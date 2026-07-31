@@ -47,16 +47,14 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0010",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0010-att-nn"
+      "@id": "kno:KN2020-0010-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-01-17"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0010-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0010-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/277/0004607513"
       }
     },
     {
@@ -67,8 +65,19 @@
       }
     },
     {
-      "@id": "kno:KN2020-0010-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0010-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     },
     {
       "@id": "kno:KN2020-0010-form",
@@ -87,22 +96,21 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2020-0010",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0010-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0010-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0010-sense"
       }
     },
     {
-      "@id": "kno:KN2020-0010-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-01-17"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/277/0004607513"
-      }
+      "@id": "kno:KN2020-0010-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2020-0010-freq-nn",
@@ -111,14 +119,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 414
-    },
-    {
-      "@id": "kno:KN2020-0010-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     }
   ]
 }

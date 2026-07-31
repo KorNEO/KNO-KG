@@ -47,14 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0421-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
-    },
-    {
       "@id": "kno:KN2025-0421",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -68,21 +60,26 @@
       }
     },
     {
+      "@id": "kno:KN2025-0421-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0421-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0421-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "역덕질"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0421-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-05-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/469/0000866567"
       }
     },
     {
@@ -105,20 +102,23 @@
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2025-0421-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0421-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0421-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "역덕질"
+      "@id": "kno:KN2025-0421-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-05-25"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/469/0000866567"
       }
+    },
+    {
+      "@id": "kno:KN2025-0421-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
     }
   ]
 }

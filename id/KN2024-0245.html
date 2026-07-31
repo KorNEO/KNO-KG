@@ -47,6 +47,18 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2024-0245-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2024-0245-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 31
+    },
+    {
       "@id": "kno:KN2024-0245-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -62,6 +74,13 @@
       }
     },
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2024-0245-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -70,30 +89,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/005/0001653195"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0245-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2024-0245",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0245-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0245-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0245-sense"
       }
     },
     {
@@ -113,12 +108,17 @@
       }
     },
     {
-      "@id": "kno:KN2024-0245-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2024-0245",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0245-att-nn"
       },
-      "rdf:value": 31
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0245-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0245-sense"
+      }
     }
   ]
 }

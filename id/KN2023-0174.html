@@ -47,10 +47,27 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0174-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%95%8C%EB%B9%A0%EB%85%B8"
+      "@id": "kno:KN2023-0174-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-10-20"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0003232060"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0174",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0174-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0174-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0174-sense"
       }
     },
     {
@@ -58,22 +75,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0174-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0174-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0174-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "알빠노"
       }
     },
     {
@@ -92,17 +93,6 @@
       "rdf:value": 43361
     },
     {
-      "@id": "kno:KN2023-0174-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-10-20"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0003232060"
-      }
-    },
-    {
       "@id": "kno:KN2023-0174-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -111,16 +101,26 @@
       "rdf:value": 76
     },
     {
-      "@id": "kno:KN2023-0174",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0174-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0174-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0174-sense"
+      "@id": "kno:KN2023-0174-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%95%8C%EB%B9%A0%EB%85%B8"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0174-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0174-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0174-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "알빠노"
       }
     }
   ]

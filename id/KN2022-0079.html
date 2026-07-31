@@ -47,20 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0079-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0079-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0079-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "기후영향사업"
-      }
+      "@id": "kno:KN2022-0079-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 16
+    },
+    {
+      "@id": "kno:KN2022-0079-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     },
     {
       "@id": "kno:corpus-NN",
@@ -81,25 +81,6 @@
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2022-0079-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 16
-    },
-    {
-      "@id": "kno:KN2022-0079-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-05-05"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/014/0004831505"
-      }
-    },
-    {
       "@id": "kno:KN2022-0079",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -113,12 +94,31 @@
       }
     },
     {
-      "@id": "kno:KN2022-0079-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2022-0079-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-05-05"
       },
-      "rdf:value": 0
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/014/0004831505"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0079-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0079-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0079-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "기후영향사업"
+      }
     }
   ]
 }

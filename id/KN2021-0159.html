@@ -47,6 +47,35 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0159-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/2020%EB%85%84%20%EC%A3%BC%EA%B0%80%20%EB%8C%80%ED%8F%AD%EB%9D%BD"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0159-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 23
+    },
+    {
       "@id": "kno:KN2021-0159-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,26 +92,23 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "@id": "kno:KN2021-0159-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-08-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/015/0004391776"
       }
     },
     {
-      "@id": "kno:KN2021-0159-freq-yt",
+      "@id": "kno:KN2021-0159-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 23
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "rdf:value": 107
     },
     {
       "@id": "kno:KN2021-0159",
@@ -96,32 +122,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2021-0159-sense"
       }
-    },
-    {
-      "@id": "kno:KN2021-0159-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-08-03"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/015/0004391776"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0159-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/2020%EB%85%84%20%EC%A3%BC%EA%B0%80%20%EB%8C%80%ED%8F%AD%EB%9D%BD"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0159-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 107
     }
   ]
 }

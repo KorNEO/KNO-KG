@@ -47,6 +47,20 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2025-0520-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -55,10 +69,14 @@
       "rdf:value": 0
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "@id": "kno:KN2025-0520-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-31"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/079/0004100779"
       }
     },
     {
@@ -66,10 +84,19 @@
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2025-0520-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0520-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0520-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "주사이모방지법"
       }
     },
     {
@@ -91,33 +118,6 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2025-0520-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0520-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-31"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/079/0004100779"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0520-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0520-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0520-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "주사이모방지법"
       }
     }
   ]

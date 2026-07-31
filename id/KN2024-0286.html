@@ -47,12 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0286-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1884
+      "@id": "kno:KN2024-0286-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0286-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0286-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "지민비조"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -60,14 +68,6 @@
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2024-0286-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 2971
     },
     {
       "@id": "kno:corpus-YT",
@@ -88,6 +88,29 @@
       }
     },
     {
+      "@id": "kno:KN2024-0286-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1884
+    },
+    {
+      "@id": "kno:KN2024-0286-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2971
+    },
+    {
+      "@id": "kno:KN2024-0286-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%A7%80%EB%AF%BC%EB%B9%84%EC%A1%B0"
+      }
+    },
+    {
       "@id": "kno:KN2024-0286",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -98,29 +121,6 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2024-0286-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0286-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%A7%80%EB%AF%BC%EB%B9%84%EC%A1%B0"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0286-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0286-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0286-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "지민비조"
       }
     }
   ]

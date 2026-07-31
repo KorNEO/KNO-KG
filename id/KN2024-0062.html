@@ -47,22 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0062-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2024-05-03"
+      "@id": "kno:KN2024-0062-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/311/0001722281"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "rdf:value": 71
     },
     {
       "@id": "kno:KN2024-0062-freq-yt",
@@ -73,6 +63,13 @@
       "rdf:value": 1180
     },
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -80,12 +77,20 @@
       }
     },
     {
-      "@id": "kno:KN2024-0062-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 71
+      "@id": "kno:KN2024-0062-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0062-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0062-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "러키비키"
+      }
     },
     {
       "@id": "kno:KN2024-0062",
@@ -108,19 +113,14 @@
       }
     },
     {
-      "@id": "kno:KN2024-0062-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0062-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0062-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "러키비키"
+      "@id": "kno:KN2024-0062-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2024-05-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/311/0001722281"
       }
     }
   ]

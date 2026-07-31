@@ -47,20 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0107-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%B9%97%EC%82%B4%EB%AA%A8%EA%B3%B5"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2024-0107",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -74,12 +60,33 @@
       }
     },
     {
-      "@id": "kno:KN2024-0107-freq-nn",
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0107-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 21
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2024-0107-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%B9%97%EC%82%B4%EB%AA%A8%EA%B3%B5"
+      }
     },
     {
       "@id": "kno:KN2024-0107-att-nn",
@@ -90,13 +97,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/018/0005653059"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -116,12 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2024-0107-freq-yt",
+      "@id": "kno:KN2024-0107-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 0
+      "rdf:value": 21
     }
   ]
 }

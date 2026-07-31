@@ -47,6 +47,21 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2023-0085-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0085-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-10-17"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/057/0001696676"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,10 +69,39 @@
       }
     },
     {
+      "@id": "kno:KN2023-0085-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 44
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0085-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2023-0085",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0085-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0085-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0085-sense"
       }
     },
     {
@@ -75,50 +119,6 @@
         "@language": "ko",
         "@value": "디지털플랫폼재난"
       }
-    },
-    {
-      "@id": "kno:KN2023-0085-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2023-0085-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-10-17"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/057/0001696676"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0085-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2023-0085",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0085-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0085-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0085-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0085-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 44
     }
   ]
 }

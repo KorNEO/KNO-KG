@@ -47,20 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0207-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0207-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0207-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "워크레저패션"
-      }
+      "@id": "kno:KN2021-0207-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     },
     {
       "@id": "kno:corpus-NN",
@@ -70,12 +62,15 @@
       }
     },
     {
-      "@id": "kno:KN2021-0207-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2021-0207-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-02-24"
       },
-      "rdf:value": 18
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/008/0004548261"
+      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -87,6 +82,14 @@
     {
       "@id": "kno:KN2021-0207-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2021-0207-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 18
     },
     {
       "@id": "kno:KN2021-0207",
@@ -102,22 +105,19 @@
       }
     },
     {
-      "@id": "kno:KN2021-0207-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2021-0207-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-02-24"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/008/0004548261"
+      "@id": "kno:KN2021-0207-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0207-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0207-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "워크레저패션"
       }
     }
   ]

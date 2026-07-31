@@ -47,15 +47,16 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0195-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-03-04"
+      "@id": "kno:KN2021-0195-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/119/0002473161"
-      }
+      "rdf:value": 91
+    },
+    {
+      "@id": "kno:KN2021-0195-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-NN",
@@ -72,8 +73,36 @@
       }
     },
     {
-      "@id": "kno:KN2021-0195-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2021-0195-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 386
+    },
+    {
+      "@id": "kno:KN2021-0195-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-03-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/119/0002473161"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0195",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0195-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0195-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0195-sense"
+      }
     },
     {
       "@id": "kno:KN2021-0195-form",
@@ -90,35 +119,6 @@
         "@language": "ko",
         "@value": "엘에이치로남불"
       }
-    },
-    {
-      "@id": "kno:KN2021-0195-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 386
-    },
-    {
-      "@id": "kno:KN2021-0195",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0195-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0195-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0195-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0195-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 91
     }
   ]
 }

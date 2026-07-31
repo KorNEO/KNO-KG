@@ -47,25 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0299-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-02-02"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/657/0000034564"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0299-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 10
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -80,12 +61,28 @@
       }
     },
     {
-      "@id": "kno:KN2025-0299-freq-yt",
+      "@id": "kno:KN2025-0299-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 856
+      "rdf:value": 10
+    },
+    {
+      "@id": "kno:KN2025-0299-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0299-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0299-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "비상계몽"
+      }
     },
     {
       "@id": "kno:KN2025-0299-sense",
@@ -105,19 +102,22 @@
       }
     },
     {
-      "@id": "kno:KN2025-0299-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0299-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0299-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "비상계몽"
+      "@id": "kno:KN2025-0299-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 856
+    },
+    {
+      "@id": "kno:KN2025-0299-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-02-02"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/657/0000034564"
       }
     }
   ]

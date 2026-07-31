@@ -47,24 +47,33 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0181",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2022-0181-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2022-0181-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2022-0181-sense"
-      }
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0181-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%86%8C%EC%8B%9D%EC%A2%8C"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0181-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 8237
     },
     {
       "@id": "kno:KN2022-0181-att-nn",
@@ -75,13 +84,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/109/0004490517"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -101,27 +103,25 @@
       }
     },
     {
+      "@id": "kno:KN2022-0181",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2022-0181-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2022-0181-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2022-0181-sense"
+      }
+    },
+    {
       "@id": "kno:KN2022-0181-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 7584
-    },
-    {
-      "@id": "kno:KN2022-0181-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 8237
-    },
-    {
-      "@id": "kno:KN2022-0181-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%86%8C%EC%8B%9D%EC%A2%8C"
-      }
     }
   ]
 }

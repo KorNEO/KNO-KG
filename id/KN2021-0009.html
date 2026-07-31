@@ -47,19 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0009-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0009-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0009-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "가족돌봄휴가연장법"
+      "@id": "kno:KN2021-0009-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2021-0009",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0009-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0009-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0009-sense"
       }
     },
     {
@@ -70,8 +71,12 @@
       }
     },
     {
-      "@id": "kno:KN2021-0009-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2021-0009-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 137
     },
     {
       "@id": "kno:corpus-YT",
@@ -92,12 +97,20 @@
       }
     },
     {
-      "@id": "kno:KN2021-0009-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 137
+      "@id": "kno:KN2021-0009-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0009-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0009-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "가족돌봄휴가연장법"
+      }
     },
     {
       "@id": "kno:KN2021-0009-freq-yt",
@@ -106,19 +119,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2021-0009",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0009-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0009-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0009-sense"
-      }
     }
   ]
 }

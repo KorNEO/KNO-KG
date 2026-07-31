@@ -47,17 +47,25 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0248-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%A0%88%EC%9D%B4%20%EC%8B%AB%EC%9C%BC%EB%A9%B4%20%EC%A4%91%EC%9D%B4%20%EB%96%A0%EB%82%98%EB%9D%BC"
-      }
+      "@id": "kno:KN2023-0248-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
     },
     {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -77,27 +85,24 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2023-0248",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0248-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0248-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0248-sense"
       }
     },
     {
-      "@id": "kno:KN2023-0248-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2023-0248-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 21
+      "@id": "kno:KN2023-0248-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%A0%88%EC%9D%B4%20%EC%8B%AB%EC%9C%BC%EB%A9%B4%20%EC%A4%91%EC%9D%B4%20%EB%96%A0%EB%82%98%EB%9D%BC"
+      }
     },
     {
       "@id": "kno:KN2023-0248-att-nn",
@@ -111,17 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2023-0248",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0248-att-nn"
+      "@id": "kno:KN2023-0248-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0248-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0248-sense"
-      }
+      "rdf:value": 21
     }
   ]
 }

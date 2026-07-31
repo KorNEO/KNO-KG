@@ -47,13 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2025-0097-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -70,12 +63,36 @@
       }
     },
     {
-      "@id": "kno:KN2025-0097-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0097-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/2025%EB%85%84%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B0%A9%ED%95%9C"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0097-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-10-30"
       },
-      "rdf:value": 527
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/056/0012057059"
+      }
     },
     {
       "@id": "kno:KN2025-0097-freq-yt",
@@ -84,13 +101,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 66
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
     },
     {
       "@id": "kno:KN2025-0097",
@@ -106,22 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2025-0097-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/2025%EB%85%84%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B0%A9%ED%95%9C"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0097-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-10-30"
+      "@id": "kno:KN2025-0097-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/056/0012057059"
-      }
+      "rdf:value": 527
     }
   ]
 }

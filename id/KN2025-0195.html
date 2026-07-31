@@ -47,11 +47,30 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2025-0195-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0195-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 71
     },
     {
       "@id": "kno:KN2025-0195-freq-yt",
@@ -78,28 +97,6 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0195-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-02-20"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/422/0000715259"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0195-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:KN2025-0195",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -113,12 +110,15 @@
       }
     },
     {
-      "@id": "kno:KN2025-0195-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0195-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-02-20"
       },
-      "rdf:value": 71
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/422/0000715259"
+      }
     }
   ]
 }

@@ -47,24 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0602-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-09-19"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/629/0000427844"
-      }
-    },
-    {
       "@id": "kno:KN2025-0602",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -78,6 +60,28 @@
       }
     },
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0602-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 2
+    },
+    {
       "@id": "kno:KN2025-0602-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -86,11 +90,8 @@
       "rdf:value": 9
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2025-0602-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2025-0602-form",
@@ -109,16 +110,15 @@
       }
     },
     {
-      "@id": "kno:KN2025-0602-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0602-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-09-19"
       },
-      "rdf:value": 2
-    },
-    {
-      "@id": "kno:KN2025-0602-sense",
-      "@type": "ontolex:LexicalSense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/629/0000427844"
+      }
     }
   ]
 }

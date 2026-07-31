@@ -47,17 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0106-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-01-18"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/018/0004830616"
-      }
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -72,12 +61,17 @@
       }
     },
     {
-      "@id": "kno:KN2021-0106-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2021-0106",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0106-att-nn"
       },
-      "rdf:value": 619
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0106-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0106-sense"
+      }
     },
     {
       "@id": "kno:KN2021-0106-sense",
@@ -85,6 +79,22 @@
       "dcterms:isReferencedBy": {
         "@id": "https://namu.wiki/w/%EB%A7%88%EA%B8%B0%EA%BE%BC"
       }
+    },
+    {
+      "@id": "kno:KN2021-0106-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 8316
+    },
+    {
+      "@id": "kno:KN2021-0106-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 619
     },
     {
       "@id": "kno:KN2021-0106-form",
@@ -103,25 +113,15 @@
       }
     },
     {
-      "@id": "kno:KN2021-0106",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0106-att-nn"
+      "@id": "kno:KN2021-0106-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-01-18"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0106-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0106-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/018/0004830616"
       }
-    },
-    {
-      "@id": "kno:KN2021-0106-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 8316
     }
   ]
 }

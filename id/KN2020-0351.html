@@ -47,6 +47,44 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0351-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 224
+    },
+    {
+      "@id": "kno:KN2020-0351-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0351-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0351-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "코로나우울감"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0351",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -58,28 +96,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2020-0351-sense"
       }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0351-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 224
     },
     {
       "@id": "kno:KN2020-0351-freq-yt",
@@ -102,22 +118,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/469/0000474399"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0351-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0351-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0351-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "코로나우울감"
       }
     }
   ]

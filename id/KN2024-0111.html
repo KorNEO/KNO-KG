@@ -47,16 +47,10 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0111",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0111-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0111-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0111-sense"
+      "@id": "kno:KN2024-0111-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%82%AC%ED%83%90%EB%9F%B0"
       }
     },
     {
@@ -67,13 +61,6 @@
       }
     },
     {
-      "@id": "kno:KN2024-0111-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%82%AC%ED%83%90%EB%9F%B0"
-      }
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -81,20 +68,12 @@
       }
     },
     {
-      "@id": "kno:KN2024-0111-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0111-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0111-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "사탐런"
-      }
+      "@id": "kno:KN2024-0111-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1236
     },
     {
       "@id": "kno:KN2024-0111-att-nn",
@@ -116,12 +95,33 @@
       "rdf:value": 2688
     },
     {
-      "@id": "kno:KN2024-0111-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2024-0111-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0111-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0111-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "사탐런"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0111",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0111-att-nn"
       },
-      "rdf:value": 1236
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0111-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0111-sense"
+      }
     }
   ]
 }

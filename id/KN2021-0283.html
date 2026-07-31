@@ -47,10 +47,28 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2021-0283-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-08-17"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/020/0003303762"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0283-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%B2%94%EC%9C%A0%ED%96%89%EC%A0%84%EC%97%BC%EB%B3%91"
       }
     },
     {
@@ -61,23 +79,25 @@
       }
     },
     {
-      "@id": "kno:KN2021-0283-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2021-0283",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0283-att-nn"
       },
-      "rdf:value": 5628
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0283-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0283-sense"
+      }
     },
     {
-      "@id": "kno:KN2021-0283-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-08-17"
+      "@id": "kno:KN2021-0283-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/020/0003303762"
-      }
+      "rdf:value": 247
     },
     {
       "@id": "kno:KN2021-0283-form",
@@ -96,32 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2021-0283-freq-yt",
+      "@id": "kno:KN2021-0283-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 247
-    },
-    {
-      "@id": "kno:KN2021-0283",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0283-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0283-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0283-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0283-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%B2%94%EC%9C%A0%ED%96%89%EC%A0%84%EC%97%BC%EB%B3%91"
-      }
+      "rdf:value": 5628
     }
   ]
 }

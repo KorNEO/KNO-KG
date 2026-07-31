@@ -47,24 +47,8 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0045",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0045-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0045-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0045-sense"
-      }
+      "@id": "kno:KN2021-0045-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-YT",
@@ -72,6 +56,40 @@
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0045-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-11-15"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/020/0003320561"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0045-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 16
+    },
+    {
+      "@id": "kno:KN2021-0045-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2
     },
     {
       "@id": "kno:KN2021-0045-form",
@@ -90,35 +108,17 @@
       }
     },
     {
-      "@id": "kno:KN2021-0045-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2021-0045",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0045-att-nn"
       },
-      "rdf:value": 16
-    },
-    {
-      "@id": "kno:KN2021-0045-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-11-15"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0045-form"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/020/0003320561"
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0045-sense"
       }
-    },
-    {
-      "@id": "kno:KN2021-0045-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2021-0045-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 2
     }
   ]
 }

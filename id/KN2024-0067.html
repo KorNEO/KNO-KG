@@ -47,22 +47,24 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0067-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-07-12"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/014/0005040974"
+      "@id": "kno:KN2024-0067-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0067-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0067-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "맛그레이드"
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2024-0067-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2024-0067",
@@ -78,8 +80,19 @@
       }
     },
     {
-      "@id": "kno:KN2024-0067-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2024-0067-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -87,14 +100,6 @@
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2024-0067-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     },
     {
       "@id": "kno:KN2024-0067-freq-nn",
@@ -105,19 +110,14 @@
       "rdf:value": 28
     },
     {
-      "@id": "kno:KN2024-0067-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0067-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0067-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "맛그레이드"
+      "@id": "kno:KN2024-0067-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-07-12"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/014/0005040974"
       }
     }
   ]

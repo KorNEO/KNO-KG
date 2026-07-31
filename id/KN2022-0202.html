@@ -47,6 +47,28 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0202-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1677
+    },
+    {
       "@id": "kno:KN2022-0202-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -55,17 +77,14 @@
       "rdf:value": 9
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0202-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%95%85%EC%9C%BC%EB%A1%9C%20%EA%B9%A1%EC%9C%BC%EB%A1%9C%20%EB%B2%84%ED%85%A8%EB%9D%BC"
+      "@id": "kno:KN2022-0202-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-09-15"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/277/0005147641"
       }
     },
     {
@@ -82,21 +101,10 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0202-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-09-15"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/277/0005147641"
+      "@id": "kno:KN2022-0202-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%95%85%EC%9C%BC%EB%A1%9C%20%EA%B9%A1%EC%9C%BC%EB%A1%9C%20%EB%B2%84%ED%85%A8%EB%9D%BC"
       }
     },
     {
@@ -114,14 +122,6 @@
         "@language": "ko",
         "@value": "악깡버"
       }
-    },
-    {
-      "@id": "kno:KN2022-0202-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 1677
     }
   ]
 }

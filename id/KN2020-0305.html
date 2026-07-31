@@ -47,10 +47,35 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0305-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-02-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/052/0001396345"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0305-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EA%B0%90%EC%97%BC%EC%A6%9D"
       }
     },
     {
@@ -67,29 +92,12 @@
       }
     },
     {
-      "@id": "kno:KN2020-0305-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EA%B0%90%EC%97%BC%EC%A6%9D"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0305-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-02-03"
+      "@id": "kno:KN2020-0305-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/052/0001396345"
-      }
+      "rdf:value": 0
     },
     {
       "@id": "kno:KN2020-0305-form",
@@ -114,14 +122,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 214
-    },
-    {
-      "@id": "kno:KN2020-0305-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     }
   ]
 }

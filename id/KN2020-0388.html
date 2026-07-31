@@ -47,25 +47,28 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0388-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%20%EC%BD%94%EB%A1%9C%EB%82%98"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0388-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2020-0388-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-02-13"
       },
-      "rdf:value": 2098
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/018/0004574953"
+      }
     },
     {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0388-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%8F%AC%EC%8A%A4%ED%8A%B8%20%EC%BD%94%EB%A1%9C%EB%82%98"
       }
     },
     {
@@ -76,14 +79,16 @@
       }
     },
     {
-      "@id": "kno:KN2020-0388-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-02-13"
+      "@id": "kno:KN2020-0388",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0388-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/018/0004574953"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0388-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0388-sense"
       }
     },
     {
@@ -111,17 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2020-0388",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0388-att-nn"
+      "@id": "kno:KN2020-0388-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0388-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0388-sense"
-      }
+      "rdf:value": 2098
     }
   ]
 }

@@ -47,6 +47,24 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0083-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2021-0083-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,24 +81,20 @@
       }
     },
     {
-      "@id": "kno:KN2021-0083",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0083-att-nn"
+      "@id": "kno:KN2021-0083-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0083-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0083-sense"
-      }
+      "rdf:value": 668
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2021-0083-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 32
     },
     {
       "@id": "kno:KN2021-0083-att-nn",
@@ -94,31 +108,17 @@
       }
     },
     {
-      "@id": "kno:KN2021-0083-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2021-0083",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0083-att-nn"
       },
-      "rdf:value": 668
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0083-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0083-sense"
       }
-    },
-    {
-      "@id": "kno:KN2021-0083-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2021-0083-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 32
     }
   ]
 }

@@ -47,20 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0188-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0188-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0188-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "알몸김치"
-      }
+      "@id": "kno:KN2021-0188-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 857
     },
     {
       "@id": "kno:corpus-NN",
@@ -70,8 +62,26 @@
       }
     },
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2021-0188-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2021-0188-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-03-17"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/022/0003562015"
+      }
     },
     {
       "@id": "kno:KN2021-0188-freq-nn",
@@ -95,30 +105,20 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2021-0188-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0188-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0188-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "알몸김치"
       }
-    },
-    {
-      "@id": "kno:KN2021-0188-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-03-17"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/022/0003562015"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0188-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 857
     }
   ]
 }

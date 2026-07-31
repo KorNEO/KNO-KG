@@ -47,15 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0198-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-10-22"
+      "@id": "kno:KN2025-0198-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/008/0005266534"
-      }
+      "rdf:value": 105
+    },
+    {
+      "@id": "kno:KN2025-0198-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
     },
     {
       "@id": "kno:corpus-NN",
@@ -65,10 +70,6 @@
       }
     },
     {
-      "@id": "kno:KN2025-0198-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -76,12 +77,17 @@
       }
     },
     {
-      "@id": "kno:KN2025-0198-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0198",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0198-att-nn"
       },
-      "rdf:value": 105
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0198-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0198-sense"
+      }
     },
     {
       "@id": "kno:KN2025-0198-form",
@@ -100,24 +106,18 @@
       }
     },
     {
-      "@id": "kno:KN2025-0198-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
+      "@id": "kno:KN2025-0198-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2025-0198",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0198-att-nn"
+      "@id": "kno:KN2025-0198-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-10-22"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0198-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0198-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/008/0005266534"
       }
     }
   ]

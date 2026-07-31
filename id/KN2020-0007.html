@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0007-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,8 +58,20 @@
       }
     },
     {
-      "@id": "kno:KN2020-0007-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2020-0007-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2020-0007-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 87
     },
     {
       "@id": "kno:KN2020-0007-att-nn",
@@ -69,14 +85,6 @@
       }
     },
     {
-      "@id": "kno:KN2020-0007-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -84,12 +92,17 @@
       }
     },
     {
-      "@id": "kno:KN2020-0007-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2020-0007",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0007-att-nn"
       },
-      "rdf:value": 87
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0007-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0007-sense"
+      }
     },
     {
       "@id": "kno:KN2020-0007-form",
@@ -105,19 +118,6 @@
       "ontolex:writtenRep": {
         "@language": "ko",
         "@value": "공감소비운동"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0007",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0007-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0007-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0007-sense"
       }
     }
   ]

@@ -47,22 +47,17 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0400-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 700
-    },
-    {
-      "@id": "kno:KN2025-0400-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -74,21 +69,16 @@
       "rdf:value": 326
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0400-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-03-31"
+      "@id": "kno:KN2025-0400",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0400-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://m.sports.naver.com/article/055/0001245054"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0400-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0400-sense"
       }
     },
     {
@@ -108,17 +98,27 @@
       }
     },
     {
-      "@id": "kno:KN2025-0400",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0400-att-nn"
+      "@id": "kno:KN2025-0400-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0400-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-03-31"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0400-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0400-sense"
+      "frac:locus": {
+        "@id": "https://m.sports.naver.com/article/055/0001245054"
       }
+    },
+    {
+      "@id": "kno:KN2025-0400-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 700
     }
   ]
 }

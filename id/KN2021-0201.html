@@ -47,19 +47,19 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2021-0201-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 8238
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2021-0201-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 8097
     },
     {
       "@id": "kno:KN2021-0201-att-nn",
@@ -80,12 +80,27 @@
       }
     },
     {
-      "@id": "kno:KN2021-0201-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 8238
+      "@id": "kno:KN2021-0201-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0201-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0201-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "영끌족"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0201-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%98%81%EB%81%8C"
+      }
     },
     {
       "@id": "kno:KN2021-0201",
@@ -101,27 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2021-0201-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%98%81%EB%81%8C"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0201-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0201-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0201-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "영끌족"
-      }
+      "@id": "kno:KN2021-0201-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 8097
     }
   ]
 }

@@ -47,32 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0001-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-11-18"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/005/0001381925"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0001-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 15
-    },
-    {
       "@id": "kno:KN2021-0001-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -83,6 +57,29 @@
     {
       "@id": "kno:KN2021-0001-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0001-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0001-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0001-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "가덕도신공항건설을위한특별법"
+      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -105,19 +102,22 @@
       }
     },
     {
-      "@id": "kno:KN2021-0001-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0001-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0001-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "가덕도신공항건설을위한특별법"
+      "@id": "kno:KN2021-0001-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 15
+    },
+    {
+      "@id": "kno:KN2021-0001-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-11-18"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/005/0001381925"
       }
     }
   ]

@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2024-0395-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%9C%A4%EC%84%9D%EC%97%B4%20%EC%9D%B4%EC%A2%85%EC%84%AD%20%ED%98%B8%EC%A3%BC%20%EB%8C%80%EC%82%AC%20%EC%9E%84%EB%AA%85%20%EB%85%BC%EB%9E%80"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -61,20 +68,23 @@
       }
     },
     {
-      "@id": "kno:KN2024-0395-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0395-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0395-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "호주런"
+      "@id": "kno:KN2024-0395-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-11-14"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/001/0014329952"
       }
+    },
+    {
+      "@id": "kno:KN2024-0395-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 103
     },
     {
       "@id": "kno:KN2024-0395",
@@ -90,25 +100,6 @@
       }
     },
     {
-      "@id": "kno:KN2024-0395-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 103
-    },
-    {
-      "@id": "kno:KN2024-0395-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-11-14"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/001/0014329952"
-      }
-    },
-    {
       "@id": "kno:KN2024-0395-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -117,10 +108,19 @@
       "rdf:value": 80
     },
     {
-      "@id": "kno:KN2024-0395-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%9C%A4%EC%84%9D%EC%97%B4%20%EC%9D%B4%EC%A2%85%EC%84%AD%20%ED%98%B8%EC%A3%BC%20%EB%8C%80%EC%82%AC%20%EC%9E%84%EB%AA%85%20%EB%85%BC%EB%9E%80"
+      "@id": "kno:KN2024-0395-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0395-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0395-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "호주런"
       }
     }
   ]

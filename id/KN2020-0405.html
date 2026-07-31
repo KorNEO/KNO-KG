@@ -47,6 +47,20 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0405",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -60,40 +74,14 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0405-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%99%95%EC%B0%90%EC%9E%90"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0405-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0405-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0405-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "확찐자"
+      "@id": "kno:KN2020-0405-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-03-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/417/0000513325"
       }
     },
     {
@@ -113,14 +101,26 @@
       "rdf:value": 5050
     },
     {
-      "@id": "kno:KN2020-0405-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-03-04"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/417/0000513325"
+      "@id": "kno:KN2020-0405-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0405-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0405-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "확찐자"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0405-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%99%95%EC%B0%90%EC%9E%90"
       }
     }
   ]

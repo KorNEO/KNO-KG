@@ -47,19 +47,27 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0370-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0370-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0370-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "코로노미쇼크"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2020-0370-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 42
     },
     {
       "@id": "kno:corpus-YT",
@@ -69,15 +77,8 @@
       }
     },
     {
-      "@id": "kno:KN2020-0370-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-03-11"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/023/0003513903"
-      }
+      "@id": "kno:KN2020-0370-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2020-0370",
@@ -93,6 +94,17 @@
       }
     },
     {
+      "@id": "kno:KN2020-0370-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-03-11"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/023/0003513903"
+      }
+    },
+    {
       "@id": "kno:KN2020-0370-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -101,24 +113,12 @@
       "rdf:value": 0
     },
     {
-      "@id": "kno:KN2020-0370-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2020-0370-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0370-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0370-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "코로노미쇼크"
-      }
+      "@id": "kno:KN2020-0370-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 42
     }
   ]
 }

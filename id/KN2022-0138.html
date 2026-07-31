@@ -47,20 +47,8 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0138-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0138-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0138-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "멍스킨라빈스"
-      }
+      "@id": "kno:KN2022-0138-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-NN",
@@ -70,15 +58,38 @@
       }
     },
     {
-      "@id": "kno:KN2022-0138-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2022-0138-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 5
+    },
+    {
+      "@id": "kno:KN2022-0138-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-03-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/421/0005945065"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0138-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 19
     },
     {
       "@id": "kno:KN2022-0138",
@@ -94,30 +105,19 @@
       }
     },
     {
-      "@id": "kno:KN2022-0138-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 5
-    },
-    {
-      "@id": "kno:KN2022-0138-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 19
-    },
-    {
-      "@id": "kno:KN2022-0138-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-03-03"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/421/0005945065"
+      "@id": "kno:KN2022-0138-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0138-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0138-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "멍스킨라빈스"
       }
     }
   ]

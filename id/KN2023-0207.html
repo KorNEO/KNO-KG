@@ -47,14 +47,28 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0207-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0207-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-03-13"
+      },
+      "frac:locus": {
+        "@id": "https://m.entertain.naver.com/article/030/0002872536"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -66,11 +80,12 @@
       "rdf:value": 80
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2023-0207-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 4
     },
     {
       "@id": "kno:KN2023-0207-form",
@@ -89,14 +104,6 @@
       }
     },
     {
-      "@id": "kno:KN2023-0207-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 4
-    },
-    {
       "@id": "kno:KN2023-0207",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -110,15 +117,8 @@
       }
     },
     {
-      "@id": "kno:KN2023-0207-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-03-13"
-      },
-      "frac:locus": {
-        "@id": "https://m.entertain.naver.com/article/030/0002872536"
-      }
+      "@id": "kno:KN2023-0207-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }

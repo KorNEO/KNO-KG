@@ -47,10 +47,35 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0293-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%90%81%ED%90%81%EB%8B%A8"
+      "@id": "kno:KN2022-0293-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 27799
+    },
+    {
+      "@id": "kno:KN2022-0293-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1319
+    },
+    {
+      "@id": "kno:KN2022-0293-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0293-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0293-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "퐁퐁남"
       }
     },
     {
@@ -68,14 +93,6 @@
       }
     },
     {
-      "@id": "kno:KN2022-0293-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1319
-    },
-    {
       "@id": "kno:KN2022-0293-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -84,6 +101,13 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/088/0000727466"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0293-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%90%81%ED%90%81%EB%8B%A8"
       }
     },
     {
@@ -97,30 +121,6 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2022-0293-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0293-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 27799
-    },
-    {
-      "@id": "kno:KN2022-0293-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0293-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0293-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "퐁퐁남"
       }
     }
   ]

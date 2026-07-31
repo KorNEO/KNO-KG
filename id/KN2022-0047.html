@@ -47,14 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0047-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -62,14 +54,27 @@
       }
     },
     {
-      "@id": "kno:KN2022-0047-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-07-07"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0047-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2022-0047",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2022-0047-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/014/0004670606"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2022-0047-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2022-0047-sense"
       }
     },
     {
@@ -79,13 +84,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 42
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
     },
     {
       "@id": "kno:KN2022-0047-form",
@@ -104,21 +102,23 @@
       }
     },
     {
-      "@id": "kno:KN2022-0047",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2022-0047-att-nn"
+      "@id": "kno:KN2022-0047-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-07-07"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2022-0047-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2022-0047-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/014/0004670606"
       }
     },
     {
-      "@id": "kno:KN2022-0047-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2022-0047-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     }
   ]
 }

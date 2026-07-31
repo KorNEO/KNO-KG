@@ -47,22 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0213-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0213-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0213-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "업토버"
-      }
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -70,15 +54,19 @@
       }
     },
     {
-      "@id": "kno:KN2022-0213-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2022-0213-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 441
     },
     {
       "@id": "kno:KN2022-0213-freq-yt",
@@ -102,6 +90,22 @@
       }
     },
     {
+      "@id": "kno:KN2022-0213-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0213-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0213-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "업토버"
+      }
+    },
+    {
       "@id": "kno:KN2022-0213-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -113,12 +117,8 @@
       }
     },
     {
-      "@id": "kno:KN2022-0213-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 441
+      "@id": "kno:KN2022-0213-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }
