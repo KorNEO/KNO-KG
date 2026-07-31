@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>삼봉오란 — KNO 지식그래프</title>
+  <meta name="description" content="KNO 신어 지식그래프: 삼봉오란. (LLM) 라면 세 봉지에 달걀 다섯 개를 넣어 끓인 라면.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script type="application/ld+json">
+{
+  "@context": {
+    "brick": "https://brickschema.org/schema/Brick#",
+    "csvw": "http://www.w3.org/ns/csvw#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcam": "http://purl.org/dc/dcam/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dcmitype": "http://purl.org/dc/dcmitype/",
+    "dcterms": "http://purl.org/dc/terms/",
+    "doap": "http://usefulinc.com/ns/doap#",
+    "foaf": "http://xmlns.com/foaf/0.1/",
+    "frac": "http://www.w3.org/ns/lemon/frac#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "kno": "https://w3id.org/kno/id/",
+    "morph": "http://www.w3.org/ns/lemon/morph#",
+    "odrl": "http://www.w3.org/ns/odrl/2/",
+    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
+    "org": "http://www.w3.org/ns/org#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "prof": "http://www.w3.org/ns/dx/prof/",
+    "prov": "http://www.w3.org/ns/prov#",
+    "qb": "http://purl.org/linked-data/cube#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "https://schema.org/",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "sosa": "http://www.w3.org/ns/sosa/",
+    "ssn": "http://www.w3.org/ns/ssn/",
+    "time": "http://www.w3.org/2006/time#",
+    "vann": "http://purl.org/vocab/vann/",
+    "void": "http://rdfs.org/ns/void#",
+    "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0320",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0320-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0320-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0320-sense"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0320-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 21
+    },
+    {
+      "@id": "kno:KN2025-0320-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-11-24"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/047/0002496039"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0320-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0320-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 3
+    },
+    {
+      "@id": "kno:KN2025-0320-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0320-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0320-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "삼봉오란"
+      }
+    }
+  ]
+}
+  </script>
+  <style>
+  /* ── Stream B: 타이포그래피 스케일 (15px body / 13px meta / 22-28px headword) ── */
+  body { font-size: 15px; }
+
+  .entry-headword {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: clamp(1.5rem, 5vw, 1.75rem);  /* 24-28px */
+    font-weight: 900;
+    color: var(--accent-nova);
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+  }
+  .entry-pos-badge {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 0.2rem 0.7rem;
+    border-radius: 4px;
+    background: rgba(30,58,138,0.07);
+    color: var(--accent-nova);
+    border: 1px solid rgba(30,58,138,0.18);
+    vertical-align: middle;
+    margin-left: 0.6rem;
+  }
+  .axis-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .axis-card h2 {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--accent-glow);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+  .definition-block {
+    background: rgba(30,58,138,0.025);
+    border-left: 3px solid var(--accent-nova);
+    border-radius: 0 6px 6px 0;
+    padding: 0.9rem 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-size: 1rem;       /* 15px body 기준 */
+    line-height: 1.85;
+    max-width: 65ch;       /* 읽기 좋은 행 길이 */
+  }
+  .llm-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(194,65,12,0.1);
+    color: var(--accent-warm);
+    border: 1px solid rgba(194,65,12,0.2);
+    margin-right: 0.4rem;
+    vertical-align: middle;
+  }
+  .example-block {
+    font-size: 0.93rem;
+    color: var(--text-secondary);
+    margin-top: 0.7rem;
+    padding: 0.6rem 1.1rem;
+    background: var(--bg-deep);
+    border-radius: 6px;
+    font-style: italic;
+    line-height: 1.75;
+    max-width: 65ch;
+  }
+  .attestation-block { margin-top: 1.2rem; }
+  .att-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-nova);
+    letter-spacing: 0.02em;
+    margin-bottom: 0.4rem;
+  }
+  .att-quote {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+    background: rgba(30,58,138,0.03);
+    border-left: 3px solid var(--accent-nova);
+    padding: 0.5rem 0.9rem;
+    border-radius: 0 5px 5px 0;
+    margin-bottom: 0.3rem;
+  }
+  .att-meta { font-size: 0.78rem; color: var(--text-muted); }
+  .att-meta a { color: var(--accent-signal); text-decoration: none; }
+  .att-meta a:hover { text-decoration: underline; }
+  .kb-row {
+    display: flex;
+    align-items: baseline;
+    gap: 0.7rem;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.92rem;
+  }
+  .kb-row:last-child { border-bottom: none; }
+  .kb-source {
+    font-weight: 600;
+    color: var(--text-secondary);
+    min-width: 110px;
+    flex-shrink: 0;
+  }
+  .kb-found a { color: var(--accent-signal); text-decoration: none; }
+  .kb-found a:hover { text-decoration: underline; }
+  .kb-redirect-badge {
+    font-size: 0.72rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3px;
+    background: rgba(124,58,237,0.08);
+    color: #7c3aed;
+    border: 1px solid rgba(124,58,237,0.2);
+    font-weight: 600;
+    margin-left: 0.4rem;
+  }
+  .kb-absent { color: var(--text-muted); font-style: italic; }
+  .kb-absent a { color: inherit; text-decoration: underline dotted; }
+  .kb-absent a:hover { color: #334155; }
+  .kb-unresearched { color: var(--text-muted); font-style: italic; }
+  .kb-homograph { font-size: 0.78rem; color: var(--text-muted); }
+  .kb-observed { font-size: 0.78rem; color: var(--text-muted); margin-left: auto; }
+  .neighbor-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+  }
+  .neighbor-link {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    background: rgba(30,58,138,0.06);
+    color: var(--accent-nova);
+    border: 1px solid rgba(30,58,138,0.18);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .neighbor-link:hover { background: rgba(30,58,138,0.14); }
+  .neighbor-section { margin-bottom: 0.8rem; }
+  .neighbor-section-label {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+  .rdf-graph-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+  .rdf-graph-card h2 {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-glow);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .rdf-graph-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.2rem; }
+  .rdf-graph-wrap {
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background: #ffffff;
+  }
+  .ttl-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.8rem 2rem;
+    margin-bottom: 1.5rem;
+  }
+  .ttl-panel h2 {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--accent-glow);
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .ttl-code-wrap {
+    margin-top: 1rem;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    overflow-x: auto;
+  }
+  .ttl-code {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.75;
+    padding: 1.2rem 1.5rem;
+    display: block;
+    white-space: pre;
+    color: #334155;
+  }
+  .ttl-prefix  { color: #7c3aed; font-weight: 700; }
+  .ttl-ns      { color: #1e3a8a; font-weight: 600; }
+  .ttl-uri     { color: #0f766e; }
+  .ttl-str     { color: #c2410c; }
+  .ttl-lang    { color: #9f1239; font-weight: 600; }
+  .ttl-dt      { color: #64748b; }
+  .ttl-num     { color: #2563eb; }
+  .ttl-kw      { color: #7c3aed; font-weight: 700; }
+  .ttl-punct   { color: #94a3b8; }
+  .ttl-comment { color: #94a3b8; font-style: italic; }
+  .download-bar {
+    display: flex;
+    gap: 0.7rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.45rem 1rem;
+    border-radius: 6px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    color: var(--text-primary);
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .dl-btn:hover { border-color: var(--accent-nova); background: rgba(30,58,138,0.04); }
+  .obs-data-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    margin-top: 0.5rem;
+  }
+  .obs-data-link:hover { color: var(--accent-nova); border-color: var(--accent-nova); }
+  /* ── 트리플 표 ── */
+  .triple-table-wrap {
+    overflow-x: auto;
+    margin-top: 0.5rem;
+  }
+  .triple-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+    table-layout: auto;
+  }
+  .triple-table thead th {
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.04em;
+    text-align: left;
+    padding: 0.4rem 0.9rem;
+    border-bottom: 1px solid var(--border);
+    background: transparent;
+  }
+  .triple-table tbody tr {
+    border-bottom: 1px solid rgba(226,232,240,0.6);
+  }
+  .triple-table tbody tr:last-child { border-bottom: none; }
+  .triple-table td {
+    padding: 0.55rem 0.9rem;
+    vertical-align: top;
+    line-height: 1.6;
+  }
+  .triple-subj {
+    color: var(--text-muted);
+    font-size: 0.78rem;
+    white-space: nowrap;
+    width: 1%;
+  }
+  .triple-subj code {
+    background: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+  }
+  .triple-prop code {
+    background: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    color: #1e3a8a;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .triple-val { color: var(--text-primary); }
+  .triple-val code {
+    background: none;
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    color: #0f766e;
+  }
+  .triple-literal { color: var(--text-primary); }
+  .triple-label {
+    display: inline-block;
+    margin-left: 0.5rem;
+    font-size: 0.82rem;
+    color: var(--text-secondary);
+    font-style: italic;
+  }
+  .triple-lang {
+    display: inline-block;
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    color: #9f1239;
+    font-family: 'Space Mono', monospace;
+    font-weight: 600;
+  }
+  .triple-dt {
+    display: inline-block;
+    margin-left: 0.25rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-family: 'Space Mono', monospace;
+  }
+  /* ── Turtle 드롭다운 ── */
+  .ttl-dropdown {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .ttl-dropdown > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 1rem 1.5rem;
+    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    user-select: none;
+  }
+  .ttl-dropdown > summary::-webkit-details-marker { display: none; }
+  .ttl-dropdown > summary::before {
+    content: "▶";
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    transition: transform 0.2s;
+    display: inline-block;
+  }
+  .ttl-dropdown[open] > summary::before { transform: rotate(90deg); }
+  .ttl-dropdown > summary:hover { color: var(--accent-nova); }
+  .ttl-raw-wrap {
+    margin: 0 1.5rem 1.2rem;
+    border-radius: 7px;
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    overflow-x: auto;
+  }
+  .ttl-raw {
+    font-family: 'Space Mono', monospace;
+    font-size: 0.82rem;
+    line-height: 1.7;
+    padding: 1rem 1.2rem;
+    display: block;
+    white-space: pre;
+    color: #334155;
+    margin: 0;
+  }
+  @media (max-width: 600px) {
+    .entry-headword { font-size: 1.9rem; }
+    .rdf-graph-wrap svg { min-width: 600px; }
+    .ttl-code { font-size: 0.72rem; padding: 1rem; }
+    .ttl-raw { font-size: 0.72rem; padding: 0.8rem; }
+    .triple-table { font-size: 0.8rem; }
+  }
+</style>
+</head>
+<body>
+  <nav class="top-nav">
+    <a href="../index.html" class="nav-logo">한국어 신어 지식 그래프</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links">
+      <a href="../index.html">그래프</a>
+      <a href="../list.html">신어 목록</a>
+      <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
+    </div>
+  </nav>
+
+  <main>
+    <nav class="report-breadcrumb">
+      <a href="../list.html">&larr; 신어 목록으로</a>
+      <span style="margin-left:0.8rem;color:var(--text-muted);">|</span>
+      <a href="../index.html" style="margin-left:0.8rem;">그래프</a>
+    </nav>
+
+    <article class="report-article">
+
+      <!-- ── 신어 헤더 ── -->
+      <header class="report-header" style="margin-bottom:2rem;">
+        <div class="report-date">KN2025-0320</div>
+        <h1 style="margin:0.4rem 0 0.6rem;">
+          <span class="entry-headword">삼봉오란</span
+          ><span class="entry-pos-badge">구</span>
+        </h1>
+        <div class="report-meta">
+          <span class="tag">None</span>
+          <span class="tag">일상어</span>
+          <span class="tag">〔식생활〕</span>
+          <span class="tag">2025년 수집</span>
+        </div>
+      </header>
+
+      <div class="report-body">
+
+        <!-- ── RDF 그래프 시각화 (페이지 중심) ── -->
+        <div class="rdf-graph-card">
+          <h2>RDF 그래프</h2>
+          <div class="rdf-graph-wrap">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="100%" style="max-width:1100px;display:block;margin:0 auto;" role="img" aria-label="RDF 그래프 — 삼봉오란">
+  <title>RDF 그래프 — 삼봉오란</title>
+<defs><filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1e3a8a" flood-opacity="0.10"/></filter></defs>
+<rect width="1100" height="700" rx="12" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/>
+<line x1="550.0" y1="294.0" x2="550.0" y2="186.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<line x1="598.5" y1="378.0" x2="681.6" y2="426.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="595.5" y="395.0" width="89.2" height="13" rx="3" fill="rgba(248,250,252,0.97)" stroke="#e2e8f0" stroke-width="0.7"/>
+<text x="640.1" y="405.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9.5" fill="#94a3b8">frac:frequency</text>
+<line x1="501.5" y1="378.0" x2="418.4" y2="426.0" stroke="#e2e8f0" stroke-width="1.2"/>
+<rect x="415.3" y="395.0" width="89.2" height="13" rx="3" fill="rgba(248,250,252,0.97)" stroke="#e2e8f0" stroke-width="0.7"/>
+<text x="459.9" y="405.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9.5" fill="#94a3b8">frac:frequency</text>
+<g transform="translate(550.0,140.0)">
+<ellipse rx="42" ry="22" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2"/>
+<title>삼봉오란의 의미 (sense)</title>
+<text text-anchor="middle" dominant-baseline="central" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#1a2540" font-weight="600">의미</text>
+</g>
+<g transform="translate(731.9,455.0)">
+<ellipse rx="54" ry="24" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
+<title>신문 말뭉치 3 토큰</title>
+<text text-anchor="middle" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#9f1239" font-weight="700"><tspan x="0" dy="-5">신문 말뭉치</tspan><tspan x="0" dy="15" font-size="11" font-weight="400">3회</tspan></text>
+</g>
+<g transform="translate(368.1,455.0)">
+<ellipse rx="54" ry="24" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
+<title>댓글 말뭉치 21 토큰</title>
+<text text-anchor="middle" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#9f1239" font-weight="700"><tspan x="0" dy="-5">댓글 말뭉치</tspan><tspan x="0" dy="15" font-size="11" font-weight="400">21회</tspan></text>
+</g>
+<g transform="translate(550.0,350.0)">
+<ellipse rx="52" ry="26" fill="#1e3a8a" stroke="#1e3a8a" stroke-width="2.5" filter="url(#nodeShadow)"/>
+<title>삼봉오란 — KNO:KN2025-0320</title>
+<text text-anchor="middle" dominant-baseline="central" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="15" fill="#ffffff" font-weight="900">삼봉오란</text>
+</g>
+<rect x="10" y="544" width="152" height="138" rx="7" fill="rgba(248,250,252,0.96)" stroke="#dde2ea" stroke-width="1"/>
+<ellipse cx="24" cy="554" rx="8" ry="6" fill="#1e3a8a"/>
+<text x="38" y="559" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">신어</text>
+<ellipse cx="24" cy="574" rx="8" ry="6" fill="#f1f5f9"/>
+<text x="38" y="579" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">형태 / 의미</text>
+<ellipse cx="24" cy="594" rx="8" ry="6" fill="#fff1f2"/>
+<text x="38" y="599" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">말뭉치 정보</text>
+<ellipse cx="24" cy="614" rx="8" ry="6" fill="#f8fafc"/>
+<text x="38" y="619" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">형태소 / 규칙</text>
+<ellipse cx="24" cy="634" rx="8" ry="6" fill="#faf5ff"/>
+<text x="38" y="639" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">의미 범주</text>
+<ellipse cx="24" cy="654" rx="8" ry="6" fill="#f0fdf9"/>
+<text x="38" y="659" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">외부 지식베이스</text>
+</svg>
+          </div>
+        </div>
+
+        <!-- ── 자원·속성·값 트리플 표 ── -->
+        <div class="axis-card">
+          <h2>어휘 속성</h2>
+          <div class="triple-table-wrap">
+  <table class="triple-table">
+    <thead>
+      <tr>
+        <th>자원</th>
+        <th>속성</th>
+        <th>값</th>
+      </tr>
+    </thead>
+    <tbody>
+<tr><td class="triple-subj"><code>kno:KN2025-0320</code></td><td class="triple-prop"><code>rdf:type</code></td><td class="triple-val"><code>ontolex:MultiwordExpression</code></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320</code></td><td class="triple-prop"><code>ontolex:canonicalForm</code></td><td class="triple-val"><code>kno:KN2025-0320-form</code></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-form</code></td><td class="triple-prop"><code>ontolex:writtenRep</code></td><td class="triple-val"><span class="triple-literal">삼봉오란</span><span class="triple-lang">@ko</span></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-form</code></td><td class="triple-prop"><code>frac:frequency</code></td><td class="triple-val"><code>kno:KN2025-0320-freq-nn</code> → 3회</td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-form</code></td><td class="triple-prop"><code>frac:frequency</code></td><td class="triple-val"><code>kno:KN2025-0320-freq-yt</code> → 21회</td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320</code></td><td class="triple-prop"><code>ontolex:sense</code></td><td class="triple-val"><code>kno:KN2025-0320-sense</code></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-sense</code></td><td class="triple-prop"><code>dcterms:isReferencedBy</code></td><td class="triple-val"><span style="color:var(--text-muted);font-style:italic;">—</span></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320</code></td><td class="triple-prop"><code>frac:attestation</code></td><td class="triple-val"><code>kno:KN2025-0320-att-nn</code></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-att-nn</code></td><td class="triple-prop"><code>dcterms:date</code></td><td class="triple-val"><span class="triple-literal">2025-11-24</span></td></tr>
+<tr><td class="triple-subj"><code>kno:KN2025-0320-att-nn</code></td><td class="triple-prop"><code>frac:locus</code></td><td class="triple-val"><a href="https://n.news.naver.com/article/047/0002496039" target="_blank" rel="noopener">https://n.news.naver.com/article/047/0002496039 ↗</a></td></tr>
+    </tbody>
+  </table>
+</div>
+          
+          
+        </div>
+
+        <div class="axis-card">
+          <h2>구성 성분 분석</h2>
+          <p style="color:var(--text-muted);font-style:italic;">형태 분해 미보강</p>
+        </div>
+
+        
+        <!-- 이웃 신어 링크 -->
+        <div class="axis-card">
+          <h2>연결된 신어</h2>
+          <div class="neighbor-section"><div class="neighbor-section-label">동일한 의미 범주 (식생활)</div><div class="neighbor-list"><a class="neighbor-link" href="KN2025-0050.html">계집간식</a> <a class="neighbor-link" href="KN2025-0052.html">고단무당</a> <a class="neighbor-link" href="KN2022-0038.html">고짠</a> <a class="neighbor-link" href="KN2023-0026.html">곱게팅</a> <a class="neighbor-link" href="KN2023-0027.html">공공반납기</a></div></div>
+        </div>
+
+        <div class="axis-card">
+          <h2>어휘 사전 연결</h2>
+          <div class="kb-row"><span class="kb-source">표준국어대사전</span><span><span class="kb-absent"><a href="https://stdict.korean.go.kr/search/searchResult.do?searchKeyword=%EC%82%BC%EB%B4%89%EC%98%A4%EB%9E%80" target="_blank" rel="noopener">미등재</a></span></span></div>
+<div class="kb-row"><span class="kb-source">우리말샘</span><span><span class="kb-absent"><a href="https://opendict.korean.go.kr/search/searchResult?query=%EC%82%BC%EB%B4%89%EC%98%A4%EB%9E%80" target="_blank" rel="noopener">미등재</a></span></span></div>
+        </div>
+
+        <div class="axis-card">
+          <h2>지식베이스 연결</h2>
+          <div class="kb-row"><span class="kb-source">나무위키</span><span><span class="kb-absent"><a href="https://namu.wiki/w/%EC%82%BC%EB%B4%89%EC%98%A4%EB%9E%80" target="_blank" rel="noopener">관측일 2026-07-29 기준 미등재</a></span></span><span class="kb-observed">관측: 2026-07-29</span></div>
+<div class="kb-row"><span class="kb-source">위키백과</span><span><span class="kb-absent"><a href="https://ko.wikipedia.org/wiki/%EC%82%BC%EB%B4%89%EC%98%A4%EB%9E%80" target="_blank" rel="noopener">관측일 2026-07-29 기준 미등재</a></span></span><span class="kb-observed">관측: 2026-07-29</span></div>
+<div class="kb-row"><span class="kb-source">네이버 지식백과</span><span><span class="kb-absent"><a href="https://terms.naver.com/search.naver?query=%EC%82%BC%EB%B4%89%EC%98%A4%EB%9E%80" target="_blank" rel="noopener">정확 일치 없음 (연관 1건)</a></span></span></div>
+        </div>
+
+        <!-- ── Turtle 원문 드롭다운 ── -->
+        <details class="ttl-dropdown">
+          <summary>Turtle (TTL) 원문 보기</summary>
+          <div class="ttl-raw-wrap">
+            <pre class="ttl-code"><span class="ttl-prefix">@prefix</span> dcterms: <span class="ttl-uri">&lt;http://purl.org/dc/terms/&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> frac: <span class="ttl-uri">&lt;http://www.w3.org/ns/lemon/frac#&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> kno: <span class="ttl-uri">&lt;https://w3id.org/kno/id/&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> ontolex: <span class="ttl-uri">&lt;http://www.w3.org/ns/lemon/ontolex#&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> rdf: <span class="ttl-uri">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> skos: <span class="ttl-uri">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span> <span class="ttl-punct">.</span>
+<span class="ttl-prefix">@prefix</span> xsd: <span class="ttl-uri">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span> <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span> <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>MultiwordExpression <span class="ttl-punct">;</span>
+    <span class="ttl-ns">frac:</span>attestation <span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-att-nn <span class="ttl-punct">;</span>
+    <span class="ttl-ns">ontolex:</span>canonicalForm <span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-form <span class="ttl-punct">;</span>
+    <span class="ttl-ns">ontolex:</span>sense <span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-sense <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-att-nn <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>Attestation <span class="ttl-punct">;</span>
+    <span class="ttl-ns">dcterms:</span>date <span class="ttl-str">&quot;2025-11-24&quot;</span><span class="ttl-dt">^^xsd:date</span> <span class="ttl-punct">;</span>
+    <span class="ttl-ns">frac:</span>locus <span class="ttl-uri">&lt;https://n.news.naver.com/article/047/0002496039&gt;</span> <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-form <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>Form <span class="ttl-punct">;</span>
+    <span class="ttl-ns">frac:</span>frequency <span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-freq-nn<span class="ttl-punct">,</span>
+        <span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-freq-yt <span class="ttl-punct">;</span>
+    <span class="ttl-ns">ontolex:</span>writtenRep <span class="ttl-str">&quot;삼봉 오란&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-freq-nn <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>CorpusFrequency <span class="ttl-punct">;</span>
+    <span class="ttl-ns">rdf:</span>value <span class="ttl-num">3</span> <span class="ttl-punct">;</span>
+    <span class="ttl-ns">frac:</span>corpus <span class="ttl-ns">kno:</span>corpus-NN <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-freq-yt <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>CorpusFrequency <span class="ttl-punct">;</span>
+    <span class="ttl-ns">rdf:</span>value <span class="ttl-num">21</span> <span class="ttl-punct">;</span>
+    <span class="ttl-ns">frac:</span>corpus <span class="ttl-ns">kno:</span>corpus-YT <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>KN2025-<span class="ttl-num">0320</span>-sense <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>LexicalSense <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>corpus-NN <span class="ttl-ns">skos:</span>prefLabel <span class="ttl-str">&quot;신문 말뭉치&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
+
+<span class="ttl-ns">kno:</span>corpus-YT <span class="ttl-ns">skos:</span>prefLabel <span class="ttl-str">&quot;댓글 말뭉치&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
+</pre>
+          </div>
+        </details>
+
+        <!-- ── 다운로드 ── -->
+        <div class="download-bar">
+          <span style="font-size:0.82rem;color:var(--text-secondary);align-self:center;">데이터 내려받기:</span>
+          <a class="dl-btn" href="KN2025-0320.ttl" download>
+            <span>↓</span> KN2025-0320.ttl
+          </a>
+          <a class="dl-btn" href="KN2025-0320.jsonld" download>
+            <span>↓</span> KN2025-0320.jsonld
+          </a>
+        </div>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 KNO Korean Neologism Observatory — 데이터 라이선스: CC BY 4.0</p>
+  </footer>
+
+  <script>
+(function() {
+  var btn = document.getElementById('navHamburger');
+  if (!btn) return;
+  var nav = btn.nextElementSibling;
+  btn.addEventListener('click', function() {
+    var expanded = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!expanded));
+    btn.classList.toggle('active');
+    nav.classList.toggle('nav-open');
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2025-0042 a ontolex:Word ;
+    frac:attestation kno:KN2025-0042-att-nn ;
+    ontolex:canonicalForm kno:KN2025-0042-form ;
+    ontolex:sense kno:KN2025-0042-sense .
+
+kno:KN2025-0042-att-nn a frac:Attestation ;
+    dcterms:date "2025-01-07"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/214/0001398569> .
+
+kno:KN2025-0042-form a ontolex:Form ;
+    frac:frequency kno:KN2025-0042-freq-nn,
+        kno:KN2025-0042-freq-yt ;
+    ontolex:writtenRep "계몽령"@ko .
+
+kno:KN2025-0042-freq-nn a frac:CorpusFrequency ;
+    rdf:value 3660 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2025-0042-freq-yt a frac:CorpusFrequency ;
+    rdf:value 25502 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2025-0042-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B3%84%EB%AA%BD%EB%A0%B9> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2022-0146 a ontolex:Word ;
+    frac:attestation kno:KN2022-0146-att-nn ;
+    ontolex:canonicalForm kno:KN2022-0146-form ;
+    ontolex:sense kno:KN2022-0146-sense .
+
+kno:KN2022-0146-att-nn a frac:Attestation ;
+    dcterms:date "2022-01-08"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/366/0000785943> .
+
+kno:KN2022-0146-form a ontolex:Form ;
+    frac:frequency kno:KN2022-0146-freq-nn,
+        kno:KN2022-0146-freq-yt ;
+    ontolex:writtenRep "멸콩"@ko .
+
+kno:KN2022-0146-freq-nn a frac:CorpusFrequency ;
+    rdf:value 459 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2022-0146-freq-yt a frac:CorpusFrequency ;
+    rdf:value 10433 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2022-0146-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EC%8B%A0%EC%84%B8%EA%B3%84%EA%B7%B8%EB%A3%B9%20%EC%A0%95%EC%9A%A9%EC%A7%84%20SNS%20%EB%A9%B8%EA%B3%B5%20%EB%B0%9C%EC%96%B8%20%EA%B2%8C%EC%8B%9C%20%EB%85%BC%EB%9E%80> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2025-0361 a ontolex:Word ;
+    frac:attestation kno:KN2025-0361-att-nn ;
+    ontolex:canonicalForm kno:KN2025-0361-form ;
+    ontolex:sense kno:KN2025-0361-sense .
+
+kno:KN2025-0361-att-nn a frac:Attestation ;
+    dcterms:date "2025-09-30"^^xsd:date ;
+    frac:locus <https://m.entertain.naver.com/article/015/0005191975> .
+
+kno:KN2025-0361-form a ontolex:Form ;
+    frac:frequency kno:KN2025-0361-freq-nn,
+        kno:KN2025-0361-freq-yt ;
+    ontolex:writtenRep "쉰스타"@ko .
+
+kno:KN2025-0361-freq-nn a frac:CorpusFrequency ;
+    rdf:value 25 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2025-0361-freq-yt a frac:CorpusFrequency ;
+    rdf:value 50 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2025-0361-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/2025%EB%85%84%20%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%20%EB%8C%80%EA%B0%9C%ED%8E%B8> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지식그래프 — 한국어 신어 관측 시스템</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background: #f8f9fb; }
+    body { font-family: 'Noto Sans KR', 'Pretendard', sans-serif; display: flex; flex-direction: column; }
+
+    /* ── 헤더 바 ── */
+    #header {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0 1.2rem;
+      height: 46px;
+      background: #ffffff;
+      border-bottom: 1px solid #e2e8f0;
+      z-index: 10;
+    }
+    #header .logo {
+      font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: #1e3a8a;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+    .graph-tabs { display: flex; gap: 8px; flex-shrink: 0; }
+    .graph-tab {
+      font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+      font-size: 0.8rem; font-weight: 500;
+      padding: 0.3rem 0.8rem; border: 1px solid #e2e8f0;
+      border-radius: 4px; background: transparent; color: #64748b;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .graph-tab:hover { color: #1e3a8a; border-color: #93c5fd; }
+    .graph-tab.is-active { background: #1e3a8a; color: #fff; border-color: #1e3a8a; }
+    #header .stats {
+      font-size: 0.75rem;
+      color: #64748b;
+      font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+    #header .stats span { color: #1e3a8a; font-weight: 700; }
+    #searchWrap {
+      flex: 1;
+      max-width: 320px;
+      position: relative;
+    }
+    #graphSearch {
+      width: 100%;
+      padding: 0.35rem 0.9rem;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+      background: #f8f9fb;
+      color: #1e293b;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    #graphSearch:focus { border-color: #1e3a8a; background: #fff; }
+    #graphSearch::placeholder { color: #94a3b8; }
+    .header-links { display: flex; gap: 0.7rem; flex-shrink: 0; }
+    .header-links a {
+      font-size: 0.78rem;
+      color: #475569;
+      text-decoration: none;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #e2e8f0;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .header-links a:hover { color: #1e3a8a; border-color: #1e3a8a; }
+
+    /* ── 캔버스 영역 ── */
+    #graph-container {
+      flex: 1;
+      position: relative;
+      overflow: hidden;
+    }
+    #graph-canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+      cursor: grab;
+    }
+    #graph-canvas:active { cursor: grabbing; }
+
+    /* ── 툴팁 ── */
+    #tooltip {
+      position: absolute;
+      display: none;
+      background: rgba(255,255,255,0.97);
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.82rem;
+      color: #1e293b;
+      pointer-events: none;
+      max-width: 220px;
+      box-shadow: 0 2px 8px rgba(30,58,138,0.10);
+      z-index: 20;
+      line-height: 1.5;
+    }
+    #tooltip.tt-pinned { pointer-events: auto; }
+    #tooltip .tt-label { font-weight: 700; color: #1e3a8a; }
+    #tooltip .tt-meta { color: #64748b; font-size: 0.75rem; }
+    #tooltip .tt-link {
+      display: inline-block;
+      margin-top: 0.3rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: #1e3a8a;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    #tooltip .tt-link:hover { text-decoration: underline; }
+
+    /* ── 층 토글 ── */
+    #layer-toggles {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.75rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+    #layer-toggles .lt-title { font-weight: 700; color: #334155; margin-bottom: 0.2rem; font-size: 0.72rem; }
+    #layer-toggles .lt-row {
+      display: flex; align-items: center; gap: 0.4rem;
+      cursor: pointer; user-select: none;
+    }
+    #layer-toggles .lt-row input { margin: 0; accent-color: #475569; }
+    #layer-toggles .lt-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+    #layer-toggles .lt-fixed { opacity: 0.7; cursor: default; background: #f1f5f9; border-radius: 3px; padding: 0 0.3rem; }
+    #layer-toggles .lt-hint { font-size: 0.67rem; color: #94a3b8; margin-top: 0.2rem; }
+    /* ── 왼쪽 상단 컨트롤 래퍼 ── */
+    #graph-controls-left {
+      position: absolute;
+      top: 0.6rem;
+      left: 1rem;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    /* ── 의미 범주·조어법 필터 ── */
+    #cat-filter, #fm-filter {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.45rem 0.7rem;
+      font-size: 0.75rem;
+      color: #475569;
+    }
+    #cat-filter .cf-title, #fm-filter .cf-title { font-weight: 700; color: #334155; margin-bottom: 0.25rem; font-size: 0.72rem; }
+    #cat-filter select, #fm-filter select {
+      width: 100%;
+      font-size: 0.75rem;
+      font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
+      padding: 0.2rem 0.3rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      color: #334155;
+      background: #fff;
+      cursor: pointer;
+    }
+
+    /* ── 범례 ── */
+    #legend {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.7rem 0.9rem;
+      font-size: 0.75rem;
+      color: #475569;
+      z-index: 10;
+      line-height: 1.8;
+    }
+    #legend .leg-row { display: flex; align-items: center; gap: 0.5rem; }
+    #legend .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+    /* ── 연도 범례 ── */
+    #year-legend {
+      position: absolute;
+      bottom: 1rem;
+      left: 1rem;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.6rem 0.9rem;
+      font-size: 0.75rem;
+      color: #475569;
+      z-index: 10;
+    }
+    #year-legend .yl-title { font-weight: 700; color: #475569; margin-bottom: 0.3rem; font-size: 0.72rem; }
+    #year-legend .yl-gradient {
+      width: 120px; height: 8px; border-radius: 4px;
+      background: linear-gradient(to right, #cbd5e1, #1e3a8a);
+      margin: 0.2rem 0;
+    }
+    #year-legend .yl-labels { display: flex; justify-content: space-between; font-size: 0.68rem; color: #94a3b8; }
+
+    /* ── 격리 안내 ── */
+    #isolated-note {
+      position: absolute;
+      top: 0.6rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 0.4rem 0.7rem;
+      font-size: 0.72rem;
+      color: #94a3b8;
+      z-index: 10;
+    }
+    #isolated-note a { color: #475569; }
+    #isolated-note a:hover { color: #1e3a8a; }
+
+    /* ── 로딩 ── */
+    #loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: #f8f9fb;
+      z-index: 30;
+      color: #64748b;
+      font-size: 0.88rem;
+      gap: 0.7rem;
+    }
+    #loading .spin {
+      width: 28px; height: 28px;
+      border: 3px solid #e2e8f0;
+      border-top-color: #1e3a8a;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── 정보 패널 ── */
+    #info-panel {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 380px;
+      height: 100%;
+      background: #ffffff;
+      border-left: 1px solid #e2e8f0;
+      z-index: 15;
+      display: none;
+      flex-direction: column;
+      font-size: 0.82rem;
+      box-shadow: -4px 0 16px rgba(30,58,138,0.08);
+    }
+    #info-panel.open { display: flex; }
+    #info-panel .ip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.8rem 1.2rem;
+      border-bottom: 2px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    #info-panel .ip-title {
+      font-weight: 800;
+      color: #1e3a8a;
+      font-size: 1rem;
+    }
+    #info-panel .ip-close {
+      border: none;
+      background: transparent;
+      font-size: 1.2rem;
+      color: #94a3b8;
+      cursor: pointer;
+      padding: 0.3rem;
+    }
+    #info-panel .ip-close:hover { color: #475569; }
+    #info-panel .ip-type {
+      font-size: 0.72rem;
+      color: #64748b;
+      padding: 0.4rem 1.2rem 0.5rem;
+      background: #f8fafc;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    #info-panel .ip-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0;
+    }
+    #info-panel .ip-section {
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: #475569;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin: 0;
+      padding: 0.5rem 1.2rem;
+      background: #f1f5f9;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    #info-panel .ip-item {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.5rem;
+      padding: 0.45rem 1.2rem;
+      color: #1e293b;
+      text-decoration: none;
+      font-size: 0.82rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    #info-panel .ip-item:hover { background: #f8fafc; color: #1e3a8a; }
+    #info-panel .ip-item-sub {
+      font-size: 0.7rem;
+      color: #94a3b8;
+      margin-left: auto;
+      white-space: nowrap;
+    }
+
+    /* ── KB 버튼 ── */
+    .kb-btns { display: flex; gap: 3px; margin-top: 3px; flex-wrap: wrap; width: 100%; }
+    .kb-btn {
+      font-size: 0.62rem; padding: 1px 6px; border-radius: 3px;
+      text-decoration: none; border: 1px solid; white-space: nowrap;
+      line-height: 1.5;
+    }
+    .kb-btn-on { background: #f0fdf4; border-color: #86efac; color: #059669; }
+    .kb-btn-on:hover { background: #dcfce7; }
+    .kb-btn-off { background: #f8fafc; border-color: #e2e8f0; color: #cbd5e1; pointer-events: none; }
+
+    /* ── 하단 바 ── */
+    #bottom-bar {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.97);
+      border-top: 1px solid #cbd5e1;
+      z-index: 10; display: flex; flex-direction: column;
+    }
+    #bottom-bar .bb-header {
+      display: flex; justify-content: center; align-items: center; gap: 0.5rem;
+      padding: 0.3rem 1rem; cursor: pointer; user-select: none;
+      font-size: 0.72rem; font-weight: 700; color: #334155;
+    }
+    #bottom-bar .bb-toggle { font-size: 0.7rem; color: #94a3b8; }
+    #bottom-bar .bb-body { overflow-y: auto; max-height: 32vh; padding: 0.3rem 1rem 0.5rem; }
+    #bottom-bar.collapsed .bb-body { display: none; }
+    #bottom-bar .bb-tabs { display: flex; gap: 0.3rem; margin-bottom: 0.4rem; }
+    #bottom-bar .bb-tab {
+      font-size: 0.7rem; padding: 0.25rem 0.6rem; border-radius: 4px;
+      background: #f1f5f9; color: #64748b; cursor: pointer; border: none;
+      font-family: inherit;
+    }
+    #bottom-bar .bb-tab.active { background: #1e3a8a; color: #fff; }
+    #bottom-bar .bb-list { display: flex; flex-wrap: wrap; gap: 0.15rem 0.4rem; }
+    #bottom-bar .bb-item {
+      font-size: 0.72rem; color: #334155; cursor: pointer;
+      padding: 0.15rem 0.4rem; border-radius: 3px; white-space: nowrap;
+    }
+    #bottom-bar .bb-item:hover { background: #e0e7ff; color: #1e3a8a; }
+    #bottom-bar .bb-deg { font-size: 0.6rem; color: #94a3b8; margin-left: 2px; }
+  </style>
+</head>
+<body>
+
+  <!-- 헤더 바 -->
+  <div id="header">
+    <a class="logo" href="index.html">한국어 신어 지식 그래프</a>
+    <div class="graph-tabs">
+      <button class="graph-tab" id="tab-morph">구성 성분 그래프</button>
+      <button class="graph-tab" id="tab-verb">감정 용언 공기 그래프</button>
+      <button class="graph-tab is-active" id="tab-main">개체명 공동 출현 그래프</button>
+    </div>
+    <div class="stats" id="stats-text">신어 <span>2,474</span></div>
+    <div id="searchWrap">
+      <input type="text" id="graphSearch" placeholder="신어·개체명 검색…" autocomplete="off">
+    </div>
+    <div class="header-links">
+      <a href="list.html">신어 목록</a>
+      <a href="freq.html">빈도 비교</a>
+      <a href="https://korneo.github.io/KNO/" target="_blank" rel="noopener">한국어 신어 관측 시스템</a>
+    </div>
+  </div>
+
+  <!-- 그래프 캔버스 -->
+  <div id="graph-container">
+    <canvas id="graph-canvas"></canvas>
+
+    <div id="tooltip">
+      <div class="tt-label" id="tt-label"></div>
+      <div class="tt-meta" id="tt-meta"></div>
+      <a class="tt-link" id="tt-link" style="display:none;"></a>
+    </div>
+
+    <div id="isolated-note" style="display:none;">
+      구성 성분 미공유 신어 473개 &mdash;
+      <a href="list.html?filter=고립">목록에서 보기</a>
+    </div>
+
+    <div id="year-legend">
+      <div class="yl-title">신어 수집 연도</div>
+      <div class="yl-gradient"></div>
+      <div class="yl-labels"><span>2020</span><span>2025</span></div>
+    </div>
+
+    <div id="graph-controls-left">
+      <div id="cat-filter">
+        <div class="cf-title">의미 범주</div>
+        <select id="cat-select">
+          <option value="">전체</option>
+          <option value="정치와 행정">정치와 행정 (620)</option>
+          <option value="경제생활">경제생활 (428)</option>
+          <option value="사회생활">사회생활 (324)</option>
+          <option value="인간">인간 (295)</option>
+          <option value="삶">삶 (183)</option>
+          <option value="보건·의학">보건·의학 (153)</option>
+          <option value="식생활">식생활 (92)</option>
+          <option value="문화">문화 (87)</option>
+          <option value="의생활">의생활 (72)</option>
+          <option value="교육">교육 (57)</option>
+          <option value="정보·기술">정보·기술 (54)</option>
+          <option value="주생활">주생활 (48)</option>
+          <option value="동식물">동식물 (28)</option>
+          <option value="개념">개념 (18)</option>
+          <option value="자연">자연 (13)</option>
+          <option value="종교">종교 (2)</option>
+        </select>
+      </div>
+      <div id="fm-filter">
+        <div class="cf-title">조어법</div>
+        <select id="fm-select">
+          <option value="">전체</option>
+          <option value="합성">합성 (172)</option>
+          <option value="파생">파생 (170)</option>
+          <option value="혼성">혼성 (321)</option>
+          <option value="축약">축약 (270)</option>
+          <option value="기타">기타 (1541)</option>
+        </select>
+      </div>
+      <div id="layer-toggles" data-mode="main">
+        <div class="lt-title">표시 층</div>
+        <label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>
+        <label class="lt-row"><input type="checkbox" id="tog-entity" checked> <span class="lt-dot" style="background:#a05c72;"></span> 개체명</label>
+      </div>
+    </div>
+
+    <div id="legend" data-mode="main">
+      <div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#a05c72; width:12px; height:12px;"></div><span>개체명</span></div>
+      <div class="leg-row"><div style="width:20px;height:0;border-top:2px dashed #475569;margin:5px 6px 0 0;"></div><span>기사 공동 출현</span></div>
+    </div>
+
+    <div id="loading">
+      <div class="spin"></div>
+      그래프 로딩 중…
+    </div>
+
+    <div id="bottom-bar" class="collapsed">
+      <div class="bb-header" id="bb-header">
+        <span id="bb-title">개체명 목록</span>
+        <span class="bb-toggle" id="bb-toggle">▲</span>
+      </div>
+      <div class="bb-body" id="bb-body">
+        <div class="bb-tabs" id="bb-tabs">
+          <button class="bb-tab active" data-tab="entity">개체명</button>
+        </div>
+        <div id="bb-content"></div>
+      </div>
+    </div>
+
+    <div id="info-panel">
+      <div class="ip-header">
+        <span class="ip-title" id="ip-title"></span>
+        <button class="ip-close" id="ip-close">&times;</button>
+      </div>
+      <div class="ip-type" id="ip-type"></div>
+      <div class="ip-list" id="ip-list"></div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    'use strict';
+
+    // ── 설정 상수 ─────────────────────────────────────────────────────────────
+    var HUB_LABEL_DEGREE = 25;      // 영구 레이블 표시 최소 degree
+    var ZOOM_LABEL_THRESHOLD = 3.5; // 이 줌 이상이면 모든 노드 레이블
+    var _drawnLabels = [];           // draw()에서 기록, findNode()에서 참조
+    var SIM_ALPHA_STOP = 0.01;      // 시뮬레이션 종료 임계값
+    var YEAR_MIN = 2020, YEAR_MAX = 2025;
+
+    // ── 층별 색상 (저채도 팔레트) ───────────────────────────────────────────
+    var LAYER_COLORS = {
+      element:   '#94a3b8',  // slate
+      entity:    '#b07a8c',  // muted rose
+      verb:      '#b07a3a',  // amber
+    };
+    var LAYER_ALPHA = {
+      element: 0.18, entity: 0.32, verb: 0.32
+    };
+    var CLS_KO = {
+      PS: '사람', OG: '기관/단체', LC: '장소', AF: '인공물/서비스',
+      CV: '제도/법률', EV: '사건', TM: '용어/기술', DT: '날짜'
+    };
+
+    // ── 모드별 층 정의 ──────────────────────────────────────────────────────
+    var MODES = {
+      main:  ['entity'],
+      morph: ['element'],
+      verb:  ['verb']
+    };
+    var currentCat = '';  // 의미 범주 필터 (빈 문자열 = 전체)
+    var currentFm = '';   // 조어법 필터 (빈 문자열 = 전체)
+    // verb 층 세부 필터
+    var verbFilter = { vv: true, va: true, nn: true, yt: true };
+    var currentMode = 'main';
+    var PAGE_LAYERS = MODES[currentMode];
+    var layerActive = {};
+    PAGE_LAYERS.forEach(function(l) { layerActive[l] = true; });
+
+    // ── 컬러 팔레트 ──────────────────────────────────────────────────────────
+    // 연도별 entry 색상: 2020 밝은 slate → 2025 짙은 navy
+    var yearColorScale = d3.scaleSequential()
+      .domain([YEAR_MIN, YEAR_MAX])
+      .interpolator(d3.interpolate('#cbd5e1', '#1e3a8a'));
+
+    // 클러스터 색상 (최대 20색 순환)
+    var COMM_PALETTE = [
+      '#1e3a8a','#dc2626','#059669','#d97706','#7c3aed',
+      '#0891b2','#be185d','#4338ca','#65a30d','#ea580c',
+      '#0d9488','#9333ea','#c2410c','#2563eb','#16a34a',
+      '#e11d48','#7c2d12','#6d28d9','#0369a1','#b45309'
+    ];
+    function commColor(ci) {
+      if (ci == null || ci < 0) return '#94a3b8';
+      return COMM_PALETTE[ci % COMM_PALETTE.length];
+    }
+
+    function entryColor(d) {
+      if (d.year) return yearColorScale(Math.min(Math.max(d.year, YEAR_MIN), YEAR_MAX));
+      return '#475569';
+    }
+
+    // element 색상: 연결 수에 따라 accent blue
+    var elemColorScale = d3.scaleSequential()
+      .domain([2, 45])
+      .interpolator(d3.interpolate('#93c5fd', '#1d4ed8'));
+
+    function elementColor(d) {
+      return elemColorScale(Math.min(d.degree || 2, 45));
+    }
+
+    // ── 캔버스 & 크기 ─────────────────────────────────────────────────────────
+    var container = document.getElementById('graph-container');
+    var canvas = document.getElementById('graph-canvas');
+    var ctx = canvas.getContext('2d');
+    var W, H, dpr;
+
+    function resize() {
+      dpr = window.devicePixelRatio || 1;
+      W = container.clientWidth;
+      H = container.clientHeight;
+      canvas.width  = W * dpr;
+      canvas.height = H * dpr;
+      canvas.style.width  = W + 'px';
+      canvas.style.height = H + 'px';
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      draw();
+    }
+    window.addEventListener('resize', resize);
+
+    // ── 트랜스폼 (pan/zoom) ────────────────────────────────────────────────────
+    var transform = d3.zoomIdentity;
+    var zoom = d3.zoom()
+      .scaleExtent([0.05, 12])
+      .on('zoom', function(event) {
+        transform = event.transform;
+        draw();
+      });
+    d3.select(canvas).call(zoom);
+
+    // ── 그래프 데이터 로드 ──────────────────────────────────────────────────────
+    var allNodes = [], allLinks = [], _allNodeMap = {};
+    var nodes = [], links = [], nodeMap = {};
+    var simRunning = false;
+    var simulation;
+
+    // 활성 층 + 의미 범주 필터 기준 표시할 노드/링크 계산
+    function computeVisible() {
+      // 의미 범주 + 조어법 필터 (AND 결합): entry 중 조건 충족만 허용
+      var catEntryIds = null;
+      if (currentCat || currentFm) {
+        catEntryIds = new Set();
+        allNodes.forEach(function(n) {
+          if (n.type !== 'entry') return;
+          if (currentCat && n.cat !== currentCat) return;
+          if (currentFm && n.fm !== currentFm) return;
+          catEntryIds.add(n.id);
+        });
+      }
+      // 활성 층의 링크만 (+ 범주 필터 시 해당 entry에 연결된 것만)
+      var visLinks = allLinks.filter(function(l) {
+        if (!layerActive[l.layer]) return false;
+        // verb 층 세부 필터: 말뭉치(NN/YT)
+        if (l.layer === 'verb') {
+          if (l.src === 'NN' && !verbFilter.nn) return false;
+          if (l.src === 'YT' && !verbFilter.yt) return false;
+          // 품사 필터: 타겟 노드의 pos 확인
+          var tid = typeof l.target === 'object' ? l.target.id : l.target;
+          var tNode = _allNodeMap[tid];
+          if (tNode && tNode.pos === 'VV' && !verbFilter.vv) return false;
+          if (tNode && tNode.pos === 'VA' && !verbFilter.va) return false;
+        }
+        if (!catEntryIds) return true;
+        var sid = typeof l.source === 'object' ? l.source.id : l.source;
+        var tid = typeof l.target === 'object' ? l.target.id : l.target;
+        return catEntryIds.has(sid) || catEntryIds.has(tid);
+      });
+      // 활성 링크에 연결된 노드 집합
+      var visNodeIds = new Set();
+      visLinks.forEach(function(l) {
+        visNodeIds.add(typeof l.source === 'object' ? l.source.id : l.source);
+        visNodeIds.add(typeof l.target === 'object' ? l.target.id : l.target);
+      });
+      // 층 전용 노드: 해당 층 비활성이면 제거
+      var visNodes = allNodes.filter(function(n) {
+        if (n.type === 'corpus' || n.type === 'kb') return false;
+        if (n.type === 'entity') return layerActive.entity && visNodeIds.has(n.id);
+        if (n.type === 'element') return layerActive.element && visNodeIds.has(n.id);
+        if (n.type === 'verb') {
+          if (!layerActive.verb || !visNodeIds.has(n.id)) return false;
+          if (n.pos === 'VV' && !verbFilter.vv) return false;
+          if (n.pos === 'VA' && !verbFilter.va) return false;
+          return true;
+        }
+        if (n.type === 'category' || n.type === 'formation') return false;
+        // entry: 범주 필터가 있으면 해당 범주만
+        if (catEntryIds) return catEntryIds.has(n.id);
+        // entry: 구성 성분/감정 용언 그래프에선 연결분만, 개체명 그래프에선 전부
+        if (layerActive.element !== undefined || layerActive.verb !== undefined) return visNodeIds.has(n.id);
+        return true;
+      });
+      return { nodes: visNodes, links: visLinks };
+    }
+
+    // 사전 계산 좌표 기반 즉시 렌더링 (시뮬레이션 없음)
+    function applyLayout(simNodes, simLinks) {
+      var nm = {};
+      simNodes.forEach(function(n) { nm[n.id] = n; n._visibleDegree = 0; });
+      simLinks.forEach(function(l) {
+        var sid = typeof l.source === 'string' ? l.source : l.source.id;
+        var tid = typeof l.target === 'string' ? l.target : l.target.id;
+        l.source = nm[sid] || l.source;
+        l.target = nm[tid] || l.target;
+        // 가시 링크 기준 degree 계산
+        if (nm[sid]) nm[sid]._visibleDegree = (nm[sid]._visibleDegree || 0) + 1;
+        if (nm[tid]) nm[tid]._visibleDegree = (nm[tid]._visibleDegree || 0) + 1;
+      });
+      nodeMap = nm;
+      nodes = simNodes;
+      links = simLinks;
+      document.getElementById('loading').style.display = 'none';
+      draw();
+    }
+
+    // 살랑살랑 애니메이션 — 개발 단계에서 비활성
+
+    // ── 그래프 중앙 정렬 (바운딩 박스 기준) ──────────────────────────────────
+    function centerGraph() {
+      if (!nodes.length) return;
+      var minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+      nodes.forEach(function(n) {
+        if (n.x == null) return;
+        if (n.x < minX) minX = n.x;
+        if (n.x > maxX) maxX = n.x;
+        if (n.y < minY) minY = n.y;
+        if (n.y > maxY) maxY = n.y;
+      });
+      var gw = maxX - minX || 1;
+      var gh = maxY - minY || 1;
+      var cx = (minX + maxX) / 2;
+      var cy = (minY + maxY) / 2;
+      // 여백 포함해서 화면에 맞추기
+      var k = Math.min(W / (gw + 100), H / (gh + 100)) * 0.9;
+      k = Math.max(0.05, Math.min(k, 2));
+      var tx = W / 2 - cx * k;
+      var ty = H / 2 - cy * k;
+      transform = d3.zoomIdentity.translate(tx, ty).scale(k);
+    }
+
+    resize();  // W, H 초기화
+
+    // 그래프 데이터 외부 로드 (HTML 파싱 부담 제거)
+    fetch('graph-data.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        allNodes = data.nodes;
+        allLinks = data.links;
+        _allNodeMap = {};
+        allNodes.forEach(function(n) { _allNodeMap[n.id] = n; });
+        var vis = computeVisible();
+        applyLayout(vis.nodes, vis.links);
+        centerGraph();
+        d3.select(canvas).call(zoom).call(zoom.transform, transform);
+        draw();
+        var _bbAct = document.querySelector('#bb-tabs .bb-tab.active');
+        if (_bbAct) _renderBB(_bbAct.getAttribute('data-tab'));
+      })
+      .catch(function(err) {
+        document.getElementById('loading').textContent = '데이터 로드 실패: ' + err.message;
+      });
+
+    // ── 층 토글 이벤트 (동적 바인딩) ──────────────────────────────────────────
+    function bindToggles() {
+      PAGE_LAYERS.forEach(function(layer) {
+        var cb = document.getElementById('tog-' + layer);
+        if (!cb) return;
+        cb.onchange = function() {
+          layerActive[layer] = cb.checked;
+          if (!allNodes.length) return;
+          var vis = computeVisible();
+          applyLayout(vis.nodes, vis.links);
+        };
+      });
+      // verb 세부 필터
+      var verbSubs = [
+        ['tog-verb-vv', 'vv'], ['tog-verb-va', 'va'],
+        ['tog-verb-nn', 'nn'], ['tog-verb-yt', 'yt']
+      ];
+      verbSubs.forEach(function(pair) {
+        var cb = document.getElementById(pair[0]);
+        if (!cb) return;
+        cb.onchange = function() {
+          verbFilter[pair[1]] = cb.checked;
+          // vv/va 중 하나라도 켜져 있으면 verb 층 활성
+          if (pair[1] === 'vv' || pair[1] === 'va') {
+            layerActive.verb = verbFilter.vv || verbFilter.va;
+          }
+          if (!allNodes.length) return;
+          var vis = computeVisible();
+          applyLayout(vis.nodes, vis.links);
+        };
+      });
+    }
+    bindToggles();
+
+    // ── 탭 전환 ────────────────────────────────────────────────────────────
+    function switchMode(mode) {
+      if (mode === currentMode) return;
+      // 이전 morph 모드에서 나갈 때: 원래 좌표 복원
+      if (currentMode === 'morph') {
+        allNodes.forEach(function(n) {
+          if ((n.type === 'element' || n.type === 'entry') && n._ox != null) {
+            n.x = n._ox; n.y = n._oy;
+          }
+        });
+      }
+      currentMode = mode;
+      PAGE_LAYERS = MODES[mode];
+      layerActive = {};
+      PAGE_LAYERS.forEach(function(l) { layerActive[l] = true; });
+      // verb 필터 리셋
+      verbFilter = { vv: true, va: true, nn: true, yt: true };
+      // morph 모드 진입: 전용 좌표로 교체
+      if (mode === 'morph') {
+        allNodes.forEach(function(n) {
+          if ((n.type === 'element' || n.type === 'entry') && n.mx != null) {
+            n._ox = n.x; n._oy = n.y;
+            n.x = n.mx; n.y = n.my;
+          }
+        });
+      }
+
+      // 탭 버튼 활성화
+      document.getElementById('tab-main').classList.toggle('is-active', mode === 'main');
+      document.getElementById('tab-morph').classList.toggle('is-active', mode === 'morph');
+      document.getElementById('tab-verb').classList.toggle('is-active', mode === 'verb');
+
+      // 토글 패널: 모드에 따라 동적 재구성
+      var toggles = document.getElementById('layer-toggles');
+      if (mode === 'morph') {
+        toggles.style.display = 'none';
+      } else if (mode === 'verb') {
+        toggles.style.display = '';
+        toggles.innerHTML = '<div class="lt-title">표시 층</div>'
+          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-verb-vv" checked> <span class="lt-dot" style="background:#b07a3a;"></span> 동사</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-verb-va" checked> <span class="lt-dot" style="background:#9f1239;"></span> 형용사</label>'
+          + '<div class="lt-title" style="margin-top:6px;">말뭉치</div>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-verb-nn" checked> <span class="lt-dot" style="background:#1e40af;"></span> 신문</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-verb-yt" checked> <span class="lt-dot" style="background:#dc2626;"></span> 댓글</label>';
+      } else {
+        toggles.style.display = '';
+        toggles.innerHTML = '<div class="lt-title">표시 층</div>'
+          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-entity" checked> <span class="lt-dot" style="background:#a05c72;"></span> 개체명</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-corpus" checked> <span class="lt-dot" style="background:#64748b;"></span> 말뭉치 정보</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-kb" checked> <span class="lt-dot" style="background:#b07a3a;"></span> 지식베이스 정보</label>';
+      }
+
+      // 범례
+      var legend = document.getElementById('legend');
+      if (mode === 'morph') {
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#2563eb;width:14px;height:14px;"></div><span>구성 성분</span></div>';
+      } else if (mode === 'verb') {
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#b07a3a;width:12px;height:12px;"></div><span>동사</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#9f1239;width:12px;height:12px;"></div><span>형용사</span></div>'
+          + '<div class="leg-row" style="margin-top:4px;"><div style="width:20px;height:2px;background:#1e40af;margin:5px 6px 0 0;"></div><span>신문</span></div>'
+          + '<div class="leg-row"><div style="width:20px;height:2px;background:#dc2626;margin:5px 6px 0 0;"></div><span>댓글</span></div>';
+      } else {
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#a05c72;width:12px;height:12px;"></div><span>개체명</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#64748b;width:12px;height:12px;"></div><span>말뭉치 정보</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#b07a3a;width:12px;height:12px;"></div><span>지식베이스 정보</span></div>'
+          + '<div class="leg-row"><div style="width:20px;height:0;border-top:2px dashed #475569;margin:5px 6px 0 0;"></div><span>기사 공동 출현</span></div>';
+      }
+
+      // 검색 placeholder
+      var _ph = mode === 'verb' ? '신어·감정 용언 검색…'
+              : mode === 'morph' ? '신어·구성 성분 검색…'
+              : '신어·개체명 검색…';
+      document.getElementById('graphSearch').placeholder = _ph;
+
+      // 고립 노트
+      document.getElementById('isolated-note').style.display = mode === 'morph' ? '' : 'none';
+
+      // 통계
+      var statsEl = document.getElementById('stats-text');
+      if (mode === 'morph') {
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 구성 성분 <span>3,615</span> &middot; 형성 연결 <span>6,142</span>';
+      } else if (mode === 'verb') {
+        statsEl.innerHTML = '신어 <span>78</span> &middot; 공기 용언 <span>645</span> &middot; 연결 <span>2,710</span>';
+      } else {
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>2,159</span> &middot; 연결 <span>5,421</span> &middot; 기사 공동 출현 <span>104</span>';
+      }
+
+      // 하단 바: 모드별 탭 재구성 (main=개체명 / verb=감정 용언 / morph=구성 성분·고립 노드)
+      _rebuildBBTabs(mode);
+
+      // 체크박스 리셋 + 재바인딩
+      ['entity'].forEach(function(l) {
+        var cb = document.getElementById('tog-' + l);
+        if (cb) cb.checked = true;
+      });
+      bindToggles();
+
+      // 그래프 재계산
+      if (!allNodes.length) return;
+      var vis = computeVisible();
+      applyLayout(vis.nodes, vis.links);
+      centerGraph();
+      d3.select(canvas).call(zoom.transform, transform);
+      draw();
+    }
+
+    document.getElementById('tab-main').addEventListener('click', function() { switchMode('main'); });
+    document.getElementById('tab-morph').addEventListener('click', function() { switchMode('morph'); });
+    document.getElementById('tab-verb').addEventListener('click', function() { switchMode('verb'); });
+
+    // ── 의미 범주 필터 ──────────────────────────────────────────────────────
+    document.getElementById('cat-select').addEventListener('change', function() {
+      currentCat = this.value;
+      if (!allNodes.length) return;
+      var vis = computeVisible();
+      applyLayout(vis.nodes, vis.links);
+      centerGraph();
+    });
+
+    // ── 조어법 필터 ────────────────────────────────────────────────────────
+    document.getElementById('fm-select').addEventListener('change', function() {
+      currentFm = this.value;
+      if (!allNodes.length) return;
+      var vis = computeVisible();
+      applyLayout(vis.nodes, vis.links);
+      centerGraph();
+    });
+
+    // ── 노드 반지름 (연결 수 비례) ──────────────────────────────────────────
+    function nodeRadius(d) {
+      var vd = d._visibleDegree || d.degree || 1;
+      if (d.type === 'element') {
+        return 3 + Math.sqrt(d.ec || d.degree || 1) * 2.2;
+      }
+      if (d.type === 'entity') return 3 + Math.sqrt(vd) * 2.2;
+      if (d.type === 'verb') return 3 + Math.sqrt(vd) * 2.2;
+      // entry (신어): morph 모드에서는 작게, 나머지에서는 크게
+      if (currentMode === 'morph') return 2.5 + Math.sqrt(vd) * 1.2;
+      return 4.5 + Math.sqrt(vd) * 3.0;
+    }
+
+    // ── 드로 함수 (canvas 2D) ─────────────────────────────────────────────────
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+
+      // 배경
+      ctx.fillStyle = '#f8f9fb';
+      ctx.fillRect(0, 0, W, H);
+
+      if (!nodes.length) return;
+
+      ctx.save();
+      ctx.translate(transform.x, transform.y);
+      ctx.scale(transform.k, transform.k);
+
+      var k = transform.k;
+
+      // ── 하이라이트 감지 ─────────────────────────────────────────────────────
+      var anyHighlighted = false;
+      var highlightIds = new Set();
+      for (var hi = 0; hi < nodes.length; hi++) {
+        if (nodes[hi]._highlighted) { anyHighlighted = true; highlightIds.add(nodes[hi].id); }
+      }
+
+      // ── 뷰포트 (링크·노드 컬링용) ─────────────────────────────────────────
+      var vpL = -transform.x / k, vpR = (W - transform.x) / k;
+      var vpT = -transform.y / k, vpB = (H - transform.y) / k;
+      var vpMargin = 60 / k;  // 약간 여유
+
+      function inViewport(x, y) {
+        return x >= vpL - vpMargin && x <= vpR + vpMargin &&
+               y >= vpT - vpMargin && y <= vpB + vpMargin;
+      }
+      function linkVisible(l) {
+        var sx = l.source.x, sy = l.source.y, tx = l.target.x, ty = l.target.y;
+        if (sx == null || sy == null || tx == null || ty == null) return false;
+        return inViewport(sx, sy) || inViewport(tx, ty);
+      }
+
+      // ── 링크: 비강조 (배경) ────────────────────────────────────────────────
+      var highlightLinks = [];
+      var layerGroups = {};
+      for (var i = 0; i < links.length; i++) {
+        var l = links[i];
+        var lay = l.layer || 'element';
+        if (!layerGroups[lay]) layerGroups[lay] = [];
+        layerGroups[lay].push(l);
+      }
+      var layerOrder = PAGE_LAYERS;
+      for (var li = 0; li < layerOrder.length; li++) {
+        var lay = layerOrder[li];
+        var grp = layerGroups[lay];
+        if (!grp) continue;
+        var alpha = anyHighlighted ? 0.04 : (LAYER_ALPHA[lay] || 0.18);
+        ctx.globalAlpha = alpha;
+        ctx.strokeStyle = LAYER_COLORS[lay] || '#94a3b8';
+        if (lay === 'entity' || lay === 'verb') {
+          var coocLinks = [];
+          for (var gi = 0; gi < grp.length; gi++) {
+            var gl = grp[gi];
+            if (!linkVisible(gl)) continue;
+            var sid = typeof gl.source === 'object' ? gl.source.id : gl.source;
+            var tid = typeof gl.target === 'object' ? gl.target.id : gl.target;
+            if (anyHighlighted && highlightIds.has(sid) && highlightIds.has(tid)) {
+              highlightLinks.push(gl); continue;
+            }
+            if (gl.kind === 'cooc') { coocLinks.push(gl); continue; }
+            ctx.lineWidth = (0.8 + Math.min((gl.w || 1) - 1, 6) * 0.5) / k;
+            ctx.beginPath();
+            ctx.moveTo(gl.source.x, gl.source.y);
+            ctx.lineTo(gl.target.x, gl.target.y);
+            ctx.stroke();
+          }
+          // 신어–신어 기사 공동 출현 엣지: 점선으로 구분
+          if (coocLinks.length) {
+            ctx.save();
+            ctx.strokeStyle = '#475569';
+            ctx.setLineDash([5 / k, 4 / k]);
+            for (var ci = 0; ci < coocLinks.length; ci++) {
+              var cl = coocLinks[ci];
+              ctx.lineWidth = (0.9 + Math.min((cl.w || 1) - 1, 6) * 0.5) / k;
+              ctx.beginPath();
+              ctx.moveTo(cl.source.x, cl.source.y);
+              ctx.lineTo(cl.target.x, cl.target.y);
+              ctx.stroke();
+            }
+            ctx.restore();
+          }
+          continue;
+        }
+        ctx.lineWidth = (lay === 'element' ? 1 : 1.2) / k;
+        ctx.beginPath();
+        for (var gi = 0; gi < grp.length; gi++) {
+          var gl = grp[gi];
+          if (!linkVisible(gl)) continue;
+          var sid = typeof gl.source === 'object' ? gl.source.id : gl.source;
+          var tid = typeof gl.target === 'object' ? gl.target.id : gl.target;
+          if (anyHighlighted && highlightIds.has(sid) && highlightIds.has(tid)) {
+            highlightLinks.push(gl); continue;
+          }
+          ctx.moveTo(gl.source.x, gl.source.y);
+          ctx.lineTo(gl.target.x, gl.target.y);
+        }
+        ctx.stroke();
+      }
+      ctx.globalAlpha = 1;
+
+      // ── 노드: 비강조 (배경) ────────────────────────────────────────────────
+      function drawNode(n, isHl) {
+        if (n.x == null || n.y == null) return;
+        var r = nodeRadius(n);
+        ctx.beginPath();
+        ctx.arc(n.x, n.y, r, 0, 2 * Math.PI);
+        if (n.type === 'element') {
+          ctx.fillStyle = n._dimmed ? '#e2e8f0' : elementColor(n);
+          ctx.fill();
+          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(30,58,138,0.25)';
+          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.stroke();
+        } else if (n.type === 'entity') {
+          ctx.fillStyle = n._dimmed ? '#e8dde1' : '#a05c72';
+          ctx.fill();
+          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(160,92,114,0.35)';
+          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.stroke();
+        } else if (n.type === 'verb') {
+          var vColor = n.pos === 'VA' ? '#9f1239' : '#b07a3a';  // 형용사=로즈, 동사=앰버
+          var vDim   = n.pos === 'VA' ? '#e8d0d8' : '#e8ddd0';
+          ctx.fillStyle = n._dimmed ? vDim : vColor;
+          ctx.fill();
+          ctx.strokeStyle = isHl ? '#f97316' : (n.pos === 'VA' ? 'rgba(159,18,57,0.35)' : 'rgba(176,122,58,0.35)');
+          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.stroke();
+        } else {
+          ctx.fillStyle = n._dimmed ? '#e2e8f0' : entryColor(n);
+          ctx.fill();
+          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(30,41,59,0.35)';
+          ctx.lineWidth = (isHl ? 2.5 : 1.2) / k;
+          ctx.stroke();
+        }
+      }
+
+      // 비강조 노드 먼저 (뷰포트 컬링)
+      for (var j = 0; j < nodes.length; j++) {
+        var nd_ = nodes[j];
+        if (!nd_._highlighted && nd_.x != null && inViewport(nd_.x, nd_.y)) drawNode(nd_, false);
+      }
+
+      // ── 강조 링크 (앞쪽) ───────────────────────────────────────────────────
+      if (highlightLinks.length) {
+        ctx.globalAlpha = 0.6;
+        for (var hl = 0; hl < highlightLinks.length; hl++) {
+          var hLink = highlightLinks[hl];
+          var sx = hLink.source.x, sy = hLink.source.y;
+          var tx = hLink.target.x, ty = hLink.target.y;
+          if (sx == null || sy == null || tx == null || ty == null) continue;
+          ctx.strokeStyle = '#f97316';
+          ctx.lineWidth = (1.5 + Math.min((hLink.w || 1) - 1, 4) * 0.6) / k;
+          ctx.beginPath();
+          ctx.moveTo(sx, sy);
+          ctx.lineTo(tx, ty);
+          ctx.stroke();
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      // ── 강조 노드 (앞쪽, 원래 색상 + 주황 테두리) ─────────────────────────
+      for (var j2 = 0; j2 < nodes.length; j2++) {
+        if (nodes[j2]._highlighted) drawNode(nodes[j2], true);
+      }
+
+      // ── 탐색 경로 (점선 + 화살표) ──────────────────────────────────────────
+      if (navHistory.length > 0 && currentFocusNode) {
+        var trail = navHistory.concat([currentFocusNode]);
+        ctx.save();
+        ctx.strokeStyle = '#0891b2';  // cyan-600
+        ctx.fillStyle = '#0891b2';
+        ctx.lineWidth = 2.0 / k;
+        ctx.setLineDash([6 / k, 4 / k]);
+        ctx.globalAlpha = 0.7;
+        for (var ti = 0; ti < trail.length - 1; ti++) {
+          var from = trail[ti], to = trail[ti + 1];
+          if (from.x == null || to.x == null) continue;
+          ctx.beginPath();
+          ctx.moveTo(from.x, from.y);
+          ctx.lineTo(to.x, to.y);
+          ctx.stroke();
+          // 화살표 머리
+          var dx = to.x - from.x, dy = to.y - from.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 1) continue;
+          var ux = dx / dist, uy = dy / dist;
+          var rTo = nodeRadius(to);
+          var ax = to.x - ux * (rTo + 4 / k), ay = to.y - uy * (rTo + 4 / k);
+          var arrowLen = 8 / k, arrowW = 4 / k;
+          ctx.setLineDash([]);
+          ctx.beginPath();
+          ctx.moveTo(ax, ay);
+          ctx.lineTo(ax - ux * arrowLen + uy * arrowW, ay - uy * arrowLen - ux * arrowW);
+          ctx.lineTo(ax - ux * arrowLen - uy * arrowW, ay - uy * arrowLen + ux * arrowW);
+          ctx.closePath();
+          ctx.fill();
+          ctx.setLineDash([6 / k, 4 / k]);
+        }
+        // 경로 번호 (각 노드에 순번 표시)
+        ctx.setLineDash([]);
+        ctx.font = '700 ' + (10 / k) + 'px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        for (var ni = 0; ni < trail.length; ni++) {
+          var tn = trail[ni];
+          if (tn.x == null) continue;
+          var nr = nodeRadius(tn) + 6 / k;
+          var bx = tn.x + nr * 0.7, by = tn.y - nr * 0.7;
+          ctx.globalAlpha = 0.85;
+          ctx.fillStyle = '#0891b2';
+          ctx.beginPath();
+          ctx.arc(bx, by, 6 / k, 0, 2 * Math.PI);
+          ctx.fill();
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText('' + (ni + 1), bx, by);
+        }
+        ctx.restore();
+      }
+
+      // ── 레이블 (우선순위 정렬 + 충돌 회피) ──────────────────────────────────
+      var showAllLabels = k >= ZOOM_LABEL_THRESHOLD;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      // 뷰포트 범위 (라벨 컬링용)
+      var lvpL = -transform.x / k - 80 / k;
+      var lvpR = (W - transform.x) / k + 80 / k;
+      var lvpT = -transform.y / k - 40 / k;
+      var lvpB = (H - transform.y) / k + 40 / k;
+
+      // 라벨 후보 수집
+      var _labelCands = [];
+      for (var m = 0; m < nodes.length; m++) {
+        var nd = nodes[m];
+        if (nd.x == null || nd.y == null) continue;
+        if (nd.x < lvpL || nd.x > lvpR || nd.y < lvpT || nd.y > lvpB) continue;
+
+        var rr = nodeRadius(nd);
+        var showLabel = false;
+        var priority = 0;
+        if (nd._highlighted) {
+          showLabel = true; priority = 10000;
+        } else if (showAllLabels) {
+          showLabel = true; priority = 1;
+        } else if (nd.type === 'entity') {
+          showLabel = (nd.degree || 0) >= 2;
+          priority = 200 + (nd.degree || 0);
+        } else if (nd.type === 'verb') {
+          showLabel = (nd.degree || 0) >= 3;
+          priority = 150 + (nd.degree || 0);
+        } else if (nd.type === 'element') {
+          showLabel = currentMode === 'morph' ? (nd.ec || 0) >= 2 : nd.degree >= HUB_LABEL_DEGREE;
+          priority = 100 + (nd.ec || nd.degree || 0);
+        } else {
+          // entry
+          if (currentMode === 'morph') {
+            showLabel = (nd.degree || 0) >= 3;
+            priority = 50 + (nd.degree || 0);
+          } else if (currentMode === 'main') {
+            // 개체명 그래프: 연결 있는 entry만 라벨, 없는 entry는 줌 시에만
+            if ((nd.entDeg || 0) > 0) {
+              showLabel = true;
+              priority = 200 + (nd.entDeg || 0);
+            } else {
+              showLabel = false;
+              priority = 0;
+            }
+          } else {
+            showLabel = (nd.degree || 0) >= 4 || rr >= 10;
+            priority = 200 + (nd.degree || 0);
+          }
+        }
+        if (!showLabel) continue;
+        _labelCands.push({ nd: nd, rr: rr, pri: priority });
+      }
+      _labelCands.sort(function(a, b) { return b.pri - a.pri; });
+
+      // 충돌 감지
+      _drawnLabels = [];
+      function _lbOverlap(x, y, hw, hh) {
+        for (var oi = 0; oi < _drawnLabels.length; oi++) {
+          var d = _drawnLabels[oi];
+          if (Math.abs(x - d.x) < hw + d.hw && Math.abs(y - d.y) < hh + d.hh) return true;
+        }
+        return false;
+      }
+
+      for (var ci = 0; ci < _labelCands.length; ci++) {
+        var c = _labelCands[ci];
+        var nd = c.nd, rr = c.rr;
+
+        var fs;
+        if (nd.type === 'entity') {
+          fs = Math.max(9, Math.min(15, rr * 1.5)) / k;
+        } else if (nd.type === 'verb') {
+          fs = Math.max(9, Math.min(15, rr * 1.5)) / k;
+        } else if (nd.type === 'element') {
+          fs = Math.max(8, Math.min(14, rr * 1.4)) / k;
+        } else {
+          fs = Math.max(9, Math.min(14, rr * 1.3)) / k;
+        }
+        ctx.font = '700 ' + fs + 'px Noto Sans KR, Pretendard, sans-serif';
+
+        var lx = nd.x, ly = nd.y - rr - 4 / k;
+        var tw = ctx.measureText(nd.label).width;
+        var lhw = tw / 2 + 2 / k;
+        var lhh = fs * 0.65;
+
+        // 충돌 회피 (강조 노드·전체 표시 모드에선 건너뜀)
+        if (!nd._highlighted && !showAllLabels && _lbOverlap(lx, ly, lhw, lhh)) continue;
+
+        ctx.strokeStyle = 'rgba(255,255,255,0.85)';
+        ctx.lineWidth = 3 / k;
+        ctx.lineJoin = 'round';
+        ctx.globalAlpha = 1;
+        ctx.strokeText(nd.label, lx, ly);
+
+        ctx.fillStyle = nd.type === 'element' ? '#1e3a8a'
+                      : nd.type === 'entity' ? '#b91c1c'
+                      : nd.type === 'verb' ? (nd.pos === 'VA' ? '#881337' : '#78350f')
+                      : '#1e3a8a';
+        ctx.globalAlpha = 0.95;
+        ctx.fillText(nd.label, lx, ly);
+        ctx.globalAlpha = 1;
+
+        _drawnLabels.push({ x: lx, y: ly, hw: lhw, hh: lhh, node: nd });
+      }
+
+      ctx.restore();
+    }
+
+    // ── 툴팁 ─────────────────────────────────────────────────────────────────
+    var tooltip = document.getElementById('tooltip');
+    var ttLabel = document.getElementById('tt-label');
+    var ttMeta  = document.getElementById('tt-meta');
+
+    function screenToGraph(ex, ey) {
+      return [(ex - transform.x) / transform.k, (ey - transform.y) / transform.k];
+    }
+
+    function findNode(gx, gy) {
+      var fk = transform.k;
+      // 1) 라벨 히트 (역순 — 나중에 그린 라벨이 위)
+      for (var li = _drawnLabels.length - 1; li >= 0; li--) {
+        var lb = _drawnLabels[li];
+        if (Math.abs(gx - lb.x) <= lb.hw && Math.abs(gy - lb.y) <= lb.hh) {
+          return lb.node;
+        }
+      }
+      // 2) 원 히트 (5px 스크린 패딩)
+      var best = null, bestDist = Infinity;
+      for (var i = 0; i < nodes.length; i++) {
+        var n = nodes[i];
+        if (n.x == null || n.y == null) continue;
+        var dx = n.x - gx, dy = n.y - gy;
+        var r = nodeRadius(n);
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist <= r + 5 / fk) {
+          if (n._highlighted) return n;
+          if (dist < bestDist) { best = n; bestDist = dist; }
+        }
+      }
+      return best;
+    }
+
+    var _mmPending = false;
+    canvas.addEventListener('mousemove', function(e) {
+      if (_mmPending) return;
+      _mmPending = true;
+      requestAnimationFrame(function() { _mmPending = false; _onMouseMove(e); });
+    });
+    function _onMouseMove(e) {
+      // 핀 고정된 툴팁이면 마우스 이동으로 갱신하지 않음
+      if (tooltip.classList.contains('tt-pinned')) {
+        var rect2 = canvas.getBoundingClientRect();
+        var ex2 = e.clientX - rect2.left, ey2 = e.clientY - rect2.top;
+        var gp2 = screenToGraph(ex2, ey2);
+        canvas.style.cursor = findNode(gp2[0], gp2[1]) ? 'pointer' : '';
+        return;
+      }
+      var rect = canvas.getBoundingClientRect();
+      var ex = e.clientX - rect.left, ey = e.clientY - rect.top;
+      var gp = screenToGraph(ex, ey);
+      var n = findNode(gp[0], gp[1]);
+
+      if (n) {
+        ttLabel.textContent = n.label;
+        ttLink.style.display = 'none';
+        if (n.type === 'element') {
+          ttMeta.textContent = '구성 성분 · ' + (n.ec || 0) + '개 신어';
+        } else if (n.type === 'entity') {
+          ttMeta.textContent = '개체명 (' + (CLS_KO[n.cls] || n.cls || '') + ') · 신어 ' + n.degree + '개 연결';
+        } else if (n.type === 'verb') {
+          var posLabel = n.pos === 'VA' ? '형용사' : '동사';
+          var polLabel = n.pol > 0 ? '긍정' : n.pol < 0 ? '부정' : '중립';
+          var negLabel = n.neg ? ' (부정형)' : '';
+          ttMeta.textContent = posLabel + ' · ' + polLabel + negLabel + ' · 신어 ' + n.degree + '개 연결';
+        } else {
+          var meta = '';
+          if (n.year) meta += n.year + '년';
+          if (n.cat) meta += (meta ? ' · ' : '') + n.cat;
+          ttMeta.textContent = meta || '신어';
+        }
+        tooltip.style.display = 'block';
+        var tx = ex + 14, ty = ey - 10;
+        if (tx + 230 > W) tx = ex - 240;
+        if (ty + 60 > H) ty = ey - 70;
+        tooltip.style.left = tx + 'px';
+        tooltip.style.top  = ty + 'px';
+        canvas.style.cursor = 'pointer';
+      } else {
+        tooltip.style.display = 'none';
+        canvas.style.cursor = '';
+      }
+    }
+
+    canvas.addEventListener('mouseleave', function() {
+      tooltip.style.display = 'none';
+    });
+
+    // ── 정보 패널 + 탐색 이력 ─────────────────────────────────────────────
+    var infoPanel = document.getElementById('info-panel');
+    var ipTitle = document.getElementById('ip-title');
+    var ipType = document.getElementById('ip-type');
+    var ipList = document.getElementById('ip-list');
+    var navHistory = [];  // 이전 노드 이력
+    var currentFocusNode = null;  // 현재 포커스된 노드
+
+    document.getElementById('ip-close').addEventListener('click', function() {
+      infoPanel.classList.remove('open');
+      navHistory = [];
+      currentFocusNode = null;
+      nodes.forEach(function(nd) { nd._highlighted = false; nd._dimmed = false; });
+      draw();
+    });
+
+    // 강조 대상 집합: 1홉 이웃 + (성분 노드일 때) 같은 신어를 형성한 형제 성분 2홉
+    function computeHighlightSet(target) {
+      var nb = new Set(); nb.add(target.id);
+      var entrySet = new Set();
+      links.forEach(function(l) {
+        var sid = typeof l.source === 'object' ? l.source.id : l.source;
+        var tid = typeof l.target === 'object' ? l.target.id : l.target;
+        if (sid === target.id) { nb.add(tid); if (l.layer === 'element') entrySet.add(tid); }
+        if (tid === target.id) { nb.add(sid); if (l.layer === 'element') entrySet.add(sid); }
+      });
+      if (target.type === 'element' && entrySet.size) {
+        links.forEach(function(l) {
+          if (l.layer !== 'element') return;
+          var sid = typeof l.source === 'object' ? l.source.id : l.source;
+          var tid = typeof l.target === 'object' ? l.target.id : l.target;
+          if (entrySet.has(sid)) nb.add(tid);
+          if (entrySet.has(tid)) nb.add(sid);
+        });
+      }
+      return nb;
+    }
+
+    function navigateTo(target) {
+      currentFocusNode = target;
+      var nb = computeHighlightSet(target);
+      nodes.forEach(function(nd) { nd._highlighted = nb.has(nd.id); nd._dimmed = !nb.has(nd.id); });
+      var sc = Math.max(transform.k, 2);
+      var tx = W / 2 - target.x * sc;
+      var ty = H / 2 - target.y * sc;
+      transform = d3.zoomIdentity.translate(tx, ty).scale(sc);
+      d3.select(canvas).call(zoom.transform, transform);
+      draw();
+      showInfoPanel(target);
+    }
+
+    function showInfoPanel(n) {
+      // 직접 연결 노드 수집 (동일 노드 중복 제거)
+      var connected = [];
+      var connectedEntryIds = new Set();
+      var linksByPeer = {};  // peerId → link data (공출현 기사 URL용)
+      var _seenPeers = new Set();
+      var verbLinkInfo = {};  // peerId → [{src, w, llr}, …]
+      links.forEach(function(l) {
+        var sid = typeof l.source === 'object' ? l.source.id : l.source;
+        var tid = typeof l.target === 'object' ? l.target.id : l.target;
+        var other = null;
+        var peerId = null;
+        if (sid === n.id) { other = nodeMap[tid]; peerId = tid; }
+        else if (tid === n.id) { other = nodeMap[sid]; peerId = sid; }
+        if (other) {
+          if (!_seenPeers.has(peerId)) {
+            _seenPeers.add(peerId);
+            connected.push(other);
+          }
+          if (other.type === 'entry') connectedEntryIds.add(other.id);
+          if (l.urls) linksByPeer[peerId] = l;
+          // verb 링크 정보 수집 (NN/YT별)
+          if (l.layer === 'verb') {
+            if (!verbLinkInfo[peerId]) verbLinkInfo[peerId] = [];
+            verbLinkInfo[peerId].push({ src: l.src, w: l.w, llr: l.llr });
+          }
+        }
+      });
+
+      // 2홉 연결 개체명 (entity → entry → entity)
+      var relatedEntities = [];
+      if (n.type === 'entity') {
+        var relatedSet = new Set();
+        connectedEntryIds.forEach(function(eid) {
+          links.forEach(function(l) {
+            var sid = typeof l.source === 'object' ? l.source.id : l.source;
+            var tid = typeof l.target === 'object' ? l.target.id : l.target;
+            if (l.layer !== 'entity') return;
+            var otherId = null;
+            if (sid === eid) otherId = tid;
+            else if (tid === eid) otherId = sid;
+            if (otherId && otherId !== n.id && !relatedSet.has(otherId)) {
+              var o = nodeMap[otherId];
+              if (o && o.type === 'entity') {
+                relatedSet.add(otherId);
+                relatedEntities.push(o);
+              }
+            }
+          });
+        });
+        relatedEntities.sort(function(a, b) { return (b.degree || 0) - (a.degree || 0); });
+      }
+
+      // 2홉 공동 형성 성분 (element → entry → element)
+      var coElements = [];
+      if (n.type === 'element') {
+        var coSet = new Set();
+        connectedEntryIds.forEach(function(eid) {
+          links.forEach(function(l) {
+            if (l.layer !== 'element') return;
+            var sid = typeof l.source === 'object' ? l.source.id : l.source;
+            var tid = typeof l.target === 'object' ? l.target.id : l.target;
+            var otherId = null;
+            if (sid === eid) otherId = tid;
+            else if (tid === eid) otherId = sid;
+            if (otherId && otherId !== n.id && !coSet.has(otherId)) {
+              var o = nodeMap[otherId];
+              if (o && o.type === 'element') {
+                coSet.add(otherId);
+                coElements.push(o);
+              }
+            }
+          });
+        });
+        coElements.sort(function(a, b) { return (b.ec || 0) - (a.ec || 0); });
+      }
+
+      ipTitle.textContent = n.label;
+      var typeLabels = { entry: '신어', entity: '개체명', element: '구성 성분', verb: '공기 용언' };
+      var typeInfo = typeLabels[n.type] || n.type;
+      if (n.type === 'entity' && n.cls) typeInfo += ' (' + (CLS_KO[n.cls] || n.cls) + ')';
+      if (n.type === 'entry' && n.year) typeInfo += ' · ' + n.year + '년';
+      if (n.type === 'entry' && n.cat) typeInfo += ' · ' + n.cat;
+      if (n.type === 'element' && n.ec) typeInfo += ' · ' + n.ec + '개 신어';
+      // 중심성 표시
+      if (n.dc != null) typeInfo += ' · 연결 ' + (n.dc * 100).toFixed(1) + '%';
+      ipType.textContent = typeInfo;
+
+      // KB 버튼 헬퍼
+      function kbBtns(wikiUrl, namuUrl, stop) {
+        var h = '<div class="kb-btns">';
+        var oc = stop ? ' onclick="event.stopPropagation();"' : '';
+        h += wikiUrl ? '<a class="kb-btn kb-btn-on" href="' + wikiUrl + '" target="_blank" rel="noopener"' + oc + '>위키백과</a>'
+                     : '<span class="kb-btn kb-btn-off">위키백과</span>';
+        h += namuUrl ? '<a class="kb-btn kb-btn-on" href="' + namuUrl + '" target="_blank" rel="noopener"' + oc + '>나무위키</a>'
+                     : '<span class="kb-btn kb-btn-off">나무위키</span>';
+        h += '<span class="kb-btn kb-btn-off">네이버 지식백과</span>';
+        h += '</div>';
+        return h;
+      }
+
+      var html = '';
+
+      // 탐색 이력 뒤로 가기
+      if (navHistory.length > 0) {
+        var prev = navHistory[navHistory.length - 1];
+        html += '<div class="ip-item" id="ip-back" style="cursor:pointer;color:#64748b;font-size:0.72rem;">← ' + prev.label + ' 으로 돌아가기</div>';
+      }
+
+      // 신어 노드: 페이지 링크 + KB 버튼
+      if (n.type === 'entry') {
+        html += '<a class="ip-item" href="id/' + n.id + '.html" style="color:#1e3a8a;font-weight:700;">페이지 보기 →</a>';
+        if (n.url) {
+          html += '<a class="ip-item" href="' + n.url + '" target="_blank" rel="noopener" style="color:#2563eb;font-size:0.78rem;">최초 출현 기사 ↗</a>';
+        }
+        html += '<div class="ip-item">' + kbBtns(n.wiki, n.namu, false) + '</div>';
+      }
+
+      // 개체명 노드: KB 버튼
+      if (n.type === 'entity') {
+        html += '<div class="ip-item">' + kbBtns(n.wiki, n.namu, false) + '</div>';
+      }
+
+      // 구성 성분 노드: 형성 신어 목록
+      if (n.type === 'element' && n.eids && n.eids.length) {
+        html += '<div class="ip-section">형성 신어 (' + n.eids.length + ')</div>';
+        n.eids.forEach(function(eid) {
+          var en = _allNodeMap[eid];
+          if (!en) return;
+          var yr = en.year ? ' · ' + en.year + '년' : '';
+          html += '<a class="ip-item" href="id/' + eid + '.html" style="color:#1e3a8a;text-decoration:none;" onclick="event.stopPropagation();">'
+            + en.label + '<span class="ip-item-sub">' + yr + '</span></a>';
+        });
+      }
+
+      // 구성 성분 노드: 공동 형성 성분 목록 (2홉)
+      if (n.type === 'element' && coElements.length > 0) {
+        html += '<div class="ip-section">공동 형성 성분 (' + coElements.length + ')</div>';
+        coElements.forEach(function(ce) {
+          html += '<div class="ip-item ip-nav" data-nid="' + ce.id + '" style="cursor:pointer;">'
+            + ce.label + '<span class="ip-item-sub"> · ' + (ce.ec || 0) + '개 신어</span></div>';
+        });
+      }
+
+      // 유형별 그룹
+      var groups = {};
+      connected.forEach(function(c) {
+        var t = c.type;
+        if (!groups[t]) groups[t] = [];
+        groups[t].push(c);
+      });
+
+      var order = ['entry', 'entity', 'verb', 'element'];
+      order.forEach(function(t) {
+        if (!groups[t]) return;
+        var label = typeLabels[t] || t;
+        html += '<div class="ip-section">' + label + ' (' + groups[t].length + ')</div>';
+        groups[t].sort(function(a, b) { return (a.label || '').localeCompare(b.label || ''); });
+        groups[t].forEach(function(c) {
+          var extra = '';
+          if (c.type === 'entry') {
+            extra = '<span class="ip-item-sub"> · ' + (c.year || '') + '년</span>';
+            var peerLink = linksByPeer[c.id];
+            if (peerLink && peerLink.urls && peerLink.urls.length > 0) {
+              extra += ' <a href="' + peerLink.urls[0] + '" target="_blank" rel="noopener" style="font-size:0.68rem;color:#2563eb;" onclick="event.stopPropagation();">공통 출현 기사 ↗</a>';
+            } else if (c.url) {
+              extra += ' <a href="' + c.url + '" target="_blank" rel="noopener" style="font-size:0.68rem;color:#2563eb;" onclick="event.stopPropagation();">최초 출현 기사 ↗</a>';
+            }
+          }
+          else if (c.type === 'verb') {
+            var posL = c.pos === 'VA' ? '형용사' : '동사';
+            var polS = c.pol > 0 ? '긍정' : c.pol < 0 ? '부정' : '중립';
+            var polC = c.pol > 0 ? '#2563eb' : c.pol < 0 ? '#dc2626' : '#6b7280';
+            extra = '<span class="ip-item-sub"> · ' + posL + ' <span style="color:' + polC + ';">' + polS + '</span>';
+            if (c.neg) extra += ' <span style="color:#9333ea;font-size:0.65rem;">(부정형←' + (c.base || '') + ')</span>';
+            extra += '</span>';
+            var vli = verbLinkInfo[c.id];
+            if (vli) {
+              var parts = [];
+              vli.forEach(function(v) {
+                var srcL = v.src === 'YT' ? '댓글' : '신문';
+                var col = v.src === 'YT' ? '#dc2626' : '#1e40af';
+                parts.push('<span style="color:' + col + ';font-size:0.7rem;">' + srcL + ' ' + v.w + '회</span>');
+              });
+              extra += ' ' + parts.join(' ');
+            }
+          }
+          else if (c.type === 'entity' && c.cls) {
+            extra = '<span class="ip-item-sub"> · ' + (CLS_KO[c.cls] || c.cls) + '</span>';
+            extra += kbBtns(c.wiki, c.namu, true);
+            var peerLink2 = linksByPeer[c.id];
+            if (peerLink2 && peerLink2.urls && peerLink2.urls.length > 0) {
+              extra += ' <a href="' + peerLink2.urls[0] + '" target="_blank" rel="noopener" style="font-size:0.68rem;color:#2563eb;" onclick="event.stopPropagation();">공통 출현 기사 ↗</a>';
+            }
+          }
+          html += '<div class="ip-item ip-nav" data-nid="' + c.id + '" style="cursor:pointer;">'
+            + c.label + extra + '</div>';
+        });
+      });
+
+      // 2홉 관련 개체명 (entity 전용)
+      if (relatedEntities.length > 0) {
+        html += '<div class="ip-section">관련 개체명 (' + relatedEntities.length + ')</div>';
+        for (var ri = 0; ri < relatedEntities.length; ri++) {
+          var re = relatedEntities[ri];
+          html += '<div class="ip-item ip-nav" data-nid="' + re.id + '" style="cursor:pointer;">'
+            + re.label + '<span class="ip-item-sub"> · ' + (CLS_KO[re.cls] || re.cls || '') + ' · 연결 ' + (re.degree || 0) + '</span>'
+            + kbBtns(re.wiki, re.namu, true) + '</div>';
+        }
+      }
+
+      ipList.innerHTML = html;
+
+      // 뒤로 가기 버튼
+      var backBtn = document.getElementById('ip-back');
+      if (backBtn) {
+        backBtn.addEventListener('click', function() {
+          var prev = navHistory.pop();
+          if (prev) navigateTo(prev);
+        });
+      }
+
+      // 아이템 클릭 → 이력 추가 + 이동
+      ipList.querySelectorAll('.ip-nav[data-nid]').forEach(function(el) {
+        el.addEventListener('click', function() {
+          var nid = el.getAttribute('data-nid');
+          var target = nodeMap[nid];
+          if (!target) return;
+          navHistory.push(n);
+          navigateTo(target);
+        });
+      });
+      infoPanel.classList.add('open');
+    }
+
+    // ── 클릭: 하이라이트 + 정보 패널 ─────────────────────────────────────
+    var _lastClickTime = 0;
+    var ttLink = document.getElementById('tt-link');
+    canvas.addEventListener('click', function(e) {
+      var now = Date.now();
+      if (now - _lastClickTime < 300) return;
+      _lastClickTime = now;
+
+      var rect = canvas.getBoundingClientRect();
+      var ex = e.clientX - rect.left, ey = e.clientY - rect.top;
+      var gp = screenToGraph(ex, ey);
+      var n = findNode(gp[0], gp[1]);
+
+      // 툴팁 핀 해제
+      tooltip.classList.remove('tt-pinned');
+      ttLink.style.display = 'none';
+
+      if (!n) {
+        // 배경 클릭: 강조 해제 + 패널 닫기
+        infoPanel.classList.remove('open');
+        navHistory = [];
+        currentFocusNode = null;
+        nodes.forEach(function(nd) { nd._highlighted = false; nd._dimmed = false; });
+        tooltip.style.display = 'none';
+        draw(); return;
+      }
+
+      // 노드 클릭: 탐색 경로 시작 (직접 클릭은 새 경로)
+      navHistory = [];
+      currentFocusNode = n;
+
+      // 연결 노드 하이라이트 (성분 노드는 형제 성분 2홉 포함)
+      var neighbors = computeHighlightSet(n);
+      nodes.forEach(function(nd) {
+        nd._highlighted = neighbors.has(nd.id);
+        nd._dimmed = !neighbors.has(nd.id);
+      });
+      draw();
+
+      // 정보 패널 표시
+      showInfoPanel(n);
+    });
+
+    // ── 검색: 표제어 노드 줌 + 강조 ──────────────────────────────────────────
+    var searchInput = document.getElementById('graphSearch');
+    var _searchTimer = null;
+    searchInput.addEventListener('input', function() {
+      clearTimeout(_searchTimer);
+      var q = this.value.trim();
+      _searchTimer = setTimeout(function() {
+        doSearch(q);
+      }, 250);
+    });
+
+    function doSearch(q) {
+      if (!q) {
+        nodes.forEach(function(n) { n._highlighted = false; n._dimmed = false; });
+        draw(); return;
+      }
+      var ql = q.toLowerCase();
+      var found = null;
+      nodes.forEach(function(n) {
+        var match = n.label && n.label.toLowerCase().indexOf(ql) !== -1;
+        var isSearchable = n.type === 'entry' || n.type === 'entity' || n.type === 'element' || n.type === 'verb';
+        n._highlighted = match && isSearchable;
+        n._dimmed = !match;
+        if (match && isSearchable && !found) found = n;
+      });
+      draw();
+      if (found && found.x != null && found.y != null) {
+        var targetZoom = Math.max(transform.k, 3);
+        var tx = W / 2 - found.x * targetZoom;
+        var ty = H / 2 - found.y * targetZoom;
+        d3.select(canvas).transition().duration(600)
+          .call(zoom.transform, d3.zoomIdentity.translate(tx, ty).scale(targetZoom));
+      }
+    }
+
+    // ── 하단 바 (모드별 목록: main=개체명 / verb=감정 용언 / morph=구성 성분·고립 노드) ──
+    var _bbContent = document.getElementById('bb-content');
+    var _BB_TABS = {
+      main: [['entity', '개체명']],
+      verb: [['verb', '감정 용언']],
+      morph: [['element', '구성 성분'], ['isolated', '고립 노드']]
+    };
+    function _rebuildBBTabs(mode) {
+      var tabs = _BB_TABS[mode] || _BB_TABS.main;
+      var wrap = document.getElementById('bb-tabs');
+      wrap.innerHTML = tabs.map(function(t, i) {
+        return '<button class="bb-tab' + (i === 0 ? ' active' : '') + '" data-tab="' + t[0] + '">' + t[1] + '</button>';
+      }).join('');
+      document.getElementById('bb-title').textContent = tabs.map(function(t) { return t[1]; }).join(' · ') + ' 목록';
+      wrap.querySelectorAll('.bb-tab').forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          wrap.querySelectorAll('.bb-tab').forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          _renderBB(tab.getAttribute('data-tab'));
+        });
+      });
+      _renderBB(tabs[0][0]);
+    }
+    function _renderBB(tabKey) {
+        var items = [];
+        if (tabKey === 'entity') {
+          items = allNodes.filter(function(n) { return n.type === 'entity'; });
+          items.sort(function(a, b) { return (b.degree || 0) - (a.degree || 0); });
+        } else if (tabKey === 'verb') {
+          items = allNodes.filter(function(n) { return n.type === 'verb'; });
+          items.sort(function(a, b) { return (b.degree || 0) - (a.degree || 0); });
+        } else if (tabKey === 'element') {
+          items = allNodes.filter(function(n) { return n.type === 'element'; });
+          items.sort(function(a, b) { return (b.degree || 0) - (a.degree || 0); });
+        } else {
+          items = allNodes.filter(function(n) { return n.isolated || (n._visibleDegree || 0) === 0; });
+          items.sort(function(a, b) { return (a.label || '').localeCompare(b.label || ''); });
+        }
+
+        var html = '<div class="bb-list">';
+        items.forEach(function(n) {
+          var deg = tabKey === 'isolated' ? '' : '<span class="bb-deg">' + (n.degree || 0) + '</span>';
+          html += '<span class="bb-item" data-nid="' + n.id + '">' + n.label + deg + '</span>';
+        });
+        html += '</div>';
+        _bbContent.innerHTML = html;
+
+        _bbContent.querySelectorAll('.bb-item[data-nid]').forEach(function(el) {
+          el.addEventListener('click', function() {
+            var target = nodeMap[el.getAttribute('data-nid')];
+            if (!target || target.x == null) return;
+            navHistory = [];
+            navigateTo(target);
+          });
+        });
+    }
+
+    (function initBottomBar() {
+      var bbPanel = document.getElementById('bottom-bar');
+      var bbHeader = document.getElementById('bb-header');
+      var bbToggle = document.getElementById('bb-toggle');
+
+      bbHeader.addEventListener('click', function() {
+        bbPanel.classList.toggle('collapsed');
+        bbToggle.textContent = bbPanel.classList.contains('collapsed') ? '▲' : '▼';
+      });
+
+      _rebuildBBTabs(currentMode);
+    })();
+
+    // ── 초기 resize ───────────────────────────────────────────────────────────
+    resize();
+  })();
+  </script>
+
+</body>
+</html>

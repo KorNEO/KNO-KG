@@ -1,0 +1,36 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2020-0040 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2020-0040-att-nn ;
+    ontolex:canonicalForm kno:KN2020-0040-form ;
+    ontolex:sense kno:KN2020-0040-sense .
+
+kno:KN2020-0040-att-nn a frac:Attestation ;
+    dcterms:date "2020-04-22"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/052/0001431432> .
+
+kno:KN2020-0040-form a ontolex:Form ;
+    frac:frequency kno:KN2020-0040-freq-nn,
+        kno:KN2020-0040-freq-yt ;
+    ontolex:writtenRep "기간산업^안정^기금"@ko .
+
+kno:KN2020-0040-freq-nn a frac:CorpusFrequency ;
+    rdf:value 7513 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2020-0040-freq-yt a frac:CorpusFrequency ;
+    rdf:value 5 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2020-0040-sense a ontolex:LexicalSense .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

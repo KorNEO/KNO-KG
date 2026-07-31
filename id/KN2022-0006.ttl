@@ -1,0 +1,36 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2022-0006 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2022-0006-att-nn ;
+    ontolex:canonicalForm kno:KN2022-0006-form ;
+    ontolex:sense kno:KN2022-0006-sense .
+
+kno:KN2022-0006-att-nn a frac:Attestation ;
+    dcterms:date "2021-10-28"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/055/0000930034> .
+
+kno:KN2022-0006-form a ontolex:Form ;
+    frac:frequency kno:KN2022-0006-freq-nn,
+        kno:KN2022-0006-freq-yt ;
+    ontolex:writtenRep "가족 돌봄 청소년"@ko .
+
+kno:KN2022-0006-freq-nn a frac:CorpusFrequency ;
+    rdf:value 1980 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2022-0006-freq-yt a frac:CorpusFrequency ;
+    rdf:value 123 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2022-0006-sense a ontolex:LexicalSense .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

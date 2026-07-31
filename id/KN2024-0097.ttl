@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2024-0097 a ontolex:Word ;
+    frac:attestation kno:KN2024-0097-att-nn ;
+    ontolex:canonicalForm kno:KN2024-0097-form ;
+    ontolex:sense kno:KN2024-0097-sense .
+
+kno:KN2024-0097-att-nn a frac:Attestation ;
+    dcterms:date "2020-01-02"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/009/0004493369> .
+
+kno:KN2024-0097-form a ontolex:Form ;
+    frac:frequency kno:KN2024-0097-freq-nn,
+        kno:KN2024-0097-freq-yt ;
+    ontolex:writtenRep "비명-횡사"@ko .
+
+kno:KN2024-0097-freq-nn a frac:CorpusFrequency ;
+    rdf:value 5708 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2024-0097-freq-yt a frac:CorpusFrequency ;
+    rdf:value 6752 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2024-0097-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EB%B9%84%EB%AA%85%ED%9A%A1%EC%82%AC> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

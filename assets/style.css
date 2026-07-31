@@ -1,0 +1,1062 @@
+:root {
+  --bg-deep: #f5f6f8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #eef1f6;
+  --border: #dde2ea;
+  --text-primary: #1a2540;
+  --text-secondary: #5a6478;
+  --text-muted: #94a3b8;
+  --accent-nova: #1e3a8a;
+  --accent-glow: #0f172a;   /* 제목·표머리 (검정 잉크) */
+  --accent-signal: #9f1239; /* 신호 — 링크·활성 탭·최종 행 */
+  --accent-warm: #c2410c;
+  --accent-purple: #7c3aed;
+  --font-mono: 'Space Mono', monospace;
+  --font-body: 'Noto Sans KR', 'Pretendard', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-weight: 400;
+  line-height: 1.75;
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased;
+  font-variant-numeric: tabular-nums;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── NAV ── */
+.top-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(12px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.nav-logo {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--accent-nova);
+  text-decoration: none;
+  letter-spacing: 0;
+}
+
+.nav-links { display: flex; gap: 2rem; }
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--accent-nova); }
+.nav-links .nav-lang { display:inline-flex; align-items:center; gap:0.35rem; margin-left:0.4rem; padding-left:0.8rem; border-left:1px solid var(--border); }
+.nav-lang-globe { width:15px; height:15px; flex:0 0 auto; }
+.nav-links .nav-lang-label { font-size:0.85rem; }
+
+/* 현재 보고 있는 탭 — 색만으로는 약해서 아래 밑줄을 같이 준다 */
+.nav-links a.is-current {
+  color: var(--accent-nova);
+  font-weight: 700;
+  position: relative;
+}
+
+.nav-links a.is-current::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1.25rem;
+  height: 3px;
+  background: var(--accent-nova);
+  border-radius: 2px 2px 0 0;
+}
+
+/* ── MAIN ── */
+main {
+  flex: 1;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+/* ── HERO (index) ── */
+.hero {
+  text-align: center;
+  padding: 3rem 0 1rem;
+}
+
+.hero-logo {
+  max-width: 600px;
+  width: 100%;
+  margin-bottom: 2rem;
+  border-radius: 12px;
+}
+
+.hero h1 {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--accent-nova);
+  letter-spacing: 0;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+.hero-stat {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--accent-nova);
+  margin-bottom: 0.3rem;
+}
+
+.hero-stat #neoCount {
+  font-weight: 800;
+  font-size: 1.4rem;
+}
+
+.hero-source {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0;
+}
+
+/* ── SECTION ── */
+.section {
+  margin-top: 2.5rem;
+}
+
+.section.overview {
+  margin-top: 1.5rem;
+}
+
+.section h2 {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-glow);
+  letter-spacing: 0;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 1.5rem;
+}
+
+.hint-tip {
+  font-size: 0.79rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-left: 0.8rem;
+  opacity: 0.8;
+}
+
+/* ── REPORT CARDS (index list) ── */
+.report-list {
+  list-style: none;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.report-card {
+  display: block;
+  padding: 1.4rem 1.6rem;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg-card);
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.report-card:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--accent-nova);
+}
+
+.report-card .card-date {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.report-card .card-title {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-top: 0.3rem;
+}
+
+.report-card .card-summary {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-top: 0.4rem;
+}
+
+.report-card .card-tags {
+  margin-top: 0.6rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: rgba(30, 58, 138, 0.06);
+  color: var(--accent-nova);
+  border: 1px solid rgba(30, 58, 138, 0.18);
+}
+
+.view-all {
+  display: inline-block;
+  margin-top: 1rem;
+  color: var(--accent-signal);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.view-all:hover { text-decoration: underline; }
+
+/* ── REPORT ARTICLE ── */
+.report-breadcrumb {
+  margin-bottom: 1.5rem;
+}
+
+.report-breadcrumb a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+
+.report-breadcrumb a:hover {
+  color: var(--accent-signal);
+}
+
+.report-article { padding: 2rem 0; }
+
+.report-header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-header h1 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0.5rem 0 0.8rem;
+}
+
+.report-date {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0;
+}
+
+.report-summary {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+.report-meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.report-body h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 2.5rem 0 0.8rem;
+  color: var(--accent-glow);
+}
+
+.report-body h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 2rem 0 0.6rem;
+  color: var(--accent-nova);
+}
+
+.report-body p { margin-bottom: 1rem; }
+
+.report-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+}
+
+.report-body th,
+.report-body td {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.report-body th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--accent-glow);
+}
+
+.report-body code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--bg-card);
+  padding: 0.15em 0.4em;
+  border-radius: 3px;
+}
+
+.report-body blockquote {
+  border-left: 3px solid var(--accent-nova);
+  padding: 0.5rem 1rem;
+  margin: 1.5rem 0;
+  color: var(--text-secondary);
+  background: rgba(30, 58, 138, 0.04);
+  border-radius: 0 6px 6px 0;
+}
+
+.report-body ul, .report-body ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.report-body li { margin-bottom: 0.3rem; }
+
+.report-body img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+.report-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.report-footer a {
+  color: var(--accent-signal);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.report-footer a:hover { text-decoration: underline; }
+
+/* ── REPORT SUMMARY BOX ── */
+.report-summary-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.8rem 2rem;
+  margin-bottom: 2.5rem;
+}
+
+.summary-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.report-summary-box h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent-glow);
+  margin: 0;
+  gap: 0.8rem;
+}
+
+.summary-neo-badge {
+  display: flex;
+  align-items: baseline;
+  gap: 0.35rem;
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.07), rgba(124, 58, 237, 0.05));
+  border: 1px solid rgba(30, 58, 138, 0.2);
+  border-radius: 10px;
+  padding: 0.6rem 1.2rem;
+}
+
+.neo-badge-count {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--accent-nova);
+  line-height: 1;
+}
+
+.neo-badge-unit {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem 2rem;
+  align-items: start;
+}
+
+.summary-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  min-height: 0;
+}
+
+.summary-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent-nova);
+  letter-spacing: 0.02em;
+}
+
+.summary-value {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-weight: 400;
+}
+
+/* ── REPORT TABLE EXTRAS ── */
+.table-wrap {
+  overflow-x: auto;
+  margin: 1rem 0 2rem;
+}
+
+td.num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+.step-desc {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+}
+
+.report-body th {
+  text-align: center;
+}
+
+.highlight-row {
+  background: rgba(159, 18, 57, 0.05);
+}
+
+.highlight-row td {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.highlight-row td:first-child {
+  box-shadow: inset 3px 0 0 var(--accent-signal);
+}
+
+.total-row {
+  border-top: 2px solid var(--border);
+  background: rgba(30, 58, 138, 0.03);
+}
+
+/* ── TABLE (general) ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+}
+
+th, td {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+th {
+  background: var(--bg-card);
+  font-weight: 600;
+  color: var(--accent-nova);
+}
+
+/* ── ABOUT PAGE ── */
+.about-content h2 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--accent-glow);
+  margin: 2.5rem 0 0.8rem;
+}
+
+.about-content p { margin-bottom: 1rem; }
+
+.about-content a {
+  color: var(--accent-signal);
+  text-decoration: none;
+}
+
+.about-content a:hover { text-decoration: underline; }
+
+/* ── REPORT INDEX PAGE ── */
+.page-header {
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-nova);
+  letter-spacing: 0;
+}
+
+.page-header p {
+  color: var(--text-secondary);
+  margin-top: 0.5rem;
+}
+
+/* ── CUMULATIVE CARD (inside report-list) ── */
+.report-card.cumulative-card {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.05), rgba(124, 58, 237, 0.03));
+  border: 1px solid rgba(30, 58, 138, 0.22);
+}
+
+.report-card.cumulative-card:hover {
+  background: linear-gradient(135deg, rgba(30, 58, 138, 0.07), rgba(124, 58, 237, 0.05));
+}
+
+.cumulative-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.3rem;
+}
+
+.cumulative-card .card-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent-nova);
+}
+
+.cumulative-card .card-summary {
+  margin-top: 0.4rem;
+}
+
+.cumulative-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding: 1rem 0.8rem;
+  background: rgba(245, 246, 248, 0.85);
+  border-radius: 8px;
+}
+
+.cum-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.cum-stat-value {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--accent-nova);
+  line-height: 1.2;
+}
+
+.cum-stat-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.cum-stat-divider {
+  width: 1px;
+  height: 2.2rem;
+  background: rgba(30, 58, 138, 0.18);
+  flex-shrink: 0;
+}
+
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  border: 1px dashed var(--border);
+  border-radius: 8px;
+}
+
+/* ── HAMBURGER (hidden on desktop) ── */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 101;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-secondary);
+  margin: 5px 0;
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* ── FEATURED NEOLOGISM ── */
+.featured-neo {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2rem 2rem 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured-neo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.featured-neo-title {
+  font-family: 'Pretendard', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  color: var(--accent-nova);
+}
+
+.featured-neo-title:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.featured-neo-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.featured-neo-charts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.featured-chart-box {
+  background: var(--bg-deep);
+  border-radius: 8px;
+  padding: 1.5rem 1.5rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured-chart-box h4 {
+  font-size: 0.85rem;
+  color: var(--accent-glow);
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.featured-chart-box canvas {
+  height: 240px !important;
+}
+
+
+/* ── INTRO HEADER (ABOUT) ── */
+.intro-header {
+  text-align: center;
+  padding: 2rem 2rem 1rem;
+}
+
+.intro-logo {
+  max-width: 480px;
+  width: 100%;
+  border-radius: 12px;
+}
+
+main {
+  text-align: justify;
+  word-break: keep-all;
+}
+
+main h1, main h2, main h3 {
+  text-align: left;
+}
+
+main img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+  border-radius: 8px;
+}
+
+/* ── FOOTER ── */
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: auto;
+}
+
+/* ═══════ MOBILE: TABLET AND BELOW ═══════ */
+@media (max-width: 768px) {
+
+  /* ── NAV: Hamburger visible, links become vertical dropdown ── */
+  .nav-hamburger {
+    display: block;
+  }
+
+  .nav-hamburger.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-hamburger.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.97);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 2rem;
+    gap: 0;
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-links.nav-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid rgba(221, 226, 234, 0.7);
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* 모바일 세로 메뉴에선 데스크톱용 밑줄(bottom:-1.25rem)이 아래 항목과 겹치므로 숨긴다.
+     현재 탭은 굵은 네이비 글자(.is-current)로 이미 구분된다. */
+  .nav-links a.is-current::after {
+    display: none;
+  }
+
+  /* 언어 스위처: 데스크톱용 세로 구분선·들여쓰기를 없애고 다른 메뉴 항목처럼 좌측 정렬 */
+  .nav-links .nav-lang {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+    gap: 0.5rem;
+  }
+  .nav-links .nav-lang-label { font-size: 1rem; }
+  .nav-lang-globe { width: 17px; height: 17px; }
+
+  .top-nav {
+    padding: 1rem 1.2rem;
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    padding: 2rem 1.2rem;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 1.5rem 0 1rem;
+  }
+
+  .hero-logo {
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    font-size: 1.2rem;
+  }
+
+  .hero p {
+    font-size: 0.95rem;
+  }
+
+  .hero-stat {
+    font-size: 1rem;
+  }
+
+  .hero-stat #neoCount {
+    font-size: 1.2rem;
+  }
+
+  /* ── FEATURED NEOLOGISM CARDS ── */
+  .featured-neo {
+    padding: 1.2rem 1rem 1.5rem;
+    overflow: hidden;
+  }
+
+  .featured-neo-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+
+  .featured-neo-title {
+    font-size: 1.15rem;
+  }
+
+  .featured-neo-meta {
+    font-size: 0.75rem;
+  }
+
+  .featured-neo-charts {
+    grid-template-columns: 1fr;
+    min-width: 0;
+  }
+
+  .featured-chart-box {
+    padding: 1rem 1rem 1.2rem;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .featured-chart-box canvas {
+    height: 260px !important;
+  }
+
+  /* ── SECTION HEADINGS ── */
+  .section h2 {
+    font-size: 1rem;
+  }
+
+  .hint-tip {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.3rem;
+  }
+
+  /* ── CUMULATIVE CARD ── */
+  .cumulative-title-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .cumulative-stats {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    padding: 0.8rem 0.6rem;
+  }
+
+  .cum-stat {
+    flex: 0 0 calc(50% - 0.8rem);
+  }
+
+  .cum-stat-divider {
+    display: none;
+  }
+
+  .cum-stat-value {
+    font-size: 1.1rem;
+  }
+
+  /* ── REPORT CARDS ── */
+  .report-card {
+    padding: 1.1rem 1.2rem;
+  }
+
+  .report-card .card-title {
+    font-size: 0.95rem;
+  }
+
+  /* ── REPORT ARTICLE ── */
+  .report-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .report-body table {
+    font-size: 0.8rem;
+  }
+
+  .report-body th,
+  .report-body td {
+    padding: 0.5rem 0.6rem;
+  }
+
+  .summary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .report-summary-box {
+    padding: 1.2rem 1.2rem;
+  }
+
+  /* ── ABOUT PAGE ── */
+  main {
+    text-align: left;
+  }
+
+  main ul {
+    padding-left: 1.2rem;
+  }
+
+  .intro-header {
+    padding: 1.5rem 1rem 0.5rem;
+  }
+
+  .intro-logo {
+    max-width: 320px;
+  }
+
+  main h2 {
+    font-size: 1.1rem;
+  }
+
+  main h3 {
+    font-size: 1rem;
+  }
+
+  main table {
+    font-size: 0.78rem !important;
+    max-width: 100% !important;
+  }
+
+  main table th,
+  main table td {
+    padding: 0.4rem 0.5rem;
+  }
+
+  main img[style*="max-width:60%"],
+  main img[style*="max-width:80%"] {
+    max-width: 95% !important;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header h1 {
+    font-size: 1.2rem;
+  }
+}
+
+/* ═══════ MOBILE: PHONES ONLY ═══════ */
+@media (max-width: 480px) {
+
+  .top-nav {
+    padding: 0.8rem 1rem;
+  }
+
+  main {
+    padding: 1.5rem 1rem;
+  }
+
+  .hero {
+    padding: 1rem 0;
+  }
+
+  .hero h1 {
+    font-size: 1.05rem;
+  }
+
+  .hero-stat {
+    font-size: 0.9rem;
+  }
+
+  .hero-stat #neoCount {
+    font-size: 1.05rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .featured-neo {
+    padding: 1rem 0.8rem;
+  }
+
+  .featured-neo-title {
+    font-size: 1.05rem;
+  }
+
+  .featured-chart-box canvas {
+    height: 230px !important;
+  }
+
+  .section h2 {
+    font-size: 0.9rem;
+  }
+
+  .report-card {
+    padding: 1rem;
+  }
+
+  /* ── ABOUT PAGE (phones) ── */
+  .intro-logo {
+    max-width: 240px;
+  }
+
+  main h2 {
+    font-size: 1rem;
+  }
+
+  main table {
+    font-size: 0.72rem !important;
+  }
+
+  main table th,
+  main table td {
+    padding: 0.3rem 0.4rem;
+  }
+}

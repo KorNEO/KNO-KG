@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2023-0362 a ontolex:Word ;
+    frac:attestation kno:KN2023-0362-att-nn ;
+    ontolex:canonicalForm kno:KN2023-0362-form ;
+    ontolex:sense kno:KN2023-0362-sense .
+
+kno:KN2023-0362-att-nn a frac:Attestation ;
+    dcterms:date "2022-07-19"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/469/0000686799> .
+
+kno:KN2023-0362-form a ontolex:Form ;
+    frac:frequency kno:KN2023-0362-freq-nn,
+        kno:KN2023-0362-freq-yt ;
+    ontolex:writtenRep "히트플레이션"@ko .
+
+kno:KN2023-0362-freq-nn a frac:CorpusFrequency ;
+    rdf:value 549 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2023-0362-freq-yt a frac:CorpusFrequency ;
+    rdf:value 4 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2023-0362-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%ED%9E%88%ED%8A%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+
