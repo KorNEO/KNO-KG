@@ -47,45 +47,14 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0210-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2023-0210-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-07-06"
       },
-      "rdf:value": 3
-    },
-    {
-      "@id": "kno:KN2023-0210-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0210-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0210-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0210-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "월급채굴"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/023/0003702041"
       }
     },
     {
@@ -95,6 +64,13 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 3
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2023-0210",
@@ -110,14 +86,38 @@
       }
     },
     {
-      "@id": "kno:KN2023-0210-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-07-06"
+      "@id": "kno:KN2023-0210-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/023/0003702041"
+      "rdf:value": 3
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0210-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0210-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0210-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0210-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "월급채굴"
       }
     }
   ]
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

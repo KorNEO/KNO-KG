@@ -47,10 +47,56 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0285-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2024-0285-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 17
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0285-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2024-03-17"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/032/0003284914"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0285-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0285-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0285-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "지민비정"
       }
     },
     {
@@ -73,52 +119,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 6
-    },
-    {
-      "@id": "kno:KN2024-0285-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2024-0285-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 17
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0285-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0285-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0285-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "지민비정"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0285-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2024-03-17"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/032/0003284914"
-      }
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

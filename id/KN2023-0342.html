@@ -47,28 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0342-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0342-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0342-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "풍선갈등"
+        "@value": "신문 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2023-0342-freq-nn",
+      "@id": "kno:KN2023-0342-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 160
+      "rdf:value": 0
     },
     {
       "@id": "kno:corpus-YT",
@@ -78,8 +69,23 @@
       }
     },
     {
-      "@id": "kno:KN2023-0342-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2023-0342-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-02-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/001/0013737150"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0342-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 160
     },
     {
       "@id": "kno:KN2023-0342",
@@ -95,30 +101,24 @@
       }
     },
     {
-      "@id": "kno:KN2023-0342-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-02-04"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/001/0013737150"
-      }
+      "@id": "kno:KN2023-0342-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
+      "@id": "kno:KN2023-0342-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0342-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0342-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "풍선갈등"
       }
-    },
-    {
-      "@id": "kno:KN2023-0342-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

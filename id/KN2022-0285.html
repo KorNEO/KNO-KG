@@ -47,26 +47,10 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0285-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0285-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0285-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "파산핑"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0285-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%BA%90%EC%B9%98!%20%ED%8B%B0%EB%8B%88%ED%95%91%20%EC%8B%9C%EB%A6%AC%EC%A6%88/%EB%B9%84%ED%8C%90"
+        "@value": "신문 말뭉치"
       }
     },
     {
@@ -88,12 +72,43 @@
       }
     },
     {
+      "@id": "kno:KN2022-0285-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%BA%90%EC%B9%98!%20%ED%8B%B0%EB%8B%88%ED%95%91%20%EC%8B%9C%EB%A6%AC%EC%A6%88/%EB%B9%84%ED%8C%90"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0285-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0285-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0285-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "파산핑"
+      }
+    },
+    {
       "@id": "kno:KN2022-0285-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 308
+    },
+    {
+      "@id": "kno:KN2022-0285-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1977
     },
     {
       "@id": "kno:KN2022-0285",
@@ -107,21 +122,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2022-0285-sense"
       }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0285-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 1977
     }
   ]
 }
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

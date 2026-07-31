@@ -47,19 +47,18 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2025-0547-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 3
     },
     {
       "@id": "kno:KN2025-0547-freq-yt",
@@ -68,19 +67,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 75
-    },
-    {
-      "@id": "kno:KN2025-0547",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0547-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0547-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0547-sense"
-      }
     },
     {
       "@id": "kno:KN2025-0547-form",
@@ -99,6 +85,26 @@
       }
     },
     {
+      "@id": "kno:KN2025-0547",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0547-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0547-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0547-sense"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0547-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%8C%A8%EB%A5%9C%EC%86%A1"
+      }
+    },
+    {
       "@id": "kno:KN2025-0547-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -110,18 +116,12 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0547-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%8C%A8%EB%A5%9C%EC%86%A1"
-      }
+      "@id": "kno:KN2025-0547-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 3
     }
   ]
 }
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

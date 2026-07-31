@@ -47,29 +47,23 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2025-0258-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0258",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0258-att-nn"
       },
-      "rdf:value": 341
-    },
-    {
-      "@id": "kno:KN2025-0258-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-03-18"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0258-form"
       },
-      "frac:locus": {
-        "@id": "https://m.entertain.naver.com/article/011/0004462451"
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0258-sense"
       }
     },
     {
@@ -81,10 +75,10 @@
       "rdf:value": 1390
     },
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -104,21 +98,27 @@
       }
     },
     {
-      "@id": "kno:KN2025-0258",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0258-att-nn"
+      "@id": "kno:KN2025-0258-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0258-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0258-sense"
-      }
+      "rdf:value": 341
     },
     {
       "@id": "kno:KN2025-0258-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0258-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-03-18"
+      },
+      "frac:locus": {
+        "@id": "https://m.entertain.naver.com/article/011/0004462451"
+      }
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

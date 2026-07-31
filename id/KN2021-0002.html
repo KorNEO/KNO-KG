@@ -47,10 +47,56 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2021-0002",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0002-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0002-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0002-sense"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0002-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-11-17"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/081/0003140531"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0002-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1756
+    },
+    {
+      "@id": "kno:KN2021-0002-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EA%B0%80%EB%8D%95%EB%8F%84%EC%8B%A0%EA%B3%B5%ED%95%AD%20%EA%B1%B4%EC%84%A4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%8A%B9%EB%B3%84%EB%B2%95"
       }
     },
     {
@@ -76,52 +122,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 83
-    },
-    {
-      "@id": "kno:KN2021-0002-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-11-17"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/081/0003140531"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0002-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EA%B0%80%EB%8D%95%EB%8F%84%EC%8B%A0%EA%B3%B5%ED%95%AD%20%EA%B1%B4%EC%84%A4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%8A%B9%EB%B3%84%EB%B2%95"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0002",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0002-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0002-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0002-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0002-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1756
     }
   ]
 }
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

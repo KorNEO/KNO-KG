@@ -47,26 +47,17 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0090-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-01-06"
+      "@id": "kno:KN2021-0090",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0090-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/020/0003330525"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0090-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0090-sense"
       }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0090-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2021-0090-freq-nn",
@@ -84,16 +75,33 @@
       }
     },
     {
-      "@id": "kno:KN2021-0090",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0090-att-nn"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0090-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0090-form"
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2021-0090-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2021-0090-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-01-06"
       },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0090-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/020/0003330525"
       }
     },
     {
@@ -111,14 +119,6 @@
         "@language": "ko",
         "@value": "랜선사원"
       }
-    },
-    {
-      "@id": "kno:KN2021-0090-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

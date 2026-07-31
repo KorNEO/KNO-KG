@@ -47,35 +47,34 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2022-0093-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0093-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0093-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "네버코비드"
-      }
+      "@id": "kno:KN2022-0093-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2022-0093-freq-yt",
+      "@id": "kno:KN2022-0093-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 4
+      "rdf:value": 114
+    },
+    {
+      "@id": "kno:KN2022-0093-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-05-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/020/0003426489"
+      }
     },
     {
       "@id": "kno:KN2022-0093",
@@ -91,33 +90,34 @@
       }
     },
     {
-      "@id": "kno:KN2022-0093-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-05-04"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/020/0003426489"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2022-0093-freq-nn",
+      "@id": "kno:KN2022-0093-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 114
+      "rdf:value": 4
     },
     {
-      "@id": "kno:KN2022-0093-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
+      "@id": "kno:KN2022-0093-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0093-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0093-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "네버코비드"
       }
     }
   ]
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

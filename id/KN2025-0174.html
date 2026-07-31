@@ -47,10 +47,34 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0174-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-14"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/009/0005605755"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0174",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0174-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0174-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0174-sense"
       }
     },
     {
@@ -70,29 +94,17 @@
       }
     },
     {
-      "@id": "kno:KN2025-0174-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-14"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/009/0005605755"
+      "@id": "kno:KN2025-0174-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%91%90%EB%B0%94%EC%9D%B4%20%EC%AB%80%EB%93%9D%EC%BF%A0%ED%82%A4"
       }
     },
     {
-      "@id": "kno:KN2025-0174-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 379
-    },
-    {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -104,24 +116,12 @@
       "rdf:value": 1055
     },
     {
-      "@id": "kno:KN2025-0174",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0174-att-nn"
+      "@id": "kno:KN2025-0174-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0174-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0174-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0174-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%91%90%EB%B0%94%EC%9D%B4%20%EC%AB%80%EB%93%9D%EC%BF%A0%ED%82%A4"
-      }
+      "rdf:value": 379
     }
   ]
 }
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

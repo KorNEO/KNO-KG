@@ -47,12 +47,50 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0165-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0165-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 192
+    },
+    {
+      "@id": "kno:KN2020-0165-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0165-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0165-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "성범죄백서"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0165-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-02-25"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/629/0000016765"
+      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -73,44 +111,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2020-0165-sense"
       }
-    },
-    {
-      "@id": "kno:KN2020-0165-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-02-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/629/0000016765"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0165-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0165-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0165-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "성범죄백서"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0165-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2020-0165-freq-yt",
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

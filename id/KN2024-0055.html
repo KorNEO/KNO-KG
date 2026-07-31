@@ -47,17 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0055-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2024-0055",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -68,6 +57,28 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2024-0055-sense"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0055-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 503
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -87,18 +98,14 @@
       }
     },
     {
-      "@id": "kno:KN2024-0055-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2024-0055-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-04-25"
       },
-      "rdf:value": 503
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/629/0000213622"
       }
     },
     {
@@ -110,15 +117,8 @@
       "rdf:value": 173
     },
     {
-      "@id": "kno:KN2024-0055-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-04-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/629/0000213622"
-      }
+      "@id": "kno:KN2024-0055-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

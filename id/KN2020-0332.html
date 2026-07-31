@@ -47,21 +47,10 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0332-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-02-03"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0002972378"
+        "@value": "신문 말뭉치"
       }
     },
     {
@@ -71,6 +60,14 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 266
+    },
+    {
+      "@id": "kno:KN2020-0332-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 354
     },
     {
       "@id": "kno:KN2020-0332-form",
@@ -89,19 +86,18 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2020-0332-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 354
+      "@id": "kno:KN2020-0332-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%9D%B4%EC%BC%80%EB%85%B8%20%EC%A3%A0%EC%9A%B0%ED%83%80"
+      }
     },
     {
       "@id": "kno:KN2020-0332",
@@ -117,10 +113,14 @@
       }
     },
     {
-      "@id": "kno:KN2020-0332-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%9D%B4%EC%BC%80%EB%85%B8%20%EC%A3%A0%EC%9A%B0%ED%83%80"
+      "@id": "kno:KN2020-0332-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-02-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0002972378"
       }
     }
   ]
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

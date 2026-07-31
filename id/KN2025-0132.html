@@ -47,10 +47,32 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0132-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0132-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-25"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/009/0005611904"
       }
     },
     {
@@ -60,22 +82,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 36
-    },
-    {
-      "@id": "kno:KN2025-0132-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0132-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0132-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "노멀휴먼"
-      }
     },
     {
       "@id": "kno:KN2025-0132",
@@ -91,25 +97,19 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
+      "@id": "kno:KN2025-0132-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0132-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0132-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0132-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2025-0132-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/009/0005611904"
+        "@value": "노멀휴먼"
       }
     },
     {
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

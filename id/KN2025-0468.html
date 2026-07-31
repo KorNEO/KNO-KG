@@ -47,6 +47,21 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0468-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 13136
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,19 +69,12 @@
       }
     },
     {
-      "@id": "kno:KN2025-0468-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2025-0468-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-04-05"
+      "@id": "kno:KN2025-0468-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/028/0002739424"
-      }
+      "rdf:value": 84309
     },
     {
       "@id": "kno:KN2025-0468",
@@ -82,12 +90,19 @@
       }
     },
     {
-      "@id": "kno:KN2025-0468-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0468-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-04-05"
       },
-      "rdf:value": 13136
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/028/0002739424"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0468-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2025-0468-form",
@@ -104,21 +119,6 @@
         "@language": "ko",
         "@value": "윤어게인"
       }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0468-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 84309
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

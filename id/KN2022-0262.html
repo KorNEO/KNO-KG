@@ -47,37 +47,29 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0262-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-03-01"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/408/0000147451"
+      "@id": "kno:KN2022-0262-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2022-0262-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 12
     },
     {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0262-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0262-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0262-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "짜짜박박"
       }
     },
     {
@@ -102,23 +94,31 @@
       "rdf:value": 245
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
+      "@id": "kno:KN2022-0262-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0262-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0262-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "짜짜박박"
       }
     },
     {
-      "@id": "kno:KN2022-0262-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2022-0262-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2022-0262-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-03-01"
       },
-      "rdf:value": 12
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/408/0000147451"
+      }
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

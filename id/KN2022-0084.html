@@ -47,23 +47,27 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2022-0084-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0084-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0084-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "꾸자사모"
       }
     },
     {
-      "@id": "kno:KN2022-0084-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 10
-    },
-    {
-      "@id": "kno:KN2022-0084-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2022-0084-att-nn",
@@ -74,6 +78,13 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/015/0004638209"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -90,13 +101,6 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2022-0084-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -105,20 +109,16 @@
       "rdf:value": 14
     },
     {
-      "@id": "kno:KN2022-0084-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0084-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0084-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "꾸자사모"
-      }
+      "@id": "kno:KN2022-0084-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2022-0084-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 10
     }
   ]
 }
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

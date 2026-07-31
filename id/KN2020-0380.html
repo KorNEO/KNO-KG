@@ -47,10 +47,17 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0380-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%A7%88%EC%8A%A4%ED%81%AC%20%EB%B6%88%EB%9F%89%20%EC%B0%A9%EC%9A%A9"
       }
     },
     {
@@ -60,6 +67,32 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 3348
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0380-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-05-12"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/056/0010834019"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0380-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 5346
     },
     {
       "@id": "kno:KN2020-0380-form",
@@ -78,24 +111,6 @@
       }
     },
     {
-      "@id": "kno:KN2020-0380-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-05-12"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/056/0010834019"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2020-0380",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -107,21 +122,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2020-0380-sense"
       }
-    },
-    {
-      "@id": "kno:KN2020-0380-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%A7%88%EC%8A%A4%ED%81%AC%20%EB%B6%88%EB%9F%89%20%EC%B0%A9%EC%9A%A9"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0380-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 5346
     }
   ]
 }
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

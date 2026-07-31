@@ -47,24 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0209-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-09-26"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/020/0003452761"
-      }
-    },
-    {
       "@id": "kno:KN2023-0209-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -73,8 +55,31 @@
       "rdf:value": 2
     },
     {
-      "@id": "kno:KN2023-0209-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0209",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0209-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0209-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0209-sense"
+      }
     },
     {
       "@id": "kno:KN2023-0209-freq-yt",
@@ -85,11 +90,8 @@
       "rdf:value": 1
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2023-0209-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2023-0209-form",
@@ -108,16 +110,14 @@
       }
     },
     {
-      "@id": "kno:KN2023-0209",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0209-att-nn"
+      "@id": "kno:KN2023-0209-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-09-26"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0209-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0209-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/020/0003452761"
       }
     }
   ]
@@ -526,6 +526,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>

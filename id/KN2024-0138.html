@@ -47,6 +47,20 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2024-0138",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -60,11 +74,12 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2024-0138-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1829
     },
     {
       "@id": "kno:KN2024-0138-sense",
@@ -72,40 +87,6 @@
       "dcterms:isReferencedBy": {
         "@id": "https://namu.wiki/w/LH%EC%95%84%ED%8C%8C%ED%8A%B8%20%EB%8B%A8%EC%A7%80%20%EC%A7%80%ED%95%98%EC%A3%BC%EC%B0%A8%EC%9E%A5%20%EC%B2%A0%EA%B7%BC%20%EB%88%84%EB%9D%BD%20%EB%8C%80%EA%B1%B0%20%EC%A0%81%EB%B0%9C%20%EC%82%AC%EA%B1%B4"
       }
-    },
-    {
-      "@id": "kno:KN2024-0138-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-07-09"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0003292459"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0138-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 4389
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0138-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1829
     },
     {
       "@id": "kno:KN2024-0138-form",
@@ -121,6 +102,25 @@
       "ontolex:writtenRep": {
         "@language": "ko",
         "@value": "순살아파트"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0138-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 4389
+    },
+    {
+      "@id": "kno:KN2024-0138-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-07-09"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0003292459"
       }
     }
   ]
@@ -529,6 +529,7 @@
     <div class="nav-links">
       <a href="../index.html">그래프</a>
       <a href="../list.html">신어 목록</a>
+      <a href="../freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
     </div>
   </nav>
