@@ -47,6 +47,25 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0211-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2024-0211-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
       "@id": "kno:KN2024-0211-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -58,12 +77,25 @@
       }
     },
     {
-      "@id": "kno:KN2024-0211-freq-yt",
+      "@id": "kno:KN2024-0211",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0211-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0211-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0211-sense"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0211-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 0
+      "rdf:value": 10
     },
     {
       "@id": "kno:KN2024-0211-form",
@@ -86,38 +118,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0211-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2024-0211-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 10
-    },
-    {
-      "@id": "kno:KN2024-0211",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0211-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0211-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0211-sense"
       }
     }
   ]

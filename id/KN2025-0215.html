@@ -47,21 +47,53 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2025-0215-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 8
     },
     {
       "@id": "kno:KN2025-0215-sense",
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:KN2025-0215-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2025-0215-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0215-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0215-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "리트머스소비"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
     },
     {
@@ -78,22 +110,6 @@
       }
     },
     {
-      "@id": "kno:KN2025-0215-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 8
-    },
-    {
-      "@id": "kno:KN2025-0215-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
       "@id": "kno:KN2025-0215-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -102,22 +118,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/008/0005283932"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0215-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0215-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0215-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "리트머스소비"
       }
     }
   ]

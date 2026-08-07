@@ -47,8 +47,58 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0212-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 58
+    },
+    {
+      "@id": "kno:KN2023-0212-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
       "@id": "kno:KN2023-0212-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0212-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0212-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0212-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "웜셰어"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0212-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-01-27"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/052/0001842534"
+      }
     },
     {
       "@id": "kno:KN2023-0212",
@@ -68,56 +118,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0212-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0212-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-01-27"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/052/0001842534"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0212-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 58
-    },
-    {
-      "@id": "kno:KN2023-0212-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0212-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0212-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "웜셰어"
       }
     }
   ]

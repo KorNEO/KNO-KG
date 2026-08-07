@@ -47,28 +47,24 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0213-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0213-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0213-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "웨딩플레이션"
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2023-0213-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2023-0213",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0213-att-nn"
       },
-      "rdf:value": 292
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0213-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0213-sense"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -86,19 +82,6 @@
       "rdf:value": 195
     },
     {
-      "@id": "kno:KN2023-0213",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0213-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0213-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0213-sense"
-      }
-    },
-    {
       "@id": "kno:KN2023-0213-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -110,15 +93,32 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2023-0213-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0213-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 292
+    },
+    {
+      "@id": "kno:KN2023-0213-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0213-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0213-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "웨딩플레이션"
+      }
     }
   ]
 }

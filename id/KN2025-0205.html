@@ -47,18 +47,26 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0205-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
+      "@id": "kno:KN2025-0205-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0205-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0205-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "레모네이딩"
+      }
     },
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -75,26 +83,16 @@
       }
     },
     {
-      "@id": "kno:KN2025-0205-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-02-12"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/296/0000086686"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2025-0205-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0205-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     },
     {
       "@id": "kno:KN2025-0205-freq-nn",
@@ -105,19 +103,21 @@
       "rdf:value": 2
     },
     {
-      "@id": "kno:KN2025-0205-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0205-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0205-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "레모네이딩"
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0205-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-02-12"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/296/0000086686"
       }
     }
   ]

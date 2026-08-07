@@ -47,12 +47,15 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0245-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 383
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0245-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-NN",
@@ -62,10 +65,27 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2023-0245-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 18444
+    },
+    {
+      "@id": "kno:KN2023-0245-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0245-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0245-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "전세사기특별법"
       }
     },
     {
@@ -82,16 +102,12 @@
       }
     },
     {
-      "@id": "kno:KN2023-0245-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2023-0245-freq-nn",
+      "@id": "kno:KN2023-0245-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 18444
+      "rdf:value": 383
     },
     {
       "@id": "kno:KN2023-0245-att-nn",
@@ -102,22 +118,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/018/0005304156"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0245-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0245-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0245-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "전세사기특별법"
       }
     }
   ]

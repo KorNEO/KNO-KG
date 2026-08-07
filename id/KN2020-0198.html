@@ -47,6 +47,25 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0198-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2020-0198-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2020-0198",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -60,12 +79,20 @@
       }
     },
     {
-      "@id": "kno:KN2020-0198-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
+      "@id": "kno:KN2020-0198-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0198-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0198-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "실효이자비용"
+      }
     },
     {
       "@id": "kno:KN2020-0198-freq-nn",
@@ -87,37 +114,10 @@
       }
     },
     {
-      "@id": "kno:KN2020-0198-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0198-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0198-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0198-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "실효이자비용"
       }
     }
   ]

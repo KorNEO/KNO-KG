@@ -47,6 +47,28 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0177-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 8
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2025-0177-sense",
       "@type": "ontolex:LexicalSense"
     },
@@ -67,12 +89,17 @@
       }
     },
     {
-      "@id": "kno:KN2025-0177-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0177",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0177-att-nn"
       },
-      "rdf:value": 0
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0177-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0177-sense"
+      }
     },
     {
       "@id": "kno:KN2025-0177-att-nn",
@@ -86,39 +113,12 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0177-freq-nn",
+      "@id": "kno:KN2025-0177-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 8
-    },
-    {
-      "@id": "kno:KN2025-0177",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0177-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0177-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0177-sense"
-      }
+      "rdf:value": 0
     }
   ]
 }

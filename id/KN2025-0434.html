@@ -47,11 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2025-0434-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 24
     },
     {
       "@id": "kno:KN2025-0434-sense",
@@ -69,12 +77,17 @@
       }
     },
     {
-      "@id": "kno:KN2025-0434-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0434",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0434-att-nn"
       },
-      "rdf:value": 0
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0434-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0434-sense"
+      }
     },
     {
       "@id": "kno:KN2025-0434-form",
@@ -93,32 +106,19 @@
       }
     },
     {
-      "@id": "kno:KN2025-0434",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0434-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0434-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0434-sense"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0434-freq-nn",
+      "@id": "kno:KN2025-0434-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 24
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     }
   ]
 }

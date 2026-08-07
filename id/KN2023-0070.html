@@ -47,6 +47,17 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2023-0070-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2023-0070",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -58,28 +69,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2023-0070-sense"
       }
-    },
-    {
-      "@id": "kno:KN2023-0070-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-02-07"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/032/0003203554"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0070-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2023-0070-form",
@@ -98,11 +87,12 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2023-0070-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 9
     },
     {
       "@id": "kno:KN2023-0070-freq-yt",
@@ -113,12 +103,22 @@
       "rdf:value": 4
     },
     {
-      "@id": "kno:KN2023-0070-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2023-0070-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-02-07"
       },
-      "rdf:value": 9
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/032/0003203554"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     }
   ]
 }

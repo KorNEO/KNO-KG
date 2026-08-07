@@ -47,22 +47,15 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0288-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2023-0288-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2023-0288-freq-yt",
@@ -84,12 +77,20 @@
       }
     },
     {
-      "@id": "kno:KN2023-0288-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 16
+      "@id": "kno:KN2023-0288-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0288-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0288-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "컴프테크"
+      }
     },
     {
       "@id": "kno:KN2023-0288",
@@ -105,19 +106,18 @@
       }
     },
     {
-      "@id": "kno:KN2023-0288-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0288-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0288-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:KN2023-0288-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 16
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "컴프테크"
+        "@value": "신문 말뭉치"
       }
     }
   ]

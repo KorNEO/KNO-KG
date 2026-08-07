@@ -47,23 +47,15 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0300-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0300-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-17"
       },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2025-0300-sense",
-      "@type": "ontolex:LexicalSense"
+      "frac:locus": {
+        "@id": "https://m.entertain.naver.com/article/092/0002402811"
+      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -81,14 +73,16 @@
       "rdf:value": 0
     },
     {
-      "@id": "kno:KN2025-0300-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-17"
+      "@id": "kno:KN2025-0300",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0300-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://m.entertain.naver.com/article/092/0002402811"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0300-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0300-sense"
       }
     },
     {
@@ -108,17 +102,23 @@
       }
     },
     {
-      "@id": "kno:KN2025-0300",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0300-att-nn"
+      "@id": "kno:KN2025-0300-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0300-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0300-sense"
+      "rdf:value": 1
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2025-0300-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }

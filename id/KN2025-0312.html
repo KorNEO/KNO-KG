@@ -47,8 +47,47 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0312-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2025-0312-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
+    },
+    {
       "@id": "kno:KN2025-0312-sense",
       "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0312-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0312-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0312-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "사운드언어모델"
+      }
     },
     {
       "@id": "kno:KN2025-0312",
@@ -80,45 +119,6 @@
       "frac:locus": {
         "@id": "https://m.entertain.naver.com/article/030/0003284463"
       }
-    },
-    {
-      "@id": "kno:KN2025-0312-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0312-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0312-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0312-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "사운드언어모델"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0312-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
     }
   ]
 }

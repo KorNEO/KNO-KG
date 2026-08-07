@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2025-0607-sense",
       "@type": "ontolex:LexicalSense"
     },
@@ -59,6 +66,38 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/140/0000055784"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0607-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
+    },
+    {
+      "@id": "kno:KN2025-0607-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 16
+    },
+    {
+      "@id": "kno:KN2025-0607-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0607-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0607-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "테겐녀"
       }
     },
     {
@@ -79,45 +118,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0607-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 16
-    },
-    {
-      "@id": "kno:KN2025-0607-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0607-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0607-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0607-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "테겐녀"
       }
     }
   ]

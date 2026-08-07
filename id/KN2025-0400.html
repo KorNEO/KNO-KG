@@ -47,10 +47,21 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0400-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-03-31"
+      },
+      "frac:locus": {
+        "@id": "https://m.sports.naver.com/article/055/0001245054"
       }
     },
     {
@@ -70,15 +81,16 @@
       }
     },
     {
-      "@id": "kno:KN2025-0400-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-03-31"
+      "@id": "kno:KN2025-0400-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://m.sports.naver.com/article/055/0001245054"
-      }
+      "rdf:value": 700
+    },
+    {
+      "@id": "kno:KN2025-0400-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2025-0400-freq-yt",
@@ -102,23 +114,11 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2025-0400-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 700
-    },
-    {
-      "@id": "kno:KN2025-0400-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

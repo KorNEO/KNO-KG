@@ -47,6 +47,21 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0070-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,18 +69,27 @@
       }
     },
     {
-      "@id": "kno:KN2024-0070-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2024-0070-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2024-04-11"
       },
-      "rdf:value": 105
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/014/0005170245"
+      }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2024-0070",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0070-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0070-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0070-sense"
       }
     },
     {
@@ -85,36 +109,12 @@
       }
     },
     {
-      "@id": "kno:KN2024-0070",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0070-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0070-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0070-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0070-freq-yt",
+      "@id": "kno:KN2024-0070-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2024-0070-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2024-04-11"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/014/0005170245"
-      }
+      "rdf:value": 105
     },
     {
       "@id": "kno:KN2024-0070-sense",

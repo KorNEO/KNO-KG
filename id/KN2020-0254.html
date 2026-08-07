@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0254-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -58,20 +65,20 @@
       }
     },
     {
-      "@id": "kno:KN2020-0254-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0254-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0254-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "위드코로나"
-      }
+      "@id": "kno:KN2020-0254-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 9322
+    },
+    {
+      "@id": "kno:KN2020-0254-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 101173
     },
     {
       "@id": "kno:KN2020-0254-sense",
@@ -94,34 +101,27 @@
       }
     },
     {
+      "@id": "kno:KN2020-0254-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0254-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0254-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "위드코로나"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2020-0254-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 9322
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0254-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 101173
     }
   ]
 }

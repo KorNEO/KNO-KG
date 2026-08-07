@@ -47,10 +47,17 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0031-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EA%B5%AD%EB%AF%BC%20%ED%8F%89%EA%B7%A0%EC%9D%80%20%EC%88%98%EB%8A%A5%205%EB%93%B1%EA%B8%89"
       }
     },
     {
@@ -70,28 +77,6 @@
       }
     },
     {
-      "@id": "kno:KN2020-0031-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EA%B5%AD%EB%AF%BC%20%ED%8F%89%EA%B7%A0%EC%9D%80%20%EC%88%98%EB%8A%A5%205%EB%93%B1%EA%B8%89"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0031-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 15
-    },
-    {
       "@id": "kno:KN2020-0031-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -100,15 +85,12 @@
       "rdf:value": 28626
     },
     {
-      "@id": "kno:KN2020-0031-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-01-18"
+      "@id": "kno:KN2020-0031-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/008/0004342335"
-      }
+      "rdf:value": 15
     },
     {
       "@id": "kno:KN2020-0031",
@@ -121,6 +103,24 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2020-0031-sense"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0031-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-01-18"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/008/0004342335"
       }
     }
   ]

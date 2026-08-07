@@ -47,15 +47,23 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0156-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-03-30"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/028/0002491426"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2020-0156-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 4678
+    },
+    {
+      "@id": "kno:KN2020-0156-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2020-0156",
@@ -68,32 +76,6 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2020-0156-sense"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0156-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 106
-    },
-    {
-      "@id": "kno:KN2020-0156-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -113,12 +95,30 @@
       }
     },
     {
-      "@id": "kno:KN2020-0156-freq-nn",
+      "@id": "kno:KN2020-0156-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 4678
+      "rdf:value": 106
+    },
+    {
+      "@id": "kno:KN2020-0156-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-03-30"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/028/0002491426"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     }
   ]
 }

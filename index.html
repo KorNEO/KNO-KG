@@ -454,16 +454,16 @@
         <button class="facet-head">단어/구 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
         <div class="facet-list">
           <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
-          <label><input type="checkbox" value="단어" checked> 단어 <span class="fc-n">1,032</span></label>
-          <label><input type="checkbox" value="구" checked> 구 <span class="fc-n">1,442</span></label>
+          <label><input type="checkbox" value="단어" checked> 단어 <span class="fc-n">1,024</span></label>
+          <label><input type="checkbox" value="구" checked> 구 <span class="fc-n">1,450</span></label>
         </div>
       </div>
       <div class="facet" data-key="fm">
         <button class="facet-head">조어법 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
         <div class="facet-list">
           <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
-          <label><input type="checkbox" value="합성" checked> 합성 <span class="fc-n">171</span></label>
-          <label><input type="checkbox" value="파생" checked> 파생 <span class="fc-n">170</span></label>
+          <label><input type="checkbox" value="합성" checked> 합성 <span class="fc-n">172</span></label>
+          <label><input type="checkbox" value="파생" checked> 파생 <span class="fc-n">161</span></label>
           <label><input type="checkbox" value="혼성" checked> 혼성 <span class="fc-n">321</span></label>
           <label><input type="checkbox" value="축약" checked> 축약 <span class="fc-n">270</span></label>
           <label><input type="checkbox" value="차용" checked> 차용 <span class="fc-n">88</span></label>
@@ -556,7 +556,7 @@
       verb:      '#b07a3a',  // amber
     };
     var LAYER_ALPHA = {
-      element: 0.18, entity: 0.32, verb: 0.1
+      element: 0.18, entity: 0.32, verb: 0.25
     };
     // 연결 깊이별 강조 엣지 색 (좌측 연결 깊이 라디오의 점 색과 일치)
     // 연결 깊이별 엣지 색 — 파스텔 3단(코럴→세이지 틸→라벤더), 밝은 배경 위 가독 확보
@@ -699,9 +699,11 @@
           return true;
         }
         if (n.type === 'category' || n.type === 'formation') return false;
+        // entry: 감정 용언 그래프에선 공기 없는 신어 미표시 (2026-08-08 사용자 확정)
+        if (currentMode === 'verb' && !visNodeIds.has(n.id)) return false;
         // entry: 범주 필터가 있으면 해당 범주만
         if (catEntryIds) return catEntryIds.has(n.id);
-        // entry: 구성 성분 그래프에선 연결분만, 개체명·감정 용언 그래프에선 전부
+        // entry: 구성 성분 그래프에선 연결분만, 개체명 그래프에선 전부
         if (layerActive.element !== undefined) return visNodeIds.has(n.id);
         return true;
       });
@@ -905,12 +907,17 @@
       // 고립 노트
       document.getElementById('isolated-note').style.display = mode === 'morph' ? '' : 'none';
 
+      // 연결 단계: 감정 용언 탭에선 숨김·1차 고정 (깊이 확장 무의미 — 2026-08-08 사용자 확정)
+      document.getElementById('hop-control').style.display = mode === 'verb' ? 'none' : '';
+      hopRange = mode === 'verb' ? 1
+        : parseInt(document.querySelector('#hop-control input[name="hop-range"]:checked').value, 10);
+
       // 통계
       var statsEl = document.getElementById('stats-text');
       if (mode === 'morph') {
         statsEl.innerHTML = '신어 <span>2,474</span> &middot; 구성 성분 <span>3,615</span>';
       } else if (mode === 'verb') {
-        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 감정 용언 <span>645</span>';
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 감정 용언 <span>646</span>';
       } else {
         statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>2,159</span>';
       }
@@ -1309,8 +1316,9 @@
           showLabel = (nd.degree || 0) >= 2;
           priority = 200 + (nd.degree || 0);
         } else if (nd.type === 'verb') {
-          showLabel = (nd.degree || 0) >= 3;
-          priority = 150 + (nd.degree || 0);
+          var _mw = nd.label.indexOf(' ') >= 0;  // 다단어 부정 결합형 (예: 꺾이지 않다)
+          showLabel = _mw || (nd.degree || 0) >= 3;
+          priority = (_mw ? 600 : 150) + (nd.degree || 0);
         } else if (nd.type === 'element') {
           showLabel = currentMode === 'morph' ? (nd.ec || 0) >= 2 : nd.degree >= HUB_LABEL_DEGREE;
           priority = 100 + (nd.ec || nd.degree || 0);
@@ -1494,9 +1502,7 @@
           ttMeta.textContent = '개체명 (' + (CLS_KO[n.cls] || n.cls || '') + ') · 신어 ' + n.degree + '개 연결';
         } else if (n.type === 'verb') {
           var posLabel = n.pos === 'VA' ? '형용사' : '동사';
-          var polLabel = n.pol > 0 ? '긍정' : n.pol < 0 ? '부정' : '중립';
-          var negLabel = n.neg ? ' (부정형)' : '';
-          ttMeta.textContent = posLabel + ' · ' + polLabel + negLabel + ' · 신어 ' + n.degree + '개 연결';
+          ttMeta.textContent = posLabel + ' · 신어 ' + n.degree + '개 연결';
         } else {
           var meta = '';
           if (n.year) meta += n.year + '년';
@@ -1543,8 +1549,6 @@
       draw();
     });
 
-    // 강조 대상 집합: 1홉 + 2홉 (이분 그래프 연결 사슬이 끊기지 않게)
-    // 신어 → 성분/개체명/용언 → 그것을 공유하는 다른 신어까지
     // BFS: 노드 ID → 연결 깊이 (0=선택 노드, 1=직접, 2·3=간접)
     function computeHighlightSet(target) {
       var depth = new Map();
@@ -1725,11 +1729,7 @@
           }
           else if (c.type === 'verb') {
             var posL = c.pos === 'VA' ? '형용사' : '동사';
-            var polS = c.pol > 0 ? '긍정' : c.pol < 0 ? '부정' : '중립';
-            var polC = c.pol > 0 ? '#2563eb' : c.pol < 0 ? '#dc2626' : '#6b7280';
-            extra = '<span class="ip-item-sub"> · ' + posL + ' <span style="color:' + polC + ';">' + polS + '</span>';
-            if (c.neg) extra += ' <span style="color:#9333ea;font-size:0.65rem;">(부정형←' + (c.base || '') + ')</span>';
-            extra += '</span>';
+            extra = '<span class="ip-item-sub"> · ' + posL + '</span>';
             var vli = verbLinkInfo[c.id];
             if (vli) {
               var parts = [];

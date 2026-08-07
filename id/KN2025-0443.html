@@ -47,19 +47,42 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0443-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0443-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0443-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "우동플레이션"
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0443-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2025-0443",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0443-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0443-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0443-sense"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0443-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-01-27"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/050/0000085727"
       }
     },
     {
@@ -82,43 +105,20 @@
       }
     },
     {
-      "@id": "kno:KN2025-0443-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-01-27"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/050/0000085727"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2025-0443-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0443-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0443-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "우동플레이션"
       }
-    },
-    {
-      "@id": "kno:KN2025-0443",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0443-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0443-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0443-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0443-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     }
   ]
 }

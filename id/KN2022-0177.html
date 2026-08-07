@@ -47,6 +47,17 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0177-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2022-0177",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -60,11 +71,31 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "@id": "kno:KN2022-0177-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 13
+    },
+    {
+      "@id": "kno:KN2022-0177-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-10-25"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0003145337"
       }
+    },
+    {
+      "@id": "kno:KN2022-0177-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 531
     },
     {
       "@id": "kno:KN2022-0177-form",
@@ -83,42 +114,11 @@
       }
     },
     {
-      "@id": "kno:KN2022-0177-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 531
-    },
-    {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2022-0177-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-10-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0003145337"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0177-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 13
-    },
-    {
-      "@id": "kno:KN2022-0177-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

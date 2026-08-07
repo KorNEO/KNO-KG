@@ -47,14 +47,16 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0101-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "@id": "kno:KN2021-0101",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0101-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0101-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0101-sense"
       }
     },
     {
@@ -62,6 +64,13 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
     },
     {
@@ -74,6 +83,22 @@
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/366/0000602511"
       }
+    },
+    {
+      "@id": "kno:KN2021-0101-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2
+    },
+    {
+      "@id": "kno:KN2021-0101-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 51
     },
     {
       "@id": "kno:KN2021-0101-form",
@@ -92,33 +117,8 @@
       }
     },
     {
-      "@id": "kno:KN2021-0101-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 51
-    },
-    {
-      "@id": "kno:KN2021-0101-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 2
-    },
-    {
-      "@id": "kno:KN2021-0101",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0101-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0101-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0101-sense"
-      }
+      "@id": "kno:KN2021-0101-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }

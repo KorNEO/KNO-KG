@@ -47,22 +47,14 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0308-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 11
+      "@id": "kno:KN2022-0308-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2022-0308-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-06-30"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0003206256"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -74,10 +66,19 @@
       "rdf:value": 11
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
+      "@id": "kno:KN2022-0308-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0308-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0308-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "혼놀로그"
       }
     },
     {
@@ -94,30 +95,29 @@
       }
     },
     {
-      "@id": "kno:KN2022-0308-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2022-0308-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 11
     },
     {
-      "@id": "kno:corpus-YT",
+      "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "신문 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2022-0308-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0308-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0308-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "혼놀로그"
+      "@id": "kno:KN2022-0308-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-06-30"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0003206256"
       }
     }
   ]

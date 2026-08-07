@@ -47,12 +47,46 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0235-freq-nn",
+      "@id": "kno:KN2024-0235-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0235-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0235-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "이머니토큰"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0235-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 78
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2024-0235-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-07-12"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/030/0003116685"
+      }
     },
     {
       "@id": "kno:KN2024-0235-sense",
@@ -79,46 +113,12 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0235-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0235-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0235-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "이머니토큰"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0235-freq-yt",
+      "@id": "kno:KN2024-0235-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2024-0235-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-07-12"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/030/0003116685"
-      }
+      "rdf:value": 78
     }
   ]
 }

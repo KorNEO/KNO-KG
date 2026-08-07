@@ -47,18 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0102-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%84%B0%EB%A0%9B(%EC%9D%B8%ED%84%B0%EB%84%B7%20%EC%9A%A9%EC%96%B4)"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2025-0102-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 423
     },
     {
       "@id": "kno:KN2025-0102-form",
@@ -77,27 +78,30 @@
       }
     },
     {
-      "@id": "kno:KN2025-0102-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 423
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2025-0102-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 2
+    },
+    {
+      "@id": "kno:KN2025-0102-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%84%B0%EB%A0%9B(%EC%9D%B8%ED%84%B0%EB%84%B7%20%EC%9A%A9%EC%96%B4)"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0102-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-05"
+      },
+      "frac:locus": {
+        "@id": "https://m.sports.naver.com/article/442/0000188027"
+      }
     },
     {
       "@id": "kno:KN2025-0102",
@@ -113,14 +117,10 @@
       }
     },
     {
-      "@id": "kno:KN2025-0102-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-05"
-      },
-      "frac:locus": {
-        "@id": "https://m.sports.naver.com/article/442/0000188027"
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
     }
   ]

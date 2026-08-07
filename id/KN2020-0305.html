@@ -47,10 +47,39 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0305-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EA%B0%90%EC%97%BC%EC%A6%9D"
+      "@id": "kno:KN2020-0305-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0305-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0305-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "정보감염증"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0305",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0305-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0305-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0305-sense"
       }
     },
     {
@@ -72,17 +101,12 @@
       }
     },
     {
-      "@id": "kno:KN2020-0305",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0305-att-nn"
+      "@id": "kno:KN2020-0305-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0305-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0305-sense"
-      }
+      "rdf:value": 0
     },
     {
       "@id": "kno:KN2020-0305-freq-nn",
@@ -93,34 +117,10 @@
       "rdf:value": 214
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0305-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2020-0305-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0305-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0305-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "정보감염증"
+      "@id": "kno:KN2020-0305-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EA%B0%90%EC%97%BC%EC%A6%9D"
       }
     }
   ]

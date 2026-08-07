@@ -47,15 +47,26 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0219-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-12-16"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/438/0000031902"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0219-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 11
     },
     {
       "@id": "kno:KN2025-0219-sense",
@@ -68,26 +79,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 17
-    },
-    {
-      "@id": "kno:KN2025-0219",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0219-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0219-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0219-sense"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
     },
     {
       "@id": "kno:KN2025-0219-form",
@@ -106,18 +97,27 @@
       }
     },
     {
-      "@id": "kno:KN2025-0219-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0219",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0219-att-nn"
       },
-      "rdf:value": 11
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0219-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0219-sense"
+      }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2025-0219-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-12-16"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/438/0000031902"
       }
     }
   ]

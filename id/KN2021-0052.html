@@ -47,28 +47,14 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2021-0052-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0052-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-10-26"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/014/0004517441"
       }
     },
     {
@@ -88,8 +74,31 @@
       }
     },
     {
-      "@id": "kno:KN2021-0052-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2021-0052-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 71
+    },
+    {
+      "@id": "kno:KN2021-0052-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2021-0052-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-10-26"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/014/0004517441"
+      }
     },
     {
       "@id": "kno:KN2021-0052",
@@ -105,20 +114,11 @@
       }
     },
     {
-      "@id": "kno:KN2021-0052-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2021-0052-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 71
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     }
   ]
 }

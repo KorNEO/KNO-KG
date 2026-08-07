@@ -47,30 +47,27 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0156-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2024-06-16"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/008/0005051112"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
+      "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
-        "@value": "신문 말뭉치"
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2024-0156-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 20
+      "@id": "kno:KN2024-0156-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0156-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0156-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "시간가중평균환율"
+      }
     },
     {
       "@id": "kno:KN2024-0156-freq-yt",
@@ -79,13 +76,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 0
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
     },
     {
       "@id": "kno:KN2024-0156-sense",
@@ -105,19 +95,29 @@
       }
     },
     {
-      "@id": "kno:KN2024-0156-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0156-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0156-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:KN2024-0156-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2024-06-16"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/008/0005051112"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0156-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 20
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "시간가중평균환율"
+        "@value": "신문 말뭉치"
       }
     }
   ]

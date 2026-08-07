@@ -47,6 +47,36 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0199-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 161
+    },
+    {
+      "@id": "kno:KN2021-0199-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2021-0199-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-07-10"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/032/0003019901"
+      }
+    },
+    {
       "@id": "kno:KN2021-0199-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,12 +93,17 @@
       }
     },
     {
-      "@id": "kno:KN2021-0199-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2021-0199",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0199-att-nn"
       },
-      "rdf:value": 161
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0199-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0199-sense"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -84,41 +119,6 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 648
-    },
-    {
-      "@id": "kno:KN2021-0199-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0199",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0199-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0199-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0199-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0199-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-07-10"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/032/0003019901"
-      }
     }
   ]
 }
