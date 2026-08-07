@@ -47,20 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2025-0547-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -80,19 +66,25 @@
       }
     },
     {
-      "@id": "kno:KN2025-0547-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0547-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0547-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "짱북송"
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0547-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 3
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -109,19 +101,27 @@
       }
     },
     {
+      "@id": "kno:KN2025-0547-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0547-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0547-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "짱북송"
+      }
+    },
+    {
       "@id": "kno:KN2025-0547-sense",
       "@type": "ontolex:LexicalSense",
       "dcterms:isReferencedBy": {
         "@id": "https://namu.wiki/w/%ED%8C%A8%EB%A5%9C%EC%86%A1"
       }
-    },
-    {
-      "@id": "kno:KN2025-0547-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 3
     }
   ]
 }

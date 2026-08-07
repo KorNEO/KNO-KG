@@ -47,18 +47,16 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2023-0036-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2023-0036-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 10
     },
     {
       "@id": "kno:KN2023-0036-att-nn",
@@ -72,16 +70,18 @@
       }
     },
     {
-      "@id": "kno:KN2023-0036",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0036-att-nn"
+      "@id": "kno:KN2023-0036-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0036-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0036-sense"
+      "rdf:value": 307
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
     },
     {
@@ -101,24 +101,24 @@
       }
     },
     {
-      "@id": "kno:KN2023-0036-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 307
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
-      "@id": "kno:KN2023-0036-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2023-0036-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2023-0036",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0036-att-nn"
       },
-      "rdf:value": 10
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0036-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0036-sense"
+      }
     }
   ]
 }

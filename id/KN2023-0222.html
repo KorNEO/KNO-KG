@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2023-0222-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,11 +58,12 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2023-0222-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 318
     },
     {
       "@id": "kno:KN2023-0222-form",
@@ -77,24 +82,11 @@
       }
     },
     {
-      "@id": "kno:KN2023-0222-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2023-0222-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 16451
-    },
-    {
-      "@id": "kno:KN2023-0222-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 318
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2023-0222-att-nn",
@@ -119,6 +111,14 @@
       "ontolex:sense": {
         "@id": "kno:KN2023-0222-sense"
       }
+    },
+    {
+      "@id": "kno:KN2023-0222-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 16451
     }
   ]
 }

@@ -47,12 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0213-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2025-0213-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0213-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-09-15"
       },
-      "rdf:value": 40
+      "frac:locus": {
+        "@id": "https://m.sports.naver.com/article/117/0003771003"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -62,15 +69,35 @@
       }
     },
     {
+      "@id": "kno:KN2025-0213-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0213-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0213-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "리버스내추럴사이클"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0213-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 40
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2025-0213-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2025-0213-freq-yt",
@@ -91,33 +118,6 @@
       },
       "ontolex:sense": {
         "@id": "kno:KN2025-0213-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0213-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0213-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0213-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "리버스내추럴사이클"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0213-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-09-15"
-      },
-      "frac:locus": {
-        "@id": "https://m.sports.naver.com/article/117/0003771003"
       }
     }
   ]

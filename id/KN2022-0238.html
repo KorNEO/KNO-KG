@@ -47,12 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0238-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 51
+      "@id": "kno:KN2022-0238-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0238-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0238-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "자금이동추적시스템"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -60,6 +68,29 @@
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2022-0238-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-11-30"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/031/0000639561"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0238-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2022-0238-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-YT",
@@ -82,43 +113,12 @@
       }
     },
     {
-      "@id": "kno:KN2022-0238-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2022-0238-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-11-30"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/031/0000639561"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0238-freq-yt",
+      "@id": "kno:KN2022-0238-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2022-0238-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0238-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0238-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "자금이동추적시스템"
-      }
+      "rdf:value": 51
     }
   ]
 }

@@ -47,16 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0309",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2022-0309-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2022-0309-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2022-0309-sense"
+      "@id": "kno:KN2022-0309-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0309-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0309-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "홀리몰리과카몰리"
       }
     },
     {
@@ -75,6 +78,10 @@
       }
     },
     {
+      "@id": "kno:KN2022-0309-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
@@ -82,24 +89,25 @@
       }
     },
     {
-      "@id": "kno:KN2022-0309-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2022-0309",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2022-0309-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2022-0309-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2022-0309-sense"
+      }
     },
     {
-      "@id": "kno:KN2022-0309-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0309-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0309-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "홀리몰리과카몰리"
-      }
+      "@id": "kno:KN2022-0309-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1228
     },
     {
       "@id": "kno:KN2022-0309-att-nn",
@@ -111,14 +119,6 @@
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/140/0000046452"
       }
-    },
-    {
-      "@id": "kno:KN2022-0309-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 1228
     }
   ]
 }

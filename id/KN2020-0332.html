@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0332-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,17 +70,36 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0332-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 266
+    },
+    {
+      "@id": "kno:KN2020-0332-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-02-03"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0002972378"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0332-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%9D%B4%EC%BC%80%EB%85%B8%20%EC%A3%A0%EC%9A%B0%ED%83%80"
       }
     },
     {
@@ -96,32 +122,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2020-0332-sense"
       }
-    },
-    {
-      "@id": "kno:KN2020-0332-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%9D%B4%EC%BC%80%EB%85%B8%20%EC%A3%A0%EC%9A%B0%ED%83%80"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0332-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-02-03"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0002972378"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0332-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 266
     }
   ]
 }

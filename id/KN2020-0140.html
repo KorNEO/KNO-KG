@@ -47,12 +47,23 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0140-freq-nn",
+      "@id": "kno:KN2020-0140-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 875
+      "rdf:value": 288
+    },
+    {
+      "@id": "kno:KN2020-0140-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-05-31"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/015/0004350865"
+      }
     },
     {
       "@id": "kno:KN2020-0140-sense",
@@ -73,23 +84,25 @@
       }
     },
     {
-      "@id": "kno:KN2020-0140-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2020-0140",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0140-att-nn"
       },
-      "rdf:value": 288
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0140-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0140-sense"
+      }
     },
     {
-      "@id": "kno:KN2020-0140-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-05-31"
+      "@id": "kno:KN2020-0140-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/015/0004350865"
-      }
+      "rdf:value": 875
     },
     {
       "@id": "kno:KN2020-0140-form",
@@ -105,19 +118,6 @@
       "ontolex:writtenRep": {
         "@language": "ko",
         "@value": "비말마스크"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0140",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0140-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0140-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0140-sense"
       }
     }
   ]

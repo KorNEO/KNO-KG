@@ -47,6 +47,14 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2024-0089-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 415
+    },
+    {
       "@id": "kno:KN2024-0089-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,14 +71,16 @@
       }
     },
     {
-      "@id": "kno:KN2024-0089-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-10-05"
+      "@id": "kno:KN2024-0089",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0089-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/016/0002206295"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0089-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0089-sense"
       }
     },
     {
@@ -78,13 +88,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -96,28 +99,25 @@
       "rdf:value": 242
     },
     {
-      "@id": "kno:KN2024-0089-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 415
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2024-0089-sense",
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2024-0089",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0089-att-nn"
+      "@id": "kno:KN2024-0089-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-10-05"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0089-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0089-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/016/0002206295"
       }
     }
   ]

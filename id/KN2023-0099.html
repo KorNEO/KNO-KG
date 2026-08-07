@@ -47,8 +47,28 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0099-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2023-0099-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2023-0099-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0099-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0099-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "무진동항온항습차"
+      }
     },
     {
       "@id": "kno:KN2023-0099-att-nn",
@@ -76,6 +96,14 @@
       }
     },
     {
+      "@id": "kno:KN2023-0099-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 65
+    },
+    {
       "@id": "kno:KN2023-0099",
       "@type": "ontolex:MultiwordExpression",
       "frac:attestation": {
@@ -89,36 +117,8 @@
       }
     },
     {
-      "@id": "kno:KN2023-0099-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0099-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0099-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "무진동항온항습차"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0099-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 65
-    },
-    {
-      "@id": "kno:KN2023-0099-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
+      "@id": "kno:KN2023-0099-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }

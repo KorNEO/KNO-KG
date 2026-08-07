@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0273-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%9D%BC%ED%83%88%EA%B3%84"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -58,13 +65,6 @@
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0273-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%9D%BC%ED%83%88%EA%B3%84"
       }
     },
     {
@@ -92,14 +92,16 @@
       "rdf:value": 550
     },
     {
-      "@id": "kno:KN2020-0273-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-01-19"
+      "@id": "kno:KN2020-0273",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0273-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/032/0002987029"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0273-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0273-sense"
       }
     },
     {
@@ -111,16 +113,14 @@
       "rdf:value": 2569
     },
     {
-      "@id": "kno:KN2020-0273",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0273-att-nn"
+      "@id": "kno:KN2020-0273-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-01-19"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0273-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0273-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/032/0002987029"
       }
     }
   ]

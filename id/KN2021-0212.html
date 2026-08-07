@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2021-0212-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2021-0212-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -65,13 +69,6 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2021-0212-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -80,12 +77,24 @@
       "rdf:value": 0
     },
     {
-      "@id": "kno:KN2021-0212-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0212",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0212-att-nn"
       },
-      "rdf:value": 351
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0212-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0212-sense"
+      }
     },
     {
       "@id": "kno:KN2021-0212-form",
@@ -104,21 +113,12 @@
       }
     },
     {
-      "@id": "kno:KN2021-0212-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2021-0212",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0212-att-nn"
+      "@id": "kno:KN2021-0212-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0212-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0212-sense"
-      }
+      "rdf:value": 351
     }
   ]
 }

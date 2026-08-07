@@ -47,14 +47,23 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2024-0013-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2023-07-25"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/016/0002174281"
+      "@id": "kno:KN2024-0013-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2024-0013-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0013-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0013-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "교권보험"
       }
     },
     {
@@ -63,21 +72,6 @@
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0013-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
     },
     {
       "@id": "kno:KN2024-0013-freq-nn",
@@ -101,24 +95,30 @@
       }
     },
     {
-      "@id": "kno:KN2024-0013-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0013-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0013-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "교권보험"
+        "@value": "댓글 말뭉치"
       }
     },
     {
-      "@id": "kno:KN2024-0013-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2024-0013-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2024-0013-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2023-07-25"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/016/0002174281"
+      }
     }
   ]
 }

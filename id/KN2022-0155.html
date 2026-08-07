@@ -47,25 +47,23 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2022-0155-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2022-0155-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 170
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2022-0155-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0155-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0155-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "백신패스제"
       }
     },
     {
@@ -82,19 +80,11 @@
       }
     },
     {
-      "@id": "kno:KN2022-0155-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-09-30"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/422/0000506911"
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2022-0155-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2022-0155-freq-yt",
@@ -105,19 +95,29 @@
       "rdf:value": 80
     },
     {
-      "@id": "kno:KN2022-0155-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0155-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0155-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "백신패스제"
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0155-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 170
+    },
+    {
+      "@id": "kno:KN2022-0155-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-09-30"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/422/0000506911"
       }
     }
   ]

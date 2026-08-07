@@ -47,16 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0073-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 64
-    },
-    {
-      "@id": "kno:KN2022-0073-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2022-0073-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0073-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0073-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "궁케팅"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -66,11 +70,34 @@
       }
     },
     {
+      "@id": "kno:KN2022-0073-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-06-18"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/023/0003698231"
+      }
+    },
+    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2022-0073-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2022-0073-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 64
     },
     {
       "@id": "kno:KN2022-0073",
@@ -92,33 +119,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2022-0073-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-06-18"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/023/0003698231"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0073-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0073-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0073-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "궁케팅"
-      }
     }
   ]
 }

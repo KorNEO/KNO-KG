@@ -47,6 +47,37 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0215-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0215",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0215-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0215-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0215-sense"
+      }
+    },
+    {
       "@id": "kno:KN2025-0215-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -55,17 +86,22 @@
       "rdf:value": 8
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2025-0215-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2025-0215-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-11-27"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/008/0005283932"
       }
     },
     {
@@ -82,42 +118,6 @@
       "ontolex:writtenRep": {
         "@language": "ko",
         "@value": "리트머스소비"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0215-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2025-0215-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2025-0215",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0215-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0215-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0215-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0215-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-11-27"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/008/0005283932"
       }
     }
   ]

@@ -47,10 +47,58 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2025-0667-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 1
+    },
+    {
+      "@id": "kno:KN2025-0667-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-02-10"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/469/0000848249"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0667-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0667-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0667-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "핢핣"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0667",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0667-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0667-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0667-sense"
       }
     },
     {
@@ -71,54 +119,6 @@
     {
       "@id": "kno:KN2025-0667-sense",
       "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2025-0667-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2025-0667",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0667-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0667-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0667-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0667-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-02-10"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/469/0000848249"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0667-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0667-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0667-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "핢핣"
-      }
     }
   ]
 }

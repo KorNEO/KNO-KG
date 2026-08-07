@@ -47,34 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2020-0249-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0249-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0249-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "워킹스루진료소"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2020-0249-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2
     },
     {
       "@id": "kno:KN2020-0249",
@@ -90,6 +68,17 @@
       }
     },
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0249-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2020-0249-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -101,16 +90,11 @@
       }
     },
     {
-      "@id": "kno:KN2020-0249-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2020-0249-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 2
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2020-0249-freq-nn",
@@ -119,6 +103,22 @@
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 196
+    },
+    {
+      "@id": "kno:KN2020-0249-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0249-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0249-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "워킹스루진료소"
+      }
     }
   ]
 }

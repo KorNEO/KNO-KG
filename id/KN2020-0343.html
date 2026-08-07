@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0343-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2020-0343-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -55,14 +59,16 @@
       "rdf:value": 14
     },
     {
-      "@id": "kno:KN2020-0343-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-04-25"
+      "@id": "kno:KN2020-0343",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0343-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/079/0003353502"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0343-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0343-sense"
       }
     },
     {
@@ -104,21 +110,15 @@
       }
     },
     {
-      "@id": "kno:KN2020-0343",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0343-att-nn"
+      "@id": "kno:KN2020-0343-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-04-25"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0343-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0343-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/079/0003353502"
       }
-    },
-    {
-      "@id": "kno:KN2020-0343-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

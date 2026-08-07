@@ -47,6 +47,22 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2024-0119-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2024-0119-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 186
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -61,12 +77,24 @@
       }
     },
     {
-      "@id": "kno:KN2024-0119-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 186
+      "@id": "kno:KN2024-0119-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2024-0119-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2024-0119-freq-nn"
+        },
+        {
+          "@id": "kno:KN2024-0119-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "상업지역총량제"
+      }
     },
     {
       "@id": "kno:KN2024-0119-att-nn",
@@ -91,34 +119,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2024-0119-sense"
       }
-    },
-    {
-      "@id": "kno:KN2024-0119-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2024-0119-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2024-0119-freq-nn"
-        },
-        {
-          "@id": "kno:KN2024-0119-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "상업지역총량제"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0119-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

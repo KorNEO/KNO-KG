@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2023-0051-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -58,18 +65,16 @@
       }
     },
     {
-      "@id": "kno:KN2023-0051-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2023-0051",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0051-att-nn"
       },
-      "rdf:value": 11
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0051-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0051-sense"
       }
     },
     {
@@ -78,18 +83,6 @@
         "@language": "ko",
         "@value": "댓글 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2023-0051-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2023-0051-sense",
-      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2023-0051-form",
@@ -108,17 +101,24 @@
       }
     },
     {
-      "@id": "kno:KN2023-0051",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0051-att-nn"
+      "@id": "kno:KN2023-0051-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0051-form"
+      "rdf:value": 1
+    },
+    {
+      "@id": "kno:KN2023-0051-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0051-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0051-sense"
-      }
+      "rdf:value": 11
     }
   ]
 }

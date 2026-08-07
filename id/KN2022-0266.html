@@ -47,20 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2022-0266-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -72,12 +58,25 @@
       }
     },
     {
-      "@id": "kno:KN2022-0266-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 3608
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0266-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%B2%AD%EB%85%84%EB%82%B4%EC%9D%BC%EC%A0%80%EC%B6%95%EA%B3%84%EC%A2%8C"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2022-0266-freq-yt",
@@ -117,11 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2022-0266-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%B2%AD%EB%85%84%EB%82%B4%EC%9D%BC%EC%A0%80%EC%B6%95%EA%B3%84%EC%A2%8C"
-      }
+      "@id": "kno:KN2022-0266-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 3608
     }
   ]
 }

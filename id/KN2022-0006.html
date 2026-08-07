@@ -47,12 +47,19 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0006-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2022-0006-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-10-28"
       },
-      "rdf:value": 123
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/055/0000930034"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0006-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-NN",
@@ -69,28 +76,20 @@
       }
     },
     {
+      "@id": "kno:KN2022-0006-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 123
+    },
+    {
       "@id": "kno:KN2022-0006-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 1980
-    },
-    {
-      "@id": "kno:KN2022-0006-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0006-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0006-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "가족돌봄청소년"
-      }
     },
     {
       "@id": "kno:KN2022-0006",
@@ -106,18 +105,19 @@
       }
     },
     {
-      "@id": "kno:KN2022-0006-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2022-0006-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-10-28"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/055/0000930034"
+      "@id": "kno:KN2022-0006-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0006-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0006-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "가족돌봄청소년"
       }
     }
   ]

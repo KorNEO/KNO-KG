@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>지식그래프 — 한국어 신어 관측 시스템</title>
+  <title>한국어 신어 지식그래프</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
@@ -43,6 +43,13 @@
     }
     .graph-tab:hover { color: #1e3a8a; border-color: #93c5fd; }
     .graph-tab.is-active { background: #1e3a8a; color: #fff; border-color: #1e3a8a; }
+    .beta-badge {
+      display: inline-block; margin-left: 6px; padding: 1px 5px;
+      font-size: 0.58rem; font-weight: 700; letter-spacing: 0.04em;
+      border-radius: 3px; background: #fef3c7; color: #92400e;
+      vertical-align: 1px;
+    }
+    .graph-tab.is-active .beta-badge { background: rgba(255,255,255,0.2); color: #fde68a; }
     #header .stats {
       font-size: 0.75rem;
       color: #64748b;
@@ -70,7 +77,7 @@
     }
     #graphSearch:focus { border-color: #1e3a8a; background: #fff; }
     #graphSearch::placeholder { color: #94a3b8; }
-    .header-links { display: flex; gap: 0.7rem; flex-shrink: 0; }
+    .header-links { display: flex; gap: 0.7rem; flex-shrink: 0; margin-left: auto; }
     .header-links a {
       font-size: 0.78rem;
       color: #475569;
@@ -145,6 +152,22 @@
     #layer-toggles .lt-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
     #layer-toggles .lt-fixed { opacity: 0.7; cursor: default; background: #f1f5f9; border-radius: 3px; padding: 0 0.3rem; }
     #layer-toggles .lt-hint { font-size: 0.67rem; color: #94a3b8; margin-top: 0.2rem; }
+    #hop-control {
+      background: rgba(255,255,255,0.95);
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 0.55rem 0.8rem;
+      font-size: 0.75rem;
+      color: #475569;
+      line-height: 1.7;
+    }
+    #hop-control .lt-title { font-weight: 700; color: #334155; margin-bottom: 0.2rem; font-size: 0.72rem; }
+    #hop-control .lt-row {
+      display: flex; align-items: center; gap: 0.4rem;
+      cursor: pointer; user-select: none;
+    }
+    #hop-control .lt-row input { margin: 0; accent-color: #475569; }
+    #hop-control .lt-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
     /* ── 왼쪽 상단 컨트롤 래퍼 ── */
     #graph-controls-left {
       position: absolute;
@@ -156,65 +179,67 @@
       gap: 0.4rem;
     }
 
-    /* ── 의미 범주·조어법 필터 ── */
-    #cat-filter, #fm-filter {
+    /* ── 필터 (엑셀식 체크리스트) ── */
+    .facet {
+      position: relative;
       background: rgba(255,255,255,0.95);
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      padding: 0.45rem 0.7rem;
       font-size: 0.75rem;
       color: #475569;
+      width: 172px;
     }
-    #cat-filter .cf-title, #fm-filter .cf-title { font-weight: 700; color: #334155; margin-bottom: 0.25rem; font-size: 0.72rem; }
-    #cat-filter select, #fm-filter select {
-      width: 100%;
-      font-size: 0.75rem;
+    .facet-head {
+      display: flex; align-items: center; gap: 0.35rem;
+      width: 100%; padding: 0.4rem 0.7rem;
+      background: transparent; border: none; cursor: pointer;
       font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-      padding: 0.2rem 0.3rem;
-      border: 1px solid #cbd5e1;
-      border-radius: 4px;
-      color: #334155;
-      background: #fff;
-      cursor: pointer;
+      font-size: 0.72rem; font-weight: 700; color: #334155;
     }
+    .facet-head .facet-sum {
+      margin-left: auto; font-weight: 500; color: #64748b;
+      max-width: 70px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+    }
+    .facet-head .facet-sum.filtered { color: #1e3a8a; font-weight: 700; }
+    .facet-head .facet-arrow { font-size: 0.6rem; color: #94a3b8; }
+    .facet-list {
+      display: none;
+      position: absolute; top: 100%; left: 0; margin-top: 2px;
+      min-width: 100%; z-index: 30;
+      background: #fff; border: 1px solid #cbd5e1; border-radius: 6px;
+      box-shadow: 0 4px 12px rgba(15,23,42,0.12);
+      padding: 0.3rem 0.2rem;
+      max-height: 260px; overflow-y: auto;
+    }
+    .facet.open .facet-list { display: block; }
+    .facet-list label {
+      display: flex; align-items: center; gap: 0.4rem;
+      padding: 0.12rem 0.5rem; cursor: pointer; user-select: none;
+      white-space: nowrap; color: #334155;
+    }
+    .facet-list label:hover { background: #f1f5f9; }
+    .facet-list input { margin: 0; accent-color: #1e3a8a; }
+    .facet-list .facet-all { border-bottom: 1px solid #e2e8f0; margin-bottom: 0.2rem; padding-bottom: 0.25rem; font-weight: 700; }
+    .facet-list .fc-n { color: #94a3b8; font-size: 0.68rem; margin-left: auto; padding-left: 0.5rem; }
 
     /* ── 범례 ── */
     #legend {
       position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      background: rgba(255,255,255,0.95);
-      border: 1px solid #e2e8f0;
-      border-radius: 8px;
-      padding: 0.7rem 0.9rem;
-      font-size: 0.75rem;
-      color: #475569;
-      z-index: 10;
-      line-height: 1.8;
-    }
-    #legend .leg-row { display: flex; align-items: center; gap: 0.5rem; }
-    #legend .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
-
-    /* ── 연도 범례 ── */
-    #year-legend {
-      position: absolute;
-      bottom: 1rem;
+      bottom: 2.8rem;
       left: 1rem;
       background: rgba(255,255,255,0.95);
       border: 1px solid #e2e8f0;
       border-radius: 8px;
-      padding: 0.6rem 0.9rem;
+      padding: 0.55rem 0.8rem;
       font-size: 0.75rem;
       color: #475569;
       z-index: 10;
+      line-height: 1.7;
+      width: 172px;
+      box-sizing: border-box;
     }
-    #year-legend .yl-title { font-weight: 700; color: #475569; margin-bottom: 0.3rem; font-size: 0.72rem; }
-    #year-legend .yl-gradient {
-      width: 120px; height: 8px; border-radius: 4px;
-      background: linear-gradient(to right, #cbd5e1, #1e3a8a);
-      margin: 0.2rem 0;
-    }
-    #year-legend .yl-labels { display: flex; justify-content: space-between; font-size: 0.68rem; color: #94a3b8; }
+    #legend .leg-row { display: flex; align-items: center; gap: 0.5rem; }
+    #legend .leg-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
 
     /* ── 격리 안내 ── */
     #isolated-note {
@@ -260,7 +285,7 @@
       position: absolute;
       top: 0;
       right: 0;
-      width: 380px;
+      width: 470px;
       height: 100%;
       background: #ffffff;
       border-left: 1px solid #e2e8f0;
@@ -334,6 +359,7 @@
       margin-left: auto;
       white-space: nowrap;
     }
+    #info-panel .ip-via { font-size: 0.62rem; }
 
     /* ── KB 버튼 ── */
     .kb-btns { display: flex; gap: 3px; margin-top: 3px; flex-wrap: wrap; width: 100%; }
@@ -383,17 +409,15 @@
   <div id="header">
     <a class="logo" href="index.html">한국어 신어 지식 그래프</a>
     <div class="graph-tabs">
-      <button class="graph-tab" id="tab-morph">구성 성분 그래프</button>
-      <button class="graph-tab" id="tab-verb">감정 용언 공기 그래프</button>
       <button class="graph-tab is-active" id="tab-main">개체명 공동 출현 그래프</button>
+      <button class="graph-tab" id="tab-morph">구성 성분 그래프<span class="beta-badge">BETA</span></button>
+      <button class="graph-tab" id="tab-verb">감정 용언 공기 그래프<span class="beta-badge">BETA</span></button>
     </div>
     <div class="stats" id="stats-text">신어 <span>2,474</span></div>
     <div id="searchWrap">
       <input type="text" id="graphSearch" placeholder="신어·개체명 검색…" autocomplete="off">
     </div>
     <div class="header-links">
-      <a href="list.html">신어 목록</a>
-      <a href="freq.html">빈도 비교</a>
       <a href="https://korneo.github.io/KNO/" target="_blank" rel="noopener">한국어 신어 관측 시스템</a>
     </div>
   </div>
@@ -413,59 +437,77 @@
       <a href="list.html?filter=고립">목록에서 보기</a>
     </div>
 
-    <div id="year-legend">
-      <div class="yl-title">신어 수집 연도</div>
-      <div class="yl-gradient"></div>
-      <div class="yl-labels"><span>2020</span><span>2025</span></div>
-    </div>
-
     <div id="graph-controls-left">
-      <div id="cat-filter">
-        <div class="cf-title">의미 범주</div>
-        <select id="cat-select">
-          <option value="">전체</option>
-          <option value="정치와 행정">정치와 행정 (620)</option>
-          <option value="경제생활">경제생활 (428)</option>
-          <option value="사회생활">사회생활 (324)</option>
-          <option value="인간">인간 (295)</option>
-          <option value="삶">삶 (183)</option>
-          <option value="보건·의학">보건·의학 (153)</option>
-          <option value="식생활">식생활 (92)</option>
-          <option value="문화">문화 (87)</option>
-          <option value="의생활">의생활 (72)</option>
-          <option value="교육">교육 (57)</option>
-          <option value="정보·기술">정보·기술 (54)</option>
-          <option value="주생활">주생활 (48)</option>
-          <option value="동식물">동식물 (28)</option>
-          <option value="개념">개념 (18)</option>
-          <option value="자연">자연 (13)</option>
-          <option value="종교">종교 (2)</option>
-        </select>
+      <div class="facet" data-key="year">
+        <button class="facet-head">수집 연도 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
+        <div class="facet-list">
+          <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
+          <label><input type="checkbox" value="2020" checked> 2020 <span class="fc-n">404</span></label>
+          <label><input type="checkbox" value="2021" checked> 2021 <span class="fc-n">296</span></label>
+          <label><input type="checkbox" value="2022" checked> 2022 <span class="fc-n">307</span></label>
+          <label><input type="checkbox" value="2023" checked> 2023 <span class="fc-n">362</span></label>
+          <label><input type="checkbox" value="2024" checked> 2024 <span class="fc-n">401</span></label>
+          <label><input type="checkbox" value="2025" checked> 2025 <span class="fc-n">704</span></label>
+        </div>
       </div>
-      <div id="fm-filter">
-        <div class="cf-title">조어법</div>
-        <select id="fm-select">
-          <option value="">전체</option>
-          <option value="합성">합성 (172)</option>
-          <option value="파생">파생 (170)</option>
-          <option value="혼성">혼성 (321)</option>
-          <option value="축약">축약 (270)</option>
-          <option value="기타">기타 (1541)</option>
-        </select>
+      <div class="facet" data-key="ut">
+        <button class="facet-head">단어/구 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
+        <div class="facet-list">
+          <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
+          <label><input type="checkbox" value="단어" checked> 단어 <span class="fc-n">1,032</span></label>
+          <label><input type="checkbox" value="구" checked> 구 <span class="fc-n">1,442</span></label>
+        </div>
+      </div>
+      <div class="facet" data-key="fm">
+        <button class="facet-head">조어법 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
+        <div class="facet-list">
+          <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
+          <label><input type="checkbox" value="합성" checked> 합성 <span class="fc-n">171</span></label>
+          <label><input type="checkbox" value="파생" checked> 파생 <span class="fc-n">170</span></label>
+          <label><input type="checkbox" value="혼성" checked> 혼성 <span class="fc-n">321</span></label>
+          <label><input type="checkbox" value="축약" checked> 축약 <span class="fc-n">270</span></label>
+          <label><input type="checkbox" value="차용" checked> 차용 <span class="fc-n">88</span></label>
+          <label><input type="checkbox" value="기타" checked> 기타 <span class="fc-n">12</span></label>
+        </div>
+      </div>
+      <div class="facet" data-key="cat">
+        <button class="facet-head">의미 범주 <span class="facet-sum">전체</span> <span class="facet-arrow">▾</span></button>
+        <div class="facet-list">
+          <label class="facet-all"><input type="checkbox" checked> (모두 선택)</label>
+          <label><input type="checkbox" value="정치와 행정" checked> 정치와 행정 <span class="fc-n">620</span></label>
+          <label><input type="checkbox" value="경제생활" checked> 경제생활 <span class="fc-n">428</span></label>
+          <label><input type="checkbox" value="사회생활" checked> 사회생활 <span class="fc-n">324</span></label>
+          <label><input type="checkbox" value="인간" checked> 인간 <span class="fc-n">295</span></label>
+          <label><input type="checkbox" value="삶" checked> 삶 <span class="fc-n">183</span></label>
+          <label><input type="checkbox" value="보건·의학" checked> 보건·의학 <span class="fc-n">153</span></label>
+          <label><input type="checkbox" value="식생활" checked> 식생활 <span class="fc-n">92</span></label>
+          <label><input type="checkbox" value="문화" checked> 문화 <span class="fc-n">87</span></label>
+          <label><input type="checkbox" value="의생활" checked> 의생활 <span class="fc-n">72</span></label>
+          <label><input type="checkbox" value="교육" checked> 교육 <span class="fc-n">57</span></label>
+          <label><input type="checkbox" value="정보·기술" checked> 정보·기술 <span class="fc-n">54</span></label>
+          <label><input type="checkbox" value="주생활" checked> 주생활 <span class="fc-n">48</span></label>
+          <label><input type="checkbox" value="동식물" checked> 동식물 <span class="fc-n">28</span></label>
+          <label><input type="checkbox" value="개념" checked> 개념 <span class="fc-n">18</span></label>
+          <label><input type="checkbox" value="자연" checked> 자연 <span class="fc-n">13</span></label>
+          <label><input type="checkbox" value="종교" checked> 종교 <span class="fc-n">2</span></label>
+        </div>
       </div>
       <div id="layer-toggles" data-mode="main">
         <div class="lt-title">표시 층</div>
-        <label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>
+        <label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#1e3a8a;"></span> 신어</label>
         <label class="lt-row"><input type="checkbox" id="tog-entity" checked> <span class="lt-dot" style="background:#a05c72;"></span> 개체명</label>
+      </div>
+      <div id="hop-control">
+        <div class="lt-title">연결 단계</div>
+        <label class="lt-row"><input type="radio" name="hop-range" value="1"> <span class="lt-dot" style="background:#f2a48c;"></span> 1차 연결</label>
+        <label class="lt-row"><input type="radio" name="hop-range" value="2" checked> <span class="lt-dot" style="background:#82c4b5;"></span> 2차 연결</label>
+        <label class="lt-row"><input type="radio" name="hop-range" value="3"> <span class="lt-dot" style="background:#b7a6de;"></span> 3차 연결</label>
       </div>
     </div>
 
     <div id="legend" data-mode="main">
-      <div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>
-      <div class="leg-row"><div class="leg-dot" style="background:#a05c72; width:12px; height:12px;"></div><span>개체명</span></div>
-      <div class="leg-row"><div class="leg-dot" style="background:#64748b; width:12px; height:12px;"></div><span>말뭉치 정보</span></div>
-      <div class="leg-row"><div class="leg-dot" style="background:#b07a3a; width:12px; height:12px;"></div><span>지식베이스 정보</span></div>
-      <div class="leg-row"><div style="width:20px;height:0;border-top:2px dashed #475569;margin:5px 6px 0 0;"></div><span>기사 공동 출현</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#1e3a8a;"></div><span>신어</span></div>
+      <div class="leg-row"><div class="leg-dot" style="background:#a05c72;"></div><span>개체명</span></div>
     </div>
 
     <div id="loading">
@@ -514,8 +556,13 @@
       verb:      '#b07a3a',  // amber
     };
     var LAYER_ALPHA = {
-      element: 0.18, entity: 0.32, verb: 0.32
+      element: 0.18, entity: 0.32, verb: 0.1
     };
+    // 연결 깊이별 강조 엣지 색 (좌측 연결 깊이 라디오의 점 색과 일치)
+    // 연결 깊이별 엣지 색 — 파스텔 3단(코럴→세이지 틸→라벤더), 밝은 배경 위 가독 확보
+    var HOP_EDGE_COLORS = { 1: '#f2a48c', 2: '#82c4b5', 3: '#b7a6de' };
+    // 패널 텍스트용(흰 바탕 가독을 위해 같은 색상의 진한 톤)
+    var HOP_TEXT_COLORS = { 1: '#c9754f', 2: '#3e8f7e', 3: '#8a6fc0' };
     var CLS_KO = {
       PS: '사람', OG: '기관/단체', LC: '장소', AF: '인공물/서비스',
       CV: '제도/법률', EV: '사건', TM: '용어/기술', DT: '날짜'
@@ -527,8 +574,9 @@
       morph: ['element'],
       verb:  ['verb']
     };
-    var currentCat = '';  // 의미 범주 필터 (빈 문자열 = 전체)
-    var currentFm = '';   // 조어법 필터 (빈 문자열 = 전체)
+    // 필터 선택 상태: null = 전체(비활성), Set = 체크된 값만 표시
+    // 항목 내부는 OR, 항목 간에는 AND 교차
+    var facetSel = { year: null, ut: null, fm: null, cat: null };
     // verb 층 세부 필터
     var verbFilter = { vv: true, va: true, nn: true, yt: true };
     var currentMode = 'main';
@@ -538,9 +586,6 @@
 
     // ── 컬러 팔레트 ──────────────────────────────────────────────────────────
     // 연도별 entry 색상: 2020 밝은 slate → 2025 짙은 navy
-    var yearColorScale = d3.scaleSequential()
-      .domain([YEAR_MIN, YEAR_MAX])
-      .interpolator(d3.interpolate('#cbd5e1', '#1e3a8a'));
 
     // 클러스터 색상 (최대 20색 순환)
     var COMM_PALETTE = [
@@ -555,14 +600,14 @@
     }
 
     function entryColor(d) {
-      if (d.year) return yearColorScale(Math.min(Math.max(d.year, YEAR_MIN), YEAR_MAX));
-      return '#475569';
+      // 신어는 모든 탭 공통 남색 (툴팁·라벨색과 동일 #1e3a8a)
+      return '#1e3a8a';
     }
 
-    // element 색상: 연결 수에 따라 accent blue
+    // element 색상: 연결 수에 따라 진회색→검정
     var elemColorScale = d3.scaleSequential()
       .domain([2, 45])
-      .interpolator(d3.interpolate('#93c5fd', '#1d4ed8'));
+      .interpolator(d3.interpolate('#94a3b8', '#0f172a'));
 
     function elementColor(d) {
       return elemColorScale(Math.min(d.degree || 2, 45));
@@ -603,16 +648,18 @@
     var simRunning = false;
     var simulation;
 
-    // 활성 층 + 의미 범주 필터 기준 표시할 노드/링크 계산
+    // 활성 층 + 필터 기준 표시할 노드/링크 계산
     function computeVisible() {
-      // 의미 범주 + 조어법 필터 (AND 결합): entry 중 조건 충족만 허용
+      // 필터 (연도·단어/구·조어법·의미 범주, AND 교차): entry 중 조건 충족만 허용
       var catEntryIds = null;
-      if (currentCat || currentFm) {
+      if (facetSel.year || facetSel.ut || facetSel.fm || facetSel.cat) {
         catEntryIds = new Set();
         allNodes.forEach(function(n) {
           if (n.type !== 'entry') return;
-          if (currentCat && n.cat !== currentCat) return;
-          if (currentFm && n.fm !== currentFm) return;
+          if (facetSel.year && !facetSel.year.has(String(n.year))) return;
+          if (facetSel.ut && !facetSel.ut.has(n.ut)) return;
+          if (facetSel.fm && (n.ut !== '단어' || !facetSel.fm.has(n.fm))) return;
+          if (facetSel.cat && !facetSel.cat.has(n.cat)) return;
           catEntryIds.add(n.id);
         });
       }
@@ -654,8 +701,8 @@
         if (n.type === 'category' || n.type === 'formation') return false;
         // entry: 범주 필터가 있으면 해당 범주만
         if (catEntryIds) return catEntryIds.has(n.id);
-        // entry: 구성 성분/감정 용언 그래프에선 연결분만, 개체명 그래프에선 전부
-        if (layerActive.element !== undefined || layerActive.verb !== undefined) return visNodeIds.has(n.id);
+        // entry: 구성 성분 그래프에선 연결분만, 개체명·감정 용언 그래프에선 전부
+        if (layerActive.element !== undefined) return visNodeIds.has(n.id);
         return true;
       });
       return { nodes: visNodes, links: visLinks };
@@ -716,6 +763,7 @@
         allLinks = data.links;
         _allNodeMap = {};
         allNodes.forEach(function(n) { _allNodeMap[n.id] = n; });
+        updateFacetCounts();
         var vis = computeVisible();
         applyLayout(vis.nodes, vis.links);
         centerGraph();
@@ -765,10 +813,16 @@
     // ── 탭 전환 ────────────────────────────────────────────────────────────
     function switchMode(mode) {
       if (mode === currentMode) return;
-      // 이전 morph 모드에서 나갈 때: 원래 좌표 복원
+      // 이전 morph·verb 모드에서 나갈 때: 원래 좌표 복원
       if (currentMode === 'morph') {
         allNodes.forEach(function(n) {
           if ((n.type === 'element' || n.type === 'entry') && n._ox != null) {
+            n.x = n._ox; n.y = n._oy;
+          }
+        });
+      } else if (currentMode === 'verb') {
+        allNodes.forEach(function(n) {
+          if ((n.type === 'verb' || n.type === 'entry') && n._ox != null) {
             n.x = n._ox; n.y = n._oy;
           }
         });
@@ -779,12 +833,19 @@
       PAGE_LAYERS.forEach(function(l) { layerActive[l] = true; });
       // verb 필터 리셋
       verbFilter = { vv: true, va: true, nn: true, yt: true };
-      // morph 모드 진입: 전용 좌표로 교체
+      // morph·verb 모드 진입: 전용 좌표로 교체
       if (mode === 'morph') {
         allNodes.forEach(function(n) {
           if ((n.type === 'element' || n.type === 'entry') && n.mx != null) {
             n._ox = n.x; n._oy = n.y;
             n.x = n.mx; n.y = n.my;
+          }
+        });
+      } else if (mode === 'verb') {
+        allNodes.forEach(function(n) {
+          if ((n.type === 'verb' || n.type === 'entry') && n.vx != null) {
+            n._ox = n.x; n._oy = n.y;
+            n.x = n.vx; n.y = n.vy;
           }
         });
       }
@@ -797,11 +858,14 @@
       // 토글 패널: 모드에 따라 동적 재구성
       var toggles = document.getElementById('layer-toggles');
       if (mode === 'morph') {
-        toggles.style.display = 'none';
+        toggles.style.display = '';
+        toggles.innerHTML = '<div class="lt-title">표시 층</div>'
+          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#1e3a8a;"></span> 신어</label>'
+          + '<label class="lt-row"><input type="checkbox" id="tog-element" checked> <span class="lt-dot" style="background:#334155;"></span> 구성 성분</label>';
       } else if (mode === 'verb') {
         toggles.style.display = '';
         toggles.innerHTML = '<div class="lt-title">표시 층</div>'
-          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>'
+          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#1e3a8a;"></span> 신어</label>'
           + '<label class="lt-row"><input type="checkbox" id="tog-verb-vv" checked> <span class="lt-dot" style="background:#b07a3a;"></span> 동사</label>'
           + '<label class="lt-row"><input type="checkbox" id="tog-verb-va" checked> <span class="lt-dot" style="background:#9f1239;"></span> 형용사</label>'
           + '<div class="lt-title" style="margin-top:6px;">말뭉치</div>'
@@ -810,7 +874,7 @@
       } else {
         toggles.style.display = '';
         toggles.innerHTML = '<div class="lt-title">표시 층</div>'
-          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#334155;"></span> 신어</label>'
+          + '<label class="lt-row lt-fixed"><input type="checkbox" checked disabled> <span class="lt-dot" style="background:#1e3a8a;"></span> 신어</label>'
           + '<label class="lt-row"><input type="checkbox" id="tog-entity" checked> <span class="lt-dot" style="background:#a05c72;"></span> 개체명</label>'
           + '<label class="lt-row"><input type="checkbox" id="tog-corpus" checked> <span class="lt-dot" style="background:#64748b;"></span> 말뭉치 정보</label>'
           + '<label class="lt-row"><input type="checkbox" id="tog-kb" checked> <span class="lt-dot" style="background:#b07a3a;"></span> 지식베이스 정보</label>';
@@ -819,19 +883,17 @@
       // 범례
       var legend = document.getElementById('legend');
       if (mode === 'morph') {
-        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#2563eb;width:14px;height:14px;"></div><span>구성 성분</span></div>';
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#1e3a8a;"></div><span>신어</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>구성 성분</span></div>';
       } else if (mode === 'verb') {
-        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>'
-          + '<div class="leg-row"><div class="leg-dot" style="background:#b07a3a;width:12px;height:12px;"></div><span>동사</span></div>'
-          + '<div class="leg-row"><div class="leg-dot" style="background:#9f1239;width:12px;height:12px;"></div><span>형용사</span></div>'
-          + '<div class="leg-row" style="margin-top:4px;"><div style="width:20px;height:2px;background:#1e40af;margin:5px 6px 0 0;"></div><span>신문</span></div>'
-          + '<div class="leg-row"><div style="width:20px;height:2px;background:#dc2626;margin:5px 6px 0 0;"></div><span>댓글</span></div>';
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#1e3a8a;"></div><span>신어</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#b07a3a;"></div><span>동사</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#9f1239;"></div><span>형용사</span></div>'
+          + '<div class="leg-row"><div style="width:20px;height:0;border-top:2px solid #1e40af;margin:5px 6px 0 0;"></div><span>신문 말뭉치 내 공기</span></div>'
+          + '<div class="leg-row"><div style="width:20px;height:0;border-top:2px solid #dc2626;margin:5px 6px 0 0;"></div><span>댓글 말뭉치 내 공기</span></div>';
       } else {
-        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#334155;"></div><span>신어</span></div>'
-          + '<div class="leg-row"><div class="leg-dot" style="background:#a05c72;width:12px;height:12px;"></div><span>개체명</span></div>'
-          + '<div class="leg-row"><div class="leg-dot" style="background:#64748b;width:12px;height:12px;"></div><span>말뭉치 정보</span></div>'
-          + '<div class="leg-row"><div class="leg-dot" style="background:#b07a3a;width:12px;height:12px;"></div><span>지식베이스 정보</span></div>'
-          + '<div class="leg-row"><div style="width:20px;height:0;border-top:2px dashed #475569;margin:5px 6px 0 0;"></div><span>기사 공동 출현</span></div>';
+        legend.innerHTML = '<div class="leg-row"><div class="leg-dot" style="background:#1e3a8a;"></div><span>신어</span></div>'
+          + '<div class="leg-row"><div class="leg-dot" style="background:#a05c72;"></div><span>개체명</span></div>';
       }
 
       // 검색 placeholder
@@ -846,11 +908,11 @@
       // 통계
       var statsEl = document.getElementById('stats-text');
       if (mode === 'morph') {
-        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 구성 성분 <span>3,615</span> &middot; 형성 연결 <span>6,142</span>';
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 구성 성분 <span>3,615</span>';
       } else if (mode === 'verb') {
-        statsEl.innerHTML = '신어 <span>78</span> &middot; 공기 용언 <span>645</span> &middot; 연결 <span>2,710</span>';
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 감정 용언 <span>645</span>';
       } else {
-        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>2,159</span> &middot; 연결 <span>5,421</span> &middot; 기사 공동 출현 <span>104</span>';
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>2,159</span>';
       }
 
       // 하단 바: 모드별 탭 재구성 (main=개체명 / verb=감정 용언 / morph=구성 성분·고립 노드)
@@ -876,22 +938,102 @@
     document.getElementById('tab-morph').addEventListener('click', function() { switchMode('morph'); });
     document.getElementById('tab-verb').addEventListener('click', function() { switchMode('verb'); });
 
-    // ── 의미 범주 필터 ──────────────────────────────────────────────────────
-    document.getElementById('cat-select').addEventListener('change', function() {
-      currentCat = this.value;
+    // ── 필터 (엑셀식 체크리스트) ────────────────────────────────────────────
+    function refreshGraphFromFacets() {
       if (!allNodes.length) return;
       var vis = computeVisible();
       applyLayout(vis.nodes, vis.links);
       centerGraph();
+    }
+
+    var FACET_KEYS = ['year', 'ut', 'fm', 'cat'];
+    var facetUI = {};
+
+    function entryFacetVal(n, key) {
+      return key === 'year' ? String(n.year) : n[key];
+    }
+
+    // 다른 항목의 필터를 적용한 부분집합 기준으로 각 항목의 건수 갱신 (0건은 숨김)
+    function updateFacetCounts() {
+      if (!allNodes.length) return;
+      FACET_KEYS.forEach(function(key) {
+        var ui = facetUI[key];
+        if (!ui) return;
+        var counts = {};
+        allNodes.forEach(function(n) {
+          if (n.type !== 'entry') return;
+          if (key === 'fm' && n.ut !== '단어') return; // 조어법은 단어만 대상
+          for (var i = 0; i < FACET_KEYS.length; i++) {
+            var k = FACET_KEYS[i];
+            if (k === key) continue;
+            if (!facetSel[k]) continue;
+            if (k === 'fm') {
+              if (n.ut !== '단어' || !facetSel.fm.has(n.fm)) return;
+            } else if (!facetSel[k].has(entryFacetVal(n, k))) return;
+          }
+          var v = entryFacetVal(n, key);
+          counts[v] = (counts[v] || 0) + 1;
+        });
+        ui.items.forEach(function(it) {
+          var c = counts[it.cb.value] || 0;
+          it.nEl.textContent = c.toLocaleString();
+          it.label.style.display = c === 0 ? 'none' : '';
+        });
+      });
+    }
+
+    document.querySelectorAll('.facet').forEach(function(facet) {
+      var key = facet.getAttribute('data-key');
+      var head = facet.querySelector('.facet-head');
+      var sum = facet.querySelector('.facet-sum');
+      var allCb = facet.querySelector('.facet-all input');
+      var items = Array.prototype.map.call(
+        facet.querySelectorAll('.facet-list label:not(.facet-all)'),
+        function(label) {
+          return { label: label, cb: label.querySelector('input'), nEl: label.querySelector('.fc-n') };
+        });
+      var itemCbs = items.map(function(it) { return it.cb; });
+      facetUI[key] = { items: items, allCb: allCb, sum: sum };
+
+      head.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var wasOpen = facet.classList.contains('open');
+        document.querySelectorAll('.facet.open').forEach(function(f) { f.classList.remove('open'); });
+        if (!wasOpen) facet.classList.add('open');
+      });
+      facet.querySelector('.facet-list').addEventListener('click', function(e) { e.stopPropagation(); });
+
+      function syncState() {
+        var checked = itemCbs.filter(function(cb) { return cb.checked; });
+        allCb.checked = checked.length === itemCbs.length;
+        allCb.indeterminate = checked.length > 0 && checked.length < itemCbs.length;
+        if (checked.length === itemCbs.length) {
+          facetSel[key] = null;
+          sum.textContent = '전체';
+          sum.classList.remove('filtered');
+        } else {
+          facetSel[key] = new Set(checked.map(function(cb) { return cb.value; }));
+          sum.textContent = checked.length === 0 ? '없음'
+            : checked.length <= 2 ? checked.map(function(cb) { return cb.value; }).join('·')
+            : checked.length + '개';
+          sum.classList.add('filtered');
+        }
+        updateFacetCounts();
+        refreshGraphFromFacets();
+      }
+
+      allCb.addEventListener('change', function() {
+        // 보이는(건수>0) 항목만 일괄 토글
+        items.forEach(function(it) {
+          if (it.label.style.display !== 'none') it.cb.checked = allCb.checked;
+        });
+        syncState();
+      });
+      itemCbs.forEach(function(cb) { cb.addEventListener('change', syncState); });
     });
 
-    // ── 조어법 필터 ────────────────────────────────────────────────────────
-    document.getElementById('fm-select').addEventListener('change', function() {
-      currentFm = this.value;
-      if (!allNodes.length) return;
-      var vis = computeVisible();
-      applyLayout(vis.nodes, vis.links);
-      centerGraph();
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.facet.open').forEach(function(f) { f.classList.remove('open'); });
     });
 
     // ── 노드 반지름 (연결 수 비례) ──────────────────────────────────────────
@@ -959,11 +1101,10 @@
         var lay = layerOrder[li];
         var grp = layerGroups[lay];
         if (!grp) continue;
-        var alpha = anyHighlighted ? 0.04 : (LAYER_ALPHA[lay] || 0.18);
+        var alpha = anyHighlighted ? 0.07 : (LAYER_ALPHA[lay] || 0.18);
         ctx.globalAlpha = alpha;
         ctx.strokeStyle = LAYER_COLORS[lay] || '#94a3b8';
         if (lay === 'entity' || lay === 'verb') {
-          var coocLinks = [];
           for (var gi = 0; gi < grp.length; gi++) {
             var gl = grp[gi];
             if (!linkVisible(gl)) continue;
@@ -972,27 +1113,15 @@
             if (anyHighlighted && highlightIds.has(sid) && highlightIds.has(tid)) {
               highlightLinks.push(gl); continue;
             }
-            if (gl.kind === 'cooc') { coocLinks.push(gl); continue; }
-            ctx.lineWidth = (0.8 + Math.min((gl.w || 1) - 1, 6) * 0.5) / k;
+            // 감정 용언 엣지: 말뭉치별 색 (신문/댓글) — 범례·토글과 일치
+            if (lay === 'verb') ctx.strokeStyle = gl.src === 'YT' ? '#dc2626' : '#1e40af';
+            ctx.lineWidth = (lay === 'verb'
+              ? 0.6 + Math.min((gl.w || 1) - 1, 6) * 0.25
+              : 0.8 + Math.min((gl.w || 1) - 1, 6) * 0.5) / k;
             ctx.beginPath();
             ctx.moveTo(gl.source.x, gl.source.y);
             ctx.lineTo(gl.target.x, gl.target.y);
             ctx.stroke();
-          }
-          // 신어–신어 기사 공동 출현 엣지: 점선으로 구분
-          if (coocLinks.length) {
-            ctx.save();
-            ctx.strokeStyle = '#475569';
-            ctx.setLineDash([5 / k, 4 / k]);
-            for (var ci = 0; ci < coocLinks.length; ci++) {
-              var cl = coocLinks[ci];
-              ctx.lineWidth = (0.9 + Math.min((cl.w || 1) - 1, 6) * 0.5) / k;
-              ctx.beginPath();
-              ctx.moveTo(cl.source.x, cl.source.y);
-              ctx.lineTo(cl.target.x, cl.target.y);
-              ctx.stroke();
-            }
-            ctx.restore();
           }
           continue;
         }
@@ -1017,65 +1146,80 @@
       function drawNode(n, isHl) {
         if (n.x == null || n.y == null) return;
         var r = nodeRadius(n);
+        // 선택 노드(차수 0)는 1.35배 확대 — 클릭한 노드가 드러나 보이게
+        if (isHl && n._hopDepth === 0) r *= 1.35;
+        // 강조 테두리: 이웃=차수별 색. 선택 노드는 검정 테두리 없이 기본 테두리 (확대+배지로 구분)
+        var hlStroke = (isHl && n._hopDepth) ? (HOP_TEXT_COLORS[n._hopDepth] || '#c9754f') : null;
         ctx.beginPath();
         ctx.arc(n.x, n.y, r, 0, 2 * Math.PI);
         if (n.type === 'element') {
-          ctx.fillStyle = n._dimmed ? '#e2e8f0' : elementColor(n);
+          ctx.fillStyle = elementColor(n);
           ctx.fill();
-          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(30,58,138,0.25)';
-          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.strokeStyle = hlStroke || 'rgba(30,58,138,0.25)';
+          ctx.lineWidth = (hlStroke ? 2.5 : 0.8) / k;
           ctx.stroke();
         } else if (n.type === 'entity') {
-          ctx.fillStyle = n._dimmed ? '#e8dde1' : '#a05c72';
+          ctx.fillStyle = '#a05c72';
           ctx.fill();
-          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(160,92,114,0.35)';
-          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.strokeStyle = hlStroke || 'rgba(160,92,114,0.35)';
+          ctx.lineWidth = (hlStroke ? 2.5 : 0.8) / k;
           ctx.stroke();
         } else if (n.type === 'verb') {
           var vColor = n.pos === 'VA' ? '#9f1239' : '#b07a3a';  // 형용사=로즈, 동사=앰버
-          var vDim   = n.pos === 'VA' ? '#e8d0d8' : '#e8ddd0';
-          ctx.fillStyle = n._dimmed ? vDim : vColor;
+          ctx.fillStyle = vColor;
           ctx.fill();
-          ctx.strokeStyle = isHl ? '#f97316' : (n.pos === 'VA' ? 'rgba(159,18,57,0.35)' : 'rgba(176,122,58,0.35)');
-          ctx.lineWidth = (isHl ? 2.5 : 0.8) / k;
+          ctx.strokeStyle = hlStroke || (n.pos === 'VA' ? 'rgba(159,18,57,0.35)' : 'rgba(176,122,58,0.35)');
+          ctx.lineWidth = (hlStroke ? 2.5 : 0.8) / k;
           ctx.stroke();
         } else {
-          ctx.fillStyle = n._dimmed ? '#e2e8f0' : entryColor(n);
+          ctx.fillStyle = entryColor(n);
           ctx.fill();
-          ctx.strokeStyle = isHl ? '#f97316' : 'rgba(30,41,59,0.35)';
-          ctx.lineWidth = (isHl ? 2.5 : 1.2) / k;
+          ctx.strokeStyle = hlStroke || 'rgba(30,41,59,0.35)';
+          ctx.lineWidth = (hlStroke ? 2.5 : 1.2) / k;
           ctx.stroke();
         }
       }
 
-      // 비강조 노드 먼저 (뷰포트 컬링)
+      // 비강조 노드 먼저 (뷰포트 컬링) — 강조 상태에선 투명도만 낮춰 원색이 연하게
+      if (anyHighlighted) ctx.globalAlpha = 0.32;
       for (var j = 0; j < nodes.length; j++) {
         var nd_ = nodes[j];
         if (!nd_._highlighted && nd_.x != null && inViewport(nd_.x, nd_.y)) drawNode(nd_, false);
       }
+      ctx.globalAlpha = 1;
 
-      // ── 강조 링크 (앞쪽) ───────────────────────────────────────────────────
+      // ── 강조 링크 (연결 깊이별 파스텔 색 + 그림자 — 앞으로 떠오름) ────────
       if (highlightLinks.length) {
-        ctx.globalAlpha = 0.6;
+        ctx.save();
+        ctx.globalAlpha = 0.85;
+        ctx.shadowColor = 'rgba(15,23,42,0.22)';
+        ctx.shadowBlur = 5;
         for (var hl = 0; hl < highlightLinks.length; hl++) {
           var hLink = highlightLinks[hl];
           var sx = hLink.source.x, sy = hLink.source.y;
           var tx = hLink.target.x, ty = hLink.target.y;
           if (sx == null || sy == null || tx == null || ty == null) continue;
-          ctx.strokeStyle = '#f97316';
+          var hd = Math.max(hLink.source._hopDepth || 0, hLink.target._hopDepth || 0);
+          ctx.strokeStyle = HOP_EDGE_COLORS[hd] || '#f2a48c';
           ctx.lineWidth = (1.5 + Math.min((hLink.w || 1) - 1, 4) * 0.6) / k;
           ctx.beginPath();
           ctx.moveTo(sx, sy);
           ctx.lineTo(tx, ty);
           ctx.stroke();
         }
+        ctx.restore();
         ctx.globalAlpha = 1;
       }
 
-      // ── 강조 노드 (앞쪽, 원래 색상 + 주황 테두리) ─────────────────────────
+      // ── 강조 노드 (원래 색상 + 깊이별 테두리 + 그림자 — 앞으로 떠오름) ────
+      ctx.save();
+      ctx.shadowColor = 'rgba(15,23,42,0.28)';
+      ctx.shadowBlur = 9;
+      ctx.shadowOffsetY = 3;
       for (var j2 = 0; j2 < nodes.length; j2++) {
         if (nodes[j2]._highlighted) drawNode(nodes[j2], true);
       }
+      ctx.restore();
 
       // ── 탐색 경로 (점선 + 화살표) ──────────────────────────────────────────
       if (navHistory.length > 0 && currentFocusNode) {
@@ -1148,12 +1292,17 @@
         var nd = nodes[m];
         if (nd.x == null || nd.y == null) continue;
         if (nd.x < lvpL || nd.x > lvpR || nd.y < lvpT || nd.y > lvpB) continue;
+        // 강조 상태에서는 강조 노드 라벨만 — 비강조 라벨이 반투명막 위를 덮는 것 방지
+        if (anyHighlighted && !nd._highlighted) continue;
 
         var rr = nodeRadius(nd);
         var showLabel = false;
         var priority = 0;
         if (nd._highlighted) {
-          showLabel = true; priority = 10000;
+          // 선택 노드 최우선, 이웃은 차수가 가까울수록·연결이 많을수록 우선
+          showLabel = true;
+          priority = nd._hopDepth === 0 ? 20000
+                   : 10000 - (nd._hopDepth || 0) * 1000 + (nd.degree || 0);
         } else if (showAllLabels) {
           showLabel = true; priority = 1;
         } else if (nd.type === 'entity') {
@@ -1213,6 +1362,11 @@
         } else {
           fs = Math.max(9, Math.min(14, rr * 1.3)) / k;
         }
+        // 선택 노드: 라벨 확대 + 노드 확대분만큼 위로
+        if (nd._highlighted && nd._hopDepth === 0) {
+          fs *= 1.2;
+          rr = rr * 1.35 + 2 / k;
+        }
         ctx.font = '700 ' + fs + 'px Noto Sans KR, Pretendard, sans-serif';
 
         var lx = nd.x, ly = nd.y - rr - 4 / k;
@@ -1220,8 +1374,9 @@
         var lhw = tw / 2 + 2 / k;
         var lhh = fs * 0.65;
 
-        // 충돌 회피 (강조 노드·전체 표시 모드에선 건너뜀)
-        if (!nd._highlighted && !showAllLabels && _lbOverlap(lx, ly, lhw, lhh)) continue;
+        // 충돌 회피 — 선택 노드(차수 0)·전체 표시 모드만 면제.
+        // 강조 이웃도 겹치면 생략 (허브 클릭 시 라벨 벽 방지)
+        if (!(anyHighlighted && nd._hopDepth === 0) && !showAllLabels && _lbOverlap(lx, ly, lhw, lhh)) continue;
 
         ctx.strokeStyle = 'rgba(255,255,255,0.85)';
         ctx.lineWidth = 3 / k;
@@ -1229,7 +1384,7 @@
         ctx.globalAlpha = 1;
         ctx.strokeText(nd.label, lx, ly);
 
-        ctx.fillStyle = nd.type === 'element' ? '#1e3a8a'
+        ctx.fillStyle = nd.type === 'element' ? '#0f172a'
                       : nd.type === 'entity' ? '#b91c1c'
                       : nd.type === 'verb' ? (nd.pos === 'VA' ? '#881337' : '#78350f')
                       : '#1e3a8a';
@@ -1237,7 +1392,35 @@
         ctx.fillText(nd.label, lx, ly);
         ctx.globalAlpha = 1;
 
-        _drawnLabels.push({ x: lx, y: ly, hw: lhw, hh: lhh, node: nd });
+        // 선택 노드 배지: 라벨 우측 상단 'Node' 필 (클릭한 노드 표시)
+        // 흰 바탕 + 파스텔 코럴 테두리·글자 — 팔레트와 톤 일치
+        var lbBadgeW = 0;
+        if (nd._highlighted && nd._hopDepth === 0) {
+          var bT = 'Node';
+          ctx.font = '700 ' + (8.5 / k) + 'px Noto Sans KR, Pretendard, sans-serif';
+          var bw = ctx.measureText(bT).width + 10 / k;
+          var bh = 13.5 / k;
+          var bx = lx + lhw;                  // 라벨 우측 끝에 딱 붙임
+          var by = ly - fs * 0.7 - bh / 2;    // 라벨 우측 상단 모서리에 걸치게
+          var brr = bh / 2;
+          ctx.beginPath();
+          ctx.moveTo(bx + brr, by);
+          ctx.arcTo(bx + bw, by, bx + bw, by + bh, brr);
+          ctx.arcTo(bx + bw, by + bh, bx, by + bh, brr);
+          ctx.arcTo(bx, by + bh, bx, by, brr);
+          ctx.arcTo(bx, by, bx + bw, by, brr);
+          ctx.closePath();
+          ctx.fillStyle = 'rgba(255,255,255,0.96)';
+          ctx.fill();
+          ctx.strokeStyle = '#e8a08a';
+          ctx.lineWidth = 1.2 / k;
+          ctx.stroke();
+          ctx.fillStyle = '#c9754f';
+          ctx.fillText(bT, bx + bw / 2, by + bh / 2 + 0.5 / k);
+          lbBadgeW = bw + 2 / k;              // 배지 영역도 겹침 보호에 포함
+        }
+
+        _drawnLabels.push({ x: lx, y: ly, hw: lhw + lbBadgeW, hh: lhh, node: nd });
       }
 
       ctx.restore();
@@ -1299,6 +1482,11 @@
 
       if (n) {
         ttLabel.textContent = n.label;
+        // 툴팁 라벨색 = 그래프 라벨색 (유형별 동일)
+        ttLabel.style.color = n.type === 'element' ? '#0f172a'
+                            : n.type === 'entity' ? '#b91c1c'
+                            : n.type === 'verb' ? (n.pos === 'VA' ? '#881337' : '#78350f')
+                            : '#1e3a8a';
         ttLink.style.display = 'none';
         if (n.type === 'element') {
           ttMeta.textContent = '구성 성분 · ' + (n.ec || 0) + '개 신어';
@@ -1339,6 +1527,13 @@
     var ipList = document.getElementById('ip-list');
     var navHistory = [];  // 이전 노드 이력
     var currentFocusNode = null;  // 현재 포커스된 노드
+    var hopRange = 2;  // 연결 깊이 (엣지 수 기준: 1·2·3)
+    document.querySelectorAll('#hop-control input[name="hop-range"]').forEach(function(r) {
+      r.addEventListener('change', function() {
+        hopRange = parseInt(this.value, 10);
+        if (currentFocusNode) navigateTo(currentFocusNode);
+      });
+    });
 
     document.getElementById('ip-close').addEventListener('click', function() {
       infoPanel.classList.remove('open');
@@ -1348,43 +1543,46 @@
       draw();
     });
 
-    // 강조 대상 집합: 1홉 이웃 + (성분 노드일 때) 같은 신어를 형성한 형제 성분 2홉
+    // 강조 대상 집합: 1홉 + 2홉 (이분 그래프 연결 사슬이 끊기지 않게)
+    // 신어 → 성분/개체명/용언 → 그것을 공유하는 다른 신어까지
+    // BFS: 노드 ID → 연결 깊이 (0=선택 노드, 1=직접, 2·3=간접)
     function computeHighlightSet(target) {
-      var nb = new Set(); nb.add(target.id);
-      var entrySet = new Set();
-      links.forEach(function(l) {
-        var sid = typeof l.source === 'object' ? l.source.id : l.source;
-        var tid = typeof l.target === 'object' ? l.target.id : l.target;
-        if (sid === target.id) { nb.add(tid); if (l.layer === 'element') entrySet.add(tid); }
-        if (tid === target.id) { nb.add(sid); if (l.layer === 'element') entrySet.add(sid); }
-      });
-      if (target.type === 'element' && entrySet.size) {
+      var depth = new Map();
+      depth.set(target.id, 0);
+      var frontier = new Set([target.id]);
+      for (var d = 1; d <= hopRange; d++) {
+        var next = new Set();
         links.forEach(function(l) {
-          if (l.layer !== 'element') return;
           var sid = typeof l.source === 'object' ? l.source.id : l.source;
           var tid = typeof l.target === 'object' ? l.target.id : l.target;
-          if (entrySet.has(sid)) nb.add(tid);
-          if (entrySet.has(tid)) nb.add(sid);
+          if (frontier.has(sid) && !depth.has(tid)) next.add(tid);
+          if (frontier.has(tid) && !depth.has(sid)) next.add(sid);
         });
+        next.forEach(function(id) { depth.set(id, d); });
+        frontier = next;
       }
-      return nb;
+      return depth;
+    }
+
+    function applyHighlight(depthMap) {
+      nodes.forEach(function(nd) {
+        var d = depthMap.get(nd.id);
+        nd._highlighted = d !== undefined;
+        nd._hopDepth = d;
+        nd._dimmed = d === undefined;
+      });
     }
 
     function navigateTo(target) {
+      // 직접 클릭과 동일: 하이라이트 교체 + 패널 갱신만, 화면 이동·확대 없음
       currentFocusNode = target;
-      var nb = computeHighlightSet(target);
-      nodes.forEach(function(nd) { nd._highlighted = nb.has(nd.id); nd._dimmed = !nb.has(nd.id); });
-      var sc = Math.max(transform.k, 2);
-      var tx = W / 2 - target.x * sc;
-      var ty = H / 2 - target.y * sc;
-      transform = d3.zoomIdentity.translate(tx, ty).scale(sc);
-      d3.select(canvas).call(zoom.transform, transform);
+      applyHighlight(computeHighlightSet(target));
       draw();
       showInfoPanel(target);
     }
 
     function showInfoPanel(n) {
-      // 직접 연결 노드 수집 (동일 노드 중복 제거)
+      // 깊이 1 노드 수집 (동일 노드 중복 제거)
       var connected = [];
       var connectedEntryIds = new Set();
       var linksByPeer = {};  // peerId → link data (공출현 기사 URL용)
@@ -1412,56 +1610,48 @@
         }
       });
 
-      // 2홉 연결 개체명 (entity → entry → entity)
-      var relatedEntities = [];
-      if (n.type === 'entity') {
-        var relatedSet = new Set();
-        connectedEntryIds.forEach(function(eid) {
-          links.forEach(function(l) {
-            var sid = typeof l.source === 'object' ? l.source.id : l.source;
-            var tid = typeof l.target === 'object' ? l.target.id : l.target;
-            if (l.layer !== 'entity') return;
-            var otherId = null;
-            if (sid === eid) otherId = tid;
-            else if (tid === eid) otherId = sid;
-            if (otherId && otherId !== n.id && !relatedSet.has(otherId)) {
-              var o = nodeMap[otherId];
-              if (o && o.type === 'entity') {
-                relatedSet.add(otherId);
-                relatedEntities.push(o);
-              }
-            }
-          });
+      // 깊이 2: 깊이 1 이웃의 이웃 — 경유 노드 기록
+      var hop2 = [];
+      var _hop2Map = {};
+      if (hopRange >= 2) {
+        links.forEach(function(l) {
+          var sid = typeof l.source === 'object' ? l.source.id : l.source;
+          var tid = typeof l.target === 'object' ? l.target.id : l.target;
+          var viaId = null, otherId = null;
+          if (_seenPeers.has(sid) && !_seenPeers.has(tid)) { viaId = sid; otherId = tid; }
+          else if (_seenPeers.has(tid) && !_seenPeers.has(sid)) { viaId = tid; otherId = sid; }
+          if (!otherId || otherId === n.id) return;
+          var o = nodeMap[otherId];
+          if (!o) return;
+          var slot = _hop2Map[otherId];
+          if (!slot) { slot = _hop2Map[otherId] = { node: o, vias: [] }; hop2.push(slot); }
+          var vn = nodeMap[viaId];
+          if (vn && slot.vias.indexOf(vn.label) < 0) slot.vias.push(vn.label);
         });
-        relatedEntities.sort(function(a, b) { return (b.degree || 0) - (a.degree || 0); });
       }
 
-      // 2홉 공동 형성 성분 (element → entry → element)
-      var coElements = [];
-      if (n.type === 'element') {
-        var coSet = new Set();
-        connectedEntryIds.forEach(function(eid) {
-          links.forEach(function(l) {
-            if (l.layer !== 'element') return;
-            var sid = typeof l.source === 'object' ? l.source.id : l.source;
-            var tid = typeof l.target === 'object' ? l.target.id : l.target;
-            var otherId = null;
-            if (sid === eid) otherId = tid;
-            else if (tid === eid) otherId = sid;
-            if (otherId && otherId !== n.id && !coSet.has(otherId)) {
-              var o = nodeMap[otherId];
-              if (o && o.type === 'element') {
-                coSet.add(otherId);
-                coElements.push(o);
-              }
-            }
-          });
+      // 깊이 3: 깊이 2 노드의 이웃
+      var hop3 = [];
+      if (hopRange >= 3 && hop2.length) {
+        var _hop3Map = {};
+        links.forEach(function(l) {
+          var sid = typeof l.source === 'object' ? l.source.id : l.source;
+          var tid = typeof l.target === 'object' ? l.target.id : l.target;
+          var viaId = null, otherId = null;
+          if (_hop2Map[sid] && !_hop2Map[tid]) { viaId = sid; otherId = tid; }
+          else if (_hop2Map[tid] && !_hop2Map[sid]) { viaId = tid; otherId = sid; }
+          if (!otherId || otherId === n.id || _seenPeers.has(otherId)) return;
+          var o = nodeMap[otherId];
+          if (!o) return;
+          var slot = _hop3Map[otherId];
+          if (!slot) { slot = _hop3Map[otherId] = { node: o, vias: [] }; hop3.push(slot); }
+          var vn = nodeMap[viaId];
+          if (vn && slot.vias.indexOf(vn.label) < 0) slot.vias.push(vn.label);
         });
-        coElements.sort(function(a, b) { return (b.ec || 0) - (a.ec || 0); });
       }
 
       ipTitle.textContent = n.label;
-      var typeLabels = { entry: '신어', entity: '개체명', element: '구성 성분', verb: '공기 용언' };
+      var typeLabels = { entry: '신어', entity: '개체명', element: '구성 성분', verb: '감정 용언' };
       var typeInfo = typeLabels[n.type] || n.type;
       if (n.type === 'entity' && n.cls) typeInfo += ' (' + (CLS_KO[n.cls] || n.cls) + ')';
       if (n.type === 'entry' && n.year) typeInfo += ' · ' + n.year + '년';
@@ -1492,13 +1682,15 @@
         html += '<div class="ip-item" id="ip-back" style="cursor:pointer;color:#64748b;font-size:0.72rem;">← ' + prev.label + ' 으로 돌아가기</div>';
       }
 
-      // 신어 노드: 페이지 링크 + KB 버튼
+      // 신어 노드: 페이지 링크 + KB 버튼 (verb 모드에선 개체명 그래프용 요소 제외)
       if (n.type === 'entry') {
         html += '<a class="ip-item" href="id/' + n.id + '.html" style="color:#1e3a8a;font-weight:700;">페이지 보기 →</a>';
-        if (n.url) {
-          html += '<a class="ip-item" href="' + n.url + '" target="_blank" rel="noopener" style="color:#2563eb;font-size:0.78rem;">최초 출현 기사 ↗</a>';
+        if (currentMode !== 'verb') {
+          if (n.url) {
+            html += '<a class="ip-item" href="' + n.url + '" target="_blank" rel="noopener" style="color:#2563eb;font-size:0.78rem;">최초 출현 기사 ↗</a>';
+          }
+          html += '<div class="ip-item">' + kbBtns(n.wiki, n.namu, false) + '</div>';
         }
-        html += '<div class="ip-item">' + kbBtns(n.wiki, n.namu, false) + '</div>';
       }
 
       // 개체명 노드: KB 버튼
@@ -1506,28 +1698,7 @@
         html += '<div class="ip-item">' + kbBtns(n.wiki, n.namu, false) + '</div>';
       }
 
-      // 구성 성분 노드: 형성 신어 목록
-      if (n.type === 'element' && n.eids && n.eids.length) {
-        html += '<div class="ip-section">형성 신어 (' + n.eids.length + ')</div>';
-        n.eids.forEach(function(eid) {
-          var en = _allNodeMap[eid];
-          if (!en) return;
-          var yr = en.year ? ' · ' + en.year + '년' : '';
-          html += '<a class="ip-item" href="id/' + eid + '.html" style="color:#1e3a8a;text-decoration:none;" onclick="event.stopPropagation();">'
-            + en.label + '<span class="ip-item-sub">' + yr + '</span></a>';
-        });
-      }
-
-      // 구성 성분 노드: 공동 형성 성분 목록 (2홉)
-      if (n.type === 'element' && coElements.length > 0) {
-        html += '<div class="ip-section">공동 형성 성분 (' + coElements.length + ')</div>';
-        coElements.forEach(function(ce) {
-          html += '<div class="ip-item ip-nav" data-nid="' + ce.id + '" style="cursor:pointer;">'
-            + ce.label + '<span class="ip-item-sub"> · ' + (ce.ec || 0) + '개 신어</span></div>';
-        });
-      }
-
-      // 유형별 그룹
+      // 유형별 그룹 (깊이 1)
       var groups = {};
       connected.forEach(function(c) {
         var t = c.type;
@@ -1539,7 +1710,7 @@
       order.forEach(function(t) {
         if (!groups[t]) return;
         var label = typeLabels[t] || t;
-        html += '<div class="ip-section">' + label + ' (' + groups[t].length + ')</div>';
+        html += '<div class="ip-section">' + label + ' · <span style="color:' + HOP_TEXT_COLORS[1] + ';">1차 연결</span> (' + groups[t].length + ')</div>';
         groups[t].sort(function(a, b) { return (a.label || '').localeCompare(b.label || ''); });
         groups[t].forEach(function(c) {
           var extra = '';
@@ -1583,16 +1754,43 @@
         });
       });
 
-      // 2홉 관련 개체명 (entity 전용)
-      if (relatedEntities.length > 0) {
-        html += '<div class="ip-section">관련 개체명 (' + relatedEntities.length + ')</div>';
-        for (var ri = 0; ri < relatedEntities.length; ri++) {
-          var re = relatedEntities[ri];
-          html += '<div class="ip-item ip-nav" data-nid="' + re.id + '" style="cursor:pointer;">'
-            + re.label + '<span class="ip-item-sub"> · ' + (CLS_KO[re.cls] || re.cls || '') + ' · 연결 ' + (re.degree || 0) + '</span>'
-            + kbBtns(re.wiki, re.namu, true) + '</div>';
-        }
+      // verb 모드: 공기 감정 용언 없는 신어도 섹션 표시 (구성 성분 그래프와 평행)
+      if (currentMode === 'verb' && n.type === 'entry' && !groups.verb) {
+        html += '<div class="ip-section">감정 용언 · 1차 연결 (0)</div>';
+        html += '<div class="ip-item" style="color:#94a3b8;cursor:default;">공기한 감정 용언 없음</div>';
       }
+
+      // 깊이 2·3 — 유형별 그룹, 경유 노드 표시
+      function renderIndirect(list, tag, tagColor) {
+        if (!list.length) return;
+        var groups2 = {};
+        list.forEach(function(s) {
+          var t = s.node.type;
+          if (!groups2[t]) groups2[t] = [];
+          groups2[t].push(s);
+        });
+        order.forEach(function(t) {
+          if (!groups2[t]) return;
+          var label2 = typeLabels[t] || t;
+          html += '<div class="ip-section">' + label2 + ' · <span style="color:' + tagColor + ';">' + tag + '</span> (' + groups2[t].length + ')</div>';
+          groups2[t].sort(function(a, b) { return (a.node.label || '').localeCompare(b.node.label || ''); });
+          groups2[t].forEach(function(s) {
+            var c = s.node;
+            var sub = '';
+            if (c.type === 'entry' && c.year) sub = ' · ' + c.year + '년';
+            else if (c.type === 'element') sub = ' · ' + (c.ec || 0) + '개 신어';
+            else if (c.type === 'verb') sub = ' · ' + (c.pos === 'VA' ? '형용사' : '동사');
+            else if (c.type === 'entity' && c.cls) sub = ' · ' + (CLS_KO[c.cls] || c.cls);
+            var via = s.vias.slice(0, 2).join('·') + (s.vias.length > 2 ? ' 외 ' + (s.vias.length - 2) : '');
+            html += '<div class="ip-item ip-nav" data-nid="' + c.id + '" style="cursor:pointer;">'
+              + c.label + '<span class="ip-item-sub">' + sub
+              + (via ? ' · <span class="ip-via" style="color:' + tagColor + ';">' + via + ' 경유</span>' : '')
+              + '</span></div>';
+          });
+        });
+      }
+      renderIndirect(hop2, '2차 연결', HOP_TEXT_COLORS[2]);
+      renderIndirect(hop3, '3차 연결', HOP_TEXT_COLORS[3]);
 
       ipList.innerHTML = html;
 
@@ -1611,7 +1809,7 @@
           var nid = el.getAttribute('data-nid');
           var target = nodeMap[nid];
           if (!target) return;
-          navHistory.push(n);
+          navHistory = [];  // 처음 클릭한 것과 동일하게 (이력 없음)
           navigateTo(target);
         });
       });
@@ -1649,12 +1847,8 @@
       navHistory = [];
       currentFocusNode = n;
 
-      // 연결 노드 하이라이트 (성분 노드는 형제 성분 2홉 포함)
-      var neighbors = computeHighlightSet(n);
-      nodes.forEach(function(nd) {
-        nd._highlighted = neighbors.has(nd.id);
-        nd._dimmed = !neighbors.has(nd.id);
-      });
+      // 연결 노드 하이라이트 (연결 깊이 설정 반영)
+      applyHighlight(computeHighlightSet(n));
       draw();
 
       // 정보 패널 표시
@@ -1683,6 +1877,7 @@
         var match = n.label && n.label.toLowerCase().indexOf(ql) !== -1;
         var isSearchable = n.type === 'entry' || n.type === 'entity' || n.type === 'element' || n.type === 'verb';
         n._highlighted = match && isSearchable;
+        n._hopDepth = undefined;
         n._dimmed = !match;
         if (match && isSearchable && !found) found = n;
       });
@@ -1701,7 +1896,7 @@
     var _BB_TABS = {
       main: [['entity', '개체명']],
       verb: [['verb', '감정 용언']],
-      morph: [['element', '구성 성분'], ['isolated', '고립 노드']]
+      morph: [['element', '구성 성분']]
     };
     function _rebuildBBTabs(mode) {
       var tabs = _BB_TABS[mode] || _BB_TABS.main;

@@ -47,24 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0013-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
       "@id": "kno:KN2023-0013-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -73,30 +55,6 @@
       },
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/055/0001037370"
-      }
-    },
-    {
-      "@id": "kno:KN2023-0013-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 233
-    },
-    {
-      "@id": "kno:KN2023-0013-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0013-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0013-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "건폭수사"
       }
     },
     {
@@ -113,12 +71,54 @@
       }
     },
     {
+      "@id": "kno:KN2023-0013-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 233
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2023-0013-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 4
+    },
+    {
+      "@id": "kno:KN2023-0013-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0013-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0013-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0013-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "건폭수사"
+      }
     }
   ]
 }

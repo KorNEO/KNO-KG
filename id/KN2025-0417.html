@@ -47,20 +47,6 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
       "@id": "kno:KN2025-0417-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -72,6 +58,21 @@
       }
     },
     {
+      "@id": "kno:KN2025-0417-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 31
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2025-0417-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -80,12 +81,28 @@
       "rdf:value": 1
     },
     {
-      "@id": "kno:KN2025-0417-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0417",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0417-att-nn"
       },
-      "rdf:value": 31
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0417-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0417-sense"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2025-0417-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:KN2025-0417-form",
@@ -102,23 +119,6 @@
         "@language": "ko",
         "@value": "에토녀"
       }
-    },
-    {
-      "@id": "kno:KN2025-0417",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0417-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0417-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0417-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0417-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

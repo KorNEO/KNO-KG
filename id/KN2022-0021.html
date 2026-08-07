@@ -47,6 +47,13 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2022-0021",
       "@type": "ontolex:Word",
       "frac:attestation": {
@@ -60,24 +67,22 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2022-0021-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 11890
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0021-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EA%B2%80%EC%B0%B0%20%EC%88%98%EC%82%AC%EA%B6%8C%20%EC%99%84%EC%A0%84%20%EB%B0%95%ED%83%88"
+      "@id": "kno:KN2022-0021-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-08-20"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/449/0000213665"
       }
     },
     {
@@ -89,12 +94,11 @@
       "rdf:value": 5554
     },
     {
-      "@id": "kno:KN2022-0021-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 11890
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2022-0021-form",
@@ -113,14 +117,10 @@
       }
     },
     {
-      "@id": "kno:KN2022-0021-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-08-20"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/449/0000213665"
+      "@id": "kno:KN2022-0021-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EA%B2%80%EC%B0%B0%20%EC%88%98%EC%82%AC%EA%B6%8C%20%EC%99%84%EC%A0%84%20%EB%B0%95%ED%83%88"
       }
     }
   ]

@@ -47,12 +47,20 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2025-0534-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 4
+      "@id": "kno:KN2025-0534-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0534-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0534-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "중립룩"
+      }
     },
     {
       "@id": "kno:corpus-NN",
@@ -60,6 +68,10 @@
         "@language": "ko",
         "@value": "신문 말뭉치"
       }
+    },
+    {
+      "@id": "kno:KN2025-0534-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-YT",
@@ -93,22 +105,6 @@
       }
     },
     {
-      "@id": "kno:KN2025-0534-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0534-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0534-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "중립룩"
-      }
-    },
-    {
       "@id": "kno:KN2025-0534-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -117,8 +113,12 @@
       "rdf:value": 4
     },
     {
-      "@id": "kno:KN2025-0534-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2025-0534-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 4
     }
   ]
 }

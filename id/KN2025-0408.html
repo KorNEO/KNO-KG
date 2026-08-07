@@ -47,33 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2025-0408-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2025-0408-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-12-29"
+      "@id": "kno:KN2025-0408-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://m.sports.naver.com/article/028/0002783720"
-      }
+      "rdf:value": 1
     },
     {
       "@id": "kno:KN2025-0408",
@@ -89,12 +68,30 @@
       }
     },
     {
-      "@id": "kno:KN2025-0408-freq-nn",
+      "@id": "kno:KN2025-0408-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2025-0408-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 1
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2025-0408-form",
@@ -113,12 +110,15 @@
       }
     },
     {
-      "@id": "kno:KN2025-0408-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2025-0408-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-12-29"
       },
-      "rdf:value": 0
+      "frac:locus": {
+        "@id": "https://m.sports.naver.com/article/028/0002783720"
+      }
     }
   ]
 }

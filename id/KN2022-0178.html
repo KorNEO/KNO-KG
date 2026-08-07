@@ -47,34 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0178-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2022-0178-freq-nn"
-        },
-        {
-          "@id": "kno:KN2022-0178-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "설거지론"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
+      "@id": "kno:KN2022-0178-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 4155
     },
     {
       "@id": "kno:KN2022-0178",
@@ -90,6 +68,27 @@
       }
     },
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0178-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EC%84%A4%EA%B1%B0%EC%A7%80%EB%A1%A0"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2022-0178-att-nn",
       "@type": "frac:Attestation",
       "dcterms:date": {
@@ -101,14 +100,6 @@
       }
     },
     {
-      "@id": "kno:KN2022-0178-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 4155
-    },
-    {
       "@id": "kno:KN2022-0178-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -117,10 +108,19 @@
       "rdf:value": 520
     },
     {
-      "@id": "kno:KN2022-0178-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EC%84%A4%EA%B1%B0%EC%A7%80%EB%A1%A0"
+      "@id": "kno:KN2022-0178-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2022-0178-freq-nn"
+        },
+        {
+          "@id": "kno:KN2022-0178-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "설거지론"
       }
     }
   ]

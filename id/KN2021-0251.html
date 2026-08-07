@@ -47,12 +47,30 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0251-freq-nn",
+      "@id": "kno:KN2021-0251-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-09-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/119/0002425981"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0251-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 615
+      "rdf:value": 3648
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2021-0251-form",
@@ -71,28 +89,10 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
       "@id": "kno:corpus-YT",
       "skos:prefLabel": {
         "@language": "ko",
         "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0251-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-09-04"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/119/0002425981"
       }
     },
     {
@@ -101,6 +101,14 @@
       "dcterms:isReferencedBy": {
         "@id": "https://namu.wiki/w/%EC%A9%9D%EC%A9%9D%EB%B0%95%EC%82%AC"
       }
+    },
+    {
+      "@id": "kno:KN2021-0251-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 615
     },
     {
       "@id": "kno:KN2021-0251",
@@ -114,14 +122,6 @@
       "ontolex:sense": {
         "@id": "kno:KN2021-0251-sense"
       }
-    },
-    {
-      "@id": "kno:KN2021-0251-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 3648
     }
   ]
 }

@@ -47,40 +47,16 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0128-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2022-0128-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2022-0128",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2022-0128-att-nn"
       },
-      "rdf:value": 15
-    },
-    {
-      "@id": "kno:KN2022-0128-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-05-17"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2022-0128-form"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/081/0003273538"
+      "ontolex:sense": {
+        "@id": "kno:KN2022-0128-sense"
       }
     },
     {
@@ -100,16 +76,28 @@
       }
     },
     {
-      "@id": "kno:KN2022-0128",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2022-0128-att-nn"
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2022-0128-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-05-17"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2022-0128-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2022-0128-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/081/0003273538"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -119,6 +107,18 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 6
+    },
+    {
+      "@id": "kno:KN2022-0128-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2022-0128-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 15
     }
   ]
 }

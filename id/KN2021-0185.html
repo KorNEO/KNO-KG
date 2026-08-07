@@ -47,12 +47,11 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0185-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 351
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
     },
     {
       "@id": "kno:KN2021-0185-att-nn",
@@ -66,11 +65,16 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
+      "@id": "kno:KN2021-0185-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 1
+    },
+    {
+      "@id": "kno:KN2021-0185-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
       "@id": "kno:corpus-YT",
@@ -80,12 +84,25 @@
       }
     },
     {
-      "@id": "kno:KN2021-0185-freq-yt",
+      "@id": "kno:KN2021-0185-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 1
+      "rdf:value": 351
+    },
+    {
+      "@id": "kno:KN2021-0185",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2021-0185-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2021-0185-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2021-0185-sense"
+      }
     },
     {
       "@id": "kno:KN2021-0185-form",
@@ -101,23 +118,6 @@
       "ontolex:writtenRep": {
         "@language": "ko",
         "@value": "아동특별돌봄비"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0185-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2021-0185",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2021-0185-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2021-0185-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2021-0185-sense"
       }
     }
   ]

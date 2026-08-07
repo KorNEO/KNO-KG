@@ -47,6 +47,38 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0075-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-06-01"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/028/0002546675"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0075-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/SARS-CoV-2/%EB%8D%B8%ED%83%80%20%EB%B3%80%EC%9D%B4"
+      }
+    },
+    {
       "@id": "kno:KN2021-0075-form",
       "@type": "ontolex:Form",
       "frac:frequency": [
@@ -63,33 +95,12 @@
       }
     },
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0075-freq-yt",
+      "@id": "kno:KN2021-0075-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-YT"
+        "@id": "kno:corpus-NN"
       },
-      "rdf:value": 3232
-    },
-    {
-      "@id": "kno:KN2021-0075-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/SARS-CoV-2/%EB%8D%B8%ED%83%80%20%EB%B3%80%EC%9D%B4"
-      }
+      "rdf:value": 103612
     },
     {
       "@id": "kno:KN2021-0075",
@@ -105,23 +116,12 @@
       }
     },
     {
-      "@id": "kno:KN2021-0075-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-06-01"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/028/0002546675"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0075-freq-nn",
+      "@id": "kno:KN2021-0075-freq-yt",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
-        "@id": "kno:corpus-NN"
+        "@id": "kno:corpus-YT"
       },
-      "rdf:value": 103612
+      "rdf:value": 3232
     }
   ]
 }

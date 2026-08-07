@@ -47,30 +47,10 @@
   },
   "@graph": [
     {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2024-0294",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2024-0294-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2024-0294-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2024-0294-sense"
+      "@id": "kno:KN2024-0294-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%ED%95%AD%EB%AA%85%EC%9D%98%20%EC%A3%84"
       }
     },
     {
@@ -90,10 +70,46 @@
       }
     },
     {
-      "@id": "kno:KN2024-0294-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%ED%95%AD%EB%AA%85%EC%9D%98%20%EC%A3%84"
+      "@id": "kno:KN2024-0294-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 42
+    },
+    {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0294",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2024-0294-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2024-0294-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2024-0294-sense"
+      }
+    },
+    {
+      "@id": "kno:KN2024-0294-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 85
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
     },
     {
@@ -106,22 +122,6 @@
       "frac:locus": {
         "@id": "https://n.news.naver.com/article/214/0001292004"
       }
-    },
-    {
-      "@id": "kno:KN2024-0294-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 85
-    },
-    {
-      "@id": "kno:KN2024-0294-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 42
     }
   ]
 }

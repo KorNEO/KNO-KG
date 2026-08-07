@@ -47,6 +47,14 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2025-0325-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
+      },
+      "rdf:value": 2
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -61,8 +69,28 @@
       }
     },
     {
-      "@id": "kno:KN2025-0325-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2025-0325-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 8
+    },
+    {
+      "@id": "kno:KN2025-0325-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2025-0325-freq-nn"
+        },
+        {
+          "@id": "kno:KN2025-0325-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "생닭자세"
+      }
     },
     {
       "@id": "kno:KN2025-0325",
@@ -89,36 +117,8 @@
       }
     },
     {
-      "@id": "kno:KN2025-0325-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 8
-    },
-    {
-      "@id": "kno:KN2025-0325-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 2
-    },
-    {
-      "@id": "kno:KN2025-0325-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2025-0325-freq-nn"
-        },
-        {
-          "@id": "kno:KN2025-0325-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "생닭자세"
-      }
+      "@id": "kno:KN2025-0325-sense",
+      "@type": "ontolex:LexicalSense"
     }
   ]
 }

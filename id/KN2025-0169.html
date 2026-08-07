@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2025-0169-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -54,10 +58,22 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
+      "@id": "kno:KN2025-0169-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 5
+    },
+    {
+      "@id": "kno:KN2025-0169-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2025-03-04"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/021/0002693891"
       }
     },
     {
@@ -69,25 +85,11 @@
       "rdf:value": 7
     },
     {
-      "@id": "kno:KN2025-0169",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2025-0169-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2025-0169-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2025-0169-sense"
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
       }
-    },
-    {
-      "@id": "kno:KN2025-0169-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 5
     },
     {
       "@id": "kno:KN2025-0169-form",
@@ -106,19 +108,17 @@
       }
     },
     {
-      "@id": "kno:KN2025-0169-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2025-03-04"
+      "@id": "kno:KN2025-0169",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2025-0169-att-nn"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/021/0002693891"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2025-0169-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2025-0169-sense"
       }
-    },
-    {
-      "@id": "kno:KN2025-0169-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

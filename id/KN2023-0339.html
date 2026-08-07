@@ -47,18 +47,40 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2023-0339-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2023-0339",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0339-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0339-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0339-sense"
+      }
     },
     {
-      "@id": "kno:KN2023-0339-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2022-07-31"
+      "@id": "kno:KN2023-0339-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/082/0001167496"
+      "rdf:value": 0
+    },
+    {
+      "@id": "kno:KN2023-0339-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0339-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0339-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "포토프레스세대"
       }
     },
     {
@@ -76,27 +98,6 @@
       }
     },
     {
-      "@id": "kno:KN2023-0339-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2023-0339",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0339-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0339-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0339-sense"
-      }
-    },
-    {
       "@id": "kno:KN2023-0339-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -105,19 +106,18 @@
       "rdf:value": 50
     },
     {
-      "@id": "kno:KN2023-0339-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0339-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0339-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "포토프레스세대"
+      "@id": "kno:KN2023-0339-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
+      "@id": "kno:KN2023-0339-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2022-07-31"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/082/0001167496"
       }
     }
   ]

@@ -47,19 +47,19 @@
   },
   "@graph": [
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
       "@id": "kno:KN2020-0001-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 7
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
     },
     {
       "@id": "kno:corpus-YT",
@@ -69,22 +69,16 @@
       }
     },
     {
-      "@id": "kno:KN2020-0001-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2020-0001",
+      "@type": "ontolex:Word",
+      "frac:attestation": {
+        "@id": "kno:KN2020-0001-att-nn"
       },
-      "rdf:value": 11
-    },
-    {
-      "@id": "kno:KN2020-0001-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-05-11"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2020-0001-form"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0002999515"
+      "ontolex:sense": {
+        "@id": "kno:KN2020-0001-sense"
       }
     },
     {
@@ -108,17 +102,23 @@
       "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2020-0001",
-      "@type": "ontolex:Word",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0001-att-nn"
+      "@id": "kno:KN2020-0001-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-05-11"
       },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0001-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0001-sense"
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0002999515"
       }
+    },
+    {
+      "@id": "kno:KN2020-0001-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 11
     }
   ]
 }

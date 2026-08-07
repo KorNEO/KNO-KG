@@ -47,6 +47,21 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2020-0006-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2020-01-29"
+      },
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/421/0004432967"
+      }
+    },
+    {
+      "@id": "kno:KN2020-0006-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2020-0006-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -62,10 +77,27 @@
       }
     },
     {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
+      "@id": "kno:KN2020-0006-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2
+    },
+    {
+      "@id": "kno:KN2020-0006-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2020-0006-freq-nn"
+        },
+        {
+          "@id": "kno:KN2020-0006-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
         "@language": "ko",
-        "@value": "댓글 말뭉치"
+        "@value": "격리생활시설"
       }
     },
     {
@@ -82,42 +114,10 @@
       }
     },
     {
-      "@id": "kno:KN2020-0006-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 2
-    },
-    {
-      "@id": "kno:KN2020-0006-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-01-29"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/421/0004432967"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0006-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2020-0006-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0006-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0006-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
         "@language": "ko",
-        "@value": "격리생활시설"
+        "@value": "댓글 말뭉치"
       }
     }
   ]

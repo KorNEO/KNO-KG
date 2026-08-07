@@ -47,15 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2022-0097-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2021-07-22"
+      "@id": "kno:KN2022-0097-freq-nn",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-NN"
       },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/025/0003120624"
-      }
+      "rdf:value": 113
     },
     {
       "@id": "kno:KN2022-0097-form",
@@ -74,6 +71,19 @@
       }
     },
     {
+      "@id": "kno:KN2022-0097",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2022-0097-att-nn"
+      },
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2022-0097-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2022-0097-sense"
+      }
+    },
+    {
       "@id": "kno:corpus-NN",
       "skos:prefLabel": {
         "@language": "ko",
@@ -88,25 +98,19 @@
       }
     },
     {
-      "@id": "kno:KN2022-0097",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2022-0097-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2022-0097-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2022-0097-sense"
-      }
+      "@id": "kno:KN2022-0097-sense",
+      "@type": "ontolex:LexicalSense"
     },
     {
-      "@id": "kno:KN2022-0097-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
+      "@id": "kno:KN2022-0097-att-nn",
+      "@type": "frac:Attestation",
+      "dcterms:date": {
+        "@type": "xsd:date",
+        "@value": "2021-07-22"
       },
-      "rdf:value": 113
+      "frac:locus": {
+        "@id": "https://n.news.naver.com/article/025/0003120624"
+      }
     },
     {
       "@id": "kno:KN2022-0097-freq-yt",
@@ -115,10 +119,6 @@
         "@id": "kno:corpus-YT"
       },
       "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2022-0097-sense",
-      "@type": "ontolex:LexicalSense"
     }
   ]
 }

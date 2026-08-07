@@ -47,6 +47,10 @@
   },
   "@graph": [
     {
+      "@id": "kno:KN2023-0325-sense",
+      "@type": "ontolex:LexicalSense"
+    },
+    {
       "@id": "kno:KN2023-0325-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
@@ -55,16 +59,19 @@
       "rdf:value": 23
     },
     {
-      "@id": "kno:KN2023-0325",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2023-0325-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2023-0325-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2023-0325-sense"
+      "@id": "kno:KN2023-0325-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2023-0325-freq-nn"
+        },
+        {
+          "@id": "kno:KN2023-0325-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "팁피로"
       }
     },
     {
@@ -82,8 +89,12 @@
       }
     },
     {
-      "@id": "kno:KN2023-0325-sense",
-      "@type": "ontolex:LexicalSense"
+      "@id": "kno:KN2023-0325-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 2
     },
     {
       "@id": "kno:KN2023-0325-att-nn",
@@ -97,27 +108,16 @@
       }
     },
     {
-      "@id": "kno:KN2023-0325-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
+      "@id": "kno:KN2023-0325",
+      "@type": "ontolex:MultiwordExpression",
+      "frac:attestation": {
+        "@id": "kno:KN2023-0325-att-nn"
       },
-      "rdf:value": 2
-    },
-    {
-      "@id": "kno:KN2023-0325-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2023-0325-freq-nn"
-        },
-        {
-          "@id": "kno:KN2023-0325-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "팁피로"
+      "ontolex:canonicalForm": {
+        "@id": "kno:KN2023-0325-form"
+      },
+      "ontolex:sense": {
+        "@id": "kno:KN2023-0325-sense"
       }
     }
   ]

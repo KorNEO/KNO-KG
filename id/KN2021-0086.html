@@ -47,41 +47,12 @@
   },
   "@graph": [
     {
-      "@id": "kno:KN2021-0086-sense",
-      "@type": "ontolex:LexicalSense",
-      "dcterms:isReferencedBy": {
-        "@id": "https://namu.wiki/w/%EB%9A%9C%EB%94%B0"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2021-0086-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2021-0086-freq-nn"
-        },
-        {
-          "@id": "kno:KN2021-0086-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "뚜따"
-      }
+      "@id": "kno:KN2021-0086-freq-yt",
+      "@type": "frac:CorpusFrequency",
+      "frac:corpus": {
+        "@id": "kno:corpus-YT"
+      },
+      "rdf:value": 8269
     },
     {
       "@id": "kno:KN2021-0086-att-nn",
@@ -108,20 +79,49 @@
       }
     },
     {
+      "@id": "kno:corpus-NN",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "신문 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0086-form",
+      "@type": "ontolex:Form",
+      "frac:frequency": [
+        {
+          "@id": "kno:KN2021-0086-freq-nn"
+        },
+        {
+          "@id": "kno:KN2021-0086-freq-yt"
+        }
+      ],
+      "ontolex:writtenRep": {
+        "@language": "ko",
+        "@value": "뚜따"
+      }
+    },
+    {
+      "@id": "kno:corpus-YT",
+      "skos:prefLabel": {
+        "@language": "ko",
+        "@value": "댓글 말뭉치"
+      }
+    },
+    {
+      "@id": "kno:KN2021-0086-sense",
+      "@type": "ontolex:LexicalSense",
+      "dcterms:isReferencedBy": {
+        "@id": "https://namu.wiki/w/%EB%9A%9C%EB%94%B0"
+      }
+    },
+    {
       "@id": "kno:KN2021-0086-freq-nn",
       "@type": "frac:CorpusFrequency",
       "frac:corpus": {
         "@id": "kno:corpus-NN"
       },
       "rdf:value": 66
-    },
-    {
-      "@id": "kno:KN2021-0086-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 8269
     }
   ]
 }
