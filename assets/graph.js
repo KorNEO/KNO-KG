@@ -76,7 +76,9 @@
   var ctx = canvas.getContext('2d');
   var W, H, dpr;
   var transform = d3.zoomIdentity;
-  var zoom = d3.zoom().scaleExtent([0.03, 14]).on('zoom', function (ev) { transform = ev.transform; draw(); });
+  // 휠 확대 속도: d3 기본값은 Ctrl+휠에서 10배로 튀므로 Ctrl 여부와 무관하게 같은 폭으로, 한 칸에 약 12%
+  function wheelDelta(ev) { var d = -ev.deltaY * (ev.deltaMode === 1 ? 0.05 : ev.deltaMode ? 1 : 0.002); return Math.max(-0.12, Math.min(0.12, d)); }
+  var zoom = d3.zoom().scaleExtent([0.03, 14]).wheelDelta(wheelDelta).on('zoom', function (ev) { transform = ev.transform; draw(); });
   d3.select(canvas).call(zoom);
 
   function resize() {
