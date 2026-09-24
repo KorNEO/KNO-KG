@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0169 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0169 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0169-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0169-form ;
-    ontolex:sense kno:KN2020-0169-sense .
-
-kno:KN2020-0169-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003721580> .
-
-kno:KN2020-0169-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0169-freq-nn,
-        kno:KN2020-0169-freq-yt ;
-    ontolex:writtenRep "소득 감소 진술서"@ko .
-
-kno:KN2020-0169-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0169-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0169-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0169 kno:languageType "한_한_한" ;
+    kno:indexForm "소득감소진술서"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "소득(所得), 감소(減少), 진술서(陳述書)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0169-freq-NN-total ;
+    kno:instantiates kno:S000531 ;
+    kno:slotFiller "감소(減少)+진술서(陳述書) (2성분)"@ko ;
+    rdfs:label "소득 감소 진술서"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0169-freq-NN-2020 ;
+    kno:example "¶금융사에 본인이 서명한 {소득 감소 진술서를} 내면 대출 원금의 상환 유예를 신청할 수 있다."@ko ;
+    kno:origin "(所得減少陳述書)" ;
+    kno:component kno:KN2020-0169-c2 ;
+    kno:frequency kno:KN2020-0169-freq-NN-2021 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0169-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0169-freq-NN-2022 ;
+    kno:activeYears "3"^^xsd:integer ;
+    skos:definition "객관적으로 소득 감소를 증명할 자료가 없을 시, 소득 감소에 관한 내용을 본인이 스스로 작성한 문서. 정부가 코로나19로 소득이 감소하여 기존 대출의 원금을 상환하기 어려운 가계의 대출 원금 상환을 유예해 주었는데, 소득 감소를 증명할 수 없는 경우 소득 감소 진술서를 제출할 수 있도록 하였다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%93%9D%20%EA%B0%90%EC%86%8C%20%EC%A7%84%EC%88%A0%EC%84%9C> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0169-c3 .
+kno:KN2020-0169-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N5m ;
+    a kno:Component ;
+    kno:formative kno:F002125 ;
+    rdfs:label "감소(減少)"@ko ;
+    kno:surfaceForm "감소"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "감소"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0169-c1 kno:fullForm "소득"@ko ;
+    kno:surfaceForm "소득"@ko ;
+    kno:formative kno:F000047 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "소득(所得)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 .
+kno:KN2020-0169-c3 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005926 ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:fullForm "진술서"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "진술서"@ko ;
+    rdfs:label "진술서(陳述書)"@ko .

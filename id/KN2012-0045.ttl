@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0045 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0045 a ontolex:Word ;
+    kno:example "¶중국에서 방송된 것을 미리 접한 누리꾼들은…“말 잘 안 통하는 두 커플이 {꽁냥거리는} 게 너무 귀엽더라.”, “얼른 보고 싶어요.” 등의 반응을 보였다."@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356880> ;
+    kno:urimalTargetCode "1356880" ;
+    kno:indexForm "꽁냥거리다"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:label "꽁냥-거리다"@ko ;
+    skos:definition "연인들끼리 귀엽게 가벼운 애정 표현을 하다."@ko ;
+    kno:componentString "꽁냥, -거리다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0045-c2 ;
+    kno:pos "「동」"@ko ;
+    kno:languageType "고+고" ;
+    kno:formation kno:W02 ;
+    kno:predicate "표현다"@ko ;
+    kno:slotFiller "꽁냥 (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0045-c1 ;
+    kno:instantiates kno:S000457 .
+kno:KN2012-0045-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "거리다"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:surfaceForm "거리다"@ko ;
+    rdfs:label "-거리다"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000654 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2012-0045-c1 rdfs:label "꽁냥"@ko ;
+    kno:surfaceForm "꽁냥"@ko ;
+    a kno:Component ;
+    kno:fullForm "꽁냥"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001129 ;
+    kno:semanticTag kno:usas-S3.2 .

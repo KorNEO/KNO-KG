@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0584 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0584 skos:definition "정규직으로 채용되지 못하고 인턴 생활만 반복하는 취업 준비생을 비유적으로 이르는 말."@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "호모^인턴스"@ko ;
+    kno:component kno:KN2016-0584-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368871> ;
+    kno:origin "(<라>▼homo<영>interns)" ;
+    kno:frequency kno:KN2016-0584-freq-NN-2021 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "호모인턴스"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2016-0584-freq-NN-2018 ;
+    kno:frequency kno:KN2016-0584-freq-NN-2015 ;
+    kno:example "¶또 인턴 생활만 반복하는 취준생들은 자조적 의미에서 스스로를 {호모 인턴스로} 부르기도 했다."@ko ;
+    kno:frequency kno:KN2016-0584-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0584-freq-NN-2016 ;
+    kno:component kno:KN2016-0584-c1 ;
+    kno:frequency kno:KN2016-0584-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0584-freq-NN-total ;
+    kno:languageType "라^영" ;
+    kno:slotFiller "인턴스(interns) (1성분)"@ko ;
+    kno:urimalTargetCode "1368871" ;
+    kno:componentString "호모(homo), 인턴스(interns)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0584-freq-NN-2023 ;
+    kno:instantiates kno:S000058 ;
+    kno:pos "「구」"@ko .
+kno:KN2016-0584-c2 kno:formative kno:F005458 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "인턴스"@ko ;
+    kno:surfaceForm "인턴스"@ko ;
+    rdfs:label "인턴스(interns)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0584-c1 kno:role "고정항"@ko ;
+    kno:fullForm "호모"@ko ;
+    kno:surfaceForm "호모"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000026 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "호모(homo)"@ko ;
+    a kno:Component .

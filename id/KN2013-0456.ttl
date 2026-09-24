@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0456 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0456 kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1387000> ;
+    kno:componentString "행(복)(幸), 쇼(←하십시오)"@ko ;
+    a ontolex:Word ;
+    skos:definition "‘행복하십시오’의 준말."@ko ;
+    rdfs:label "행쇼"@ko ;
+    kno:languageType "한+고" ;
+    kno:indexForm "행쇼"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(幸쇼)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0456-c2 ;
+    kno:formation kno:W06 ;
+    kno:urimalTargetCode "1387000" ;
+    kno:example "¶지난 12월 31일 오후 OOO은 자신의 에스엔에스를 통해 “2013 모두 {행쇼}.”라는 짧은 글과 함께 본인의 사진 한 장을 게재했다."@ko ;
+    kno:component kno:KN2013-0456-c1 ;
+    a kno:Neologism .
+kno:KN2013-0456-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "쇼(←하십시오)"@ko ;
+    kno:fullForm "쇼"@ko ;
+    kno:formative kno:F004450 ;
+    kno:surfaceForm "쇼"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0456-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "행"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000640 ;
+    kno:fullForm "행복"@ko ;
+    rdfs:label "행(복)(幸)"@ko ;
+    kno:semanticTag kno:usas-E4.1p .

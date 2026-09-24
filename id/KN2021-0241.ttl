@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0241 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0241 a ontolex:Word ;
-    frac:attestation kno:KN2021-0241-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0241-form ;
-    ontolex:sense kno:KN2021-0241-sense .
-
-kno:KN2021-0241-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/022/0003503445> .
-
-kno:KN2021-0241-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0241-freq-nn,
-        kno:KN2021-0241-freq-yt ;
-    ontolex:writtenRep "줌-피로"@ko .
-
-kno:KN2021-0241-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0241-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0241-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0241 skos:definition "화상 회의나 화상 수업 등을 진행하며 개인이 느끼는 정신이나 몸의 피로. 코로나19가 확산하는 상황에서 대면보다는 화면을 주시해야 하는 비대면 상황이 많아지면서 생겨난 말이다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2021-0241-c2 ;
+    kno:formation kno:W01 ;
+    kno:indexForm "줌피로"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2021-0241-freq-NN-2023 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0241-freq-NN-total ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "줌(Zoom), 피로(疲勞)"@ko ;
+    kno:instantiates kno:S000579 ;
+    kno:example "¶화상 회의가 활성화되자 회의는 물론이고 회식까지 온라인으로 진행하는 문화가 생겨나며 {줌피로를} 호소하는 직장인들이 많아지고 있다."@ko ;
+    kno:origin "(Zoom疲勞)" ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "피로(疲勞) (1성분)"@ko ;
+    rdfs:label "줌-피로"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%8C%ED%94%BC%EB%A1%9C> ;
+    kno:frequency kno:KN2021-0241-freq-NN-2020 ;
+    kno:component kno:KN2021-0241-c1 .
+kno:KN2021-0241-c2 a kno:Component ;
+    rdfs:label "피로(疲勞)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "피로"@ko ;
+    kno:surfaceForm "피로"@ko ;
+    kno:formative kno:F000634 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0241-c1 kno:semanticTag kno:usas-Q1.3 ;
+    rdfs:label "줌(Zoom)"@ko ;
+    kno:formative kno:F000928 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "줌"@ko ;
+    a kno:Component ;
+    kno:fullForm "줌"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .

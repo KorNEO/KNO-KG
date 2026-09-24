@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0101 rdfs:label "몸 캠 낚시"@ko ;
+    kno:frequency kno:KN2019-0101-freq-NN-total ;
+    kno:frequency kno:KN2019-0101-freq-NN-2019 ;
+    kno:component kno:KN2019-0101-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:origin "(몸<영>cam낚시)" ;
+    kno:example "¶몸 캠 피싱은 이른바 몸또, {몸 캠 낚시로도} 불리는 범죄 수법으로 주로 랜덤 채팅 애플리케이션에서 이뤄지는 것이 특징이다."@ko ;
+    kno:component kno:KN2019-0101-c3 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "알몸이 찍힌 동영상으로 상대방을 협박하여 돈을 뜯어내는 범죄를 비유적으로 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
+    kno:indexForm "몸캠낚시"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "몸, 캠(cam), 낚시"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0101-c1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%B8%20%EC%BA%A0%20%EB%82%9A%EC%8B%9C> ;
+    kno:languageType "고_영_고" ;
+    kno:frequency kno:KN2019-0101-freq-NN-2021 ;
+    kno:registration "신어DB"@ko .
+kno:KN2019-0101-c2 a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "캠"@ko ;
+    rdfs:label "캠(cam)"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006227 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "캠"@ko .
+kno:KN2019-0101-c3 kno:fullForm "낚시"@ko ;
+    kno:surfaceForm "낚시"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002683 ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "낚시"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0101-c1 kno:surfaceForm "몸"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "몸"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "몸"@ko ;
+    kno:formative kno:F001309 ;
+    kno:truncated "false"^^xsd:boolean .

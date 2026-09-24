@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0017 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0017-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0017-form ;
-    ontolex:sense kno:KN2024-0017-sense .
-
-kno:KN2024-0017-att-nn a frac:Attestation ;
-    dcterms:date "2024-05-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005422431> .
-
-kno:KN2024-0017-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0017-freq-nn,
-        kno:KN2024-0017-freq-yt ;
-    ontolex:writtenRep "국고^만능론"@ko .
-
-kno:KN2024-0017-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0017-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0017-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0017 a kno:Neologism ;
+    kno:origin "(國庫萬能論)" ;
+    kno:frequency kno:KN2024-0017-freq-NN-2024 ;
+    kno:example "¶재정이 부족할 때 국가가 모든 부족분을 채울 수 있다는 {국고 만능론에} 기대는 것은 바람직하지 않다."@ko ;
+    kno:languageType "한^한" ;
+    kno:indexForm "국고만능론"@ko ;
+    skos:definition "연금이나 복지 재정이 부족할 경우, 구체적인 제도 개혁이나 재원 확충 방안 없이 단순히 국고로 모든 부족분을 충당할 수 있다고 보는 관점이나 주장."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0017-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "국고^만능론"@ko ;
+    kno:componentString "국고(國庫), 만능론(萬能論)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0017-c2 ;
+    kno:frequency kno:KN2024-0017-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EA%B3%A0%EB%A7%8C%EB%8A%A5%EB%A1%A0> .
+kno:KN2024-0017-c1 kno:role "성분"@ko ;
+    kno:fullForm "국고"@ko ;
+    kno:surfaceForm "국고"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:formative kno:F002470 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "국고(國庫)"@ko .
+kno:KN2024-0017-c2 kno:formative kno:F003367 ;
+    kno:fullForm "만능론"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "만능론"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "만능론(萬能論)"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:truncated "false"^^xsd:boolean .

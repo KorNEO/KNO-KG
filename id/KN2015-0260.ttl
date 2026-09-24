@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0260 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0260 kno:component kno:KN2015-0260-c1 ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "허(가)(許), 특(허)(特), 법(法)"@ko ;
+    kno:urimalTargetCode "1359797" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2015-0260-c3 ;
+    kno:frequency kno:KN2015-0260-freq-NN-2015 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:origin "(許特法)" ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    rdfs:label "허특법"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:predicate "금지하다"@ko ;
+    skos:definition "의약품에 대한 특허를 받은 사람의 권리를 보호하기 위해, 특허권이 유지되는 동안에 다른 복제약의 판매를 금지하는 법. 한 의약품에 각각 따로 적용되어 온 허가와 특허에 대한 행정 절차를 서로 연계하여, 2015년 3월 15일부터 시행되었다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2015-0260-c2 ;
+    kno:frequency kno:KN2015-0260-freq-NN-total ;
+    kno:slotFiller "허(가)(許)+특(허)(特) (2성분)"@ko ;
+    kno:instantiates kno:S000015 ;
+    kno:indexForm "허특법"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359797> ;
+    a ontolex:Word ;
+    kno:example "¶특허권자인 다국적 제약 회사는 {허특법을} 통해 높은 약값을 유지하며 제네릭약을 견제할 수 있다."@ko .
+kno:KN2015-0260-c1 rdfs:label "허(가)(許)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "허가"@ko ;
+    kno:surfaceForm "허"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F007034 ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:position "1"^^xsd:integer .
+kno:KN2015-0260-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "법"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000002 .
+kno:KN2015-0260-c2 a kno:Component ;
+    rdfs:label "특(허)(特)"@ko ;
+    kno:surfaceForm "특"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006576 ;
+    kno:fullForm "특허"@ko ;
+    kno:truncated "true"^^xsd:boolean .

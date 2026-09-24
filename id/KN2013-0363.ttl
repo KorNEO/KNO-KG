@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0363 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0363 kno:example "¶“OOO 미모 빛난다, 빛나!”,…“OOO {존예}! 드라마 기대할게요!” 등등 OOO에게 쏟아지는 관심이 뜨겁다."@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "존(나) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:instantiates kno:S000652 ;
+    rdfs:label "존예"@ko ;
+    kno:component kno:KN2013-0363-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "고+고" ;
+    kno:unitType "단어"@ko ;
+    skos:definition "정말 생긴 모양이 아름다워 눈으로 보기에 좋음."@ko ;
+    kno:slotFiller "예(쁘다) (1성분)"@ko ;
+    kno:instantiates kno:S000576 ;
+    kno:component kno:KN2013-0363-c2 ;
+    kno:indexForm "존예"@ko ;
+    a ontolex:Word ;
+    kno:componentString "존(나), 예(쁘다)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B4%EC%98%88> .
+kno:KN2013-0363-c1 a kno:Component ;
+    rdfs:label "존(나)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A13.3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "존나"@ko ;
+    kno:surfaceForm "존"@ko ;
+    kno:formative kno:F000586 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0363-c2 kno:surfaceForm "예"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:role "고정항"@ko ;
+    rdfs:label "예(쁘다)"@ko ;
+    kno:formative kno:F000865 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "예쁘다"@ko .

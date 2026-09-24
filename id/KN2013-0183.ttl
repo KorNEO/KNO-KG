@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0183 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0183 kno:indexForm "미모드립"@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "미모(美貌) (1성분)"@ko ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:component kno:KN2013-0183-c2 ;
+    kno:languageType "한_영" ;
+    kno:predicate "하다"@ko ;
+    kno:frequency kno:KN2013-0183-freq-NN-total ;
+    a kno:Neologism ;
+    kno:componentString "미모(美貌), 드립(←ad lib)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000835 ;
+    skos:definition "미모를 소재로 하여 대본에 없는 대사를 즉흥적으로 하는 일. 또는 그런 대사."@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "미모 드립"@ko ;
+    kno:frequency kno:KN2013-0183-freq-NN-2014 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%AA%A8%20%EB%93%9C%EB%A6%BD> ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2013-0183-freq-NN-2012 ;
+    kno:origin "(美貌←<영>ad lib)" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:example "¶‘OO’로 유명한 OOO는 ‘간디 드립’으로, 후천적 미모의 소유자 OOO는 ‘{미모 드립’으로} 등장한다."@ko ;
+    kno:component kno:KN2013-0183-c1 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2013-0183-c2 kno:semanticTag kno:usas-Q2.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E4.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "드립"@ko ;
+    kno:surfaceForm "드립"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000487 ;
+    rdfs:label "드립(←ad lib)"@ko .
+kno:KN2013-0183-c1 kno:formative kno:F003602 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "미모"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "미모"@ko ;
+    rdfs:label "미모(美貌)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:role "슬롯 채움"@ko .

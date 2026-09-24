@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0510 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0510 rdfs:label "쿡^드라마"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372945> ;
+    kno:component kno:KN2016-0510-c2 ;
+    kno:languageType "영^영" ;
+    kno:frequency kno:KN2016-0510-freq-NN-2018 ;
+    skos:definition "요리를 소재로 한 드라마."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>cook drama)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:example "¶요즘 안방극장은 쿡방에 이어 {쿡 드라마가} 점령했다."@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:component kno:KN2016-0510-c1 ;
+    kno:frequency kno:KN2016-0510-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0510-freq-NN-2015 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "쿡(cook), 드라마(drama)"@ko ;
+    kno:indexForm "쿡드라마"@ko ;
+    kno:urimalTargetCode "1372945" ;
+    a ontolex:MultiwordExpression .
+kno:KN2016-0510-c2 kno:formative kno:F003052 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K4 ;
+    rdfs:label "드라마(drama)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "드라마"@ko ;
+    kno:surfaceForm "드라마"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2016-0510-c1 kno:formative kno:F001869 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "쿡"@ko ;
+    rdfs:label "쿡(cook)"@ko ;
+    kno:fullForm "쿡"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

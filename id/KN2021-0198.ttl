@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0198 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0198-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0198-form ;
-    ontolex:sense kno:KN2021-0198-sense .
-
-kno:KN2021-0198-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004661174> .
-
-kno:KN2021-0198-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0198-freq-nn,
-        kno:KN2021-0198-freq-yt ;
-    ontolex:writtenRep "연금^개미"@ko .
-
-kno:KN2021-0198-freq-nn a frac:CorpusFrequency ;
-    rdf:value 161 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0198-freq-yt a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0198-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0198 kno:indexForm "연금개미"@ko ;
+    kno:languageType "한^고" ;
+    kno:example "¶{연금 개미들을} 잡기 위한 자산 운용사들의 경쟁이 심화되고 있다."@ko ;
+    kno:frequency kno:KN2021-0198-freq-NN-total ;
+    rdfs:label "연금^개미"@ko ;
+    skos:definition "퇴직 연금을 활용하여 주식 시장에서 개인적으로 주식 투자를 하는 사람."@ko ;
+    kno:componentString "연금(年金), 개미"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0198-freq-NN-2021 ;
+    kno:component kno:KN2021-0198-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0198-freq-NN-2022 ;
+    kno:urimalTargetCode "1523080" ;
+    kno:component kno:KN2021-0198-c1 ;
+    kno:frequency kno:KN2021-0198-freq-NN-2023 ;
+    kno:predicate "하다"@ko ;
+    kno:frequency kno:KN2021-0198-freq-NN-2024 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1523080> ;
+    kno:frequency kno:KN2021-0198-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000070 ;
+    kno:origin "(年金개미)" ;
+    kno:instantiates kno:S001559 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "개미 (1성분)"@ko ;
+    kno:frequency kno:KN2021-0198-freq-NN-2020 ;
+    kno:slotFiller "연금(年金) (1성분)"@ko .
+kno:KN2021-0198-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "개미"@ko ;
+    kno:formative kno:F000083 ;
+    a kno:Component ;
+    kno:fullForm "개미"@ko ;
+    kno:surfaceForm "개미"@ko ;
+    kno:semanticTag kno:usas-L2 .
+kno:KN2021-0198-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "연금(年金)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "연금"@ko ;
+    kno:surfaceForm "연금"@ko ;
+    kno:formative kno:F000388 .

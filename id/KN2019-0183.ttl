@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0183 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0183 kno:lastAttestationYear "2020"^^xsd:gYear ;
+    skos:definition "고용 보험에 가입하기 어려워 실업 급여 혜택을 받지 못하는 저소득층을 지원하기 위한 구직자 취업 촉진 및 생활 지원에 관한 법률안. 고용 안전망 사각지대를 해소하기 위해 2019년 4월에 국회에서 발의되었다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0183-freq-NN-2020 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EC%97%85%EB%B6%80%EC%A1%B0%EB%B2%95> ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0183-freq-NN-2019 ;
+    kno:slotFiller "실업(失業)+부조(扶助) (2성분)"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:component kno:KN2019-0183-c2 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0183-c1 ;
+    kno:frequency kno:KN2019-0183-freq-NN-total ;
+    kno:componentString "실업(失業), 부조(扶助), 법(法)"@ko ;
+    kno:indexForm "실업부조법"@ko ;
+    kno:component kno:KN2019-0183-c3 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶이에 OOO 의원은 사회 초년생, 장기 경력 단절자, 특수 형태 고용 종사자 등 고용 보험에 가입하지 않은 국민들의 고용 안전망 사각지대를 해소하기 위해 ‘한국형 {실업 부조법’을} 발의하게 되었다."@ko ;
+    rdfs:label "실업^부조법"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(失業扶助法)" ;
+    kno:languageType "한^한" ;
+    a ontolex:MultiwordExpression .
+kno:KN2019-0183-c2 a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "부조"@ko ;
+    kno:formative kno:F003957 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "부조(扶助)"@ko ;
+    kno:fullForm "부조"@ko .
+kno:KN2019-0183-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004723 ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "실업"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "실업"@ko ;
+    rdfs:label "실업(失業)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2019-0183-c3 rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

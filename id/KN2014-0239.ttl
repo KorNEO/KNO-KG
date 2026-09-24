@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0239 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0239 skos:definition "적당한 정도의 위험을 감수하면서 중규모의 수익을 올리려는 투자자. 또는 그런 무리."@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:predicate "올리려다"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0239-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(中박族)" ;
+    kno:indexForm "중박족"@ko ;
+    a ontolex:Word ;
+    kno:example "¶OO도 {중박족이} 즐겨 찾는 상품이다. OO는 증권사들이 개별 종목의 주가나 특정 지수의 움직임에 연동해 투자자에게 약정한 수익률을 주도록 설계됐다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "중박(中박) (1성분)"@ko ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "중박(中박), -족(族)"@ko ;
+    kno:languageType "(한+고)+한" ;
+    kno:component kno:KN2014-0239-c1 ;
+    kno:frequency kno:KN2014-0239-freq-NN-2014 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EB%B0%95%EC%A1%B1> ;
+    kno:frequency kno:KN2014-0239-freq-NN-total ;
+    a kno:Neologism ;
+    rdfs:label "중박-족"@ko .
+kno:KN2014-0239-c2 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2014-0239-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "중박(中박)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:formative kno:F005835 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "중박"@ko ;
+    kno:surfaceForm "중박"@ko .

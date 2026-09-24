@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0012 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0012-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0012-form ;
-    ontolex:sense kno:KN2020-0012-sense .
-
-kno:KN2020-0012-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0004357283> .
-
-kno:KN2020-0012-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0012-freq-nn,
-        kno:KN2020-0012-freq-yt ;
-    ontolex:writtenRep "공동^주택^사육^허가제"@ko .
-
-kno:KN2020-0012-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0012-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0012-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:example "¶정부는 맹견에 의한 물림 사고를 예방하기 위해 2022년까지 {공동 주택 사육 허가제를} 도입할 계획이다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2020-0012-c3 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0012-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "공동(共同), 주택(住宅), 사육(飼育), 허가제(許可制)"@ko ;
+    rdfs:label "공동^주택^사육^허가제"@ko ;
+    kno:indexForm "공동주택사육허가제"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:frequency kno:KN2020-0012-freq-NN-2020 ;
+    kno:component kno:KN2020-0012-c4 ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%8F%99%EC%A3%BC%ED%83%9D%EC%82%AC%EC%9C%A1%ED%97%88%EA%B0%80%EC%A0%9C> ;
+    skos:definition "아파트, 연립 주택 따위의 공동 주택 내에서 맹견을 기르고자 할 때, 정부의 허가를 받도록 하는 제도."@ko ;
+    kno:component kno:KN2020-0012-c2 ;
+    kno:origin "(共同住宅飼育許可制)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0012-c1 ;
+    kno:slotFiller "주택(住宅)+사육(飼育)+허가제(許可制) (3성분)"@ko ;
+    kno:instantiates kno:S000473 ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2020-0012-freq-NN-2021 ;
+    kno:predicate "하다"@ko .
+kno:KN2020-0012-c3 kno:fullForm "사육"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "사육"@ko ;
+    kno:formative kno:F001437 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "사육(飼育)"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component .
+kno:KN2020-0012-c4 kno:fullForm "허가제"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "허가제"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    a kno:Component ;
+    rdfs:label "허가제(許可制)"@ko ;
+    kno:formative kno:F007038 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2020-0012-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:surfaceForm "주택"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000073 ;
+    rdfs:label "주택(住宅)"@ko ;
+    kno:fullForm "주택"@ko ;
+    a kno:Component .
+kno:KN2020-0012-c1 kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000665 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "공동(共同)"@ko ;
+    kno:fullForm "공동"@ko ;
+    kno:surfaceForm "공동"@ko .

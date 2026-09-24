@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0082 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0082 kno:year "2017"^^xsd:gYear ;
+    kno:origin "(蘭<이>←paparazzi)" ;
+    kno:languageType "한+이" ;
+    kno:component kno:KN2017-0082-c2 ;
+    kno:frequency kno:KN2017-0082-freq-NN-2016 ;
+    kno:indexForm "란파라치"@ko ;
+    kno:example "¶일각에선 이른바 ‘파파라치’처럼 공무원과 기자들이 만나는 현장을 몰래 살펴보다가 규정보다 많은 금액을 쓴 것으로 의심되면 곧장 수사 당국에 신고하는 ‘{란파라치’가} 생겨날 것을 우려하기도 했다."@ko ;
+    kno:frequency kno:KN2017-0082-freq-NN-2018 ;
+    skos:definition "‘부정 청탁 및 금품 등 수수의 금지에 관한 법률’을 위배하는 공직자들을 신고하여 포상금을 받는 사람. ‘김영란법’과 ‘파파라치’를 결합하여 만든 말이다."@ko ;
+    kno:componentString "란(蘭), (파)파라치(paparazzi)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0082-freq-NN-2017 ;
+    kno:urimalTargetCode "1380428" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380428> ;
+    kno:slotFiller "란(蘭) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000239 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0082-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:label "란파라치"@ko ;
+    kno:component kno:KN2017-0082-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "받다"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko .
+kno:KN2017-0082-c2 a kno:Component ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    kno:fullForm "파파라치"@ko ;
+    rdfs:label "(파)파라치(paparazzi)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000625 ;
+    kno:surfaceForm "파라치"@ko .
+kno:KN2017-0082-c1 kno:fullForm "란"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "란"@ko ;
+    kno:formative kno:F003164 ;
+    rdfs:label "란(蘭)"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .

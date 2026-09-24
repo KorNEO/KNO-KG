@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0071 a ontolex:Word ;
-    frac:attestation kno:KN2024-0071-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0071-form ;
-    ontolex:sense kno:KN2024-0071-sense .
-
-kno:KN2024-0071-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003774333> .
-
-kno:KN2024-0071-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0071-freq-nn,
-        kno:KN2024-0071-freq-yt ;
-    ontolex:writtenRep "명언돌"@ko .
-
-kno:KN2024-0071-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0071-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0071-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0071 kno:component kno:KN2024-0071-c2 ;
+    skos:definition "방송ㆍ인터뷰ㆍ누리 소통망 서비스(SNS) 등에서 감동적이거나 삶에 울림을 주는 발언을 자주 남기는 아이돌을 이르는 말. ‘명언(名言)’과 ‘아이돌(idol)’을 결합하여 만든 말이다."@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%85%EC%96%B8%EB%8F%8C> ;
+    kno:componentString "명언(名言), (아이)돌(idol)"@ko ;
+    kno:origin "(名言<영>←idol)" ;
+    kno:instantiates kno:S000047 ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶명언 제조기로 불리는 {명언돌이} 이번에도 울림 있는 한마디로 ‘밈(meme)’을 만들어 내며 큰 화제 되었다."@ko ;
+    rdfs:label "명언돌"@ko ;
+    kno:slotFiller "명언(名言) (1성분)"@ko ;
+    kno:frequency kno:KN2024-0071-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0071-c1 ;
+    kno:frequency kno:KN2024-0071-freq-NN-total ;
+    kno:indexForm "명언돌"@ko .
+kno:KN2024-0071-c2 kno:fullForm "아이돌"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(아이)돌(idol)"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:surfaceForm "돌"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000098 .
+kno:KN2024-0071-c1 kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003472 ;
+    rdfs:label "명언(名言)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "명언"@ko ;
+    kno:surfaceForm "명언"@ko .

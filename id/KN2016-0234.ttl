@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0234 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0234 kno:componentString "블록(block), 딜(deal), 게이트(gate)"@ko ;
+    kno:instantiates kno:S000071 ;
+    kno:urimalTargetCode "1372669" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372669> ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:example "¶증권가에서는 이번 {블록 딜 게이트가} 금융권에 만연한 모럴 해저드의 민낯을 보여 주는 사건이라 해석한다."@ko ;
+    kno:languageType "영^영^영" ;
+    kno:predicate "받다"@ko ;
+    kno:component kno:KN2016-0234-c3 ;
+    kno:frequency kno:KN2016-0234-freq-NN-total ;
+    kno:component kno:KN2016-0234-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(<영>block deal gate)" ;
+    skos:definition "증권가에서 증권 거래 시간 이전이나 마감 후 대규모 주식 거래가 행해질 때, 주식을 대량으로 매도하려는 매도자가 부정한 방법을 사용하여 다른 투자자들이 피해를 받는 일."@ko ;
+    rdfs:label "블록^딜^게이트"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "블록딜게이트"@ko ;
+    kno:frequency kno:KN2016-0234-freq-NN-2015 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "블록(block)+딜(deal) (2성분)"@ko ;
+    kno:frequency kno:KN2016-0234-freq-NN-2023 ;
+    kno:year "2016"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0234-c2 .
+kno:KN2016-0234-c3 kno:surfaceForm "게이트"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000126 ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "게이트(gate)"@ko ;
+    kno:fullForm "게이트"@ko .
+kno:KN2016-0234-c1 kno:surfaceForm "블록"@ko ;
+    kno:formative kno:F000518 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "블록"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "블록(block)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0234-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000110 ;
+    kno:fullForm "딜"@ko ;
+    kno:surfaceForm "딜"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "딜(deal)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 .

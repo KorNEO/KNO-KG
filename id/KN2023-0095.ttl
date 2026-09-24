@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0095 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0095 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0095-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0095-form ;
-    ontolex:sense kno:KN2023-0095-sense .
-
-kno:KN2023-0095-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003449520> .
-
-kno:KN2023-0095-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0095-freq-nn,
-        kno:KN2023-0095-freq-yt ;
-    ontolex:writtenRep "명절 테크"@ko .
-
-kno:KN2023-0095-freq-nn a frac:CorpusFrequency ;
-    rdf:value 162 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0095-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0095-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0095 kno:frequency kno:KN2023-0095-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0095-freq-NN-2024 ;
+    kno:languageType "한_영" ;
+    kno:origin "(名節<영>←tech)" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0095-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%85%EC%A0%88%20%ED%85%8C%ED%81%AC> ;
+    kno:slotFiller "명절(名節) (1성분)"@ko ;
+    kno:componentString "명절(名節), (재)테크(財tech)"@ko ;
+    kno:frequency kno:KN2023-0095-freq-NN-total ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶혼자 사는 이삼십 대의 직장인들 사이에서 지인이나 회사로부터 받은 선물 세트를 포장도 뜯지 않고 중고 거래로 파는 {명절 테크가} 유행이다."@ko ;
+    kno:component kno:KN2023-0095-c2 ;
+    kno:frequency kno:KN2023-0095-freq-NN-2023 ;
+    skos:definition "명절에 받은 선물 세트를 개봉하지 않고 중고 거래로 되팔아 남긴 이익을 이용한 재테크."@ko ;
+    kno:indexForm "명절테크"@ko ;
+    kno:instantiates kno:S000238 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0095-c1 ;
+    rdfs:label "명절 테크"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2023-0095-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "테크"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:formative kno:F000065 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "재테크"@ko .
+kno:KN2023-0095-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003474 ;
+    rdfs:label "명절(名節)"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "명절"@ko ;
+    kno:surfaceForm "명절"@ko ;
+    a kno:Component .

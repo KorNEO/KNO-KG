@@ -1,0 +1,81 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0440 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0440 kno:activeYears "10"^^xsd:integer ;
+    kno:frequency kno:KN2016-0440-freq-NN-2024 ;
+    rdfs:label "재난^심리^회복^지원"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0440-c2 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0440-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "재난을 당한 후에 심리적 회복을 돕기 위해 마련한 제도를 이르는 말."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372875> ;
+    kno:frequency kno:KN2016-0440-freq-NN-2025 ;
+    kno:frequency kno:KN2016-0440-freq-NN-2017 ;
+    kno:slotFiller "재난(災亂)+심리(心理)+회복(回復) (3성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0440-c4 ;
+    kno:frequency kno:KN2016-0440-freq-NN-2016 ;
+    kno:urimalTargetCode "1372875" ;
+    kno:component kno:KN2016-0440-c3 ;
+    kno:indexForm "재난심리회복지원"@ko ;
+    kno:component kno:KN2016-0440-c1 ;
+    kno:frequency kno:KN2016-0440-freq-NN-2022 ;
+    kno:example "¶OO시가…현장 중심의 {재난 심리 회복 지원} 강화를 위해 16일 시청에서 재난 심리 회복 지원 센터 운영 협약을 체결했다."@ko ;
+    kno:componentString "재난(災亂), 심리(心理), 회복(回復), 지원(支援)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0440-freq-NN-2023 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0440-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0440-freq-NN-2019 ;
+    kno:origin "(災亂心理回復支援)" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000628 ;
+    kno:frequency kno:KN2016-0440-freq-NN-2018 ;
+    kno:frequency kno:KN2016-0440-freq-NN-total .
+kno:KN2016-0440-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "심리(心理)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004734 ;
+    kno:fullForm "심리"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "심리"@ko ;
+    kno:semanticTag kno:usas-X2.1 .
+kno:KN2016-0440-c4 rdfs:label "지원(支援)"@ko ;
+    kno:formative kno:F000103 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "지원"@ko ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:surfaceForm "지원"@ko .
+kno:KN2016-0440-c3 kno:semanticTag kno:usas-B2p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "회복"@ko ;
+    kno:surfaceForm "회복"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "회복(回復)"@ko ;
+    kno:formative kno:F000442 .
+kno:KN2016-0440-c1 rdfs:label "재난(災亂)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005585 ;
+    kno:surfaceForm "재난"@ko ;
+    a kno:Component ;
+    kno:fullForm "재난"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A15m .

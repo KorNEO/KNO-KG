@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0198 kno:predicate "밝히다"@ko ;
+    kno:frequency kno:KN2014-0198-freq-NN-2014 ;
+    kno:origin "(外<영>←coming-out)" ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%B8%EB%B0%8D%EC%95%84%EC%9B%83> ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:component kno:KN2014-0198-c2 ;
+    a kno:Neologism ;
+    rdfs:label "외밍아웃"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "외(계인)(外), (커)밍아웃(coming-out)"@ko ;
+    skos:definition "스스로 외계인임을 밝히는 일. 또는 그렇게 되는 일."@ko ;
+    kno:instantiates kno:S000118 ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:slotFiller "외(계인)(外) (1성분)"@ko ;
+    kno:example "¶{외밍아웃은} 동성애자가 다른 사람들에게 자신이 동성애자임을 공개적으로 밝히는 것을 뜻하는 커밍아웃을 변형시킨 말로 외계인임을 공개한다는 뜻이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2014-0198-freq-NN-total ;
+    kno:indexForm "외밍아웃"@ko ;
+    kno:component kno:KN2014-0198-c1 .
+kno:KN2014-0198-c2 kno:fullForm "커밍아웃"@ko ;
+    kno:surfaceForm "밍아웃"@ko ;
+    rdfs:label "(커)밍아웃(coming-out)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000270 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2014-0198-c1 kno:fullForm "외계인"@ko ;
+    kno:surfaceForm "외"@ko ;
+    kno:formative kno:F005175 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "외(계인)(外)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

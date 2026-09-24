@@ -1,36 +1,75 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0007 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0007-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0007-form ;
-    ontolex:sense kno:KN2024-0007-sense .
-
-kno:KN2024-0007-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000748634> .
-
-kno:KN2024-0007-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0007-freq-nn,
-        kno:KN2024-0007-freq-yt ;
-    ontolex:writtenRep "개^식용^종식^특별법"@ko .
-
-kno:KN2024-0007-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1081 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0007-freq-yt a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0007-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:component kno:KN2024-0007-c3 ;
+    kno:frequency kno:KN2024-0007-freq-NN-2025 ;
+    kno:instantiates kno:S000027 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EC%8B%9D%EC%9A%A9%EC%A2%85%EC%8B%9D%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:indexForm "개식용종식특별법"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "개, 식용(食用), 종식(終熄), 특별법(特別法)"@ko ;
+    kno:slotFiller "식용(食用)+종식(終熄)+특별법(特別法) (3성분)"@ko ;
+    kno:frequency kno:KN2024-0007-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001189 ;
+    kno:frequency kno:KN2024-0007-freq-NN-total ;
+    kno:component kno:KN2024-0007-c1 ;
+    kno:component kno:KN2024-0007-c2 ;
+    kno:example "¶{개 식용 종식 특별법이} 시행되면 개를 식용 목적으로 사육하거나 도살, 유통, 판매하는 행위 등은 모두 금지된다."@ko ;
+    rdfs:label "개^식용^종식^특별법"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0007-c4 ;
+    kno:slotFiller "개+식용(食用)+종식(終熄) (3성분)"@ko ;
+    skos:definition "식용할 목적으로 개를 사육, 유통, 도살하는 것을 금지하기 위해 2024년 2월 6일 제정된 법률. 정식 명칭은 ‘개의 식용 목적의 사육ㆍ도살 및 유통 등 종식에 관한 특별법’이다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0007-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고^한^한^한" ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(개食用終熄特別法)" .
+kno:KN2024-0007-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "종식"@ko ;
+    rdfs:label "종식(終熄)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "종식"@ko ;
+    kno:semanticTag kno:usas-T2m ;
+    kno:formative kno:F005768 ;
+    a kno:Component .
+kno:KN2024-0007-c1 kno:fullForm "개"@ko ;
+    kno:surfaceForm "개"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000095 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "개"@ko ;
+    a kno:Component .
+kno:KN2024-0007-c2 kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004688 ;
+    rdfs:label "식용(食用)"@ko ;
+    kno:surfaceForm "식용"@ko ;
+    kno:fullForm "식용"@ko ;
+    a kno:Component .
+kno:KN2024-0007-c4 kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "특별법"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "특별법"@ko ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

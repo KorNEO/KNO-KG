@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0187 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0187 a ontolex:Word ;
-    frac:attestation kno:KN2025-0187-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0187-form ;
-    ontolex:sense kno:KN2025-0187-sense .
-
-kno:KN2025-0187-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005308698> .
-
-kno:KN2025-0187-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0187-freq-nn,
-        kno:KN2025-0187-freq-yt ;
-    ontolex:writtenRep "딱풀 영장"@ko .
-
-kno:KN2025-0187-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0187-freq-yt a frac:CorpusFrequency ;
-    rdf:value 97 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0187-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0187 skos:definition "(LLM) 체포ㆍ구속ㆍ압수수색 따위의 영장이 형식과 절차를 제대로 갖추지 못해 조잡하고 허술하다는 뜻으로 비판할 때 쓰는 말."@ko ;
+    a ontolex:Word ;
+    kno:predicate "쓰다"@ko ;
+    kno:formation kno:W01 ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "딱풀-영장"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 야당은 법원이 발부한 영장에 절차적 하자가 있다며 사실상 {딱풀영장으로} 사람을 연행하는 것이라고 반발했다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0187-freq-NN-total ;
+    kno:indexForm "딱풀영장"@ko ;
+    kno:slotFiller "영장(令狀) (1성분)"@ko ;
+    kno:component kno:KN2025-0187-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0187-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001349 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0187-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B1%ED%92%80%EC%98%81%EC%9E%A5> ;
+    kno:origin "(딱풀令狀)" ;
+    kno:componentString "딱풀, 영장(令狀)"@ko .
+kno:KN2025-0187-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "영장"@ko ;
+    kno:surfaceForm "영장"@ko ;
+    rdfs:label "영장(令狀)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005081 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component .
+kno:KN2025-0187-c1 a kno:Component ;
+    kno:formative kno:F001222 ;
+    kno:fullForm "딱풀"@ko ;
+    kno:surfaceForm "딱풀"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "딱풀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O1.1 .

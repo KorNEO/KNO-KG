@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0310 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0310 a ontolex:Word ;
-    frac:attestation kno:KN2020-0310-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0310-form ;
-    ontolex:sense kno:KN2020-0310-sense .
-
-kno:KN2020-0310-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004439851> .
-
-kno:KN2020-0310-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0310-freq-nn,
-        kno:KN2020-0310-freq-yt ;
-    ontolex:writtenRep "좋-반"@ko .
-
-kno:KN2020-0310-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0310-freq-yt a frac:CorpusFrequency ;
-    rdf:value 102 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0310-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0310 kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0310-freq-NN-total ;
+    kno:component kno:KN2020-0310-c2 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "‘좋아요 반사’를 줄여 이르는 말. 누군가가 자신의 게시물에 ‘좋아요’를 누르면, 나도 상대방의 게시물에 ‘좋아요’를 누르겠다는 것을 말한다."@ko ;
+    kno:languageType "고+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A2%8B%EB%B0%98> ;
+    kno:frequency kno:KN2020-0310-freq-NN-2021 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2020-0310-freq-NN-2019 ;
+    kno:formation kno:W06 ;
+    kno:indexForm "좋반"@ko ;
+    kno:component kno:KN2020-0310-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0310-freq-NN-2022 ;
+    kno:example "¶최근 게시물 {좋반이에요}."@ko ;
+    kno:componentString "좋(아요), 반(사)(反射)"@ko ;
+    kno:origin "(좋反)" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:activeYears "4"^^xsd:integer ;
+    a kno:Neologism ;
+    rdfs:label "좋반"@ko ;
+    kno:frequency kno:KN2020-0310-freq-NN-2020 .
+kno:KN2020-0310-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "반사"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.2p ;
+    rdfs:label "반(사)(反射)"@ko ;
+    kno:formative kno:F003678 ;
+    kno:surfaceForm "반"@ko .
+kno:KN2020-0310-c1 kno:surfaceForm "좋"@ko ;
+    rdfs:label "좋(아요)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "좋아요"@ko ;
+    kno:formative kno:F005770 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E2p .

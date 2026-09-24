@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0085 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0085 a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2013-0085-freq-NN-2024 ;
+    kno:frequency kno:KN2013-0085-freq-NN-2015 ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "네일(nail), 글루(glue)"@ko ;
+    kno:component kno:KN2013-0085-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2013-0085-c1 ;
+    kno:frequency kno:KN2013-0085-freq-NN-2014 ;
+    kno:unitType "구"@ko ;
+    skos:definition "손톱 위에 작은 구슬과 같은 장식들을 붙이는 데 쓰이는 접착제."@ko ;
+    rdfs:label "네일 글루"@ko ;
+    kno:frequency kno:KN2013-0085-freq-NN-2013 ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2013-0085-freq-NN-2019 ;
+    kno:frequency kno:KN2013-0085-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:predicate "쓰이다"@ko ;
+    kno:origin "(nail glue)" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:urimalTargetCode "1353943" ;
+    kno:frequency kno:KN2013-0085-freq-NN-2016 ;
+    kno:indexForm "네일글루"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0085-freq-NN-2025 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1353943> ;
+    kno:example "¶스톤은 {네일 글루를} 묻혀 고정시키거나 스톤을 손톱 위에 올리고 톱코트를 덧바르는 등 두 가지 방법이 있다."@ko .
+kno:KN2013-0085-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "글루"@ko ;
+    kno:surfaceForm "글루"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:formative kno:F002553 ;
+    rdfs:label "글루(glue)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2013-0085-c1 kno:role "성분"@ko ;
+    kno:formative kno:F001147 ;
+    a kno:Component ;
+    kno:fullForm "네일"@ko ;
+    rdfs:label "네일(nail)"@ko ;
+    kno:surfaceForm "네일"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0008 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0008 a ontolex:Word ;
+    kno:frequency kno:KN2016-0008-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0008-freq-NN-2025 ;
+    kno:frequency kno:KN2016-0008-freq-NN-2018 ;
+    skos:definition "‘개’와 ‘어린이’를 결합한 말로, 반려견을 어린 아이에 빗대어 이르는 말."@ko ;
+    kno:frequency kno:KN2016-0008-freq-NN-2017 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0008-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0008-freq-NN-total ;
+    kno:languageType "고+고" ;
+    kno:formation kno:W05 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "개, (어)린이"@ko ;
+    kno:instantiates kno:S000066 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "개린이"@ko ;
+    kno:frequency kno:KN2016-0008-freq-NN-2022 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0008-freq-NN-2023 ;
+    kno:example "¶생후 1년도 안 된 새끼 강아지는 예방 접종, 1년이 지난 성견은 정기 종합 검진 등…‘{개린이}’ 시기별 관리 팁을 정리했다."@ko ;
+    kno:instantiates kno:S000083 ;
+    kno:frequency kno:KN2016-0008-freq-NN-2024 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0008-c2 ;
+    kno:slotFiller "개 (1성분)"@ko ;
+    kno:activeYears "11"^^xsd:integer ;
+    kno:urimalTargetCode "1372443" ;
+    kno:frequency kno:KN2016-0008-freq-NN-2016 ;
+    kno:component kno:KN2016-0008-c1 ;
+    kno:slotFiller "(어)린이 (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372443> ;
+    kno:frequency kno:KN2016-0008-freq-NN-2015 ;
+    rdfs:label "개린이"@ko ;
+    kno:frequency kno:KN2016-0008-freq-NN-2021 .
+kno:KN2016-0008-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "린이"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000169 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:fullForm "어린이"@ko ;
+    rdfs:label "(어)린이"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2016-0008-c1 kno:fullForm "개"@ko ;
+    kno:surfaceForm "개"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F000095 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "개"@ko .

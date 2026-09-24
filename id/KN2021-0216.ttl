@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0216 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0216-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0216-form ;
-    ontolex:sense kno:KN2021-0216-sense .
-
-kno:KN2021-0216-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003044700> .
-
-kno:KN2021-0216-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0216-freq-nn,
-        kno:KN2021-0216-freq-yt ;
-    ontolex:writtenRep "인플루언서블^세대"@ko .
-
-kno:KN2021-0216-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0216-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0216-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0216 kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0216-c2 ;
+    kno:instantiates kno:S000002 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0216-freq-NN-total ;
+    kno:predicate "행동하다"@ko ;
+    kno:indexForm "인플루언서블세대"@ko ;
+    kno:component kno:KN2021-0216-c1 ;
+    kno:example "¶밀레니얼 세대는 공동의 행복보다는 자신의 욕구 실현과 취향을 추구하며, 개개인이 상당한 영향력을 가지고 있는 ‘{인플루언서블 세대’인} 만큼 주거 트렌드에도 급격한 변화가 나타나고 있다."@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0216-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^한" ;
+    kno:componentString "인플루언서블(influenceable), 세대(世代)"@ko ;
+    kno:origin "(<영>influenceable世代)" ;
+    skos:definition "인플루언서가 되고 싶어 하거나 그들처럼 행동하는 세대. ‘인플루언서블’은 누리 소통망 서비스에서 다른 사람들에게 영향을 미치는 사람을 뜻하는 ‘인플루언서’와 어떤 것을 ‘할 수 있는’을 뜻하는 영어 접미사 ‘-어블(-able)’을 결합하여 만든 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C%EB%B8%94%EC%84%B8%EB%8C%80> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0216-freq-NN-2020 ;
+    kno:slotFiller "인플루언서블(influenceable) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "인플루언서블^세대"@ko .
+kno:KN2021-0216-c2 kno:fullForm "세대"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component .
+kno:KN2021-0216-c1 kno:fullForm "인플루언서블"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "인플루언서블"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "인플루언서블(influenceable)"@ko ;
+    kno:formative kno:F005463 .

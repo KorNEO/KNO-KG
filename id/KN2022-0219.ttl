@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0219 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0219 a ontolex:Word ;
-    frac:attestation kno:KN2022-0219-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0219-form ;
-    ontolex:sense kno:KN2022-0219-sense .
-
-kno:KN2022-0219-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004936769> .
-
-kno:KN2022-0219-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0219-freq-nn,
-        kno:KN2022-0219-freq-yt ;
-    ontolex:writtenRep "예-테크"@ko .
-
-kno:KN2022-0219-freq-nn a frac:CorpusFrequency ;
-    rdf:value 243 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0219-freq-yt a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0219-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0219 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(預<영>tech)" ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0219-freq-NN-total ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0219-freq-NN-2024 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "예테크"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "(재)테크(財tech) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0219-freq-NN-2025 ;
+    skos:definition "예금 금리가 상승한 것을 이용한 재테크."@ko ;
+    kno:component kno:KN2022-0219-c2 ;
+    kno:instantiates kno:S001568 ;
+    kno:component kno:KN2022-0219-c1 ;
+    kno:slotFiller "예(금)(預金) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0219-freq-NN-2022 ;
+    kno:indexForm "예테크"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0219-freq-NN-2023 ;
+    kno:instantiates kno:S000160 ;
+    kno:componentString "예(금)(預金), (재)테크(財tech)"@ko ;
+    kno:frequency kno:KN2022-0219-freq-NN-2021 ;
+    kno:example "¶한 관계자는 “주식, 코인, 부동산 등의 시장이 최근 하락세를 보이면서 {예테크가} 주목받고 있다.”라고 말했다."@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%88%ED%85%8C%ED%81%AC> .
+kno:KN2022-0219-c2 rdfs:label "(재)테크(財tech)"@ko ;
+    kno:surfaceForm "테크"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:formative kno:F000065 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "재테크"@ko .
+kno:KN2022-0219-c1 kno:surfaceForm "예"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "예(금)(預金)"@ko ;
+    kno:formative kno:F001619 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "예금"@ko .

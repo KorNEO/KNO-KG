@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0093 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0093 kno:slotFiller "(전)쟁(戰爭) (1성분)"@ko ;
+    kno:indexForm "떼쟁"@ko ;
+    kno:example "¶기존까지 전투할 수 있는 지역이라면 어디든 OO 단위로 뭉쳐 다니며 사람들을 질려 버리게 한, 일명 ‘{떼쟁’에서} 벗어나…속이 시원하게 싸움을 즐길 수 있을 거라는 환상을 안겨 줬던 패치였습니다."@ko ;
+    kno:component kno:KN2012-0093-c2 ;
+    skos:definition "게임에서, 목적이나 행동을 같이하는 무리들끼리 하는 싸움."@ko ;
+    kno:componentString "떼, (전)쟁(戰爭)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%96%BC%EC%9F%81> ;
+    kno:component kno:KN2012-0093-c1 ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000295 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(떼爭)" ;
+    kno:predicate "하다"@ko ;
+    rdfs:label "떼쟁"@ko .
+kno:KN2012-0093-c2 kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005599 ;
+    kno:surfaceForm "쟁"@ko ;
+    rdfs:label "(전)쟁(戰爭)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "전쟁"@ko .
+kno:KN2012-0093-c1 rdfs:label "떼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "떼"@ko ;
+    kno:surfaceForm "떼"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000258 .

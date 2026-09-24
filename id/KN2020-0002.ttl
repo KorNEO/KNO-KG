@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0002 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0002 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0002-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0002-form ;
-    ontolex:sense kno:KN2020-0002-sense .
-
-kno:KN2020-0002-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/214/0001016336> .
-
-kno:KN2020-0002-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0002-freq-nn,
-        kno:KN2020-0002-freq-yt ;
-    ontolex:writtenRep "감염병^특별^관리^지역"@ko .
-
-kno:KN2020-0002-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3350 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0002-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0002-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1479326> ;
+    kno:frequency kno:KN2020-0002-freq-NN-2023 ;
+    kno:component kno:KN2020-0002-c2 ;
+    kno:languageType "한^한^한^한" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:urimalTargetCode "1479326" ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶O 국무총리는 신종 감염병의 방역과 관련하여 “OO 지역을 {감염병 특별 관리 지역으로} 지정해 더 높은 단계의 방역 조치를 취하겠다.”라고 발표했다."@ko ;
+    kno:indexForm "감염병특별관리지역"@ko ;
+    skos:definition "감염병의 확산을 막기 위해 통상적인 수준보다 더 강한 방역 조치와 관리가 이루어지는 지역. 특정 지역을 중심으로 코로나19가 확산되기 시작하던 단계에서 효율적으로 방역 활동을 하기 위해 적용되었다."@ko ;
+    kno:component kno:KN2020-0002-c3 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0002-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0002-freq-NN-total ;
+    kno:origin "(感染病特別管理地域)" ;
+    kno:componentString "감염병(感染病), 특별(特別), 관리(管理), 지역(地域)"@ko ;
+    kno:frequency kno:KN2020-0002-freq-NN-2020 ;
+    rdfs:label "감염병^특별^관리^지역"@ko ;
+    kno:component kno:KN2020-0002-c4 ;
+    kno:predicate "이루어지다"@ko ;
+    kno:component kno:KN2020-0002-c1 ;
+    kno:slotFiller "감염병(感染病)+특별(特別)+관리(管理) (3성분)"@ko ;
+    kno:instantiates kno:S000179 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2020-0002-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001187 ;
+    kno:slotFiller "특별(特別)+관리(管理)+지역(地域) (3성분)"@ko .
+kno:KN2020-0002-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "특별(特別)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "특별"@ko ;
+    kno:formative kno:F000081 ;
+    kno:semanticTag kno:usas-A6.2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "특별"@ko .
+kno:KN2020-0002-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "관리"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    rdfs:label "관리(管理)"@ko ;
+    kno:surfaceForm "관리"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000461 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2020-0002-c4 kno:role "고정항"@ko ;
+    kno:formative kno:F000063 ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "지역"@ko ;
+    kno:surfaceForm "지역"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component .
+kno:KN2020-0002-c1 kno:fullForm "감염병"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "감염병"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    rdfs:label "감염병(感染病)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001037 .

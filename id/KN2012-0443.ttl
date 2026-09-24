@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0443 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0443 kno:languageType "한+한" ;
+    kno:componentString "특(별)(特), 여성(女性)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B9%EC%97%AC%EC%84%B1> ;
+    kno:indexForm "특여성"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0443-freq-NN-2012 ;
+    kno:component kno:KN2012-0443-c2 ;
+    skos:definition "특별한 여성."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0443-c1 ;
+    kno:formation kno:W06 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "특여성"@ko ;
+    kno:frequency kno:KN2012-0443-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(特女性)" ;
+    kno:example "¶{특여성들의} 경우 다이어트와 피부 관리와 같이 외모를 가꾸는 목표를 세웠지만 연초부터 신년회, 설날 등 이어지는 행사로 그 계획에 금이 간 것이 사실이다."@ko ;
+    a ontolex:Word .
+kno:KN2012-0443-c2 kno:formative kno:F000859 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "여성"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "여성(女性)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "여성"@ko .
+kno:KN2012-0443-c1 kno:semanticTag kno:usas-A6.2m ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000983 ;
+    rdfs:label "특(별)(特)"@ko ;
+    kno:fullForm "특별"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "특"@ko .

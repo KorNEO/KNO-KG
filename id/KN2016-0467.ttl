@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0467 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0467 a kno:Neologism ;
+    kno:languageType "고+한" ;
+    kno:component kno:KN2016-0467-c1 ;
+    rdfs:label "집-방"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(집放)" ;
+    kno:slotFiller "집 (1성분)"@ko ;
+    kno:slotFiller "방(放) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:example "¶{집방의} 인기를 업고 가구 재배치와 벽지 교체, 소품 등으로 간단하게 집안 분위기를 바꾸는 ‘셀프 홈 스타일링’이 인기를 끌고 있다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "집, 방(放)"@ko ;
+    kno:instantiates kno:S000379 ;
+    kno:formation kno:W01 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372903> ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1372903" ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2016-0467-c2 ;
+    skos:definition "집을 꾸미는 것을 보여 주는 방송. 주로 개인의 방을 꾸미는 과정이나 결과를 보여준다."@ko ;
+    kno:instantiates kno:S000583 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "집방"@ko ;
+    kno:predicate "주다"@ko .
+kno:KN2016-0467-c1 a kno:Component ;
+    rdfs:label "집"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "집"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:formative kno:F000064 ;
+    kno:surfaceForm "집"@ko .
+kno:KN2016-0467-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "방"@ko ;
+    rdfs:label "방(放)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000764 ;
+    kno:surfaceForm "방"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q4.3 .

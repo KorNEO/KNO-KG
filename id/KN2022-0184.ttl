@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0184 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0184 a ontolex:Word ;
-    frac:attestation kno:KN2022-0184-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0184-form ;
-    ontolex:sense kno:KN2022-0184-sense .
-
-kno:KN2022-0184-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003397732> .
-
-kno:KN2022-0184-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0184-freq-nn,
-        kno:KN2022-0184-freq-yt ;
-    ontolex:writtenRep "손주-턴"@ko .
-
-kno:KN2022-0184-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0184-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0184-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0184 kno:indexForm "손주턴"@ko ;
+    kno:frequency kno:KN2022-0184-freq-NN-2021 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%90%EC%A3%BC%ED%84%B4> ;
+    kno:instantiates kno:S001471 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "손주(孫주), 턴(turn)"@ko ;
+    rdfs:label "손주-턴"@ko ;
+    kno:example "¶일본에서는 도시에서 태어난 손주가 조부모의 고향으로 이주하는 ‘{손주턴’이} 늘면서 지방 인구가 증가하고 있다고 한다."@ko ;
+    skos:definition "도시에서 나고 자란 손주 세대들이 조부모가 거주하는 시골로 이주하는 것을 이르는 말."@ko ;
+    kno:origin "(孫주<영>turn)" ;
+    kno:component kno:KN2022-0184-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0184-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2022-0184-c2 ;
+    kno:slotFiller "턴(turn) (1성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:languageType "(한+고)+영" .
+kno:KN2022-0184-c1 kno:surfaceForm "손주"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "손주(孫주)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "손주"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F001494 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0184-c2 kno:semanticTag kno:usas-M1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000615 ;
+    kno:fullForm "턴"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "턴"@ko ;
+    rdfs:label "턴(turn)"@ko ;
+    a kno:Component .

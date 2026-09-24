@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0068 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0068 kno:activeYears "0"^^xsd:integer ;
+    kno:instantiates kno:S000064 ;
+    kno:formation kno:W06 ;
+    kno:urimalTargetCode "1357556" ;
+    kno:example "¶그가 내민 시간표에는 어렵게 수강 신청 했다는{꿀강이} 여러 개 있었다."@ko ;
+    a kno:Neologism ;
+    kno:predicate "있다"@ko ;
+    rdfs:label "꿀강"@ko ;
+    kno:indexForm "꿀강"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357556> ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "꿀 (1성분)"@ko ;
+    kno:component kno:KN2013-0068-c2 ;
+    kno:componentString "꿀, 강(의)(講)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:instantiates kno:S000775 ;
+    kno:component kno:KN2013-0068-c1 ;
+    kno:slotFiller "강(의)(講) (1성분)"@ko ;
+    kno:languageType "고+한" ;
+    kno:origin "(꿀講)" ;
+    a ontolex:Word ;
+    skos:definition "학생들이 손쉽게 학점을 잘 받을 수 있는 강의."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2013-0068-c2 kno:surfaceForm "강"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "강의"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    rdfs:label "강(의)(講)"@ko ;
+    kno:formative kno:F001040 .
+kno:KN2013-0068-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "꿀"@ko ;
+    a kno:Component ;
+    kno:fullForm "꿀"@ko ;
+    kno:formative kno:F000097 ;
+    kno:surfaceForm "꿀"@ko ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:role "고정항"@ko .

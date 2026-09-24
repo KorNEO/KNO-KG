@@ -1,36 +1,82 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0010 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0010-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0010-form ;
-    ontolex:sense kno:KN2024-0010-sense .
-
-kno:KN2024-0010-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002420959> .
-
-kno:KN2024-0010-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0010-freq-nn,
-        kno:KN2024-0010-freq-yt ;
-    ontolex:writtenRep "계약형^지역^필수^의사^제도"@ko .
-
-kno:KN2024-0010-freq-nn a frac:CorpusFrequency ;
-    rdf:value 62 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0010-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0010-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0010 kno:instantiates kno:S001135 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EC%95%BD%ED%98%95%EC%A7%80%EC%97%AD%ED%95%84%EC%88%98%EC%9D%98%EC%82%AC%EC%A0%9C%EB%8F%84> ;
+    kno:origin "(契約型地域必須醫師制度)" ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2024-0010-c1 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "계약형(契約型)+지역(地域) (2성분)"@ko ;
+    kno:component kno:KN2024-0010-c5 ;
+    skos:definition "의과 대학 입학생 중 일정 비율을 지역 인재 전형으로 선발하는 대신 졸업 이후 일정 기간 해당 지역에서 근무하도록 하는 제도."@ko ;
+    kno:component kno:KN2024-0010-c2 ;
+    kno:componentString "계약형(契約型), 지역(地域), 필수(必須), 의사(醫師), 제도(制度)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0010-c3 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶보건 복지부는 지역의 필수 의료 부족 문제를 해결하기 위해 {계약형 지역 필수 의사 제도를} 도입해 국립 대학 병원이 지역 필수 의료의 중심 역할을 수행할 수 있도록 하겠다고 발표했다."@ko ;
+    kno:languageType "한^한^한^한^한" ;
+    rdfs:label "계약형^지역^필수^의사^제도"@ko ;
+    kno:indexForm "계약형지역필수의사제도"@ko ;
+    kno:component kno:KN2024-0010-c4 ;
+    kno:frequency kno:KN2024-0010-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0010-freq-NN-total .
+kno:KN2024-0010-c1 kno:surfaceForm "계약형"@ko ;
+    rdfs:label "계약형(契約型)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002254 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "계약형"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 .
+kno:KN2024-0010-c5 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:surfaceForm "제도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "5"^^xsd:integer ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
+    kno:role "고정항"@ko .
+kno:KN2024-0010-c2 kno:formative kno:F000063 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "지역"@ko ;
+    kno:surfaceForm "지역"@ko .
+kno:KN2024-0010-c3 kno:fullForm "필수"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "필수(必須)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "필수"@ko ;
+    kno:formative kno:F000436 ;
+    kno:semanticTag kno:usas-S6p .
+kno:KN2024-0010-c4 rdfs:label "의사(醫師)"@ko ;
+    kno:fullForm "의사"@ko ;
+    kno:formative kno:F000890 ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "의사"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B3 .

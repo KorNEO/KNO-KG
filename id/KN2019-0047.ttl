@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0047 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0047 kno:component kno:KN2019-0047-c3 ;
+    kno:instantiates kno:S000079 ;
+    kno:frequency kno:KN2019-0047-freq-NN-total ;
+    kno:component kno:KN2019-0047-c1 ;
+    kno:componentString "놀(다), 앎, -러(←-er)"@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    rdfs:label "놀앎-러"@ko ;
+    kno:indexForm "놀앎러"@ko ;
+    kno:origin "(놀앎<영>←er)" ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0047-freq-NN-2019 ;
+    kno:languageType "고+영" ;
+    kno:component kno:KN2019-0047-c2 ;
+    kno:slotFiller "놀(다)+앎 (2성분)"@ko ;
+    kno:predicate "배우다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%86%80%EC%95%8E%EB%9F%AC> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:slotFiller "앎+-러(←-er) (2성분)"@ko ;
+    skos:definition "어떤 지식을 배울 때, 놀면서 배우는 사람. 재미를 돋우는 내용과 정보 전달이 함께 있는 영상물 따위를 통해 지식을 학습하는 사람을 이르는 말이다."@ko ;
+    kno:example "¶시험공부 혹은 직무 교육도 대세이지만, 온전히 자기만족 혹은 덕업일치를 꿈꾸는 {‘놀앎러’도} 역시 엠제트(MZ) 세대의 ‘공부’ 맥락에서 큰 축을 이룬다."@ko ;
+    kno:instantiates kno:S000491 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0047-c3 rdfs:label "-러(←-er)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "러"@ko ;
+    kno:formative kno:F000022 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "러"@ko .
+kno:KN2019-0047-c1 kno:semanticTag kno:usas-K1 ;
+    rdfs:label "놀(다)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "놀"@ko ;
+    kno:formative kno:F000343 ;
+    kno:fullForm "놀다"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2019-0047-c2 kno:formative kno:F004860 ;
+    rdfs:label "앎"@ko ;
+    a kno:Component ;
+    kno:fullForm "앎"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:surfaceForm "앎"@ko ;
+    kno:truncated "false"^^xsd:boolean .

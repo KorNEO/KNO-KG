@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0231 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0231 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0231-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0231-form ;
-    ontolex:sense kno:KN2024-0231-sense .
-
-kno:KN2024-0231-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000787568> .
-
-kno:KN2024-0231-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0231-freq-nn,
-        kno:KN2024-0231-freq-yt ;
-    ontolex:writtenRep "의전 노동"@ko .
-
-kno:KN2024-0231-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0231-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0231-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0231 kno:unitType "구"@ko ;
+    rdfs:label "의전 노동"@ko ;
+    kno:component kno:KN2024-0231-c1 ;
+    kno:instantiates kno:S000247 ;
+    kno:frequency kno:KN2024-0231-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%EC%A0%84%20%EB%85%B8%EB%8F%99> ;
+    a kno:Neologism ;
+    skos:definition "명사(名士)나 귀빈, 조직 내 상급자 등을 예우하거나 대외적 격식을 갖추는 과정에서 생기는 노동. 주 업무와 직접적인 관련이 없음에도 불구하고 관행이나 체면을 중시하는 조직 문화 속에서 요구되는 부가적 노동을 비판적으로 이르는 말이다."@ko ;
+    kno:slotFiller "의전(儀典) (1성분)"@ko ;
+    kno:predicate "생기다"@ko ;
+    kno:component kno:KN2024-0231-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0231-freq-NN-2024 ;
+    kno:componentString "의전(儀典), 노동(勞動)"@ko ;
+    kno:languageType "한_한" ;
+    kno:example "¶공직 사회나 민간 기업 모두 불필요한 허례허식을 줄여야 한다고 하면서도, 직장인들은 여전히 업무와 무관한 {의전 노동에} 시달리고 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(儀典勞動)" ;
+    kno:indexForm "의전노동"@ko .
+kno:KN2024-0231-c1 kno:formative kno:F005372 ;
+    a kno:Component ;
+    rdfs:label "의전(儀典)"@ko ;
+    kno:fullForm "의전"@ko ;
+    kno:surfaceForm "의전"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0231-c2 rdfs:label "노동(勞動)"@ko ;
+    kno:fullForm "노동"@ko ;
+    kno:surfaceForm "노동"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000166 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I3.1 .

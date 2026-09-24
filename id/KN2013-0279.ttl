@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0279 kno:origin "(心血管<영>tech)" ;
+    kno:component kno:KN2013-0279-c1 ;
+    a kno:Neologism ;
+    skos:definition "심혈관 질환을 관리하고 예방하여 건강한 노후 생활을 대비하기 위한 투자."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0279-freq-NN-2017 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%AC%ED%98%88%EA%B4%80%ED%85%8C%ED%81%AC> ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S000133 ;
+    kno:component kno:KN2013-0279-c2 ;
+    kno:example "¶{심혈관테크가} 중요한 이유는 심장 및 혈관에 문제가 생기면 다른 신체 기관에 영향을 미치거나 생명에도 직접적인 위협이 될 수 있기 때문이다."@ko ;
+    kno:slotFiller "심혈관(心血管) (1성분)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "심혈관테크"@ko ;
+    kno:frequency kno:KN2013-0279-freq-NN-2013 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0279-freq-NN-total ;
+    rdfs:label "심혈관-테크"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "심혈관(心血管), 테크(tech)"@ko .
+kno:KN2013-0279-c1 kno:surfaceForm "심혈관"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "심혈관(心血管)"@ko ;
+    kno:formative kno:F004742 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "심혈관"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2013-0279-c2 kno:surfaceForm "테크"@ko ;
+    a kno:Component ;
+    kno:fullForm "테크"@ko ;
+    kno:formative kno:F000066 ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "테크(tech)"@ko .

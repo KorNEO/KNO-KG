@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0111 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0111 a ontolex:Word ;
-    frac:attestation kno:KN2022-0111-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0111-form ;
-    ontolex:sense kno:KN2022-0111-sense .
-
-kno:KN2022-0111-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002320946> .
-
-kno:KN2022-0111-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0111-freq-nn,
-        kno:KN2022-0111-freq-yt ;
-    ontolex:writtenRep "대깨좌"@ko .
-
-kno:KN2022-0111-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0111-freq-yt a frac:CorpusFrequency ;
-    rdf:value 419 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0111-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0111 kno:component kno:KN2022-0111-c1 ;
+    kno:example "¶좌파 성향을 지닌 단체를 조직하고 운영하는 사람들과 그들의 가족까지 합치면 ‘{대깨좌’} 고정표가 수백만은 될 것이라는 의견이 나오고 있다."@ko ;
+    skos:definition "‘대가리가 깨져도 좌파’를 줄여 이르는 말. 주로 정치에서, 좌파 성향을 지닌 단체나 정당 따위를 맹목적으로 지지하는 사람을 비판적으로 이르는 말이다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:componentString "대(가리), 깨(지다), 좌(파)(左派)"@ko ;
+    kno:origin "(대깨左)" ;
+    kno:component kno:KN2022-0111-c2 ;
+    kno:languageType "고+고+한" ;
+    kno:indexForm "대깨좌"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:instantiates kno:S001316 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0111-freq-NN-total ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0111-freq-NN-2021 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B9%A8%EC%A2%8C> ;
+    kno:component kno:KN2022-0111-c3 ;
+    kno:slotFiller "좌(파)(左派) (1성분)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0111-freq-NN-2024 ;
+    rdfs:label "대깨좌"@ko ;
+    a ontolex:Word .
+kno:KN2022-0111-c1 kno:surfaceForm "대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001168 ;
+    rdfs:label "대(가리)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "대가리"@ko .
+kno:KN2022-0111-c2 kno:fullForm "깨지다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "깨"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001126 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    rdfs:label "깨(지다)"@ko .
+kno:KN2022-0111-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "좌파"@ko ;
+    kno:formative kno:F001771 ;
+    rdfs:label "좌(파)(左派)"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "좌"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0168 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0168 a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0168-c2 ;
+    rdfs:label "사토시^사이클"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "일^영" ;
+    kno:example "¶그럼에도 비트코인 가격과 동떨어지게 일시적으로 비트코인 검색량이 급감할 때가 있지만 {사토시 사이클은} 유효한 지표라고 강조했다."@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "가상 화폐의 한 종류인 ‘비트코인’의 검색 빈도와 가격의 상관관계를 이르는 말. 비트코인 개발자로 알려진 ‘나가모토 사토시’라는 프로그래머의 이름에서 유래된 말로, 비트코인의 검색 빈도가 늘어나면 거래량이 증가하고 가격이 상승하는 현상을 보인다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "사토시(Satoshi) (1성분)"@ko ;
+    kno:component kno:KN2018-0168-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%86%A0%EC%8B%9C%EC%82%AC%EC%9D%B4%ED%81%B4> ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "사토시사이클"@ko ;
+    kno:origin "(Satoshi[哲史]<영>cycle)" ;
+    kno:componentString "사토시(Satoshi), 사이클(cycle)"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000914 .
+kno:KN2018-0168-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000792 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "사이클"@ko ;
+    kno:surfaceForm "사이클"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    rdfs:label "사이클(cycle)"@ko .
+kno:KN2018-0168-c1 kno:fullForm "사토시"@ko ;
+    kno:formative kno:F004185 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "사토시(Satoshi)"@ko ;
+    kno:surfaceForm "사토시"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:truncated "false"^^xsd:boolean .

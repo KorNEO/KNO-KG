@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0328 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0328 kno:languageType "한+프" ;
+    kno:component kno:KN2017-0328-c1 ;
+    kno:frequency kno:KN2017-0328-freq-NN-2017 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0328-freq-NN-2018 ;
+    kno:component kno:KN2017-0328-c2 ;
+    kno:componentString "피(지)(皮), (오)르가즘(orgasme)"@ko ;
+    kno:formation kno:W05 ;
+    kno:urimalTargetCode "1380589" ;
+    skos:definition "피지를 제거하며 느끼는 쾌락을 이르는 말. ‘피지’와 ‘오르가즘(orgasme)’을 결합하여 만든 말이다. ⇒규범 표기는 ‘피르가슴’이다."@ko ;
+    kno:origin "(皮<프>←orgasme)" ;
+    kno:frequency kno:KN2017-0328-freq-NN-2022 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380589> ;
+    kno:frequency kno:KN2017-0328-freq-NN-2016 ;
+    rdfs:label "피르가즘"@ko ;
+    kno:frequency kno:KN2017-0328-freq-NN-2019 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:indexForm "피르가즘"@ko ;
+    kno:frequency kno:KN2017-0328-freq-NN-total ;
+    kno:example "¶‘{피르가즘’을} 느끼고 싶다면, OO팩을 추천합니다."@ko .
+kno:KN2017-0328-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "피"@ko ;
+    kno:fullForm "피지"@ko ;
+    rdfs:label "피(지)(皮)"@ko ;
+    kno:formative kno:F006860 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0328-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "오르가즘"@ko ;
+    kno:surfaceForm "르가즘"@ko ;
+    kno:formative kno:F003275 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "(오)르가즘(orgasme)"@ko .

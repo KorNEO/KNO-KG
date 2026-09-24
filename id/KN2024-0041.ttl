@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0041 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0041 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0041-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0041-form ;
-    ontolex:sense kno:KN2024-0041-sense .
-
-kno:KN2024-0041-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003841753> .
-
-kno:KN2024-0041-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0041-freq-nn,
-        kno:KN2024-0041-freq-yt ;
-    ontolex:writtenRep "노 썸바디 존"@ko .
-
-kno:KN2024-0041-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0041-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0041-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0041 kno:languageType "영_영_영" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "썸바디(somebody) (1성분)"@ko ;
+    kno:component kno:KN2024-0041-c1 ;
+    kno:frequency kno:KN2024-0041-freq-NN-2024 ;
+    kno:indexForm "노썸바디존"@ko ;
+    kno:origin "(▼<영>no somebody zone)" ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0041-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%20%EC%8D%B8%EB%B0%94%EB%94%94%20%EC%A1%B4> ;
+    skos:definition "특정 사람 혹은 집단의 출입이나 이용을 금지하거나 제한하는 곳."@ko ;
+    kno:componentString "노(no), 썸바디(somebody), 존(zone)"@ko ;
+    kno:example "¶{노 썸바디 존은} 개개인의 이익과 권리의 확대임과 동시에 혐오와 배제가 공존하는 한국 사회의 현실을 보여 준다."@ko ;
+    kno:component kno:KN2024-0041-c3 ;
+    kno:instantiates kno:S000035 ;
+    rdfs:label "노 썸바디 존"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "제한하다"@ko ;
+    kno:frequency kno:KN2024-0041-freq-NN-total ;
+    a ontolex:MultiwordExpression .
+kno:KN2024-0041-c1 kno:formative kno:F000015 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "노(no)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z6 .
+kno:KN2024-0041-c2 rdfs:label "썸바디(somebody)"@ko ;
+    kno:formative kno:F004767 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "썸바디"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "썸바디"@ko .
+kno:KN2024-0041-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "존"@ko ;
+    kno:surfaceForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000034 .

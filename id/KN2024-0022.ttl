@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0022 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0022 a ontolex:Word ;
-    frac:attestation kno:KN2024-0022-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0022-form ;
-    ontolex:sense kno:KN2024-0022-sense .
-
-kno:KN2024-0022-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003516351> .
-
-kno:KN2024-0022-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0022-freq-nn,
-        kno:KN2024-0022-freq-yt ;
-    ontolex:writtenRep "귀가팟"@ko .
-
-kno:KN2024-0022-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0022-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0022-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0022 kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0022-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:predicate "이동하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%80%EA%B0%80%ED%8C%9F> ;
+    kno:component kno:KN2024-0022-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:label "귀가팟"@ko ;
+    kno:component kno:KN2024-0022-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0022-freq-NN-total ;
+    skos:definition "‘귀가 파트너’를 줄여 이르는 말로, 같은 지역이나 거주지로 귀가하는 사람들이 안전을 위해 모여 함께 이동하는 모임. 또는 그런 사람들."@ko ;
+    kno:origin "(歸家<영>←partner)" ;
+    kno:componentString "귀가(歸家), 팟(←partner)"@ko ;
+    kno:indexForm "귀가팟"@ko ;
+    kno:example "¶이웃 주민들이 함께 집으로 돌아가는 이른바 {귀가팟이} 점점 늘어나고 있다."@ko ;
+    kno:languageType "한+영" .
+kno:KN2024-0022-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "팟"@ko ;
+    kno:fullForm "팟"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "팟(←partner)"@ko ;
+    kno:formative kno:F006643 ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2024-0022-c1 rdfs:label "귀가(歸家)"@ko ;
+    kno:surfaceForm "귀가"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001095 ;
+    a kno:Component ;
+    kno:fullForm "귀가"@ko ;
+    kno:semanticTag kno:usas-M1 .

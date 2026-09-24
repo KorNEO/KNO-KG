@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0044 kno:slotFiller "(홀)로서기 (1성분)"@ko ;
+    kno:activeYears "10"^^xsd:integer ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000205 ;
+    kno:component kno:KN2017-0044-c2 ;
+    kno:predicate "살아가다"@ko ;
+    kno:frequency kno:KN2017-0044-freq-NN-2025 ;
+    kno:frequency kno:KN2017-0044-freq-NN-2022 ;
+    kno:frequency kno:KN2017-0044-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0044-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0044-freq-NN-2016 ;
+    kno:frequency kno:KN2017-0044-freq-NN-2023 ;
+    rdfs:label "나로서기"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1380354" ;
+    kno:frequency kno:KN2017-0044-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0044-freq-NN-2020 ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380354> ;
+    kno:frequency kno:KN2017-0044-freq-NN-total ;
+    kno:frequency kno:KN2017-0044-freq-NN-2018 ;
+    kno:example "¶대학 생활은 {나로서기를} 본격적으로 진행시키는 기간이다."@ko ;
+    skos:definition "다른 것에 매이거나 의존하지 않고, 자신의 내면적 가치를 찾고 본연의 ‘나’로 살아가는 일. ‘나’와 ‘홀로서기’를 결합하여 만든 말이다."@ko ;
+    kno:componentString "나, (홀)로서기"@ko ;
+    kno:frequency kno:KN2017-0044-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고+고" ;
+    kno:frequency kno:KN2017-0044-freq-NN-2021 ;
+    kno:indexForm "나로서기"@ko .
+kno:KN2017-0044-c2 kno:formative kno:F003244 ;
+    kno:semanticTag kno:usas-S5m ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(홀)로서기"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "홀로서기"@ko ;
+    kno:surfaceForm "로서기"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2017-0044-c1 kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000070 ;
+    rdfs:label "나"@ko ;
+    kno:surfaceForm "나"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "나"@ko ;
+    a kno:Component .

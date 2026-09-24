@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0076 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0076 kno:component kno:KN2018-0076-c2 ;
+    kno:instantiates kno:S000130 ;
+    kno:example "¶O 씨는 “할 말 있으면 문자로 하면 되지, 별로 친하지도 않은 사람들끼리 모여 있는 단톡방은 정말 불편하다. 오죽하면 ‘{단톡 지옥’이라는} 말까지 생겼겠나.”라며 “단톡방을 나가면 뭐라고 할 것 같아서 억지로 있는데, 볼 때마다 스트레스라 웬만하면 신경을 쓰지 않으려고 한다.”라고 말했다."@ko ;
+    kno:slotFiller "단(체)(團)+톡(←talk) (2성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416092> ;
+    kno:componentString "단(체)(團), 톡(←talk), 지옥(地獄)"@ko ;
+    kno:frequency kno:KN2018-0076-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0076-freq-NN-2022 ;
+    skos:definition "시도 때도 없이 상사가 업무를 지시하는 회사의 단체 채팅방이나 참여를 원하지 않으나 어쩔 수 없이 성향이 맞지 않는 사람들과 함께 있는 단체 채팅방을 지옥에 빗대어 이르는 말."@ko ;
+    kno:instantiates kno:S001308 ;
+    kno:frequency kno:KN2018-0076-freq-NN-2023 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(團<영>←talk地獄)" ;
+    rdfs:label "단톡 지옥"@ko ;
+    kno:frequency kno:KN2018-0076-freq-NN-total ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0076-c3 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:slotFiller "지옥(地獄) (1성분)"@ko ;
+    kno:indexForm "단톡지옥"@ko ;
+    kno:urimalTargetCode "1416092" ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "(한+영)_한" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2018-0076-c1 .
+kno:KN2018-0076-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    rdfs:label "톡(←talk)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000619 ;
+    kno:fullForm "톡"@ko ;
+    kno:surfaceForm "톡"@ko ;
+    a kno:Component .
+kno:KN2018-0076-c3 kno:fullForm "지옥"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "지옥"@ko ;
+    kno:formative kno:F000191 ;
+    rdfs:label "지옥(地獄)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0076-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "단"@ko ;
+    kno:fullForm "단체"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000480 ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "단(체)(團)"@ko .

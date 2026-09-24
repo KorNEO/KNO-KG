@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0225 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0225 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0225-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0225-form ;
-    ontolex:sense kno:KN2024-0225-sense .
-
-kno:KN2024-0225-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003459267> .
-
-kno:KN2024-0225-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0225-freq-nn,
-        kno:KN2024-0225-freq-yt ;
-    ontolex:writtenRep "육아^몰입^기간"@ko .
-
-kno:KN2024-0225-freq-nn a frac:CorpusFrequency ;
-    rdf:value 210 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0225-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0225-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0225 kno:frequency kno:KN2024-0225-freq-NN-2025 ;
+    kno:component kno:KN2024-0225-c2 ;
+    kno:componentString "육아(育兒), 몰입(沒入), 기간(其間)"@ko ;
+    kno:indexForm "육아몰입기간"@ko ;
+    rdfs:label "육아^몰입^기간"@ko ;
+    kno:frequency kno:KN2024-0225-freq-NN-2024 ;
+    kno:example "¶기업들은 일과 가정의 양립을 위해 {육아 몰입 기간을} 보장하는 한편, 출산 전후 휴가, 출산 장려금 등 다양한 제도를 함께 운영하고 있다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:frequency kno:KN2024-0225-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000088 ;
+    kno:slotFiller "몰입(沒入)+기간(其間) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(育兒沒入其間)" ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%EC%95%84%EB%AA%B0%EC%9E%85%EA%B8%B0%EA%B0%84> ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0225-c3 ;
+    kno:component kno:KN2024-0225-c1 ;
+    skos:definition "근로자가 자녀 양육에 전념할 수 있도록 제도적으로 보장된 기간. 또는 그러한 제도. ‘육아 휴직’ 대신, 자녀 양육의 가치를 강조하는 취지에서 사용되는 표현이다."@ko .
+kno:KN2024-0225-c2 kno:fullForm "몰입"@ko ;
+    kno:formative kno:F003509 ;
+    kno:surfaceForm "몰입"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "몰입(沒入)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X5.2p ;
+    a kno:Component .
+kno:KN2024-0225-c3 kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "기간"@ko ;
+    rdfs:label "기간(其間)"@ko ;
+    kno:formative kno:F002581 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:fullForm "기간"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0225-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "육아"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "육아(育兒)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000118 ;
+    kno:surfaceForm "육아"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko .

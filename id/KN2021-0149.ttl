@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0149 a ontolex:Word ;
-    frac:attestation kno:KN2021-0149-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0149-form ;
-    ontolex:sense kno:KN2021-0149-sense .
-
-kno:KN2021-0149-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/022/0003500726> .
-
-kno:KN2021-0149-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0149-freq-nn,
-        kno:KN2021-0149-freq-yt ;
-    ontolex:writtenRep "빵공-족"@ko .
-
-kno:KN2021-0149-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0149-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0149-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0149 kno:unitType "단어"@ko ;
+    kno:example "¶특히 프렌차이즈형 빵집에는 {빵공족에게} 필요한 환경이 고루 갖추어져 있다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:slotFiller "빵공 (1성분)"@ko ;
+    kno:component kno:KN2021-0149-c1 ;
+    kno:formation kno:W02 ;
+    kno:origin "(빵工族)" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0149-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0149-freq-NN-2021 ;
+    a ontolex:Word ;
+    kno:languageType "고+한+한" ;
+    kno:instantiates kno:S000001 ;
+    kno:indexForm "빵공족"@ko ;
+    kno:component kno:KN2021-0149-c2 ;
+    skos:definition "빵집에서 공부하는 사람. 또는 그런 무리. 코로나19의 거리 두기 정책 때문에 음식점으로 등록된 사업장만 영업이 가능해져, 독서실이나 카페를 가지 못하는 학생들이 빵집으로 몰리면서 생겨난 말이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2021-0149-freq-NN-total ;
+    kno:predicate "공부하다"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "빵공-족"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%EA%B3%B5%EC%A1%B1> ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:componentString "빵공, -족(族)"@ko .
+kno:KN2021-0149-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "빵공"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004124 ;
+    rdfs:label "빵공"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "빵공"@ko .
+kno:KN2021-0149-c2 kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0020 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0020 kno:frequency kno:KN2012-0020-freq-NN-2015 ;
+    rdfs:label "공공^원룸텔"@ko ;
+    skos:definition "국가나 민간 업체 등에서 1~2인 가구가 거주할 수 있도록 저렴한 임대료로 공급하는 호텔식 원룸."@ko ;
+    kno:slotFiller "원룸(one-room)+(호)텔(hotel) (2성분)"@ko ;
+    kno:languageType "한^영" ;
+    kno:frequency kno:KN2012-0020-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:indexForm "공공원룸텔"@ko ;
+    kno:frequency kno:KN2012-0020-freq-NN-2017 ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356946> ;
+    kno:example "¶아울러 대학 부지 내 기숙사 건립을 장려하고 매 년 5000호의 {공공 원룸텔을} 공급할 예정이다."@ko ;
+    kno:instantiates kno:S000084 ;
+    kno:component kno:KN2012-0020-c2 ;
+    kno:frequency kno:KN2012-0020-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0020-freq-NN-2016 ;
+    kno:component kno:KN2012-0020-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2012-0020-c3 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2012-0020-freq-NN-2012 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(公共←one-room hotel)" ;
+    kno:urimalTargetCode "1356946" ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "공공(公共), 원룸(one-room), (호)텔(hotel)"@ko .
+kno:KN2012-0020-c2 a kno:Component ;
+    kno:surfaceForm "원룸"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "원룸"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001666 ;
+    rdfs:label "원룸(one-room)"@ko .
+kno:KN2012-0020-c1 rdfs:label "공공(公共)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "공공"@ko ;
+    a kno:Component ;
+    kno:fullForm "공공"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000084 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0020-c3 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(호)텔(hotel)"@ko ;
+    kno:surfaceForm "텔"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F000425 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "호텔"@ko .

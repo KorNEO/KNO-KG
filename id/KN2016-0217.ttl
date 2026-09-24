@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0217 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0217 kno:frequency kno:KN2016-0217-freq-NN-2015 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2016-0217-freq-NN-2017 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "부장인턴"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1368867" ;
+    kno:component kno:KN2016-0217-c2 ;
+    kno:frequency kno:KN2016-0217-freq-NN-total ;
+    kno:frequency kno:KN2016-0217-freq-NN-2018 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0217-freq-NN-2019 ;
+    kno:slotFiller "부장(部長) (1성분)"@ko ;
+    kno:languageType "한_영" ;
+    kno:origin "(部長<영>intern)" ;
+    kno:instantiates kno:S000419 ;
+    kno:componentString "부장(部長), 인턴(intern)"@ko ;
+    kno:frequency kno:KN2016-0217-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0217-freq-NN-2016 ;
+    skos:definition "정규직으로 채용되지 못한 채 오랜 인턴 생활로 인해 부장급의 능력을 갖춘 취업 준비생."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368867> ;
+    kno:example "¶만년 인턴 생활만 하다 보니 ‘{부장 인턴’이란} 말도 생겨났다. 인턴만 하다 보니 부장급 능력을 갖추게 됐다는 자조 섞인 말이다."@ko ;
+    rdfs:label "부장 인턴"@ko ;
+    kno:frequency kno:KN2016-0217-freq-NN-2020 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2016-0217-c1 .
+kno:KN2016-0217-c2 kno:fullForm "인턴"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "인턴"@ko ;
+    kno:formative kno:F000897 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "인턴(intern)"@ko .
+kno:KN2016-0217-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "부장(部長)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:fullForm "부장"@ko ;
+    kno:formative kno:F003954 ;
+    kno:surfaceForm "부장"@ko ;
+    kno:truncated "false"^^xsd:boolean .

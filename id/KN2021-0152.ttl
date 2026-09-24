@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0152 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0152-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0152-form ;
-    ontolex:sense kno:KN2021-0152-sense .
-
-kno:KN2021-0152-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000257015> .
-
-kno:KN2021-0152-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0152-freq-nn,
-        kno:KN2021-0152-freq-yt ;
-    ontolex:writtenRep "사전^위탁^보호제"@ko .
-
-kno:KN2021-0152-freq-nn a frac:CorpusFrequency ;
-    rdf:value 252 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0152-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0152-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0152 kno:example "¶O 연구원은 {사전 위탁 보호제를} 법제화한다면 입양과 관련된 다양한 문제를 해결하는 데 도움이 될 것이라고 말했다."@ko ;
+    kno:frequency kno:KN2021-0152-freq-NN-2024 ;
+    kno:origin "(事前委託保護制)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:indexForm "사전위탁보호제"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:slotFiller "보호제(保護制) (1성분)"@ko ;
+    kno:instantiates kno:S001438 ;
+    skos:definition "입양을 하기 전에 양친과 양자 간 친밀감을 미리 조성하고 파양을 막기 위해 국가에서 일정 기간 양자를 돌봐 주며 보호하는 제도. =사전 위탁 보호 제도."@ko ;
+    rdfs:label "사전^위탁^보호제"@ko ;
+    kno:frequency kno:KN2021-0152-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0152-c2 ;
+    kno:frequency kno:KN2021-0152-freq-NN-2021 ;
+    kno:component kno:KN2021-0152-c3 ;
+    kno:predicate "보호하다"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:componentString "사전(事前), 위탁(委託), 보호제(保護制)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%EC%9C%84%ED%83%81%EB%B3%B4%ED%98%B8%EC%A0%9C> ;
+    kno:component kno:KN2021-0152-c1 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2021-0152-c2 rdfs:label "위탁(委託)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "위탁"@ko ;
+    kno:surfaceForm "위탁"@ko ;
+    kno:formative kno:F001673 .
+kno:KN2021-0152-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "보호제"@ko ;
+    kno:surfaceForm "보호제"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003907 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-B3 ;
+    rdfs:label "보호제(保護制)"@ko .
+kno:KN2021-0152-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T4 ;
+    kno:formative kno:F000367 ;
+    rdfs:label "사전(事前)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "사전"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "사전"@ko .

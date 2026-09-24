@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0014 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%ED%8F%90%EB%9D%BD> ;
+    kno:component kno:KN2013-0014-c2 ;
+    a ontolex:Word ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:origin "(開閉←<영>lock)" ;
+    kno:indexForm "개폐락"@ko ;
+    kno:instantiates kno:S000844 ;
+    kno:component kno:KN2013-0014-c1 ;
+    kno:languageType "한+영" ;
+    kno:formation kno:W01 ;
+    kno:example "¶이번에 개발된 폐쇄락은 외관상 {개폐락과} 눈으로 거의 구분할 수 없어 내부자가 우발적으로 유에스비 포트로 정보를 유출하거나 해킹하려 해도 폐쇄락 해제에 많은 시간을 빼앗기는 데다, 해킹 흔적까지 남기게 된다."@ko ;
+    kno:frequency kno:KN2013-0014-freq-NN-2012 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "개폐(開閉), 락(←lock)"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    skos:definition "장치의 삽입과 제거가 자유로운 유형의 포트."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "개폐-락"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "개폐(開閉) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0014-freq-NN-total .
+kno:KN2013-0014-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001231 ;
+    kno:semanticTag kno:usas-K2 ;
+    rdfs:label "락(←lock)"@ko ;
+    kno:fullForm "락"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "락"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component .
+kno:KN2013-0014-c1 kno:fullForm "개폐"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002164 ;
+    kno:surfaceForm "개폐"@ko ;
+    kno:semanticTag kno:usas-A10 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "개폐(開閉)"@ko ;
+    kno:position "1"^^xsd:integer .

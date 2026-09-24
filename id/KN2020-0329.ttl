@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0329 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0329 a ontolex:Word ;
-    frac:attestation kno:KN2020-0329-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0329-form ;
-    ontolex:sense kno:KN2020-0329-sense .
-
-kno:KN2020-0329-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003750866> .
-
-kno:KN2020-0329-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0329-freq-nn,
-        kno:KN2020-0329-freq-yt ;
-    ontolex:writtenRep "캠린이"@ko .
-
-kno:KN2020-0329-freq-nn a frac:CorpusFrequency ;
-    rdf:value 665 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0329-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5988 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0329-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0329 kno:indexForm "캠린이"@ko ;
+    kno:origin "(<영>←camping린이)" ;
+    kno:slotFiller "(어)린이 (1성분)"@ko ;
+    kno:instantiates kno:S000331 ;
+    kno:frequency kno:KN2020-0329-freq-NN-2022 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2020-0329-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0329-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0329-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0329-freq-NN-2023 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2020-0329-c1 ;
+    kno:frequency kno:KN2020-0329-freq-NN-total ;
+    skos:definition "캠핑을 즐기기 시작한 지 얼마 되지 않아 캠핑과 관련된 활동에 서툰 사람. 코로나19의 확산을 방지하기 위해 실내에서 하는 활동의 많은 부분에서 제약이 생기자 여가 활동으로 캠핑에 관심을 가지기 시작한 사람들이 늘어나는 상황에서 나온 말이다."@ko ;
+    rdfs:label "캠린이"@ko ;
+    kno:frequency kno:KN2020-0329-freq-NN-2024 ;
+    kno:instantiates kno:S000066 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영+고" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0329-freq-NN-2021 ;
+    kno:example "¶{캠린이도} 쉽게 설치할 수 있는 텐트 추천 부탁드립니다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%A0%EB%A6%B0%EC%9D%B4> ;
+    kno:component kno:KN2020-0329-c2 ;
+    kno:componentString "캠(핑)(camping), (어)린이"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "캠(핑)(camping) (1성분)"@ko .
+kno:KN2020-0329-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000235 ;
+    kno:fullForm "캠핑"@ko ;
+    rdfs:label "캠(핑)(camping)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "캠"@ko .
+kno:KN2020-0329-c2 kno:role "고정항"@ko ;
+    kno:surfaceForm "린이"@ko ;
+    kno:formative kno:F000169 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "어린이"@ko ;
+    a kno:Component ;
+    rdfs:label "(어)린이"@ko ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0349 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0349 a ontolex:Word ;
-    frac:attestation kno:KN2023-0349-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0349-form ;
-    ontolex:sense kno:KN2023-0349-sense .
-
-kno:KN2023-0349-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003753568> .
-
-kno:KN2023-0349-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0349-freq-nn,
-        kno:KN2023-0349-freq-yt ;
-    ontolex:writtenRep "해글봇"@ko .
-
-kno:KN2023-0349-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0349-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0349-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0349 rdfs:label "해글봇"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EA%B8%80%EB%B4%87> ;
+    kno:formation kno:W07 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:slotFiller "해글(haggle) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0349-freq-NN-2023 ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶인공지능의 발전에 힘입어 이제 국가 간의 외교 상황에서도 최적의 협상법을 학습한 에 이아이(AI)인 {해글봇이} 핵심적인 역할을 할 수 있을 것이라는 전망이 나왔다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0349-c1 ;
+    kno:component kno:KN2023-0349-c2 ;
+    kno:indexForm "해글봇"@ko ;
+    skos:definition "거래 조건과 이해관계 등을 고려하여 최적의 합의안을 찾아낼 수 있는 협상법을 학습한 인공지능 장치."@ko ;
+    kno:instantiates kno:S000893 ;
+    kno:frequency kno:KN2023-0349-freq-NN-total ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:origin "(<영>hagglebot)" ;
+    kno:componentString "해글(haggle), 봇(bot)"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2023-0349-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "해글"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:surfaceForm "해글"@ko ;
+    rdfs:label "해글(haggle)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006994 .
+kno:KN2023-0349-c2 kno:formative kno:F000778 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "봇"@ko ;
+    kno:surfaceForm "봇"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "봇(bot)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

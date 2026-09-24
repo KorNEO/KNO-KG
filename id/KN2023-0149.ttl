@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0149 a ontolex:Word ;
-    frac:attestation kno:KN2023-0149-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0149-form ;
-    ontolex:sense kno:KN2023-0149-sense .
-
-kno:KN2023-0149-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011281469> .
-
-kno:KN2023-0149-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0149-freq-nn,
-        kno:KN2023-0149-freq-yt ;
-    ontolex:writtenRep "스키니피케이션"@ko .
-
-kno:KN2023-0149-freq-nn a frac:CorpusFrequency ;
-    rdf:value 146 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0149-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0149-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0149 kno:frequency kno:KN2023-0149-freq-NN-2024 ;
+    rdfs:label "스키니피케이션"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "스키니피케이션"@ko ;
+    kno:component kno:KN2023-0149-c2 ;
+    kno:component kno:KN2023-0149-c1 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0149-freq-NN-2025 ;
+    kno:componentString "스킨(skin), 이피케이션(-ification)"@ko ;
+    kno:frequency kno:KN2023-0149-freq-NN-2022 ;
+    kno:instantiates kno:S001003 ;
+    skos:definition "두피와 모발을 마치 피부를 관리하는 것처럼 깨끗하고 섬세하게 가꾸는 일."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%82%A4%EB%8B%88%ED%94%BC%EC%BC%80%EC%9D%B4%EC%85%98> ;
+    kno:frequency kno:KN2023-0149-freq-NN-2023 ;
+    kno:formation kno:W07 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶뷰티업계는 젊은층 사이 확산되고 있는 ‘{스키니피케이션’에} 대한 관심에 맞춰 두피와 헤어 관리 상품군을 강화하고 있다."@ko ;
+    kno:slotFiller "스킨(skin) (1성분)"@ko ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "가꾸다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(<영>skinification)" ;
+    kno:frequency kno:KN2023-0149-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2023-0149-c2 a kno:Component ;
+    kno:formative kno:F001701 ;
+    rdfs:label "이피케이션(-ification)"@ko ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:fullForm "이피케이션"@ko ;
+    kno:surfaceForm "이피케이션"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0149-c1 kno:formative kno:F001524 ;
+    a kno:Component ;
+    rdfs:label "스킨(skin)"@ko ;
+    kno:surfaceForm "스킨"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "스킨"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

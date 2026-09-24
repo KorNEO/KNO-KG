@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0239 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0239 a ontolex:Word ;
-    frac:attestation kno:KN2021-0239-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0239-form ;
-    ontolex:sense kno:KN2021-0239-sense .
-
-kno:KN2021-0239-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003308654> .
-
-kno:KN2021-0239-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0239-freq-nn,
-        kno:KN2021-0239-freq-yt ;
-    ontolex:writtenRep "주포-원"@ko .
-
-kno:KN2021-0239-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0239-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0239-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0239 rdfs:label "주포-원"@ko ;
+    kno:indexForm "주포원"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2021-0239-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0239-freq-NN-total ;
+    kno:slotFiller "주포(住抛) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0239-freq-NN-2020 ;
+    kno:instantiates kno:S001170 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%ED%8F%AC%EC%9B%90> ;
+    kno:example "¶대출 규제가 거듭 추가되면서 대출의 최전선인 은행 지점에서는 {주포원이} 등장하고 있다는 말까지 나온다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    skos:definition "‘주택 담보 대출에 대한 상담을 포기한 은행원’을 줄여 이르는 말. 대출과 관련한 정책이나 규정이 자주 바뀌고 복잡해져서 은행원이 고객과 주택 담보 대출을 상담할 때 어려움을 겪는 일이 많아진 상황에서 나온 말이다."@ko ;
+    kno:frequency kno:KN2021-0239-freq-NN-2021 ;
+    kno:componentString "주포(住抛), -원(員)"@ko ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2021-0239-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(住抛員)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word .
+kno:KN2021-0239-c1 kno:fullForm "주포"@ko ;
+    kno:surfaceForm "주포"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005804 ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "주포(住抛)"@ko .
+kno:KN2021-0239-c2 kno:formative kno:F001663 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "원"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "원"@ko ;
+    rdfs:label "-원(員)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

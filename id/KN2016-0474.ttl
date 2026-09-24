@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0474 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0474 kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "차량(車輛), 난민(難民)"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:predicate "하다"@ko ;
+    kno:frequency kno:KN2016-0474-freq-NN-2017 ;
+    rdfs:label "차량^난민"@ko ;
+    kno:indexForm "차량난민"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2016-0474-freq-NN-2016 ;
+    kno:component kno:KN2016-0474-c1 ;
+    kno:component kno:KN2016-0474-c2 ;
+    kno:example "¶OO 피난민 가운데 상당수가 차에서 대피 생활을 이어가는 이른바 ‘{차량 난민’입니다}."@ko ;
+    kno:slotFiller "차량(車輛) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0474-freq-NN-total ;
+    kno:instantiates kno:S000092 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:origin "(車輛難民)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%EB%9F%89%EB%82%9C%EB%AF%BC> ;
+    skos:definition "재난을 당한 후 차량에서 피난 생활을 하는 사람들. =자동차 난민."@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2016-0474-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000595 ;
+    rdfs:label "차량(車輛)"@ko ;
+    kno:fullForm "차량"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "차량"@ko ;
+    kno:semanticTag kno:usas-M3 .
+kno:KN2016-0474-c2 a kno:Component ;
+    kno:formative kno:F000205 ;
+    kno:surfaceForm "난민"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "난민(難民)"@ko ;
+    kno:semanticTag kno:usas-S2m ;
+    kno:fullForm "난민"@ko .

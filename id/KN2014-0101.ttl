@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0101 skos:definition "잠을 자다가 문자 메시지를 확인하거나 답문자를 보내고 다시 잠이 든 뒤, 다음날 아침 깨어나서는 그런 일을 기억하지 못하는 병."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "몽유 문자병"@ko ;
+    kno:example "¶‘노모포비아’가 심해져 ‘{몽유 문자병’이라는} 단어도 생겨났다."@ko ;
+    kno:indexForm "몽유문자병"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:componentString "몽유(夢遊), 문자(文字), 병(病)"@ko ;
+    kno:component kno:KN2014-0101-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384044> ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:instantiates kno:S000384 ;
+    kno:component kno:KN2014-0101-c3 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    kno:origin "(夢遊文字病)" ;
+    kno:predicate "못하다"@ko ;
+    kno:frequency kno:KN2014-0101-freq-NN-2024 ;
+    kno:slotFiller "몽유(夢遊)+문자(文字) (2성분)"@ko ;
+    kno:urimalTargetCode "1384044" ;
+    kno:frequency kno:KN2014-0101-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0101-freq-NN-total ;
+    kno:frequency kno:KN2014-0101-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2014-0101-c1 .
+kno:KN2014-0101-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:formative kno:F003549 ;
+    a kno:Component ;
+    rdfs:label "문자(文字)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "문자"@ko ;
+    kno:surfaceForm "문자"@ko .
+kno:KN2014-0101-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "병"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000033 ;
+    rdfs:label "병(病)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "병"@ko .
+kno:KN2014-0101-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003518 ;
+    rdfs:label "몽유(夢遊)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "몽유"@ko ;
+    kno:surfaceForm "몽유"@ko .

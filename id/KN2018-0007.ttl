@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0007 a kno:Neologism ;
+    kno:slotFiller "갑(甲) (1성분)"@ko ;
+    kno:component kno:KN2018-0007-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000829 ;
+    kno:year "2018"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%91%EB%8C%80%EC%B6%9C> ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2018-0007-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "받다"@ko ;
+    kno:origin "(甲貸出)" ;
+    kno:example "¶그는 “…갭 투자를 막으려다 ‘{갑대출’만} 받게 하는 것.”이라며 “대출 양극화를 막을 추가 대책이 필요하다.”라고 촉구했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    skos:definition "소득이 높은 계층이 받는 대출."@ko ;
+    kno:frequency kno:KN2018-0007-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:componentString "갑(甲), 대출(貸出)"@ko ;
+    kno:frequency kno:KN2018-0007-freq-NN-2017 ;
+    kno:indexForm "갑대출"@ko ;
+    rdfs:label "갑-대출"@ko ;
+    kno:formation kno:W01 .
+kno:KN2018-0007-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "대출"@ko ;
+    rdfs:label "대출(貸出)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "대출"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    kno:formative kno:F000167 .
+kno:KN2018-0007-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:fullForm "갑"@ko ;
+    kno:surfaceForm "갑"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001038 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "갑(甲)"@ko .

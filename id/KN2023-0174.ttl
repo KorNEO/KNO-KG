@@ -1,37 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0174 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0174 a ontolex:Word ;
-    frac:attestation kno:KN2023-0174-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0174-form ;
-    ontolex:sense kno:KN2023-0174-sense .
-
-kno:KN2023-0174-att-nn a frac:Attestation ;
-    dcterms:date "2022-10-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003232060> .
-
-kno:KN2023-0174-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0174-freq-nn,
-        kno:KN2023-0174-freq-yt ;
-    ontolex:writtenRep "알빠노"@ko .
-
-kno:KN2023-0174-freq-nn a frac:CorpusFrequency ;
-    rdf:value 76 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0174-freq-yt a frac:CorpusFrequency ;
-    rdf:value 43361 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0174-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%95%8C%EB%B9%A0%EB%85%B8> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0174 kno:predicate "쓰다"@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:indexForm "알빠노"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0174-c3 ;
+    skos:definition "‘내가 알 바가 아님’이라는 뜻으로 쓰는 말. 주로 어떤 상황에 대해 냉소적으로 반응할 때 쓰는 말이다. =알빠임."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0174-freq-NN-2025 ;
+    kno:slotFiller "-노 (1성분)"@ko ;
+    kno:example "¶O 씨는 최근 직장인 익명 커뮤니티에 “나는 제일 싫은 요즘 말이 누칼협, {알빠노야.”라는} 제목의 글을 올렸다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0174-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:component kno:KN2023-0174-c2 ;
+    rdfs:label "알빠노"@ko ;
+    kno:frequency kno:KN2023-0174-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%8C%EB%B9%A0%EB%85%B8> ;
+    kno:component kno:KN2023-0174-c1 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:componentString "알(다), 바, -노"@ko ;
+    kno:frequency kno:KN2023-0174-freq-NN-total ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:languageType "고+고+고" ;
+    kno:frequency kno:KN2023-0174-freq-NN-2023 ;
+    kno:instantiates kno:S001525 .
+kno:KN2023-0174-c3 rdfs:label "-노"@ko ;
+    kno:formative kno:F002760 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0174-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "바"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:fullForm "바"@ko ;
+    kno:surfaceForm "바"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001334 .
+kno:KN2023-0174-c1 rdfs:label "알(다)"@ko ;
+    kno:surfaceForm "알"@ko ;
+    kno:formative kno:F000025 ;
+    kno:fullForm "알다"@ko ;
+    kno:semanticTag kno:usas-X2.2p ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .

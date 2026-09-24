@@ -1,30 +1,50 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0189 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2020-0189-form ;
-    ontolex:sense kno:KN2020-0189-sense .
-
-kno:KN2020-0189-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0189-freq-nn,
-        kno:KN2020-0189-freq-yt ;
-    ontolex:writtenRep "식빵 세대"@ko .
-
-kno:KN2020-0189-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0189-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0189-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0189 kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    skos:definition "1970년대에 태어난 세대로, 동일한 형태의 식빵처럼 개성이 없고 주어진 목적에 자신을 맞추고 순응하며 살아가는 세대."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "(한+고)_한" ;
+    kno:indexForm "식빵세대"@ko ;
+    rdfs:label "식빵 세대"@ko ;
+    kno:predicate "살아가다"@ko ;
+    kno:example "¶자기주장이 강한 엑스 세대로 불리던 1970년대생들이 2020년에 와서는 조직에 순응적인 {식빵 세대로} 불리고 있다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0189-c1 ;
+    kno:frequency kno:KN2020-0189-freq-NN-total ;
+    kno:componentString "식빵(食), 세대"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9D%EB%B9%B5%20%EC%84%B8%EB%8C%80> ;
+    kno:component kno:KN2020-0189-c2 ;
+    kno:frequency kno:KN2020-0189-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(食빵世代)" .
+kno:KN2020-0189-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "식빵"@ko ;
+    kno:formative kno:F001549 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "식빵(食)"@ko ;
+    kno:fullForm "식빵"@ko .
+kno:KN2020-0189-c2 kno:semanticTag kno:usas-T3 ;
+    rdfs:label "세대"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004345 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "세대"@ko .

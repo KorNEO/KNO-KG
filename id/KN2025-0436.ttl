@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0436 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0436 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0436-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0436-form ;
-    ontolex:sense kno:KN2025-0436-sense .
-
-kno:KN2025-0436-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/112/0003752757> .
-
-kno:KN2025-0436-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0436-freq-nn,
-        kno:KN2025-0436-freq-yt ;
-    ontolex:writtenRep "온라인 파묘"@ko .
-
-kno:KN2025-0436-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0436-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0436-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0436 kno:component kno:KN2025-0436-c1 ;
+    kno:instantiates kno:S000106 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A8%EB%9D%BC%EC%9D%B8%20%ED%8C%8C%EB%AC%98> ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "온라인(on-line), 파묘(破墓)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0436-freq-NN-total ;
+    skos:definition "(LLM) 인터넷에서 특정 인물ㆍ단체의 과거 발언이나 행적, 게시물ㆍ영상 등의 자료를 뒤져 찾아내고, 이를 다시 끄집어내어 비판하거나 논란거리로 만드는 일."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "온라인파묘"@ko ;
+    kno:predicate "만드다"@ko ;
+    kno:component kno:KN2025-0436-c2 ;
+    kno:origin "(<영>on-line破墓)" ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:slotFiller "파묘(破墓) (1성분)"@ko ;
+    kno:example "(LLM) 논란이 커지자 누리꾼들이 예전 인터뷰와 게시물을 찾아내며 {온라인파묘가} 이어졌다."@ko ;
+    rdfs:label "온라인 파묘"@ko ;
+    kno:frequency kno:KN2025-0436-freq-NN-2025 ;
+    kno:unitType "구"@ko .
+kno:KN2025-0436-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000224 ;
+    kno:surfaceForm "온라인"@ko ;
+    rdfs:label "온라인(on-line)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "온라인"@ko .
+kno:KN2025-0436-c2 rdfs:label "파묘(破墓)"@ko ;
+    kno:formative kno:F001934 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:fullForm "파묘"@ko ;
+    kno:surfaceForm "파묘"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

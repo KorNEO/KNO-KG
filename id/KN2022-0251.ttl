@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0251 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0251-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0251-form ;
-    ontolex:sense kno:KN2022-0251-sense .
-
-kno:KN2022-0251-att-nn a frac:Attestation ;
-    dcterms:date "2021-11-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003984292> .
-
-kno:KN2022-0251-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0251-freq-nn,
-        kno:KN2022-0251-freq-yt ;
-    ontolex:writtenRep "주간^수술^유닛"@ko .
-
-kno:KN2022-0251-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0251-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0251-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0251 kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0251-freq-NN-total ;
+    kno:component kno:KN2022-0251-c2 ;
+    kno:component kno:KN2022-0251-c1 ;
+    kno:indexForm "주간수술유닛"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(晝間手術<영>unit)" ;
+    kno:componentString "주간(晝間), 수술(手術), 유닛(unit)"@ko ;
+    rdfs:label "주간^수술^유닛"@ko ;
+    kno:example "¶새로 개소한 여성 센터는 난임 진료실, 난자 채취실 등 관련 시설들을 한곳에 모은 {주간 수술 유닛이라고} 할 수 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:predicate "모은"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EA%B0%84%EC%88%98%EC%88%A0%EC%9C%A0%EB%8B%9B> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0251-freq-NN-2021 ;
+    kno:languageType "한^한^영" ;
+    skos:definition "당일에 퇴원이 가능한 시술 또는 수술과 관련된 시설들을 하나로 모은 구역."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0251-c3 .
+kno:KN2022-0251-c2 rdfs:label "수술(手術)"@ko ;
+    kno:fullForm "수술"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000817 ;
+    kno:surfaceForm "수술"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B3 .
+kno:KN2022-0251-c1 a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "주간"@ko ;
+    kno:surfaceForm "주간"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "주간(晝間)"@ko ;
+    kno:formative kno:F005787 ;
+    kno:role "성분"@ko .
+kno:KN2022-0251-c3 kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "유닛"@ko ;
+    rdfs:label "유닛(unit)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:fullForm "유닛"@ko ;
+    kno:formative kno:F005305 .

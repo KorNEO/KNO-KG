@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0111 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0111 a ontolex:Word ;
-    frac:attestation kno:KN2021-0111-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0111-form ;
-    ontolex:sense kno:KN2021-0111-sense .
-
-kno:KN2021-0111-att-nn a frac:Attestation ;
-    dcterms:date "2021-02-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/109/0004360446> .
-
-kno:KN2021-0111-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0111-freq-nn,
-        kno:KN2021-0111-freq-yt ;
-    ontolex:writtenRep "먹노매"@ko .
-
-kno:KN2021-0111-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0111-freq-yt a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0111-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0111 kno:frequency kno:KN2021-0111-freq-NN-2021 ;
+    kno:component kno:KN2021-0111-c3 ;
+    kno:component kno:KN2021-0111-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2021-0111-freq-NN-total ;
+    a kno:Neologism ;
+    kno:indexForm "먹노매"@ko ;
+    kno:languageType "고+고+고" ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B9%EB%85%B8%EB%A7%A4> ;
+    kno:example "¶80% 이상의 초특가 세일을 하는 물건을 사기 위해서는 {먹노매를} 하고 기다려야 한다."@ko ;
+    kno:predicate "집중하다"@ko ;
+    kno:componentString "먹(이), 노(리다), 매"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2021-0111-c2 ;
+    kno:frequency kno:KN2021-0111-freq-NN-2022 ;
+    kno:formation kno:W06 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0111-freq-NN-2023 ;
+    skos:definition "‘먹이를 노리는 매의 눈’을 줄여 이르는 말로, 기회를 엿보거나 결정적인 순간을 놓치지 않기 위해 집중하는 모습."@ko ;
+    a ontolex:Word ;
+    rdfs:label "먹노매"@ko .
+kno:KN2021-0111-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "매"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "매"@ko ;
+    kno:formative kno:F003388 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "매"@ko .
+kno:KN2021-0111-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003419 ;
+    kno:surfaceForm "먹"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "먹이"@ko ;
+    rdfs:label "먹(이)"@ko .
+kno:KN2021-0111-c2 kno:surfaceForm "노"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X7p ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002762 ;
+    a kno:Component ;
+    rdfs:label "노(리다)"@ko ;
+    kno:fullForm "노리다"@ko .

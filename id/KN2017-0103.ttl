@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0103 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0103 kno:frequency kno:KN2017-0103-freq-NN-total ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380447> ;
+    kno:frequency kno:KN2017-0103-freq-NN-2017 ;
+    kno:slotFiller "크러시(crush) (1성분)"@ko ;
+    kno:languageType "고+영" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:indexForm "먹크러시"@ko ;
+    kno:instantiates kno:S001073 ;
+    kno:slotFiller "먹 (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "먹, 크러시(crush)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(먹<영>crush)" ;
+    kno:formation kno:W01 ;
+    skos:definition "먹는 모습으로 다른 사람들의 마음을 사로잡음. 또는 그런 매력이 있는 사람."@ko ;
+    kno:component kno:KN2017-0103-c2 ;
+    rdfs:label "먹-크러시"@ko ;
+    kno:instantiates kno:S000211 ;
+    kno:urimalTargetCode "1380447" ;
+    kno:example "¶OOO은 프로 복서 출신다운 날카로운 시선과 승부욕으로 남다른 ‘{먹크러시’를} 선보인다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0103-c1 ;
+    kno:predicate "마음다"@ko ;
+    kno:frequency kno:KN2017-0103-freq-NN-2021 .
+kno:KN2017-0103-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "크러시"@ko ;
+    kno:surfaceForm "크러시"@ko ;
+    kno:formative kno:F000419 ;
+    rdfs:label "크러시(crush)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E2p ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2017-0103-c1 kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000352 ;
+    rdfs:label "먹"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "먹"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "먹"@ko .

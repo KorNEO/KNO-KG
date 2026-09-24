@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0221 kno:componentString "싫(다), 존(중)(尊), 주의(主義)"@ko ;
+    kno:slotFiller "싫(다)+존(중)(尊) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1383688" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383688> ;
+    skos:definition "싫어하는 마음을 존중하는 태도. 싫어하는 것에 대해 솔직히 말하고, 이를 취향으로 존중받기를 바라는 젊은 세대들의 경향을 반영한 말이다."@ko ;
+    kno:component kno:KN2018-0221-c2 ;
+    kno:predicate "존중하다"@ko ;
+    kno:frequency kno:KN2018-0221-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0221-freq-NN-2020 ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2018-0221-freq-NN-2018 ;
+    rdfs:label "싫존-주의"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2018-0221-freq-NN-total ;
+    kno:origin "(싫尊主義)" ;
+    kno:frequency kno:KN2018-0221-freq-NN-2023 ;
+    kno:frequency kno:KN2018-0221-freq-NN-2019 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0221-freq-NN-2021 ;
+    kno:indexForm "싫존주의"@ko ;
+    kno:component kno:KN2018-0221-c1 ;
+    kno:slotFiller "존(중)(尊)+주의(主義) (2성분)"@ko ;
+    kno:example "¶하지만 일각에서는 {싫존주의가} 특정 대상을 혐오하는 것마저 개인의 취향으로 받아들이도록 강요할 위험이 있다고 우려한다."@ko ;
+    kno:instantiates kno:S001501 ;
+    kno:component kno:KN2018-0221-c3 ;
+    kno:languageType "(고+한)+한" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000075 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism .
+kno:KN2018-0221-c2 rdfs:label "존(중)(尊)"@ko ;
+    kno:fullForm "존중"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.2p ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005752 ;
+    kno:surfaceForm "존"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0221-c1 kno:formative kno:F000835 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "싫(다)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "싫"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "싫다"@ko ;
+    kno:semanticTag kno:usas-E2m .
+kno:KN2018-0221-c3 a kno:Component ;
+    kno:formative kno:F000080 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주의"@ko ;
+    kno:surfaceForm "주의"@ko .

@@ -1,37 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0273 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0273 a ontolex:Word ;
-    frac:attestation kno:KN2020-0273-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0273-form ;
-    ontolex:sense kno:KN2020-0273-sense .
-
-kno:KN2020-0273-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0002987029> .
-
-kno:KN2020-0273-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0273-freq-nn,
-        kno:KN2020-0273-freq-yt ;
-    ontolex:writtenRep "일탈-계"@ko .
-
-kno:KN2020-0273-freq-nn a frac:CorpusFrequency ;
-    rdf:value 550 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0273-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2569 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0273-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%9D%BC%ED%83%88%EA%B3%84> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0273 kno:predicate "사용하다"@ko ;
+    kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%BC%ED%83%88%EA%B3%84> ;
+    kno:componentString "일탈(逸脫), 계(정)(計定)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0273-freq-NN-2022 ;
+    a ontolex:Word ;
+    rdfs:label "일탈계"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶피싱 범죄의 가해자들은 피해자들이 {일탈계를} 운영했다는 사실이 주변에 알려질까 두려워 경찰에 신고하는 것을 꺼린다는 점을 이용한다."@ko ;
+    kno:frequency kno:KN2020-0273-freq-NN-total ;
+    kno:frequency kno:KN2020-0273-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0273-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0273-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0273-freq-NN-2021 ;
+    kno:component kno:KN2020-0273-c1 ;
+    kno:formation kno:W06 ;
+    kno:origin "(逸脫計)" ;
+    kno:indexForm "일탈계"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0273-freq-NN-2024 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2020-0273-c2 ;
+    skos:definition "누리 소통망 서비스(SNS)에서, 주로 사용하는 계정 이외에 일탈을 위해서 따로 사용하는 계정. =일탈 계정."@ko .
+kno:KN2020-0273-c1 kno:fullForm "일탈"@ko ;
+    kno:surfaceForm "일탈"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "일탈(逸脫)"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001715 .
+kno:KN2020-0273-c2 kno:fullForm "계정"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "계"@ko ;
+    rdfs:label "계(정)(計定)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002247 .

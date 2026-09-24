@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0182 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0182-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0182-form ;
-    ontolex:sense kno:KN2020-0182-sense .
-
-kno:KN2020-0182-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000408896> .
-
-kno:KN2020-0182-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0182-freq-nn,
-        kno:KN2020-0182-freq-yt ;
-    ontolex:writtenRep "수출^심사^우대국"@ko .
-
-kno:KN2020-0182-freq-nn a frac:CorpusFrequency ;
-    rdf:value 771 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0182-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0182-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0182 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%B6%9C%EC%8B%AC%EC%82%AC%EC%9A%B0%EB%8C%80%EA%B5%AD> ;
+    kno:frequency kno:KN2020-0182-freq-NN-2023 ;
+    kno:origin "(輸出審査優待國)" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0182-freq-NN-2019 ;
+    kno:component kno:KN2020-0182-c2 ;
+    kno:componentString "수출(輸出), 심사(審査), 우대국(優待國)"@ko ;
+    skos:definition "정부가 외국과 교역 시 전략 물자 수출 절차를 간소화할 수 있도록 정한 국가. =수출 우대국."@ko ;
+    kno:indexForm "수출심사우대국"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:instantiates kno:S001476 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0182-c3 ;
+    kno:frequency kno:KN2020-0182-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0182-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:slotFiller "심사(審査)+우대국(優待國) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0182-c1 ;
+    kno:frequency kno:KN2020-0182-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "수출^심사^우대국"@ko ;
+    kno:instantiates kno:S000993 ;
+    kno:frequency kno:KN2020-0182-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0182-freq-NN-2024 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:slotFiller "수출(輸出)+심사(審査) (2성분)"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:example "¶일본이 한국을 {수출 심사 우대국에서} 제외하자, 한국도 일본을 {수출 심사 우대국에서} 제외하였다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0182-freq-NN-2025 .
+kno:KN2020-0182-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.1 ;
+    kno:fullForm "심사"@ko ;
+    kno:surfaceForm "심사"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001560 ;
+    rdfs:label "심사(審査)"@ko .
+kno:KN2020-0182-c3 kno:position "3"^^xsd:integer ;
+    rdfs:label "우대국(優待國)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:formative kno:F001651 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "우대국"@ko ;
+    kno:surfaceForm "우대국"@ko .
+kno:KN2020-0182-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "수출(輸出)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "수출"@ko ;
+    kno:surfaceForm "수출"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F001505 .

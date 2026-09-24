@@ -1,36 +1,70 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0190 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0190 a ontolex:Word ;
-    frac:attestation kno:KN2024-0190-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0190-form ;
-    ontolex:sense kno:KN2024-0190-sense .
-
-kno:KN2024-0190-att-nn a frac:Attestation ;
-    dcterms:date "2024-05-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003563443> .
-
-kno:KN2024-0190-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0190-freq-nn,
-        kno:KN2024-0190-freq-yt ;
-    ontolex:writtenRep "영프스이"@ko .
-
-kno:KN2024-0190-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0190-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0190-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0190 kno:component kno:KN2024-0190-c4 ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶{영프스이} 15일 상품은 서유럽 핵심 도시인 런던, 파리, 인터라켄, 베네치아 등을 인솔자와 함께 여행하는 것으로 고객 만족도가 매우 높다."@ko ;
+    rdfs:label "영프스이"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:origin "(英←France←Suisse←Italia)" ;
+    skos:definition "유럽의 여행지로 인기를 끌고 있는 서유럽 4개국을 이르는 말. 영국, 프랑스, 스위스, 이탈리아의 앞 글자를 따서 만든 말이다."@ko ;
+    kno:component kno:KN2024-0190-c1 ;
+    kno:component kno:KN2024-0190-c3 ;
+    a ontolex:Word ;
+    kno:languageType "한+프+프+이" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%ED%94%84%EC%8A%A4%EC%9D%B4> ;
+    kno:indexForm "영프스이"@ko ;
+    kno:component kno:KN2024-0190-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0190-freq-NN-total ;
+    kno:frequency kno:KN2024-0190-freq-NN-2024 ;
+    kno:componentString "영(국)(英國), 프(랑스)(France), 스(위스)(Suisse), 이(탈리아)(Italia)"@ko .
+kno:KN2024-0190-c4 kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "이"@ko ;
+    rdfs:label "이(탈리아)(Italia)"@ko ;
+    a kno:Component ;
+    kno:fullForm "이탈리아"@ko ;
+    kno:formative kno:F001694 ;
+    kno:semanticTag kno:usas-Z2 .
+kno:KN2024-0190-c1 kno:formative kno:F005074 ;
+    kno:fullForm "영국"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "영(국)(英國)"@ko ;
+    kno:surfaceForm "영"@ko .
+kno:KN2024-0190-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "스위스"@ko ;
+    kno:surfaceForm "스"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F004533 ;
+    rdfs:label "스(위스)(Suisse)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0190-c2 kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "프랑스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F006789 ;
+    kno:surfaceForm "프"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "프(랑스)(France)"@ko .

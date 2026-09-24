@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0221 a ontolex:Word ;
-    frac:attestation kno:KN2021-0221-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0221-form ;
-    ontolex:sense kno:KN2021-0221-sense .
-
-kno:KN2021-0221-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004599246> .
-
-kno:KN2021-0221-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0221-freq-nn,
-        kno:KN2021-0221-freq-yt ;
-    ontolex:writtenRep "자콘"@ko .
-
-kno:KN2021-0221-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1860 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0221-freq-yt a frac:CorpusFrequency ;
-    rdf:value 520 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0221-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0221 kno:frequency kno:KN2021-0221-freq-NN-2025 ;
+    kno:component kno:KN2021-0221-c1 ;
+    a kno:Neologism ;
+    skos:definition "‘자체 제작 콘텐츠’를 줄여 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EC%BD%98> ;
+    kno:frequency kno:KN2021-0221-freq-NN-2024 ;
+    rdfs:label "자콘"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0221-freq-NN-2020 ;
+    kno:componentString "자(체)(自體), 콘(텐츠)(contents)"@ko ;
+    kno:origin "(自<영>←contents)" ;
+    kno:indexForm "자콘"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0221-freq-NN-2021 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0221-freq-NN-total ;
+    kno:frequency kno:KN2021-0221-freq-NN-2022 ;
+    kno:component kno:KN2021-0221-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:example "¶{자콘이란} 개인이나 기업이 자체 제작하여 인터넷상에서 공개하는 콘텐츠로 방송국 등에서 제작하는 프로그램과 구별하기 위해 사용하기 시작한 말이다."@ko ;
+    kno:frequency kno:KN2021-0221-freq-NN-2023 ;
+    kno:languageType "한+영" .
+kno:KN2021-0221-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:formative kno:F005511 ;
+    kno:fullForm "자체"@ko ;
+    rdfs:label "자(체)(自體)"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2021-0221-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "콘(텐츠)(contents)"@ko ;
+    kno:surfaceForm "콘"@ko ;
+    kno:fullForm "콘텐츠"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:formative kno:F001865 .

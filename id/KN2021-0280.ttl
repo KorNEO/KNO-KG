@@ -1,37 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0280 a ontolex:Word ;
-    frac:attestation kno:KN2021-0280-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0280-form ;
-    ontolex:sense kno:KN2021-0280-sense .
-
-kno:KN2021-0280-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004619571> .
-
-kno:KN2021-0280-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0280-freq-nn,
-        kno:KN2021-0280-freq-yt ;
-    ontolex:writtenRep "테슬람"@ko .
-
-kno:KN2021-0280-freq-nn a frac:CorpusFrequency ;
-    rdf:value 613 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0280-freq-yt a frac:CorpusFrequency ;
-    rdf:value 14531 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0280-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%ED%85%8C%EC%8A%AC%EB%9E%8C> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0280 kno:origin "(<영>Teslam)" ;
+    kno:slotFiller "테슬라(Tesla) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0280-freq-NN-2025 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0280-freq-NN-2022 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0280-c1 ;
+    kno:formation kno:W07 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶그의 행보에 한결같은 지지를 보내던 {테슬람들조차} 대다수가 침묵을 유지했습니다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000749 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2021-0280-freq-NN-total ;
+    kno:frequency kno:KN2021-0280-freq-NN-2024 ;
+    kno:component kno:KN2021-0280-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%85%8C%EC%8A%AC%EB%9E%8C> ;
+    kno:languageType "영" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0280-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0280-freq-NN-2020 ;
+    rdfs:label "테슬람"@ko ;
+    skos:definition "미국 기업 ‘테슬라’를 맹목적으로 좋아하거나 신뢰하는 사람을 낮잡아 이르는 말. 이 기업에서 만든 자동차를 맹목적으로 좋아하거나 기업의 소유주를 맹목적으로 추종하는 사람을 가리킨다. 또는 이 기업의 성장 가능성을 고평가하여 기업의 주식이 떨어지지 않을 것이라는 맹목적인 믿음을 고수하는 사람을 가리키기도 한다. 미국 기업 ‘테슬라’와 이슬람교 또는 그 교도를 의미하는 ‘이슬람’을 결합하여 만든 말이다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:indexForm "테슬람"@ko ;
+    kno:frequency kno:KN2021-0280-freq-NN-2023 ;
+    kno:componentString "테슬라(Tesla), (이)슬람(Islam)"@ko ;
+    a kno:Neologism .
+kno:KN2021-0280-c1 rdfs:label "테슬라(Tesla)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "테슬라"@ko ;
+    kno:surfaceForm "테슬라"@ko ;
+    kno:formative kno:F006459 ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0280-c2 kno:formative kno:F001536 ;
+    kno:surfaceForm "슬람"@ko ;
+    kno:fullForm "이슬람"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    rdfs:label "(이)슬람(Islam)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

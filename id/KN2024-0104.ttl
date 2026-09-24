@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0104 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0104-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0104-form ;
-    ontolex:sense kno:KN2024-0104-sense .
-
-kno:KN2024-0104-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001649182> .
-
-kno:KN2024-0104-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0104-freq-nn,
-        kno:KN2024-0104-freq-yt ;
-    ontolex:writtenRep "빅^헬퍼"@ko .
-
-kno:KN2024-0104-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0104-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0104-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0104 kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "빅헬퍼"@ko ;
+    kno:origin "(<영>big helper)" ;
+    kno:frequency kno:KN2024-0104-freq-NN-total ;
+    kno:componentString "빅(big), 헬퍼(helper)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0104-c2 ;
+    rdfs:label "빅^헬퍼"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0104-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0104-freq-NN-2023 ;
+    kno:predicate "제공하다"@ko ;
+    kno:languageType "영^영" ;
+    kno:example "¶정부는 국민의 데이터를 감시가 아닌 지원에 활용하며, 빅 브라더가 아닌 진정한 {빅 헬퍼로} 자리매김하겠다는 입장을 밝혔다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%85%ED%97%AC%ED%8D%BC> ;
+    skos:definition "개인의 정보를 활용하여 공익적 지원과 편의를 제공하는 존재. 또는 그러한 사회 체제."@ko .
+kno:KN2024-0104-c2 kno:surfaceForm "헬퍼"@ko ;
+    a kno:Component ;
+    rdfs:label "헬퍼(helper)"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F007063 ;
+    kno:fullForm "헬퍼"@ko .
+kno:KN2024-0104-c1 kno:surfaceForm "빅"@ko ;
+    rdfs:label "빅(big)"@ko ;
+    kno:semanticTag kno:usas-N3.2p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000363 ;
+    kno:fullForm "빅"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

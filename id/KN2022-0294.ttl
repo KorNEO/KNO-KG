@@ -1,37 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0294 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0294 a ontolex:Word ;
-    frac:attestation kno:KN2022-0294-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0294-form ;
-    ontolex:sense kno:KN2022-0294-sense .
-
-kno:KN2022-0294-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-17"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/356/0000047007> .
-
-kno:KN2022-0294-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0294-freq-nn,
-        kno:KN2022-0294-freq-yt ;
-    ontolex:writtenRep "퐁퐁-단"@ko .
-
-kno:KN2022-0294-freq-nn a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0294-freq-yt a frac:CorpusFrequency ;
-    rdf:value 901 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0294-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%ED%90%81%ED%90%81%EB%8B%A8> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0294 kno:example "¶전문가들은 ‘{퐁퐁단’과} 같이 설거지론에서 파생된 신조어는 젠더 갈등을 부추긴다고 지적하였다."@ko ;
+    kno:frequency kno:KN2022-0294-freq-NN-total ;
+    kno:frequency kno:KN2022-0294-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    rdfs:label "퐁퐁-단"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0294-c2 ;
+    skos:definition "가정 내 발언권과 경제권이 제한된 유부남 집단을 부정적으로 이르는 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "퐁퐁 (1성분)"@ko ;
+    kno:slotFiller "-단(團) (1성분)"@ko ;
+    kno:indexForm "퐁퐁단"@ko ;
+    kno:instantiates kno:S000460 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%90%81%ED%90%81%EB%8B%A8> ;
+    kno:origin "(퐁퐁團)" ;
+    kno:component kno:KN2022-0294-c1 ;
+    kno:formation kno:W02 ;
+    kno:componentString "퐁퐁, -단(團)"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001741 ;
+    kno:frequency kno:KN2022-0294-freq-NN-2021 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0294-freq-NN-2024 .
+kno:KN2022-0294-c2 a kno:Component ;
+    kno:fullForm "단"@ko ;
+    rdfs:label "-단(團)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000255 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "단"@ko ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2022-0294-c1 kno:formative kno:F001001 ;
+    a kno:Component ;
+    kno:fullForm "퐁퐁"@ko ;
+    kno:surfaceForm "퐁퐁"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "퐁퐁"@ko .

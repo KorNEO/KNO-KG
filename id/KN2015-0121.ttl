@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0121 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0121 a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "셤니"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고" ;
+    skos:definition "‘시어머니’의 준말."@ko ;
+    a ontolex:Word ;
+    kno:indexForm "셤니"@ko ;
+    kno:example "¶육아 정보를 공유하는 인터넷 사이트에 가 보면 ‘윰차’, ‘얼집’, ‘{셤니}’ 등 눈치만으론 알아들을 수 없는 단어들이 젊은 엄마들의 보통 용어가 된 지 오래다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2015-0121-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%A4%EB%8B%88> ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "셤니(←시어머니)"@ko ;
+    kno:formation kno:W06 .
+kno:KN2015-0121-c1 kno:surfaceForm "셤니"@ko ;
+    kno:formative kno:F004378 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "셤니(←시어머니)"@ko ;
+    kno:fullForm "셤니"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:semanticTag kno:usas-S4 .

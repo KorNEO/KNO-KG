@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0197 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0197 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0197-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0197-form ;
-    ontolex:sense kno:KN2025-0197-sense .
-
-kno:KN2025-0197-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/374/0000426520> .
-
-kno:KN2025-0197-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0197-freq-nn,
-        kno:KN2025-0197-freq-yt ;
-    ontolex:writtenRep "래그니피센트 세븐"@ko .
-
-kno:KN2025-0197-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0197-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0197-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:indexForm "래그니피센트세븐"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "(LLM) 빅테크 실적 전망이 흔들리자 투자자들 사이에서는 {래그니피센트세븐이} 나타나 시장 수익률을 밑돌 수 있다는 말이 돌았다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%98%EA%B7%B8%EB%8B%88%ED%94%BC%EC%84%BC%ED%8A%B8%20%EC%84%B8%EB%B8%90> ;
+    rdfs:label "래그니피센트 세븐"@ko ;
+    kno:componentString "래그(lag), (매)그니피센트(magnificent), 세븐(seven)"@ko ;
+    kno:frequency kno:KN2025-0197-freq-NN-total ;
+    kno:frequency kno:KN2025-0197-freq-NN-2025 ;
+    kno:component kno:KN2025-0197-c2 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0197-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0197-c3 ;
+    skos:definition "(LLM) 미국의 대형 기술주 7개 종목이 시장 수익률을 밑도는(언더퍼폼하는) 흐름을 보일 것이라는 전망이나 그런 상황을 비유적으로 이르는 말."@ko .
+kno:KN2025-0197-c2 kno:surfaceForm "그니피센트"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:formative kno:F002514 ;
+    kno:fullForm "매그니피센트"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(매)그니피센트(magnificent)"@ko .
+kno:KN2025-0197-c1 kno:surfaceForm "래그"@ko ;
+    rdfs:label "래그(lag)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003166 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T4m ;
+    kno:fullForm "래그"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0197-c3 kno:position "3"^^xsd:integer ;
+    kno:fullForm "세븐"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세븐(seven)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "세븐"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:formative kno:F004352 .

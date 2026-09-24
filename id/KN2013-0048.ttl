@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0048 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0048 skos:definition "컴퓨터에서 만들어진 영상 신호를 모니터로 전송해 주는 하드웨어."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "글픽(←graphic), 카드(card)"@ko ;
+    kno:indexForm "글픽카드"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:predicate "주다"@ko ;
+    kno:component kno:KN2013-0048-c1 ;
+    kno:languageType "영+영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%80%ED%94%BD%EC%B9%B4%EB%93%9C> ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2013-0048-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "글픽카드"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    kno:origin "(←graphic card)" ;
+    a kno:Neologism ;
+    kno:example "¶{글픽카드} 80도 넘게 올라가서 다리가 뜨뜻하네요. 겨울에 하기 좋을 듯."@ko .
+kno:KN2013-0048-c1 kno:surfaceForm "글픽"@ko ;
+    kno:formative kno:F002555 ;
+    rdfs:label "글픽(←graphic)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "글픽"@ko ;
+    kno:semanticTag kno:usas-Y2 .
+kno:KN2013-0048-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "카드"@ko ;
+    kno:formative kno:F001843 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "카드"@ko ;
+    rdfs:label "카드(card)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

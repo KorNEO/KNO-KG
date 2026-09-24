@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0527 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0527 kno:component kno:KN2016-0527-c2 ;
+    skos:definition "국가마다 다른 조세 체계와 국가 간 조세 조약을 이용하여 세금을 내지 않거나 적게 내는 일."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0527-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "트리티(treaty), 쇼핑(shopping)"@ko ;
+    kno:example "¶OO는 다국적 기업이 가장 많이 사용하는 조세 회피 전략으로 ‘조세 조약 남용’을 꼽았다.…조약 적용 기본 전제인 당사국 거주자 지위를 얻기 위해 제3국 거주자가 해당국에 페이퍼 컴퍼니를 설립해 조약 혜택을 주장하는 ‘{트리티 쇼핑’이} 대표 사례다."@ko ;
+    kno:frequency kno:KN2016-0527-freq-NN-total ;
+    kno:frequency kno:KN2016-0527-freq-NN-2015 ;
+    kno:languageType "영^영" ;
+    kno:component kno:KN2016-0527-c1 ;
+    kno:indexForm "트리티쇼핑"@ko ;
+    rdfs:label "트리티^쇼핑"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372962> ;
+    kno:urimalTargetCode "1372962" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000403 ;
+    kno:origin "(<영>treaty shopping)" ;
+    kno:slotFiller "트리티(treaty) (1성분)"@ko ;
+    kno:predicate "내다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2016-0527-c2 kno:fullForm "쇼핑"@ko ;
+    kno:formative kno:F000286 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:surfaceForm "쇼핑"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "쇼핑(shopping)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2016-0527-c1 kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    rdfs:label "트리티(treaty)"@ko ;
+    kno:formative kno:F006563 ;
+    kno:fullForm "트리티"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "트리티"@ko ;
+    kno:position "1"^^xsd:integer .

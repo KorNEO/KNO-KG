@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0608 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0608 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OO이 상하로 크기 변형이 가능한 ‘{확장형 로고’를} 새로 선보인다고 2일 밝혔다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:frequency kno:KN2016-0608-freq-NN-2025 ;
+    kno:componentString "확장형(擴張形), 로고(logo)"@ko ;
+    kno:origin "(擴張形<영>logo)" ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "확장형 로고"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0608-c1 ;
+    kno:frequency kno:KN2016-0608-freq-NN-2016 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%95%EC%9E%A5%ED%98%95%20%EB%A1%9C%EA%B3%A0> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0608-c2 ;
+    skos:definition "크기가 고정되어 있지 않고, 늘리고 넓히는 변형이 가능한 로고."@ko ;
+    kno:indexForm "확장형로고"@ko ;
+    kno:frequency kno:KN2016-0608-freq-NN-total .
+kno:KN2016-0608-c1 rdfs:label "확장형(擴張形)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F007152 ;
+    kno:surfaceForm "확장형"@ko ;
+    kno:semanticTag kno:usas-N3.2p ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "확장형"@ko .
+kno:KN2016-0608-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "로고"@ko ;
+    kno:surfaceForm "로고"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "로고(logo)"@ko ;
+    kno:formative kno:F001248 .

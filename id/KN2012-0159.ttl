@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0159 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0159 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "온라인 게임에서, 버그를 이용해 기존 아이템을 복사한 아이템을 이르는 말."@ko ;
+    kno:frequency kno:KN2012-0159-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:indexForm "복사템"@ko ;
+    kno:origin "(複寫←item)" ;
+    kno:frequency kno:KN2012-0159-freq-NN-2022 ;
+    kno:example "¶실제 전작 OO는 아이템 복사법이 등장하면서 급격한 이용자 감소를 피할 수 없었다. 상황이 이렇다 보니 OO는 게임의 존폐 여부를 결정짓는 {복사템} 등장에 전전긍긍하는 모습이다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한+영" ;
+    kno:componentString "복사(複寫), (아이)템(item)"@ko ;
+    rdfs:label "복사템"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%B5%EC%82%AC%ED%85%9C> ;
+    kno:component kno:KN2012-0159-c1 ;
+    kno:formation kno:W05 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0159-c2 ;
+    kno:slotFiller "복사(複寫) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0159-freq-NN-2012 ;
+    a ontolex:Word .
+kno:KN2012-0159-c1 kno:fullForm "복사"@ko ;
+    rdfs:label "복사(複寫)"@ko ;
+    kno:surfaceForm "복사"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003915 ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0159-c2 kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "템"@ko ;
+    a kno:Component ;
+    kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0291 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0291 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0291-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0291-form ;
-    ontolex:sense kno:KN2021-0291-sense .
-
-kno:KN2021-0291-att-nn a frac:Attestation ;
-    dcterms:date "2021-02-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000584193> .
-
-kno:KN2021-0291-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0291-freq-nn,
-        kno:KN2021-0291-freq-yt ;
-    ontolex:writtenRep "한계^근로^빈곤층"@ko .
-
-kno:KN2021-0291-freq-nn a frac:CorpusFrequency ;
-    rdf:value 193 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0291-freq-yt a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0291-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0291 kno:slotFiller "한계(限界)+근로(勤勞) (2성분)"@ko ;
+    kno:componentString "한계(限界), 근로(勤勞), 빈곤층(貧困層)"@ko ;
+    rdfs:label "한계^근로^빈곤층"@ko ;
+    kno:frequency kno:KN2021-0291-freq-NN-total ;
+    kno:component kno:KN2021-0291-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "일하려는 의지가 있지만 실업 상태가 지속됨에 따라 소득이 부족하여 살기가 어려운 계층."@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0291-freq-NN-2021 ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0291-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "한계근로빈곤층"@ko ;
+    kno:instantiates kno:S000908 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(限界勤勞貧困層)" ;
+    kno:component kno:KN2021-0291-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%9C%EA%B3%84%EA%B7%BC%EB%A1%9C%EB%B9%88%EA%B3%A4%EC%B8%B5> ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:example "¶정부는 생계에 어려움을 겪는 {한계 근로 빈곤층을} 대상으로 한시적 생계 지원금 50만 원을 지급하기로 하였다."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0291-c2 kno:fullForm "근로"@ko ;
+    kno:surfaceForm "근로"@ko ;
+    rdfs:label "근로(勤勞)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F001099 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0291-c3 kno:formative kno:F001416 ;
+    rdfs:label "빈곤층(貧困層)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "빈곤층"@ko ;
+    kno:surfaceForm "빈곤층"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0291-c1 kno:formative kno:F006960 ;
+    kno:semanticTag kno:usas-N5 ;
+    a kno:Component ;
+    rdfs:label "한계(限界)"@ko ;
+    kno:fullForm "한계"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "한계"@ko .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0251 kno:pos "「명」"@ko ;
+    kno:component kno:KN2016-0251-c1 ;
+    kno:example "¶일본의 심리학 에세이엔 내가 종종 ‘{사소주의’라고} 부르는 사고가 스며들어 있다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "세력이 약한 나라나 사람을 받들어 섬기는 태도. 약자를 함부로 대하면 안 된다는 이치로 맹자 양혜왕편에 나오는 말이다."@ko ;
+    rdfs:label "사소-주의"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2016-0251-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(事小主義)" ;
+    kno:componentString "사소(事小), 주의(主義)"@ko ;
+    kno:component kno:KN2016-0251-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%86%8C%EC%A3%BC%EC%9D%98> ;
+    kno:frequency kno:KN2016-0251-freq-NN-2015 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "사소(事小) (1성분)"@ko ;
+    kno:formation kno:W01 ;
+    kno:predicate "섬기다"@ko ;
+    kno:instantiates kno:S000075 ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:indexForm "사소주의"@ko ;
+    kno:languageType "한+한" .
+kno:KN2016-0251-c1 kno:fullForm "사소"@ko ;
+    kno:surfaceForm "사소"@ko ;
+    kno:semanticTag kno:usas-A11.1m ;
+    kno:formative kno:F004167 ;
+    rdfs:label "사소(事小)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0251-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주의"@ko ;
+    kno:surfaceForm "주의"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000080 ;
+    kno:role "고정항"@ko .

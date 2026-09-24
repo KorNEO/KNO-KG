@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0016 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0016-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0016-form ;
-    ontolex:sense kno:KN2023-0016-sense .
-
-kno:KN2023-0016-att-nn a frac:Attestation ;
-    dcterms:date "2023-02-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004159575> .
-
-kno:KN2023-0016-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0016-freq-nn,
-        kno:KN2023-0016-freq-yt ;
-    ontolex:writtenRep "검주^국가"@ko .
-
-kno:KN2023-0016-freq-nn a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0016-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0016-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0016 kno:component kno:KN2023-0016-c1 ;
+    a kno:Neologism ;
+    rdfs:label "검주^국가"@ko ;
+    kno:languageType "한^한" ;
+    skos:definition "검찰이 지나치게 많은 권력을 가지고 운용되는 나라를 이르는 말."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0016-c2 ;
+    kno:origin "(檢主國家)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%A3%BC%EA%B5%AD%EA%B0%80> ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2023-0016-freq-NN-2023 ;
+    kno:componentString "검주(檢主), 국가(國家)"@ko ;
+    kno:frequency kno:KN2023-0016-freq-NN-total ;
+    kno:slotFiller "검주(檢主) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000797 ;
+    kno:example "¶OOO은 이번 압수 수색에 대해 권위주의 시대로 돌아가기 위한 것이냐는 비판과 함께 민주 국가가 아닌 {검주 국가라는} 말이 나오는 것도 무리는 아니라고 지적했다."@ko ;
+    kno:indexForm "검주국가"@ko .
+kno:KN2023-0016-c1 kno:fullForm "검주"@ko ;
+    kno:formative kno:F002201 ;
+    kno:semanticTag kno:usas-S7.1m ;
+    rdfs:label "검주(檢主)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "검주"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0016-c2 a kno:Component ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "국가"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000020 ;
+    kno:fullForm "국가"@ko .

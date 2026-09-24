@@ -3,741 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>긴급정서돌봄 — KNO 지식그래프</title>
-  <meta name="description" content="KNO 신어 지식그래프: 긴급정서돌봄. 정서 조절에 어려움을 겪고 있는 학생들을 도와주기 위해 지방 자치 단체에서 지원 인력 및 공간을 제공하는 제도.">
+  <title>긴급 정서 돌봄 · 스키마-사례 그래프</title>
+  <meta name="description" content="신어 긴급 정서 돌봄 · 한국어 신어 지식 그래프">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="icon" href="data:,">
   <link rel="stylesheet" href="../assets/style.css">
-  <script type="application/ld+json">
-{
-  "@context": {
-    "brick": "https://brickschema.org/schema/Brick#",
-    "csvw": "http://www.w3.org/ns/csvw#",
-    "dc": "http://purl.org/dc/elements/1.1/",
-    "dcam": "http://purl.org/dc/dcam/",
-    "dcat": "http://www.w3.org/ns/dcat#",
-    "dcmitype": "http://purl.org/dc/dcmitype/",
-    "dcterms": "http://purl.org/dc/terms/",
-    "doap": "http://usefulinc.com/ns/doap#",
-    "foaf": "http://xmlns.com/foaf/0.1/",
-    "frac": "http://www.w3.org/ns/lemon/frac#",
-    "geo": "http://www.opengis.net/ont/geosparql#",
-    "kno": "https://w3id.org/kno/id/",
-    "morph": "http://www.w3.org/ns/lemon/morph#",
-    "odrl": "http://www.w3.org/ns/odrl/2/",
-    "ontolex": "http://www.w3.org/ns/lemon/ontolex#",
-    "org": "http://www.w3.org/ns/org#",
-    "owl": "http://www.w3.org/2002/07/owl#",
-    "prof": "http://www.w3.org/ns/dx/prof/",
-    "prov": "http://www.w3.org/ns/prov#",
-    "qb": "http://purl.org/linked-data/cube#",
-    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
-    "schema": "https://schema.org/",
-    "sh": "http://www.w3.org/ns/shacl#",
-    "skos": "http://www.w3.org/2004/02/skos/core#",
-    "sosa": "http://www.w3.org/ns/sosa/",
-    "ssn": "http://www.w3.org/ns/ssn/",
-    "time": "http://www.w3.org/2006/time#",
-    "vann": "http://purl.org/vocab/vann/",
-    "void": "http://rdfs.org/ns/void#",
-    "wgs": "https://www.w3.org/2003/01/geo/wgs84_pos#",
-    "xsd": "http://www.w3.org/2001/XMLSchema#"
-  },
-  "@graph": [
-    {
-      "@id": "kno:corpus-YT",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "댓글 말뭉치"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0049-freq-nn",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-NN"
-      },
-      "rdf:value": 1
-    },
-    {
-      "@id": "kno:KN2020-0049-freq-yt",
-      "@type": "frac:CorpusFrequency",
-      "frac:corpus": {
-        "@id": "kno:corpus-YT"
-      },
-      "rdf:value": 0
-    },
-    {
-      "@id": "kno:KN2020-0049-att-nn",
-      "@type": "frac:Attestation",
-      "dcterms:date": {
-        "@type": "xsd:date",
-        "@value": "2020-05-19"
-      },
-      "frac:locus": {
-        "@id": "https://n.news.naver.com/article/032/0003009955"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0049-sense",
-      "@type": "ontolex:LexicalSense"
-    },
-    {
-      "@id": "kno:KN2020-0049",
-      "@type": "ontolex:MultiwordExpression",
-      "frac:attestation": {
-        "@id": "kno:KN2020-0049-att-nn"
-      },
-      "ontolex:canonicalForm": {
-        "@id": "kno:KN2020-0049-form"
-      },
-      "ontolex:sense": {
-        "@id": "kno:KN2020-0049-sense"
-      }
-    },
-    {
-      "@id": "kno:KN2020-0049-form",
-      "@type": "ontolex:Form",
-      "frac:frequency": [
-        {
-          "@id": "kno:KN2020-0049-freq-nn"
-        },
-        {
-          "@id": "kno:KN2020-0049-freq-yt"
-        }
-      ],
-      "ontolex:writtenRep": {
-        "@language": "ko",
-        "@value": "긴급정서돌봄"
-      }
-    },
-    {
-      "@id": "kno:corpus-NN",
-      "skos:prefLabel": {
-        "@language": "ko",
-        "@value": "신문 말뭉치"
-      }
-    }
-  ]
-}
-  </script>
-  <style>
-  /* ── Stream B: 타이포그래피 스케일 (15px body / 13px meta / 22-28px headword) ── */
-  body { font-size: 15px; }
-
-  .entry-headword {
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: clamp(1.5rem, 5vw, 1.75rem);  /* 24-28px */
-    font-weight: 900;
-    color: var(--accent-nova);
-    letter-spacing: -0.02em;
-    line-height: 1.15;
-  }
-  .entry-pos-badge {
-    display: inline-block;
-    font-size: 0.8rem;
-    font-weight: 600;
-    padding: 0.2rem 0.7rem;
-    border-radius: 4px;
-    background: rgba(30,58,138,0.07);
-    color: var(--accent-nova);
-    border: 1px solid rgba(30,58,138,0.18);
-    vertical-align: middle;
-    margin-left: 0.6rem;
-  }
-  .axis-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.8rem 2rem;
-    margin-bottom: 1.5rem;
-  }
-  .axis-card h2 {
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--accent-glow);
-    margin-bottom: 1.2rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--border);
-    letter-spacing: 0.01em;
-    text-transform: none;
-  }
-  .definition-block {
-    background: rgba(30,58,138,0.025);
-    border-left: 3px solid var(--accent-nova);
-    border-radius: 0 6px 6px 0;
-    padding: 0.9rem 1.3rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    font-size: 1rem;       /* 15px body 기준 */
-    line-height: 1.85;
-    max-width: 65ch;       /* 읽기 좋은 행 길이 */
-  }
-  .llm-label {
-    display: inline-block;
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    background: rgba(194,65,12,0.1);
-    color: var(--accent-warm);
-    border: 1px solid rgba(194,65,12,0.2);
-    margin-right: 0.4rem;
-    vertical-align: middle;
-  }
-  .example-block {
-    font-size: 0.93rem;
-    color: var(--text-secondary);
-    margin-top: 0.7rem;
-    padding: 0.6rem 1.1rem;
-    background: var(--bg-deep);
-    border-radius: 6px;
-    font-style: italic;
-    line-height: 1.75;
-    max-width: 65ch;
-  }
-  .attestation-block { margin-top: 1.2rem; }
-  .att-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--accent-nova);
-    letter-spacing: 0.02em;
-    margin-bottom: 0.4rem;
-  }
-  .att-quote {
-    font-size: 0.9rem;
-    color: var(--text-primary);
-    background: rgba(30,58,138,0.03);
-    border-left: 3px solid var(--accent-nova);
-    padding: 0.5rem 0.9rem;
-    border-radius: 0 5px 5px 0;
-    margin-bottom: 0.3rem;
-  }
-  .att-meta { font-size: 0.78rem; color: var(--text-muted); }
-  .att-meta a { color: var(--accent-signal); text-decoration: none; }
-  .att-meta a:hover { text-decoration: underline; }
-  .kb-row {
-    display: flex;
-    align-items: baseline;
-    gap: 0.7rem;
-    padding: 0.7rem 0;
-    border-bottom: 1px solid var(--border);
-    font-size: 0.92rem;
-  }
-  .kb-row:last-child { border-bottom: none; }
-  .kb-source {
-    font-weight: 600;
-    color: var(--text-secondary);
-    min-width: 110px;
-    flex-shrink: 0;
-  }
-  .kb-found a { color: var(--accent-signal); text-decoration: none; }
-  .kb-found a:hover { text-decoration: underline; }
-  .kb-redirect-badge {
-    font-size: 0.72rem;
-    padding: 0.1rem 0.4rem;
-    border-radius: 3px;
-    background: rgba(124,58,237,0.08);
-    color: #7c3aed;
-    border: 1px solid rgba(124,58,237,0.2);
-    font-weight: 600;
-    margin-left: 0.4rem;
-  }
-  .kb-absent { color: var(--text-muted); font-style: italic; }
-  .kb-absent a { color: inherit; text-decoration: underline dotted; }
-  .kb-absent a:hover { color: #334155; }
-  .kb-unresearched { color: var(--text-muted); font-style: italic; }
-  .kb-homograph { font-size: 0.78rem; color: var(--text-muted); }
-  .kb-observed { font-size: 0.78rem; color: var(--text-muted); margin-left: auto; }
-  .neighbor-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin: 0.5rem 0;
-  }
-  .neighbor-link {
-    display: inline-block;
-    padding: 0.3rem 0.8rem;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
-    background: rgba(30,58,138,0.06);
-    color: var(--accent-nova);
-    border: 1px solid rgba(30,58,138,0.18);
-    text-decoration: none;
-    transition: background 0.15s;
-  }
-  .neighbor-link:hover { background: rgba(30,58,138,0.14); }
-  .neighbor-section { margin-bottom: 0.8rem; }
-  .neighbor-section-label {
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    margin-bottom: 0.3rem;
-  }
-  .rdf-graph-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.8rem 2rem;
-    margin-bottom: 1.5rem;
-    overflow: hidden;
-  }
-  .rdf-graph-card h2 {
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent-glow);
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .rdf-graph-desc { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 1.2rem; }
-  .rdf-graph-wrap {
-    overflow-x: auto;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    background: #ffffff;
-  }
-  .ttl-panel {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 1.8rem 2rem;
-    margin-bottom: 1.5rem;
-  }
-  .ttl-panel h2 {
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    color: var(--accent-glow);
-    margin-bottom: 0.5rem;
-    padding-bottom: 0.6rem;
-    border-bottom: 1px solid var(--border);
-  }
-  .ttl-code-wrap {
-    margin-top: 1rem;
-    border-radius: 8px;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    overflow-x: auto;
-  }
-  .ttl-code {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    line-height: 1.75;
-    padding: 1.2rem 1.5rem;
-    display: block;
-    white-space: pre;
-    color: #334155;
-  }
-  .ttl-prefix  { color: #7c3aed; font-weight: 700; }
-  .ttl-ns      { color: #1e3a8a; font-weight: 600; }
-  .ttl-uri     { color: #0f766e; }
-  .ttl-str     { color: #c2410c; }
-  .ttl-lang    { color: #9f1239; font-weight: 600; }
-  .ttl-dt      { color: #64748b; }
-  .ttl-num     { color: #2563eb; }
-  .ttl-kw      { color: #7c3aed; font-weight: 700; }
-  .ttl-punct   { color: #94a3b8; }
-  .ttl-comment { color: #94a3b8; font-style: italic; }
-  .download-bar {
-    display: flex;
-    gap: 0.7rem;
-    flex-wrap: wrap;
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border);
-  }
-  .dl-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.45rem 1rem;
-    border-radius: 6px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    text-decoration: none;
-    border: 1px solid var(--border);
-    background: var(--bg-card);
-    color: var(--text-primary);
-    transition: border-color 0.2s, background 0.2s;
-  }
-  .dl-btn:hover { border-color: var(--accent-nova); background: rgba(30,58,138,0.04); }
-  .obs-data-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.82rem;
-    color: var(--text-muted);
-    text-decoration: none;
-    border: 1px solid var(--border);
-    padding: 0.3rem 0.7rem;
-    border-radius: 6px;
-    margin-top: 0.5rem;
-  }
-  .obs-data-link:hover { color: var(--accent-nova); border-color: var(--accent-nova); }
-  /* ── 트리플 표 ── */
-  .triple-table-wrap {
-    overflow-x: auto;
-    margin-top: 0.5rem;
-  }
-  .triple-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.88rem;
-    table-layout: auto;
-  }
-  .triple-table thead th {
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    letter-spacing: 0.04em;
-    text-align: left;
-    padding: 0.4rem 0.9rem;
-    border-bottom: 1px solid var(--border);
-    background: transparent;
-  }
-  .triple-table tbody tr {
-    border-bottom: 1px solid rgba(226,232,240,0.6);
-  }
-  .triple-table tbody tr:last-child { border-bottom: none; }
-  .triple-table td {
-    padding: 0.55rem 0.9rem;
-    vertical-align: top;
-    line-height: 1.6;
-  }
-  .triple-subj {
-    color: var(--text-muted);
-    font-size: 0.78rem;
-    white-space: nowrap;
-    width: 1%;
-  }
-  .triple-subj code {
-    background: none;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-  }
-  .triple-prop code {
-    background: none;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    color: #1e3a8a;
-    font-weight: 600;
-    white-space: nowrap;
-  }
-  .triple-val { color: var(--text-primary); }
-  .triple-val code {
-    background: none;
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    color: #0f766e;
-  }
-  .triple-literal { color: var(--text-primary); }
-  .triple-label {
-    display: inline-block;
-    margin-left: 0.5rem;
-    font-size: 0.82rem;
-    color: var(--text-secondary);
-    font-style: italic;
-  }
-  .triple-lang {
-    display: inline-block;
-    margin-left: 0.25rem;
-    font-size: 0.75rem;
-    color: #9f1239;
-    font-family: 'Space Mono', monospace;
-    font-weight: 600;
-  }
-  .triple-dt {
-    display: inline-block;
-    margin-left: 0.25rem;
-    font-size: 0.75rem;
-    color: #64748b;
-    font-family: 'Space Mono', monospace;
-  }
-  /* ── Turtle 드롭다운 ── */
-  .ttl-dropdown {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    margin-bottom: 1.5rem;
-  }
-  .ttl-dropdown > summary {
-    list-style: none;
-    cursor: pointer;
-    padding: 1rem 1.5rem;
-    font-family: 'Noto Sans KR', 'Pretendard', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--accent-glow);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    user-select: none;
-  }
-  .ttl-dropdown > summary::-webkit-details-marker { display: none; }
-  .ttl-dropdown > summary::before {
-    content: "▶";
-    font-size: 0.65rem;
-    color: var(--text-muted);
-    transition: transform 0.2s;
-    display: inline-block;
-  }
-  .ttl-dropdown[open] > summary::before { transform: rotate(90deg); }
-  .ttl-dropdown > summary:hover { color: var(--accent-nova); }
-  .ttl-raw-wrap {
-    margin: 0 1.5rem 1.2rem;
-    border-radius: 7px;
-    border: 1px solid #e2e8f0;
-    background: #f8fafc;
-    overflow-x: auto;
-  }
-  .ttl-raw {
-    font-family: 'Space Mono', monospace;
-    font-size: 0.82rem;
-    line-height: 1.7;
-    padding: 1rem 1.2rem;
-    display: block;
-    white-space: pre;
-    color: #334155;
-    margin: 0;
-  }
-  @media (max-width: 600px) {
-    .entry-headword { font-size: 1.9rem; }
-    .rdf-graph-wrap svg { min-width: 600px; }
-    .ttl-code { font-size: 0.72rem; padding: 1rem; }
-    .ttl-raw { font-size: 0.72rem; padding: 0.8rem; }
-    .triple-table { font-size: 0.8rem; }
-  }
-</style>
 </head>
 <body>
   <nav class="top-nav">
     <a href="../index.html" class="nav-logo">한국어 신어 지식 그래프</a>
-    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links">
-      <a href="../index.html">그래프</a>
-      <a href="../list.html">신어 목록</a>
-      <a href="../freq.html">빈도 비교</a>
-      <a href="https://korneo.github.io/KNO/" target="_blank">한국어 신어 관측 시스템</a>
-    </div>
+    <button class="nav-hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links"><a href="../index.html">스키마-사례 그래프</a><a href="../list.html">목록</a><a href="../dashboard.html">대시보드</a><a href="../entity/index.html">개체명 그래프</a><a href="https://korneo.github.io/KNO/" target="_blank" rel="noopener">한국어 신어 관측 시스템</a></div>
   </nav>
-
   <main>
     <nav class="report-breadcrumb">
-      <a href="../list.html">&larr; 신어 목록으로</a>
+      <a href="../list.html?tab=neologism">&larr; 신어 목록</a>
       <span style="margin-left:0.8rem;color:var(--text-muted);">|</span>
-      <a href="../index.html" style="margin-left:0.8rem;">그래프</a>
+      <a href="../index.html?node=KN2020-0049" style="margin-left:0.8rem;">그래프에서 보기</a>
     </nav>
-
     <article class="report-article">
-
-      <!-- ── 신어 헤더 ── -->
       <header class="report-header" style="margin-bottom:2rem;">
         <div class="report-date">KN2020-0049</div>
-        <h1 style="margin:0.4rem 0 0.6rem;">
-          <span class="entry-headword">긴급정서돌봄</span
-          ><span class="entry-pos-badge">구</span>
-        </h1>
-        <div class="report-meta">
-          <span class="tag">None</span>
-          <span class="tag">일상어</span>
-          <span class="tag">〔정치와 행정〕</span>
-          <span class="tag">2020년 수집</span>
-        </div>
+        <h1 style="margin:0.4rem 0 0.6rem;"><span class="type-badge neologism">신어</span><span class="entry-headword">긴급 정서 돌봄</span></h1>
+        <div class="report-meta"><span class="tag">2020년 수집</span><span class="tag">구</span><span class="tag">구</span><span class="tag">일상어</span><span class="tag">정치와 행정</span></div>
       </header>
-
       <div class="report-body">
+        <div class="rdf-graph-card"><h2>연결 그래프</h2><div class="rdf-graph-wrap"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="100%" style="font-family:Noto Sans KR,Pretendard,sans-serif;"><line x1="500.0" y1="260.0" x2="500" y2="60" stroke="#cbd5e1" stroke-width="1.2"/><text x="500" y="112" font-size="9" fill="#94a3b8" text-anchor="middle">사례화 스키마</text><a href="S000670.html"><circle cx="500" cy="60" r="10" fill="#1e3a8a" stroke="#fff" stroke-width="1.5"/><text x="500" y="83" font-size="12" fill="#1e293b" text-anchor="middle">[긴급 X]<tspan font-size="70%" baseline-shift="sub">NP</tspan></text></a><line x1="500.0" y1="260.0" x2="900" y2="260" stroke="#cbd5e1" stroke-width="1.2"/><text x="788" y="256" font-size="9" fill="#94a3b8" text-anchor="middle">구성 성분</text><a href="F000016.html"><circle cx="900" cy="260" r="8" fill="#475569" stroke="#fff" stroke-width="1.5"/><text x="900" y="281" font-size="12" fill="#1e293b" text-anchor="middle">긴급(緊急)</text></a><line x1="500.0" y1="260.0" x2="500" y2="460" stroke="#cbd5e1" stroke-width="1.2"/><text x="500" y="400" font-size="9" fill="#94a3b8" text-anchor="middle">구성 성분</text><a href="F000046.html"><circle cx="500" cy="460" r="8" fill="#475569" stroke="#fff" stroke-width="1.5"/><text x="500" y="481" font-size="12" fill="#1e293b" text-anchor="middle">돌봄</text></a><line x1="500.0" y1="260.0" x2="100" y2="260" stroke="#cbd5e1" stroke-width="1.2"/><text x="212" y="256" font-size="9" fill="#94a3b8" text-anchor="middle">구성 성분</text><a href="F000919.html"><circle cx="100" cy="260" r="8" fill="#475569" stroke="#fff" stroke-width="1.5"/><text x="100" y="281" font-size="12" fill="#1e293b" text-anchor="middle">정서(情緖)</text></a><circle cx="500.0" cy="260.0" r="16" fill="#94a3b8" stroke="#0f172a" stroke-width="1.5"/><text x="500.0" y="292.0" font-size="14" font-weight="800" fill="#1e3a8a" text-anchor="middle">긴급 정서 돌봄</text></svg></div></div>
+        <div class="axis-card"><h2>외부 연결</h2><div class="ext-links"><span class="kb-btn kb-btn-off" title="연결 없음">우리말샘</span><span class="kb-btn kb-btn-off" title="연결 없음">위키백과</span><a class="kb-btn kb-btn-on" href="https://n.news.naver.com/article/032/0003009955" target="_blank" rel="noopener">최초 출현 기사 ↗</a></div></div>
+        <div class="axis-card"><h2>어휘 속성</h2><div class="definition-block">정서 조절에 어려움을 겪고 있는 학생들을 도와주기 위해 지방 자치 단체에서 지원 인력 및 공간을 제공하는 제도.</div><div class="example-block">¶OOO 장학사는 “학교 내 {긴급 정서 돌봄이} 가능한 공간을 만들어 학생들의 자존감 회복, 심리 안정을 돕기로 했다.”라고 말했다.</div><table class="kv-table"><tr><th>색인표제어</th><td>긴급정서돌봄</td></tr><tr><th>원어</th><td>(緊急情緖돌봄)</td></tr><tr><th>어종</th><td>한_한_고</td></tr><tr><th>뜻풀이 서술어</th><td>제공하다</td></tr><tr><th>검색 꼴(정규표현식)</th><td><code>긴급 정서 돌봄</code></td></tr></table></div>
+        <div class="axis-card"><h2>구성 성분</h2><table class="comp-table"><thead><tr><th>순번</th><th>형성소</th><th>실현형</th><th>원형식</th><th>원어</th><th>역할</th><th>절단</th><th>USAS</th></tr></thead><tbody><tr><td class="num">1</td><td><a class="index-hw-link" href="F000016.html">긴급(緊急)</a></td><td>긴급</td><td>긴급</td><td>緊急</td><td>고정항</td><td></td><td><code>A11.1+</code></td></tr><tr><td class="num">2</td><td><a class="index-hw-link" href="F000919.html">정서(情緖)</a></td><td>정서</td><td>정서</td><td>情緖</td><td>슬롯 채움</td><td></td><td><code>E1</code></td></tr><tr><td class="num">3</td><td><a class="index-hw-link" href="F000046.html">돌봄</a></td><td>돌봄</td><td>돌봄</td><td></td><td>슬롯 채움</td><td></td><td><code>S8</code></td></tr></tbody></table><p style="font-size:0.82rem;color:var(--text-muted);margin-top:0.6rem;">성분 열(v1.6): 긴급(緊急), 정서(情緖), 돌봄</p></div>
+        <div class="axis-card"><h2>사례화 스키마</h2><div class="chip-list"><a class="chip schema" href="S000670.html">[긴급(緊急) X]<sub>NP</sub><span class="chip-n">유형 1</span></a></div></div>
+        <div class="axis-card"><h2>USAS 의미 범주 · 구성 성분 태그</h2><div class="usas-row"><span class="usas-lv">대범주</span><code>A</code><span class="usas-ko">일반·추상</span><span class="usas-en">General and abstract terms</span></div><div class="usas-row"><span class="usas-lv">중범주</span><code>A11</code><span class="usas-en">Importance</span></div><div class="usas-row"><span class="usas-lv">소범주</span><code>A11.1+</code><span class="usas-en">Importance: Important (극성 +)</span></div><div style="height:0.5rem;"></div><div class="usas-row"><span class="usas-lv">대범주</span><code>E</code><span class="usas-ko">감정</span><span class="usas-en">Emotion</span></div><div class="usas-row"><span class="usas-lv">중범주</span><code>E1</code><span class="usas-en">General</span></div><div style="height:0.5rem;"></div><div class="usas-row"><span class="usas-lv">대범주</span><code>S</code><span class="usas-ko">사회 행위·상태</span><span class="usas-en">Social actions, states and processes</span></div><div class="usas-row"><span class="usas-lv">중범주</span><code>S8</code><span class="usas-en">Helping/hindering</span></div><div style="height:0.5rem;"></div></div>
+        <div class="axis-card"><h2><a id="urimal"></a>우리말샘 연결</h2><div class="kb-row"><span class="kb-source">등재표제어</span><span class="kb-absent"><a href="https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&amp;query=%EA%B8%B4%EA%B8%89%20%EC%A0%95%EC%84%9C%20%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">우리말샘 검색 ↗</a></span><span class="kb-homograph">미등재</span></div></div>
+        <div class="axis-card"><h2>말뭉치 관측</h2><div class="stat-cards"><div class="stat-card"><div class="stat-value">1<span class="stat-unit"> 회</span></div><div class="stat-label">절대빈도</div></div><div class="stat-card"><div class="stat-value">1<span class="stat-unit"> 건</span></div><div class="stat-label">출현 문서 수</div></div><div class="stat-card"><div class="stat-value">2020.05.</div><div class="stat-label">최초 출현 시점</div></div></div><table class="comp-table"><thead><tr><th>연도</th><th>출현 수</th><th>문서 수</th></tr></thead><tbody><tr><td>2020</td><td class="num">1</td><td class="num">1</td></tr></tbody></table><div class="example-block" style="margin-top:0.8rem;">박재희 도교육청 학생건강증진추진단 장학사는 “지난해 각 학교를 대상으로 수업시간에 돌발행동을 보이거나 과격한 행동을 하는 정서위기학생 실태조사를 했고, 이를 토대로 이들의 심리 안정, 자존감 회복을 도울 수 있는 긴급정서돌봄 공간을 만들기로 했다”며 “소아청소년정신의학 전문의와 공간혁신 전문가의 협업을 통해 맞춤형 심리안정 서비스를 제공할 수 있을 것으로 본다”고 말했다.</div><p class="corpus-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 문서 1억 2,583만 건, 약 250억 어절) 기준</p></div>
+        <div class="axis-card"><h2>RDF 트리플</h2><div class="triple-table-wrap"><table class="triple-table"><thead><tr><th>주어</th><th>속성</th><th>값</th></tr></thead><tbody><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:origin</code></td><td class="triple-val"><span class="triple-literal">(緊急情緖돌봄)</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:pos</code></td><td class="triple-val"><span class="triple-literal">「구」</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:languageType</code></td><td class="triple-val"><span class="triple-literal">한_한_고</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>skos:definition</code></td><td class="triple-val"><span class="triple-literal">정서 조절에 어려움을 겪고 있는 학생들을 도와주기 위해 지방 자치 단체에서 지원 인력 및 공간을 제공하는 제도.</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:component</code></td><td class="triple-val"><code>kno:KN2020-0049-c2</code></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:indexForm</code></td><td class="triple-val"><span class="triple-literal">긴급정서돌봄</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>rdfs:seeAlso</code></td><td class="triple-val"><a href="https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&amp;query=%EA%B8%B4%EA%B8%89%20%EC%A0%95%EC%84%9C%20%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener"><code>&lt;https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&amp;query=%EA%B8%B4%EA%B8%89%20%EC%A0%95%EC%84%9C%20%EB%8F%8C%EB%B4%84&gt;</code></a></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:frequency</code></td><td class="triple-val"><code>kno:KN2020-0049-freq-NN-2020</code></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:instantiates</code></td><td class="triple-val"><a href="S000670.html"><code>kno:S000670</code></a></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:unitType</code></td><td class="triple-val"><span class="triple-literal">구</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:predicate</code></td><td class="triple-val"><span class="triple-literal">제공하다</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:component</code></td><td class="triple-val"><code>kno:KN2020-0049-c3</code></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:slotFiller</code></td><td class="triple-val"><span class="triple-literal">정서(情緖)+돌봄 (2성분)</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:componentString</code></td><td class="triple-val"><span class="triple-literal">긴급(緊急), 정서(情緖), 돌봄</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>rdf:type</code></td><td class="triple-val"><a href="http://www.w3.org/ns/lemon/ontolex#MultiwordExpression" target="_blank" rel="noopener"><code>ontolex:MultiwordExpression</code></a></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:example</code></td><td class="triple-val"><span class="triple-literal">¶OOO 장학사는 “학교 내 {긴급 정서 돌봄이} 가능한 공간을 만들어 학생들의 자존감 회복, 심리 안정을 돕기로 했다.”라고 말했다.</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:lastAttestationYear</code></td><td class="triple-val"><span class="triple-literal">2020</span><span class="triple-dt">^^xsd:gYear</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>rdfs:label</code></td><td class="triple-val"><span class="triple-literal">긴급 정서 돌봄</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:year</code></td><td class="triple-val"><span class="triple-literal">2020</span><span class="triple-dt">^^xsd:gYear</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>rdf:type</code></td><td class="triple-val"><code>kno:Neologism</code></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:activeYears</code></td><td class="triple-val"><span class="triple-literal">1</span><span class="triple-dt">^^xsd:integer</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:registration</code></td><td class="triple-val"><span class="triple-literal">신어DB</span><span class="triple-lang">@ko</span></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:frequency</code></td><td class="triple-val"><code>kno:KN2020-0049-freq-NN-total</code></td></tr><tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>kno:component</code></td><td class="triple-val"><code>kno:KN2020-0049-c1</code></td></tr></tbody></table></div></div>
 
-        <!-- ── RDF 그래프 시각화 (페이지 중심) ── -->
-        <div class="rdf-graph-card">
-          <h2>RDF 그래프</h2>
-          <div class="rdf-graph-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 700" width="100%" style="max-width:1100px;display:block;margin:0 auto;" role="img" aria-label="RDF 그래프 — 긴급정서돌봄">
-  <title>RDF 그래프 — 긴급정서돌봄</title>
-<defs><filter id="nodeShadow" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="2" stdDeviation="3" flood-color="#1e3a8a" flood-opacity="0.10"/></filter></defs>
-<rect width="1100" height="700" rx="12" fill="#ffffff" stroke="#dde2ea" stroke-width="1"/>
-<line x1="550.0" y1="294.0" x2="550.0" y2="186.0" stroke="#e2e8f0" stroke-width="1.2"/>
-<line x1="598.5" y1="378.0" x2="681.6" y2="426.0" stroke="#e2e8f0" stroke-width="1.2"/>
-<rect x="595.5" y="395.0" width="89.2" height="13" rx="3" fill="rgba(248,250,252,0.97)" stroke="#e2e8f0" stroke-width="0.7"/>
-<text x="640.1" y="405.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9.5" fill="#94a3b8">frac:frequency</text>
-<line x1="501.5" y1="378.0" x2="418.4" y2="426.0" stroke="#e2e8f0" stroke-width="1.2"/>
-<rect x="415.3" y="395.0" width="89.2" height="13" rx="3" fill="rgba(248,250,252,0.97)" stroke="#e2e8f0" stroke-width="0.7"/>
-<text x="459.9" y="405.5" text-anchor="middle" font-family="'Space Mono',monospace" font-size="9.5" fill="#94a3b8">frac:frequency</text>
-<g transform="translate(550.0,140.0)">
-<ellipse rx="42" ry="22" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.2"/>
-<title>긴급정서돌봄의 의미 (sense)</title>
-<text text-anchor="middle" dominant-baseline="central" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#1a2540" font-weight="600">의미</text>
-</g>
-<g transform="translate(731.9,455.0)">
-<ellipse rx="54" ry="24" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
-<title>신문 말뭉치 1 토큰</title>
-<text text-anchor="middle" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#9f1239" font-weight="700"><tspan x="0" dy="-5">신문 말뭉치</tspan><tspan x="0" dy="15" font-size="11" font-weight="400">1회</tspan></text>
-</g>
-<g transform="translate(368.1,455.0)">
-<ellipse rx="54" ry="24" fill="#fff1f2" stroke="#fda4af" stroke-width="1.2"/>
-<title>댓글 말뭉치 0 토큰</title>
-<text text-anchor="middle" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="13" fill="#9f1239" font-weight="700"><tspan x="0" dy="-5">댓글 말뭉치</tspan><tspan x="0" dy="15" font-size="11" font-weight="400">0회</tspan></text>
-</g>
-<g transform="translate(550.0,350.0)">
-<ellipse rx="52" ry="26" fill="#1e3a8a" stroke="#1e3a8a" stroke-width="2.5" filter="url(#nodeShadow)"/>
-<title>긴급정서돌봄 — KNO:KN2020-0049</title>
-<text text-anchor="middle" dominant-baseline="central" font-family="'Pretendard','Noto Sans KR',sans-serif" font-size="15" fill="#ffffff" font-weight="900">긴급정서돌봄</text>
-</g>
-<rect x="10" y="544" width="152" height="138" rx="7" fill="rgba(248,250,252,0.96)" stroke="#dde2ea" stroke-width="1"/>
-<ellipse cx="24" cy="554" rx="8" ry="6" fill="#1e3a8a"/>
-<text x="38" y="559" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">신어</text>
-<ellipse cx="24" cy="574" rx="8" ry="6" fill="#f1f5f9"/>
-<text x="38" y="579" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">형태 / 의미</text>
-<ellipse cx="24" cy="594" rx="8" ry="6" fill="#fff1f2"/>
-<text x="38" y="599" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">말뭉치 정보</text>
-<ellipse cx="24" cy="614" rx="8" ry="6" fill="#f8fafc"/>
-<text x="38" y="619" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">형태소 / 규칙</text>
-<ellipse cx="24" cy="634" rx="8" ry="6" fill="#faf5ff"/>
-<text x="38" y="639" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">의미 범주</text>
-<ellipse cx="24" cy="654" rx="8" ry="6" fill="#f0fdf9"/>
-<text x="38" y="659" font-size="12" fill="#475569" font-family="'Pretendard','Noto Sans KR',sans-serif">외부 지식베이스</text>
-</svg>
-          </div>
-        </div>
+        <details class="ttl-dropdown"><summary>Turtle (TTL) 원문 보기</summary><div class="ttl-raw-wrap"><pre class="ttl-raw">@prefix dcterms: &lt;http://purl.org/dc/terms/&gt; .
+@prefix skos: &lt;http://www.w3.org/2004/02/skos/core#&gt; .
+@prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
+@prefix rdf: &lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt; .
+@prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
+@prefix xsd: &lt;http://www.w3.org/2001/XMLSchema#&gt; .
+@prefix kno: &lt;https://w3id.org/kno/&gt; .
+@prefix ontolex: &lt;http://www.w3.org/ns/lemon/ontolex#&gt; .
+@prefix frac: &lt;http://www.w3.org/ns/lemon/frac#&gt; .
+# KN2020-0049 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-        <!-- ── 자원·속성·값 트리플 표 ── -->
-        <div class="axis-card">
-          <h2>어휘 속성</h2>
-          <div class="triple-table-wrap">
-  <table class="triple-table">
-    <thead>
-      <tr>
-        <th>자원</th>
-        <th>속성</th>
-        <th>값</th>
-      </tr>
-    </thead>
-    <tbody>
-<tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>rdf:type</code></td><td class="triple-val"><code>ontolex:MultiwordExpression</code></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>ontolex:canonicalForm</code></td><td class="triple-val"><code>kno:KN2020-0049-form</code></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-form</code></td><td class="triple-prop"><code>ontolex:writtenRep</code></td><td class="triple-val"><span class="triple-literal">긴급정서돌봄</span><span class="triple-lang">@ko</span></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-form</code></td><td class="triple-prop"><code>frac:frequency</code></td><td class="triple-val"><code>kno:KN2020-0049-freq-nn</code> → 1회</td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-form</code></td><td class="triple-prop"><code>frac:frequency</code></td><td class="triple-val"><code>kno:KN2020-0049-freq-yt</code> → 0회</td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>ontolex:sense</code></td><td class="triple-val"><code>kno:KN2020-0049-sense</code></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-sense</code></td><td class="triple-prop"><code>dcterms:isReferencedBy</code></td><td class="triple-val"><span style="color:var(--text-muted);font-style:italic;">—</span></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049</code></td><td class="triple-prop"><code>frac:attestation</code></td><td class="triple-val"><code>kno:KN2020-0049-att-nn</code></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-att-nn</code></td><td class="triple-prop"><code>dcterms:date</code></td><td class="triple-val"><span class="triple-literal">2020-05-19</span></td></tr>
-<tr><td class="triple-subj"><code>kno:KN2020-0049-att-nn</code></td><td class="triple-prop"><code>frac:locus</code></td><td class="triple-val"><a href="https://n.news.naver.com/article/032/0003009955" target="_blank" rel="noopener">https://n.news.naver.com/article/032/0003009955 ↗</a></td></tr>
-    </tbody>
-  </table>
-</div>
-          
-          
-        </div>
-
-        <div class="axis-card">
-          <h2>구성 성분 분석</h2>
-          <p style="color:var(--text-muted);font-style:italic;">형태 분해 미보강</p>
-        </div>
-
-        
-        <!-- 이웃 신어 링크 -->
-        <div class="axis-card">
-          <h2>연결된 신어</h2>
-          <div class="neighbor-section"><div class="neighbor-section-label">동일한 의미 범주 (정치와 행정)</div><div class="neighbor-list"><a class="neighbor-link" href="KN2021-0001.html">가덕도신공항건설을위한특별법</a> <a class="neighbor-link" href="KN2021-0002.html">가덕도특별법</a> <a class="neighbor-link" href="KN2021-0007.html">가상자산업법</a> <a class="neighbor-link" href="KN2025-0014.html">가세연방지법</a> <a class="neighbor-link" href="KN2022-0004.html">가입자퇴직급여보장법</a></div></div>
-        </div>
-
-        <div class="axis-card">
-          <h2>어휘 사전 연결</h2>
-          <div class="kb-row"><span class="kb-source">표준국어대사전</span><span><span class="kb-absent"><a href="https://stdict.korean.go.kr/search/searchResult.do?searchKeyword=%EA%B8%B4%EA%B8%89%EC%A0%95%EC%84%9C%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">미등재</a></span></span></div>
-<div class="kb-row"><span class="kb-source">우리말샘</span><span><span class="kb-absent"><a href="https://opendict.korean.go.kr/search/searchResult?query=%EA%B8%B4%EA%B8%89%EC%A0%95%EC%84%9C%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">미등재</a></span></span></div>
-        </div>
-
-        <div class="axis-card">
-          <h2>지식베이스 연결</h2>
-          <div class="kb-row"><span class="kb-source">나무위키</span><span><span class="kb-absent"><a href="https://namu.wiki/w/%EA%B8%B4%EA%B8%89%EC%A0%95%EC%84%9C%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">관측일 2026-07-29 기준 미등재</a></span></span><span class="kb-observed">관측: 2026-07-29</span></div>
-<div class="kb-row"><span class="kb-source">위키백과</span><span><span class="kb-absent"><a href="https://ko.wikipedia.org/wiki/%EA%B8%B4%EA%B8%89%EC%A0%95%EC%84%9C%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">관측일 2026-07-29 기준 미등재</a></span></span><span class="kb-observed">관측: 2026-07-29</span></div>
-<div class="kb-row"><span class="kb-source">네이버 지식백과</span><span><span class="kb-absent"><a href="https://terms.naver.com/search.naver?query=%EA%B8%B4%EA%B8%89%EC%A0%95%EC%84%9C%EB%8F%8C%EB%B4%84" target="_blank" rel="noopener">정확 일치 없음 (연관 706건)</a></span></span></div>
-        </div>
-
-        <!-- ── Turtle 원문 드롭다운 ── -->
-        <details class="ttl-dropdown">
-          <summary>Turtle (TTL) 원문 보기</summary>
-          <div class="ttl-raw-wrap">
-            <pre class="ttl-code"><span class="ttl-prefix">@prefix</span> dcterms: <span class="ttl-uri">&lt;http://purl.org/dc/terms/&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> frac: <span class="ttl-uri">&lt;http://www.w3.org/ns/lemon/frac#&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> kno: <span class="ttl-uri">&lt;https://w3id.org/kno/id/&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> ontolex: <span class="ttl-uri">&lt;http://www.w3.org/ns/lemon/ontolex#&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> rdf: <span class="ttl-uri">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> skos: <span class="ttl-uri">&lt;http://www.w3.org/2004/02/skos/core#&gt;</span> <span class="ttl-punct">.</span>
-<span class="ttl-prefix">@prefix</span> xsd: <span class="ttl-uri">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span> <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span> <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>MultiwordExpression <span class="ttl-punct">;</span>
-    <span class="ttl-ns">frac:</span>attestation <span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-att-nn <span class="ttl-punct">;</span>
-    <span class="ttl-ns">ontolex:</span>canonicalForm <span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-form <span class="ttl-punct">;</span>
-    <span class="ttl-ns">ontolex:</span>sense <span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-sense <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-att-nn <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>Attestation <span class="ttl-punct">;</span>
-    <span class="ttl-ns">dcterms:</span>date <span class="ttl-str">&quot;2020-05-19&quot;</span><span class="ttl-dt">^^xsd:date</span> <span class="ttl-punct">;</span>
-    <span class="ttl-ns">frac:</span>locus <span class="ttl-uri">&lt;https://n.news.naver.com/article/032/0003009955&gt;</span> <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-form <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>Form <span class="ttl-punct">;</span>
-    <span class="ttl-ns">frac:</span>frequency <span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-freq-nn<span class="ttl-punct">,</span>
-        <span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-freq-yt <span class="ttl-punct">;</span>
-    <span class="ttl-ns">ontolex:</span>writtenRep <span class="ttl-str">&quot;긴급 정서 돌봄&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-freq-nn <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>CorpusFrequency <span class="ttl-punct">;</span>
-    <span class="ttl-ns">rdf:</span>value <span class="ttl-num">1</span> <span class="ttl-punct">;</span>
-    <span class="ttl-ns">frac:</span>corpus <span class="ttl-ns">kno:</span>corpus-NN <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-freq-yt <span class="ttl-kw">a</span> <span class="ttl-ns">frac:</span>CorpusFrequency <span class="ttl-punct">;</span>
-    <span class="ttl-ns">rdf:</span>value <span class="ttl-num">0</span> <span class="ttl-punct">;</span>
-    <span class="ttl-ns">frac:</span>corpus <span class="ttl-ns">kno:</span>corpus-YT <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>KN2020-<span class="ttl-num">0049</span>-sense <span class="ttl-kw">a</span> <span class="ttl-ns">ontolex:</span>LexicalSense <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>corpus-NN <span class="ttl-ns">skos:</span>prefLabel <span class="ttl-str">&quot;신문 말뭉치&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
-
-<span class="ttl-ns">kno:</span>corpus-YT <span class="ttl-ns">skos:</span>prefLabel <span class="ttl-str">&quot;댓글 말뭉치&quot;</span><span class="ttl-lang">@ko</span> <span class="ttl-punct">.</span>
-</pre>
-          </div>
-        </details>
-
-        <!-- ── 다운로드 ── -->
+kno:KN2020-0049 kno:origin &quot;(緊急情緖돌봄)&quot; ;
+    kno:pos &quot;「구」&quot;@ko ;
+    kno:languageType &quot;한_한_고&quot; ;
+    skos:definition &quot;정서 조절에 어려움을 겪고 있는 학생들을 도와주기 위해 지방 자치 단체에서 지원 인력 및 공간을 제공하는 제도.&quot;@ko ;
+    kno:component kno:KN2020-0049-c2 ;
+    kno:indexForm &quot;긴급정서돌봄&quot;@ko ;
+    rdfs:seeAlso &lt;https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&amp;query=%EA%B8%B4%EA%B8%89%20%EC%A0%95%EC%84%9C%20%EB%8F%8C%EB%B4%84&gt; ;
+    kno:frequency kno:KN2020-0049-freq-NN-2020 ;
+    kno:instantiates kno:S000670 ;
+    kno:unitType &quot;구&quot;@ko ;
+    kno:predicate &quot;제공하다&quot;@ko ;
+    kno:component kno:KN2020-0049-c3 ;
+    kno:slotFiller &quot;정서(情緖)+돌봄 (2성분)&quot;@ko ;
+    kno:componentString &quot;긴급(緊急), 정서(情緖), 돌봄&quot;@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example &quot;¶OOO 장학사는 “학교 내 {긴급 정서 돌봄이} 가능한 공간을 만들어 학생들의 자존감 회복, 심리 안정을 돕기로 했다.”라고 말했다.&quot;@ko ;
+    kno:lastAttestationYear &quot;2020&quot;^^xsd:gYear ;
+    rdfs:label &quot;긴급 정서 돌봄&quot;@ko ;
+    kno:year &quot;2020&quot;^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:activeYears &quot;1&quot;^^xsd:integer ;
+    kno:registration &quot;신어DB&quot;@ko ;
+    kno:frequency kno:KN2020-0049-freq-NN-total ;
+    kno:component kno:KN2020-0049-c1 .
+kno:KN2020-0049-c2 kno:semanticTag kno:usas-E1 ;
+    kno:truncated &quot;false&quot;^^xsd:boolean ;
+    kno:position &quot;2&quot;^^xsd:integer ;
+    kno:fullForm &quot;정서&quot;@ko ;
+    rdfs:label &quot;정서(情緖)&quot;@ko ;
+    kno:surfaceForm &quot;정서&quot;@ko ;
+    kno:formative kno:F000919 ;
+    a kno:Component ;
+    kno:role &quot;슬롯 채움&quot;@ko .
+kno:KN2020-0049-c3 kno:role &quot;슬롯 채움&quot;@ko ;
+    kno:fullForm &quot;돌봄&quot;@ko ;
+    kno:position &quot;3&quot;^^xsd:integer ;
+    kno:truncated &quot;false&quot;^^xsd:boolean ;
+    kno:formative kno:F000046 ;
+    a kno:Component ;
+    rdfs:label &quot;돌봄&quot;@ko ;
+    kno:surfaceForm &quot;돌봄&quot;@ko ;
+    kno:semanticTag kno:usas-S8 .
+kno:KN2020-0049-c1 kno:position &quot;1&quot;^^xsd:integer ;
+    kno:formative kno:F000016 ;
+    kno:fullForm &quot;긴급&quot;@ko ;
+    a kno:Component ;
+    kno:surfaceForm &quot;긴급&quot;@ko ;
+    kno:semanticTag kno:usas-A11.1p ;
+    rdfs:label &quot;긴급(緊急)&quot;@ko ;
+    kno:role &quot;고정항&quot;@ko ;
+    kno:truncated &quot;false&quot;^^xsd:boolean .</pre></div></details>
         <div class="download-bar">
           <span style="font-size:0.82rem;color:var(--text-secondary);align-self:center;">데이터 내려받기:</span>
-          <a class="dl-btn" href="KN2020-0049.ttl" download>
-            <span>↓</span> KN2020-0049.ttl
-          </a>
-          <a class="dl-btn" href="KN2020-0049.jsonld" download>
-            <span>↓</span> KN2020-0049.jsonld
-          </a>
+          <a class="dl-btn" href="KN2020-0049.ttl" download><span>↓</span> KN2020-0049.ttl</a>
         </div>
-
       </div>
     </article>
   </main>
-
-  <footer class="site-footer">
-    <p>&copy; 2026 KNO Korean Neologism Observatory — 데이터 라이선스: CC BY 4.0</p>
-  </footer>
-
-  <script>
-(function() {
-  var btn = document.getElementById('navHamburger');
-  if (!btn) return;
-  var nav = btn.nextElementSibling;
-  btn.addEventListener('click', function() {
-    var expanded = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!expanded));
-    btn.classList.toggle('active');
-    nav.classList.toggle('nav-open');
-  });
-})();
+<footer class="site-footer"><p>&copy; 2026 KNO Korean Neologism Observatory</p></footer>
+<script>
+(function(){var b=document.getElementById('navHamburger');if(!b)return;var n=b.nextElementSibling;
+b.addEventListener('click',function(){var e=b.getAttribute('aria-expanded')==='true';b.setAttribute('aria-expanded',String(!e));b.classList.toggle('active');n.classList.toggle('nav-open');});})();
 </script>
 </body>
 </html>

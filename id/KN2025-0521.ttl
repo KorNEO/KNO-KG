@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0521 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0521 a ontolex:Word ;
-    frac:attestation kno:KN2025-0521-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0521-form ;
-    ontolex:sense kno:KN2025-0521-sense .
-
-kno:KN2025-0521-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003944926> .
-
-kno:KN2025-0521-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0521-freq-nn,
-        kno:KN2025-0521-freq-yt ;
-    ontolex:writtenRep "주선러"@ko .
-
-kno:KN2025-0521-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0521-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0521-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0521 kno:languageType "한+영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0521-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EC%84%A0%EB%9F%AC> ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "주선-러"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0521-c2 ;
+    kno:formation kno:W02 ;
+    kno:slotFiller "주선(周旋) (1성분)"@ko ;
+    kno:origin "(周旋<영>←er)" ;
+    kno:componentString "주선(周旋), -어(←-er)"@ko ;
+    kno:component kno:KN2025-0521-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000140 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0521-freq-NN-2025 ;
+    skos:definition "(LLM) 소개팅이나 선 같은 만남을 주선해 사람들을 연결해 주는 사람을 이르는 말."@ko ;
+    kno:example "(LLM) 동아리에서 누가 누구랑 잘 맞을지 먼저 파악해 두는 {주선러가} 이번 주에 소개팅 자리를 잡아 줬다."@ko ;
+    kno:indexForm "주선러"@ko .
+kno:KN2025-0521-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "어"@ko ;
+    kno:surfaceForm "어"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000182 ;
+    rdfs:label "-어(←-er)"@ko ;
+    a kno:Component .
+kno:KN2025-0521-c1 kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "주선(周旋)"@ko ;
+    kno:fullForm "주선"@ko ;
+    kno:surfaceForm "주선"@ko ;
+    kno:formative kno:F005795 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .

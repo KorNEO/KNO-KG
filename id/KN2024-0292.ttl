@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0292 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0292 a ontolex:Word ;
-    frac:attestation kno:KN2024-0292-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0292-form ;
-    ontolex:sense kno:KN2024-0292-sense .
-
-kno:KN2024-0292-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-12"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/092/0002311090> .
-
-kno:KN2024-0292-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0292-freq-nn,
-        kno:KN2024-0292-freq-yt ;
-    ontolex:writtenRep "집-가락"@ko .
-
-kno:KN2024-0292-freq-nn a frac:CorpusFrequency ;
-    rdf:value 39 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0292-freq-yt a frac:CorpusFrequency ;
-    rdf:value 150 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0292-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0292 kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0292-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2024-0292-freq-NN-total ;
+    kno:component kno:KN2024-0292-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2024-0292-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "집게와 젓가락의 기능을 결합한 기구. 주로 긴 면이나 작은 반찬 등을 집을 때 사용한다."@ko ;
+    rdfs:label "집가락"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%91%EA%B0%80%EB%9D%BD> ;
+    kno:languageType "고+고" ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶한 먹방 크리에이터가 {집가락으로} 국수 한 그릇을 통째로 들어 올리자 시청자들이 놀랍다는 반응을 보였다."@ko ;
+    kno:frequency kno:KN2024-0292-freq-NN-2024 ;
+    kno:indexForm "집가락"@ko ;
+    kno:componentString "집(게), (젓)가락"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
+kno:KN2024-0292-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "집게"@ko ;
+    kno:surfaceForm "집"@ko ;
+    kno:formative kno:F005938 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "집(게)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0292-c2 kno:surfaceForm "가락"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "(젓)가락"@ko ;
+    kno:formative kno:F002073 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "젓가락"@ko ;
+    kno:semanticTag kno:usas-F1 .

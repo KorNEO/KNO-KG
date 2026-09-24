@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0118 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0118-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0118-form ;
-    ontolex:sense kno:KN2022-0118-sense .
-
-kno:KN2022-0118-att-nn a frac:Attestation ;
-    dcterms:date "2021-11-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005731012> .
-
-kno:KN2022-0118-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0118-freq-nn,
-        kno:KN2022-0118-freq-yt ;
-    ontolex:writtenRep "도그 폰"@ko .
-
-kno:KN2022-0118-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0118-freq-yt a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0118-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0118 kno:indexForm "도그폰"@ko ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:origin "(<영>dog phone)" ;
+    rdfs:label "도그 폰"@ko ;
+    kno:componentString "도그(dog), 폰(phone)"@ko ;
+    kno:frequency kno:KN2022-0118-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    skos:definition "반려견이 주인에게 전화를 걸 수 있도록 고안된 휴대 전화. 부드러운 공 모양으로, 반려견이 공을 흔들면 공 내부의 가속도계가 움직임을 감지하여 미리 등록된 번호로 영상 통화를 거는 방식이다."@ko ;
+    kno:slotFiller "도그(dog) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0118-c2 ;
+    kno:instantiates kno:S000135 ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶영국에서는 반려견용 휴대 전화인 ‘{도그 폰’이}, 미국에서는 반려견 훈련 기기인 ‘트레이너’가 개발되는 등 최근 반려동물 산업은 디지털 기기의 개발과 판매 영역으로도 확장되고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EA%B7%B8%20%ED%8F%B0> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001327 ;
+    kno:frequency kno:KN2022-0118-freq-NN-2022 ;
+    kno:component kno:KN2022-0118-c1 ;
+    kno:frequency kno:KN2022-0118-freq-NN-2021 ;
+    kno:slotFiller "폰(phone) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0118-freq-NN-2025 .
+kno:KN2022-0118-c2 a kno:Component ;
+    kno:formative kno:F000107 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "폰"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:surfaceForm "폰"@ko ;
+    rdfs:label "폰(phone)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0118-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F000713 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "도그"@ko ;
+    kno:surfaceForm "도그"@ko ;
+    rdfs:label "도그(dog)"@ko .

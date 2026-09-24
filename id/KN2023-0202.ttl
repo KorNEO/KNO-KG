@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0202 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0202 a ontolex:Word ;
-    frac:attestation kno:KN2023-0202-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0202-form ;
-    ontolex:sense kno:KN2023-0202-sense .
-
-kno:KN2023-0202-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/448/0000375379> .
-
-kno:KN2023-0202-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0202-freq-nn,
-        kno:KN2023-0202-freq-yt ;
-    ontolex:writtenRep "욕로남불"@ko .
-
-kno:KN2023-0202-freq-nn a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0202-freq-yt a frac:CorpusFrequency ;
-    rdf:value 27 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0202-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0202 kno:frequency kno:KN2023-0202-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:slotFiller "로(맨스)(romance)+남+불(륜)(不倫) (3성분)"@ko ;
+    skos:definition "남이 욕설을 쓸 때는 비난하다가 자신이 욕설을 쓸 때는 합리화하는 태도를 이르는 말. ‘욕설’과 ‘내로남불’을 결합하 여 만든 말이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(辱<영>←romance남不)" ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "욕(辱), 로(맨스)(romance), 남, 불(륜)(不倫)"@ko ;
+    kno:component kno:KN2023-0202-c3 ;
+    kno:component kno:KN2023-0202-c4 ;
+    kno:languageType "한+영+고+한" ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:instantiates kno:S001584 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶대통령의 비속어 사용을 비판한 한 국회의원에게 그의 과거 논란을 들추며 ‘{욕로남불’이라는} 반격이 가해졌다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%95%EB%A1%9C%EB%82%A8%EB%B6%88> ;
+    rdfs:label "욕로남불"@ko ;
+    kno:component kno:KN2023-0202-c2 ;
+    kno:component kno:KN2023-0202-c1 ;
+    kno:frequency kno:KN2023-0202-freq-NN-total ;
+    kno:indexForm "욕로남불"@ko .
+kno:KN2023-0202-c3 kno:formative kno:F000339 ;
+    a kno:Component ;
+    rdfs:label "남"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "남"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2023-0202-c4 kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S3.2m ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "불(륜)(不倫)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003986 ;
+    kno:fullForm "불륜"@ko ;
+    kno:surfaceForm "불"@ko .
+kno:KN2023-0202-c2 kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "로(맨스)(romance)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001247 ;
+    kno:fullForm "로맨스"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "로"@ko .
+kno:KN2023-0202-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2m ;
+    kno:formative kno:F000393 ;
+    a kno:Component ;
+    rdfs:label "욕(辱)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "욕"@ko ;
+    kno:surfaceForm "욕"@ko ;
+    kno:role "고정항"@ko .

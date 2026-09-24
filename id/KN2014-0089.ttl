@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0089 kno:componentString "마롱(marron), 라테(latte)"@ko ;
+    kno:component kno:KN2014-0089-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "삶은 밤을 으깨어, 우유와 시럽을 넣고 섞어 만든 음료."@ko ;
+    a ontolex:Word ;
+    kno:origin "(<프>marron<이>latte)" ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "마롱(marron) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:label "마롱-라테"@ko ;
+    kno:urimalTargetCode "1358146" ;
+    kno:indexForm "마롱라테"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2014-0089-freq-NN-2016 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0089-freq-NN-2025 ;
+    kno:example "¶{마롱라테는} 진하고 깊은 밤 맛이 나는 우유 음료로 어린 아이들은 물론 전 층이 좋아할 만한 건강음료다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000373 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0089-freq-NN-total ;
+    kno:component kno:KN2014-0089-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358146> ;
+    kno:languageType "프+이" ;
+    kno:unitType "단어"@ko .
+kno:KN2014-0089-c1 kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "마롱"@ko ;
+    kno:formative kno:F003350 ;
+    kno:surfaceForm "마롱"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "마롱(marron)"@ko .
+kno:KN2014-0089-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "라테"@ko ;
+    kno:surfaceForm "라테"@ko ;
+    kno:formative kno:F000260 ;
+    kno:semanticTag kno:usas-F2 ;
+    a kno:Component ;
+    rdfs:label "라테(latte)"@ko ;
+    kno:role "고정항"@ko .

@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0101 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0101-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0101-form ;
-    ontolex:sense kno:KN2024-0101-sense .
-
-kno:KN2024-0101-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-27"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/023/0003818891> .
-
-kno:KN2024-0101-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0101-freq-nn,
-        kno:KN2024-0101-freq-yt ;
-    ontolex:writtenRep "비지상^통신망"@ko .
-
-kno:KN2024-0101-freq-nn a frac:CorpusFrequency ;
-    rdf:value 152 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0101-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0101-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0101 kno:origin "(非地上通信網)" ;
+    kno:predicate "제공하다"@ko ;
+    kno:componentString "비지상(非地上), 통신망(通信網)"@ko ;
+    skos:definition "위성, 드론, 고고도 플랫폼(HAPS) 등 지상 기지국이 아닌 수단을 활용하여 통신 서비스를 제공하는 시스템."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0101-freq-NN-2024 ;
+    kno:component kno:KN2024-0101-c1 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한^한" ;
+    rdfs:label "비지상^통신망"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%A7%80%EC%83%81%ED%86%B5%EC%8B%A0%EB%A7%9D> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0101-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶{비지상 통신망은} 위성과 드론 등을 활용해 지상 인프라가 부족한 지역에서도 안정적인 연결을 제공한다."@ko ;
+    kno:indexForm "비지상통신망"@ko ;
+    kno:component kno:KN2024-0101-c2 ;
+    kno:frequency kno:KN2024-0101-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2024-0101-c1 kno:role "성분"@ko ;
+    kno:surfaceForm "비지상"@ko ;
+    rdfs:label "비지상(非地上)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "비지상"@ko ;
+    kno:semanticTag kno:usas-W3 ;
+    kno:formative kno:F004082 .
+kno:KN2024-0101-c2 kno:surfaceForm "통신망"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:fullForm "통신망"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006509 ;
+    rdfs:label "통신망(通信網)"@ko .

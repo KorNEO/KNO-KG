@@ -1,37 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0627 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0627 a ontolex:Word ;
-    frac:attestation kno:KN2025-0627-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0627-form ;
-    ontolex:sense kno:KN2025-0627-sense .
-
-kno:KN2025-0627-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/214/0001431472> .
-
-kno:KN2025-0627-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0627-freq-nn,
-        kno:KN2025-0627-freq-yt ;
-    ontolex:writtenRep "파파돈"@ko .
-
-kno:KN2025-0627-freq-nn a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0627-freq-yt a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0627-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%ED%8C%8C%ED%8C%8C%EB%8F%88> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0627 rdfs:label "파파돈"@ko ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 야당은 후보자 검증 과정에서 {파파돈} 논란이 커지고 있다며 추가 자료 제출을 요구했다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0627-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001731 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "돈 (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "파파돈"@ko ;
+    skos:definition "(LLM) 의혹을 파고들수록 금전 거래나 자금 흐름 등 돈과 관련된 문제 제기가 연이어 드러나는 상황을 빗대어 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0627-freq-NN-total ;
+    kno:component kno:KN2025-0627-c1 ;
+    kno:component kno:KN2025-0627-c3 ;
+    kno:componentString "파(다), 파(다), 돈"@ko ;
+    kno:frequency kno:KN2025-0627-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:languageType "고+고+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%8C%ED%8C%8C%EB%8F%88> .
+kno:KN2025-0627-c2 kno:fullForm "파다"@ko ;
+    rdfs:label "파(다)"@ko ;
+    kno:formative kno:F001932 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "파"@ko .
+kno:KN2025-0627-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "파"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "파(다)"@ko ;
+    kno:formative kno:F001932 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "파다"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 .
+kno:KN2025-0627-c3 kno:role "슬롯 채움"@ko ;
+    rdfs:label "돈"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000257 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "돈"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:surfaceForm "돈"@ko .

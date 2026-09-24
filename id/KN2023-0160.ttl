@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0160 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0160 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0160-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0160-form ;
-    ontolex:sense kno:KN2023-0160-sense .
-
-kno:KN2023-0160-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000321601> .
-
-kno:KN2023-0160-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0160-freq-nn,
-        kno:KN2023-0160-freq-yt ;
-    ontolex:writtenRep "썰 스포츠"@ko .
-
-kno:KN2023-0160-freq-nn a frac:CorpusFrequency ;
-    rdf:value 691 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0160-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0160-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0160 kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8D%B0%20%EC%8A%A4%ED%8F%AC%EC%B8%A0> ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:label "썰 스포츠"@ko ;
+    kno:frequency kno:KN2023-0160-freq-NN-2022 ;
+    kno:languageType "한_영" ;
+    kno:example "¶새롭게 방영되는 프로그램은 최고의 입담을 가진 각 분야의 출연자들이 치열한 ‘{썰 스포츠’를} 펼친다는 점에서 시청자들의 기대를 한 몸에 받고 있다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:componentString "썰(←說), 스포츠(sports)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0160-c1 ;
+    kno:origin "(←說<영>sports)" ;
+    kno:indexForm "썰스포츠"@ko ;
+    kno:frequency kno:KN2023-0160-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0160-freq-NN-total ;
+    kno:component kno:KN2023-0160-c2 ;
+    skos:definition "예능 프로그램 따위에서, 재미있는 이야기를 경쟁적으로 풀어내는 것을 스포츠에 빗대어 이르는 말."@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2023-0160-c1 kno:surfaceForm "썰"@ko ;
+    kno:formative kno:F000378 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "썰(←說)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "썰"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0160-c2 kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "스포츠"@ko ;
+    kno:formative kno:F004606 ;
+    rdfs:label "스포츠(sports)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "스포츠"@ko ;
+    kno:semanticTag kno:usas-K5.1 .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0043 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0043 a ontolex:Word ;
-    frac:attestation kno:KN2025-0043-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0043-form ;
-    ontolex:sense kno:KN2025-0043-sense .
-
-kno:KN2025-0043-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/022/0003436774> .
-
-kno:KN2025-0043-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0043-freq-nn,
-        kno:KN2025-0043-freq-yt ;
-    ontolex:writtenRep "계몽절"@ko .
-
-kno:KN2025-0043-freq-nn a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0043-freq-yt a frac:CorpusFrequency ;
-    rdf:value 149 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0043-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0043 kno:componentString "계몽(啓蒙), -절(節)"@ko ;
+    kno:instantiates kno:S001205 ;
+    rdfs:label "계몽-절"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:example "(LLM) 일부 단체는 비상계엄 선포를 ‘국가를 깨우친 조치’로 해석하며 {계몽절}을 기념한다는 취지의 행사를 예고했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0043-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0043-freq-NN-2025 ;
+    kno:slotFiller "계몽(啓蒙) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 비상계엄 선포를 긍정하거나 정당화하는 입장에서, 해당 일을 ‘계몽’으로 의미화하며 기념ㆍ상징적으로 부르는 날."@ko ;
+    kno:origin "(啓蒙節)" ;
+    kno:slotFiller "-절(節) (1성분)"@ko ;
+    kno:component kno:KN2025-0043-c2 ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2025-0043-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EB%AA%BD%EC%A0%88> ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "계몽절"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001174 ;
+    kno:unitType "단어"@ko .
+kno:KN2025-0043-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "절"@ko ;
+    kno:surfaceForm "절"@ko ;
+    rdfs:label "-절(節)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001754 .
+kno:KN2025-0043-c1 a kno:Component ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000455 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "계몽"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "계몽(啓蒙)"@ko ;
+    kno:surfaceForm "계몽"@ko .

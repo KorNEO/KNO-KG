@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0015 a ontolex:Word ;
-    frac:attestation kno:KN2023-0015-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0015-form ;
-    ontolex:sense kno:KN2023-0015-sense .
-
-kno:KN2023-0015-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002364873> .
-
-kno:KN2023-0015-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0015-freq-nn,
-        kno:KN2023-0015-freq-yt ;
-    ontolex:writtenRep "검수원복-법"@ko .
-
-kno:KN2023-0015-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0015-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0015-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0015 kno:example "¶일각에서는 {검수원복법으로} 인해 검찰 조직에 대한 견제 장치가 무력화되면, 검찰에 많은 권력이 집중될 수도 있다는 지적이 나왔다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EC%9B%90%EB%B3%B5%EB%B2%95> ;
+    kno:frequency kno:KN2023-0015-freq-NN-2023 ;
+    kno:origin "(檢搜原復法)" ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2023-0015-c1 ;
+    a kno:Neologism ;
+    rdfs:label "검수원복-법"@ko ;
+    kno:instantiates kno:S000015 ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2023-0015-freq-NN-2022 ;
+    kno:indexForm "검수원복법"@ko ;
+    kno:componentString "검수원복(檢搜原復), 법(法)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:slotFiller "검수원복(檢搜原復) (1성분)"@ko ;
+    skos:definition "검찰의 수사권을 원상 복구하는 법안. 검찰의 수사권을 확대한 법안으로, 검찰의 수사가 가능한 경제 및 부패 범죄의 범위가 확대된다."@ko ;
+    kno:predicate "복구하다"@ko ;
+    kno:component kno:KN2023-0015-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0015-freq-NN-total ;
+    a ontolex:Word ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko .
+kno:KN2023-0015-c1 kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    rdfs:label "검수원복(檢搜原復)"@ko ;
+    kno:formative kno:F002197 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "검수원복"@ko ;
+    kno:surfaceForm "검수원복"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0015-c2 rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:role "고정항"@ko .

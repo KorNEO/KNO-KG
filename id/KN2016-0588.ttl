@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0588 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0588 kno:indexForm "혼곡"@ko ;
+    kno:slotFiller "혼(자) (1성분)"@ko ;
+    kno:component kno:KN2016-0588-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373023> ;
+    kno:formation kno:W02 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2016-0588-c2 ;
+    kno:origin "(혼曲)" ;
+    kno:instantiates kno:S000017 ;
+    skos:definition "혼자서 노래를 부름. 또는 그렇게 부르는 노래."@ko ;
+    kno:languageType "고+한" ;
+    kno:urimalTargetCode "1373023" ;
+    rdfs:label "혼-곡"@ko ;
+    a ontolex:Word ;
+    kno:example "¶혼자 사는 1인 가구인 ‘싱글족’이 증가하면서 OO 주요 상권에도 혼밥, 혼술, {혼곡} 등 ‘혼자’를 즐기는 소비문화가 형성되고 있다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "-곡(曲) (1성분)"@ko ;
+    kno:componentString "혼(자), -곡(曲)"@ko ;
+    kno:instantiates kno:S000279 .
+kno:KN2016-0588-c1 rdfs:label "혼(자)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko ;
+    a kno:Component .
+kno:KN2016-0588-c2 kno:fullForm "곡"@ko ;
+    kno:surfaceForm "곡"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-곡(曲)"@ko ;
+    kno:formative kno:F000334 ;
+    kno:semanticTag kno:usas-K2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

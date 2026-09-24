@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0152 a ontolex:Word ;
-    frac:attestation kno:KN2024-0152-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0152-form ;
-    ontolex:sense kno:KN2024-0152-sense .
-
-kno:KN2024-0152-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/629/0000248548> .
-
-kno:KN2024-0152-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0152-freq-nn,
-        kno:KN2024-0152-freq-yt ;
-    ontolex:writtenRep "스페이스덴티티"@ko .
-
-kno:KN2024-0152-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0152-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0152-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0152 kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0152-c1 ;
+    kno:frequency kno:KN2024-0152-freq-NN-2023 ;
+    kno:component kno:KN2024-0152-c2 ;
+    kno:frequency kno:KN2024-0152-freq-NN-total ;
+    skos:definition "자신이 머무르는 공간을 통해서 드러나는 개인의 정체성. 공간을 뜻하는 ‘스페이스’와 정체성을 뜻하는 ‘아이덴티티’를 결합하여 만든 말이다."@ko ;
+    kno:example "¶자신이 꾸미거나 머무는 공간을 활용하여 취향과 개성을 드러내는 {스페이스덴티티가} 최근 주목을 받게 되면서 주거 공간의 모습이 변화하고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%8E%98%EC%9D%B4%EC%8A%A4%EB%8D%B4%ED%8B%B0%ED%8B%B0> ;
+    kno:origin "(<영>▼space←identity)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "스페이스덴티티"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "스페이스(space), (아이)덴티티(identity)"@ko ;
+    kno:frequency kno:KN2024-0152-freq-NN-2024 ;
+    kno:indexForm "스페이스덴티티"@ko ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0152-c1 kno:semanticTag kno:usas-W1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "스페이스"@ko ;
+    kno:surfaceForm "스페이스"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001532 ;
+    rdfs:label "스페이스(space)"@ko .
+kno:KN2024-0152-c2 rdfs:label "(아이)덴티티(identity)"@ko ;
+    kno:fullForm "아이덴티티"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "덴티티"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002966 .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0099 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0099 rdfs:label "매너 푸드"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2017-0099-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0099-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "매너(manner), 푸드(food)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000188 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "매너푸드"@ko ;
+    kno:origin "(<영>▼manner food)" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    skos:definition "주로 도서관 등 조용한 분위기가 조성되어 있는 곳에서, 주변 사람들을 방해하지 않고 조용히 섭취할 수 있는 간단한 음식."@ko ;
+    kno:example "¶보관과 섭취가 쉬운 과일 제품, 쏟을 걱정이 없는 에너지 젤리 등 도서관에서 즐기기 좋은 ‘{매너 푸드’가} 인기다."@ko ;
+    kno:slotFiller "매너(manner) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0099-freq-NN-total ;
+    kno:frequency kno:KN2017-0099-freq-NN-2017 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EB%84%88%20%ED%91%B8%EB%93%9C> ;
+    kno:languageType "영_영" .
+kno:KN2017-0099-c2 rdfs:label "푸드(food)"@ko ;
+    kno:formative kno:F000108 ;
+    a kno:Component ;
+    kno:fullForm "푸드"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "푸드"@ko .
+kno:KN2017-0099-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000745 ;
+    kno:fullForm "매너"@ko ;
+    rdfs:label "매너(manner)"@ko ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:surfaceForm "매너"@ko .

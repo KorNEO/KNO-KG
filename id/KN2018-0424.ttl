@@ -1,0 +1,72 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0424 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0424 kno:indexForm "홈루덴스족"@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "루덴스(ludens)+-족(族) (2성분)"@ko ;
+    kno:frequency kno:KN2018-0424-freq-NN-total ;
+    kno:frequency kno:KN2018-0424-freq-NN-2019 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383463> ;
+    kno:slotFiller "홈(home)+루덴스(ludens) (2성분)"@ko ;
+    kno:component kno:KN2018-0424-c2 ;
+    kno:instantiates kno:S000012 ;
+    kno:frequency kno:KN2018-0424-freq-NN-2020 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:predicate "취하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0424-c3 ;
+    kno:origin "(<영>home<라>ludens族)" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0424-freq-NN-2023 ;
+    kno:example "¶OO 관계자는 “{홈 루덴스족과} 더불어 모든 소비자에게 마음의 평안을 가져다주는 쉼터 같은 공간을 제공하고자 하는 마음으로 신규 디자인을 선보이게 됐다.”라고 전했다."@ko ;
+    kno:urimalTargetCode "1383463" ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0424-freq-NN-2017 ;
+    skos:definition "집에서 하는 놀이를 즐기면서 편안하게 휴식을 취하는 사람. 또는 그런 무리. 유희하는 인간이라는 뜻의 ‘호모 루덴스’에서 유래한 말이다."@ko ;
+    kno:frequency kno:KN2018-0424-freq-NN-2021 ;
+    kno:component kno:KN2018-0424-c1 ;
+    kno:instantiates kno:S000158 ;
+    kno:frequency kno:KN2018-0424-freq-NN-2022 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:componentString "홈(home), 루덴스(ludens), -족(族)"@ko ;
+    rdfs:label "홈 루덴스족"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:languageType "영_(라+한)" ;
+    kno:frequency kno:KN2018-0424-freq-NN-2018 .
+kno:KN2018-0424-c2 a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "루덴스"@ko ;
+    rdfs:label "루덴스(ludens)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001253 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "루덴스"@ko .
+kno:KN2018-0424-c3 kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component .
+kno:KN2018-0424-c1 a kno:Component ;
+    kno:formative kno:F000045 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "홈"@ko ;
+    kno:surfaceForm "홈"@ko ;
+    rdfs:label "홈(home)"@ko .

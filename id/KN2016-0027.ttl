@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0027 kno:component kno:KN2016-0027-c1 ;
+    kno:indexForm "과잉근심사회"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(過剩근심社會)" ;
+    kno:frequency kno:KN2016-0027-freq-NN-total ;
+    kno:instantiates kno:S000396 ;
+    kno:component kno:KN2016-0027-c3 ;
+    kno:urimalTargetCode "1372462" ;
+    kno:example "¶O 교수는 현대 사회를 {과잉 근심 사회로} 규정한다."@ko ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:label "과잉^근심^사회"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^고^한" ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0027-freq-NN-2015 ;
+    skos:definition "어떤 일이나 상황에 대해 지나치게 근심을 많이 느끼게 하는 사회. 누리 소통망 서비스 따위에서 각종 재해나 사고를 자주 접하게 되어 불안한 심리가 증가하여 생기는 근심이다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372462> ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "과잉(過剩), 근심, 사회(社會)"@ko ;
+    kno:component kno:KN2016-0027-c2 ;
+    kno:frequency kno:KN2016-0027-freq-NN-2016 ;
+    kno:slotFiller "과잉(過剩)+근심 (2성분)"@ko ;
+    kno:predicate "하다"@ko .
+kno:KN2016-0027-c1 a kno:Component ;
+    kno:formative kno:F002376 ;
+    kno:fullForm "과잉"@ko ;
+    kno:surfaceForm "과잉"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "과잉(過剩)"@ko ;
+    kno:semanticTag kno:usas-N5ppp ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0027-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "사회"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000139 ;
+    kno:surfaceForm "사회"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "사회(社會)"@ko .
+kno:KN2016-0027-c2 rdfs:label "근심"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "근심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "근심"@ko ;
+    kno:formative kno:F001102 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E6m .

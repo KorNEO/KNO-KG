@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0300 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0300-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0300-form ;
-    ontolex:sense kno:KN2024-0300-sense .
-
-kno:KN2024-0300-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004250661> .
-
-kno:KN2024-0300-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0300-freq-nn,
-        kno:KN2024-0300-freq-yt ;
-    ontolex:writtenRep "차일드 페널티"@ko .
-
-kno:KN2024-0300-freq-nn a frac:CorpusFrequency ;
-    rdf:value 122 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0300-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0300-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0300 kno:instantiates kno:S001113 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2024-0300-freq-NN-total ;
+    kno:component kno:KN2024-0300-c2 ;
+    kno:frequency kno:KN2024-0300-freq-NN-2023 ;
+    kno:frequency kno:KN2024-0300-freq-NN-2024 ;
+    kno:indexForm "차일드페널티"@ko ;
+    a kno:Neologism ;
+    kno:componentString "차일드(child), 페널티(penalty)"@ko ;
+    kno:example "¶OO는 출산에 따른 여성의 고용상 불이익을 의미하는 {차일드 페널티가} 국내 출산율 하락의 주요 원인이라고 분석했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(<영>child penalty)" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "차일드(child) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "차일드 페널티"@ko ;
+    kno:component kno:KN2024-0300-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%EC%9D%BC%EB%93%9C%20%ED%8E%98%EB%84%90%ED%8B%B0> ;
+    kno:unitType "구"@ko ;
+    skos:definition "임금이 줄어들거나 승진이 어려워지는 등 출산한 여성이 노동 시장에서 받게 되는 불이익을 이르는 말."@ko ;
+    kno:frequency kno:KN2024-0300-freq-NN-2025 .
+kno:KN2024-0300-c2 kno:formative kno:F001953 ;
+    a kno:Component ;
+    kno:fullForm "페널티"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "페널티"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "페널티(penalty)"@ko .
+kno:KN2024-0300-c1 kno:fullForm "차일드"@ko ;
+    kno:surfaceForm "차일드"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "차일드(child)"@ko ;
+    kno:formative kno:F005993 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:role "슬롯 채움"@ko .

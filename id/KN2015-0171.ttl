@@ -1,0 +1,75 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0171 kno:component kno:KN2015-0171-c1 ;
+    kno:frequency kno:KN2015-0171-freq-NN-2019 ;
+    kno:component kno:KN2015-0171-c2 ;
+    kno:year "2015"^^xsd:gYear ;
+    rdfs:label "요섹-남"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2015-0171-freq-NN-2017 ;
+    kno:frequency kno:KN2015-0171-freq-NN-2022 ;
+    kno:instantiates kno:S001583 ;
+    kno:frequency kno:KN2015-0171-freq-NN-2024 ;
+    kno:example "¶가수 OOO가 능수능란한 요리 솜씨로 ‘{요섹남’에} 등극했다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0171-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "-남(男) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371262> ;
+    kno:frequency kno:KN2015-0171-freq-NN-2018 ;
+    kno:formation kno:W02 ;
+    kno:urimalTargetCode "1371262" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2015-0171-freq-NN-2020 ;
+    kno:origin "(料<영>←sexy男)" ;
+    kno:frequency kno:KN2015-0171-freq-NN-2025 ;
+    kno:frequency kno:KN2015-0171-freq-NN-2015 ;
+    kno:activeYears "11"^^xsd:integer ;
+    kno:component kno:KN2015-0171-c3 ;
+    kno:componentString "요(리)(料), 섹(시)(sexy), -남(男)"@ko ;
+    kno:frequency kno:KN2015-0171-freq-NN-total ;
+    skos:definition "‘요리를 하는 섹시한 남자’를 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2015-0171-freq-NN-2021 ;
+    kno:frequency kno:KN2015-0171-freq-NN-2016 ;
+    kno:slotFiller "요(리)(料)+섹(시)(sexy) (2성분)"@ko ;
+    kno:indexForm "요섹남"@ko ;
+    kno:languageType "(한+영)+한" ;
+    kno:instantiates kno:S000003 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism .
+kno:KN2015-0171-c1 rdfs:label "요(리)(料)"@ko ;
+    kno:surfaceForm "요"@ko ;
+    a kno:Component ;
+    kno:fullForm "요리"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001645 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2015-0171-c2 kno:formative kno:F000114 ;
+    kno:fullForm "섹시"@ko ;
+    rdfs:label "섹(시)(sexy)"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:surfaceForm "섹"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2015-0171-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "남"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    a kno:Component ;
+    kno:formative kno:F000008 ;
+    rdfs:label "-남(男)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

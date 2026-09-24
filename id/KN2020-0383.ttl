@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0383 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0383 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0383-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0383-form ;
-    ontolex:sense kno:KN2020-0383-sense .
-
-kno:KN2020-0383-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000478290> .
-
-kno:KN2020-0383-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0383-freq-nn,
-        kno:KN2020-0383-freq-yt ;
-    ontolex:writtenRep "투게더 앳 홈"@ko .
-
-kno:KN2020-0383-freq-nn a frac:CorpusFrequency ;
-    rdf:value 757 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0383-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0383-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0383 kno:instantiates kno:S001145 ;
+    a kno:Neologism ;
+    kno:origin "(<영>together at home)" ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0383-freq-NN-2021 ;
+    skos:definition "인기 연예인들을 중심으로 시작된 코로나19 대응 기금 모금 운동의 하나. 온라인으로 자선 콘서트를 열어 코로나19 대응을 위한 기금을 모으는 방식으로 진행된다."@ko ;
+    kno:component kno:KN2020-0383-c1 ;
+    kno:component kno:KN2020-0383-c2 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "투게더 앳 홈"@ko ;
+    kno:frequency kno:KN2020-0383-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0383-freq-NN-total ;
+    kno:languageType "영_영_영" ;
+    kno:slotFiller "투게더(together)+앳(at) (2성분)"@ko ;
+    kno:component kno:KN2020-0383-c3 ;
+    kno:example "¶OO는 국내 가수 중 최초로 ‘{투게더 앳 홈’에} 동참하여 온라인 콘서트를 진행한다."@ko ;
+    kno:indexForm "투게더앳홈"@ko ;
+    kno:componentString "투게더(together), 앳(at), 홈(home)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2020-0383-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%88%AC%EA%B2%8C%EB%8D%94%20%EC%95%B3%20%ED%99%88> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2020-0383-c1 rdfs:label "투게더(together)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "투게더"@ko ;
+    kno:formative kno:F006521 ;
+    kno:surfaceForm "투게더"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0383-c2 kno:formative kno:F001577 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "앳"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "앳(at)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "앳"@ko .
+kno:KN2020-0383-c3 rdfs:label "홈(home)"@ko ;
+    kno:surfaceForm "홈"@ko ;
+    kno:formative kno:F000045 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "홈"@ko ;
+    kno:semanticTag kno:usas-H4 .

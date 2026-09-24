@@ -1,36 +1,41 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0211 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0211 a ontolex:Word ;
-    frac:attestation kno:KN2021-0211-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0211-form ;
-    ontolex:sense kno:KN2021-0211-sense .
-
-kno:KN2021-0211-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0012375745> .
-
-kno:KN2021-0211-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0211-freq-nn,
-        kno:KN2021-0211-freq-yt ;
-    ontolex:writtenRep "음토토"@ko .
-
-kno:KN2021-0211-freq-nn a frac:CorpusFrequency ;
-    rdf:value 39 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0211-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0211-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0211 kno:component kno:KN2021-0211-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "와" ;
+    a kno:Neologism ;
+    rdfs:label "음토토"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0211-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶중동 지역과 유럽에서는 약 12만 년 전의 매장 유적이 발굴되었으나 선사 시대 무덤의 발굴이 드문 아프리카에서는 {음토토의} 무덤이 가장 오래된 것으로 기록되었다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:formation kno:W07 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:componentString "음토토(mtoto)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2021-0211-freq-NN-2021 ;
+    kno:origin "(<와>mtoto)" ;
+    a ontolex:Word ;
+    kno:indexForm "음토토"@ko ;
+    skos:definition "2013년에 케냐 동부의 동굴에서 발굴된 현생 인류의 유골 화석. 스와힐리어의 ‘아이’라는 뜻으로, 2.5세 내지 3세 유아의 유골로 추정된다. 매장 시기는 7만 8000년 전으로 추정되며 현재 아프리카에서 발견된 매장 유적들 가운데 가장 오래된 것으로 기록되었다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%8C%ED%86%A0%ED%86%A0> .
+kno:KN2021-0211-c1 a kno:Component ;
+    kno:surfaceForm "음토토"@ko ;
+    kno:formative kno:F005356 ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "음토토(mtoto)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "음토토"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3m .

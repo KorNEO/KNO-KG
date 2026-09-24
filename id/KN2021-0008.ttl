@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0008 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0008 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0008-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0008-form ;
-    ontolex:sense kno:KN2021-0008-sense .
-
-kno:KN2021-0008-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000574565> .
-
-kno:KN2021-0008-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0008-freq-nn,
-        kno:KN2021-0008-freq-yt ;
-    ontolex:writtenRep "가정 대기자"@ko .
-
-kno:KN2021-0008-freq-nn a frac:CorpusFrequency ;
-    rdf:value 240 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0008-freq-yt a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0008-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0008 kno:unitType "구"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2021-0008-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:predicate "대기하다"@ko ;
+    skos:definition "감염병에 대한 확진 판정을 받고도 병원 이송이나 생활 치료 센터 입소가 어려워 가정에서 대기하는 사람. 코로나19 확진 환자가 급증하여 환자를 치료할 수 있는 의료 시설이 부족해지면서 생긴 말로, 의료 시설에 들어가기 위해 가정에서 기다리는 사람을 이르는 말이다."@ko ;
+    kno:component kno:KN2021-0008-c1 ;
+    kno:example "¶OO시는 코로나19 확진자가 급증하던 때, 병상 부족으로 발생한 {가정 대기자를} 집중적으로 관리해 왔다."@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:indexForm "가정대기자"@ko ;
+    kno:frequency kno:KN2021-0008-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0008-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0008-freq-NN-total ;
+    kno:languageType "한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A0%95%20%EB%8C%80%EA%B8%B0%EC%9E%90> ;
+    kno:frequency kno:KN2021-0008-freq-NN-2022 ;
+    rdfs:label "가정 대기자"@ko ;
+    kno:origin "(家庭待機者)" ;
+    kno:componentString "가정(家庭), 대기자(待機者)"@ko .
+kno:KN2021-0008-c2 a kno:Component ;
+    kno:formative kno:F002910 ;
+    kno:fullForm "대기자"@ko ;
+    kno:surfaceForm "대기자"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "대기자(待機者)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2021-0008-c1 kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F001033 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "가정(家庭)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "가정"@ko ;
+    kno:surfaceForm "가정"@ko ;
+    kno:truncated "false"^^xsd:boolean .

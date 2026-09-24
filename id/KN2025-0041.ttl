@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0041 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0041 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0041-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0041-form ;
-    ontolex:sense kno:KN2025-0041-sense .
-
-kno:KN2025-0041-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003791896> .
-
-kno:KN2025-0041-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0041-freq-nn,
-        kno:KN2025-0041-freq-yt ;
-    ontolex:writtenRep "계란 외교"@ko .
-
-kno:KN2025-0041-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0041-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0041-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0041 kno:languageType "한_한" ;
+    kno:frequency kno:KN2025-0041-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 달걀값이 급등하자 정부는 여러 나라와 수입 물량과 검역 절차를 논의하는 등 {계란외교를} 본격화했다."@ko ;
+    kno:origin "(鷄卵外交)" ;
+    kno:componentString "계란(鷄卵), 외교(外交)"@ko ;
+    kno:component kno:KN2025-0041-c2 ;
+    kno:slotFiller "계란(鷄卵) (1성분)"@ko ;
+    kno:indexForm "계란외교"@ko ;
+    kno:component kno:KN2025-0041-c1 ;
+    rdfs:label "계란 외교"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EB%9E%80%20%EC%99%B8%EA%B5%90> ;
+    kno:frequency kno:KN2025-0041-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000127 ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 달걀의 수급 불안이나 가격 급등을 완화하기 위해 국가 간에 달걀ㆍ달걀가공품의 수출입, 검역ㆍ통관, 물량 지원 등을 협의ㆍ추진하는 외교적 대응을 이르는 말."@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0041-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:fullForm "외교"@ko ;
+    kno:surfaceForm "외교"@ko ;
+    a kno:Component ;
+    rdfs:label "외교(外交)"@ko ;
+    kno:formative kno:F000295 .
+kno:KN2025-0041-c1 kno:surfaceForm "계란"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "계란(鷄卵)"@ko ;
+    kno:fullForm "계란"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002251 ;
+    a kno:Component .

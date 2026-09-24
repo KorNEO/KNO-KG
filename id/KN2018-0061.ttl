@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0061 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0061 kno:frequency kno:KN2018-0061-freq-NN-2019 ;
+    kno:frequency kno:KN2018-0061-freq-NN-2024 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:frequency kno:KN2018-0061-freq-NN-2021 ;
+    rdfs:label "남페미"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶그는 ‘{남페미’로서} 자신의 역할은 일상의 최전선에서 같은 남성들을 향해 발언하는 것이라며 “남자도 페미니스트가 돼야 하는 이유는 다른 데 있는 것이 아니라 페미니즘이 남성의 삶과도 맞닿아 있으며 여성만큼이나 남성을 자유롭게 해 줄 수 있다는 데 있다.”라고 합니다."@ko ;
+    kno:component kno:KN2018-0061-c1 ;
+    skos:definition "남성 페미니스트를 이르는 말."@ko ;
+    kno:frequency kno:KN2018-0061-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0061-freq-NN-2023 ;
+    kno:frequency kno:KN2018-0061-freq-NN-2025 ;
+    kno:componentString "남(성)(男), 페미(니스트)(feminist)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0061-freq-NN-total ;
+    kno:slotFiller "남(성)(男) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0061-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0061-freq-NN-2018 ;
+    kno:component kno:KN2018-0061-c2 ;
+    kno:indexForm "남페미"@ko ;
+    kno:urimalTargetCode "1415844" ;
+    a ontolex:Word ;
+    kno:origin "(男<영>←feminist)" ;
+    kno:instantiates kno:S000276 ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "9"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415844> ;
+    kno:frequency kno:KN2018-0061-freq-NN-2022 .
+kno:KN2018-0061-c1 kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:fullForm "남성"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "남(성)(男)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002694 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2018-0061-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "페미"@ko ;
+    kno:fullForm "페미니스트"@ko ;
+    rdfs:label "페미(니스트)(feminist)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:formative kno:F000319 ;
+    kno:role "고정항"@ko .

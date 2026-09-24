@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0445 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0445 a ontolex:Word ;
-    frac:attestation kno:KN2025-0445-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0445-form ;
-    ontolex:sense kno:KN2025-0445-sense .
-
-kno:KN2025-0445-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/417/0001089391> .
-
-kno:KN2025-0445-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0445-freq-nn,
-        kno:KN2025-0445-freq-yt ;
-    ontolex:writtenRep "운샌들"@ko .
-
-kno:KN2025-0445-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0445-freq-yt a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0445-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0445 skos:definition "(LLM) 운동화처럼 쿠션감과 안정적인 착화감을 갖추면서, 샌들처럼 통풍이 잘되도록 만든 신발."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0445-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:origin "(運<영>sandal)" ;
+    kno:pos "「명」"@ko ;
+    kno:example "(LLM) 여름에 오래 걸어야 해서 {운샌들을} 신었더니 발이 덜 답답하고 오래 걸어도 편했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    rdfs:label "운샌들"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "운샌들"@ko ;
+    kno:slotFiller "샌들(sandal) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B4%EC%83%8C%EB%93%A4> ;
+    kno:instantiates kno:S001590 ;
+    kno:componentString "운(동)(運動), 샌들(sandal)"@ko ;
+    kno:component kno:KN2025-0445-c2 ;
+    kno:frequency kno:KN2025-0445-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:frequency kno:KN2025-0445-freq-NN-total .
+kno:KN2025-0445-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000564 ;
+    kno:fullForm "운동"@ko ;
+    rdfs:label "운(동)(運動)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "운"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2025-0445-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "샌들"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004247 ;
+    kno:fullForm "샌들"@ko ;
+    a kno:Component ;
+    rdfs:label "샌들(sandal)"@ko ;
+    kno:semanticTag kno:usas-B5 .

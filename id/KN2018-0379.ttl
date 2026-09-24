@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0379 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0379 kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0379-freq-NN-2018 ;
+    kno:example "¶보고서는 ‘펫미족’의 등장을 견인하는 3가지 키워드로 펫러닝, 펫셔리, {펫부심을} 꼽았습니다."@ko ;
+    kno:frequency kno:KN2018-0379-freq-NN-2023 ;
+    kno:frequency kno:KN2018-0379-freq-NN-total ;
+    kno:component kno:KN2018-0379-c1 ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:indexForm "펫부심"@ko ;
+    rdfs:label "펫-부심"@ko ;
+    kno:frequency kno:KN2018-0379-freq-NN-2020 ;
+    kno:instantiates kno:S000232 ;
+    kno:formation kno:W01 ;
+    kno:origin "(<영>pet負心)" ;
+    kno:frequency kno:KN2018-0379-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "펫(pet) (1성분)"@ko ;
+    kno:slotFiller "(자)부심(負心) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415981> ;
+    kno:componentString "펫(pet), (자)부심(負心)"@ko ;
+    kno:component kno:KN2018-0379-c2 ;
+    kno:instantiates kno:S000037 ;
+    kno:frequency kno:KN2018-0379-freq-NN-2022 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    skos:definition "기르는 애완동물에 대하여 자부심이 있음을 이르는 말."@ko ;
+    kno:frequency kno:KN2018-0379-freq-NN-2019 ;
+    kno:urimalTargetCode "1415981" .
+kno:KN2018-0379-c1 rdfs:label "펫(pet)"@ko ;
+    kno:surfaceForm "펫"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000054 ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "펫"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0379-c2 kno:semanticTag kno:usas-E4.2p ;
+    kno:surfaceForm "부심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000087 ;
+    rdfs:label "(자)부심(負心)"@ko ;
+    kno:fullForm "자부심"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

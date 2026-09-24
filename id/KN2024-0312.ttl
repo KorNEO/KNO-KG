@@ -1,37 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0312 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0312 a ontolex:Word ;
-    frac:attestation kno:KN2024-0312-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0312-form ;
-    ontolex:sense kno:KN2024-0312-sense .
-
-kno:KN2024-0312-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/609/0000249754> .
-
-kno:KN2024-0312-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0312-freq-nn,
-        kno:KN2024-0312-freq-yt ;
-    ontolex:writtenRep "추구-미"@ko .
-
-kno:KN2024-0312-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2459 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0312-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8647 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0312-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%B6%94%EA%B5%AC> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0312 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0312-freq-NN-2025 ;
+    kno:languageType "한+한" ;
+    rdfs:label "추구-미"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶OOO의 옷차림은 평소 상남자다운 매력을 어필하는 OOO의 {추구미와는} 완전히 다른 비주얼을 자아냈다."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2024-0312-c1 ;
+    kno:frequency kno:KN2024-0312-freq-NN-2024 ;
+    kno:origin "(追求美)" ;
+    kno:frequency kno:KN2024-0312-freq-NN-total ;
+    kno:indexForm "추구미"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000094 ;
+    kno:frequency kno:KN2024-0312-freq-NN-2023 ;
+    kno:componentString "추구(追求), 미(美)"@ko ;
+    kno:slotFiller "추구(追求) (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    a kno:Neologism ;
+    skos:definition "스스로 추구하는 미적 기준이나 스타일."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B6%94%EA%B5%AC%EB%AF%B8> ;
+    kno:component kno:KN2024-0312-c2 ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0312-c1 kno:fullForm "추구"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "추구"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "추구(追求)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X7p ;
+    kno:formative kno:F006119 .
+kno:KN2024-0312-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "미"@ko ;
+    kno:surfaceForm "미"@ko ;
+    kno:formative kno:F000112 ;
+    a kno:Component ;
+    rdfs:label "미(美)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

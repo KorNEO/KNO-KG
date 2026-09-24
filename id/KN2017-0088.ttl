@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0088 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0088 kno:slotFiller "신드롬(syndrome) (1성분)"@ko ;
+    kno:origin "(<영>rage syndrome)" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:predicate "보이다"@ko ;
+    kno:urimalTargetCode "1380431" ;
+    kno:component kno:KN2017-0088-c2 ;
+    kno:instantiates kno:S000171 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380431> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0088-freq-NN-2016 ;
+    kno:componentString "레이지(rage), 신드롬(syndrome)"@ko ;
+    kno:slotFiller "레이지(rage) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶{레이지 신드롬이라고} 하는 돌발성 격노 증후군을 앓는 고양이들은 발작이 일어날 때 공격을 하고, 발작이 가라앉으면 다시 안정된 상태로 돌아가 아무 일 없는 듯 행동한다."@ko ;
+    kno:frequency kno:KN2017-0088-freq-NN-total ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S001361 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "레이지 신드롬"@ko ;
+    kno:component kno:KN2017-0088-c1 ;
+    skos:definition "개나 고양이와 같은 반려동물이 갑자기 격렬한 분노를 일으키며 주인을 무는 등 공격적인 행동을 보이는 증상. ‘돌발성 격노 증후군’이라고도 한다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:indexForm "레이지신드롬"@ko ;
+    kno:languageType "영_영" ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2017-0088-c2 kno:role "고정항"@ko ;
+    kno:fullForm "신드롬"@ko ;
+    kno:surfaceForm "신드롬"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "신드롬(syndrome)"@ko ;
+    kno:formative kno:F000377 ;
+    kno:semanticTag kno:usas-B2m .
+kno:KN2017-0088-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "레이지"@ko ;
+    kno:surfaceForm "레이지"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001242 ;
+    rdfs:label "레이지(rage)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E3m .

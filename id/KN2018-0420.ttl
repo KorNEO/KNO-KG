@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0420 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0420 kno:frequency kno:KN2018-0420-freq-NN-2018 ;
+    kno:formation kno:W02 ;
+    kno:origin "(혼<영>←cake族)" ;
+    kno:component kno:KN2018-0420-c2 ;
+    a ontolex:Word ;
+    kno:indexForm "혼케족"@ko ;
+    rdfs:label "혼케-족"@ko ;
+    kno:languageType "(고+영)+한" ;
+    kno:instantiates kno:S000029 ;
+    skos:definition "혼자 케이크를 즐겨 먹는 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2018-0420-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:example "¶카페 OO은 {혼케족을} 겨냥한 미니 사이즈 조각 케이크 7종을 출시했다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416024> ;
+    kno:component kno:KN2018-0420-c1 ;
+    kno:component kno:KN2018-0420-c3 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:slotFiller "케(크)(cake) (1성분)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0420-freq-NN-total ;
+    kno:urimalTargetCode "1416024" ;
+    kno:componentString "혼(자), 케(크)(cake), -족(族)"@ko ;
+    kno:predicate "먹다"@ko .
+kno:KN2018-0420-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F006262 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "케(크)(cake)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "케크"@ko ;
+    kno:surfaceForm "케"@ko .
+kno:KN2018-0420-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "혼(자)"@ko ;
+    kno:formative kno:F000011 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "혼자"@ko .
+kno:KN2018-0420-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 .

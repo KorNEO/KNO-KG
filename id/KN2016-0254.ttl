@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0254 kno:languageType "한^한" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "사탕선전물"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "사탕(沙糖), 선전물(宣傳物)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "사탕^선전물"@ko ;
+    kno:component kno:KN2016-0254-c1 ;
+    kno:frequency kno:KN2016-0254-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:origin "(沙糖▽宣傳物)" ;
+    kno:predicate "담은"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:example "¶파리 테러 때는 발생 20여 일 뒤 영국 의회가 시리아 내 공습을 승인하자 이른바 ‘{사탕 선전물’을} 공개했지만, 이번에는 브뤼셀 테러 당일에 선전물을 유포했다."@ko ;
+    kno:component kno:KN2016-0254-c2 ;
+    skos:definition "이슬람 무장 단체에서 테러를 축하하기 위해 점령한 지역의 주민들에게 사탕을 나누어 주는 내용을 담은 선전물. 기쁜 일이 있을 때 단맛이 나는 음식을 선물하는 이슬람의 풍습을 이용한 것이다."@ko ;
+    kno:frequency kno:KN2016-0254-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%83%95%EC%84%A0%EC%A0%84%EB%AC%BC> .
+kno:KN2016-0254-c1 kno:role "성분"@ko ;
+    kno:surfaceForm "사탕"@ko ;
+    rdfs:label "사탕(沙糖)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004183 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "사탕"@ko .
+kno:KN2016-0254-c2 rdfs:label "선전물(宣傳物)"@ko ;
+    kno:fullForm "선전물"@ko ;
+    kno:formative kno:F004307 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "선전물"@ko ;
+    kno:position "2"^^xsd:integer .

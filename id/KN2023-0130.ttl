@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0130 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0130 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0130-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0130-form ;
-    ontolex:sense kno:KN2023-0130-sense .
-
-kno:KN2023-0130-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0002876551> .
-
-kno:KN2023-0130-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0130-freq-nn,
-        kno:KN2023-0130-freq-yt ;
-    ontolex:writtenRep "생성형^에이아이"@ko .
-
-kno:KN2023-0130-freq-nn a frac:CorpusFrequency ;
-    rdf:value 206163 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0130-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5930 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0130-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0130 kno:frequency kno:KN2023-0130-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "생성형(生成型) (1성분)"@ko ;
+    kno:example "¶저작권 전문가들은 {생성형 에이아이의} 활용이 늘어나면서 저작권이 있는 자료를 무단으로 복제하는 것에 대한 우려를 표명하였다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "한^영" ;
+    kno:frequency kno:KN2023-0130-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EC%84%B1%ED%98%95%EC%97%90%EC%9D%B4%EC%95%84%EC%9D%B4> ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2023-0130-freq-NN-2025 ;
+    kno:instantiates kno:S000412 ;
+    kno:frequency kno:KN2023-0130-freq-NN-total ;
+    kno:indexForm "생성형에이아이"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "생성형^에이아이"@ko ;
+    skos:definition "사용자가 입력한 문장을 분석하여 그 의도에 맞는 텍스트, 이미지, 비디오 따위를 만들어 내는 컴퓨터 시스템. 기존의 인공 지능과 달리 새로운 콘텐츠를 생성하는 데 초점을 두며, 작문, 예술, 소프트웨어 개발 따위의 영역에 응용한다. =생성 에이아이."@ko ;
+    kno:componentString "생성형(生成型), 에이아이(AI)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2023-0130-c2 ;
+    kno:frequency kno:KN2023-0130-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0130-c1 ;
+    kno:origin "(生成型<영>AI)" .
+kno:KN2023-0130-c2 kno:role "고정항"@ko ;
+    rdfs:label "에이아이(AI)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000856 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "에이아이"@ko ;
+    kno:surfaceForm "에이아이"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0130-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "생성형(生成型)"@ko ;
+    kno:fullForm "생성형"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004265 ;
+    kno:surfaceForm "생성형"@ko .

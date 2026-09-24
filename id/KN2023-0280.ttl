@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0280 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0280-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0280-form ;
-    ontolex:sense kno:KN2023-0280-sense .
-
-kno:KN2023-0280-att-nn a frac:Attestation ;
-    dcterms:date "2022-08-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000312017> .
-
-kno:KN2023-0280-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0280-freq-nn,
-        kno:KN2023-0280-freq-yt ;
-    ontolex:writtenRep "최소^주거^보장법"@ko .
-
-kno:KN2023-0280-freq-nn a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0280-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0280-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0280 rdfs:label "최소^주거^보장법"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2023-0280-freq-NN-total ;
+    kno:frequency kno:KN2023-0280-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(最小住居保障法)" ;
+    kno:instantiates kno:S000386 ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶최근 수도권 집중 호우로 거주 환경이 좋지 않은 계층의 인명 및 재산 피해가 발생한 현실을 반영하여, 취약 계층을 국가가 지원하도록 하는 ‘{최소 주거 보장법’과} 장애인에 대한 국가의 책임을 강화하는 ‘장애인 국가 책임제법’ 등이 주요 안건으로 선정되었다."@ko ;
+    kno:component kno:KN2023-0280-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B5%9C%EC%86%8C%EC%A3%BC%EA%B1%B0%EB%B3%B4%EC%9E%A5%EB%B2%95> ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:indexForm "최소주거보장법"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "최소(最小), 주거(住居), 보장(保障), 법(法)"@ko ;
+    skos:definition "열악한 주거 시설 거주자들의 최소 주거 환경을 보장하기 위한 법안. 야당이 주요 입법 과제로 발표한 법안 중 하나이다."@ko ;
+    kno:frequency kno:KN2023-0280-freq-NN-2022 ;
+    kno:slotFiller "최소(最小)+주거(住居) (2성분)"@ko ;
+    kno:component kno:KN2023-0280-c3 ;
+    kno:component kno:KN2023-0280-c4 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0280-c2 .
+kno:KN2023-0280-c1 kno:surfaceForm "최소"@ko ;
+    rdfs:label "최소(最小)"@ko ;
+    a kno:Component ;
+    kno:fullForm "최소"@ko ;
+    kno:formative kno:F006110 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0280-c3 rdfs:label "보장(保障)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:fullForm "보장"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A15p ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "보장"@ko ;
+    kno:formative kno:F000359 .
+kno:KN2023-0280-c4 rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2023-0280-c2 kno:semanticTag kno:usas-H4 ;
+    rdfs:label "주거(住居)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000924 ;
+    kno:fullForm "주거"@ko ;
+    kno:surfaceForm "주거"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

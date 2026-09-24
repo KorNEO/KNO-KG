@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0232 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0232 a ontolex:MultiwordExpression ;
+    kno:indexForm "인맥커팅"@ko ;
+    rdfs:label "인맥 커팅"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2017-0232-freq-NN-2017 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380796> ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    skos:definition "인맥을 유지하고 관리하는 데서 오는 회의감으로 인해 관계를 과감히 끊는 일."@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:predicate "끊다"@ko ;
+    kno:frequency kno:KN2017-0232-freq-NN-2024 ;
+    kno:example "¶{인맥 커팅을} 시도했던 이유로는 ‘원치 않는 타인에게 내 프로필을 공개하고 싶지 않기 때문’이라는 응답이 가장 많았다."@ko ;
+    kno:frequency kno:KN2017-0232-freq-NN-total ;
+    kno:origin "(人脈<영>cutting)" ;
+    a kno:Neologism ;
+    kno:componentString "인맥(人脈), 커팅(cutting)"@ko ;
+    kno:urimalTargetCode "1380796" ;
+    kno:component kno:KN2017-0232-c1 ;
+    kno:component kno:KN2017-0232-c2 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2017-0232-c1 kno:semanticTag kno:usas-S3.1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "인맥"@ko ;
+    kno:formative kno:F005440 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "인맥(人脈)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "인맥"@ko .
+kno:KN2017-0232-c2 kno:formative kno:F001855 ;
+    kno:fullForm "커팅"@ko ;
+    kno:surfaceForm "커팅"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "커팅(cutting)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

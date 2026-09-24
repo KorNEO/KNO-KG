@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0571 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0571 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0571-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0571-form ;
-    ontolex:sense kno:KN2025-0571-sense .
-
-kno:KN2025-0571-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/088/0000925518> .
-
-kno:KN2025-0571-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0571-freq-nn,
-        kno:KN2025-0571-freq-yt ;
-    ontolex:writtenRep "카톡 계엄령"@ko .
-
-kno:KN2025-0571-freq-nn a frac:CorpusFrequency ;
-    rdf:value 237 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0571-freq-yt a frac:CorpusFrequency ;
-    rdf:value 216 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0571-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0571 kno:component kno:KN2025-0571-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "카(카오)톡(←Kakaotalk), 계엄령(戒嚴令)"@ko ;
+    kno:frequency kno:KN2025-0571-freq-NN-total ;
+    rdfs:label "카톡 계엄령"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    skos:definition "(LLM) 모바일 메신저 카카오톡에서의 대화 내용이나 메시지 유통을 문제 삼아 처벌ㆍ고발하겠다는 움직임을, 표현의 자유를 과도하게 제한하는 조치에 빗대어 비판적으로 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%B4%ED%86%A1%20%EA%B3%84%EC%97%84%EB%A0%B9> ;
+    kno:instantiates kno:S001689 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0571-freq-NN-2025 ;
+    kno:indexForm "카톡계엄령"@ko ;
+    kno:slotFiller "계엄령(戒嚴令) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:origin "(←Kakaotalk戒嚴令)" ;
+    kno:component kno:KN2025-0571-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 단톡방에 올라온 글을 전달했다는 이유로 책임을 묻겠다는 말이 나오자, 온라인에서는 {카톡계엄령이} 아니냐는 반발이 이어졌다."@ko .
+kno:KN2025-0571-c2 kno:surfaceForm "계엄령"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "계엄령(戒嚴令)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "계엄령"@ko ;
+    kno:formative kno:F002255 .
+kno:KN2025-0571-c1 kno:fullForm "카카오톡"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    rdfs:label "카(카오)톡(←Kakaotalk)"@ko ;
+    kno:formative kno:F001847 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:surfaceForm "카톡"@ko .

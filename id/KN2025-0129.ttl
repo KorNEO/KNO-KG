@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0129 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0129 a ontolex:Word ;
-    frac:attestation kno:KN2025-0129-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0129-form ;
-    ontolex:sense kno:KN2025-0129-sense .
-
-kno:KN2025-0129-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0005107195> .
-
-kno:KN2025-0129-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0129-freq-nn,
-        kno:KN2025-0129-freq-yt ;
-    ontolex:writtenRep "넛 플레이션"@ko .
-
-kno:KN2025-0129-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0129-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0129-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0129 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%9B%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    a kno:Neologism ;
+    kno:indexForm "넛플레이션"@ko ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2025-0129-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "음식; X=넛(nut) (1성분)"@ko ;
+    kno:componentString "넛(nut), (인)플레이션(inflation)"@ko ;
+    kno:example "(LLM) 이상 기후로 수입 호두와 아몬드 값이 뛰자 제과업계에서는 {넛플레이션} 여파로 일부 제품 가격 조정이 불가피하다는 말이 나온다."@ko ;
+    skos:definition "(LLM) 호두ㆍ아몬드 등 견과류의 원물 가격이 오르면서 이를 원재료로 한 가공식품이나 관련 제품의 가격까지 함께 상승하는 물가 현상."@ko ;
+    kno:frequency kno:KN2025-0129-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000053 ;
+    kno:component kno:KN2025-0129-c2 ;
+    kno:frequency kno:KN2025-0129-freq-NN-total ;
+    rdfs:label "넛플레이션"@ko .
+kno:KN2025-0129-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "넛"@ko ;
+    kno:formative kno:F002739 ;
+    a kno:Component ;
+    kno:surfaceForm "넛"@ko ;
+    rdfs:label "넛(nut)"@ko .
+kno:KN2025-0129-c2 kno:semanticTag kno:usas-I1.3p ;
+    kno:formative kno:F000009 ;
+    a kno:Component ;
+    kno:surfaceForm "플레이션"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(인)플레이션(inflation)"@ko .

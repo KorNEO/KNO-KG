@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0255 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0255 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0255-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0255-form ;
-    ontolex:sense kno:KN2022-0255-sense .
-
-kno:KN2022-0255-att-nn a frac:Attestation ;
-    dcterms:date "2021-08-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004587124> .
-
-kno:KN2022-0255-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0255-freq-nn,
-        kno:KN2022-0255-freq-yt ;
-    ontolex:writtenRep "지사 찬스"@ko .
-
-kno:KN2022-0255-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1209 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0255-freq-yt a frac:CorpusFrequency ;
-    rdf:value 111 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0255-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0255 kno:languageType "한_영" ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "지사 찬스"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2022-0255-freq-NN-2021 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0255-c2 ;
+    kno:frequency kno:KN2022-0255-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "지사(知事), 찬스(chance)"@ko ;
+    skos:definition "도지사직을 이용하여 또는 도지사의 도움을 받아 무엇을 이룰 기회를 얻음. 또는 그런 기회."@ko ;
+    kno:origin "(知事<영>chance)" ;
+    kno:frequency kno:KN2022-0255-freq-NN-2022 ;
+    kno:indexForm "지사찬스"@ko ;
+    kno:component kno:KN2022-0255-c1 ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%82%AC%20%EC%B0%AC%EC%8A%A4> ;
+    kno:example "¶농업 용지에 불법적으로 운영 중인 카페 주인이 해당 도지사의 최측근인 것이 알려지면서 {지사 찬스로} 행정 처리가 미뤄진 것이 아니냐는 지적이 일고 있다."@ko ;
+    kno:frequency kno:KN2022-0255-freq-NN-total .
+kno:KN2022-0255-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "찬스(chance)"@ko ;
+    kno:formative kno:F001813 ;
+    kno:semanticTag kno:usas-A7 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "찬스"@ko ;
+    kno:surfaceForm "찬스"@ko .
+kno:KN2022-0255-c1 kno:formative kno:F005877 ;
+    rdfs:label "지사(知事)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "지사"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "지사"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

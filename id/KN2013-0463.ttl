@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0463 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0463 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2013-0463-freq-NN-2012 ;
+    kno:componentString "혐일(嫌日), 주의(主義)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    rdfs:label "혐일-주의"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0463-freq-NN-2013 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%90%EC%9D%BC%EC%A3%BC%EC%9D%98> ;
+    skos:definition "일본을 미워하고 증오하는 마음으로 가득 찬 태도."@ko ;
+    kno:example "¶OOO 공주의 사진이 공개된 뒤 ‘{혐일주의’가} 만연한 중국 네티즌들도 마음을 열고 관심을 보이고 있다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:indexForm "혐일주의"@ko ;
+    kno:origin "(嫌日主義)" ;
+    kno:pos "「명」"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0463-freq-NN-total ;
+    kno:component kno:KN2013-0463-c1 ;
+    kno:slotFiller "혐일(嫌日) (1성분)"@ko ;
+    kno:instantiates kno:S000075 ;
+    kno:component kno:KN2013-0463-c2 .
+kno:KN2013-0463-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "혐일"@ko ;
+    kno:semanticTag kno:usas-E2m ;
+    rdfs:label "혐일(嫌日)"@ko ;
+    kno:formative kno:F007082 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "혐일"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0463-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000080 ;
+    kno:fullForm "주의"@ko ;
+    kno:surfaceForm "주의"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X4.1 .

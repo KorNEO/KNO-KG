@@ -1,0 +1,75 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0104 kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0104-freq-NN-2019 ;
+    kno:indexForm "달삼쓰뱉"@ko ;
+    kno:frequency kno:KN2013-0104-freq-NN-2022 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357600> ;
+    kno:componentString "달(다), 삼(키다), 쓰(다), 뱉(다)"@ko ;
+    kno:component kno:KN2013-0104-c1 ;
+    kno:formation kno:W06 ;
+    kno:example "¶OOO은 “또 말을 줄여서 하는 것을 좋아한다.”라며 “예를 들어 {달삼쓰뱉은} 달면 삼키고 쓰면 뱉는다를 이렇게 말한다.”라고 카리스마 있는 모습 뒤에 숨겨진 귀여운 매력을 한껏 뽐냈다."@ko ;
+    kno:frequency kno:KN2013-0104-freq-NN-total ;
+    skos:definition "‘달면 삼키고 쓰면 뱉는다’를 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2013-0104-freq-NN-2021 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0104-freq-NN-2013 ;
+    kno:component kno:KN2013-0104-c4 ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:label "달삼쓰뱉"@ko ;
+    kno:instantiates kno:S001310 ;
+    kno:component kno:KN2013-0104-c2 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0104-c3 ;
+    kno:languageType "고+고+고+고" ;
+    kno:slotFiller "삼(키다)+쓰(다)+뱉(다) (3성분)"@ko ;
+    kno:urimalTargetCode "1357600" ;
+    kno:registration "우리말샘"@ko .
+kno:KN2013-0104-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000481 ;
+    rdfs:label "달(다)"@ko ;
+    kno:semanticTag kno:usas-X3.1 ;
+    kno:fullForm "달다"@ko ;
+    kno:surfaceForm "달"@ko .
+kno:KN2013-0104-c4 rdfs:label "뱉(다)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003763 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "뱉다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "뱉"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2013-0104-c2 kno:formative kno:F004208 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "삼(키다)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "삼키다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "삼"@ko .
+kno:KN2013-0104-c3 kno:semanticTag kno:usas-A1.5.1 ;
+    kno:formative kno:F000551 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "쓰(다)"@ko ;
+    kno:fullForm "쓰다"@ko ;
+    kno:surfaceForm "쓰"@ko .

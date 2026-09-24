@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0397 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0397 a ontolex:Word ;
-    frac:attestation kno:KN2024-0397-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0397-form ;
-    ontolex:sense kno:KN2024-0397-sense .
-
-kno:KN2024-0397-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-22"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/005/0001646065> .
-
-kno:KN2024-0397-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0397-freq-nn,
-        kno:KN2024-0397-freq-yt ;
-    ontolex:writtenRep "홀인-투"@ko .
-
-kno:KN2024-0397-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0397-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0397-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0397 kno:example "¶OOO가 첫 티 샷을 워터 해저드에 빠트려 벌타를 받고 친 티 샷이기 때문에 {홀인투임에도} 버디로 기록됐다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:predicate "들어가다"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2024-0397-freq-NN-total ;
+    skos:definition "골프에서, 티 샷 이후 두 번째에 친 공이 홀에 들어가는 일."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:componentString "홀인(hole in), 투(two)"@ko ;
+    kno:indexForm "홀인투"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0397-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0397-freq-NN-2023 ;
+    kno:origin "(<영>hole in two)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0397-c1 ;
+    rdfs:label "홀인-투"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%80%EC%9D%B8%ED%88%AC> .
+kno:KN2024-0397-c2 kno:semanticTag kno:usas-N1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "투"@ko ;
+    kno:formative kno:F001913 ;
+    kno:surfaceForm "투"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "투(two)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2024-0397-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "홀인(hole in)"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:formative kno:F007130 ;
+    kno:fullForm "홀인"@ko ;
+    kno:surfaceForm "홀인"@ko .

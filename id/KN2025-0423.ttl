@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0423 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0423 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0423-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0423-form ;
-    ontolex:sense kno:KN2025-0423-sense .
-
-kno:KN2025-0423-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004564903> .
-
-kno:KN2025-0423-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0423-freq-nn,
-        kno:KN2025-0423-freq-yt ;
-    ontolex:writtenRep "연결 지능 체계"@ko .
-
-kno:KN2025-0423-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0423-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0423-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0423 kno:origin "(連結知能體系)" ;
+    rdfs:label "연결 지능 체계"@ko ;
+    kno:languageType "한_한_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "(LLM) 회사는 반복 업무는 자동화하고 핵심 판단은 사람이 맡는 {연결지능체계를} 도입해 의사 결정 속도를 높이겠다고 밝혔다."@ko ;
+    kno:frequency kno:KN2025-0423-freq-NN-total ;
+    kno:componentString "연결(連結), 지능(知能), 체계(體系)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "연결(連結)+지능(知能) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EA%B2%B0%20%EC%A7%80%EB%8A%A5%20%EC%B2%B4%EA%B3%84> ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0423-c1 ;
+    kno:frequency kno:KN2025-0423-freq-NN-2025 ;
+    kno:component kno:KN2025-0423-c3 ;
+    skos:definition "(LLM) 인간의 판단ㆍ창의 등 지적 능력과 인공 지능의 연산ㆍ분석 능력을 네트워크로 연결해, 업무 수행이나 의사 결정을 함께 처리하도록 설계한 지능 운영 체계."@ko ;
+    kno:instantiates kno:S000431 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0423-c2 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "연결지능체계"@ko .
+kno:KN2025-0423-c1 kno:surfaceForm "연결"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005044 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:fullForm "연결"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "연결(連結)"@ko .
+kno:KN2025-0423-c3 kno:semanticTag kno:usas-X4.2 ;
+    rdfs:label "체계(體系)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "체계"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000946 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "체계"@ko .
+kno:KN2025-0423-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "지능"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:formative kno:F000409 ;
+    a kno:Component ;
+    rdfs:label "지능(知能)"@ko ;
+    kno:fullForm "지능"@ko .

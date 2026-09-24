@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0033 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0033 a ontolex:Word ;
-    frac:attestation kno:KN2024-0033-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0033-form ;
-    ontolex:sense kno:KN2024-0033-sense .
-
-kno:KN2024-0033-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004952793> .
-
-kno:KN2024-0033-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0033-freq-nn,
-        kno:KN2024-0033-freq-yt ;
-    ontolex:writtenRep "낙수-과"@ko .
-
-kno:KN2024-0033-freq-nn a frac:CorpusFrequency ;
-    rdf:value 89 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0033-freq-yt a frac:CorpusFrequency ;
-    rdf:value 322 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0033-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0033 kno:componentString "낙수(落水), -과(過)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    skos:definition "산부인과, 흉부외과, 응급 의학과 등의 필수 의료과를 낮잡아 이르는 말. 성적이나 능력 부족으로 상위 인기 의료과의 지원 경쟁에 밀려 ‘낙수되었다’는 의미에서 비롯된 표현으로, 조롱과 자조의 의미를 담고 있다."@ko ;
+    kno:frequency kno:KN2024-0033-freq-NN-2023 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2024-0033-freq-NN-total ;
+    kno:frequency kno:KN2024-0033-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%99%EC%88%98%EA%B3%BC> ;
+    kno:formation kno:W02 ;
+    kno:indexForm "낙수과"@ko ;
+    kno:origin "(落水科)" ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0033-c1 ;
+    kno:component kno:KN2024-0033-c2 ;
+    kno:example "¶O 회장은 단순히 의과 대학 정원을 늘려 낙수 효과를 기대한다면 필수 의료 종사자에게 {낙수과} 의사라는 자괴감을 줄 것이라는 우려를 표명했다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "낙수-과"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0033-freq-NN-2025 .
+kno:KN2024-0033-c1 kno:semanticTag kno:usas-O1.2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "낙수"@ko ;
+    kno:surfaceForm "낙수"@ko ;
+    rdfs:label "낙수(落水)"@ko ;
+    kno:formative kno:F000688 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2024-0033-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:fullForm "과"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "과"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002368 ;
+    rdfs:label "-과(過)"@ko .

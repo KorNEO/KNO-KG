@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0176 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0176 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0176-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0176-form ;
-    ontolex:sense kno:KN2020-0176-sense .
-
-kno:KN2020-0176-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003537698> .
-
-kno:KN2020-0176-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0176-freq-nn,
-        kno:KN2020-0176-freq-yt ;
-    ontolex:writtenRep "쇄국 방역"@ko .
-
-kno:KN2020-0176-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0176-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0176-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0176 kno:slotFiller "쇄국(鎖國) (1성분)"@ko ;
+    kno:instantiates kno:S000256 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "쇄국(鎖國), 방역(防疫)"@ko ;
+    kno:component kno:KN2020-0176-c2 ;
+    kno:origin "(鎖國防疫)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0176-freq-NN-2020 ;
+    a kno:Neologism ;
+    rdfs:label "쇄국 방역"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0176-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "쇄국방역"@ko ;
+    kno:frequency kno:KN2020-0176-freq-NN-total ;
+    kno:component kno:KN2020-0176-c1 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%87%84%EA%B5%AD%20%EB%B0%A9%EC%97%AD> ;
+    kno:languageType "한_한" ;
+    kno:example "¶그 나라는 철저하게 {쇄국 방역을} 펼쳐 코로나19 방역에 성공했다는 평가를 받고 있다."@ko ;
+    kno:predicate "막다"@ko ;
+    skos:definition "감염원이 외부에서 유입되는 것을 차단하기 위해, 국내로의 입국을 금지하거나 국경을 봉쇄하여 전염병의 발병과 확산을 막는 일. 코로나19의 감염과 확산을 막기 위하여 일부 나라에서 시행된 방역 조치이다."@ko .
+kno:KN2020-0176-c2 kno:semanticTag kno:usas-B3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "방역"@ko ;
+    kno:surfaceForm "방역"@ko ;
+    rdfs:label "방역(防疫)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000078 .
+kno:KN2020-0176-c1 kno:surfaceForm "쇄국"@ko ;
+    kno:formative kno:F004449 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "쇄국(鎖國)"@ko ;
+    kno:fullForm "쇄국"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

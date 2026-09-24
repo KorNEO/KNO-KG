@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0053 kno:urimalTargetCode "1380363" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "취재(取材) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0053-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0053-freq-NN-2018 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2017-0053-freq-NN-2020 ;
+    kno:languageType "영_영_한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380363> ;
+    kno:example "¶방송 후 누리꾼들은 보도 화면에 OO 땅 현장 사진이 아닌 포털 사이트 OO 로드 뷰 사진이 쓰인 것을 두고 ‘{노 룩 취재’라는} 의혹을 제기했다."@ko ;
+    skos:definition "직접 현장을 방문하지 않고 하는 취재."@ko ;
+    rdfs:label "노 룩 취재"@ko ;
+    kno:frequency kno:KN2017-0053-freq-NN-2021 ;
+    kno:frequency kno:KN2017-0053-freq-NN-total ;
+    kno:component kno:KN2017-0053-c1 ;
+    kno:component kno:KN2017-0053-c2 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001294 ;
+    kno:component kno:KN2017-0053-c3 ;
+    kno:predicate "하다"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "노룩취재"@ko ;
+    kno:componentString "노(no), 룩(look), 취재(取材)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>no look取材)" .
+kno:KN2017-0053-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "노(no)"@ko ;
+    kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko .
+kno:KN2017-0053-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "룩"@ko ;
+    kno:surfaceForm "룩"@ko ;
+    rdfs:label "룩(look)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2017-0053-c3 kno:fullForm "취재"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "취재(取材)"@ko ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    kno:surfaceForm "취재"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006156 ;
+    a kno:Component .

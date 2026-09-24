@@ -1,30 +1,53 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0399 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0399 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2024-0399-form ;
-    ontolex:sense kno:KN2024-0399-sense .
-
-kno:KN2024-0399-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0399-freq-nn,
-        kno:KN2024-0399-freq-yt ;
-    ontolex:writtenRep "환절-통"@ko .
-
-kno:KN2024-0399-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0399-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0399-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0399 kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "환절(換節), 통(痛)"@ko ;
+    kno:component kno:KN2024-0399-c1 ;
+    kno:example "¶이렇게 계절이 바뀔 때면 {환절통을} 앓는 사람들이 있다."@ko ;
+    kno:languageType "한+한" ;
+    kno:indexForm "환절통"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0399-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "환절(換節) (1성분)"@ko ;
+    kno:origin "(換節痛)" ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0399-c2 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "계절이 바뀔 때 발생하는 몸이나 마음에 발생하는 통증."@ko ;
+    rdfs:label "환절-통"@ko ;
+    kno:instantiates kno:S001085 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EC%A0%88%ED%86%B5> ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2024-0399-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:predicate "발생하다"@ko .
+kno:KN2024-0399-c1 kno:formative kno:F007159 ;
+    kno:fullForm "환절"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    rdfs:label "환절(換節)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "환절"@ko ;
+    a kno:Component .
+kno:KN2024-0399-c2 kno:role "고정항"@ko ;
+    a kno:Component ;
+    rdfs:label "통(痛)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001906 ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:fullForm "통"@ko ;
+    kno:surfaceForm "통"@ko ;
+    kno:position "2"^^xsd:integer .

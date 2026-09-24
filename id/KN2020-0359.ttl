@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0359 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0359 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0359-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0359-form ;
-    ontolex:sense kno:KN2020-0359-sense .
-
-kno:KN2020-0359-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004349931> .
-
-kno:KN2020-0359-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0359-freq-nn,
-        kno:KN2020-0359-freq-yt ;
-    ontolex:writtenRep "코로나 특수"@ko .
-
-kno:KN2020-0359-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3914 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0359-freq-yt a frac:CorpusFrequency ;
-    rdf:value 883 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0359-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0359 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0359-freq-NN-2025 ;
+    kno:slotFiller "특수(特需) (1성분)"@ko ;
+    kno:instantiates kno:S000005 ;
+    skos:definition "코로나19의 유행으로 인해 특정 업종이 호황을 누리거나 특정 상품의 수요가 많아지는 것을 이르는 말."@ko ;
+    kno:frequency kno:KN2020-0359-freq-NN-total ;
+    kno:component kno:KN2020-0359-c1 ;
+    kno:frequency kno:KN2020-0359-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0359-freq-NN-2024 ;
+    kno:languageType "영_한" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0359-freq-NN-2020 ;
+    rdfs:label "코로나 특수"@ko ;
+    kno:origin "(<영>←corona virus特需)" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0359-freq-NN-2023 ;
+    kno:year "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%8A%B9%EC%88%98> ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0359-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "코로나(바이러스)(corona virus), 특수(特需)"@ko ;
+    kno:example "¶온라인 쇼핑은 때아닌 {코로나 특수를} 맞이하여 호황을 누리고 있다."@ko ;
+    kno:frequency kno:KN2020-0359-freq-NN-2021 ;
+    kno:indexForm "코로나특수"@ko .
+kno:KN2020-0359-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m .
+kno:KN2020-0359-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006584 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특수"@ko ;
+    kno:surfaceForm "특수"@ko ;
+    a kno:Component ;
+    rdfs:label "특수(特需)"@ko ;
+    kno:semanticTag kno:usas-I2.1 .

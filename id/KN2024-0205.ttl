@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0205 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0205-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0205-form ;
-    ontolex:sense kno:KN2024-0205-sense .
-
-kno:KN2024-0205-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0007006980> .
-
-kno:KN2024-0205-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0205-freq-nn,
-        kno:KN2024-0205-freq-yt ;
-    ontolex:writtenRep "완전^전자^주주^총회"@ko .
-
-kno:KN2024-0205-freq-nn a frac:CorpusFrequency ;
-    rdf:value 50 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0205-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0205-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "주식회사의 주주 총회가 필요한 경우 모든 주주들이 온라인으로 참석하는 주주 총회."@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:component kno:KN2024-0205-c1 ;
+    kno:component kno:KN2024-0205-c3 ;
+    kno:frequency kno:KN2024-0205-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "완전^전자^주주^총회"@ko ;
+    kno:frequency kno:KN2024-0205-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%84%EC%A0%84%EC%A0%84%EC%9E%90%EC%A3%BC%EC%A3%BC%EC%B4%9D%ED%9A%8C> ;
+    kno:frequency kno:KN2024-0205-freq-NN-total ;
+    kno:component kno:KN2024-0205-c4 ;
+    kno:frequency kno:KN2024-0205-freq-NN-2023 ;
+    kno:origin "(完全電子株主總會)" ;
+    kno:component kno:KN2024-0205-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:componentString "완전(完全), 전자(電子), 주주(株主), 총회(總會)"@ko ;
+    kno:indexForm "완전전자주주총회"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶{완전 전자 주주 총회는} 온라인으로 이루어지기 때문에 더 많은 주주들이 쉽게 참여할 수 있으나 주주와 경영진 사이에 대면 소통이 사라질 수 있다는 우려도 있다."@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0205-c1 kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "완전"@ko ;
+    kno:formative kno:F005170 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "완전"@ko ;
+    rdfs:label "완전(完全)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0205-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "주주"@ko ;
+    kno:surfaceForm "주주"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "주주(株主)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:formative kno:F005799 .
+kno:KN2024-0205-c4 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F006106 ;
+    rdfs:label "총회(總會)"@ko ;
+    kno:fullForm "총회"@ko ;
+    kno:surfaceForm "총회"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0205-c2 kno:surfaceForm "전자"@ko ;
+    kno:formative kno:F000406 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "전자(電子)"@ko ;
+    kno:fullForm "전자"@ko ;
+    kno:semanticTag kno:usas-O3 .

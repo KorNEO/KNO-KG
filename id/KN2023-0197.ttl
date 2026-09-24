@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0197 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0197 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0197-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0197-form ;
-    ontolex:sense kno:KN2023-0197-sense .
-
-kno:KN2023-0197-att-nn a frac:Attestation ;
-    dcterms:date "2022-10-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005345347> .
-
-kno:KN2023-0197-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0197-freq-nn,
-        kno:KN2023-0197-freq-yt ;
-    ontolex:writtenRep "영끌 푸어족"@ko .
-
-kno:KN2023-0197-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0197-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0197-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0197 kno:component kno:KN2023-0197-c3 ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2023-0197-c2 ;
+    a kno:Neologism ;
+    skos:definition "최대한의 대출을 받아서 자신의 경제력에 비해 비싼 집을 사거나 주식 등에 투자하여 경제적으로 어려운 생활을 하는 사람. 또는 그런 무리."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0197-c1 ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶물가를 잡기 위하여 금리 인상은 피할 수 없는 선택이었지만, 기준 금리가 올라가면서 늘어난 이자 부담을 감당하기 힘든 {영끌 푸어족이} 속출하고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%EB%81%8C%ED%91%B8%EC%96%B4%EC%A1%B1> ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0197-freq-NN-total ;
+    kno:origin "(靈끌<영>poor族)" ;
+    kno:slotFiller "영끌(靈끌)+푸어(poor) (2성분)"@ko ;
+    kno:languageType "(한+고)_(영+한)" ;
+    kno:indexForm "영끌푸어족"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "푸어(poor)+-족(族) (2성분)"@ko ;
+    rdfs:label "영끌푸어-족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "영끌(靈끌), 푸어(poor), -족(族)"@ko ;
+    kno:frequency kno:KN2023-0197-freq-NN-2022 ;
+    kno:instantiates kno:S000316 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2023-0197-c3 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2023-0197-c2 kno:fullForm "푸어"@ko ;
+    kno:formative kno:F000050 ;
+    rdfs:label "푸어(poor)"@ko ;
+    kno:surfaceForm "푸어"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0197-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000294 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.2 ;
+    rdfs:label "영끌(靈끌)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "영끌"@ko ;
+    kno:surfaceForm "영끌"@ko .

@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0201 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0201 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0201-freq-NN-total ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶‘{연애 정상성’이라는} 개념에서 벗어난 성향의 사람들은 연애 권하기를 넘어 연애를 강요하는 사회와 부딪칠 수밖에 없다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    rdfs:label "연애 정상성"@ko ;
+    kno:frequency kno:KN2017-0201-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0201-freq-NN-2017 ;
+    kno:component kno:KN2017-0201-c1 ;
+    kno:frequency kno:KN2017-0201-freq-NN-2025 ;
+    kno:component kno:KN2017-0201-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "연애(戀愛), 정상성(正常性)"@ko ;
+    kno:unitType "구"@ko ;
+    skos:definition "남자와 여자가 서로 사랑해서 사귀는 것만이 정상 범주에 속하는 것이라고 생각하는 태도. 미국에서, 사랑하는 사람을 뜻하는 이탈리아 어 ‘아마토(amato)’와 정상성을 뜻하는 영어 ‘노머티비티(normative)’를 결합하여 만든 말인 ‘아마토노머티비티(amatonormativity)’를 한국어로 번역한 말이다."@ko ;
+    kno:predicate "생각하다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380765> ;
+    kno:urimalTargetCode "1380765" ;
+    kno:indexForm "연애정상성"@ko ;
+    kno:frequency kno:KN2017-0201-freq-NN-2016 ;
+    kno:origin "(戀愛正常性)" .
+kno:KN2017-0201-c1 kno:formative kno:F000389 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "연애"@ko ;
+    kno:semanticTag kno:usas-S3 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "연애"@ko ;
+    rdfs:label "연애(戀愛)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0201-c2 rdfs:label "정상성(正常性)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A6.2p ;
+    kno:formative kno:F005676 ;
+    kno:fullForm "정상성"@ko ;
+    kno:surfaceForm "정상성"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

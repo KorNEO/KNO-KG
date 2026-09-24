@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0528 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0528 kno:frequency kno:KN2016-0528-freq-NN-2023 ;
+    kno:slotFiller "티슈(tissue) (1성분)"@ko ;
+    kno:component kno:KN2016-0528-c1 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:urimalTargetCode "1368869" ;
+    kno:example "¶인턴 근무 경험이 있다고 답한 응답자에게 스스로 {티슈 인턴이라고} 생각하는지 물었다."@ko ;
+    kno:frequency kno:KN2016-0528-freq-NN-2020 ;
+    kno:languageType "영^영" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0528-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0528-freq-NN-2018 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "티슈(tissue), 인턴(intern)"@ko ;
+    kno:frequency kno:KN2016-0528-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0528-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0528-freq-NN-total ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368869> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0528-freq-NN-2022 ;
+    rdfs:label "티슈^인턴"@ko ;
+    kno:frequency kno:KN2016-0528-freq-NN-2021 ;
+    kno:frequency kno:KN2016-0528-freq-NN-2016 ;
+    kno:indexForm "티슈인턴"@ko ;
+    kno:instantiates kno:S000419 ;
+    skos:definition "티슈처럼 쉽게 쓰고 버린다는 뜻으로, 안정된 고용을 보장받지 못한 인턴을 이르는 말."@ko ;
+    kno:origin "(<영>tissue intern)" ;
+    kno:pos "「구」"@ko .
+kno:KN2016-0528-c1 kno:fullForm "티슈"@ko ;
+    kno:surfaceForm "티슈"@ko ;
+    kno:formative kno:F006591 ;
+    rdfs:label "티슈(tissue)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0528-c2 kno:semanticTag kno:usas-I3.1 ;
+    kno:fullForm "인턴"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "인턴"@ko ;
+    rdfs:label "인턴(intern)"@ko ;
+    kno:formative kno:F000897 .

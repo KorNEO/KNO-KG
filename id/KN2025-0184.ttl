@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0184 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0184 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0184-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0184-form ;
-    ontolex:sense kno:KN2025-0184-sense .
-
-kno:KN2025-0184-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004447611> .
-
-kno:KN2025-0184-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0184-freq-nn,
-        kno:KN2025-0184-freq-yt ;
-    ontolex:writtenRep "딥시크 포비아"@ko .
-
-kno:KN2025-0184-freq-nn a frac:CorpusFrequency ;
-    rdf:value 41 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0184-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0184-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0184 kno:origin "(<영>DeepSeek phobia)" ;
+    kno:indexForm "딥시크포비아"@ko ;
+    kno:slotFiller "포비아(phobia) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "딥시크(DeepSeek), 포비아(phobia)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 사내 보안 점검이 강화되면서 외부 생성형 AI 접속이 제한됐고, 특히 {딥시크포비아가} 커지자 해당 서비스는 아예 차단됐다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0184-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%A5%EC%8B%9C%ED%81%AC%20%ED%8F%AC%EB%B9%84%EC%95%84> ;
+    kno:component kno:KN2025-0184-c2 ;
+    skos:definition "(LLM) 중국의 인공지능 서비스 ‘딥시크’를 사용할 경우 정보 유출이나 보안 사고가 발생할 수 있다는 우려로, 개인ㆍ기업ㆍ기관 등이 이용을 꺼리거나 접속을 제한ㆍ차단하려는 불안 심리 또는 사회적 분위기."@ko ;
+    rdfs:label "딥시크 포비아"@ko ;
+    kno:instantiates kno:S000013 ;
+    kno:frequency kno:KN2025-0184-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0184-freq-NN-total ;
+    kno:instantiates kno:S001345 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "딥시크(DeepSeek) (1성분)"@ko .
+kno:KN2025-0184-c1 rdfs:label "딥시크(DeepSeek)"@ko ;
+    kno:fullForm "딥시크"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F001217 ;
+    kno:surfaceForm "딥시크"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0184-c2 a kno:Component ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:formative kno:F000018 ;
+    rdfs:label "포비아(phobia)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "포비아"@ko ;
+    kno:surfaceForm "포비아"@ko .

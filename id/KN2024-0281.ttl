@@ -1,36 +1,74 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0281 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0281 a ontolex:Word ;
-    frac:attestation kno:KN2024-0281-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0281-form ;
-    ontolex:sense kno:KN2024-0281-sense .
-
-kno:KN2024-0281-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005270628> .
-
-kno:KN2024-0281-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0281-freq-nn,
-        kno:KN2024-0281-freq-yt ;
-    ontolex:writtenRep "지국비국"@ko .
-
-kno:KN2024-0281-freq-nn a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0281-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0281-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0281 kno:instantiates kno:S001660 ;
+    kno:example "¶온라인 게시판에는 {지국비국을} 강조하며 보수 결집을 주장하는 글이 게시되었다."@ko ;
+    kno:origin "(地國比國)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0281-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "지국비국"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    skos:definition "‘지역구 의원은 국민의 힘 후보에, 비례 대표 의원은 국민의 미래 후보에 투표’를 줄여 이르는 말. 2024년 4월 10일에 실시된 대한민국 제22대 국회 의원 선거에서 나온 표현이다."@ko ;
+    kno:component kno:KN2024-0281-c3 ;
+    kno:frequency kno:KN2024-0281-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EA%B5%AD%EB%B9%84%EA%B5%AD> ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0281-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "지국비국"@ko ;
+    kno:componentString "지(역구)(地域區), 국(민의힘), 비(례대표)(比例代表), 국(민의미래)"@ko ;
+    kno:component kno:KN2024-0281-c4 ;
+    kno:slotFiller "국(민의미래) (1성분)"@ko ;
+    kno:component kno:KN2024-0281-c1 ;
+    kno:formation kno:W06 .
+kno:KN2024-0281-c2 rdfs:label "국(민의힘)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "국민의힘"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001089 ;
+    kno:surfaceForm "국"@ko .
+kno:KN2024-0281-c3 kno:fullForm "비례대표"@ko ;
+    kno:formative kno:F000174 ;
+    rdfs:label "비(례대표)(比例代表)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "비"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0281-c4 kno:semanticTag kno:usas-Z3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "국민의미래"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F002465 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "국"@ko ;
+    rdfs:label "국(민의미래)"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2024-0281-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000190 ;
+    kno:surfaceForm "지"@ko ;
+    a kno:Component ;
+    kno:fullForm "지역구"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "지(역구)(地域區)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 .

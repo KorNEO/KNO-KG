@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0356 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2020-0356 rdfs:label "코로나 정치02"@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 정치(政治)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "코로나정치"@ko ;
+    kno:example "¶OOO 지사는 코로나19 대유행 속에서 중앙 정부보다 한발 앞선 방역 조치와 경제적 대안 마련에 승부수를 걸면서 거침없이 ‘{코로나 정치’를} 펼치고 있다."@ko ;
+    kno:origin "(<영>←corona virus政治)" ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    skos:definition "코로나19 사태에 대응하는 정치 행위."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0356-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2020-0356-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%A0%95%EC%B9%9802> .
+kno:KN2020-0356-c2 kno:fullForm "정치"@ko ;
+    kno:surfaceForm "정치"@ko ;
+    rdfs:label "정치(政治)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000188 .
+kno:KN2020-0356-c1 kno:role "성분"@ko ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:formative kno:F000003 ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "true"^^xsd:boolean .

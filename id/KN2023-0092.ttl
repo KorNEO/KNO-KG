@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0092 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0092 a ontolex:Word ;
-    frac:attestation kno:KN2023-0092-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0092-form ;
-    ontolex:sense kno:KN2023-0092-sense .
-
-kno:KN2023-0092-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0006012398> .
-
-kno:KN2023-0092-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0092-freq-nn,
-        kno:KN2023-0092-freq-yt ;
-    ontolex:writtenRep "멍-쉼터"@ko .
-
-kno:KN2023-0092-freq-nn a frac:CorpusFrequency ;
-    rdf:value 51 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0092-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0092-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0092 kno:example "¶OO시는 주민들이 계곡 소리를 듣거나 편안한 공간에 앉아 쉴 수 있도록 {멍쉼터} 등 다양한 휴식 공간을 조성할 계획이라고 밝혔다."@ko ;
+    kno:instantiates kno:S000101 ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "멍-쉼터"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0092-c2 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%8D%EC%89%BC%ED%84%B0> ;
+    kno:predicate "놓은"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "멍(멍이), 쉼터"@ko ;
+    kno:frequency kno:KN2023-0092-freq-NN-2022 ;
+    kno:component kno:KN2023-0092-c1 ;
+    skos:definition "물소리를 듣거나 숲속에서 경치를 바라보는 등을 하며 아무 생각 없이 멍하게 있으면서 쉴 수 있도록 시설물을 설치해 놓은 곳."@ko ;
+    kno:slotFiller "쉼터 (1성분)"@ko ;
+    kno:frequency kno:KN2023-0092-freq-NN-total ;
+    kno:indexForm "멍쉼터"@ko ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0092-freq-NN-2025 .
+kno:KN2023-0092-c2 rdfs:label "쉼터"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "쉼터"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "쉼터"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004513 ;
+    a kno:Component .
+kno:KN2023-0092-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "멍멍이"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:surfaceForm "멍"@ko ;
+    rdfs:label "멍(멍이)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000211 .

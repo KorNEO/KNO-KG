@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0084 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0084 a ontolex:Word ;
-    frac:attestation kno:KN2022-0084-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0084-form ;
-    ontolex:sense kno:KN2022-0084-sense .
-
-kno:KN2022-0084-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004638209> .
-
-kno:KN2022-0084-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0084-freq-nn,
-        kno:KN2022-0084-freq-yt ;
-    ontolex:writtenRep "꾸자사모"@ko .
-
-kno:KN2022-0084-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0084-freq-yt a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0084-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0084 kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2022-0084-freq-NN-2021 ;
+    skos:definition "‘꾸준히 자산을 사서 모으자.’를 줄여 이르는 말. 장기적인 관점에서 투자하는 방식을 이른다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "꾸자사모"@ko ;
+    kno:component kno:KN2022-0084-c2 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0084-c4 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2022-0084-c1 ;
+    kno:frequency kno:KN2022-0084-freq-NN-2022 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:languageType "고+한+고+고" ;
+    kno:origin "(꾸資사모)" ;
+    kno:frequency kno:KN2022-0084-freq-NN-total ;
+    rdfs:label "꾸자사모"@ko ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:example "¶{꾸자사모를} 주장하는 사람들은 10년 이상 볼 주식이 아니면 사지 말라고 한다."@ko ;
+    kno:componentString "꾸(준하다), 자(산)(資産), 사(다), 모(으다)"@ko ;
+    kno:component kno:KN2022-0084-c3 ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BE%B8%EC%9E%90%EC%82%AC%EB%AA%A8> .
+kno:KN2022-0084-c2 rdfs:label "자(산)(資産)"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F005506 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "자산"@ko .
+kno:KN2022-0084-c4 kno:position "4"^^xsd:integer ;
+    rdfs:label "모(으다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003479 ;
+    kno:fullForm "모으다"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:surfaceForm "모"@ko .
+kno:KN2022-0084-c1 kno:fullForm "꾸준하다"@ko ;
+    kno:formative kno:F002654 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "꾸(준하다)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "꾸"@ko ;
+    kno:semanticTag kno:usas-N6p .
+kno:KN2022-0084-c3 kno:formative kno:F000138 ;
+    kno:fullForm "사다"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "사(다)"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "사"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .

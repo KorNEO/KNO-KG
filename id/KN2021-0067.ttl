@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0067 a ontolex:Word ;
-    frac:attestation kno:KN2021-0067-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0067-form ;
-    ontolex:sense kno:KN2021-0067-sense .
-
-kno:KN2021-0067-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003581951> .
-
-kno:KN2021-0067-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0067-freq-nn,
-        kno:KN2021-0067-freq-yt ;
-    ontolex:writtenRep "대깨-족"@ko .
-
-kno:KN2021-0067-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0067-freq-yt a frac:CorpusFrequency ;
-    rdf:value 85 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0067-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0067 kno:componentString "대(가리), 깨(지다), -족(族)"@ko ;
+    skos:definition "지지하는 정치인이 하는 일은 옳고 그름을 따지지 않고 무조건 따르는 사람. 또는 그런 무리. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:frequency kno:KN2021-0067-freq-NN-total ;
+    kno:frequency kno:KN2021-0067-freq-NN-2020 ;
+    kno:slotFiller "대(가리)+깨(지다) (2성분)"@ko ;
+    rdfs:label "대깨-족"@ko ;
+    kno:predicate "따르다"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0067-c3 ;
+    kno:component kno:KN2021-0067-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B9%A8%EC%A1%B1> ;
+    kno:instantiates kno:S000001 ;
+    kno:example "¶자신이 지지하는 사람이 하는 일은 무조건적으로 옹호하는 {대깨족은} 자신과 생각이 다른 사람들과는 대화조차 하지 않는다."@ko ;
+    kno:slotFiller "-족(族) (1성분)"@ko ;
+    kno:indexForm "대깨족"@ko ;
+    a ontolex:Word ;
+    kno:origin "(대깨族)" ;
+    kno:instantiates kno:S001316 ;
+    kno:component kno:KN2021-0067-c1 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 .
+kno:KN2021-0067-c3 kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0067-c2 kno:formative kno:F001126 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "깨"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    rdfs:label "깨(지다)"@ko ;
+    kno:fullForm "깨지다"@ko .
+kno:KN2021-0067-c1 rdfs:label "대(가리)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "대가리"@ko ;
+    kno:surfaceForm "대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001168 .

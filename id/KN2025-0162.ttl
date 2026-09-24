@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0162 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0162 a ontolex:Word ;
-    frac:attestation kno:KN2025-0162-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0162-form ;
-    ontolex:sense kno:KN2025-0162-sense .
-
-kno:KN2025-0162-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003673734> .
-
-kno:KN2025-0162-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0162-freq-nn,
-        kno:KN2025-0162-freq-yt ;
-    ontolex:writtenRep "덕자금"@ko .
-
-kno:KN2025-0162-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0162-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0162-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0162 kno:indexForm "덕자금"@ko ;
+    kno:frequency kno:KN2025-0162-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0162-c2 ;
+    kno:origin "(<일>←otaku[御宅]資金)" ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0162-c1 ;
+    kno:slotFiller "자금(資金) (1성분)"@ko ;
+    kno:instantiates kno:S000294 ;
+    skos:definition "(LLM) 좋아하는 연예인ㆍ캐릭터ㆍ작품 등을 응원하거나 관련 굿즈를 사는 데 쓰는 돈."@ko ;
+    kno:languageType "일+한" ;
+    kno:formation kno:W05 ;
+    kno:predicate "쓰다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "덕자금"@ko ;
+    kno:componentString "덕(후)(otaku), 자금(資金)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0162-freq-NN-total ;
+    a kno:Neologism ;
+    kno:example "(LLM) 이번 컴백에 앨범이랑 응원봉까지 사려니 {덕자금이} 꽤 들어서 당분간은 지출을 줄여야겠다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8D%95%EC%9E%90%EA%B8%88> .
+kno:KN2025-0162-c2 kno:fullForm "자금"@ko ;
+    kno:surfaceForm "자금"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000187 ;
+    rdfs:label "자금(資金)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0162-c1 a kno:Component ;
+    rdfs:label "덕(후)(otaku)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000037 ;
+    kno:fullForm "덕후"@ko ;
+    kno:surfaceForm "덕"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:truncated "true"^^xsd:boolean .

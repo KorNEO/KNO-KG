@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0055 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0055 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0055-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0055-form ;
-    ontolex:sense kno:KN2020-0055-sense .
-
-kno:KN2020-0055-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004523504> .
-
-kno:KN2020-0055-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0055-freq-nn,
-        kno:KN2020-0055-freq-yt ;
-    ontolex:writtenRep "긴급^돌봄^지원단"@ko .
-
-kno:KN2020-0055-freq-nn a frac:CorpusFrequency ;
-    rdf:value 213 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0055-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0055-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0055 kno:languageType "한^고^한" ;
+    a kno:Neologism ;
+    kno:example "¶OO시는 코로나19로 인한 돌봄 활동의 공백을 막기 위해 노인 및 장애인에 대한 {긴급 돌봄 지원단을} 모집하기로 결정했다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0055-c3 ;
+    kno:indexForm "긴급돌봄지원단"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "지원단(支援團) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0055-freq-NN-2023 ;
+    kno:component kno:KN2020-0055-c2 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2020-0055-freq-NN-2020 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%8F%8C%EB%B4%84%EC%A7%80%EC%9B%90%EB%8B%A8> ;
+    kno:componentString "긴급(緊急), 돌봄, 지원단(支援團)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000485 ;
+    kno:frequency kno:KN2020-0055-freq-NN-2024 ;
+    kno:component kno:KN2020-0055-c1 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(緊急돌봄支援團)" ;
+    kno:frequency kno:KN2020-0055-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0055-freq-NN-2022 ;
+    skos:definition "전국적인 재난 사태로 인해 발생한 노인이나 장애인, 아동 등의 돌봄 공백을 해소하기 위해 지방 자치 단체와 고용 계약을 맺고 채용된 인력. 코로나19의 확산에 따라 자가 격리 대상자 또는 확진자로 분류된 노인 및 장애인과 지정된 전문 시설에 동반 입소하여 돌봄 서비스를 제공한다."@ko ;
+    rdfs:label "긴급^돌봄^지원단"@ko ;
+    kno:frequency kno:KN2020-0055-freq-NN-total .
+kno:KN2020-0055-c3 kno:formative kno:F005888 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    a kno:Component ;
+    kno:fullForm "지원단"@ko ;
+    rdfs:label "지원단(支援團)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "지원단"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2020-0055-c2 kno:surfaceForm "돌봄"@ko ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "돌봄"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "돌봄"@ko ;
+    kno:formative kno:F000046 ;
+    a kno:Component .
+kno:KN2020-0055-c1 kno:formative kno:F000016 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "긴급"@ko ;
+    rdfs:label "긴급(緊急)"@ko ;
+    kno:surfaceForm "긴급"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:role "고정항"@ko .

@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0205 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0205-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0205-form ;
-    ontolex:sense kno:KN2020-0205-sense .
-
-kno:KN2020-0205-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0000807858> .
-
-kno:KN2020-0205-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0205-freq-nn,
-        kno:KN2020-0205-freq-yt ;
-    ontolex:writtenRep "아이^돌봄^포인트"@ko .
-
-kno:KN2020-0205-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0205-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0205-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0205 kno:activeYears "3"^^xsd:integer ;
+    kno:slotFiller "포인트(point) (1성분)"@ko ;
+    kno:instantiates kno:S001122 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "고^고^영" ;
+    kno:example "¶온라인에서는 {아이 돌봄 포인트로} 결제할 수 없다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0205-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EC%9D%B4%EB%8F%8C%EB%B4%84%ED%8F%AC%EC%9D%B8%ED%8A%B8> ;
+    kno:frequency kno:KN2020-0205-freq-NN-2021 ;
+    rdfs:label "아이^돌봄^포인트"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0205-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(아이돌봄<영>point)" ;
+    kno:slotFiller "아이+돌봄 (2성분)"@ko ;
+    kno:frequency kno:KN2020-0205-freq-NN-2020 ;
+    skos:definition "아이를 돌보는 데 드는 비용을 줄이기 위해 지급하는 포인트. 정부에서 제공하는 양육 지원 서비스를 이용하는 카드로 지급받아 현금처럼 사용할 수 있다. 코로나19로 인한 재난 상황에서 지급되기 시작했다."@ko ;
+    kno:component kno:KN2020-0205-c1 ;
+    kno:predicate "지급하다"@ko ;
+    kno:frequency kno:KN2020-0205-freq-NN-total ;
+    kno:indexForm "아이돌봄포인트"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2020-0205-c2 ;
+    kno:componentString "아이, 돌봄, 포인트(point)"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001516 .
+kno:KN2020-0205-c3 kno:formative kno:F001961 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:fullForm "포인트"@ko ;
+    kno:surfaceForm "포인트"@ko ;
+    rdfs:label "포인트(point)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2020-0205-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3m ;
+    rdfs:label "아이"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "아이"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000840 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "아이"@ko .
+kno:KN2020-0205-c2 kno:fullForm "돌봄"@ko ;
+    kno:surfaceForm "돌봄"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000046 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "돌봄"@ko ;
+    kno:semanticTag kno:usas-S8 .

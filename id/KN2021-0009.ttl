@@ -1,36 +1,83 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0009 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0009 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0009-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0009-form ;
-    ontolex:sense kno:KN2021-0009-sense .
-
-kno:KN2021-0009-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0004484719> .
-
-kno:KN2021-0009-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0009-freq-nn,
-        kno:KN2021-0009-freq-yt ;
-    ontolex:writtenRep "가족^돌봄^휴가^연장법"@ko .
-
-kno:KN2021-0009-freq-nn a frac:CorpusFrequency ;
-    rdf:value 137 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0009-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0009-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0009 kno:example "¶코로나19로 인한 육아 공백이 커짐에 따라 국회 본회의에서 {가족 돌봄 휴가 연장법이} 통과되었다."@ko ;
+    kno:slotFiller "휴가(休暇)+연장(延長)+법(法) (3성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A1%B1%EB%8F%8C%EB%B4%84%ED%9C%B4%EA%B0%80%EC%97%B0%EC%9E%A5%EB%B2%95> ;
+    kno:component kno:KN2021-0009-c4 ;
+    kno:component kno:KN2021-0009-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^고^한^한" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2021-0009-c2 ;
+    kno:slotFiller "가족(家族)+돌봄+휴가(休暇)+연장(延長) (4성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0009-c3 ;
+    kno:frequency kno:KN2021-0009-freq-NN-total ;
+    kno:frequency kno:KN2021-0009-freq-NN-2020 ;
+    kno:instantiates kno:S000010 ;
+    kno:origin "(家族돌봄休暇延長法)" ;
+    kno:instantiates kno:S000467 ;
+    skos:definition "가족 돌봄이 필요한 경우 근로자의 휴가 기간을 연장할 수 있도록 규정한 법률. 코로나19의 장기화로 어린이집ㆍ유치원ㆍ학교 등의 휴원ㆍ휴업ㆍ휴교가 실시됨에 따라 가족 돌봄이 필요한 경우 근로자는 기존 10일을 포함하여 최장 20일까지 휴가를 연장할 수 있으며, 한 부모 가족의 경우 최장 25일까지 연장할 수 있다. 2020년 9월 국회에서 해당 법안이 통과되었다."@ko ;
+    kno:indexForm "가족돌봄휴가연장법"@ko ;
+    kno:component kno:KN2021-0009-c5 ;
+    kno:componentString "가족(家族), 돌봄, 휴가(休暇), 연장(延長), 법(法)"@ko ;
+    a kno:Neologism ;
+    rdfs:label "가족^돌봄^휴가^연장법"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0009-c4 kno:formative kno:F005057 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T1.3p ;
+    kno:fullForm "연장"@ko ;
+    rdfs:label "연장(延長)"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "연장"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0009-c1 rdfs:label "가족(家族)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000245 ;
+    kno:fullForm "가족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "가족"@ko ;
+    a kno:Component .
+kno:KN2021-0009-c2 kno:formative kno:F000046 ;
+    a kno:Component ;
+    kno:fullForm "돌봄"@ko ;
+    kno:surfaceForm "돌봄"@ko ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "돌봄"@ko .
+kno:KN2021-0009-c3 kno:fullForm "휴가"@ko ;
+    kno:surfaceForm "휴가"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "휴가(休暇)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000647 .
+kno:KN2021-0009-c5 kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "5"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko .

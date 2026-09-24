@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0169 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0169 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0169-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0169-form ;
-    ontolex:sense kno:KN2023-0169-sense .
-
-kno:KN2023-0169-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-25"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/469/0000687983> .
-
-kno:KN2023-0169-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0169-freq-nn,
-        kno:KN2023-0169-freq-yt ;
-    ontolex:writtenRep "안티^인스타"@ko .
-
-kno:KN2023-0169-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0169-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0169-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0169 kno:year "2023"^^xsd:gYear ;
+    kno:example "¶최근 젊은 세대 사이에서는 ‘{안티 인스타’나} ‘안티 알고리즘’ 등 진정성 없는 기계적인 소통에 반대하는 움직임이 생겨나고 있다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "안티^인스타"@ko ;
+    kno:predicate "반대하다"@ko ;
+    a kno:Neologism ;
+    kno:componentString "안티(anti)-, 인스타(그램)(Instagram)"@ko ;
+    kno:frequency kno:KN2023-0169-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0169-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(<영>anti←Instagram)" ;
+    kno:indexForm "안티인스타"@ko ;
+    kno:frequency kno:KN2023-0169-freq-NN-2024 ;
+    kno:component kno:KN2023-0169-c2 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘인스타그램’ 등의 소셜 미디어에 자신의 외모, 재력, 사회적 지위 따위를 과하게 자랑하거나 꾸며내는 일에 반대하는 사람. 또는 그러한 무리."@ko ;
+    kno:languageType "영^영" ;
+    kno:frequency kno:KN2023-0169-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%ED%8B%B0%EC%9D%B8%EC%8A%A4%ED%83%80> ;
+    kno:unitType "구"@ko .
+kno:KN2023-0169-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "안티(anti)-"@ko ;
+    kno:formative kno:F001574 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "안티"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "안티"@ko .
+kno:KN2023-0169-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "인스타"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "인스타그램"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "인스타(그램)(Instagram)"@ko ;
+    kno:formative kno:F001708 .

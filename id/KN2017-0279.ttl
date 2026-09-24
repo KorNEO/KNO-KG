@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0279 kno:year "2017"^^xsd:gYear ;
+    skos:definition "멀리 떠나지 않고 소풍을 하듯이 도시 인근에서 가볍게 캠핑을 즐기는 사람. ⇒규범 표기는 미확정이다."@ko ;
+    kno:languageType "영+영" ;
+    kno:origin "(<영>▼←camping picnicker)" ;
+    kno:predicate "즐기다"@ko ;
+    kno:componentString "캠프(←camping), (피크)니커(picnicker)"@ko ;
+    kno:instantiates kno:S000590 ;
+    kno:component kno:KN2017-0279-c2 ;
+    a kno:Neologism ;
+    rdfs:label "캠프니커"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%A0%ED%94%84%EB%8B%88%EC%BB%A4> ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2017-0279-c1 ;
+    kno:slotFiller "(피크)니커(picnicker) (1성분)"@ko ;
+    kno:example "¶캠프닉을 즐기는 사람들, 이른바 ‘{캠프니커’들은} 무거워도 많은 장비를 챙길 수 있는 오토캠핑과 다르게 캠핑을 떠날 때 소풍을 가는 것처럼 가벼운 짐만 챙긴다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2017-0279-freq-NN-total ;
+    a ontolex:Word ;
+    kno:indexForm "캠프니커"@ko ;
+    kno:frequency kno:KN2017-0279-freq-NN-2017 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear .
+kno:KN2017-0279-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "니커"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:formative kno:F002839 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "피크니커"@ko ;
+    rdfs:label "(피크)니커(picnicker)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2017-0279-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "캠프"@ko ;
+    kno:formative kno:F000955 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "캠프(←camping)"@ko ;
+    kno:fullForm "캠프"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K1 .

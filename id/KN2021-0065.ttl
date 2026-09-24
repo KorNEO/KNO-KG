@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0065 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0065 a ontolex:Word ;
-    frac:attestation kno:KN2021-0065-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0065-form ;
-    ontolex:sense kno:KN2021-0065-sense .
-
-kno:KN2021-0065-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003763379> .
-
-kno:KN2021-0065-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0065-freq-nn,
-        kno:KN2021-0065-freq-yt ;
-    ontolex:writtenRep "당근-질"@ko .
-
-kno:KN2021-0065-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0065-freq-yt a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0065-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0065 a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    skos:definition "가까운 동네에서 중고로 물건을 사고파는 일. 중고 거래 애플리케이션인 ‘당근 마켓’에서 비롯된 말이다."@ko ;
+    kno:languageType "고+고" ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2021-0065-c2 ;
+    kno:frequency kno:KN2021-0065-freq-NN-total ;
+    kno:indexForm "당근질"@ko ;
+    kno:slotFiller "당근 (1성분)"@ko ;
+    kno:instantiates kno:S000141 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%B9%EA%B7%BC%EC%A7%88> ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:predicate "사고파다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2021-0065-freq-NN-2020 ;
+    rdfs:label "당근-질"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2021-0065-c1 ;
+    kno:frequency kno:KN2021-0065-freq-NN-2021 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:componentString "당근, -질"@ko ;
+    kno:example "¶오늘은 이사 준비로 낡은 물건은 다 내다 버리고, 쓸 만한 물건은 골라 {당근질까지} 했다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0065-freq-NN-2023 .
+kno:KN2021-0065-c2 kno:formative kno:F000149 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "질"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:surfaceForm "질"@ko ;
+    rdfs:label "-질"@ko .
+kno:KN2021-0065-c1 kno:fullForm "당근"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "당근"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002893 ;
+    rdfs:label "당근"@ko ;
+    a kno:Component .

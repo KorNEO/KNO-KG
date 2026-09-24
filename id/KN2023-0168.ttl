@@ -1,36 +1,40 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0168 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0168 a ontolex:Word ;
-    frac:attestation kno:KN2023-0168-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0168-form ;
-    ontolex:sense kno:KN2023-0168-sense .
-
-kno:KN2023-0168-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-16"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/277/0005245954> .
-
-kno:KN2023-0168-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0168-freq-nn,
-        kno:KN2023-0168-freq-yt ;
-    ontolex:writtenRep "안트로포퀴나스"@ko .
-
-kno:KN2023-0168-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0168-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0168-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0168 kno:origin "(<영>anthropoquinas)" ;
+    skos:definition "일반적으로 플라스틱 쓰레기와 자연 암석이 혼합되어 형성된 퇴적암. =암석 플라스틱."@ko ;
+    kno:frequency kno:KN2023-0168-freq-NN-2023 ;
+    kno:indexForm "안트로포퀴나스"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0168-freq-NN-total ;
+    kno:component kno:KN2023-0168-c1 ;
+    kno:formation kno:W07 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶브라질에서는 2020년에 플라스틱 병뚜껑, 귀걸이 등이 녹아 퇴적암과 결합된 암석이 발견돼 ‘{안트로포퀴나스’라고} 명명됐다."@ko ;
+    kno:componentString "안트로포퀴나스(anthropoquinas)"@ko ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    rdfs:label "안트로포퀴나스"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%ED%8A%B8%EB%A1%9C%ED%8F%AC%ED%80%B4%EB%82%98%EC%8A%A4> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "단어"@ko .
+kno:KN2023-0168-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "안트로포퀴나스"@ko ;
+    kno:surfaceForm "안트로포퀴나스"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-W3 ;
+    rdfs:label "안트로포퀴나스(anthropoquinas)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004842 .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0129 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0129 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0129-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0129-form ;
-    ontolex:sense kno:KN2024-0129-sense .
-
-kno:KN2024-0129-att-nn a frac:Attestation ;
-    dcterms:date "2024-05-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005043773> .
-
-kno:KN2024-0129-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0129-freq-nn,
-        kno:KN2024-0129-freq-yt ;
-    ontolex:writtenRep "세월호^참사^지원법"@ko .
-
-kno:KN2024-0129-freq-nn a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0129-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0129-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0129 skos:definition "2014년 4월 16일의 세월호 참사로 피해를 입은 피해자 및 그 유족을 지원할 목적으로 제정한 법률. 정식 명칭은 ‘4ㆍ16 세월호 참사 피해 구제 및 지원 등을 위한 특별법’이다."@ko ;
+    kno:indexForm "세월호참사지원법"@ko ;
+    kno:component kno:KN2024-0129-c2 ;
+    kno:instantiates kno:S000267 ;
+    rdfs:label "세월호^참사^지원법"@ko ;
+    kno:origin "(歲月號慘事支援法)" ;
+    kno:componentString "세월호(歲月號), 참사(慘事), 지원법(支援法)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%9B%94%ED%98%B8%EC%B0%B8%EC%82%AC%EC%A7%80%EC%9B%90%EB%B2%95> ;
+    kno:component kno:KN2024-0129-c3 ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2024-0129-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶{세월호 참사 지원법은} 피해자들의 트라우마 등의 치유를 위한 의료 지원이 지난 4월 15일 중단된 것을 개선하기 위한 것이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0129-freq-NN-2024 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0129-freq-NN-total ;
+    kno:slotFiller "세월호(歲月號)+참사(慘事) (2성분)"@ko .
+kno:KN2024-0129-c2 rdfs:label "참사(慘事)"@ko ;
+    kno:fullForm "참사"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A15m ;
+    kno:formative kno:F000596 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "참사"@ko .
+kno:KN2024-0129-c3 kno:formative kno:F000591 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "지원법(支援法)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "지원법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "지원법"@ko .
+kno:KN2024-0129-c1 a kno:Component ;
+    rdfs:label "세월호(歲月號)"@ko ;
+    kno:fullForm "세월호"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "세월호"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004356 .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0338 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0338 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0338-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0338-form ;
-    ontolex:sense kno:KN2020-0338-sense .
-
-kno:KN2020-0338-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0009839100> .
-
-kno:KN2020-0338-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0338-freq-nn,
-        kno:KN2020-0338-freq-yt ;
-    ontolex:writtenRep "코로나 블랙"@ko .
-
-kno:KN2020-0338-freq-nn a frac:CorpusFrequency ;
-    rdf:value 244 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0338-freq-yt a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0338-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0338 kno:frequency kno:KN2020-0338-freq-NN-2021 ;
+    kno:component kno:KN2020-0338-c1 ;
+    kno:component kno:KN2020-0338-c2 ;
+    kno:componentString "코로나(바이러스)(corona virus), 블랙(black)"@ko ;
+    kno:indexForm "코로나블랙"@ko ;
+    kno:frequency kno:KN2020-0338-freq-NN-total ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(<영>←corona virus black)" ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶코로나 블루를 넘어서는 {코로나 블랙을} 슬기롭게 극복하기 위해서는 가벼운 산책과 같은 외부 활동을 조금씩 가져야 할 것이다."@ko ;
+    kno:predicate "느끼다"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "코로나19의 확산으로 인해 우울감보다 심한 좌절감이나 절망감 따위를 느끼는 상태."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:slotFiller "블랙(black) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0338-freq-NN-2020 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EB%B8%94%EB%9E%99> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2020-0338-freq-NN-2022 ;
+    kno:instantiates kno:S000005 ;
+    kno:languageType "영_영" ;
+    rdfs:label "코로나 블랙"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2020-0338-c1 rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko .
+kno:KN2020-0338-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "블랙"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "블랙"@ko ;
+    rdfs:label "블랙(black)"@ko ;
+    kno:semanticTag kno:usas-O4 ;
+    kno:formative kno:F000361 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0296 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0296 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0296-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0296-form ;
-    ontolex:sense kno:KN2023-0296-sense .
-
-kno:KN2023-0296-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011338338> .
-
-kno:KN2023-0296-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0296-freq-nn,
-        kno:KN2023-0296-freq-yt ;
-    ontolex:writtenRep "콰이어트^퀴팅"@ko .
-
-kno:KN2023-0296-freq-nn a frac:CorpusFrequency ;
-    rdf:value 48 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0296-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0296-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0296 kno:registration "신어DB"@ko ;
+    kno:origin "(<영>quiet quitting)" ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%B0%EC%9D%B4%EC%96%B4%ED%8A%B8%ED%80%B4%ED%8C%85> ;
+    kno:indexForm "콰이어트퀴팅"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "콰이어트^퀴팅"@ko ;
+    kno:frequency kno:KN2023-0296-freq-NN-2022 ;
+    kno:component kno:KN2023-0296-c2 ;
+    kno:example "¶최근 조사에 따르면, 직장인 2명 중 1명은 최소한의 자기 업무만 처리하며 회사에 기여하려는 의지가 없는 {콰이어트 퀴팅}의 상태라고 한다."@ko ;
+    kno:frequency kno:KN2023-0296-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0296-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0296-freq-NN-2023 ;
+    skos:definition "직장인들이 자신에게 정해진 시간 동안 책임 범위 내에서만 자신의 업무를 수행하는 것을 이르는 말. 실제로 퇴사를 하지는 않지만 소극적으로 자신의 업무를 처리하며 회사에 기여하고자 하지 않는다는 점에서 ‘조용한 퇴사’라도고 하며, 장기간 유행한 코로나19로 인해 직장인의 피로감과 좌절감이 커진 것이 주요 원인으로 꼽힌다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "콰이어트(quiet), 퀴팅(quitting)"@ko ;
+    a kno:Neologism .
+kno:KN2023-0296-c2 rdfs:label "퀴팅(quitting)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "퀴팅"@ko ;
+    kno:formative kno:F001872 ;
+    kno:surfaceForm "퀴팅"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2023-0296-c1 kno:role "성분"@ko ;
+    kno:surfaceForm "콰이어트"@ko ;
+    kno:semanticTag kno:usas-X3.2m ;
+    a kno:Component ;
+    kno:formative kno:F001866 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "콰이어트(quiet)"@ko ;
+    kno:fullForm "콰이어트"@ko .

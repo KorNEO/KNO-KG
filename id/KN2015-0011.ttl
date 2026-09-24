@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0011 kno:indexForm "곰맘"@ko ;
+    kno:componentString "곰, 맘(mom)"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:predicate "하다"@ko ;
+    kno:languageType "고+영" ;
+    rdfs:label "곰-맘"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1359882" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359882> ;
+    skos:definition "군대에 있는 아들이 군 생활을 잘할 수 있도록 여러 가지로 뒷바라지를 하는 어머니. 남자친구를 군대에 보낸 여성을 뜻하는 ‘곰신’에 엄마를 뜻하는 ‘맘(mom)’이 결합된 말이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(곰<영>mom)" ;
+    kno:slotFiller "맘(mom) (1성분)"@ko ;
+    kno:slotFiller "곰 (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2015-0011-c2 ;
+    kno:component kno:KN2015-0011-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000042 ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S001212 ;
+    kno:example "¶최근 군 관련 사고가 잇따르자 군 생활 중인 아들을 위해 위문 용품을 사는 {곰맘이} 늘어났다."@ko .
+kno:KN2015-0011-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "맘"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "맘"@ko ;
+    kno:formative kno:F000021 .
+kno:KN2015-0011-c1 kno:formative kno:F001069 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "곰"@ko ;
+    kno:surfaceForm "곰"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "곰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko .

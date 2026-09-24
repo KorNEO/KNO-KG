@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0189 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0189-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0189-form ;
-    ontolex:sense kno:KN2021-0189-sense .
-
-kno:KN2021-0189-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003617551> .
-
-kno:KN2021-0189-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0189-freq-nn,
-        kno:KN2021-0189-freq-yt ;
-    ontolex:writtenRep "알파^변이"@ko .
-
-kno:KN2021-0189-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3420 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0189-freq-yt a frac:CorpusFrequency ;
-    rdf:value 76 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0189-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0189 kno:instantiates kno:S000543 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "변이(變異) (1성분)"@ko ;
+    kno:urimalTargetCode "1572515" ;
+    kno:instantiates kno:S000257 ;
+    kno:origin "(<영>alpha變異)" ;
+    kno:frequency kno:KN2021-0189-freq-NN-2022 ;
+    rdfs:label "알파^변이"@ko ;
+    kno:example "¶델타 변이가 {알파 변이보다} 전염력이 더 강하다는 주장이 나왔다."@ko ;
+    kno:frequency kno:KN2021-0189-freq-NN-2021 ;
+    kno:component kno:KN2021-0189-c1 ;
+    kno:indexForm "알파변이"@ko ;
+    kno:component kno:KN2021-0189-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0189-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0189-freq-NN-total ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1572515> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "알파(alpha), 변이(變異)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    skos:definition "영국에서 발견되고 보고된 코로나19의 변이 바이러스. 국가에 대한 낙인 효과를 제거하기 위해 바이러스의 이름을 그리스어 숫자로 대체하게 되었다."@ko ;
+    kno:frequency kno:KN2021-0189-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^한" ;
+    kno:slotFiller "알파(alpha) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0189-freq-NN-2024 .
+kno:KN2021-0189-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "알파(alpha)"@ko ;
+    kno:semanticTag kno:usas-N4 ;
+    kno:formative kno:F000844 ;
+    kno:fullForm "알파"@ko ;
+    kno:surfaceForm "알파"@ko .
+kno:KN2021-0189-c2 kno:formative kno:F000514 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "변이"@ko ;
+    rdfs:label "변이(變異)"@ko ;
+    kno:fullForm "변이"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A2.1 .

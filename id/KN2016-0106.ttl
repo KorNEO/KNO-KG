@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0106 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0106 kno:origin "(道議員內閣制)" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0106-freq-NN-total ;
+    kno:component kno:KN2016-0106-c2 ;
+    kno:unitType "구"@ko ;
+    skos:definition "도 의원이 지방 장관을 겸직할 수 있도록 하는 의원 내각제. 현행 지방 자치법에서는 지방 의원이 지방 공무원을 겸직할 수 없으나, ‘지방 장관’이라는 명예직을 두어 도 의원이 둘 이상의 직위를 겸할 수 있도록 한다."@ko ;
+    kno:instantiates kno:S000195 ;
+    kno:component kno:KN2016-0106-c4 ;
+    kno:component kno:KN2016-0106-c1 ;
+    kno:example "¶OOO 경기도지사의 상징인 ‘연정(聯政)’이 ‘{도 의원 내각제’로} 한 단계 발전할지 관심이 쏠린다."@ko ;
+    kno:frequency kno:KN2016-0106-freq-NN-2016 ;
+    kno:component kno:KN2016-0106-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:indexForm "도의원내각제"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EC%9D%98%EC%9B%90%EB%82%B4%EA%B0%81%EC%A0%9C> ;
+    rdfs:label "도^의원^내각제"@ko ;
+    kno:componentString "도(道), 의원(議員), 내각(內閣), -제(制)"@ko ;
+    kno:slotFiller "도(道)+의원(議員)+내각(內閣) (3성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2016-0106-c2 kno:fullForm "의원"@ko ;
+    rdfs:label "의원(議員)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F001687 ;
+    kno:surfaceForm "의원"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0106-c4 kno:role "고정항"@ko ;
+    rdfs:label "-제(制)"@ko ;
+    kno:fullForm "제"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "제"@ko ;
+    kno:formative kno:F000120 ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1 ;
+    a kno:Component .
+kno:KN2016-0106-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "도(道)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "도"@ko ;
+    kno:formative kno:F001188 ;
+    kno:semanticTag kno:usas-A13.3 ;
+    a kno:Component ;
+    kno:surfaceForm "도"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0106-c3 rdfs:label "내각(內閣)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:fullForm "내각"@ko ;
+    kno:formative kno:F001140 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "내각"@ko ;
+    kno:position "3"^^xsd:integer .

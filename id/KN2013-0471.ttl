@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0471 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0471 kno:frequency kno:KN2013-0471-freq-NN-2012 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "회식(會食) (1성분)"@ko ;
+    kno:frequency kno:KN2013-0471-freq-NN-2022 ;
+    kno:frequency kno:KN2013-0471-freq-NN-2018 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S001127 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:indexForm "회식폰"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9A%8C%EC%8B%9D%ED%8F%B0> ;
+    kno:component kno:KN2013-0471-c2 ;
+    kno:languageType "한+영" ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:componentString "회식(會食), 폰(phone)"@ko ;
+    kno:frequency kno:KN2013-0471-freq-NN-total ;
+    kno:component kno:KN2013-0471-c1 ;
+    rdfs:label "회식-폰"@ko ;
+    kno:example "¶휴대 전화 한 대의 리베이트가 회식을 할 수 있을 정도면 {회식폰이고} 직원 월급에 상당하면 월급폰이며…일당에 해당해 퇴근할 수 있으면 퇴근폰이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0471-freq-NN-2017 ;
+    kno:frequency kno:KN2013-0471-freq-NN-2015 ;
+    skos:definition "판매하면 큰 이득을 얻을 수 있는 휴대 전화. 판매자가 한 대를 팔면, 휴대 전화 제조사와 이동 통신사에서 지급하는 보조금이나 판매 촉진비로 회식을 할 만큼 큰 이득을 남길 수 있음을 비유적으로 이르는 말이다."@ko ;
+    kno:origin "(會食<영>phone)" ;
+    kno:frequency kno:KN2013-0471-freq-NN-2014 .
+kno:KN2013-0471-c2 kno:semanticTag kno:usas-Q1.3 ;
+    a kno:Component ;
+    kno:formative kno:F000107 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "폰"@ko ;
+    kno:surfaceForm "폰"@ko ;
+    rdfs:label "폰(phone)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0471-c1 rdfs:label "회식(會食)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "회식"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "회식"@ko ;
+    kno:formative kno:F002034 ;
+    a kno:Component .

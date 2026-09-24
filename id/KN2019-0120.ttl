@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0120 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0120 kno:frequency kno:KN2019-0120-freq-NN-total ;
+    kno:example "¶회사는 이미 수도권과 지방의 대형 사업장, 사무실, 공동 주택 등 50여 개 장소에 {베이핑 룸을} 설치해 담배 연기 없는 환경 조성을 선도한 바 있다."@ko ;
+    kno:indexForm "베이핑룸"@ko ;
+    kno:instantiates kno:S001404 ;
+    kno:frequency kno:KN2019-0120-freq-NN-2025 ;
+    kno:origin "(<영>vaping room)" ;
+    kno:componentString "베이핑(vaping), 룸(room)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%A0%EC%9D%B4%ED%95%91%20%EB%A3%B8> ;
+    kno:component kno:KN2019-0120-c1 ;
+    kno:frequency kno:KN2019-0120-freq-NN-2019 ;
+    kno:slotFiller "룸(room) (1성분)"@ko ;
+    kno:component kno:KN2019-0120-c2 ;
+    kno:slotFiller "베이핑(vaping) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0120-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0120-freq-NN-2020 ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:label "베이핑 룸"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000853 ;
+    skos:definition "전자 담배를 피우도록 따로 설치한 공간. ⇒규범 표기는 미확정이다."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0120-freq-NN-2022 ;
+    kno:languageType "영_영" .
+kno:KN2019-0120-c1 kno:fullForm "베이핑"@ko ;
+    kno:surfaceForm "베이핑"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F3 ;
+    rdfs:label "베이핑(vaping)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000772 .
+kno:KN2019-0120-c2 kno:fullForm "룸"@ko ;
+    a kno:Component ;
+    rdfs:label "룸(room)"@ko ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "룸"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001255 .

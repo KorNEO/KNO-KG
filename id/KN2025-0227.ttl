@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0227 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0227 a ontolex:Word ;
-    frac:attestation kno:KN2025-0227-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0227-form ;
-    ontolex:sense kno:KN2025-0227-sense .
-
-kno:KN2025-0227-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/241/0003422072> .
-
-kno:KN2025-0227-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0227-freq-nn,
-        kno:KN2025-0227-freq-yt ;
-    ontolex:writtenRep "먹로비"@ko .
-
-kno:KN2025-0227-freq-nn a frac:CorpusFrequency ;
-    rdf:value 68 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0227-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0227-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0227 a kno:Neologism ;
+    kno:slotFiller "로비(lobby) (1성분)"@ko ;
+    kno:component kno:KN2025-0227-c2 ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2025-0227-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0227-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 계약 얘기 꺼내기 전에 먼저 한턱내는 {먹로비를} 했다는 소문이 돌았다."@ko ;
+    rdfs:label "먹로비"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B9%EB%A1%9C%EB%B9%84> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000508 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    skos:definition "(LLM) 식사나 음식 대접을 매개로 상대의 호의를 얻거나 청탁ㆍ협상 등에서 유리한 결과를 끌어내려는 행위."@ko ;
+    kno:componentString "먹(다), 로비(lobby)"@ko ;
+    kno:predicate "끌어내려다"@ko ;
+    kno:indexForm "먹로비"@ko ;
+    kno:component kno:KN2025-0227-c1 ;
+    kno:origin "(먹<영>lobby)" ;
+    kno:languageType "고+영" .
+kno:KN2025-0227-c2 kno:formative kno:F003241 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "로비(lobby)"@ko ;
+    kno:fullForm "로비"@ko ;
+    kno:surfaceForm "로비"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 .
+kno:KN2025-0227-c1 rdfs:label "먹(다)"@ko ;
+    kno:formative kno:F000263 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "먹다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "먹"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "고정항"@ko .

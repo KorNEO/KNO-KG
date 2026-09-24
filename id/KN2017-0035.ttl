@@ -1,0 +1,69 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0035 kno:componentString "그루(밍)(grooming), (얼리 어)답터(early adopter), -족(族)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2017-0035-freq-NN-total ;
+    kno:component kno:KN2017-0035-c1 ;
+    a ontolex:Word ;
+    kno:example "¶패션과 미용에 아낌없이 투자하는 ‘그루밍족’을 넘어 피부 타입에 맞는 제품을 비교하거나 메이크업 제품을 사용하는 ‘{그루답터족’까지} 생겼다."@ko ;
+    kno:frequency kno:KN2017-0035-freq-NN-2017 ;
+    kno:instantiates kno:S000001 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "(얼리 어)답터(early adopter)+-족(族) (2성분)"@ko ;
+    kno:frequency kno:KN2017-0035-freq-NN-2016 ;
+    kno:indexForm "그루답터족"@ko ;
+    kno:origin "(<영>▼←grooming early adopter族)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380345> ;
+    kno:component kno:KN2017-0035-c3 ;
+    kno:urimalTargetCode "1380345" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    rdfs:label "그루답터-족"@ko ;
+    kno:slotFiller "그루(밍)(grooming)+(얼리 어)답터(early adopter) (2성분)"@ko ;
+    kno:frequency kno:KN2017-0035-freq-NN-2018 ;
+    kno:predicate "가꾸다"@ko ;
+    skos:definition "다른 사람보다 먼저 패션이나 미용과 관련된 신제품을 구매하여 외모를 가꾸는 남자. 또는 그런 무리. 자신의 패션이나 미용에 아낌없이 투자하는 남자들을 일컫는 ‘그루밍족(gloomming族)’과, 새로운 제품에 대한 정보를 다른 사람보다 먼저 알고 신제품을 구매하여 사용하는 사람을 의미하는 ‘얼리 어답터(early adopter)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:instantiates kno:S001242 ;
+    kno:component kno:KN2017-0035-c2 .
+kno:KN2017-0035-c1 kno:semanticTag kno:usas-B4 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "그루(밍)(grooming)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "그루"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "그루밍"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001097 .
+kno:KN2017-0035-c3 kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component .
+kno:KN2017-0035-c2 rdfs:label "(얼리 어)답터(early adopter)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "답터"@ko ;
+    kno:semanticTag kno:usas-T4 ;
+    kno:formative kno:F001166 ;
+    kno:fullForm "얼리 어답터"@ko ;
+    kno:truncated "true"^^xsd:boolean .

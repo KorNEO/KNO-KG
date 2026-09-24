@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0085 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0085 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0085-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0085-form ;
-    ontolex:sense kno:KN2025-0085-sense .
-
-kno:KN2025-0085-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003671290> .
-
-kno:KN2025-0085-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0085-freq-nn,
-        kno:KN2025-0085-freq-yt ;
-    ontolex:writtenRep "금관 외교"@ko .
-
-kno:KN2025-0085-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0085-freq-yt a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0085-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0085 kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:origin "(金冠外交)" ;
+    rdfs:label "금관 외교"@ko ;
+    kno:component kno:KN2025-0085-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "금관(金冠) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "금관외교"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EA%B4%80%20%EC%99%B8%EA%B5%90> ;
+    kno:example "(LLM) 일각에서는 이번 순방이 실질 협상보다 상징적 선물에 기대는 {금관외교로} 흐르는 것 아니냐는 지적도 나왔다."@ko ;
+    kno:languageType "한_한" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0085-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 정상회담ㆍ통상 협상 등에서 금관 같은 상징성이 큰 문화유산ㆍ기념품을 내세워 상대국의 호감을 얻고, 외교적 성과를 부각하려는 방식을 비판적으로 이르는 말."@ko ;
+    kno:instantiates kno:S000127 ;
+    kno:frequency kno:KN2025-0085-freq-NN-2025 ;
+    kno:componentString "금관(金冠), 외교(外交)"@ko ;
+    kno:component kno:KN2025-0085-c2 .
+kno:KN2025-0085-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "금관"@ko ;
+    kno:surfaceForm "금관"@ko ;
+    a kno:Component ;
+    rdfs:label "금관(金冠)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002561 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 .
+kno:KN2025-0085-c2 kno:semanticTag kno:usas-G1.1 ;
+    kno:fullForm "외교"@ko ;
+    kno:surfaceForm "외교"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000295 ;
+    rdfs:label "외교(外交)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

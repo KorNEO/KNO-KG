@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0300 kno:pos "「명」"@ko ;
+    skos:definition "‘파도 파도 미담’을 줄여 이르는 말. 사람들이 감동할 만큼 좋은 이야기가 끊임없이 나온다는 말이다."@ko ;
+    kno:slotFiller "미(담)(美) (1성분)"@ko ;
+    rdfs:label "파파미"@ko ;
+    kno:languageType "고+한" ;
+    kno:frequency kno:KN2017-0300-freq-NN-2019 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2022 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380561> ;
+    kno:componentString "파(다), 파(다), 미(담)(美)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0300-freq-NN-total ;
+    kno:component kno:KN2017-0300-c2 ;
+    kno:component kno:KN2017-0300-c1 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2021 ;
+    kno:urimalTargetCode "1380561" ;
+    kno:frequency kno:KN2017-0300-freq-NN-2018 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2025 ;
+    kno:indexForm "파파미"@ko ;
+    kno:frequency kno:KN2017-0300-freq-NN-2023 ;
+    kno:example "¶OOO는 야구계의 ‘{파파미’다}. 이미 OO 팬들은 그를 ‘기부 천사’라고 부른다."@ko ;
+    kno:origin "(파파美)" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001731 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2020 ;
+    kno:component kno:KN2017-0300-c3 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2017 ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2017-0300-freq-NN-2024 ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2017-0300-c2 a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "파"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "파(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "파다"@ko ;
+    kno:formative kno:F001932 .
+kno:KN2017-0300-c1 kno:semanticTag kno:usas-A1.1.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "파다"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "파"@ko ;
+    rdfs:label "파(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001932 ;
+    a kno:Component .
+kno:KN2017-0300-c3 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:surfaceForm "미"@ko ;
+    a kno:Component ;
+    kno:fullForm "미담"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "미(담)(美)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F003580 .

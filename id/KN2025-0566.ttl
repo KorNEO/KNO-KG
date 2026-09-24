@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0566 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0566 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0566-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0566-form ;
-    ontolex:sense kno:KN2025-0566-sense .
-
-kno:KN2025-0566-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0002418629> .
-
-kno:KN2025-0566-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0566-freq-nn,
-        kno:KN2025-0566-freq-yt ;
-    ontolex:writtenRep "치유 낙농"@ko .
-
-kno:KN2025-0566-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0566-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0566-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0566 kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "치유낙농"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "치유 낙농"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%98%EC%9C%A0%20%EB%82%99%EB%86%8D> ;
+    kno:component kno:KN2025-0566-c2 ;
+    kno:origin "(治癒酪農)" ;
+    kno:component kno:KN2025-0566-c1 ;
+    skos:definition "(LLM) 목장(낙농) 환경에서 젖소 등 가축과의 교감, 돌봄, 체험 활동을 통해 정서적 안정과 스트레스 완화를 돕는 치유ㆍ돌봄 프로그램 또는 활동."@ko ;
+    kno:example "(LLM) 도는 사회적 배려 유ㆍ청소년을 대상으로 목장 체험을 확대해 {치유낙농} 프로그램을 운영할 계획이라고 밝혔다."@ko ;
+    kno:frequency kno:KN2025-0566-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "치유(治癒), 낙농(酪農)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0566-freq-NN-2025 .
+kno:KN2025-0566-c2 kno:formative kno:F002681 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "낙농(酪農)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I4 ;
+    kno:fullForm "낙농"@ko ;
+    kno:surfaceForm "낙농"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2025-0566-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001838 ;
+    rdfs:label "치유(治癒)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "치유"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "치유"@ko ;
+    kno:truncated "false"^^xsd:boolean .

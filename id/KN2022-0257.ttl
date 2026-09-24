@@ -1,36 +1,77 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0257 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0257 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0257-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0257-form ;
-    ontolex:sense kno:KN2022-0257-sense .
-
-kno:KN2022-0257-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0010633964> .
-
-kno:KN2022-0257-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0257-freq-nn,
-        kno:KN2022-0257-freq-yt ;
-    ontolex:writtenRep "지역^소멸^대응^기금"@ko .
-
-kno:KN2022-0257-freq-nn a frac:CorpusFrequency ;
-    rdf:value 546 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0257-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0257-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0257 kno:component kno:KN2022-0257-c3 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0257-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0257-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0257-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0257-freq-NN-2021 ;
+    kno:slotFiller "지역(地域) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0257-freq-NN-total ;
+    kno:component kno:KN2022-0257-c4 ;
+    kno:unitType "구"@ko ;
+    rdfs:label "지역^소멸^대응^기금"@ko ;
+    kno:instantiates kno:S000326 ;
+    kno:component kno:KN2022-0257-c1 ;
+    kno:instantiates kno:S000943 ;
+    kno:componentString "지역(地域), 소멸(消滅), 대응(對應), 기금(基金)"@ko ;
+    kno:frequency kno:KN2022-0257-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0257-c2 ;
+    kno:example "¶행정 안전부는 지방 소멸 위기를 극복하기 위해 2014년 {지역 소멸 대응 기금의} 개선 방안을 마련하겠다고 밝혔다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "지역소멸대응기금"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(地域消滅對應基金)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%97%AD%EC%86%8C%EB%A9%B8%EB%8C%80%EC%9D%91%EA%B8%B0%EA%B8%88> ;
+    kno:slotFiller "소멸(消滅)+대응(對應)+기금(基金) (3성분)"@ko ;
+    kno:languageType "한^한^한^한" ;
+    skos:definition "인구가 감소하여 사라질 위기에 있는 지방 자치 단체를 위해 조성된 재정 지원 자금. =지방 소멸 대응 기금."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0257-c3 kno:position "3"^^xsd:integer ;
+    rdfs:label "대응(對應)"@ko ;
+    a kno:Component ;
+    kno:fullForm "대응"@ko ;
+    kno:surfaceForm "대응"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:formative kno:F001172 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0257-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000096 ;
+    kno:surfaceForm "기금"@ko ;
+    rdfs:label "기금(基金)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "기금"@ko .
+kno:KN2022-0257-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "지역"@ko ;
+    a kno:Component ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "지역"@ko ;
+    kno:formative kno:F000063 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0257-c2 rdfs:label "소멸(消滅)"@ko ;
+    kno:fullForm "소멸"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A3m ;
+    kno:surfaceForm "소멸"@ko ;
+    kno:formative kno:F000284 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0079 skos:definition "얼얼하면서 매운 맛을 내는 ‘마라’라는 향신료가 들어간 음식을 먹는 주간. ⇒규범 표기는 미확정이다."@ko ;
+    kno:frequency kno:KN2019-0079-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0079-freq-NN-2022 ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:label "마라 위크"@ko ;
+    kno:component kno:KN2019-0079-c1 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0079-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0079-freq-NN-total ;
+    kno:urimalTargetCode "1436773" ;
+    kno:unitType "구"@ko ;
+    kno:predicate "먹다"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:example "¶여기저기서 {‘마라 위크’를} 보내려는 ‘마심’ 충만한 이들이 ‘혈중 마라 농도’를 채울 ‘마세권’으로 향한다."@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1436773> ;
+    kno:languageType "중_영" ;
+    kno:component kno:KN2019-0079-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(<중>←mala[麻辣]<영>week)" ;
+    kno:componentString "마라(mala), 위크(week)"@ko ;
+    kno:indexForm "마라위크"@ko .
+kno:KN2019-0079-c1 rdfs:label "마라(mala)"@ko ;
+    kno:formative kno:F001270 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "마라"@ko ;
+    kno:surfaceForm "마라"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-F1 .
+kno:KN2019-0079-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005282 ;
+    kno:fullForm "위크"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "위크"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    rdfs:label "위크(week)"@ko .

@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0335 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0335 a ontolex:Word ;
-    frac:attestation kno:KN2023-0335-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0335-form ;
-    ontolex:sense kno:KN2023-0335-sense .
-
-kno:KN2023-0335-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/112/0003312106> .
-
-kno:KN2023-0335-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0335-freq-nn,
-        kno:KN2023-0335-freq-yt ;
-    ontolex:writtenRep "편픽"@ko .
-
-kno:KN2023-0335-freq-nn a frac:CorpusFrequency ;
-    rdf:value 74 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0335-freq-yt a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0335-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0335 kno:example "¶편의점에서 물건을 주문한 뒤 직접 가져갈 수 있는 ‘{편픽’}이 출시된 후, 어마어마한 속도로 이용자가 상승하는 추세를 보이고 있다."@ko ;
+    kno:frequency kno:KN2023-0335-freq-NN-2022 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "편픽"@ko ;
+    kno:slotFiller "편(의점)(便宜店) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0335-freq-NN-2024 ;
+    kno:instantiates kno:S001133 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0335-c1 ;
+    kno:languageType "한+영" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:origin "(便<영>pick)" ;
+    kno:componentString "편(의점)(便宜店), 픽(pick)"@ko ;
+    skos:definition "‘편의점 픽업(pick up)’을 줄여 이르는 말. 상품을 미리 주문한 뒤, 원하는 시간에 편의점에서 직접 물건을 수령해 갈 수 있는 서비스를 말한다."@ko ;
+    kno:indexForm "편픽"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%ED%94%BD> ;
+    kno:component kno:KN2023-0335-c2 ;
+    kno:frequency kno:KN2023-0335-freq-NN-total ;
+    a ontolex:Word ;
+    kno:slotFiller "픽(pick) (1성분)"@ko ;
+    kno:instantiates kno:S000602 ;
+    kno:frequency kno:KN2023-0335-freq-NN-2025 .
+kno:KN2023-0335-c1 kno:formative kno:F000994 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "편의점"@ko ;
+    rdfs:label "편(의점)(便宜店)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "편"@ko .
+kno:KN2023-0335-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "픽"@ko ;
+    kno:surfaceForm "픽"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001008 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X7p ;
+    rdfs:label "픽(pick)"@ko .

@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0538 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0538 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0538-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0538-form ;
-    ontolex:sense kno:KN2025-0538-sense .
-
-kno:KN2025-0538-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/427/0000042673> .
-
-kno:KN2025-0538-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0538-freq-nn,
-        kno:KN2025-0538-freq-yt ;
-    ontolex:writtenRep "지우기 마케팅"@ko .
-
-kno:KN2025-0538-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0538-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0538-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0538 kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(지우기<영>marketing)" ;
+    kno:component kno:KN2025-0538-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "지우기마케팅"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0538-c2 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "지우기 마케팅"@ko ;
+    kno:example "(LLM) 제작사는 주연 배우의 구설이 커지자 포스터와 예고편에서 해당 인물의 노출을 줄이는 {지우기마케팅을} 선택했다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "지우기 (1성분)"@ko ;
+    kno:frequency kno:KN2025-0538-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%9A%B0%EA%B8%B0%20%EB%A7%88%EC%BC%80%ED%8C%85> ;
+    kno:componentString "지우기, 마케팅(marketing)"@ko ;
+    kno:frequency kno:KN2025-0538-freq-NN-total ;
+    kno:instantiates kno:S000050 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    skos:definition "(LLM) 논란이 되거나 불리하게 작용할 수 있는 인물ㆍ요소를 홍보물이나 대외 노출에서 의도적으로 제외하거나 비중을 줄여 부정적 반응을 완화하려는 마케팅 방식."@ko ;
+    kno:languageType "고_영" .
+kno:KN2025-0538-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "지우기"@ko ;
+    a kno:Component ;
+    kno:fullForm "지우기"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "지우기"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005886 .
+kno:KN2025-0538-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "마케팅"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "마케팅"@ko ;
+    kno:formative kno:F000111 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "마케팅(marketing)"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component .

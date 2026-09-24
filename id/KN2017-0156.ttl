@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0156 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0156 kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "술, (인)스타그램(Instagram), -족(族)"@ko ;
+    kno:formation kno:W02 ;
+    kno:example "¶소셜 네트워크 서비스(SNS) OO에 술이나 안주 사진을 올리는 일명 ‘{술스타그램족’이} 늘면서 디자인이 예쁜 술에 대한 수요도 증가했다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A0%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8%EC%A1%B1> ;
+    kno:component kno:KN2017-0156-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:languageType "(고+영)+한" ;
+    kno:component kno:KN2017-0156-c1 ;
+    kno:instantiates kno:S000150 ;
+    kno:origin "(술←Instagram族)" ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:predicate "올리다"@ko ;
+    kno:indexForm "술스타그램족"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    skos:definition "누리 소통망 서비스(SNS)에서 술과 관련된 게시물을 주로 올리는 사람. 또는 그런 무리."@ko ;
+    kno:slotFiller "술+(인)스타그램(Instagram) (2성분)"@ko ;
+    kno:component kno:KN2017-0156-c3 ;
+    kno:slotFiller "(인)스타그램(Instagram)+-족(族) (2성분)"@ko ;
+    rdfs:label "술스타그램-족"@ko ;
+    kno:frequency kno:KN2017-0156-freq-NN-total ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0156-freq-NN-2016 .
+kno:KN2017-0156-c2 rdfs:label "(인)스타그램(Instagram)"@ko ;
+    kno:formative kno:F000143 ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "스타그램"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "인스타그램"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0156-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "술"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "술"@ko ;
+    kno:surfaceForm "술"@ko ;
+    kno:formative kno:F000142 .
+kno:KN2017-0156-c3 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

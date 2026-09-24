@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0064 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0064 kno:urimalTargetCode "1373297" ;
+    kno:slotFiller "끓는+물 (2성분)"@ko ;
+    kno:frequency kno:KN2016-0064-freq-NN-2016 ;
+    kno:instantiates kno:S000404 ;
+    kno:component kno:KN2016-0064-c2 ;
+    kno:componentString "끓는, 물, 수능(修能)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0064-freq-NN-total ;
+    kno:frequency kno:KN2016-0064-freq-NN-2017 ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373297> ;
+    kno:example "¶실제로 뚜껑을 열어 보니 ‘{끓는 물 수능’이었음이} 입증된 것으로, 특히 영어 과목이 대폭 어려워져 당락을 좌우할 것으로 예상된다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0064-c3 ;
+    skos:definition "예상했던 것보다 난이도가 너무 높아 어렵게 출제된 대학 수학 능력 시험을 비난조로 이르는 말. 2016학년도 대학 수학 능력 시험이 쉬울 것이라는 예상과는 달리 매우 어렵게 출제되어 생겨난 말이다."@ko ;
+    kno:component kno:KN2016-0064-c1 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(끓는물修能)" ;
+    kno:frequency kno:KN2016-0064-freq-NN-2015 ;
+    kno:languageType "고^고^한" ;
+    rdfs:label "끓는^물^수능"@ko ;
+    kno:indexForm "끓는물수능"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0064-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000756 ;
+    kno:fullForm "물"@ko ;
+    kno:surfaceForm "물"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "물"@ko .
+kno:KN2016-0064-c3 kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "수능"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000539 ;
+    rdfs:label "수능(修能)"@ko ;
+    kno:fullForm "수능"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0064-c1 kno:surfaceForm "끓는"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.6p ;
+    rdfs:label "끓는"@ko ;
+    kno:fullForm "끓는"@ko ;
+    kno:formative kno:F002660 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

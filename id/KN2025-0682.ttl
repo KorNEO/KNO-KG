@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0682 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0682 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0682-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0682-form ;
-    ontolex:sense kno:KN2025-0682-sense .
-
-kno:KN2025-0682-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/024/0000100462> .
-
-kno:KN2025-0682-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0682-freq-nn,
-        kno:KN2025-0682-freq-yt ;
-    ontolex:writtenRep "호모 브레인 오프"@ko .
-
-kno:KN2025-0682-freq-nn a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0682-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0682-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0682 kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "호모(Homo), 브레인(brain), 오프(off)"@ko ;
+    kno:component kno:KN2025-0682-c3 ;
+    kno:frequency kno:KN2025-0682-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0682-c1 ;
+    kno:frequency kno:KN2025-0682-freq-NN-total ;
+    kno:example "(LLM) 회의 안건도 정리도 전부 추천 목록대로만 따라가니 {호모브레인오프가} 된 것 같다는 말이 나왔다."@ko ;
+    rdfs:label "호모 브레인 오프"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "호모브레인오프"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EB%AA%A8%20%EB%B8%8C%EB%A0%88%EC%9D%B8%20%EC%98%A4%ED%94%84> ;
+    kno:component kno:KN2025-0682-c2 ;
+    kno:predicate "줄이다"@ko ;
+    kno:slotFiller "브레인(brain)+오프(off) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000109 ;
+    skos:definition "(LLM) 생성형 인공 지능이나 알고리즘 추천에 지나치게 의존해 스스로 사고하고 판단하는 과정을 꺼리거나 줄이는 사람."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0682-c3 kno:fullForm "오프"@ko ;
+    kno:surfaceForm "오프"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "오프(off)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F005133 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0682-c1 kno:surfaceForm "호모"@ko ;
+    rdfs:label "호모(Homo)"@ko ;
+    kno:formative kno:F000026 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "호모"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0682-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001400 ;
+    rdfs:label "브레인(brain)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "브레인"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "브레인"@ko .

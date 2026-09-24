@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0178 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0178-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0178-form ;
-    ontolex:sense kno:KN2020-0178-sense .
-
-kno:KN2020-0178-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0009641413> .
-
-kno:KN2020-0178-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0178-freq-nn,
-        kno:KN2020-0178-freq-yt ;
-    ontolex:writtenRep "수사^심사관"@ko .
-
-kno:KN2020-0178-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1196 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0178-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0178-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0178 kno:frequency kno:KN2020-0178-freq-NN-2025 ;
+    skos:definition "경찰서에서 사건의 수사 과정과 결과를 독립적으로 심사하는 일을 맡은 사람."@ko ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0178-c1 ;
+    kno:frequency kno:KN2020-0178-freq-NN-2020 ;
+    kno:indexForm "수사심사관"@ko ;
+    kno:frequency kno:KN2020-0178-freq-NN-total ;
+    a kno:Neologism ;
+    kno:example "¶{수사 심사관은} 부실 수사와 편파 수 사를 가려내는 내부 감시자의 역할을 하게 된다."@ko ;
+    kno:instantiates kno:S001475 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%82%AC%EC%8B%AC%EC%82%AC%EA%B4%80> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0178-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0178-c2 ;
+    rdfs:label "수사^심사관"@ko ;
+    kno:predicate "맡은"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:slotFiller "심사관(審査官) (1성분)"@ko ;
+    kno:componentString "수사(搜査), 심사관(審査官)"@ko ;
+    kno:origin "(搜査審査官)" ;
+    kno:frequency kno:KN2020-0178-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0178-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0178-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0178-freq-NN-2021 .
+kno:KN2020-0178-c1 kno:formative kno:F000540 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "수사"@ko ;
+    kno:surfaceForm "수사"@ko ;
+    a kno:Component ;
+    rdfs:label "수사(搜査)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2020-0178-c2 kno:fullForm "심사관"@ko ;
+    kno:surfaceForm "심사관"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "심사관(審査官)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004735 .

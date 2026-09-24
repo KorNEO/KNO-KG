@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0668 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0668 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0668-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0668-form ;
-    ontolex:sense kno:KN2025-0668-sense .
-
-kno:KN2025-0668-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002464183> .
-
-kno:KN2025-0668-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0668-freq-nn,
-        kno:KN2025-0668-freq-yt ;
-    ontolex:writtenRep "햇빛 기본 소득"@ko .
-
-kno:KN2025-0668-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0668-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0668-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0668 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%96%87%EB%B9%9B%20%EA%B8%B0%EB%B3%B8%20%EC%86%8C%EB%93%9D> ;
+    kno:origin "(햇빛基本所得)" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0668-freq-NN-total ;
+    kno:instantiates kno:S000246 ;
+    kno:component kno:KN2025-0668-c3 ;
+    kno:frequency kno:KN2025-0668-freq-NN-2025 ;
+    kno:languageType "고_한_한" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0668-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 태양광 발전 등 햇빛을 이용해 얻은 전력 판매 수익을 재원으로 하여 주민이나 국민에게 일정 금액을 배당하는 소득(또는 제도)."@ko ;
+    kno:slotFiller "기본(基本) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "햇빛기본소득"@ko ;
+    kno:example "(LLM) 지자체가 공공부지에 태양광 설비를 설치해 발생한 수익을 지역화폐로 나눠 주는 방안을 검토하면서 {햇빛기본소득을} 도입하자는 목소리도 커졌다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001766 ;
+    rdfs:label "햇빛 기본 소득"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "햇빛 (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "햇빛, 기본(基本), 소득(所得)"@ko ;
+    kno:component kno:KN2025-0668-c2 .
+kno:KN2025-0668-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000047 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    rdfs:label "소득(所得)"@ko ;
+    kno:fullForm "소득"@ko ;
+    kno:surfaceForm "소득"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0668-c1 kno:formative kno:F002005 ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "햇빛"@ko ;
+    kno:surfaceForm "햇빛"@ko ;
+    a kno:Component ;
+    kno:fullForm "햇빛"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0668-c2 kno:semanticTag kno:usas-A4.2m ;
+    rdfs:label "기본(基本)"@ko ;
+    kno:fullForm "기본"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "기본"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000085 .

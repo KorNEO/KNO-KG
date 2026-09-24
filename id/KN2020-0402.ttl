@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0402 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0402 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0402-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0402-form ;
-    ontolex:sense kno:KN2020-0402-sense .
-
-kno:KN2020-0402-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003542152> .
-
-kno:KN2020-0402-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0402-freq-nn,
-        kno:KN2020-0402-freq-yt ;
-    ontolex:writtenRep "홈터 파크"@ko .
-
-kno:KN2020-0402-freq-nn a frac:CorpusFrequency ;
-    rdf:value 87 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0402-freq-yt a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0402-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0402 a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0402-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "홈(home), (워)터파크(water park)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%88%ED%84%B0%20%ED%8C%8C%ED%81%AC> ;
+    kno:slotFiller "(워)터파크(water park) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0402-freq-NN-2020 ;
+    rdfs:label "홈터 파크"@ko ;
+    skos:definition "집에서 물놀이를 하며 워터 파크에서 노는 듯한 분위기를 내는 일. 또는 그 공간. 코로나19로 인해 외부 활동에 제약이 생기면서 사용되는 말이다. =집터 파크."@ko ;
+    kno:instantiates kno:S000158 ;
+    kno:frequency kno:KN2020-0402-freq-NN-2023 ;
+    kno:indexForm "홈터파크"@ko ;
+    kno:frequency kno:KN2020-0402-freq-NN-2021 ;
+    kno:component kno:KN2020-0402-c2 ;
+    kno:languageType "영_영" ;
+    kno:origin "(<영>▼home←water park)" ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶바캉스 시즌임에도 코로나19로 외출이 어려워 집에서 일명 ‘{홈터 파크’를} 즐기는 사람들이 늘어나고 있다."@ko ;
+    kno:predicate "내다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0402-freq-NN-total ;
+    kno:component kno:KN2020-0402-c1 .
+kno:KN2020-0402-c2 kno:fullForm "워터파크"@ko ;
+    rdfs:label "(워)터파크(water park)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F006438 ;
+    kno:surfaceForm "터파크"@ko .
+kno:KN2020-0402-c1 kno:formative kno:F000045 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "홈"@ko ;
+    kno:surfaceForm "홈"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "홈(home)"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:position "1"^^xsd:integer .

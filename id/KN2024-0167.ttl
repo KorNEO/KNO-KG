@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0167 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0167 a ontolex:Word ;
-    frac:attestation kno:KN2024-0167-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0167-form ;
-    ontolex:sense kno:KN2024-0167-sense .
-
-kno:KN2024-0167-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005148843> .
-
-kno:KN2024-0167-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0167-freq-nn,
-        kno:KN2024-0167-freq-yt ;
-    ontolex:writtenRep "알테쉬"@ko .
-
-kno:KN2024-0167-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1515 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0167-freq-yt a frac:CorpusFrequency ;
-    rdf:value 137 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0167-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0167 kno:component kno:KN2024-0167-c1 ;
+    kno:instantiates kno:S001526 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶이들 업체들은 {알테쉬로} 불리며 수수료 제로 정책과 막대한 자금력을 투입한 광고로 판매자들을 확보하고 있지만, 국내 업체가 부담해야 하는 관세에서는 자유로워 역차별이라는 논란이 제기되기도 한다."@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "쉬(인)(Shein) (1성분)"@ko ;
+    kno:componentString "알(리익스프레스)(AliExpress), 테(무)(Temu), 쉬(인)(Shein)"@ko ;
+    kno:languageType "영+영+영" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0167-c3 ;
+    rdfs:label "알테쉬"@ko ;
+    kno:frequency kno:KN2024-0167-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0167-freq-NN-total ;
+    kno:frequency kno:KN2024-0167-freq-NN-2024 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    skos:definition "중국의 온라인 쇼핑 업체 ‘알리익스프레스, 테무, 쉬인’을 아울러 이르는 말. 각 기업의 앞 글자를 따 만들어진 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%8C%ED%85%8C%EC%89%AC> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:origin "(←AliExpress←Temu←Shein)" ;
+    kno:component kno:KN2024-0167-c2 ;
+    kno:indexForm "알테쉬"@ko .
+kno:KN2024-0167-c1 rdfs:label "알(리익스프레스)(AliExpress)"@ko ;
+    kno:surfaceForm "알"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000843 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:fullForm "알리익스프레스"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2024-0167-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "쉬인"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F001513 ;
+    rdfs:label "쉬(인)(Shein)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "쉬"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0167-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "테무"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001897 ;
+    rdfs:label "테(무)(Temu)"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "테"@ko .

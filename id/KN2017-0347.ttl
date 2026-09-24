@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0347 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0347 a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%8C%ED%8C%85%20%EC%BD%98%ED%85%90%EC%B8%A0> ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2017-0347-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "매체를 통하여 제공되는, 헌팅과 관련된 디지털 정보. 주로 인터넷 방송에서 다루는, 길거리에서 애인을 찾는 방법이나 그 내용을 이른다."@ko ;
+    kno:slotFiller "헌팅(hunting) (1성분)"@ko ;
+    kno:componentString "헌팅(hunting), 콘텐츠(contents)"@ko ;
+    rdfs:label "헌팅 콘텐츠"@ko ;
+    kno:frequency kno:KN2017-0347-freq-NN-2017 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S001069 ;
+    kno:frequency kno:KN2017-0347-freq-NN-total ;
+    kno:indexForm "헌팅콘텐츠"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2017-0347-freq-NN-2023 ;
+    kno:frequency kno:KN2017-0347-freq-NN-2024 ;
+    kno:origin "(<영>▼hunting contents)" ;
+    a kno:Neologism ;
+    kno:example "¶한편 O 씨와 O 씨는 일명 ‘{헌팅 콘텐츠’를} 처음 인터넷 방송에 도입했다."@ko ;
+    kno:component kno:KN2017-0347-c1 .
+kno:KN2017-0347-c2 rdfs:label "콘텐츠(contents)"@ko ;
+    kno:fullForm "콘텐츠"@ko ;
+    kno:surfaceForm "콘텐츠"@ko ;
+    kno:formative kno:F000961 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q4.3 .
+kno:KN2017-0347-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002010 ;
+    rdfs:label "헌팅(hunting)"@ko ;
+    a kno:Component ;
+    kno:fullForm "헌팅"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "헌팅"@ko ;
+    kno:semanticTag kno:usas-S3.2 .

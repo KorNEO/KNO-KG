@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0280 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0280-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0280-form ;
-    ontolex:sense kno:KN2024-0280-sense .
-
-kno:KN2024-0280-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0001076931> .
-
-kno:KN2024-0280-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0280-freq-nn,
-        kno:KN2024-0280-freq-yt ;
-    ontolex:writtenRep "지구^열대화"@ko .
-
-kno:KN2024-0280-freq-nn a frac:CorpusFrequency ;
-    rdf:value 271 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0280-freq-yt a frac:CorpusFrequency ;
-    rdf:value 252 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0280-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0280 kno:frequency kno:KN2024-0280-freq-NN-2023 ;
+    kno:indexForm "지구열대화"@ko ;
+    kno:frequency kno:KN2024-0280-freq-NN-2024 ;
+    skos:definition "지구의 기온이 높아져 열대 기후 수준의 고온 상태에 이르는 현상."@ko ;
+    kno:component kno:KN2024-0280-c1 ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EA%B5%AC%EC%97%B4%EB%8C%80%ED%99%94> ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(地球熱帶化)" ;
+    rdfs:label "지구^열대화"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "지구(地球), 열대화(熱帶化)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶{지구 열대화에} 따른 폭염과 가뭄이 전 세계적으로 확산되고 있다."@ko ;
+    kno:frequency kno:KN2024-0280-freq-NN-2025 ;
+    kno:component kno:KN2024-0280-c2 ;
+    kno:frequency kno:KN2024-0280-freq-NN-total .
+kno:KN2024-0280-c1 kno:surfaceForm "지구"@ko ;
+    kno:fullForm "지구"@ko ;
+    kno:formative kno:F005866 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "지구(地球)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0280-c2 rdfs:label "열대화(熱帶化)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "열대화"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:formative kno:F005068 ;
+    kno:surfaceForm "열대화"@ko .

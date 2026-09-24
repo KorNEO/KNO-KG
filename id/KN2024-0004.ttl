@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0004 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0004 a ontolex:Word ;
-    frac:attestation kno:KN2024-0004-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0004-form ;
-    ontolex:sense kno:KN2024-0004-sense .
-
-kno:KN2024-0004-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003534425> .
-
-kno:KN2024-0004-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0004-freq-nn,
-        kno:KN2024-0004-freq-yt ;
-    ontolex:writtenRep "감속주의-자"@ko .
-
-kno:KN2024-0004-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0004-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0004-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0004 kno:component kno:KN2024-0004-c1 ;
+    a kno:Neologism ;
+    skos:definition "기술이 급진적으로 발전하는 것을 경계하고 개발 속도를 조절해야 한다고 주장하는 사람."@ko ;
+    kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2024-0004-freq-NN-2024 ;
+    kno:example "¶가속주의자와 반대편에 선 {감속주의자들은} 인공 지능의 부작용을 우려하며 개발의 속도를 조절해야 한다고 주장한다."@ko ;
+    kno:instantiates kno:S000016 ;
+    kno:frequency kno:KN2024-0004-freq-NN-2023 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "감속주의(減速主義) (1성분)"@ko ;
+    kno:frequency kno:KN2024-0004-freq-NN-total ;
+    a ontolex:Word ;
+    rdfs:label "감속주의-자"@ko ;
+    kno:indexForm "감속주의자"@ko ;
+    kno:origin "(減速主義者)" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0004-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%90%EC%86%8D%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "감속주의(減速主義), -자(者)"@ko ;
+    kno:predicate "주장하다"@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2024-0004-c1 kno:formative kno:F002126 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "감속주의(減速主義)"@ko ;
+    kno:fullForm "감속주의"@ko ;
+    kno:surfaceForm "감속주의"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0004-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko .

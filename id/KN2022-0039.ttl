@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0039 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0039 a ontolex:Word ;
-    frac:attestation kno:KN2022-0039-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0039-form ;
-    ontolex:sense kno:KN2022-0039-sense .
-
-kno:KN2022-0039-att-nn a frac:Attestation ;
-    dcterms:date "2021-09-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004604345> .
-
-kno:KN2022-0039-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0039-freq-nn,
-        kno:KN2022-0039-freq-yt ;
-    ontolex:writtenRep "골푸어"@ko .
-
-kno:KN2022-0039-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0039-freq-yt a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0039-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0039 kno:predicate "하다"@ko ;
+    kno:instantiates kno:S000472 ;
+    kno:component kno:KN2022-0039-c2 ;
+    rdfs:label "골푸어"@ko ;
+    kno:instantiates kno:S001129 ;
+    kno:frequency kno:KN2022-0039-freq-NN-2021 ;
+    kno:languageType "영+영" ;
+    kno:component kno:KN2022-0039-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0039-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "푸어(poor) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:slotFiller "골(프)(golf) (1성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:example "¶골프 때문에 궁핍해진 사람들을 ‘{골푸어’라} 부르기도 하였다."@ko ;
+    kno:indexForm "골푸어"@ko ;
+    kno:formation kno:W05 ;
+    kno:componentString "골(프)(golf), 푸어(poor)"@ko ;
+    kno:frequency kno:KN2022-0039-freq-NN-2022 ;
+    a ontolex:Word ;
+    skos:definition "자신의 경제력에 비해 비싼 골프 용품들을 구매하여 경제적으로 궁핍한 생활을 하는 사람."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(<영>▼←golf poor)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A8%ED%91%B8%EC%96%B4> .
+kno:KN2022-0039-c2 rdfs:label "푸어(poor)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000050 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "푸어"@ko ;
+    kno:surfaceForm "푸어"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m .
+kno:KN2022-0039-c1 kno:role "고정항"@ko ;
+    kno:fullForm "골프"@ko ;
+    kno:surfaceForm "골"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "골(프)(golf)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000457 ;
+    kno:semanticTag kno:usas-K5.1 .

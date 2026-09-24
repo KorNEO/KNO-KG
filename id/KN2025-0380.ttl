@@ -1,37 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0380 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0380 a ontolex:Word ;
-    frac:attestation kno:KN2025-0380-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0380-form ;
-    ontolex:sense kno:KN2025-0380-sense .
-
-kno:KN2025-0380-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003925922> .
-
-kno:KN2025-0380-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0380-freq-nn,
-        kno:KN2025-0380-freq-yt ;
-    ontolex:writtenRep "실압근"@ko .
-
-kno:KN2025-0380-freq-nn a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0380-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2078 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0380-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%82%B4%EC%9E%A5%ED%98%95%20%EA%B7%BC%EC%9C%A1> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0380 kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    kno:example "(LLM) 체격은 왜소해 보이는데도 악력이랑 코어 힘이 좋아서 주변에서 {실압근이라고} 부르더라."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0380-c2 ;
+    kno:frequency kno:KN2025-0380-freq-NN-total ;
+    kno:component kno:KN2025-0380-c3 ;
+    kno:indexForm "실압근"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EC%95%95%EA%B7%BC> ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 겉으로 드러나는 근육량은 크지 않지만 실제로는 힘이 단단하고 효율적으로 나오는 체형이나 근력을 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0380-freq-NN-2025 ;
+    kno:componentString "실(제)(實際), 압(력)(壓力), 근(육)(筋肉)"@ko ;
+    kno:origin "(實壓筋)" ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0380-c1 ;
+    rdfs:label "실압근"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "한+한+한" .
+kno:KN2025-0380-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "압력"@ko ;
+    kno:formative kno:F004866 ;
+    kno:surfaceForm "압"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X9.1p ;
+    rdfs:label "압(력)(壓力)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2025-0380-c3 kno:surfaceForm "근"@ko ;
+    kno:formative kno:F002542 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "근(육)(筋肉)"@ko ;
+    a kno:Component ;
+    kno:fullForm "근육"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2025-0380-c1 kno:formative kno:F001556 ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:fullForm "실제"@ko ;
+    kno:surfaceForm "실"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "실(제)(實際)"@ko .

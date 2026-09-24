@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0368 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0368 a ontolex:Word ;
-    frac:attestation kno:KN2020-0368-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0368-form ;
-    ontolex:sense kno:KN2020-0368-sense .
-
-kno:KN2020-0368-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011543323> .
-
-kno:KN2020-0368-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0368-freq-nn,
-        kno:KN2020-0368-freq-yt ;
-    ontolex:writtenRep "코로나케이션"@ko .
-
-kno:KN2020-0368-freq-nn a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0368-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0368-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0368 kno:example "¶학교에 가지 않는 {코로나케이션에} 슬기롭게 대응하기 위해서는 학생 본인의 노력뿐만 아니라 학부모들의 세심한 관심도 요구된다."@ko ;
+    kno:frequency kno:KN2020-0368-freq-NN-2020 ;
+    kno:component kno:KN2020-0368-c2 ;
+    kno:urimalTargetCode "1513228" ;
+    a ontolex:Word ;
+    skos:definition "코로나19로 인해 수업이 학교 현장에서 이루어지지 않고 집에 머물면서 온라인 비대면 수업으로 진행하는 상황을 방학에 빗대어 이르는 말."@ko ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:instantiates kno:S000089 ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2020-0368-c1 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), (베이)케이션(vacation)"@ko ;
+    rdfs:label "코로나케이션"@ko ;
+    kno:indexForm "코로나케이션"@ko ;
+    kno:origin "(<영>coronacation)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W07 ;
+    kno:slotFiller "(베이)케이션(vacation) (1성분)"@ko ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0368-freq-NN-2021 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2020-0368-freq-NN-total ;
+    kno:instantiates kno:S000334 ;
+    kno:frequency kno:KN2020-0368-freq-NN-2025 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1513228> .
+kno:KN2020-0368-c2 kno:formative kno:F000193 ;
+    kno:fullForm "베이케이션"@ko ;
+    rdfs:label "(베이)케이션(vacation)"@ko ;
+    kno:surfaceForm "케이션"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 .
+kno:KN2020-0368-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko .

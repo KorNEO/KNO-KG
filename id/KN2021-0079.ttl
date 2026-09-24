@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0079 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0079-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0079-form ;
-    ontolex:sense kno:KN2021-0079-sense .
-
-kno:KN2021-0079-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003018834> .
-
-kno:KN2021-0079-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0079-freq-nn,
-        kno:KN2021-0079-freq-yt ;
-    ontolex:writtenRep "동물^특별^사법^경찰관"@ko .
-
-kno:KN2021-0079-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0079-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0079-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0079 a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2021-0079-c2 ;
+    kno:component kno:KN2021-0079-c3 ;
+    kno:frequency kno:KN2021-0079-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%99%EB%AC%BC%ED%8A%B9%EB%B3%84%EC%82%AC%EB%B2%95%EA%B2%BD%EC%B0%B0%EA%B4%80> ;
+    kno:example "¶경기도는 국내에서 처음으로 {동물 특별 사법 경찰관 제도를} 도입하였다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "동물^특별^사법^경찰관"@ko ;
+    kno:componentString "동물(動物), 특별(特別), 사법(司法), 경찰관(警察官)"@ko ;
+    kno:indexForm "동물특별사법경찰관"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001335 ;
+    kno:slotFiller "특별(特別)+사법(司法)+경찰관(警察官) (3성분)"@ko ;
+    kno:component kno:KN2021-0079-c4 ;
+    kno:origin "(動物特別司法警察官)" ;
+    kno:frequency kno:KN2021-0079-freq-NN-total ;
+    kno:component kno:KN2021-0079-c1 ;
+    skos:definition "동물 관련 범죄를 전담하는 특별 사법 경찰관. 길고양이 학대, 반려견 살해, 불법 도살 등의 동물을 대상으로 한 범죄에 대응한다."@ko .
+kno:KN2021-0079-c2 a kno:Component ;
+    kno:formative kno:F000081 ;
+    kno:semanticTag kno:usas-A6.2m ;
+    rdfs:label "특별(特別)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특별"@ko ;
+    kno:surfaceForm "특별"@ko .
+kno:KN2021-0079-c3 kno:fullForm "사법"@ko ;
+    kno:formative kno:F001436 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "사법(司法)"@ko ;
+    kno:surfaceForm "사법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0079-c4 rdfs:label "경찰관(警察官)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경찰관"@ko ;
+    kno:surfaceForm "경찰관"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001058 .
+kno:KN2021-0079-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "동물"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "동물(動物)"@ko ;
+    kno:surfaceForm "동물"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F000717 ;
+    a kno:Component .

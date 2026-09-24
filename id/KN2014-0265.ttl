@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0265 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0265 kno:lastAttestationYear "2014"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000591 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶특히 최근에는 20~30대를 중심으로 가벼운 텐트와 기본적인 장비만 챙겨 떠나는 미니멀 캠핑이 각광받으면서 ‘솔캠족’, ‘{커캠족’이} 늘어나고 있는 추세다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:slotFiller "커(플)(couple) (1성분)"@ko ;
+    kno:languageType "영+한" ;
+    kno:component kno:KN2014-0265-c2 ;
+    kno:slotFiller "캠(핑)(camping)+-족(族) (2성분)"@ko ;
+    kno:urimalTargetCode "1358307" ;
+    kno:frequency kno:KN2014-0265-freq-NN-total ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2014-0265-c3 ;
+    a ontolex:Word ;
+    kno:origin "(<영>←couple camping族)" ;
+    rdfs:label "커캠-족"@ko ;
+    kno:instantiates kno:S001061 ;
+    kno:indexForm "커캠족"@ko ;
+    kno:component kno:KN2014-0265-c1 ;
+    kno:componentString "커(플)(couple), 캠(핑)(camping), -족(族)"@ko ;
+    skos:definition "같이 캠핑을 하는 커플. 또는 그런 무리."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2014-0265-freq-NN-2014 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358307> ;
+    kno:pos "「명」"@ko .
+kno:KN2014-0265-c2 kno:formative kno:F000235 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "캠핑"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "캠"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "캠(핑)(camping)"@ko .
+kno:KN2014-0265-c3 kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-족(族)"@ko .
+kno:KN2014-0265-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "커(플)(couple)"@ko ;
+    kno:formative kno:F000606 ;
+    kno:fullForm "커플"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "커"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:role "고정항"@ko .

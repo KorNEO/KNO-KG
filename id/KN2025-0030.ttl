@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0030 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0030 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0030-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0030-form ;
-    ontolex:sense kno:KN2025-0030-sense .
-
-kno:KN2025-0030-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011975393> .
-
-kno:KN2025-0030-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0030-freq-nn,
-        kno:KN2025-0030-freq-yt ;
-    ontolex:writtenRep "검은 봉투법"@ko .
-
-kno:KN2025-0030-freq-nn a frac:CorpusFrequency ;
-    rdf:value 208 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0030-freq-yt a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0030-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0030 a kno:Neologism ;
+    kno:languageType "고_한+한" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(검은封套法)" ;
+    kno:component kno:KN2025-0030-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001198 ;
+    kno:component kno:KN2025-0030-c1 ;
+    kno:frequency kno:KN2025-0030-freq-NN-2025 ;
+    kno:componentString "검(다), 봉투(封套), 법(法)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "검은 봉투 법"@ko ;
+    kno:component kno:KN2025-0030-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%9D%80%20%EB%B4%89%ED%88%AC%20%EB%B2%95> ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0030-freq-NN-total ;
+    skos:definition "(LLM) 정치인의 출판기념회에서 발생하는 수입을 정치자금으로 보아 신고ㆍ공개 및 회계 보고를 의무화하도록 하는 정치자금법 개정안."@ko ;
+    kno:indexForm "검은봉투법"@ko ;
+    kno:slotFiller "법(法) (1성분)"@ko ;
+    kno:slotFiller "검(다)+봉투(封套) (2성분)"@ko ;
+    kno:example "(LLM) 출판기념회에서 오간 현금 봉투가 논란이 되자, 국회에서는 {검은봉투법이} 발의돼 수입과 지출 내역을 투명하게 보고하도록 하는 방안이 논의됐다."@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0030-c2 a kno:Component ;
+    kno:fullForm "봉투"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001383 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "봉투(封套)"@ko ;
+    kno:surfaceForm "봉투"@ko .
+kno:KN2025-0030-c1 rdfs:label "검(다)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "검"@ko ;
+    kno:fullForm "검다"@ko ;
+    kno:semanticTag kno:usas-O4 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000656 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0030-c3 kno:formative kno:F000002 ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0426 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0426 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0426-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0426-form ;
-    ontolex:sense kno:KN2025-0426-sense .
-
-kno:KN2025-0426-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011960436> .
-
-kno:KN2025-0426-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0426-freq-nn,
-        kno:KN2025-0426-freq-yt ;
-    ontolex:writtenRep "연필 청소기"@ko .
-
-kno:KN2025-0426-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0426-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0426-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0426 kno:slotFiller "청소기(淸掃機) (1성분)"@ko ;
+    kno:component kno:KN2025-0426-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:componentString "연필(鉛筆), 청소기(淸掃機)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%ED%95%84%20%EC%B2%AD%EC%86%8C%EA%B8%B0> ;
+    skos:definition "(LLM) 본체와 손잡이(막대)가 연필처럼 가늘고 길게 설계된 초슬림형 무선청소기."@ko ;
+    rdfs:label "연필 청소기"@ko ;
+    kno:component kno:KN2025-0426-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0426-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "연필청소기"@ko ;
+    kno:instantiates kno:S001562 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2025-0426-freq-NN-total ;
+    kno:example "(LLM) 막대가 유난히 얇아서 처음엔 장난감인 줄 알았는데, {연필청소기라} 손목에 부담이 덜하더라."@ko ;
+    kno:origin "(鉛筆淸掃機)" .
+kno:KN2025-0426-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006056 ;
+    rdfs:label "청소기(淸掃機)"@ko ;
+    kno:fullForm "청소기"@ko ;
+    kno:surfaceForm "청소기"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0426-c1 rdfs:label "연필(鉛筆)"@ko ;
+    kno:fullForm "연필"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "연필"@ko ;
+    kno:formative kno:F001614 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0046 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0046 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0046-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0046-form ;
-    ontolex:sense kno:KN2023-0046-sense .
-
-kno:KN2023-0046-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0006669914> .
-
-kno:KN2023-0046-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0046-freq-nn,
-        kno:KN2023-0046-freq-yt ;
-    ontolex:writtenRep "기절 근무표"@ko .
-
-kno:KN2023-0046-freq-nn a frac:CorpusFrequency ;
-    rdf:value 46 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0046-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0046-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0046 kno:component kno:KN2023-0046-c1 ;
+    kno:origin "(氣絕勤務表)" ;
+    kno:instantiates kno:S000801 ;
+    kno:unitType "구"@ko ;
+    skos:definition "온라인상에 등장한 한 주 동안 69시간의 근로를 가정하여 근무 시간을 짠 도표. 정부가 근로 시간 개편 방안을 발표한 이후 소셜 네트워크 서비스에서 등장하여 화제가 되었으며, 늦은 퇴근 시간 때문에 평일에 부족했던 수면을 주말 동안 보충하기 위하여 주말에는 기절하는 일정으로 표시되어 있다."@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%A0%88%20%EA%B7%BC%EB%AC%B4%ED%91%9C> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "기절근무표"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:slotFiller "기절(氣絕) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2023-0046-freq-NN-total ;
+    kno:componentString "기절(氣絕), 근무표(勤務表)"@ko ;
+    kno:frequency kno:KN2023-0046-freq-NN-2023 ;
+    rdfs:label "기절 근무표"@ko ;
+    kno:component kno:KN2023-0046-c2 ;
+    kno:example "¶OOO은 주 69시간 제도는 실제 노동 현실을 모르는 {기절 근무표이자} 과로사를 조장하는 정책이라고 날을 세웠다."@ko ;
+    kno:languageType "한_한" .
+kno:KN2023-0046-c1 a kno:Component ;
+    kno:formative kno:F002602 ;
+    rdfs:label "기절(氣絕)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "기절"@ko ;
+    kno:fullForm "기절"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m .
+kno:KN2023-0046-c2 kno:formative kno:F001101 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "근무표"@ko ;
+    rdfs:label "근무표(勤務表)"@ko ;
+    kno:surfaceForm "근무표"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,74 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0181 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0181 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0181-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0181-form ;
-    ontolex:sense kno:KN2020-0181-sense .
-
-kno:KN2020-0181-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003279846> .
-
-kno:KN2020-0181-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0181-freq-nn,
-        kno:KN2020-0181-freq-yt ;
-    ontolex:writtenRep "수소^사회^형성^법안"@ko .
-
-kno:KN2020-0181-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0181-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0181-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0181 skos:definition "수소 사회 형성을 위해 기반을 조성하고 수소 산업의 발전적인 생태계를 조성하기 위한 법안. 2019년 8월에 국회에서 발의되어 2020년 1월에 통과되었다."@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0181-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0181-freq-NN-total ;
+    kno:component kno:KN2020-0181-c2 ;
+    kno:example "¶O 의원은 수소 산업 육성을 위한 법적 근거를 마련하고자 {수소 사회 형성 법안을} 발의했다고 밝혔다."@ko ;
+    kno:componentString "수소(水素), 사회(社會), 형성(形成), 법안(法案)"@ko ;
+    kno:instantiates kno:S000123 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%86%8C%EC%82%AC%ED%9A%8C%ED%98%95%EC%84%B1%EB%B2%95%EC%95%88> ;
+    kno:slotFiller "사회(社會)+형성(形成)+법안(法案) (3성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000533 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0181-c3 ;
+    kno:slotFiller "수소(水素)+사회(社會)+형성(形成) (3성분)"@ko ;
+    kno:origin "(水素社會形成法案)" ;
+    kno:languageType "한^한^한^한" ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0181-c4 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "수소^사회^형성^법안"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0181-freq-NN-2020 ;
+    kno:indexForm "수소사회형성법안"@ko ;
+    kno:component kno:KN2020-0181-c1 .
+kno:KN2020-0181-c2 a kno:Component ;
+    kno:fullForm "사회"@ko ;
+    kno:formative kno:F000139 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "사회"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "사회(社會)"@ko .
+kno:KN2020-0181-c3 a kno:Component ;
+    rdfs:label "형성(形成)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F007095 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "형성"@ko ;
+    kno:surfaceForm "형성"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 .
+kno:KN2020-0181-c4 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "법안(法案)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "법안"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "법안"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000272 .
+kno:KN2020-0181-c1 a kno:Component ;
+    kno:formative kno:F000541 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O1.3 ;
+    kno:fullForm "수소"@ko ;
+    kno:surfaceForm "수소"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "수소(水素)"@ko .

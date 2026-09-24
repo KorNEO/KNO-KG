@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0216 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0216-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0216-form ;
-    ontolex:sense kno:KN2024-0216-sense .
-
-kno:KN2024-0216-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/417/0000677672> .
-
-kno:KN2024-0216-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0216-freq-nn,
-        kno:KN2024-0216-freq-yt ;
-    ontolex:writtenRep "원형^알엔에이"@ko .
-
-kno:KN2024-0216-freq-nn a frac:CorpusFrequency ;
-    rdf:value 464 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0216-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0216-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0216 kno:unitType "구"@ko ;
+    kno:componentString "원형(圓形), 알엔에이(RNA)"@ko ;
+    kno:indexForm "원형알엔에이"@ko ;
+    kno:frequency kno:KN2024-0216-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0216-c2 ;
+    kno:example "¶연구 팀은 “안정성이 높은 {원형 알엔에이(RNA)의} 합성 과정을 규명했으며, 이를 활용해 부작용이 적고 효율적인 백신 개발이 가능할 것.”이라고 밝혔다."@ko ;
+    kno:frequency kno:KN2024-0216-freq-NN-2025 ;
+    rdfs:label "원형^알엔에이"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0216-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(圓形<영>RNA)" ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0216-c1 ;
+    kno:frequency kno:KN2024-0216-freq-NN-2024 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^영" ;
+    skos:definition "일반적인 아르엔에이(RNA)와 달리, 끝이 맞닿아 원형 모양으로 이어진 아르엔에이(RNA). ⇒규범 표기는 ‘원형 아르엔에이’이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%ED%98%95%EC%95%8C%EC%97%94%EC%97%90%EC%9D%B4> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2024-0216-c2 kno:surfaceForm "알엔에이"@ko ;
+    rdfs:label "알엔에이(RNA)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "알엔에이"@ko ;
+    kno:formative kno:F004855 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0216-c1 kno:fullForm "원형"@ko ;
+    kno:surfaceForm "원형"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005256 ;
+    kno:semanticTag kno:usas-O4.4 ;
+    rdfs:label "원형(圓形)"@ko .

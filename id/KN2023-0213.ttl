@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0213 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0213 a ontolex:Word ;
-    frac:attestation kno:KN2023-0213-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0213-form ;
-    ontolex:sense kno:KN2023-0213-sense .
-
-kno:KN2023-0213-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000824718> .
-
-kno:KN2023-0213-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0213-freq-nn,
-        kno:KN2023-0213-freq-yt ;
-    ontolex:writtenRep "웨딩플레이션"@ko .
-
-kno:KN2023-0213-freq-nn a frac:CorpusFrequency ;
-    rdf:value 292 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0213-freq-yt a frac:CorpusFrequency ;
-    rdf:value 195 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0213-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0213 skos:definition "결혼식을 준비하는 데 필요한 비용이 급등하는 현상."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "웨딩(wedding) (1성분)"@ko ;
+    kno:origin "(<영>wedding←inflation)" ;
+    kno:predicate "급등하다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2023-0213-c1 ;
+    kno:example "¶{웨딩플레이션의} 영향으로 많은 예비 부부들이 결혼식을 올리기를 주저하고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2023-0213-c2 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "웨딩플레이션"@ko ;
+    kno:componentString "웨딩(wedding), (인)플레이션(inflation)"@ko ;
+    kno:frequency kno:KN2023-0213-freq-NN-total ;
+    kno:frequency kno:KN2023-0213-freq-NN-2023 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%A8%EB%94%A9%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:instantiates kno:S000011 ;
+    kno:frequency kno:KN2023-0213-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0213-freq-NN-2024 ;
+    kno:indexForm "웨딩플레이션"@ko ;
+    kno:languageType "영+영" .
+kno:KN2023-0213-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000566 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "웨딩"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    a kno:Component ;
+    kno:fullForm "웨딩"@ko ;
+    rdfs:label "웨딩(wedding)"@ko .
+kno:KN2023-0213-c2 kno:semanticTag kno:usas-I1.3p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:formative kno:F000009 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "플레이션"@ko ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,80 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0010 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0010-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0010-form ;
-    ontolex:sense kno:KN2020-0010-sense .
-
-kno:KN2020-0010-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004607513> .
-
-kno:KN2020-0010-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0010-freq-nn,
-        kno:KN2020-0010-freq-yt ;
-    ontolex:writtenRep "공공^재정^환수^제도"@ko .
-
-kno:KN2020-0010-freq-nn a frac:CorpusFrequency ;
-    rdf:value 414 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0010-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0010-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0010 kno:component kno:KN2020-0010-c4 ;
+    kno:origin "(公共財政還收制度)" ;
+    kno:frequency kno:KN2020-0010-freq-NN-2023 ;
+    kno:slotFiller "재정(財政)+환수(還收)+제도(制度) (3성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0010-c1 ;
+    rdfs:label "공공^재정^환수^제도"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "공공재정환수제도"@ko ;
+    kno:frequency kno:KN2020-0010-freq-NN-2024 ;
+    kno:instantiates kno:S000084 ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:predicate "거두어들이다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0010-freq-NN-2020 ;
+    kno:component kno:KN2020-0010-c2 ;
+    kno:frequency kno:KN2020-0010-freq-NN-total ;
+    kno:languageType "한^한^한^한" ;
+    kno:example "¶올해부터 시행되는 {공공 재정 환수 제도로} 원래 사용 목적과 다르게 사용되거나 허위ㆍ과다 청구된 ‘눈먼 나랏돈’이 사라질 전망이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0010-freq-NN-2022 ;
+    kno:component kno:KN2020-0010-c3 ;
+    kno:frequency kno:KN2020-0010-freq-NN-2025 ;
+    kno:componentString "공공(公共), 재정(財政), 환수(還收), 제도(制度)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%EC%9E%AC%EC%A0%95%ED%99%98%EC%88%98%EC%A0%9C%EB%8F%84> ;
+    kno:instantiates kno:S000039 ;
+    kno:frequency kno:KN2020-0010-freq-NN-2021 ;
+    skos:definition "정당하지 않은 방법으로 구축한 정부의 재정을 도로 거두어들이는 제도."@ko ;
+    kno:slotFiller "공공(公共)+재정(財政)+환수(還收) (3성분)"@ko ;
+    kno:frequency kno:KN2020-0010-freq-NN-2019 .
+kno:KN2020-0010-c4 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:surfaceForm "제도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "4"^^xsd:integer ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
+    kno:role "고정항"@ko .
+kno:KN2020-0010-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000084 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "공공"@ko ;
+    kno:surfaceForm "공공"@ko ;
+    rdfs:label "공공(公共)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component .
+kno:KN2020-0010-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001740 ;
+    kno:surfaceForm "재정"@ko ;
+    rdfs:label "재정(財政)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "재정"@ko .
+kno:KN2020-0010-c3 kno:fullForm "환수"@ko ;
+    kno:surfaceForm "환수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F007156 ;
+    rdfs:label "환수(還收)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:position "3"^^xsd:integer .

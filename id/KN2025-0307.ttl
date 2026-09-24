@@ -1,36 +1,70 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0307 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0307 a ontolex:Word ;
-    frac:attestation kno:KN2025-0307-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0307-form ;
-    ontolex:sense kno:KN2025-0307-sense .
-
-kno:KN2025-0307-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0006009587> .
-
-kno:KN2025-0307-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0307-freq-nn,
-        kno:KN2025-0307-freq-yt ;
-    ontolex:writtenRep "빵부빵조"@ko .
-
-kno:KN2025-0307-freq-nn a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0307-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0307-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0307 kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0307-c4 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0307-c1 ;
+    kno:indexForm "빵부빵조"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "빵, (상)부(相扶), 빵, (상)조(相助)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(빵扶빵助)" ;
+    kno:languageType "고+한+고+한" ;
+    skos:definition "(LLM) 빵집을 중심으로 한 지역 상권에서 가게들이 서로의 상품을 구매하거나 홍보해 주는 등, 함께 돕는 상생 활동."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0307-freq-NN-2025 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "빵부빵조"@ko ;
+    kno:component kno:KN2025-0307-c3 ;
+    kno:frequency kno:KN2025-0307-freq-NN-total ;
+    kno:component kno:KN2025-0307-c2 ;
+    kno:instantiates kno:S000214 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%EB%B6%80%EB%B9%B5%EC%A1%B0> ;
+    kno:example "(LLM) 동네 유명 빵집이 이웃 샌드위치 가게에 단체 주문을 넣고 SNS로도 소개해 주자, 사람들은 {빵부빵조가} 보기 좋다고 말했다."@ko ;
+    kno:slotFiller "(상)부(相扶)+빵+(상)조(相助) (3성분)"@ko .
+kno:KN2025-0307-c4 kno:surfaceForm "조"@ko ;
+    rdfs:label "(상)조(相助)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005724 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "상조"@ko .
+kno:KN2025-0307-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000175 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "빵"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빵"@ko ;
+    rdfs:label "빵"@ko ;
+    kno:semanticTag kno:usas-F1 .
+kno:KN2025-0307-c3 kno:fullForm "빵"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빵"@ko ;
+    rdfs:label "빵"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000175 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0307-c2 kno:fullForm "상부"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F003945 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "부"@ko ;
+    rdfs:label "(상)부(相扶)"@ko .

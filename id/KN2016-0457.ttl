@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0457 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0457 kno:registration "신어DB"@ko ;
+    rdfs:label "주백남"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0457-c1 ;
+    kno:slotFiller "주(말)(週)+백(화점)(百) (2성분)"@ko ;
+    kno:frequency kno:KN2016-0457-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2016-0457-c3 ;
+    kno:frequency kno:KN2016-0457-freq-NN-2015 ;
+    kno:example "¶{주백남} 증가를 ‘남성의 여성화’ 결과물로 해석하는 시각도 존재한다."@ko ;
+    a ontolex:Word ;
+    kno:indexForm "주백남"@ko ;
+    skos:definition "‘주말에 백화점에 가는 남자’를 줄여 이르는 말."@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:origin "(週百男)" ;
+    kno:component kno:KN2016-0457-c2 ;
+    kno:languageType "한+한+한" ;
+    kno:frequency kno:KN2016-0457-freq-NN-2016 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000031 ;
+    kno:componentString "주(말)(週), 백(화점)(百), 남(자)(男)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EB%B0%B1%EB%82%A8> .
+kno:KN2016-0457-c1 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "주(말)(週)"@ko ;
+    kno:formative kno:F005781 ;
+    kno:surfaceForm "주"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "주말"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0457-c3 kno:surfaceForm "남"@ko ;
+    kno:formative kno:F000023 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "남(자)(男)"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "남자"@ko .
+kno:KN2016-0457-c2 a kno:Component ;
+    kno:formative kno:F003747 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "백(화점)(百)"@ko ;
+    kno:fullForm "백화점"@ko ;
+    kno:surfaceForm "백"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 .

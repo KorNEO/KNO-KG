@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0267 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2023-0267 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0267-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0267-form ;
-    ontolex:sense kno:KN2023-0267-sense .
-
-kno:KN2023-0267-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003318480> .
-
-kno:KN2023-0267-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0267-freq-nn,
-        kno:KN2023-0267-freq-yt ;
-    ontolex:writtenRep "직장인 수능러"@ko .
-
-kno:KN2023-0267-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0267-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0267-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:slotFiller "수능(修能)+-어(←-er) (2성분)"@ko ;
+    kno:predicate "응시하다"@ko ;
+    kno:languageType "한_(한+영)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "직장인 수능러"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%81%EC%9E%A5%EC%9D%B8%20%EC%88%98%EB%8A%A5%EB%9F%AC> ;
+    kno:component kno:KN2023-0267-c2 ;
+    kno:slotFiller "직장인(職場人)+수능(修能) (2성분)"@ko ;
+    kno:component kno:KN2023-0267-c1 ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:origin "(職場人修能<영>←er)" ;
+    kno:example "¶정부의 의과대학 정원 확대에 대한 지침 발표 후, 최근 몇 년간 증가하고 있던 {직장인 수능러들이} 급증하는 양상이 나타났다."@ko ;
+    kno:frequency kno:KN2023-0267-freq-NN-total ;
+    skos:definition "직장인 중에서 대학 수학 능력 시험을 준비하거나 응시하는 사람."@ko ;
+    kno:frequency kno:KN2023-0267-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0267-freq-NN-2024 ;
+    kno:indexForm "직장인수능러"@ko ;
+    kno:componentString "직장인(職場人), 수능(修能), -어(←-er)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0267-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001664 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001169 .
+kno:KN2023-0267-c2 rdfs:label "수능(修能)"@ko ;
+    a kno:Component ;
+    kno:fullForm "수능"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "수능"@ko ;
+    kno:formative kno:F000539 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0267-c1 kno:role "고정항"@ko ;
+    kno:fullForm "직장인"@ko ;
+    kno:surfaceForm "직장인"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "직장인(職場人)"@ko ;
+    kno:formative kno:F001793 .
+kno:KN2023-0267-c3 kno:surfaceForm "어"@ko ;
+    kno:formative kno:F000182 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    rdfs:label "-어(←-er)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "어"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

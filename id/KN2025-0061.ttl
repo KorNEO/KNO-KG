@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0061 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0061 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0061-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0061-form ;
-    ontolex:sense kno:KN2025-0061-sense .
-
-kno:KN2025-0061-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/144/0001025267> .
-
-kno:KN2025-0061-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0061-freq-nn,
-        kno:KN2025-0061-freq-yt ;
-    ontolex:writtenRep "골싱 남녀"@ko .
-
-kno:KN2025-0061-freq-nn a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0061-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0061-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0061 kno:component kno:KN2025-0061-c2 ;
+    kno:component kno:KN2025-0061-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "골싱남녀"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0061-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A8%EC%8B%B1%20%EB%82%A8%EB%85%80> ;
+    kno:slotFiller "골(드)(gold)+싱(글)(single) (2성분)"@ko ;
+    kno:component kno:KN2025-0061-c3 ;
+    kno:predicate "있다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 중장년층 가운데 결혼 경험이 없거나(골드 미스ㆍ미스터) 이혼 경험이 있는 사람(돌싱)들을 함께 묶어 이르는 말로, 주로 연애ㆍ재혼 관련 프로그램이나 모임의 출연자 집단을 가리킨다."@ko ;
+    kno:componentString "골(드)(gold), 싱(글)(single), 남녀(男女)"@ko ;
+    kno:example "(LLM) 이번 예능은 {골싱남녀가} 한 공간에서 서로의 연애관과 결혼관을 확인하며 짝을 찾아가는 구성을 내세웠다."@ko ;
+    kno:origin "(<영>←gold single男女)" ;
+    rdfs:label "골싱 남녀"@ko ;
+    kno:instantiates kno:S000364 ;
+    kno:frequency kno:KN2025-0061-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "영_한" ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0061-c2 a kno:Component ;
+    kno:fullForm "싱글"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000837 ;
+    kno:surfaceForm "싱"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "싱(글)(single)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0061-c1 kno:surfaceForm "골"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:fullForm "골드"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002310 ;
+    rdfs:label "골(드)(gold)"@ko .
+kno:KN2025-0061-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "남녀"@ko ;
+    kno:formative kno:F000473 ;
+    rdfs:label "남녀(男女)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "남녀"@ko ;
+    kno:semanticTag kno:usas-S2 .

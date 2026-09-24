@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0139 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0139 a ontolex:Word ;
-    frac:attestation kno:KN2025-0139-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0139-form ;
-    ontolex:sense kno:KN2025-0139-sense .
-
-kno:KN2025-0139-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/410/0001059056> .
-
-kno:KN2025-0139-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0139-freq-nn,
-        kno:KN2025-0139-freq-yt ;
-    ontolex:writtenRep "뇌 이상형"@ko .
-
-kno:KN2025-0139-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0139-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0139-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0139 kno:frequency kno:KN2025-0139-freq-NN-total ;
+    kno:componentString "뇌(腦), 이상형(理想型)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "뇌-이상형"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한_한" ;
+    a ontolex:Word ;
+    kno:origin "(腦理想型)" ;
+    kno:component kno:KN2025-0139-c1 ;
+    kno:component kno:KN2025-0139-c2 ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0139-freq-NN-2025 ;
+    skos:definition "(LLM) 외모 같은 겉조건보다 대화ㆍ사고방식ㆍ가치관 등 정신적 결이 잘 맞는 점에 끌려 이상형으로 여기는 사람."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "여기다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 친구는 “얼굴보다 말이 통하는 게 더 중요하더라”며 요즘은 {뇌이상형을} 찾는 중이라고 했다."@ko ;
+    kno:slotFiller "이상형(理想型) (1성분)"@ko ;
+    kno:indexForm "뇌이상형"@ko ;
+    kno:instantiates kno:S000208 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%87%8C%EC%9D%B4%EC%83%81%ED%98%95> ;
+    a kno:Neologism .
+kno:KN2025-0139-c1 kno:formative kno:F000057 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "뇌"@ko ;
+    kno:surfaceForm "뇌"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "뇌(腦)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component .
+kno:KN2025-0139-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "이상형"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "이상형"@ko ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "이상형(理想型)"@ko ;
+    kno:formative kno:F005399 .

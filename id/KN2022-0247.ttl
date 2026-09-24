@@ -1,37 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0247 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0247 a ontolex:Word ;
-    frac:attestation kno:KN2022-0247-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0247-form ;
-    ontolex:sense kno:KN2022-0247-sense .
-
-kno:KN2022-0247-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/108/0002997362> .
-
-kno:KN2022-0247-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0247-freq-nn,
-        kno:KN2022-0247-freq-yt ;
-    ontolex:writtenRep "저쩔-티비"@ko .
-
-kno:KN2022-0247-freq-nn a frac:CorpusFrequency ;
-    rdf:value 85 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0247-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7148 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0247-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%96%B4%EC%A9%94%ED%8B%B0%EB%B9%84> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0247 kno:year "2022"^^xsd:gYear ;
+    kno:urimalTargetCode "1660608" ;
+    kno:predicate "대꾸하다"@ko ;
+    a ontolex:Word ;
+    kno:origin "(저쩔<영>←TV)" ;
+    kno:formation kno:W01 ;
+    skos:definition "‘어쩔티비’를 맞받아서 대꾸하는 말. ‘저쩔’ 뒤에는 여러가지 단어가 쓰일 수 있으며, 특별한 의미를 더하지는 않는다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "저쩔, 티비(TV)"@ko ;
+    kno:component kno:KN2022-0247-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶상대방이 ‘어쩔티비’라고 말하면 {‘저쩔티비’라고} 대응한다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2022-0247-freq-NN-total ;
+    kno:languageType "고+영" ;
+    kno:component kno:KN2022-0247-c1 ;
+    kno:frequency kno:KN2022-0247-freq-NN-2021 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0247-freq-NN-2023 ;
+    rdfs:label "저쩔-티비"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1660608> ;
+    kno:frequency kno:KN2022-0247-freq-NN-2022 ;
+    kno:indexForm "저쩔티비"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0247-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001926 ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    rdfs:label "티비(TV)"@ko ;
+    kno:fullForm "티비"@ko ;
+    kno:surfaceForm "티비"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0247-c1 kno:surfaceForm "저쩔"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005605 ;
+    kno:fullForm "저쩔"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z4 ;
+    rdfs:label "저쩔"@ko .

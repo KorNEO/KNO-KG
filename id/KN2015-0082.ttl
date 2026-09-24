@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0082 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0082 rdfs:label "문송"@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2015"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359928> ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2015-0082-c2 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶그중에서도 ‘인구론’(인문계 대졸자 90%가 논다)과 ‘{문송’이라는} 신조어가 나올 정도로 인문계를 졸업한 취업 준비생의 취업난은 극히 열악하다."@ko ;
+    kno:instantiates kno:S000758 ;
+    kno:origin "(文悚)" ;
+    kno:languageType "한+한" ;
+    kno:indexForm "문송"@ko ;
+    kno:urimalTargetCode "1359928" ;
+    kno:componentString "문(과)(文), (죄)송(悚)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2015-0082-c1 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "‘문과라서 죄송’을 줄여 이르는 말. 인문계 출신 대학 졸업자들이 졸업 후에도 취업을 하지 못하는 상황을 자조적으로 이르는 말이다."@ko ;
+    kno:slotFiller "문(과)(文) (1성분)"@ko .
+kno:KN2015-0082-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:fullForm "죄송"@ko ;
+    kno:surfaceForm "송"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001496 ;
+    rdfs:label "(죄)송(悚)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2015-0082-c1 rdfs:label "문(과)(文)"@ko ;
+    kno:fullForm "문과"@ko ;
+    kno:surfaceForm "문"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F003545 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

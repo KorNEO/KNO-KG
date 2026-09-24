@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0079 a ontolex:Word ;
-    frac:attestation kno:KN2023-0079-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0079-form ;
-    ontolex:sense kno:KN2023-0079-sense .
-
-kno:KN2023-0079-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/076/0003897250> .
-
-kno:KN2023-0079-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0079-freq-nn,
-        kno:KN2023-0079-freq-yt ;
-    ontolex:writtenRep "돌친자"@ko .
-
-kno:KN2023-0079-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0079-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0079-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0079 kno:frequency kno:KN2023-0079-freq-NN-2022 ;
+    kno:instantiates kno:S000111 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:label "돌친자"@ko ;
+    kno:component kno:KN2023-0079-c3 ;
+    kno:frequency kno:KN2023-0079-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0079-freq-NN-total ;
+    kno:component kno:KN2023-0079-c1 ;
+    kno:predicate "좋아하다"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%8C%EC%B9%9C%EC%9E%90> ;
+    kno:slotFiller "돌(비)(Dolby) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0079-c2 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶지난해 화려한 액션 신과 시원한 사운드가 장점인 영화들이 흥행하자, 영화 마니아 사이에서는 {돌친자들이} 등장했다."@ko ;
+    kno:indexForm "돌친자"@ko ;
+    skos:definition "‘돌비 시네마’를 열광적으로 좋아하는 사람. ‘돌비 시네마’는 미국의 오디오 기업 ‘돌비(Dolby)’에서 개발한 첨단 영상 및 음향 기술인 ‘돌비 비전(Dolby Vision)’과 ‘돌비 애트모스(Dolby Atmos)’를 도입한 영화관을 말한다."@ko ;
+    kno:origin "(←Dolby친者)" ;
+    kno:formation kno:W05 ;
+    kno:componentString "돌(비)(Dolby), (미)치(다), -자(者)"@ko ;
+    kno:languageType "영+(고+한)" .
+kno:KN2023-0079-c3 a kno:Component ;
+    kno:fullForm "자"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    rdfs:label "-자(者)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2023-0079-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "돌"@ko ;
+    rdfs:label "돌(비)(Dolby)"@ko ;
+    kno:fullForm "돌비"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F003009 .
+kno:KN2023-0079-c2 rdfs:label "(미)치(다)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "치"@ko ;
+    kno:fullForm "미치다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X1 ;
+    kno:formative kno:F000307 ;
+    kno:truncated "true"^^xsd:boolean .

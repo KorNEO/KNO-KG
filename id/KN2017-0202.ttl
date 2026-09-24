@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0202 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0202 kno:component kno:KN2017-0202-c1 ;
+    a kno:Neologism ;
+    kno:slotFiller "연차(年次) (1성분)"@ko ;
+    kno:component kno:KN2017-0202-c2 ;
+    kno:frequency kno:KN2017-0202-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0202-freq-NN-2017 ;
+    kno:year "2017"^^xsd:gYear ;
+    skos:definition "해마다 차례대로 정해진 휴가를 마음대로 쓸 수 없는 사람. ⇒규범 표기는 미확정이다."@ko ;
+    rdfs:label "연차 푸어"@ko ;
+    kno:origin "(年次<영>poor)" ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EC%B0%A8%20%ED%91%B8%EC%96%B4> ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000028 ;
+    kno:indexForm "연차푸어"@ko ;
+    kno:predicate "없다"@ko ;
+    kno:example "¶그들은 자신을 ‘연차 빈곤자’, ‘{연차 푸어’라고} 부른다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "연차(年次), 푸어(poor)"@ko ;
+    kno:languageType "한_영" .
+kno:KN2017-0202-c1 rdfs:label "연차(年次)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "연차"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "연차"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005058 .
+kno:KN2017-0202-c2 rdfs:label "푸어(poor)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "푸어"@ko ;
+    kno:formative kno:F000050 ;
+    kno:surfaceForm "푸어"@ko .

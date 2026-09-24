@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0363 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0363 a ontolex:Word ;
-    frac:attestation kno:KN2025-0363-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0363-form ;
-    ontolex:sense kno:KN2025-0363-sense .
-
-kno:KN2025-0363-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002762895> .
-
-kno:KN2025-0363-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0363-freq-nn,
-        kno:KN2025-0363-freq-yt ;
-    ontolex:writtenRep "스니크 플레이션"@ko .
-
-kno:KN2025-0363-freq-nn a frac:CorpusFrequency ;
-    rdf:value 50 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0363-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0363-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0363 kno:frequency kno:KN2025-0363-freq-NN-total ;
+    rdfs:label "스니크플레이션"@ko ;
+    skos:definition "(LLM) 소비자가 눈치채기 어렵게 가격 인상을 한 번에 크게 올리지 않고 여러 차례에 걸쳐 조금씩 반영하는 일."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "스니크플레이션"@ko ;
+    kno:formation kno:W05 ;
+    kno:origin "(<영>sneak←inflation)" ;
+    kno:predicate "반영하다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0363-freq-NN-2025 ;
+    kno:languageType "영+영" ;
+    kno:slotFiller "스니크(sneak) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EB%8B%88%ED%81%AC%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:instantiates kno:S000011 ;
+    kno:component kno:KN2025-0363-c1 ;
+    kno:example "(LLM) 원가 부담이 커지자 업체는 한 번에 올리기보다 {스니크플레이션을} 택해 제품 가격을 조금씩 조정했다."@ko ;
+    kno:componentString "스니크(sneak), (인)플레이션(inflation)"@ko ;
+    kno:component kno:KN2025-0363-c2 ;
+    a ontolex:Word .
+kno:KN2025-0363-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "스니크"@ko ;
+    kno:surfaceForm "스니크"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004547 ;
+    kno:semanticTag kno:usas-A10 ;
+    rdfs:label "스니크(sneak)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0363-c2 kno:surfaceForm "플레이션"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:formative kno:F000009 ;
+    kno:semanticTag kno:usas-I1.3p .

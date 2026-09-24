@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0165 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0165 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0165-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0165-form ;
-    ontolex:sense kno:KN2025-0165-sense .
-
-kno:KN2025-0165-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000862766> .
-
-kno:KN2025-0165-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0165-freq-nn,
-        kno:KN2025-0165-freq-yt ;
-    ontolex:writtenRep "도파민 하이재킹"@ko .
-
-kno:KN2025-0165-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0165-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0165-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0165 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0165-c2 ;
+    kno:indexForm "도파민하이재킹"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "하이재킹(hijacking) (1성분)"@ko ;
+    kno:origin "(<영>dopamine hijacking)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 자극적이고 즉각적인 보상을 주는 콘텐츠나 활동이 주의와 자기 통제를 약화시켜, 그 자극을 반복적으로 찾게 만드는 현상."@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%ED%8C%8C%EB%AF%BC%20%ED%95%98%EC%9D%B4%EC%9E%AC%ED%82%B9> ;
+    kno:predicate "만드다"@ko ;
+    kno:component kno:KN2025-0165-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0165-freq-NN-2025 ;
+    kno:languageType "영_영" ;
+    rdfs:label "도파민 하이재킹"@ko ;
+    kno:example "(LLM) 짧고 강한 자극의 영상만 계속 넘겨 보게 되는 건 {도파민하이재킹이} 일어나 집중이 흐트러진 탓이라는 말이 나온다."@ko ;
+    kno:componentString "도파민(dopamine), 하이재킹(hijacking)"@ko ;
+    kno:instantiates kno:S001331 ;
+    kno:frequency kno:KN2025-0165-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0165-c2 kno:semanticTag kno:usas-G2.1m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006933 ;
+    rdfs:label "하이재킹(hijacking)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "하이재킹"@ko ;
+    kno:surfaceForm "하이재킹"@ko .
+kno:KN2025-0165-c1 kno:fullForm "도파민"@ko ;
+    kno:surfaceForm "도파민"@ko ;
+    rdfs:label "도파민(dopamine)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:formative kno:F001192 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

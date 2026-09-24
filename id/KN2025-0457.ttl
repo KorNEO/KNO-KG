@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0457 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0457 a ontolex:Word ;
-    frac:attestation kno:KN2025-0457-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0457-form ;
-    ontolex:sense kno:KN2025-0457-sense .
-
-kno:KN2025-0457-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/241/0003416227> .
-
-kno:KN2025-0457-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0457-freq-nn,
-        kno:KN2025-0457-freq-yt ;
-    ontolex:writtenRep "위쑤시개"@ko .
-
-kno:KN2025-0457-freq-nn a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0457-freq-yt a frac:CorpusFrequency ;
-    rdf:value 52 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0457-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0457 kno:pos "「명」"@ko ;
+    kno:indexForm "위쑤시개"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000558 ;
+    kno:origin "(胃쑤시개)" ;
+    kno:predicate "되다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0457-c1 ;
+    kno:component kno:KN2025-0457-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "(이)쑤시개 (1성분)"@ko ;
+    rdfs:label "위쑤시개"@ko ;
+    kno:example "(LLM) 요즘 야근이 잦아서 그런지 {위쑤시개가} 와서 매운 거랑 튀김만 계속 생각난다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%84%EC%91%A4%EC%8B%9C%EA%B0%9C> ;
+    a kno:Neologism ;
+    kno:componentString "위(胃), (이)쑤시개"@ko ;
+    kno:frequency kno:KN2025-0457-freq-NN-total ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2025-0457-freq-NN-2025 ;
+    skos:definition "(LLM) 스트레스나 피로로 기운이 떨어졌을 때, 속에 부담이 가는 자극적이거나 기름진 음식을 자꾸 찾게 되는 상태."@ko ;
+    kno:languageType "한+고" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0457-c1 kno:role "고정항"@ko ;
+    rdfs:label "위(胃)"@ko ;
+    kno:fullForm "위"@ko ;
+    kno:surfaceForm "위"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000883 ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0457-c2 kno:surfaceForm "쑤시개"@ko ;
+    a kno:Component ;
+    rdfs:label "(이)쑤시개"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:fullForm "이쑤시개"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004773 .

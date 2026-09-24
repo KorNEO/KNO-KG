@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0193 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0193 kno:instantiates kno:S001470 ;
+    kno:urimalTargetCode "1415657" ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "손캠"@ko ;
+    kno:origin "(손<영>←camcoder)" ;
+    kno:formation kno:W05 ;
+    kno:componentString "손, 캠(코더)(camcoder)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415657> ;
+    kno:component kno:KN2018-0193-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    skos:definition "컴퓨터 마우스와 키보드를 손으로 조작하는 장면을 찍은 영상. ⇒규범 표기는 미확정이다."@ko ;
+    kno:slotFiller "캠(코더)(camcoder) (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "손캠"@ko ;
+    kno:component kno:KN2018-0193-c2 ;
+    kno:predicate "찍은"@ko ;
+    kno:languageType "고+영" ;
+    kno:example "¶너무나도 뛰어난 게임 실력 때문에 초기에는 ‘매크로’를 쓴다는 오해도 받았다. 그때부터 스트리밍 영상 하단에 자신의 마우스와 키보드 영상, 일명 {손캠을} 따로 공개한다."@ko ;
+    a ontolex:Word .
+kno:KN2018-0193-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000221 ;
+    kno:fullForm "손"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "손"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "손"@ko .
+kno:KN2018-0193-c2 kno:surfaceForm "캠"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "캠(코더)(camcoder)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F006228 ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:fullForm "캠코더"@ko .

@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0050 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0050 kno:frequency kno:KN2017-0050-freq-NN-2023 ;
+    kno:formation kno:W05 ;
+    skos:definition "일본에서, 반려동물로 고양이를 키우는 인구가 증가하면서 생기는 경제적 효과. ‘고양이’를 의미하는 일본어 ‘네코(neko[猫])’와 ‘경제학’을 의미하는 ‘이코노믹스(economics)’를 결합하여 만든 말이다."@ko ;
+    kno:componentString "네코(neko), (이코)노믹스(economics)"@ko ;
+    kno:slotFiller "네코(neko) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0050-freq-NN-2020 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380360> ;
+    kno:example "¶일본 사회에 ‘{네코노믹스’라고까지} 불리는 고양이 붐이 일면서 새끼 고양이 가격이 치솟고 있다."@ko ;
+    kno:frequency kno:KN2017-0050-freq-NN-2022 ;
+    rdfs:label "네코노믹스"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2017-0050-freq-NN-2017 ;
+    kno:component kno:KN2017-0050-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2017-0050-freq-NN-2019 ;
+    kno:frequency kno:KN2017-0050-freq-NN-total ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:frequency kno:KN2017-0050-freq-NN-2018 ;
+    kno:frequency kno:KN2017-0050-freq-NN-2016 ;
+    kno:instantiates kno:S000020 ;
+    kno:indexForm "네코노믹스"@ko ;
+    kno:urimalTargetCode "1380360" ;
+    kno:origin "(<일>neko[猫]<영>←economics)" ;
+    kno:frequency kno:KN2017-0050-freq-NN-2025 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0050-c2 ;
+    kno:languageType "일+영" ;
+    kno:pos "「명」"@ko .
+kno:KN2017-0050-c1 kno:surfaceForm "네코"@ko ;
+    kno:formative kno:F002750 ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    rdfs:label "네코(neko)"@ko ;
+    kno:fullForm "네코"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2017-0050-c2 kno:semanticTag kno:usas-I1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "노믹스"@ko ;
+    a kno:Component ;
+    rdfs:label "(이코)노믹스(economics)"@ko ;
+    kno:fullForm "이코노믹스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000027 .

@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0100 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0100 kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "라테(latte), 테크(tech)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:languageType "이^영" ;
+    kno:example "¶봉투에 넣어 둔 액수 내에서만 하루를 사는 일명 ‘봉투 살림법’, 커피값을 아껴 적금하는 ‘{라테 테크’에} 매달 새로운 적금 통장을 마련하는 ‘풍차 돌리기’까지 생활비를 줄이기 위한 갖가지 아이디어가 속출합니다."@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "라테(latte) (1성분)"@ko ;
+    rdfs:label "라테^테크"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "라테테크"@ko ;
+    kno:slotFiller "테크(tech) (1성분)"@ko ;
+    skos:definition "커피 마시는 돈을 아껴서, 그 돈을 재테크에 활용하는 것을 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001356 ;
+    kno:component kno:KN2018-0100-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2018-0100-c1 ;
+    kno:origin "(<이>latte<영>tech)" ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9D%BC%ED%85%8C%ED%85%8C%ED%81%AC> ;
+    kno:instantiates kno:S000185 .
+kno:KN2018-0100-c2 kno:surfaceForm "테크"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "테크"@ko ;
+    kno:formative kno:F000066 ;
+    kno:semanticTag kno:usas-Y1 ;
+    rdfs:label "테크(tech)"@ko .
+kno:KN2018-0100-c1 kno:surfaceForm "라테"@ko ;
+    rdfs:label "라테(latte)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "라테"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000260 ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean .

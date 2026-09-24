@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0083 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0083 kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:componentString "랜(LAN), 선(線), 실세(實勢)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0083-freq-NN-2016 ;
+    rdfs:label "랜선 실세"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380335> ;
+    kno:frequency kno:KN2017-0083-freq-NN-2017 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:slotFiller "실세(實勢) (1성분)"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    skos:definition "주로 실시간으로 중계되는 청문회에서, 인터넷이나 휴대 전화를 이용해 정치인에게 사실이 담긴 내용을 제보하여 실제적인 세력을 행사하는 사람을 비유적으로 이르는 말."@ko ;
+    kno:frequency kno:KN2017-0083-freq-NN-total ;
+    kno:example "¶이른바 ‘{랜선 실세’로} 불리는 시민들은 문자 메시지, 에스엔에스(SNS)를 이용해 국정 조사 특위 위원들에게 직접 제보하며 사실상 청문회를 주도했다는 평가도 나온다."@ko ;
+    kno:languageType "(영+한)_한" ;
+    kno:indexForm "랜선실세"@ko ;
+    kno:component kno:KN2017-0083-c3 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>LAN線實勢)" ;
+    kno:urimalTargetCode "1380335" ;
+    kno:component kno:KN2017-0083-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000086 ;
+    kno:component kno:KN2017-0083-c2 .
+kno:KN2017-0083-c3 kno:surfaceForm "실세"@ko ;
+    kno:formative kno:F004722 ;
+    rdfs:label "실세(實勢)"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "실세"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2017-0083-c1 kno:formative kno:F000134 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "랜(LAN)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "랜"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "랜"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0083-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000176 ;
+    rdfs:label "선(線)"@ko ;
+    a kno:Component ;
+    kno:fullForm "선"@ko ;
+    kno:surfaceForm "선"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko .

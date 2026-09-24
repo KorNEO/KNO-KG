@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0090 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0090 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0090-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0090-form ;
-    ontolex:sense kno:KN2021-0090-sense .
-
-kno:KN2021-0090-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003330525> .
-
-kno:KN2021-0090-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0090-freq-nn,
-        kno:KN2021-0090-freq-yt ;
-    ontolex:writtenRep "랜선 사원"@ko .
-
-kno:KN2021-0090-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0090-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0090-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0090 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%EC%84%A0%20%EC%82%AC%EC%9B%90> ;
+    kno:frequency kno:KN2021-0090-freq-NN-total ;
+    skos:definition "온라인으로 혼자 재택근무를 하는 사원. 코로나19의 확산으로 인해 회사에 출근하여 다른 사원들과 같은 공간에서 일하지 않고 온라인을 통해 비대면으로 업무를 보는 사람이 많아진 상황에서 나온 말이다."@ko ;
+    kno:component kno:KN2021-0090-c1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:label "랜선 사원"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:instantiates kno:S000057 ;
+    kno:example "¶{랜선 사원이} 증가하면서 업무 환경과 직장 문화도 변화하게 되었다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>LAN線社員)" ;
+    kno:frequency kno:KN2021-0090-freq-NN-2021 ;
+    kno:componentString "랜선(LAN線), 사원(社員)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "하다"@ko ;
+    kno:indexForm "랜선사원"@ko ;
+    a kno:Neologism ;
+    kno:languageType "(영+한)_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "사원(社員) (1성분)"@ko ;
+    kno:component kno:KN2021-0090-c2 .
+kno:KN2021-0090-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000099 ;
+    kno:fullForm "랜선"@ko ;
+    kno:surfaceForm "랜선"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "랜선(LAN線)"@ko .
+kno:KN2021-0090-c2 kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "사원"@ko ;
+    kno:formative kno:F004175 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "사원(社員)"@ko ;
+    a kno:Component ;
+    kno:fullForm "사원"@ko .

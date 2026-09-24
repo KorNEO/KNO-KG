@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0173 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0173 a ontolex:Word ;
-    frac:attestation kno:KN2025-0173-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0173-form ;
-    ontolex:sense kno:KN2025-0173-sense .
-
-kno:KN2025-0173-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0008159342> .
-
-kno:KN2025-0173-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0173-freq-nn,
-        kno:KN2025-0173-freq-yt ;
-    ontolex:writtenRep "두진법"@ko .
-
-kno:KN2025-0173-freq-nn a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0173-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0173-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0173 kno:indexForm "두진법"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%91%90%EC%A7%84%EB%B2%95> ;
+    kno:example "(LLM) 기존 처치로도 어지럼증이 잘 가라앉지 않자 의료진이 {두진법을} 시행해 증상 변화를 관찰했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0173-c2 ;
+    kno:predicate "짧은"@ko ;
+    kno:componentString "두(頭), 진(振), -법(法)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0173-c1 ;
+    rdfs:label "두진-법"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0173-freq-NN-total ;
+    skos:definition "(LLM) 머리를 짧은 시간 좌우로 빠르게 흔들어 귓속의 이석이 떨어지도록 유도하는 치료 방법."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0173-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0173-c3 .
+kno:KN2025-0173-c2 kno:surfaceForm "진"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "진(振)"@ko ;
+    kno:formative kno:F005917 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "진"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0173-c1 kno:semanticTag kno:usas-B1 ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "두"@ko ;
+    kno:surfaceForm "두"@ko ;
+    rdfs:label "두(頭)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001203 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0173-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001363 ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "-법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 .

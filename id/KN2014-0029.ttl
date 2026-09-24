@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0029 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0029 kno:activeYears "0"^^xsd:integer ;
+    kno:urimalTargetCode "1383979" ;
+    rdfs:label "극혐오-하다"@ko ;
+    kno:pos "「동」"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(極嫌惡하다)" ;
+    kno:slotFiller "극(極)-+혐오(嫌惡) (2성분)"@ko ;
+    kno:component kno:KN2014-0029-c2 ;
+    kno:instantiates kno:S000019 ;
+    kno:indexForm "극혐오하다"@ko ;
+    kno:componentString "극(極)-, 혐오(嫌惡), -하다"@ko ;
+    kno:languageType "한+고" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383979> ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    skos:definition "아주 싫어하고 미워하다."@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0029-c1 ;
+    kno:example "¶내가 가장 힘들었을 때, 내가 내 자신을 {극혐오했을} 때 피아노를 다시 칠 수 있게 해 줬고 내 마음을 읽어 줬다."@ko ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2014-0029-c3 .
+kno:KN2014-0029-c2 a kno:Component ;
+    kno:fullForm "혐오"@ko ;
+    kno:surfaceForm "혐오"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002016 ;
+    kno:semanticTag kno:usas-E2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "혐오(嫌惡)"@ko .
+kno:KN2014-0029-c1 rdfs:label "극(極)-"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000202 ;
+    kno:fullForm "극"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "극"@ko ;
+    a kno:Component .
+kno:KN2014-0029-c3 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "하다"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "하다"@ko ;
+    rdfs:label "-하다"@ko ;
+    kno:formative kno:F000019 .

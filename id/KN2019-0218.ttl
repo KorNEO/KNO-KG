@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0218 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0218 kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:slotFiller "유관순(柳寬順)+서훈(敍勳)+승격(昇格) (3성분)"@ko ;
+    kno:frequency kno:KN2019-0218-freq-NN-total ;
+    kno:component kno:KN2019-0218-c4 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0218-c1 ;
+    kno:instantiates kno:S000027 ;
+    kno:component kno:KN2019-0218-c2 ;
+    kno:languageType "한^한^한^한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "유관순서훈승격특별법"@ko ;
+    kno:frequency kno:KN2019-0218-freq-NN-2019 ;
+    kno:componentString "유관순(柳寬順), 서훈(敍勳), 승격(昇格), 특별법(特別法)"@ko ;
+    rdfs:label "유관순^서훈^승격^특별법"@ko ;
+    kno:origin "(柳寬順敍勳昇格特別法)" ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EA%B4%80%EC%88%9C%EC%84%9C%ED%9B%88%EC%8A%B9%EA%B2%A9%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:component kno:KN2019-0218-c3 ;
+    kno:example "¶이와 함께 O 의원은 충남도, 천안시와 함께 ‘{유관순 서훈 승격 특별법}’ 통과를 위한 100만 국민 청원 운동을 전개할 계획이다."@ko ;
+    skos:definition "유관순 열사의 업적과 사회적 영향을 고려하여 서훈 등급을 높이는 것에 관한 법안. 정식 명칭은 ‘3ㆍ1운동 및 대한민국 임시 정부 수립 100주년 기념 유관순 열사의 서훈 변경을 위한 특별법’이다. 2019년 1월에 국회에서 발의되었다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2019-0218-c4 kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:fullForm "특별법"@ko ;
+    kno:surfaceForm "특별법"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "특별법(特別法)"@ko .
+kno:KN2019-0218-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005300 ;
+    kno:fullForm "유관순"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "유관순(柳寬順)"@ko ;
+    kno:surfaceForm "유관순"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z1 .
+kno:KN2019-0218-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.2p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004293 ;
+    rdfs:label "서훈(敍勳)"@ko ;
+    kno:fullForm "서훈"@ko ;
+    kno:surfaceForm "서훈"@ko .
+kno:KN2019-0218-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "승격"@ko ;
+    kno:surfaceForm "승격"@ko ;
+    kno:formative kno:F004628 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    rdfs:label "승격(昇格)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer .

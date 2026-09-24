@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0105 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%B4%EB%B0%B0%20%EC%83%9D%EC%A0%95> ;
+    kno:componentString "담배, 생정(生情)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "담배 (1성분)"@ko ;
+    kno:frequency kno:KN2013-0105-freq-NN-2013 ;
+    kno:slotFiller "생정(生情) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:origin "(--生情)" ;
+    kno:instantiates kno:S001311 ;
+    kno:instantiates kno:S000259 ;
+    kno:frequency kno:KN2013-0105-freq-NN-total ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    skos:definition "초중고생이 담배를 예쁘거나 멋있게 피우는 방법에 대한 정보."@ko ;
+    kno:component kno:KN2013-0105-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2013-0105-c1 ;
+    kno:example "¶23일 일선 초중등학교 등에 따르면 최근 청소년들 사이에서 각종 10대 관련 생활 정보를 게시하는 생정 블로그가 유행처럼 번지고 있는 가운데 일부에서 ‘{담배 생정}’, ‘일진 생정’ 등의 제목을 달고 담배 피는 법, 일진 되는 법, 화장 상식 등을 알려 주는 정보 글이 무분별하게 올라와 문제로 지적되고 있다."@ko ;
+    rdfs:label "담배 생정"@ko ;
+    kno:indexForm "담배생정"@ko .
+kno:KN2013-0105-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "생정"@ko ;
+    rdfs:label "생정(生情)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "생정"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000281 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.2 .
+kno:KN2013-0105-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "담배"@ko ;
+    kno:surfaceForm "담배"@ko ;
+    kno:semanticTag kno:usas-F3 ;
+    kno:formative kno:F001164 ;
+    a kno:Component ;
+    kno:fullForm "담배"@ko .

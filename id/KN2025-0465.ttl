@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0465 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0465 a ontolex:Word ;
-    frac:attestation kno:KN2025-0465-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0465-form ;
-    ontolex:sense kno:KN2025-0465-sense .
-
-kno:KN2025-0465-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0005173116> .
-
-kno:KN2025-0465-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0465-freq-nn,
-        kno:KN2025-0465-freq-yt ;
-    ontolex:writtenRep "육회 칼빔면"@ko .
-
-kno:KN2025-0465-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0465-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0465-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:componentString "육회(肉膾), 칼빔면(칼빔麵)"@ko ;
+    rdfs:label "육회-칼빔면"@ko ;
+    kno:component kno:KN2025-0465-c2 ;
+    kno:origin "(肉膾칼빔麵)" ;
+    kno:indexForm "육회칼빔면"@ko ;
+    kno:formation kno:W01 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%ED%9A%8C%EC%B9%BC%EB%B9%94%EB%A9%B4> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 비빔면에 육회를 올려 함께 비벼 먹는 음식(또는 그 조합)."@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0465-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) SNS에서 {육회칼빔면이} 별미 조합으로 입소문을 타면서 집에서 따라 해 먹는 사람이 늘었다."@ko ;
+    kno:frequency kno:KN2025-0465-freq-NN-total ;
+    kno:predicate "먹다"@ko ;
+    kno:frequency kno:KN2025-0465-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0465-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "칼빔면(칼빔麵)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "칼빔면"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "칼빔면"@ko ;
+    kno:formative kno:F006210 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0465-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "육회"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F005334 ;
+    kno:fullForm "육회"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "육회(肉膾)"@ko .

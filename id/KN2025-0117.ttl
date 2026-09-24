@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0117 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0117 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0117-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0117-form ;
-    ontolex:sense kno:KN2025-0117-sense .
-
-kno:KN2025-0117-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000426669> .
-
-kno:KN2025-0117-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0117-freq-nn,
-        kno:KN2025-0117-freq-yt ;
-    ontolex:writtenRep "내란성 증후군"@ko .
-
-kno:KN2025-0117-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0117-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0117-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0117 rdfs:label "내란성 증후군"@ko ;
+    kno:instantiates kno:S000033 ;
+    kno:example "(LLM) 하루 종일 속보만 새로고침하게 되고 잠도 잘 못 자서 {내란성증후군이} 온 것 같아."@ko ;
+    kno:slotFiller "내란성(內亂性) (1성분)"@ko ;
+    kno:instantiates kno:S001281 ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2025-0117-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0117-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "내란성(內亂性), 증후군(症候群)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:origin "(內亂性症候群)" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%EC%84%B1%20%EC%A6%9D%ED%9B%84%EA%B5%B0> ;
+    skos:definition "(LLM) 정치적 사건ㆍ상황과 관련한 뉴스와 정보에 과도하게 반응하여 불안, 분노, 불면, 집중력 저하, 반복적인 뉴스 확인 등 일상 기능의 저하로 이어지는 심리적 상태를 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0117-freq-NN-2025 ;
+    kno:component kno:KN2025-0117-c1 ;
+    kno:indexForm "내란성증후군"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "증후군(症候群) (1성분)"@ko .
+kno:KN2025-0117-c2 a kno:Component ;
+    kno:surfaceForm "증후군"@ko ;
+    kno:formative kno:F000062 ;
+    kno:fullForm "증후군"@ko ;
+    rdfs:label "증후군(症候群)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m .
+kno:KN2025-0117-c1 rdfs:label "내란성(內亂性)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001141 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "내란성"@ko ;
+    kno:surfaceForm "내란성"@ko ;
+    kno:semanticTag kno:usas-G3 .

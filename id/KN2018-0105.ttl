@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0105 kno:componentString "로봇(robot), 시민권자(市民權者)"@ko ;
+    kno:slotFiller "시민권자(市民權者) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0105-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2018-0105-freq-NN-2018 ;
+    rdfs:label "로봇 시민권자"@ko ;
+    skos:definition "일반 국민이나 주민이 누리고 가지는 권리인 시민권을 가진 로봇을 이르는 말. 2017년 10월 사우디아라비아 정부가 인공 지능 로봇에 전자적 인격체로서의 지위를 인정함으로써 최초로 시민권을 부여한 데서 생겨난 말이다."@ko ;
+    kno:urimalTargetCode "1416165" ;
+    kno:example "¶‘현존하는 가장 사람 같은 로봇’으로 불리는 인공 지능 로봇 OO가 지난 10월 사우디아라비아 정부로부터 시민권을 받으며 최초의 ‘{로봇 시민권자’가} 된 데 이어 30일에는 인도의 시민권도 받을 가능성이 제기되면서 로봇과 인간 사이의 경계와 공존 가능성을 둘러싼 논란이 심화하고 있다."@ko ;
+    kno:frequency kno:KN2018-0105-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0105-freq-NN-total ;
+    kno:indexForm "로봇시민권자"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416165> ;
+    kno:component kno:KN2018-0105-c1 ;
+    kno:origin "(<영>robot市民權者)" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2018-0105-c2 ;
+    kno:languageType "영_한" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000296 ;
+    kno:pos "「구」"@ko .
+kno:KN2018-0105-c1 kno:formative kno:F000135 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "로봇"@ko ;
+    rdfs:label "로봇(robot)"@ko ;
+    a kno:Component ;
+    kno:fullForm "로봇"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2018-0105-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    rdfs:label "시민권자(市民權者)"@ko ;
+    kno:formative kno:F004654 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "시민권자"@ko ;
+    kno:surfaceForm "시민권자"@ko .

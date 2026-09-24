@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0061 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0061 kno:year "2014"^^xsd:gYear ;
+    kno:slotFiller "추격극(追擊劇) (1성분)"@ko ;
+    kno:frequency kno:KN2014-0061-freq-NN-total ;
+    kno:component kno:KN2014-0061-c2 ;
+    kno:component kno:KN2014-0061-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "도보추격극"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EB%B3%B4%EC%B6%94%EA%B2%A9%EA%B7%B9> ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "등장인물들이 뛰지 않고 걸어서 추격하는 내용을 소재로 한 연극이나 영화."@ko ;
+    rdfs:label "도보^추격극"@ko ;
+    kno:componentString "도보(徒步), 추격극(追擊劇)"@ko ;
+    kno:instantiates kno:S000498 ;
+    kno:example "¶‘OO’은 ‘{도보 추격극’이라는} 신조어를 만들어 낸 작품이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0061-freq-NN-2013 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(徒步追擊劇)" ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko .
+kno:KN2014-0061-c2 kno:semanticTag kno:usas-K4 ;
+    rdfs:label "추격극(追擊劇)"@ko ;
+    kno:formative kno:F006118 ;
+    kno:fullForm "추격극"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "추격극"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2014-0061-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000486 ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "도보"@ko ;
+    rdfs:label "도보(徒步)"@ko ;
+    kno:surfaceForm "도보"@ko .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2023-0027 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0027-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0027-form ;
-    ontolex:sense kno:KN2023-0027-sense .
-
-kno:KN2023-0027-att-nn a frac:Attestation ;
-    dcterms:date "2022-12-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001821399> .
-
-kno:KN2023-0027-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0027-freq-nn,
-        kno:KN2023-0027-freq-yt ;
-    ontolex:writtenRep "공공 반납기"@ko .
-
-kno:KN2023-0027-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0027-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0027-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:languageType "한_한" ;
+    kno:predicate "회수하다"@ko ;
+    skos:definition "회수하는 사람 없이도, 매장이 아닌 곳에서 일회용 컵의 보증금을 돌려받을 수 있도록 설치한 기계."@ko ;
+    kno:frequency kno:KN2023-0027-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%20%EB%B0%98%EB%82%A9%EA%B8%B0> ;
+    kno:indexForm "공공반납기"@ko ;
+    kno:component kno:KN2023-0027-c2 ;
+    rdfs:label "공공 반납기"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0027-freq-NN-2023 ;
+    kno:example "¶제주 시청과 제주 공항에 설치된 {공공 반납기는} 일회용 컵 반납처로서 중요한 역할을 하고 있다."@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000084 ;
+    kno:origin "(公共返納器)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "반납기(返納器) (1성분)"@ko ;
+    kno:component kno:KN2023-0027-c1 ;
+    kno:frequency kno:KN2023-0027-freq-NN-2022 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:componentString "공공(公共), 반납기(返納器)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2023-0027-c2 kno:fullForm "반납기"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "반납기(返納器)"@ko ;
+    kno:formative kno:F003681 ;
+    kno:surfaceForm "반납기"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0027-c1 kno:formative kno:F000084 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "공공"@ko ;
+    kno:surfaceForm "공공"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "공공(公共)"@ko ;
+    kno:semanticTag kno:usas-G1.1 .

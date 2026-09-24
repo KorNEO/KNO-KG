@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0165 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0165 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0165-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0165-form ;
-    ontolex:sense kno:KN2021-0165-sense .
-
-kno:KN2021-0165-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003296546> .
-
-kno:KN2021-0165-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0165-freq-nn,
-        kno:KN2021-0165-freq-yt ;
-    ontolex:writtenRep "수정체낭^절개술"@ko .
-
-kno:KN2021-0165-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0165-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0165-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0165 kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "수정체낭^절개술"@ko ;
+    kno:component kno:KN2021-0165-c2 ;
+    kno:predicate "절개하다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "수정체낭(水晶體囊), 절개술(切開術)"@ko ;
+    kno:origin "(水晶體囊切開術)" ;
+    kno:example "¶새로 도입된 레이저 수술 장비를 활용하면 보다 정확한 {수정체낭 절개술이} 가능해 관련 질병을 안전하게 치료할 수 있다."@ko ;
+    kno:languageType "한^한" ;
+    kno:frequency kno:KN2021-0165-freq-NN-total ;
+    skos:definition "백내장 따위의 안구 관련 질병을 치료하기 위해 수정체낭을 절개하는 수술."@ko ;
+    kno:frequency kno:KN2021-0165-freq-NN-2020 ;
+    kno:indexForm "수정체낭절개술"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%A0%95%EC%B2%B4%EB%82%AD%EC%A0%88%EA%B0%9C%EC%88%A0> ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0165-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0165-c2 kno:role "성분"@ko ;
+    kno:fullForm "절개술"@ko ;
+    kno:surfaceForm "절개술"@ko ;
+    kno:formative kno:F005648 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "절개술(切開術)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B3 .
+kno:KN2021-0165-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "수정체낭"@ko ;
+    rdfs:label "수정체낭(水晶體囊)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "수정체낭"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F004483 ;
+    kno:truncated "false"^^xsd:boolean .

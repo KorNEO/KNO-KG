@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0396 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0396 kno:frequency kno:KN2012-0396-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶아울러 추종자는 {착용템의} 모든 OO의 효과를 2.5배 향상되어 받는 특수 능력을 가지고 있어 더욱 강력한 공격과 방어를 펼칠 수도 있다."@ko ;
+    kno:origin "(着用←item)" ;
+    rdfs:label "착용템"@ko ;
+    kno:frequency kno:KN2012-0396-freq-NN-2017 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2012-0396-freq-NN-2015 ;
+    kno:indexForm "착용템"@ko ;
+    kno:slotFiller "착용(着用) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0396-freq-NN-2024 ;
+    kno:componentString "착용(着用), (아이)템(item)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0396-freq-NN-2022 ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A9%EC%9A%A9%ED%85%9C> ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0396-freq-NN-2025 ;
+    skos:definition "게임에서, 입거나, 쓰거나, 신거나 하는 아이템."@ko ;
+    kno:frequency kno:KN2012-0396-freq-NN-2023 ;
+    kno:component kno:KN2012-0396-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0396-c2 ;
+    kno:predicate "하다"@ko .
+kno:KN2012-0396-c1 a kno:Component ;
+    kno:fullForm "착용"@ko ;
+    kno:surfaceForm "착용"@ko ;
+    rdfs:label "착용(着用)"@ko ;
+    kno:formative kno:F005997 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0396-c2 kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "템"@ko ;
+    a kno:Component .

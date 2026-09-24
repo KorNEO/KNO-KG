@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0325 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0325 kno:frequency kno:KN2013-0325-freq-NN-2018 ;
+    kno:origin "(one plate料理)" ;
+    kno:urimalTargetCode "1357341" ;
+    kno:example "¶분주한 아침 시간에도 손쉽게 만들어 먹을 수 있는 메뉴, 자신만을 위한 {원플레이트 요리}…레스토랑보다 더 맛있는 특별 요리법과 조리 시간을 꼼꼼하게 소개한다."@ko ;
+    kno:languageType "영_한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357341> ;
+    kno:component kno:KN2013-0325-c2 ;
+    kno:activeYears "7"^^xsd:integer ;
+    skos:definition "한 접시에 사람이 섭취해야 할 영양소가 빠짐없이 들어가 있어 그 음식만 먹어도 포만감과 만족감을 느낄 수 있도록 만든 요리. 반찬과 밥을 따로 하지 않아 간편하게 먹을 수 있다. 볶음밥, 덮밥 따위가 이에 해당한다."@ko ;
+    kno:indexForm "원플레이트요리"@ko ;
+    kno:frequency kno:KN2013-0325-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0325-freq-NN-total ;
+    kno:componentString "원(one), 플레이트(plate), 요리(料理)"@ko ;
+    kno:frequency kno:KN2013-0325-freq-NN-2022 ;
+    kno:frequency kno:KN2013-0325-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0325-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "플레이트(plate)+요리(料理) (2성분)"@ko ;
+    kno:component kno:KN2013-0325-c1 ;
+    kno:instantiates kno:S001595 ;
+    kno:frequency kno:KN2013-0325-freq-NN-2016 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0325-c3 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "원플레이트 요리"@ko ;
+    kno:frequency kno:KN2013-0325-freq-NN-2017 ;
+    a ontolex:MultiwordExpression .
+kno:KN2013-0325-c2 kno:fullForm "플레이트"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F001979 ;
+    rdfs:label "플레이트(plate)"@ko ;
+    kno:surfaceForm "플레이트"@ko ;
+    a kno:Component .
+kno:KN2013-0325-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "원"@ko ;
+    kno:surfaceForm "원"@ko ;
+    kno:formative kno:F001662 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "원(one)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2013-0325-c3 kno:fullForm "요리"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000876 ;
+    kno:surfaceForm "요리"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "요리(料理)"@ko .

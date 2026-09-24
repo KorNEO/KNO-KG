@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0237 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0237 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%8A%B9%EC%9D%B8%EC%9D%B4%EB%AF%BC> ;
+    skos:definition "‘불법 체류인’ 또는 ‘불법 체류자’를 달리 이르는 말. 미국 연방 의회 도서관의 도서 목록 주제어에서 그동안 사용하던 ‘불법 체류인’ 또는 ‘불법 체류자’라는 말 대신 가치 중립적인 이 말로 바꾸어 사용할 것을 발표하였다."@ko ;
+    kno:example "¶의회 도서관 측은…“비시민권자나 {비승인 이민이} 훨씬 더 정확하다.”라고 강조했다."@ko ;
+    a kno:Neologism ;
+    kno:indexForm "비승인이민"@ko ;
+    kno:languageType "한^한" ;
+    kno:slotFiller "승인(承認)+이민(移民) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0237-freq-NN-2016 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001418 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0237-c3 ;
+    kno:component kno:KN2016-0237-c2 ;
+    kno:unitType "구"@ko ;
+    kno:componentString "비(非)-, 승인(承認), 이민(移民)"@ko ;
+    rdfs:label "비승인^이민"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:origin "(非承認移民)" ;
+    kno:component kno:KN2016-0237-c1 ;
+    kno:frequency kno:KN2016-0237-freq-NN-total .
+kno:KN2016-0237-c3 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:fullForm "이민"@ko ;
+    kno:surfaceForm "이민"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "이민(移民)"@ko ;
+    kno:formative kno:F005391 .
+kno:KN2016-0237-c2 kno:surfaceForm "승인"@ko ;
+    kno:formative kno:F001538 ;
+    a kno:Component ;
+    rdfs:label "승인(承認)"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "승인"@ko .
+kno:KN2016-0237-c1 a kno:Component ;
+    kno:formative kno:F000520 ;
+    kno:fullForm "비"@ko ;
+    rdfs:label "비(非)-"@ko ;
+    kno:surfaceForm "비"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

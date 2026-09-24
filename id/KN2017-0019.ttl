@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0019 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0019 kno:component kno:KN2017-0019-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "고삐, 법안(法案)"@ko ;
+    rdfs:label "고삐^법안"@ko ;
+    kno:slotFiller "고삐 (1성분)"@ko ;
+    kno:origin "(고삐法案)" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2017-0019-freq-NN-2016 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000123 ;
+    kno:component kno:KN2017-0019-c1 ;
+    skos:definition "미국에서, 반드시 의회의 승인을 받아야 하는 법률의 안건이나 초안을 비유적으로 이르는 말."@ko ;
+    kno:frequency kno:KN2017-0019-freq-NN-2017 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "고^한" ;
+    kno:frequency kno:KN2017-0019-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶미 정치 전문 매체인 OO는 28일 OO당 의회 소식통들을 인용해 하원이…새로운 대형 규제에 대해 반드시 의회의 승인을 거치도록 하는 {고삐 법안을} 우선 처리하도록 했다."@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:indexForm "고삐법안"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EC%82%90%EB%B2%95%EC%95%88> .
+kno:KN2017-0019-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000272 ;
+    kno:fullForm "법안"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "법안"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "법안(法案)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2017-0019-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "고삐"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002293 ;
+    rdfs:label "고삐"@ko ;
+    a kno:Component ;
+    kno:fullForm "고삐"@ko .

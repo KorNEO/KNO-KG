@@ -1,30 +1,62 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0209 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0209 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2022-0209-form ;
-    ontolex:sense kno:KN2022-0209-sense .
-
-kno:KN2022-0209-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0209-freq-nn,
-        kno:KN2022-0209-freq-yt ;
-    ontolex:writtenRep "언수처"@ko .
-
-kno:KN2022-0209-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0209-freq-yt a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0209-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0209 kno:year "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%EC%88%98%EC%B2%98> ;
+    kno:origin "(言搜處)" ;
+    kno:component kno:KN2022-0209-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:instantiates kno:S001536 ;
+    skos:definition "언론인을 비롯한 교수, 정치인 등 여러 개인의 정보를 사찰한 ‘고위 공직자 범죄 수사처’를 비판하여 이르는 말."@ko ;
+    kno:component kno:KN2022-0209-c1 ;
+    rdfs:label "언수처"@ko ;
+    kno:languageType "한+한+한" ;
+    a kno:Neologism ;
+    kno:example "¶공수처는 최근 민간인 사찰 논란으로 {‘언수처’라는} 비판을 피하지 못 했다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0209-freq-NN-2022 ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2022-0209-freq-NN-total ;
+    kno:component kno:KN2022-0209-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "언수처"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "언(론)(言論), 수(사)(搜査), -처(處)"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "수(사)(搜査) (1성분)"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0209-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F004460 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "수사"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "수"@ko ;
+    rdfs:label "수(사)(搜査)"@ko .
+kno:KN2022-0209-c1 rdfs:label "언(론)(言論)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "언론"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    kno:surfaceForm "언"@ko ;
+    kno:formative kno:F000382 ;
+    kno:role "고정항"@ko .
+kno:KN2022-0209-c3 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "처"@ko ;
+    kno:formative kno:F001820 ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "-처(處)"@ko ;
+    kno:fullForm "처"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

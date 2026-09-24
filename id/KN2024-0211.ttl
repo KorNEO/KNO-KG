@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0211 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0211 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0211-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0211-form ;
-    ontolex:sense kno:KN2024-0211-sense .
-
-kno:KN2024-0211-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002836330> .
-
-kno:KN2024-0211-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0211-freq-nn,
-        kno:KN2024-0211-freq-yt ;
-    ontolex:writtenRep "우유^서기관"@ko .
-
-kno:KN2024-0211-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0211-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0211-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0211 kno:component kno:KN2024-0211-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "서기관(書記官) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EC%9C%A0%EC%84%9C%EA%B8%B0%EA%B4%80> ;
+    kno:indexForm "우유서기관"@ko ;
+    rdfs:label "우유^서기관"@ko ;
+    kno:slotFiller "우유(牛乳) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    kno:origin "(牛乳書記官)" ;
+    kno:componentString "우유(牛乳), 서기관(書記官)"@ko ;
+    kno:frequency kno:KN2024-0211-freq-NN-2023 ;
+    kno:instantiates kno:S000930 ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶최근 정부가 품목별 물가 관리에 나서면서 {우유 서기관이} 부활한 가운데 정부가 가격 형성에 지나치게 개입한다는 지적이 잇따르고 있다."@ko ;
+    kno:component kno:KN2024-0211-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "관리하다"@ko ;
+    skos:definition "우유의 가격을 관리하는 담당자. 물가 체감도가 높은 빵, 우유, 과자, 커피, 라면, 아이스크림, 설탕, 식용유, 밀가루 등 9개 품목을 집중 관리 대상으로 선정하고, 서기관이나 사무관급 담당자를 지정한 것에서 나온 말이다. =우유 관리관."@ko ;
+    kno:frequency kno:KN2024-0211-freq-NN-total ;
+    kno:instantiates kno:S000317 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism .
+kno:KN2024-0211-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001459 ;
+    rdfs:label "서기관(書記官)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "서기관"@ko ;
+    kno:surfaceForm "서기관"@ko .
+kno:KN2024-0211-c1 kno:surfaceForm "우유"@ko ;
+    rdfs:label "우유(牛乳)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000563 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "우유"@ko .

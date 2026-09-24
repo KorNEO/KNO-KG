@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0251 kno:frequency kno:KN2018-0251-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0251-freq-NN-total ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:indexForm "엔지족"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "엔지(NG) (1성분)"@ko ;
+    kno:predicate "모으다"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1301571> ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    rdfs:label "엔지-족"@ko ;
+    kno:frequency kno:KN2018-0251-freq-NN-2017 ;
+    kno:urimalTargetCode "1301571" ;
+    kno:origin "(<영>NG族)" ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:componentString "엔지(NG), -족(族)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:component kno:KN2018-0251-c2 ;
+    kno:example "¶한글 등이 {엔지족에} 때아닌 주목을 받게 된 것도 청년의 나라에 대한 자부심 회복과 무관하지 않다."@ko ;
+    kno:component kno:KN2018-0251-c1 ;
+    skos:definition "국가에서 기획하거나 제작한 상품을 구매하여 모으는 사람. 또는 그런 무리."@ko .
+kno:KN2018-0251-c2 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0251-c1 kno:semanticTag kno:usas-K4 ;
+    kno:fullForm "엔지"@ko ;
+    kno:surfaceForm "엔지"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005010 ;
+    rdfs:label "엔지(NG)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

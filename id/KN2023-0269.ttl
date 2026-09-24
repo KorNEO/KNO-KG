@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0269 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0269 a ontolex:Word ;
-    frac:attestation kno:KN2023-0269-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0269-form ;
-    ontolex:sense kno:KN2023-0269-sense .
-
-kno:KN2023-0269-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/024/0000077143> .
-
-kno:KN2023-0269-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0269-freq-nn,
-        kno:KN2023-0269-freq-yt ;
-    ontolex:writtenRep "징무원"@ko .
-
-kno:KN2023-0269-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0269-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0269-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0269 rdfs:label "징무원"@ko ;
+    kno:instantiates kno:S000723 ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "징무원"@ko ;
+    skos:definition "인터넷 커뮤니티 따위에서, 업무의 어려움이나 박봉을 호소하는 공무원을 비난조로 이르는 말. ‘징징대다’와 ‘공무원’을 결합하여 만든 말이다."@ko ;
+    kno:example "¶최고의 직업으로 선망받던 공무원은 근래 ‘{징무원’과} 같은 조롱을 받으며 그 위상이 급격하게 떨어지고 있다."@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0269-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0269-freq-NN-total ;
+    kno:origin "(징務員)" ;
+    kno:component kno:KN2023-0269-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%95%EB%AC%B4%EC%9B%90> ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2023-0269-c1 ;
+    kno:frequency kno:KN2023-0269-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "고+한" ;
+    kno:componentString "징(징대다), (공)무원(公務員)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "징(징대다) (1성분)"@ko .
+kno:KN2023-0269-c2 kno:surfaceForm "무원"@ko ;
+    kno:fullForm "공무원"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(공)무원(公務員)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001317 ;
+    kno:semanticTag kno:usas-G1.1 .
+kno:KN2023-0269-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "징징대다"@ko ;
+    rdfs:label "징(징대다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "징"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:formative kno:F005944 .

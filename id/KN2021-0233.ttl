@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0233 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0233-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0233-form ;
-    ontolex:sense kno:KN2021-0233-sense .
-
-kno:KN2021-0233-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001495909> .
-
-kno:KN2021-0233-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0233-freq-nn,
-        kno:KN2021-0233-freq-yt ;
-    ontolex:writtenRep "정책형^뉴딜^펀드"@ko .
-
-kno:KN2021-0233-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4122 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0233-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0233-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0233 kno:frequency kno:KN2021-0233-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0233-freq-NN-2021 ;
+    kno:example "¶정부는 {정책형 뉴딜 펀드를} 신설하고 20조 원을 조성하여 한국판 뉴딜 기업과 사업에 적극적으로 투자할 계획이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "정책형(政策型), 뉴딜(New Deal), 펀드(fund)"@ko ;
+    kno:frequency kno:KN2021-0233-freq-NN-2023 ;
+    rdfs:label "정책형^뉴딜^펀드"@ko ;
+    kno:instantiates kno:S001110 ;
+    kno:component kno:KN2021-0233-c1 ;
+    kno:component kno:KN2021-0233-c2 ;
+    kno:component kno:KN2021-0233-c3 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "정책형(政策型)+뉴딜(New Deal) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0233-freq-NN-total ;
+    kno:languageType "한^영^영" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0233-freq-NN-2022 ;
+    kno:indexForm "정책형뉴딜펀드"@ko ;
+    skos:definition "뉴딜 관련 기업이나 사업에 투자하기 위하여 정부가 출자하여 만든 모펀드."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0233-freq-NN-2020 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%B1%85%ED%98%95%EB%89%B4%EB%94%9C%ED%8E%80%EB%93%9C> ;
+    kno:frequency kno:KN2021-0233-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:origin "(政策型New Deal<영>fund)" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0233-c1 kno:fullForm "정책형"@ko ;
+    kno:surfaceForm "정책형"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "정책형(政策型)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F005689 .
+kno:KN2021-0233-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "뉴딜(New Deal)"@ko ;
+    kno:formative kno:F002823 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "뉴딜"@ko ;
+    kno:surfaceForm "뉴딜"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0233-c3 kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "펀드(fund)"@ko ;
+    kno:surfaceForm "펀드"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001950 ;
+    kno:fullForm "펀드"@ko .

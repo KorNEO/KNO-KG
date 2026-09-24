@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0401 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0401 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0401-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0401-form ;
-    ontolex:sense kno:KN2020-0401-sense .
-
-kno:KN2020-0401-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000420892> .
-
-kno:KN2020-0401-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0401-freq-nn,
-        kno:KN2020-0401-freq-yt ;
-    ontolex:writtenRep "혼합^검체^기법"@ko .
-
-kno:KN2020-0401-freq-nn a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0401-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0401-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0401 kno:frequency kno:KN2020-0401-freq-NN-2020 ;
+    kno:origin "(混合檢體技法)" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0401-freq-NN-total ;
+    kno:slotFiller "혼합(混合)+검체(檢體) (2성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:component kno:KN2020-0401-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "혼합^검체^기법"@ko ;
+    kno:slotFiller "검체(檢體)+기법(技法) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶이날 휴가에서 복귀한 생도들은 {혼합 검체 기법으로} 코로나19 검사를 받는다."@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0401-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001780 ;
+    kno:instantiates kno:S000804 ;
+    kno:indexForm "혼합검체기법"@ko ;
+    kno:component kno:KN2020-0401-c3 ;
+    skos:definition "같은 병원체에 의한 감염자가 동시다발적으로 발생할 때 감염 여부를 확인하는 검사 방법의 하나. 여러 명의 검체를 섞은 검체를 검사하고 여기서 양성이 나오면 다시 개별검사를 하는 방식으로 이루어진다. 코로나19와 같이 전국적인 감염이 발생할 때 사용되는 검사 기법이다. =취합 검사법, 취합 검사 기법, 혼합 검사법."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%BC%ED%95%A9%EA%B2%80%EC%B2%B4%EA%B8%B0%EB%B2%95> ;
+    kno:componentString "혼합(混合), 검체(檢體), 기법(技法)"@ko .
+kno:KN2020-0401-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "검체(檢體)"@ko ;
+    kno:formative kno:F000657 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B3 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "검체"@ko ;
+    kno:surfaceForm "검체"@ko .
+kno:KN2020-0401-c1 rdfs:label "혼합(混合)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002020 ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:fullForm "혼합"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "혼합"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0401-c3 a kno:Component ;
+    kno:semanticTag kno:usas-X4.2 ;
+    rdfs:label "기법(技法)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "기법"@ko ;
+    kno:formative kno:F001116 ;
+    kno:fullForm "기법"@ko .

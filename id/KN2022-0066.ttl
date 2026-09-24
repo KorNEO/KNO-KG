@@ -1,36 +1,77 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0066 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0066 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0066-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0066-form ;
-    ontolex:sense kno:KN2022-0066-sense .
-
-kno:KN2022-0066-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/082/0001133594> .
-
-kno:KN2022-0066-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0066-freq-nn,
-        kno:KN2022-0066-freq-yt ;
-    ontolex:writtenRep "국립^지질^유산^센터"@ko .
-
-kno:KN2022-0066-freq-nn a frac:CorpusFrequency ;
-    rdf:value 111 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0066-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0066-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0066 kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0066-c3 ;
+    kno:frequency kno:KN2022-0066-freq-NN-2022 ;
+    kno:instantiates kno:S001234 ;
+    kno:instantiates kno:S000400 ;
+    kno:indexForm "국립지질유산센터"@ko ;
+    kno:frequency kno:KN2022-0066-freq-NN-2023 ;
+    skos:definition "화석 자연 유산의 통합적인 관리와 화석 산지의 활성화 방안을 마련하기 위해 미래에 설립될 기관. 서부 경남 지역 화석 산지의 효율적인 연구와 관리 등을 위하여 진주시가 유치를 추진하였다."@ko ;
+    kno:frequency kno:KN2022-0066-freq-NN-2024 ;
+    kno:languageType "한^한^한^영" ;
+    kno:component kno:KN2022-0066-c2 ;
+    kno:component kno:KN2022-0066-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%A6%BD%EC%A7%80%EC%A7%88%EC%9C%A0%EC%82%B0%EC%84%BC%ED%84%B0> ;
+    kno:slotFiller "국립(國立)+지질(地質)+유산(遺産) (3성분)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0066-c4 ;
+    rdfs:label "국립^지질^유산^센터"@ko ;
+    kno:slotFiller "지질(地質)+유산(遺産)+센터(center) (3성분)"@ko ;
+    kno:frequency kno:KN2022-0066-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0066-freq-NN-2025 ;
+    kno:componentString "국립(國立), 지질(地質), 유산(遺産), 센터(center)"@ko ;
+    kno:frequency kno:KN2022-0066-freq-NN-total ;
+    kno:origin "(國立地質遺産<영>center)" ;
+    kno:example "¶진주시는 ‘{국립 지질 유산 센터’의} 건립을 추진하기 위하여 진주와 인근 지역에서 발견되고 있는 자연 유산 자원을 활용한 관광 콘텐츠를 확립하고, 이들을 효과적으로 활용하고 보존할 수 있는 방안을 마련할 계획이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2022-0066-c3 kno:surfaceForm "유산"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "유산(遺産)"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000886 ;
+    a kno:Component ;
+    kno:fullForm "유산"@ko .
+kno:KN2022-0066-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "지질"@ko ;
+    kno:formative kno:F005895 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "지질(地質)"@ko ;
+    kno:surfaceForm "지질"@ko ;
+    kno:semanticTag kno:usas-W3 .
+kno:KN2022-0066-c1 rdfs:label "국립(國立)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "국립"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "국립"@ko ;
+    kno:formative kno:F001090 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component .
+kno:KN2022-0066-c4 kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000141 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H1 ;
+    rdfs:label "센터(center)"@ko ;
+    a kno:Component ;
+    kno:fullForm "센터"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "센터"@ko .

@@ -1,30 +1,51 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0381 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0381 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2024-0381-form ;
-    ontolex:sense kno:KN2024-0381-sense .
-
-kno:KN2024-0381-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0381-freq-nn,
-        kno:KN2024-0381-freq-yt ;
-    ontolex:writtenRep "행복 분기점"@ko .
-
-kno:KN2024-0381-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0381-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0381-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0381 a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "행복(幸福), 분기점(分岐點)"@ko ;
+    kno:slotFiller "분기점(分岐點) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "개인이나 사회의 행복 수준이 크게 달라지는 지점이나 시기. 소득과 관련하여, 일정 소득 수준 이하에서는 소득이 증가함에 따라 행복이 증가하지만, 일정 소득 수준 이상을 넘으면 행복 증가 효과가 정체되는 지점을 이른다."@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%96%89%EB%B3%B5%20%EB%B6%84%EA%B8%B0%EC%A0%90> ;
+    kno:languageType "한_한" ;
+    kno:origin "(幸福分岐點)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0381-c2 ;
+    kno:component kno:KN2024-0381-c1 ;
+    kno:example "¶행복하지 않은 사람들 중에는 {행복 분기점인} 연 소득 1억 원을 이미 넘긴 경우들도 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "행복분기점"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001769 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0381-freq-NN-total ;
+    rdfs:label "행복 분기점"@ko ;
+    kno:frequency kno:KN2024-0381-freq-NN-2024 .
+kno:KN2024-0381-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "분기점"@ko ;
+    kno:formative kno:F003968 ;
+    a kno:Component ;
+    rdfs:label "분기점(分岐點)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "분기점"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0381-c1 kno:semanticTag kno:usas-E4.1p ;
+    kno:formative kno:F002008 ;
+    rdfs:label "행복(幸福)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "행복"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "행복"@ko .

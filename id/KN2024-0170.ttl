@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0170 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0170 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0170-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0170-form ;
-    ontolex:sense kno:KN2024-0170-sense .
-
-kno:KN2024-0170-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-06"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/584/0000024497> .
-
-kno:KN2024-0170-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0170-freq-nn,
-        kno:KN2024-0170-freq-yt ;
-    ontolex:writtenRep "양자^비트^플랫폼"@ko .
-
-kno:KN2024-0170-freq-nn a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0170-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0170-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0170 kno:componentString "양자(量子), 비트(bit), 플랫폼(platform)"@ko ;
+    kno:instantiates kno:S000453 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0170-freq-NN-2023 ;
+    kno:indexForm "양자비트플랫폼"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "구현되다"@ko ;
+    rdfs:label "양자^비트^플랫폼"@ko ;
+    kno:component kno:KN2024-0170-c1 ;
+    kno:component kno:KN2024-0170-c2 ;
+    kno:origin "(量子<영>bit platform)" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한^영^영" ;
+    kno:slotFiller "비트(bit)+플랫폼(platform) (2성분)"@ko ;
+    kno:component kno:KN2024-0170-c3 ;
+    kno:example "¶양자 컴퓨터는 기존의 컴퓨터보다 성능이 월등할 것으로 기대되지만, 아직까지는 범용으로 사용될 수 있을 만큼의 안정성과 성능을 모두 확보한 {양자 비트 플랫폼은} 나오지 않았다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0170-freq-NN-total ;
+    skos:definition "양자 컴퓨터가 사용하는 양자 정보의 기본 단위인 큐비트가 구현되는 환경. 1나노미터 크기의 큐비트를 사용하는데, 이는 물질이 도달할 수 있는 가장 작은 크기이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9E%90%EB%B9%84%ED%8A%B8%ED%94%8C%EB%9E%AB%ED%8F%BC> ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000546 ;
+    kno:slotFiller "양자(量子)+비트(bit) (2성분)"@ko .
+kno:KN2024-0170-c1 kno:surfaceForm "양자"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000848 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "양자(量子)"@ko ;
+    kno:fullForm "양자"@ko .
+kno:KN2024-0170-c2 rdfs:label "비트(bit)"@ko ;
+    kno:formative kno:F004086 ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:fullForm "비트"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "비트"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0170-c3 kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "플랫폼"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    a kno:Component ;
+    rdfs:label "플랫폼(platform)"@ko ;
+    kno:formative kno:F000154 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "플랫폼"@ko ;
+    kno:truncated "false"^^xsd:boolean .

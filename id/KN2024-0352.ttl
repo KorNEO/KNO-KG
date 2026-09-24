@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0352 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0352 a ontolex:Word ;
-    frac:attestation kno:KN2024-0352-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0352-form ;
-    ontolex:sense kno:KN2024-0352-sense .
-
-kno:KN2024-0352-att-nn a frac:Attestation ;
-    dcterms:date "2023-09-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003134649> .
-
-kno:KN2024-0352-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0352-freq-nn,
-        kno:KN2024-0352-freq-yt ;
-    ontolex:writtenRep "폭룡-적"@ko .
-
-kno:KN2024-0352-freq-nn a frac:CorpusFrequency ;
-    rdf:value 137 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0352-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4197 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0352-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0352 a kno:Neologism ;
+    kno:frequency kno:KN2024-0352-freq-NN-2024 ;
+    kno:indexForm "폭룡적"@ko ;
+    kno:origin "(爆龍的)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0352-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶연예인 OOO은 날렵한 턱선과 오똑한 콧대로 {폭룡적인} 비주얼을 자랑하였다."@ko ;
+    kno:instantiates kno:S000194 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2024-0352-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0352-freq-NN-2023 ;
+    rdfs:label "폭룡-적"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2024-0352-freq-NN-2025 ;
+    kno:component kno:KN2024-0352-c1 ;
+    kno:pos "「관ㆍ명」"@ko ;
+    kno:slotFiller "폭룡(爆龍) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%AD%EB%A3%A1%EC%A0%81> ;
+    skos:definition "외모나 재주 등이 아주 우세하여 남을 능가할 만한. 또는 그런 것. =쾌룡적."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "폭룡(爆龍), -적(的)"@ko .
+kno:KN2024-0352-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000229 ;
+    rdfs:label "-적(的)"@ko ;
+    kno:fullForm "적"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:surfaceForm "적"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2024-0352-c1 kno:surfaceForm "폭룡"@ko ;
+    rdfs:label "폭룡(爆龍)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "폭룡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F006750 .

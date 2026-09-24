@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0223 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0223 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0223-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0223-form ;
-    ontolex:sense kno:KN2024-0223-sense .
-
-kno:KN2024-0223-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0002989377> .
-
-kno:KN2024-0223-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0223-freq-nn,
-        kno:KN2024-0223-freq-yt ;
-    ontolex:writtenRep "유스^앱"@ko .
-
-kno:KN2024-0223-freq-nn a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0223-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0223-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0223 kno:languageType "영^영" ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0223-c2 ;
+    skos:definition "청소년을 주요 대상으로 하여 맞춤형 서비스와 콘텐츠를 제공하는 애플리케이션."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EC%8A%A4%EC%95%B1> ;
+    kno:predicate "제공하다"@ko ;
+    kno:example "¶최근 중고등학생들은 첫 금융 거래를 오프라인 지점이 아닌 온라인 앱에서 시작하는 경우가 늘고 있으며, 은행들은 이를 겨냥해 청소년 맞춤형 서비스를 제공하는 {유스 앱을} 경쟁적으로 출시하고 있다."@ko ;
+    kno:frequency kno:KN2024-0223-freq-NN-2023 ;
+    kno:origin "(<영>▼youth app)" ;
+    kno:frequency kno:KN2024-0223-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2024-0223-c1 ;
+    rdfs:label "유스^앱"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0223-freq-NN-total ;
+    kno:slotFiller "유스(youth) (1성분)"@ko ;
+    kno:indexForm "유스앱"@ko ;
+    kno:componentString "유스(youth), 앱(app)"@ko ;
+    kno:frequency kno:KN2024-0223-freq-NN-2024 ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000172 .
+kno:KN2024-0223-c2 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "앱"@ko ;
+    rdfs:label "앱(app)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "앱"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F000116 .
+kno:KN2024-0223-c1 a kno:Component ;
+    kno:fullForm "유스"@ko ;
+    rdfs:label "유스(youth)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005315 ;
+    kno:surfaceForm "유스"@ko .

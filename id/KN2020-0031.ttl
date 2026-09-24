@@ -1,37 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0031 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0031 a ontolex:Word ;
-    frac:attestation kno:KN2020-0031-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0031-form ;
-    ontolex:sense kno:KN2020-0031-sense .
-
-kno:KN2020-0031-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004342335> .
-
-kno:KN2020-0031-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0031-freq-nn,
-        kno:KN2020-0031-freq-yt ;
-    ontolex:writtenRep "국평오"@ko .
-
-kno:KN2020-0031-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0031-freq-yt a frac:CorpusFrequency ;
-    rdf:value 28626 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0031-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%8C%80%ED%95%9C%EB%AF%BC%EA%B5%AD%20%EA%B5%AD%EB%AF%BC%20%ED%8F%89%EA%B7%A0%EC%9D%80%20%EC%88%98%EB%8A%A5%205%EB%93%B1%EA%B8%89> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0031 kno:formation kno:W06 ;
+    kno:component kno:KN2020-0031-c2 ;
+    kno:frequency kno:KN2020-0031-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0031-freq-NN-total ;
+    kno:indexForm "국평오"@ko ;
+    skos:definition "‘국민들의 평균은 5등급’을 줄여 이르는 말. 국민의 평균적인 지능이 수능 점수의 중간값인 5등급을 받는 수준이라는 뜻으로, 주로 상대방을 폄하하며 비난조로 이르는 말이다."@ko ;
+    a ontolex:Word ;
+    kno:origin "(國平五)" ;
+    kno:example "¶‘{국평오’나} ‘지잡대’ 등의 차별적인 혐오 발언이 온라인을 중심으로 유행처럼 번졌다."@ko ;
+    kno:frequency kno:KN2020-0031-freq-NN-2023 ;
+    kno:languageType "한+한+한" ;
+    kno:componentString "국(민)(國民), 평(균)(平均), 오(등급)(五等級)"@ko ;
+    kno:frequency kno:KN2020-0031-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0031-freq-NN-2020 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2020-0031-c1 ;
+    kno:activeYears "6"^^xsd:integer ;
+    rdfs:label "국평오"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0031-freq-NN-2022 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0031-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%ED%8F%89%EC%98%A4> ;
+    kno:frequency kno:KN2020-0031-freq-NN-2024 ;
+    kno:unitType "단어"@ko .
+kno:KN2020-0031-c2 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "평(균)(平均)"@ko ;
+    kno:fullForm "평균"@ko ;
+    kno:formative kno:F006702 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-N5 ;
+    a kno:Component ;
+    kno:surfaceForm "평"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0031-c1 kno:formative kno:F002464 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "국"@ko ;
+    rdfs:label "국(민)(國民)"@ko ;
+    kno:fullForm "국민"@ko ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2020-0031-c3 kno:semanticTag kno:usas-P1 ;
+    rdfs:label "오(등급)(五等級)"@ko ;
+    kno:fullForm "오등급"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "오"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F005101 .

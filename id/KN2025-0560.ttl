@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0560 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0560 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0560-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0560-form ;
-    ontolex:sense kno:KN2025-0560-sense .
-
-kno:KN2025-0560-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003343068> .
-
-kno:KN2025-0560-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0560-freq-nn,
-        kno:KN2025-0560-freq-yt ;
-    ontolex:writtenRep "체포 텐트"@ko .
-
-kno:KN2025-0560-freq-nn a frac:CorpusFrequency ;
-    rdf:value 109 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0560-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0560-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0560 kno:predicate "진행하다"@ko ;
+    skos:definition "(LLM) 특정 인물의 체포를 촉구하는 집회ㆍ시위에서 현장에 천막을 설치해 상주하며 기자회견이나 농성 형태로 진행하는 방식."@ko ;
+    kno:example "(LLM) 시민단체는 관저 인근에 천막을 설치하고 {체포텐트를} 꾸려 체포 촉구 기자회견과 농성을 이어가겠다고 밝혔다."@ko ;
+    kno:origin "(逮捕<영>tent)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0560-c2 ;
+    kno:indexForm "체포텐트"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%B4%ED%8F%AC%20%ED%85%90%ED%8A%B8> ;
+    kno:instantiates kno:S001083 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "체포 텐트"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:componentString "체포(逮捕), 텐트(tent)"@ko ;
+    kno:slotFiller "체포(逮捕) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0560-freq-NN-total ;
+    kno:component kno:KN2025-0560-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0560-freq-NN-2025 ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0560-c2 kno:semanticTag kno:usas-H1 ;
+    rdfs:label "텐트(tent)"@ko ;
+    a kno:Component ;
+    kno:fullForm "텐트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "텐트"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001900 .
+kno:KN2025-0560-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "체포"@ko ;
+    rdfs:label "체포(逮捕)"@ko ;
+    kno:formative kno:F006072 ;
+    kno:fullForm "체포"@ko ;
+    kno:semanticTag kno:usas-G2.1 .

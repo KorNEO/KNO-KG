@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0321 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0321 kno:frequency kno:KN2017-0321-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0321-freq-NN-2016 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶‘{프로 야근러’인} 직장인 O 씨에게 택시 귀가는 언젠가부터 일상이 되어 버렸다."@ko ;
+    kno:component kno:KN2017-0321-c3 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0321-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0321-freq-NN-2024 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372277> ;
+    kno:languageType "영_(한+영)" ;
+    kno:frequency kno:KN2017-0321-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0321-freq-NN-2018 ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>←professional夜勤<영>←er)" ;
+    kno:component kno:KN2017-0321-c1 ;
+    kno:frequency kno:KN2017-0321-freq-NN-total ;
+    kno:indexForm "프로야근러"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "프로(페셔널)(professional), 야근(夜勤), -러(←-er)"@ko ;
+    kno:slotFiller "야근(夜勤) (1성분)"@ko ;
+    kno:component kno:KN2017-0321-c2 ;
+    skos:definition "직장에서 야근을 자주 하는 사람을 이르는 말."@ko ;
+    kno:instantiates kno:S000046 ;
+    kno:frequency kno:KN2017-0321-freq-NN-2022 ;
+    kno:urimalTargetCode "1372277" ;
+    kno:activeYears "7"^^xsd:integer ;
+    rdfs:label "프로 야근러"@ko .
+kno:KN2017-0321-c3 kno:fullForm "러"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "러"@ko ;
+    kno:formative kno:F000022 ;
+    rdfs:label "-러(←-er)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2017-0321-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.2p ;
+    rdfs:label "프로(페셔널)(professional)"@ko ;
+    kno:surfaceForm "프로"@ko ;
+    kno:formative kno:F000051 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "프로페셔널"@ko .
+kno:KN2017-0321-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "야근"@ko ;
+    kno:surfaceForm "야근"@ko ;
+    kno:formative kno:F000846 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "야근(夜勤)"@ko ;
+    kno:semanticTag kno:usas-I3.1 .

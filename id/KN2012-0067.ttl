@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0067 kno:component kno:KN2012-0067-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A5%EB%B9%99%EB%85%80> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:slotFiller "닥(치다)+빙(의)(憑) (2성분)"@ko ;
+    kno:instantiates kno:S000009 ;
+    kno:component kno:KN2012-0067-c2 ;
+    kno:componentString "닥(치다), 빙(의)(憑), -녀(女)"@ko ;
+    rdfs:label "닥빙-녀"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:example "¶사슴 눈망울에 청순 미소로 ‘{닥빙녀’에} 꼽힌 OOO가 이번에는 ‘옥탑방 개념녀’로 네티즌들의 주목을 한 몸에 받고 있는 것."@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘닥치고 빙의되고 싶은 여자’를 줄여 이르는 말. 아주 닮고 싶은 여자를 말한다."@ko ;
+    a ontolex:Word ;
+    kno:origin "(닥憑女)" ;
+    kno:indexForm "닥빙녀"@ko ;
+    kno:languageType "고+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2012-0067-freq-NN-2012 ;
+    kno:slotFiller "빙(의)(憑)+-녀(女) (2성분)"@ko ;
+    kno:frequency kno:KN2012-0067-freq-NN-total ;
+    kno:component kno:KN2012-0067-c3 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000494 ;
+    kno:pos "「명」"@ko .
+kno:KN2012-0067-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000699 ;
+    rdfs:label "닥(치다)"@ko ;
+    kno:surfaceForm "닥"@ko ;
+    kno:fullForm "닥치다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2012-0067-c2 rdfs:label "빙(의)(憑)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "빙의"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:surfaceForm "빙"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004109 .
+kno:KN2012-0067-c3 kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:formative kno:F000004 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

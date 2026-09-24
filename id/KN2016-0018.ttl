@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0018 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0018 kno:pos "「구」"@ko ;
+    rdfs:label "고용^디딤돌^프로젝트"@ko ;
+    kno:predicate "진행하다"@ko ;
+    kno:languageType "한^고^영" ;
+    kno:unitType "구"@ko ;
+    kno:origin "(雇傭디딤돌<영>project)" ;
+    kno:component kno:KN2016-0018-c1 ;
+    kno:instantiates kno:S000452 ;
+    kno:frequency kno:KN2016-0018-freq-NN-2021 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0018-c2 ;
+    kno:component kno:KN2016-0018-c3 ;
+    kno:indexForm "고용디딤돌프로젝트"@ko ;
+    skos:definition "주로 청년들의 일자리 창출을 위해서 교육과 채용을 함께 진행하는 프로그램. 채용을 전제로 교육 과정이나 인턴 과정을 개설해 일자리를 얻을 기회를 제공한다. 2015년에 고용노동부에서 추진한 프로그램이다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:componentString "고용(雇傭), 디딤돌, 프로젝트(project)"@ko ;
+    kno:frequency kno:KN2016-0018-freq-NN-total ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0018-freq-NN-2017 ;
+    kno:slotFiller "디딤돌+프로젝트(project) (2성분)"@ko ;
+    kno:example "¶OO 그룹은 청년 창업과 취업 경쟁력 확보를 위한 ‘청년 비상 프로그램’과 ‘{고용 디딤돌 프로젝트’를} 기획해 2년간 2만 4,000명에 이르는 취업ㆍ창업 인재를 양성하기로 했다."@ko ;
+    kno:urimalTargetCode "1372453" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372453> ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001210 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0018-freq-NN-2016 ;
+    kno:slotFiller "고용(雇傭)+디딤돌 (2성분)"@ko ;
+    kno:frequency kno:KN2016-0018-freq-NN-2015 .
+kno:KN2016-0018-c1 kno:surfaceForm "고용"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "고용(雇傭)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "고용"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000248 .
+kno:KN2016-0018-c2 kno:formative kno:F001212 ;
+    rdfs:label "디딤돌"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "디딤돌"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "디딤돌"@ko .
+kno:KN2016-0018-c3 rdfs:label "프로젝트(project)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001003 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "프로젝트"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "프로젝트"@ko .

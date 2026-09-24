@@ -1,36 +1,74 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0118 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0118-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0118-form ;
-    ontolex:sense kno:KN2023-0118-sense .
-
-kno:KN2023-0118-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005017719> .
-
-kno:KN2023-0118-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0118-freq-nn,
-        kno:KN2023-0118-freq-yt ;
-    ontolex:writtenRep "불법^파업^조장법"@ko .
-
-kno:KN2023-0118-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2368 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0118-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0118-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0118 kno:indexForm "불법파업조장법"@ko ;
+    kno:frequency kno:KN2023-0118-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0118-freq-NN-2025 ;
+    skos:definition "‘노동조합 및 노동 관계 조정법 2ㆍ3조 개정에 관한 법률안’을 비난조로 이르는 말. 개정안은 사용자의 범위를 확대하고 노동조합에 대한 손해 배상 청구를 제한하는 것을 골자로 하는데, 이것이 불법 파업을 조장할 수도 있다는 우려 속에서 나온 말이다. =불법 파업 보장법."@ko ;
+    kno:frequency kno:KN2023-0118-freq-NN-total ;
+    kno:componentString "불법(不法), 파업(罷業), 조장(助長), 법(法)"@ko ;
+    rdfs:label "불법^파업^조장법"@ko ;
+    a kno:Neologism ;
+    kno:origin "(不法罷業助長法)" ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "조장(助長) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2023-0118-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0118-freq-NN-2024 ;
+    kno:component kno:KN2023-0118-c4 ;
+    kno:component kno:KN2023-0118-c1 ;
+    kno:instantiates kno:S000522 ;
+    kno:component kno:KN2023-0118-c3 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2023-0118-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%88%EB%B2%95%ED%8C%8C%EC%97%85%EC%A1%B0%EC%9E%A5%EB%B2%95> ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶노동조합 및 노동 관계 조정법에 대한 개정안이 가결되자, 이를 {불법 파업 조장법이라} 지칭하며 강력하게 반발하였다."@ko .
+kno:KN2023-0118-c2 kno:formative kno:F000429 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "파업"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "파업(罷業)"@ko ;
+    kno:fullForm "파업"@ko .
+kno:KN2023-0118-c4 rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer .
+kno:KN2023-0118-c1 a kno:Component ;
+    kno:fullForm "불법"@ko ;
+    kno:surfaceForm "불법"@ko ;
+    rdfs:label "불법(不法)"@ko ;
+    kno:formative kno:F000517 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0118-c3 rdfs:label "조장(助長)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A2.1p ;
+    kno:fullForm "조장"@ko ;
+    kno:formative kno:F005740 ;
+    a kno:Component ;
+    kno:surfaceForm "조장"@ko ;
+    kno:role "슬롯 채움"@ko .

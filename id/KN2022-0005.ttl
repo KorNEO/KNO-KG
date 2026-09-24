@@ -1,36 +1,70 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0005 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0005 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0005-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0005-form ;
-    ontolex:sense kno:KN2022-0005-sense .
-
-kno:KN2022-0005-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0000930170> .
-
-kno:KN2022-0005-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0005-freq-nn,
-        kno:KN2022-0005-freq-yt ;
-    ontolex:writtenRep "가족 돌봄 청년"@ko .
-
-kno:KN2022-0005-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8455 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0005-freq-yt a frac:CorpusFrequency ;
-    rdf:value 283 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0005-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0005 kno:component kno:KN2022-0005-c1 ;
+    skos:definition "정신적, 신체적 질병이나 장애, 약물 중독 따위의 문제를 가진 가족을 돌보는 청년."@ko ;
+    kno:frequency kno:KN2022-0005-freq-NN-2025 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한_고_한" ;
+    kno:origin "(家族돌봄靑年)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1622787> ;
+    kno:component kno:KN2022-0005-c3 ;
+    kno:indexForm "가족돌봄청년"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000467 ;
+    kno:frequency kno:KN2022-0005-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0005-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001052 ;
+    kno:component kno:KN2022-0005-c2 ;
+    kno:frequency kno:KN2022-0005-freq-NN-2022 ;
+    rdfs:label "가족 돌봄 청년"@ko ;
+    kno:componentString "가족(家族), 돌봄, 청년(靑年)"@ko ;
+    kno:frequency kno:KN2022-0005-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0005-freq-NN-2021 ;
+    kno:slotFiller "가족(家族)+돌봄 (2성분)"@ko ;
+    kno:slotFiller "청년(靑年) (1성분)"@ko ;
+    kno:urimalTargetCode "1622787" ;
+    kno:predicate "돌보다"@ko ;
+    kno:example "¶{가족 돌봄 청년에} 대한 사회적 책임을 요청하는 목소리가 커짐에 따라, 지난해 정부는 {가족 돌봄 청년을} 지원하는 방안을 마련했다."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0005-c1 kno:formative kno:F000245 ;
+    kno:fullForm "가족"@ko ;
+    kno:surfaceForm "가족"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "가족(家族)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0005-c3 kno:formative kno:F000042 ;
+    rdfs:label "청년(靑年)"@ko ;
+    a kno:Component ;
+    kno:fullForm "청년"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2022-0005-c2 kno:fullForm "돌봄"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000046 ;
+    a kno:Component ;
+    kno:surfaceForm "돌봄"@ko ;
+    kno:semanticTag kno:usas-S8 ;
+    rdfs:label "돌봄"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

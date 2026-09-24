@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0124 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0124 a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2015-0124-c2 ;
+    kno:indexForm "소품덕"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한+일" ;
+    kno:origin "(小品<일>←otaku[御宅])" ;
+    kno:instantiates kno:S000060 ;
+    skos:definition "소품을 지나치게 좋아하거나 소품에 집착하는 사람. 또는 소품에 전문적인 지식을 지닌 사람."@ko ;
+    kno:component kno:KN2015-0124-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "소품(小品) (1성분)"@ko ;
+    rdfs:label "소품덕"@ko ;
+    kno:example "¶굿즈덕은 아이돌과 같은 스타의 얼굴이 그려진 상품을 모으는 덕후이고, 문구덕은 펜, 연필, 노트 등을 모으기 좋아하는 덕후, 그리고 {소품덕은} 인테리어용 작은 물건들을 모으는 마니아입니다."@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:predicate "집착하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%92%88%EB%8D%95> ;
+    kno:componentString "소품(小品), 덕(후)(otaku)"@ko .
+kno:KN2015-0124-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:formative kno:F000037 ;
+    rdfs:label "덕(후)(otaku)"@ko ;
+    a kno:Component ;
+    kno:fullForm "덕후"@ko ;
+    kno:surfaceForm "덕"@ko .
+kno:KN2015-0124-c1 kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F004428 ;
+    rdfs:label "소품(小品)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:fullForm "소품"@ko ;
+    kno:surfaceForm "소품"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .

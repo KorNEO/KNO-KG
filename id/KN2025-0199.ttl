@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0199 a ontolex:Word ;
-    frac:attestation kno:KN2025-0199-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0199-form ;
-    ontolex:sense kno:KN2025-0199-sense .
-
-kno:KN2025-0199-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/241/0003416227> .
-
-kno:KN2025-0199-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0199-freq-nn,
-        kno:KN2025-0199-freq-yt ;
-    ontolex:writtenRep "랜선생님"@ko .
-
-kno:KN2025-0199-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0199-freq-yt a frac:CorpusFrequency ;
-    rdf:value 44 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0199-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0199 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0199-c2 ;
+    kno:frequency kno:KN2025-0199-freq-NN-total ;
+    kno:component kno:KN2025-0199-c1 ;
+    a kno:Neologism ;
+    rdfs:label "랜선생님"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W05 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "(LLM) 온라인상에서 영상ㆍ글ㆍ라이브 방송 등으로 지식이나 기술을 가르쳐 주는 사람을 친근하게 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "랜(선)(LAN線), 선생님(先生님)"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "랜선생님"@ko ;
+    kno:frequency kno:KN2025-0199-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%EC%84%A0%EC%83%9D%EB%8B%98> ;
+    kno:example "(LLM) 요즘은 짧은 영상으로 맛만 보고, 마음에 드는 {랜선생님을} 찾아 강의 영상을 정주행하는 사람이 많다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0199-c2 kno:formative kno:F004303 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "선생님(先生님)"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:fullForm "선생님"@ko ;
+    kno:surfaceForm "선생님"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0199-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "랜"@ko ;
+    rdfs:label "랜(선)(LAN線)"@ko ;
+    kno:fullForm "랜선"@ko ;
+    kno:formative kno:F003171 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

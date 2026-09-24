@@ -1,36 +1,70 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0156 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0156 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0156-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0156-form ;
-    ontolex:sense kno:KN2024-0156-sense .
-
-kno:KN2024-0156-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005051112> .
-
-kno:KN2024-0156-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0156-freq-nn,
-        kno:KN2024-0156-freq-yt ;
-    ontolex:writtenRep "시간^가중^평균^환율"@ko .
-
-kno:KN2024-0156-freq-nn a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0156-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0156-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0156 kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:predicate "산출하다"@ko ;
+    rdfs:label "시간^가중^평균^환율"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0156-freq-NN-total ;
+    kno:origin "(時間加重平均換率)" ;
+    kno:indexForm "시간가중평균환율"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:component kno:KN2024-0156-c2 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "환율 산출 시점의 직전 10분부터 매 10초 간격으로 체결된 환율의 가격을 평균하여 산출하는 환율."@ko ;
+    kno:component kno:KN2024-0156-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EA%B0%84%EA%B0%80%EC%A4%91%ED%8F%89%EA%B7%A0%ED%99%98%EC%9C%A8> ;
+    kno:componentString "시간(時間), 가중(加重), 평균(平均), 환율(換率)"@ko ;
+    kno:frequency kno:KN2024-0156-freq-NN-2024 ;
+    kno:component kno:KN2024-0156-c1 ;
+    kno:example "¶다음 달부터는 환율 정보 제공이 달라지게 되는데, 현물환을 중개하는 회사는 오전 9시부터 다음날 오전 2시 사이에는 매시 정각, 오후 3시 반의 시점 환율과 {시간 가중 평균 환율을} 제공할 예정이다."@ko ;
+    kno:component kno:KN2024-0156-c4 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2024-0156-c2 kno:role "성분"@ko ;
+    kno:formative kno:F002093 ;
+    a kno:Component ;
+    kno:fullForm "가중"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "가중(加重)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "가중"@ko ;
+    kno:semanticTag kno:usas-N2 .
+kno:KN2024-0156-c3 kno:position "3"^^xsd:integer ;
+    kno:fullForm "평균"@ko ;
+    kno:semanticTag kno:usas-N5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "평균"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "평균(平均)"@ko ;
+    kno:formative kno:F001959 .
+kno:KN2024-0156-c1 kno:fullForm "시간"@ko ;
+    kno:surfaceForm "시간"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "시간(時間)"@ko ;
+    kno:formative kno:F000829 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 .
+kno:KN2024-0156-c4 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:fullForm "환율"@ko ;
+    rdfs:label "환율(換率)"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "환율"@ko ;
+    kno:formative kno:F002030 .

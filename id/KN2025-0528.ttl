@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0528 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0528 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0528-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0528-form ;
-    ontolex:sense kno:KN2025-0528-sense .
-
-kno:KN2025-0528-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005300901> .
-
-kno:KN2025-0528-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0528-freq-nn,
-        kno:KN2025-0528-freq-yt ;
-    ontolex:writtenRep "중간 소멸"@ko .
-
-kno:KN2025-0528-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0528-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0528-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0528 kno:registration "신어DB"@ko ;
+    kno:indexForm "중간소멸"@ko ;
+    skos:definition "(LLM) 양극화로 인해 중간 가격대의 주택(또는 주거 상품) 거래와 수요가 줄고, 수요가 고가ㆍ저가로 갈라져 쏠리는 부동산 시장 현상."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0528-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "(LLM) 서울에서도 단지별 가격 격차가 커지면서 {중간소멸이} 가속화될 수 있다는 분석이 나왔다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0528-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0528-freq-NN-2025 ;
+    kno:slotFiller "중간(中間) (1성분)"@ko ;
+    kno:instantiates kno:S000944 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EA%B0%84%20%EC%86%8C%EB%A9%B8> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "중간(中間), 소멸(消滅)"@ko ;
+    rdfs:label "중간 소멸"@ko ;
+    kno:origin "(中間消滅)" ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0528-freq-NN-total .
+kno:KN2025-0528-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "중간"@ko ;
+    kno:surfaceForm "중간"@ko ;
+    kno:formative kno:F005823 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    rdfs:label "중간(中間)"@ko ;
+    a kno:Component .
+kno:KN2025-0528-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A3m ;
+    kno:fullForm "소멸"@ko ;
+    kno:surfaceForm "소멸"@ko ;
+    kno:formative kno:F000284 ;
+    rdfs:label "소멸(消滅)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

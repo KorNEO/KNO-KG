@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0297 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0297 kno:predicate "생활하다"@ko ;
+    kno:component kno:KN2019-0297-c1 ;
+    skos:definition "일주일에 4일은 도시에서, 3일은 전원에서 생활하는 사람. 또는 그런 무리."@ko ;
+    rdfs:label "포서드-족"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2019-0297-c2 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:frequency kno:KN2019-0297-freq-NN-2019 ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(<영>four third族)" ;
+    kno:formation kno:W02 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1470498> ;
+    kno:component kno:KN2019-0297-c3 ;
+    kno:slotFiller "포(four)+서드(third) (2성분)"@ko ;
+    kno:frequency kno:KN2019-0297-freq-NN-2021 ;
+    kno:componentString "포(four), 서드(third), -족(族)"@ko ;
+    kno:frequency kno:KN2019-0297-freq-NN-2022 ;
+    kno:urimalTargetCode "1470498" ;
+    kno:example "¶‘4도 3촌’의 일상을 추구하는 {‘포서드족’은} 도심을 벗어나 전원에서 생활하는 이들을 가리키는 말로 최근 전원주택 시장을 주도하는 대명사로 등장했다."@ko ;
+    kno:indexForm "포서드족"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:frequency kno:KN2019-0297-freq-NN-total .
+kno:KN2019-0297-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "포"@ko ;
+    rdfs:label "포(four)"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "포"@ko ;
+    kno:formative kno:F006718 .
+kno:KN2019-0297-c2 kno:formative kno:F004280 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "서드"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "서드"@ko ;
+    rdfs:label "서드(third)"@ko ;
+    kno:semanticTag kno:usas-N4 .
+kno:KN2019-0297-c3 rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .

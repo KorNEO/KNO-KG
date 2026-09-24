@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0405 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0405 skos:definition "분홍색 다이아몬드 중 최고 품질로, 희소성을 지닌 다이아몬드를 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0405-freq-NN-total ;
+    kno:languageType "영_영" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "유니크(unique), 핑크(pink)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶경매에 나온 최고 등급 핑크 다이아몬드 가운데 가장 큰 ‘{유니크 핑크’가} 우리 돈으로 370억 원이 넘는 거액에 낙찰됐다."@ko ;
+    kno:component kno:KN2016-0405-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0405-freq-NN-2016 ;
+    kno:indexForm "유니크핑크"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "유니크 핑크"@ko ;
+    kno:component kno:KN2016-0405-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EB%8B%88%ED%81%AC%20%ED%95%91%ED%81%AC> ;
+    kno:origin "(<영>unique pink)" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear .
+kno:KN2016-0405-c1 rdfs:label "유니크(unique)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "유니크"@ko ;
+    kno:semanticTag kno:usas-A6.2m ;
+    kno:surfaceForm "유니크"@ko ;
+    kno:formative kno:F005304 ;
+    kno:role "성분"@ko .
+kno:KN2016-0405-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001011 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.3 ;
+    rdfs:label "핑크(pink)"@ko ;
+    kno:fullForm "핑크"@ko ;
+    kno:surfaceForm "핑크"@ko .

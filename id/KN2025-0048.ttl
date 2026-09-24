@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0048 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0048 a ontolex:Word ;
-    frac:attestation kno:KN2025-0048-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0048-form ;
-    ontolex:sense kno:KN2025-0048-sense .
-
-kno:KN2025-0048-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011906468> .
-
-kno:KN2025-0048-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0048-freq-nn,
-        kno:KN2025-0048-freq-yt ;
-    ontolex:writtenRep "계엄 팔이"@ko .
-
-kno:KN2025-0048-freq-nn a frac:CorpusFrequency ;
-    rdf:value 93 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0048-freq-yt a frac:CorpusFrequency ;
-    rdf:value 70 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0048-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0048 kno:slotFiller "팔이 (1성분)"@ko ;
+    kno:slotFiller "계엄(戒嚴) (1성분)"@ko ;
+    skos:definition "(LLM) 계엄을 특정 정치 세력에 대한 공격이나 여론전의 소재로 삼아 반복적으로 들먹이며 이용하는 행위."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 상대 진영을 몰아붙이려고 같은 이슈를 계속 꺼내 드는 {계엄팔이가} 이제는 피로감을 준다는 반응도 나온다."@ko ;
+    kno:frequency kno:KN2025-0048-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "계엄팔이"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "계엄-팔이"@ko ;
+    kno:component kno:KN2025-0048-c1 ;
+    kno:frequency kno:KN2025-0048-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EC%97%84%ED%8C%94%EC%9D%B4> ;
+    kno:predicate "이용하다"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "계엄(戒嚴), 팔이"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001206 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한_고" ;
+    kno:instantiates kno:S000274 ;
+    kno:origin "(戒嚴팔이)" ;
+    kno:component kno:KN2025-0048-c2 .
+kno:KN2025-0048-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "계엄(戒嚴)"@ko ;
+    kno:formative kno:F000160 ;
+    a kno:Component ;
+    kno:fullForm "계엄"@ko ;
+    kno:semanticTag kno:usas-G3m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "계엄"@ko .
+kno:KN2025-0048-c2 a kno:Component ;
+    rdfs:label "팔이"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:fullForm "팔이"@ko ;
+    kno:formative kno:F000430 ;
+    kno:surfaceForm "팔이"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0195 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0195 a ontolex:Word ;
-    frac:attestation kno:KN2021-0195-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0195-form ;
-    ontolex:sense kno:KN2021-0195-sense .
-
-kno:KN2021-0195-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/119/0002473161> .
-
-kno:KN2021-0195-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0195-freq-nn,
-        kno:KN2021-0195-freq-yt ;
-    ontolex:writtenRep "엘에이치로남불"@ko .
-
-kno:KN2021-0195-freq-nn a frac:CorpusFrequency ;
-    rdf:value 91 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0195-freq-yt a frac:CorpusFrequency ;
-    rdf:value 386 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0195-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0195 rdfs:label "엘에이치로남불"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%98%EC%97%90%EC%9D%B4%EC%B9%98%EB%A1%9C%EB%82%A8%EB%B6%88> ;
+    kno:indexForm "엘에이치로남불"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영+고+한" ;
+    kno:example "¶{엘에이치(LH)로남불에서} 비롯된 사태가 향후 지역 사회에 얼마나 큰 파문을 일으킬지 가늠하기조차 어려운 상황이다."@ko ;
+    skos:definition "임직원들의 땅 투기를 부동산 투자라고 합리화한 한국 토지 주택 공사 직원의 발언을 ‘내로남불’에 빗대어 이르는 말. ‘내로남불’은 ‘내가 하면 로맨스, 남이 하면 불륜’을 줄여 이르는 말로, 다른 사람이 하면 비난할 행위를 자기가 할 때는 합리화하는 태도를 이르는 말이다. 한국 토지 주택 공사의 영문명 이니셜인 ‘엘에이치(LH)’의 모양이 ‘내로남불’의 ‘내’와 비슷하다는 점을 이용하여 풍자적으로 쓰는 말이다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2021-0195-c2 ;
+    kno:frequency kno:KN2021-0195-freq-NN-2021 ;
+    kno:formation kno:W05 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:componentString "엘에이치(LH), (내)로남불(내←romance남不)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0195-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(LH<영>←romance남不)" ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2021-0195-c1 .
+kno:KN2021-0195-c2 kno:formative kno:F003236 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "내로남불"@ko ;
+    kno:surfaceForm "로남불"@ko ;
+    rdfs:label "(내)로남불(내←romance남不)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.2m ;
+    a kno:Component .
+kno:KN2021-0195-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "엘에이치(LH)"@ko ;
+    kno:formative kno:F005015 ;
+    kno:surfaceForm "엘에이치"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:fullForm "엘에이치"@ko .

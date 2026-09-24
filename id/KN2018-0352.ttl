@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0352 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0352 kno:component kno:KN2018-0352-c3 ;
+    kno:component kno:KN2018-0352-c2 ;
+    kno:formation kno:W06 ;
+    kno:origin "(脫잘싸)" ;
+    kno:year "2018"^^xsd:gYear ;
+    skos:definition "‘탈락했지만 잘 싸웠음’을 줄여 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%EC%9E%98%EC%8B%B8> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0352-freq-NN-2018 ;
+    kno:componentString "탈(락)(脫), 잘, 싸(우다)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2018-0352-freq-NN-total ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:slotFiller "탈(락)(脫) (1성분)"@ko ;
+    kno:languageType "한+고+고" ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001013 ;
+    kno:example "¶페루와 모로코는 이번 월드컵에서 ‘{탈잘싸’의} 전형을 보여 줬다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2018-0352-c1 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "탈잘싸"@ko ;
+    kno:indexForm "탈잘싸"@ko .
+kno:KN2018-0352-c3 kno:surfaceForm "싸"@ko ;
+    kno:fullForm "싸우다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000838 ;
+    kno:semanticTag kno:usas-E3m ;
+    a kno:Component ;
+    rdfs:label "싸(우다)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2018-0352-c2 kno:semanticTag kno:usas-A5.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "잘"@ko ;
+    kno:surfaceForm "잘"@ko ;
+    kno:formative kno:F000299 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "잘"@ko .
+kno:KN2018-0352-c1 kno:surfaceForm "탈"@ko ;
+    kno:semanticTag kno:usas-X9.2m ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "탈(락)(脫)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000971 ;
+    kno:fullForm "탈락"@ko ;
+    kno:position "1"^^xsd:integer .

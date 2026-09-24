@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0173 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0173 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0173-freq-NN-2022 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2019-0173-c2 ;
+    kno:component kno:KN2019-0173-c1 ;
+    kno:instantiates kno:S000851 ;
+    a kno:Neologism ;
+    rdfs:label "스타트업 로펌"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "변호사법에 따라 설립된 신생 소형 법률 회사. 변호사와 사무직원으로 구성된 대형 로펌과 달리 변호사만으로 구성된 회사가 많다."@ko ;
+    kno:frequency kno:KN2019-0173-freq-NN-total ;
+    kno:slotFiller "스타트업(startup) (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶미국의 실리콘 밸리를 기반으로 OO과 같은 세계적 기업의 법률 자문으로 창업 초기 벤처 회사에 불과하던 OO와 같이 아이티(IT) 벤처 기업의 성장과 함께 대형 로펌 중심의 법률 시장에 새 블루 오션으로 {‘스타트업 로펌’들의} 활약이 눈에 띄고 있다."@ko ;
+    kno:origin "(<영>startup law firm)" ;
+    kno:frequency kno:KN2019-0173-freq-NN-2021 ;
+    kno:indexForm "스타트업로펌"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%83%80%ED%8A%B8%EC%97%85%20%EB%A1%9C%ED%8E%8C> ;
+    kno:frequency kno:KN2019-0173-freq-NN-2019 ;
+    kno:componentString "스타트업(startup), 로펌(law firm)"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0173-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001250 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "로펌"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "로펌"@ko ;
+    rdfs:label "로펌(law firm)"@ko .
+kno:KN2019-0173-c1 kno:formative kno:F004583 ;
+    kno:surfaceForm "스타트업"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "스타트업(startup)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "스타트업"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 .

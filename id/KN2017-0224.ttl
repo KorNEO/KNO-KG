@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0224 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0224 kno:origin "(僞裝毒感)" ;
+    kno:predicate "보이다"@ko ;
+    kno:frequency kno:KN2017-0224-freq-NN-2024 ;
+    kno:component kno:KN2017-0224-c1 ;
+    skos:definition "위장이 아픈 증세를 보이는 독감."@ko ;
+    kno:urimalTargetCode "1380788" ;
+    kno:frequency kno:KN2017-0224-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "위장독감"@ko ;
+    kno:componentString "위장(僞裝), 독감(毒感)"@ko ;
+    kno:languageType "한_한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0224-freq-NN-2016 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2017-0224-freq-NN-2025 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380788> ;
+    rdfs:label "위장 독감"@ko ;
+    kno:component kno:KN2017-0224-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:example "¶리우 올림픽 한국 대표로 출전했던 OOO은 대회가 끝난 뒤 {위장 독감으로} 인해 한 달 동안 대회에 출전하지 못했다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism .
+kno:KN2017-0224-c1 kno:surfaceForm "위장"@ko ;
+    rdfs:label "위장(僞裝)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000885 ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:fullForm "위장"@ko ;
+    kno:role "성분"@ko .
+kno:KN2017-0224-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001193 ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "독감"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "독감"@ko ;
+    rdfs:label "독감(毒感)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

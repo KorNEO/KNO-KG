@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0651 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0651 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0651-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0651-form ;
-    ontolex:sense kno:KN2025-0651-sense .
-
-kno:KN2025-0651-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/346/0000098382> .
-
-kno:KN2025-0651-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0651-freq-nn,
-        kno:KN2025-0651-freq-yt ;
-    ontolex:writtenRep "플러깅 백"@ko .
-
-kno:KN2025-0651-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0651-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0651-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:indexForm "플러깅백"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%8C%EB%9F%AC%EA%B9%85%20%EB%B0%B1> ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 플로깅 등 야외에서 쓰레기를 주워 담아 되가져오기 위해 준비하는 봉투나 가방."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0651-c1 ;
+    kno:componentString "플러깅(plugging), 백(bag)"@ko ;
+    kno:frequency kno:KN2025-0651-freq-NN-total ;
+    kno:instantiates kno:S000381 ;
+    kno:frequency kno:KN2025-0651-freq-NN-2025 ;
+    rdfs:label "플러깅 백"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0651-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "플러깅(plugging) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 등산을 갈 때는 {플러깅백을} 챙겨서 과일 껍질이나 나무젓가락 같은 쓰레기를 담아 내려왔다."@ko .
+kno:KN2025-0651-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W5p ;
+    kno:fullForm "플러깅"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006838 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "플러깅"@ko ;
+    rdfs:label "플러깅(plugging)"@ko ;
+    a kno:Component .
+kno:KN2025-0651-c2 kno:surfaceForm "백"@ko ;
+    kno:formative kno:F000356 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:fullForm "백"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "백(bag)"@ko .

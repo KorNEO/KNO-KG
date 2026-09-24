@@ -1,36 +1,79 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0191 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0191 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0191-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0191-form ;
-    ontolex:sense kno:KN2021-0191-sense .
-
-kno:KN2021-0191-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-13"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/030/0002861982> .
-
-kno:KN2021-0191-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0191-freq-nn,
-        kno:KN2021-0191-freq-yt ;
-    ontolex:writtenRep "양자^난수^생성^기술"@ko .
-
-kno:KN2021-0191-freq-nn a frac:CorpusFrequency ;
-    rdf:value 193 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0191-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0191-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0191 kno:component kno:KN2021-0191-c4 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0191-freq-NN-total ;
+    kno:origin "(量子亂數生成技術)" ;
+    kno:component kno:KN2021-0191-c3 ;
+    kno:frequency kno:KN2021-0191-freq-NN-2023 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0191-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0191-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0191-freq-NN-2022 ;
+    kno:instantiates kno:S000546 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9E%90%EB%82%9C%EC%88%98%EC%83%9D%EC%84%B1%EA%B8%B0%EC%88%A0> ;
+    kno:languageType "한^한^한^한" ;
+    kno:unitType "구"@ko ;
+    rdfs:label "양자^난수^생성^기술"@ko ;
+    kno:predicate "만드다"@ko ;
+    kno:slotFiller "양자(量子)+난수(亂數)+생성(生成) (3성분)"@ko ;
+    kno:component kno:KN2021-0191-c1 ;
+    kno:example "¶{양자 난수 생성 기술은} 패턴이 없고 예측이 불가능한 순수한 난수를 만들어 낼 수 있으며, 이 기술은 생체 인증 보안 키에 활용될 수 있다."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0191-freq-NN-2020 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0191-freq-NN-2021 ;
+    kno:slotFiller "난수(亂數)+생성(生成)+기술(技術) (3성분)"@ko ;
+    kno:instantiates kno:S000164 ;
+    skos:definition "양자 역학의 원리를 이용하여 특정한 규칙을 가지지 않는 임의의 수를 만드는 기술."@ko ;
+    kno:indexForm "양자난수생성기술"@ko ;
+    kno:componentString "양자(量子), 난수(亂數), 생성(生成), 기술(技術)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0191-freq-NN-2024 ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0191-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:fullForm "기술"@ko ;
+    rdfs:label "기술(技術)"@ko ;
+    kno:surfaceForm "기술"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000129 ;
+    kno:role "고정항"@ko .
+kno:KN2021-0191-c3 a kno:Component ;
+    rdfs:label "생성(生成)"@ko ;
+    kno:formative kno:F001456 ;
+    kno:fullForm "생성"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "생성"@ko .
+kno:KN2021-0191-c2 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "난수"@ko ;
+    rdfs:label "난수(亂數)"@ko ;
+    kno:surfaceForm "난수"@ko ;
+    kno:formative kno:F002688 ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0191-c1 a kno:Component ;
+    kno:formative kno:F000848 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "양자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "양자(量子)"@ko ;
+    kno:surfaceForm "양자"@ko .

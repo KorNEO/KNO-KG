@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0373 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0373 a ontolex:Word ;
+    kno:component kno:KN2018-0373-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0373-freq-NN-total ;
+    kno:componentString "페이스(face), (스)틱(stick)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%98%EC%9D%B4%EC%8A%A4%ED%8B%B1> ;
+    kno:example "¶스틱 형태의 화장품인 ‘{페이스틱’의} 인기가 뜨겁다."@ko ;
+    kno:languageType "영+영" ;
+    kno:origin "(<영>▼←face stick)" ;
+    kno:indexForm "페이스틱"@ko ;
+    kno:component kno:KN2018-0373-c2 ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    skos:definition "고체 형태로 굳혀서 막대 모양의 용기에 담아 얼굴에 바로 바를 수 있게 만든 화장품. 자외선 차단제, 크림 따위를 손에 묻히지 않고 얼굴에 직접 바를 수 있으며 휴대가 간편하다. ‘얼굴’을 의미하는 ‘페이스(face)’와 ‘막대기’를 뜻하는 ‘스틱(stick)’을 결합하여 만든 말이다."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0373-freq-NN-2025 ;
+    kno:frequency kno:KN2018-0373-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "페이스틱"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2018-0373-c1 rdfs:label "페이스(face)"@ko ;
+    kno:formative kno:F000628 ;
+    kno:fullForm "페이스"@ko ;
+    kno:surfaceForm "페이스"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2018-0373-c2 kno:formative kno:F006600 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "(스)틱(stick)"@ko ;
+    kno:fullForm "스틱"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "틱"@ko .

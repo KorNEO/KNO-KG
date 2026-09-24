@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0207 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0207 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EB%AA%A8%EA%B7%B8%20%EC%BF%A0%ED%8A%80%EB%A5%B4> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2018-0207-c1 ;
+    kno:example "¶이를 겨냥해 패션업계에서는 최근 ‘{스모그 쿠튀르}’ 제품들을 출시하고 있다."@ko ;
+    kno:component kno:KN2018-0207-c2 ;
+    kno:languageType "영_프" ;
+    rdfs:label "스모그 쿠튀르"@ko ;
+    kno:instantiates kno:S000537 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "쿠튀르(couture) (1성분)"@ko ;
+    skos:definition "스모그와 같은 대기 오염으로부터 몸을 보호하기 위한 패션. ‘스모그(smog)’와 고급 여성복을 뜻하는 ‘쿠튀르(couture)’를 결합하여 만든 말이다."@ko ;
+    kno:origin "(<영>smog<프>couture)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:componentString "스모그(smog), 쿠튀르(couture)"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "스모그쿠튀르"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2018-0207-c1 kno:fullForm "스모그"@ko ;
+    kno:surfaceForm "스모그"@ko ;
+    kno:formative kno:F000820 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "스모그(smog)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0207-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "쿠튀르(couture)"@ko ;
+    kno:fullForm "쿠튀르"@ko ;
+    kno:surfaceForm "쿠튀르"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006318 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

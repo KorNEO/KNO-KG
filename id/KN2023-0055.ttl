@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0055 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0055 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0055-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0055-form ;
-    ontolex:sense kno:KN2023-0055-sense .
-
-kno:KN2023-0055-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003215769> .
-
-kno:KN2023-0055-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0055-freq-nn,
-        kno:KN2023-0055-freq-yt ;
-    ontolex:writtenRep "긴급^벌채^제도"@ko .
-
-kno:KN2023-0055-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0055-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0055-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0055 kno:origin "(緊急伐採制度)" ;
+    kno:component kno:KN2023-0055-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶산림청 관계자는 조만간 과도하게 넓은 지역에 대한 벌채를 허가하는 {긴급 벌채 제도의} 미비점을 정비할 예정임을 알렸다."@ko ;
+    kno:component kno:KN2023-0055-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2023-0055-freq-NN-2023 ;
+    skos:definition "병충해 방제, 산불 진화 및 산불 확산 방지, 산사태 등 2차 피해가 우려되는 경우에, 산림 소유자의 동의 없이 긴급히 벌채를 할 수 있도록 한 제도."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001256 ;
+    kno:component kno:KN2023-0055-c3 ;
+    kno:slotFiller "벌채(伐採) (1성분)"@ko ;
+    kno:indexForm "긴급벌채제도"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0055-freq-NN-total ;
+    kno:componentString "긴급(緊急), 벌채(伐採), 제도(制度)"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "긴급^벌채^제도"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%B2%8C%EC%B1%84%EC%A0%9C%EB%8F%84> ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0055-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "긴급"@ko ;
+    rdfs:label "긴급(緊急)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "긴급"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000016 .
+kno:KN2023-0055-c2 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "벌채"@ko ;
+    kno:formative kno:F003795 ;
+    kno:surfaceForm "벌채"@ko ;
+    rdfs:label "벌채(伐採)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-F4 .
+kno:KN2023-0055-c3 kno:semanticTag kno:usas-S7.1p ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000041 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "제도"@ko ;
+    rdfs:label "제도(制度)"@ko .

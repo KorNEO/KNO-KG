@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0158 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0158 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0158-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0158-form ;
-    ontolex:sense kno:KN2020-0158-sense .
-
-kno:KN2020-0158-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011490434> .
-
-kno:KN2020-0158-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0158-freq-nn,
-        kno:KN2020-0158-freq-yt ;
-    ontolex:writtenRep "생활^방역^체계"@ko .
-
-kno:KN2020-0158-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3136 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0158-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0158-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0158 kno:componentString "생활(生活), 방역(防疫), 체계(體系)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0158-freq-NN-2022 ;
+    kno:urimalTargetCode "1493126" ;
+    kno:component kno:KN2020-0158-c3 ;
+    kno:instantiates kno:S000306 ;
+    kno:slotFiller "생활(生活)+방역(防疫) (2성분)"@ko ;
+    kno:frequency kno:KN2020-0158-freq-NN-2021 ;
+    rdfs:label "생활^방역^체계"@ko ;
+    skos:definition "일상생활 속에서 전염병이 발생하거나 확산되는 것을 막기 위한 방역 체계. 경제 활동과 사회 활동을 하면서도 생활 속에서 코로나19를 예방하기 위한 방역 체계를 의미한다."@ko ;
+    kno:origin "(生活防疫體系)" ;
+    kno:frequency kno:KN2020-0158-freq-NN-2025 ;
+    kno:slotFiller "체계(體系) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:example "¶O 시장은 다중 이용 시설에 대한 {생활 방역 체계를} 구축하여 집단 감염의 위험을 최소화하겠다고 밝혔다."@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0158-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0158-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2020-0158-c1 ;
+    kno:component kno:KN2020-0158-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1493126> ;
+    kno:indexForm "생활방역체계"@ko ;
+    kno:instantiates kno:S000431 ;
+    kno:frequency kno:KN2020-0158-freq-NN-2023 .
+kno:KN2020-0158-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "체계(體系)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000946 ;
+    kno:fullForm "체계"@ko ;
+    kno:surfaceForm "체계"@ko ;
+    kno:semanticTag kno:usas-X4.2 .
+kno:KN2020-0158-c1 rdfs:label "생활(生活)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "생활"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000059 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L1 ;
+    kno:surfaceForm "생활"@ko .
+kno:KN2020-0158-c2 a kno:Component ;
+    kno:fullForm "방역"@ko ;
+    kno:surfaceForm "방역"@ko ;
+    rdfs:label "방역(防疫)"@ko ;
+    kno:formative kno:F000078 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:truncated "false"^^xsd:boolean .

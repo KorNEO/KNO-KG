@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0201 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0201 a ontolex:Word ;
-    frac:attestation kno:KN2025-0201-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0201-form ;
-    ontolex:sense kno:KN2025-0201-sense .
-
-kno:KN2025-0201-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/382/0001204444> .
-
-kno:KN2025-0201-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0201-freq-nn,
-        kno:KN2025-0201-freq-yt ;
-    ontolex:writtenRep "러닝 코어족"@ko .
-
-kno:KN2025-0201-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0201-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0201-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0201 kno:component kno:KN2025-0201-c3 ;
+    kno:instantiates kno:S000001 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:example "(LLM) 출퇴근길에 가볍게 달리고, 회사에서는 단정한 상의에 러닝화를 매치하는 {러닝코어족이} 늘면서 도심형 러닝웨어가 주목받고 있다."@ko ;
+    kno:frequency kno:KN2025-0201-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 달리기를 일상적으로 즐기면서, 러닝에 적합한 기능성과 함께 옷차림의 스타일(코어 룩)까지 중시하는 사람. 또는 그런 무리."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0201-c1 ;
+    kno:component kno:KN2025-0201-c2 ;
+    kno:predicate "중시하다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "러닝(running), 코어(core), -족(族)"@ko ;
+    kno:slotFiller "러닝(running)+코어(core) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9F%AC%EB%8B%9D%EC%BD%94%EC%96%B4%EC%A1%B1> ;
+    kno:frequency kno:KN2025-0201-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "러닝코어족"@ko ;
+    a ontolex:Word ;
+    rdfs:label "러닝코어-족"@ko .
+kno:KN2025-0201-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0201-c1 kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "러닝"@ko ;
+    kno:surfaceForm "러닝"@ko ;
+    kno:formative kno:F003184 ;
+    rdfs:label "러닝(running)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2025-0201-c2 rdfs:label "코어(core)"@ko ;
+    kno:surfaceForm "코어"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:fullForm "코어"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000043 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

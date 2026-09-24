@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0021 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0021 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0021-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0021-form ;
-    ontolex:sense kno:KN2025-0021-sense .
-
-kno:KN2025-0021-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/119/0002991359> .
-
-kno:KN2025-0021-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0021-freq-nn,
-        kno:KN2025-0021-freq-yt ;
-    ontolex:writtenRep "개딸 임명식"@ko .
-
-kno:KN2025-0021-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0021-freq-yt a frac:CorpusFrequency ;
-    rdf:value 84 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0021-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0021 kno:frequency kno:KN2025-0021-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0021-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000631 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EB%94%B8%20%EC%9E%84%EB%AA%85%EC%8B%9D> ;
+    kno:example "(LLM) 야당은 광복절 행사 성격이 흐려졌다며 {개딸임명식}이라는 표현까지 써 가며 강하게 반발했다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0021-freq-NN-2025 ;
+    rdfs:label "개딸 임명식"@ko ;
+    skos:definition "(LLM) 특정 정치인의 강성 지지층(일명 ‘개딸’)을 위한 행사처럼 보인다는 비판적 뉘앙스로, 어떤 임명 절차나 행사를 깎아 말하는 표현."@ko ;
+    kno:indexForm "개딸임명식"@ko ;
+    kno:componentString "개딸, 임명식(任命式)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0021-c1 ;
+    kno:slotFiller "임명식(任命式) (1성분)"@ko .
+kno:KN2025-0021-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:fullForm "임명식"@ko ;
+    kno:surfaceForm "임명식"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "임명식(任命式)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005484 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0021-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "개딸"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "개딸"@ko ;
+    kno:surfaceForm "개딸"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000448 ;
+    kno:role "고정항"@ko .

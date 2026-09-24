@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0678 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0678 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0678-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0678-form ;
-    ontolex:sense kno:KN2025-0678-sense .
-
-kno:KN2025-0678-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003275645> .
-
-kno:KN2025-0678-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0678-freq-nn,
-        kno:KN2025-0678-freq-yt ;
-    ontolex:writtenRep "헤징 메뉴"@ko .
-
-kno:KN2025-0678-freq-nn a frac:CorpusFrequency ;
-    rdf:value 59 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0678-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0678-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0678 kno:component kno:KN2025-0678-c2 ;
+    kno:frequency kno:KN2025-0678-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>hedging menu)" ;
+    skos:definition "(LLM) 원재료 가격 상승 등으로 기존 메뉴의 원가 부담이 커졌을 때, 비싸진 식자재를 다른 재료로 대체하거나 구성ㆍ조리법을 조정해 가격 인상 부담을 줄이면서도 소비자 만족을 유지하려는 메뉴 운영ㆍ개발 방식."@ko ;
+    kno:languageType "영_영" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%A4%EC%A7%95%20%EB%A9%94%EB%89%B4> ;
+    kno:componentString "헤징(hedging), 메뉴(menu)"@ko ;
+    kno:instantiates kno:S000376 ;
+    kno:slotFiller "헤징(hedging) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "(LLM) 원재료 단가가 급등하자 구내식당은 대체 식자재를 활용한 {헤징메뉴를} 내놓아 가격 인상 압박을 낮췄다."@ko ;
+    kno:indexForm "헤징메뉴"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "헤징 메뉴"@ko ;
+    kno:component kno:KN2025-0678-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0678-freq-NN-2025 .
+kno:KN2025-0678-c2 kno:fullForm "메뉴"@ko ;
+    rdfs:label "메뉴(menu)"@ko ;
+    kno:surfaceForm "메뉴"@ko ;
+    kno:formative kno:F000748 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0678-c1 rdfs:label "헤징(hedging)"@ko ;
+    kno:fullForm "헤징"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "헤징"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F007059 .

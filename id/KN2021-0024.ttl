@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0024 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2021-0024 kno:component kno:KN2021-0024-c1 ;
+    kno:componentString "공(공)(公共), 민지"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "공민지"@ko ;
+    kno:component kno:KN2021-0024-c2 ;
+    kno:example "¶딱딱하고 경직되었던 공공 기관의 문화가 {공민지들에} 의해 변화될 조짐을 보이고 있다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%AF%BC%EC%A7%80> ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(公민지)" ;
+    skos:definition "공공 기관에서 일하는 엠제트(MZ) 세대를 이르는 말. ‘공공 기관’의 첫 음절인 ‘공’, ‘밀레니엄 세대’의 첫머리 문자인 엠(M)을 활용한 ‘민’, ‘제트 세대’의 제트(Z)를 활용한 ‘지’를 결합하여 만든 말로 , 최근 공공 기관에 채용되어 일하는 1980년대 초부터 2000년대 초반에 태어난 세대를 이르는 말이다."@ko ;
+    rdfs:label "공민지"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:languageType "한+고" .
+kno:KN2021-0024-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002329 ;
+    kno:surfaceForm "공"@ko ;
+    kno:fullForm "공공"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "공(공)(公共)"@ko ;
+    kno:semanticTag kno:usas-S5p .
+kno:KN2021-0024-c2 rdfs:label "민지"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001332 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:fullForm "민지"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "민지"@ko ;
+    kno:truncated "false"^^xsd:boolean .

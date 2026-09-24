@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0578 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0578 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0578-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0578-form ;
-    ontolex:sense kno:KN2025-0578-sense .
-
-kno:KN2025-0578-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005288845> .
-
-kno:KN2025-0578-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0578-freq-nn,
-        kno:KN2025-0578-freq-yt ;
-    ontolex:writtenRep "코어 컬처"@ko .
-
-kno:KN2025-0578-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0578-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0578-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0578 kno:pos "「구」"@ko ;
+    kno:componentString "코어(core), 컬처(culture)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EC%96%B4%20%EC%BB%AC%EC%B2%98> ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "코어컬처"@ko ;
+    kno:example "(LLM) 애니메이션ㆍ게임 관련 행사에 관람객이 대거 몰리면서 서브컬처가 {코어컬처로} 자리 잡았다는 평가가 나온다."@ko ;
+    kno:predicate "잡다"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0578-c1 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 한때 비주류로 여겨지던 취향 기반 문화가 대중적 영향력을 확보하여 산업과 소비의 중심 흐름으로 자리 잡는 문화 경향."@ko ;
+    kno:languageType "영_영" ;
+    rdfs:label "코어 컬처"@ko ;
+    kno:origin "(<영>core culture)" ;
+    kno:frequency kno:KN2025-0578-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0578-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0578-freq-NN-total .
+kno:KN2025-0578-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000043 ;
+    kno:fullForm "코어"@ko ;
+    kno:surfaceForm "코어"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "코어(core)"@ko .
+kno:KN2025-0578-c2 kno:surfaceForm "컬처"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "컬처(culture)"@ko ;
+    kno:formative kno:F001858 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "컬처"@ko .

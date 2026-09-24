@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0093 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0093 kno:year "2019"^^xsd:gYear ;
+    kno:slotFiller "진료(診療) (1성분)"@ko ;
+    kno:slotFiller "먹튀 (1성분)"@ko ;
+    skos:definition "건강 보험료를 내지 않으면서 건강 보험의 혜택을 받아 진료를 받는 일. 주로 해외에 장기간 체류하는 동안 건강 보험료를 면제받고 있던 사람이 짧은 기간 동안 귀국하여 진료를 받고 건강 보험료가 부과되기 전에 다시 해외로 출국하는 경우를 말한다."@ko ;
+    kno:instantiates kno:S000509 ;
+    kno:componentString "먹튀, 진료(診療)"@ko ;
+    kno:frequency kno:KN2019-0093-freq-NN-2019 ;
+    rdfs:label "먹튀 진료"@ko ;
+    kno:instantiates kno:S001043 ;
+    a kno:Neologism ;
+    kno:languageType "고_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B9%ED%8A%80%20%EC%A7%84%EB%A3%8C> ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2019-0093-c1 ;
+    kno:frequency kno:KN2019-0093-freq-NN-2021 ;
+    kno:example "¶O 의원은 “건보료는 내지 않고 혜택만 본 장기 해외 체류자 23만 명 중 상당수는 이러한 제도의 사각지대를 악용해 {‘먹튀 진료’를} 받은 것으로 추정된다.”라고 지적했다."@ko ;
+    kno:origin "(먹튀診療)" ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:predicate "받다"@ko ;
+    kno:frequency kno:KN2019-0093-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0093-freq-NN-2018 ;
+    kno:component kno:KN2019-0093-c2 ;
+    kno:indexForm "먹튀진료"@ko ;
+    kno:frequency kno:KN2019-0093-freq-NN-2020 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2019-0093-freq-NN-total ;
+    kno:unitType "구"@ko .
+kno:KN2019-0093-c1 rdfs:label "먹튀"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000746 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "먹튀"@ko ;
+    kno:surfaceForm "먹튀"@ko ;
+    a kno:Component .
+kno:KN2019-0093-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "진료"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "진료(診療)"@ko ;
+    kno:formative kno:F001795 ;
+    kno:fullForm "진료"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 .

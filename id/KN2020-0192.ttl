@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0192 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0192 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0192-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0192-form ;
-    ontolex:sense kno:KN2020-0192-sense .
-
-kno:KN2020-0192-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004669289> .
-
-kno:KN2020-0192-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0192-freq-nn,
-        kno:KN2020-0192-freq-yt ;
-    ontolex:writtenRep "신속^통로제"@ko .
-
-kno:KN2020-0192-freq-nn a frac:CorpusFrequency ;
-    rdf:value 446 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0192-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0192-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0192 kno:component kno:KN2020-0192-c2 ;
+    skos:definition "기업인들의 필수 경제 활동을 보장하기 위해 기업인의 입국 절차를 간소화하는 제도. 코로나19 검사에서 음성 판정을 받으면 격리를 면제받는다."@ko ;
+    kno:urimalTargetCode "1518571" ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶앞으로 한국 기업인들은 {신속 통로제를} 통해 중국에 입국할 수 있다."@ko ;
+    kno:frequency kno:KN2020-0192-freq-NN-2020 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1518571> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:predicate "간소화하다"@ko ;
+    kno:component kno:KN2020-0192-c1 ;
+    kno:indexForm "신속통로제"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(迅速通路制)" ;
+    kno:year "2020"^^xsd:gYear ;
+    rdfs:label "신속^통로제"@ko ;
+    kno:instantiates kno:S000151 ;
+    kno:slotFiller "통로제(通路制) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0192-freq-NN-total ;
+    kno:languageType "한^한" ;
+    kno:componentString "신속(迅速), 통로제(通路制)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0192-freq-NN-2021 ;
+    kno:pos "「구」"@ko .
+kno:KN2020-0192-c2 kno:formative kno:F006505 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "통로제(通路制)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "통로제"@ko ;
+    kno:surfaceForm "통로제"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2020-0192-c1 a kno:Component ;
+    kno:fullForm "신속"@ko ;
+    kno:surfaceForm "신속"@ko ;
+    kno:formative kno:F000291 ;
+    rdfs:label "신속(迅速)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-N3.8p .

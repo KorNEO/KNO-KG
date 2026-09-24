@@ -1,0 +1,75 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0030 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0030 kno:component kno:KN2017-0030-c3 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2017-0030-c2 ;
+    kno:frequency kno:KN2017-0030-freq-NN-2018 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001222 ;
+    rdfs:label "교순대-원"@ko ;
+    kno:component kno:KN2017-0030-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "‘교통 순찰대원’을 줄여 이르는 말로, 여러 곳을 돌아다니며 주로 도로 교통의 사정을 살피기 위해 조직된 경찰대의 대원."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S001170 ;
+    kno:origin "(交巡隊員)" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:slotFiller "대(隊)+-원(員) (2성분)"@ko ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:indexForm "교순대원"@ko ;
+    kno:slotFiller "교(통)(交)+순(찰)(巡)+대(隊) (3성분)"@ko ;
+    kno:frequency kno:KN2017-0030-freq-NN-2016 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "교(통)(交), 순(찰)(巡), 대(隊), -원(員)"@ko ;
+    kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%88%9C%EB%8C%80%EC%9B%90> ;
+    kno:component kno:KN2017-0030-c4 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2017-0030-freq-NN-total ;
+    kno:example "¶하지만 정작 {교순대원들은} 자신들의 모터사이클을 OO로 부른다네요."@ko .
+kno:KN2017-0030-c3 kno:semanticTag kno:usas-N3.2p ;
+    kno:formative kno:F001167 ;
+    rdfs:label "대(隊)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "대"@ko ;
+    kno:surfaceForm "대"@ko ;
+    a kno:Component .
+kno:KN2017-0030-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "순(찰)(巡)"@ko ;
+    kno:formative kno:F001507 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "순"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "순찰"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2017-0030-c1 kno:formative kno:F000669 ;
+    rdfs:label "교(통)(交)"@ko ;
+    kno:fullForm "교통"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "교"@ko .
+kno:KN2017-0030-c4 kno:fullForm "원"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F001663 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "원"@ko ;
+    rdfs:label "-원(員)"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer .

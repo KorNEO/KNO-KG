@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0137 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0137 kno:component kno:KN2017-0137-c2 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>sound毯요)" ;
+    kno:example "¶‘{사운드 담요’라} 불리는 이 기기는 파장을 일으켜 주변의 소음을 제거합니다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%9A%B4%EB%93%9C%20%EB%8B%B4%EC%9A%94> ;
+    kno:slotFiller "담요(毯요) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2017-0137-freq-NN-total ;
+    kno:frequency kno:KN2017-0137-freq-NN-2017 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S001436 ;
+    kno:indexForm "사운드담요"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "사운드(sound), 담요(毯요)"@ko ;
+    kno:languageType "영_(한+고)" ;
+    kno:predicate "제거하다"@ko ;
+    rdfs:label "사운드 담요"@ko ;
+    kno:component kno:KN2017-0137-c1 ;
+    skos:definition "파장을 이용하여 주변의 시끄러운 소리를 제거하는 기기. 소음을 덮어 준다고 하여 ‘담요’에 빗대어 이르는 말이다."@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear .
+kno:KN2017-0137-c2 kno:surfaceForm "담요"@ko ;
+    kno:formative kno:F002885 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "담요"@ko ;
+    rdfs:label "담요(毯요)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H5 .
+kno:KN2017-0137-c1 kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "사운드"@ko ;
+    kno:surfaceForm "사운드"@ko ;
+    a kno:Component ;
+    rdfs:label "사운드(sound)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000791 ;
+    kno:position "1"^^xsd:integer .

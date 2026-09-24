@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0525 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0525 kno:frequency kno:KN2016-0525-freq-NN-total ;
+    rdfs:label "트렌딩 점수"@ko ;
+    kno:languageType "영_한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%A0%8C%EB%94%A9%20%EC%A0%90%EC%88%98> ;
+    kno:component kno:KN2016-0525-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "트렌딩(trending), 점수(點數)"@ko ;
+    kno:indexForm "트렌딩점수"@ko ;
+    kno:origin "(<영>trending點數)" ;
+    skos:definition "사람들의 사고, 사상, 활동이나 일의 형세 따위가 움직여 가는 방향이나 추세를 확인할 수 있는 점수. 키워드의 등장 횟수를 기준으로 하여 점수를 매겨 어떠한 명사가 많이 사용되는지 파악한다."@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0525-c2 ;
+    kno:predicate "있다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0525-freq-NN-2016 ;
+    kno:example "¶{트렌딩 점수에} 따라 실제 이슈화 유무를 알 수 있게 된다."@ko ;
+    kno:unitType "구"@ko .
+kno:KN2016-0525-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "트렌딩"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "트렌딩(trending)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "트렌딩"@ko ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:formative kno:F006552 .
+kno:KN2016-0525-c2 kno:formative kno:F005656 ;
+    rdfs:label "점수(點數)"@ko ;
+    kno:fullForm "점수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "점수"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

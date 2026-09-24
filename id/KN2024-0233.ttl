@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0233 a ontolex:Word ;
-    frac:attestation kno:KN2024-0233-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0233-form ;
-    ontolex:sense kno:KN2024-0233-sense .
-
-kno:KN2024-0233-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002627728> .
-
-kno:KN2024-0233-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0233-freq-nn,
-        kno:KN2024-0233-freq-yt ;
-    ontolex:writtenRep "의준-생"@ko .
-
-kno:KN2024-0233-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0233-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0233-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0233 kno:component kno:KN2024-0233-c3 ;
+    kno:indexForm "의준생"@ko ;
+    kno:example "¶지방 의과 대학의 정원 확대 소식이 전해지자 {의준생을} 둔 학부모들의 상담 문의가 학원가를 중심으로 크게 늘고 있다."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0233-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0233-c1 ;
+    rdfs:label "의준생"@ko ;
+    kno:origin "(醫準生)" ;
+    kno:languageType "한+한+한" ;
+    kno:instantiates kno:S000226 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%EC%A4%80%EC%83%9D> ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "의(사)(醫師), 준(準), 생(生)"@ko ;
+    kno:component kno:KN2024-0233-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0233-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘의과 대학 입학 준비생’을 줄여 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "준(準)+생(生) (2성분)"@ko .
+kno:KN2024-0233-c3 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "생(生)"@ko ;
+    kno:formative kno:F000368 ;
+    a kno:Component ;
+    kno:fullForm "생"@ko ;
+    kno:surfaceForm "생"@ko ;
+    kno:semanticTag kno:usas-L1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0233-c1 kno:role "고정항"@ko ;
+    rdfs:label "의(사)(醫師)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "의사"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "의"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000398 .
+kno:KN2024-0233-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "준(準)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005814 ;
+    kno:fullForm "준"@ko ;
+    kno:surfaceForm "준"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:truncated "false"^^xsd:boolean .

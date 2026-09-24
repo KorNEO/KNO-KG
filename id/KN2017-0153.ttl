@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0153 kno:componentString "솔로(solo), 이코노믹스(economics)"@ko ;
+    kno:origin "(<영>▼solo economics)" ;
+    kno:slotFiller "이코노믹스(economics) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2017-0153-freq-NN-total ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%94%EB%A1%9C%20%EC%9D%B4%EC%BD%94%EB%85%B8%EB%AF%B9%EC%8A%A4> ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2017-0153-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:example "¶1인 가구가 증가하면서 소위 ‘{솔로 이코노믹스’와} ‘혼족 문화’라는 새로운 트렌드가 확산되는 가운데 이에 대한 자치 단체 연구원의 정책 방향 설정이 눈길을 끈다."@ko ;
+    rdfs:label "솔로 이코노믹스"@ko ;
+    kno:indexForm "솔로이코노믹스"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0153-c1 ;
+    skos:definition "1인 가구와 관련된 경제 활동이나 전략. 1인 가구를 뜻하는 ‘솔로(solo)’와 경제를 뜻하는 ‘이코노믹스(econimics)’를 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2017-0153-freq-NN-2016 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000219 ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0153-c2 kno:fullForm "이코노믹스"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005413 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "이코노믹스"@ko ;
+    rdfs:label "이코노믹스(economics)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0153-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "솔로"@ko ;
+    rdfs:label "솔로(solo)"@ko ;
+    kno:surfaceForm "솔로"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000285 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

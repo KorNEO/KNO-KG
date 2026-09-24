@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0075 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0075 kno:formation kno:W05 ;
+    kno:componentString "런(닝)(running), (원)피스(one-piece)"@ko ;
+    kno:component kno:KN2014-0075-c2 ;
+    kno:slotFiller "(원)피스(one-piece) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358370> ;
+    kno:languageType "영+영" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2014-0075-freq-NN-2013 ;
+    kno:predicate "신은"@ko ;
+    a ontolex:Word ;
+    kno:urimalTargetCode "1358370" ;
+    kno:component kno:KN2014-0075-c1 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "런피스"@ko ;
+    kno:frequency kno:KN2014-0075-freq-NN-total ;
+    kno:instantiates kno:S000677 ;
+    kno:origin "(<영>▼←running one-piece)" ;
+    skos:definition "원피스를 입고 러닝화를 신은 차림. =런피스 룩(<영>▼←running one-piece look)."@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "런피스"@ko ;
+    kno:example "¶최근에는 원피스 차림에 편안한 운동화를 신는 믹스 매치 스타일링, 이른바 ‘{런피스’가} 대세다."@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2014-0075-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(원)피스(one-piece)"@ko ;
+    kno:formative kno:F000637 ;
+    kno:surfaceForm "피스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "원피스"@ko ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2014-0075-c1 a kno:Component ;
+    kno:formative kno:F000494 ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "런닝"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "런(닝)(running)"@ko ;
+    kno:surfaceForm "런"@ko ;
+    kno:role "고정항"@ko .

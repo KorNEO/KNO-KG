@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0216 kno:slotFiller "인골(人骨) (1성분)"@ko ;
+    kno:frequency kno:KN2014-0216-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0216-freq-NN-total ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000081 ;
+    skos:definition "인골이 있던 자리에 난 흔적."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2014-0216-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373899> ;
+    kno:component kno:KN2014-0216-c1 ;
+    kno:indexForm "인골흔"@ko ;
+    kno:urimalTargetCode "1373899" ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(人骨痕)" ;
+    rdfs:label "인골-흔"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:example "¶당시 10여 개 유구에서 {인골흔이} 발견되었지만, 전신 형태의 온전한 유골 수습은 20호 분이 유일했다."@ko ;
+    kno:componentString "인골(人骨), -흔(痕)"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 .
+kno:KN2014-0216-c2 kno:surfaceForm "흔"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000197 ;
+    rdfs:label "-흔(痕)"@ko ;
+    kno:fullForm "흔"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0216-c1 kno:formative kno:F005435 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "인골(人骨)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "인골"@ko ;
+    kno:surfaceForm "인골"@ko .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0125 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0125 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0125-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0125-form ;
-    ontolex:sense kno:KN2020-0125-sense .
-
-kno:KN2020-0125-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000228633> .
-
-kno:KN2020-0125-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0125-freq-nn,
-        kno:KN2020-0125-freq-yt ;
-    ontolex:writtenRep "분노 방정식"@ko .
-
-kno:KN2020-0125-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0125-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0125-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0125 kno:example "¶{분노 방정식을} 보면 무주택자끼리 만나면 서로 신세를 한탄하다가 마지막에는 분노를 한다는데, 뭔가 웃기면서도 맞는 말인 것 같아 씁쓸하다."@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:predicate "유주택자였던"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0125-freq-NN-2019 ;
+    kno:indexForm "분노방정식"@ko ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2020-0125-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%84%EB%85%B8%20%EB%B0%A9%EC%A0%95%EC%8B%9D> ;
+    kno:frequency kno:KN2020-0125-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0125-freq-NN-2020 ;
+    kno:componentString "분노(憤怒), 방정식(方程式)"@ko ;
+    rdfs:label "분노 방정식"@ko ;
+    kno:instantiates kno:S001411 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "방정식(方程式) (1성분)"@ko ;
+    skos:definition "집값 폭등 이후 주택 보유 수에 따라 유주택자였던 사람, 무주택자, 1주택자, 다주택자가 각자의 상황에 따라 서로를 보는 태도를 나타낸 도식. 몇 년 전 집을 판 유주택자와 다주택자가 만나면 큰 전쟁이 일어나고, 무주택자와 1주택자 간에는 작은 전투가 일어나며, 다주택자는 무주택자를 멍청한 놈으로 여기고, 무주택자는 다주택자를 나쁜 놈으로 생각한다는 등의 내용이 포함된다."@ko ;
+    kno:origin "(憤怒方程式)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2020-0125-c1 .
+kno:KN2020-0125-c2 kno:formative kno:F003717 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "방정식(方程式)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "방정식"@ko ;
+    kno:surfaceForm "방정식"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component .
+kno:KN2020-0125-c1 kno:semanticTag kno:usas-E3m ;
+    a kno:Component ;
+    kno:formative kno:F001390 ;
+    kno:fullForm "분노"@ko ;
+    kno:surfaceForm "분노"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "분노(憤怒)"@ko .

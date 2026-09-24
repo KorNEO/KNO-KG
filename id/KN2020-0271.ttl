@@ -1,30 +1,50 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0271 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0271 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2020-0271-form ;
-    ontolex:sense kno:KN2020-0271-sense .
-
-kno:KN2020-0271-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0271-freq-nn,
-        kno:KN2020-0271-freq-yt ;
-    ontolex:writtenRep "일시 귀국생"@ko .
-
-kno:KN2020-0271-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0271-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0271-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0271 kno:example "¶우리 학원에서는 {일시 귀국생들로만} 한 반을 구성하여 외국에서 공부하는 학생들에게 알맞은 수업을 진행한다."@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%BC%EC%8B%9C%20%EA%B7%80%EA%B5%AD%EC%83%9D> ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2020-0271-freq-NN-2019 ;
+    kno:component kno:KN2020-0271-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    kno:origin "(一時歸國生)" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:componentString "일시(一時), 귀국생(歸國生)"@ko ;
+    skos:definition "외국에서 유학하다가 잠시 귀국한 학생."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0271-c1 ;
+    rdfs:label "일시 귀국생"@ko ;
+    kno:frequency kno:KN2020-0271-freq-NN-total ;
+    kno:indexForm "일시귀국생"@ko .
+kno:KN2020-0271-c2 kno:semanticTag kno:usas-S2 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "귀국생"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002504 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "귀국생"@ko ;
+    rdfs:label "귀국생(歸國生)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0271-c1 kno:fullForm "일시"@ko ;
+    kno:surfaceForm "일시"@ko ;
+    rdfs:label "일시(一時)"@ko ;
+    kno:semanticTag kno:usas-T1.3m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005473 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .

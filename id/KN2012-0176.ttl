@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0176 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0176 kno:component kno:KN2012-0176-c2 ;
+    kno:slotFiller "빨대 (1성분)"@ko ;
+    kno:instantiates kno:S000268 ;
+    kno:example "¶‘{빨대차}’ 몰고 다니며…노상주차 화물차 경유 훔쳐."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(빨대車)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "차(車) (1성분)"@ko ;
+    kno:componentString "빨대, 차(車)"@ko ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001428 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "빨대차"@ko ;
+    skos:definition "다른 차의 기름을 훔칠 목적으로 기름을 빨아올리는 장치를 설치한 차."@ko ;
+    kno:component kno:KN2012-0176-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%A8%EB%8C%80%EC%B0%A8> ;
+    rdfs:label "빨대-차"@ko .
+kno:KN2012-0176-c2 rdfs:label "차(車)"@ko ;
+    kno:surfaceForm "차"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000075 ;
+    kno:fullForm "차"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2012-0176-c1 kno:semanticTag kno:usas-O2 ;
+    kno:fullForm "빨대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001422 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "빨대"@ko ;
+    a kno:Component ;
+    rdfs:label "빨대"@ko ;
+    kno:position "1"^^xsd:integer .

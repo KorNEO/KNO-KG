@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0554 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0554 a ontolex:Word ;
-    frac:attestation kno:KN2025-0554-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0554-form ;
-    ontolex:sense kno:KN2025-0554-sense .
-
-kno:KN2025-0554-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/408/0000251621> .
-
-kno:KN2025-0554-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0554-freq-nn,
-        kno:KN2025-0554-freq-yt ;
-    ontolex:writtenRep "창덕궁 세권"@ko .
-
-kno:KN2025-0554-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0554-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0554-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0554 a kno:Neologism ;
+    skos:definition "(LLM) 창덕궁과 인접해 도보로 접근할 수 있을 만큼 가까운 주거 지역의 범위."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한" ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:origin "(昌德宮勢圈)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%BD%EB%8D%95%EA%B6%81%EC%84%B8%EA%B6%8C> ;
+    kno:slotFiller "창덕궁(昌德宮) (1성분)"@ko ;
+    kno:instantiates kno:S000008 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0554-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "창덕궁세권"@ko ;
+    kno:frequency kno:KN2025-0554-freq-NN-2025 ;
+    kno:componentString "창덕궁(昌德宮), (역)세권(驛勢圈)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0554-freq-NN-total ;
+    kno:indexForm "창덕궁세권"@ko ;
+    kno:example "(LLM) 최근 북촌 일대는 {창덕궁세권}이라는 말이 돌 만큼 궁궐과 가까운 입지를 내세운 매물이 늘고 있다."@ko ;
+    kno:component kno:KN2025-0554-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2025-0554-c2 kno:surfaceForm "세권"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:fullForm "역세권"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000012 .
+kno:KN2025-0554-c1 rdfs:label "창덕궁(昌德宮)"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:formative kno:F006009 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "창덕궁"@ko ;
+    kno:surfaceForm "창덕궁"@ko ;
+    a kno:Component .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0266 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0266 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0266-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0266-form ;
-    ontolex:sense kno:KN2021-0266-sense .
-
-kno:KN2021-0266-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001495538> .
-
-kno:KN2021-0266-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0266-freq-nn,
-        kno:KN2021-0266-freq-yt ;
-    ontolex:writtenRep "코로나 피로도"@ko .
-
-kno:KN2021-0266-freq-nn a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0266-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0266-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0266 kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2021-0266-freq-NN-2020 ;
+    rdfs:label "코로나 피로도"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000005 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%94%BC%EB%A1%9C%EB%8F%84> ;
+    kno:component kno:KN2021-0266-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0266-freq-NN-2021 ;
+    kno:component kno:KN2021-0266-c1 ;
+    kno:frequency kno:KN2021-0266-freq-NN-2022 ;
+    skos:definition "코로나19의 장기화로 인해 피로를 느끼는 정도."@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 피로도(疲勞度)"@ko ;
+    kno:languageType "영_한" ;
+    kno:predicate "느끼다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0266-freq-NN-total ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:example "¶영업시간 제한과 5인 이상의 사적 모임 금지 등으로 인해 국민들의 {코로나 피로도가} 한계에 다다르고 있다."@ko ;
+    kno:indexForm "코로나피로도"@ko ;
+    kno:slotFiller "피로도(疲勞度) (1성분)"@ko ;
+    kno:origin "(<영>←corona virus疲勞度)" .
+kno:KN2021-0266-c2 kno:semanticTag kno:usas-B2 ;
+    kno:formative kno:F001982 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "피로도"@ko ;
+    kno:surfaceForm "피로도"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "피로도(疲勞度)"@ko .
+kno:KN2021-0266-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko .

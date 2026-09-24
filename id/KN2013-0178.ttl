@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0178 kno:indexForm "무직휴급자"@ko ;
+    kno:frequency kno:KN2013-0178-freq-NN-2021 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0178-freq-NN-total ;
+    kno:origin "(無職休給者)" ;
+    kno:componentString "무직(無職), 휴급자(休給者)"@ko ;
+    kno:languageType "한^한" ;
+    kno:example "¶국정 조사가 임박한 상황에서 {무직 휴급자} 복직 합의를 이뤘다는 건 국정 조사 무용론을 주장하기 위한 정치적 도구로서의 활용이 아닌가 싶다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    skos:definition "일도 하지 않고 월급도 받지 못하는 직장인."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B4%EC%A7%81%ED%9C%B4%EA%B8%89%EC%9E%90> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0178-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2013-0178-c1 ;
+    kno:predicate "못하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2013-0178-c2 ;
+    kno:frequency kno:KN2013-0178-freq-NN-2013 ;
+    rdfs:label "무직^휴급자"@ko .
+kno:KN2013-0178-c1 kno:semanticTag kno:usas-I3.1m ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003540 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "무직"@ko ;
+    kno:surfaceForm "무직"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "무직(無職)"@ko .
+kno:KN2013-0178-c2 kno:semanticTag kno:usas-I3.1m ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F007207 ;
+    kno:surfaceForm "휴급자"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "휴급자(休給者)"@ko ;
+    kno:fullForm "휴급자"@ko .

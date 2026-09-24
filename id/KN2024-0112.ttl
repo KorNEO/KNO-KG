@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0112 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0112 a ontolex:Word ;
-    frac:attestation kno:KN2024-0112-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0112-form ;
-    ontolex:sense kno:KN2024-0112-sense .
-
-kno:KN2024-0112-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-07"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/009/0004988197> .
-
-kno:KN2024-0112-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0112-freq-nn,
-        kno:KN2024-0112-freq-yt ;
-    ontolex:writtenRep "사포-당"@ko .
-
-kno:KN2024-0112-freq-nn a frac:CorpusFrequency ;
-    rdf:value 35 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0112-freq-yt a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0112-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0112 kno:indexForm "사포당"@ko ;
+    kno:origin "(四抛黨)" ;
+    kno:languageType "한+한" ;
+    a kno:Neologism ;
+    kno:componentString "사(십)(四), 포(기)(抛), 당(黨)"@ko ;
+    kno:frequency kno:KN2024-0112-freq-NN-total ;
+    kno:slotFiller "사(십)(四) (1성분)"@ko ;
+    kno:instantiates kno:S001118 ;
+    kno:component kno:KN2024-0112-c1 ;
+    kno:frequency kno:KN2024-0112-freq-NN-2024 ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0112-c2 ;
+    a ontolex:Word ;
+    rdfs:label "사포당"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:example "¶이번 총선 참패의 원인을 철저하게 분석하여 {사포당의} 한계를 벗고, 세대 차원에서도 제대로 된 전략을 보여 줘야 한다."@ko ;
+    skos:definition "‘사십 대를 포기한 정당’을 줄여 이르는 말. 40대 유권자층의 지지를 받지 못하는 정당을 이르는 말이다."@ko ;
+    kno:component kno:KN2024-0112-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%8F%AC%EB%8B%B9> .
+kno:KN2024-0112-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004144 ;
+    kno:surfaceForm "사"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "사십"@ko ;
+    a kno:Component ;
+    rdfs:label "사(십)(四)"@ko .
+kno:KN2024-0112-c2 rdfs:label "포(기)(抛)"@ko ;
+    kno:fullForm "포기"@ko ;
+    kno:formative kno:F000320 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:surfaceForm "포"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2024-0112-c3 kno:surfaceForm "당"@ko ;
+    kno:formative kno:F000345 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "당"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "당(黨)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 .

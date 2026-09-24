@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0620 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0620 a ontolex:Word ;
-    frac:attestation kno:KN2025-0620-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0620-form ;
-    ontolex:sense kno:KN2025-0620-sense .
-
-kno:KN2025-0620-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/050/0000089011> .
-
-kno:KN2025-0620-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0620-freq-nn,
-        kno:KN2025-0620-freq-yt ;
-    ontolex:writtenRep "트윅먼트"@ko .
-
-kno:KN2025-0620-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0620-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0620-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0620 kno:example "(LLM) 얼굴이 달라진 건 아닌데 피부가 훨씬 매끈해 보여서, 요즘 {트윅먼트} 받았냐고 물어봤다."@ko ;
+    rdfs:label "트윅먼트"@ko ;
+    kno:componentString "트윅(tweak), (트리트)먼트(treatment)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 얼굴의 인상을 크게 바꾸지 않는 범위에서 주름 완화나 피부 결 개선 등을 위해 보톡스ㆍ필러ㆍ레이저 같은 비수술적 미용 시술을 가볍게 받는 경향."@ko ;
+    kno:component kno:KN2025-0620-c2 ;
+    kno:predicate "받다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0620-c1 ;
+    kno:indexForm "트윅먼트"@ko ;
+    kno:frequency kno:KN2025-0620-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EC%9C%85%EB%A8%BC%ED%8A%B8> ;
+    kno:formation kno:W07 ;
+    kno:frequency kno:KN2025-0620-freq-NN-2025 ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0620-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "트리트먼트"@ko ;
+    rdfs:label "(트리트)먼트(treatment)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "먼트"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F003421 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0620-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006568 ;
+    kno:surfaceForm "트윅"@ko ;
+    kno:semanticTag kno:usas-A2.1p ;
+    kno:fullForm "트윅"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "트윅(tweak)"@ko ;
+    kno:position "1"^^xsd:integer .

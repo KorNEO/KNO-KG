@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0080 kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0080-freq-NN-2019 ;
+    kno:languageType "영_(영+한)" ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(<영>double care族)" ;
+    kno:slotFiller "더블(double)+케어(care) (2성분)"@ko ;
+    skos:definition "성인 자녀와 노부모를 동시에 부양하는 중장년층에 속하는 사람. 또는 그런 무리."@ko ;
+    kno:predicate "속하다"@ko ;
+    kno:component kno:KN2018-0080-c3 ;
+    kno:urimalTargetCode "1416102" ;
+    kno:indexForm "더블케어족"@ko ;
+    kno:component kno:KN2018-0080-c1 ;
+    kno:frequency kno:KN2018-0080-freq-NN-total ;
+    kno:componentString "더블(double), 케어(care), -족(族)"@ko ;
+    kno:example "¶12일 OO에 따르면 50, 60대의 34.5%는 성인 자녀와 노부모를 동시에 부양하는 {더블 케어족인} 것으로 집계됐다."@ko ;
+    kno:component kno:KN2018-0080-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000012 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416102> ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0080-freq-NN-2018 ;
+    rdfs:label "더블케어족"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko .
+kno:KN2018-0080-c3 kno:semanticTag kno:usas-S5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko .
+kno:KN2018-0080-c1 kno:semanticTag kno:usas-N1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "더블"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "더블"@ko ;
+    kno:formative kno:F002945 ;
+    rdfs:label "더블(double)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2018-0080-c2 a kno:Component ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "케어(care)"@ko ;
+    kno:formative kno:F000418 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "케어"@ko ;
+    kno:surfaceForm "케어"@ko .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0210 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0210-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0210-form ;
-    ontolex:sense kno:KN2024-0210-sense .
-
-kno:KN2024-0210-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002834909> .
-
-kno:KN2024-0210-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0210-freq-nn,
-        kno:KN2024-0210-freq-yt ;
-    ontolex:writtenRep "우유^사무관"@ko .
-
-kno:KN2024-0210-freq-nn a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0210-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0210-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0210 kno:frequency kno:KN2024-0210-freq-NN-2025 ;
+    kno:origin "(牛乳事務官)" ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "우유의 가격을 관리하는 사무관급 담당자. 물가를 관리하는 담당자를 지정하여 물가를 집중 관리하는 제도의 일환으로 생겨난 직책이다."@ko ;
+    kno:component kno:KN2024-0210-c1 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0210-freq-NN-2023 ;
+    kno:componentString "우유(牛乳), 사무관(事務官)"@ko ;
+    kno:example "¶일각에서는 우유에 사용되는 원유 가격은 생산비 등에 비례하여 매년 오르는 것인데, 근본적인 구조의 개선 없이 {우유 사무관을} 지정하는 것으로 물가 안정화를 기대하기는 힘들다는 지적이 나온다."@ko ;
+    kno:indexForm "우유사무관"@ko ;
+    kno:component kno:KN2024-0210-c2 ;
+    kno:languageType "한^한" ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "우유^사무관"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EC%9C%A0%EC%82%AC%EB%AC%B4%EA%B4%80> ;
+    kno:frequency kno:KN2024-0210-freq-NN-2024 ;
+    kno:instantiates kno:S000317 ;
+    kno:slotFiller "사무관(事務官) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0210-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2024-0210-c1 kno:semanticTag kno:usas-F2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "우유"@ko ;
+    kno:surfaceForm "우유"@ko ;
+    rdfs:label "우유(牛乳)"@ko ;
+    kno:formative kno:F000563 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0210-c2 rdfs:label "사무관(事務官)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004160 ;
+    kno:fullForm "사무관"@ko ;
+    kno:surfaceForm "사무관"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

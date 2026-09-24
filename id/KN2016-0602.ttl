@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0602 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0602 kno:registration "동형어 미확정"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    skos:definition "‘혼자 가는 여행’을 줄여 이르는 말. 함께할 친구나 동료 없이 떠나는 여행을 이르는 말이다."@ko ;
+    kno:example "¶혼밥, 혼술, {혼행이} 이젠 흔한 풍경이다."@ko ;
+    kno:slotFiller "(여)행(行) (1성분)"@ko ;
+    rdfs:label "혼행"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%BC%ED%96%89> ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000017 ;
+    kno:origin "(혼行)" ;
+    kno:languageType "고+한" ;
+    kno:componentString "혼(자), (여)행(行)"@ko ;
+    kno:component kno:KN2016-0602-c1 ;
+    kno:formation kno:W05 ;
+    kno:indexForm "혼행"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0602-c2 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism .
+kno:KN2016-0602-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000011 ;
+    rdfs:label "혼(자)"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "혼자"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko .
+kno:KN2016-0602-c2 kno:semanticTag kno:usas-M1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "여행"@ko ;
+    rdfs:label "(여)행(行)"@ko ;
+    kno:surfaceForm "행"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F001016 .

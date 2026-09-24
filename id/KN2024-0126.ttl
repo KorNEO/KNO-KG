@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0126 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0126 a ontolex:Word ;
-    frac:attestation kno:KN2024-0126-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0126-form ;
-    ontolex:sense kno:KN2024-0126-sense .
-
-kno:KN2024-0126-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0006978385> .
-
-kno:KN2024-0126-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0126-freq-nn,
-        kno:KN2024-0126-freq-yt ;
-    ontolex:writtenRep "선납-후검"@ko .
-
-kno:KN2024-0126-freq-nn a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0126-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0126-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0126 kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0126-freq-NN-total ;
+    kno:componentString "선납(先納), 후검(後檢)"@ko ;
+    kno:languageType "한+한" ;
+    kno:example "¶감사원은 방탄 헬멧의 구매 과정에서 군이 {선납후검의} 요건에 해당되지 않음에도 불구하고 이를 승인하고 품질 검사의 결과까지 허위로 기록한 사실을 적발했다."@ko ;
+    skos:definition "‘선 납품 후 검사’를 줄여 이르는 말. 긴급 소요나 국가 재난이 발생했을 경우 군수품을 먼저 납품받고 이후에 품질 검사를 받게 하는 제도를 말한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(先納後檢)" ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A0%EB%82%A9%ED%9B%84%EA%B2%80> ;
+    rdfs:label "선납-후검"@ko ;
+    kno:frequency kno:KN2024-0126-freq-NN-2023 ;
+    kno:formation kno:W01 ;
+    kno:indexForm "선납후검"@ko ;
+    kno:component kno:KN2024-0126-c2 ;
+    kno:component kno:KN2024-0126-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism .
+kno:KN2024-0126-c2 kno:formative kno:F007187 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "후검"@ko ;
+    rdfs:label "후검(後檢)"@ko ;
+    kno:surfaceForm "후검"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2024-0126-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004302 ;
+    kno:fullForm "선납"@ko ;
+    rdfs:label "선납(先納)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "선납"@ko .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0126 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0126 kno:languageType "고_한" ;
+    kno:indexForm "봄날대선"@ko ;
+    kno:example "¶이른바 ‘{봄날 대선’이} 현실화되면 여야 차기 주자들이 준비할 수 있는 시간도 고작 80여 일에 불과합니다."@ko ;
+    kno:frequency kno:KN2017-0126-freq-NN-2017 ;
+    kno:componentString "봄날, 대선(大選)"@ko ;
+    kno:component kno:KN2017-0126-c1 ;
+    a kno:Neologism ;
+    rdfs:label "봄날 대선"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(봄날大選)" ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380688> ;
+    kno:slotFiller "봄날 (1성분)"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0126-freq-NN-total ;
+    kno:urimalTargetCode "1380688" ;
+    kno:instantiates kno:S000093 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2017-0126-c2 ;
+    skos:definition "봄날에 실시하는 대통령 선거를 이르는 말. 2016년 대통령 탄핵으로 원래 겨울철에 실시되던 대선이 앞당겨져 봄철에 치르게 되면서 생겨난 말이다."@ko .
+kno:KN2017-0126-c1 rdfs:label "봄날"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "봄날"@ko ;
+    kno:surfaceForm "봄날"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:formative kno:F003929 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2017-0126-c2 rdfs:label "대선(大選)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000207 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "대선"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "대선"@ko ;
+    kno:truncated "false"^^xsd:boolean .

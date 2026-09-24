@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0462 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0462 kno:componentString "현차(現車), 고시(考試)"@ko ;
+    rdfs:label "현차 고시"@ko ;
+    kno:component kno:KN2013-0462-c2 ;
+    kno:frequency kno:KN2013-0462-freq-NN-2013 ;
+    kno:languageType "한_한" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0462-freq-NN-2023 ;
+    kno:example "¶국내에서 가장 높은 수준의 연봉과 위상 덕에 OO 차 그룹 신입사원 공채는 대학생들 사이에 ‘{현차 고시’로} 불린다."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:indexForm "현차고시"@ko ;
+    kno:frequency kno:KN2013-0462-freq-NN-total ;
+    kno:slotFiller "현차(現車) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%84%EC%B0%A8%20%EA%B3%A0%EC%8B%9C> ;
+    kno:instantiates kno:S000357 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "특정 자동차 회사의 신입직 공개 채용을 고시에 빗대어 이르는 말. 경쟁률이 매우 높아 사법 고시, 행정 고시, 외무 고시만큼이나 합격하기 어려워 붙여진 말이다."@ko ;
+    kno:component kno:KN2013-0462-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0462-freq-NN-2014 ;
+    kno:frequency kno:KN2013-0462-freq-NN-2016 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2013-0462-freq-NN-2019 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0462-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(現車考試)" .
+kno:KN2013-0462-c2 kno:semanticTag kno:usas-P1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "고시"@ko ;
+    kno:surfaceForm "고시"@ko ;
+    kno:formative kno:F000247 ;
+    rdfs:label "고시(考試)"@ko .
+kno:KN2013-0462-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:fullForm "현차"@ko ;
+    kno:surfaceForm "현차"@ko ;
+    kno:formative kno:F007078 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "현차(現車)"@ko .

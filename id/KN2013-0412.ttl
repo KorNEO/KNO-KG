@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0412 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0412 kno:year "2013"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2013-0412-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "타희(他喜) (1성분)"@ko ;
+    kno:component kno:KN2013-0412-c1 ;
+    kno:frequency kno:KN2013-0412-freq-NN-total ;
+    rdfs:label "타희-력"@ko ;
+    skos:definition "남을 기쁘게 하는 능력."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2013-0412-c2 ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000006 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:componentString "타희(他喜), -력(力)"@ko ;
+    kno:indexForm "타희력"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%80%ED%9D%AC%EB%A0%A5> ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(他喜力)" ;
+    kno:example "¶지난 3월 OO로부터 업무 보고를 받는 자리에서 O 대통령은 ‘공무원의 자세’에 대해 설명하면서 ‘{타희력’을} 언급했다."@ko ;
+    kno:frequency kno:KN2013-0412-freq-NN-2013 .
+kno:KN2013-0412-c1 kno:semanticTag kno:usas-E4.1p ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006397 ;
+    rdfs:label "타희(他喜)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "타희"@ko ;
+    kno:surfaceForm "타희"@ko .
+kno:KN2013-0412-c2 kno:formative kno:F000010 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:fullForm "력"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-력(力)"@ko .

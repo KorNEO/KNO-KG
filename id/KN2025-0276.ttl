@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0276 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0276 a ontolex:Word ;
-    frac:attestation kno:KN2025-0276-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0276-form ;
-    ontolex:sense kno:KN2025-0276-sense .
-
-kno:KN2025-0276-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/094/0000012974> .
-
-kno:KN2025-0276-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0276-freq-nn,
-        kno:KN2025-0276-freq-yt ;
-    ontolex:writtenRep "백보킹"@ko .
-
-kno:KN2025-0276-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0276-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0276-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0276 rdfs:label "백보킹"@ko ;
+    kno:frequency kno:KN2025-0276-freq-NN-2025 ;
+    kno:component kno:KN2025-0276-c1 ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0276-c2 ;
+    skos:definition "(LLM) 배낭에 야영 장비를 챙겨 짊어진 채, 출발 지점에서 멀리 이동하지 않고 가까운 거리만 걸어가 텐트를 치고 하룻밤을 보내는 간편한 야영 방식."@ko ;
+    kno:formation kno:W05 ;
+    kno:indexForm "백보킹"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0276-c3 ;
+    kno:componentString "백(百), 보(步), (백패)킹(backpacking)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0276-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 오늘은 힘들게 산을 타기보다 주차장에서 조금만 걸어 올라가 {백보킹을} 하기로 했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EB%B3%B4%ED%82%B9> ;
+    kno:unitType "단어"@ko .
+kno:KN2025-0276-c1 kno:semanticTag kno:usas-N1 ;
+    kno:fullForm "백"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "백"@ko ;
+    rdfs:label "백(百)"@ko ;
+    kno:formative kno:F001349 ;
+    kno:role "성분"@ko .
+kno:KN2025-0276-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "보(步)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003867 ;
+    kno:fullForm "보"@ko ;
+    kno:surfaceForm "보"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X3.4 .
+kno:KN2025-0276-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "킹"@ko ;
+    kno:fullForm "백패킹"@ko ;
+    kno:formative kno:F006378 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "(백패)킹(backpacking)"@ko ;
+    kno:truncated "true"^^xsd:boolean .

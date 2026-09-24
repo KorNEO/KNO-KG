@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0023 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0023 kno:languageType "고+영" ;
+    kno:component kno:KN2019-0023-c1 ;
+    a kno:Neologism ;
+    kno:origin "(그럴<영>←insider)" ;
+    kno:example "¶핵인싸는 인싸대로 아싸는 아싸대로 {그럴싸는} 그 중간 어느 정도로 각자의 색을 만들어 살고 있는 것뿐이다."@ko ;
+    skos:definition "무리에 어울리기는 하나 적극적이지 않은 태도를 가진 사람을 이르는 말. ‘아싸’와 ‘인싸’의 중간을 뜻하는 말이다."@ko ;
+    kno:slotFiller "그럴(싸하다) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "그럴(싸하다), (인)싸(insider)"@ko ;
+    kno:frequency kno:KN2019-0023-freq-NN-2020 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=597547> ;
+    kno:indexForm "그럴싸"@ko ;
+    kno:frequency kno:KN2019-0023-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0023-freq-NN-2021 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:instantiates kno:S000237 ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0023-freq-NN-2019 ;
+    kno:component kno:KN2019-0023-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "597547" ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0023-freq-NN-total ;
+    kno:frequency kno:KN2019-0023-freq-NN-2018 ;
+    rdfs:label "그럴싸"@ko ;
+    kno:frequency kno:KN2019-0023-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0023-freq-NN-2025 ;
+    kno:frequency kno:KN2019-0023-freq-NN-2022 .
+kno:KN2019-0023-c1 rdfs:label "그럴(싸하다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002516 ;
+    kno:surfaceForm "그럴"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A7p ;
+    kno:fullForm "그럴싸하다"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2019-0023-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000549 ;
+    kno:surfaceForm "싸"@ko ;
+    rdfs:label "(인)싸(insider)"@ko ;
+    kno:fullForm "인싸"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .

@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0312 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0312 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0312-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0312-form ;
-    ontolex:sense kno:KN2025-0312-sense .
-
-kno:KN2025-0312-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-16"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/030/0003284463> .
-
-kno:KN2025-0312-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0312-freq-nn,
-        kno:KN2025-0312-freq-yt ;
-    ontolex:writtenRep "사운드 언어 모델"@ko .
-
-kno:KN2025-0312-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0312-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0312-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0312 kno:instantiates kno:S001436 ;
+    kno:slotFiller "언어(言語)+모델(model) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0312-c3 ;
+    kno:indexForm "사운드언어모델"@ko ;
+    kno:component kno:KN2025-0312-c1 ;
+    kno:component kno:KN2025-0312-c2 ;
+    rdfs:label "사운드 언어 모델"@ko ;
+    kno:componentString "사운드(sound), 언어(言語), 모델(model)"@ko ;
+    kno:slotFiller "사운드(sound) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%9A%B4%EB%93%9C%20%EC%96%B8%EC%96%B4%20%EB%AA%A8%EB%8D%B8> ;
+    kno:example "(LLM) 회사는 콜센터 통화 내용을 자동으로 받아 적고 요약하기 위해 {사운드언어모델을} 고객 응대 시스템에 연동했다."@ko ;
+    kno:languageType "영_한_영" ;
+    kno:instantiates kno:S000411 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0312-freq-NN-total ;
+    kno:frequency kno:KN2025-0312-freq-NN-2025 ;
+    skos:definition "(LLM) 음성(소리) 데이터를 입력받아 언어로 해석하거나, 음성ㆍ텍스트 형태의 언어 출력을 생성할 수 있도록 설계된 인공 지능 언어 모델."@ko ;
+    kno:origin "(<영>sound言語<영>model)" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0312-c3 kno:fullForm "모델"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "모델(model)"@ko ;
+    kno:formative kno:F000172 ;
+    kno:surfaceForm "모델"@ko ;
+    kno:semanticTag kno:usas-X4.2 ;
+    a kno:Component .
+kno:KN2025-0312-c1 kno:formative kno:F000791 ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "사운드"@ko ;
+    kno:surfaceForm "사운드"@ko ;
+    rdfs:label "사운드(sound)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0312-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "언어(言語)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000383 ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "언어"@ko ;
+    kno:surfaceForm "언어"@ko ;
+    a kno:Component .

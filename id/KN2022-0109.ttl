@@ -1,30 +1,50 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0109 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0109 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2022-0109-form ;
-    ontolex:sense kno:KN2022-0109-sense .
-
-kno:KN2022-0109-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0109-freq-nn,
-        kno:KN2022-0109-freq-yt ;
-    ontolex:writtenRep "당평^세대"@ko .
-
-kno:KN2022-0109-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0109-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0109-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0109 kno:indexForm "당평세대"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "중국에서 사회ㆍ경제적 상황으로 인해 취업, 내 집 마련, 결혼 및 출산 등을 포기하고 최저 생계만 유지한 채 소극적으로 지내는 세대."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0109-c1 ;
+    kno:unitType "구"@ko ;
+    kno:predicate "지내다"@ko ;
+    rdfs:label "당평^세대"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:componentString "당평(躺平), 세대(世代)"@ko ;
+    a kno:Neologism ;
+    kno:origin "(躺平世代)" ;
+    kno:instantiates kno:S000002 ;
+    kno:component kno:KN2022-0109-c2 ;
+    kno:languageType "한^한" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "당평(躺平) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%B9%ED%8F%89%EC%84%B8%EB%8C%80> ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶최근 중국에서는 오직 최저 생계만 유지하며 자신들을 돈벌이 수단으로 착취하는 모든 것들에 대하여 소극적으로나마 반항하는 {당평 세대가} 늘어나고 있다."@ko .
+kno:KN2022-0109-c1 rdfs:label "당평(躺平)"@ko ;
+    kno:semanticTag kno:usas-M8 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "당평"@ko ;
+    kno:surfaceForm "당평"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002895 .
+kno:KN2022-0109-c2 kno:surfaceForm "세대"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000006 ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "세대"@ko .

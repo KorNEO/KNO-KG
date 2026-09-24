@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0041 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0041 kno:frequency kno:KN2016-0041-freq-NN-total ;
+    kno:componentString "군(인)(軍), (스)타벅스(Starbucks)"@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%B0%ED%83%80%EB%B2%85%EC%8A%A4> ;
+    kno:component kno:KN2016-0041-c1 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "군타벅스"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "군타벅스"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0041-c2 ;
+    kno:example "¶그런데 일부 여성 인터넷 사이트에서…OO가 주요 구매층인 여성이 아니라 남성만 우대한다며, {군타벅스}, 군무벅스라고 부르며 불매 운동까지 진행합니다."@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0041-freq-NN-2016 ;
+    kno:languageType "한+영" ;
+    kno:origin "(軍←Starbucks)" ;
+    a kno:Neologism ;
+    skos:definition "‘군인’과 프랜차이즈 커피 전문점의 하나인 ‘스타벅스’를 결합하여 이르는 말. 한 커피 전문점에서 휴가를 받은 군인에게 커피 한 잔을 무료로 제공하는 행사를 진행한 것에 대하여 일부 누리꾼들이 성차별이라고 비난한 데서 유래한다."@ko .
+kno:KN2016-0041-c1 kno:formative kno:F002484 ;
+    a kno:Component ;
+    kno:surfaceForm "군"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "군(인)(軍)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "군인"@ko ;
+    kno:semanticTag kno:usas-S2.2 .
+kno:KN2016-0041-c2 rdfs:label "(스)타벅스(Starbucks)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F006386 ;
+    kno:surfaceForm "타벅스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "스타벅스"@ko .

@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0297 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0297 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0297-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0297-form ;
-    ontolex:sense kno:KN2025-0297-sense .
-
-kno:KN2025-0297-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0001279562> .
-
-kno:KN2025-0297-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0297-freq-nn,
-        kno:KN2025-0297-freq-yt ;
-    ontolex:writtenRep "불법 파업 면허법"@ko .
-
-kno:KN2025-0297-freq-nn a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0297-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0297-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0297 kno:instantiates kno:S000522 ;
+    kno:languageType "한_한_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "면허(免許) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "불법(不法), 파업(罷業), 면허(免許), 법(法)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0297-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%88%EB%B2%95%20%ED%8C%8C%EC%97%85%20%EB%A9%B4%ED%97%88%EB%B2%95> ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "(LLM) 일부에서는 노조법 개정안을 두고 {불법파업면허법이라} 부르며 불법 파업에 대한 책임이 느슨해질 수 있다고 반발했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0297-c1 ;
+    kno:origin "(不法罷業免許法)" ;
+    rdfs:label "불법 파업 면허법"@ko ;
+    kno:frequency kno:KN2025-0297-freq-NN-2025 ;
+    kno:indexForm "불법파업면허법"@ko ;
+    kno:frequency kno:KN2025-0297-freq-NN-total ;
+    kno:component kno:KN2025-0297-c3 ;
+    kno:component kno:KN2025-0297-c2 ;
+    skos:definition "(LLM) ‘노동조합 및 노동 관계 조정법 2ㆍ3조 개정에 관한 법률안’(일명 노란봉투법)을 비난조로 이르는 말. 개정안이 노동조합에 대한 손해 배상 청구를 제한하고 사용자 범위를 확대하는 내용 등을 담아 불법 파업에 대한 책임을 약화시켜 사실상 불법 파업을 용인할 수 있다는 우려에서 나온 표현이다."@ko .
+kno:KN2025-0297-c4 kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0297-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000517 ;
+    kno:surfaceForm "불법"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "불법"@ko ;
+    rdfs:label "불법(不法)"@ko .
+kno:KN2025-0297-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "면허"@ko ;
+    kno:surfaceForm "면허"@ko ;
+    kno:formative kno:F001299 ;
+    kno:semanticTag kno:usas-S7.4p ;
+    a kno:Component ;
+    rdfs:label "면허(免許)"@ko .
+kno:KN2025-0297-c2 a kno:Component ;
+    kno:formative kno:F000429 ;
+    kno:fullForm "파업"@ko ;
+    kno:surfaceForm "파업"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    rdfs:label "파업(罷業)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

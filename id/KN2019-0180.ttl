@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0180 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0180 kno:example "¶이외에도 브이아르(VR), 방 탈출 등으로 대표되는 체험형 카페나 이미지 사진을 직접 찍을 수 있는 셀프 스튜디오 등이 {실감 세대의} 취향을 조준하는 새로운 형태의 사업 아이템이다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1423791> ;
+    kno:slotFiller "실감(實感) (1성분)"@ko ;
+    kno:frequency kno:KN2019-0180-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "세대(世代) (1성분)"@ko ;
+    skos:definition "현실에서 직접 경험하는 것을 즐기는 세대. 브이아르(VR) 게임과 같은 체험형 게임을 즐기거나, 실제로 상품을 보고 체험할 수 있는 매장을 찾아가는 등 실제적인 경험을 중요시한다."@ko ;
+    kno:componentString "실감(實感), 세대(世代)"@ko ;
+    kno:origin "(實感世代)" ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:instantiates kno:S001500 ;
+    kno:frequency kno:KN2019-0180-freq-NN-2022 ;
+    kno:predicate "즐기다"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0180-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0180-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "실감세대"@ko ;
+    kno:frequency kno:KN2019-0180-freq-NN-2021 ;
+    kno:component kno:KN2019-0180-c1 ;
+    kno:instantiates kno:S000002 ;
+    rdfs:label "실감^세대"@ko ;
+    kno:frequency kno:KN2019-0180-freq-NN-2018 ;
+    kno:languageType "한^한" ;
+    kno:component kno:KN2019-0180-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:urimalTargetCode "1423791" .
+kno:KN2019-0180-c1 a kno:Component ;
+    kno:formative kno:F001557 ;
+    kno:fullForm "실감"@ko ;
+    kno:semanticTag kno:usas-X3.1 ;
+    rdfs:label "실감(實感)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A3p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "실감"@ko .
+kno:KN2019-0180-c2 kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "세대"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

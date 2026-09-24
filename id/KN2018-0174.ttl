@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0174 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0174 kno:component kno:KN2018-0174-c1 ;
+    kno:frequency kno:KN2018-0174-freq-NN-2017 ;
+    kno:indexForm "생리대포비아"@ko ;
+    kno:component kno:KN2018-0174-c2 ;
+    kno:example "¶‘{생리대 포비아’라} 불릴 만큼 여성들의 공포감이 커지자 보건 당국은 OO에 대한 품질 검사를 곧바로 시작하기로 했다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416240> ;
+    kno:origin "(生理帶<영>phobia)" ;
+    kno:componentString "생리대(生理帶), 포비아(phobia)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:slotFiller "생리대(生理帶) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    rdfs:label "생리대 포비아"@ko ;
+    kno:frequency kno:KN2018-0174-freq-NN-2020 ;
+    kno:urimalTargetCode "1416240" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0174-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0174-freq-NN-total ;
+    kno:predicate "느끼다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_영" ;
+    skos:definition "일회용 생리대를 사용하는 것에 대해 두려움이나 거부감을 느끼는 증세. 일회용 생리대에서 인체에 해로운 성분이 검출된 데에서 비롯되었다."@ko ;
+    kno:instantiates kno:S000013 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0174-freq-NN-2019 .
+kno:KN2018-0174-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    rdfs:label "생리대(生理帶)"@ko ;
+    kno:fullForm "생리대"@ko ;
+    kno:surfaceForm "생리대"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001455 ;
+    a kno:Component .
+kno:KN2018-0174-c2 kno:semanticTag kno:usas-E5m ;
+    kno:formative kno:F000018 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "포비아"@ko ;
+    kno:surfaceForm "포비아"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "포비아(phobia)"@ko ;
+    a kno:Component .

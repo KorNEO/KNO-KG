@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0246 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0246 kno:instantiates kno:S000001 ;
+    kno:component kno:KN2015-0246-c1 ;
+    kno:slotFiller "피딩(FEEDing) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1371169" ;
+    kno:example "¶OO 백화점이 2월을 맞아 ‘손주의 날’ 행사를 진행하는 것은 최근 ‘{피딩족’의} 구매력이 점점 증가하고 있고, 이들의 구매가 명절 시즌에 집중되어 있기 때문이다."@ko ;
+    kno:componentString "피딩(FEEDing), -족(族)"@ko ;
+    kno:component kno:KN2015-0246-c2 ;
+    kno:frequency kno:KN2015-0246-freq-NN-2016 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371169> ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2015-0246-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:origin "(<영>FEEDing族)" ;
+    rdfs:label "피딩-족"@ko ;
+    kno:indexForm "피딩족"@ko ;
+    kno:formation kno:W02 ;
+    skos:definition "손주를 돌볼 때 경제적으로 여유가 있고 육아를 즐기며 활동적이고 헌신적인 조부모. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2015-0246-freq-NN-total ;
+    kno:frequency kno:KN2015-0246-freq-NN-2015 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko .
+kno:KN2015-0246-c1 rdfs:label "피딩(FEEDing)"@ko ;
+    kno:formative kno:F006872 ;
+    a kno:Component ;
+    kno:fullForm "피딩"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "피딩"@ko .
+kno:KN2015-0246-c2 rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 .

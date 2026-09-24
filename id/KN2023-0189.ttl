@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0189 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0189-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0189-form ;
-    ontolex:sense kno:KN2023-0189-sense .
-
-kno:KN2023-0189-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003727991> .
-
-kno:KN2023-0189-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0189-freq-nn,
-        kno:KN2023-0189-freq-yt ;
-    ontolex:writtenRep "에바스^증후군"@ko .
-
-kno:KN2023-0189-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0189-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0189-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0189 kno:component kno:KN2023-0189-c1 ;
+    kno:component kno:KN2023-0189-c2 ;
+    rdfs:label "에바스^증후군"@ko ;
+    kno:predicate "생기다"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0189-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:componentString "에바스(EVAS), 증후군(症候群)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OOO은 네 살 때 {에바스 증후군으로} 청력을 잃었다가 여덟 살 때 청력을 회복하기 위해 인공 와우 수술을 받았다고 한다."@ko ;
+    kno:slotFiller "에바스(EVAS) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0189-freq-NN-2022 ;
+    kno:origin "(<영>EVAS症候群)" ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영^한" ;
+    kno:indexForm "에바스증후군"@ko ;
+    kno:instantiates kno:S000033 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EB%B0%94%EC%8A%A4%EC%A6%9D%ED%9B%84%EA%B5%B0> ;
+    skos:definition "귀의 가장 안쪽에 단단한 뼈로 둘러싸인 부분에 있는 전정 수도관이 비정상적으로 커져서 생기는 증후군. =전정 수도관 확장 증후군."@ko .
+kno:KN2023-0189-c1 a kno:Component ;
+    kno:formative kno:F004992 ;
+    kno:fullForm "에바스"@ko ;
+    kno:surfaceForm "에바스"@ko ;
+    rdfs:label "에바스(EVAS)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A13.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0189-c2 kno:fullForm "증후군"@ko ;
+    rdfs:label "증후군(症候群)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "증후군"@ko ;
+    kno:formative kno:F000062 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m .

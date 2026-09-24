@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0380 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0380 kno:component kno:KN2013-0380-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W08 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%B4%EA%B3%A0%EC%8B%9C%EB%8B%A4> ;
+    a ontolex:Word ;
+    rdfs:label "체고시다"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고" ;
+    kno:pos "「형」"@ko ;
+    kno:indexForm "체고시다"@ko ;
+    kno:componentString "최고(最高), -이시다"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0380-c1 ;
+    skos:definition "‘최고이시다(最高이시다)’를 변형한 말로, 가장 으뜸이다."@ko ;
+    kno:example "¶이러한 사연을 접한 대다수의 네티즌들은 금세 훈훈하다는 반응을 보이며 수백 개의 댓글을 달았다. 현재 해당 글에는…“역시 OO이 {체고시다}.” 등 OO에 대한 칭찬도 쉽게 찾을 수 있다."@ko .
+kno:KN2013-0380-c2 rdfs:label "-이시다"@ko ;
+    kno:semanticTag kno:usas-S7.2p ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005401 ;
+    kno:fullForm "이시다"@ko ;
+    kno:surfaceForm "이시다"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2013-0380-c1 kno:role "성분"@ko ;
+    kno:fullForm "최고"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "최고(最高)"@ko ;
+    kno:formative kno:F006109 ;
+    kno:surfaceForm "최고"@ko ;
+    kno:semanticTag kno:usas-A5.1ppp .

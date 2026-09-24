@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0296 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0296 kno:instantiates kno:S000902 ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0296-c2 ;
+    kno:origin "(<영>smart安全<영>block)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372731> ;
+    kno:component kno:KN2016-0296-c1 ;
+    kno:componentString "스마트(smart), 안전(安全), 블록(block)"@ko ;
+    kno:component kno:KN2016-0296-c3 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "보행자가 통행하는 도로에 깔도록 만들어진 블록 형태의 바닥 신호등. 신호등과 연계된 발광 다이오드를 이용하여 신호가 바뀔 때마다 블록의 색깔이 바뀌며, 밝기는 일반 신호등의 10배 이상이다."@ko ;
+    kno:example "¶특히 이 업체는 횡단보도 건널목 보도에 설치하는 엘이디 안전 유도 블록, 이른바 {스마트 안전 블록을} 개발했다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1372731" ;
+    kno:instantiates kno:S001482 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2016-0296-freq-NN-2016 ;
+    kno:slotFiller "블록(block) (1성분)"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "스마트(smart)+안전(安全) (2성분)"@ko ;
+    kno:languageType "영^한^영" ;
+    kno:indexForm "스마트안전블록"@ko ;
+    kno:frequency kno:KN2016-0296-freq-NN-total ;
+    rdfs:label "스마트^안전^블록"@ko .
+kno:KN2016-0296-c2 kno:surfaceForm "안전"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "안전"@ko ;
+    kno:semanticTag kno:usas-A15p ;
+    kno:role "고정항"@ko ;
+    rdfs:label "안전(安全)"@ko ;
+    kno:formative kno:F000180 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0296-c1 a kno:Component ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:formative kno:F000101 ;
+    kno:fullForm "스마트"@ko ;
+    rdfs:label "스마트(smart)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "스마트"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0296-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "블록"@ko ;
+    kno:surfaceForm "블록"@ko ;
+    kno:formative kno:F000518 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "블록(block)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 .

@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0617 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0617 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0617-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0617-form ;
-    ontolex:sense kno:KN2025-0617-sense .
-
-kno:KN2025-0617-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/213/0001324028> .
-
-kno:KN2025-0617-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0617-freq-nn,
-        kno:KN2025-0617-freq-yt ;
-    ontolex:writtenRep "퉁퉁이 창법"@ko .
-
-kno:KN2025-0617-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0617-freq-yt a frac:CorpusFrequency ;
-    rdf:value 487 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0617-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0617 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0617-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%89%81%ED%89%81%EC%9D%B4%20%EC%B0%BD%EB%B2%95> ;
+    kno:component kno:KN2025-0617-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0617-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0617-freq-NN-total ;
+    kno:component kno:KN2025-0617-c2 ;
+    skos:definition "(LLM) 특정 가수나 노래의 창법을 흉내 내어, 발음을 일부러 둔탁하고 뭉개지게 하거나 비음을 과장해 우스꽝스럽게 들리도록 부르는 방식."@ko ;
+    kno:componentString "퉁퉁, -이, 창법(唱法)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:origin "(퉁퉁이唱法)" ;
+    kno:unitType "구"@ko ;
+    rdfs:label "퉁퉁이 창법"@ko ;
+    kno:example "(LLM) 그는 라이브에서 원곡과 다르게 일부러 {퉁퉁이창법을} 섞어 불러 관객들의 웃음을 자아냈다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "퉁퉁이창법"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0617-c3 kno:role "성분"@ko ;
+    rdfs:label "창법(唱法)"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:fullForm "창법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006010 ;
+    kno:surfaceForm "창법"@ko .
+kno:KN2025-0617-c1 rdfs:label "퉁퉁"@ko ;
+    kno:formative kno:F006528 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "퉁퉁"@ko ;
+    kno:surfaceForm "퉁퉁"@ko ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2025-0617-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "-이"@ko ;
+    kno:fullForm "이"@ko ;
+    kno:formative kno:F000227 ;
+    kno:surfaceForm "이"@ko ;
+    kno:semanticTag kno:usas-S2 .

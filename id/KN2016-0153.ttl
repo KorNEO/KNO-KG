@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0153 kno:componentString "머신(machine), 댄스(dance)"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0153-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0153-freq-NN-2015 ;
+    kno:example "¶특히 인트로 부분에 나오는 ‘{머신 댄스’는} 일곱 멤버가 합체를 해야 하는 만큼 호흡이 특히 중요하다."@ko ;
+    kno:predicate "추다"@ko ;
+    rdfs:label "머신 댄스"@ko ;
+    kno:component kno:KN2016-0153-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:slotFiller "머신(machine) (1성분)"@ko ;
+    kno:indexForm "머신댄스"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "여러 사람이 조금도 어긋남이 없이 동작을 기계처럼 정확하게 맞추어 추는 춤."@ko ;
+    kno:origin "(<영>machine dance)" ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000367 ;
+    kno:component kno:KN2016-0153-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B8%EC%8B%A0%20%EB%8C%84%EC%8A%A4> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2016-0153-freq-NN-2016 .
+kno:KN2016-0153-c2 kno:role "고정항"@ko ;
+    kno:fullForm "댄스"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "댄스(dance)"@ko ;
+    kno:surfaceForm "댄스"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000483 .
+kno:KN2016-0153-c1 kno:formative kno:F001290 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "머신(machine)"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "머신"@ko ;
+    kno:surfaceForm "머신"@ko ;
+    a kno:Component .

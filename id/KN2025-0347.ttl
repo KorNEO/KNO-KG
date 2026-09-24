@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0347 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0347 a ontolex:Word ;
-    frac:attestation kno:KN2025-0347-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0347-form ;
-    ontolex:sense kno:KN2025-0347-sense .
-
-kno:KN2025-0347-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002727269> .
-
-kno:KN2025-0347-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0347-freq-nn,
-        kno:KN2025-0347-freq-yt ;
-    ontolex:writtenRep "속옷 수괴"@ko .
-
-kno:KN2025-0347-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0347-freq-yt a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0347-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0347 kno:slotFiller "속옷 (1성분)"@ko ;
+    kno:component kno:KN2025-0347-c2 ;
+    kno:languageType "고_한" ;
+    kno:component kno:KN2025-0347-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "속옷-수괴"@ko ;
+    kno:example "(LLM) 체포영장 집행을 막겠다며 바닥에 드러눕는 장면이 퍼지자, 온라인에서는 그를 {속옷수괴라고} 부르며 비판했다."@ko ;
+    kno:componentString "속옷, 수괴(首魁)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(속옷首魁)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8D%EC%98%B7%EC%88%98%EA%B4%B4> ;
+    kno:indexForm "속옷수괴"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2025-0347-freq-NN-2025 ;
+    skos:definition "(LLM) 속옷 차림으로 바닥에 드러눕는 등 체포ㆍ조사 과정에서 물리적으로 저항하는 모습을 보인 권력자나 사건의 핵심 인물을 비꼬아 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0347-freq-NN-total ;
+    kno:instantiates kno:S000262 ;
+    a kno:Neologism .
+kno:KN2025-0347-c2 kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "수괴"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "수괴"@ko ;
+    kno:formative kno:F000538 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "수괴(首魁)"@ko .
+kno:KN2025-0347-c1 a kno:Component ;
+    kno:formative kno:F004434 ;
+    kno:semanticTag kno:usas-B5 ;
+    rdfs:label "속옷"@ko ;
+    kno:surfaceForm "속옷"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "속옷"@ko ;
+    kno:truncated "false"^^xsd:boolean .

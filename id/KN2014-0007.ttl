@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0007 kno:languageType "한+고" ;
+    kno:component kno:KN2014-0007-c2 ;
+    kno:componentString "강려크(←강력)(強力), -하다"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "강려크-하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EB%A0%A4%ED%81%AC%ED%95%98%EB%8B%A4> ;
+    skos:definition "‘강력하다001’를 변형한 말."@ko ;
+    kno:indexForm "강려크하다"@ko ;
+    kno:example "¶나머지 3명은 잘 크면 {강려크한데} 잘 커서 약한 챔프가 어딨음."@ko ;
+    a kno:Neologism ;
+    kno:pos "「동」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(強力▽하다)" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "강려크(←강력)(強力) (1성분)"@ko ;
+    kno:component kno:KN2014-0007-c1 ;
+    kno:instantiates kno:S000019 ;
+    a ontolex:Word .
+kno:KN2014-0007-c2 kno:semanticTag kno:usas-Z5 ;
+    kno:formative kno:F000019 ;
+    a kno:Component ;
+    rdfs:label "-하다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "하다"@ko ;
+    kno:surfaceForm "하다"@ko .
+kno:KN2014-0007-c1 kno:formative kno:F002145 ;
+    kno:fullForm "강려크"@ko ;
+    kno:semanticTag kno:usas-S1.2.5p ;
+    kno:surfaceForm "강려크"@ko ;
+    a kno:Component ;
+    rdfs:label "강려크(←강력)(強力)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

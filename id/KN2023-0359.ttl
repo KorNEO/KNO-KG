@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0359 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0359 a ontolex:Word ;
-    frac:attestation kno:KN2023-0359-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0359-form ;
-    ontolex:sense kno:KN2023-0359-sense .
-
-kno:KN2023-0359-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003713836> .
-
-kno:KN2023-0359-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0359-freq-nn,
-        kno:KN2023-0359-freq-yt ;
-    ontolex:writtenRep "홈마카세-족"@ko .
-
-kno:KN2023-0359-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0359-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0359-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0359 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%88%EB%A7%88%EC%B9%B4%EC%84%B8%EC%A1%B1> ;
+    kno:frequency kno:KN2023-0359-freq-NN-total ;
+    skos:definition "다양한 특선 요리를 집에서 즐기는 사람. 또는 그런 무리."@ko ;
+    kno:instantiates kno:S000337 ;
+    kno:component kno:KN2023-0359-c2 ;
+    kno:origin "(<영>home<일>←omaka[御任]se族)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0359-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2023-0359-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:componentString "홈(home), (오)마카세(omakase), -족(族)"@ko ;
+    kno:indexForm "홈마카세족"@ko ;
+    kno:frequency kno:KN2023-0359-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "즐기다"@ko ;
+    kno:languageType "(영+일)+한" ;
+    rdfs:label "홈마카세-족"@ko ;
+    kno:slotFiller "(오)마카세(omakase) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶오마카세의 인기에 힘입어 명절 선물 세트에서도 {홈마카세족을} 위한 상품들이 대거 등장하였다."@ko .
+kno:KN2023-0359-c2 kno:fullForm "오마카세"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "마카세"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(오)마카세(omakase)"@ko ;
+    kno:formative kno:F000351 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0359-c1 a kno:Component ;
+    kno:formative kno:F000045 ;
+    rdfs:label "홈(home)"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "홈"@ko ;
+    kno:surfaceForm "홈"@ko .
+kno:KN2023-0359-c3 kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component .

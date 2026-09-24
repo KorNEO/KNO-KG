@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0350 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0350 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0350-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0350-form ;
-    ontolex:sense kno:KN2020-0350-sense .
-
-kno:KN2020-0350-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-03"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/008/0004350673> .
-
-kno:KN2020-0350-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0350-freq-nn,
-        kno:KN2020-0350-freq-yt ;
-    ontolex:writtenRep "코로나 앱"@ko .
-
-kno:KN2020-0350-freq-nn a frac:CorpusFrequency ;
-    rdf:value 253 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0350-freq-yt a frac:CorpusFrequency ;
-    rdf:value 70 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0350-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0350 kno:componentString "코로나(바이러스)(corona virus), 앱(application)"@ko ;
+    kno:frequency kno:KN2020-0350-freq-NN-2022 ;
+    rdfs:label "코로나 앱"@ko ;
+    kno:frequency kno:KN2020-0350-freq-NN-2020 ;
+    kno:component kno:KN2020-0350-c1 ;
+    kno:frequency kno:KN2020-0350-freq-NN-total ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0350-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "앱(application) (1성분)"@ko ;
+    kno:indexForm "코로나앱"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(<영>←corona virus←application)" ;
+    kno:example "¶코로나19가 무섭게 번지는 요즘 확진자가 지나간 동선 정보를 제공하는 {코로나 앱은} 코로나19 방역에 톡톡히 한몫하고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%95%B1> ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "코로나19 확진자 현황이나 동선 따위의 코로나19와 관련된 정보를 확인할 수 있는 응용 프로그램."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000005 ;
+    kno:frequency kno:KN2020-0350-freq-NN-2024 ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2020-0350-c2 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer .
+kno:KN2020-0350-c1 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000003 ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2020-0350-c2 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "앱"@ko ;
+    kno:formative kno:F000555 ;
+    a kno:Component ;
+    kno:surfaceForm "앱"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "앱(application)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

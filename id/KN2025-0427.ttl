@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0427 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0427 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0427-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0427-form ;
-    ontolex:sense kno:KN2025-0427-sense .
-
-kno:KN2025-0427-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/449/0000325248> .
-
-kno:KN2025-0427-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0427-freq-nn,
-        kno:KN2025-0427-freq-yt ;
-    ontolex:writtenRep "영끌 외교"@ko .
-
-kno:KN2025-0427-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0427-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0427-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0427 kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000127 ;
+    kno:origin "(靈끌外交)" ;
+    kno:slotFiller "외교(外交) (1성분)"@ko ;
+    kno:indexForm "영끌외교"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%20%EB%81%8C%20%EC%99%B8%EA%B5%90> ;
+    kno:componentString "영끌(靈끌), 외교(外交)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0427-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "(LLM) 야당은 합의문도 공개되지 않은 채 대규모 투자만 약속했다며, 이런 {영끌외교가} 결국 국민 부담으로 돌아올 수 있다고 비판했다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0427-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0427-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001564 ;
+    kno:slotFiller "영끌(靈끌) (1성분)"@ko ;
+    rdfs:label "영 끌 외교"@ko ;
+    kno:languageType "(한+고)_한" ;
+    skos:definition "(LLM) 국가 간 협상에서 실질적 이익이나 재정적 부담을 충분히 따지지 않은 채, 성과를 내기 위해 과도한 지원ㆍ투자 약속 등을 ‘끌어모아’ 내거는 외교 방식을 비판적으로 이르는 말."@ko ;
+    kno:component kno:KN2025-0427-c1 .
+kno:KN2025-0427-c2 kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    rdfs:label "외교(外交)"@ko ;
+    kno:formative kno:F000295 ;
+    kno:surfaceForm "외교"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "외교"@ko .
+kno:KN2025-0427-c1 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "영끌"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    rdfs:label "영끌(靈끌)"@ko ;
+    kno:formative kno:F000294 ;
+    kno:surfaceForm "영끌"@ko .

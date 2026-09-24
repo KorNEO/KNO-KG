@@ -1,30 +1,49 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0217 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0217 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2024-0217-form ;
-    ontolex:sense kno:KN2024-0217-sense .
-
-kno:KN2024-0217-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0217-freq-nn,
-        kno:KN2024-0217-freq-yt ;
-    ontolex:writtenRep "월천 도사"@ko .
-
-kno:KN2024-0217-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0217-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0217-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0217 kno:origin "(月千道士)" ;
+    kno:componentString "월천(月千), 도사(道士)"@ko ;
+    skos:definition "월 소득이 천만 원이 넘는 사람을 도사에 빗대어 이르는 말."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2024-0217-freq-NN-total ;
+    rdfs:label "월천 도사"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    kno:example "¶전공의 과정을 거치지 않아도, 소송 위험이 적고 수요가 많은 미용 시술을 익혀 개원하면 곧장 {월천 도사가} 될 수 있다."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0217-c1 ;
+    kno:indexForm "월천도사"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%EC%B2%9C%20%EB%8F%84%EC%82%AC> ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0217-freq-NN-2024 ;
+    kno:component kno:KN2024-0217-c2 .
+kno:KN2024-0217-c1 rdfs:label "월천(月千)"@ko ;
+    kno:fullForm "월천"@ko ;
+    kno:formative kno:F005267 ;
+    kno:surfaceForm "월천"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.1p .
+kno:KN2024-0217-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S9 ;
+    rdfs:label "도사(道士)"@ko ;
+    kno:formative kno:F002981 ;
+    kno:fullForm "도사"@ko ;
+    kno:surfaceForm "도사"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0204 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0204 kno:predicate "있다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "영혼(靈魂), 음식(飮食)"@ko ;
+    rdfs:label "영혼 음식"@ko ;
+    kno:frequency kno:KN2019-0204-freq-NN-2018 ;
+    kno:languageType "한_한" ;
+    kno:indexForm "영혼음식"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%ED%98%BC%20%EC%9D%8C%EC%8B%9D> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:example "¶과거엔 간편하게 한 끼를 때우는 데 그쳤다면, 요즘엔 한국인의 {‘영혼 음식’이라고} 불리는 국, 탕, 찌개까지 식품업체들이 만든 간편식이 빠르게 대체하는 중이다."@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2019-0204-freq-NN-2019 ;
+    kno:component kno:KN2019-0204-c1 ;
+    kno:component kno:KN2019-0204-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "음식(飮食) (1성분)"@ko ;
+    skos:definition "자신에게 특별한 의미가 있는 음식. 주로 어린 시절의 추억을 떠올리게 하는 음식이나 평소에 즐겨 자주 먹는 음식을 뜻한다."@ko ;
+    kno:frequency kno:KN2019-0204-freq-NN-total ;
+    kno:instantiates kno:S001567 ;
+    kno:origin "(靈魂飮食)" .
+kno:KN2019-0204-c1 kno:formative kno:F001617 ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "영혼"@ko ;
+    kno:surfaceForm "영혼"@ko ;
+    rdfs:label "영혼(靈魂)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2019-0204-c2 kno:surfaceForm "음식"@ko ;
+    a kno:Component ;
+    kno:fullForm "음식"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005353 ;
+    rdfs:label "음식(飮食)"@ko .

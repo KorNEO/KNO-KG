@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0073 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0073 kno:frequency kno:KN2018-0073-freq-NN-total ;
+    kno:frequency kno:KN2018-0073-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2018-0073-c1 ;
+    kno:frequency kno:KN2018-0073-freq-NN-2024 ;
+    kno:origin "(斷髮病退治짤)" ;
+    kno:frequency kno:KN2018-0073-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0073-freq-NN-2018 ;
+    kno:component kno:KN2018-0073-c2 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2018-0073-freq-NN-2021 ;
+    kno:indexForm "단발병퇴치짤"@ko ;
+    kno:languageType "한_(한+고)" ;
+    kno:example "¶최근 진행된 녹화에서 한때 ‘{단발병 퇴치짤’의} 주인공으로 입에 오르내리던 OOO는 ‘이발 후 첫 방송’이라며 원하는 OO의 주인공으로 OOO 선수와 배우 OOO을 꼽았다."@ko ;
+    a kno:Neologism ;
+    kno:componentString "단발병(斷髮病), 퇴치(退治), 짤"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "충동적으로 머리를 짧게 자르고 싶은 마음을 억제하기 위해서 보는 사진이나 그림. 주로 단발이 잘 어울리지 않는 사람의 사진이나 그림을 가리킨다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0073-freq-NN-2017 ;
+    kno:component kno:KN2018-0073-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EB%B0%9C%EB%B3%91%20%ED%87%B4%EC%B9%98%EC%A7%A4> ;
+    rdfs:label "단발병 퇴치짤"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
+kno:KN2018-0073-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "단발병"@ko ;
+    kno:surfaceForm "단발병"@ko ;
+    rdfs:label "단발병(斷髮病)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002866 ;
+    kno:semanticTag kno:usas-B4 .
+kno:KN2018-0073-c2 a kno:Component ;
+    kno:formative kno:F006519 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "퇴치"@ko ;
+    kno:surfaceForm "퇴치"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    rdfs:label "퇴치(退治)"@ko .
+kno:KN2018-0073-c3 kno:fullForm "짤"@ko ;
+    kno:surfaceForm "짤"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "짤"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:formative kno:F000074 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .

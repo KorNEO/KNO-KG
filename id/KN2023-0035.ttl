@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0035 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0035-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0035-form ;
-    ontolex:sense kno:KN2023-0035-sense .
-
-kno:KN2023-0035-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0013825931> .
-
-kno:KN2023-0035-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0035-freq-nn,
-        kno:KN2023-0035-freq-yt ;
-    ontolex:writtenRep "군졸^교과서"@ko .
-
-kno:KN2023-0035-freq-nn a frac:CorpusFrequency ;
-    rdf:value 46 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0035-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0035-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0035 skos:definition "군국기무처의 의결을 거쳐서 군졸들에게 보급된 우리나라 최초의 순 한글 교과서."@ko ;
+    kno:component kno:KN2023-0035-c1 ;
+    kno:frequency kno:KN2023-0035-freq-NN-2023 ;
+    kno:languageType "한^한" ;
+    kno:example "¶이번에 공개된 {군졸 교과서는} 군졸을 대상으로 예절과 충절의 도리를 설파한 내용을 담고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%B0%EC%A1%B8%EA%B5%90%EA%B3%BC%EC%84%9C> ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(軍卒敎科書)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0035-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "군졸(軍卒), 교과서(敎科書)"@ko ;
+    rdfs:label "군졸^교과서"@ko ;
+    kno:frequency kno:KN2023-0035-freq-NN-total ;
+    kno:indexForm "군졸교과서"@ko .
+kno:KN2023-0035-c1 rdfs:label "군졸(軍卒)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002489 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "군졸"@ko ;
+    kno:surfaceForm "군졸"@ko .
+kno:KN2023-0035-c2 rdfs:label "교과서(敎科書)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:fullForm "교과서"@ko ;
+    kno:surfaceForm "교과서"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002429 .

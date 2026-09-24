@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0305 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0305 a ontolex:Word ;
-    frac:attestation kno:KN2022-0305-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0305-form ;
-    ontolex:sense kno:KN2022-0305-sense .
-
-kno:KN2022-0305-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000765006> .
-
-kno:KN2022-0305-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0305-freq-nn,
-        kno:KN2022-0305-freq-yt ;
-    ontolex:writtenRep "헬시플레저"@ko .
-
-kno:KN2022-0305-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6921 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0305-freq-yt a frac:CorpusFrequency ;
-    rdf:value 35 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0305-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:component kno:KN2022-0305-c2 ;
+    kno:slotFiller "플레저(pleasure) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    skos:definition "건강을 즐겁고 편리하게 관리하는 일. 건강한 상태를 의미하는 ‘헬시(healty)’와 즐거움을 의미하는 ‘플레저(pleasure)’를 결합하여 만든 말이다."@ko ;
+    kno:urimalTargetCode "1618574" ;
+    kno:origin "(<영>▼healthy pleasure)" ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1618574> ;
+    kno:instantiates kno:S001772 ;
+    kno:componentString "헬시(healthy), 플레저(pleasure)"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:predicate "관리하다"@ko ;
+    kno:frequency kno:KN2022-0305-freq-NN-2025 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0305-freq-NN-2023 ;
+    rdfs:label "헬시플레저"@ko ;
+    kno:frequency kno:KN2022-0305-freq-NN-2022 ;
+    kno:indexForm "헬시플레저"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0305-freq-NN-total ;
+    kno:frequency kno:KN2022-0305-freq-NN-2021 ;
+    kno:example "¶요즘 젊은 세대들 사이에서는 즐거운 건강 관리를 뜻하는 ‘{헬시플레저’가} 트렌드로 자리잡기 시작했다."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0305-freq-NN-2024 ;
+    kno:component kno:KN2022-0305-c1 .
+kno:KN2022-0305-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006847 ;
+    kno:semanticTag kno:usas-E4.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "플레저"@ko ;
+    kno:fullForm "플레저"@ko ;
+    rdfs:label "플레저(pleasure)"@ko .
+kno:KN2022-0305-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002012 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "헬시"@ko ;
+    rdfs:label "헬시(healthy)"@ko ;
+    kno:surfaceForm "헬시"@ko .

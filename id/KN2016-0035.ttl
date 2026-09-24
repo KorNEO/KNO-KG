@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0035 kno:frequency kno:KN2016-0035-freq-NN-total ;
+    rdfs:label "구출^오페라"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AC%EC%B6%9C%EC%98%A4%ED%8E%98%EB%9D%BC> ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한^영" ;
+    skos:definition "주인공을 위험한 상태에서 구하여 내는 내용을 담고 있는 오페라."@ko ;
+    kno:indexForm "구출오페라"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:origin "(救出<영>opera)" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0035-c1 ;
+    kno:example "¶모차르트의 마지막 오페라 ‘마술피리’와 같은 시기인 1791년에 초연된 OO는 ‘{구출 오페라’의} 효시였다."@ko ;
+    kno:frequency kno:KN2016-0035-freq-NN-2020 ;
+    kno:component kno:KN2016-0035-c2 ;
+    kno:componentString "구출(救出), 오페라(opera)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0035-freq-NN-2015 .
+kno:KN2016-0035-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "구출"@ko ;
+    kno:surfaceForm "구출"@ko ;
+    kno:formative kno:F002455 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "구출(救出)"@ko .
+kno:KN2016-0035-c2 rdfs:label "오페라(opera)"@ko ;
+    kno:formative kno:F005131 ;
+    kno:surfaceForm "오페라"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "오페라"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K2 .

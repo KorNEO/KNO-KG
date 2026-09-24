@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0279 kno:component kno:KN2018-0279-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%80%ED%96%89%ED%8C%A8%EC%8B%B1> ;
+    skos:definition "은행을 직접 거치지 않고, 공공 거래 장부인 블록 체인상에 등록된 자산을 개인 간에 거래하는 일을 이르는 말."@ko ;
+    kno:component kno:KN2018-0279-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "은행^패싱"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:componentString "은행(銀行), 패싱(passing)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(銀行<영>passing)" ;
+    kno:slotFiller "은행(銀行) (1성분)"@ko ;
+    kno:languageType "한^영" ;
+    kno:indexForm "은행패싱"@ko ;
+    kno:instantiates kno:S001106 ;
+    kno:frequency kno:KN2018-0279-freq-NN-2017 ;
+    a kno:Neologism ;
+    kno:example "¶이른바 은행 없이도 담보 대출이 가능한 ‘{은행 패싱}’ 시대가 오는 것이다."@ko ;
+    kno:frequency kno:KN2018-0279-freq-NN-total .
+kno:KN2018-0279-c2 rdfs:label "패싱(passing)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.8m ;
+    kno:surfaceForm "패싱"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "패싱"@ko ;
+    kno:formative kno:F000988 ;
+    a kno:Component .
+kno:KN2018-0279-c1 kno:semanticTag kno:usas-I1 ;
+    rdfs:label "은행(銀行)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "은행"@ko ;
+    kno:surfaceForm "은행"@ko ;
+    kno:formative kno:F001686 .

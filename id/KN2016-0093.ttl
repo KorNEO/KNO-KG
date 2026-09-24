@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0093 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0093 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372528> ;
+    kno:frequency kno:KN2016-0093-freq-NN-2025 ;
+    kno:frequency kno:KN2016-0093-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0093-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0093-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0093-freq-NN-2018 ;
+    kno:component kno:KN2016-0093-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0093-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:urimalTargetCode "1372528" ;
+    kno:indexForm "대안우파"@ko ;
+    kno:frequency kno:KN2016-0093-freq-NN-2023 ;
+    kno:componentString "대안(代案), 우파(右派)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0093-freq-NN-2022 ;
+    kno:frequency kno:KN2016-0093-freq-NN-2016 ;
+    kno:instantiates kno:S000292 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "우파(右派) (1성분)"@ko ;
+    kno:component kno:KN2016-0093-c1 ;
+    kno:frequency kno:KN2016-0093-freq-NN-2021 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0093-freq-NN-2017 ;
+    kno:example "¶반이민 정책을 내건 OOO 지지자인 ‘{대안 우파’라는} 온라인 보수 성향 네티즌들이 퍼뜨리는 것으로 알려졌다."@ko ;
+    rdfs:label "대안^우파"@ko ;
+    skos:definition "미국의 백인 우월주의를 주창하는 보수 단체. 주류를 이루는 보수 단체를 대신하며 이슬람과 페미니즘, 동성애 등을 배척하고 반유대주의를 주장한다. =알트라이트."@ko ;
+    kno:origin "(代案右派)" ;
+    kno:languageType "한^한" ;
+    kno:activeYears "10"^^xsd:integer .
+kno:KN2016-0093-c2 kno:formative kno:F005224 ;
+    a kno:Component ;
+    rdfs:label "우파(右派)"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "우파"@ko ;
+    kno:surfaceForm "우파"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0093-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "대안(代案)"@ko ;
+    kno:formative kno:F000482 ;
+    kno:fullForm "대안"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "대안"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:role "고정항"@ko .

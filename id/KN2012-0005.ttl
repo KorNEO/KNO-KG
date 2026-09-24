@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0005 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0005 kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "간장(간醬) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0005-freq-NN-2016 ;
+    kno:frequency kno:KN2012-0005-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2012-0005-freq-NN-2012 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=973025> ;
+    kno:frequency kno:KN2012-0005-freq-NN-2017 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0005-c1 ;
+    skos:definition "실속형 소비를 하는 여성을 비유적으로 이르는 말."@ko ;
+    kno:indexForm "간장녀"@ko ;
+    kno:frequency kno:KN2012-0005-freq-NN-2015 ;
+    kno:frequency kno:KN2012-0005-freq-NN-2013 ;
+    rdfs:label "간장-녀"@ko ;
+    kno:component kno:KN2012-0005-c2 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:componentString "간장(간醬), -녀(女)"@ko ;
+    kno:origin "(간醬女)" ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W02 ;
+    kno:example "¶이들과 정반대로 자기 과시보다 실속을 중시하는 짠물 소비 패턴을 지닌 ‘{간장녀’가} 떠오르고 있다."@ko ;
+    kno:instantiates kno:S000009 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:languageType "(고+한)+한" ;
+    kno:frequency kno:KN2012-0005-freq-NN-2014 ;
+    kno:urimalTargetCode "973025" .
+kno:KN2012-0005-c1 kno:fullForm "간장"@ko ;
+    kno:surfaceForm "간장"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "간장(간醬)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002101 .
+kno:KN2012-0005-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    kno:formative kno:F000004 .

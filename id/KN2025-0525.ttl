@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0525 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0525 a ontolex:Word ;
-    frac:attestation kno:KN2025-0525-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0525-form ;
-    ontolex:sense kno:KN2025-0525-sense .
-
-kno:KN2025-0525-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002198608> .
-
-kno:KN2025-0525-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0525-freq-nn,
-        kno:KN2025-0525-freq-yt ;
-    ontolex:writtenRep "준찍명"@ko .
-
-kno:KN2025-0525-freq-nn a frac:CorpusFrequency ;
-    rdf:value 101 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0525-freq-yt a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0525-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0525 skos:definition "(LLM) 대통령 선거에서 이준석 후보에게 투표하는 것이 결과적으로 이재명 후보의 당선에 유리하게 작용한다는 주장 또는 이를 경계하는 표현."@ko ;
+    kno:example "(LLM) 일부 보수 지지층은 표가 분산되면 안 된다며 {준찍명}을 거론하며 전략적 투표를 주장했다."@ko ;
+    kno:componentString "(이)준(석), 찍(다), (이재)명"@ko ;
+    kno:slotFiller "(이)준(석)+찍(다) (2성분)"@ko ;
+    kno:frequency kno:KN2025-0525-freq-NN-total ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000750 ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%80%EC%B0%8D%EB%AA%85> ;
+    kno:indexForm "준찍명"@ko ;
+    kno:frequency kno:KN2025-0525-freq-NN-2025 ;
+    kno:component kno:KN2025-0525-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "한+고+한" ;
+    kno:predicate "경계하다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(俊찍明)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0525-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "준찍명"@ko ;
+    kno:component kno:KN2025-0525-c1 .
+kno:KN2025-0525-c2 rdfs:label "찍(다)"@ko ;
+    kno:surfaceForm "찍"@ko ;
+    kno:fullForm "찍다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-C1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000593 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0525-c3 kno:fullForm "이재명"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "(이재)명"@ko ;
+    kno:formative kno:F001302 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "명"@ko .
+kno:KN2025-0525-c1 kno:surfaceForm "준"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005813 ;
+    kno:fullForm "이준석"@ko ;
+    rdfs:label "(이)준(석)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z1 .

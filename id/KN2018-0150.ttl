@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0150 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0150 kno:frequency kno:KN2018-0150-freq-NN-2020 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000008 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0150-freq-NN-total ;
+    kno:indexForm "뷰세권"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0150-freq-NN-2021 ;
+    kno:frequency kno:KN2018-0150-freq-NN-2022 ;
+    skos:definition "숲, 강, 호수 따위가 주변에 있어 전망이 좋은 주거 지역의 범위."@ko ;
+    kno:slotFiller "뷰(view) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0150-freq-NN-2017 ;
+    kno:origin "(<영>view勢圈)" ;
+    kno:slotFiller "(역)세권(驛勢圈) (1성분)"@ko ;
+    kno:urimalTargetCode "1416217" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0150-freq-NN-2023 ;
+    kno:languageType "(영+한)+한" ;
+    kno:instantiates kno:S001413 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416217> ;
+    kno:component kno:KN2018-0150-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:frequency kno:KN2018-0150-freq-NN-2025 ;
+    rdfs:label "뷰세-권"@ko ;
+    kno:component kno:KN2018-0150-c2 ;
+    kno:componentString "뷰(view), (역)세권(驛勢圈)"@ko ;
+    kno:frequency kno:KN2018-0150-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0150-freq-NN-2019 ;
+    kno:frequency kno:KN2018-0150-freq-NN-2024 ;
+    kno:example "¶특히 강이나 호수, 숲 등 쾌적한 자연환경을 품은 오피스텔의 경우 ‘{뷰세권’으로} 불리며 높은 인기를 이어 가고 있다."@ko ;
+    kno:formation kno:W05 .
+kno:KN2018-0150-c1 a kno:Component ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "뷰(view)"@ko ;
+    kno:fullForm "뷰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000783 ;
+    kno:surfaceForm "뷰"@ko .
+kno:KN2018-0150-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    a kno:Component ;
+    kno:surfaceForm "세권"@ko ;
+    kno:fullForm "역세권"@ko ;
+    kno:formative kno:F000012 ;
+    rdfs:label "(역)세권(驛勢圈)"@ko .

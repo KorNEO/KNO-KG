@@ -1,36 +1,70 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0404 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0404 a ontolex:Word ;
-    frac:attestation kno:KN2024-0404-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0404-form ;
-    ontolex:sense kno:KN2024-0404-sense .
-
-kno:KN2024-0404-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005276643> .
-
-kno:KN2024-0404-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0404-freq-nn,
-        kno:KN2024-0404-freq-yt ;
-    ontolex:writtenRep "흔싸귀비"@ko .
-
-kno:KN2024-0404-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0404-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0404-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0404 kno:component kno:KN2024-0404-c4 ;
+    kno:componentString "흔(하다), 싸(다), 귀(하다), 비(싸다)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(흔싸貴비)" ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0404-freq-NN-total ;
+    rdfs:label "흔싸귀비"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "‘흔하면 싸고 귀하면 비쌈’을 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2024-0404-freq-NN-2024 ;
+    kno:component kno:KN2024-0404-c3 ;
+    kno:indexForm "흔싸귀비"@ko ;
+    a ontolex:Word ;
+    kno:languageType "고+고+한+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9D%94%EC%8B%B8%EA%B7%80%EB%B9%84> ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶{흔싸귀비로} 일컬어지는 시장 경제 원칙에 따라서 리셀러들이 고가로 되팔이를 하는 것이 당연하다는 의견도 있다."@ko ;
+    kno:component kno:KN2024-0404-c1 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0404-c2 .
+kno:KN2024-0404-c4 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.3p ;
+    kno:surfaceForm "비"@ko ;
+    rdfs:label "비(싸다)"@ko ;
+    kno:fullForm "비싸다"@ko ;
+    kno:formative kno:F004059 .
+kno:KN2024-0404-c3 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "귀(하다)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "귀하다"@ko ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "귀"@ko ;
+    kno:formative kno:F002502 .
+kno:KN2024-0404-c1 a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "흔"@ko ;
+    kno:fullForm "흔하다"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A6.2p ;
+    rdfs:label "흔(하다)"@ko ;
+    kno:formative kno:F002041 .
+kno:KN2024-0404-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F004754 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.3m ;
+    rdfs:label "싸(다)"@ko ;
+    kno:fullForm "싸다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "싸"@ko .

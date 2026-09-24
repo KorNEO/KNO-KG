@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0279 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0279-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0279-form ;
-    ontolex:sense kno:KN2022-0279-sense .
-
-kno:KN2022-0279-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0002990938> .
-
-kno:KN2022-0279-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0279-freq-nn,
-        kno:KN2022-0279-freq-yt ;
-    ontolex:writtenRep "쿠팡^세대"@ko .
-
-kno:KN2022-0279-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0279-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0279-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0279 kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "세대(世代) (1성분)"@ko ;
+    skos:definition "전자 상거래 플랫폼인 ‘쿠팡’ 등을 사용하여 온라인에서 편리하게 물품을 구매하고 매우 빠르게 배송받는 생활 을 일상적으로 경험하며 성장한 세대."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2022-0279-c1 ;
+    rdfs:label "쿠팡^세대"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "쿠팡(Coupang) (1성분)"@ko ;
+    kno:languageType "영^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BF%A0%ED%8C%A1%EC%84%B8%EB%8C%80> ;
+    kno:frequency kno:KN2022-0279-freq-NN-total ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0279-freq-NN-2021 ;
+    kno:instantiates kno:S000002 ;
+    kno:component kno:KN2022-0279-c2 ;
+    kno:componentString "쿠팡(Coupang), 세대(世代)"@ko ;
+    kno:origin "(Coupang世代)" ;
+    kno:indexForm "쿠팡세대"@ko ;
+    kno:example "¶이들이 ‘{쿠팡 세대’로} 성장하였을 때가 기존 유통사의 진짜 위기일 것이다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001699 ;
+    kno:pos "「구」"@ko .
+kno:KN2022-0279-c1 kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:fullForm "쿠팡"@ko ;
+    kno:surfaceForm "쿠팡"@ko ;
+    rdfs:label "쿠팡(Coupang)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000963 ;
+    kno:semanticTag kno:usas-I2.2 .
+kno:KN2022-0279-c2 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "세대(世代)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "세대"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T3 .

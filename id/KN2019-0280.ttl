@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0280 kno:component kno:KN2019-0280-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1437581> ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2019-0280-freq-NN-2018 ;
+    kno:indexForm "퇴튜던트"@ko ;
+    a ontolex:Word ;
+    kno:origin "(退<영>←student)" ;
+    kno:frequency kno:KN2019-0280-freq-NN-2023 ;
+    kno:urimalTargetCode "1437581" ;
+    kno:example "¶주 52시간 근무제가 시행되면서 직장인들의 여가 생활에 대한 투자가 높아진 가운데 OO에서도 퇴근 후 배움에 열중하는 직장인인 {‘퇴튜던트’가} 증가하고 있는 것으로 나타났다."@ko ;
+    skos:definition "퇴근한 후에 공부하는 직장인을 이르는 말. ‘퇴근’과 학생을 뜻하는 ‘스튜던트(student)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0280-freq-NN-2019 ;
+    kno:component kno:KN2019-0280-c2 ;
+    kno:frequency kno:KN2019-0280-freq-NN-total ;
+    kno:componentString "퇴(근)(退), (스)튜던트(student)"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "퇴튜던트"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0280-freq-NN-2022 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko .
+kno:KN2019-0280-c1 kno:surfaceForm "퇴"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000976 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "퇴근"@ko ;
+    rdfs:label "퇴(근)(退)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "성분"@ko .
+kno:KN2019-0280-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "(스)튜던트(student)"@ko ;
+    kno:formative kno:F006531 ;
+    kno:fullForm "스튜던트"@ko ;
+    kno:surfaceForm "튜던트"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "2"^^xsd:integer .

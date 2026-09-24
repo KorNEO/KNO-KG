@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0310 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0310 a ontolex:Word ;
-    frac:attestation kno:KN2022-0310-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0310-form ;
-    ontolex:sense kno:KN2022-0310-sense .
-
-kno:KN2022-0310-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0002895231> .
-
-kno:KN2022-0310-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0310-freq-nn,
-        kno:KN2022-0310-freq-yt ;
-    ontolex:writtenRep "회슬라"@ko .
-
-kno:KN2022-0310-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0310-freq-yt a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0310-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0310 a kno:Neologism ;
+    kno:example "¶테슬라가 찻값을 수시로 올렸다 내렸다를 반복하자 이를 횟집에 빗대 ‘{회슬라’냐는} 말이 나오고 있다."@ko ;
+    skos:definition "제품의 가격을 자주 바꾸는 미국 자동차 기업 ‘테슬라’를 시기에 따라 가격의 변동이 큰 생선회에 빗대어 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0310-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9A%8C%EC%8A%AC%EB%9D%BC> ;
+    kno:indexForm "회슬라"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "회(膾), (테)슬라(Tesla)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0310-freq-NN-total ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0310-freq-NN-2023 ;
+    kno:origin "(膾←Tesla)" ;
+    kno:frequency kno:KN2022-0310-freq-NN-2022 ;
+    rdfs:label "회슬라"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2022-0310-c1 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2022-0310-freq-NN-2024 .
+kno:KN2022-0310-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004615 ;
+    kno:fullForm "테슬라"@ko ;
+    rdfs:label "(테)슬라(Tesla)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "슬라"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:semanticTag kno:usas-Z3 .
+kno:KN2022-0310-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "회"@ko ;
+    kno:formative kno:F007173 ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "회(膾)"@ko ;
+    kno:fullForm "회"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0400 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0400 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0400-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0400-form ;
-    ontolex:sense kno:KN2024-0400-sense .
-
-kno:KN2024-0400-att-nn a frac:Attestation ;
-    dcterms:date "2023-12-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003419196> .
-
-kno:KN2024-0400-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0400-freq-nn,
-        kno:KN2024-0400-freq-yt ;
-    ontolex:writtenRep "환형^유치율"@ko .
-
-kno:KN2024-0400-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0400-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0400-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0400 kno:predicate "실행되다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0400-c1 ;
+    kno:indexForm "환형유치율"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶대검찰청에 따르면 벌금형 대상 범죄자 중 노역형으로 전환된 비율인 {환형 유치율이} 지난달 기준 6.76%로 나타났다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "환형^유치율"@ko ;
+    kno:languageType "한^한" ;
+    kno:frequency kno:KN2024-0400-freq-NN-2023 ;
+    skos:definition "벌금이나 과료를 내지 못하는 사람을 노역장에 유치하는 등의 환형이 실행되는 비율."@ko ;
+    kno:origin "(換刑留置率)" ;
+    kno:frequency kno:KN2024-0400-freq-NN-total ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0400-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%ED%98%95%EC%9C%A0%EC%B9%98%EC%9C%A8> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "환형(換刑), 유치율(留置率)"@ko .
+kno:KN2024-0400-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "환형"@ko ;
+    rdfs:label "환형(換刑)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F007160 ;
+    a kno:Component ;
+    kno:fullForm "환형"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0400-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "유치율"@ko ;
+    kno:surfaceForm "유치율"@ko ;
+    kno:semanticTag kno:usas-N2 ;
+    kno:formative kno:F005326 ;
+    rdfs:label "유치율(留置率)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0288 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0288 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0288-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0288-form ;
-    ontolex:sense kno:KN2024-0288-sense .
-
-kno:KN2024-0288-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0007328431> .
-
-kno:KN2024-0288-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0288-freq-nn,
-        kno:KN2024-0288-freq-yt ;
-    ontolex:writtenRep "지역^필수^의사제"@ko .
-
-kno:KN2024-0288-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1573 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0288-freq-yt a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0288-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0288 kno:instantiates kno:S001662 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0288-c1 ;
+    kno:frequency kno:KN2024-0288-freq-NN-2025 ;
+    kno:example "¶보건 복지부는 지역 의료 체계의 붕괴를 막기 위해서 {지역 필수 의사제} 도입을 추진하기로 했다."@ko ;
+    kno:frequency kno:KN2024-0288-freq-NN-total ;
+    a kno:Neologism ;
+    kno:componentString "지역(地域), 필수(必須), 의사제(醫師制)"@ko ;
+    kno:frequency kno:KN2024-0288-freq-NN-2024 ;
+    kno:languageType "한^한^한" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:predicate "하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%97%AD%ED%95%84%EC%88%98%EC%9D%98%EC%82%AC%EC%A0%9C> ;
+    skos:definition "의과 대학 입학생 중 일정 비율을 지역 인재 전형으로 선발하는 대신 졸업 이후 일정 기간 해당 지역에서 근무하도록 하는 제도. ‘계약형 지역 필수 의사 제도’를 줄여 이르는 말이다. =지역 필수 의사 제도."@ko ;
+    kno:indexForm "지역필수의사제"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0288-c3 ;
+    rdfs:label "지역^필수^의사제"@ko ;
+    kno:origin "(地域必須醫師制)" ;
+    kno:slotFiller "의사제(醫師制) (1성분)"@ko ;
+    kno:component kno:KN2024-0288-c2 .
+kno:KN2024-0288-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000063 ;
+    kno:surfaceForm "지역"@ko ;
+    a kno:Component ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:fullForm "지역"@ko ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2024-0288-c3 kno:semanticTag kno:usas-B3 ;
+    rdfs:label "의사제(醫師制)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005370 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "의사제"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "의사제"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0288-c2 a kno:Component ;
+    kno:formative kno:F000436 ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:fullForm "필수"@ko ;
+    rdfs:label "필수(必須)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "필수"@ko ;
+    kno:truncated "false"^^xsd:boolean .

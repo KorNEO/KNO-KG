@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0190 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0190 kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%ED%88%AC> ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:example "¶고백하는 이들은 이러한 {‘약투’를} 통해 부작용을 고려하지 않고 약물 투입을 하려는 일반인들을 막자는 취지에서 말을 꺼낸다."@ko ;
+    kno:slotFiller "약(물)(藥) (1성분)"@ko ;
+    kno:componentString "약(물)(藥), (미)투(me-too)"@ko ;
+    kno:instantiates kno:S000112 ;
+    a kno:Neologism ;
+    rdfs:label "약투"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "약물과 ‘나도 당했다’는 의미의 ‘미 투(me too)’를 결합하여 만든 말로, 자신이 몰래 행한 약물 투약 경험을 밝히는 일. ⇒규범 표기는 미확정이다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "밝히다"@ko ;
+    kno:component kno:KN2019-0190-c2 ;
+    kno:component kno:KN2019-0190-c1 ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:origin "(藥<영>←me-too)" ;
+    kno:indexForm "약투"@ko .
+kno:KN2019-0190-c2 kno:fullForm "미투"@ko ;
+    kno:surfaceForm "투"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000241 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    rdfs:label "(미)투(me-too)"@ko .
+kno:KN2019-0190-c1 kno:formative kno:F004912 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "약(물)(藥)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "약물"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "약"@ko ;
+    a kno:Component .

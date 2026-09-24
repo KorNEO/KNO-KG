@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0265 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0265 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0265-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0265-form ;
-    ontolex:sense kno:KN2022-0265-sense .
-
-kno:KN2022-0265-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/374/0000269852> .
-
-kno:KN2022-0265-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0265-freq-nn,
-        kno:KN2022-0265-freq-yt ;
-    ontolex:writtenRep "첫^만남^지원금"@ko .
-
-kno:KN2022-0265-freq-nn a frac:CorpusFrequency ;
-    rdf:value 47 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0265-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0265-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0265 kno:component kno:KN2022-0265-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "만남+지원금(支援金) (2성분)"@ko ;
+    kno:frequency kno:KN2022-0265-freq-NN-total ;
+    skos:definition "저출산 문제를 해결하기 위해 아이를 낳은 부모에게 제공되는 지원금. 2022년부터 시작된 제도로, 출생 아동당 200만 원이 바우처 형식으로 지급된다."@ko ;
+    kno:component kno:KN2022-0265-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0265-freq-NN-2024 ;
+    kno:languageType "고^고^한" ;
+    rdfs:label "첫^만남^지원금"@ko ;
+    kno:frequency kno:KN2022-0265-freq-NN-2025 ;
+    kno:predicate "제공되다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AB%EB%A7%8C%EB%82%A8%EC%A7%80%EC%9B%90%EA%B8%88> ;
+    kno:slotFiller "첫+만남 (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0265-freq-NN-2023 ;
+    kno:componentString "첫, 만남, 지원금(支援金)"@ko ;
+    kno:origin "(첫만남支援金)" ;
+    kno:instantiates kno:S000076 ;
+    kno:instantiates kno:S001676 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0265-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0265-c1 ;
+    kno:indexForm "첫만남지원금"@ko ;
+    kno:example "¶첫째 아이를 낳을 경우, 출산 지원금뿐만 아니라 {첫만남 지원금까지} 모두 받을 수 있다."@ko ;
+    kno:frequency kno:KN2022-0265-freq-NN-2021 ;
+    a ontolex:MultiwordExpression .
+kno:KN2022-0265-c3 rdfs:label "지원금(支援金)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000036 ;
+    kno:fullForm "지원금"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "지원금"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2022-0265-c2 kno:surfaceForm "만남"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "만남"@ko ;
+    kno:formative kno:F003366 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "만남"@ko .
+kno:KN2022-0265-c1 kno:semanticTag kno:usas-N4 ;
+    kno:formative kno:F001822 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "첫"@ko ;
+    kno:surfaceForm "첫"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "첫"@ko .

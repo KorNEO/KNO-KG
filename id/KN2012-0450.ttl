@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0450 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0450 kno:year "2012"^^xsd:gYear ;
+    skos:definition "반려동물을 기르는 비용으로 인해 점점 가난해지는 사람."@ko ;
+    kno:componentString "펫(pet), 푸어(poor)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000232 ;
+    kno:origin "(▼pet poor)" ;
+    kno:instantiates kno:S001129 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357148> ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2012-0450-freq-NN-total ;
+    kno:slotFiller "푸어(poor) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2012-0450-freq-NN-2017 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶자발적 가난을 선택한 ‘{펫푸어’들이} 늘고 있다."@ko ;
+    kno:component kno:KN2012-0450-c1 ;
+    rdfs:label "펫-푸어"@ko ;
+    kno:slotFiller "펫(pet) (1성분)"@ko ;
+    kno:languageType "영+영" ;
+    kno:predicate "가난해지다"@ko ;
+    kno:urimalTargetCode "1357148" ;
+    kno:indexForm "펫푸어"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2012-0450-c2 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism .
+kno:KN2012-0450-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "펫"@ko ;
+    rdfs:label "펫(pet)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "펫"@ko ;
+    kno:formative kno:F000054 .
+kno:KN2012-0450-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000050 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "푸어"@ko ;
+    kno:surfaceForm "푸어"@ko ;
+    rdfs:label "푸어(poor)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m .

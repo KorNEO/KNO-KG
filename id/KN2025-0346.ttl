@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0346 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0346 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0346-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0346-form ;
-    ontolex:sense kno:KN2025-0346-sense .
-
-kno:KN2025-0346-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0002537930> .
-
-kno:KN2025-0346-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0346-freq-nn,
-        kno:KN2025-0346-freq-yt ;
-    ontolex:writtenRep "소버린 블록 체인"@ko .
-
-kno:KN2025-0346-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0346-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0346-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0346 kno:frequency kno:KN2025-0346-freq-NN-total ;
+    kno:origin "(sovereign block chain)" ;
+    kno:component kno:KN2025-0346-c2 ;
+    kno:languageType "영_영_영" ;
+    kno:indexForm "소버린블록체인"@ko ;
+    kno:example "(LLM) 정부는 전자비자 발급과 복지 수당 지급을 한 시스템에서 처리하기 위해 {소버린블록체인을} 도입하는 방안을 검토했다."@ko ;
+    kno:component kno:KN2025-0346-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:componentString "소버린(sovereign), 블록(block), 체인(chain)"@ko ;
+    kno:frequency kno:KN2025-0346-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0346-c3 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%B2%84%EB%A6%B0%20%EB%B8%94%EB%A1%9D%20%EC%B2%B4%EC%9D%B8> ;
+    rdfs:label "소버린 블록 체인"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "(LLM) 국가가 운영 주체가 되어 데이터와 거래 기록의 관리ㆍ통제 권한을 자국 내에 두고, 행정ㆍ공공서비스ㆍ금융 등 공공 영역의 디지털 처리를 지원하도록 설계한 블록체인(분산형 원장) 기반 인프라."@ko .
+kno:KN2025-0346-c2 rdfs:label "블록(block)"@ko ;
+    kno:fullForm "블록"@ko ;
+    kno:surfaceForm "블록"@ko ;
+    kno:formative kno:F000518 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0346-c1 kno:fullForm "소버린"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004407 ;
+    rdfs:label "소버린(sovereign)"@ko ;
+    kno:surfaceForm "소버린"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:role "성분"@ko .
+kno:KN2025-0346-c3 kno:fullForm "체인"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "체인(chain)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F006066 ;
+    kno:surfaceForm "체인"@ko .

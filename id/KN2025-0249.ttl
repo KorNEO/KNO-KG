@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0249 a ontolex:Word ;
-    frac:attestation kno:KN2025-0249-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0249-form ;
-    ontolex:sense kno:KN2025-0249-sense .
-
-kno:KN2025-0249-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002465210> .
-
-kno:KN2025-0249-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0249-freq-nn,
-        kno:KN2025-0249-freq-yt ;
-    ontolex:writtenRep "미꼰"@ko .
-
-kno:KN2025-0249-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0249-freq-yt a frac:CorpusFrequency ;
-    rdf:value 108 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0249-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0249 kno:origin "(<영>←media꼰)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "위축시키다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0249-c1 ;
+    kno:component kno:KN2025-0249-c2 ;
+    kno:example "(LLM) 예능에서 가벼운 농담이 나왔을 뿐인데도 {미꼰이} 몰려와 문제 삼는 바람에 제작진이 편집 방향을 바꿨다."@ko ;
+    kno:componentString "미(디어)(media), 꼰(대)"@ko ;
+    kno:instantiates kno:S000363 ;
+    rdfs:label "미꼰"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "미(디어)(media) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "미꼰"@ko ;
+    kno:frequency kno:KN2025-0249-freq-NN-total ;
+    kno:formation kno:W06 ;
+    kno:languageType "영+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EA%BC%B0> ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 미디어 콘텐츠를 대하는 태도가 지나치게 엄격하고 훈계조여서, 제작ㆍ표현의 자유를 위축시키는 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2025-0249-freq-NN-2025 ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0249-c1 rdfs:label "미(디어)(media)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:formative kno:F003581 ;
+    kno:surfaceForm "미"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "미디어"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0249-c2 kno:surfaceForm "꼰"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:semanticTag kno:usas-S2.2 ;
+    rdfs:label "꼰(대)"@ko ;
+    kno:fullForm "꼰대"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000686 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0221 a ontolex:Word ;
-    frac:attestation kno:KN2023-0221-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0221-form ;
-    ontolex:sense kno:KN2023-0221-sense .
-
-kno:KN2023-0221-att-nn a frac:Attestation ;
-    dcterms:date "2022-12-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001572305> .
-
-kno:KN2023-0221-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0221-freq-nn,
-        kno:KN2023-0221-freq-yt ;
-    ontolex:writtenRep "이찍남"@ko .
-
-kno:KN2023-0221-freq-nn a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0221-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1994 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0221-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0221 kno:frequency kno:KN2023-0221-freq-NN-2023 ;
+    kno:componentString "이(二), 찍(다), 남(자)(男子)"@ko ;
+    kno:languageType "한+고+한" ;
+    kno:frequency kno:KN2023-0221-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0221-freq-NN-2022 ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000623 ;
+    kno:origin "(二찍男)" ;
+    skos:definition "대통령 선거 또는 국회 의원 선거에서 ‘기호 이 번을 찍은 이십 대 남성’을 줄여 이르는 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:slotFiller "이(二)+찍(다) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "이찍남"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0221-freq-NN-total ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EC%B0%8D%EB%82%A8> ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0221-c1 ;
+    kno:component kno:KN2023-0221-c2 ;
+    kno:component kno:KN2023-0221-c3 ;
+    kno:frequency kno:KN2023-0221-freq-NN-2024 ;
+    kno:example "¶일부 정치 세력은 기호 2번을 찍은 이십 대 남자들의 생각을 이해하려고 하기보다는, 그들을 ‘{이찍남’이라고} 비하하기만 한다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    rdfs:label "이찍남"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0221-c1 kno:surfaceForm "이"@ko ;
+    rdfs:label "이(二)"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F001689 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "이"@ko .
+kno:KN2023-0221-c2 kno:formative kno:F000593 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "찍(다)"@ko ;
+    kno:surfaceForm "찍"@ko ;
+    kno:fullForm "찍다"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-C1 .
+kno:KN2023-0221-c3 kno:fullForm "남자"@ko ;
+    rdfs:label "남(자)(男子)"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000472 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

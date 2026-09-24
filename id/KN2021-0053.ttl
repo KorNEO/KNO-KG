@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0053 a ontolex:Word ;
-    frac:attestation kno:KN2021-0053-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0053-form ;
-    ontolex:sense kno:KN2021-0053-sense .
-
-kno:KN2021-0053-att-nn a frac:Attestation ;
-    dcterms:date "2021-02-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000582208> .
-
-kno:KN2021-0053-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0053-freq-nn,
-        kno:KN2021-0053-freq-yt ;
-    ontolex:writtenRep "껄무새"@ko .
-
-kno:KN2021-0053-freq-nn a frac:CorpusFrequency ;
-    rdf:value 186 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0053-freq-yt a frac:CorpusFrequency ;
-    rdf:value 836 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0053-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0053 a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶가상 화폐의 가치가 최근 급격히 높아지자 가상 화폐에 투자해 큰 수익률을 자랑하는 사람들이 있는 반면, “그때 살걸.”, “그때 팔지 말걸.”과 같은 후회로 가득찬 {껄무새들의} 하소연도 속출하고 있다."@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "자신이 하는 말에 아쉬움을 나타내는 종결 어미 ‘-ㄹ걸’을 앵무새처럼 반복하여 붙여 말하는 사람. 주로 주식이나 가상 화폐 따위의 경제적인 투자와 관련해 투자 시기나 매입ㆍ매도 규모 등을 반복적으로 후회하는 사람을 이르는 말이다."@ko ;
+    kno:frequency kno:KN2021-0053-freq-NN-2024 ;
+    kno:slotFiller "껄 (1성분)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2021-0053-c1 ;
+    kno:frequency kno:KN2021-0053-freq-NN-2022 ;
+    kno:origin "(껄鵡새)" ;
+    rdfs:label "껄무새"@ko ;
+    kno:indexForm "껄무새"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000346 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0053-freq-NN-2021 ;
+    kno:component kno:KN2021-0053-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+한+고" ;
+    kno:componentString "껄, (앵)무새(鸚鵡새)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BB%84%EB%AC%B4%EC%83%88> ;
+    kno:frequency kno:KN2021-0053-freq-NN-total ;
+    kno:frequency kno:KN2021-0053-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0053-freq-NN-2025 .
+kno:KN2021-0053-c1 kno:formative kno:F002641 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "껄"@ko ;
+    kno:surfaceForm "껄"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-E4.1m ;
+    rdfs:label "껄"@ko .
+kno:KN2021-0053-c2 kno:surfaceForm "무새"@ko ;
+    kno:fullForm "앵무새"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "(앵)무새(鸚鵡새)"@ko ;
+    kno:formative kno:F000753 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

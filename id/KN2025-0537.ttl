@@ -1,36 +1,90 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0537 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0537 a ontolex:Word ;
-    frac:attestation kno:KN2025-0537-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0537-form ;
-    ontolex:sense kno:KN2025-0537-sense .
-
-kno:KN2025-0537-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002991955> .
-
-kno:KN2025-0537-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0537-freq-nn,
-        kno:KN2025-0537-freq-yt ;
-    ontolex:writtenRep "지산학연관민"@ko .
-
-kno:KN2025-0537-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0537-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0537-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0537 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%82%B0%ED%95%99%EC%97%B0%EA%B4%80%EB%AF%BC> ;
+    kno:frequency kno:KN2025-0537-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "지산학연관민"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0537-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 지방자치단체를 중심으로 지역의 산업계ㆍ대학ㆍ연구 기관ㆍ공공 기관ㆍ민간이 함께 참여해 지역 혁신 과제 발굴과 사업 추진을 협력하는 연계 체계."@ko ;
+    kno:component kno:KN2025-0537-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2025-0537-c4 ;
+    kno:origin "(地産學硏官民)" ;
+    kno:frequency kno:KN2025-0537-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "지산학연관민"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한+한+한+한+한" ;
+    kno:componentString "지(방자치단체)(地方自治團體), 산(업계)(産業界), (대)학(大學), 연(구)(硏究), 관(官), 민(간)(民間)"@ko ;
+    kno:component kno:KN2025-0537-c5 ;
+    kno:component kno:KN2025-0537-c3 ;
+    kno:component kno:KN2025-0537-c6 ;
+    kno:example "(LLM) 도는 RISE 사업을 추진하며 지역 혁신 과제를 발굴하기 위해 {지산학연관민이} 참여하는 협력 체계를 구축했다."@ko .
+kno:KN2025-0537-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "산업계"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    rdfs:label "산(업계)(産業界)"@ko ;
+    kno:surfaceForm "산"@ko ;
+    kno:formative kno:F004193 ;
+    kno:role "성분"@ko .
+kno:KN2025-0537-c1 kno:semanticTag kno:usas-G1.1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "지방자치단체"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005858 ;
+    kno:surfaceForm "지"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "지(방자치단체)(地方自治團體)"@ko .
+kno:KN2025-0537-c4 kno:formative kno:F005040 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "연(구)(硏究)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:surfaceForm "연"@ko ;
+    a kno:Component ;
+    kno:fullForm "연구"@ko .
+kno:KN2025-0537-c5 kno:fullForm "관"@ko ;
+    kno:surfaceForm "관"@ko ;
+    kno:position "5"^^xsd:integer ;
+    kno:formative kno:F001081 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "관(官)"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0537-c3 kno:formative kno:F006941 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "대학"@ko ;
+    rdfs:label "(대)학(大學)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "학"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2025-0537-c6 kno:fullForm "민간"@ko ;
+    kno:position "6"^^xsd:integer ;
+    kno:surfaceForm "민"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "민(간)(民間)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003618 .

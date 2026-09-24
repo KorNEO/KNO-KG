@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0254 a ontolex:Word ;
-    frac:attestation kno:KN2024-0254-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0254-form ;
-    ontolex:sense kno:KN2024-0254-sense .
-
-kno:KN2024-0254-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000752775> .
-
-kno:KN2024-0254-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0254-freq-nn,
-        kno:KN2024-0254-freq-yt ;
-    ontolex:writtenRep "저축-템"@ko .
-
-kno:KN2024-0254-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0254-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0254-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0254 kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "저축템"@ko ;
+    kno:languageType "한+영" ;
+    kno:origin "(貯蓄<영>←item)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%80%EC%B6%95%ED%85%9C> ;
+    rdfs:label "저축-템"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0254-c1 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "저축(貯蓄) (1성분)"@ko ;
+    kno:component kno:KN2024-0254-c2 ;
+    kno:componentString "저축(貯蓄), (아이)템(item)"@ko ;
+    kno:example "¶고물가 시대에 저축과 절약의 중요성이 확산되면서, 누리 소통망(SNS)에 자신만의 {저축템을} 소개하는 게시글이 늘어나고 있다."@ko ;
+    kno:frequency kno:KN2024-0254-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "저축이나 절약에 도움을 주는 물건을 이르는 말. 주로 생활비를 기간별로 나누어 쓰도록 만든 수첩이나 상자 따위를 말한다."@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2024-0254-freq-NN-2023 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 .
+kno:KN2024-0254-c1 a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "저축"@ko ;
+    kno:surfaceForm "저축"@ko ;
+    kno:formative kno:F000914 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "저축(貯蓄)"@ko .
+kno:KN2024-0254-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "아이템"@ko ;
+    rdfs:label "(아이)템(item)"@ko .

@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0243 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0243 a ontolex:Word ;
-    frac:attestation kno:KN2020-0243-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0243-form ;
-    ontolex:sense kno:KN2020-0243-sense .
-
-kno:KN2020-0243-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004546257> .
-
-kno:KN2020-0243-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0243-freq-nn,
-        kno:KN2020-0243-freq-yt ;
-    ontolex:writtenRep "온택트"@ko .
-
-kno:KN2020-0243-freq-nn a frac:CorpusFrequency ;
-    rdf:value 37901 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0243-freq-yt a frac:CorpusFrequency ;
-    rdf:value 623 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0243-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0243 kno:indexForm "온택트"@ko ;
+    skos:definition "온라인상으로 다른 사람과 접촉함. 코로나19의 확산을 방지하기 위해 온라인으로 하는 활동이 일반화되는 상황에서 나온 말이다."@ko ;
+    kno:frequency kno:KN2020-0243-freq-NN-2022 ;
+    kno:languageType "영+영" ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2020-0243-freq-NN-2025 ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0243-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2020-0243-c1 ;
+    rdfs:label "온택트"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A8%ED%83%9D%ED%8A%B8> ;
+    kno:origin "(<영>▼on←contact)" ;
+    kno:componentString "온(on), (콘)택트(contact)"@ko ;
+    kno:slotFiller "온(on) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0243-freq-NN-total ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0243-freq-NN-2021 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0243-freq-NN-2020 ;
+    kno:instantiates kno:S000762 ;
+    kno:frequency kno:KN2020-0243-freq-NN-2024 ;
+    kno:example "¶정부에서는 코로나19 확산 방지를 위해 전체 교육을 {온택트로} 진행한다고 밝혔다."@ko ;
+    kno:component kno:KN2020-0243-c2 .
+kno:KN2020-0243-c1 kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "온"@ko ;
+    kno:surfaceForm "온"@ko ;
+    rdfs:label "온(on)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000870 .
+kno:KN2020-0243-c2 kno:fullForm "콘택트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(콘)택트(contact)"@ko ;
+    kno:surfaceForm "택트"@ko ;
+    kno:formative kno:F001892 .

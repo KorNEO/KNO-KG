@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0236 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0236 a ontolex:Word ;
-    frac:attestation kno:KN2020-0236-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0236-form ;
-    ontolex:sense kno:KN2020-0236-sense .
-
-kno:KN2020-0236-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004465452> .
-
-kno:KN2020-0236-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0236-freq-nn,
-        kno:KN2020-0236-freq-yt ;
-    ontolex:writtenRep "오저치고"@ko .
-
-kno:KN2020-0236-freq-nn a frac:CorpusFrequency ;
-    rdf:value 66 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0236-freq-yt a frac:CorpusFrequency ;
-    rdf:value 146 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0236-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0236 kno:frequency kno:KN2020-0236-freq-NN-2019 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2020-0236-c1 ;
+    kno:languageType "고+고+영+영" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2020-0236-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0236-freq-NN-2021 ;
+    kno:origin "(오저<영>←chicken go)" ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2020-0236-freq-NN-2022 ;
+    kno:component kno:KN2020-0236-c3 ;
+    kno:component kno:KN2020-0236-c4 ;
+    kno:slotFiller "저(녁)+치(킨)(chicken)+고(go) (3성분)"@ko ;
+    kno:componentString "오(늘), 저(녁), 치(킨)(chicken), 고(go)"@ko ;
+    kno:indexForm "오저치고"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0236-freq-NN-total ;
+    kno:component kno:KN2020-0236-c2 ;
+    kno:urimalTargetCode "1607649" ;
+    kno:instantiates kno:S000224 ;
+    skos:definition "‘오늘 저녁 치킨 고’를 줄여 이르는 말. 주로 치킨을 함께 먹을 것을 권할 때 쓰는 말이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0236-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:example "¶불금인데 {오저치고}?"@ko ;
+    kno:frequency kno:KN2020-0236-freq-NN-2020 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1607649> ;
+    rdfs:label "오저치고"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0236-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "오늘"@ko ;
+    rdfs:label "오(늘)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000390 ;
+    kno:semanticTag kno:usas-T1.1.2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "오"@ko .
+kno:KN2020-0236-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "치"@ko ;
+    kno:formative kno:F000092 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "치(킨)(chicken)"@ko ;
+    kno:fullForm "치킨"@ko ;
+    a kno:Component .
+kno:KN2020-0236-c4 kno:position "4"^^xsd:integer ;
+    kno:fullForm "고"@ko ;
+    kno:surfaceForm "고"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.7p ;
+    rdfs:label "고(go)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002259 .
+kno:KN2020-0236-c2 a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "저"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001743 ;
+    rdfs:label "저(녁)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "저녁"@ko .

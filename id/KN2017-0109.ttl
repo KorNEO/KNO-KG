@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0109 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0109 kno:frequency kno:KN2017-0109-freq-NN-2017 ;
+    kno:predicate "종사하다"@ko ;
+    kno:example "¶OO의 경우 금융 상품 및 애플리케이션과 관련된 상담은 이번에 선발하는 모바일 텔러가 맡고, 개인 정보 변경 처리 및 사고 관련 대응, 증서 처리 등은 정직원으로 사전에 선발된 {모바일 뱅커가} 담당한다."@ko ;
+    kno:frequency kno:KN2017-0109-freq-NN-total ;
+    kno:instantiates kno:S000876 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2017-0109-freq-NN-2016 ;
+    rdfs:label "모바일 뱅커"@ko ;
+    kno:origin "(<영>mobile banker)" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    skos:definition "스마트폰을 활용한 전화, 메신저, 애플리케이션을 통해 비대면 은행 업무에 종사하는 직원."@ko ;
+    kno:slotFiller "모바일(mobile) (1성분)"@ko ;
+    kno:indexForm "모바일뱅커"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:component kno:KN2017-0109-c2 ;
+    kno:componentString "모바일(mobile), 뱅커(banker)"@ko ;
+    kno:slotFiller "뱅커(banker) (1성분)"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380453> ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1380453" ;
+    kno:component kno:KN2017-0109-c1 ;
+    kno:instantiates kno:S000639 .
+kno:KN2017-0109-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "뱅커"@ko ;
+    kno:formative kno:F001354 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "뱅커(banker)"@ko ;
+    a kno:Component ;
+    kno:fullForm "뱅커"@ko .
+kno:KN2017-0109-c1 kno:fullForm "모바일"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "모바일(mobile)"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    a kno:Component ;
+    kno:formative kno:F000502 ;
+    kno:surfaceForm "모바일"@ko ;
+    kno:role "고정항"@ko .

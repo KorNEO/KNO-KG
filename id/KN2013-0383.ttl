@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0383 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0383 a ontolex:Word ;
+    kno:frequency kno:KN2013-0383-freq-NN-2025 ;
+    kno:urimalTargetCode "1357453" ;
+    kno:formation kno:W01 ;
+    kno:origin "(推薦<영>deal)" ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2013-0383-freq-NN-2016 ;
+    kno:componentString "추천(推薦), 딜(deal)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000251 ;
+    kno:frequency kno:KN2013-0383-freq-NN-2017 ;
+    kno:indexForm "추천딜"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "추천(推薦) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:example "¶이와 함께 매일 오전 10시 오늘의 OO {추천딜을} OO와 OO으로 공유한 선착순 1천 명에게 500포인트를 증정하는 깜짝 행사도 4월 31일까지 진행한다."@ko ;
+    skos:definition "어떤 조건에 적합한 대상을 책임지고 소개하는 거래."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0383-freq-NN-2014 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357453> ;
+    rdfs:label "추천-딜"@ko ;
+    kno:frequency kno:KN2013-0383-freq-NN-2021 ;
+    kno:frequency kno:KN2013-0383-freq-NN-2019 ;
+    kno:component kno:KN2013-0383-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0383-c1 ;
+    kno:frequency kno:KN2013-0383-freq-NN-2023 ;
+    kno:frequency kno:KN2013-0383-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0383-freq-NN-total ;
+    kno:frequency kno:KN2013-0383-freq-NN-2024 ;
+    kno:predicate "소개하다"@ko ;
+    kno:languageType "한+영" .
+kno:KN2013-0383-c2 kno:role "고정항"@ko ;
+    kno:formative kno:F000110 ;
+    kno:surfaceForm "딜"@ko ;
+    rdfs:label "딜(deal)"@ko ;
+    kno:fullForm "딜"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2013-0383-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "추천(推薦)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006125 ;
+    kno:fullForm "추천"@ko ;
+    kno:surfaceForm "추천"@ko .

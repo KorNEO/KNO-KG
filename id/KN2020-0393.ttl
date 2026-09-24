@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0393 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0393 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0393-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0393-form ;
-    ontolex:sense kno:KN2020-0393-sense .
-
-kno:KN2020-0393-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-19"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/092/0002181261> .
-
-kno:KN2020-0393-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0393-freq-nn,
-        kno:KN2020-0393-freq-yt ;
-    ontolex:writtenRep "플랫폼^운수^사업자"@ko .
-
-kno:KN2020-0393-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0393-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0393-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0393 kno:indexForm "플랫폼운수사업자"@ko ;
+    kno:slotFiller "사업자(事業者) (1성분)"@ko ;
+    kno:component kno:KN2020-0393-c2 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:componentString "플랫폼(platform), 운수(運輸), 사업자(事業者)"@ko ;
+    kno:languageType "영^한^한" ;
+    kno:frequency kno:KN2020-0393-freq-NN-2019 ;
+    rdfs:label "플랫폼^운수^사업자"@ko ;
+    kno:slotFiller "플랫폼(platform)+운수(運輸) (2성분)"@ko ;
+    kno:frequency kno:KN2020-0393-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶{플랫폼 운수 사업자는} 앞으로 정부의 허가를 받아 노란 번호판을 달고 영업해야 하며 일정 액수의 기여금을 내야 한다."@ko ;
+    kno:instantiates kno:S000394 ;
+    skos:definition "위치 기반 서비스와 같은 정보 시스템 환경을 구축하고 차량을 확보하여 사람 또는 화물을 운송하는 서비스를 제공하는 사람."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%8C%EB%9E%AB%ED%8F%BC%EC%9A%B4%EC%88%98%EC%82%AC%EC%97%85%EC%9E%90> ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0393-c1 ;
+    kno:component kno:KN2020-0393-c3 ;
+    kno:origin "(<영>platform運輸事業者)" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0393-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0393-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:predicate "제공하다"@ko ;
+    kno:instantiates kno:S001748 ;
+    a ontolex:MultiwordExpression .
+kno:KN2020-0393-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "운수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001656 ;
+    rdfs:label "운수(運輸)"@ko ;
+    kno:fullForm "운수"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component .
+kno:KN2020-0393-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "플랫폼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F000154 ;
+    rdfs:label "플랫폼(platform)"@ko ;
+    kno:fullForm "플랫폼"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2020-0393-c3 rdfs:label "사업자(事業者)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000790 ;
+    kno:fullForm "사업자"@ko ;
+    kno:surfaceForm "사업자"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0085 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0085 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0085-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0085-form ;
-    ontolex:sense kno:KN2021-0085-sense .
-
-kno:KN2021-0085-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005219994> .
-
-kno:KN2021-0085-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0085-freq-nn,
-        kno:KN2021-0085-freq-yt ;
-    ontolex:writtenRep "딴봉띠^집회"@ko .
-
-kno:KN2021-0085-freq-nn a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0085-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0085-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0085 a kno:Neologism ;
+    kno:componentString "딴봉띠(ttanpongtti), 집회(集會)"@ko ;
+    kno:example "¶오는 18일에는 광주에서 미얀마 민주주의 수호를 위한 마지막 {딴봉띠 집회가} 열린다."@ko ;
+    kno:frequency kno:KN2021-0085-freq-NN-2024 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "딴봉띠집회"@ko ;
+    kno:component kno:KN2021-0085-c2 ;
+    kno:component kno:KN2021-0085-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "미^한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "딴봉띠(ttanpongtti) (1성분)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<미>←ttanpongtti集會)" ;
+    kno:frequency kno:KN2021-0085-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B4%EB%B4%89%EB%9D%A0%EC%A7%91%ED%9A%8C> ;
+    kno:frequency kno:KN2021-0085-freq-NN-2022 ;
+    kno:instantiates kno:S000430 ;
+    kno:frequency kno:KN2021-0085-freq-NN-total ;
+    skos:definition "2021년 3월부터 12월까지 광주의 미얀마 노동자, 학생, ‘미얀마 군부 쿠데타 반대와 민주화 지지 광주 연대’를 중심으로 미얀마 군부 독재에 저항하고자 열린 집회. ‘딴봉띠’는 큰소리로 악귀를 쫓는 미얀마의 전통 풍습을 뜻한다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "딴봉띠^집회"@ko .
+kno:KN2021-0085-c2 a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000938 ;
+    rdfs:label "집회(集會)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "집회"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "집회"@ko .
+kno:KN2021-0085-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F003114 ;
+    kno:fullForm "딴봉띠"@ko ;
+    rdfs:label "딴봉띠(ttanpongtti)"@ko ;
+    kno:surfaceForm "딴봉띠"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5 .

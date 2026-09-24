@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0335 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0335 a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "이랴, 이랴, 춤"@ko ;
+    rdfs:label "이랴이랴-춤"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EB%9E%B4%EC%9D%B4%EB%9E%B4%EC%B6%A4> ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:instantiates kno:S000432 ;
+    kno:indexForm "이랴이랴춤"@ko ;
+    kno:component kno:KN2013-0335-c2 ;
+    kno:slotFiller "이랴+이랴 (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0335-freq-NN-2012 ;
+    kno:languageType "고+고" ;
+    kno:example "¶이날 방송에서 출연자들은 스튜디오 안에서 함께 뮤직비디오를 보며 OOO의 포인트 안무인 ‘{이랴이랴춤’을} 따라 추며 흥겨운 모습을 보였다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0335-c1 ;
+    kno:frequency kno:KN2013-0335-freq-NN-total ;
+    kno:predicate "흉내내다"@ko ;
+    skos:definition "소나 말을 모는 모습을 흉내내는 춤. 소나 말을 몰 때 내는 감탄사를 따서 붙여진 이름이다."@ko ;
+    kno:component kno:KN2013-0335-c3 ;
+    kno:registration "신어DB"@ko .
+kno:KN2013-0335-c2 a kno:Component ;
+    kno:formative kno:F005383 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "이랴"@ko ;
+    kno:semanticTag kno:usas-Z4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "이랴"@ko ;
+    kno:surfaceForm "이랴"@ko .
+kno:KN2013-0335-c1 kno:surfaceForm "이랴"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "이랴"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "이랴"@ko ;
+    kno:semanticTag kno:usas-Z4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005383 .
+kno:KN2013-0335-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K4 ;
+    rdfs:label "춤"@ko ;
+    kno:formative kno:F000601 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "춤"@ko ;
+    kno:surfaceForm "춤"@ko .

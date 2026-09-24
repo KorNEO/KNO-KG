@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0373 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0373 kno:languageType "고+영" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:example "¶금수저와 흙수저처럼 ‘금턴’과 ‘{흙턴’은} 인턴 자리의 양극화 현상을 보여 준다."@ko ;
+    kno:indexForm "흙턴"@ko ;
+    skos:definition "안정된 고용을 보장받지 못하고 허드렛일만 반복해서 하는 인턴. 가난하거나 사회적 지위가 낮은 가정에서 태어나 좋지 않은 환경을 누리는 사람을 뜻하는 ‘흙수저’와 회사나 기관 따위의 정식 구성원이 되기에 앞서 훈련을 받는 사람을 뜻하는 ‘인턴’을 결합하여 만든 말이다."@ko ;
+    kno:urimalTargetCode "1380663" ;
+    rdfs:label "흙턴"@ko ;
+    kno:component kno:KN2017-0373-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:componentString "흙(수저), (인)턴(intern)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(흙<영>←intern)" ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0373-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000348 ;
+    kno:slotFiller "흙(수저) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380663> ;
+    kno:predicate "하다"@ko .
+kno:KN2017-0373-c1 rdfs:label "흙(수저)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "흙수저"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F007220 ;
+    a kno:Component ;
+    kno:surfaceForm "흙"@ko ;
+    kno:semanticTag kno:usas-I1.1m .
+kno:KN2017-0373-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "인턴"@ko ;
+    kno:surfaceForm "턴"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.1 ;
+    rdfs:label "(인)턴(intern)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000973 .

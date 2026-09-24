@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0259 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0259 a ontolex:Word ;
-    frac:attestation kno:KN2020-0259-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0259-form ;
-    ontolex:sense kno:KN2020-0259-sense .
-
-kno:KN2020-0259-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003504509> .
-
-kno:KN2020-0259-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0259-freq-nn,
-        kno:KN2020-0259-freq-yt ;
-    ontolex:writtenRep "유튜버-셀러"@ko .
-
-kno:KN2020-0259-freq-nn a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0259-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0259-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0259 kno:componentString "유튜버(YouTuber), 셀러(seller)"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2020-0259-freq-NN-total ;
+    rdfs:label "유튜버-셀러"@ko ;
+    kno:example "¶최근 서점에는 {유튜버셀러가} 넘쳐 나고 있다."@ko ;
+    kno:component kno:KN2020-0259-c2 ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%ED%8A%9C%EB%B2%84%EC%85%80%EB%9F%AC> ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0259-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0259-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0259-freq-NN-2020 ;
+    kno:origin "(<영>▼YouTuber seller)" ;
+    kno:frequency kno:KN2020-0259-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0259-freq-NN-2025 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0259-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "유튜버셀러"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    skos:definition "동영상 공유 플랫폼에서 동영상을 만드는 사람이나 동영상에 출연한 사람이 소개하거나 추천하여 많이 팔린 책."@ko .
+kno:KN2020-0259-c2 kno:fullForm "셀러"@ko ;
+    kno:surfaceForm "셀러"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 ;
+    rdfs:label "셀러(seller)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004372 .
+kno:KN2020-0259-c1 rdfs:label "유튜버(YouTuber)"@ko ;
+    kno:surfaceForm "유튜버"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "유튜버"@ko ;
+    kno:formative kno:F001681 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

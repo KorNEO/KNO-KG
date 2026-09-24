@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0105 a ontolex:Word ;
-    frac:attestation kno:KN2024-0105-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0105-form ;
-    ontolex:sense kno:KN2024-0105-sense .
-
-kno:KN2024-0105-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005337952> .
-
-kno:KN2024-0105-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0105-freq-nn,
-        kno:KN2024-0105-freq-yt ;
-    ontolex:writtenRep "빈대믹"@ko .
-
-kno:KN2024-0105-freq-nn a frac:CorpusFrequency ;
-    rdf:value 60 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0105-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0105-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "빈대, (팬데)믹(pandemic)"@ko ;
+    kno:indexForm "빈대믹"@ko ;
+    kno:origin "(빈대<영>←pandemic)" ;
+    kno:frequency kno:KN2024-0105-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0105-c1 ;
+    kno:formation kno:W05 ;
+    skos:definition "빈대가 특정 지역이나 국가를 넘어 광범위하게 확산하여 사회적 불안과 피해를 일으키는 현상을, 감염병의 확산을 뜻하는 ‘팬데믹(pandemic)’에 빗대어 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%88%EB%8C%80%EB%AF%B9> ;
+    rdfs:label "빈대믹"@ko ;
+    kno:languageType "고+영" ;
+    kno:frequency kno:KN2024-0105-freq-NN-total ;
+    kno:component kno:KN2024-0105-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2024-0105-freq-NN-2024 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶전국적으로 빈대 확산에 대한 공포가 커지면서 {빈대믹이라는} 말까지 나오고 있습니다."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0105-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "빈대"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "빈대"@ko ;
+    kno:surfaceForm "빈대"@ko ;
+    kno:formative kno:F001417 .
+kno:KN2024-0105-c2 kno:surfaceForm "믹"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(팬데)믹(pandemic)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "팬데믹"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003614 .

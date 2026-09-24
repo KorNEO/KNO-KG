@@ -1,36 +1,44 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0290 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0290 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0290-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0290-form ;
-    ontolex:sense kno:KN2025-0290-sense .
-
-kno:KN2025-0290-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/112/0003754832> .
-
-kno:KN2025-0290-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0290-freq-nn,
-        kno:KN2025-0290-freq-yt ;
-    ontolex:writtenRep "볼살 만수르"@ko .
-
-kno:KN2025-0290-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0290-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0290-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0290 kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "볼살, 만수르"@ko ;
+    kno:component kno:KN2025-0290-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%BC%EC%82%B4%20%EB%A7%8C%EC%88%98%EB%A5%B4> ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:label "볼살 만수르"@ko ;
+    kno:example "(LLM) 셀카를 찍을 때 얼각을 잡아도 {볼살만수르라} 볼이 더 부각돼 보여서 보정 앱을 켰다."@ko ;
+    kno:indexForm "볼살만수르"@ko ;
+    skos:definition "(LLM) 볼에 살이 도드라져 얼굴이 통통해 보이는 사람을 익살스럽게 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2025-0290-c2 ;
+    a kno:Neologism .
+kno:KN2025-0290-c1 kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    rdfs:label "볼살"@ko ;
+    kno:surfaceForm "볼살"@ko ;
+    kno:fullForm "볼살"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003927 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0290-c2 kno:semanticTag kno:usas-I1.1p ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "만수르"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "만수르"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003371 ;
+    kno:fullForm "만수르"@ko ;
+    a kno:Component .

@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2025-0662 a ontolex:Word ;
+    frac:attestation kno:KN2025-0662-att-nn ;
+    ontolex:canonicalForm kno:KN2025-0662-form ;
+    ontolex:sense kno:KN2025-0662-sense .
+
+kno:KN2025-0662-att-nn a frac:Attestation ;
+    dcterms:date "2025-06-20"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/108/0003340004> .
+
+kno:KN2025-0662-form a ontolex:Form ;
+    frac:frequency kno:KN2025-0662-freq-nn,
+        kno:KN2025-0662-freq-yt ;
+    ontolex:writtenRep "하룰라라"@ko .
+
+kno:KN2025-0662-freq-nn a frac:CorpusFrequency ;
+    rdf:value 30 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2025-0662-freq-yt a frac:CorpusFrequency ;
+    rdf:value 2609 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2025-0662-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EC%B2%9C%EA%B5%AD> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

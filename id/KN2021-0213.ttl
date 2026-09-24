@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0213 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0213 a ontolex:Word ;
-    frac:attestation kno:KN2021-0213-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0213-form ;
-    ontolex:sense kno:KN2021-0213-sense .
-
-kno:KN2021-0213-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004382932> .
-
-kno:KN2021-0213-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0213-freq-nn,
-        kno:KN2021-0213-freq-yt ;
-    ontolex:writtenRep "이말올"@ko .
-
-kno:KN2021-0213-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0213-freq-yt a frac:CorpusFrequency ;
-    rdf:value 105 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0213-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0213 a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0213-freq-NN-2020 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2021-0213-freq-NN-total ;
+    kno:indexForm "이말올"@ko ;
+    kno:frequency kno:KN2021-0213-freq-NN-2023 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2021-0213-c1 ;
+    kno:componentString "이(것), 말(다), 올(리다)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EB%A7%90%EC%98%AC> ;
+    kno:frequency kno:KN2021-0213-freq-NN-2021 ;
+    kno:instantiates kno:S001610 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘이걸 말아 올림’을 줄여 이르는 말. 하락한 주가를 특정 투자 세력이 움직여서 끌어올릴 때 사용한다."@ko ;
+    kno:component kno:KN2021-0213-c2 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "말(다)+올(리다) (2성분)"@ko ;
+    kno:languageType "고+고+고" ;
+    kno:component kno:KN2021-0213-c3 ;
+    kno:example "¶최근에는 개인 투자자들의 매수세가 대거 유입되면서 급격히 하락하던 증시를 단숨에 끌어올렸는데, 이런 상황에서 쓰는 말이 ‘{이말올’이다}."@ko ;
+    rdfs:label "이말올"@ko .
+kno:KN2021-0213-c1 kno:formative kno:F001690 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "이것"@ko ;
+    rdfs:label "이(것)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "이"@ko .
+kno:KN2021-0213-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003375 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "말(다)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "말"@ko ;
+    kno:fullForm "말다"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    a kno:Component .
+kno:KN2021-0213-c3 kno:formative kno:F005142 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "올(리다)"@ko ;
+    kno:fullForm "올리다"@ko ;
+    kno:surfaceForm "올"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 .

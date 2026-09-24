@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0206 a ontolex:Word ;
-    frac:attestation kno:KN2022-0206-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0206-form ;
-    ontolex:sense kno:KN2022-0206-sense .
-
-kno:KN2022-0206-att-nn a frac:Attestation ;
-    dcterms:date "2021-11-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011163110> .
-
-kno:KN2022-0206-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0206-freq-nn,
-        kno:KN2022-0206-freq-yt ;
-    ontolex:writtenRep "약케팅"@ko .
-
-kno:KN2022-0206-freq-nn a frac:CorpusFrequency ;
-    rdf:value 83 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0206-freq-yt a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0206-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0206 rdfs:label "약케팅"@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2022-0206-freq-NN-total ;
+    kno:componentString "약(과)(藥菓), (티)케팅(ticketing)"@ko ;
+    kno:component kno:KN2022-0206-c2 ;
+    kno:example "¶요즘 약과가 워낙 인기를 끌다 보니 ‘{약케팅’에} 성공한 사람들이 에스엔에스에 인증 숏을 올리고 있다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "전통 과자의 하나인 약과 구매에 많은 사람이 한꺼번에 몰려 치열한 경쟁을 벌이는 일을 이르는 말."@ko ;
+    kno:frequency kno:KN2022-0206-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "약(과)(藥菓) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0206-c1 ;
+    kno:instantiates kno:S000091 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "약케팅"@ko ;
+    kno:origin "(藥<영>←ticketing)" ;
+    kno:frequency kno:KN2022-0206-freq-NN-2025 ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0206-freq-NN-2024 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0206-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0206-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EC%BC%80%ED%8C%85> .
+kno:KN2022-0206-c2 kno:fullForm "티케팅"@ko ;
+    kno:surfaceForm "케팅"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(티)케팅(ticketing)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000236 ;
+    a kno:Component .
+kno:KN2022-0206-c1 kno:formative kno:F004911 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "약(과)(藥菓)"@ko ;
+    kno:surfaceForm "약"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "약과"@ko .

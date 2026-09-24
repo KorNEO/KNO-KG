@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0467 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0467 a ontolex:Word ;
-    frac:attestation kno:KN2025-0467-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0467-form ;
-    ontolex:sense kno:KN2025-0467-sense .
-
-kno:KN2025-0467-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002231957> .
-
-kno:KN2025-0467-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0467-freq-nn,
-        kno:KN2025-0467-freq-yt ;
-    ontolex:writtenRep "윤두머리"@ko .
-
-kno:KN2025-0467-freq-nn a frac:CorpusFrequency ;
-    rdf:value 46 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0467-freq-yt a frac:CorpusFrequency ;
-    rdf:value 666 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0467-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0467 skos:definition "(LLM) 윤석열 전 대통령을 ‘내란의 우두머리’로 지목한다는 뜻으로, 그를 강하게 비판하거나 조롱하여 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0467-freq-NN-2025 ;
+    a kno:Neologism ;
+    rdfs:label "윤두머리"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "윤두머리"@ko ;
+    kno:component kno:KN2025-0467-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(尹두머리)" ;
+    kno:component kno:KN2025-0467-c2 ;
+    kno:example "(LLM) 그는 기자회견에서 “{윤두머리는} 책임을 져야 한다”고 주장했다."@ko ;
+    kno:frequency kno:KN2025-0467-freq-NN-total ;
+    kno:componentString "윤(석열), (우)두머리"@ko ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A4%EB%91%90%EB%A8%B8%EB%A6%AC> ;
+    kno:languageType "한+고" .
+kno:KN2025-0467-c1 kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "윤(석열)"@ko ;
+    kno:fullForm "윤석열"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "윤"@ko ;
+    kno:formative kno:F001683 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2025-0467-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003039 ;
+    rdfs:label "(우)두머리"@ko ;
+    kno:fullForm "우두머리"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "두머리"@ko ;
+    kno:truncated "true"^^xsd:boolean .

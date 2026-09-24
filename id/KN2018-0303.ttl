@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0303 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0303 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A2%85%ED%95%A9%EA%B8%B0%EC%83%81%EA%B4%80%EC%B8%A1%EC%86%8C> ;
+    kno:origin "(綜合氣象觀測所)" ;
+    kno:predicate "통보하다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2018-0303-freq-NN-2017 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:example "¶하늘을 나는 ‘{종합 기상 관측소’로} 불리는 기상 항공기가 국내 최초로 도입된다."@ko ;
+    kno:component kno:KN2018-0303-c3 ;
+    kno:frequency kno:KN2018-0303-freq-NN-2019 ;
+    kno:indexForm "종합기상관측소"@ko ;
+    kno:component kno:KN2018-0303-c2 ;
+    rdfs:label "종합^기상^관측소"@ko ;
+    a kno:Neologism ;
+    skos:definition "여러 가지 기상 관측 장비를 사용하여 날씨나 대기 현상과 관련된 기상 요소들을 관찰하고 측정하며 그러한 자료를 종합적으로 기록하고 해석ㆍ통보하는 곳. 또는 그런 기관."@ko ;
+    kno:instantiates kno:S000621 ;
+    kno:frequency kno:KN2018-0303-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "기상(氣象)+관측소(觀測所) (2성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2018-0303-c1 ;
+    kno:frequency kno:KN2018-0303-freq-NN-2018 ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:componentString "종합(綜合), 기상(氣象), 관측소(觀測所)"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko .
+kno:KN2018-0303-c3 a kno:Component ;
+    rdfs:label "관측소(觀測所)"@ko ;
+    kno:fullForm "관측소"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "관측소"@ko ;
+    kno:formative kno:F002401 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 .
+kno:KN2018-0303-c2 kno:formative kno:F002592 ;
+    kno:fullForm "기상"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "기상(氣象)"@ko ;
+    kno:surfaceForm "기상"@ko ;
+    a kno:Component .
+kno:KN2018-0303-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "종합"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000189 ;
+    kno:fullForm "종합"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A4.2 ;
+    rdfs:label "종합(綜合)"@ko .

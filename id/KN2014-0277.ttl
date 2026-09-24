@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0277 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0277 kno:origin "(<영>kinfolk族)" ;
+    kno:componentString "킨포크(kinfolk), -족(族)"@ko ;
+    kno:frequency kno:KN2014-0277-freq-NN-2015 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    skos:definition "낯선 사람과 식사를 함께 하고 이야기 나누기를 즐기는 사람. 또는 그런 무리."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2014-0277-freq-NN-2019 ;
+    kno:frequency kno:KN2014-0277-freq-NN-2017 ;
+    kno:frequency kno:KN2014-0277-freq-NN-2014 ;
+    kno:example "¶웹 디자이너 OOO 씨도 자신을 {킨포크족이라고} 일컫는 사람이다. 페이스북에 종종 공지를 띄워, 낯선 사람들과 함께 모여 밥을 먹는다."@ko ;
+    kno:languageType "영+한" ;
+    kno:predicate "즐기다"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:component kno:KN2014-0277-c2 ;
+    kno:slotFiller "킨포크(kinfolk) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2014-0277-freq-NN-2018 ;
+    kno:indexForm "킨포크족"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358290> ;
+    kno:component kno:KN2014-0277-c1 ;
+    kno:urimalTargetCode "1358290" ;
+    kno:frequency kno:KN2014-0277-freq-NN-total ;
+    rdfs:label "킨포크-족"@ko ;
+    kno:frequency kno:KN2014-0277-freq-NN-2016 ;
+    kno:instantiates kno:S000001 .
+kno:KN2014-0277-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 .
+kno:KN2014-0277-c1 kno:formative kno:F006375 ;
+    kno:fullForm "킨포크"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "킨포크"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "킨포크(kinfolk)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    a kno:Component .

@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0308 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0308 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0308-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0308-form ;
-    ontolex:sense kno:KN2020-0308-sense .
-
-kno:KN2020-0308-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0001626575> .
-
-kno:KN2020-0308-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0308-freq-nn,
-        kno:KN2020-0308-freq-yt ;
-    ontolex:writtenRep "종합^지급^결제업"@ko .
-
-kno:KN2020-0308-freq-nn a frac:CorpusFrequency ;
-    rdf:value 933 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0308-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0308-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0308-c2 ;
+    kno:frequency kno:KN2020-0308-freq-NN-2021 ;
+    kno:component kno:KN2020-0308-c3 ;
+    kno:origin "(綜合支給決濟業)" ;
+    kno:indexForm "종합지급결제업"@ko ;
+    kno:example "¶금융 당국과 국회가 {종합 지급 결제업을} 도입하기로 하면서 카드업계는 최근 결제 시장 변화에 촉각을 곤두세우고 있다."@ko ;
+    kno:frequency kno:KN2020-0308-freq-NN-2019 ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0308-freq-NN-2023 ;
+    kno:slotFiller "결제업(決濟業) (1성분)"@ko ;
+    kno:componentString "종합(綜合), 지급(支給), 결제업(決濟業)"@ko ;
+    kno:urimalTargetCode "1476617" ;
+    kno:frequency kno:KN2020-0308-freq-NN-2022 ;
+    rdfs:label "종합^지급^결제업"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1476617> ;
+    kno:frequency kno:KN2020-0308-freq-NN-2025 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:predicate "제공하다"@ko ;
+    skos:definition "은행의 예금이나 여신 업무를 제외한, 계좌 이체, 각종 대금이나 공과금 납부 따위의 계좌를 기반으로 한 서비스를 단일한 온라인 플랫폼을 통해 제공하는 사업. =종합 지급 결제 사업."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0308-freq-NN-total ;
+    kno:instantiates kno:S000644 ;
+    kno:frequency kno:KN2020-0308-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0308-freq-NN-2024 ;
+    kno:component kno:KN2020-0308-c1 .
+kno:KN2020-0308-c2 kno:formative kno:F000589 ;
+    rdfs:label "지급(支給)"@ko ;
+    kno:surfaceForm "지급"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:fullForm "지급"@ko .
+kno:KN2020-0308-c3 kno:surfaceForm "결제업"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "결제업(決濟業)"@ko ;
+    kno:formative kno:F002223 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "결제업"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2020-0308-c1 a kno:Component ;
+    kno:fullForm "종합"@ko ;
+    kno:surfaceForm "종합"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "종합(綜合)"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000189 .

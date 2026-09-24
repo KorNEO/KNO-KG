@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0491 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0491 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0491-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0491-form ;
-    ontolex:sense kno:KN2025-0491-sense .
-
-kno:KN2025-0491-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002283255> .
-
-kno:KN2025-0491-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0491-freq-nn,
-        kno:KN2025-0491-freq-yt ;
-    ontolex:writtenRep "장경태 방지법"@ko .
-
-kno:KN2025-0491-freq-nn a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0491-freq-yt a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0491-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0491 rdfs:label "장경태 방지법"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "인명; X=장경태 (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0491-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0491-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "장경태방지법"@ko ;
+    kno:frequency kno:KN2025-0491-freq-NN-2025 ;
+    skos:definition "(LLM) 권력형 성범죄 등에서 피해자에 대한 신상 공개, 조롱ㆍ비방, 인신공격 등 2차 가해 행위를 막기 위해 처벌을 강화하거나 가중 처벌하도록 하자는 취지로 불리는 법안(또는 법안 별칭)."@ko ;
+    kno:example "(LLM) 피해자 신상 공개와 조롱성 발언 같은 2차 가해를 막기 위해 {장경태방지법이} 필요하다는 주장이 나왔다."@ko ;
+    kno:componentString "장경태, 방지법(防止法)"@ko ;
+    kno:instantiates kno:S000054 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%A5%EA%B2%BD%ED%83%9C%20%EB%B0%A9%EC%A7%80%EB%B2%95> ;
+    kno:component kno:KN2025-0491-c2 .
+kno:KN2025-0491-c1 kno:fullForm "장경태"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005566 ;
+    kno:surfaceForm "장경태"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "장경태"@ko ;
+    a kno:Component .
+kno:KN2025-0491-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000032 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "방지법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "방지법(防止法)"@ko ;
+    kno:fullForm "방지법"@ko ;
+    a kno:Component .

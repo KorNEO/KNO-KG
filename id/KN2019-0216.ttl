@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0216 a ontolex:Word ;
+    kno:frequency kno:KN2019-0216-freq-NN-total ;
+    kno:componentString "웜(warm), 박스(box)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "박스(box) (1성분)"@ko ;
+    kno:component kno:KN2019-0216-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%9C%EB%B0%95%EC%8A%A4> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:indexForm "웜박스"@ko ;
+    kno:frequency kno:KN2019-0216-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001598 ;
+    skos:definition "소외 계층에게 제공되는 이불, 수면 바지 등의 방한용품을 담은 상자."@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "웜-박스"@ko ;
+    kno:example "¶OO구는 지역 내 이웃들에게 ‘따뜻한 겨울나기 {웜박스’를} 배포한다."@ko ;
+    kno:origin "(<영>warm box)" ;
+    kno:frequency kno:KN2019-0216-freq-NN-2018 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:languageType "영+영" ;
+    kno:component kno:KN2019-0216-c1 ;
+    kno:predicate "담은"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2019-0216-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:fullForm "박스"@ko ;
+    rdfs:label "박스(box)"@ko ;
+    kno:surfaceForm "박스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000271 .
+kno:KN2019-0216-c1 kno:fullForm "웜"@ko ;
+    rdfs:label "웜(warm)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4 ;
+    kno:formative kno:F000881 ;
+    kno:surfaceForm "웜"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

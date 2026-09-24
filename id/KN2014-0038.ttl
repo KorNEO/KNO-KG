@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0038 kno:example "¶꽃할배 가고 {꽃오빠가} 왔다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "꽃, 오빠"@ko ;
+    kno:frequency kno:KN2014-0038-freq-NN-total ;
+    kno:instantiates kno:S000986 ;
+    kno:instantiates kno:S000288 ;
+    rdfs:label "꽃-오빠"@ko ;
+    kno:frequency kno:KN2014-0038-freq-NN-2016 ;
+    kno:indexForm "꽃오빠"@ko ;
+    kno:slotFiller "오빠 (1성분)"@ko ;
+    kno:component kno:KN2014-0038-c2 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358089> ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0038-freq-NN-2025 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:urimalTargetCode "1358089" ;
+    kno:slotFiller "꽃 (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0038-freq-NN-2018 ;
+    kno:component kno:KN2014-0038-c1 ;
+    skos:definition "외모가 꽃처럼 아름다운 오빠."@ko .
+kno:KN2014-0038-c2 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "오빠"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "오빠"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000868 ;
+    kno:fullForm "오빠"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2014-0038-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-L3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "꽃"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "꽃"@ko ;
+    kno:surfaceForm "꽃"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000469 .

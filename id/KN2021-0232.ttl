@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0232 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0232 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0232-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0232-form ;
-    ontolex:sense kno:KN2021-0232-sense .
-
-kno:KN2021-0232-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003053037> .
-
-kno:KN2021-0232-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0232-freq-nn,
-        kno:KN2021-0232-freq-yt ;
-    ontolex:writtenRep "정자 공여 시술"@ko .
-
-kno:KN2021-0232-freq-nn a frac:CorpusFrequency ;
-    rdf:value 94 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0232-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0232-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0232 kno:frequency kno:KN2021-0232-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0232-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0232-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0232-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%9E%90%20%EA%B3%B5%EC%97%AC%20%EC%8B%9C%EC%88%A0> ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:origin "(精子供與施術)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0232-c1 ;
+    a kno:Neologism ;
+    rdfs:label "정자 공여 시술"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0232-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0232-freq-NN-2022 ;
+    kno:component kno:KN2021-0232-c3 ;
+    kno:frequency kno:KN2021-0232-freq-NN-2020 ;
+    kno:componentString "정자(精子), 공여(供與), 시술(施術)"@ko ;
+    kno:predicate "결합시키다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한_한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0232-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "정자공여시술"@ko ;
+    kno:example "¶한국에서의 {정자 공여 시술은} 법률적 혼인 관계에 있는 부부만을 대상으로 시행되고 있다."@ko ;
+    skos:definition "보조 생식술의 하나로, 정자은행에서 공여받은 정자와 시술 대상의 난자를 결합시키는 시술."@ko .
+kno:KN2021-0232-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A9m ;
+    kno:fullForm "공여"@ko ;
+    kno:surfaceForm "공여"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002357 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "공여(供與)"@ko .
+kno:KN2021-0232-c1 kno:fullForm "정자"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "정자"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "정자(精子)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F005684 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2021-0232-c3 kno:surfaceForm "시술"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "시술"@ko ;
+    kno:formative kno:F004659 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "시술(施術)"@ko .

@@ -1,0 +1,46 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0135 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0135 a kno:Neologism ;
+    kno:example "¶이곳은 방조제로부터 6km가량 떨어진 비교적 맑은 바다입니다만 보시는 것처럼 올라오는 그물마다 {물곱이} 가득 붙어 있습니다."@ko ;
+    kno:languageType "고+고" ;
+    rdfs:label "물-곱"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%BC%EA%B3%B1> ;
+    kno:indexForm "물곱"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0135-c2 ;
+    kno:formation kno:W01 ;
+    skos:definition "그물에 달라붙은 해조류를 비유적으로 이르는 말."@ko ;
+    kno:componentString "물, 곱"@ko ;
+    kno:component kno:KN2012-0135-c1 .
+kno:KN2012-0135-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "곱"@ko ;
+    kno:formative kno:F002320 ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:fullForm "곱"@ko ;
+    kno:surfaceForm "곱"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2012-0135-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "물"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F000756 ;
+    kno:fullForm "물"@ko ;
+    kno:surfaceForm "물"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component .

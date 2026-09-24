@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0104 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0104-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0104-form ;
-    ontolex:sense kno:KN2021-0104-sense .
-
-kno:KN2021-0104-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-18"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/016/0001808887> .
-
-kno:KN2021-0104-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0104-freq-nn,
-        kno:KN2021-0104-freq-yt ;
-    ontolex:writtenRep "리뷰 진상"@ko .
-
-kno:KN2021-0104-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0104-freq-yt a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0104-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0104 kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "리뷰(review), 진상"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "리뷰진상"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0104-freq-NN-total ;
+    kno:predicate "제기하다"@ko ;
+    rdfs:label "리뷰 진상"@ko ;
+    kno:component kno:KN2021-0104-c1 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001367 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0104-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EB%B7%B0%20%EC%A7%84%EC%83%81> ;
+    kno:slotFiller "진상 (1성분)"@ko ;
+    skos:definition "리뷰를 빌미로 하여 과도한 요청을 하거나 정당하지 않은 이유로 불만을 제기하는 소비자."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0104-c2 ;
+    kno:origin "(<영>review진상)" ;
+    kno:languageType "영_고" ;
+    kno:example "¶배달 어플 사용량이 급증하면서 리뷰를 이용한 {리뷰 진상도} 크게 늘었다."@ko ;
+    kno:unitType "구"@ko .
+kno:KN2021-0104-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A5.1 ;
+    rdfs:label "리뷰(review)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000738 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "리뷰"@ko ;
+    kno:surfaceForm "리뷰"@ko .
+kno:KN2021-0104-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "진상"@ko ;
+    kno:surfaceForm "진상"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.1m ;
+    kno:formative kno:F005925 ;
+    kno:semanticTag kno:usas-S1.2.4m ;
+    rdfs:label "진상"@ko .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0370 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0370 kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:formation kno:W01 ;
+    kno:componentString "전용(專用), 룬(rune)"@ko ;
+    kno:frequency kno:KN2012-0370-freq-NN-2012 ;
+    kno:example "¶OO는 가격이 싼 챔피언이지만 {전용룬이} 필요하다는 점에서 값 나가는 챔피언으로 평가받기도 합니다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(專用rune)" ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:predicate "주다"@ko ;
+    a kno:Neologism ;
+    skos:definition "게임에서, 캐릭터의 기본적인 능력치를 올려 주는 아이템."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0370-freq-NN-total ;
+    kno:frequency kno:KN2012-0370-freq-NN-2017 ;
+    kno:component kno:KN2012-0370-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "전용-룬"@ko ;
+    kno:component kno:KN2012-0370-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%9A%A9%EB%A3%AC> ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:indexForm "전용룬"@ko .
+kno:KN2012-0370-c2 kno:surfaceForm "룬"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003271 ;
+    kno:semanticTag kno:usas-K5.2 ;
+    kno:fullForm "룬"@ko ;
+    rdfs:label "룬(rune)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0370-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005638 ;
+    kno:fullForm "전용"@ko ;
+    kno:surfaceForm "전용"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.5.1 ;
+    rdfs:label "전용(專用)"@ko .

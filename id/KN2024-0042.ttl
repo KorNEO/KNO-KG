@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0042 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0042 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0042-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0042-form ;
-    ontolex:sense kno:KN2024-0042-sense .
-
-kno:KN2024-0042-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004995412> .
-
-kno:KN2024-0042-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0042-freq-nn,
-        kno:KN2024-0042-freq-yt ;
-    ontolex:writtenRep "노 아줌마 존"@ko .
-
-kno:KN2024-0042-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0042-freq-yt a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0042-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0042 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0042-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0042-freq-NN-total ;
+    kno:frequency kno:KN2024-0042-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(▼<영>no아줌마<영>zone)" ;
+    kno:languageType "영_고_영" ;
+    kno:componentString "노(no), 아줌마, 존(zone)"@ko ;
+    kno:instantiates kno:S000035 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0042-c3 ;
+    kno:predicate "제한하다"@ko ;
+    kno:example "¶{노 아줌마 존은} 일부 여성 중장년층 회원들로 인해 업장이 큰 피해를 입었다는 주장에서 시작되었다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%20%EC%95%84%EC%A4%8C%EB%A7%88%20%EC%A1%B4> ;
+    kno:component kno:KN2024-0042-c2 ;
+    rdfs:label "노 아줌마 존"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "중장년 여성의 출입이나 이용을 금지하거나 제한하는 곳."@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "아줌마 (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "노아줌마존"@ko ;
+    kno:component kno:KN2024-0042-c1 .
+kno:KN2024-0042-c3 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "존"@ko ;
+    kno:surfaceForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000034 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0042-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001571 ;
+    rdfs:label "아줌마"@ko ;
+    kno:surfaceForm "아줌마"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:fullForm "아줌마"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0042-c1 kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "노(no)"@ko ;
+    kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko .

@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0501 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0501 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0501-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0501-form ;
-    ontolex:sense kno:KN2025-0501-sense .
-
-kno:KN2025-0501-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0008656141> .
-
-kno:KN2025-0501-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0501-freq-nn,
-        kno:KN2025-0501-freq-yt ;
-    ontolex:writtenRep "전 국민 재갈법"@ko .
-
-kno:KN2025-0501-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0501-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0501-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0501 kno:languageType "한_한_(고+한)" ;
+    kno:instantiates kno:S001636 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 야당은 해당 개정안이 통과되면 언론과 유튜버의 비판 기능이 위축될 수 있다며 {전국민재갈법으로} 만들지 말라고 반발했다."@ko ;
+    kno:component kno:KN2025-0501-c3 ;
+    kno:component kno:KN2025-0501-c1 ;
+    kno:slotFiller "전(全)+국민(國民)+재갈 (3성분)"@ko ;
+    kno:componentString "전(全), 국민(國民), 재갈, 법(法)"@ko ;
+    kno:slotFiller "재갈+법(法) (2성분)"@ko ;
+    skos:definition "(LLM) 허위ㆍ조작 정보 유포를 막는다는 명목의 법률(또는 법률 개정안)을, 표현의 자유를 과도하게 제한하고 비판적 발언을 위축시킬 수 있다며 비난조로 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%20%EA%B5%AD%EB%AF%BC%20%EC%9E%AC%EA%B0%88%20%EB%B2%95> ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0501-freq-NN-2025 ;
+    rdfs:label "전 국민 재갈 법"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0501-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0501-c2 ;
+    kno:origin "(全國民재갈法)" ;
+    kno:component kno:KN2025-0501-c4 ;
+    kno:indexForm "전국민재갈법"@ko .
+kno:KN2025-0501-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "재갈"@ko ;
+    kno:surfaceForm "재갈"@ko ;
+    kno:semanticTag kno:usas-S7.4m ;
+    a kno:Component ;
+    kno:formative kno:F005584 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "재갈"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0501-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "전"@ko ;
+    kno:formative kno:F001748 ;
+    kno:surfaceForm "전"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "전(全)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T4 .
+kno:KN2025-0501-c2 kno:surfaceForm "국민"@ko ;
+    kno:formative kno:F000055 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "국민(國民)"@ko ;
+    kno:fullForm "국민"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0501-c4 rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean .

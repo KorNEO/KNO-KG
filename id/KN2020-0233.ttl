@@ -1,30 +1,72 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0233 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2020-0233-form ;
-    ontolex:sense kno:KN2020-0233-sense .
-
-kno:KN2020-0233-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0233-freq-nn,
-        kno:KN2020-0233-freq-yt ;
-    ontolex:writtenRep "연관 검색어 정화 운동"@ko .
-
-kno:KN2020-0233-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0233-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0233-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0233 kno:frequency kno:KN2020-0233-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한_한_한" ;
+    kno:instantiates kno:S000032 ;
+    kno:component kno:KN2020-0233-c2 ;
+    kno:component kno:KN2020-0233-c4 ;
+    kno:component kno:KN2020-0233-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶{연관 검색어 정화 운동에} 참여한 네티즌들은 댓글을 통해 더 많은 사람들이 참여해 주기를 촉구했다."@ko ;
+    kno:origin "(聯關檢索語淨化運動)" ;
+    kno:indexForm "연관검색어정화운동"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "연관(聯關)+검색어(檢索語)+정화(淨化) (3성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EA%B4%80%20%EA%B2%80%EC%83%89%EC%96%B4%20%EC%A0%95%ED%99%94%20%EC%9A%B4%EB%8F%99> ;
+    kno:component kno:KN2020-0233-c3 ;
+    kno:frequency kno:KN2020-0233-freq-NN-2019 ;
+    kno:componentString "연관(聯關), 검색어(檢索語), 정화(淨化), 운동(運動)"@ko ;
+    skos:definition "포털 사이트에 특정 어휘를 검색했을 때 나타나는 부정적인 연관 검색어를 긍정적인 것으로 바꾸려고 힘쓰는 일. 또는 그런 활동."@ko ;
+    kno:predicate "힘쓰다"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:label "연관 검색어 정화 운동"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear .
+kno:KN2020-0233-c2 rdfs:label "검색어(檢索語)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "검색어"@ko ;
+    kno:surfaceForm "검색어"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002196 .
+kno:KN2020-0233-c4 rdfs:label "운동(運動)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000053 ;
+    kno:surfaceForm "운동"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2020-0233-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "연관(聯關)"@ko ;
+    kno:formative kno:F005046 ;
+    kno:semanticTag kno:usas-A2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "연관"@ko ;
+    kno:surfaceForm "연관"@ko .
+kno:KN2020-0233-c3 kno:fullForm "정화"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005695 ;
+    kno:surfaceForm "정화"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "정화(淨化)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

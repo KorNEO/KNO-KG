@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0052 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0052 kno:componentString "나(←not), 오(←old), 머(←multiplayer), -족(族)"@ko ;
+    kno:component kno:KN2012-0052-c3 ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:instantiates kno:S000001 ;
+    kno:example "¶회사 측은 이번 시즌 신상품이 최근 패션 시장의 핵심 소비층으로 떠오르고 있는 ‘{나오머족’을} 겨냥한 것으로 설명했다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "나오머족"@ko ;
+    kno:frequency kno:KN2012-0052-freq-NN-2013 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(▼←not old multiplayer族)" ;
+    kno:slotFiller "나(←not)+오(←old)+머(←multiplayer) (3성분)"@ko ;
+    kno:component kno:KN2012-0052-c1 ;
+    rdfs:label "나오머-족"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:frequency kno:KN2012-0052-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "안정적인 경제력을 바탕으로 여러 가지 분야에 대한 지식과 능력을 갖춘 30~40대 여성. 또는 그러한 무리."@ko ;
+    kno:component kno:KN2012-0052-c2 ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0052-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%98%EC%98%A4%EB%A8%B8%EC%A1%B1> ;
+    a ontolex:Word .
+kno:KN2012-0052-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "머"@ko ;
+    kno:surfaceForm "머"@ko ;
+    kno:formative kno:F003411 ;
+    rdfs:label "머(←multiplayer)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-K5.1 .
+kno:KN2012-0052-c1 kno:fullForm "나"@ko ;
+    kno:surfaceForm "나"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z8 ;
+    rdfs:label "나(←not)"@ko ;
+    kno:formative kno:F002663 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0052-c2 kno:fullForm "오"@ko ;
+    rdfs:label "오(←old)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "오"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T3 ;
+    a kno:Component ;
+    kno:formative kno:F005097 .
+kno:KN2012-0052-c4 kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:position "4"^^xsd:integer .

@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0615 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0615 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0615-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0615-form ;
-    ontolex:sense kno:KN2025-0615-sense .
-
-kno:KN2025-0615-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005532369> .
-
-kno:KN2025-0615-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0615-freq-nn,
-        kno:KN2025-0615-freq-yt ;
-    ontolex:writtenRep "통섭 역학"@ko .
-
-kno:KN2025-0615-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0615-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0615-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:frequency kno:KN2025-0615-freq-NN-2025 ;
+    kno:example "(LLM) 연성 물질의 미세 구조 변화와 흐름 특성을 동시에 해석하기 위해 연구팀은 {통섭역학을} 바탕으로 이론 모델과 실험을 함께 설계했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0615-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0615-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%B5%EC%84%AD%20%EC%97%AD%ED%95%99> ;
+    skos:definition "(LLM) 나노ㆍ고분자ㆍ액정ㆍ바이오 유체 등 연성 물질을 대상으로, 통계역학ㆍ열역학ㆍ유체역학ㆍ유변학 등 여러 역학 이론을 아울러 적용해 구조와 거동을 함께 설명하려는 융합 연구 분야."@ko ;
+    kno:languageType "한_한" ;
+    kno:origin "(統攝力學)" ;
+    kno:indexForm "통섭역학"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "통섭 역학"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0615-c1 ;
+    a kno:Neologism ;
+    kno:componentString "통섭(統攝), 역학(力學)"@ko .
+kno:KN2025-0615-c2 kno:formative kno:F005039 ;
+    kno:fullForm "역학"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "역학"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "역학(力學)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Y1 .
+kno:KN2025-0615-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "통섭(統攝)"@ko ;
+    kno:fullForm "통섭"@ko ;
+    kno:surfaceForm "통섭"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006507 ;
+    kno:semanticTag kno:usas-A1.8p .

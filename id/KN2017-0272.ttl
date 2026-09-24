@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0272 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0272 kno:component kno:KN2017-0272-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>←chicken中眞談)" ;
+    kno:slotFiller "(취)중(中)+진담(眞談) (2성분)"@ko ;
+    kno:example "¶치맥지교, {치중 진담을} 나누는 대상은 친구인 경우가 많다. 2011년부터 지난 1월까지 치킨과 관련해 가장 언급이 많이 된 인물 1위가 친구인 점은 이를 보여 준다."@ko ;
+    kno:instantiates kno:S001686 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0272-freq-NN-2017 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2017-0272-freq-NN-total ;
+    kno:languageType "(영+한)_한" ;
+    kno:component kno:KN2017-0272-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380258> ;
+    kno:componentString "치(킨)(chicken), (취)중(中), 진담(眞談)"@ko ;
+    rdfs:label "치중 진담"@ko ;
+    skos:definition "치킨을 먹는 동안 털어놓는, 진심에서 우러나온 말. 술에 취하게 되면 자기의 속마음을 털어놓게 된다는 ‘취중 진담’에서 유래한 말이다."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0272-freq-NN-2018 ;
+    kno:component kno:KN2017-0272-c3 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:urimalTargetCode "1380258" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "치중진담"@ko ;
+    kno:registration "우리말샘"@ko .
+kno:KN2017-0272-c2 kno:semanticTag kno:usas-F2 ;
+    kno:fullForm "취중"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(취)중(中)"@ko ;
+    kno:formative kno:F005822 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "중"@ko .
+kno:KN2017-0272-c1 kno:surfaceForm "치"@ko ;
+    kno:formative kno:F000092 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "치킨"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "치(킨)(chicken)"@ko ;
+    kno:semanticTag kno:usas-F1 .
+kno:KN2017-0272-c3 kno:surfaceForm "진담"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "진담(眞談)"@ko ;
+    kno:formative kno:F005922 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "진담"@ko .

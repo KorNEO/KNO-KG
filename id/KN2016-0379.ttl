@@ -1,0 +1,74 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0379 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0379 a ontolex:Word ;
+    kno:instantiates kno:S001558 ;
+    kno:component kno:KN2016-0379-c2 ;
+    kno:activeYears "10"^^xsd:integer ;
+    kno:frequency kno:KN2016-0379-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "연(애)(戀), 알(다), 못(하다)"@ko ;
+    kno:indexForm "연알못"@ko ;
+    kno:urimalTargetCode "1375972" ;
+    kno:example "¶‘{연알못’인} 줄 알았던 그가 심드렁한 표정 뒤에 숨어 있는 배려와 따뜻한 마음을 선보였다."@ko ;
+    kno:slotFiller "연(애)(戀) (1성분)"@ko ;
+    kno:instantiates kno:S000022 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "알(다)+못(하다) (2성분)"@ko ;
+    kno:origin "(戀알못)" ;
+    kno:frequency kno:KN2016-0379-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2016-0379-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0379-freq-NN-2023 ;
+    kno:languageType "한+고+고" ;
+    skos:definition "‘연애를 잘 알지 못하는 사람’을 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2016-0379-freq-NN-2022 ;
+    kno:frequency kno:KN2016-0379-freq-NN-2018 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2016-0379-freq-NN-2016 ;
+    kno:formation kno:W06 ;
+    rdfs:label "연알못"@ko ;
+    kno:component kno:KN2016-0379-c3 ;
+    kno:frequency kno:KN2016-0379-freq-NN-2021 ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1375972> ;
+    kno:frequency kno:KN2016-0379-freq-NN-2025 ;
+    kno:frequency kno:KN2016-0379-freq-NN-2024 ;
+    kno:frequency kno:KN2016-0379-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0379-freq-NN-2017 .
+kno:KN2016-0379-c2 kno:semanticTag kno:usas-X2.2p ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "알(다)"@ko ;
+    kno:surfaceForm "알"@ko ;
+    kno:formative kno:F000025 ;
+    kno:fullForm "알다"@ko .
+kno:KN2016-0379-c1 a kno:Component ;
+    rdfs:label "연(애)(戀)"@ko ;
+    kno:surfaceForm "연"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001610 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "연애"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0379-c3 kno:formative kno:F000039 ;
+    a kno:Component ;
+    kno:fullForm "못하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "못(하다)"@ko ;
+    kno:surfaceForm "못"@ko ;
+    kno:position "3"^^xsd:integer .

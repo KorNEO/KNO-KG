@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0070 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0070 a ontolex:Word ;
-    frac:attestation kno:KN2024-0070-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0070-form ;
-    ontolex:sense kno:KN2024-0070-sense .
-
-kno:KN2024-0070-att-nn a frac:Attestation ;
-    dcterms:date "2024-04-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005170245> .
-
-kno:KN2024-0070-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0070-freq-nn,
-        kno:KN2024-0070-freq-yt ;
-    ontolex:writtenRep "맵파민"@ko .
-
-kno:KN2024-0070-freq-nn a frac:CorpusFrequency ;
-    rdf:value 105 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0070-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0070-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0070 kno:frequency kno:KN2024-0070-freq-NN-2025 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2024-0070-c2 ;
+    kno:frequency kno:KN2024-0070-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "맵(다), (도)파민(dopamine)"@ko ;
+    kno:component kno:KN2024-0070-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:slotFiller "(도)파민(dopamine) (1성분)"@ko ;
+    kno:languageType "고+영" ;
+    kno:slotFiller "맵(다) (1성분)"@ko ;
+    a kno:Neologism ;
+    skos:definition "매운 음식을 먹었을 때 분비되는 도파민으로 인해 느껴지는 즐거움을 이르는 말. ‘맵다’와 ‘도파민(dopamine)’을 결합하여 만든 말이다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "맵파민"@ko ;
+    kno:frequency kno:KN2024-0070-freq-NN-2024 ;
+    kno:indexForm "맵파민"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%B5%ED%8C%8C%EB%AF%BC> ;
+    kno:instantiates kno:S000299 ;
+    kno:example "¶{맵파민이} 터지는 매운 음식을 선호하는 사람들이 증가하면서 위염 환자도 늘어나고 있다."@ko ;
+    kno:origin "(맵<영>←dopamine)" ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000725 .
+kno:KN2024-0070-c2 kno:surfaceForm "파민"@ko ;
+    rdfs:label "(도)파민(dopamine)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "도파민"@ko ;
+    kno:formative kno:F001935 .
+kno:KN2024-0070-c1 kno:formative kno:F000262 ;
+    kno:semanticTag kno:usas-X3.1 ;
+    rdfs:label "맵(다)"@ko ;
+    kno:fullForm "맵다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "맵"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .

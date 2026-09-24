@@ -1,0 +1,77 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0464 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0464 kno:frequency kno:KN2016-0464-freq-NN-2017 ;
+    kno:origin "(職場人나홀로族)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "직장인(職場人), 나, 홀로, -족(族)"@ko ;
+    kno:instantiates kno:S000012 ;
+    kno:indexForm "직장인나홀로족"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0464-c3 ;
+    kno:slotFiller "나+홀로+-족(族) (3성분)"@ko ;
+    kno:instantiates kno:S001664 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0464-freq-NN-total ;
+    kno:component kno:KN2016-0464-c2 ;
+    kno:urimalTargetCode "1372899" ;
+    kno:example "¶{직장인 나홀로족은} 음주와 관련한 소비 영역에서 ‘모임’, ‘회비’, ‘친구’라는 연관어가 포함된 소비를 절약하는 행태를 보였다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0464-freq-NN-2015 ;
+    kno:predicate "좋아하다"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:component kno:KN2016-0464-c1 ;
+    kno:languageType "한_(고+한)" ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:label "직장인나홀로족"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372899> ;
+    kno:slotFiller "직장인(職場人)+나+홀로 (3성분)"@ko ;
+    kno:component kno:KN2016-0464-c4 ;
+    skos:definition "직장에서 다른 사람과 어울리는 것을 꺼리고 혼자 생활하는 것을 좋아하는 사람. 또는 그런 무리."@ko .
+kno:KN2016-0464-c3 a kno:Component ;
+    rdfs:label "홀로"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "홀로"@ko ;
+    kno:formative kno:F007126 ;
+    kno:surfaceForm "홀로"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2016-0464-c2 rdfs:label "나"@ko ;
+    kno:surfaceForm "나"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "나"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:formative kno:F000070 .
+kno:KN2016-0464-c1 a kno:Component ;
+    kno:fullForm "직장인"@ko ;
+    kno:surfaceForm "직장인"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001793 ;
+    rdfs:label "직장인(職場人)"@ko .
+kno:KN2016-0464-c4 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 .

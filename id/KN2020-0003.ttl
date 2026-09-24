@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0003 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0003 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0003-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0003-form ;
-    ontolex:sense kno:KN2020-0003-sense .
-
-kno:KN2020-0003-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/079/0003307087> .
-
-kno:KN2020-0003-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0003-freq-nn,
-        kno:KN2020-0003-freq-yt ;
-    ontolex:writtenRep "거스름돈^계좌^적립^서비스"@ko .
-
-kno:KN2020-0003-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0003-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0003-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0003 kno:componentString "거스름돈, 계좌(計座), 적립(積立), 서비스(service)"@ko ;
+    kno:instantiates kno:S000788 ;
+    kno:component kno:KN2020-0003-c1 ;
+    kno:predicate "주다"@ko ;
+    kno:component kno:KN2020-0003-c2 ;
+    kno:example "¶한국은행은 {거스름돈 계좌 적립 서비스가} 시행되면 동전 발행과 유통에 드는 비용이 한층 감소될 것이라고 전망했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0003-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88%EA%B3%84%EC%A2%8C%EC%A0%81%EB%A6%BD%EC%84%9C%EB%B9%84%EC%8A%A4> ;
+    kno:frequency kno:KN2020-0003-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0003-freq-NN-2019 ;
+    rdfs:label "거스름돈^계좌^적립^서비스"@ko ;
+    kno:component kno:KN2020-0003-c3 ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(거스름돈計座積立<영>service)" ;
+    kno:frequency kno:KN2020-0003-freq-NN-total ;
+    kno:slotFiller "거스름돈 (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "거스름돈계좌적립서비스"@ko ;
+    skos:definition "현금으로 계산한 후 거슬러 받은 돈을 구매자의 은행 계좌로 곧바로 입금해 주는 서비스. =잔돈 계좌 적립 서비스."@ko ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:languageType "고^한^한^영" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko .
+kno:KN2020-0003-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002182 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "거스름돈"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "거스름돈"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:surfaceForm "거스름돈"@ko .
+kno:KN2020-0003-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "계좌"@ko ;
+    kno:formative kno:F000201 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "계좌"@ko ;
+    rdfs:label "계좌(計座)"@ko .
+kno:KN2020-0003-c4 kno:fullForm "서비스"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "서비스"@ko ;
+    kno:formative kno:F000527 ;
+    rdfs:label "서비스(service)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 .
+kno:KN2020-0003-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "적립"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F001747 ;
+    rdfs:label "적립(積立)"@ko ;
+    kno:fullForm "적립"@ko .

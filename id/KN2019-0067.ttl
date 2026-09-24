@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0067 kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2019-0067-c2 ;
+    a ontolex:Word ;
+    kno:example "¶{‘됐추럴’은} ‘됐고! 여전히 내추럴!’을 강조하는 키워드로 변함없이 이어지는 자연주의 테마가 한층 업그레이드된 스타일로 표현되는 트렌드를 의미한다."@ko ;
+    kno:indexForm "됐추럴"@ko ;
+    kno:component kno:KN2019-0067-c1 ;
+    kno:frequency kno:KN2019-0067-freq-NN-2019 ;
+    kno:predicate "생각하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    skos:definition "액세서리 따위에서 자연스러운 맵시를 중요하게 생각하는 경향."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%90%90%EC%B6%94%EB%9F%B4> ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "되(다), (내)추럴(natural)"@ko ;
+    kno:origin "(됐<영>←natural)" ;
+    kno:frequency kno:KN2019-0067-freq-NN-total ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:label "됐추럴"@ko ;
+    kno:languageType "고+영" .
+kno:KN2019-0067-c2 kno:semanticTag kno:usas-A5.4p ;
+    kno:surfaceForm "추럴"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(내)추럴(natural)"@ko ;
+    a kno:Component ;
+    kno:fullForm "내추럴"@ko ;
+    kno:formative kno:F006120 .
+kno:KN2019-0067-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003030 ;
+    kno:semanticTag kno:usas-A3p ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "되"@ko ;
+    rdfs:label "되(다)"@ko ;
+    kno:fullForm "되다"@ko ;
+    a kno:Component .

@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0144 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0144 kno:year "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000506 ;
+    kno:frequency kno:KN2016-0144-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0144-freq-NN-total ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0144-c3 ;
+    kno:slotFiller "선거(選擧)+지리학(地理學) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0144-c1 ;
+    kno:predicate "예측하다"@ko ;
+    kno:languageType "영^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>micro選擧地理學)" ;
+    skos:definition "과거의 선거 자료와 통계청의 조사 자료를 활용하여 지도를 작성하고, 이를 이용하여 선거의 결과를 예측하는 학문."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0144-c2 ;
+    kno:frequency kno:KN2016-0144-freq-NN-2016 ;
+    kno:componentString "마이크로(micro), 선거(選擧), 지리학(地理學)"@ko ;
+    rdfs:label "마이크로^선거^지리학"@ko ;
+    kno:example "¶현재 한국에서 공개된 데이터로 할 수 있는 선거 전략은 ‘{마이크로 선거 지리학’이다}."@ko ;
+    kno:indexForm "마이크로선거지리학"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EC%9D%B4%ED%81%AC%EB%A1%9C%EC%84%A0%EA%B1%B0%EC%A7%80%EB%A6%AC%ED%95%99> .
+kno:KN2016-0144-c3 kno:semanticTag kno:usas-Y1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "지리학(地理學)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W3 ;
+    kno:fullForm "지리학"@ko ;
+    kno:surfaceForm "지리학"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005873 .
+kno:KN2016-0144-c1 kno:fullForm "마이크로"@ko ;
+    kno:surfaceForm "마이크로"@ko ;
+    kno:semanticTag kno:usas-N3.2m ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "마이크로(micro)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000498 .
+kno:KN2016-0144-c2 rdfs:label "선거(選擧)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000529 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "선거"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "선거"@ko ;
+    kno:truncated "false"^^xsd:boolean .

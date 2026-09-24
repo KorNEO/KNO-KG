@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0210 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0210-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0210-form ;
-    ontolex:sense kno:KN2025-0210-sense .
-
-kno:KN2025-0210-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0006019932> .
-
-kno:KN2025-0210-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0210-freq-nn,
-        kno:KN2025-0210-freq-yt ;
-    ontolex:writtenRep "루트 뷰티"@ko .
-
-kno:KN2025-0210-freq-nn a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0210-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0210-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0210 kno:slotFiller "루트(root) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A3%A8%ED%8A%B8%20%EB%B7%B0%ED%8B%B0> ;
+    kno:frequency kno:KN2025-0210-freq-NN-2025 ;
+    kno:componentString "루트(root), 뷰티(beauty)"@ko ;
+    skos:definition "(LLM) 두피와 모발의 뿌리(모근) 건강을 피부 관리하듯 세심하게 가꾸는 헤어ㆍ두피 케어."@ko ;
+    rdfs:label "루트 뷰티"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000388 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0210-c1 ;
+    kno:indexForm "루트뷰티"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0210-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0210-c2 ;
+    a kno:Neologism ;
+    kno:example "(LLM) 뷰티업계는 두피를 피부처럼 관리하는 흐름이 커지면서 {루트뷰티} 라인업을 강화하고 있다."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0210-c1 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "루트"@ko ;
+    kno:surfaceForm "루트"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-M6 ;
+    a kno:Component ;
+    rdfs:label "루트(root)"@ko ;
+    kno:formative kno:F003267 .
+kno:KN2025-0210-c2 kno:formative kno:F000173 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:fullForm "뷰티"@ko ;
+    kno:surfaceForm "뷰티"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "뷰티(beauty)"@ko .

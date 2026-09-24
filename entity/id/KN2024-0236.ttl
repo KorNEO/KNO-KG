@@ -1,0 +1,36 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2024-0236 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2024-0236-att-nn ;
+    ontolex:canonicalForm kno:KN2024-0236-form ;
+    ontolex:sense kno:KN2024-0236-sense .
+
+kno:KN2024-0236-att-nn a frac:Attestation ;
+    dcterms:date "2024-02-14"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/005/0001673912> .
+
+kno:KN2024-0236-form a ontolex:Form ;
+    frac:frequency kno:KN2024-0236-freq-nn,
+        kno:KN2024-0236-freq-yt ;
+    ontolex:writtenRep "이분^도체육"@ko .
+
+kno:KN2024-0236-freq-nn a frac:CorpusFrequency ;
+    rdf:value 36 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2024-0236-freq-yt a frac:CorpusFrequency ;
+    rdf:value 0 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2024-0236-sense a ontolex:LexicalSense .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

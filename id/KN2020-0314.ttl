@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0314 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0314 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0314-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0314-form ;
-    ontolex:sense kno:KN2020-0314-sense .
-
-kno:KN2020-0314-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003707942> .
-
-kno:KN2020-0314-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0314-freq-nn,
-        kno:KN2020-0314-freq-yt ;
-    ontolex:writtenRep "집콕 시대"@ko .
-
-kno:KN2020-0314-freq-nn a frac:CorpusFrequency ;
-    rdf:value 663 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0314-freq-yt a frac:CorpusFrequency ;
-    rdf:value 134 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0314-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0314 kno:componentString "집콕, 시대"@ko ;
+    kno:frequency kno:KN2020-0314-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0314-freq-NN-2022 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0314-freq-NN-total ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1500758> ;
+    kno:frequency kno:KN2020-0314-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0314-freq-NN-2023 ;
+    rdfs:label "집콕 시대"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:example "¶공기 청정기는 최근 집에 있는 시간이 많아진 {집콕 시대에} 필수적인 용품이 되었다."@ko ;
+    kno:component kno:KN2020-0314-c1 ;
+    kno:slotFiller "시대 (1성분)"@ko ;
+    skos:definition "집에서 보내는 시간이 길어진 시대. 코로나19로 인한 외부 활동 제한으로 생겨난 말이다."@ko ;
+    kno:urimalTargetCode "1500758" ;
+    kno:indexForm "집콕시대"@ko ;
+    kno:languageType "(고+고)_한" ;
+    kno:origin "(집콕時代)" ;
+    kno:frequency kno:KN2020-0314-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0314-c2 ;
+    kno:instantiates kno:S000585 ;
+    a ontolex:MultiwordExpression .
+kno:KN2020-0314-c1 a kno:Component ;
+    kno:formative kno:F000937 ;
+    rdfs:label "집콕"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "집콕"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "집콕"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M8 .
+kno:KN2020-0314-c2 kno:fullForm "시대"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "시대"@ko ;
+    kno:surfaceForm "시대"@ko ;
+    kno:formative kno:F004651 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:position "2"^^xsd:integer .

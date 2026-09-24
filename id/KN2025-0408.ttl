@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0408 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0408 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0408-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0408-form ;
-    ontolex:sense kno:KN2025-0408-sense .
-
-kno:KN2025-0408-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-29"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/028/0002783720> .
-
-kno:KN2025-0408-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0408-freq-nn,
-        kno:KN2025-0408-freq-yt ;
-    ontolex:writtenRep "엄마 친구 아들상"@ko .
-
-kno:KN2025-0408-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0408-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0408-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "엄마+친구(親舊)+아들 (3성분)"@ko ;
+    kno:indexForm "엄마친구아들상"@ko ;
+    kno:origin "(엄마親舊아들相)" ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 대회에서 1등 하고 장학금까지 받았다니, 우리 반에서도 걔는 완전 {엄마친구아들상이네}."@ko ;
+    kno:component kno:KN2025-0408-c3 ;
+    rdfs:label "엄마 친구 아들상"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%84%EB%A7%88%20%EC%B9%9C%EA%B5%AC%20%EC%95%84%EB%93%A4%EC%83%81> ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 주변에서 비교 대상으로 자주 거론될 만큼 성과ㆍ조건이 뛰어난 사람을 비유적으로 이르는 말."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0408-c4 ;
+    kno:componentString "엄마, 친구(親舊), 아들, -상(相)"@ko ;
+    kno:slotFiller "친구(親舊)+아들+-상(相) (3성분)"@ko ;
+    kno:instantiates kno:S001166 ;
+    kno:languageType "고_한_(고+한)" ;
+    kno:frequency kno:KN2025-0408-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000315 ;
+    kno:frequency kno:KN2025-0408-freq-NN-total ;
+    kno:component kno:KN2025-0408-c1 ;
+    kno:component kno:KN2025-0408-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0408-c3 kno:fullForm "아들"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000839 ;
+    rdfs:label "아들"@ko ;
+    kno:surfaceForm "아들"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4 .
+kno:KN2025-0408-c4 kno:position "4"^^xsd:integer ;
+    rdfs:label "-상(相)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "상"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:surfaceForm "상"@ko ;
+    kno:formative kno:F000217 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0408-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "엄마"@ko ;
+    kno:surfaceForm "엄마"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000559 ;
+    rdfs:label "엄마"@ko .
+kno:KN2025-0408-c2 kno:formative kno:F000603 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "친구"@ko ;
+    rdfs:label "친구(親舊)"@ko ;
+    kno:semanticTag kno:usas-S3.1 ;
+    a kno:Component ;
+    kno:surfaceForm "친구"@ko .

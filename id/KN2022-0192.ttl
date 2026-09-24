@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0192 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0192 a ontolex:Word ;
-    frac:attestation kno:KN2022-0192-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0192-form ;
-    ontolex:sense kno:KN2022-0192-sense .
-
-kno:KN2022-0192-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002334813> .
-
-kno:KN2022-0192-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0192-freq-nn,
-        kno:KN2022-0192-freq-yt ;
-    ontolex:writtenRep "신-윤핵관"@ko .
-
-kno:KN2022-0192-freq-nn a frac:CorpusFrequency ;
-    rdf:value 312 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0192-freq-yt a frac:CorpusFrequency ;
-    rdf:value 90 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0192-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0192-freq-NN-2023 ;
+    kno:indexForm "신윤핵관"@ko ;
+    kno:slotFiller "윤핵관(尹核館) (1성분)"@ko ;
+    kno:example "¶친박계 인사로 널리 알려진 O 의원은 이번 선거에서 {신윤핵관을} 자처하고 나섰다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0192-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0192-freq-NN-total ;
+    kno:frequency kno:KN2022-0192-freq-NN-2021 ;
+    kno:instantiates kno:S000221 ;
+    kno:component kno:KN2022-0192-c2 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0192-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0192-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0192-freq-NN-2025 ;
+    kno:origin "(新尹核館)" ;
+    kno:componentString "신(新)-, 윤핵관(尹核館)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%9C%A4%ED%95%B5%EA%B4%80> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:languageType "한+한" ;
+    kno:formation kno:W03 ;
+    skos:definition "‘새로운 윤석열 대통령 측 핵심 관계자’를 이르는 말."@ko ;
+    rdfs:label "신-윤핵관"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0192-c2 a kno:Component ;
+    kno:formative kno:F005335 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "윤핵관"@ko ;
+    rdfs:label "윤핵관(尹核館)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "윤핵관"@ko .
+kno:KN2022-0192-c1 kno:formative kno:F000145 ;
+    rdfs:label "신(新)-"@ko ;
+    kno:surfaceForm "신"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "신"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

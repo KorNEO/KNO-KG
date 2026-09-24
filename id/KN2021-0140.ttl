@@ -1,37 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0140 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0140 a ontolex:Word ;
-    frac:attestation kno:KN2021-0140-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0140-form ;
-    ontolex:sense kno:KN2021-0140-sense .
-
-kno:KN2021-0140-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004700590> .
-
-kno:KN2021-0140-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0140-freq-nn,
-        kno:KN2021-0140-freq-yt ;
-    ontolex:writtenRep "벼락-거지"@ko .
-
-kno:KN2021-0140-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2471 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0140-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8664 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0140-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%B2%BC%EB%9D%BD%EA%B1%B0%EC%A7%80> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0140 kno:activeYears "6"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "벼락거지"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2021-0140-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%BC%EB%9D%BD%EA%B1%B0%EC%A7%80> ;
+    kno:component kno:KN2021-0140-c2 ;
+    kno:example "¶부동산 가격이 급격히 오르면서, 갑자기 나만 거지 신세가 된 것 같다고 느낀 무주택자들은 스스로를 {벼락 거지라고} 말한다."@ko ;
+    kno:componentString "벼락, 거지"@ko ;
+    skos:definition "갑자기 된 거지. 주로 주택 가격이 크게 올라서 매매나 전세로 집을 마련할 수 없게 되어 상대적 박탈감을 크게 느끼는 무주택자를 이르는 말이다."@ko ;
+    kno:frequency kno:KN2021-0140-freq-NN-total ;
+    kno:instantiates kno:S000242 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0140-freq-NN-2020 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0140-freq-NN-2024 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:frequency kno:KN2021-0140-freq-NN-2021 ;
+    rdfs:label "벼락-거지"@ko ;
+    kno:slotFiller "벼락 (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0140-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0140-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0140-c1 ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0140-c2 a kno:Component ;
+    kno:surfaceForm "거지"@ko ;
+    kno:semanticTag kno:usas-I1.1m ;
+    rdfs:label "거지"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000158 ;
+    kno:fullForm "거지"@ko .
+kno:KN2021-0140-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "벼락"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F003835 ;
+    rdfs:label "벼락"@ko ;
+    kno:surfaceForm "벼락"@ko .

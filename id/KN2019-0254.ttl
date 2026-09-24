@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0254 a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1523390> ;
+    kno:slotFiller "친(구)(親) (1성분)"@ko ;
+    skos:definition "‘진정한 친구’를 강조하여 이르는 말."@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:label "찐친"@ko ;
+    kno:instantiates kno:S000327 ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:slotFiller "찐(眞)- (1성분)"@ko ;
+    kno:indexForm "찐친"@ko ;
+    kno:urimalTargetCode "1523390" ;
+    kno:componentString "찐(眞)-, 친(구)(親)"@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:origin "(眞▽親)" ;
+    kno:instantiates kno:S000661 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2019-0254-c2 ;
+    kno:example "¶이미 ‘OO’을 통해 케미를 다진 네 명은 제작 발표회를 마무리하며 “{‘찐친’들이} 친근하게 같이 노는 프로그램이었으면 좋겠다.”라는 바람을 덧붙이기도 했다."@ko ;
+    kno:component kno:KN2019-0254-c1 ;
+    kno:languageType "한+한" .
+kno:KN2019-0254-c2 kno:formative kno:F000308 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "친"@ko ;
+    a kno:Component ;
+    kno:fullForm "친구"@ko ;
+    kno:semanticTag kno:usas-S3.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "친(구)(親)"@ko .
+kno:KN2019-0254-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:surfaceForm "찐"@ko ;
+    kno:formative kno:F000594 ;
+    a kno:Component ;
+    rdfs:label "찐(眞)-"@ko ;
+    kno:fullForm "찐"@ko ;
+    kno:role "고정항"@ko .

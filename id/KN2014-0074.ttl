@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0074 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0074 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%A9%20%EC%BC%80%EB%AF%B8> ;
+    kno:componentString "랩(rap), 케미(스트리)(chemistry)"@ko ;
+    kno:frequency kno:KN2014-0074-freq-NN-2016 ;
+    kno:instantiates kno:S001064 ;
+    kno:component kno:KN2014-0074-c1 ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2014-0074-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>▼←rap chemistry)" ;
+    skos:definition "래퍼들의 랩이 서로 조화롭게 어울림."@ko ;
+    kno:component kno:KN2014-0074-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0074-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "랩(rap) (1성분)"@ko ;
+    kno:indexForm "랩케미"@ko ;
+    kno:frequency kno:KN2014-0074-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0074-freq-NN-2020 ;
+    rdfs:label "랩 케미"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶또 ‘OO’를 통해 증명된 세 랩퍼의 ‘{랩 케미’도} 다시 한 번 들을 수 있다."@ko ;
+    kno:frequency kno:KN2014-0074-freq-NN-2014 ;
+    kno:activeYears "5"^^xsd:integer .
+kno:KN2014-0074-c1 rdfs:label "랩(rap)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "랩"@ko ;
+    kno:formative kno:F000728 ;
+    a kno:Component ;
+    kno:fullForm "랩"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2014-0074-c2 kno:formative kno:F000104 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S3.1p ;
+    kno:fullForm "케미스트리"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "케미"@ko ;
+    rdfs:label "케미(스트리)(chemistry)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0090 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0090 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2017-0090-c3 ;
+    kno:frequency kno:KN2017-0090-freq-NN-2017 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EB%B8%8C%EB%A5%B4%20%EC%95%84%20%EB%A5%BC%EB%A6%AC%EC%97%90> ;
+    skos:definition "제본을 하지 않은 상태의 서적. 텍스트가 인쇄된 종이가 표지 사이에 끼워져 있는 형태로, 독자가 자신의 개성과 취향을 고려하여 자신만의 책으로 디자인할 수 있다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:componentString "리브르(livre), 아(a), 를리에(relier)"@ko ;
+    kno:component kno:KN2017-0090-c1 ;
+    kno:example "¶출판사 OO는 {리브르 아 를리에} 형식에서 따온 OO을 내놓았다."@ko ;
+    kno:component kno:KN2017-0090-c2 ;
+    kno:frequency kno:KN2017-0090-freq-NN-2019 ;
+    kno:frequency kno:KN2017-0090-freq-NN-2016 ;
+    kno:origin "(<프>livre a relier)" ;
+    kno:languageType "프_프_프" ;
+    kno:frequency kno:KN2017-0090-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    rdfs:label "리브르 아 를리에"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "리브르아를리에"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0090-c3 kno:fullForm "를리에"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003279 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "를리에"@ko ;
+    rdfs:label "를리에(relier)"@ko ;
+    kno:semanticTag kno:usas-Q4.1 .
+kno:KN2017-0090-c1 kno:formative kno:F003296 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "리브르"@ko ;
+    kno:surfaceForm "리브르"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "리브르(livre)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.1 .
+kno:KN2017-0090-c2 kno:semanticTag kno:usas-Z5 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "아(a)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004787 ;
+    kno:fullForm "아"@ko ;
+    kno:surfaceForm "아"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0081 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0081 kno:predicate "느끼다"@ko ;
+    kno:slotFiller "더스트(dust) (1성분)"@ko ;
+    rdfs:label "더스트 포비아"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000013 ;
+    kno:frequency kno:KN2018-0081-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    skos:definition "미세 먼지가 심할 때 외출하는 것에 대해 두려움이나 거부감을 느끼는 증세. ⇒규범 표기는 미확정이다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:componentString "더스트(dust), 포비아(phobia)"@ko ;
+    kno:frequency kno:KN2018-0081-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶연일 한반도에 불어닥치고 있는 사상 최대 수준의 미세 먼지에 대해 교육 당국이 뚜렷한 대책을 내놓지 못하자…일부에선 등교 거부까지 선언하고 나서면서 미세 먼지 공포증, 이른바 ‘{더스트 포비아’가} 확산하는 모습이다."@ko ;
+    kno:indexForm "더스트포비아"@ko ;
+    kno:frequency kno:KN2018-0081-freq-NN-2018 ;
+    kno:urimalTargetCode "1384623" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384623> ;
+    kno:origin "(<영>▼dust phobia)" ;
+    kno:component kno:KN2018-0081-c1 ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2018-0081-c2 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2018-0081-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:fullForm "더스트"@ko ;
+    rdfs:label "더스트(dust)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000709 ;
+    kno:surfaceForm "더스트"@ko .
+kno:KN2018-0081-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "포비아"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:surfaceForm "포비아"@ko ;
+    kno:formative kno:F000018 ;
+    rdfs:label "포비아(phobia)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

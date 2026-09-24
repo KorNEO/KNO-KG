@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0368 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0368 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0368-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0368-form ;
-    ontolex:sense kno:KN2025-0368-sense .
-
-kno:KN2025-0368-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0006138042> .
-
-kno:KN2025-0368-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0368-freq-nn,
-        kno:KN2025-0368-freq-yt ;
-    ontolex:writtenRep "스캠 산업"@ko .
-
-kno:KN2025-0368-freq-nn a frac:CorpusFrequency ;
-    rdf:value 174 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0368-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0368-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:instantiates kno:S000124 ;
+    kno:example "(LLM) 현지 당국의 단속이 느슨한 틈을 타 {스캠산업이} 커지면서, 취업을 미끼로 한 감금 피해도 함께 늘고 있다."@ko ;
+    kno:origin "(<영>scam産業)" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EC%BA%A0%20%EC%82%B0%EC%97%85> ;
+    skos:definition "(LLM) 온라인을 기반으로 한 사기 범죄가 분업ㆍ조직화되어 운영되며, 자금 회수ㆍ세탁과 인력 동원까지 갖춘 하나의 산업처럼 굳어진 범죄 생태계."@ko ;
+    kno:component kno:KN2025-0368-c2 ;
+    rdfs:label "스캠 산업"@ko ;
+    kno:frequency kno:KN2025-0368-freq-NN-total ;
+    kno:frequency kno:KN2025-0368-freq-NN-2025 ;
+    kno:slotFiller "스캠(scam) (1성분)"@ko ;
+    kno:languageType "영_한" ;
+    kno:component kno:KN2025-0368-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "스캠산업"@ko ;
+    kno:componentString "스캠(scam), 산업(産業)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0368-c2 kno:surfaceForm "산업"@ko ;
+    a kno:Component ;
+    rdfs:label "산업(産業)"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "산업"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000058 .
+kno:KN2025-0368-c1 kno:formative kno:F000821 ;
+    a kno:Component ;
+    kno:fullForm "스캠"@ko ;
+    kno:surfaceForm "스캠"@ko ;
+    rdfs:label "스캠(scam)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

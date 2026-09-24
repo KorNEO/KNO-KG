@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0006 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0006 kno:frequency kno:KN2016-0006-freq-NN-2015 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2016-0006-freq-NN-2020 ;
+    kno:componentString "강된장(강된醬), -남(男)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EB%90%9C%EC%9E%A5%EB%82%A8> ;
+    kno:frequency kno:KN2016-0006-freq-NN-2016 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    rdfs:label "강된장-남"@ko ;
+    kno:languageType "(고+한)+한" ;
+    kno:component kno:KN2016-0006-c2 ;
+    kno:slotFiller "강된장(강된醬) (1성분)"@ko ;
+    kno:indexForm "강된장남"@ko ;
+    kno:example "¶14살 많은 남자 상사의 고백에 난감해 할, 그래서 앞으로의 직장 생활이 곤혹스러울, 어쩌면 부담을 못 이겨 직장을 그만 둬야 할지도 모를 20세 여직원에 대한 강한 연민과, ‘{강된장남’의} 뻔뻔함에 대한 분노, 조롱, 이 상황을 패러디한 창작물들로 OO가 들썩였다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0006-c1 ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "명품 소비를 맹목적으로 지향하며 과시형 소비를 자주 일삼는 남성을 비하하여 이르는 말. 된장남보다 더 심한 과소비를 하는 남성을 이르는 말이다."@ko ;
+    kno:instantiates kno:S000003 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2016-0006-freq-NN-2018 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0006-freq-NN-total ;
+    kno:origin "(강된醬男)" .
+kno:KN2016-0006-c2 kno:formative kno:F000008 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "남"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    rdfs:label "-남(男)"@ko .
+kno:KN2016-0006-c1 kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "강된장"@ko ;
+    kno:surfaceForm "강된장"@ko ;
+    rdfs:label "강된장(강된醬)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002144 ;
+    a kno:Component .

@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0243 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0243 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0243-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0243-form ;
-    ontolex:sense kno:KN2025-0243-sense .
-
-kno:KN2025-0243-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005138180> .
-
-kno:KN2025-0243-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0243-freq-nn,
-        kno:KN2025-0243-freq-yt ;
-    ontolex:writtenRep "무해력 채널"@ko .
-
-kno:KN2025-0243-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0243-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0243-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0243 kno:registration "신어DB"@ko ;
+    kno:componentString "무해(無害), -력(力), 채널(channel)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B4%ED%95%B4%20%EB%A0%A5%20%EC%B1%84%EB%84%90> ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0243-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0243-freq-NN-2025 ;
+    kno:example "(LLM) 요즘 뉴스가 너무 자극적이라 퇴근하고 나면 {무해력채널을} 틀어 놓고 아기랑 강아지 영상만 한참 본다."@ko ;
+    skos:definition "(LLM) 아기ㆍ반려동물 등 자극이 적고 귀엽거나 순수한 소재를 중심으로, 시청자에게 정서적 안정감과 편안함을 주는 사회 관계망 서비스의 콘텐츠 채널."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0243-freq-NN-total ;
+    kno:component kno:KN2025-0243-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "무해력채널"@ko ;
+    kno:component kno:KN2025-0243-c2 ;
+    kno:origin "(無害力<영>channel)" ;
+    kno:languageType "(한+한)_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "무해 력 채널"@ko .
+kno:KN2025-0243-c1 kno:formative kno:F003544 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A15p ;
+    kno:fullForm "무해"@ko ;
+    kno:surfaceForm "무해"@ko ;
+    rdfs:label "무해(無害)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2025-0243-c3 a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "채널(channel)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001816 ;
+    kno:fullForm "채널"@ko ;
+    kno:surfaceForm "채널"@ko ;
+    kno:role "성분"@ko .
+kno:KN2025-0243-c2 kno:surfaceForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "-력(力)"@ko ;
+    kno:fullForm "력"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000010 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X9.1p .

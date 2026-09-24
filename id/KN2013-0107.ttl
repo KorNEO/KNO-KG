@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0107 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0107 kno:registration "우리말샘"@ko ;
+    skos:definition "공연에서 행사 ‘당일까지 판매되지 않은 좌석을 할인하여 파는 티켓’."@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357601> ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:predicate "파다"@ko ;
+    kno:origin "(當←<영>ticket)" ;
+    kno:indexForm "당켓"@ko ;
+    kno:example "¶OO에서 열린 OO 7~8일 공연 티켓 중 103장이 ‘{당켓’으로} 팔렸다."@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "당(일)(當), (티)켓(ticket)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0107-c1 ;
+    kno:urimalTargetCode "1357601" ;
+    kno:component kno:KN2013-0107-c2 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "당켓"@ko .
+kno:KN2013-0107-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "당"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "당(일)(當)"@ko ;
+    kno:fullForm "당일"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002892 .
+kno:KN2013-0107-c2 kno:formative kno:F006272 ;
+    kno:surfaceForm "켓"@ko ;
+    kno:fullForm "티켓"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "(티)켓(ticket)"@ko ;
+    kno:position "2"^^xsd:integer .

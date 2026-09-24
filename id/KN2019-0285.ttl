@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0285 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0285 kno:frequency kno:KN2019-0285-freq-NN-2024 ;
+    kno:componentString "특가(特價), (아이)템(item)"@ko ;
+    kno:frequency kno:KN2019-0285-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:slotFiller "특가(特價) (1성분)"@ko ;
+    kno:instantiates kno:S000004 ;
+    kno:indexForm "특가템"@ko ;
+    kno:frequency kno:KN2019-0285-freq-NN-2019 ;
+    kno:component kno:KN2019-0285-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶OO은…단순히 할인 혜택만 제공하는 것이 아닌, 다양한 {특가템을} 퍼스널 컬러 타입별로 분류하여 개인의 톤에 어울리는 제품을 추천해 더욱 실용적이다."@ko ;
+    kno:frequency kno:KN2019-0285-freq-NN-total ;
+    kno:frequency kno:KN2019-0285-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "특가-템"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:activeYears "6"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B9%EA%B0%80%ED%85%9C> ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(特價<영>←item)" ;
+    kno:frequency kno:KN2019-0285-freq-NN-2022 ;
+    skos:definition "값을 특별히 싸게 매긴 물건을 이르는 말."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0285-freq-NN-2021 ;
+    kno:component kno:KN2019-0285-c1 ;
+    kno:languageType "한+영" ;
+    kno:formation kno:W01 .
+kno:KN2019-0285-c2 rdfs:label "(아이)템(item)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "아이템"@ko .
+kno:KN2019-0285-c1 rdfs:label "특가(特價)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006577 ;
+    kno:fullForm "특가"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "특가"@ko ;
+    kno:semanticTag kno:usas-I1.3m .

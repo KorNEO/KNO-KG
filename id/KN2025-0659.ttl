@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0659 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0659 a ontolex:Word ;
-    frac:attestation kno:KN2025-0659-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0659-form ;
-    ontolex:sense kno:KN2025-0659-sense .
-
-kno:KN2025-0659-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/310/0000129809> .
-
-kno:KN2025-0659-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0659-freq-nn,
-        kno:KN2025-0659-freq-yt ;
-    ontolex:writtenRep "필코노미"@ko .
-
-kno:KN2025-0659-freq-nn a frac:CorpusFrequency ;
-    rdf:value 241 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0659-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0659-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0659 rdfs:label "필코노미"@ko ;
+    kno:componentString "필(feel), (이)코노미(economy)"@ko ;
+    kno:frequency kno:KN2025-0659-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0659-freq-NN-total ;
+    kno:predicate "구매하다"@ko ;
+    kno:component kno:KN2025-0659-c1 ;
+    a kno:Neologism ;
+    kno:origin "(<영>▼feel←economy)" ;
+    kno:instantiates kno:S000048 ;
+    kno:formation kno:W05 ;
+    skos:definition "(LLM) 자신의 기분을 달래거나 만족감을 얻기 위해 상품ㆍ서비스를 구매하는 소비 현상."@ko ;
+    kno:indexForm "필코노미"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:example "(LLM) 우울감이 쌓일 때마다 향기 테라피나 힐링 클래스에 돈을 쓰는 {필코노미가} 하나의 소비 트렌드로 자리 잡았다."@ko ;
+    kno:languageType "영+영" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0659-c2 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%84%EC%BD%94%EB%85%B8%EB%AF%B8> ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "필(feel) (1성분)"@ko .
+kno:KN2025-0659-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "필"@ko ;
+    kno:surfaceForm "필"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006898 ;
+    rdfs:label "필(feel)"@ko ;
+    kno:semanticTag kno:usas-E1 .
+kno:KN2025-0659-c2 kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "코노미"@ko ;
+    a kno:Component ;
+    kno:fullForm "이코노미"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000105 ;
+    rdfs:label "(이)코노미(economy)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .

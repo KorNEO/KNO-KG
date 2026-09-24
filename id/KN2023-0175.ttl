@@ -1,37 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0175 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0175 a ontolex:Word ;
-    frac:attestation kno:KN2023-0175-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0175-form ;
-    ontolex:sense kno:KN2023-0175-sense .
-
-kno:KN2023-0175-att-nn a frac:Attestation ;
-    dcterms:date "2022-12-04"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/018/0005380161> .
-
-kno:KN2023-0175-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0175-freq-nn,
-        kno:KN2023-0175-freq-yt ;
-    ontolex:writtenRep "알빠임"@ko .
-
-kno:KN2023-0175-freq-nn a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0175-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3319 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0175-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%95%8C%EB%B9%A0%EC%9E%84%3F> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0175 kno:frequency kno:KN2023-0175-freq-NN-total ;
+    kno:slotFiller "이(다) (1성분)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "알빠임"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2023-0175-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0175-freq-NN-2024 ;
+    kno:example "¶취업을 준비하고 있는 O 씨는 “경쟁자가 많아도 상대가 아무리 스펙이 뛰어나도 ‘{알빠임’의} 자세로 면접을 준비할 생각”이라고 말했다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:languageType "고+고+고" ;
+    kno:component kno:KN2023-0175-c3 ;
+    kno:instantiates kno:S001525 ;
+    kno:predicate "쓰다"@ko ;
+    kno:component kno:KN2023-0175-c1 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "알빠임"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2023-0175-c2 ;
+    kno:componentString "알(다), 바, 이(다)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%8C%EB%B9%A0%EC%9E%84> ;
+    kno:frequency kno:KN2023-0175-freq-NN-2022 ;
+    skos:definition "‘내가 알 바가 아님’이라는 뜻으로 쓰는 말. 주로 어떤 상황에 대해 냉소적으로 반응할 때 쓰는 말이다. =알빠노."@ko .
+kno:KN2023-0175-c3 kno:surfaceForm "이"@ko ;
+    kno:fullForm "이다"@ko ;
+    kno:formative kno:F005374 ;
+    kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    rdfs:label "이(다)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0175-c1 kno:semanticTag kno:usas-X2.2p ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "알(다)"@ko ;
+    kno:surfaceForm "알"@ko ;
+    kno:formative kno:F000025 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "알다"@ko .
+kno:KN2023-0175-c2 kno:fullForm "바"@ko ;
+    kno:surfaceForm "바"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:formative kno:F001334 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "바"@ko .

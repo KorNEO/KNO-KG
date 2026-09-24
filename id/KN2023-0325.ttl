@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0325 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0325 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0325-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0325-form ;
-    ontolex:sense kno:KN2023-0325-sense .
-
-kno:KN2023-0325-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003489553> .
-
-kno:KN2023-0325-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0325-freq-nn,
-        kno:KN2023-0325-freq-yt ;
-    ontolex:writtenRep "팁 피로"@ko .
-
-kno:KN2023-0325-freq-nn a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0325-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0325-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0325 kno:origin "(<영>tip疲勞)" ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001729 ;
+    kno:indexForm "팁피로"@ko ;
+    kno:componentString "팁(tip), 피로(疲勞)"@ko ;
+    kno:frequency kno:KN2023-0325-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%81%20%ED%94%BC%EB%A1%9C> ;
+    kno:languageType "영_한" ;
+    kno:example "¶미국에서는 코로나 팬데믹을 거치며 지나칠 정도의 팁을 요구하는 현상으로 인해 고객들이 {팁 피로에} 시달린다는 보도가 있다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "피로(疲勞) (1성분)"@ko ;
+    skos:definition "서비스에 대한 감사의 의미로 종업원에게 지불하는 팁의 금액이 치솟으면서 사용자의 몸이나 정신이 지쳐서 힘듦. 또는 그런 상태."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0325-freq-NN-total ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0325-c1 ;
+    kno:frequency kno:KN2023-0325-freq-NN-2025 ;
+    kno:component kno:KN2023-0325-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "팁 피로"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2023-0325-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "팁"@ko ;
+    kno:formative kno:F000195 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    rdfs:label "팁(tip)"@ko ;
+    a kno:Component ;
+    kno:fullForm "팁"@ko .
+kno:KN2023-0325-c2 kno:semanticTag kno:usas-B2m ;
+    rdfs:label "피로(疲勞)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "피로"@ko ;
+    kno:surfaceForm "피로"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000634 .

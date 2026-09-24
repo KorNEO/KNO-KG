@@ -1,0 +1,76 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0189 kno:component kno:KN2017-0189-c3 ;
+    kno:slotFiller "페이(pay)+근절(根絕)+법(法) (3성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^영^한" ;
+    kno:example "¶O 의원은 “{애국 페이 근절법을} 통해 병사 사기를 진작하고 군 복무의 충실을 기함은 물론 병역 의무 이행에 대해 정당한 대가를 받을 수 있도록 해야 한다.”라고 강조했다."@ko ;
+    kno:frequency kno:KN2017-0189-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0189-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2017-0189-freq-NN-2017 ;
+    kno:origin "(愛國<영>pay根絕法)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%A0%EA%B5%AD%ED%8E%98%EC%9D%B4%EA%B7%BC%EC%A0%88%EB%B2%95> ;
+    kno:instantiates kno:S001528 ;
+    kno:predicate "근절하다"@ko ;
+    kno:component kno:KN2017-0189-c4 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:component kno:KN2017-0189-c2 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "애국페이근절법"@ko ;
+    skos:definition "애국심을 빌미로 노동력을 착취하고 그에 대한 임금을 제대로 지급하지 않는 일을 근절하는 법안. 병역의 의무를 다하면서도 열악한 대우를 받는 한국 병사들의 임금 문제를 개선하고자 2016년 12월 국회에서 발의된 군인 월급 인상안으로, ‘군인 보수법 개정안’이라고도 한다."@ko ;
+    kno:slotFiller "애국(愛國)+페이(pay) (2성분)"@ko ;
+    rdfs:label "애국^페이^근절법"@ko ;
+    kno:component kno:KN2017-0189-c1 ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "애국(愛國), 페이(pay), 근절(根絕), 법(法)"@ko ;
+    kno:instantiates kno:S000802 .
+kno:KN2017-0189-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:formative kno:F001103 ;
+    a kno:Component ;
+    kno:fullForm "근절"@ko ;
+    rdfs:label "근절(根絕)"@ko ;
+    kno:surfaceForm "근절"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2017-0189-c4 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0189-c2 kno:formative kno:F000433 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "페이"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "페이"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "페이(pay)"@ko .
+kno:KN2017-0189-c1 kno:role "고정항"@ko ;
+    rdfs:label "애국(愛國)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-E2p ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000845 ;
+    kno:fullForm "애국"@ko ;
+    kno:surfaceForm "애국"@ko .

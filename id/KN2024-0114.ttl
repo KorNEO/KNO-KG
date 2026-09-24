@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0114 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0114 a ontolex:Word ;
-    frac:attestation kno:KN2024-0114-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0114-form ;
-    ontolex:sense kno:KN2024-0114-sense .
-
-kno:KN2024-0114-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005223306> .
-
-kno:KN2024-0114-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0114-freq-nn,
-        kno:KN2024-0114-freq-yt ;
-    ontolex:writtenRep "삼쏘공"@ko .
-
-kno:KN2024-0114-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0114-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0114-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0114 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EC%8F%98%EA%B3%B5> ;
+    kno:origin "(三쏘공)" ;
+    kno:slotFiller "쏘(다)+공 (2성분)"@ko ;
+    a kno:Neologism ;
+    rdfs:label "삼쏘공"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "삼(성)(Samsung), 쏘(다), 공"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2024-0114-freq-NN-total ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0114-c2 ;
+    kno:formation kno:W06 ;
+    skos:definition "‘삼성이 쏘아 올린 공’을 줄여 이르는 말. 삼성 그룹의 미래 사업과 관련하여 상승세를 타는 주식 종목을 의미한다."@ko ;
+    kno:example "¶투자자들이 {삼쏘공의} 수혜 업종을 찾기 시작하면서 인공 지능 및 로봇, 자율 주행 등 관련주들의 주가가 큰 폭으로 상승하였다."@ko ;
+    kno:languageType "한+고+고" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0114-c1 ;
+    kno:component kno:KN2024-0114-c3 ;
+    a ontolex:Word ;
+    kno:indexForm "삼쏘공"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0114-freq-NN-2024 ;
+    kno:instantiates kno:S001442 .
+kno:KN2024-0114-c2 a kno:Component ;
+    rdfs:label "쏘(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:fullForm "쏘다"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "쏘"@ko ;
+    kno:formative kno:F004770 .
+kno:KN2024-0114-c1 kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F001443 ;
+    kno:surfaceForm "삼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    rdfs:label "삼(성)(Samsung)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "삼성"@ko .
+kno:KN2024-0114-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "공"@ko ;
+    kno:surfaceForm "공"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:formative kno:F002322 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "공"@ko .

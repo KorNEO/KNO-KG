@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0341 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0341 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0341-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0341-form ;
-    ontolex:sense kno:KN2020-0341-sense .
-
-kno:KN2020-0341-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/214/0001017742> .
-
-kno:KN2020-0341-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0341-freq-nn,
-        kno:KN2020-0341-freq-yt ;
-    ontolex:writtenRep "코로나 블루"@ko .
-
-kno:KN2020-0341-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17964 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0341-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1772 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0341-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0341 kno:frequency kno:KN2020-0341-freq-NN-2024 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1484676> ;
+    kno:component kno:KN2020-0341-c2 ;
+    kno:frequency kno:KN2020-0341-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:label "코로나 블루"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0341-freq-NN-2020 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "코로나블루"@ko ;
+    kno:instantiates kno:S000005 ;
+    kno:example "¶코로나19 확산이 장기화됨에 따라 이른바 ‘{코로나 블루’를} 호소하는 이들이 늘고 있다."@ko ;
+    kno:frequency kno:KN2020-0341-freq-NN-2021 ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0341-freq-NN-2023 ;
+    skos:definition "코로나19의 확산으로 인해 불안함이나 우울함을 느끼는 상태."@ko ;
+    kno:component kno:KN2020-0341-c1 ;
+    kno:instantiates kno:S000258 ;
+    kno:componentString "코로나(바이러스)(corona virus), 블루(blue)"@ko ;
+    kno:origin "(<영>←corona virus blue)" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:predicate "느끼다"@ko ;
+    kno:urimalTargetCode "1484676" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2020-0341-freq-NN-2025 ;
+    kno:slotFiller "블루(blue) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0341-freq-NN-2022 ;
+    a kno:Neologism .
+kno:KN2020-0341-c2 kno:formative kno:F000519 ;
+    kno:semanticTag kno:usas-O4.3 ;
+    a kno:Component ;
+    rdfs:label "블루(blue)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "블루"@ko ;
+    kno:surfaceForm "블루"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2020-0341-c1 kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component .

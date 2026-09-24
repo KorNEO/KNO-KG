@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0141 kno:frequency kno:KN2019-0141-freq-NN-2025 ;
+    kno:frequency kno:KN2019-0141-freq-NN-2018 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2019-0141-freq-NN-2020 ;
+    kno:componentString "생리(生理), 빈곤(貧困)"@ko ;
+    kno:frequency kno:KN2019-0141-freq-NN-total ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2019-0141-c2 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:frequency kno:KN2019-0141-freq-NN-2019 ;
+    kno:origin "(生理貧困)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%A6%AC%20%EB%B9%88%EA%B3%A4> ;
+    kno:predicate "놓이다"@ko ;
+    kno:frequency kno:KN2019-0141-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0141-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0141-c1 ;
+    kno:indexForm "생리빈곤"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0141-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "생리 빈곤"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶선진국 OO에서도 그처럼 이른바 {‘생리 빈곤’을} 겪고 있는 여성이 5명 중 1명에 달한다."@ko ;
+    kno:frequency kno:KN2019-0141-freq-NN-2022 ;
+    skos:definition "저소득층 여성들이 생리와 관련된 용품을 구입하기 어려운 처지에 놓이는 일."@ko ;
+    kno:languageType "한_한" .
+kno:KN2019-0141-c2 kno:surfaceForm "빈곤"@ko ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "빈곤(貧困)"@ko ;
+    kno:fullForm "빈곤"@ko ;
+    kno:formative kno:F001415 .
+kno:KN2019-0141-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "생리"@ko ;
+    rdfs:label "생리(生理)"@ko ;
+    kno:formative kno:F004262 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "생리"@ko .

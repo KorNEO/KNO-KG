@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0139 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0139 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0139-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0139-form ;
-    ontolex:sense kno:KN2024-0139-sense .
-
-kno:KN2024-0139-att-nn a frac:Attestation ;
-    dcterms:date "2023-12-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0014384731> .
-
-kno:KN2024-0139-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0139-freq-nn,
-        kno:KN2024-0139-freq-yt ;
-    ontolex:writtenRep "순환^경제^사회법"@ko .
-
-kno:KN2024-0139-freq-nn a frac:CorpusFrequency ;
-    rdf:value 83 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0139-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0139-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0139 a kno:Neologism ;
+    kno:year "2024"^^xsd:gYear ;
+    skos:definition "폐기물의 순환 이용을 촉진하여 자원을 효율적으로 이용하고, 순환 경제 체계 구축이 지속 가능하도록 하는 것을 목적으로 제정한 법률. 정식 명칭은 ‘순환 경제 사회 전환 촉진법’이다."@ko ;
+    kno:frequency kno:KN2024-0139-freq-NN-2023 ;
+    kno:component kno:KN2024-0139-c2 ;
+    kno:example "¶지난해 겨울에 제정된 {순환 경제 사회법은} 제품의 생산 및 유통, 소비 과정에서 폐기물의 발생량을 줄이고 순환 이용을 촉진하기 위한 것이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(循環經濟社會法)" ;
+    kno:frequency kno:KN2024-0139-freq-NN-total ;
+    kno:component kno:KN2024-0139-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001478 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%9C%ED%99%98%EA%B2%BD%EC%A0%9C%EC%82%AC%ED%9A%8C%EB%B2%95> ;
+    kno:indexForm "순환경제사회법"@ko ;
+    kno:componentString "순환(循環), 경제(經濟), 사회법(社會法)"@ko ;
+    kno:component kno:KN2024-0139-c3 ;
+    kno:slotFiller "사회법(社會法) (1성분)"@ko ;
+    rdfs:label "순환^경제^사회법"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0139-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0139-freq-NN-2025 .
+kno:KN2024-0139-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "경제"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000029 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:surfaceForm "경제"@ko .
+kno:KN2024-0139-c1 a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001510 ;
+    rdfs:label "순환(循環)"@ko ;
+    kno:fullForm "순환"@ko ;
+    kno:surfaceForm "순환"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0139-c3 kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "사회법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "사회법(社會法)"@ko ;
+    kno:fullForm "사회법"@ko ;
+    kno:formative kno:F004187 ;
+    a kno:Component .

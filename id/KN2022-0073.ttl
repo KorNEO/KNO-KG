@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0073 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0073 a ontolex:Word ;
-    frac:attestation kno:KN2022-0073-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0073-form ;
-    ontolex:sense kno:KN2022-0073-sense .
-
-kno:KN2022-0073-att-nn a frac:Attestation ;
-    dcterms:date "2022-06-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003698231> .
-
-kno:KN2022-0073-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0073-freq-nn,
-        kno:KN2022-0073-freq-yt ;
-    ontolex:writtenRep "궁케팅"@ko .
-
-kno:KN2022-0073-freq-nn a frac:CorpusFrequency ;
-    rdf:value 64 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0073-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0073-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0073 kno:indexForm "궁케팅"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0073-freq-NN-2025 ;
+    skos:definition "궁궐을 의미하는 ‘궁’과 ‘티케팅’을 결합하여 만든 말로, 궁궐에서 열리는 기획 행사에 참여하기 위한 표 예매 경쟁이 치열하다는 것을 이르는 말."@ko ;
+    kno:frequency kno:KN2022-0073-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0073-freq-NN-total ;
+    kno:frequency kno:KN2022-0073-freq-NN-2022 ;
+    kno:example "¶궁궐을 체험하는 행사는 대부분 온라인 예매를 통하여 이루어지는데, 예매 경쟁이 치열하여 ‘{궁케팅’이라는} 말까지 등장하였다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "궁케팅"@ko ;
+    kno:slotFiller "궁(宮) (1성분)"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B6%81%EC%BC%80%ED%8C%85> ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0073-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0073-freq-NN-2024 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:componentString "궁(宮), (티)케팅(ticketing)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(宮<영>←ticketing)" ;
+    kno:component kno:KN2022-0073-c1 ;
+    kno:instantiates kno:S000091 .
+kno:KN2022-0073-c2 kno:role "고정항"@ko ;
+    kno:fullForm "티케팅"@ko ;
+    kno:surfaceForm "케팅"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F000236 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "(티)케팅(ticketing)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2022-0073-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "궁"@ko ;
+    kno:surfaceForm "궁"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    rdfs:label "궁(宮)"@ko ;
+    kno:formative kno:F001092 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

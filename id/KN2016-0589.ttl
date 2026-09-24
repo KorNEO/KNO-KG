@@ -1,0 +1,72 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0589 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0589 kno:component kno:KN2016-0589-c1 ;
+    kno:origin "(혼工族)" ;
+    kno:frequency kno:KN2016-0589-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "공(부)(工) (1성분)"@ko ;
+    kno:component kno:KN2016-0589-c3 ;
+    kno:frequency kno:KN2016-0589-freq-NN-2020 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:registration "동형어 미확정"@ko ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:languageType "(고+한)+한" ;
+    kno:frequency kno:KN2016-0589-freq-NN-2018 ;
+    kno:instantiates kno:S000029 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0589-freq-NN-2016 ;
+    kno:example "¶이에 과거에 책상과 스탠드가 전부였던 독서실이 학습자 성향에 맞춰 다양한 전용 공간을 제공하며 {혼공족을} 위한 맞춤형 학습 공간으로 인기를 끌고 있다."@ko ;
+    kno:component kno:KN2016-0589-c2 ;
+    kno:componentString "혼(자), 공(부)(工), -족(族)"@ko ;
+    a ontolex:Word ;
+    kno:predicate "좋아하다"@ko ;
+    rdfs:label "혼공-족"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2016-0589-freq-NN-2022 ;
+    skos:definition "혼자 공부하는 것을 좋아하는 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2016-0589-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%BC%EA%B3%B5%EC%A1%B1> ;
+    kno:frequency kno:KN2016-0589-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2016-0589-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0589-freq-NN-2021 ;
+    kno:indexForm "혼공족"@ko ;
+    kno:frequency kno:KN2016-0589-freq-NN-2024 ;
+    a kno:Neologism .
+kno:KN2016-0589-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000011 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "혼(자)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "혼자"@ko .
+kno:KN2016-0589-c3 kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko .
+kno:KN2016-0589-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "공"@ko ;
+    rdfs:label "공(부)(工)"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "공부"@ko ;
+    kno:formative kno:F001070 ;
+    kno:truncated "true"^^xsd:boolean .

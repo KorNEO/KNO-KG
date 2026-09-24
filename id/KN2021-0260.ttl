@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0260 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0260 a ontolex:Word ;
-    frac:attestation kno:KN2021-0260-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0260-form ;
-    ontolex:sense kno:KN2021-0260-sense .
-
-kno:KN2021-0260-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/109/0004392162> .
-
-kno:KN2021-0260-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0260-freq-nn,
-        kno:KN2021-0260-freq-yt ;
-    ontolex:writtenRep "촌캉스"@ko .
-
-kno:KN2021-0260-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4629 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0260-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4442 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0260-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0260 skos:definition "시골에서 보내는 휴가. 코로나19로 인해 사람이 많이 몰리는 휴가지를 피해 한적한 시골을 찾아 휴가를 즐기려는 사람들이 많아지는 상황에서 나온 말이다."@ko ;
+    kno:frequency kno:KN2021-0260-freq-NN-total ;
+    kno:urimalTargetCode "1618334" ;
+    kno:frequency kno:KN2021-0260-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    kno:example "¶{촌캉스의} 성지인 강원도에서는 산기슭마다 들어선 소담한 시골집들이 가득이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000014 ;
+    kno:component kno:KN2021-0260-c1 ;
+    kno:componentString "촌(村), (바)캉스(vacance)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0260-c2 ;
+    kno:frequency kno:KN2021-0260-freq-NN-2024 ;
+    rdfs:label "촌캉스"@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(村<프>←vacance)" ;
+    kno:frequency kno:KN2021-0260-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0260-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0260-freq-NN-2023 ;
+    kno:languageType "한+프" ;
+    kno:slotFiller "촌(村) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0260-freq-NN-2020 ;
+    kno:indexForm "촌캉스"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:predicate "보내다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1618334> .
+kno:KN2021-0260-c1 a kno:Component ;
+    kno:fullForm "촌"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006097 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "촌(村)"@ko ;
+    kno:surfaceForm "촌"@ko .
+kno:KN2021-0260-c2 rdfs:label "(바)캉스(vacance)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "바캉스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000017 ;
+    kno:surfaceForm "캉스"@ko ;
+    kno:semanticTag kno:usas-K1 .

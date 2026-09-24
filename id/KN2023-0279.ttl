@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0279 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0279-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0279-form ;
-    ontolex:sense kno:KN2023-0279-sense .
-
-kno:KN2023-0279-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0006250247> .
-
-kno:KN2023-0279-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0279-freq-nn,
-        kno:KN2023-0279-freq-yt ;
-    ontolex:writtenRep "초부자 감세"@ko .
-
-kno:KN2023-0279-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6830 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0279-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1347 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0279-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0279 kno:componentString "초부자(超富者), 감세(減稅)"@ko ;
+    kno:frequency kno:KN2023-0279-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0279-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "초부자감세"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0279-c1 ;
+    kno:predicate "낮추다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B4%88%EB%B6%80%EC%9E%90%20%EA%B0%90%EC%84%B8> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0279-freq-NN-total ;
+    rdfs:label "초부자 감세"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶대기업들의 법인세 감세와 같은 {초부자 감세를} 통해서는 양극화 심화와 경제 악화뿐이라는 의견이 등장했다."@ko ;
+    kno:component kno:KN2023-0279-c2 ;
+    skos:definition "극도로 재산이 많은 사람에게 부과된 세금의 액수를 줄이거나 세율을 낮추는 일."@ko ;
+    kno:origin "(超富者減稅)" ;
+    kno:frequency kno:KN2023-0279-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0279-freq-NN-2024 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:languageType "한_한" .
+kno:KN2023-0279-c1 kno:role "성분"@ko ;
+    kno:fullForm "초부자"@ko ;
+    kno:surfaceForm "초부자"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006087 ;
+    rdfs:label "초부자(超富者)"@ko ;
+    kno:semanticTag kno:usas-I1.1ppp ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0279-c2 kno:surfaceForm "감세"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "감세(減稅)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002124 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "감세"@ko .

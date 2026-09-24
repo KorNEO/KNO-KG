@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0275 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0275 kno:registration "우리말샘"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:pos "「명」"@ko ;
+    skos:definition "개봉 후에도 구겨지거나 흠집 없이 원래의 형태를 가지고 있는 상자."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2017-0275-c1 ;
+    kno:languageType "고+영" ;
+    kno:componentString "칼, 박(스)(box)"@ko ;
+    kno:indexForm "칼박"@ko ;
+    kno:instantiates kno:S000589 ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380261> ;
+    kno:origin "(칼<영>←box)" ;
+    kno:urimalTargetCode "1380261" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "박(스)(box) (1성분)"@ko ;
+    kno:component kno:KN2017-0275-c2 ;
+    a ontolex:Word ;
+    rdfs:label "칼박"@ko ;
+    kno:example "¶실제…박스가 흠집이나 구겨짐이 전혀 없이 칼날 같은 모서리를 유지하고 있는 것을 뜻하는 ‘{칼박}’ 등 포장 관련 신조어도 있다."@ko .
+kno:KN2017-0275-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "칼"@ko ;
+    a kno:Component ;
+    rdfs:label "칼"@ko ;
+    kno:formative kno:F000605 ;
+    kno:fullForm "칼"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O2 .
+kno:KN2017-0275-c2 kno:formative kno:F001339 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "박"@ko ;
+    kno:fullForm "박스"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "박(스)(box)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 .

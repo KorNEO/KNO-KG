@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0139 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0139 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0139-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0139-form ;
-    ontolex:sense kno:KN2021-0139-sense .
-
-kno:KN2021-0139-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002546675> .
-
-kno:KN2021-0139-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0139-freq-nn,
-        kno:KN2021-0139-freq-yt ;
-    ontolex:writtenRep "베타^변이"@ko .
-
-kno:KN2021-0139-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1451 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0139-freq-yt a frac:CorpusFrequency ;
-    rdf:value 39 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0139-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0139 kno:languageType "그^한" ;
+    kno:frequency kno:KN2021-0139-freq-NN-2021 ;
+    kno:component kno:KN2021-0139-c1 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶새롭게 개발된 백신은 남아프리카 공화국에서 발견된 {베타 변이에도} 면역 반응을 보였다."@ko ;
+    kno:frequency kno:KN2021-0139-freq-NN-total ;
+    kno:frequency kno:KN2021-0139-freq-NN-2024 ;
+    rdfs:label "베타^변이"@ko ;
+    kno:componentString "베타(beta), 변이(變異)"@ko ;
+    kno:indexForm "베타변이"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:urimalTargetCode "1572517" ;
+    kno:origin "(<그>beta變異)" ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1572517> ;
+    skos:definition "남아프리카 공화국에서 최초로 발견된 코로나19의 변이 바이러스. 국가에 대한 낙인 효과를 제거하기 위해 바이러스의 이름을 그리스어 숫자로 대체하게 되었다."@ko ;
+    kno:component kno:KN2021-0139-c2 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0139-freq-NN-2022 ;
+    kno:instantiates kno:S000257 ;
+    kno:slotFiller "베타(beta) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0139-freq-NN-2023 .
+kno:KN2021-0139-c1 kno:fullForm "베타"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "베타"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "베타(beta)"@ko ;
+    kno:formative kno:F003827 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0139-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "변이"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000514 ;
+    a kno:Component ;
+    rdfs:label "변이(變異)"@ko ;
+    kno:fullForm "변이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A2.1 .

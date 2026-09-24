@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0246 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0246 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0246-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0246-form ;
-    ontolex:sense kno:KN2020-0246-sense .
-
-kno:KN2020-0246-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004389989> .
-
-kno:KN2020-0246-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0246-freq-nn,
-        kno:KN2020-0246-freq-yt ;
-    ontolex:writtenRep "우한 폐렴"@ko .
-
-kno:KN2020-0246-freq-nn a frac:CorpusFrequency ;
-    rdf:value 92995 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0246-freq-yt a frac:CorpusFrequency ;
-    rdf:value 93290 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0246-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0246 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%ED%95%9C%20%ED%8F%90%EB%A0%B4> ;
+    rdfs:label "우한 폐렴"@ko ;
+    kno:componentString "우한(Wuhan), 폐렴(肺炎)"@ko ;
+    kno:frequency kno:KN2020-0246-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0246-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0246-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0246-freq-NN-2024 ;
+    kno:languageType "중_한" ;
+    kno:component kno:KN2020-0246-c2 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0246-freq-NN-2022 ;
+    kno:instantiates kno:S001117 ;
+    kno:example "¶{우한 폐렴을} 일으키는 바이러스는 사스나 메르스와 다른 신종 코로나바이러스이다."@ko ;
+    skos:definition "‘코로나바이러스 감염증 일구’를 달리 이르는 말. 이 질병에 감염된 사람이 폐렴과 비슷한 증상을 보이는 데서 비롯한 말이다. 2019년 12월 중국 우한시에서 집단으로 호흡기 질병에 감염되는 사건이 발생하자 이 질병을 일으킨 신종 코로나바이러스 감염증을 가리키는 말로 사용되었다. 지리적 위치를 나타내는 말이 병명에 포함되지 않도록 하는 더블유에이치오(WHO)의 2015년 지침에 따라 2020년 2월 더블유에이치오(WHO)에서는 ‘코비드 일구(COVID-19)’를 공식 명칭으로 발표하였고, 한국 정부에서는 ‘코로나바이러스 감염증-19’와 ‘코로나19’를 국내 공식 명칭과 그 약칭으로 발표하였다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(Wuhan[武漢]肺炎▽)" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0246-freq-NN-2023 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0246-freq-NN-total ;
+    kno:frequency kno:KN2020-0246-freq-NN-2020 ;
+    kno:instantiates kno:S001588 ;
+    kno:slotFiller "우한(Wuhan) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "폐렴(肺炎) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0246-freq-NN-2021 ;
+    kno:indexForm "우한폐렴"@ko .
+kno:KN2020-0246-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001654 ;
+    kno:fullForm "우한"@ko ;
+    kno:surfaceForm "우한"@ko ;
+    rdfs:label "우한(Wuhan)"@ko .
+kno:KN2020-0246-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "폐렴"@ko ;
+    kno:surfaceForm "폐렴"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000996 ;
+    rdfs:label "폐렴(肺炎)"@ko .

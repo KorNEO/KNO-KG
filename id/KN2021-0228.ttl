@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0228 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0228 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0228-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0228-form ;
-    ontolex:sense kno:KN2021-0228-sense .
-
-kno:KN2021-0228-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/022/0003535632> .
-
-kno:KN2021-0228-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0228-freq-nn,
-        kno:KN2021-0228-freq-yt ;
-    ontolex:writtenRep "전월세^금지법"@ko .
-
-kno:KN2021-0228-freq-nn a frac:CorpusFrequency ;
-    rdf:value 381 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0228-freq-yt a frac:CorpusFrequency ;
-    rdf:value 224 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0228-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0228 kno:frequency kno:KN2021-0228-freq-NN-2021 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0228-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0228-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "전월세금지법"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2021-0228-c1 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:componentString "전월세(傳月貰), 금지법(禁止法)"@ko ;
+    rdfs:label "전월세^금지법"@ko ;
+    kno:predicate "부과하다"@ko ;
+    kno:example "¶내일부터 수도권에서 분양가 상한제가 적용되는 지역의 아파트에 최대 5년의 실제 거주 의무 기간이 부여되는 {전월세 금지법이} 시행될 예정이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0228-freq-NN-total ;
+    kno:frequency kno:KN2021-0228-freq-NN-2020 ;
+    kno:instantiates kno:S000059 ;
+    kno:frequency kno:KN2021-0228-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%9B%94%EC%84%B8%EA%B8%88%EC%A7%80%EB%B2%95> ;
+    kno:slotFiller "전월세(傳月貰) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    skos:definition "수도권 내의 분양가 상한제가 적용되는 신규 아파트에 실거주 의무 기간을 부과하는 법률. 실수요자 위주의 분양 시장을 만드는 것을 목적으로 2021년 2월에 시행되었다. 정식 명칭은 ‘주택법 시행령 일부 개정안’이다."@ko ;
+    kno:origin "(傳月貰禁止法)" .
+kno:KN2021-0228-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "금지법"@ko ;
+    kno:surfaceForm "금지법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    rdfs:label "금지법(禁止法)"@ko ;
+    kno:formative kno:F000128 ;
+    a kno:Component .
+kno:KN2021-0228-c1 kno:surfaceForm "전월세"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "전월세(傳月貰)"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "전월세"@ko ;
+    kno:formative kno:F005639 .

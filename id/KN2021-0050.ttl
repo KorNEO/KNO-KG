@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0050 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0050 a ontolex:Word ;
-    frac:attestation kno:KN2021-0050-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0050-form ;
-    ontolex:sense kno:KN2021-0050-sense .
-
-kno:KN2021-0050-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003567788> .
-
-kno:KN2021-0050-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0050-freq-nn,
-        kno:KN2021-0050-freq-yt ;
-    ontolex:writtenRep "기후-테크"@ko .
-
-kno:KN2021-0050-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16035 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0050-freq-yt a frac:CorpusFrequency ;
-    rdf:value 724 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0050-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0050 kno:formation kno:W01 ;
+    kno:frequency kno:KN2021-0050-freq-NN-2020 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0050-c2 ;
+    kno:predicate "돕다"@ko ;
+    kno:origin "(氣候<영>tech)" ;
+    kno:pos "「명」"@ko ;
+    skos:definition "첨단 정보 기술을 기후 분야에 적용하여 온실가스의 배출량을 줄이거나 지구 온난화 등의 기후 문제를 해결하도록 돕는 기술."@ko ;
+    a kno:Neologism ;
+    kno:componentString "기후(氣候), 테크(놀로지)(technology)"@ko ;
+    kno:frequency kno:KN2021-0050-freq-NN-total ;
+    kno:component kno:KN2021-0050-c1 ;
+    kno:frequency kno:KN2021-0050-freq-NN-2023 ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "기후(氣候) (1성분)"@ko ;
+    kno:urimalTargetCode "1821723" ;
+    kno:example "¶환경 관련 스타트업의 OOO 대표는 “외국의 경우 {기후테크에} 대한 정부의 투자가 많아 다양한 대기업과 스타트업에서 적극적으로 이 분야에 참여하고 있지만 국내는 그렇게 중요한 문제로 다뤄지지 않고 있다.”라고 설명했다."@ko ;
+    kno:frequency kno:KN2021-0050-freq-NN-2022 ;
+    kno:indexForm "기후테크"@ko ;
+    kno:slotFiller "테크(놀로지)(technology) (1성분)"@ko ;
+    kno:instantiates kno:S001255 ;
+    kno:instantiates kno:S001082 ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1821723> ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0050-freq-NN-2024 ;
+    rdfs:label "기후-테크"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2021-0050-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0050-freq-NN-2025 ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2021-0050-c2 kno:semanticTag kno:usas-Y1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "테크놀로지"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "테크"@ko ;
+    kno:formative kno:F000239 ;
+    rdfs:label "테크(놀로지)(technology)"@ko ;
+    a kno:Component .
+kno:KN2021-0050-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    rdfs:label "기후(氣候)"@ko ;
+    kno:formative kno:F000069 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-W4 .

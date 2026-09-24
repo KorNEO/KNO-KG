@@ -1,37 +1,76 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0266 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0266 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0266-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0266-form ;
-    ontolex:sense kno:KN2022-0266-sense .
-
-kno:KN2022-0266-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003113611> .
-
-kno:KN2022-0266-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0266-freq-nn,
-        kno:KN2022-0266-freq-yt ;
-    ontolex:writtenRep "청년^내일^저축^계좌"@ko .
-
-kno:KN2022-0266-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3608 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0266-freq-yt a frac:CorpusFrequency ;
-    rdf:value 139 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0266-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%B2%AD%EB%85%84%EB%82%B4%EC%9D%BC%EC%A0%80%EC%B6%95%EA%B3%84%EC%A2%8C> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0266 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0266-freq-NN-2024 ;
+    kno:slotFiller "내일(來日)+저축(貯蓄) (2성분)"@ko ;
+    kno:frequency kno:KN2022-0266-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0266-freq-NN-total ;
+    kno:component kno:KN2022-0266-c4 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:example "¶{청년 내일 저축 계좌에} 3년간 매월 10만 원씩 적금을 들면 만기 시 1,080만 원을 마련할 수 있다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:origin "(靑年來日貯蓄計座)" ;
+    kno:component kno:KN2022-0266-c3 ;
+    kno:indexForm "청년내일저축계좌"@ko ;
+    kno:instantiates kno:S001680 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%EB%82%B4%EC%9D%BC%EC%A0%80%EC%B6%95%EA%B3%84%EC%A2%8C> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "소득 수준이 낮은 청년들을 지원하기 위하여 정부에서 마련한 금융 상품. 차상위 계층 이하이거나 기준 중위 소득 100% 이하이면서 연 소득이 2200만 원 이하인 청년들이 3년 동안 월 10만 원씩을 계좌에 넣으면 정부에서 매월 10~30만 원을 지원한다."@ko ;
+    kno:frequency kno:KN2022-0266-freq-NN-2023 ;
+    rdfs:label "청년^내일^저축^계좌"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "청년(靑年), 내일(來日), 저축(貯蓄), 계좌(計座)"@ko ;
+    kno:frequency kno:KN2022-0266-freq-NN-2025 ;
+    kno:component kno:KN2022-0266-c1 ;
+    kno:frequency kno:KN2022-0266-freq-NN-2021 ;
+    kno:languageType "한^한^한^한" ;
+    kno:component kno:KN2022-0266-c2 .
+kno:KN2022-0266-c4 kno:surfaceForm "계좌"@ko ;
+    rdfs:label "계좌(計座)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000201 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "계좌"@ko .
+kno:KN2022-0266-c3 a kno:Component ;
+    rdfs:label "저축(貯蓄)"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:formative kno:F000914 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "저축"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "저축"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0266-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:fullForm "청년"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000042 ;
+    a kno:Component .
+kno:KN2022-0266-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "내일"@ko ;
+    kno:surfaceForm "내일"@ko ;
+    rdfs:label "내일(來日)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001142 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.1.3 .

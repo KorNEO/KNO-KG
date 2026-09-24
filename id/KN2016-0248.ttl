@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0248 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0248 kno:example "¶그룹 OO의 OOO는 투명한 피부, 붉은 입술색 덕분에 과일 중에서도 ‘{사과상’이라고} 불린다."@ko ;
+    kno:instantiates kno:S001434 ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0248-freq-NN-total ;
+    kno:frequency kno:KN2016-0248-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2021 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "사과-상"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EA%B3%BC%EC%83%81> ;
+    kno:indexForm "사과상"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0248-freq-NN-2020 ;
+    kno:instantiates kno:S000190 ;
+    kno:activeYears "11"^^xsd:integer ;
+    kno:frequency kno:KN2016-0248-freq-NN-2019 ;
+    skos:definition "사과와 비슷한 생김새나 얼굴 모습. 주로 피부색이 하얗고 입술 색이 붉어 상큼한 사과의 모습을 연상하게 하는 얼굴을 말한다."@ko ;
+    kno:frequency kno:KN2016-0248-freq-NN-2015 ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0248-c2 ;
+    kno:origin "(沙果相)" ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2024 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2018 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0248-c1 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2022 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2025 ;
+    kno:slotFiller "-상(相) (1성분)"@ko ;
+    kno:slotFiller "사과(沙果) (1성분)"@ko ;
+    kno:componentString "사과(沙果), -상(相)"@ko ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2016-0248-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0248-freq-NN-2023 .
+kno:KN2016-0248-c2 a kno:Component ;
+    kno:surfaceForm "상"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-상(相)"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:formative kno:F000217 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "상"@ko .
+kno:KN2016-0248-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001431 ;
+    a kno:Component ;
+    kno:surfaceForm "사과"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "사과(沙果)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "사과"@ko .

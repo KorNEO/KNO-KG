@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0149 kno:componentString "리젠트(regent), 펌(permanent)"@ko ;
+    kno:frequency kno:KN2013-0149-freq-NN-total ;
+    kno:slotFiller "리젠트(regent) (1성분)"@ko ;
+    kno:frequency kno:KN2013-0149-freq-NN-2013 ;
+    kno:example "¶둥글고 각진 얼굴형의 단점을 커버하고 싶다면 {리젠트펌으로} 신사답고 부드러운 이미지를 연출해 보자."@ko ;
+    skos:definition "앞 머리를 높이 위로 빗어 넘기고, 옆 머리 를 뒤로 빗어 붙인 모양의 파마."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "리젠트펌"@ko ;
+    kno:frequency kno:KN2013-0149-freq-NN-2019 ;
+    kno:frequency kno:KN2013-0149-freq-NN-2017 ;
+    kno:frequency kno:KN2013-0149-freq-NN-2014 ;
+    kno:urimalTargetCode "1357658" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357658> ;
+    kno:origin "(▼←regent permanent)" ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:instantiates kno:S001111 ;
+    kno:languageType "영+영" ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "리젠트펌"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2013-0149-freq-NN-2020 ;
+    kno:component kno:KN2013-0149-c1 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0149-c2 .
+kno:KN2013-0149-c1 a kno:Component ;
+    kno:formative kno:F001258 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "리젠트"@ko ;
+    kno:surfaceForm "리젠트"@ko ;
+    rdfs:label "리젠트(regent)"@ko .
+kno:KN2013-0149-c2 a kno:Component ;
+    kno:fullForm "펌"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "펌(permanent)"@ko ;
+    kno:formative kno:F001951 ;
+    kno:surfaceForm "펌"@ko ;
+    kno:truncated "false"^^xsd:boolean .

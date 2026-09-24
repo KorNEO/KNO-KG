@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0313 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0313 kno:instantiates kno:S000555 ;
+    kno:slotFiller "퀸(queen) (1성분)"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:origin "(오글<영>queen)" ;
+    kno:frequency kno:KN2013-0313-freq-NN-total ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "남들이 보기에 민망한 말과 행동을 하는 여자."@ko ;
+    kno:frequency kno:KN2013-0313-freq-NN-2012 ;
+    kno:example "¶그렇게…출비 퀸과 {오글퀸을} 오가는 여주인공 OOO 덕에 극적인 장면조차 몰입을 방해한다."@ko ;
+    kno:componentString "오글, 퀸(queen)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A4%EA%B8%80%ED%80%B8> ;
+    kno:languageType "고+영" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "오글 (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "오글퀸"@ko ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S001072 ;
+    kno:year "2013"^^xsd:gYear ;
+    rdfs:label "오글-퀸"@ko ;
+    kno:component kno:KN2013-0313-c1 ;
+    kno:component kno:KN2013-0313-c2 .
+kno:KN2013-0313-c1 kno:fullForm "오글"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000391 ;
+    kno:semanticTag kno:usas-E1 ;
+    rdfs:label "오글"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "오글"@ko .
+kno:KN2013-0313-c2 rdfs:label "퀸(queen)"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000965 ;
+    kno:fullForm "퀸"@ko ;
+    kno:surfaceForm "퀸"@ko .

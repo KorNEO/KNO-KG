@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0272 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0272 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%80%EB%A7%A5%20%EB%94%9C%EB%A0%88%EC%9D%B4> ;
+    kno:component kno:KN2019-0272-c1 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0272-freq-NN-2018 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:componentString "타맥(tarmac), 딜레이(delay)"@ko ;
+    rdfs:label "타맥 딜레이"@ko ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0272-freq-NN-2024 ;
+    skos:definition "항공기가 승객을 태운 채로 활주로에서 일정 시간 이상 머물러 있어 출발 시간이나 도착 시간을 지연하는 상태를 이르는 말. 활주로를 포장하는 데 쓰는 역청 물질인 ‘타맥(tarmac)’과 지연을 뜻하는 ‘딜레이(delay)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:indexForm "타맥딜레이"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:example "¶미국에서는 2010년부터 {‘타맥 딜레이’와} 관련해 3시간 이상 승객을 기내에서 대기시킨 경우 항공사에 벌금을 부과하고 있다."@ko ;
+    kno:origin "(<영>tarmac delay)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0272-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0272-freq-NN-total ;
+    a ontolex:MultiwordExpression .
+kno:KN2019-0272-c1 kno:semanticTag kno:usas-M5 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006385 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "타맥(tarmac)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "타맥"@ko ;
+    kno:surfaceForm "타맥"@ko .
+kno:KN2019-0272-c2 kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-T4m ;
+    kno:surfaceForm "딜레이"@ko ;
+    rdfs:label "딜레이(delay)"@ko ;
+    kno:formative kno:F003105 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "딜레이"@ko .

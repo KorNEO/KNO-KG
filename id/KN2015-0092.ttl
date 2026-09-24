@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0092 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0092 kno:unitType "구"@ko ;
+    kno:languageType "한_일" ;
+    kno:example "¶그는 대학을 나오지 않았다. 취업해 본 적도 없다. 이른바 {백수 오덕의} 상징 격이다."@ko ;
+    kno:componentString "백수(白手), 오덕(←otaku)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%88%98%20%EC%98%A4%EB%8D%95> ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:predicate "집착하다"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2015-0092-freq-NN-2015 ;
+    skos:definition "직업이 없이 어떤 일에 병적으로 집중하거나 집착하는 사람."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(白手<일>←otaku[御宅])" ;
+    rdfs:label "백수 오덕"@ko ;
+    kno:component kno:KN2015-0092-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2015-0092-c2 ;
+    kno:indexForm "백수오덕"@ko ;
+    kno:frequency kno:KN2015-0092-freq-NN-total .
+kno:KN2015-0092-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "백수"@ko ;
+    rdfs:label "백수(白手)"@ko ;
+    kno:surfaceForm "백수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001350 ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:position "1"^^xsd:integer .
+kno:KN2015-0092-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "오덕"@ko ;
+    rdfs:label "오덕(←otaku)"@ko ;
+    kno:formative kno:F005108 ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "오덕"@ko .

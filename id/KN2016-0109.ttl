@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0109 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0109 kno:languageType "한^영" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "독조(毒潮), 라떼(latte)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%85%EC%A1%B0%EB%9D%BC%EB%96%BC> ;
+    kno:frequency kno:KN2016-0109-freq-NN-2017 ;
+    kno:component kno:KN2016-0109-c2 ;
+    kno:indexForm "독조라떼"@ko ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:origin "(毒潮<영>latte)" ;
+    kno:frequency kno:KN2016-0109-freq-NN-2024 ;
+    rdfs:label "독조^라떼"@ko ;
+    kno:component kno:KN2016-0109-c1 ;
+    kno:frequency kno:KN2016-0109-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0109-freq-NN-total ;
+    kno:frequency kno:KN2016-0109-freq-NN-2018 ;
+    kno:frequency kno:KN2016-0109-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    skos:definition "독성 물질이 함유된 녹조 현상."@ko ;
+    kno:example "¶뜨거웠던 지난여름, 낙동강은 그 어느 때보다 ‘{독조 라떼’로} 몸살을 앓았다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0109-freq-NN-2023 ;
+    kno:frequency kno:KN2016-0109-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0109-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0109-freq-NN-2019 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko .
+kno:KN2016-0109-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003148 ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "라떼(latte)"@ko ;
+    kno:fullForm "라떼"@ko ;
+    kno:surfaceForm "라떼"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2016-0109-c1 kno:formative kno:F003002 ;
+    rdfs:label "독조(毒潮)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-W5m ;
+    kno:fullForm "독조"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "독조"@ko ;
+    a kno:Component .

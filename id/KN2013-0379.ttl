@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0379 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0379 kno:instantiates kno:S000041 ;
+    kno:example "¶모델 OOO이 {청글녀} 콘셉트의 촬영 컷을 공개했다."@ko ;
+    kno:languageType "한+영+한" ;
+    kno:component kno:KN2013-0379-c3 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "청글녀"@ko ;
+    kno:origin "(淸←<영>glamour女)" ;
+    kno:slotFiller "청(순)(淸)+글(래머)(glamour) (2성분)"@ko ;
+    kno:frequency kno:KN2013-0379-freq-NN-2017 ;
+    kno:frequency kno:KN2013-0379-freq-NN-2014 ;
+    kno:componentString "청(순)(淸), 글(래머)(glamour), 녀(女)"@ko ;
+    kno:formation kno:W06 ;
+    skos:definition "‘청순하면서도 글래머인 여자’를 줄여 이르는 말."@ko ;
+    rdfs:label "청글녀"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0379-freq-NN-2015 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371045> ;
+    kno:urimalTargetCode "1371045" ;
+    kno:component kno:KN2013-0379-c1 ;
+    kno:frequency kno:KN2013-0379-freq-NN-total ;
+    kno:component kno:KN2013-0379-c2 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0379-freq-NN-2013 .
+kno:KN2013-0379-c3 kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    kno:formative kno:F000024 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "녀(女)"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:role "고정항"@ko .
+kno:KN2013-0379-c1 rdfs:label "청(순)(淸)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "청"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "청순"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:formative kno:F006050 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2013-0379-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:formative kno:F002551 ;
+    rdfs:label "글(래머)(glamour)"@ko ;
+    kno:surfaceForm "글"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "글래머"@ko ;
+    kno:truncated "true"^^xsd:boolean .

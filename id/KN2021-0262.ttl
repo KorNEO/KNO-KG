@@ -1,37 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0262 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0262 a ontolex:Word ;
-    frac:attestation kno:KN2021-0262-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0262-form ;
-    ontolex:sense kno:KN2021-0262-sense .
-
-kno:KN2021-0262-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/586/0000011370> .
-
-kno:KN2021-0262-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0262-freq-nn,
-        kno:KN2021-0262-freq-yt ;
-    ontolex:writtenRep "캐해"@ko .
-
-kno:KN2021-0262-freq-nn a frac:CorpusFrequency ;
-    rdf:value 106 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0262-freq-yt a frac:CorpusFrequency ;
-    rdf:value 11967 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0262-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%BA%90%EB%A6%AD%ED%84%B0%20%ED%95%B4%EC%84%9D> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0262 kno:frequency kno:KN2021-0262-freq-NN-2020 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0262-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2021-0262-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:component kno:KN2021-0262-c1 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1666902> ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:label "캐해"@ko ;
+    kno:origin "(<영>←character解)" ;
+    kno:urimalTargetCode "1666902" ;
+    kno:frequency kno:KN2021-0262-freq-NN-2021 ;
+    kno:example "¶‘{캐해’는} 영화나 드라마 속 등장인물뿐만이 아니라, 자신이 좋아하는 연예인 등을 대상으로도 활발하게 이뤄진다."@ko ;
+    kno:frequency kno:KN2021-0262-freq-NN-total ;
+    skos:definition "‘캐릭터 해석’을 줄여 이르는 말. 특정 인물의 성격이나 표정, 말투, 행동 특성 따위를 자세하게 파악하여 앞으로 어떻게 행동할지 예측하는 것을 이르는 말이다."@ko ;
+    kno:frequency kno:KN2021-0262-freq-NN-2023 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:componentString "캐(릭터)(character), 해(석)(解釋)"@ko ;
+    kno:component kno:KN2021-0262-c2 ;
+    kno:formation kno:W06 ;
+    kno:indexForm "캐해"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2021-0262-c1 kno:fullForm "캐릭터"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "캐"@ko ;
+    rdfs:label "캐(릭터)(character)"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000192 .
+kno:KN2021-0262-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "해(석)(解釋)"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
+    kno:fullForm "해석"@ko ;
+    kno:formative kno:F006992 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "해"@ko ;
+    a kno:Component .

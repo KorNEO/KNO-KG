@@ -1,37 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0097 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0097 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0097-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0097-form ;
-    ontolex:sense kno:KN2025-0097-sense .
-
-kno:KN2025-0097-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0012057059> .
-
-kno:KN2025-0097-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0097-freq-nn,
-        kno:KN2025-0097-freq-yt ;
-    ontolex:writtenRep "깐부 회동"@ko .
-
-kno:KN2025-0097-freq-nn a frac:CorpusFrequency ;
-    rdf:value 527 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0097-freq-yt a frac:CorpusFrequency ;
-    rdf:value 66 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0097-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/2025%EB%85%84%20%EC%A0%A0%EC%8A%A8%20%ED%99%A9%20%EB%B0%A9%ED%95%9C> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0097 kno:instantiates kno:S000486 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%90%EB%B6%80%20%ED%9A%8C%EB%8F%99> ;
+    kno:component kno:KN2025-0097-c2 ;
+    a kno:Neologism ;
+    kno:example "(LLM) 세 기업 수장이 치킨집에서 {깐부회동을} 갖고 인공지능 분야 협력 방안을 논의했다."@ko ;
+    kno:componentString "깐부, 회동(會同)"@ko ;
+    kno:origin "(깐부會同)" ;
+    kno:indexForm "깐부회동"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "회동(會同) (1성분)"@ko ;
+    rdfs:label "깐부 회동"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0097-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    skos:definition "(LLM) 서로를 ‘깐부’로 여길 만큼 가까운 사이의 사람들이 격식 없이 만나 협력이나 현안을 논의하는 비공식 회동."@ko ;
+    kno:languageType "고_한" ;
+    kno:component kno:KN2025-0097-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0097-freq-NN-total ;
+    kno:unitType "구"@ko .
+kno:KN2025-0097-c2 rdfs:label "회동(會同)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "회동"@ko ;
+    kno:surfaceForm "회동"@ko ;
+    kno:formative kno:F007176 ;
+    kno:semanticTag kno:usas-S1.1.3p .
+kno:KN2025-0097-c1 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "깐부"@ko ;
+    kno:surfaceForm "깐부"@ko ;
+    kno:semanticTag kno:usas-S3.1p ;
+    a kno:Component ;
+    kno:formative kno:F000684 ;
+    rdfs:label "깐부"@ko .

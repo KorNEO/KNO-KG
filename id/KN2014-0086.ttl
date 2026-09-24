@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0086 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0086 rdfs:label "리젠트^볼륨^펌"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EC%A0%A0%ED%8A%B8%EB%B3%BC%EB%A5%A8%ED%8E%8C> ;
+    kno:slotFiller "리젠트(regent)+볼륨(volume) (2성분)"@ko ;
+    kno:frequency kno:KN2014-0086-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>▼regent volume perm)" ;
+    skos:definition "앞머리를 높이 위로 빗어 넘겨 부피감을 주고, 옆머리를 뒤로 빗어 붙인 모양의 파마."@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:component kno:KN2014-0086-c3 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2014-0086-c1 ;
+    kno:component kno:KN2014-0086-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "리젠트볼륨펌"@ko ;
+    kno:frequency kno:KN2014-0086-freq-NN-2013 ;
+    kno:instantiates kno:S000449 ;
+    kno:componentString "리젠트(regent), 볼륨(volume), 펌(perm)"@ko ;
+    kno:example "¶{리젠트 볼륨 펌이라} 컬링보다는 볼륨만 연출해 주는 것이 포인트이며, 리젠트 펌만으로는 손질이 어려우니 아이론, 드라이기와 같은 열기구 제품을 이용해 기본적 세팅을 해 주는 것이 중요하다."@ko ;
+    a kno:Neologism ;
+    kno:languageType "영^영^영" ;
+    kno:registration "신어DB"@ko .
+kno:KN2014-0086-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "펌(perm)"@ko ;
+    kno:fullForm "펌"@ko ;
+    kno:surfaceForm "펌"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000991 ;
+    kno:role "고정항"@ko .
+kno:KN2014-0086-c1 rdfs:label "리젠트(regent)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001258 ;
+    kno:surfaceForm "리젠트"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "리젠트"@ko .
+kno:KN2014-0086-c2 kno:fullForm "볼륨"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "볼륨"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "볼륨(volume)"@ko ;
+    kno:semanticTag kno:usas-N3.4 ;
+    kno:formative kno:F003926 ;
+    kno:position "2"^^xsd:integer .

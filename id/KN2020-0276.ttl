@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0276 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0276 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0276-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0276-form ;
-    ontolex:sense kno:KN2020-0276-sense .
-
-kno:KN2020-0276-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011507333> .
-
-kno:KN2020-0276-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0276-freq-nn,
-        kno:KN2020-0276-freq-yt ;
-    ontolex:writtenRep "자가 격리 면제서"@ko .
-
-kno:KN2020-0276-freq-nn a frac:CorpusFrequency ;
-    rdf:value 323 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0276-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0276-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0276 skos:definition "코로나19 대유행 이후에, 감염병의 확산을 방지하기 위하여 해외에서 입국한 사람들은 일정 기간 동안 자가 격리를 해야 하지만, 부득이한 사유로 자가 격리 의무를 면해 줄 필요가 있는 경우에 정부에서 발급하여 주는 문서. 배우자나 직계 존비속의 장례식 참석 등의 인도적 목적이나 공익적 목적을 위해 발급받을 수 있다."@ko ;
+    kno:instantiates kno:S001621 ;
+    kno:component kno:KN2020-0276-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(自家隔離免除書)" ;
+    kno:predicate "주다"@ko ;
+    kno:frequency kno:KN2020-0276-freq-NN-2022 ;
+    kno:component kno:KN2020-0276-c1 ;
+    kno:frequency kno:KN2020-0276-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0276-c2 ;
+    kno:indexForm "자가격리면제서"@ko ;
+    kno:componentString "자가(自家), 격리(隔離), 면제서(免除書)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0276-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EA%B0%80%20%EA%B2%A9%EB%A6%AC%20%EB%A9%B4%EC%A0%9C%EC%84%9C> ;
+    kno:slotFiller "면제서(免除書) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한_한" ;
+    rdfs:label "자가 격리 면제서"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶외교나 공무 등의 목적으로 한국 대사관에서 {자가 격리 면제서를} 입국 전에 미리 발급받은 경우에는 자가 격리를 하지 않고 입국할 수 있다."@ko ;
+    kno:frequency kno:KN2020-0276-freq-NN-2020 ;
+    kno:registration "신어DB"@ko .
+kno:KN2020-0276-c3 kno:surfaceForm "면제서"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F003461 ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:semanticTag kno:usas-A1.7m ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "면제서(免除書)"@ko ;
+    a kno:Component ;
+    kno:fullForm "면제서"@ko .
+kno:KN2020-0276-c1 kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "자가(自家)"@ko ;
+    kno:formative kno:F000577 ;
+    kno:fullForm "자가"@ko ;
+    kno:surfaceForm "자가"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H4 .
+kno:KN2020-0276-c2 kno:formative kno:F000330 ;
+    kno:surfaceForm "격리"@ko ;
+    rdfs:label "격리(隔離)"@ko ;
+    a kno:Component ;
+    kno:fullForm "격리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0254 kno:languageType "한^(영+한)" ;
+    kno:instantiates kno:S000952 ;
+    skos:definition "출퇴근을 하면서 쇼핑을 하는 사람. 또는 그런 무리. 스마트폰이나 태블릿 피시 따위로 무선 인터넷에 접속하여 쇼핑을 하는 경우가 많다."@ko ;
+    kno:slotFiller "출퇴근(出退勤) (1성분)"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:indexForm "출퇴근쇼핑족"@ko ;
+    kno:urimalTargetCode "1369510" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0254-freq-NN-total ;
+    kno:component kno:KN2014-0254-c2 ;
+    rdfs:label "출퇴근^쇼핑족"@ko ;
+    kno:component kno:KN2014-0254-c3 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0254-freq-NN-2015 ;
+    kno:example "¶OO은 모바일 거래액이 전년 대비 400% 성장하면서 모바일 쇼핑 주 고객층 중 하나인 {출퇴근 쇼핑족을} 겨냥해 다양한 이벤트를 진행하고 있다."@ko ;
+    kno:predicate "하다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369510> ;
+    kno:frequency kno:KN2014-0254-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:origin "(出退勤<영>shopping族)" ;
+    kno:frequency kno:KN2014-0254-freq-NN-2013 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2014-0254-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2014-0254-freq-NN-2016 ;
+    kno:componentString "출퇴근(出退勤), 쇼핑(shopping), -족(族)"@ko ;
+    kno:activeYears "4"^^xsd:integer .
+kno:KN2014-0254-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000286 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    rdfs:label "쇼핑(shopping)"@ko ;
+    kno:fullForm "쇼핑"@ko ;
+    kno:surfaceForm "쇼핑"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2014-0254-c3 rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2014-0254-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "출퇴근(出退勤)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "출퇴근"@ko ;
+    kno:formative kno:F006138 ;
+    kno:surfaceForm "출퇴근"@ko ;
+    kno:semanticTag kno:usas-I3.1 .

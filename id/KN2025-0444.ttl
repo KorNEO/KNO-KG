@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0444 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0444 a ontolex:Word ;
-    frac:attestation kno:KN2025-0444-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0444-form ;
-    ontolex:sense kno:KN2025-0444-sense .
-
-kno:KN2025-0444-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002706280> .
-
-kno:KN2025-0444-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0444-freq-nn,
-        kno:KN2025-0444-freq-yt ;
-    ontolex:writtenRep "우정혼"@ko .
-
-kno:KN2025-0444-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0444-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0444-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0444 kno:frequency kno:KN2025-0444-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EC%A0%95%ED%98%BC> ;
+    kno:componentString "우정(友情), 혼(婚)"@ko ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2025-0444-freq-NN-2025 ;
+    kno:example "(LLM) 가족의 결혼 압박이 부담스러워서 친한 친구와 {우정혼을} 선택해 생활비를 나눠 내며 지내기로 했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:indexForm "우정혼"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "우정-혼"@ko ;
+    kno:component kno:KN2025-0444-c1 ;
+    kno:component kno:KN2025-0444-c2 ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(友情婚)" ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 연애 감정이나 성적 관계 없이 친한 친구와 부부로서의 관계를 맺고 함께 생활하는 결혼 형태."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0444-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001653 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S3.1 ;
+    kno:fullForm "우정"@ko ;
+    kno:surfaceForm "우정"@ko ;
+    rdfs:label "우정(友情)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0444-c2 kno:formative kno:F007117 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "혼(婚)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "혼"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4 .

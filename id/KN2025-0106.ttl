@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0106 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0106 a ontolex:Word ;
-    frac:attestation kno:KN2025-0106-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0106-form ;
-    ontolex:sense kno:KN2025-0106-sense .
-
-kno:KN2025-0106-att-nn a frac:Attestation ;
-    dcterms:date "2022-08-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003036923> .
-
-kno:KN2025-0106-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0106-freq-nn,
-        kno:KN2025-0106-freq-yt ;
-    ontolex:writtenRep "낭만추"@ko .
-
-kno:KN2025-0106-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0106-freq-yt a frac:CorpusFrequency ;
-    rdf:value 93 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0106-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0106 kno:formation kno:W06 ;
+    kno:component kno:KN2025-0106-c3 ;
+    a kno:Neologism ;
+    kno:example "(LLM) 소개팅으로 빠르게 결정하기보다는 우연히 마주친 인연을 기대하는 {낭만추를} 하는 편이야."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0106-freq-NN-total ;
+    skos:definition "(LLM) ‘낭만적인 만남을 추구함’을 줄여 이르는 말. 계산적이거나 조건 중심의 만남보다 설렘, 우연, 분위기 같은 낭만을 중시하는 연애관을 말한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "낭(만), 만(남), 추(구)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%AD%EB%A7%8C%EC%B6%94> ;
+    a ontolex:Word ;
+    rdfs:label "낭만추"@ko ;
+    kno:component kno:KN2025-0106-c2 ;
+    kno:component kno:KN2025-0106-c1 ;
+    kno:indexForm "낭만추"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0106-freq-NN-2025 ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0106-c3 kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "추"@ko ;
+    kno:formative kno:F006114 ;
+    kno:fullForm "추구"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "추(구)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X7p .
+kno:KN2025-0106-c2 rdfs:label "만(남)"@ko ;
+    kno:formative kno:F000499 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:surfaceForm "만"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "만남"@ko .
+kno:KN2025-0106-c1 kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "낭"@ko ;
+    rdfs:label "낭(만)"@ko ;
+    kno:fullForm "낭만"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F002707 ;
+    kno:semanticTag kno:usas-S3.2 ;
+    a kno:Component .

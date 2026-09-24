@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0028 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0028 a ontolex:Word ;
-    frac:attestation kno:KN2024-0028-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0028-form ;
-    ontolex:sense kno:KN2024-0028-sense .
-
-kno:KN2024-0028-att-nn a frac:Attestation ;
-    dcterms:date "2024-01-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001987897> .
-
-kno:KN2024-0028-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0028-freq-nn,
-        kno:KN2024-0028-freq-yt ;
-    ontolex:writtenRep "극-험지"@ko .
-
-kno:KN2024-0028-freq-nn a frac:CorpusFrequency ;
-    rdf:value 57 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0028-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0028-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0028 kno:example "¶O 후보는 “정부의 안정적인 국가 운영 및 발전을 위해 {극험지에} 출마하기로 결심했다.”라고 밝혔다."@ko ;
+    kno:formation kno:W03 ;
+    skos:definition "의원으로 선출되기 극히 어려운 선거구를 비유적으로 이르는 말."@ko ;
+    kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B9%ED%97%98%EC%A7%80> ;
+    kno:component kno:KN2024-0028-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:indexForm "극험지"@ko ;
+    kno:component kno:KN2024-0028-c1 ;
+    rdfs:label "극-험지"@ko ;
+    kno:componentString "극(極)-, 험지(險地)"@ko ;
+    kno:frequency kno:KN2024-0028-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:slotFiller "험지(險地) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2024-0028-freq-NN-2025 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000202 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(極險地)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0028-freq-NN-total .
+kno:KN2024-0028-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A12m ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F007053 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W3 ;
+    kno:fullForm "험지"@ko ;
+    kno:surfaceForm "험지"@ko ;
+    a kno:Component ;
+    rdfs:label "험지(險地)"@ko .
+kno:KN2024-0028-c1 kno:role "고정항"@ko ;
+    kno:fullForm "극"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000202 ;
+    kno:surfaceForm "극"@ko ;
+    a kno:Component ;
+    rdfs:label "극(極)-"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:truncated "false"^^xsd:boolean .

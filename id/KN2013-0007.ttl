@@ -1,0 +1,74 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0007 kno:frequency kno:KN2013-0007-freq-NN-2014 ;
+    kno:instantiates kno:S000143 ;
+    kno:componentString "강제(強制), 해외(海外), 진출(進出)"@ko ;
+    kno:indexForm "강제해외진출"@ko ;
+    kno:frequency kno:KN2013-0007-freq-NN-2018 ;
+    kno:languageType "한_한_한" ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2013-0007-c1 ;
+    a kno:Neologism ;
+    kno:origin "(強制海外進出)" ;
+    kno:activeYears "13"^^xsd:integer ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0007-freq-NN-2012 ;
+    kno:frequency kno:KN2013-0007-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0007-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "해외(海外)+진출(進出) (2성분)"@ko ;
+    kno:frequency kno:KN2013-0007-freq-NN-2019 ;
+    kno:component kno:KN2013-0007-c2 ;
+    kno:frequency kno:KN2013-0007-freq-NN-2015 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357683> ;
+    kno:frequency kno:KN2013-0007-freq-NN-2017 ;
+    kno:frequency kno:KN2013-0007-freq-NN-2016 ;
+    kno:frequency kno:KN2013-0007-freq-NN-2020 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "강제 해외 진출"@ko ;
+    kno:frequency kno:KN2013-0007-freq-NN-2022 ;
+    kno:example "¶외국에서의 자발적인 OOO 칭찬에 팬들이 먼저 ‘OOO, {강제 해외 진출} 추진’을 주장할 정도다."@ko ;
+    kno:frequency kno:KN2013-0007-freq-NN-2024 ;
+    kno:urimalTargetCode "1357683" ;
+    kno:frequency kno:KN2013-0007-freq-NN-2021 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2013-0007-c3 ;
+    kno:frequency kno:KN2013-0007-freq-NN-total ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "외부에서 작용하는 힘이나 작용에 의해 본의 아니게 해외로 활동 범위나 세력을 넓혀 나아감."@ko .
+kno:KN2013-0007-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000198 ;
+    rdfs:label "강제(強制)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:fullForm "강제"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "강제"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0007-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002002 ;
+    rdfs:label "해외(海外)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "해외"@ko ;
+    kno:surfaceForm "해외"@ko ;
+    a kno:Component .
+kno:KN2013-0007-c3 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005932 ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "진출(進出)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "진출"@ko ;
+    kno:surfaceForm "진출"@ko .

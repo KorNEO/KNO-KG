@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0228 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0228 kno:predicate "유행하다"@ko ;
+    kno:indexForm "인싸춤"@ko ;
+    kno:component kno:KN2019-0228-c1 ;
+    kno:languageType "영_고" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0228-c2 ;
+    kno:frequency kno:KN2019-0228-freq-NN-2023 ;
+    kno:componentString "인싸(←insider), 춤"@ko ;
+    kno:instantiates kno:S000322 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "춤 (1성분)"@ko ;
+    kno:example "¶그는 팬들과의 야외 인터뷰에 {인싸 춤까지} 춰 보이며 화기애애한 분위기를 자아냈다."@ko ;
+    kno:frequency kno:KN2019-0228-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0228-freq-NN-2021 ;
+    kno:origin "(<영>←insider춤)" ;
+    rdfs:label "인싸 춤"@ko ;
+    kno:frequency kno:KN2019-0228-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2019-0228-freq-NN-2020 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0228-freq-NN-2018 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EC%8B%B8%20%EC%B6%A4> ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2019-0228-freq-NN-2019 ;
+    skos:definition "인싸들 사이에서 유행하는 춤."@ko .
+kno:KN2019-0228-c1 kno:fullForm "인싸"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "인싸"@ko ;
+    a kno:Component ;
+    rdfs:label "인싸(←insider)"@ko ;
+    kno:formative kno:F000102 ;
+    kno:role "고정항"@ko .
+kno:KN2019-0228-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "춤"@ko ;
+    kno:surfaceForm "춤"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000601 ;
+    kno:semanticTag kno:usas-K4 ;
+    rdfs:label "춤"@ko ;
+    a kno:Component .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0198 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0198-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0198-form ;
-    ontolex:sense kno:KN2020-0198-sense .
-
-kno:KN2020-0198-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004660018> .
-
-kno:KN2020-0198-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0198-freq-nn,
-        kno:KN2020-0198-freq-yt ;
-    ontolex:writtenRep "실효^이자^비용"@ko .
-
-kno:KN2020-0198-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0198-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0198-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0198 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%ED%9A%A8%EC%9D%B4%EC%9E%90%EB%B9%84%EC%9A%A9> ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000096 ;
+    kno:frequency kno:KN2020-0198-freq-NN-2020 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:slotFiller "실효(實效)+이자(利子) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0198-c3 ;
+    kno:componentString "실효(實效), 이자(利子), 비용(費用)"@ko ;
+    kno:component kno:KN2020-0198-c1 ;
+    kno:component kno:KN2020-0198-c2 ;
+    kno:unitType "구"@ko ;
+    skos:definition "금융 기관에서 대출받은 금액에 대해 실제로 부담하는 이자 비용."@ko ;
+    kno:origin "(實效利子費用)" ;
+    kno:example "¶최근 국가 채무가 늘어났지만 국채 금리에서 명목 성장률을 뺀 {실효 이자 비용의} 추이를 살펴보면 한국의 재정 여력에는 문제가 없어 보인다."@ko ;
+    rdfs:label "실효^이자^비용"@ko ;
+    kno:frequency kno:KN2020-0198-freq-NN-total ;
+    kno:indexForm "실효이자비용"@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2020-0198-c3 kno:surfaceForm "비용"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "비용(費用)"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    a kno:Component ;
+    kno:fullForm "비용"@ko ;
+    kno:formative kno:F000215 ;
+    kno:role "고정항"@ko .
+kno:KN2020-0198-c1 kno:semanticTag kno:usas-X9.1p ;
+    kno:formative kno:F004729 ;
+    rdfs:label "실효(實效)"@ko ;
+    a kno:Component ;
+    kno:fullForm "실효"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "실효"@ko .
+kno:KN2020-0198-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "이자(利子)"@ko ;
+    kno:formative kno:F005408 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "이자"@ko ;
+    kno:surfaceForm "이자"@ko .

@@ -1,36 +1,79 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0247 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0247 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0247-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0247-form ;
-    ontolex:sense kno:KN2021-0247-sense .
-
-kno:KN2021-0247-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003328211> .
-
-kno:KN2021-0247-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0247-freq-nn,
-        kno:KN2021-0247-freq-yt ;
-    ontolex:writtenRep "지역^재생^잠재력^지수"@ko .
-
-kno:KN2021-0247-freq-nn a frac:CorpusFrequency ;
-    rdf:value 101 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0247-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0247-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0247 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0247-c2 ;
+    kno:instantiates kno:S000025 ;
+    kno:frequency kno:KN2021-0247-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0247-freq-NN-total ;
+    kno:frequency kno:KN2021-0247-freq-NN-2023 ;
+    kno:component kno:KN2021-0247-c1 ;
+    kno:slotFiller "재생(再生)+잠재력(潛在力)+지수(指數) (3성분)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:label "지역^재생^잠재력^지수"@ko ;
+    kno:frequency kno:KN2021-0247-freq-NN-2022 ;
+    kno:slotFiller "지역(地域)+재생(再生)+잠재력(潛在力) (3성분)"@ko ;
+    kno:component kno:KN2021-0247-c3 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000326 ;
+    skos:definition "지역의 발전 가능성과 성장 잠재력을 평가하는 지수. 둘째 이상의 출생률을 출산 가능한 인구의 비율로 나눈 것으로, 값이 1 이상이면 인구가 늘고 있음을 보여준다."@ko ;
+    kno:component kno:KN2021-0247-c4 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%97%AD%EC%9E%AC%EC%83%9D%EC%9E%A0%EC%9E%AC%EB%A0%A5%EC%A7%80%EC%88%98> ;
+    kno:example "¶{지역 재생 잠재력 지수가} 2 이상 나온 곳은 총 19곳으로 집계되었으며, 모두 농촌의 군 단위 지역이었다."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:origin "(地域再生潛在力指數)" ;
+    kno:indexForm "지역재생잠재력지수"@ko ;
+    kno:frequency kno:KN2021-0247-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0247-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0247-freq-NN-2021 ;
+    kno:languageType "한^한^한^한" ;
+    kno:componentString "지역(地域), 재생(再生), 잠재력(潛在力), 지수(指數)"@ko ;
+    kno:predicate "평가하다"@ko ;
+    a kno:Neologism .
+kno:KN2021-0247-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T2p ;
+    kno:formative kno:F005589 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "재생(再生)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "재생"@ko ;
+    kno:surfaceForm "재생"@ko .
+kno:KN2021-0247-c1 kno:fullForm "지역"@ko ;
+    kno:surfaceForm "지역"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000063 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0247-c3 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "잠재력"@ko ;
+    kno:surfaceForm "잠재력"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "잠재력(潛在力)"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:formative kno:F005552 ;
+    a kno:Component .
+kno:KN2021-0247-c4 kno:position "4"^^xsd:integer ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000035 ;
+    kno:fullForm "지수"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:surfaceForm "지수"@ko ;
+    a kno:Component .

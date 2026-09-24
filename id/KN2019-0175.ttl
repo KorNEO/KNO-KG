@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0175 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0175 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0175-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0175-freq-NN-2023 ;
+    kno:origin "(<영>stealth車線)" ;
+    kno:frequency kno:KN2019-0175-freq-NN-2024 ;
+    kno:example "¶지자체는 도심 등 차선이 자주 지워지는 곳 위주로 도색하여 문제가 없다는 입장이지만 운전자들은 도심 속 도로를 모두 도색하지 않았거나 도색 성능이 떨어지기 때문에 {‘스텔스 차선’이} 발생한다고 반박하고 있다."@ko ;
+    a kno:Neologism ;
+    kno:indexForm "스텔스차선"@ko ;
+    kno:frequency kno:KN2019-0175-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0175-freq-NN-2021 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "스텔스(stealth), 차선(車線)"@ko ;
+    kno:slotFiller "차선(車線) (1성분)"@ko ;
+    kno:frequency kno:KN2019-0175-freq-NN-2025 ;
+    kno:component kno:KN2019-0175-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0175-freq-NN-total ;
+    kno:instantiates kno:S000220 ;
+    skos:definition "야간이나 날이 어두울 때 잘 보이지 않는 도로 위 차선. 특히 비 오는 날 선명하게 보이지 않아 운전하기 어렵다."@ko ;
+    rdfs:label "스텔스 차선"@ko ;
+    kno:component kno:KN2019-0175-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%85%94%EC%8A%A4%20%EC%B0%A8%EC%84%A0> ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2019-0175-c1 kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000375 ;
+    kno:fullForm "스텔스"@ko ;
+    rdfs:label "스텔스(stealth)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A10 ;
+    kno:surfaceForm "스텔스"@ko ;
+    a kno:Component .
+kno:KN2019-0175-c2 kno:formative kno:F005988 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "차선(車線)"@ko ;
+    kno:fullForm "차선"@ko ;
+    kno:surfaceForm "차선"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:role "슬롯 채움"@ko .

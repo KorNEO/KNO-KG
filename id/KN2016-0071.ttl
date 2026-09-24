@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0071 kno:frequency kno:KN2016-0071-freq-NN-2015 ;
+    kno:indexForm "네오비트족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "네오(neo)+비트(beat) (2성분)"@ko ;
+    kno:frequency kno:KN2016-0071-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "중요시하다"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:componentString "네오(neo), 비트(beat), -족(族)"@ko ;
+    skos:definition "기존의 질서와 도덕을 거부하지만, 자신의 경험과 타인과의 소통을 중요시하는 사람. 또는 그런 집단. 1950년대 미국의 비트족과 유사하지만, 아이티(IT) 기계와 같은 최신 기술이나 관계 누리망 서비스와 같은 새로운 의사소통 수단을 잘 활용한다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1382523> ;
+    kno:frequency kno:KN2016-0071-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0071-freq-NN-2016 ;
+    kno:urimalTargetCode "1382523" ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:origin "(<영>neo beat族)" ;
+    kno:component kno:KN2016-0071-c2 ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2016-0071-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2016-0071-c3 ;
+    kno:component kno:KN2016-0071-c1 ;
+    kno:example "¶전문가들은 기술의 발전과 함께 등장한 이디엠(EDM)이 20, 30대 ‘{네오비트족’의} 놀이 문화와 맞물리면서 국내 공연 시장에서 주연급으로 성장할 것이란 전망을 내놓는다."@ko ;
+    rdfs:label "네오비트-족"@ko ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0071-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "비트(beat)"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:formative kno:F004085 ;
+    kno:fullForm "비트"@ko ;
+    kno:surfaceForm "비트"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2016-0071-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2016-0071-c1 kno:formative kno:F001146 ;
+    kno:surfaceForm "네오"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "네오"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "네오(neo)"@ko ;
+    a kno:Component .

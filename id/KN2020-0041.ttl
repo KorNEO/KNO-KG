@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0041 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0041 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0041-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0041-form ;
-    ontolex:sense kno:KN2020-0041-sense .
-
-kno:KN2020-0041-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004601497> .
-
-kno:KN2020-0041-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0041-freq-nn,
-        kno:KN2020-0041-freq-yt ;
-    ontolex:writtenRep "기간산업^안정^자금"@ko .
-
-kno:KN2020-0041-freq-nn a frac:CorpusFrequency ;
-    rdf:value 213 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0041-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0041-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0041 kno:frequency kno:KN2020-0041-freq-NN-2020 ;
+    kno:component kno:KN2020-0041-c1 ;
+    kno:frequency kno:KN2020-0041-freq-NN-2021 ;
+    kno:component kno:KN2020-0041-c3 ;
+    kno:example "¶OOO 연구원은 “백신이 보급되더라도 본격적인 여객 수요 회복까지는 약 6개월의 시간이 소요될 전망이므로 {기간산업 안정 자금과} 같은 자금 확보 전략이 필요하다.”라고 분석했다."@ko ;
+    kno:slotFiller "자금(資金) (1성분)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:slotFiller "기간산업(基幹産業) (1성분)"@ko ;
+    skos:definition "기간산업의 경영난 및 그에 따른 근로자의 고용 불안을 해소하기 위해 정부가 지급하는 자금. 코로나19의 확산으로 인해 기간산업계가 어려움을 겪자 정부가 지원하는 돈으로, 한국 산업 은행이 기업에 자금을 빌려주고 정부에서 지급 보증을 해 주는 형식으로 운영된다. 기간산업을 영위하는 기업이나 기간산업 기업을 지원하기 위해 설립된 회사 및 기구를 지원 대상으로 한다."@ko ;
+    kno:frequency kno:KN2020-0041-freq-NN-2025 ;
+    kno:componentString "기간산업(基幹産業), 안정(安定), 자금(資金)"@ko ;
+    kno:indexForm "기간산업안정자금"@ko ;
+    kno:frequency kno:KN2020-0041-freq-NN-2023 ;
+    kno:predicate "지급하다"@ko ;
+    kno:origin "(基幹産業安定資金)" ;
+    kno:frequency kno:KN2020-0041-freq-NN-2022 ;
+    kno:instantiates kno:S001247 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0041-c2 ;
+    rdfs:label "기간산업^안정^자금"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000410 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EA%B0%84%EC%82%B0%EC%97%85%EC%95%88%EC%A0%95%EC%9E%90%EA%B8%88> ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:frequency kno:KN2020-0041-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2020-0041-c1 kno:fullForm "기간산업"@ko ;
+    kno:surfaceForm "기간산업"@ko ;
+    kno:formative kno:F000467 ;
+    rdfs:label "기간산업(基幹産業)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0041-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "자금(資金)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "자금"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "자금"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000187 .
+kno:KN2020-0041-c2 kno:formative kno:F000181 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "안정(安定)"@ko ;
+    kno:fullForm "안정"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A15 ;
+    kno:surfaceForm "안정"@ko .

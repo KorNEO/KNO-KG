@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0147 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0147 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0147-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0147-form ;
-    ontolex:sense kno:KN2025-0147-sense .
-
-kno:KN2025-0147-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003589990> .
-
-kno:KN2025-0147-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0147-freq-nn,
-        kno:KN2025-0147-freq-yt ;
-    ontolex:writtenRep "다크 샤워"@ko .
-
-kno:KN2025-0147-freq-nn a frac:CorpusFrequency ;
-    rdf:value 54 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0147-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0147-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0147 skos:definition "(LLM) 조명을 끄거나 낮춘 어두운 환경에서 하는 샤워."@ko ;
+    kno:languageType "영_영" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0147-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000209 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A4%ED%81%AC%20%EC%83%A4%EC%9B%8C> ;
+    kno:indexForm "다크샤워"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0147-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0147-freq-NN-2025 ;
+    kno:componentString "다크(dark), 샤워(shower)"@ko ;
+    kno:predicate "하다"@ko ;
+    rdfs:label "다크 샤워"@ko ;
+    kno:origin "(<영>dark shower)" ;
+    kno:component kno:KN2025-0147-c2 ;
+    kno:example "(LLM) 수면의 질을 높이려고 잠들기 전 욕실 조명을 최소로 낮춘 채 {다크샤워를} 하는 사람이 늘고 있다."@ko ;
+    kno:slotFiller "샤워(shower) (1성분)"@ko .
+kno:KN2025-0147-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-W2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "다크"@ko ;
+    kno:surfaceForm "다크"@ko ;
+    rdfs:label "다크(dark)"@ko ;
+    kno:formative kno:F000344 .
+kno:KN2025-0147-c2 rdfs:label "샤워(shower)"@ko ;
+    kno:formative kno:F004269 ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:fullForm "샤워"@ko ;
+    kno:surfaceForm "샤워"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .

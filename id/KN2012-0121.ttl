@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0121 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0121 skos:definition "남의 마음을 사로잡아 호리는 능력."@ko ;
+    a kno:Neologism ;
+    kno:componentString "매혹(魅惑), -력(力)"@ko ;
+    kno:frequency kno:KN2012-0121-freq-NN-2016 ;
+    kno:predicate "호리다"@ko ;
+    kno:frequency kno:KN2012-0121-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000006 ;
+    kno:indexForm "매혹력"@ko ;
+    kno:example "¶이 책은…철저한 자기 관리를 통해 멋진 여자로 거듭날 수 있게 도와주는 ‘{매혹력’을} 제시하고 있다."@ko ;
+    kno:languageType "한+한" ;
+    rdfs:label "매혹-력"@ko ;
+    kno:slotFiller "매혹(魅惑) (1성분)"@ko ;
+    kno:component kno:KN2012-0121-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2012-0121-freq-NN-2012 ;
+    kno:component kno:KN2012-0121-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%ED%98%B9%EB%A0%A5> ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(魅惑力)" ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2012-0121-c1 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "매혹"@ko ;
+    kno:semanticTag kno:usas-E2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "매혹"@ko ;
+    kno:formative kno:F003402 ;
+    rdfs:label "매혹(魅惑)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0121-c2 rdfs:label "-력(力)"@ko ;
+    kno:fullForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000010 ;
+    a kno:Component ;
+    kno:surfaceForm "력"@ko .

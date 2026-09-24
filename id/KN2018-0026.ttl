@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0026 kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한_영" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415806> ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:indexForm "경찰로또"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0026-c1 ;
+    kno:origin "(警察<영>lotto)" ;
+    kno:frequency kno:KN2018-0026-freq-NN-2018 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2018-0026-c2 ;
+    skos:definition "경찰을 대상으로 고소를 하거나 민원을 제기하여 받은 거액의 합의금을 ‘로토’의 비규범 표기형인 ‘로또’에 비유하여 이르는 말. 자신의 잘못을 떠나 경찰관에게 물리적인 행사를 당했다는 이유로 소송을 걸어 거액을 취하는 것을 말한다. ⇒규범 표기는 ‘경찰 로토’이다."@ko ;
+    kno:componentString "경찰(警察), 로또(lotto)"@ko ;
+    kno:frequency kno:KN2018-0026-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2018-0026-freq-NN-2017 ;
+    kno:urimalTargetCode "1415806" ;
+    kno:example "¶O 경사는 얼마 전 유흥업소 밀집 지역을 순찰하던 중 한 상인으로부터 “유흥업소 호객꾼 사이에서 ‘{경찰 로또’란} 말이 돈다.”라는 얘기를 들었다."@ko ;
+    rdfs:label "경찰 로또"@ko ;
+    a kno:Neologism .
+kno:KN2018-0026-c1 kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002243 ;
+    rdfs:label "경찰(警察)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경찰"@ko ;
+    kno:surfaceForm "경찰"@ko .
+kno:KN2018-0026-c2 a kno:Component ;
+    kno:surfaceForm "로또"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "로또(lotto)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003237 ;
+    kno:semanticTag kno:usas-K5.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "로또"@ko .

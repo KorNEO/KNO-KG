@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0113 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0113 a ontolex:Word ;
-    frac:attestation kno:KN2025-0113-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0113-form ;
-    ontolex:sense kno:KN2025-0113-sense .
-
-kno:KN2025-0113-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002463051> .
-
-kno:KN2025-0113-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0113-freq-nn,
-        kno:KN2025-0113-freq-yt ;
-    ontolex:writtenRep "내란 본당"@ko .
-
-kno:KN2025-0113-freq-nn a frac:CorpusFrequency ;
-    rdf:value 96 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0113-freq-yt a frac:CorpusFrequency ;
-    rdf:value 66 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0113-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0113 rdfs:label "내란-본당"@ko ;
+    kno:example "(LLM) 시민단체는 해당 발언이 계엄을 두둔한 것이라며 {내란본당이} 책임을 져야 한다고 주장했다."@ko ;
+    kno:frequency kno:KN2025-0113-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%EB%B3%B8%EB%8B%B9> ;
+    kno:component kno:KN2025-0113-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0113-freq-NN-2025 ;
+    kno:languageType "한_한" ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0113-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "내란본당"@ko ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S000206 ;
+    kno:componentString "내란(內亂), 본당(本黨)"@ko ;
+    skos:definition "(LLM) 비상계엄ㆍ쿠데타 등 국가 질서를 뒤흔드는 행위를 옹호했거나 그와 연루됐다고 비판받는 정당이나 정치 세력을 비유적으로 이르는 말."@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "본당(本黨) (1성분)"@ko ;
+    kno:origin "(內亂本黨)" .
+kno:KN2025-0113-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "본당"@ko ;
+    kno:surfaceForm "본당"@ko ;
+    rdfs:label "본당(本黨)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003922 ;
+    a kno:Component .
+kno:KN2025-0113-c1 kno:semanticTag kno:usas-G3m ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "내란"@ko ;
+    rdfs:label "내란(內亂)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000052 ;
+    kno:surfaceForm "내란"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .

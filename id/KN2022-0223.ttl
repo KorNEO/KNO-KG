@@ -1,37 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0223 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0223 a ontolex:Word ;
-    frac:attestation kno:KN2022-0223-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0223-form ;
-    ontolex:sense kno:KN2022-0223-sense .
-
-kno:KN2022-0223-att-nn a frac:Attestation ;
-    dcterms:date "2022-02-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/311/0001408969> .
-
-kno:KN2022-0223-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0223-freq-nn,
-        kno:KN2022-0223-freq-yt ;
-    ontolex:writtenRep "오운완"@ko .
-
-kno:KN2022-0223-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2521 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0223-freq-yt a frac:CorpusFrequency ;
-    rdf:value 29718 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0223-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%98%A4%EC%9A%B4%EC%99%84> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0223 kno:componentString "오(늘), 운(동)(運動), 완(료)(完了)"@ko ;
+    kno:component kno:KN2022-0223-c3 ;
+    kno:frequency kno:KN2022-0223-freq-NN-2025 ;
+    a ontolex:Word ;
+    kno:languageType "고+한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000224 ;
+    skos:definition "‘오늘 운동 완료’를 줄여 이르는 말."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2022-0223-c2 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2022-0223-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0223-freq-NN-2022 ;
+    kno:indexForm "오운완"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1671508> ;
+    kno:origin "(오運完)" ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2022-0223-freq-NN-total ;
+    a kno:Neologism ;
+    kno:example "¶운동에 푹 빠진 엠제트 세대들의 에스엔에스에는 ‘{오운완’이라는} 해시 태그가 넘쳐 난다."@ko ;
+    kno:urimalTargetCode "1671508" ;
+    kno:slotFiller "오(늘)+운(동)(運動) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000417 ;
+    kno:component kno:KN2022-0223-c1 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0223-freq-NN-2024 ;
+    kno:slotFiller "운(동)(運動)+완(료)(完了) (2성분)"@ko ;
+    rdfs:label "오운완"@ko .
+kno:KN2022-0223-c3 kno:semanticTag kno:usas-T2 ;
+    kno:formative kno:F000874 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "완료"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "완(료)(完了)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "완"@ko .
+kno:KN2022-0223-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "운동"@ko ;
+    rdfs:label "운(동)(運動)"@ko ;
+    kno:surfaceForm "운"@ko ;
+    kno:formative kno:F000564 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0223-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "오늘"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "오(늘)"@ko ;
+    kno:formative kno:F000390 ;
+    kno:semanticTag kno:usas-T1.1.2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "오"@ko .

@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0189 kno:frequency kno:KN2018-0189-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0189-freq-NN-total ;
+    kno:languageType "한_한" ;
+    kno:instantiates kno:S000174 ;
+    kno:instantiates kno:S001466 ;
+    kno:component kno:KN2018-0189-c2 ;
+    skos:definition "소비를 많이 하는 사람을 귀엽게 부르는 말."@ko ;
+    kno:frequency kno:KN2018-0189-freq-NN-2020 ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415653> ;
+    kno:slotFiller "소비(消費) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0189-freq-NN-2017 ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1415653" ;
+    kno:indexForm "소비요정"@ko ;
+    kno:frequency kno:KN2018-0189-freq-NN-2022 ;
+    kno:slotFiller "요정(妖精) (1성분)"@ko ;
+    kno:componentString "소비(消費), 요정(妖精)"@ko ;
+    kno:origin "(消費妖精)" ;
+    kno:component kno:KN2018-0189-c1 ;
+    kno:frequency kno:KN2018-0189-freq-NN-2019 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0189-freq-NN-2024 ;
+    rdfs:label "소비 요정"@ko ;
+    kno:example "¶이날 OOO은 “제가 한때 {소비 요정이었는데} 농촌에는 살 게 없다. 살 게 농기계밖에 없다. 그런데 되게 갖고 싶더라.”라고 말문을 열었다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0189-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0189-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0189-freq-NN-2021 .
+kno:KN2018-0189-c2 kno:formative kno:F000226 ;
+    kno:surfaceForm "요정"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    rdfs:label "요정(妖精)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "요정"@ko .
+kno:KN2018-0189-c1 a kno:Component ;
+    kno:surfaceForm "소비"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "소비(消費)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "소비"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000030 ;
+    kno:semanticTag kno:usas-I2.2 .

@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0403 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0403 a ontolex:Word ;
-    frac:attestation kno:KN2020-0403-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0403-form ;
-    ontolex:sense kno:KN2020-0403-sense .
-
-kno:KN2020-0403-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004394194> .
-
-kno:KN2020-0403-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0403-freq-nn,
-        kno:KN2020-0403-freq-yt ;
-    ontolex:writtenRep "홈테인먼트"@ko .
-
-kno:KN2020-0403-freq-nn a frac:CorpusFrequency ;
-    rdf:value 199 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0403-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0403-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0403 kno:frequency kno:KN2020-0403-freq-NN-2022 ;
+    kno:formation kno:W05 ;
+    kno:slotFiller "(엔터)테인먼트(entertainment) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0403-freq-NN-total ;
+    kno:instantiates kno:S000617 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:indexForm "홈테인먼트"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0403-freq-NN-2021 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%88%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8> ;
+    kno:origin "(<영>home←entertainment)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2020-0403-c2 ;
+    kno:example "¶코로나19의 영향으로 가족이 집에서 함께 즐기는 {홈테인먼트를} 찾는 경향이 강해졌다."@ko ;
+    kno:instantiates kno:S000234 ;
+    kno:component kno:KN2020-0403-c1 ;
+    kno:componentString "홈(home), (엔터)테인먼트(entertainment)"@ko ;
+    a ontolex:Word ;
+    rdfs:label "홈테인먼트"@ko ;
+    kno:slotFiller "홈(home) (1성분)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "집에서 즐기는 오락물을 이르는 말. 코로나19로 인해 외부 활동에 제약이 생기면서 사용되는 말이다."@ko ;
+    kno:frequency kno:KN2020-0403-freq-NN-2020 .
+kno:KN2020-0403-c2 a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "테인먼트"@ko ;
+    kno:fullForm "엔터테인먼트"@ko ;
+    rdfs:label "(엔터)테인먼트(entertainment)"@ko ;
+    kno:formative kno:F000618 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2020-0403-c1 kno:surfaceForm "홈"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000045 ;
+    rdfs:label "홈(home)"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "홈"@ko .

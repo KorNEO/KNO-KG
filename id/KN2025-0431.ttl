@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0431 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0431 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0431-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0431-form ;
-    ontolex:sense kno:KN2025-0431-sense .
-
-kno:KN2025-0431-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/241/0003465398> .
-
-kno:KN2025-0431-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0431-freq-nn,
-        kno:KN2025-0431-freq-yt ;
-    ontolex:writtenRep "오버 블러싱"@ko .
-
-kno:KN2025-0431-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0431-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0431-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0431 kno:example "(LLM) 볼 중앙에서 콧등까지 색을 자연스럽게 이어 주면 {오버블러싱이} 과해 보이지 않으면서도 얼굴에 생기가 돈다."@ko ;
+    kno:frequency kno:KN2025-0431-freq-NN-total ;
+    kno:origin "(over blushing)" ;
+    rdfs:label "오버 블러싱"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "오버(over), 블러싱(blushing)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "블러싱(blushing) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A4%EB%B2%84%20%EB%B8%94%EB%9F%AC%EC%8B%B1> ;
+    kno:predicate "내다"@ko ;
+    kno:frequency kno:KN2025-0431-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "오버블러싱"@ko ;
+    kno:instantiates kno:S001571 ;
+    kno:component kno:KN2025-0431-c1 ;
+    skos:definition "(LLM) 블러셔(치크)를 볼에서 콧등까지 넓은 범위에 진하게 올려, 얼굴에 붉은 기가 번진 듯한 분위기를 내는 화장법."@ko ;
+    kno:component kno:KN2025-0431-c2 ;
+    kno:languageType "영_영" .
+kno:KN2025-0431-c1 rdfs:label "오버(over)"@ko ;
+    kno:formative kno:F001629 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "오버"@ko ;
+    kno:surfaceForm "오버"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0431-c2 a kno:Component ;
+    kno:formative kno:F004049 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "블러싱"@ko ;
+    rdfs:label "블러싱(blushing)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "블러싱"@ko .

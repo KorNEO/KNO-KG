@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0206 kno:formation kno:W01 ;
+    kno:instantiates kno:S000260 ;
+    kno:example "¶이 방송을 본 네티즌들은…“OO OOO 갑오징어 먹방, 진정한 {위꼴샷}.”, “OO OOO 갑오징어 먹방, 갑자기 배고프다.” 등의 반응을 보였다."@ko ;
+    kno:instantiates kno:S000558 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%84%EA%BC%B4%EC%83%B7> ;
+    kno:slotFiller "위(胃)+꼴(리다) (2성분)"@ko ;
+    skos:definition "위가 움직일 정도로 식욕을 자극하는 사진."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2014-0206-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "위(胃), 꼴(리다), 샷(shot)"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0206-freq-NN-total ;
+    kno:frequency kno:KN2014-0206-freq-NN-2015 ;
+    kno:indexForm "위꼴샷"@ko ;
+    kno:component kno:KN2014-0206-c1 ;
+    kno:slotFiller "꼴(리다)+샷(shot) (2성분)"@ko ;
+    kno:component kno:KN2014-0206-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(胃꼴<영>shot)" ;
+    kno:languageType "(한+고)+영" ;
+    rdfs:label "위꼴-샷"@ko ;
+    kno:predicate "자극하다"@ko .
+kno:KN2014-0206-c2 kno:semanticTag kno:usas-S3.2 ;
+    rdfs:label "꼴(리다)"@ko ;
+    kno:surfaceForm "꼴"@ko ;
+    kno:formative kno:F001128 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "꼴리다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2014-0206-c1 kno:formative kno:F000883 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "위"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "위(胃)"@ko ;
+    kno:surfaceForm "위"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2014-0206-c3 rdfs:label "샷(shot)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000140 ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:fullForm "샷"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "샷"@ko ;
+    kno:truncated "false"^^xsd:boolean .

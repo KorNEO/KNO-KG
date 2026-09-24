@@ -1,36 +1,114 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0095 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0095 a ontolex:Word ;
-    frac:attestation kno:KN2022-0095-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0095-form ;
-    ontolex:sense kno:KN2022-0095-sense .
-
-kno:KN2022-0095-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-16"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/031/0000611302> .
-
-kno:KN2022-0095-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0095-freq-nn,
-        kno:KN2022-0095-freq-yt ;
-    ontolex:writtenRep "네카라쿠배토당야"@ko .
-
-kno:KN2022-0095-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0095-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0095-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0095 kno:component kno:KN2022-0095-c1 ;
+    kno:languageType "영+영+영+영+한+영+한+고" ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:indexForm "네카라쿠배토당야"@ko ;
+    kno:component kno:KN2022-0095-c7 ;
+    kno:instantiates kno:S001288 ;
+    kno:example "¶{네카라쿠배토당야는} 재택 근무 등의 자유로운 근무 방식과 높은 연봉으로 직장인들의 선호도가 높다."@ko ;
+    kno:componentString "네(이버)(Naver), 카(카오)(Kakao), 라(인)(Line), 쿠(팡)(Coupang), 배(달의민족), 토(스)(Toss), 당(근마켓), 야(놀자)"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2022-0095-c4 ;
+    kno:component kno:KN2022-0095-c3 ;
+    kno:frequency kno:KN2022-0095-freq-NN-2021 ;
+    kno:component kno:KN2022-0095-c5 ;
+    a kno:Neologism ;
+    kno:origin "(←Naver←Kakao←Line←Coupang配←Toss當야)" ;
+    kno:component kno:KN2022-0095-c8 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0095-c6 ;
+    rdfs:label "네카라쿠배토당야"@ko ;
+    kno:component kno:KN2022-0095-c2 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0095-freq-NN-total ;
+    skos:definition "대형 아이티 기업 ‘네이버, 카카오, 라인, 쿠팡, 배달의 민족, 토스, 당근 마켓, 야놀자’를 아울러 이르는 말. 각 기업의 앞 글자를 따 만들어진 말이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%A4%EC%B9%B4%EB%9D%BC%EC%BF%A0%EB%B0%B0%ED%86%A0%EB%8B%B9%EC%95%BC> ;
+    kno:slotFiller "토(스)(Toss)+당(근마켓) (2성분)"@ko .
+kno:KN2022-0095-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "네이버"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:surfaceForm "네"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000340 ;
+    rdfs:label "네(이버)(Naver)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0095-c7 kno:fullForm "당근마켓"@ko ;
+    kno:surfaceForm "당"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:position "7"^^xsd:integer ;
+    rdfs:label "당(근마켓)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000705 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 .
+kno:KN2022-0095-c4 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "쿠"@ko ;
+    rdfs:label "쿠(팡)(Coupang)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "쿠팡"@ko ;
+    kno:formative kno:F000313 ;
+    kno:role "고정항"@ko .
+kno:KN2022-0095-c3 kno:surfaceForm "라"@ko ;
+    kno:formative kno:F000350 ;
+    rdfs:label "라(인)(Line)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "라인"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component .
+kno:KN2022-0095-c5 kno:fullForm "배달의민족"@ko ;
+    kno:formative kno:F000510 ;
+    kno:surfaceForm "배"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    rdfs:label "배(달의민족)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "5"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0095-c8 rdfs:label "야(놀자)"@ko ;
+    kno:formative kno:F001579 ;
+    kno:surfaceForm "야"@ko ;
+    kno:fullForm "야놀자"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:position "8"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0095-c6 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000975 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:position "6"^^xsd:integer ;
+    rdfs:label "토(스)(Toss)"@ko ;
+    kno:surfaceForm "토"@ko ;
+    kno:fullForm "토스"@ko .
+kno:KN2022-0095-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "카(카오)(Kakao)"@ko ;
+    kno:surfaceForm "카"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F000234 ;
+    kno:fullForm "카카오"@ko ;
+    kno:truncated "true"^^xsd:boolean .

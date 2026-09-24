@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0176 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0176 a ontolex:Word ;
-    frac:attestation kno:KN2025-0176-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0176-form ;
-    ontolex:sense kno:KN2025-0176-sense .
-
-kno:KN2025-0176-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/448/0000506086> .
-
-kno:KN2025-0176-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0176-freq-nn,
-        kno:KN2025-0176-freq-yt ;
-    ontolex:writtenRep "뒷톡방"@ko .
-
-kno:KN2025-0176-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0176-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0176-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0176 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "뒷톡방"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0176-freq-NN-total ;
+    skos:definition "(LLM) 모바일 메신저에서, 공식 단체 대화방과는 별도로 일부 인원이 따로 만들어 특정인을 배제하거나 험담하는 단체 대화방."@ko ;
+    kno:indexForm "뒷톡방"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0176-c1 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0176-freq-NN-2025 ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "(고+영)+한" ;
+    kno:component kno:KN2025-0176-c3 ;
+    kno:slotFiller "(카카오)톡(Kakaotalk)+방(房) (2성분)"@ko ;
+    kno:example "(LLM) 회의 때마다 내 의견이 묵살돼서 이상했는데, 나중에 {뒷톡방이} 따로 있었다는 얘기를 들었다."@ko ;
+    kno:instantiates kno:S000760 ;
+    kno:slotFiller "뒤 (1성분)"@ko ;
+    kno:origin "(뒷←<영>Kakaotalk房)" ;
+    kno:instantiates kno:S001338 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%92%B7%ED%86%A1%EB%B0%A9> ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2025-0176-c2 ;
+    kno:componentString "뒤, (카카오)톡(Kakaotalk), 방(房)"@ko .
+kno:KN2025-0176-c1 kno:surfaceForm "뒤"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "뒤"@ko ;
+    a kno:Component ;
+    kno:fullForm "뒤"@ko ;
+    kno:formative kno:F001204 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0176-c3 kno:role "고정항"@ko ;
+    kno:formative kno:F000077 ;
+    kno:fullForm "방"@ko ;
+    rdfs:label "방(房)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:surfaceForm "방"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0176-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "톡"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:formative kno:F000106 ;
+    kno:fullForm "카카오톡"@ko ;
+    rdfs:label "(카카오)톡(Kakaotalk)"@ko .

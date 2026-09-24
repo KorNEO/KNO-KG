@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0243 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0243 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0243-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0243-form ;
-    ontolex:sense kno:KN2022-0243-sense .
-
-kno:KN2022-0243-att-nn a frac:Attestation ;
-    dcterms:date "2022-03-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011069161> .
-
-kno:KN2022-0243-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0243-freq-nn,
-        kno:KN2022-0243-freq-yt ;
-    ontolex:writtenRep "재택 응시생"@ko .
-
-kno:KN2022-0243-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0243-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0243-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0243 kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(在宅應試生)" ;
+    rdfs:label "재택 응시생"@ko ;
+    kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0243-freq-NN-2022 ;
+    skos:definition "집에서 컴퓨터 통신망을 통해 시험을 치는 사람."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%83%9D%20%EC%9D%91%EC%8B%9C%EC%83%9D> ;
+    kno:component kno:KN2022-0243-c2 ;
+    kno:instantiates kno:S000325 ;
+    kno:componentString "재택(在宅), 응시생(應試生)"@ko ;
+    kno:indexForm "재택응시생"@ko ;
+    kno:component kno:KN2022-0243-c1 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:example "¶교육청이 예상한 {재택 응시생은} 5만 명 정도였으나, 서버가 다운되면서 시험을 2만 명밖에 치르지 못했다."@ko ;
+    kno:slotFiller "응시생(應試生) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:predicate "치다"@ko ;
+    kno:frequency kno:KN2022-0243-freq-NN-total ;
+    kno:pos "「구」"@ko .
+kno:KN2022-0243-c2 rdfs:label "응시생(應試生)"@ko ;
+    kno:formative kno:F005360 ;
+    kno:fullForm "응시생"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "응시생"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2022-0243-c1 rdfs:label "재택(在宅)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000404 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "재택"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "재택"@ko ;
+    kno:position "1"^^xsd:integer .

@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0181 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0181 kno:frequency kno:KN2014-0181-freq-NN-2013 ;
+    kno:predicate "주다"@ko ;
+    kno:componentString "엄마, 적금(積金)"@ko ;
+    kno:slotFiller "적금(積金) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0181-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "엄마적금"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%84%EB%A7%88%20%EC%A0%81%EA%B8%88> ;
+    skos:definition "엄마가 자식을 위하여 들어 주는 적금."@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    rdfs:label "엄마 적금"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:example "¶‘엄마가 알아서’ 적금을 들어 주는 {엄마 적금은} 편할 뿐 아니라 말만 잘하면 이자율이 높아지기도 하고, 무엇보다 원금 손실의 걱정이 없다."@ko ;
+    kno:instantiates kno:S001022 ;
+    kno:slotFiller "엄마 (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(엄마積金)" ;
+    kno:component kno:KN2014-0181-c2 ;
+    kno:component kno:KN2014-0181-c1 ;
+    kno:instantiates kno:S000315 ;
+    kno:languageType "고_한" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2014-0181-c2 kno:formative kno:F001746 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "적금"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "적금"@ko ;
+    rdfs:label "적금(積金)"@ko .
+kno:KN2014-0181-c1 rdfs:label "엄마"@ko ;
+    a kno:Component ;
+    kno:fullForm "엄마"@ko ;
+    kno:surfaceForm "엄마"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000559 .

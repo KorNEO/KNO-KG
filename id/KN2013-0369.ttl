@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0369 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0369 a kno:Neologism ;
+    rdfs:label "짜릿-감"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0369-freq-NN-2014 ;
+    kno:frequency kno:KN2013-0369-freq-NN-2024 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:componentString "짜릿, -감(感)"@ko ;
+    kno:indexForm "짜릿감"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0369-freq-NN-2012 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2013-0369-c2 ;
+    skos:definition "심리적 자극을 받아 순간적으로 조금 흥분되고 떨리는 듯한 마음."@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0369-c1 ;
+    kno:frequency kno:KN2013-0369-freq-NN-total ;
+    kno:example "¶네티즌들은 외국의 멋진 배경들이 게임 속에서 그대로 재현, 현실에 있는 듯한 {짜릿감을} 맛볼 수 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%9C%EB%A6%BF%EA%B0%90> ;
+    kno:origin "(짜릿感)" .
+kno:KN2013-0369-c2 kno:role "성분"@ko ;
+    kno:formative kno:F002110 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:fullForm "감"@ko ;
+    rdfs:label "-감(感)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "감"@ko .
+kno:KN2013-0369-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "짜릿"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "짜릿"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:formative kno:F005948 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "짜릿"@ko .

@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0252 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0252 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0252-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0252-form ;
-    ontolex:sense kno:KN2022-0252-sense .
-
-kno:KN2022-0252-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003389878> .
-
-kno:KN2022-0252-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0252-freq-nn,
-        kno:KN2022-0252-freq-yt ;
-    ontolex:writtenRep "지뢰 설치반"@ko .
-
-kno:KN2022-0252-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0252-freq-yt a frac:CorpusFrequency ;
-    rdf:value 92 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0252-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0252 a kno:Neologism ;
+    kno:component kno:KN2022-0252-c1 ;
+    kno:origin "(地雷設置班)" ;
+    kno:frequency kno:KN2022-0252-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "지뢰설치반"@ko ;
+    rdfs:label "지뢰 설치반"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2022-0252-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EB%A2%B0%20%EC%84%A4%EC%B9%98%EB%B0%98> ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko ;
+    skos:definition "매력적인 외모와 성격을 가지고 여러 이성을 만나는 남성들을 부정적으로 이르는 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:frequency kno:KN2022-0252-freq-NN-total ;
+    kno:example "¶네티즌들은 연애 경험이 풍부한 남성들을 ‘{지뢰 설치반’이라고} 낮잡아 부르기도 하였다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:componentString "지뢰(地雷), 설치반(設置班)"@ko .
+kno:KN2022-0252-c1 kno:fullForm "지뢰"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "지뢰"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "지뢰(地雷)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:formative kno:F005871 .
+kno:KN2022-0252-c2 rdfs:label "설치반(設置班)"@ko ;
+    kno:fullForm "설치반"@ko ;
+    kno:surfaceForm "설치반"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004318 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

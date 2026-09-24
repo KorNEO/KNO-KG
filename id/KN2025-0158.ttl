@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0158 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0158 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0158-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0158-form ;
-    ontolex:sense kno:KN2025-0158-sense .
-
-kno:KN2025-0158-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-26"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/029/0002943703> .
-
-kno:KN2025-0158-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0158-freq-nn,
-        kno:KN2025-0158-freq-yt ;
-    ontolex:writtenRep "대형 영상 모델"@ko .
-
-kno:KN2025-0158-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0158-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0158-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0158 kno:componentString "대형(大型), 영상(映像), 모델(model)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한_한_영" ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001319 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%ED%98%95%20%EC%98%81%EC%83%81%20%EB%AA%A8%EB%8D%B8> ;
+    kno:component kno:KN2025-0158-c2 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "영상(映像) (1성분)"@ko ;
+    kno:origin "(大型映像<영>model)" ;
+    kno:frequency kno:KN2025-0158-freq-NN-2025 ;
+    kno:component kno:KN2025-0158-c3 ;
+    kno:frequency kno:KN2025-0158-freq-NN-total ;
+    kno:example "(LLM) 회사는 경기 영상을 분석해 주요 장면을 자동으로 요약하고 질문에 답하게 하려고 {대형영상모델을} 서비스에 적용했다."@ko ;
+    skos:definition "(LLM) 대규모 영상 데이터를 학습해 영상의 장면ㆍ사물ㆍ인물ㆍ행동 등을 이해하고, 영상에 대한 질의응답이나 설명 생성 등 언어 기반 처리에 활용할 수 있도록 설계된 인공 지능 모델."@ko ;
+    rdfs:label "대형 영상 모델"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0158-c1 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "대형영상모델"@ko .
+kno:KN2025-0158-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "영상"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "영상"@ko ;
+    kno:formative kno:F005079 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "영상(映像)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0158-c3 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000172 ;
+    kno:surfaceForm "모델"@ko ;
+    kno:semanticTag kno:usas-X4.2 ;
+    a kno:Component ;
+    kno:fullForm "모델"@ko ;
+    rdfs:label "모델(model)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0158-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000707 ;
+    rdfs:label "대형(大型)"@ko ;
+    kno:surfaceForm "대형"@ko ;
+    kno:semanticTag kno:usas-N3.2p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "대형"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0677 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0677 a ontolex:Word ;
-    frac:attestation kno:KN2025-0677-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0677-form ;
-    ontolex:sense kno:KN2025-0677-sense .
-
-kno:KN2025-0677-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0015675513> .
-
-kno:KN2025-0677-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0677-freq-nn,
-        kno:KN2025-0677-freq-yt ;
-    ontolex:writtenRep "헤마 토이드"@ko .
-
-kno:KN2025-0677-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0677-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0677-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0677 kno:slotFiller "헤마토(hemato-) (1성분)"@ko ;
+    kno:example "(LLM) 연구팀은 {헤마토이드에서} 조혈 줄기세포가 생성되는 것을 확인하고, 이를 혈액 질환 연구와 이식용 세포 생산에 활용할 가능성을 제시했다."@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "(LLM) 줄기세포를 3차원으로 배양해 사람 배아의 초기 발달 과정 가운데 일부를 모사하도록 만든 배아 유사체."@ko ;
+    kno:component kno:KN2025-0677-c2 ;
+    kno:formation kno:W07 ;
+    kno:componentString "헤마토(hemato-), 오이드(-oid)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0677-freq-NN-2025 ;
+    kno:instantiates kno:S000987 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0677-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%A4%EB%A7%88%ED%86%A0%EC%9D%B4%EB%93%9C> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0677-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "헤마토이드"@ko ;
+    kno:indexForm "헤마토이드"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0677-c2 rdfs:label "오이드(-oid)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:formative kno:F001631 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "오이드"@ko ;
+    a kno:Component ;
+    kno:fullForm "오이드"@ko .
+kno:KN2025-0677-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "헤마토"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F007057 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "헤마토"@ko ;
+    rdfs:label "헤마토(hemato-)"@ko ;
+    a kno:Component .

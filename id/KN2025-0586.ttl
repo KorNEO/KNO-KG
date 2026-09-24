@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0586 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0586 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0586-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0586-form ;
-    ontolex:sense kno:KN2025-0586-sense .
-
-kno:KN2025-0586-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003277886> .
-
-kno:KN2025-0586-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0586-freq-nn,
-        kno:KN2025-0586-freq-yt ;
-    ontolex:writtenRep "퀀텀 셸"@ko .
-
-kno:KN2025-0586-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0586-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0586-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0586 kno:frequency kno:KN2025-0586-freq-NN-total ;
+    kno:componentString "퀀텀(quantum), 셸(shell)"@ko ;
+    kno:indexForm "퀀텀셸"@ko ;
+    skos:definition "(LLM) 나노결정(양자점) 따위의 표면에 단일 원자층 수준으로 매우 얇게 성장시킨 반도체 껍질(코팅) 구조."@ko ;
+    kno:languageType "영_영" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0586-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0586-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%80%80%ED%85%80%20%EC%85%B8> ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0586-c2 ;
+    kno:example "(LLM) 연구팀은 황화아연 나노결정 표면에 인화갈륨을 원자층으로 성장시켜 {퀀텀셸을} 형성했고, 그 결과 발광 효율이 크게 향상됐다고 설명했다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "퀀텀 셸"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>quantum shell)" .
+kno:KN2025-0586-c1 kno:surfaceForm "퀀텀"@ko ;
+    kno:formative kno:F006325 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    a kno:Component ;
+    rdfs:label "퀀텀(quantum)"@ko ;
+    kno:fullForm "퀀텀"@ko .
+kno:KN2025-0586-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004386 ;
+    rdfs:label "셸(shell)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:fullForm "셸"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "셸"@ko .

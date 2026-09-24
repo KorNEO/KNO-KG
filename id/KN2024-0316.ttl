@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0316 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0316 a ontolex:Word ;
-    frac:attestation kno:KN2024-0316-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0316-form ;
-    ontolex:sense kno:KN2024-0316-sense .
-
-kno:KN2024-0316-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005153128> .
-
-kno:KN2024-0316-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0316-freq-nn,
-        kno:KN2024-0316-freq-yt ;
-    ontolex:writtenRep "캐리오버-템"@ko .
-
-kno:KN2024-0316-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0316-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0316-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0316 skos:definition "한 시즌이 지나도 계속 판매되는 기본 상품을 이르는 말. 주로 특정 브랜드의 로고 티셔츠나 셔츠, 청바지 등을 말한다."@ko ;
+    kno:frequency kno:KN2024-0316-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EB%A6%AC%EC%98%A4%EB%B2%84%ED%85%9C> ;
+    kno:component kno:KN2024-0316-c1 ;
+    kno:component kno:KN2024-0316-c2 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    kno:slotFiller "캐리오버(carryover) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "캐리오버-템"@ko ;
+    kno:indexForm "캐리오버템"@ko ;
+    kno:languageType "영+영" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0316-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이번 시즌 매출에서 큰 비중을 차지한 것은 전 시즌부터 꾸준히 팔린 {캐리오버템이었다}."@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "캐리오버(carryover), (아이)템(item)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(<영>▼carryover←item)" .
+kno:KN2024-0316-c1 rdfs:label "캐리오버(carryover)"@ko ;
+    kno:fullForm "캐리오버"@ko ;
+    kno:surfaceForm "캐리오버"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006217 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2024-0316-c2 kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

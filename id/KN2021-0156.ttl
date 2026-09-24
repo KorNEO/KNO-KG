@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0156 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0156 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0156-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0156-form ;
-    ontolex:sense kno:KN2021-0156-sense .
-
-kno:KN2021-0156-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004882425> .
-
-kno:KN2021-0156-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0156-freq-nn,
-        kno:KN2021-0156-freq-yt ;
-    ontolex:writtenRep "상폐^빔"@ko .
-
-kno:KN2021-0156-freq-nn a frac:CorpusFrequency ;
-    rdf:value 262 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0156-freq-yt a frac:CorpusFrequency ;
-    rdf:value 135 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0156-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0156 kno:frequency kno:KN2021-0156-freq-NN-2025 ;
+    kno:indexForm "상폐빔"@ko ;
+    kno:frequency kno:KN2021-0156-freq-NN-2022 ;
+    a kno:Neologism ;
+    rdfs:label "상폐^빔"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0156-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0156-c1 ;
+    kno:languageType "한^영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%ED%8F%90%EB%B9%94> ;
+    kno:frequency kno:KN2021-0156-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2021-0156-c2 ;
+    kno:componentString "상폐(上廢), 빔(beam)"@ko ;
+    kno:origin "(上廢<영>beam)" ;
+    skos:definition "상장 폐지를 앞둔 종목의 주가가 급등하는 현상."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0156-freq-NN-2024 ;
+    kno:example "¶전문가들은 개인 투자자들이 {상폐 빔에} 올라타 수익을 내려는 욕심을 버려야 한다고 말한다."@ko ;
+    kno:frequency kno:KN2021-0156-freq-NN-2021 ;
+    kno:predicate "급등하다"@ko .
+kno:KN2021-0156-c1 rdfs:label "상폐(上廢)"@ko ;
+    kno:fullForm "상폐"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:surfaceForm "상폐"@ko ;
+    kno:formative kno:F004237 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2021-0156-c2 kno:semanticTag kno:usas-I1.3p ;
+    rdfs:label "빔(beam)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빔"@ko ;
+    kno:formative kno:F004105 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "빔"@ko .

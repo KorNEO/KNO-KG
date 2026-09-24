@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0347 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0347 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0347-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0347-form ;
-    ontolex:sense kno:KN2020-0347-sense .
-
-kno:KN2020-0347-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/449/0000186437> .
-
-kno:KN2020-0347-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0347-freq-nn,
-        kno:KN2020-0347-freq-yt ;
-    ontolex:writtenRep "코로나 수당"@ko .
-
-kno:KN2020-0347-freq-nn a frac:CorpusFrequency ;
-    rdf:value 114 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0347-freq-yt a frac:CorpusFrequency ;
-    rdf:value 49 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0347-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0347 kno:registration "신어DB"@ko ;
+    kno:example "¶청원에 동참한 사람들은 목숨을 걸고 일하는 기존의 간호사들에게도 {코로나 수당을} 지급할 것을 강력히 요구하고 있다."@ko ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2020-0347-freq-NN-2024 ;
+    kno:instantiates kno:S000005 ;
+    kno:component kno:KN2020-0347-c1 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0347-freq-NN-2022 ;
+    skos:definition "코로나19로 인한 영향을 받는 사람들이나 코로나19 감염증과 관련한 업무에 직접적으로 종사하는 사람들을 대상으로 특별히 지급하는 수당."@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 수당(手當)"@ko ;
+    kno:instantiates kno:S000405 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%88%98%EB%8B%B9> ;
+    kno:component kno:KN2020-0347-c2 ;
+    a kno:Neologism ;
+    kno:slotFiller "수당(手當) (1성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0347-freq-NN-2020 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0347-freq-NN-total ;
+    kno:predicate "지급하다"@ko ;
+    kno:indexForm "코로나수당"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0347-freq-NN-2023 ;
+    kno:origin "(<영>←corona virus手當)" ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    rdfs:label "코로나 수당"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2020-0347-freq-NN-2021 .
+kno:KN2020-0347-c1 rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 .
+kno:KN2020-0347-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "수당(手當)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "수당"@ko ;
+    kno:surfaceForm "수당"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000100 .

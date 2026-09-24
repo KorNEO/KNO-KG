@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0343 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0343 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0343-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0343-form ;
-    ontolex:sense kno:KN2025-0343-sense .
-
-kno:KN2025-0343-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003554155> .
-
-kno:KN2025-0343-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0343-freq-nn,
-        kno:KN2025-0343-freq-yt ;
-    ontolex:writtenRep "셰셰 정부"@ko .
-
-kno:KN2025-0343-freq-nn a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0343-freq-yt a frac:CorpusFrequency ;
-    rdf:value 205 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0343-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0343 kno:component kno:KN2025-0343-c1 ;
+    kno:slotFiller "정부(政府) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0343-freq-NN-2025 ;
+    kno:componentString "셰셰(xièxie), 정부(政府)"@ko ;
+    kno:languageType "중_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%B0%EC%85%B0%20%EC%A0%95%EB%B6%80> ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "셰셰 정부"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 야당은 외국인 지원 정책을 두고 정부가 자국민보다 외국인을 우선한다며 {셰셰정부}라고 비판했다."@ko ;
+    kno:origin "(<중>xièxie[謝謝]政府)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "셰셰정부"@ko ;
+    skos:definition "(LLM) 정부가 자국민보다 외국인, 특히 중국인에게 더 관대하게 혜택을 준다는 비판을 담아 이르는 말."@ko ;
+    kno:slotFiller "셰셰(xièxie) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0343-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000218 ;
+    kno:instantiates kno:S000654 ;
+    kno:component kno:KN2025-0343-c2 .
+kno:KN2025-0343-c1 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000372 ;
+    rdfs:label "셰셰(xièxie)"@ko ;
+    kno:surfaceForm "셰셰"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:fullForm "셰셰"@ko .
+kno:KN2025-0343-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "정부(政府)"@ko ;
+    kno:fullForm "정부"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000584 ;
+    kno:surfaceForm "정부"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.1 .

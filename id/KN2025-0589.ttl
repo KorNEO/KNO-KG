@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0589 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0589 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0589-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0589-form ;
-    ontolex:sense kno:KN2025-0589-sense .
-
-kno:KN2025-0589-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013157426> .
-
-kno:KN2025-0589-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0589-freq-nn,
-        kno:KN2025-0589-freq-yt ;
-    ontolex:writtenRep "클릭 페이크"@ko .
-
-kno:KN2025-0589-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0589-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0589-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0589 kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%81%B4%EB%A6%AD%20%ED%8E%98%EC%9D%B4%ED%81%AC> ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>click fake)" ;
+    kno:component kno:KN2025-0589-c1 ;
+    kno:frequency kno:KN2025-0589-freq-NN-2025 ;
+    rdfs:label "클릭 페이크"@ko ;
+    kno:instantiates kno:S000594 ;
+    kno:frequency kno:KN2025-0589-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "페이크(fake) (1성분)"@ko ;
+    kno:indexForm "클릭페이크"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 채용 담당자를 사칭한 계정이 화상 면접용 프로그램 설치 링크를 보내 와, 피해자는 {클릭페이크를} 의심하며 경찰에 신고했다."@ko ;
+    kno:component kno:KN2025-0589-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "클릭(click), 페이크(fake)"@ko ;
+    skos:definition "(LLM) 주로 온라인에서, 채용 담당자나 기업을 사칭해 면접ㆍ과제ㆍ입사 절차를 빌미로 링크 클릭이나 프로그램 설치를 유도한 뒤 악성 파일을 내려받게 하거나 가짜 사이트로 접속시켜 개인정보ㆍ계정 정보 등을 빼내는 사기ㆍ해킹 수법. ⇒규범 표기는 미확정이다."@ko .
+kno:KN2025-0589-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "클릭"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "클릭"@ko ;
+    rdfs:label "클릭(click)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000612 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0589-c2 rdfs:label "페이크(fake)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000993 ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:fullForm "페이크"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "페이크"@ko ;
+    kno:role "슬롯 채움"@ko .

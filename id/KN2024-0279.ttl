@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0279 a ontolex:Word ;
-    frac:attestation kno:KN2024-0279-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0279-form ;
-    ontolex:sense kno:KN2024-0279-sense .
-
-kno:KN2024-0279-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0014320921> .
-
-kno:KN2024-0279-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0279-freq-nn,
-        kno:KN2024-0279-freq-yt ;
-    ontolex:writtenRep "지갑-비"@ko .
-
-kno:KN2024-0279-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0279-freq-yt a frac:CorpusFrequency ;
-    rdf:value 86 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0279-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0279 rdfs:label "지갑-비"@ko ;
+    kno:component kno:KN2024-0279-c2 ;
+    kno:example "¶정부는 수고비, {지갑비라는} 명목으로 불법 수수료를 요구하는 대부업체를 대대적으로 단속하겠다고 밝혔다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EA%B0%91%EB%B9%84> ;
+    kno:indexForm "지갑비"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(紙匣費)" ;
+    skos:definition "불법 대부업자가 돈을 빌려주면서, 자신의 지갑을 대신 사용한다는 구실로 받는 부당한 비용."@ko ;
+    kno:languageType "한+한" ;
+    kno:componentString "지갑(紙匣), -비(費)"@ko ;
+    kno:frequency kno:KN2024-0279-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0279-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "지갑(紙匣) (1성분)"@ko ;
+    kno:instantiates kno:S001165 ;
+    kno:frequency kno:KN2024-0279-freq-NN-2023 .
+kno:KN2024-0279-c2 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "비"@ko ;
+    rdfs:label "-비(費)"@ko ;
+    kno:formative kno:F000785 ;
+    a kno:Component ;
+    kno:surfaceForm "비"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0279-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "지갑"@ko ;
+    kno:surfaceForm "지갑"@ko ;
+    rdfs:label "지갑(紙匣)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F005864 .

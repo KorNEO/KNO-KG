@@ -1,37 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0254 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0254-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0254-form ;
-    ontolex:sense kno:KN2020-0254-sense .
-
-kno:KN2020-0254-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000238173> .
-
-kno:KN2020-0254-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0254-freq-nn,
-        kno:KN2020-0254-freq-yt ;
-    ontolex:writtenRep "위드 코로나"@ko .
-
-kno:KN2020-0254-freq-nn a frac:CorpusFrequency ;
-    rdf:value 101173 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0254-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9322 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0254-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%8B%A8%EA%B3%84%EC%A0%81%20%EC%9D%BC%EC%83%81%ED%9A%8C%EB%B3%B5> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0254 kno:origin "(<영>▼with←corona virus)" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0254-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0254-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0254-freq-NN-total ;
+    kno:frequency kno:KN2020-0254-freq-NN-2025 ;
+    kno:componentString "위드(with), 코로나(바이러스)(corona virus)"@ko ;
+    rdfs:label "위드 코로나"@ko ;
+    kno:frequency kno:KN2020-0254-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:slotFiller "위드(with) (1성분)"@ko ;
+    kno:instantiates kno:S000131 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%84%EB%93%9C%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
+    kno:example "¶앞으로 {위드 코로나가} 정착되기 위해서는 사회 각 분야의 환경이나 문화, 제도 등을 다 함께 개선해 나가야 한다."@ko ;
+    kno:component kno:KN2020-0254-c1 ;
+    skos:definition "코로나19를 통제하며 안전하게 생활하는 상황을 이르는 말."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0254-freq-NN-2020 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "위드코로나"@ko ;
+    kno:frequency kno:KN2020-0254-freq-NN-2024 ;
+    kno:component kno:KN2020-0254-c2 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko .
+kno:KN2020-0254-c1 kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "위드"@ko ;
+    kno:surfaceForm "위드"@ko ;
+    kno:formative kno:F005278 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "위드(with)"@ko .
+kno:KN2020-0254-c2 kno:surfaceForm "코로나"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

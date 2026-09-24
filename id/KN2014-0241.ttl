@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0241 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0241 kno:origin "(進上<영>camper)" ;
+    kno:frequency kno:KN2014-0241-freq-NN-total ;
+    kno:example "¶그 원인이 무엇이든 {진상 캠퍼들은} 건전한 캠핑 문화에 독이 될 수밖에 없다."@ko ;
+    kno:frequency kno:KN2014-0241-freq-NN-2017 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "진상(進上), 캠퍼(camper)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%84%EC%83%81%20%EC%BA%A0%ED%8D%BC> ;
+    kno:component kno:KN2014-0241-c1 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:instantiates kno:S001665 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0241-freq-NN-2013 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2014-0241-c2 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "캠퍼(camper) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "공동 캠핑장에서 타인을 배려하지 않고 이기적인 행동을 하는 사람."@ko ;
+    kno:indexForm "진상캠퍼"@ko ;
+    rdfs:label "진상 캠퍼"@ko .
+kno:KN2014-0241-c1 kno:semanticTag kno:usas-S1.2.4m ;
+    kno:surfaceForm "진상"@ko ;
+    kno:semanticTag kno:usas-A5.1m ;
+    a kno:Component ;
+    kno:fullForm "진상"@ko ;
+    kno:formative kno:F001796 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    rdfs:label "진상(進上)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2014-0241-c2 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "캠퍼"@ko ;
+    kno:formative kno:F006230 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "캠퍼"@ko ;
+    rdfs:label "캠퍼(camper)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K1 .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0298 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0298 a ontolex:Word ;
-    frac:attestation kno:KN2024-0298-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0298-form ;
-    ontolex:sense kno:KN2024-0298-sense .
-
-kno:KN2024-0298-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0002269001> .
-
-kno:KN2024-0298-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0298-freq-nn,
-        kno:KN2024-0298-freq-yt ;
-    ontolex:writtenRep "찐명-횡재"@ko .
-
-kno:KN2024-0298-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0298-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0298-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0298 rdfs:label "찐명-횡재"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "찐명(眞明), 횡재(橫財)"@ko ;
+    kno:example "¶공천 배제 명단에 비명계만 몰리자, 당 안에서는 ‘{찐명횡재’라는} 반응이 나왔다."@ko ;
+    kno:slotFiller "횡재(橫財) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "찐명횡재"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0298-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(眞▽明橫財)" ;
+    kno:instantiates kno:S001672 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0298-c2 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%90%EB%AA%85%ED%9A%A1%EC%9E%AC> ;
+    kno:formation kno:W01 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2024-0298-freq-NN-total ;
+    kno:frequency kno:KN2024-0298-freq-NN-2024 ;
+    skos:definition "친이재명계 인사들이, 공직 인사 등의 과정에서 뜻밖의 큰 이익을 얻는 상황을 이르는 말."@ko .
+kno:KN2024-0298-c1 a kno:Component ;
+    kno:fullForm "찐명"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F001806 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "찐명(眞明)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "찐명"@ko .
+kno:KN2024-0298-c2 kno:fullForm "횡재"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "횡재"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002036 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1p ;
+    rdfs:label "횡재(橫財)"@ko .

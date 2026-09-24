@@ -1,37 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0002 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0002 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0002-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0002-form ;
-    ontolex:sense kno:KN2021-0002-sense .
-
-kno:KN2021-0002-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003140531> .
-
-kno:KN2021-0002-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0002-freq-nn,
-        kno:KN2021-0002-freq-yt ;
-    ontolex:writtenRep "가덕도^특별법"@ko .
-
-kno:KN2021-0002-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1756 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0002-freq-yt a frac:CorpusFrequency ;
-    rdf:value 83 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0002-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B0%80%EB%8D%95%EB%8F%84%EC%8B%A0%EA%B3%B5%ED%95%AD%20%EA%B1%B4%EC%84%A4%EC%9D%84%20%EC%9C%84%ED%95%9C%20%ED%8A%B9%EB%B3%84%EB%B2%95> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0002 kno:registration "신어DB"@ko ;
+    rdfs:label "가덕도^특별법"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0002-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0002-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0002-freq-NN-2025 ;
+    kno:component kno:KN2021-0002-c1 ;
+    kno:predicate "부여하다"@ko ;
+    kno:slotFiller "특별법(特別法) (1성분)"@ko ;
+    kno:example "¶국회 법제 사법 위원회는 필요하다면 공항 건설을 위한 예비 타당성 조사를 면제하는 내용의 {가덕도 특별법을} 통과시켰고, 해당 법은 국회 본회의에서 처리될 것으로 전망된다."@ko ;
+    kno:languageType "한^한" ;
+    kno:indexForm "가덕도특별법"@ko ;
+    kno:instantiates kno:S001182 ;
+    kno:frequency kno:KN2021-0002-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0002-freq-NN-total ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EB%8D%95%EB%8F%84%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:pos "「구」"@ko ;
+    skos:definition "부산 가덕도에 새로운 공항을 건설하는 데 있어 신속하게 건설 사업을 진행할 수 있도록 한시적 특례를 부여하는 법률. 2021년 3월 16일에 공포되었고 2021년 9월 17일에 시행되었다. 정식 명칭은 ‘가덕도 신공항 건설을 위한 특별법’이다."@ko ;
+    kno:frequency kno:KN2021-0002-freq-NN-2020 ;
+    kno:component kno:KN2021-0002-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "가덕도(加德島) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(加德島特別法)" ;
+    kno:instantiates kno:S000027 ;
+    kno:componentString "가덕도(加德島), 특별법(特別法)"@ko ;
+    kno:frequency kno:KN2021-0002-freq-NN-2021 .
+kno:KN2021-0002-c1 kno:formative kno:F001031 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "가덕도"@ko ;
+    kno:surfaceForm "가덕도"@ko ;
+    a kno:Component ;
+    rdfs:label "가덕도(加德島)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2021-0002-c2 kno:surfaceForm "특별법"@ko ;
+    kno:fullForm "특별법"@ko ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "특별법(特別法)"@ko .

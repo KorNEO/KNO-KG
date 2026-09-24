@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0234 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0234 a ontolex:Word ;
-    frac:attestation kno:KN2024-0234-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0234-form ;
-    ontolex:sense kno:KN2024-0234-sense .
-
-kno:KN2024-0234-att-nn a frac:Attestation ;
-    dcterms:date "2024-05-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/033/0000047141> .
-
-kno:KN2024-0234-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0234-freq-nn,
-        kno:KN2024-0234-freq-yt ;
-    ontolex:writtenRep "의한민국"@ko .
-
-kno:KN2024-0234-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0234-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0234-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0234 kno:frequency kno:KN2024-0234-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0234-freq-NN-2025 ;
+    a kno:Neologism ;
+    skos:definition "의사가 되는 것을 다른 진로보다 압도적으로 중시하는 대한민국의 사회적 풍조를 비판적으로 이르는 말."@ko ;
+    kno:component kno:KN2024-0234-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    rdfs:label "의한민국"@ko ;
+    kno:componentString "의(사)(醫師), (대)한민국"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000226 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶과거에는 이공계를 선택하는 수재들이 많았지만, 이제는 모두 의과 대학만 지원해 {의한민국이라는} 말까지 나온다."@ko ;
+    kno:slotFiller "(대)한민국 (1성분)"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0234-freq-NN-total ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0234-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(醫韓民國)" ;
+    kno:languageType "한+한" ;
+    kno:indexForm "의한민국"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%ED%95%9C%EB%AF%BC%EA%B5%AD> .
+kno:KN2024-0234-c2 kno:surfaceForm "한민국"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(대)한민국"@ko ;
+    kno:fullForm "대한민국"@ko ;
+    kno:formative kno:F006966 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0234-c1 kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "의"@ko ;
+    rdfs:label "의(사)(醫師)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "의사"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000398 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .

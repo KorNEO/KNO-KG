@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0247 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0247 kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0247-freq-NN-2015 ;
+    kno:formation kno:W01 ;
+    skos:definition "‘후두 융기’를 달리 이르는 말."@ko ;
+    kno:indexForm "사과뼈"@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0247-freq-NN-total ;
+    kno:frequency kno:KN2016-0247-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "사과-뼈"@ko ;
+    kno:origin "(沙果뼈)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0247-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EA%B3%BC%EB%BC%88> ;
+    kno:frequency kno:KN2016-0247-freq-NN-2016 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:example "¶갑상선은 목 앞 중앙에 아담의 사과, 일명 ‘{사과뼈’라고} 불리는 부위의 바로 밑에 위치한 나비 모양의 내분비 기관으로 갑상선 호르몬을 만들어 내는 역할을 담당한다."@ko ;
+    kno:component kno:KN2016-0247-c1 ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001434 ;
+    kno:componentString "사과(沙果), 뼈"@ko ;
+    kno:languageType "한+고" ;
+    kno:slotFiller "뼈 (1성분)"@ko .
+kno:KN2016-0247-c2 rdfs:label "뼈"@ko ;
+    kno:surfaceForm "뼈"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001425 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "뼈"@ko ;
+    a kno:Component .
+kno:KN2016-0247-c1 kno:fullForm "사과"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001431 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "사과"@ko ;
+    a kno:Component ;
+    rdfs:label "사과(沙果)"@ko .

@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0011 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0011-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0011-form ;
-    ontolex:sense kno:KN2023-0011-sense .
-
-kno:KN2023-0011-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003760019> .
-
-kno:KN2023-0011-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0011-freq-nn,
-        kno:KN2023-0011-freq-yt ;
-    ontolex:writtenRep "건강^보정^기대^수명"@ko .
-
-kno:KN2023-0011-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0011-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0011-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0011 kno:component kno:KN2023-0011-c4 ;
+    kno:component kno:KN2023-0011-c3 ;
+    kno:componentString "건강(健康), 보정(補正), 기대(期待), 수명(壽命)"@ko ;
+    kno:component kno:KN2023-0011-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(健康補正期待壽命)" ;
+    rdfs:label "건강^보정^기대^수명"@ko ;
+    kno:component kno:KN2023-0011-c1 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶사람이 건강하게 살다 죽을 수 있을지 보여주는 수치가 {건강 보정 기대 수명인데}, 한국인은 2010년에는 71.3세, 2019년에는 75.0세로 나타났다."@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0011-freq-NN-2023 ;
+    skos:definition "가벼운 만성 질환은 제외하고 건강하게 살아갈 것으로 기대되는 삶의 기간."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "보정(補正)+기대(期待) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0011-freq-NN-total ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001195 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B4%EA%B0%95%EB%B3%B4%EC%A0%95%EA%B8%B0%EB%8C%80%EC%88%98%EB%AA%85> ;
+    kno:indexForm "건강보정기대수명"@ko .
+kno:KN2023-0011-c4 rdfs:label "수명(壽命)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "수명"@ko ;
+    kno:surfaceForm "수명"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001501 .
+kno:KN2023-0011-c3 kno:semanticTag kno:usas-X2.6p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001113 ;
+    a kno:Component ;
+    kno:fullForm "기대"@ko ;
+    kno:surfaceForm "기대"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "기대(期待)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2023-0011-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "보정"@ko ;
+    rdfs:label "보정(補正)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "보정"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:formative kno:F003897 .
+kno:KN2023-0011-c1 kno:fullForm "건강"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "건강"@ko ;
+    a kno:Component ;
+    rdfs:label "건강(健康)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:formative kno:F000655 ;
+    kno:role "고정항"@ko .

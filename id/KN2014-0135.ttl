@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0135 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0135 kno:languageType "영_영" ;
+    kno:origin "(<영>▼socksholic)" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0135-freq-NN-2014 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AD%EC%8A%A4%20%ED%99%80%EB%A6%AD> ;
+    skos:definition "양말을 사는 것을 광적으로 좋아하는 성향이나 태도. 또는 그러한 사람."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2014-0135-c1 ;
+    kno:example "¶OO에 다니는 OOO 과장은 일명 ‘{삭스 홀릭’으로} 통한다."@ko ;
+    rdfs:label "삭스 홀릭"@ko ;
+    kno:indexForm "삭스홀릭"@ko ;
+    kno:frequency kno:KN2014-0135-freq-NN-total ;
+    kno:frequency kno:KN2014-0135-freq-NN-2015 ;
+    a kno:Neologism ;
+    kno:component kno:KN2014-0135-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "삭스(socks), 홀릭(-holic)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2014-0135-c1 kno:role "성분"@ko ;
+    rdfs:label "삭스(socks)"@ko ;
+    kno:fullForm "삭스"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004191 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:surfaceForm "삭스"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0135-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "홀릭"@ko ;
+    kno:formative kno:F007129 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "홀릭(-holic)"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:fullForm "홀릭"@ko ;
+    kno:role "성분"@ko .

@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0027 rdfs:label "냥무룩"@ko ;
+    kno:instantiates kno:S000737 ;
+    kno:frequency kno:KN2015-0027-freq-NN-2016 ;
+    kno:frequency kno:KN2015-0027-freq-NN-total ;
+    kno:frequency kno:KN2015-0027-freq-NN-2018 ;
+    kno:component kno:KN2015-0027-c2 ;
+    kno:slotFiller "(시)무룩 (1성분)"@ko ;
+    a ontolex:Word ;
+    skos:definition "표정이나 느낌이 시무룩한 고양이."@ko ;
+    kno:frequency kno:KN2015-0027-freq-NN-2015 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2015-0027-c1 ;
+    kno:urimalTargetCode "1359898" ;
+    kno:instantiates kno:S000489 ;
+    kno:indexForm "냥무룩"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359898> ;
+    kno:formation kno:W05 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:slotFiller "냥(이) (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "냥(이), (시)무룩"@ko ;
+    a kno:Neologism ;
+    kno:example "¶모태 {냥무룩}, 세상에서 가장 슬픈 눈썹을 가진 고양이가 화제입니다."@ko ;
+    kno:languageType "고+고" .
+kno:KN2015-0027-c2 rdfs:label "(시)무룩"@ko ;
+    kno:fullForm "시무룩"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F001315 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E4.1m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "무룩"@ko .
+kno:KN2015-0027-c1 kno:semanticTag kno:usas-L2 ;
+    rdfs:label "냥(이)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000475 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "냥이"@ko ;
+    kno:surfaceForm "냥"@ko .

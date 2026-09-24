@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0033 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0033 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0033-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0033-form ;
-    ontolex:sense kno:KN2020-0033-sense .
-
-kno:KN2020-0033-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-02"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/409/0000016225> .
-
-kno:KN2020-0033-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0033-freq-nn,
-        kno:KN2020-0033-freq-yt ;
-    ontolex:writtenRep "그린 스테이"@ko .
-
-kno:KN2020-0033-freq-nn a frac:CorpusFrequency ;
-    rdf:value 411 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0033-freq-yt a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0033-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0033 kno:frequency kno:KN2020-0033-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0033-freq-NN-2025 ;
+    kno:example "¶OO 호텔은 욕실에서 사용하는 샴푸, 보디 워시 등의 플라스틱 용기를 친환경 대용량 용기로 대체하고 모든 조명을 이산화 탄소 배출이 적은 엘이디 조명으로 교체하는 등 {그린 스테이를} 추구하는 모습을 보인다."@ko ;
+    kno:frequency kno:KN2020-0033-freq-NN-2022 ;
+    kno:indexForm "그린스테이"@ko ;
+    kno:origin "(<영>green stay)" ;
+    rdfs:label "그린 스테이"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0033-c2 ;
+    kno:instantiates kno:S000287 ;
+    kno:frequency kno:KN2020-0033-freq-NN-2019 ;
+    kno:slotFiller "스테이(stay) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2020-0033-c1 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0033-freq-NN-2021 ;
+    kno:componentString "그린(green), 스테이(stay)"@ko ;
+    kno:frequency kno:KN2020-0033-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0033-freq-NN-2024 ;
+    kno:activeYears "7"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    skos:definition "물, 에너지, 화학 물질 등의 불필요한 사용을 줄이는 친환경적 숙박 문화를 이르는 말."@ko ;
+    kno:urimalTargetCode "1601576" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1601576> ;
+    kno:frequency kno:KN2020-0033-freq-NN-total ;
+    kno:year "2020"^^xsd:gYear ;
+    a kno:Neologism .
+kno:KN2020-0033-c2 a kno:Component ;
+    rdfs:label "스테이(stay)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "스테이"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M8 ;
+    kno:formative kno:F000288 ;
+    kno:fullForm "스테이"@ko .
+kno:KN2020-0033-c1 kno:formative kno:F000162 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W5 ;
+    rdfs:label "그린(green)"@ko ;
+    kno:fullForm "그린"@ko ;
+    kno:surfaceForm "그린"@ko ;
+    a kno:Component .

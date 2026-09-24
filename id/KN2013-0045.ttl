@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0045 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0045 kno:instantiates kno:S000202 ;
+    kno:slotFiller "극(極)- (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368024> ;
+    kno:registration "우리말샘"@ko ;
+    kno:formation kno:W03 ;
+    a kno:Neologism ;
+    rdfs:label "극혐"@ko ;
+    skos:definition "아주 혐오스러움."@ko ;
+    kno:slotFiller "혐(오)(嫌) (1성분)"@ko ;
+    kno:example "¶‘{극혐’이라는} 제목과 함께 한 교회의 새벽 기도회 모습이 담긴 사진이 올라왔고, 또 다른 OO 회원은 “내가 직접 목격했는데 OO는 매일 새벽 5시에 깨서 새벽 기도를 해야 하고, 교회를 다니지 않으면 왕따를 당한다.”라고 주장하기도 했다."@ko ;
+    kno:componentString "극(極)-, 혐(오)(嫌)"@ko ;
+    kno:component kno:KN2013-0045-c1 ;
+    a ontolex:Word ;
+    kno:urimalTargetCode "1368024" ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(極嫌)" ;
+    kno:indexForm "극혐"@ko ;
+    kno:languageType "한" ;
+    kno:instantiates kno:S000454 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2013-0045-c2 .
+kno:KN2013-0045-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000202 ;
+    kno:fullForm "극"@ko ;
+    kno:surfaceForm "극"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    rdfs:label "극(極)-"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2013-0045-c2 kno:surfaceForm "혐"@ko ;
+    rdfs:label "혐(오)(嫌)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E2m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000324 ;
+    a kno:Component ;
+    kno:fullForm "혐오"@ko .

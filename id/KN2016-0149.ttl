@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0149 kno:component kno:KN2016-0149-c1 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(<영>mom matching)" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:urimalTargetCode "1372584" ;
+    kno:frequency kno:KN2016-0149-freq-NN-total ;
+    kno:componentString "맘(mom), 매칭(matching)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2016-0149-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0149-freq-NN-2018 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372584> ;
+    kno:example "¶자녀의 초혼 나이가 늦어지는 상황이 불안한 부모들이 자녀들 대신 짝 찾기에 나서는 ‘{맘 매칭’까지} 등장했다고 한다."@ko ;
+    skos:definition "부모, 특히 어머니가 자녀를 대신하여 자녀의 배우자를 찾는 일."@ko ;
+    kno:frequency kno:KN2016-0149-freq-NN-2015 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "맘매칭"@ko ;
+    kno:predicate "찾다"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0149-freq-NN-2016 ;
+    kno:instantiates kno:S001374 ;
+    kno:slotFiller "매칭(matching) (1성분)"@ko ;
+    rdfs:label "맘 매칭"@ko .
+kno:KN2016-0149-c1 a kno:Component ;
+    kno:surfaceForm "맘"@ko ;
+    kno:formative kno:F000021 ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "맘"@ko .
+kno:KN2016-0149-c2 a kno:Component ;
+    kno:fullForm "매칭"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "매칭(matching)"@ko ;
+    kno:surfaceForm "매칭"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:formative kno:F001287 .

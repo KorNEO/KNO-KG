@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0242 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0242 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0242-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0242-form ;
-    ontolex:sense kno:KN2022-0242-sense .
-
-kno:KN2022-0242-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003646893> .
-
-kno:KN2022-0242-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0242-freq-nn,
-        kno:KN2022-0242-freq-yt ;
-    ontolex:writtenRep "재택 수강생"@ko .
-
-kno:KN2022-0242-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0242-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0242-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0242 kno:slotFiller "수강생(受講生) (1성분)"@ko ;
+    kno:componentString "재택(在宅), 수강생(受講生)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:label "재택 수강생"@ko ;
+    kno:component kno:KN2022-0242-c2 ;
+    kno:indexForm "재택수강생"@ko ;
+    skos:definition "집에서 컴퓨터 통신망을 통해 수업을 받는 사람."@ko ;
+    kno:instantiates kno:S000325 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0242-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "받다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%83%9D%20%EC%88%98%EA%B0%95%EC%83%9D> ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한_한" ;
+    kno:origin "(在宅受講生)" ;
+    kno:example "¶{재택 수강생들의} 모습이 대형 화면에 모습을 드러내자, 마치 대면 강의처럼 느껴졌다."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0242-c2 kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "수강생"@ko ;
+    kno:formative kno:F004466 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "수강생"@ko ;
+    rdfs:label "수강생(受講生)"@ko ;
+    a kno:Component .
+kno:KN2022-0242-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000404 ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "재택"@ko ;
+    kno:surfaceForm "재택"@ko ;
+    a kno:Component ;
+    rdfs:label "재택(在宅)"@ko .

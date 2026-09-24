@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0292 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0292 a ontolex:Word ;
-    frac:attestation kno:KN2025-0292-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0292-form ;
-    ontolex:sense kno:KN2025-0292-sense .
-
-kno:KN2025-0292-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005146480> .
-
-kno:KN2025-0292-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0292-freq-nn,
-        kno:KN2025-0292-freq-yt ;
-    ontolex:writtenRep "부머 라스킹"@ko .
-
-kno:KN2025-0292-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0292-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0292-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0292 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0292-freq-NN-total ;
+    kno:indexForm "부머라스킹"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 상대에게 질문을 던진 뒤, 상대의 답을 충분히 듣지 않고 대화의 초점을 곧바로 자기 이야기로 돌려 자랑이나 불평을 늘어놓는 말하기 방식."@ko ;
+    kno:componentString "부머(랭)(boomerang), 애스킹(asking)"@ko ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2025-0292-c1 ;
+    kno:origin "(<영>boomerasking)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "영" ;
+    kno:component kno:KN2025-0292-c2 ;
+    rdfs:label "부머라스킹"@ko ;
+    kno:frequency kno:KN2025-0292-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:example "(LLM) 팀장이 “주말에 뭐 했어?”라고 묻더니 내 대답은 끊고 본인 여행 얘기만 길게 해서 {부머라스킹이} 또 시작됐구나 싶었다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%EB%A8%B8%EB%9D%BC%EC%8A%A4%ED%82%B9> .
+kno:KN2025-0292-c1 kno:formative kno:F003950 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "부머랭"@ko ;
+    kno:surfaceForm "부머"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "부머(랭)(boomerang)"@ko .
+kno:KN2025-0292-c2 kno:fullForm "애스킹"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "애스킹"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:formative kno:F004880 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "애스킹(asking)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0306 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0306 kno:frequency kno:KN2017-0306-freq-NN-2016 ;
+    kno:component kno:KN2017-0306-c2 ;
+    kno:component kno:KN2017-0306-c1 ;
+    kno:frequency kno:KN2017-0306-freq-NN-total ;
+    rdfs:label "팩트리어트 미사일"@ko ;
+    skos:definition "사실에 입각해 상대방이 감추고 싶어 하는 사실을 아주 강하게 지적하는 행위. 사실을 뜻하는 ‘팩트(fact)’와 미사일의 한 종류인 ‘패트리엇 미사일(patriot missile)’의 비규범 형태인 ‘패트리어트 미사일’을 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:languageType "영_영" ;
+    kno:example "¶요즘 온라인에선 팩트로 무장한 ‘{팩트리어트 미사일’이} 이곳저곳 날아다닌다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380567> ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "팩트리어트(←fact patriot), 미사일(missile)"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:origin "(<영>▼←fact patriot missile)" ;
+    kno:indexForm "팩트리어트미사일"@ko ;
+    kno:urimalTargetCode "1380567" ;
+    kno:predicate "지적하다"@ko ;
+    a kno:Neologism .
+kno:KN2017-0306-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003603 ;
+    rdfs:label "미사일(missile)"@ko ;
+    kno:fullForm "미사일"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "미사일"@ko .
+kno:KN2017-0306-c1 kno:formative kno:F006660 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "팩트리어트(←fact patriot)"@ko ;
+    kno:fullForm "팩트리어트"@ko ;
+    kno:surfaceForm "팩트리어트"@ko ;
+    kno:truncated "false"^^xsd:boolean .

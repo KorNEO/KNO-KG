@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0017 a ontolex:MultiwordExpression ;
+    skos:definition "주로 청년들의 일자리 창출을 위해서 교육과 채용을 함께 진행하는 제도. 교육 과정과 인턴 과정을 단계적으로 진행해 취업을 알선하는 제도이다. 2015년에 고용노동부에서 추진한 제도이다."@ko ;
+    kno:frequency kno:KN2016-0017-freq-NN-2017 ;
+    kno:instantiates kno:S000039 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372452> ;
+    kno:component kno:KN2016-0017-c2 ;
+    kno:component kno:KN2016-0017-c3 ;
+    kno:frequency kno:KN2016-0017-freq-NN-total ;
+    rdfs:label "고용^디딤돌^제도"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "고용디딤돌제도"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0017-freq-NN-2015 ;
+    kno:predicate "진행하다"@ko ;
+    kno:origin "(雇用디딤돌制度)" ;
+    kno:urimalTargetCode "1372452" ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "고용(雇用)+디딤돌 (2성분)"@ko ;
+    kno:frequency kno:KN2016-0017-freq-NN-2016 ;
+    kno:example "¶OO 그룹 관계자는 “이번 {고용 디딤돌 제도는} 별도로 설립된 공익 법인을 통해 사회적 책임을 이행하는 형태이기 때문에, 단발에 그치지 않고 지속성을 갖는 것이 특징.”이라고 설명했다."@ko ;
+    kno:languageType "한^고^한" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:componentString "고용(雇用), 디딤돌, 제도(制度)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2016-0017-c1 .
+kno:KN2016-0017-c2 a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:fullForm "디딤돌"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001212 ;
+    rdfs:label "디딤돌"@ko ;
+    kno:surfaceForm "디딤돌"@ko .
+kno:KN2016-0017-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "제도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F000041 ;
+    a kno:Component ;
+    kno:fullForm "제도"@ko .
+kno:KN2016-0017-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002297 ;
+    kno:surfaceForm "고용"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "고용"@ko ;
+    rdfs:label "고용(雇用)"@ko .

@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0232 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0232 kno:pos "「구」"@ko ;
+    kno:component kno:KN2012-0232-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EC%BF%A0%ED%8C%85%20%EB%AA%A8%ED%84%B0%EC%82%AC%EC%9D%B4%ED%81%B4> ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "스쿠팅(scooting), 모터사이클(motorcycle)"@ko ;
+    kno:frequency kno:KN2012-0232-freq-NN-2012 ;
+    skos:definition "오토바이의 역동성과 스쿠터의 편안함을 갖춘 새로운 탈 것의 하나."@ko ;
+    kno:frequency kno:KN2012-0232-freq-NN-total ;
+    kno:component kno:KN2012-0232-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:example "¶OO는 대형 모터사이클의 역동성과 스쿠터의 편안함을 모두 갖춘 {스쿠팅 모터사이클이다}."@ko ;
+    kno:origin "(scooting motorcycle)" ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "스쿠팅 모터사이클"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:indexForm "스쿠팅모터사이클"@ko .
+kno:KN2012-0232-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "스쿠팅"@ko ;
+    kno:surfaceForm "스쿠팅"@ko ;
+    rdfs:label "스쿠팅(scooting)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004572 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M3 .
+kno:KN2012-0232-c2 kno:surfaceForm "모터사이클"@ko ;
+    rdfs:label "모터사이클(motorcycle)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003500 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "모터사이클"@ko .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0115 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0115 a ontolex:Word ;
-    frac:attestation kno:KN2025-0115-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0115-form ;
-    ontolex:sense kno:KN2025-0115-sense .
-
-kno:KN2025-0115-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002136368> .
-
-kno:KN2025-0115-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0115-freq-nn,
-        kno:KN2025-0115-freq-yt ;
-    ontolex:writtenRep "내란 사병"@ko .
-
-kno:KN2025-0115-freq-nn a frac:CorpusFrequency ;
-    rdf:value 109 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0115-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0115-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0115 kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:example "(LLM) 수사기관의 적법한 영장 집행을 막아서는 장면이 이어지자, 야당은 경호 인력이 {내란사병으로} 전락했다고 비판했다."@ko ;
+    skos:definition "(LLM) 국가의 헌정 질서를 무너뜨리려는 움직임을 돕거나 비호하는 데 동원된 사적 무력 집단을 비유적으로 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%EC%82%AC%EB%B3%91> ;
+    rdfs:label "내란-사병"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "내란사병"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2025-0115-freq-NN-2025 ;
+    kno:origin "(內亂私兵)" ;
+    kno:instantiates kno:S000206 ;
+    kno:componentString "내란(內亂), 사병(私兵)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0115-c2 ;
+    kno:frequency kno:KN2025-0115-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0115-c1 ;
+    kno:slotFiller "사병(私兵) (1성분)"@ko ;
+    kno:languageType "한_한" .
+kno:KN2025-0115-c2 kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "사병(私兵)"@ko ;
+    kno:surfaceForm "사병"@ko ;
+    kno:formative kno:F004166 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "사병"@ko .
+kno:KN2025-0115-c1 a kno:Component ;
+    kno:formative kno:F000052 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "내란(內亂)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3m ;
+    kno:fullForm "내란"@ko ;
+    kno:surfaceForm "내란"@ko ;
+    kno:position "1"^^xsd:integer .

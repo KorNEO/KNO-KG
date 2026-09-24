@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0165 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0165 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0165-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0165-form ;
-    ontolex:sense kno:KN2024-0165-sense .
-
-kno:KN2024-0165-att-nn a frac:Attestation ;
-    dcterms:date "2024-01-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004986382> .
-
-kno:KN2024-0165-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0165-freq-nn,
-        kno:KN2024-0165-freq-yt ;
-    ontolex:writtenRep "알리 지옥"@ko .
-
-kno:KN2024-0165-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0165-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0165-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0165 kno:frequency kno:KN2024-0165-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "알리지옥"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "저렴한 상품이 많기 때문에 한 번 쇼핑하기 시작하면 헤어 나오기 힘든 것을 지옥에 빗대어 이르는 말."@ko ;
+    kno:component kno:KN2024-0165-c2 ;
+    kno:slotFiller "알리(Ali) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%8C%EB%A6%AC%20%EC%A7%80%EC%98%A5> ;
+    kno:frequency kno:KN2024-0165-freq-NN-2024 ;
+    kno:instantiates kno:S000130 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0165-freq-NN-2025 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:example "¶초저가 경쟁력과 파격적인 배송 시스템으로 인해 최근 소비자들은 {알리 지옥에} 빠졌다."@ko ;
+    rdfs:label "알리 지옥"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(←AliExpress地獄)" ;
+    kno:component kno:KN2024-0165-c1 ;
+    a kno:Neologism ;
+    kno:componentString "알리(Ali), 지옥(地獄)"@ko .
+kno:KN2024-0165-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "지옥(地獄)"@ko ;
+    kno:formative kno:F000191 ;
+    kno:surfaceForm "지옥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9m ;
+    kno:fullForm "지옥"@ko .
+kno:KN2024-0165-c1 kno:surfaceForm "알리"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004851 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "알리(Ali)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "알리"@ko ;
+    kno:semanticTag kno:usas-I2.2 .

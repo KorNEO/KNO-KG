@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0399 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0399 kno:frequency kno:KN2012-0399-freq-NN-2024 ;
+    kno:indexForm "채록가"@ko ;
+    kno:languageType "한+한" ;
+    skos:definition "기록으로 남아 있지 않은 신화나 설화, 민요 따위를 제보자를 통해 직접 듣고 그 구술 내용을 적거나 녹음하는 사람."@ko ;
+    kno:urimalTargetCode "1357270" ;
+    kno:frequency kno:KN2012-0399-freq-NN-2014 ;
+    kno:frequency kno:KN2012-0399-freq-NN-2022 ;
+    kno:frequency kno:KN2012-0399-freq-NN-total ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2012-0399-c2 ;
+    kno:frequency kno:KN2012-0399-freq-NN-2021 ;
+    kno:example "¶‘한국 구전 설화’에는 1920년대부터 전국을 돌며 옛이야기를 탐구한 {채록가들의} 채록본이 담겨있다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:predicate "녹음하다"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2012-0399-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0399-freq-NN-2012 ;
+    kno:origin "(採錄家)" ;
+    kno:component kno:KN2012-0399-c1 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357270> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "채록(採錄), -가(家)"@ko ;
+    rdfs:label "채록-가"@ko .
+kno:KN2012-0399-c2 kno:formative kno:F002058 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "-가(家)"@ko ;
+    kno:surfaceForm "가"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "가"@ko .
+kno:KN2012-0399-c1 kno:role "성분"@ko ;
+    rdfs:label "채록(採錄)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006018 ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "채록"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "채록"@ko .

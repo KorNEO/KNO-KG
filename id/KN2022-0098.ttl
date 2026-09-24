@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0098 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0098 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0098-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0098-form ;
-    ontolex:sense kno:KN2022-0098-sense .
-
-kno:KN2022-0098-att-nn a frac:Attestation ;
-    dcterms:date "2021-08-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000752967> .
-
-kno:KN2022-0098-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0098-freq-nn,
-        kno:KN2022-0098-freq-yt ;
-    ontolex:writtenRep "노숙 런"@ko .
-
-kno:KN2022-0098-freq-nn a frac:CorpusFrequency ;
-    rdf:value 76 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0098-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0098-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0098 kno:instantiates kno:S000038 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EC%88%99%20%EB%9F%B0> ;
+    kno:frequency kno:KN2022-0098-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0098-freq-NN-total ;
+    rdfs:label "노숙 런"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0098-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0098-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0098-c2 ;
+    kno:example "¶가격 인상 소식을 접한 소비자들은 값이 오르기 전에 명품을 사고자 새벽부터 백화점 앞에 줄을 서서 밤을 새는 이른바 ‘{노숙런’을} 반복하고 있다."@ko ;
+    kno:frequency kno:KN2022-0098-freq-NN-2023 ;
+    kno:indexForm "노숙런"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "원하는 물건을 구매하기 위해 백화점 등의 개점 시간을 기다리며 밖에서 노숙을 하다가, 개점하자마자 입장해 물건을 구매하는 일. ‘노숙’과 달리다를 의미하는 영어 단어 ‘런(run)’을 결합하여 만든 말이다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:componentString "노숙(露宿), 런(run)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(露宿<영>run)" ;
+    kno:component kno:KN2022-0098-c1 ;
+    kno:slotFiller "노숙(露宿) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0098-freq-NN-2024 ;
+    kno:predicate "구매하다"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0098-c2 rdfs:label "런(run)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000072 ;
+    kno:surfaceForm "런"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:fullForm "런"@ko .
+kno:KN2022-0098-c1 kno:semanticTag kno:usas-I1.1m ;
+    kno:formative kno:F002775 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H4m ;
+    kno:fullForm "노숙"@ko ;
+    rdfs:label "노숙(露宿)"@ko ;
+    kno:surfaceForm "노숙"@ko .

@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0295 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0295 a ontolex:Word ;
-    frac:attestation kno:KN2022-0295-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0295-form ;
-    ontolex:sense kno:KN2022-0295-sense .
-
-kno:KN2022-0295-att-nn a frac:Attestation ;
-    dcterms:date "2022-03-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/082/0001144577> .
-
-kno:KN2022-0295-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0295-freq-nn,
-        kno:KN2022-0295-freq-yt ;
-    ontolex:writtenRep "표미새"@ko .
-
-kno:KN2022-0295-freq-nn a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0295-freq-yt a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0295-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0295 kno:formation kno:W06 ;
+    kno:component kno:KN2022-0295-c3 ;
+    kno:frequency kno:KN2022-0295-freq-NN-total ;
+    a ontolex:Word ;
+    kno:example "¶득표를 위해서는 뭐든지 하는 사람이란 의미로 사용된 ‘{표미새’는} 욕 같이 들리지만, 애칭의 성격도 있다."@ko ;
+    kno:indexForm "표미새"@ko ;
+    kno:frequency kno:KN2022-0295-freq-NN-2022 ;
+    kno:languageType "한+고" ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:instantiates kno:S001742 ;
+    kno:slotFiller "표(票)+미(치다) (2성분)"@ko ;
+    kno:instantiates kno:S000924 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%91%9C%EB%AF%B8%EC%83%88> ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    rdfs:label "표미새"@ko ;
+    kno:component kno:KN2022-0295-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "표(票), 미(치다), 새(끼)"@ko ;
+    kno:frequency kno:KN2022-0295-freq-NN-2023 ;
+    kno:slotFiller "미(치다)+새(끼) (2성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2022-0295-c2 ;
+    kno:origin "(票미새)" ;
+    skos:definition "‘표에 미친 새끼’를 줄여 이르는 말. 제20대 대선 과정 중 상대 후보를 비하하기 위해 나온 말이다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0295-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001449 ;
+    rdfs:label "새(끼)"@ko ;
+    kno:fullForm "새끼"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "새"@ko .
+kno:KN2022-0295-c1 a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000630 ;
+    kno:fullForm "표"@ko ;
+    kno:surfaceForm "표"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "표(票)"@ko .
+kno:KN2022-0295-c2 kno:surfaceForm "미"@ko ;
+    kno:fullForm "미치다"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003589 ;
+    a kno:Component ;
+    rdfs:label "미(치다)"@ko ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0063 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0063 a ontolex:Word ;
-    frac:attestation kno:KN2023-0063-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0063-form ;
-    ontolex:sense kno:KN2023-0063-sense .
-
-kno:KN2023-0063-att-nn a frac:Attestation ;
-    dcterms:date "2023-02-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002628533> .
-
-kno:KN2023-0063-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0063-freq-nn,
-        kno:KN2023-0063-freq-yt ;
-    ontolex:writtenRep "내비남공"@ko .
-
-kno:KN2023-0063-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0063-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0063-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0063 skos:definition "‘내가 쓴 돈은 비공개, 남이 쓴 돈은 공개’라는 뜻으로, 자신이 쓴 돈에 대해서는 숨기려고 하면서 다른 사람에게는 회계 자료의 공개를 요구하는 태도를 이르는 말."@ko ;
+    kno:origin "(내非남公)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶일부 국민들이 답답하게 생각하는 점은 한두 언론을 제외하면 이러한 {내비남공의} 행태에 대한 제대로 된 보도를 찾기 힘들다는 것이다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2023-0063-c4 ;
+    kno:componentString "내, 비(非)-, 남, 공(개)(公開)"@ko ;
+    kno:instantiates kno:S000145 ;
+    kno:slotFiller "비(非)-+남+공(개)(公開) (3성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%B9%84%EB%82%A8%EA%B3%B5> ;
+    kno:frequency kno:KN2023-0063-freq-NN-total ;
+    kno:languageType "고+한+고+한" ;
+    rdfs:label "내비남공"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:indexForm "내비남공"@ko ;
+    kno:component kno:KN2023-0063-c3 ;
+    kno:component kno:KN2023-0063-c2 ;
+    kno:frequency kno:KN2023-0063-freq-NN-2023 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0063-c1 ;
+    kno:formation kno:W06 .
+kno:KN2023-0063-c4 a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A10p ;
+    kno:fullForm "공개"@ko ;
+    kno:surfaceForm "공"@ko ;
+    rdfs:label "공(개)(公開)"@ko ;
+    kno:formative kno:F002327 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0063-c3 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    rdfs:label "남"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "남"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000339 .
+kno:KN2023-0063-c2 a kno:Component ;
+    kno:formative kno:F000520 ;
+    rdfs:label "비(非)-"@ko ;
+    kno:surfaceForm "비"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "비"@ko .
+kno:KN2023-0063-c1 kno:surfaceForm "내"@ko ;
+    rdfs:label "내"@ko ;
+    kno:formative kno:F000071 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "내"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:position "1"^^xsd:integer .

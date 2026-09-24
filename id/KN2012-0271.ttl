@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0271 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0271 a ontolex:Word ;
+    kno:frequency kno:KN2012-0271-freq-NN-2013 ;
+    kno:example "¶안보를 입에 달고 ‘{애국팔이’를} 하던 자들도 내심으로는 전쟁 억제와 안보 태세 강화보다는 아파트 값이 떨어질까 겁나고 수도권 땅값이 똥값 되는 게 두려울 뿐인지도 모른다."@ko ;
+    kno:frequency kno:KN2012-0271-freq-NN-total ;
+    kno:predicate "호소하다"@ko ;
+    kno:componentString "애국(愛國), 팔이"@ko ;
+    skos:definition "애국심에 호소하는 것."@ko ;
+    kno:frequency kno:KN2012-0271-freq-NN-2014 ;
+    kno:languageType "한+고" ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:frequency kno:KN2012-0271-freq-NN-2019 ;
+    kno:component kno:KN2012-0271-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0271-freq-NN-2015 ;
+    kno:frequency kno:KN2012-0271-freq-NN-2017 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0271-c2 ;
+    kno:frequency kno:KN2012-0271-freq-NN-2020 ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2012-0271-freq-NN-2022 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0271-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%A0%EA%B5%AD%ED%8C%94%EC%9D%B4> ;
+    kno:frequency kno:KN2012-0271-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:slotFiller "애국(愛國) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000274 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "애국-팔이"@ko ;
+    kno:indexForm "애국팔이"@ko ;
+    kno:origin "(愛國--)" .
+kno:KN2012-0271-c1 kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000845 ;
+    kno:fullForm "애국"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "애국(愛國)"@ko ;
+    kno:surfaceForm "애국"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E2p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0271-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "팔이"@ko ;
+    a kno:Component ;
+    rdfs:label "팔이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "팔이"@ko ;
+    kno:formative kno:F000430 .

@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0065 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0065 kno:languageType "한+한" ;
+    rdfs:label "다택-자"@ko ;
+    kno:frequency kno:KN2012-0065-freq-NN-total ;
+    kno:frequency kno:KN2012-0065-freq-NN-2021 ;
+    a ontolex:Word ;
+    kno:slotFiller "다택(多宅) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0065-freq-NN-2012 ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1356913" ;
+    kno:componentString "다택(多宅), -자(者)"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2012-0065-c1 ;
+    kno:instantiates kno:S000016 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(多宅者)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356913> ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2012-0065-freq-NN-2025 ;
+    skos:definition "여러 주택을 소유한 사람."@ko ;
+    kno:frequency kno:KN2012-0065-freq-NN-2017 ;
+    kno:example "¶끝으로, {다택자} 등의 양도 소득세, 중과세율제도 폐지이다."@ko ;
+    kno:formation kno:W02 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2012-0065-c2 ;
+    kno:indexForm "다택자"@ko .
+kno:KN2012-0065-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    rdfs:label "다택(多宅)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002856 ;
+    kno:fullForm "다택"@ko ;
+    kno:surfaceForm "다택"@ko .
+kno:KN2012-0065-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko ;
+    a kno:Component .

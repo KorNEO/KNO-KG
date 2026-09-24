@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0171 kno:instantiates kno:S000002 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416237> ;
+    kno:frequency kno:KN2018-0171-freq-NN-2020 ;
+    rdfs:label "살코기 세대"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "불필요한 인간관계를 최소화하고 살아가는 세대를 비유적으로 이르는 말. 인간관계에서 불필요한 기름기를 다 뺐다는 의미로 ‘살코기’와 ‘세대(世代)’를 결합하여 만든 말이다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1416237" ;
+    kno:component kno:KN2018-0171-c1 ;
+    kno:componentString "살코기, 세대(世代)"@ko ;
+    kno:languageType "고_한" ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0171-freq-NN-2022 ;
+    kno:origin "(살코기世代)" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0171-freq-NN-2018 ;
+    kno:slotFiller "살코기 (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "살코기세대"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0171-freq-NN-total ;
+    kno:example "¶‘{살코기 세대’는} 인생에 풍미를 더하는 마블링을 쫙 뺀 퍽퍽한 삶일까, 거추장스러운 기름기를 제거한 담백한 삶일까."@ko ;
+    kno:component kno:KN2018-0171-c2 .
+kno:KN2018-0171-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "살코기"@ko ;
+    kno:formative kno:F004202 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "살코기"@ko ;
+    kno:fullForm "살코기"@ko ;
+    a kno:Component .
+kno:KN2018-0171-c2 kno:fullForm "세대"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "세대"@ko ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:formative kno:F000006 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

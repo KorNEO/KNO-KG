@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0240 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0240 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0240-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0240-form ;
-    ontolex:sense kno:KN2020-0240-sense .
-
-kno:KN2020-0240-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003509297> .
-
-kno:KN2020-0240-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0240-freq-nn,
-        kno:KN2020-0240-freq-yt ;
-    ontolex:writtenRep "온라인 뷰잉 룸"@ko .
-
-kno:KN2020-0240-freq-nn a frac:CorpusFrequency ;
-    rdf:value 814 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0240-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0240-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0240 kno:example "¶‘{온라인 뷰잉 룸’에서는} 수천 점의 작품을 관람할 수 있다."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0240-freq-NN-2020 ;
+    kno:instantiates kno:S000853 ;
+    kno:frequency kno:KN2020-0240-freq-NN-2022 ;
+    rdfs:label "온라인 뷰잉 룸"@ko ;
+    kno:instantiates kno:S000106 ;
+    kno:origin "(<영>▼on-line viewing room)" ;
+    kno:component kno:KN2020-0240-c2 ;
+    kno:predicate "있다"@ko ;
+    kno:slotFiller "뷰잉(viewing)+룸(room) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0240-freq-NN-2021 ;
+    kno:indexForm "온라인뷰잉룸"@ko ;
+    skos:definition "온라인상으로 예술 작품을 감상할 수 있는 공간. 코로나19의 확산을 방지하기 위해 예술 작품을 전시하거나 판매하는 일을 온라인으로 진행하게 되면서 나온 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A8%EB%9D%BC%EC%9D%B8%20%EB%B7%B0%EC%9E%89%20%EB%A3%B8> ;
+    kno:frequency kno:KN2020-0240-freq-NN-total ;
+    kno:component kno:KN2020-0240-c3 ;
+    kno:frequency kno:KN2020-0240-freq-NN-2024 ;
+    kno:languageType "영_영_영" ;
+    kno:slotFiller "온라인(on-line)+뷰잉(viewing) (2성분)"@ko ;
+    kno:componentString "온라인(on-line), 뷰잉(viewing), 룸(room)"@ko ;
+    kno:frequency kno:KN2020-0240-freq-NN-2023 ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0240-c1 ;
+    kno:frequency kno:KN2020-0240-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0240-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004009 ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "뷰잉(viewing)"@ko ;
+    kno:fullForm "뷰잉"@ko ;
+    kno:surfaceForm "뷰잉"@ko .
+kno:KN2020-0240-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001255 ;
+    kno:fullForm "룸"@ko ;
+    a kno:Component ;
+    rdfs:label "룸(room)"@ko ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:surfaceForm "룸"@ko .
+kno:KN2020-0240-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "온라인"@ko ;
+    rdfs:label "온라인(on-line)"@ko ;
+    kno:surfaceForm "온라인"@ko ;
+    kno:formative kno:F000224 .

@@ -1,36 +1,75 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0344 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0344-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0344-form ;
-    ontolex:sense kno:KN2024-0344-sense .
-
-kno:KN2024-0344-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004958527> .
-
-kno:KN2024-0344-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0344-freq-nn,
-        kno:KN2024-0344-freq-yt ;
-    ontolex:writtenRep "틱톡^강제^매각법"@ko .
-
-kno:KN2024-0344-freq-nn a frac:CorpusFrequency ;
-    rdf:value 425 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0344-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0344-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0344 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001727 ;
+    kno:component kno:KN2024-0344-c1 ;
+    kno:component kno:KN2024-0344-c3 ;
+    kno:languageType "영^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:slotFiller "틱톡(Tiktok)+강제(強制)+매각(賣却) (3성분)"@ko ;
+    kno:component kno:KN2024-0344-c4 ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "틱톡(Tiktok), 강제(強制), 매각(賣却), 법(法)"@ko ;
+    kno:example "¶미국 하원이 안보 위협을 이유로 {틱톡 강제 매각법을} 통과시킨 가운데 서방 주요국에서도 중국 기업에 대한 규제 강도를 높이고 있다."@ko ;
+    kno:slotFiller "강제(強制)+매각(賣却)+법(法) (3성분)"@ko ;
+    skos:definition "중국계 기업이 소유한 틱톡의 미국 내 서비스 유지를 조건으로 270일 이내에 미국 사업권을 매각하도록 의무화 하고, 이를 이행하지 않을 경우 미국 내 틱톡의 유통과 업데이트를 전면 금지하는 내용을 담은 법률. 2024년 4월 24일 조 바이든 미국 대통령의 서명 및 공포로 정식 법률로 확정되었다."@ko ;
+    kno:predicate "담은"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "틱톡강제매각법"@ko ;
+    kno:origin "(Tiktok強制賣却法)" ;
+    kno:frequency kno:KN2024-0344-freq-NN-2025 ;
+    kno:component kno:KN2024-0344-c2 ;
+    rdfs:label "틱톡^강제^매각법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8B%B1%ED%86%A1%EA%B0%95%EC%A0%9C%EB%A7%A4%EA%B0%81%EB%B2%95> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2024-0344-freq-NN-total ;
+    kno:frequency kno:KN2024-0344-freq-NN-2024 .
+kno:KN2024-0344-c1 rdfs:label "틱톡(Tiktok)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001928 ;
+    kno:surfaceForm "틱톡"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:fullForm "틱톡"@ko .
+kno:KN2024-0344-c3 a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F003392 ;
+    kno:fullForm "매각"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "매각"@ko ;
+    rdfs:label "매각(賣却)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0344-c4 kno:fullForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0344-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "강제(強制)"@ko ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:fullForm "강제"@ko ;
+    kno:formative kno:F000198 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "강제"@ko .

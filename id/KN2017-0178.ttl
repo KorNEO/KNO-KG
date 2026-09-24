@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0178 kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%94%B9%EB%8D%95%EC%83%81> ;
+    kno:frequency kno:KN2017-0178-freq-NN-total ;
+    kno:frequency kno:KN2017-0178-freq-NN-2017 ;
+    kno:slotFiller "덕(후)+-상(相) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "씹(←십)(十), 덕(후), -상(相)"@ko ;
+    kno:frequency kno:KN2017-0178-freq-NN-2016 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2017-0178-c1 ;
+    kno:origin "(十▽덕相)" ;
+    kno:component kno:KN2017-0178-c2 ;
+    kno:instantiates kno:S001507 ;
+    skos:definition "매우 귀여운 인상을 이르는 말. 2015년 신어로 아주 귀여움을 비유적으로 이르는 말인 ‘씹덕사’의 ‘씹덕’과 얼굴을 의미하는 ‘상(相)’을 결합하여 만든 말이다."@ko ;
+    kno:component kno:KN2017-0178-c3 ;
+    kno:formation kno:W02 ;
+    rdfs:label "씹덕-상"@ko ;
+    kno:indexForm "씹덕상"@ko ;
+    a ontolex:Word ;
+    kno:languageType "(한+고)+한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶에스엔에스(SNS)를 하면서 이런 말들이 눈에 띌 때는 뜻을 찾아보기도 하는데 한 독자가 칭찬의 의미로 해준 ‘{씹덕상’이라는} 말은 처음에는 과격한 욕인 줄 알았지만 꽤 흥미롭게 관심을 가질 만한 인상이라는…것이었다."@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000190 ;
+    kno:slotFiller "씹(←십)(十)+덕(후) (2성분)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2017-0178-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001566 ;
+    rdfs:label "씹(←십)(十)"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "씹"@ko ;
+    kno:surfaceForm "씹"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2017-0178-c2 kno:formative kno:F000346 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "덕"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    a kno:Component ;
+    rdfs:label "덕(후)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "덕후"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0178-c3 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "상"@ko ;
+    kno:formative kno:F000217 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "상"@ko ;
+    rdfs:label "-상(相)"@ko .

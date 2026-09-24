@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0568 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0568 kno:frequency kno:KN2016-0568-freq-NN-2016 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:componentString "학(學), 옥살이(獄살이), -족(族)"@ko ;
+    kno:component kno:KN2016-0568-c3 ;
+    kno:languageType "(한+고)+한" ;
+    kno:origin "(學獄살이族)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%EC%98%A5%EC%82%B4%EC%9D%B4%EC%A1%B1> ;
+    skos:definition "생활비의 많은 부분을 학원비와 식비에 투자하면서 공부를 하며 사는 사람, 또는 그런 무리. 옥살이하듯 공부한다는 뜻이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "사다"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶{학옥살이족은} 생활비의 상당 부분을 식비로 지출했다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:indexForm "학옥살이족"@ko ;
+    kno:component kno:KN2016-0568-c2 ;
+    kno:slotFiller "학(學)+옥살이(獄살이) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "학옥살이-족"@ko ;
+    kno:frequency kno:KN2016-0568-freq-NN-total ;
+    kno:component kno:KN2016-0568-c1 ;
+    a kno:Neologism .
+kno:KN2016-0568-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0568-c2 kno:formative kno:F005138 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    rdfs:label "옥살이(獄살이)"@ko ;
+    kno:fullForm "옥살이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "옥살이"@ko .
+kno:KN2016-0568-c1 kno:fullForm "학"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "학"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:formative kno:F006942 ;
+    rdfs:label "학(學)"@ko .

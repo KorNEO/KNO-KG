@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0257 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0257 kno:predicate "뛰어넘다"@ko ;
+    rdfs:label "초-인싸"@ko ;
+    kno:slotFiller "초(超)- (1성분)"@ko ;
+    kno:indexForm "초인싸"@ko ;
+    kno:frequency kno:KN2019-0257-freq-NN-total ;
+    kno:componentString "초(超)-, 인싸(←insider)"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001006 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0257-freq-NN-2019 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:formation kno:W03 ;
+    kno:component kno:KN2019-0257-c1 ;
+    kno:frequency kno:KN2019-0257-freq-NN-2024 ;
+    kno:component kno:KN2019-0257-c2 ;
+    kno:languageType "한+영" ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B4%88%EC%9D%B8%EC%8B%B8> ;
+    kno:frequency kno:KN2019-0257-freq-NN-2021 ;
+    kno:origin "(超<영>←insider)" ;
+    kno:frequency kno:KN2019-0257-freq-NN-2020 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶‘OO 페스티벌’ 공연 당시 강풍이 몰아치는 궂은 날씨 속에서도 멋진 무대를 보여 줬던 OOO는…밀레니얼 아이콘들과 친한 ‘{초인싸}’ 뮤지션이다."@ko ;
+    skos:definition "보통의 ‘인싸’를 훨씬 더 뛰어넘는 사람. 각종 행사나 모임에 매우 적극적으로 참여하면서 다른 사람들과 특별히 더 잘 어울려 지내는 사람을 이르는 말이다."@ko .
+kno:KN2019-0257-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A13.3 ;
+    a kno:Component ;
+    rdfs:label "초(超)-"@ko ;
+    kno:formative kno:F006077 ;
+    kno:fullForm "초"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "초"@ko .
+kno:KN2019-0257-c2 kno:role "고정항"@ko ;
+    kno:fullForm "인싸"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "인싸"@ko ;
+    a kno:Component ;
+    rdfs:label "인싸(←insider)"@ko ;
+    kno:formative kno:F000102 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

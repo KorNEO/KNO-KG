@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0338 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0338 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0338-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0338-form ;
-    ontolex:sense kno:KN2023-0338-sense .
-
-kno:KN2023-0338-att-nn a frac:Attestation ;
-    dcterms:date "2023-01-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003199492> .
-
-kno:KN2023-0338-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0338-freq-nn,
-        kno:KN2023-0338-freq-yt ;
-    ontolex:writtenRep "폐교^장려금"@ko .
-
-kno:KN2023-0338-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0338-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0338-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0338 skos:definition "대학의 구조 개혁을 위하여 한계 상황에 놓인 대학이 폐교할 때 폐교된 학교 재산의 일부를 설립자가 가질 수 있도록 정부가 지원하는 장려금."@ko ;
+    kno:origin "(閉校奬勵金)" ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%90%EA%B5%90%EC%9E%A5%EB%A0%A4%EA%B8%88> ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶정부는 학교 법인 내의 일부 대학을 폐교하는 경우에도 폐교된 학교 재산의 일부에 대해 {폐교 장려금으로} 지원하는 방안을 검토 중이다."@ko ;
+    kno:languageType "한^한" ;
+    kno:component kno:KN2023-0338-c2 ;
+    kno:indexForm "폐교장려금"@ko ;
+    kno:slotFiller "폐교(閉校) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0338-freq-NN-2023 ;
+    kno:componentString "폐교(閉校), 장려금(奬勵金)"@ko ;
+    kno:predicate "지원하다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2023-0338-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000422 ;
+    kno:component kno:KN2023-0338-c1 ;
+    rdfs:label "폐교^장려금"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0338-c2 kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "장려금"@ko ;
+    kno:formative kno:F000909 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "장려금"@ko ;
+    rdfs:label "장려금(奬勵金)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2023-0338-c1 rdfs:label "폐교(閉校)"@ko ;
+    kno:surfaceForm "폐교"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006713 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "폐교"@ko ;
+    a kno:Component .

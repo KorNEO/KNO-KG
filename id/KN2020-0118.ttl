@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0118 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0118-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0118-form ;
-    ontolex:sense kno:KN2020-0118-sense .
-
-kno:KN2020-0118-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002262518> .
-
-kno:KN2020-0118-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0118-freq-nn,
-        kno:KN2020-0118-freq-yt ;
-    ontolex:writtenRep "문고리 드림"@ko .
-
-kno:KN2020-0118-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0118-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0118-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0118 kno:component kno:KN2020-0118-c2 ;
+    kno:frequency kno:KN2020-0118-freq-NN-total ;
+    kno:component kno:KN2020-0118-c1 ;
+    kno:indexForm "문고리드림"@ko ;
+    kno:languageType "(한+고)_고" ;
+    a kno:Neologism ;
+    kno:example "¶중고 물건을 구매하기 위해 먼저 계좌로 돈을 보내고 {문고리 드림으로} 물건을 받아 왔다."@ko ;
+    kno:componentString "문고리(門고리), 드림"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B8%EA%B3%A0%EB%A6%AC%20%EB%93%9C%EB%A6%BC> ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(門고리드림)" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    rdfs:label "문고리 드림"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    skos:definition "상대방에게 물건을 줄 때 직접 대면하지 않고 문고리에 물건을 걸어서 전달하는 일. 넓은 의미로 문고리뿐만 아니라 문 앞에 물건을 두는 일도 포함된다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0118-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:predicate "전달하다"@ko .
+kno:KN2020-0118-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "드림"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "드림"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003059 ;
+    kno:fullForm "드림"@ko ;
+    kno:semanticTag kno:usas-A9m .
+kno:KN2020-0118-c1 rdfs:label "문고리(門고리)"@ko ;
+    kno:surfaceForm "문고리"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "문고리"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003546 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H2 .

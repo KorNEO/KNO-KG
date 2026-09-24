@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0273 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0273 kno:slotFiller "워드(word) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "워드(word), 백(bag)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^영" ;
+    kno:origin "(<영>word bag)" ;
+    skos:definition "누리 소통망 서비스(SNS)에서 수집한 글을 대상으로 특정한 상황이나 분위기에 따라 사용되는 단어들에 가중치를 부여해 분류하는 프로그램."@ko ;
+    kno:predicate "분류하다"@ko ;
+    rdfs:label "워드^백"@ko ;
+    kno:instantiates kno:S001594 ;
+    kno:slotFiller "백(bag) (1성분)"@ko ;
+    kno:component kno:KN2018-0273-c2 ;
+    kno:frequency kno:KN2018-0273-freq-NN-2017 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%8C%EB%93%9C%EB%B0%B1> ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0273-c1 ;
+    kno:frequency kno:KN2018-0273-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000381 ;
+    kno:example "¶연구 팀은 자체 개발한 텍스트를 분석하는 {워드 백} 기술과 기존의 딥 러닝 방식을 이용해 사진을 분석하는 기술을 접목했다."@ko ;
+    kno:indexForm "워드백"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2018-0273-c2 kno:role "고정항"@ko ;
+    kno:formative kno:F000356 ;
+    kno:fullForm "백"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "백"@ko ;
+    rdfs:label "백(bag)"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2018-0273-c1 kno:formative kno:F001658 ;
+    a kno:Component ;
+    kno:fullForm "워드"@ko ;
+    kno:surfaceForm "워드"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "워드(word)"@ko ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

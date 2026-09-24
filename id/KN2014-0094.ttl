@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0094 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0094 kno:pos "「명」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    skos:definition "맥주를 지나치게 좋아하거나 집착하는 사람. 또는 맥주에 전문적인 지식을 지닌 사람."@ko ;
+    kno:component kno:KN2014-0094-c2 ;
+    kno:predicate "집착하다"@ko ;
+    kno:languageType "한+일" ;
+    kno:slotFiller "맥(주)(麥) (1성분)"@ko ;
+    kno:indexForm "맥덕"@ko ;
+    kno:instantiates kno:S000060 ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1374923" ;
+    kno:componentString "맥(주)(麥), 덕(후)(otaku)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(麥<일>←otaku[御宅])" ;
+    kno:example "¶하지만 지난해부터 20~30대 ‘{맥덕’만} 알고 있던 수제 맥주가 요즘에는 세대의 벽을 허물고 한국의 새로운 술 문화 트렌드로 자리 잡아 가고 있다."@ko ;
+    rdfs:label "맥덕"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374923> ;
+    kno:component kno:KN2014-0094-c1 ;
+    kno:registration "우리말샘"@ko .
+kno:KN2014-0094-c2 kno:formative kno:F000037 ;
+    kno:fullForm "덕후"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "덕(후)(otaku)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "덕"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2014-0094-c1 kno:formative kno:F000171 ;
+    kno:surfaceForm "맥"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "맥(주)(麥)"@ko ;
+    kno:fullForm "맥주"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

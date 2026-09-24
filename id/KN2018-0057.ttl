@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0057 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0057 kno:slotFiller "나 (1성분)"@ko ;
+    kno:urimalTargetCode "1415838" ;
+    kno:component kno:KN2018-0057-c2 ;
+    kno:slotFiller "성(능)(性) (1성분)"@ko ;
+    a ontolex:Word ;
+    skos:definition "‘내가 만족하는 성능의 비율’을 줄여 이르는 말. ‘가격 대비 성능의 비율’을 뜻하는 ‘가성비’에서 파생된 말로, 다른 사람의 시선을 생각하지 않고, 오직 자기 스스로를 만족시키는 데 집중하여 자기만의 확고한 스타일로 상품을 구매하는 소비 태도를 말한다."@ko ;
+    kno:example "¶‘{나성비’를} 따지는 20대 소비 트렌드의 대표적인 사례가 캐릭터 상품에 대한 소비 증가입니다."@ko ;
+    kno:componentString "나, 성(능)(性), 비(율)(比)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000934 ;
+    kno:registration "우리말샘"@ko ;
+    kno:indexForm "나성비"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2018-0057-c3 ;
+    kno:frequency kno:KN2018-0057-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2018-0057-freq-NN-2017 ;
+    kno:languageType "(고+한)+한" ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415838> ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001268 ;
+    kno:component kno:KN2018-0057-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:label "나성비"@ko ;
+    kno:origin "(나性比)" .
+kno:KN2018-0057-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "성능"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X9.1p ;
+    rdfs:label "성(능)(性)"@ko ;
+    kno:surfaceForm "성"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001467 ;
+    kno:role "고정항"@ko .
+kno:KN2018-0057-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    rdfs:label "비(율)(比)"@ko ;
+    kno:fullForm "비율"@ko ;
+    kno:formative kno:F000277 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "비"@ko .
+kno:KN2018-0057-c1 kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "나"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "나"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000070 ;
+    kno:surfaceForm "나"@ko .

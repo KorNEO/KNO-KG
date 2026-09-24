@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0336 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0336 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0336-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0336-form ;
-    ontolex:sense kno:KN2024-0336-sense .
-
-kno:KN2024-0336-att-nn a frac:Attestation ;
-    dcterms:date "2024-01-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004986382> .
-
-kno:KN2024-0336-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0336-freq-nn,
-        kno:KN2024-0336-freq-yt ;
-    ontolex:writtenRep "테무 지옥"@ko .
-
-kno:KN2024-0336-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0336-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0336-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0336 kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S001719 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%85%8C%EB%AC%B4%20%EC%A7%80%EC%98%A5> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0336-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "테무(Temu) (1성분)"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    skos:definition "상품의 가격이 낮은 중국의 전자 상거래 플랫폼인 ‘테무’에서 물건을 계속해서 구매하는 행위를 영원히 빠져나올 수 없는 지옥에 빗대어 이르는 말."@ko ;
+    kno:indexForm "테무지옥"@ko ;
+    kno:origin "(Temu地獄)" ;
+    kno:frequency kno:KN2024-0336-freq-NN-2025 ;
+    kno:componentString "테무(Temu), 지옥(地獄)"@ko ;
+    kno:component kno:KN2024-0336-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0336-freq-NN-2024 ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2024-0336-freq-NN-total ;
+    kno:instantiates kno:S000130 ;
+    kno:example "¶{테무 지옥에} 빠진 사람들이 늘어나면서 우리나라의 유통 시장은 중국 기업에 빠르게 잠식되고 있다."@ko ;
+    rdfs:label "테무 지옥"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "지옥(地獄) (1성분)"@ko .
+kno:KN2024-0336-c2 rdfs:label "지옥(地獄)"@ko ;
+    kno:surfaceForm "지옥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9m ;
+    kno:fullForm "지옥"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000191 .
+kno:KN2024-0336-c1 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "테무"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "테무"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F000423 ;
+    rdfs:label "테무(Temu)"@ko .

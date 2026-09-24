@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0414 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0414 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0414-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0414-form ;
-    ontolex:sense kno:KN2025-0414-sense .
-
-kno:KN2025-0414-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002321066> .
-
-kno:KN2025-0414-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0414-freq-nn,
-        kno:KN2025-0414-freq-yt ;
-    ontolex:writtenRep "에겐 투자자"@ko .
-
-kno:KN2025-0414-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0414-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0414-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0414 kno:example "(LLM) 나는 단기 급등주보다는 우량주를 오래 들고 가는 편이라서 주변에서 {에겐투자자}라고 한다."@ko ;
+    kno:slotFiller "에(스트로)겐(estrogen) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0414-c1 ;
+    kno:instantiates kno:S001542 ;
+    kno:indexForm "에겐투자자"@ko ;
+    kno:origin "(<영>←estrogen投資者)" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EA%B2%90%20%ED%88%AC%EC%9E%90%EC%9E%90> ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:instantiates kno:S001089 ;
+    skos:definition "(LLM) 투자 성향을 성별 고정관념에 빗대어, 신중하고 안정 지향적인 방식으로 투자하는 개인 투자자."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "에(스트로)겐(estrogen), 투자자(投資者)"@ko ;
+    kno:slotFiller "투자자(投資者) (1성분)"@ko ;
+    kno:component kno:KN2025-0414-c2 ;
+    kno:languageType "영_한" ;
+    rdfs:label "에겐 투자자"@ko .
+kno:KN2025-0414-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "에겐"@ko ;
+    kno:fullForm "에스트로겐"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "에(스트로)겐(estrogen)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000387 .
+kno:KN2025-0414-c2 kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F001914 ;
+    a kno:Component ;
+    rdfs:label "투자자(投資者)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "투자자"@ko ;
+    kno:surfaceForm "투자자"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

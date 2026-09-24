@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0131 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0131 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0131-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0131-form ;
-    ontolex:sense kno:KN2025-0131-sense .
-
-kno:KN2025-0131-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013471354> .
-
-kno:KN2025-0131-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0131-freq-nn,
-        kno:KN2025-0131-freq-yt ;
-    ontolex:writtenRep "네포 키즈"@ko .
-
-kno:KN2025-0131-freq-nn a frac:CorpusFrequency ;
-    rdf:value 120 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0131-freq-yt a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0131-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0131 kno:component kno:KN2025-0131-c2 ;
+    kno:slotFiller "네포(티즘)(nepotism) (1성분)"@ko ;
+    rdfs:label "네포 키즈"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000272 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0131-freq-NN-total ;
+    skos:definition "(LLM) 부모나 친인척 등 혈연ㆍ인맥의 영향으로 사회적으로 유리한 지위나 기회를 쉽게 얻는 자녀(들)를 비판적으로 이르는 말."@ko ;
+    kno:indexForm "네포키즈"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0131-freq-NN-2025 ;
+    kno:example "(LLM) 공채보다 지인 추천으로 입사한 사례가 알려지자, 사람들은 그를 {네포키즈로} 보며 공정성 문제를 제기했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%A4%ED%8F%AC%20%ED%82%A4%EC%A6%88> ;
+    kno:component kno:KN2025-0131-c1 ;
+    kno:componentString "네포(티즘)(nepotism), 키즈(kids)"@ko .
+kno:KN2025-0131-c2 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    rdfs:label "키즈(kids)"@ko ;
+    kno:surfaceForm "키즈"@ko ;
+    kno:formative kno:F000151 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "키즈"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3m .
+kno:KN2025-0131-c1 kno:surfaceForm "네포"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002753 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "네포(티즘)(nepotism)"@ko ;
+    kno:fullForm "네포티즘"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 .

@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0206 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0206-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0206-form ;
-    ontolex:sense kno:KN2020-0206-sense .
-
-kno:KN2020-0206-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0002997702> .
-
-kno:KN2020-0206-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0206-freq-nn,
-        kno:KN2020-0206-freq-yt ;
-    ontolex:writtenRep "안방 요금"@ko .
-
-kno:KN2020-0206-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0206-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0206-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0206 kno:componentString "안방, 요금(料金)"@ko ;
+    kno:predicate "지불하다"@ko ;
+    kno:origin "(안房料金)" ;
+    rdfs:label "안방 요금"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EB%B0%A9%20%EC%9A%94%EA%B8%88> ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "안방요금"@ko ;
+    kno:component kno:KN2020-0206-c1 ;
+    skos:definition "극장에서 상영하는 영화를 텔레비전으로 관람하기 위해 지불하는 요금. 코로나19로 인한 재난 상황에서 최신 개봉 영화를 관람하는 장소가 다양화되면서 극장에서 영화를 관람하기 위해 지불하는 요금에 상대하여 이르는 말이다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0206-c2 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "(고+한)_한" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶이 영화는 온라인과 오프라인에서 동시 개봉 했지만 {안방 요금이} 상대적으로 비싸 예상보다 많은 사람들이 극장을 찾았다."@ko .
+kno:KN2020-0206-c1 kno:semanticTag kno:usas-H2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "안방"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004839 ;
+    kno:fullForm "안방"@ko ;
+    kno:surfaceForm "안방"@ko .
+kno:KN2020-0206-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1.3 ;
+    rdfs:label "요금(料金)"@ko ;
+    kno:fullForm "요금"@ko ;
+    kno:formative kno:F005188 ;
+    kno:surfaceForm "요금"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

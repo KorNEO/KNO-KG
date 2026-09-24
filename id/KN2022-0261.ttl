@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0261 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0261 a ontolex:Word ;
-    frac:attestation kno:KN2022-0261-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0261-form ;
-    ontolex:sense kno:KN2022-0261-sense .
-
-kno:KN2022-0261-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/076/0003707493> .
-
-kno:KN2022-0261-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0261-freq-nn,
-        kno:KN2022-0261-freq-yt ;
-    ontolex:writtenRep "짜세-권"@ko .
-
-kno:KN2022-0261-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0261-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0261-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0261 kno:componentString "짜(장면)(zhajiangmian), (역)세권(驛勢圈)"@ko ;
+    kno:origin "(<중>←zhajiangmian[炸醬麵]勢圈)" ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "짜세-권"@ko ;
+    kno:indexForm "짜세권"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%9C%EC%84%B8%EA%B6%8C> ;
+    skos:definition "주변에 중화요리점이 있어 짜장면 등을 편리하게 배달받을 수 있는 주거 지역."@ko ;
+    kno:component kno:KN2022-0261-c2 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "짜(장면)(zhajiangmian) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:example "¶요즘 ‘{짜세권’이} 아닌 집은 거의 찾아보기가 힘들다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000008 ;
+    kno:languageType "(중+한)+한" ;
+    kno:component kno:KN2022-0261-c1 .
+kno:KN2022-0261-c2 rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:fullForm "역세권"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "세권"@ko ;
+    kno:formative kno:F000012 .
+kno:KN2022-0261-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "짜(장면)(zhajiangmian)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "짜장면"@ko ;
+    kno:formative kno:F001798 ;
+    a kno:Component ;
+    kno:surfaceForm "짜"@ko .

@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0429 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0429 kno:frequency kno:KN2016-0429-freq-NN-2018 ;
+    rdfs:label "자동 입덕"@ko ;
+    kno:languageType "한_(한+일)" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0429-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0429-freq-NN-2021 ;
+    kno:example "¶4일 OO OO에는 ‘미소만 봐도 {자동 입덕’이라는} 글과 함께 여러 장의 사진들이 올라왔다."@ko ;
+    kno:indexForm "자동입덕"@ko ;
+    kno:component kno:KN2016-0429-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0429-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0429-freq-NN-2023 ;
+    kno:frequency kno:KN2016-0429-freq-NN-2019 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372864> ;
+    skos:definition "자신의 의사와 상관없이 한 분야에 지나치게 집중하거나, 집착하게 되는 길에 처음 들어섬."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2016-0429-freq-NN-2024 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(自動入<일>←otaku[御宅])" ;
+    kno:component kno:KN2016-0429-c3 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:urimalTargetCode "1372864" ;
+    kno:component kno:KN2016-0429-c1 ;
+    kno:componentString "자동(自動), 입(入), 덕(후)(otaku)"@ko ;
+    kno:frequency kno:KN2016-0429-freq-NN-2016 .
+kno:KN2016-0429-c2 kno:semanticTag kno:usas-B1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "입"@ko ;
+    kno:surfaceForm "입"@ko ;
+    rdfs:label "입(入)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000401 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2016-0429-c3 a kno:Component ;
+    rdfs:label "덕(후)(otaku)"@ko ;
+    kno:formative kno:F000037 ;
+    kno:fullForm "덕후"@ko ;
+    kno:surfaceForm "덕"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-X5.2p .
+kno:KN2016-0429-c1 kno:semanticTag kno:usas-A1.7m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "자동(自動)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "자동"@ko ;
+    kno:surfaceForm "자동"@ko ;
+    kno:formative kno:F005514 .

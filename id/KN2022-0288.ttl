@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0288 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0288 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0288-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0288-form ;
-    ontolex:sense kno:KN2022-0288-sense .
-
-kno:KN2022-0288-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011124575> .
-
-kno:KN2022-0288-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0288-freq-nn,
-        kno:KN2022-0288-freq-yt ;
-    ontolex:writtenRep "퍼피 시네마"@ko .
-
-kno:KN2022-0288-freq-nn a frac:CorpusFrequency ;
-    rdf:value 182 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0288-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0288-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0288 rdfs:label "퍼피 시네마"@ko ;
+    kno:slotFiller "퍼피(puppy) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "퍼피(puppy), 시네마(cinema)"@ko ;
+    kno:frequency kno:KN2022-0288-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8D%BC%ED%94%BC%20%EC%8B%9C%EB%84%A4%EB%A7%88> ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:origin "(<영>▼puppy cinema)" ;
+    kno:instantiates kno:S000408 ;
+    kno:component kno:KN2022-0288-c2 ;
+    kno:frequency kno:KN2022-0288-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0288-freq-NN-2022 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:example "¶최근 서울, 수원 등에 반려견 가구를 겨냥한 ‘{퍼피 시네마’가} 인기를 얻고 있다."@ko ;
+    kno:frequency kno:KN2022-0288-freq-NN-total ;
+    skos:definition "반려견과 함께 영화를 감상할 수 있는 시설을 갖춘 영화관."@ko ;
+    kno:indexForm "퍼피시네마"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0288-freq-NN-2025 ;
+    kno:component kno:KN2022-0288-c1 ;
+    a kno:Neologism .
+kno:KN2022-0288-c2 kno:semanticTag kno:usas-K4 ;
+    rdfs:label "시네마(cinema)"@ko ;
+    kno:surfaceForm "시네마"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "시네마"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000830 .
+kno:KN2022-0288-c1 kno:fullForm "퍼피"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "퍼피(puppy)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "퍼피"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F006674 ;
+    kno:truncated "false"^^xsd:boolean .

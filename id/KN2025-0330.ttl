@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0330 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0330 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0330-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0330-form ;
-    ontolex:sense kno:KN2025-0330-sense .
-
-kno:KN2025-0330-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0005105804> .
-
-kno:KN2025-0330-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0330-freq-nn,
-        kno:KN2025-0330-freq-yt ;
-    ontolex:writtenRep "서브 과외"@ko .
-
-kno:KN2025-0330-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0330-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0330-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0330 kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "(LLM) 대치동 학원 진도가 너무 빨라서 아이가 주말마다 {서브과외를} 받기 시작했다."@ko ;
+    a kno:Neologism ;
+    kno:languageType "영_한" ;
+    kno:indexForm "서브과외"@ko ;
+    kno:component kno:KN2025-0330-c2 ;
+    kno:origin "(sub課外)" ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EB%B8%8C%20%EA%B3%BC%EC%99%B8> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0330-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "서브 과외"@ko ;
+    kno:componentString "서브(sub), 과외(課外)"@ko ;
+    kno:frequency kno:KN2025-0330-freq-NN-total ;
+    kno:component kno:KN2025-0330-c1 ;
+    skos:definition "(LLM) 학원 수업의 진도나 과제 수행을 따라가기 위해, 본수업 외에 추가로 받는 비공식적인 개인 지도."@ko .
+kno:KN2025-0330-c2 kno:fullForm "과외"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "과외"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001079 ;
+    rdfs:label "과외(課外)"@ko ;
+    kno:semanticTag kno:usas-P1 .
+kno:KN2025-0330-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "서브(sub)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A11.1m ;
+    kno:fullForm "서브"@ko ;
+    kno:surfaceForm "서브"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001461 .

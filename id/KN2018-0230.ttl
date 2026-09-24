@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0230 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0230 kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^영" ;
+    rdfs:label "아이슬레저^룩"@ko ;
+    kno:slotFiller "아이(스)(ice)+(애)슬레저(athleisure) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EC%9D%B4%EC%8A%AC%EB%A0%88%EC%A0%80%EB%A3%A9> ;
+    kno:frequency kno:KN2018-0230-freq-NN-total ;
+    kno:indexForm "아이슬레저룩"@ko ;
+    kno:frequency kno:KN2018-0230-freq-NN-2018 ;
+    kno:component kno:KN2018-0230-c3 ;
+    kno:origin "(<영>▼←ice athleisure look)" ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    skos:definition "시원한 소재로 만든 운동복을 일상복처럼 입는 옷차림. 시원한 느낌을 뜻하는 ‘아이스(ice)’와 운동복을 일상복처럼 입는 옷차림을 뜻하는 ‘애슬레저 룩(athleisure look)’을 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:frequency kno:KN2018-0230-freq-NN-2020 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000007 ;
+    kno:component kno:KN2018-0230-c2 ;
+    kno:predicate "입다"@ko ;
+    kno:component kno:KN2018-0230-c1 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:componentString "아이(스)(ice), (애)슬레저(athleisure), 룩(look)"@ko ;
+    a kno:Neologism ;
+    kno:example "¶실제로 새로운 ‘{아이슬레저 룩’을} 찾는 이가 많아지면서 OO 백화점 아웃도어 브랜드 중 OO의 6월 매출은 전년 동기보다 38% 증가했다."@ko .
+kno:KN2018-0230-c3 kno:surfaceForm "룩"@ko ;
+    rdfs:label "룩(look)"@ko ;
+    kno:formative kno:F000005 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "룩"@ko ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2018-0230-c2 kno:surfaceForm "슬레저"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "애슬레저"@ko ;
+    kno:formative kno:F004618 ;
+    rdfs:label "(애)슬레저(athleisure)"@ko ;
+    a kno:Component .
+kno:KN2018-0230-c1 rdfs:label "아이(스)(ice)"@ko ;
+    kno:fullForm "아이스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "아이"@ko ;
+    kno:semanticTag kno:usas-O4.6m ;
+    a kno:Component ;
+    kno:formative kno:F004813 ;
+    kno:role "슬롯 채움"@ko .

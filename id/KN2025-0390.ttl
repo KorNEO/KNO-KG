@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0390 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0390 a ontolex:Word ;
-    frac:attestation kno:KN2025-0390-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0390-form ;
-    ontolex:sense kno:KN2025-0390-sense .
-
-kno:KN2025-0390-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-24"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/584/0000032983> .
-
-kno:KN2025-0390-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0390-freq-nn,
-        kno:KN2025-0390-freq-yt ;
-    ontolex:writtenRep "알로켈핑"@ko .
-
-kno:KN2025-0390-freq-nn a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0390-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0390-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0390 kno:component kno:KN2025-0390-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "알로켈핑"@ko ;
+    kno:component kno:KN2025-0390-c2 ;
+    kno:frequency kno:KN2025-0390-freq-NN-total ;
+    kno:indexForm "알로켈핑"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%8C%EB%A1%9C%EC%BC%88%ED%95%91> ;
+    skos:definition "(LLM) 범고래가 다시마 등 해조류 조각을 몸에 끼우거나 문질러 서로의 피부를 손질하는 사회적 행동."@ko ;
+    kno:component kno:KN2025-0390-c3 ;
+    kno:componentString "알로(allo-), 켈(프)(kelp), -핑(←-ing)"@ko ;
+    kno:origin "(<영>allokelping)" ;
+    kno:frequency kno:KN2025-0390-freq-NN-2025 ;
+    kno:example "(LLM) 관찰 영상에는 범고래들이 해조류를 몸 사이에 끼운 채 한동안 비비며 {알로켈핑을} 하는 모습이 담겼다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:formation kno:W07 ;
+    kno:languageType "영" ;
+    a kno:Neologism .
+kno:KN2025-0390-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "알로(allo-)"@ko ;
+    kno:fullForm "알로"@ko ;
+    kno:surfaceForm "알로"@ko ;
+    kno:formative kno:F004850 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0390-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "켈(프)(kelp)"@ko ;
+    kno:formative kno:F006271 ;
+    a kno:Component ;
+    kno:surfaceForm "켈"@ko ;
+    kno:fullForm "켈프"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-L3 .
+kno:KN2025-0390-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006912 ;
+    kno:surfaceForm "핑"@ko ;
+    rdfs:label "-핑(←-ing)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "핑"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 .

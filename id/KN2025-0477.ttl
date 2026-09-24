@@ -1,30 +1,48 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0477 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0477 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2025-0477-form ;
-    ontolex:sense kno:KN2025-0477-sense .
-
-kno:KN2025-0477-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0477-freq-nn,
-        kno:KN2025-0477-freq-yt ;
-    ontolex:writtenRep "인간 GPT"@ko .
-
-kno:KN2025-0477-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0477-freq-yt a frac:CorpusFrequency ;
-    rdf:value 52 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0477-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0477 skos:definition "(LLM) 인공지능 챗봇처럼 질문에 맞춰 핵심을 정리해 주거나 근거를 들어 답을 잘하는 사람을 비유적으로 이르는 말."@ko ;
+    kno:instantiates kno:S001614 ;
+    rdfs:label "인간 GPT"@ko ;
+    kno:component kno:KN2025-0477-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "GPT (1성분)"@ko ;
+    kno:componentString "인간(人間), GPT"@ko ;
+    kno:languageType "한_영" ;
+    kno:indexForm "인간GPT"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 자료를 쭉 훑더니 쟁점이랑 결론을 바로 정리해 주는 선배는 팀에서 {인간GPT로} 통한다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(人間<영>GPT)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EA%B0%84%20GPT> ;
+    kno:component kno:KN2025-0477-c2 .
+kno:KN2025-0477-c1 kno:surfaceForm "인간"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "인간(人間)"@ko ;
+    a kno:Component ;
+    kno:fullForm "인간"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000892 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0477-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "GPT"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "GPT"@ko ;
+    kno:surfaceForm "GPT"@ko ;
+    kno:formative kno:F002053 ;
+    kno:position "2"^^xsd:integer .

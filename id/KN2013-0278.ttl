@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0278 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0278 kno:instantiates kno:S001495 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EB%8D%B0%EB%A0%90%EB%9D%BC%20%ED%95%99%EC%83%9D> ;
+    kno:component kno:KN2013-0278-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001138 ;
+    kno:componentString "신데렐라(Cinderella), 학생(學生)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "신데렐라학생"@ko ;
+    kno:slotFiller "학생(學生) (1성분)"@ko ;
+    kno:languageType "영_한" ;
+    kno:predicate "귀가하다"@ko ;
+    kno:origin "(Cinderella學生)" ;
+    kno:example "¶밤 12시에 집에 오는 학생들을 일컬어 ‘{신데렐라 학생’이라는} 신조어가 생겨났다."@ko ;
+    kno:slotFiller "신데렐라(Cinderella) (1성분)"@ko ;
+    skos:definition "학교 수업이 끝난 후에 야간 자율 학습을 하고 학원에 갔다가 밤 12시에 귀가하는 학생."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2013-0278-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "신데렐라 학생"@ko .
+kno:KN2013-0278-c1 kno:formative kno:F000546 ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:fullForm "신데렐라"@ko ;
+    kno:surfaceForm "신데렐라"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "신데렐라(Cinderella)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0278-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "학생"@ko ;
+    kno:surfaceForm "학생"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    rdfs:label "학생(學生)"@ko ;
+    kno:formative kno:F001993 .

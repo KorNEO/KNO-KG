@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0417 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0417 a ontolex:Word ;
-    frac:attestation kno:KN2025-0417-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0417-form ;
-    ontolex:sense kno:KN2025-0417-sense .
-
-kno:KN2025-0417-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/140/0000055784> .
-
-kno:KN2025-0417-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0417-freq-nn,
-        kno:KN2025-0417-freq-yt ;
-    ontolex:writtenRep "에토녀"@ko .
-
-kno:KN2025-0417-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0417-freq-yt a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0417-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0417 rdfs:label "에토-녀"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "영+영+한" ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0417-c1 ;
+    kno:indexForm "에토녀"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:slotFiller "신체; X=에(스트로겐)(estrogen)+토(스토스테론)(testosterone) (2성분)"@ko ;
+    kno:origin "(<영>←estrogen testosterone女)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 남성 호르몬(테스토스테론)과 여성 호르몬(에스트로겐)의 성향을 함께 지닌 것으로 여겨지는 여자."@ko ;
+    kno:instantiates kno:S000082 ;
+    kno:frequency kno:KN2025-0417-freq-NN-total ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%ED%86%A0%EB%85%80> ;
+    kno:predicate "여겨지다"@ko ;
+    kno:componentString "에(스트로겐)(estrogen), 토(스토스테론)(testosterone), -녀(女)"@ko ;
+    kno:component kno:KN2025-0417-c3 ;
+    kno:example "(LLM) 그는 평소엔 차분하지만 필요할 땐 먼저 나서서 분위기를 주도하는 편이라 {에토녀라고} 불리기도 한다."@ko ;
+    kno:slotFiller "-녀(女) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001544 ;
+    kno:frequency kno:KN2025-0417-freq-NN-2025 ;
+    kno:component kno:KN2025-0417-c2 .
+kno:KN2025-0417-c1 kno:fullForm "에스트로겐"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "에"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000855 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    rdfs:label "에(스트로겐)(estrogen)"@ko .
+kno:KN2025-0417-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000004 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko .
+kno:KN2025-0417-c2 a kno:Component ;
+    kno:fullForm "토스토스테론"@ko ;
+    kno:surfaceForm "토"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "토(스토스테론)(testosterone)"@ko ;
+    kno:formative kno:F001901 .

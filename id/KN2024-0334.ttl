@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0334 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0334 a ontolex:Word ;
-    frac:attestation kno:KN2024-0334-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0334-form ;
-    ontolex:sense kno:KN2024-0334-sense .
-
-kno:KN2024-0334-att-nn a frac:Attestation ;
-    dcterms:date "2022-10-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011499439> .
-
-kno:KN2024-0334-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0334-freq-nn,
-        kno:KN2024-0334-freq-yt ;
-    ontolex:writtenRep "텀꾸"@ko .
-
-kno:KN2024-0334-freq-nn a frac:CorpusFrequency ;
-    rdf:value 229 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0334-freq-yt a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0334-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0334 kno:languageType "영+고" ;
+    rdfs:label "텀꾸"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%85%80%EA%BE%B8> ;
+    kno:origin "(<영>←tumbler꾸)" ;
+    kno:component kno:KN2024-0334-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "텀(블러)(tumbler) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0334-freq-NN-total ;
+    kno:example "¶미국에서 유행하던 {텀꾸가} 유명 유튜버를 통해 국내에 전해지면서 {텀꾸에} 대한 젊은 층의 관심이 높아지고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2024-0334-freq-NN-2025 ;
+    kno:componentString "텀(블러)(tumbler), 꾸(미다)"@ko ;
+    kno:frequency kno:KN2024-0334-freq-NN-2024 ;
+    kno:instantiates kno:S000030 ;
+    kno:indexForm "텀꾸"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "‘텀블러 꾸미기’를 줄여 이르는 말. 다양한 색의 스티커, 키링, 스트랩 등을 이용해 텀블러를 꾸미는 행위를 말한다."@ko ;
+    a kno:Neologism ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2024-0334-c2 .
+kno:KN2024-0334-c1 kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F006446 ;
+    a kno:Component ;
+    kno:fullForm "텀블러"@ko ;
+    kno:surfaceForm "텀"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "텀(블러)(tumbler)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0334-c2 kno:fullForm "꾸미다"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "꾸"@ko ;
+    rdfs:label "꾸(미다)"@ko ;
+    kno:formative kno:F000056 ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

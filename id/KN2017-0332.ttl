@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0332 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0332 kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:instantiates kno:S001752 ;
+    kno:componentString "피짓(fidget), 토이(toy)"@ko ;
+    kno:example "¶{피짓 토이는} 지난해 말부터 서구권을 중심으로 폭발적인 인기를 누리고 있다."@ko ;
+    kno:component kno:KN2017-0332-c1 ;
+    kno:predicate "작은"@ko ;
+    kno:instantiates kno:S001084 ;
+    kno:languageType "영_영" ;
+    kno:slotFiller "토이(toy) (1성분)"@ko ;
+    kno:slotFiller "피짓(fidget) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0332-freq-NN-2023 ;
+    kno:frequency kno:KN2017-0332-freq-NN-total ;
+    kno:origin "(<영>fidget toy)" ;
+    kno:frequency kno:KN2017-0332-freq-NN-2024 ;
+    kno:indexForm "피짓토이"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "아이 또는 성인들이 한 손에 쥐고 주무르거나 눌러서 돌릴 수 있는 작은 장난감."@ko ;
+    kno:component kno:KN2017-0332-c2 ;
+    rdfs:label "피짓 토이"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0332-freq-NN-2020 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1388463> ;
+    kno:urimalTargetCode "1388463" ;
+    kno:frequency kno:KN2017-0332-freq-NN-2017 ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0332-c1 kno:formative kno:F001985 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "피짓"@ko ;
+    kno:surfaceForm "피짓"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    rdfs:label "피짓(fidget)"@ko .
+kno:KN2017-0332-c2 kno:fullForm "토이"@ko ;
+    kno:surfaceForm "토이"@ko ;
+    kno:formative kno:F001902 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    rdfs:label "토이(toy)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0691 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0691 a ontolex:Word ;
-    frac:attestation kno:KN2025-0691-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0691-form ;
-    ontolex:sense kno:KN2025-0691-sense .
-
-kno:KN2025-0691-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/410/0001091246> .
-
-kno:KN2025-0691-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0691-freq-nn,
-        kno:KN2025-0691-freq-yt ;
-    ontolex:writtenRep "홍보핑"@ko .
-
-kno:KN2025-0691-freq-nn a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0691-freq-yt a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0691-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0691 kno:languageType "한+고" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "홍보핑"@ko ;
+    kno:frequency kno:KN2025-0691-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0691-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 음원 성적이 기대만큼 나오지 않자 제작진은 곡의 완성도보다 {홍보핑을} 먼저 들며 해명을 이어 갔다."@ko ;
+    kno:slotFiller "홍보(弘報) (1성분)"@ko ;
+    skos:definition "(LLM) 성과가 기대에 못 미친 이유를 실력이나 완성도 같은 본질적 문제 대신 홍보 부족 탓으로 돌려 책임을 피하려는 핑계."@ko ;
+    kno:predicate "피하려다"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "홍보핑"@ko ;
+    kno:componentString "홍보(弘報), (티니)핑"@ko ;
+    kno:origin "(弘報핑)" ;
+    kno:instantiates kno:S000766 ;
+    kno:frequency kno:KN2025-0691-freq-NN-total ;
+    kno:component kno:KN2025-0691-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%8D%EB%B3%B4%ED%95%91> ;
+    kno:formation kno:W05 .
+kno:KN2025-0691-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "핑"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001989 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(티니)핑"@ko ;
+    kno:fullForm "티니핑"@ko .
+kno:KN2025-0691-c1 rdfs:label "홍보(弘報)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "홍보"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "홍보"@ko ;
+    kno:formative kno:F007131 ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

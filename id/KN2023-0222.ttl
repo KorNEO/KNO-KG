@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0222 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0222 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0222-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0222-form ;
-    ontolex:sense kno:KN2023-0222-sense .
-
-kno:KN2023-0222-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/656/0000034447> .
-
-kno:KN2023-0222-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0222-freq-nn,
-        kno:KN2023-0222-freq-yt ;
-    ontolex:writtenRep "이태원^참사^특별법"@ko .
-
-kno:KN2023-0222-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16451 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0222-freq-yt a frac:CorpusFrequency ;
-    rdf:value 318 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0222-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0222 kno:frequency kno:KN2023-0222-freq-NN-2024 ;
+    kno:indexForm "이태원참사특별법"@ko ;
+    kno:frequency kno:KN2023-0222-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%ED%83%9C%EC%9B%90%EC%B0%B8%EC%82%AC%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:component kno:KN2023-0222-c3 ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0222-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "이태원(梨泰院)+참사(慘事) (2성분)"@ko ;
+    kno:instantiates kno:S000027 ;
+    kno:origin "(梨泰院慘事特別法)" ;
+    rdfs:label "이태원^참사^특별법"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:frequency kno:KN2023-0222-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2023-0222-freq-NN-2025 ;
+    kno:componentString "이태원(梨泰院), 참사(慘事), 특별법(特別法)"@ko ;
+    kno:frequency kno:KN2023-0222-freq-NN-total ;
+    kno:example "¶이태원 참사의 유가족들은 {이태원 참사 특별법에} 따른 진상 규명을 철저하게 진행할 것을 정부에 요구했다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2023-0222-c2 ;
+    skos:definition "2022년 10월 29일에 발생한 이태원 참사의 진상 규명과 재발 방지를 위해 필요한 사항을 제정한 특별 법안. 정식 명칭은 ‘10ㆍ29 이태원 참사 피해자 권리 보장과 진상 규명 및 재발 방지를 위한 특별 법안’이다."@ko ;
+    kno:unitType "구"@ko .
+kno:KN2023-0222-c3 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:formative kno:F000044 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "특별법"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "특별법"@ko .
+kno:KN2023-0222-c1 rdfs:label "이태원(梨泰院)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "이태원"@ko ;
+    kno:surfaceForm "이태원"@ko ;
+    kno:formative kno:F005416 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0222-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A15m ;
+    kno:formative kno:F000596 ;
+    rdfs:label "참사(慘事)"@ko ;
+    kno:fullForm "참사"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "참사"@ko ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0022 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0022 a ontolex:Word ;
-    frac:attestation kno:KN2021-0022-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0022-form ;
-    ontolex:sense kno:KN2021-0022-sense .
-
-kno:KN2021-0022-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011788832> .
-
-kno:KN2021-0022-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0022-freq-nn,
-        kno:KN2021-0022-freq-yt ;
-    ontolex:writtenRep "골플루언서"@ko .
-
-kno:KN2021-0022-freq-nn a frac:CorpusFrequency ;
-    rdf:value 636 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0022-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0022-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0022 kno:origin "(<영>▼←golf influencer)" ;
+    kno:component kno:KN2021-0022-c2 ;
+    rdfs:label "골플루언서"@ko ;
+    kno:component kno:KN2021-0022-c1 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0022-freq-NN-2020 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:indexForm "골플루언서"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "미치다"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000068 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2021-0022-freq-NN-total ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2021-0022-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0022-freq-NN-2022 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0022-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A8%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C> ;
+    kno:componentString "골(프)(golf), (인)플루언서(influencer)"@ko ;
+    skos:definition "골프와 관련한 의견이나 정보를 소셜 미디어에 공유하여 대중에게 영향을 미치는 사람."@ko ;
+    kno:slotFiller "골(프)(golf) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶최근 {골플루언서로} 활약하고 있는 배우가 착용한 골프 장갑이 시장 점유율 1위를 차지한 것으로 조사되었다."@ko ;
+    kno:frequency kno:KN2021-0022-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000472 ;
+    kno:slotFiller "(인)플루언서(influencer) (1성분)"@ko .
+kno:KN2021-0022-c2 kno:fullForm "인플루언서"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000196 ;
+    kno:surfaceForm "플루언서"@ko ;
+    rdfs:label "(인)플루언서(influencer)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "고정항"@ko .
+kno:KN2021-0022-c1 rdfs:label "골(프)(golf)"@ko ;
+    kno:formative kno:F000457 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "골"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "골프"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:truncated "true"^^xsd:boolean .

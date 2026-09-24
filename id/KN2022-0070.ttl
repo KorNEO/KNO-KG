@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0070 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0070 a ontolex:Word ;
-    frac:attestation kno:KN2022-0070-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0070-form ;
-    ontolex:sense kno:KN2022-0070-sense .
-
-kno:KN2022-0070-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/079/0003634104> .
-
-kno:KN2022-0070-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0070-freq-nn,
-        kno:KN2022-0070-freq-yt ;
-    ontolex:writtenRep "국특완박"@ko .
-
-kno:KN2022-0070-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0070-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1090 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0070-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0070 kno:componentString "국(회의원)(國會議員), 특(권)(特權), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    kno:indexForm "국특완박"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "국(회의원)(國會議員)+특(권)(特權) (2성분)"@ko ;
+    kno:example "¶‘{국특완박’을} 주장하는 사람들은 국회 의원이 누릴 수 있는 다양한 특권은 국민을 대표하기 때문에 주어지는 것으로 의원 개개인을 위한 것이 아니라고 강조하였다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0070-freq-NN-total ;
+    kno:component kno:KN2022-0070-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%ED%8A%B9%EC%99%84%EB%B0%95> ;
+    kno:frequency kno:KN2022-0070-freq-NN-2022 ;
+    kno:component kno:KN2022-0070-c1 ;
+    skos:definition "‘국회 의원의 특권을 완전히 박탈함’을 줄여 이르는 말."@ko ;
+    kno:component kno:KN2022-0070-c4 ;
+    rdfs:label "국특완박"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0070-c3 ;
+    kno:instantiates kno:S000051 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(國特完剝)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 .
+kno:KN2022-0070-c2 kno:formative kno:F006573 ;
+    kno:surfaceForm "특"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "특(권)(特權)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "특권"@ko ;
+    kno:semanticTag kno:usas-S7.1p .
+kno:KN2022-0070-c1 rdfs:label "국(회의원)(國會議員)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "국회의원"@ko ;
+    kno:formative kno:F002468 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "국"@ko ;
+    kno:semanticTag kno:usas-G1.1 .
+kno:KN2022-0070-c4 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "박"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000040 ;
+    kno:fullForm "박탈"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A9 ;
+    rdfs:label "박(탈)(剝奪)"@ko .
+kno:KN2022-0070-c3 kno:fullForm "완전"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "완"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000031 ;
+    a kno:Component .

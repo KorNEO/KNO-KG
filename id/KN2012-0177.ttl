@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0177 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0177 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357015> ;
+    a ontolex:Word ;
+    rdfs:label "빽치"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "빽치"@ko ;
+    kno:component kno:KN2012-0177-c2 ;
+    kno:componentString "빽, 치(마)"@ko ;
+    skos:definition "몸에 딱 달라붙는 치마."@ko ;
+    kno:instantiates kno:S000270 ;
+    kno:slotFiller "빽 (1성분)"@ko ;
+    kno:example "¶학생들은 ‘짧은 치마, 줄인 교복’을 외치며 중고 교복을 사고 팔고 ‘짧치’, ‘똥치’, ‘{빽치’라는} 은어까지 만들어내며 불량 치마 구매에 열을 올리고 있다."@ko ;
+    kno:component kno:KN2012-0177-c1 ;
+    kno:urimalTargetCode "1357015" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:predicate "달라붙다"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 .
+kno:KN2012-0177-c2 kno:surfaceForm "치"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "치마"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "치(마)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000413 ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2012-0177-c1 rdfs:label "빽"@ko ;
+    kno:formative kno:F004125 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "빽"@ko ;
+    kno:surfaceForm "빽"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean .

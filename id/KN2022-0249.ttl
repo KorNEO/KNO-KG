@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0249 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0249-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0249-form ;
-    ontolex:sense kno:KN2022-0249-sense .
-
-kno:KN2022-0249-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000229083> .
-
-kno:KN2022-0249-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0249-freq-nn,
-        kno:KN2022-0249-freq-yt ;
-    ontolex:writtenRep "제로^코로나"@ko .
-
-kno:KN2022-0249-freq-nn a frac:CorpusFrequency ;
-    rdf:value 37485 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0249-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3427 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0249-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0249 kno:frequency kno:KN2022-0249-freq-NN-2023 ;
+    kno:origin "(<영>zero←corona virus)" ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:indexForm "제로코로나"@ko ;
+    kno:frequency kno:KN2022-0249-freq-NN-2021 ;
+    rdfs:label "제로^코로나"@ko ;
+    kno:instantiates kno:S001643 ;
+    kno:component kno:KN2022-0249-c1 ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:componentString "제로(zero), 코로나(바이러스)(corona virus)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1613084" ;
+    kno:pos "「구」"@ko ;
+    skos:definition "중국이 코로나19 바이러스를 완전히 박멸하기 위해 시행한 엄격한 방역 정책. 국경을 봉쇄하여 전 세계에 경제 및 사회적 영향을 미쳤으며 시행된지 3년만인 2022년 12월 폐지되었다."@ko ;
+    kno:frequency kno:KN2022-0249-freq-NN-2022 ;
+    kno:slotFiller "제로(zero) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶지난 5월에는 중국이 국경을 봉쇄한 {제로 코로나} 방역 이후로 첫 범죄자 송환이 이루어졌다."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2022-0249-freq-NN-2025 ;
+    kno:instantiates kno:S000131 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1613084> ;
+    kno:languageType "영^영" ;
+    kno:frequency kno:KN2022-0249-freq-NN-total ;
+    kno:frequency kno:KN2022-0249-freq-NN-2024 ;
+    kno:component kno:KN2022-0249-c2 .
+kno:KN2022-0249-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:fullForm "제로"@ko ;
+    kno:formative kno:F001760 ;
+    a kno:Component ;
+    kno:surfaceForm "제로"@ko ;
+    rdfs:label "제로(zero)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2022-0249-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko .

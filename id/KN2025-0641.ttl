@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0641 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0641 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0641-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0641-form ;
-    ontolex:sense kno:KN2025-0641-sense .
-
-kno:KN2025-0641-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002461777> .
-
-kno:KN2025-0641-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0641-freq-nn,
-        kno:KN2025-0641-freq-yt ;
-    ontolex:writtenRep "폭동 옹호 위원회"@ko .
-
-kno:KN2025-0641-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0641-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0641-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0641 kno:instantiates kno:S000990 ;
+    kno:componentString "폭동(暴動), 옹호(擁護), 위원회(委員會)"@ko ;
+    kno:component kno:KN2025-0641-c3 ;
+    kno:predicate "비판하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(暴動擁護委員會)" ;
+    skos:definition "(LLM) 어떤 위원회ㆍ기구ㆍ단체가 폭력적 집단행동을 비판ㆍ제지하기보다 두둔하거나 정당화한다고 보아, 그 성격을 비꼬거나 비판하는 표현."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%AD%EB%8F%99%20%EC%98%B9%ED%98%B8%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 야당은 해당 위원의 과격한 발언을 문제 삼으며 인권 관련 기구가 {폭동옹호위원회로} 변질되고 있다고 비판했다."@ko ;
+    kno:frequency kno:KN2025-0641-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0641-c1 ;
+    rdfs:label "폭동 옹호 위원회"@ko ;
+    kno:frequency kno:KN2025-0641-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "폭동옹호위원회"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한_한" ;
+    kno:slotFiller "폭동(暴動) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0641-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0641-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000148 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "위원회"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "위원회(委員會)"@ko ;
+    kno:fullForm "위원회"@ko .
+kno:KN2025-0641-c1 kno:fullForm "폭동"@ko ;
+    kno:surfaceForm "폭동"@ko ;
+    kno:formative kno:F001965 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "폭동(暴動)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0641-c2 kno:fullForm "옹호"@ko ;
+    rdfs:label "옹호(擁護)"@ko ;
+    kno:surfaceForm "옹호"@ko ;
+    kno:formative kno:F001638 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean .

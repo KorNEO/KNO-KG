@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0326 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0326 kno:component kno:KN2017-0326-c2 ;
+    rdfs:label "프리랜서 바이오 해커"@ko ;
+    kno:example "¶OOO 박사는 “앞으로는 {프리랜서 바이오 해커들이} 중요한 과학적 성과를 만들어 내게 될 것.”이라고 예측했다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "연구하다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0326-freq-NN-2016 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:origin "(<영>free-lancer bio hacker)" ;
+    kno:languageType "영_영_영" ;
+    kno:component kno:KN2017-0326-c3 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380587> ;
+    kno:urimalTargetCode "1380587" ;
+    kno:component kno:KN2017-0326-c1 ;
+    kno:indexForm "프리랜서바이오해커"@ko ;
+    skos:definition "유전자 편집 기술과 관련된 소프트웨어를 활용하여 사람의 건강 상태를 진단하고, 각종 질병을 치료하기 위한 방안을 연구하는 사람."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2017-0326-freq-NN-total ;
+    kno:componentString "프리랜서(free-lancer), 바이오(bio), 해커(hacker)"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism .
+kno:KN2017-0326-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "바이오"@ko ;
+    kno:formative kno:F003653 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "바이오(bio)"@ko ;
+    kno:surfaceForm "바이오"@ko .
+kno:KN2017-0326-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F007010 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:fullForm "해커"@ko ;
+    kno:surfaceForm "해커"@ko ;
+    rdfs:label "해커(hacker)"@ko .
+kno:KN2017-0326-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "프리랜서(free-lancer)"@ko ;
+    kno:fullForm "프리랜서"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006820 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "프리랜서"@ko ;
+    kno:position "1"^^xsd:integer .

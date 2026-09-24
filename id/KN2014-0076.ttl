@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0076 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0076 kno:activeYears "0"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영^영" ;
+    kno:component kno:KN2014-0076-c1 ;
+    kno:indexForm "런피스룩"@ko ;
+    kno:example "¶피케 원피스는…화려한 무늬의 러닝화를 매치하면…생기 넘치는 {런피스 룩을} 연출할 수 있다."@ko ;
+    kno:componentString "런(닝)(running), (원)피스(one-piece), 룩(look)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2014-0076-c2 ;
+    kno:predicate "신은"@ko ;
+    skos:definition "원피스를 입고 러닝화를 신은 차림. =런피스(<영>▼←running one-piece)."@ko ;
+    kno:slotFiller "런(닝)(running)+(원)피스(one-piece) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9F%B0%ED%94%BC%EC%8A%A4%EB%A3%A9> ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0076-c3 ;
+    rdfs:label "런피스^룩"@ko ;
+    kno:origin "(<영>▼←running one-piece look)" ;
+    kno:instantiates kno:S000007 .
+kno:KN2014-0076-c1 kno:fullForm "런닝"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "런"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000494 ;
+    kno:semanticTag kno:usas-K5.1 ;
+    rdfs:label "런(닝)(running)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2014-0076-c2 a kno:Component ;
+    kno:fullForm "원피스"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000637 ;
+    kno:surfaceForm "피스"@ko ;
+    rdfs:label "(원)피스(one-piece)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2014-0076-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "룩"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "룩"@ko ;
+    a kno:Component ;
+    rdfs:label "룩(look)"@ko ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 .

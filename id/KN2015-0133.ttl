@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0133 kno:example "¶교복을 입은 OOO는…벽에 기대어 그윽한 눈빛으로 먼 곳을 응시하는 치명적인 매력까지 선보이며 {심멎 주의를} 불러일으키고 있는 상황."@ko ;
+    kno:component kno:KN2015-0133-c1 ;
+    kno:component kno:KN2015-0133-c2 ;
+    kno:frequency kno:KN2015-0133-freq-NN-2017 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:languageType "(한+고)_한" ;
+    kno:frequency kno:KN2015-0133-freq-NN-2019 ;
+    kno:frequency kno:KN2015-0133-freq-NN-2020 ;
+    kno:urimalTargetCode "1359980" ;
+    kno:frequency kno:KN2015-0133-freq-NN-2022 ;
+    kno:component kno:KN2015-0133-c3 ;
+    kno:slotFiller "심(장)(心)+멎(다) (2성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359980> ;
+    kno:frequency kno:KN2015-0133-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2015-0133-freq-NN-2018 ;
+    kno:frequency kno:KN2015-0133-freq-NN-2016 ;
+    kno:frequency kno:KN2015-0133-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(心멎注意)" ;
+    kno:componentString "심(장)(心), 멎(다), 주의(注意)"@ko ;
+    kno:frequency kno:KN2015-0133-freq-NN-2014 ;
+    kno:frequency kno:KN2015-0133-freq-NN-2024 ;
+    kno:frequency kno:KN2015-0133-freq-NN-2015 ;
+    rdfs:label "심멎 주의"@ko ;
+    kno:activeYears "12"^^xsd:integer ;
+    kno:frequency kno:KN2015-0133-freq-NN-2021 ;
+    skos:definition "앞으로 보게 될 장면 따위가 심장이 멎을 만큼 놀라울 수 있음을 마음에 새겨 두고 조심함. 주로 게시물에 아주 멋지거나 아름다운 연예인의 사진 또는 영상이 포함되어 있거나, 너무 무섭거나 충격적인 내용이 포함된 경우에 독자나 시청자가 놀라지 않게 미리 조심하거나 삼가도록 주의를 시키는 것을 나타낸다."@ko ;
+    kno:indexForm "심멎주의"@ko ;
+    kno:frequency kno:KN2015-0133-freq-NN-2023 ;
+    kno:instantiates kno:S001035 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2015-0133-c1 rdfs:label "심(장)(心)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000547 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "심장"@ko ;
+    kno:surfaceForm "심"@ko ;
+    a kno:Component .
+kno:KN2015-0133-c2 rdfs:label "멎(다)"@ko ;
+    kno:formative kno:F001295 ;
+    kno:surfaceForm "멎"@ko ;
+    kno:fullForm "멎다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T2m ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2015-0133-c3 kno:semanticTag kno:usas-X5.1p ;
+    rdfs:label "주의(注意)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001775 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주의"@ko ;
+    kno:surfaceForm "주의"@ko .

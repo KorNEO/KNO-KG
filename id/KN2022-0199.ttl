@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0199 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0199-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0199-form ;
-    ontolex:sense kno:KN2022-0199-sense .
-
-kno:KN2022-0199-att-nn a frac:Attestation ;
-    dcterms:date "2022-05-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003149682> .
-
-kno:KN2022-0199-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0199-freq-nn,
-        kno:KN2022-0199-freq-yt ;
-    ontolex:writtenRep "아동 거부 업소"@ko .
-
-kno:KN2022-0199-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0199-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0199-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:origin "(兒童拒否業所)" ;
+    kno:component kno:KN2022-0199-c2 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "아동 거부 업소"@ko ;
+    kno:example "¶2019년 유엔 아동 권리 위원회가 한국이 아동 혐오 국가라는 인상을 받았다고 말하면서 {아동 거부 업소를} 언급했다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%8F%99%20%EA%B1%B0%EB%B6%80%20%EC%97%85%EC%86%8C> ;
+    skos:definition "영유아나 어린이의 출입을 금지하는 곳. =노키즈존."@ko ;
+    kno:componentString "아동(兒童), 거부(拒否), 업소(業所)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0199-freq-NN-2022 ;
+    kno:component kno:KN2022-0199-c1 ;
+    kno:slotFiller "거부(拒否)+업소(業所) (2성분)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000642 ;
+    kno:languageType "한_한_한" ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "아동거부업소"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0199-c3 ;
+    kno:predicate "금지하다"@ko ;
+    kno:frequency kno:KN2022-0199-freq-NN-total .
+kno:KN2022-0199-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "거부"@ko ;
+    kno:surfaceForm "거부"@ko ;
+    kno:formative kno:F001048 ;
+    kno:semanticTag kno:usas-S7.4m ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "거부(拒否)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2022-0199-c1 rdfs:label "아동(兒童)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "아동"@ko ;
+    kno:surfaceForm "아동"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:formative kno:F000115 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2022-0199-c3 kno:surfaceForm "업소"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004980 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "업소(業所)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "업소"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:truncated "false"^^xsd:boolean .

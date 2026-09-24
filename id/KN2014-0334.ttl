@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0334 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0334 kno:unitType "단어"@ko ;
+    kno:component kno:KN2014-0334-c1 ;
+    kno:slotFiller "희귀(稀貴) (1성분)"@ko ;
+    kno:origin "(稀貴짤)" ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2014-0334-freq-NN-total ;
+    kno:indexForm "희귀짤"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2014-0334-freq-NN-2015 ;
+    kno:formation kno:W01 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358346> ;
+    kno:languageType "한+고" ;
+    rdfs:label "희귀-짤"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0334-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0334-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:urimalTargetCode "1358346" ;
+    kno:component kno:KN2014-0334-c2 ;
+    kno:componentString "희귀(稀貴), 짤"@ko ;
+    kno:frequency kno:KN2014-0334-freq-NN-2018 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0334-freq-NN-2025 ;
+    kno:example "¶여성 독자들을 위해 어렵게 만든 {희귀짤인데요}. 여성 독자 여러분, OOO의 폭풍 애교를 즐겨 보시길 바랍니다."@ko ;
+    skos:definition "인터넷에서 쉽게 찾을 수 없는 귀한 이미지 파일."@ko ;
+    kno:instantiates kno:S000052 .
+kno:KN2014-0334-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F007223 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "희귀"@ko ;
+    rdfs:label "희귀(稀貴)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N6m ;
+    kno:surfaceForm "희귀"@ko ;
+    a kno:Component .
+kno:KN2014-0334-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "짤"@ko ;
+    kno:surfaceForm "짤"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "짤"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:formative kno:F000074 .

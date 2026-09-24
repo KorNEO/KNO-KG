@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0602 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0602 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0602-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0602-form ;
-    ontolex:sense kno:KN2025-0602-sense .
-
-kno:KN2025-0602-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/629/0000427844> .
-
-kno:KN2025-0602-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0602-freq-nn,
-        kno:KN2025-0602-freq-yt ;
-    ontolex:writtenRep "탈퇴 런"@ko .
-
-kno:KN2025-0602-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0602-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0602-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0602 kno:componentString "탈퇴(脫退), 런(run)"@ko ;
+    rdfs:label "탈퇴 런"@ko ;
+    kno:component kno:KN2025-0602-c2 ;
+    skos:definition "(LLM) 문제가 생기거나 불리한 상황이 닥치자 온라인 서비스ㆍ에스엔에스ㆍ커뮤니티 등에서 계정을 급히 삭제하거나 회원 자격을 끊어 떠나는 일."@ko ;
+    kno:instantiates kno:S000038 ;
+    kno:languageType "한_영" ;
+    kno:slotFiller "탈퇴(脫退) (1성분)"@ko ;
+    kno:origin "(脫退<영>run)" ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001710 ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0602-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0602-freq-NN-total ;
+    kno:indexForm "탈퇴런"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0602-c1 ;
+    kno:predicate "떠나다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%ED%87%B4%20%EB%9F%B0> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "런(run) (1성분)"@ko ;
+    kno:example "(LLM) 개인정보 유출 의혹이 커지자 이용자들이 불안해하며 {탈퇴런을} 하는 바람에 회원 수가 급감했다."@ko .
+kno:KN2025-0602-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000072 ;
+    rdfs:label "런(run)"@ko ;
+    kno:fullForm "런"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "런"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 .
+kno:KN2025-0602-c1 kno:surfaceForm "탈퇴"@ko ;
+    kno:formative kno:F001886 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "탈퇴"@ko ;
+    kno:semanticTag kno:usas-S5m ;
+    rdfs:label "탈퇴(脫退)"@ko .

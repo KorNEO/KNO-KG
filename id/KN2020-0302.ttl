@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0302 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0302 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0302-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0302-form ;
-    ontolex:sense kno:KN2020-0302-sense .
-
-kno:KN2020-0302-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004288083> .
-
-kno:KN2020-0302-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0302-freq-nn,
-        kno:KN2020-0302-freq-yt ;
-    ontolex:writtenRep "전자^보석^제도"@ko .
-
-kno:KN2020-0302-freq-nn a frac:CorpusFrequency ;
-    rdf:value 220 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0302-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0302-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0302 kno:example "¶우리 법무부는 {전자 보석 제도를} 도입해 불필요한 구금을 줄이고 피고인의 방어권을 강화하는 데 노력을 기울이고 있다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "전자^보석^제도"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2020-0302-c1 ;
+    kno:component kno:KN2020-0302-c3 ;
+    kno:instantiates kno:S000643 ;
+    skos:definition "전자 기기를 사용하여 실시간으로 이동 경로 따위를 관리하는 조건으로 형사 피고인을 풀어 주는 제도."@ko ;
+    kno:slotFiller "전자(電子)+보석(保釋) (2성분)"@ko ;
+    kno:slotFiller "보석(保釋)+제도(制度) (2성분)"@ko ;
+    kno:urimalTargetCode "1513736" ;
+    kno:predicate "주다"@ko ;
+    kno:indexForm "전자보석제도"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0302-freq-NN-2024 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0302-freq-NN-2023 ;
+    kno:component kno:KN2020-0302-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0302-freq-NN-2022 ;
+    kno:componentString "전자(電子), 보석(保釋), 제도(制度)"@ko ;
+    kno:instantiates kno:S000039 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2020-0302-freq-NN-total ;
+    kno:frequency kno:KN2020-0302-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0302-freq-NN-2020 ;
+    kno:origin "(電子保釋制度)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1513736> .
+kno:KN2020-0302-c1 rdfs:label "전자(電子)"@ko ;
+    kno:fullForm "전자"@ko ;
+    kno:formative kno:F000406 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O3 ;
+    kno:surfaceForm "전자"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0302-c3 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:surfaceForm "제도"@ko ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "3"^^xsd:integer .
+kno:KN2020-0302-c2 rdfs:label "보석(保釋)"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001372 ;
+    kno:fullForm "보석"@ko ;
+    kno:surfaceForm "보석"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

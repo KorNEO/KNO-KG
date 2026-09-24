@@ -1,36 +1,40 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0060 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0060 a ontolex:Word ;
-    frac:attestation kno:KN2023-0060-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0060-form ;
-    ontolex:sense kno:KN2023-0060-sense .
-
-kno:KN2023-0060-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005232657> .
-
-kno:KN2023-0060-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0060-freq-nn,
-        kno:KN2023-0060-freq-yt ;
-    ontolex:writtenRep "꾸웨액"@ko .
-
-kno:KN2023-0060-freq-nn a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0060-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0060-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0060 kno:languageType "고" ;
+    rdfs:label "꾸웨액"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0060-freq-NN-2023 ;
+    kno:predicate "쓰다"@ko ;
+    kno:componentString "후회하(다)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:indexForm "꾸웨액"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W08 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BE%B8%EC%9B%A8%EC%95%A1> ;
+    kno:pos "「동」"@ko ;
+    skos:definition "‘후회해’라는 뜻으로 쓰는 말. ‘후회해’를 익살스럽게 발음한 것에서 비롯되었다."@ko ;
+    kno:frequency kno:KN2023-0060-freq-NN-total ;
+    kno:example "¶주말에 너무 많이 먹은 거 {꾸웨액.}"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0060-c1 .
+kno:KN2023-0060-c1 kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-E4.1m ;
+    kno:surfaceForm "후회하"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "후회하다"@ko ;
+    kno:formative kno:F007194 ;
+    rdfs:label "후회하(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0292 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0292 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0292-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0292-form ;
-    ontolex:sense kno:KN2022-0292-sense .
-
-kno:KN2022-0292-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/088/0000727466> .
-
-kno:KN2022-0292-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0292-freq-nn,
-        kno:KN2022-0292-freq-yt ;
-    ontolex:writtenRep "퐁퐁 시티"@ko .
-
-kno:KN2022-0292-freq-nn a frac:CorpusFrequency ;
-    rdf:value 35 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0292-freq-yt a frac:CorpusFrequency ;
-    rdf:value 224 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0292-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0292 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0292-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "퐁퐁시티"@ko ;
+    kno:slotFiller "퐁퐁 (1성분)"@ko ;
+    kno:component kno:KN2022-0292-c2 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "퐁퐁 시티"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%90%81%ED%90%81%20%EC%8B%9C%ED%8B%B0> ;
+    kno:component kno:KN2022-0292-c1 ;
+    kno:instantiates kno:S000968 ;
+    kno:origin "(퐁퐁<영>city)" ;
+    kno:componentString "퐁퐁, 시티(city)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶대기업이 많아 다수의 퐁퐁남이 사는 도시를 ‘{퐁퐁 시티’라고} 비하하여 부른다."@ko ;
+    kno:languageType "고_영" ;
+    kno:frequency kno:KN2022-0292-freq-NN-total ;
+    kno:frequency kno:KN2022-0292-freq-NN-2023 ;
+    skos:definition "퐁퐁남이 많이 살고 있는 도시를 이르는 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0292-freq-NN-2024 .
+kno:KN2022-0292-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "시티"@ko ;
+    kno:surfaceForm "시티"@ko ;
+    rdfs:label "시티(city)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000376 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2022-0292-c1 a kno:Component ;
+    kno:fullForm "퐁퐁"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001001 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:surfaceForm "퐁퐁"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "퐁퐁"@ko .

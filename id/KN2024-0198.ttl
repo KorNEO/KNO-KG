@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0198 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0198-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0198-form ;
-    ontolex:sense kno:KN2024-0198-sense .
-
-kno:KN2024-0198-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003527777> .
-
-kno:KN2024-0198-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0198-freq-nn,
-        kno:KN2024-0198-freq-yt ;
-    ontolex:writtenRep "오피스코어^룩"@ko .
-
-kno:KN2024-0198-freq-nn a frac:CorpusFrequency ;
-    rdf:value 91 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0198-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0198-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0198 skos:definition "전형적인 직장인의 모습을 연상시키는 단정한 스타일의 옷차림."@ko ;
+    kno:origin "(<영>▼office core look)" ;
+    kno:indexForm "오피스코어룩"@ko ;
+    rdfs:label "오피스코어^룩"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000132 ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶{오피스코어 룩은} 슬림 핏 스타일의 셔츠, 무릎 정도 길이의 스커트, 심플한 디자인의 신발과 가방 등으로 연출할 수 있다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000225 ;
+    kno:component kno:KN2024-0198-c1 ;
+    kno:componentString "오피스(office), 코어(core), 룩(look)"@ko ;
+    kno:component kno:KN2024-0198-c3 ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "코어(core)+룩(look) (2성분)"@ko ;
+    kno:frequency kno:KN2024-0198-freq-NN-total ;
+    kno:frequency kno:KN2024-0198-freq-NN-2025 ;
+    kno:component kno:KN2024-0198-c2 ;
+    kno:frequency kno:KN2024-0198-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A4%ED%94%BC%EC%8A%A4%EC%BD%94%EC%96%B4%EB%A3%A9> ;
+    kno:slotFiller "오피스(office) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0198-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영^영" .
+kno:KN2024-0198-c1 a kno:Component ;
+    kno:fullForm "오피스"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:surfaceForm "오피스"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000185 ;
+    rdfs:label "오피스(office)"@ko .
+kno:KN2024-0198-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "룩"@ko ;
+    kno:surfaceForm "룩"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 ;
+    rdfs:label "룩(look)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2024-0198-c2 rdfs:label "코어(core)"@ko ;
+    kno:formative kno:F000043 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "코어"@ko ;
+    kno:surfaceForm "코어"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .

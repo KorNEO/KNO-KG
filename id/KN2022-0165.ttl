@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0165 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0165 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0165-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0165-form ;
-    ontolex:sense kno:KN2022-0165-sense .
-
-kno:KN2022-0165-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003405278> .
-
-kno:KN2022-0165-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0165-freq-nn,
-        kno:KN2022-0165-freq-yt ;
-    ontolex:writtenRep "비말^환자"@ko .
-
-kno:KN2022-0165-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0165-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0165-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    rdfs:label "비말^환자"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "환자(患者) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EB%A7%90%ED%99%98%EC%9E%90> ;
+    kno:component kno:KN2022-0165-c1 ;
+    kno:frequency kno:KN2022-0165-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:slotFiller "비말(飛沫) (1성분)"@ko ;
+    kno:origin "(飛沫患者)" ;
+    kno:instantiates kno:S000455 ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000523 ;
+    kno:example "¶최근 OO대학교 의과 대학 연구진은 연구소에서 새롭게 개발한 특수 구리 합금 위에 {비말 환자의} 기침 수준의 코로나19 바이러스를 200μL 도포한 결과, 4시간 뒤에 99.9%가 사멸했다는 연구 결과를 발표하였다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0165-c2 ;
+    skos:definition "비말을 통해 감염병에 감염된 환자."@ko ;
+    kno:componentString "비말(飛沫), 환자(患者)"@ko ;
+    kno:frequency kno:KN2022-0165-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "비말환자"@ko .
+kno:KN2022-0165-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000362 ;
+    kno:fullForm "비말"@ko ;
+    kno:surfaceForm "비말"@ko ;
+    rdfs:label "비말(飛沫)"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2022-0165-c2 a kno:Component ;
+    rdfs:label "환자(患者)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000645 ;
+    kno:fullForm "환자"@ko ;
+    kno:surfaceForm "환자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0100 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0100 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0100-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0100-form ;
-    ontolex:sense kno:KN2022-0100-sense .
-
-kno:KN2022-0100-att-nn a frac:Attestation ;
-    dcterms:date "2022-02-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002580337> .
-
-kno:KN2022-0100-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0100-freq-nn,
-        kno:KN2022-0100-freq-yt ;
-    ontolex:writtenRep "농^접근권"@ko .
-
-kno:KN2022-0100-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0100-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0100-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0100 kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0100-c1 ;
+    kno:frequency kno:KN2022-0100-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%86%8D%EC%A0%91%EA%B7%BC%EA%B6%8C> ;
+    kno:year "2022"^^xsd:gYear ;
+    skos:definition "어떠한 정보에도 접근할 수 있는 청각 장애인의 권리. 주로 음성 언어로 의사소통이 이루어지는 환경에서 청각 장애인의 원활한 정보 접근을 위하여 수어 통역 따위를 제공하는 등 청각 장애인의 권리를 보장할 수 있는 방안의 필요성이 제기되는 상황에서 나온 말이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0100-c2 ;
+    kno:indexForm "농접근권"@ko ;
+    kno:frequency kno:KN2022-0100-freq-NN-2022 ;
+    kno:origin "(聾接近權)" ;
+    kno:frequency kno:KN2022-0100-freq-NN-2023 ;
+    kno:languageType "한^한" ;
+    rdfs:label "농^접근권"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:example "¶{농 접근권은} 쉬이 보장되지 않으므로, 농인 당사자의 의견을 귀담아 들으면서 그 내용과 형식에 대해 깊은 고민이 필요하다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "농(聾), 접근권(接近權)"@ko .
+kno:KN2022-0100-c1 kno:fullForm "농"@ko ;
+    kno:surfaceForm "농"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002797 ;
+    rdfs:label "농(聾)"@ko .
+kno:KN2022-0100-c2 kno:formative kno:F005659 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "접근권"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "접근권"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "접근권(接近權)"@ko .

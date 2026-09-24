@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0042 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0042 kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359908> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "다람쥐-족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:componentString "다람쥐, -족(族)"@ko ;
+    kno:component kno:KN2015-0042-c2 ;
+    kno:component kno:KN2015-0042-c1 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:slotFiller "다람쥐 (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:example "¶한곳에서 1인당 파는 담배의 양을 제한하자 편의점을 돌며 도토리 모으듯 2~3갑씩 담배를 사 모으는 {다람쥐족이} 등장했다는 뉴스가 전해지기도 했다."@ko ;
+    kno:pos "「명」"@ko ;
+    skos:definition "담뱃값이 인상되기 전에 여기저기에서 담배를 사 모으는 사람이나 무리를 낮잡아 이르는 말. 다람쥐가 도토리를 모으듯 판매 수량에 제한이 있는 담배를 낱개로 사서 모으는 행위 때문에 생겨난 말이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2015-0042-freq-NN-2014 ;
+    kno:origin "(다람쥐族)" ;
+    kno:indexForm "다람쥐족"@ko ;
+    kno:urimalTargetCode "1359908" ;
+    kno:frequency kno:KN2015-0042-freq-NN-total .
+kno:KN2015-0042-c2 kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko .
+kno:KN2015-0042-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001156 ;
+    rdfs:label "다람쥐"@ko ;
+    kno:fullForm "다람쥐"@ko ;
+    kno:surfaceForm "다람쥐"@ko .

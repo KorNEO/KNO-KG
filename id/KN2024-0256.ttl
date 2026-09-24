@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0256 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0256-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0256-form ;
-    ontolex:sense kno:KN2024-0256-sense .
-
-kno:KN2024-0256-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/449/0000254623> .
-
-kno:KN2024-0256-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0256-freq-nn,
-        kno:KN2024-0256-freq-yt ;
-    ontolex:writtenRep "전관^용역"@ko .
-
-kno:KN2024-0256-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0256-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0256-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0256 rdfs:label "전관^용역"@ko ;
+    a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "공공 기관에서 퇴직한 고위 공직자가 소속된 업체가 수주하거나 수행하는 용역. 퇴직한 전관의 영향력이나 인맥을 기반으로 특정 용역 사업을 독점하거나 과점하는 행태를 비판적으로 이르는 표현이다."@ko ;
+    kno:component kno:KN2024-0256-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EA%B4%80%EC%9A%A9%EC%97%AD> ;
+    kno:frequency kno:KN2024-0256-freq-NN-total ;
+    kno:component kno:KN2024-0256-c2 ;
+    kno:origin "(前官用役)" ;
+    kno:predicate "수행하다"@ko ;
+    kno:languageType "한^한" ;
+    kno:example "¶감사원은 {전관 용역으로} 의심되는 일부 입찰 과정에 대한 조사에 착수했다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "전관용역"@ko ;
+    kno:componentString "전관(前官), 용역(用役)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0256-freq-NN-2023 .
+kno:KN2024-0256-c1 kno:fullForm "전관"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    rdfs:label "전관(前官)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "전관"@ko ;
+    kno:formative kno:F005621 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0256-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005209 ;
+    kno:fullForm "용역"@ko ;
+    rdfs:label "용역(用役)"@ko ;
+    kno:surfaceForm "용역"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

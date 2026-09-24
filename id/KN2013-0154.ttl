@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0154 kno:languageType "(고+한)+한" ;
+    kno:instantiates kno:S000082 ;
+    kno:component kno:KN2013-0154-c2 ;
+    kno:component kno:KN2013-0154-c1 ;
+    kno:origin "(말筋肉女)" ;
+    a kno:Neologism ;
+    kno:slotFiller "신체; X=말+근육(筋肉) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W02 ;
+    kno:instantiates kno:S000507 ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이날 첫 번째로 출연한 일명 ‘{말근육녀’는} 왕 자가 세겨진 탄탄한 복근과 남성 보디빌더 못지 않은 등 근육을 자랑했다."@ko ;
+    kno:frequency kno:KN2013-0154-freq-NN-total ;
+    kno:frequency kno:KN2013-0154-freq-NN-2012 ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "근육이 많고 탄탄한 여자를 말에 비유하 여 이르는 말."@ko ;
+    rdfs:label "말근육-녀"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%90%EA%B7%BC%EC%9C%A1%EB%85%80> ;
+    kno:componentString "말, 근육(筋肉), -녀(女)"@ko ;
+    kno:component kno:KN2013-0154-c3 ;
+    kno:slotFiller "근육(筋肉)+-녀(女) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:indexForm "말근육녀"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2013-0154-c2 kno:formative kno:F000163 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "근육"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    rdfs:label "근육(筋肉)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "근육"@ko .
+kno:KN2013-0154-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000261 ;
+    kno:semanticTag kno:usas-Q1.1 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "말"@ko ;
+    kno:surfaceForm "말"@ko ;
+    a kno:Component ;
+    kno:fullForm "말"@ko .
+kno:KN2013-0154-c3 kno:surfaceForm "녀"@ko ;
+    kno:formative kno:F000004 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 .

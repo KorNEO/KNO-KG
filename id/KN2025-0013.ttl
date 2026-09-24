@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0013 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0013 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0013-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0013-form ;
-    ontolex:sense kno:KN2025-0013-sense .
-
-kno:KN2025-0013-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/144/0001026018> .
-
-kno:KN2025-0013-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0013-freq-nn,
-        kno:KN2025-0013-freq-yt ;
-    ontolex:writtenRep "가성비 남친"@ko .
-
-kno:KN2025-0013-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0013-freq-yt a frac:CorpusFrequency ;
-    rdf:value 132 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0013-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0013 kno:componentString "가성비(價性比), 남친(男親)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%84%B1%EB%B9%84%20%EB%82%A8%EC%B9%9C> ;
+    kno:component kno:KN2025-0013-c2 ;
+    rdfs:label "가성비 남친"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "가성비(價性比) (1성분)"@ko ;
+    kno:indexForm "가성비남친"@ko ;
+    kno:origin "(價性比男親)" ;
+    kno:predicate "보이다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0013-c1 ;
+    kno:example "(LLM) 기념일인데도 선물은커녕 영화표도 할인되는 시간만 고집해서 {가성비남친이} 아니냐는 말이 나왔다."@ko ;
+    kno:instantiates kno:S000812 ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 연애 관계에서 데이트 비용이나 선물 등 상대를 위해 쓰는 지출을 지나치게 아끼며 최소화하려는 태도를 보이는 남자친구."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko .
+kno:KN2025-0013-c2 kno:semanticTag kno:usas-S3.2 ;
+    rdfs:label "남친(男親)"@ko ;
+    kno:formative kno:F000689 ;
+    a kno:Component ;
+    kno:fullForm "남친"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "남친"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0013-c1 kno:surfaceForm "가성비"@ko ;
+    rdfs:label "가성비(價性比)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "가성비"@ko ;
+    kno:formative kno:F000648 ;
+    a kno:Component .

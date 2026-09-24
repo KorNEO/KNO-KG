@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0096 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0096 a ontolex:Word ;
-    frac:attestation kno:KN2020-0096-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0096-form ;
-    ontolex:sense kno:KN2020-0096-sense .
-
-kno:KN2020-0096-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000421444> .
-
-kno:KN2020-0096-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0096-freq-nn,
-        kno:KN2020-0096-freq-yt ;
-    ontolex:writtenRep "딥페이크-물"@ko .
-
-kno:KN2020-0096-freq-nn a frac:CorpusFrequency ;
-    rdf:value 682 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0096-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0096-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0096 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%A5%ED%8E%98%EC%9D%B4%ED%81%AC%EB%AC%BC> ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:frequency kno:KN2020-0096-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0096-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶최근 온라인 커뮤니티에 내 {딥페이크물의} 유포가 심각하다. 합성의 대상자가 유명인들뿐만 아니라 일반인까지 확대되면서 심각한 사회적 문제로 대두되었다."@ko ;
+    kno:indexForm "딥페이크물"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2020-0096-freq-NN-2024 ;
+    kno:component kno:KN2020-0096-c1 ;
+    kno:origin "(<영>deepfake物)" ;
+    skos:definition "인공 지능 기술을 활용하여 두 개 이상의 영상을 합성한 영상 편집물. 기존의 영상을 컴퓨터가 학습하게 한 후 대상이 되는 영상에 프레임 단위로 합성하여 가짜 영상을 만들어 내는 인공 지능 기술인 ‘딥페이크’를 사용하여 붙여진 이름이다. 특정 연예인이나 일반인의 영상을 기존의 성인 비디오에 합성하여 불법적으로 음란물을 만들어 내는 데 기술을 사용하고 있어 문제가 되고 있다."@ko ;
+    kno:frequency kno:KN2020-0096-freq-NN-2023 ;
+    kno:componentString "딥페이크(deepfake), -물(物)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    rdfs:label "딥페이크-물"@ko ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2020-0096-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0096-freq-NN-2021 ;
+    kno:component kno:KN2020-0096-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0096-freq-NN-2025 ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2020-0096-c1 kno:fullForm "딥페이크"@ko ;
+    rdfs:label "딥페이크(deepfake)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:surfaceForm "딥페이크"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F003107 .
+kno:KN2020-0096-c2 kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:surfaceForm "물"@ko ;
+    rdfs:label "-물(物)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001321 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "물"@ko .

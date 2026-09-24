@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0240 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0240 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0240-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0240-form ;
-    ontolex:sense kno:KN2021-0240-sense .
-
-kno:KN2021-0240-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003608088> .
-
-kno:KN2021-0240-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0240-freq-nn,
-        kno:KN2021-0240-freq-yt ;
-    ontolex:writtenRep "주폭^방지법"@ko .
-
-kno:KN2021-0240-freq-nn a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0240-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0240-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0240 kno:componentString "주폭(酒暴), 방지법(防止法)"@ko ;
+    kno:origin "(酒暴防止法)" ;
+    kno:frequency kno:KN2021-0240-freq-NN-2021 ;
+    kno:component kno:KN2021-0240-c1 ;
+    kno:component kno:KN2021-0240-c2 ;
+    skos:definition "술을 마시고 행패를 부리는 일이 일어나지 못하게 막기 위한 법안. 주취 범죄에 대한 처벌을 강화하기 위한 법안으로, 정식 명칭은 ‘주취자 범죄의 예방 및 처벌 등에 관한 법률안’이다. 2021년 4월에 국회에서 발의되었다."@ko ;
+    kno:indexForm "주폭방지법"@ko ;
+    rdfs:label "주폭^방지법"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%ED%8F%AD%EB%B0%A9%EC%A7%80%EB%B2%95> ;
+    kno:languageType "한^한" ;
+    kno:instantiates kno:S000095 ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:slotFiller "주폭(酒暴) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0240-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶{주폭 방지법은} 상습적인 주폭 사범에게 형의 2분의 1까지 가중할 수 있도록 한 것이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear .
+kno:KN2021-0240-c1 kno:semanticTag kno:usas-F2 ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:formative kno:F005805 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "주폭"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "주폭"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "주폭(酒暴)"@ko .
+kno:KN2021-0240-c2 kno:fullForm "방지법"@ko ;
+    kno:surfaceForm "방지법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "방지법(防止法)"@ko ;
+    kno:formative kno:F000032 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

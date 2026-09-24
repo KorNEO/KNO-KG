@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0146 kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0146-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "변포-자"@ko ;
+    kno:instantiates kno:S000016 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:indexForm "변포자"@ko ;
+    kno:origin "(辯抛者)" ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2018-0146-c1 ;
+    kno:component kno:KN2018-0146-c3 ;
+    kno:component kno:KN2018-0146-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%80%ED%8F%AC%EC%9E%90> ;
+    kno:slotFiller "변(호사)(辯)+포(기하다)(抛) (2성분)"@ko ;
+    skos:definition "‘변호사가 되기를 포기한 자’를 줄여 이르는 말."@ko ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2018-0146-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0146-freq-NN-2020 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "변(호사)(辯), 포(기하다)(抛), -자(者)"@ko ;
+    a ontolex:Word ;
+    kno:example "¶또 자격 제한에 걸리기 전 3번 정도 본 후 변시를 포기해 ‘{변포자’가} 되기도 합니다."@ko .
+kno:KN2018-0146-c1 kno:fullForm "변호사"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "변"@ko ;
+    rdfs:label "변(호사)(辯)"@ko ;
+    kno:formative kno:F003842 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2018-0146-c3 kno:fullForm "자"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:formative kno:F000014 ;
+    rdfs:label "-자(者)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0146-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "포"@ko ;
+    rdfs:label "포(기하다)(抛)"@ko ;
+    kno:fullForm "포기하다"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001960 ;
+    a kno:Component .

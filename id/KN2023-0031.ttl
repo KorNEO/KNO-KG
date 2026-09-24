@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0031 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0031 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0031-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0031-form ;
-    ontolex:sense kno:KN2023-0031-sense .
-
-kno:KN2023-0031-att-nn a frac:Attestation ;
-    dcterms:date "2023-01-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004140369> .
-
-kno:KN2023-0031-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0031-freq-nn,
-        kno:KN2023-0031-freq-yt ;
-    ontolex:writtenRep "교육^자유^특구법"@ko .
-
-kno:KN2023-0031-freq-nn a frac:CorpusFrequency ;
-    rdf:value 47 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0031-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0031-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0031 kno:origin "(敎育自由特區法)" ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0031-c4 ;
+    kno:indexForm "교육자유특구법"@ko ;
+    kno:component kno:KN2023-0031-c2 ;
+    kno:instantiates kno:S001095 ;
+    kno:example "¶{교육 자유 특구법이} 시행되면, 특구 내의 학교에서는 다양한 교육 활동이 운영될 수 있도록 공교육을 지원하고, 개인의 적성이나 소질의 개발, 체험 등을 위한 교육을 실시할 수 있는 대안 학교가 설립되어 운영될 수 있다."@ko ;
+    kno:frequency kno:KN2023-0031-freq-NN-total ;
+    kno:component kno:KN2023-0031-c1 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "교육(敎育)+자유(自由) (2성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000286 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "교육^자유^특구법"@ko ;
+    kno:componentString "교육(敎育), 자유(自由), 특구(特區), 법(法)"@ko ;
+    kno:component kno:KN2023-0031-c3 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%9C%A1%EC%9E%90%EC%9C%A0%ED%8A%B9%EA%B5%AC%EB%B2%95> ;
+    kno:frequency kno:KN2023-0031-freq-NN-2023 ;
+    skos:definition "학교의 설립 및 운영과 관련된 규제를 완화하여 지역에 맞는 공교육의 선도 모델을 만들기 위하여 마련된 법률."@ko ;
+    kno:slotFiller "자유(自由)+특구(特區)+법(法) (3성분)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear .
+kno:KN2023-0031-c4 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0031-c2 kno:fullForm "자유"@ko ;
+    a kno:Component ;
+    rdfs:label "자유(自由)"@ko ;
+    kno:surfaceForm "자유"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000905 .
+kno:KN2023-0031-c1 kno:surfaceForm "교육"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000127 ;
+    rdfs:label "교육(敎育)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "교육"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0031-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특구"@ko ;
+    kno:surfaceForm "특구"@ko ;
+    kno:formative kno:F000623 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "특구(特區)"@ko .

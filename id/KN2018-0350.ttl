@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0350 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0350 kno:instantiates kno:S000722 ;
+    kno:origin "(<영>←kickboard라니)" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:example "¶킥보드가 도로 위의 새로운 위협으로 떠오르면서…‘{킥라니’라는} 말이 생긴 겁니다."@ko ;
+    kno:frequency kno:KN2018-0350-freq-NN-2018 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0350-freq-NN-2017 ;
+    rdfs:label "킥라니"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0350-freq-NN-2024 ;
+    kno:component kno:KN2018-0350-c1 ;
+    kno:frequency kno:KN2018-0350-freq-NN-2019 ;
+    kno:languageType "영+고" ;
+    kno:component kno:KN2018-0350-c2 ;
+    kno:urimalTargetCode "1415953" ;
+    kno:frequency kno:KN2018-0350-freq-NN-2022 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2018-0350-freq-NN-2021 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0350-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0350-freq-NN-total ;
+    kno:componentString "킥(보드)(kickboard), (고)라니"@ko ;
+    kno:frequency kno:KN2018-0350-freq-NN-2025 ;
+    kno:indexForm "킥라니"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0350-freq-NN-2023 ;
+    skos:definition "도로에서 전동 킥보드를 타는 사람을 속되게 이르는 말. 갑자기 도로에 뛰어들어 차량 운전자를 놀라게 하는 ‘고라니’처럼 주로 위험하게 주행하는 킥보드 운전자를 뜻한다. ‘킥보드(kickboard)’와 ‘고라니’를 결합하여 만든 말이다."@ko ;
+    kno:slotFiller "킥(보드)(kickboard) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415953> .
+kno:KN2018-0350-c1 a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006374 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "킥"@ko ;
+    rdfs:label "킥(보드)(kickboard)"@ko ;
+    kno:fullForm "킥보드"@ko .
+kno:KN2018-0350-c2 kno:fullForm "고라니"@ko ;
+    rdfs:label "(고)라니"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000493 ;
+    kno:surfaceForm "라니"@ko .

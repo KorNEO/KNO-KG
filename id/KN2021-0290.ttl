@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0290 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0290 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0290-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0290-form ;
-    ontolex:sense kno:KN2021-0290-sense .
-
-kno:KN2021-0290-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004525264> .
-
-kno:KN2021-0290-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0290-freq-nn,
-        kno:KN2021-0290-freq-yt ;
-    ontolex:writtenRep "학대^정책계"@ko .
-
-kno:KN2021-0290-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0290-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0290-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0290 kno:year "2021"^^xsd:gYear ;
+    kno:origin "(虐待政策係)" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0290-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%EB%8C%80%EC%A0%95%EC%B1%85%EA%B3%84> ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "학대(虐待), 정책계(政策係)"@ko ;
+    kno:component kno:KN2021-0290-c1 ;
+    kno:frequency kno:KN2021-0290-freq-NN-2021 ;
+    kno:unitType "구"@ko ;
+    skos:definition "경찰서에서 아동 학대 범죄를 다루는 업무를 맡은 부서. 아동 학대를 예방하고 피해 아동의 보호를 전담하기 위해 2021년 1월에 신설되었다."@ko ;
+    kno:instantiates kno:S001760 ;
+    kno:predicate "맡은"@ko ;
+    kno:example "¶경찰 내에서는 {학대 정책계를} 신설하여 학대 예방과 피해 아동 보호를 전담할 수 있게 하고 학대 사건에 대한 전수 합동 조사를 강화하겠다는 대책을 내놓았다."@ko ;
+    kno:languageType "한^한" ;
+    kno:slotFiller "정책계(政策係) (1성분)"@ko ;
+    kno:component kno:KN2021-0290-c2 ;
+    a kno:Neologism ;
+    kno:indexForm "학대정책계"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "학대^정책계"@ko ;
+    kno:frequency kno:KN2021-0290-freq-NN-2024 ;
+    a ontolex:MultiwordExpression .
+kno:KN2021-0290-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001012 ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "학대"@ko ;
+    kno:surfaceForm "학대"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "학대(虐待)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2021-0290-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "정책계"@ko ;
+    kno:surfaceForm "정책계"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    rdfs:label "정책계(政策係)"@ko ;
+    kno:formative kno:F005688 ;
+    kno:role "슬롯 채움"@ko .

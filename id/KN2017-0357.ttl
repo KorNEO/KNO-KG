@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0357 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0357 kno:component kno:KN2017-0357-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "혼뱅"@ko ;
+    skos:definition "은행원의 도움 없이 혼자서 은행 업무를 봄. 또는 그렇게 보는 은행 업무."@ko ;
+    kno:origin "(혼<영>←bank)" ;
+    kno:urimalTargetCode "1380647" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "혼(자), 뱅(크)(bank)"@ko ;
+    kno:indexForm "혼뱅"@ko ;
+    kno:example "¶3일 공식 서비스를 개시한 국내 최초 인터넷 전문 은행인 OO는 {혼뱅을} 키워드로 내세웠다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380647> ;
+    kno:component kno:KN2017-0357-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "뱅(크)(bank) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:languageType "고+영" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000017 .
+kno:KN2017-0357-c1 kno:fullForm "혼자"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "혼(자)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko .
+kno:KN2017-0357-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001353 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "뱅"@ko ;
+    a kno:Component ;
+    kno:fullForm "뱅크"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "뱅(크)(bank)"@ko .

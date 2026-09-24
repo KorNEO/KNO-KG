@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0310 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0310 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0310-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0310-form ;
-    ontolex:sense kno:KN2024-0310-sense .
-
-kno:KN2024-0310-att-nn a frac:Attestation ;
-    dcterms:date "2023-12-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005121297> .
-
-kno:KN2024-0310-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0310-freq-nn,
-        kno:KN2024-0310-freq-yt ;
-    ontolex:writtenRep "초일^가점"@ko .
-
-kno:KN2024-0310-freq-nn a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0310-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0310-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0310 kno:componentString "초일(初日), 가점(加點)"@ko ;
+    kno:frequency kno:KN2024-0310-freq-NN-total ;
+    kno:predicate "주다"@ko ;
+    kno:component kno:KN2024-0310-c1 ;
+    kno:frequency kno:KN2024-0310-freq-NN-2024 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "공모주 수요 예측에서, 첫날 주문을 넣은 기관 투자자에게 가산점을 주는 제도."@ko ;
+    kno:example "¶공모주 시장에서는 첫날 주문에 참여해 {초일 가점을} 확보하는 것이 필수 전략으로 자리를 잡았다."@ko ;
+    kno:component kno:KN2024-0310-c2 ;
+    kno:indexForm "초일가점"@ko ;
+    kno:origin "(初日加點)" ;
+    rdfs:label "초일^가점"@ko ;
+    kno:languageType "한^한" ;
+    kno:frequency kno:KN2024-0310-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0310-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B4%88%EC%9D%BC%EA%B0%80%EC%A0%90> ;
+    kno:activeYears "3"^^xsd:integer .
+kno:KN2024-0310-c1 kno:formative kno:F006090 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T1.1.1 ;
+    rdfs:label "초일(初日)"@ko ;
+    kno:fullForm "초일"@ko ;
+    kno:surfaceForm "초일"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2024-0310-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "가점(加點)"@ko ;
+    kno:fullForm "가점"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:surfaceForm "가점"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002091 ;
+    kno:position "2"^^xsd:integer .

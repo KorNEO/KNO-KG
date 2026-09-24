@@ -1,36 +1,77 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0014 a ontolex:Word ;
-    frac:attestation kno:KN2023-0014-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0014-form ;
-    ontolex:sense kno:KN2023-0014-sense .
-
-kno:KN2023-0014-att-nn a frac:Attestation ;
-    dcterms:date "2022-08-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003166073> .
-
-kno:KN2023-0014-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0014-freq-nn,
-        kno:KN2023-0014-freq-yt ;
-    ontolex:writtenRep "검수원복"@ko .
-
-kno:KN2023-0014-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3852 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0014-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2290 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0014-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0014 kno:componentString "검(찰)(檢察), 수(사권)(搜査權), 원(상)(原狀), 복(구)(復舊)"@ko ;
+    kno:component kno:KN2023-0014-c4 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2023-0014-c1 ;
+    kno:indexForm "검수원복"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000667 ;
+    kno:slotFiller "수(사권)(搜査權)+원(상)(原狀)+복(구)(復舊) (3성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EC%9B%90%EB%B3%B5> ;
+    skos:definition "‘검찰의 수사권을 원상 복구함’을 줄여 이르는 말. 검찰이 직접 수사할 수 있는 경제 범죄와 부패 범죄의 범위가 대폭 확대되는 것이 주요 내용이다."@ko ;
+    kno:example "¶이러한 검찰의 수사권을 완전히 박탈하는 것에 맞서서, {검수원복에} 대한 위원회의 공방이 아주 뜨거웠다."@ko ;
+    kno:frequency kno:KN2023-0014-freq-NN-total ;
+    kno:origin "(檢搜原復)" ;
+    kno:frequency kno:KN2023-0014-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0014-freq-NN-2022 ;
+    kno:slotFiller "원(상)(原狀)+복(구)(復舊) (2성분)"@ko ;
+    kno:component kno:KN2023-0014-c2 ;
+    kno:frequency kno:KN2023-0014-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0014-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "검수원복"@ko ;
+    kno:component kno:KN2023-0014-c3 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:instantiates kno:S000619 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0014-c4 kno:surfaceForm "복"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "복구"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003908 ;
+    rdfs:label "복(구)(復舊)"@ko .
+kno:KN2023-0014-c1 kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000159 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "검"@ko ;
+    kno:fullForm "검찰"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "검(찰)(檢察)"@ko .
+kno:KN2023-0014-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000178 ;
+    kno:fullForm "수사권"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "수(사권)(搜査權)"@ko ;
+    kno:surfaceForm "수"@ko .
+kno:KN2023-0014-c3 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "원"@ko ;
+    kno:fullForm "원상"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F005245 ;
+    rdfs:label "원(상)(原狀)"@ko ;
+    kno:semanticTag kno:usas-A6.1p .

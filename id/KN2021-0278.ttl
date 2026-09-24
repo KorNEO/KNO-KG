@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0278 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0278 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0278-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0278-form ;
-    ontolex:sense kno:KN2021-0278-sense .
-
-kno:KN2021-0278-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-20"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/138/0002103689> .
-
-kno:KN2021-0278-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0278-freq-nn,
-        kno:KN2021-0278-freq-yt ;
-    ontolex:writtenRep "태그니티^마케팅"@ko .
-
-kno:KN2021-0278-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0278-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0278-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0278 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:slotFiller "태그니티(tag←community) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0278-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(<영>▼tag←community marketing)" ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000050 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%9C%EA%B7%B8%EB%8B%88%ED%8B%B0%EB%A7%88%EC%BC%80%ED%8C%85> ;
+    kno:componentString "태그니티(tag←community), 마케팅(marketing)"@ko ;
+    skos:definition "누리 소통망 서비스에서, 해시태그를 통하여 같은 관심사나 취향을 공유하는 집단을 대상으로 하는 마케팅. ‘태그니티’는 ‘해시태그’와 ‘커뮤니티’를 결합하여 만든 말이다."@ko ;
+    kno:predicate "하다"@ko ;
+    kno:example "¶에스엔에스(SNS)에서 민초단이 이슈가 되자 한 아이스크림 회사는 민초단들을 대상으로 공격적인 {태그니티 마케팅을} 펼쳤다."@ko ;
+    rdfs:label "태그니티^마케팅"@ko ;
+    kno:frequency kno:KN2021-0278-freq-NN-2021 ;
+    kno:component kno:KN2021-0278-c2 ;
+    kno:languageType "영^영" ;
+    kno:frequency kno:KN2021-0278-freq-NN-2022 ;
+    kno:indexForm "태그니티마케팅"@ko ;
+    kno:component kno:KN2021-0278-c1 .
+kno:KN2021-0278-c2 a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000111 ;
+    kno:fullForm "마케팅"@ko ;
+    kno:surfaceForm "마케팅"@ko ;
+    rdfs:label "마케팅(marketing)"@ko .
+kno:KN2021-0278-c1 rdfs:label "태그니티(tag←community)"@ko ;
+    kno:formative kno:F006420 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "태그니티"@ko ;
+    kno:surfaceForm "태그니티"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0536 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0536 a ontolex:Word ;
-    frac:attestation kno:KN2025-0536-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0536-form ;
-    ontolex:sense kno:KN2025-0536-sense .
-
-kno:KN2025-0536-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013282380> .
-
-kno:KN2025-0536-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0536-freq-nn,
-        kno:KN2025-0536-freq-yt ;
-    ontolex:writtenRep "지금조방원"@ko .
-
-kno:KN2025-0536-freq-nn a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0536-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0536-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0536 kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0536-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "지(주)(支柱), 금(융)(金融), 조(선)(祖先), 방(산)(方山), 원(자력)(原子力)"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2025-0536-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0536-c4 ;
+    kno:indexForm "지금조방원"@ko ;
+    skos:definition "(LLM) 주식 시장에서 지주ㆍ금융ㆍ조선ㆍ방산ㆍ원자력 관련 업종(또는 종목군)을 묶어 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0536-c5 ;
+    kno:example "(LLM) 정책 기대감이 커지자 투자자들 사이에서 {지금조방원} 종목군으로 매수세가 몰리며 주가가 급등락했다."@ko ;
+    kno:component kno:KN2025-0536-c2 ;
+    rdfs:label "지금조방원"@ko ;
+    kno:frequency kno:KN2025-0536-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0536-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EA%B8%88%EC%A1%B0%EB%B0%A9%EC%9B%90> ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0536-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    rdfs:label "지(주)(支柱)"@ko ;
+    kno:formative kno:F005862 ;
+    kno:surfaceForm "지"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "지주"@ko .
+kno:KN2025-0536-c3 kno:semanticTag kno:usas-Z2 ;
+    kno:surfaceForm "조"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "조(선)(祖先)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "조선"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005727 .
+kno:KN2025-0536-c4 rdfs:label "방(산)(方山)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "방"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:fullForm "방산"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003710 .
+kno:KN2025-0536-c5 rdfs:label "원(자력)(原子力)"@ko ;
+    kno:surfaceForm "원"@ko ;
+    kno:semanticTag kno:usas-O3 ;
+    kno:position "5"^^xsd:integer ;
+    kno:fullForm "원자력"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001664 ;
+    a kno:Component .
+kno:KN2025-0536-c2 kno:fullForm "금융"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "금"@ko ;
+    kno:formative kno:F002560 ;
+    rdfs:label "금(융)(金融)"@ko ;
+    kno:semanticTag kno:usas-I1 .

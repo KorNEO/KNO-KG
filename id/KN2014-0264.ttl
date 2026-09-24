@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0264 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0264 kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2014-0264-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶{커넥티즌이} 매년 늘어나고 국내 통신 네트워크 품질이 세계적으로 인정받고 있지만 역설적으로 이동 통신사들은 위기감을 느끼고 있다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(<영>▼←connect netizen)" ;
+    kno:componentString "커넥(트)(connect), (네)티즌(netizen)"@ko ;
+    rdfs:label "커넥티즌"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2014-0264-freq-NN-2017 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1382586" ;
+    kno:predicate "해결하다"@ko ;
+    kno:component kno:KN2014-0264-c1 ;
+    kno:year "2014"^^xsd:gYear ;
+    skos:definition "모바일을 이용한 인터넷 접속을 통해 일, 여가 활동 등 생활과 관련된 많은 부분을 해결하는 사람."@ko ;
+    kno:indexForm "커넥티즌"@ko ;
+    kno:frequency kno:KN2014-0264-freq-NN-2014 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1382586> ;
+    kno:component kno:KN2014-0264-c2 .
+kno:KN2014-0264-c1 rdfs:label "커넥(트)(connect)"@ko ;
+    kno:formative kno:F006235 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "커넥트"@ko ;
+    kno:surfaceForm "커넥"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 .
+kno:KN2014-0264-c2 kno:fullForm "네티즌"@ko ;
+    kno:surfaceForm "티즌"@ko ;
+    rdfs:label "(네)티즌(netizen)"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006593 .

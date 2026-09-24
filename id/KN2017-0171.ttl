@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0171 kno:instantiates kno:S000123 ;
+    kno:indexForm "실험동물지킴이법안"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "실험동물^지킴이^법안"@ko ;
+    kno:slotFiller "실험동물(實驗動物)+지킴이 (2성분)"@ko ;
+    kno:example "¶정치권에서도 OOO 의원을 포함한 13명이 일명 ‘{실험동물 지킴이 법안’을} 발의했다."@ko ;
+    kno:languageType "한^고^한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380735> ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0171-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "동물 실험 후 회복된 동물을 분양하거나 기증하여 동물을 보호하고자 하는 법안과 동물 실험 시설에서 무등록 공급자에게 실험동물을 공급받는 것을 금지하는 법안을 아울러 이르는 말. 실험동물의 복지를 보장하기 위하여 2017년 4월 국회에서 발의되었고, 2017년 11월 국회 본회의에서 통과되었다. ‘동물 보호법 일부 개정 법률안’ 및 ‘실험동물에 관한 법률 일부 개정 법률안’이라고도 한다."@ko ;
+    kno:frequency kno:KN2017-0171-freq-NN-2017 ;
+    kno:origin "(實驗動物지킴이法案)" ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "실험동물(實驗動物), 지킴이, 법안(法案)"@ko ;
+    kno:component kno:KN2017-0171-c2 ;
+    kno:component kno:KN2017-0171-c1 ;
+    kno:component kno:KN2017-0171-c3 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:urimalTargetCode "1380735" .
+kno:KN2017-0171-c2 kno:formative kno:F001787 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "지킴이"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "지킴이"@ko ;
+    kno:surfaceForm "지킴이"@ko .
+kno:KN2017-0171-c1 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "실험동물"@ko ;
+    rdfs:label "실험동물(實驗動物)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y1 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F004728 ;
+    kno:fullForm "실험동물"@ko .
+kno:KN2017-0171-c3 kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000272 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:fullForm "법안"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "법안"@ko ;
+    rdfs:label "법안(法案)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

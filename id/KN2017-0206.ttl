@@ -1,0 +1,69 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0206 kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "영(young)+영(young) (2성분)"@ko ;
+    kno:frequency kno:KN2017-0206-freq-NN-2019 ;
+    kno:slotFiller "영(young)+페미(니스트)(feminist) (2성분)"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2017-0206-c1 ;
+    kno:component kno:KN2017-0206-c2 ;
+    kno:indexForm "영영페미"@ko ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2017-0206-freq-NN-2022 ;
+    kno:componentString "영(young), 영(young), 페미(니스트)(feminist)"@ko ;
+    kno:frequency kno:KN2017-0206-freq-NN-2021 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380770> ;
+    kno:component kno:KN2017-0206-c3 ;
+    kno:urimalTargetCode "1380770" ;
+    kno:frequency kno:KN2017-0206-freq-NN-2017 ;
+    skos:definition "1990년대에 등장한 젊은 페미니스트인 ‘영 페미’ 이후 나타난 신경향의 더 어린 페미니스트."@ko ;
+    kno:frequency kno:KN2017-0206-freq-NN-2018 ;
+    kno:instantiates kno:S001114 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0206-freq-NN-2020 ;
+    rdfs:label "영영 페미"@ko ;
+    kno:example "¶페미니스트라는 낙인과 편견이 두려웠지만 ‘{영영 페미’들은} 강남역에서 행동할 ‘용기’를 얻었다고 공통적으로 말합니다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000554 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0206-freq-NN-total ;
+    kno:origin "(<영>▼young young←feminist)" .
+kno:KN2017-0206-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000223 ;
+    kno:fullForm "영"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "영"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "영(young)"@ko ;
+    kno:semanticTag kno:usas-T3 .
+kno:KN2017-0206-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000223 ;
+    rdfs:label "영(young)"@ko ;
+    kno:surfaceForm "영"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    a kno:Component ;
+    kno:fullForm "영"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0206-c3 kno:surfaceForm "페미"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "페미니스트"@ko ;
+    rdfs:label "페미(니스트)(feminist)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:formative kno:F000319 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

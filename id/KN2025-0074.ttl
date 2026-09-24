@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0074 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0074 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0074-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0074-form ;
-    ontolex:sense kno:KN2025-0074-sense .
-
-kno:KN2025-0074-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004527282> .
-
-kno:KN2025-0074-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0074-freq-nn,
-        kno:KN2025-0074-freq-yt ;
-    ontolex:writtenRep "국민 깡통 펀드"@ko .
-
-kno:KN2025-0074-freq-nn a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0074-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0074-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 정부가 출자ㆍ조성한 정책성 펀드가 운용 성과 부진으로 손실을 내거나 원금 회수가 어려워져, 그 부담이 국민에게 돌아갈 수 있음을 비판적으로 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000063 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0074-freq-NN-total ;
+    kno:indexForm "국민깡통펀드"@ko ;
+    kno:languageType "한_고+한_영" ;
+    kno:componentString "국민(國民), 깡, 통(筒), 펀드(fund)"@ko ;
+    rdfs:label "국민 깡 통 펀드"@ko ;
+    kno:example "(LLM) 일각에서는 정부 주도 투자 사업이 기대만큼 성과를 내지 못하면 결국 {국민깡통펀드로} 전락할 수 있다며 운용 책임과 손실 부담 구조를 명확히 해야 한다고 지적했다."@ko ;
+    kno:frequency kno:KN2025-0074-freq-NN-2025 ;
+    kno:slotFiller "국민(國民)+깡+통(筒) (3성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(國民깡筒<영>fund)" ;
+    kno:component kno:KN2025-0074-c3 ;
+    kno:component kno:KN2025-0074-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%AF%BC%20%EA%B9%A1%20%ED%86%B5%20%ED%8E%80%EB%93%9C> ;
+    kno:component kno:KN2025-0074-c2 ;
+    kno:slotFiller "깡+통(筒)+펀드(fund) (3성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001110 ;
+    kno:component kno:KN2025-0074-c1 .
+kno:KN2025-0074-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "통(筒)"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "통"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "통"@ko ;
+    kno:formative kno:F006496 .
+kno:KN2025-0074-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001950 ;
+    kno:fullForm "펀드"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "펀드"@ko ;
+    a kno:Component ;
+    rdfs:label "펀드(fund)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0074-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E5 ;
+    rdfs:label "깡"@ko ;
+    kno:formative kno:F000204 ;
+    a kno:Component ;
+    kno:fullForm "깡"@ko ;
+    kno:surfaceForm "깡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0074-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "국민"@ko ;
+    kno:surfaceForm "국민"@ko ;
+    kno:formative kno:F000055 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "국민(國民)"@ko ;
+    kno:semanticTag kno:usas-G1.1 .

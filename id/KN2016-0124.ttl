@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0124 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0124 kno:frequency kno:KN2016-0124-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0124-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0124-freq-NN-total ;
+    a ontolex:Word ;
+    kno:component kno:KN2016-0124-c1 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "똥 (1성분)"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2016-0124-freq-NN-2022 ;
+    kno:example "¶대학 시절, 금수저는 화려한 파티를 즐기지만, {똥수저는} 편의점에서 아르바이트를 한다."@ko ;
+    kno:instantiates kno:S000043 ;
+    kno:instantiates kno:S000505 ;
+    kno:urimalTargetCode "1372559" ;
+    kno:frequency kno:KN2016-0124-freq-NN-2023 ;
+    kno:frequency kno:KN2016-0124-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "똥-수저"@ko ;
+    kno:slotFiller "수저 (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372559> ;
+    kno:registration "우리말샘"@ko ;
+    kno:indexForm "똥수저"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0124-freq-NN-2016 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:component kno:KN2016-0124-c2 ;
+    skos:definition "부모의 사회 경제적 지위에 따라 자녀의 계층을 나누어 수저에 비유할 때, 가장 낮은 계급인 ‘흙수저’보다 더 낮은 계급을 빗대어 이르는 말."@ko ;
+    kno:frequency kno:KN2016-0124-freq-NN-2025 ;
+    kno:componentString "똥, 수저"@ko .
+kno:KN2016-0124-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "똥"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "똥"@ko ;
+    kno:formative kno:F000349 ;
+    kno:fullForm "똥"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2016-0124-c2 rdfs:label "수저"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "수저"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "수저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000048 ;
+    kno:semanticTag kno:usas-O2 .

@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0178 kno:example "¶수수한 듯 고급스러운 문화 센터 패션, 일명 ‘{문센 룩’이} 인기입니다."@ko ;
+    kno:origin "(文<영>←center look)" ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "자연스럽지만 고급스러워 보이는 느낌이 나는 옷. 또는 그런 옷차림. 문화 센터에 다닐 때 부모나 아이가 즐겨 입는 옷차림을 말한다."@ko ;
+    kno:component kno:KN2016-0178-c3 ;
+    kno:frequency kno:KN2016-0178-freq-NN-2015 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372613> ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:component kno:KN2016-0178-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2016-0178-freq-NN-2019 ;
+    kno:instantiates kno:S000007 ;
+    kno:frequency kno:KN2016-0178-freq-NN-total ;
+    kno:urimalTargetCode "1372613" ;
+    rdfs:label "문센^룩"@ko ;
+    a kno:Neologism ;
+    kno:predicate "나다"@ko ;
+    kno:slotFiller "문(화)(文)+센(터)(center) (2성분)"@ko ;
+    kno:languageType "(한+영)^영" ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "문센룩"@ko ;
+    kno:component kno:KN2016-0178-c1 ;
+    kno:componentString "문(화)(文), 센(터)(center), 룩(look)"@ko .
+kno:KN2016-0178-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000005 ;
+    kno:fullForm "룩"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "룩(look)"@ko ;
+    kno:surfaceForm "룩"@ko .
+kno:KN2016-0178-c2 kno:fullForm "센터"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "센"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F001476 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "센(터)(center)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0178-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001320 ;
+    kno:surfaceForm "문"@ko ;
+    kno:fullForm "문화"@ko ;
+    rdfs:label "문(화)(文)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 .

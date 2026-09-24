@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0203 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0203 kno:indexForm "복돌"@ko ;
+    kno:predicate "돌리다"@ko ;
+    kno:languageType "한+고" ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "복(제)(複), 돌(리다)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%B5%EB%8F%8C> ;
+    skos:definition "디지털 콘텐츠를 복제하여 돌리는 사람."@ko ;
+    a ontolex:Word ;
+    kno:example "¶‘카리스마 O’라는 별명으로 활동한 O 씨는 컴퓨터 전공자가 아니면서도 OO 출시 이틀 만에 OO 프로그램을 배포할 정도로 해킹 실력이 뛰어났다. 그 바람에 누리꾼 사이에서는…‘OO {복돌의} 신’ 등으로 불렸다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2013-0203-c2 ;
+    kno:component kno:KN2013-0203-c1 ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:origin "(複돌)" ;
+    rdfs:label "복돌"@ko .
+kno:KN2013-0203-c2 kno:semanticTag kno:usas-M2 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "돌(리다)"@ko ;
+    kno:surfaceForm "돌"@ko ;
+    kno:fullForm "돌리다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003008 .
+kno:KN2013-0203-c1 kno:semanticTag kno:usas-A6.1p ;
+    rdfs:label "복(제)(複)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "복"@ko ;
+    kno:formative kno:F003911 ;
+    kno:fullForm "복제"@ko .

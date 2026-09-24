@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0069 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0069 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0069-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0069-form ;
-    ontolex:sense kno:KN2021-0069-sense .
-
-kno:KN2021-0069-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003608840> .
-
-kno:KN2021-0069-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0069-freq-nn,
-        kno:KN2021-0069-freq-yt ;
-    ontolex:writtenRep "대북 방송 금지법"@ko .
-
-kno:KN2021-0069-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0069-freq-yt a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0069-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0069 kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0069-c2 ;
+    skos:definition "통일부가 2021년 1월 말 발의한 ‘남북 교류 협력에 관한 법률 개정안’에 통일부 장관의 승인이 필요한 반출ㆍ반입 항목에 ‘정보 통신망을 통한 송ㆍ수신’이 추가된 것을 북한 인권 단체의 대북 라디오 방송 송출을 막기 위한 것으로 보고 비판적으로 이르는 말."@ko ;
+    kno:component kno:KN2021-0069-c1 ;
+    kno:origin "(對北放送禁止法)" ;
+    rdfs:label "대북 방송 금지법"@ko ;
+    kno:indexForm "대북방송금지법"@ko ;
+    kno:componentString "대북(對北), 방송(放送), 금지법(禁止法)"@ko ;
+    kno:frequency kno:KN2021-0069-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0069-c3 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0069-freq-NN-total ;
+    kno:languageType "한_한_한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:slotFiller "대북(對北)+방송(放送) (2성분)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EB%B6%81%20%EB%B0%A9%EC%86%A1%20%EA%B8%88%EC%A7%80%EB%B2%95> ;
+    kno:example "¶야당은 {대북 방송 금지법의} 목적이 북한 인권 단체가 대북 라디오 방송을 송출하는 것을 막기 위한 것이라며 반발했다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000059 .
+kno:KN2021-0069-c2 kno:fullForm "방송"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "방송"@ko ;
+    kno:formative kno:F001344 ;
+    rdfs:label "방송(放送)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0069-c1 rdfs:label "대북(對北)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "대북"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "대북"@ko ;
+    kno:formative kno:F002920 .
+kno:KN2021-0069-c3 a kno:Component ;
+    kno:surfaceForm "금지법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "금지법"@ko ;
+    rdfs:label "금지법(禁止法)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000128 .

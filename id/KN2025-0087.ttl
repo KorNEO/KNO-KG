@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0087 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0087 a ontolex:Word ;
-    frac:attestation kno:KN2025-0087-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0087-form ;
-    ontolex:sense kno:KN2025-0087-sense .
-
-kno:KN2025-0087-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/087/0001125051> .
-
-kno:KN2025-0087-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0087-freq-nn,
-        kno:KN2025-0087-freq-yt ;
-    ontolex:writtenRep "기롯삼한엘"@ko .
-
-kno:KN2025-0087-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0087-freq-yt a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0087-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0087 kno:component kno:KN2025-0087-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0087-freq-NN-total ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:example "(LLM) 올해는 {기롯삼한엘이} 상위권에 몰리면서 가을야구 경쟁이 더 치열해졌다."@ko ;
+    skos:definition "(LLM) 프로 야구에서, KIA 타이거즈ㆍ롯데 자이언츠ㆍ삼성 라이온즈ㆍ한화 이글스ㆍLG 트윈스 다섯 구단을 함께 이르는 말."@ko ;
+    rdfs:label "기롯삼한엘"@ko ;
+    kno:frequency kno:KN2025-0087-freq-NN-2025 ;
+    kno:component kno:KN2025-0087-c4 ;
+    kno:indexForm "기롯삼한엘"@ko ;
+    kno:component kno:KN2025-0087-c5 ;
+    kno:component kno:KN2025-0087-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%A1%AF%EC%82%BC%ED%95%9C%EC%97%98> ;
+    kno:component kno:KN2025-0087-c3 ;
+    kno:componentString "기(아), 롯(데), 삼(성), 한(화), 엘(지)"@ko ;
+    a kno:Neologism .
+kno:KN2025-0087-c2 kno:surfaceForm "롯"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:fullForm "롯데"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003258 ;
+    rdfs:label "롯(데)"@ko .
+kno:KN2025-0087-c4 rdfs:label "한(화)"@ko ;
+    kno:fullForm "한화"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:surfaceForm "한"@ko ;
+    kno:formative kno:F006959 .
+kno:KN2025-0087-c5 a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "엘(지)"@ko ;
+    kno:surfaceForm "엘"@ko ;
+    kno:fullForm "엘지"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "5"^^xsd:integer ;
+    kno:formative kno:F005013 .
+kno:KN2025-0087-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "기아"@ko ;
+    rdfs:label "기(아)"@ko ;
+    kno:formative kno:F002572 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "기"@ko .
+kno:KN2025-0087-c3 rdfs:label "삼(성)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:surfaceForm "삼"@ko ;
+    kno:formative kno:F004205 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "삼성"@ko .

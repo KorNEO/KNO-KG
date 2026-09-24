@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0360 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0360 a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:instantiates kno:S000324 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "잉여남"@ko ;
+    rdfs:label "잉여-남"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(剩餘男)" ;
+    kno:frequency kno:KN2012-0360-freq-NN-2024 ;
+    kno:frequency kno:KN2012-0360-freq-NN-total ;
+    kno:slotFiller "잉여(剩餘) (1성분)"@ko ;
+    kno:componentString "잉여(剩餘), -남(男)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%89%EC%97%AC%EB%82%A8> ;
+    kno:component kno:KN2012-0360-c2 ;
+    kno:slotFiller "-남(男) (1성분)"@ko ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:instantiates kno:S000003 ;
+    kno:languageType "한+한" ;
+    skos:definition "결혼 적령기에 배우자를 찾지 못한 남자."@ko ;
+    kno:example "¶ 전문가들의 예측에 따르면 2020년이 되면 약 3000만~4000만 명의 남성이 ‘{잉여남’이} 될 전망이다."@ko ;
+    kno:frequency kno:KN2012-0360-freq-NN-2017 ;
+    kno:frequency kno:KN2012-0360-freq-NN-2014 ;
+    kno:frequency kno:KN2012-0360-freq-NN-2012 ;
+    kno:component kno:KN2012-0360-c1 ;
+    kno:pos "「명」"@ko .
+kno:KN2012-0360-c2 kno:surfaceForm "남"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-남(男)"@ko ;
+    kno:formative kno:F000008 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "남"@ko .
+kno:KN2012-0360-c1 kno:surfaceForm "잉여"@ko ;
+    rdfs:label "잉여(剩餘)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5.2p ;
+    kno:fullForm "잉여"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000402 .

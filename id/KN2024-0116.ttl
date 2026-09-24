@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0116 a ontolex:Word ;
-    frac:attestation kno:KN2024-0116-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0116-form ;
-    ontolex:sense kno:KN2024-0116-sense .
-
-kno:KN2024-0116-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005322660> .
-
-kno:KN2024-0116-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0116-freq-nn,
-        kno:KN2024-0116-freq-yt ;
-    ontolex:writtenRep "상세오"@ko .
-
-kno:KN2024-0116-freq-nn a frac:CorpusFrequency ;
-    rdf:value 37 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0116-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0116-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0116 kno:frequency kno:KN2024-0116-freq-NN-2023 ;
+    skos:definition "중국, 한국, 일본이 중심이 된 동북아시아의 경제권을 가리키는 말. 3개 나라의 주요 도시인 상하이, 서울, 오사카의 영문 앞 글자를 따서 만든 말이다."@ko ;
+    kno:component kno:KN2024-0116-c1 ;
+    kno:frequency kno:KN2024-0116-freq-NN-total ;
+    rdfs:label "상세오"@ko ;
+    kno:example "¶중국, 한국, 일본 3국의 수도인 베이징, 서울, 도쿄를 잇는 베세토 노선과 같이 3국의 경제 중심지인 상하이-서울-오사카를 잇는 {상세오} 비즈니스 셔틀 노선이 국가 간 교류 활성화의 매개 역할을 담당할 것이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%84%B8%EC%98%A4> ;
+    kno:component kno:KN2024-0116-c3 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2024-0116-freq-NN-2024 ;
+    kno:componentString "상(하이)(Shanghai), 서(울), 오(사카)(Oosaka)"@ko ;
+    kno:origin "(←Shanghai[上海]←Seoul←Oosaka[大阪])" ;
+    kno:languageType "중+영+일" ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "상세오"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0116-c2 ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2024-0116-c1 kno:surfaceForm "상"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001444 ;
+    rdfs:label "상(하이)(Shanghai)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "상하이"@ko .
+kno:KN2024-0116-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:surfaceForm "오"@ko ;
+    rdfs:label "오(사카)(Oosaka)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F001625 ;
+    kno:fullForm "오사카"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0116-c2 kno:formative kno:F000218 ;
+    kno:surfaceForm "서"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "서(울)"@ko ;
+    kno:fullForm "서울"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0270 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0270 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0270-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0270-form ;
-    ontolex:sense kno:KN2024-0270-sense .
-
-kno:KN2024-0270-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0004219064> .
-
-kno:KN2024-0270-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0270-freq-nn,
-        kno:KN2024-0270-freq-yt ;
-    ontolex:writtenRep "주가 리튬 비율"@ko .
-
-kno:KN2024-0270-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0270-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0270-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0270 kno:componentString "주가(株價), 리튬(lithium), 비율(比率)"@ko ;
+    kno:component kno:KN2024-0270-c3 ;
+    kno:component kno:KN2024-0270-c2 ;
+    kno:frequency kno:KN2024-0270-freq-NN-total ;
+    a kno:Neologism ;
+    kno:languageType "한_영_한" ;
+    rdfs:label "주가 리튬 비율"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2024-0270-freq-NN-2023 ;
+    kno:origin "(株價<영>lithium比率)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0270-c1 ;
+    kno:example "¶이차 전지 종목이 연일 상한가를 기록하면서, 투자자들 사이에서는 {주가 리튬 비율이라는} 말이 농담처럼 쓰이기 시작했다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EA%B0%80%20%EB%A6%AC%ED%8A%AC%20%EB%B9%84%EC%9C%A8> ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "리튬(lithium) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "주가리튬비율"@ko ;
+    kno:instantiates kno:S000577 ;
+    skos:definition "리튬 관련주의 급등 현상을 이르는 말. 리튬을 원재료로 하는 이차 전지 종목의 가격이 비정상적으로 오르자, 기존의 주가 수익 비율로는 설명하기 어렵다는 뜻에서 나온 표현이다."@ko .
+kno:KN2024-0270-c3 kno:semanticTag kno:usas-N3.1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000786 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "비율(比率)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "비율"@ko ;
+    kno:surfaceForm "비율"@ko ;
+    a kno:Component .
+kno:KN2024-0270-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "리튬"@ko ;
+    kno:formative kno:F001260 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "리튬"@ko ;
+    rdfs:label "리튬(lithium)"@ko .
+kno:KN2024-0270-c1 a kno:Component ;
+    rdfs:label "주가(株價)"@ko ;
+    kno:formative kno:F000923 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주가"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "주가"@ko .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0493 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0493 rdfs:label "후첨 수프"@ko ;
+    kno:componentString "후첨(後添), 수프(soup)"@ko ;
+    skos:definition "라면을 다 끓이고 난 뒤에 넣는 수프. 라면의 맛을 더욱 맛나게 하기 위해 넣는다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9B%84%EC%B2%A8%20%EC%88%98%ED%94%84> ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0493-freq-NN-2018 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:example "¶OO의 인기 비결은 청량고추보다 2~3배 더 맵지만 고소함이 가미된 맛 때문이라는 분석이다. 국물맛을 내는 수프 외에 {후첨수프를} 추가해 매운 맛을 적절히 잡아줬다는 것이다."@ko ;
+    kno:component kno:KN2012-0493-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:predicate "넣다"@ko ;
+    kno:frequency kno:KN2012-0493-freq-NN-total ;
+    kno:languageType "한+영" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2012-0493-freq-NN-2025 ;
+    kno:frequency kno:KN2012-0493-freq-NN-2014 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "후첨수프"@ko ;
+    kno:component kno:KN2012-0493-c2 ;
+    kno:frequency kno:KN2012-0493-freq-NN-2020 ;
+    kno:origin "(後添soup)" ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2012-0493-c1 kno:role "성분"@ko ;
+    kno:formative kno:F002038 ;
+    rdfs:label "후첨(後添)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "후첨"@ko ;
+    kno:surfaceForm "후첨"@ko ;
+    kno:semanticTag kno:usas-T4 .
+kno:KN2012-0493-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "수프"@ko ;
+    kno:surfaceForm "수프"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004489 ;
+    rdfs:label "수프(soup)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:position "2"^^xsd:integer .

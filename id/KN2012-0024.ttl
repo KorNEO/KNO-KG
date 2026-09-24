@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0024 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0024 kno:urimalTargetCode "1356878" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:label "과적 도시"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "과적(過積) (1성분)"@ko ;
+    kno:origin "(過積都市)" ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "과적(過積), 도시(都市)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0024-c2 ;
+    kno:indexForm "과적도시"@ko ;
+    skos:definition "과도하게 인구가 집중된 도시를 비유적으로 이르는 말."@ko ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2012-0024-c1 ;
+    kno:instantiates kno:S000831 ;
+    kno:unitType "구"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:example "¶우리는 ‘{과적 도시’라는} 생소한 단어를 통해 도대체 무엇이 이런 {과적 도시를} 유발시키고 있는지, 어떻게 풀어나갈 수 있는지를 생각해 볼 필요성을 느끼게 된다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356878> .
+kno:KN2012-0024-c2 kno:formative kno:F000347 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "도시"@ko ;
+    rdfs:label "도시(都市)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "도시"@ko ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2012-0024-c1 a kno:Component ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:formative kno:F002379 ;
+    kno:surfaceForm "과적"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "과적"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "과적(過積)"@ko .

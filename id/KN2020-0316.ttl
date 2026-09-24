@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0316 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0316 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0316-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0316-form ;
-    ontolex:sense kno:KN2020-0316-sense .
-
-kno:KN2020-0316-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0004607665> .
-
-kno:KN2020-0316-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0316-freq-nn,
-        kno:KN2020-0316-freq-yt ;
-    ontolex:writtenRep "집콕 운동"@ko .
-
-kno:KN2020-0316-freq-nn a frac:CorpusFrequency ;
-    rdf:value 854 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0316-freq-yt a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0316-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0316 kno:predicate "있다"@ko ;
+    kno:component kno:KN2020-0316-c1 ;
+    kno:slotFiller "운동 (1성분)"@ko ;
+    kno:frequency kno:KN2020-0316-freq-NN-total ;
+    kno:frequency kno:KN2020-0316-freq-NN-2020 ;
+    kno:indexForm "집콕운동"@ko ;
+    skos:definition "집 안에서 간단하게 할 수 있는 운동. 코로나19로 인한 외부 활동 제한으로 생겨난 말이다."@ko ;
+    kno:componentString "집콕, 운동"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0316-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%91%EC%BD%95%20%EC%9A%B4%EB%8F%99> ;
+    kno:frequency kno:KN2020-0316-freq-NN-2022 ;
+    kno:origin "(집콕運動)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "(고+고)_한" ;
+    kno:frequency kno:KN2020-0316-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:example "¶사회적 거리 두기 단계 격상으로 인해 헬스장이나 외부에서 운동하는 대신 {집콕 운동을} 하는 사람들이 많다."@ko ;
+    kno:instantiates kno:S000585 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "집콕 운동"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2020-0316-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000937 ;
+    rdfs:label "집콕"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "집콕"@ko ;
+    kno:surfaceForm "집콕"@ko ;
+    kno:semanticTag kno:usas-M8 .
+kno:KN2020-0316-c2 kno:fullForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:formative kno:F005226 ;
+    kno:surfaceForm "운동"@ko ;
+    rdfs:label "운동"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0186 kno:component kno:KN2016-0186-c1 ;
+    kno:example "¶OO는…{믿보녀} 캐릭터 4명의 엠시로 구성되어 방영 전부터 화제를 불러일으키고 있다."@ko ;
+    kno:frequency kno:KN2016-0186-freq-NN-2021 ;
+    kno:slotFiller "녀(女) (1성분)"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:languageType "고+고+한" ;
+    kno:urimalTargetCode "1372621" ;
+    kno:component kno:KN2016-0186-c2 ;
+    kno:frequency kno:KN2016-0186-freq-NN-2016 ;
+    rdfs:label "믿보녀"@ko ;
+    kno:frequency kno:KN2016-0186-freq-NN-total ;
+    a ontolex:Word ;
+    kno:componentString "믿(다), 보(다), 녀(女)"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S001389 ;
+    kno:component kno:KN2016-0186-c3 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372621> ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000041 ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "‘믿고 보는 여자’를 줄여 이르는 말. 주로 드라마나 예능 프로그램에서, 항상 기대를 저버리지 않을 만큼 좋은 연기를 하거나 재밌는 행동을 하는 여자를 가리키는 말이다."@ko ;
+    kno:indexForm "믿보녀"@ko ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "믿(다)+보(다) (2성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:origin "(믿보女)" .
+kno:KN2016-0186-c1 rdfs:label "믿(다)"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
+    kno:fullForm "믿다"@ko ;
+    kno:formative kno:F000269 ;
+    kno:surfaceForm "믿"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0186-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:fullForm "보다"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "보(다)"@ko ;
+    kno:formative kno:F000773 ;
+    kno:surfaceForm "보"@ko .
+kno:KN2016-0186-c3 kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    rdfs:label "녀(女)"@ko ;
+    kno:formative kno:F000024 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:role "고정항"@ko .

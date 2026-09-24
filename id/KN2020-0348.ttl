@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0348 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0348 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0348-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0348-form ;
-    ontolex:sense kno:KN2020-0348-sense .
-
-kno:KN2020-0348-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003749816> .
-
-kno:KN2020-0348-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0348-freq-nn,
-        kno:KN2020-0348-freq-yt ;
-    ontolex:writtenRep "코로나 신데렐라"@ko .
-
-kno:KN2020-0348-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0348-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0348-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0348 kno:instantiates kno:S000005 ;
+    kno:indexForm "코로나신데렐라"@ko ;
+    kno:frequency kno:KN2020-0348-freq-NN-2021 ;
+    kno:component kno:KN2020-0348-c2 ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:example "¶코로나19로 재택근무와 온라인 학습이 늘면서 화상 회의 등의 온라인 인프라로 주목받던 이 기업은 ‘{코로나 신데렐라’라는} 별명을 얻을 정도로 놀라운 성장세를 나타내고 있다."@ko ;
+    kno:languageType "영_영" ;
+    kno:slotFiller "신데렐라(Cinderella) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>←corona virus Cinderella)" ;
+    kno:frequency kno:KN2020-0348-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2020-0348-freq-NN-2024 ;
+    kno:component kno:KN2020-0348-c1 ;
+    kno:instantiates kno:S000970 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%8B%A0%EB%8D%B0%EB%A0%90%EB%9D%BC> ;
+    kno:frequency kno:KN2020-0348-freq-NN-2020 ;
+    skos:definition "코로나19의 확산으로 인해 급격한 성장세를 보인 기업을 비유적으로 이르는 말."@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 신데렐라(Cinderella)"@ko ;
+    rdfs:label "코로나 신데렐라"@ko .
+kno:KN2020-0348-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "신데렐라(Cinderella)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000546 ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:fullForm "신데렐라"@ko ;
+    kno:surfaceForm "신데렐라"@ko ;
+    a kno:Component .
+kno:KN2020-0348-c1 kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000003 ;
+    kno:truncated "true"^^xsd:boolean .

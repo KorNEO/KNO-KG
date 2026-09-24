@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0153 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0153-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0153-form ;
-    ontolex:sense kno:KN2020-0153-sense .
-
-kno:KN2020-0153-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001423299> .
-
-kno:KN2020-0153-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0153-freq-nn,
-        kno:KN2020-0153-freq-yt ;
-    ontolex:writtenRep "상상 코로나"@ko .
-
-kno:KN2020-0153-freq-nn a frac:CorpusFrequency ;
-    rdf:value 89 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0153-freq-yt a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0153-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0153 kno:languageType "한_영" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(想像<영>←corona virus)" ;
+    kno:predicate "의심하다"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000131 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "상상(想像), 코로나(바이러스)(corona virus)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0153-freq-NN-total ;
+    skos:definition "피로나 재채기와 같은 일상적인 증상에도 코로나19의 감염을 의심하는 현상."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%83%81%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
+    kno:component kno:KN2020-0153-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0153-freq-NN-2020 ;
+    kno:component kno:KN2020-0153-c2 ;
+    kno:example "¶코로나19가 확산되면서 {상상 코로나에} 시달리는 사람이 증가하고 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "상상코로나"@ko ;
+    kno:frequency kno:KN2020-0153-freq-NN-2022 ;
+    kno:slotFiller "상상(想像) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0153-freq-NN-2021 ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "상상 코로나"@ko .
+kno:KN2020-0153-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "상상(想像)"@ko ;
+    kno:fullForm "상상"@ko ;
+    kno:formative kno:F004230 ;
+    kno:surfaceForm "상상"@ko ;
+    kno:semanticTag kno:usas-X2.1 .
+kno:KN2020-0153-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:fullForm "코로나바이러스"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m .

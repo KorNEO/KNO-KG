@@ -1,37 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0253 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0253 a ontolex:Word ;
-    frac:attestation kno:KN2024-0253-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0253-form ;
-    ontolex:sense kno:KN2024-0253-sense .
-
-kno:KN2024-0253-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003824328> .
-
-kno:KN2024-0253-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0253-freq-nn,
-        kno:KN2024-0253-freq-yt ;
-    ontolex:writtenRep "재렉스"@ko .
-
-kno:KN2024-0253-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0253-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0253-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%95%8C%EB%A0%89%EC%8A%A4(%EC%B9%B4%EC%9A%B4%ED%84%B0%EC%82%AC%EC%9D%B4%EB%93%9C)/%EB%B8%8C%EB%A0%88%EC%9D%B4%ED%81%AC%EB%B9%84%ED%8A%B8> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0253 kno:frequency kno:KN2024-0253-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0253-freq-NN-total ;
+    kno:indexForm "재렉스"@ko ;
+    kno:component kno:KN2024-0253-c1 ;
+    skos:definition "주식, 펀드, 암호 화폐 투자 등을 통해 미래를 위한 자산 관리를 하면서 명품 의류 구입이나 해외여행 등 현재의 가치와 만족 또한 중시하는 생활 방식. 투자 활동을 의미하는 ‘재테크(財tech)’와 과시적 소비를 뜻하는 ‘플렉스(flex)’를 결합하여 만든 말이다."@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:origin "(財<영>←flex)" ;
+    kno:example "¶그녀는 주식으로 번 돈을 재투자하면서도 자신을 위한 새 명품 가방을 구매하는 {재렉스를} 실천하고 있다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "재렉스"@ko ;
+    kno:componentString "재(財), (플)렉스(flex)"@ko ;
+    kno:component kno:KN2024-0253-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EB%A0%89%EC%8A%A4> ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko .
+kno:KN2024-0253-c1 kno:fullForm "재"@ko ;
+    kno:formative kno:F005576 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "재"@ko ;
+    kno:semanticTag kno:usas-N6p ;
+    rdfs:label "재(財)"@ko ;
+    a kno:Component .
+kno:KN2024-0253-c2 kno:surfaceForm "렉스"@ko ;
+    rdfs:label "(플)렉스(flex)"@ko ;
+    kno:semanticTag kno:usas-I1.1p ;
+    kno:fullForm "플렉스"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003221 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko .

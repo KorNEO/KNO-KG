@@ -1,36 +1,76 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0042 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2021-0042 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0042-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0042-form ;
-    ontolex:sense kno:KN2021-0042-sense .
-
-kno:KN2021-0042-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/586/0000019050> .
-
-kno:KN2021-0042-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0042-freq-nn,
-        kno:KN2021-0042-freq-yt ;
-    ontolex:writtenRep "금융^복합^기업^집단"@ko .
-
-kno:KN2021-0042-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3245 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0042-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0042-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:origin "(金融複合企業集團)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0042-c1 ;
+    skos:definition "둘 이상의 금융 회사가 동일한 기업에 소속된 집단을 이르는 말. 카드ㆍ보험ㆍ증권 등 금융 회사를 두 개 이상 운영하면서 자산 규모가 오조 원 이상인 기업이 이에 해당한다."@ko ;
+    kno:frequency kno:KN2021-0042-freq-NN-2021 ;
+    kno:languageType "한^한^한^한" ;
+    kno:slotFiller "집단(集團) (1성분)"@ko ;
+    kno:instantiates kno:S001245 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0042-c3 ;
+    kno:frequency kno:KN2021-0042-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0042-freq-NN-2023 ;
+    kno:component kno:KN2021-0042-c4 ;
+    kno:component kno:KN2021-0042-c2 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶{금융 복합 기업 집단에} 속한 기업들이 지정 형평성과 강한 규제에 반발하며 논란이 일고 있다."@ko ;
+    kno:frequency kno:KN2021-0042-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0042-freq-NN-2022 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:componentString "금융(金融), 복합(複合), 기업(企業), 집단(集團)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EC%9C%B5%EB%B3%B5%ED%95%A9%EA%B8%B0%EC%97%85%EC%A7%91%EB%8B%A8> ;
+    kno:indexForm "금융복합기업집단"@ko ;
+    kno:frequency kno:KN2021-0042-freq-NN-total ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0042-freq-NN-2025 ;
+    rdfs:label "금융^복합^기업^집단"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0042-c1 kno:formative kno:F000068 ;
+    kno:fullForm "금융"@ko ;
+    kno:surfaceForm "금융"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "금융(金融)"@ko ;
+    a kno:Component .
+kno:KN2021-0042-c3 kno:fullForm "기업"@ko ;
+    kno:formative kno:F000338 ;
+    kno:surfaceForm "기업"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "기업(企業)"@ko ;
+    kno:semanticTag kno:usas-I2.1 .
+kno:KN2021-0042-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000410 ;
+    kno:fullForm "집단"@ko ;
+    kno:surfaceForm "집단"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "집단(集團)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0042-c2 kno:semanticTag kno:usas-A4 ;
+    a kno:Component ;
+    rdfs:label "복합(複合)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000275 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "복합"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "복합"@ko .

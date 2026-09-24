@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0593 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0593 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0593-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0593-form ;
-    ontolex:sense kno:KN2025-0593-sense .
-
-kno:KN2025-0593-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/214/0001398090> .
-
-kno:KN2025-0593-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0593-freq-nn,
-        kno:KN2025-0593-freq-yt ;
-    ontolex:writtenRep "키세스 시위대"@ko .
-
-kno:KN2025-0593-freq-nn a frac:CorpusFrequency ;
-    rdf:value 223 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0593-freq-yt a frac:CorpusFrequency ;
-    rdf:value 42 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0593-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0593 kno:componentString "키세스(Kisses), 시위대(示威隊)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0593-freq-NN-total ;
+    kno:frequency kno:KN2025-0593-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(Kisses示威隊)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0593-c2 ;
+    kno:instantiates kno:S000229 ;
+    kno:component kno:KN2025-0593-c1 ;
+    kno:example "(LLM) 폭설이 이어지는 가운데도 은박 담요를 두른 {키세스시위대가} 밤샘 농성을 이어가자, 시민들이 핫팩과 따뜻한 음료를 보내며 응원했다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%A4%EC%84%B8%EC%8A%A4%20%EC%8B%9C%EC%9C%84%EB%8C%80> ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    skos:definition "(LLM) 은박 담요 따위를 두르고 강추위나 눈보라 속에서 농성ㆍ집회에 참여하는 시위 참가자들을 초콜릿 ‘키세스’에 빗대어 이르는 말."@ko ;
+    kno:indexForm "키세스시위대"@ko ;
+    rdfs:label "키세스 시위대"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "시위대(示威隊) (1성분)"@ko .
+kno:KN2025-0593-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "시위대"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F004663 ;
+    kno:fullForm "시위대"@ko ;
+    rdfs:label "시위대(示威隊)"@ko .
+kno:KN2025-0593-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "키세스"@ko ;
+    kno:surfaceForm "키세스"@ko ;
+    a kno:Component ;
+    rdfs:label "키세스(Kisses)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000314 .

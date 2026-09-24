@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0446 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0446 a ontolex:Word ;
-    frac:attestation kno:KN2025-0446-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0446-form ;
-    ontolex:sense kno:KN2025-0446-sense .
-
-kno:KN2025-0446-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/448/0000554672> .
-
-kno:KN2025-0446-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0446-freq-nn,
-        kno:KN2025-0446-freq-yt ;
-    ontolex:writtenRep "울세이너"@ko .
-
-kno:KN2025-0446-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0446-freq-yt a frac:CorpusFrequency ;
-    rdf:value 185 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0446-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0446 kno:frequency kno:KN2025-0446-freq-NN-total ;
+    kno:component kno:KN2025-0446-c2 ;
+    a kno:Neologism ;
+    kno:example "(LLM) 동호회에서 다들 고향 이야기를 하길래 “나 {울세이너}라 울산 얘기 나오면 괜히 뿌듯하다”라고 했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "울산(Ulsan) (1성분)"@ko ;
+    rdfs:label "울세이너"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B8%EC%84%B8%EC%9D%B4%EB%84%88> ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0446-freq-NN-2025 ;
+    kno:componentString "울산(Ulsan), -어(←-er)"@ko ;
+    kno:component kno:KN2025-0446-c1 ;
+    skos:definition "(LLM) 울산 출신이거나 울산에 연고가 있는 사람을 가리키는 말."@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000140 ;
+    kno:indexForm "울세이너"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0446-c2 rdfs:label "-어(←-er)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "어"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "어"@ko ;
+    kno:formative kno:F000182 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component .
+kno:KN2025-0446-c1 kno:surfaceForm "울산"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "울산(Ulsan)"@ko ;
+    kno:fullForm "울산"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005229 ;
+    kno:role "슬롯 채움"@ko .

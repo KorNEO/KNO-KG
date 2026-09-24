@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0175 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0175 a ontolex:Word ;
-    frac:attestation kno:KN2022-0175-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0175-form ;
-    ontolex:sense kno:KN2022-0175-sense .
-
-kno:KN2022-0175-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0001975080> .
-
-kno:KN2022-0175-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0175-freq-nn,
-        kno:KN2022-0175-freq-yt ;
-    ontolex:writtenRep "서육남"@ko .
-
-kno:KN2022-0175-freq-nn a frac:CorpusFrequency ;
-    rdf:value 149 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0175-freq-yt a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0175-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0175 kno:component kno:KN2022-0175-c1 ;
+    kno:example "¶국무총리 후보자와 18개 부처 장관 후보자 등 총 19명 후보자가 ‘{서육남’으로} 서울대 출신 육십 대 남성이라고 한다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EC%9C%A1%EB%82%A8> ;
+    kno:instantiates kno:S000999 ;
+    kno:frequency kno:KN2022-0175-freq-NN-2022 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2022-0175-c2 ;
+    kno:frequency kno:KN2022-0175-freq-NN-2023 ;
+    kno:instantiates kno:S001448 ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "육(십)(六十)+남(자)(男子) (2성분)"@ko ;
+    a kno:Neologism ;
+    rdfs:label "서육남"@ko ;
+    kno:componentString "서(울대학교), 육(십)(六十), 남(자)(男子)"@ko ;
+    skos:definition "‘서울대 출신의 육십 대 남자’를 줄여 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "서(울대학교) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0175-freq-NN-2024 ;
+    kno:component kno:KN2022-0175-c3 ;
+    kno:origin "(서六男)" ;
+    kno:frequency kno:KN2022-0175-freq-NN-total ;
+    kno:indexForm "서육남"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2022-0175-freq-NN-2025 ;
+    kno:languageType "고+한+한" ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0175-c1 kno:fullForm "서울대학교"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:surfaceForm "서"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001458 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "서(울대학교)"@ko .
+kno:KN2022-0175-c2 kno:formative kno:F001682 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "육(십)(六十)"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:fullForm "육십"@ko ;
+    kno:surfaceForm "육"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2022-0175-c3 kno:fullForm "남자"@ko ;
+    rdfs:label "남(자)(男子)"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000472 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

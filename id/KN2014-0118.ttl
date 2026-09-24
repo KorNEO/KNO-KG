@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0118 kno:frequency kno:KN2014-0118-freq-NN-2014 ;
+    kno:urimalTargetCode "1358414" ;
+    kno:slotFiller "베이비(baby) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2014-0118-c1 ;
+    kno:origin "(<영>baby←economics)" ;
+    kno:frequency kno:KN2014-0118-freq-NN-2013 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2014-0118-c2 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:instantiates kno:S000020 ;
+    kno:componentString "베이비(baby), (이코)노믹스(economics)"@ko ;
+    kno:indexForm "베이비노믹스"@ko ;
+    kno:languageType "영+영" ;
+    kno:frequency kno:KN2014-0118-freq-NN-2015 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358414> ;
+    kno:example "¶영국 소매업계는 ‘{베이비노믹스’란} 말을 써 가며 OOO 왕세손 부부의 첫 아들이 가져다 줄 경제 효과를 기대하고 있다."@ko ;
+    kno:frequency kno:KN2014-0118-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    skos:definition "영국 왕가의 아기가 탄생함으로써 발생할 경제 효과를 이르는 말."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2014-0118-freq-NN-2019 ;
+    a ontolex:Word ;
+    rdfs:label "베이비노믹스"@ko .
+kno:KN2014-0118-c1 kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "베이비"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "베이비(baby)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000214 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "베이비"@ko .
+kno:KN2014-0118-c2 a kno:Component ;
+    rdfs:label "(이코)노믹스(economics)"@ko ;
+    kno:fullForm "이코노믹스"@ko ;
+    kno:formative kno:F000027 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "노믹스"@ko .

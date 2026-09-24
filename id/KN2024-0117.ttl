@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0117 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0117 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0117-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0117-form ;
-    ontolex:sense kno:KN2024-0117-sense .
-
-kno:KN2024-0117-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004898891> .
-
-kno:KN2024-0117-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0117-freq-nn,
-        kno:KN2024-0117-freq-yt ;
-    ontolex:writtenRep "상세오 노선"@ko .
-
-kno:KN2024-0117-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0117-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0117-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:frequency kno:KN2024-0117-freq-NN-2023 ;
+    kno:componentString "상(하이)(Shanghai), 서(울), 오(사카)(Oosaka), 노선(路線)"@ko ;
+    kno:frequency kno:KN2024-0117-freq-NN-2024 ;
+    kno:component kno:KN2024-0117-c4 ;
+    rdfs:label "상세오 노선"@ko ;
+    kno:component kno:KN2024-0117-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(←Shanghai[上海]←Seoul←Oosaka[大阪]路線)" ;
+    kno:component kno:KN2024-0117-c3 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "(중+영+일)_한" ;
+    kno:component kno:KN2024-0117-c1 ;
+    kno:indexForm "상세오노선"@ko ;
+    kno:slotFiller "상(하이)(Shanghai)+서(울)+오(사카)(Oosaka) (3성분)"@ko ;
+    kno:example "¶O 사장은 2025년 오사카 엑스포에 맞춰 {상세오 노선} 활성화에 심혈을 기울이고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%84%B8%EC%98%A4%20%EB%85%B8%EC%84%A0> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000819 ;
+    skos:definition "동북아시아 일일생활권 확충을 위하여 중국 상하이와 한국 서울, 일본 오사카를 잇는 항공 노선을 이르는 말. =상세오 라인."@ko ;
+    kno:frequency kno:KN2024-0117-freq-NN-total ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0117-c4 kno:role "고정항"@ko ;
+    kno:formative kno:F001152 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "노선"@ko ;
+    rdfs:label "노선(路線)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "노선"@ko ;
+    a kno:Component .
+kno:KN2024-0117-c2 a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "서(울)"@ko ;
+    kno:fullForm "서울"@ko ;
+    kno:formative kno:F000218 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "서"@ko .
+kno:KN2024-0117-c3 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "오"@ko ;
+    kno:fullForm "오사카"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "오(사카)(Oosaka)"@ko ;
+    kno:formative kno:F001625 .
+kno:KN2024-0117-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "상하이"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "상(하이)(Shanghai)"@ko ;
+    kno:formative kno:F001444 ;
+    kno:surfaceForm "상"@ko ;
+    kno:truncated "true"^^xsd:boolean .

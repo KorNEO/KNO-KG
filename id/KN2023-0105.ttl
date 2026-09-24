@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0105 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0105-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0105-form ;
-    ontolex:sense kno:KN2023-0105-sense .
-
-kno:KN2023-0105-att-nn a frac:Attestation ;
-    dcterms:date "2022-08-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0006253117> .
-
-kno:KN2023-0105-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0105-freq-nn,
-        kno:KN2023-0105-freq-yt ;
-    ontolex:writtenRep "반도체^산업^강화법"@ko .
-
-kno:KN2023-0105-freq-nn a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0105-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0105-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0105 kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%98%EB%8F%84%EC%B2%B4%EC%82%B0%EC%97%85%EA%B0%95%ED%99%94%EB%B2%95> ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0105-freq-NN-2022 ;
+    kno:component kno:KN2023-0105-c3 ;
+    kno:frequency kno:KN2023-0105-freq-NN-2023 ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:label "반도체^산업^강화법"@ko ;
+    kno:example "¶{반도체 산업 강화법에} 대하여 법안 취지에 대해서는 일부 공감하면서도 대기업을 위한 특혜 법안이 될 수 있다는 이유로 반대하고 있다."@ko ;
+    kno:component kno:KN2023-0105-c1 ;
+    kno:componentString "반도체(半導體), 산업(産業), 강화법(強化法)"@ko ;
+    kno:component kno:KN2023-0105-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(半導體産業強化法)" ;
+    skos:definition "반도체 투자 활성화를 위하여 반도체 투자에 대한 세제 혜택을 주고자 제정한 법률. 대기업의 반도체 설비 투자 세액 공제율을 기존의 8%에서 15%로, 중소기업은 16%에서 25%까지 상향하는 것을 내용으로 한다."@ko ;
+    kno:frequency kno:KN2023-0105-freq-NN-total ;
+    kno:indexForm "반도체산업강화법"@ko .
+kno:KN2023-0105-c3 kno:formative kno:F002151 ;
+    rdfs:label "강화법(強化法)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "강화법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "강화법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2023-0105-c1 kno:fullForm "반도체"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "반도체"@ko ;
+    kno:formative kno:F003683 ;
+    kno:role "성분"@ko ;
+    rdfs:label "반도체(半導體)"@ko .
+kno:KN2023-0105-c2 kno:fullForm "산업"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000058 ;
+    kno:surfaceForm "산업"@ko ;
+    rdfs:label "산업(産業)"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer .

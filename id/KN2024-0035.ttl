@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0035 a ontolex:Word ;
-    frac:attestation kno:KN2024-0035-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0035-form ;
-    ontolex:sense kno:KN2024-0035-sense .
-
-kno:KN2024-0035-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003298973> .
-
-kno:KN2024-0035-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0035-freq-nn,
-        kno:KN2024-0035-freq-yt ;
-    ontolex:writtenRep "내세가불"@ko .
-
-kno:KN2024-0035-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0035-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0035-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0035 kno:instantiates kno:S000145 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+한+고+고" ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0035-c3 ;
+    kno:component kno:KN2024-0035-c4 ;
+    kno:indexForm "내세가불"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0035-c2 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "세(상)(世上)+가(장)+불(쌍하다) (3성분)"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "‘내가 세상에서 가장 불쌍하다’를 줄여 이르는 말로, 자신의 처지를 자조적으로 이르는 표현이다."@ko ;
+    kno:component kno:KN2024-0035-c1 ;
+    kno:componentString "내, 세(상)(世上), 가(장), 불(쌍하다)"@ko ;
+    rdfs:label "내세가불"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EC%84%B8%EA%B0%80%EB%B6%88> ;
+    kno:origin "(내世가불)" ;
+    kno:example "¶{내세가불} 심리에 사로잡힌 청년층들의 사회적 고립과 분노가 폭탄처럼 터져 나온다."@ko .
+kno:KN2024-0035-c3 rdfs:label "가(장)"@ko ;
+    kno:formative kno:F002062 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "가"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "가장"@ko ;
+    kno:semanticTag kno:usas-A13.3 ;
+    a kno:Component .
+kno:KN2024-0035-c4 a kno:Component ;
+    kno:semanticTag kno:usas-E4.1m ;
+    kno:formative kno:F003988 ;
+    rdfs:label "불(쌍하다)"@ko ;
+    kno:surfaceForm "불"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "불쌍하다"@ko .
+kno:KN2024-0035-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "세상"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "세"@ko ;
+    rdfs:label "세(상)(世上)"@ko ;
+    kno:formative kno:F001471 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0035-c1 kno:role "고정항"@ko ;
+    kno:fullForm "내"@ko ;
+    kno:surfaceForm "내"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000071 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    rdfs:label "내"@ko .

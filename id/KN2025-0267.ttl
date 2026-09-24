@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0267 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0267 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0267-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0267-form ;
-    ontolex:sense kno:KN2025-0267-sense .
-
-kno:KN2025-0267-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005501076> .
-
-kno:KN2025-0267-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0267-freq-nn,
-        kno:KN2025-0267-freq-yt ;
-    ontolex:writtenRep "밥그릇 투표"@ko .
-
-kno:KN2025-0267-freq-nn a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0267-freq-yt a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0267-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0267 kno:pos "「구」"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(밥그릇投票)" ;
+    kno:component kno:KN2025-0267-c2 ;
+    kno:frequency kno:KN2025-0267-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "밥그릇 투표"@ko ;
+    kno:component kno:KN2025-0267-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0267-freq-NN-total ;
+    skos:definition "(LLM) 사전 투표 등 선거 과정에서 기표 전 투표용지를 투표소 밖으로 들고 나가거나 외부에서 보관하는 행위를 빗대어 이르는 말."@ko ;
+    kno:componentString "밥그릇, 투표(投票)"@ko ;
+    kno:indexForm "밥그릇투표"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%A5%EA%B7%B8%EB%A6%87%20%ED%88%AC%ED%91%9C> ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 관외 투표 대기 줄이 길어지자 일부 유권자가 투표용지를 손에 든 채 밖에서 식사까지 했다는 보도가 나오며 {밥그릇투표} 논란이 커졌다."@ko .
+kno:KN2025-0267-c2 rdfs:label "투표(投票)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "투표"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "투표"@ko ;
+    kno:formative kno:F000978 ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0267-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "밥그릇"@ko ;
+    kno:formative kno:F003707 ;
+    a kno:Component ;
+    kno:fullForm "밥그릇"@ko ;
+    kno:surfaceForm "밥그릇"@ko .

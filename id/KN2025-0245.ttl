@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0245 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0245 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0245-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0245-form ;
-    ontolex:sense kno:KN2025-0245-sense .
-
-kno:KN2025-0245-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002743194> .
-
-kno:KN2025-0245-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0245-freq-nn,
-        kno:KN2025-0245-freq-yt ;
-    ontolex:writtenRep "묻지마 위촉장"@ko .
-
-kno:KN2025-0245-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0245-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0245-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    skos:definition "(LLM) 당사자의 동의나 확인 절차 없이 특정 직책ㆍ위원 등으로 위촉됐다고 통보하는 문서나 메시지, 또는 그런 위촉 행태."@ko ;
+    kno:component kno:KN2025-0245-c1 ;
+    rdfs:label "묻지마 위촉장"@ko ;
+    kno:origin "(묻지마委囑狀)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%BB%EC%A7%80%EB%A7%88%20%EC%9C%84%EC%B4%89%EC%9E%A5> ;
+    kno:componentString "묻지마, 위촉장(委囑狀)"@ko ;
+    kno:component kno:KN2025-0245-c2 ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "묻지마위촉장"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0245-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 당원도 아닌데 갑자기 {묻지마위촉장이} 문자로 와서 내 개인정보가 어디서 새었는지 걱정됐다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0245-freq-NN-2025 .
+kno:KN2025-0245-c1 kno:fullForm "묻지마"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003555 ;
+    kno:surfaceForm "묻지마"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "묻지마"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0245-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005281 ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "위촉장"@ko ;
+    kno:surfaceForm "위촉장"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "위촉장(委囑狀)"@ko .

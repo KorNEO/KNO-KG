@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0331 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0331 a ontolex:Word ;
-    frac:attestation kno:KN2023-0331-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0331-form ;
-    ontolex:sense kno:KN2023-0331-sense .
-
-kno:KN2023-0331-att-nn a frac:Attestation ;
-    dcterms:date "2022-03-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011079795> .
-
-kno:KN2023-0331-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0331-freq-nn,
-        kno:KN2023-0331-freq-yt ;
-    ontolex:writtenRep "펫얼리케어-족"@ko .
-
-kno:KN2023-0331-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0331-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0331-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0331 kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0331-c1 ;
+    kno:indexForm "펫얼리케어족"@ko ;
+    kno:origin "(<영>▼pet early care族)" ;
+    kno:predicate "관리하다"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    skos:definition "반려동물의 건강 상태를 새끼 시절부터 꼼꼼히 관리하는 사람. 또는 그런 무리."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%AB%EC%96%BC%EB%A6%AC%EC%BC%80%EC%96%B4%EC%A1%B1> ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2023-0331-c2 ;
+    kno:slotFiller "펫얼리케어(pet early care) (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:example "¶반려동물이 아주 어릴 때부터 건강을 관리하는 ‘{펫얼리케어족’이} 국내에 등장하기 시작했다."@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "펫얼리케어-족"@ko ;
+    kno:componentString "펫얼리케어(pet early care), -족(族)"@ko ;
+    kno:instantiates kno:S000001 .
+kno:KN2023-0331-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "펫얼리케어"@ko ;
+    kno:fullForm "펫얼리케어"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F006696 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "펫얼리케어(pet early care)"@ko .
+kno:KN2023-0331-c2 a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko .

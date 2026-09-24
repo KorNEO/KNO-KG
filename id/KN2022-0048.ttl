@@ -1,37 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0048 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0048 a ontolex:Word ;
-    frac:attestation kno:KN2022-0048-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0048-form ;
-    ontolex:sense kno:KN2022-0048-sense .
-
-kno:KN2022-0048-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/002/0002239077> .
-
-kno:KN2022-0048-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0048-freq-nn,
-        kno:KN2022-0048-freq-yt ;
-    ontolex:writtenRep "굥정"@ko .
-
-kno:KN2022-0048-freq-nn a frac:CorpusFrequency ;
-    rdf:value 147 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0048-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34218 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0048-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B5%A5> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0048 kno:component kno:KN2022-0048-c1 ;
+    kno:frequency kno:KN2022-0048-freq-NN-2024 ;
+    kno:componentString "공정(公正), 윤(尹)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    skos:definition "현 대통령이 공정하지 못함을 반어적으로 이르는 말. ‘굥’은 대통령의 성인 ‘윤’을 뒤집어 쓴 것으로, 온라인 커뮤니티에서 밈으로 사용된다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    a kno:Neologism ;
+    rdfs:label "굥정"@ko ;
+    kno:component kno:KN2022-0048-c2 ;
+    kno:frequency kno:KN2022-0048-freq-NN-2023 ;
+    kno:origin "(굥正)" ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0048-freq-NN-2022 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W08 ;
+    kno:indexForm "굥정"@ko ;
+    kno:frequency kno:KN2022-0048-freq-NN-total ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶대통령실의 사적 채용 소식을 들은 국민들은 대통령이 강조했던 ‘공정’은 허울뿐인 ‘{굥정’에} 불과하냐며 분통을 터트렸다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%A5%EC%A0%95> .
+kno:KN2022-0048-c1 kno:surfaceForm "공정"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.2p ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "공정"@ko ;
+    rdfs:label "공정(公正)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000459 .
+kno:KN2022-0048-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "윤"@ko ;
+    rdfs:label "윤(尹)"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:surfaceForm "윤"@ko ;
+    kno:formative kno:F000568 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0079 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0079-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0079-form ;
-    ontolex:sense kno:KN2025-0079-sense .
-
-kno:KN2025-0079-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/477/0000529721> .
-
-kno:KN2025-0079-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0079-freq-nn,
-        kno:KN2025-0079-freq-yt ;
-    ontolex:writtenRep "귀사 본능"@ko .
-
-kno:KN2025-0079-freq-nn a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0079-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0079-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0079 kno:componentString "귀사(歸社), 본능(本能)"@ko ;
+    rdfs:label "귀사 본능"@ko ;
+    kno:component kno:KN2025-0079-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0079-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 퇴근하거나 귀가해야 할 상황에서 무의식적으로 회사(사무실) 쪽으로 발길이 향하거나, 회사로 돌아가고 싶어지는 심리 또는 행동."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%80%EC%82%AC%20%EB%B3%B8%EB%8A%A5> ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(歸社本能)" ;
+    kno:languageType "한_한" ;
+    kno:indexForm "귀사본능"@ko ;
+    kno:frequency kno:KN2025-0079-freq-NN-2025 ;
+    kno:example "(LLM) 회식이 끝나고 다들 집으로 가는데, 그는 술김에 {귀사본능이} 발동해 회사 쪽으로 걸음을 옮겼다."@ko ;
+    kno:component kno:KN2025-0079-c1 .
+kno:KN2025-0079-c2 rdfs:label "본능(本能)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "본능"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "본능"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000777 ;
+    kno:semanticTag kno:usas-X2.1 .
+kno:KN2025-0079-c1 rdfs:label "귀사(歸社)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002508 ;
+    kno:fullForm "귀사"@ko ;
+    kno:surfaceForm "귀사"@ko ;
+    kno:truncated "false"^^xsd:boolean .

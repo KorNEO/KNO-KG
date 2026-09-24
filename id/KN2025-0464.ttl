@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0464 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0464 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0464-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0464-form ;
-    ontolex:sense kno:KN2025-0464-sense .
-
-kno:KN2025-0464-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/109/0005377362> .
-
-kno:KN2025-0464-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0464-freq-nn,
-        kno:KN2025-0464-freq-yt ;
-    ontolex:writtenRep "육아 셔틀"@ko .
-
-kno:KN2025-0464-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0464-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0464-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0464 kno:slotFiller "셔틀(shuttle) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "육아셔틀"@ko ;
+    kno:instantiates kno:S000088 ;
+    kno:example "(LLM) 부모가 늦게까지 일하느라 집을 비우는 날이 많아 큰아이가 동생들 밥을 챙기고 씻기고 재우는 {육아셔틀이} 됐다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한_영" ;
+    skos:definition "(LLM) 가족 안에서 특정 자녀가 동생을 돌보는 일과 관련 집안일을 반복적으로 맡아, 부모의 양육 역할을 대신하게 되는 처지."@ko ;
+    kno:slotFiller "육아(育兒) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:predicate "되다"@ko ;
+    rdfs:label "육아 셔틀"@ko ;
+    kno:origin "(育兒<영>shuttle)" ;
+    kno:component kno:KN2025-0464-c2 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%EC%95%84%20%EC%85%94%ED%8B%80> ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "육아(育兒), 셔틀(shuttle)"@ko ;
+    kno:instantiates kno:S000940 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0464-c1 .
+kno:KN2025-0464-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "셔틀"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000807 ;
+    kno:fullForm "셔틀"@ko ;
+    rdfs:label "셔틀(shuttle)"@ko .
+kno:KN2025-0464-c1 kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000118 ;
+    kno:surfaceForm "육아"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "육아(育兒)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "육아"@ko ;
+    kno:position "1"^^xsd:integer .

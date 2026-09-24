@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0324 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0324 kno:indexForm "신홍합지역"@ko ;
+    kno:component kno:KN2016-0324-c2 ;
+    skos:definition "서울의 지하철역인 신촌역ㆍ홍대입구역ㆍ합정역 주변 지역을 아울러 이르는 말."@ko ;
+    kno:example "¶OO시는 {신홍합 지역} 창업 인프라를 보다 촘촘히 하기 위해 대학과의 연계성을 강화할 계획이다."@ko ;
+    kno:origin "(新弘合地域)" ;
+    kno:instantiates kno:S000179 ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:label "신홍합 지역"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%ED%99%8D%ED%95%A9%20%EC%A7%80%EC%97%AD> ;
+    kno:frequency kno:KN2016-0324-freq-NN-total ;
+    kno:component kno:KN2016-0324-c1 ;
+    kno:slotFiller "신홍합(新弘合) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "신홍합(新弘合), 지역(地域)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0324-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko .
+kno:KN2016-0324-c2 kno:fullForm "지역"@ko ;
+    kno:surfaceForm "지역"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "지역(地域)"@ko ;
+    kno:formative kno:F000063 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0324-c1 kno:fullForm "신홍합"@ko ;
+    kno:formative kno:F004713 ;
+    kno:surfaceForm "신홍합"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    rdfs:label "신홍합(新弘合)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

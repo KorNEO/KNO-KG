@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0199 kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0199-c1 ;
+    kno:urimalTargetCode "1380763" ;
+    kno:instantiates kno:S000015 ;
+    kno:origin "(域外法)" ;
+    kno:frequency kno:KN2017-0199-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0199-c2 ;
+    kno:indexForm "역외법"@ko ;
+    kno:slotFiller "역외(域外) (1성분)"@ko ;
+    kno:componentString "역외(域外), 법(法)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:example "¶이 가운데 핵심 업체 21개는…업체 이름조차도 이른바 {역외법에} 의해 보호돼 익명으로 되어 있다."@ko ;
+    skos:definition "국내에서 제정한 법률, 명령, 규칙, 조례 따위가 아닌 타국에서 제정한 법률을 이르는 말."@ko ;
+    rdfs:label "역외-법"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380763> ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2017-0199-freq-NN-total .
+kno:KN2017-0199-c1 kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "역외"@ko ;
+    kno:surfaceForm "역외"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005036 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "역외(域外)"@ko ;
+    a kno:Component .
+kno:KN2017-0199-c2 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

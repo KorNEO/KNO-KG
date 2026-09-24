@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0154 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0154-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0154-form ;
-    ontolex:sense kno:KN2024-0154-sense .
-
-kno:KN2024-0154-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005755774> .
-
-kno:KN2024-0154-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0154-freq-nn,
-        kno:KN2024-0154-freq-yt ;
-    ontolex:writtenRep "슬림 다이닝"@ko .
-
-kno:KN2024-0154-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0154-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0154-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0154-freq-NN-2024 ;
+    kno:component kno:KN2024-0154-c2 ;
+    kno:frequency kno:KN2024-0154-freq-NN-total ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "슬림다이닝"@ko ;
+    kno:componentString "슬림(slim), 다이닝(dining)"@ko ;
+    kno:origin "(<영>▼slim dining)" ;
+    skos:definition "편의점, 밀키트, 배달 음식 등을 통해 빠르고 간편하게 준비한 식사."@ko ;
+    kno:instantiates kno:S000825 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2024-0154-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%AC%EB%A6%BC%20%EB%8B%A4%EC%9D%B4%EB%8B%9D> ;
+    a kno:Neologism ;
+    kno:slotFiller "슬림(slim) (1성분)"@ko ;
+    kno:example "¶60대를 포함한 전 연령층에서 반찬을 사 먹는 등 효율적인 방식을 택하며 여가와 휴식 시간을 위한 {슬림 다이닝을} 추구하고 있다."@ko ;
+    rdfs:label "슬림 다이닝"@ko .
+kno:KN2024-0154-c2 kno:surfaceForm "다이닝"@ko ;
+    rdfs:label "다이닝(dining)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001158 ;
+    kno:fullForm "다이닝"@ko ;
+    a kno:Component .
+kno:KN2024-0154-c1 kno:semanticTag kno:usas-N3.2m ;
+    kno:surfaceForm "슬림"@ko ;
+    kno:formative kno:F001537 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "슬림(slim)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "슬림"@ko .

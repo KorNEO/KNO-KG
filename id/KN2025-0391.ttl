@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0391 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0391 a ontolex:Word ;
-    frac:attestation kno:KN2025-0391-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0391-form ;
-    ontolex:sense kno:KN2025-0391-sense .
-
-kno:KN2025-0391-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004450860> .
-
-kno:KN2025-0391-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0391-freq-nn,
-        kno:KN2025-0391-freq-yt ;
-    ontolex:writtenRep "앞브"@ko .
-
-kno:KN2025-0391-freq-nn a frac:CorpusFrequency ;
-    rdf:value 78 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0391-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7285 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0391-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0391 kno:pos "「명」"@ko ;
+    rdfs:label "앞브"@ko ;
+    kno:component kno:KN2025-0391-c1 ;
+    kno:indexForm "앞브"@ko ;
+    kno:languageType "고+영" ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 자전거ㆍ오토바이 따위에서 앞바퀴에 작동하는 브레이크를 줄여 이르는 말."@ko ;
+    kno:example "(LLM) 내리막에서 속도가 붙을 때 {앞브}를 갑자기 세게 잡으면 앞바퀴가 잠기면서 넘어질 수 있다."@ko ;
+    kno:instantiates kno:S001527 ;
+    kno:origin "(앞<영>←brake)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0391-c2 ;
+    kno:componentString "앞, 브(레이크)(brake)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0391-freq-NN-2025 ;
+    kno:slotFiller "브(레이크)(brake) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%9E%EB%B8%8C> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0391-freq-NN-total .
+kno:KN2025-0391-c1 kno:formative kno:F001575 ;
+    rdfs:label "앞"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "앞"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "앞"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0391-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004012 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "브"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "브(레이크)(brake)"@ko ;
+    kno:fullForm "브레이크"@ko .

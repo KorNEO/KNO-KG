@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0001 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0001 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0001-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0001-form ;
-    ontolex:sense kno:KN2022-0001-sense .
-
-kno:KN2022-0001-att-nn a frac:Attestation ;
-    dcterms:date "2021-08-08"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/009/0004835370> .
-
-kno:KN2022-0001-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0001-freq-nn,
-        kno:KN2022-0001-freq-yt ;
-    ontolex:writtenRep "가상^세계^패션"@ko .
-
-kno:KN2022-0001-freq-nn a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0001-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0001-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0001 kno:indexForm "가상세계패션"@ko ;
+    kno:origin "(假想世界<영>fashion)" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0001-c2 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0001-c3 ;
+    kno:componentString "가상(假想), 세계(世界), 패션(fashion)"@ko ;
+    rdfs:label "가상^세계^패션"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "한^한^영" ;
+    kno:slotFiller "세계(世界)+패션(fashion) (2성분)"@ko ;
+    kno:component kno:KN2022-0001-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1650811> ;
+    kno:example "¶O 대표는 온라인에서 보내는 시간이 많아지면서 ‘{가상 세계 패션’에} 대한 수요가 늘어날 것이라고 하였다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0001-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0001-freq-NN-2021 ;
+    kno:instantiates kno:S000062 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:urimalTargetCode "1650811" ;
+    skos:definition "가상 세계에 등장하는 아바타에게 사용하기 위해 디지털 기술을 활용하여 만든 패션 제품."@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "가상(假想)+세계(世界) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0001-freq-NN-total ;
+    kno:instantiates kno:S000098 ;
+    kno:frequency kno:KN2022-0001-freq-NN-2024 .
+kno:KN2022-0001-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세계(世界)"@ko ;
+    a kno:Component ;
+    kno:fullForm "세계"@ko ;
+    kno:surfaceForm "세계"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:formative kno:F000219 .
+kno:KN2022-0001-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000123 ;
+    kno:fullForm "패션"@ko ;
+    kno:surfaceForm "패션"@ko ;
+    rdfs:label "패션(fashion)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2022-0001-c1 kno:formative kno:F000157 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.4m ;
+    rdfs:label "가상(假想)"@ko ;
+    a kno:Component ;
+    kno:fullForm "가상"@ko ;
+    kno:surfaceForm "가상"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0227 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2023-0227 a ontolex:Word ;
-    frac:attestation kno:KN2023-0227-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0227-form ;
-    ontolex:sense kno:KN2023-0227-sense .
-
-kno:KN2023-0227-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003702041> .
-
-kno:KN2023-0227-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0227-freq-nn,
-        kno:KN2023-0227-freq-yt ;
-    ontolex:writtenRep "일저-우일저"@ko .
-
-kno:KN2023-0227-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0227-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0227-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:indexForm "일저우일저"@ko ;
+    skos:definition "날마다 주식 가격이 떨어지는 현상을 이르는 말."@ko ;
+    kno:formation kno:W01 ;
+    kno:origin "(日低又日低)" ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0227-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%BC%EC%A0%80%EC%9A%B0%EC%9D%BC%EC%A0%80> ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0227-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0227-c1 ;
+    rdfs:label "일저-우일저"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2023-0227-freq-NN-2022 ;
+    kno:example "¶국내 증시가 매일매일 추락함에 따라 투자자들은 {일저우일저라는} 웃지 못할 말로 신저가를 설명하고 있다."@ko ;
+    kno:componentString "일저(日低), 우일저(又日低)"@ko .
+kno:KN2023-0227-c2 rdfs:label "우일저(又日低)"@ko ;
+    kno:formative kno:F005223 ;
+    kno:fullForm "우일저"@ko ;
+    kno:surfaceForm "우일저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.3m .
+kno:KN2023-0227-c1 kno:surfaceForm "일저"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "일저"@ko ;
+    rdfs:label "일저(日低)"@ko ;
+    kno:semanticTag kno:usas-I1.3m ;
+    kno:formative kno:F005475 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

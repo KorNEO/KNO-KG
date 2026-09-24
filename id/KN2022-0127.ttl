@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0127 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0127 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0127-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0127-form ;
-    ontolex:sense kno:KN2022-0127-sense .
-
-kno:KN2022-0127-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/382/0000950930> .
-
-kno:KN2022-0127-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0127-freq-nn,
-        kno:KN2022-0127-freq-yt ;
-    ontolex:writtenRep "디지털^헬스^지표"@ko .
-
-kno:KN2022-0127-freq-nn a frac:CorpusFrequency ;
-    rdf:value 100 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0127-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0127-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0127 kno:slotFiller "디지털(digital)+헬스(health) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0127-freq-NN-2023 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0127-freq-NN-2024 ;
+    skos:definition "병원 운영 전반에 관한 디지털 전환 정도를 수치로 나타낸 지표. 지배 구조 및 인력, 개인별 맞춤 의료 지원 등의 항목에서 정보 통신 기술 적용 및 활용의 정도를 평가한다."@ko ;
+    kno:frequency kno:KN2022-0127-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶OO병원은 {디지털 헬스 지표} 400점 만점의 평가에서 308점을 얻어 디지털 의료 생태계 구축에 있어서 그 우수함을 인정받았다."@ko ;
+    kno:frequency kno:KN2022-0127-freq-NN-total ;
+    kno:origin "(<영>digital health指標)" ;
+    kno:instantiates kno:S000044 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "헬스(health)+지표(指標) (2성분)"@ko ;
+    kno:indexForm "디지털헬스지표"@ko ;
+    kno:instantiates kno:S000428 ;
+    rdfs:label "디지털^헬스^지표"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%94%EC%A7%80%ED%84%B8%ED%97%AC%EC%8A%A4%EC%A7%80%ED%91%9C> ;
+    kno:componentString "디지털(digital), 헬스(health), 지표(指標)"@ko ;
+    kno:component kno:KN2022-0127-c1 ;
+    kno:languageType "영^영^한" ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0127-c3 ;
+    kno:component kno:KN2022-0127-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0127-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0127-freq-NN-2021 .
+kno:KN2022-0127-c1 a kno:Component ;
+    kno:surfaceForm "디지털"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F000076 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "디지털(digital)"@ko ;
+    kno:fullForm "디지털"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0127-c3 a kno:Component ;
+    kno:fullForm "지표"@ko ;
+    kno:surfaceForm "지표"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000933 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.1 ;
+    rdfs:label "지표(指標)"@ko .
+kno:KN2022-0127-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "헬스(health)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:formative kno:F000642 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "헬스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "헬스"@ko .

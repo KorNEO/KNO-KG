@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0341 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0341 kno:unitType "구"@ko ;
+    kno:example "¶신조어를 마스터하는 순간, 당신은 ‘탈 아재’ 할 것이다. 이번엔 {아재 팁} 신조어 고급편이다!"@ko ;
+    skos:definition "아저씨들을 위한 유용한 정보나 조언."@ko ;
+    kno:slotFiller "팁(tip) (1성분)"@ko ;
+    rdfs:label "아재 팁"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EC%9E%AC%20%ED%8C%81> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0341-freq-NN-total ;
+    kno:componentString "아재, 팁(tip)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_영" ;
+    kno:frequency kno:KN2016-0341-freq-NN-2016 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(아재<영>tip)" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0341-c2 ;
+    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:instantiates kno:S000445 ;
+    kno:component kno:KN2016-0341-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "아재팁"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000045 .
+kno:KN2016-0341-c2 kno:surfaceForm "팁"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000195 ;
+    rdfs:label "팁(tip)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "팁"@ko .
+kno:KN2016-0341-c1 rdfs:label "아재"@ko ;
+    kno:surfaceForm "아재"@ko ;
+    kno:formative kno:F000028 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "아재"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:semanticTag kno:usas-S2.2 ;
+    a kno:Component ;
+    kno:role "고정항"@ko .

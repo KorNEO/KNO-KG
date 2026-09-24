@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0397 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0397 a ontolex:Word ;
-    frac:attestation kno:KN2025-0397-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0397-form ;
-    ontolex:sense kno:KN2025-0397-sense .
-
-kno:KN2025-0397-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013250639> .
-
-kno:KN2025-0397-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0397-freq-nn,
-        kno:KN2025-0397-freq-yt ;
-    ontolex:writtenRep "어깨빵족"@ko .
-
-kno:KN2025-0397-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0397-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0397-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0397 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0397-c2 ;
+    kno:frequency kno:KN2025-0397-freq-NN-total ;
+    kno:componentString "어깨빵, -족(族)"@ko ;
+    kno:frequency kno:KN2025-0397-freq-NN-2025 ;
+    kno:languageType "고+한" ;
+    kno:slotFiller "어깨빵 (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(어깨빵族)" ;
+    a ontolex:Word ;
+    kno:indexForm "어깨빵족"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "어깨빵-족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:component kno:KN2025-0397-c1 ;
+    skos:definition "(LLM) 번화가ㆍ지하철 등 사람이 붐비는 곳에서 낯선 사람에게 고의로 어깨나 몸을 부딪쳐 불쾌감이나 위협을 주는 사람들, 또는 그런 무리."@ko ;
+    kno:example "(LLM) 퇴근 시간대에 사람이 많은 환승 통로에서 일부러 어깨를 세게 치고 지나가는 사람이 반복해서 나타나자, 이용객들은 {어깨빵족이} 있는 것 아니냐며 주의를 당부했다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EA%B9%A8%EB%B9%B5%EC%A1%B1> .
+kno:KN2025-0397-c2 kno:fullForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0397-c1 kno:surfaceForm "어깨빵"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004942 ;
+    rdfs:label "어깨빵"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E3 ;
+    kno:fullForm "어깨빵"@ko .

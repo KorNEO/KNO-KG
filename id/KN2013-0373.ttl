@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0373 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0373 kno:languageType "고+영" ;
+    skos:definition "‘쫑파티’의 준말."@ko ;
+    kno:component kno:KN2013-0373-c2 ;
+    rdfs:label "쫑파"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2013-0373-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:example "¶이날 OOO은 “어제 {쫑파를} 하고 일어나니 기분이 이상하더라.…”라고 입을 열었다."@ko ;
+    kno:origin "(쫑←<영>party)" ;
+    kno:indexForm "쫑파"@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000446 ;
+    kno:componentString "쫑, 파(티)(party)"@ko ;
+    kno:slotFiller "쫑 (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%AB%91%ED%8C%8C> ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2013-0373-c2 kno:fullForm "파티"@ko ;
+    kno:surfaceForm "파"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000624 ;
+    rdfs:label "파(티)(party)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component .
+kno:KN2013-0373-c1 kno:fullForm "쫑"@ko ;
+    kno:surfaceForm "쫑"@ko ;
+    kno:semanticTag kno:usas-T2m ;
+    kno:formative kno:F005968 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "쫑"@ko ;
+    kno:position "1"^^xsd:integer .

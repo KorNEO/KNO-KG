@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0343 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0343 kno:indexForm "일진생정"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "일진(一陣) (1성분)"@ko ;
+    rdfs:label "일진 생정"@ko ;
+    kno:component kno:KN2013-0343-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "일진(一陣), 생정(生情)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(一陣生情)" ;
+    kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2013-0343-freq-NN-2013 ;
+    kno:component kno:KN2013-0343-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%BC%EC%A7%84%20%EC%83%9D%EC%A0%95> ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:example "¶23일 일선 초중등학교 등에 따르면 최근 청소년들 사이에서 각종 10대 관련 생활 정보를 게시하는 생정 블로그가 유행처럼 번지고 있는 가운데 일부에서 ‘담배 생정’, ‘{일진 생정}’ 등의 제목을 달고 담배 피는 법, 일진되는 법, 화장 상식 등을 알려 주는 정보 글이 무분별하게 올라와 문제로 지적되고 있다."@ko ;
+    kno:frequency kno:KN2013-0343-freq-NN-total ;
+    kno:instantiates kno:S000259 ;
+    skos:definition "학교에서 일진이 되기 위한 생활 방법에 대한 정보."@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko .
+kno:KN2013-0343-c1 kno:surfaceForm "일진"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "일진(一陣)"@ko ;
+    kno:fullForm "일진"@ko ;
+    kno:semanticTag kno:usas-S5m ;
+    kno:formative kno:F005476 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0343-c2 kno:formative kno:F000281 ;
+    rdfs:label "생정(生情)"@ko ;
+    kno:surfaceForm "생정"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:fullForm "생정"@ko .

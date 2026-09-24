@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0070 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0070 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0070-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0070-form ;
-    ontolex:sense kno:KN2020-0070-sense .
-
-kno:KN2020-0070-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000500163> .
-
-kno:KN2020-0070-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0070-freq-nn,
-        kno:KN2020-0070-freq-yt ;
-    ontolex:writtenRep "긴급^재난금"@ko .
-
-kno:KN2020-0070-freq-nn a frac:CorpusFrequency ;
-    rdf:value 269 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0070-freq-yt a frac:CorpusFrequency ;
-    rdf:value 611 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0070-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0070 kno:languageType "한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EC%9E%AC%EB%82%9C%EA%B8%88> ;
+    kno:componentString "긴급(緊急), 재난(災難), -금(金)"@ko ;
+    kno:frequency kno:KN2020-0070-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0070-c2 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "-금(金) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000144 ;
+    kno:frequency kno:KN2020-0070-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "긴급^재난금"@ko ;
+    kno:frequency kno:KN2020-0070-freq-NN-2024 ;
+    kno:origin "(緊急災難金)" ;
+    kno:component kno:KN2020-0070-c1 ;
+    kno:component kno:KN2020-0070-c3 ;
+    skos:definition "전국적인 재난 사태로 인해 생계에 어려움을 겪는 국민들에게 정부가 긴급하게 지급하는 일정 금액의 현금 혹은 현물. 코로나19의 확산으로 인한 경제 위축이 장기화되자 국민들의 생계를 지원하고 위축된 소비 심리를 진작하기 위해 마련된 제도로, 지급 주체가 지방 자치 단체일 경우 각 지방 자치 단체에 따라 지급 내용과 용어가 조금씩 다르다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:predicate "혹은"@ko ;
+    kno:frequency kno:KN2020-0070-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0070-freq-NN-total ;
+    kno:frequency kno:KN2020-0070-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0070-freq-NN-2020 ;
+    kno:indexForm "긴급재난금"@ko ;
+    kno:example "¶OO시가 코로나19 확산 방지를 위해 방역 수칙을 철저하게 준수한 집합 금지 대상 시설들에게 {긴급 재난금을} 우선 지원한다."@ko .
+kno:KN2020-0070-c2 a kno:Component ;
+    kno:fullForm "재난"@ko ;
+    kno:surfaceForm "재난"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A15m ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "재난(災難)"@ko ;
+    kno:formative kno:F000013 .
+kno:KN2020-0070-c1 kno:fullForm "긴급"@ko ;
+    kno:formative kno:F000016 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "긴급(緊急)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "긴급"@ko .
+kno:KN2020-0070-c3 a kno:Component ;
+    kno:surfaceForm "금"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001105 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-O1.1 ;
+    rdfs:label "-금(金)"@ko ;
+    kno:fullForm "금"@ko .

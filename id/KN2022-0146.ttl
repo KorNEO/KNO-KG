@@ -1,37 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0146 a ontolex:Word ;
-    frac:attestation kno:KN2022-0146-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0146-form ;
-    ontolex:sense kno:KN2022-0146-sense .
-
-kno:KN2022-0146-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000785943> .
-
-kno:KN2022-0146-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0146-freq-nn,
-        kno:KN2022-0146-freq-yt ;
-    ontolex:writtenRep "멸콩"@ko .
-
-kno:KN2022-0146-freq-nn a frac:CorpusFrequency ;
-    rdf:value 459 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0146-freq-yt a frac:CorpusFrequency ;
-    rdf:value 10433 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0146-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%8B%A0%EC%84%B8%EA%B3%84%EA%B7%B8%EB%A3%B9%20%EC%A0%95%EC%9A%A9%EC%A7%84%20SNS%20%EB%A9%B8%EA%B3%B5%20%EB%B0%9C%EC%96%B8%20%EA%B2%8C%EC%8B%9C%20%EB%85%BC%EB%9E%80> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0146 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:example "¶멸치와 콩 등으로 장을 보며 자신의 정치적 견해를 전달하는 이른바 ‘{멸콩} 릴레이’에 대한 정치권의 찬반 공방이 이어졌다."@ko ;
+    kno:frequency kno:KN2022-0146-freq-NN-2025 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "멸콩"@ko ;
+    kno:component kno:KN2022-0146-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0146-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0146-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%B8%EC%BD%A9> ;
+    kno:slotFiller "멸(치) (1성분)"@ko ;
+    kno:componentString "멸(치), 콩"@ko ;
+    kno:instantiates kno:S000439 ;
+    kno:component kno:KN2022-0146-c1 ;
+    a kno:Neologism ;
+    kno:indexForm "멸콩"@ko ;
+    kno:frequency kno:KN2022-0146-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0146-freq-NN-total ;
+    kno:languageType "고+고" ;
+    skos:definition "‘멸치’와 ‘콩’의 앞 글자를 따서 만든 말로, 공산주의 또는 공산주의자를 멸한다는 뜻을 가진 ‘멸공’과 발음이 유사하도록 만들어 우회적으로 표현한 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko .
+kno:KN2022-0146-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "콩"@ko ;
+    kno:surfaceForm "콩"@ko ;
+    kno:formative kno:F000962 ;
+    a kno:Component ;
+    kno:fullForm "콩"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2022-0146-c1 a kno:Component ;
+    rdfs:label "멸(치)"@ko ;
+    kno:surfaceForm "멸"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001300 ;
+    kno:fullForm "멸치"@ko .

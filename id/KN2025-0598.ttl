@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0598 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0598 a ontolex:Word ;
-    frac:attestation kno:KN2025-0598-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0598-form ;
-    ontolex:sense kno:KN2025-0598-sense .
-
-kno:KN2025-0598-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-16"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/442/0000155999> .
-
-kno:KN2025-0598-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0598-freq-nn,
-        kno:KN2025-0598-freq-yt ;
-    ontolex:writtenRep "킹룡"@ko .
-
-kno:KN2025-0598-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0598-freq-yt a frac:CorpusFrequency ;
-    rdf:value 563 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0598-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0598 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%B9%EB%A3%A1> ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000335 ;
+    kno:origin "(<영>king龍)" ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    rdfs:label "킹룡"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:componentString "킹(king), (공)룡(恐龍)"@ko ;
+    kno:frequency kno:KN2025-0598-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "(공)룡(恐龍) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) ‘공룡’에 ‘킹(king)’을 붙여, 크기ㆍ위압감ㆍ스케일 등이 매우 압도적인 대상이나 장면을 과장해 이르는 말."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "(LLM) 이번 영화는 스토리는 아쉬웠지만, 큰 스크린에서 {킹룡}이 등장하는 장면만큼은 진짜 압도적이었다."@ko ;
+    kno:frequency kno:KN2025-0598-freq-NN-2025 ;
+    kno:component kno:KN2025-0598-c1 ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:indexForm "킹룡"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0598-c2 .
+kno:KN2025-0598-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F000122 ;
+    kno:fullForm "킹"@ko ;
+    rdfs:label "킹(king)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "킹"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0598-c2 kno:formative kno:F003261 ;
+    rdfs:label "(공)룡(恐龍)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "룡"@ko ;
+    kno:fullForm "공룡"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-L2 .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0363 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0363 a ontolex:Word ;
-    frac:attestation kno:KN2023-0363-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0363-form ;
-    ontolex:sense kno:KN2023-0363-sense .
-
-kno:KN2023-0363-att-nn a frac:Attestation ;
-    dcterms:date "2022-05-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004967469> .
-
-kno:KN2023-0363-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0363-freq-nn,
-        kno:KN2023-0363-freq-yt ;
-    ontolex:writtenRep "힙스티지"@ko .
-
-kno:KN2023-0363-freq-nn a frac:CorpusFrequency ;
-    rdf:value 66 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0363-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0363-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0363 kno:component kno:KN2023-0363-c2 ;
+    kno:predicate "중요시하다"@ko ;
+    kno:indexForm "힙스티지"@ko ;
+    kno:instantiates kno:S001787 ;
+    kno:origin "(<영>▼hip←prestige)" ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:slotFiller "(프레)스티지(prestige) (1성분)"@ko ;
+    kno:component kno:KN2023-0363-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9E%99%EC%8A%A4%ED%8B%B0%EC%A7%80> ;
+    kno:frequency kno:KN2023-0363-freq-NN-2022 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    skos:definition "무작정 유행을 좇지 않고 브랜드 고유의 가치와 개성을 중요시하는 것. ‘힙(hip)’과 ‘프레스티지(prestige)’를 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2023-0363-freq-NN-2023 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2023-0363-freq-NN-total ;
+    rdfs:label "힙스티지"@ko ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:example "¶{힙스티지는} 유행에 편승하지 않고 브랜드 고유의 스타일과 가치를 추구한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "힙(하다)(hip), (프레)스티지(prestige)"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2023-0363-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004599 ;
+    kno:fullForm "프레스티지"@ko ;
+    kno:surfaceForm "스티지"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(프레)스티지(prestige)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p .
+kno:KN2023-0363-c1 kno:surfaceForm "힙"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F002047 ;
+    kno:fullForm "힙하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "힙(하다)(hip)"@ko .

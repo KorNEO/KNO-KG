@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0044 kno:origin "(꼭짓點깝dance)" ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OOO의 {꼭짓점 깝댄스가} 스튜디오를 열광의 도가니로 만들었다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BC%AD%EC%A7%93%EC%A0%90%20%EA%B9%9D%EB%8C%84%EC%8A%A4> ;
+    kno:instantiates kno:S000367 ;
+    kno:predicate "추다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "꼭짓점(꼭짓點), 깝, 댄스(dance)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "꼭짓점깝댄스"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:slotFiller "꼭짓점(꼭짓點)+깝 (2성분)"@ko ;
+    skos:definition "여러 명의 사람들이 피라미드 모양의 대열을 이루어 까불거리며 가볍게 몸을 움직여 추는 춤."@ko ;
+    kno:component kno:KN2012-0044-c2 ;
+    rdfs:label "꼭짓점 깝댄스"@ko ;
+    a kno:Neologism ;
+    kno:languageType "(고+한)_(고+영)" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2012-0044-c3 ;
+    kno:component kno:KN2012-0044-c1 .
+kno:KN2012-0044-c2 kno:semanticTag kno:usas-S1.2.4m ;
+    rdfs:label "깝"@ko ;
+    kno:formative kno:F001124 ;
+    a kno:Component ;
+    kno:fullForm "깝"@ko ;
+    kno:surfaceForm "깝"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0044-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "댄스"@ko ;
+    kno:surfaceForm "댄스"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000483 ;
+    rdfs:label "댄스(dance)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K4 .
+kno:KN2012-0044-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "꼭짓점"@ko ;
+    kno:surfaceForm "꼭짓점"@ko ;
+    kno:formative kno:F002649 ;
+    rdfs:label "꼭짓점(꼭짓點)"@ko ;
+    kno:semanticTag kno:usas-M6 .

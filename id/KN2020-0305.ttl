@@ -1,37 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0305 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0305 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0305-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0305-form ;
-    ontolex:sense kno:KN2020-0305-sense .
-
-kno:KN2020-0305-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001396345> .
-
-kno:KN2020-0305-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0305-freq-nn,
-        kno:KN2020-0305-freq-yt ;
-    ontolex:writtenRep "정보 감염증"@ko .
-
-kno:KN2020-0305-freq-nn a frac:CorpusFrequency ;
-    rdf:value 214 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0305-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0305-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%A0%95%EB%B3%B4%EA%B0%90%EC%97%BC%EC%A6%9D> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0305 kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0305-freq-NN-2021 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1485728> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2020-0305-freq-NN-2020 ;
+    rdfs:label "정보 감염증"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0305-c1 ;
+    kno:example "¶언론 관계자들은 최근 코로나19와 관련된 일부 국민들의 {정보 감염증}을 우려하며, 해당 정보를 수용하기에 앞서 정보의 출처와 사실 관계를 먼저 확인해야 한다고 말했다."@ko ;
+    kno:instantiates kno:S000648 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0305-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(情報感染症)" ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    kno:indexForm "정보감염증"@ko ;
+    skos:definition "사실 확인 없이 과도하게 생산되어 유통되는 정보에 과민하게 반응하는 현상을 일컫는 말. 코로나19와 관련하여 확인되지 않은 정보가 급속히 퍼지면서 혼란을 가져오는 데서 생겨난 말이다."@ko ;
+    kno:urimalTargetCode "1485728" ;
+    kno:frequency kno:KN2020-0305-freq-NN-total ;
+    kno:componentString "정보(情報), 감염증(感染症)"@ko ;
+    kno:frequency kno:KN2020-0305-freq-NN-2022 ;
+    kno:slotFiller "정보(情報) (1성분)"@ko .
+kno:KN2020-0305-c1 a kno:Component ;
+    rdfs:label "정보(情報)"@ko ;
+    kno:fullForm "정보"@ko ;
+    kno:formative kno:F000583 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "정보"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0305-c2 kno:fullForm "감염증"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "감염증"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "감염증(感染症)"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F000447 .

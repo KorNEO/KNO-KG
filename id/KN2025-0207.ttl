@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0207 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0207 a ontolex:Word ;
-    frac:attestation kno:KN2025-0207-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0207-form ;
-    ontolex:sense kno:KN2025-0207-sense .
-
-kno:KN2025-0207-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001823465> .
-
-kno:KN2025-0207-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0207-freq-nn,
-        kno:KN2025-0207-freq-yt ;
-    ontolex:writtenRep "레프트 튜브"@ko .
-
-kno:KN2025-0207-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0207-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0207-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0207 kno:lastAttestationYear "2026"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "레프트튜브"@ko ;
+    kno:component kno:KN2025-0207-c2 ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 진보 성향의 정치ㆍ사회 이슈를 다루는 콘텐츠를 주로 생산ㆍ유통하는 유튜브 채널 또는 그 채널들이 형성한 생태계."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0207-freq-NN-total ;
+    rdfs:label "레프트튜브"@ko ;
+    kno:frequency kno:KN2025-0207-freq-NN-2025 ;
+    kno:componentString "레프트(left), (유)튜브(YouTube)"@ko ;
+    kno:slotFiller "레프트(left) (1성분)"@ko ;
+    kno:component kno:KN2025-0207-c1 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000748 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A0%88%ED%94%84%ED%8A%B8%ED%8A%9C%EB%B8%8C> ;
+    kno:example "(LLM) 노동 정책 논쟁이 커지자 {레프트튜브가} 관련 해설 영상을 잇달아 올리며 여론전에 나섰다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0207-c2 kno:surfaceForm "튜브"@ko ;
+    rdfs:label "(유)튜브(YouTube)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F001917 ;
+    kno:fullForm "유튜브"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0207-c1 kno:fullForm "레프트"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "레프트(left)"@ko ;
+    kno:surfaceForm "레프트"@ko ;
+    kno:formative kno:F003218 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M6 .

@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0258 kno:example "¶OO는 다양한 식품 영양소의 효능 조합이 중요하다는 신개념 영양 트렌드인 ‘{슈퍼 이팅}’ 개념을 적용해 다섯 가지 멀티 슈퍼 푸드의 영양을 한 번에 담은 제품이다."@ko ;
+    kno:origin "(super eating)" ;
+    kno:component kno:KN2013-0258-c1 ;
+    a kno:Neologism ;
+    kno:indexForm "슈퍼이팅"@ko ;
+    kno:frequency kno:KN2013-0258-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0258-freq-NN-2013 ;
+    kno:slotFiller "이팅(eating) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "섭취하다"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    skos:definition "영양소를 고려하여 건강에 이로운 식품을 골고루 섭취하는 일."@ko ;
+    kno:frequency kno:KN2013-0258-freq-NN-2017 ;
+    rdfs:label "슈퍼 이팅"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "슈퍼(super), 이팅(eating)"@ko ;
+    kno:frequency kno:KN2013-0258-freq-NN-2019 ;
+    kno:frequency kno:KN2013-0258-freq-NN-2018 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2013-0258-freq-NN-2012 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:component kno:KN2013-0258-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%88%ED%8D%BC%20%EC%9D%B4%ED%8C%85> ;
+    kno:instantiates kno:S000309 .
+kno:KN2013-0258-c1 kno:role "고정항"@ko ;
+    kno:fullForm "슈퍼"@ko ;
+    kno:formative kno:F000373 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "슈퍼(super)"@ko ;
+    kno:surfaceForm "슈퍼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A13.3 .
+kno:KN2013-0258-c2 rdfs:label "이팅(eating)"@ko ;
+    kno:formative kno:F005418 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "이팅"@ko ;
+    kno:surfaceForm "이팅"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

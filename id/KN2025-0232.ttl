@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0232 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0232 a ontolex:Word ;
-    frac:attestation kno:KN2025-0232-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0232-form ;
-    ontolex:sense kno:KN2025-0232-sense .
-
-kno:KN2025-0232-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002690003> .
-
-kno:KN2025-0232-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0232-freq-nn,
-        kno:KN2025-0232-freq-yt ;
-    ontolex:writtenRep "메타 플루언서"@ko .
-
-kno:KN2025-0232-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0232-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0232-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0232 kno:unitType "단어"@ko ;
+    kno:example "(LLM) 가상 팬미팅이 늘면서 {메타플루언서가} 아바타로 라이브 방송을 진행하고 팬들과 실시간으로 대화했다."@ko ;
+    kno:componentString "메타(meta), (인)플루언서(influencer)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "메타플루언서"@ko ;
+    kno:frequency kno:KN2025-0232-freq-NN-total ;
+    kno:component kno:KN2025-0232-c1 ;
+    skos:definition "(LLM) 메타버스 등 가상 공간에서 아바타ㆍ가상 캐릭터를 활용해 콘텐츠를 제작ㆍ공유하고, 이용자와 소통하며 영향력을 미치는 사람."@ko ;
+    a kno:Neologism ;
+    kno:predicate "미치다"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000068 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%94%ED%83%80%ED%94%8C%EB%A3%A8%EC%96%B8%EC%84%9C> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "메타플루언서"@ko ;
+    kno:component kno:KN2025-0232-c2 ;
+    kno:frequency kno:KN2025-0232-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "메타(meta) (1성분)"@ko ;
+    a ontolex:Word .
+kno:KN2025-0232-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "메타(meta)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "메타"@ko ;
+    kno:surfaceForm "메타"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000212 .
+kno:KN2025-0232-c2 kno:fullForm "인플루언서"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000196 ;
+    rdfs:label "(인)플루언서(influencer)"@ko ;
+    kno:surfaceForm "플루언서"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "고정항"@ko .

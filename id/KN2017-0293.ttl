@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0293 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0293 rdfs:label "트럼프 페이드"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:component kno:KN2017-0293-c1 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:componentString "트럼프(Trump), 페이드(fade)"@ko ;
+    skos:definition "2016년 미국 대선에서 당선된 대통령이 경기를 좋게 할 정책을 내놓을 것이라는 기대감이 급격히 사라지는 현상."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2017-0293-freq-NN-2017 ;
+    kno:origin "(Trump<영>fade)" ;
+    kno:indexForm "트럼프페이드"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%9F%BC%ED%94%84%20%ED%8E%98%EC%9D%B4%EB%93%9C> ;
+    kno:year "2017"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0293-freq-NN-total ;
+    kno:component kno:KN2017-0293-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OO는 “…이제 ‘{트럼프 페이드’가} 시작됐다.”라며 OOO 행정부 기대감에 의한 상승세가 막을 내렸다고 지적했다."@ko ;
+    kno:predicate "사라지다"@ko .
+kno:KN2017-0293-c1 kno:formative kno:F006545 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:fullForm "트럼프"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "트럼프(Trump)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "트럼프"@ko .
+kno:KN2017-0293-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A3m ;
+    kno:formative kno:F006687 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "페이드(fade)"@ko ;
+    kno:fullForm "페이드"@ko ;
+    kno:surfaceForm "페이드"@ko .

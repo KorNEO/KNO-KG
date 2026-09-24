@@ -1,37 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0090 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0090 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0090-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0090-form ;
-    ontolex:sense kno:KN2020-0090-sense .
-
-kno:KN2020-0090-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001417411> .
-
-kno:KN2020-0090-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0090-freq-nn,
-        kno:KN2020-0090-freq-yt ;
-    ontolex:writtenRep "동학 개미"@ko .
-
-kno:KN2020-0090-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21161 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0090-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3873 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0090-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B0%9C%EB%AF%B8(%EC%A3%BC%EC%8B%9D)> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:component kno:KN2020-0090-c1 ;
+    kno:frequency kno:KN2020-0090-freq-NN-2021 ;
+    kno:indexForm "동학개미"@ko ;
+    kno:frequency kno:KN2020-0090-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0090-freq-NN-2022 ;
+    kno:component kno:KN2020-0090-c2 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:example "¶코로나19 확산 이후 {동학 개미의} 주식 투자가 급증하면서 증권사들이 역대급 실적을 내고 있다."@ko ;
+    kno:frequency kno:KN2020-0090-freq-NN-2024 ;
+    kno:slotFiller "개미 (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1494619" ;
+    kno:frequency kno:KN2020-0090-freq-NN-total ;
+    kno:slotFiller "동학(東學) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1494619> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(東學개미)" ;
+    kno:frequency kno:KN2020-0090-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0090-freq-NN-2023 ;
+    skos:definition "동학 개미 운동에 참여한 국내 개인 투자자들을 이르는 말. 코로나19의 확산과 그에 따른 경제 위기로 인해, 우리나라 주식 시장에서 외국인 투자자들의 대규모 매도세와 국내 개인 투자자들의 대규모 매수세가 맞물린 상황에서, 코스피 지수 및 코스닥 지수의 폭락을 막기 위해 매도된 매물을 조금이라도 매수한 사람을 말한다."@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:instantiates kno:S001337 ;
+    kno:languageType "한_고" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000070 ;
+    rdfs:label "동학 개미"@ko ;
+    kno:componentString "동학(東學), 개미"@ko .
+kno:KN2020-0090-c1 a kno:Component ;
+    kno:formative kno:F001201 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "동학(東學)"@ko ;
+    kno:fullForm "동학"@ko ;
+    kno:surfaceForm "동학"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S9 .
+kno:KN2020-0090-c2 kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "개미"@ko ;
+    rdfs:label "개미"@ko ;
+    kno:formative kno:F000083 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "개미"@ko .

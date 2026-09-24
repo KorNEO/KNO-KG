@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0384 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0384 a ontolex:Word ;
-    frac:attestation kno:KN2025-0384-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0384-form ;
-    ontolex:sense kno:KN2025-0384-sense .
-
-kno:KN2025-0384-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005520356> .
-
-kno:KN2025-0384-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0384-freq-nn,
-        kno:KN2025-0384-freq-yt ;
-    ontolex:writtenRep "아들 맘상"@ko .
-
-kno:KN2025-0384-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0384-freq-yt a frac:CorpusFrequency ;
-    rdf:value 203 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0384-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0384 kno:instantiates kno:S000190 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0384-c3 ;
+    rdfs:label "아들맘-상"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0384-freq-NN-2025 ;
+    kno:origin "(아들<영>mom相)" ;
+    kno:frequency kno:KN2025-0384-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S001511 ;
+    skos:definition "(LLM) 아들을 둔 엄마(또는 아들을 낳아 키울 것 같은 사람)로 연상되는 분위기나 인상을 주는 얼굴 생김새."@ko ;
+    kno:slotFiller "맘(mom)+-상(相) (2성분)"@ko ;
+    kno:componentString "아들, 맘(mom), -상(相)"@ko ;
+    kno:slotFiller "아들+맘(mom) (2성분)"@ko ;
+    kno:example "(LLM) 내 사진을 보더니 친구가 {아들맘상이라}면서 왠지 아들 엄마 느낌이 난다고 하더라."@ko ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2025-0384-c1 ;
+    kno:languageType "고_(영+한)" ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0384-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%93%A4%EB%A7%98%EC%83%81> ;
+    kno:indexForm "아들맘상"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2025-0384-c3 kno:semanticTag kno:usas-O4.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "상"@ko ;
+    kno:formative kno:F000217 ;
+    a kno:Component ;
+    kno:surfaceForm "상"@ko ;
+    rdfs:label "-상(相)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0384-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "아들"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000839 ;
+    kno:fullForm "아들"@ko ;
+    kno:surfaceForm "아들"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0384-c2 kno:surfaceForm "맘"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000021 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "맘"@ko .

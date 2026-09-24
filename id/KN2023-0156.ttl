@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0156 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0156 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0156-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0156-form ;
-    ontolex:sense kno:KN2023-0156-sense .
-
-kno:KN2023-0156-att-nn a frac:Attestation ;
-    dcterms:date "2023-06-01"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/029/0002804236> .
-
-kno:KN2023-0156-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0156-freq-nn,
-        kno:KN2023-0156-freq-yt ;
-    ontolex:writtenRep "실감^문화^공간"@ko .
-
-kno:KN2023-0156-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0156-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0156-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0156 kno:origin "(實感文化空間)" ;
+    kno:indexForm "실감문화공간"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EA%B0%90%EB%AC%B8%ED%99%94%EA%B3%B5%EA%B0%84> ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0156-c1 ;
+    rdfs:label "실감^문화^공간"@ko ;
+    kno:frequency kno:KN2023-0156-freq-NN-2022 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:predicate "놓은"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "메타버스와 인공 지능을 활용하여 실제로 체험하는 듯한 콘텐츠를 제작하고 이를 전시해 놓은 문화 공간."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:slotFiller "실감(實感)+문화(文化) (2성분)"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "실감(實感), 문화(文化), 공간(空間)"@ko ;
+    kno:slotFiller "문화(文化)+공간(空間) (2성분)"@ko ;
+    kno:example "¶{실감 문화 공간은} 메타버스를 기반으로 한 창의적인 연출을 통해 만들어지며, 광장에 설치된 대형 디스플레이를 통해 전시된다."@ko ;
+    kno:frequency kno:KN2023-0156-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0156-freq-NN-total ;
+    kno:component kno:KN2023-0156-c2 ;
+    kno:instantiates kno:S001500 ;
+    kno:instantiates kno:S000790 ;
+    kno:component kno:KN2023-0156-c3 ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0156-c1 a kno:Component ;
+    kno:fullForm "실감"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "실감(實感)"@ko ;
+    kno:surfaceForm "실감"@ko ;
+    kno:formative kno:F001557 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X3.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A3p .
+kno:KN2023-0156-c2 rdfs:label "문화(文化)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000267 ;
+    kno:fullForm "문화"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:surfaceForm "문화"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0156-c3 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "공간(空間)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "공간"@ko ;
+    kno:formative kno:F000335 ;
+    kno:surfaceForm "공간"@ko ;
+    a kno:Component .

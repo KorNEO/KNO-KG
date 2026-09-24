@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0038 kno:unitType "단어"@ko ;
+    rdfs:label "긴치"@ko ;
+    kno:instantiates kno:S000270 ;
+    skos:definition "‘긴 치마’를 줄여 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "긴치"@ko ;
+    kno:slotFiller "긴 (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:componentString "긴, 치(마)"@ko ;
+    kno:component kno:KN2012-0038-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EC%B9%98> ;
+    kno:example "¶학교 안에선 {긴치}, 학교 밖에선 짧치로 갈아입고 다녔는데 이젠 그럴 필요가 없게 됐어요."@ko ;
+    kno:component kno:KN2012-0038-c1 ;
+    a kno:Neologism ;
+    kno:languageType "고+고" .
+kno:KN2012-0038-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000413 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "치마"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "치(마)"@ko ;
+    kno:surfaceForm "치"@ko ;
+    a kno:Component .
+kno:KN2012-0038-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "긴"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "긴"@ko ;
+    kno:formative kno:F002610 ;
+    kno:semanticTag kno:usas-N3.7p ;
+    a kno:Component ;
+    rdfs:label "긴"@ko .

@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0391 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0391 kno:origin "(←cheese curry←<일>râmen)" ;
+    kno:component kno:KN2013-0391-c3 ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2013-0391-freq-NN-total ;
+    a ontolex:Word ;
+    kno:indexForm "치카면"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2013-0391-c1 ;
+    kno:languageType "영+영+일" ;
+    kno:example "¶이에 누리꾼들은 “누나도 즐거운 추석 보내세요.”, “저도 {치카면} 먹고 싶어요.”…등 다양한 반응을 보였다"@ko ;
+    kno:componentString "치(즈)(cheese), 카(레)(curry), (라)면(râmen)"@ko ;
+    kno:frequency kno:KN2013-0391-freq-NN-2012 ;
+    kno:component kno:KN2013-0391-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "치카면"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%98%EC%B9%B4%EB%A9%B4> ;
+    skos:definition "치즈와 카레를 넣어 만든 라면. 라면에 스프 대신 카레를 넣고 치즈를 얹어 만든다."@ko .
+kno:KN2013-0391-c3 kno:formative kno:F003453 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "라면"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "면"@ko ;
+    rdfs:label "(라)면(râmen)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2013-0391-c1 kno:fullForm "치즈"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "치"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F006162 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "치(즈)(cheese)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2013-0391-c2 kno:fullForm "카레"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F006187 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "카(레)(curry)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "카"@ko .

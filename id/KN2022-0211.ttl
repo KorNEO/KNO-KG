@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0211 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0211 a ontolex:Word ;
-    frac:attestation kno:KN2022-0211-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0211-form ;
-    ontolex:sense kno:KN2022-0211-sense .
-
-kno:KN2022-0211-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003105899> .
-
-kno:KN2022-0211-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0211-freq-nn,
-        kno:KN2022-0211-freq-yt ;
-    ontolex:writtenRep "언자완박"@ko .
-
-kno:KN2022-0211-freq-nn a frac:CorpusFrequency ;
-    rdf:value 172 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0211-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0211-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0211 kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶언론 중재법은 검수완박 여론을 {언자완박으로} 전환하여 지지층을 결집하기 위한 의도라는 지적을 받고 있다."@ko ;
+    kno:slotFiller "자(유)(自由) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0211-freq-NN-total ;
+    kno:indexForm "언자완박"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(言自完剝)" ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0211-c4 ;
+    kno:componentString "언(론)(言論), 자(유)(自由), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%EC%9E%90%EC%99%84%EB%B0%95> ;
+    kno:instantiates kno:S001535 ;
+    kno:frequency kno:KN2022-0211-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0211-freq-NN-2021 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "‘언론의 자유 완전 박탈’을 줄여 이르는 말."@ko ;
+    rdfs:label "언자완박"@ko ;
+    kno:component kno:KN2022-0211-c1 ;
+    kno:component kno:KN2022-0211-c2 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2022-0211-c3 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0211-c4 kno:fullForm "박탈"@ko ;
+    rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000040 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "박"@ko ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2022-0211-c1 kno:semanticTag kno:usas-Q4.2 ;
+    rdfs:label "언(론)(言論)"@ko ;
+    kno:formative kno:F000382 ;
+    kno:surfaceForm "언"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "언론"@ko .
+kno:KN2022-0211-c2 rdfs:label "자(유)(自由)"@ko ;
+    kno:fullForm "자유"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005508 ;
+    kno:surfaceForm "자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.4p ;
+    a kno:Component .
+kno:KN2022-0211-c3 kno:formative kno:F000031 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:surfaceForm "완"@ko ;
+    kno:fullForm "완전"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A13.2 .

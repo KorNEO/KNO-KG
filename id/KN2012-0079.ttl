@@ -1,0 +1,76 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0079 kno:registration "우리말샘"@ko ;
+    skos:definition "상대방 입장을 고려하지 않고 직설적으로 말하거나 행동하는 여자."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356916> ;
+    kno:indexForm "돌직구녀"@ko ;
+    kno:frequency kno:KN2012-0079-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0079-freq-NN-total ;
+    kno:instantiates kno:S000009 ;
+    kno:example "¶그녀는 일뿐만 아니라 사랑과 인생 설계에서도 정공법을 택하는 ‘{돌직구녀’다}."@ko ;
+    kno:origin "(돌直球女)" ;
+    kno:languageType "(고+한)+한" ;
+    kno:frequency kno:KN2012-0079-freq-NN-2022 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2015 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2014 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001333 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2012-0079-freq-NN-2017 ;
+    kno:predicate "행동하다"@ko ;
+    kno:frequency kno:KN2012-0079-freq-NN-2020 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2023 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2024 ;
+    kno:urimalTargetCode "1356916" ;
+    kno:componentString "돌, 직구(直球), -녀(女)"@ko ;
+    kno:activeYears "11"^^xsd:integer ;
+    kno:component kno:KN2012-0079-c3 ;
+    kno:component kno:KN2012-0079-c2 ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2012-0079-freq-NN-2016 ;
+    kno:slotFiller "-녀(女) (1성분)"@ko ;
+    kno:slotFiller "돌+직구(直球) (2성분)"@ko ;
+    kno:frequency kno:KN2012-0079-freq-NN-2018 ;
+    kno:component kno:KN2012-0079-c1 ;
+    a ontolex:Word ;
+    rdfs:label "돌직구-녀"@ko .
+kno:KN2012-0079-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000004 ;
+    kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko .
+kno:KN2012-0079-c2 kno:fullForm "직구"@ko ;
+    rdfs:label "직구(直球)"@ko ;
+    kno:surfaceForm "직구"@ko ;
+    kno:formative kno:F000934 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component .
+kno:KN2012-0079-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "돌"@ko ;
+    kno:formative kno:F001194 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "돌"@ko ;
+    kno:surfaceForm "돌"@ko .

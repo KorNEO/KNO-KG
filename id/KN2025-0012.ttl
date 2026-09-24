@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0012 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0012-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0012-form ;
-    ontolex:sense kno:KN2025-0012-sense .
-
-kno:KN2025-0012-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003283174> .
-
-kno:KN2025-0012-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0012-freq-nn,
-        kno:KN2025-0012-freq-yt ;
-    ontolex:writtenRep "가상 도크"@ko .
-
-kno:KN2025-0012-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0012-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0012-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0012 kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0012-freq-NN-total ;
+    rdfs:label "가상 도크"@ko ;
+    kno:component kno:KN2025-0012-c1 ;
+    kno:component kno:KN2025-0012-c2 ;
+    kno:componentString "가상(假想), 도크(dock)"@ko ;
+    kno:slotFiller "도크(dock) (1성분)"@ko ;
+    kno:languageType "한_영" ;
+    kno:example "(LLM) 도심에서는 거치대를 늘리되, 외곽 지역은 {가상도크를} 적용해 무단 방치를 줄이자는 의견이 나왔다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "(LLM) 개인형 이동장치 공유 서비스에서 실물 거치대 없이, 앱으로 지정된 구역 안에만 반납(주차)하도록 운영하는 방식."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000098 ;
+    kno:predicate "운영하다"@ko ;
+    kno:origin "(假想<영>dock)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%83%81%20%EB%8F%84%ED%81%AC> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0012-freq-NN-2025 ;
+    kno:indexForm "가상도크"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2025-0012-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "가상"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000157 ;
+    rdfs:label "가상(假想)"@ko ;
+    kno:semanticTag kno:usas-A5.4m ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "가상"@ko .
+kno:KN2025-0012-c2 kno:semanticTag kno:usas-M4 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "도크"@ko ;
+    rdfs:label "도크(dock)"@ko ;
+    kno:surfaceForm "도크"@ko ;
+    kno:formative kno:F002990 .

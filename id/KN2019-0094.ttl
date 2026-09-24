@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0094 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0094 kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "멜림"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:example "¶“댓림 성공하기가 왜 이렇게 어렵나.”라는 탄식이나 “{멜림이} 127명 선착순이야?”와 같은 하소연은 언뜻 보면 9시간씩 기다려야 한다는 ‘골목 식당 맛집’ 줄과 같다는 푸념과 유사하다."@ko ;
+    kno:componentString "멜(mail), (올)림(픽)(Olympics)"@ko ;
+    skos:definition "‘메일 올림픽’을 줄여 이르는 말. 온라인에서 어떤 상품이나 정보 따위를 얻기 위해 메일 작성을 유도할 때, 그 경쟁이 올림픽에서의 순위 경쟁과 같이 힘들다는 것을 비유적으로 나타낸다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2019-0094-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%9C%EB%A6%BC> ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2019-0094-c1 ;
+    kno:origin "(<영>←mail←Olympics)" ;
+    kno:indexForm "멜림"@ko .
+kno:KN2019-0094-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001261 ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "올림픽"@ko ;
+    rdfs:label "(올)림(픽)(Olympics)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "림"@ko .
+kno:KN2019-0094-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "멜"@ko ;
+    rdfs:label "멜(mail)"@ko ;
+    kno:semanticTag kno:usas-Q1.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "멜"@ko ;
+    kno:formative kno:F001298 .

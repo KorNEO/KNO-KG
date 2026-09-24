@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0149 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0149-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0149-form ;
-    ontolex:sense kno:KN2020-0149-sense .
-
-kno:KN2020-0149-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0010802240> .
-
-kno:KN2020-0149-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0149-freq-nn,
-        kno:KN2020-0149-freq-yt ;
-    ontolex:writtenRep "사전^환자^분류소"@ko .
-
-kno:KN2020-0149-freq-nn a frac:CorpusFrequency ;
-    rdf:value 122 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0149-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0149-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0149 kno:predicate "분류하다"@ko ;
+    kno:slotFiller "환자(患者)+분류소(分類所) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0149-freq-NN-total ;
+    kno:languageType "한^한^한" ;
+    kno:componentString "사전(事前), 환자(患者), 분류소(分類所)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2020-0149-freq-NN-2021 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0149-c1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:label "사전^환자^분류소"@ko ;
+    kno:component kno:KN2020-0149-c3 ;
+    kno:indexForm "사전환자분류소"@ko ;
+    skos:definition "응급실에 내원하기 전에 환자를 상태에 따라 분류하는 곳. 코로나19 감염 여부와 중증도에 따라 환자를 분류하는 곳으로, 응급실 내의 감염 문제를 해결하고 중증 응급 환자를 신속히 치료하기 위한 목적으로 설치되었다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%ED%99%98%EC%9E%90%EB%B6%84%EB%A5%98%EC%86%8C> ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0149-freq-NN-2020 ;
+    kno:example "¶중증 응급 진료 센터는 {사전 환자 분류소에서} 코로나19 의심 증상 여부와 중증도에 따라 환자를 분류하며, 코로나19 의심 증상이 있는 중증 환자는 별도로 격리된 진료 구역에서 응급 처치를 받는다."@ko ;
+    kno:instantiates kno:S000681 ;
+    kno:component kno:KN2020-0149-c2 ;
+    kno:origin "(事前患者分類所)" .
+kno:KN2020-0149-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T4 ;
+    kno:formative kno:F000367 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "사전(事前)"@ko ;
+    a kno:Component ;
+    kno:fullForm "사전"@ko ;
+    kno:surfaceForm "사전"@ko .
+kno:KN2020-0149-c3 kno:fullForm "분류소"@ko ;
+    kno:surfaceForm "분류소"@ko ;
+    kno:formative kno:F003970 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "분류소(分類所)"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0149-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000645 ;
+    kno:surfaceForm "환자"@ko ;
+    rdfs:label "환자(患者)"@ko ;
+    kno:fullForm "환자"@ko .

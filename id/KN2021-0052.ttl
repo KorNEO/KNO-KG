@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0052 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0052 a ontolex:Word ;
-    frac:attestation kno:KN2021-0052-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0052-form ;
-    ontolex:sense kno:KN2021-0052-sense .
-
-kno:KN2021-0052-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0004517441> .
-
-kno:KN2021-0052-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0052-freq-nn,
-        kno:KN2021-0052-freq-yt ;
-    ontolex:writtenRep "깃깔따구-속"@ko .
-
-kno:KN2021-0052-freq-nn a frac:CorpusFrequency ;
-    rdf:value 71 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0052-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0052-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0052 kno:frequency kno:KN2021-0052-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0052-freq-NN-total ;
+    kno:predicate "속하다"@ko ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000946 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2021-0052-freq-NN-2021 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%83%EA%B9%94%EB%94%B0%EA%B5%AC%EC%86%8D> ;
+    kno:component kno:KN2021-0052-c2 ;
+    skos:definition "일반적으로 흐르는 물에서 서식하는 파리목 깔따굿과에 속하는 속류. 국내 미기록 종이었지만 2020년 제주 서귀포시 수돗물에서 깃깔따구속 유충이 발견되었으며, 사람을 물지는 않는다고 알려져 있다."@ko ;
+    kno:component kno:KN2021-0052-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "깃깔따구-속"@ko ;
+    kno:slotFiller "깃깔따구 (1성분)"@ko ;
+    kno:example "¶OO 지역 수돗물에서 {깃깔따구속의} 유충이 발견되어 수돗물 품질 관리에 대한 문제가 제기되고 있다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:indexForm "깃깔따구속"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:origin "(깃깔따구屬)" ;
+    a ontolex:Word ;
+    kno:componentString "깃깔따구, 속(屬)"@ko .
+kno:KN2021-0052-c2 kno:formative kno:F001491 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "속(屬)"@ko ;
+    kno:fullForm "속"@ko ;
+    kno:surfaceForm "속"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2021-0052-c1 a kno:Component ;
+    rdfs:label "깃깔따구"@ko ;
+    kno:surfaceForm "깃깔따구"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F002620 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "깃깔따구"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0121 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0121 kno:frequency kno:KN2016-0121-freq-NN-2016 ;
+    kno:slotFiller "땡+처리(處理) (2성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372556> ;
+    kno:component kno:KN2016-0121-c3 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0121-freq-NN-2023 ;
+    kno:languageType "(고+한)_한" ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "땡, 처리(處理), 점포(店鋪)"@ko ;
+    kno:predicate "판매하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "땡처리 점포"@ko ;
+    kno:example "¶경기 침체가 길어지면서 빈 점포를 단기간 임대해 각종 생활용품을 대량 처분하는 일명 ‘{땡처리 점포’가} 늘어나고 있다."@ko ;
+    kno:instantiates kno:S001352 ;
+    kno:slotFiller "처리(處理)+점포(店鋪) (2성분)"@ko ;
+    kno:component kno:KN2016-0121-c1 ;
+    kno:urimalTargetCode "1372556" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:origin "(땡處理店鋪)" ;
+    kno:indexForm "땡처리점포"@ko ;
+    skos:definition "재고품을 급히 판매하는 점포. 주로 빈 점포를 짧은 기간 동안 임대하여 물건을 싼값에 판매하는 점포를 이르는 말이다."@ko ;
+    kno:frequency kno:KN2016-0121-freq-NN-total ;
+    kno:instantiates kno:S001024 ;
+    kno:component kno:KN2016-0121-c2 .
+kno:KN2016-0121-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "점포(店鋪)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F001755 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:fullForm "점포"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "점포"@ko .
+kno:KN2016-0121-c1 kno:surfaceForm "땡"@ko ;
+    kno:semanticTag kno:usas-T1.1.2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "땡"@ko ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "땡"@ko ;
+    kno:formative kno:F000724 ;
+    a kno:Component .
+kno:KN2016-0121-c2 rdfs:label "처리(處理)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "처리"@ko ;
+    kno:surfaceForm "처리"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F001821 .

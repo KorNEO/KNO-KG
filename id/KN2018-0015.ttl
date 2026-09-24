@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0015 kno:frequency kno:KN2018-0015-freq-NN-total ;
+    rdfs:label "개선^현실"@ko ;
+    kno:languageType "한^한" ;
+    kno:origin "(改善現實)" ;
+    kno:example "¶{개선 현실을} 이용해 지속적으로 통증을 완화할 수 있는 기술이 국내 연구진에 의해 세계 최초로 개발됐다."@ko ;
+    skos:definition "아픈 부위의 통증을 완화시킬 목적으로 환자에게 보여 주는 개선된 가상 현실. 아픈 부위가 치료된 가상 현실을 환자에게 보여 주면 환자의 뇌가 착각을 일으켜 아픈 부위의 통증이 줄어드는 효과가 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "개선현실"@ko ;
+    kno:frequency kno:KN2018-0015-freq-NN-2025 ;
+    kno:frequency kno:KN2018-0015-freq-NN-2022 ;
+    kno:componentString "개선(改善), 현실(現實)"@ko ;
+    kno:component kno:KN2018-0015-c2 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0015-freq-NN-2018 ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0015-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EC%84%A0%ED%98%84%EC%8B%A4> ;
+    a ontolex:MultiwordExpression .
+kno:KN2018-0015-c2 kno:formative kno:F002014 ;
+    kno:fullForm "현실"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "현실"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A3p ;
+    rdfs:label "현실(現實)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2018-0015-c1 kno:semanticTag kno:usas-A5.1p ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "개선"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "개선(改善)"@ko ;
+    kno:formative kno:F002160 ;
+    kno:surfaceForm "개선"@ko .

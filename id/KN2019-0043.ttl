@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0043 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0043 kno:indexForm "노오더족"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2019-0043-c2 ;
+    kno:frequency kno:KN2019-0043-freq-NN-total ;
+    kno:component kno:KN2019-0043-c1 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1422295> ;
+    skos:definition "식당이나 카페 따위의 영업 장소에서 주문을 하지 않고 자리만 차지하는 사람. 또는 그런 무리."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶집에서 코코아, 녹차, 미숫가루를 가져와 커피 전문점에서 타 먹는 {노 오더족도} 있다."@ko ;
+    kno:languageType "영_(영+한)" ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000291 ;
+    kno:urimalTargetCode "1422295" ;
+    rdfs:label "노오더족"@ko ;
+    kno:predicate "차지하다"@ko ;
+    kno:origin "(<영>no order族)" ;
+    kno:slotFiller "오더(order) (1성분)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0043-c3 ;
+    kno:componentString "노(no), 오더(order), -족(族)"@ko ;
+    kno:frequency kno:KN2019-0043-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0043-freq-NN-2018 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear .
+kno:KN2019-0043-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F000867 ;
+    kno:fullForm "오더"@ko ;
+    kno:surfaceForm "오더"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "오더(order)"@ko .
+kno:KN2019-0043-c1 kno:formative kno:F000015 ;
+    kno:surfaceForm "노"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "노(no)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:fullForm "노"@ko .
+kno:KN2019-0043-c3 kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

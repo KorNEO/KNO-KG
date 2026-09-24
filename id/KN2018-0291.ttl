@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0291 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0291 kno:pos "「명」"@ko ;
+    kno:indexForm "잠자리맡"@ko ;
+    kno:example "¶먼저 {잠자리맡에서} 어버이가 아이한테 이야기를 들려줄 수 있어요."@ko ;
+    kno:componentString "잠자리, -맡"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0291-c2 ;
+    kno:frequency kno:KN2018-0291-freq-NN-total ;
+    a kno:Neologism ;
+    kno:languageType "고+고" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2018-0291-c1 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0291-freq-NN-2018 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%A0%EC%9E%90%EB%A6%AC%EB%A7%A1> ;
+    a ontolex:Word ;
+    rdfs:label "잠자리-맡"@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "누워서 자는 곳의 부근."@ko .
+kno:KN2018-0291-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "맡"@ko ;
+    kno:surfaceForm "맡"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003386 ;
+    rdfs:label "-맡"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2018-0291-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-H5 ;
+    kno:formative kno:F005551 ;
+    rdfs:label "잠자리"@ko ;
+    kno:fullForm "잠자리"@ko ;
+    kno:surfaceForm "잠자리"@ko ;
+    kno:role "성분"@ko .

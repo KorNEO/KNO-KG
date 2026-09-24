@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0233 a ontolex:Word ;
-    frac:attestation kno:KN2025-0233-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0233-form ;
-    ontolex:sense kno:KN2025-0233-sense .
-
-kno:KN2025-0233-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/108/0003391815> .
-
-kno:KN2025-0233-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0233-freq-nn,
-        kno:KN2025-0233-freq-yt ;
-    ontolex:writtenRep "명문고 세권"@ko .
-
-kno:KN2025-0233-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0233-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0233-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0233 kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    rdfs:label "명문고세권"@ko ;
+    kno:componentString "명문고(名門高), (역)세권(驛勢圈)"@ko ;
+    kno:languageType "한+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 이 단지는 자사고가 도보권에 있어 {명문고세권으로} 불리며 학부모들의 관심이 높다."@ko ;
+    kno:frequency kno:KN2025-0233-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%85%EB%AC%B8%EA%B3%A0%EC%84%B8%EA%B6%8C> ;
+    kno:slotFiller "명문고(名門高) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0233-c1 ;
+    kno:origin "(名門高勢圈)" ;
+    a kno:Neologism ;
+    kno:indexForm "명문고세권"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000008 ;
+    kno:frequency kno:KN2025-0233-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 명문 고등학교가 가까이 있어 통학이 편리하고 교육 환경 측면에서 선호되는 주거 지역의 범위."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0233-c2 ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0233-c1 kno:formative kno:F003470 ;
+    rdfs:label "명문고(名門高)"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "명문고"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "명문고"@ko .
+kno:KN2025-0233-c2 kno:fullForm "역세권"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000012 ;
+    kno:surfaceForm "세권"@ko ;
+    rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:semanticTag kno:usas-M7 .

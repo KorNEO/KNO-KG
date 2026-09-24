@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0109 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0109 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0109-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0109-form ;
-    ontolex:sense kno:KN2023-0109-sense .
-
-kno:KN2023-0109-att-nn a frac:Attestation ;
-    dcterms:date "2022-10-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005028131> .
-
-kno:KN2023-0109-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0109-freq-nn,
-        kno:KN2023-0109-freq-yt ;
-    ontolex:writtenRep "뱅보드^차트"@ko .
-
-kno:KN2023-0109-freq-nn a frac:CorpusFrequency ;
-    rdf:value 60 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0109-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0109-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0109 kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2023-0109-freq-NN-total ;
+    kno:instantiates kno:S001047 ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2023-0109-freq-NN-2022 ;
+    kno:example "¶고금리의 특판 가입에 성공하기 위해서는 사전 정보가 가장 중요한데, 인터넷 포털 사이트에서 {뱅보드 차트를} 검색하면 일자별 예금 금리의 순위가 정리된 게시물을 확인할 수 있다."@ko ;
+    kno:indexForm "뱅보드차트"@ko ;
+    kno:component kno:KN2023-0109-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B1%85%EB%B3%B4%EB%93%9C%EC%B0%A8%ED%8A%B8> ;
+    kno:component kno:KN2023-0109-c2 ;
+    kno:origin "(<영>←bank board chart)" ;
+    kno:unitType "구"@ko ;
+    kno:languageType "영^영" ;
+    kno:slotFiller "뱅+보드(board) (2성분)"@ko ;
+    kno:componentString "뱅, 보드(board), 차트(chart)"@ko ;
+    rdfs:label "뱅보드^차트"@ko ;
+    skos:definition "일반에게 널리 알리기 위하여 예금 상품의 금리를 비교해 만든 표. 은행을 의미하는 ‘뱅크(bank)’와 미국 대중음악의 순위를 집계한 순위표를 뜻하는 ‘빌보드 차트’를 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2023-0109-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0109-c3 ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0109-c1 rdfs:label "뱅"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "뱅"@ko ;
+    kno:surfaceForm "뱅"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:formative kno:F003759 ;
+    a kno:Component .
+kno:KN2023-0109-c2 kno:formative kno:F001369 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "보드(board)"@ko ;
+    kno:fullForm "보드"@ko ;
+    kno:surfaceForm "보드"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0109-c3 kno:semanticTag kno:usas-K2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "차트(chart)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "차트"@ko ;
+    kno:surfaceForm "차트"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001812 .

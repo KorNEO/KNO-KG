@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0137 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0137 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0137-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0137-form ;
-    ontolex:sense kno:KN2025-0137-sense .
-
-kno:KN2025-0137-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/449/0000324712> .
-
-kno:KN2025-0137-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0137-freq-nn,
-        kno:KN2025-0137-freq-yt ;
-    ontolex:writtenRep "노 차이니즈 존"@ko .
-
-kno:KN2025-0137-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0137-freq-yt a frac:CorpusFrequency ;
-    rdf:value 54 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0137-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0137 kno:frequency kno:KN2025-0137-freq-NN-total ;
+    kno:example "(LLM) 일부 업소가 안내문에 {노차이니즈존을} 내걸어 중국인 손님의 출입을 제한하려 하자 차별 논란이 일었다."@ko ;
+    kno:languageType "영_영_영" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(▼<영>no Chinese zone)" ;
+    kno:component kno:KN2025-0137-c1 ;
+    rdfs:label "노 차이니즈 존"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0137-freq-NN-2025 ;
+    kno:instantiates kno:S000035 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%20%EC%B0%A8%EC%9D%B4%EB%8B%88%EC%A6%88%20%EC%A1%B4> ;
+    skos:definition "(LLM) 중국인의 출입이나 이용을 금지하거나 제한하는 곳."@ko ;
+    kno:indexForm "노차이니즈존"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:slotFiller "차이니즈(Chinese) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0137-c2 ;
+    kno:component kno:KN2025-0137-c3 ;
+    kno:predicate "제한하다"@ko ;
+    kno:componentString "노(no), 차이니즈(Chinese), 존(zone)"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0137-c1 kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "노(no)"@ko ;
+    a kno:Component .
+kno:KN2025-0137-c2 kno:formative kno:F005992 ;
+    kno:fullForm "차이니즈"@ko ;
+    rdfs:label "차이니즈(Chinese)"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "차이니즈"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0137-c3 a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "존"@ko ;
+    kno:formative kno:F000034 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

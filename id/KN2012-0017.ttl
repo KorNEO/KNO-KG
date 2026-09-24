@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0017 kno:component kno:KN2012-0017-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "(한+영)+영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EB%8E%80%EC%BA%90> ;
+    kno:year "2012"^^xsd:gYear ;
+    skos:definition "게임에서, 적에게 고정된 피해를 주는 캐릭터."@ko ;
+    rdfs:label "고뎀캐"@ko ;
+    kno:instantiates kno:S000830 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0017-c2 ;
+    kno:componentString "고(정)(固), 뎀(이지)(damage), 캐(릭터)(character)"@ko ;
+    kno:origin "(固▼←damage character)" ;
+    kno:indexForm "고뎀캐"@ko ;
+    kno:slotFiller "고(정)(固) (1성분)"@ko ;
+    kno:component kno:KN2012-0017-c3 ;
+    kno:predicate "주다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶애초 정해진 콘셉트대로 퍼뎀캐는 초반엔 약하지만 투자를 할수록 강해지고, {고뎀캐는} 초반부터 상당히 강하지만 투자를 하더라도 강해지는 정도가 다소 떨어진다."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko .
+kno:KN2012-0017-c1 rdfs:label "고(정)(固)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A2.1m ;
+    kno:surfaceForm "고"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "고정"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002271 .
+kno:KN2012-0017-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "뎀"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001186 ;
+    rdfs:label "뎀(이지)(damage)"@ko ;
+    a kno:Component ;
+    kno:fullForm "뎀이지"@ko .
+kno:KN2012-0017-c3 rdfs:label "캐(릭터)(character)"@ko ;
+    kno:formative kno:F000192 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "캐릭터"@ko ;
+    kno:surfaceForm "캐"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

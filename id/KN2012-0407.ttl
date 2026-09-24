@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0407 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0407 kno:frequency kno:KN2012-0407-freq-NN-2019 ;
+    kno:frequency kno:KN2012-0407-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(致命作)" ;
+    skos:definition "게임에서, 치명타를 우선으로 한 작업."@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0407-c1 ;
+    kno:indexForm "치명작"@ko ;
+    kno:component kno:KN2012-0407-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%98%EB%AA%85%EC%9E%91> ;
+    rdfs:label "치명-작"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "치명(致命), -작(作)"@ko ;
+    kno:formation kno:W02 ;
+    kno:example "¶일단 앞전 스펙보다 달라진 건 2인 클리어를 위해,…120금 정도 들여서 {치명작으로} 바꿔 놓았습니다."@ko ;
+    kno:frequency kno:KN2012-0407-freq-NN-2017 ;
+    kno:instantiates kno:S000283 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2012-0407-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "치명(致命) (1성분)"@ko ;
+    a ontolex:Word .
+kno:KN2012-0407-c1 kno:fullForm "치명"@ko ;
+    kno:surfaceForm "치명"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A15m ;
+    rdfs:label "치명(致命)"@ko ;
+    kno:formative kno:F006167 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0407-c2 kno:formative kno:F000580 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-C1 ;
+    rdfs:label "-작(作)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "작"@ko ;
+    kno:surfaceForm "작"@ko .

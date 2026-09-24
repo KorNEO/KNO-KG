@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0333 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0333 kno:component kno:KN2019-0333-c3 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0333-freq-NN-2024 ;
+    kno:languageType "(고+한)+한" ;
+    kno:instantiates kno:S000029 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1443491> ;
+    kno:slotFiller "명(절)(名) (1성분)"@ko ;
+    kno:component kno:KN2019-0333-c2 ;
+    kno:frequency kno:KN2019-0333-freq-NN-2019 ;
+    kno:example "¶편의점이 혼자 설을 보내는 {‘혼명족’들을} 위해 집밥 느낌을 살린 소불고기 도시락을 내놨다."@ko ;
+    kno:frequency kno:KN2019-0333-freq-NN-2025 ;
+    kno:urimalTargetCode "1443491" ;
+    kno:indexForm "혼명족"@ko ;
+    kno:frequency kno:KN2019-0333-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0333-freq-NN-2020 ;
+    a kno:Neologism ;
+    kno:origin "(혼名族)" ;
+    kno:year "2019"^^xsd:gYear ;
+    skos:definition "혼자 명절을 쇠는 사람. 또는 그런 무리."@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:component kno:KN2019-0333-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0333-freq-NN-2023 ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0333-freq-NN-total ;
+    kno:predicate "쇠다"@ko ;
+    rdfs:label "혼명-족"@ko ;
+    kno:componentString "혼(자), 명(절)(名), -족(族)"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2019-0333-freq-NN-2022 ;
+    a ontolex:Word .
+kno:KN2019-0333-c3 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko .
+kno:KN2019-0333-c2 kno:fullForm "명절"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "명(절)(名)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "명"@ko ;
+    kno:formative kno:F001301 .
+kno:KN2019-0333-c1 kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "혼(자)"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko .

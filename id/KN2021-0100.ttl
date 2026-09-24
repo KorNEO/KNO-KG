@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0100 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0100 a ontolex:Word ;
-    frac:attestation kno:KN2021-0100-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0100-form ;
-    ontolex:sense kno:KN2021-0100-sense .
-
-kno:KN2021-0100-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000543772> .
-
-kno:KN2021-0100-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0100-freq-nn,
-        kno:KN2021-0100-freq-yt ;
-    ontolex:writtenRep "롤코-족"@ko .
-
-kno:KN2021-0100-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0100-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0100-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0100 kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0100-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0100-freq-NN-2020 ;
+    kno:componentString "롤코(←roller coaster), -족(族)"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2021-0100-freq-NN-total ;
+    rdfs:label "롤코-족"@ko ;
+    kno:example "¶최근 기업들은 {롤코족을} 겨냥하여 단기간 내 브랜드의 인지도를 높이기 위한 마케팅 전략을 취하고 있다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A1%A4%EC%BD%94%EC%A1%B1> ;
+    kno:component kno:KN2021-0100-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "롤코족"@ko ;
+    kno:slotFiller "롤코(←roller coaster) (1성분)"@ko ;
+    skos:definition "롤러코스터를 타듯이 삶을 즐기고 짧은 유행을 빠르게 따라가는 사람. 또는 그런 무리."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "따라가다"@ko ;
+    kno:component kno:KN2021-0100-c1 ;
+    kno:origin "(<영>←roller coaster族)" .
+kno:KN2021-0100-c2 kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0100-c1 kno:semanticTag kno:usas-K1 ;
+    kno:formative kno:F001252 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "롤코"@ko ;
+    kno:surfaceForm "롤코"@ko ;
+    rdfs:label "롤코(←roller coaster)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

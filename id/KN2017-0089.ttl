@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0089 kno:frequency kno:KN2017-0089-freq-NN-2017 ;
+    kno:languageType "영_영" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:origin "(<영>low-tech terror)" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000273 ;
+    kno:indexForm "로테크테러"@ko ;
+    rdfs:label "로테크 테러"@ko ;
+    kno:example "¶폭탄이 아닌 차량을 이용한 이른바 ‘{로테크 테러’가} 잇따르면서 테러 공포가 유럽 전역으로 확산되고 있습니다."@ko ;
+    skos:definition "고도의 기술이 필요하지 않은 수법으로 저지르는 테러. 예를 들어, 일상에서 쉽게 구할 수 있는 차량으로 대규모 인파가 있는 곳에 돌진하여 사상자를 내는 방식의 폭력 행위 등이 이에 해당한다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2017-0089-freq-NN-total ;
+    kno:predicate "저지르다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380432> ;
+    kno:component kno:KN2017-0089-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "로테크(low-tech) (1성분)"@ko ;
+    kno:urimalTargetCode "1380432" ;
+    kno:unitType "구"@ko ;
+    kno:componentString "로테크(low-tech), 테러(terror)"@ko ;
+    kno:component kno:KN2017-0089-c1 .
+kno:KN2017-0089-c2 kno:role "고정항"@ko ;
+    kno:fullForm "테러"@ko ;
+    kno:surfaceForm "테러"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000422 ;
+    rdfs:label "테러(terror)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G3m .
+kno:KN2017-0089-c1 kno:semanticTag kno:usas-Y1m ;
+    kno:surfaceForm "로테크"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003249 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "로테크(low-tech)"@ko ;
+    kno:fullForm "로테크"@ko ;
+    kno:truncated "false"^^xsd:boolean .

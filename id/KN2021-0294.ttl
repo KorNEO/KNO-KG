@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0294 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0294 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0294-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0294-form ;
-    ontolex:sense kno:KN2021-0294-sense .
-
-kno:KN2021-0294-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0012102416> .
-
-kno:KN2021-0294-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0294-freq-nn,
-        kno:KN2021-0294-freq-yt ;
-    ontolex:writtenRep "할미^룩"@ko .
-
-kno:KN2021-0294-freq-nn a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0294-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0294-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0294 kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:origin "(할미<영>look)" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0294-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0294-freq-NN-total ;
+    kno:frequency kno:KN2021-0294-freq-NN-2022 ;
+    rdfs:label "할미^룩"@ko ;
+    kno:component kno:KN2021-0294-c2 ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:indexForm "할미룩"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶지금은 편안한 {할미 룩과} 같은 패션 스타일이 유행하고 있지만, 몇 년 후에는 또 다른 패션 스타일들이 유행할 것이다."@ko ;
+    kno:slotFiller "할미 (1성분)"@ko ;
+    skos:definition "할머니의 옷차림을 현대적으로 재해석한 패션 스타일. 강렬하고 알록달록한 색상의 조합, 화려한 꽃무늬 자수나 펑퍼짐한 실루엣이 특징이다. =그래니 룩, 할머니 룩."@ko ;
+    kno:component kno:KN2021-0294-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000007 ;
+    kno:componentString "할미, 룩(look)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%A0%EB%AF%B8%EB%A3%A9> ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0294-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0294-freq-NN-2020 ;
+    kno:languageType "고^영" .
+kno:KN2021-0294-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "룩"@ko ;
+    kno:surfaceForm "룩"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 ;
+    rdfs:label "룩(look)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2021-0294-c1 kno:formative kno:F006971 ;
+    rdfs:label "할미"@ko ;
+    a kno:Component ;
+    kno:fullForm "할미"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "할미"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S4 .

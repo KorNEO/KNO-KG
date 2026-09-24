@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0209 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0209 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0209-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0209-form ;
-    ontolex:sense kno:KN2021-0209-sense .
-
-kno:KN2021-0209-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002519881> .
-
-kno:KN2021-0209-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0209-freq-nn,
-        kno:KN2021-0209-freq-yt ;
-    ontolex:writtenRep "육아^기본^소득"@ko .
-
-kno:KN2021-0209-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0209-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0209-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0209 kno:frequency kno:KN2021-0209-freq-NN-total ;
+    kno:component kno:KN2021-0209-c2 ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%EC%95%84%EA%B8%B0%EB%B3%B8%EC%86%8C%EB%93%9D> ;
+    kno:origin "(育兒基本所得)" ;
+    kno:example "¶O 연구원은 {육아 기본 소득의} 도입과 출산율 간의 상관관계에 대한 논문을 발표를 하였다."@ko ;
+    kno:slotFiller "기본(基本)+소득(所得) (2성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:predicate "지급하다"@ko ;
+    kno:indexForm "육아기본소득"@ko ;
+    kno:slotFiller "육아(育兒) (1성분)"@ko ;
+    skos:definition "근로 여부나 재산의 많고 적음에 상관없이 어린 아이를 양육하는 모든 가정에 지급하는 소득. 우리나라에서는 강원도 지방 자치 단체에서 2019년 1월 1일 이후 출생한 아이가 48개월이 될 때까지 아이의 보호자에게 매달 30만 원을 지급한다."@ko ;
+    kno:component kno:KN2021-0209-c3 ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0209-freq-NN-2020 ;
+    kno:instantiates kno:S000246 ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000088 ;
+    kno:frequency kno:KN2021-0209-freq-NN-2021 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0209-c1 ;
+    kno:componentString "육아(育兒), 기본(基本), 소득(所得)"@ko ;
+    rdfs:label "육아^기본^소득"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0209-c2 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "기본"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "기본(基本)"@ko ;
+    kno:formative kno:F000085 ;
+    kno:fullForm "기본"@ko ;
+    kno:semanticTag kno:usas-A4.2m .
+kno:KN2021-0209-c3 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "소득(所得)"@ko ;
+    kno:fullForm "소득"@ko ;
+    kno:formative kno:F000047 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:surfaceForm "소득"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2021-0209-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "육아(育兒)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000118 ;
+    kno:fullForm "육아"@ko ;
+    kno:surfaceForm "육아"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .

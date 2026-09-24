@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0110 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0110 a ontolex:Word ;
-    frac:attestation kno:KN2023-0110-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0110-form ;
-    ontolex:sense kno:KN2023-0110-sense .
-
-kno:KN2023-0110-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005106996> .
-
-kno:KN2023-0110-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0110-freq-nn,
-        kno:KN2023-0110-freq-yt ;
-    ontolex:writtenRep "뱅크데믹"@ko .
-
-kno:KN2023-0110-freq-nn a frac:CorpusFrequency ;
-    rdf:value 379 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0110-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0110-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0110 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0110-freq-NN-total ;
+    kno:component kno:KN2023-0110-c2 ;
+    kno:slotFiller "뱅크(bank) (1성분)"@ko ;
+    rdfs:label "뱅크데믹"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0110-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B1%85%ED%81%AC%EB%8D%B0%EB%AF%B9> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000240 ;
+    kno:frequency kno:KN2023-0110-freq-NN-2024 ;
+    kno:component kno:KN2023-0110-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "뱅크(bank), (팬)데믹(pandemic)"@ko ;
+    kno:formation kno:W07 ;
+    kno:languageType "영" ;
+    kno:frequency kno:KN2023-0110-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "뱅크데믹"@ko ;
+    a ontolex:Word ;
+    kno:example "¶다수의 사람들이 스마트폰을 통해 쉽게 예금을 인출하고 해지할 수 있기 때문에 위기설이 나도는 은행은 순식간에 {뱅크데믹의} 상황으로 들어가고 만다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(<영>bankdemic)" ;
+    skos:definition "은행 파산에 대한 두려움이 전세계적으로 확산되는 현상을 전염병에 빗대어 이르는 말."@ko .
+kno:KN2023-0110-c2 rdfs:label "(팬)데믹(pandemic)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "팬데믹"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "데믹"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000485 .
+kno:KN2023-0110-c1 kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "뱅크"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "뱅크(bank)"@ko ;
+    kno:formative kno:F000512 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "뱅크"@ko ;
+    kno:position "1"^^xsd:integer .

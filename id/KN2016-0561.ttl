@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0561 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0561 rdfs:label "하남 구름"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%98%EB%82%A8%20%EA%B5%AC%EB%A6%84> ;
+    kno:component kno:KN2016-0561-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:componentString "하남(河南), 구름"@ko ;
+    kno:origin "(河南구름)" ;
+    kno:languageType "한_고" ;
+    kno:frequency kno:KN2016-0561-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "경기도 하남시에서 발견된 대량의 흰 거품을 구름에 빗대어 이르는 말. 인근 화장품 회사에서 원료가 누출되어 우수관을 타고 흘러 하천으로 유입되었다."@ko ;
+    kno:frequency kno:KN2016-0561-freq-NN-2015 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0561-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "하남구름"@ko ;
+    kno:example "¶어제 인터넷에선 이른바 ‘{하남 구름} 소동’이 화제였는데요."@ko .
+kno:KN2016-0561-c2 kno:semanticTag kno:usas-W4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "구름"@ko ;
+    kno:formative kno:F002447 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "구름"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "구름"@ko .
+kno:KN2016-0561-c1 kno:semanticTag kno:usas-Z2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "하남"@ko ;
+    kno:surfaceForm "하남"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006922 ;
+    rdfs:label "하남(河南)"@ko ;
+    kno:position "1"^^xsd:integer .

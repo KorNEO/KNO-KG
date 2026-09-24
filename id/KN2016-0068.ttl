@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0068 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0068 kno:component kno:KN2016-0068-c3 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000458 ;
+    kno:pos "「구」"@ko ;
+    kno:urimalTargetCode "1372503" ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OOO 그리스 총리는 일부 동유럽 발칸 국가들이 난민 이동을 막으면서 그리스에 3만 명 이상의 난민이 묶여 있다며 {난민 거부국에} 대한 제재 필요성을 언급했습니다."@ko ;
+    rdfs:label "난민^거부국"@ko ;
+    kno:frequency kno:KN2016-0068-freq-NN-total ;
+    kno:component kno:KN2016-0068-c2 ;
+    kno:languageType "한^한" ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372503> ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:origin "(亂民拒否國)" ;
+    kno:componentString "난민(亂民), 거부(拒否), -국(國)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0068-c1 ;
+    kno:indexForm "난민거부국"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2016-0068-freq-NN-2018 ;
+    kno:slotFiller "난민(亂民)+거부(拒否) (2성분)"@ko ;
+    kno:predicate "거부하다"@ko ;
+    skos:definition "난민 수용을 거부하는 나라. 주로 유럽 연합의 회원국 중에서 사회적, 정치적, 종교적 이유 따위로 난민을 받아들이지 않는 나라를 지칭한다."@ko .
+kno:KN2016-0068-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:fullForm "국"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "국"@ko ;
+    rdfs:label "-국(國)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000161 .
+kno:KN2016-0068-c2 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "거부"@ko ;
+    kno:surfaceForm "거부"@ko ;
+    kno:formative kno:F001048 ;
+    kno:semanticTag kno:usas-S7.4m ;
+    a kno:Component ;
+    rdfs:label "거부(拒否)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2016-0068-c1 kno:fullForm "난민"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "난민"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "난민(亂民)"@ko ;
+    kno:formative kno:F002686 .

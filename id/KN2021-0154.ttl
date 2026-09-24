@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0154 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0154-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0154-form ;
-    ontolex:sense kno:KN2021-0154-sense .
-
-kno:KN2021-0154-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0000862164> .
-
-kno:KN2021-0154-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0154-freq-nn,
-        kno:KN2021-0154-freq-yt ;
-    ontolex:writtenRep "삼대 이모님"@ko .
-
-kno:KN2021-0154-freq-nn a frac:CorpusFrequency ;
-    rdf:value 135 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0154-freq-yt a frac:CorpusFrequency ;
-    rdf:value 66 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0154-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0154 kno:frequency kno:KN2021-0154-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0154-freq-NN-2024 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0154-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0154-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0154-c2 ;
+    kno:frequency kno:KN2021-0154-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EB%8C%80%20%EC%9D%B4%EB%AA%A8%EB%8B%98> ;
+    kno:frequency kno:KN2021-0154-freq-NN-2022 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0154-c1 ;
+    kno:origin "(三大姨母님)" ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "집안일을 하는 데 큰 도움을 주는 대표적인 생활 가전인 ‘빨래 건조기, 로봇 청소기, 식기세척기’를 아울러 이르는 말."@ko ;
+    kno:example "¶요즘 신혼부부들에게는 {삼대 이모님이} 결혼 필수품이다."@ko ;
+    kno:frequency kno:KN2021-0154-freq-NN-2021 ;
+    rdfs:label "삼대 이모님"@ko ;
+    kno:languageType "한_(한+고)" ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "삼대이모님"@ko ;
+    kno:componentString "삼대(三大), 이모님(姨母)"@ko .
+kno:KN2021-0154-c2 kno:formative kno:F005388 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "이모님"@ko ;
+    kno:surfaceForm "이모님"@ko ;
+    rdfs:label "이모님(姨母)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0154-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "삼대(三大)"@ko ;
+    kno:fullForm "삼대"@ko ;
+    kno:surfaceForm "삼대"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004212 .

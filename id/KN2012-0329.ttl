@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0329 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0329 kno:component kno:KN2012-0329-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357208> ;
+    kno:languageType "한_영" ;
+    kno:example "¶‘{월급 로그인}ㆍ로그아웃’은 가슴 한 구석을 저리게 하는 신조어다."@ko ;
+    kno:instantiates kno:S000319 ;
+    rdfs:label "월급 로그인"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "월급로그인"@ko ;
+    kno:urimalTargetCode "1357208" ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(月給log-in)" ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:component kno:KN2012-0329-c2 ;
+    skos:definition "인터넷 사이트에서 로그인을 하는 것처럼 월급이 통장에 들어온 것을 비유적으로 이르는 말."@ko ;
+    kno:slotFiller "로그인(log-in) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0329-freq-NN-2014 ;
+    kno:componentString "월급(月給), 로그인(log-in)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2012-0329-freq-NN-total .
+kno:KN2012-0329-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "월급"@ko ;
+    kno:surfaceForm "월급"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "월급(月給)"@ko ;
+    kno:formative kno:F000297 ;
+    a kno:Component .
+kno:KN2012-0329-c2 kno:surfaceForm "로그인"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F003235 ;
+    rdfs:label "로그인(log-in)"@ko ;
+    kno:fullForm "로그인"@ko ;
+    kno:role "슬롯 채움"@ko .

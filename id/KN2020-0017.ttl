@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0017 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0017-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0017-form ;
-    ontolex:sense kno:KN2020-0017-sense .
-
-kno:KN2020-0017-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/119/0002386029> .
-
-kno:KN2020-0017-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0017-freq-nn,
-        kno:KN2020-0017-freq-yt ;
-    ontolex:writtenRep "공적^마스크^제도"@ko .
-
-kno:KN2020-0017-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1233 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0017-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0017-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0017 kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:example "¶{공적 마스크 제도는} 요일별 마스크 5부제를 적용해 인당 구매 수량을 정함으로써 수급을 안정하는 결과를 낳았다."@ko ;
+    kno:slotFiller "공적(公的)+마스크(mask) (2성분)"@ko ;
+    kno:frequency kno:KN2020-0017-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0017-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(公的<영>mask制度)" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0017-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0017-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "마스크(mask)+제도(制度) (2성분)"@ko ;
+    kno:componentString "공적(公的), 마스크(mask), 제도(制度)"@ko ;
+    kno:component kno:KN2020-0017-c3 ;
+    kno:component kno:KN2020-0017-c2 ;
+    kno:languageType "한^영^한" ;
+    kno:component kno:KN2020-0017-c1 ;
+    kno:frequency kno:KN2020-0017-freq-NN-2023 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1511909> ;
+    kno:urimalTargetCode "1511909" ;
+    kno:frequency kno:KN2020-0017-freq-NN-2021 ;
+    kno:indexForm "공적마스크제도"@ko ;
+    kno:instantiates kno:S000474 ;
+    rdfs:label "공적^마스크^제도"@ko ;
+    kno:instantiates kno:S000039 ;
+    kno:activeYears "5"^^xsd:integer ;
+    skos:definition "공적 마스크 보급과 관련하여 만든 제도. 코로나19의 확산으로 마스크 품귀 현상이 발생함에 따라 정부에서 공적 마스크를 유통하기로 하고, 공적 마스크를 구매할 수 있는 날짜 및 장소, 구매량을 정한 제도이다. 2020년 2월 27일부터 시행되었고 이후 마스크 수급이 안정되자 2020년 7월 11일부로 폐지되었다."@ko .
+kno:KN2020-0017-c3 kno:formative kno:F000041 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:fullForm "제도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "제도"@ko .
+kno:KN2020-0017-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000038 ;
+    kno:surfaceForm "마스크"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "마스크(mask)"@ko ;
+    kno:fullForm "마스크"@ko .
+kno:KN2020-0017-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000458 ;
+    rdfs:label "공적(公的)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "공적"@ko ;
+    kno:surfaceForm "공적"@ko ;
+    kno:semanticTag kno:usas-G1.1 .

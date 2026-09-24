@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0253 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0253 kno:component kno:KN2015-0253-c1 ;
+    kno:predicate "주다"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고+한" ;
+    kno:componentString "해먹(다), 방(송)(放)"@ko ;
+    kno:instantiates kno:S000255 ;
+    kno:component kno:KN2015-0253-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359790> ;
+    kno:slotFiller "해먹(다) (1성분)"@ko ;
+    rdfs:label "해먹방"@ko ;
+    kno:example "¶‘먹방’을 넘어 ‘{해먹방’이} 뜨고 있는 지금, OO와 OO는 ‘먹방’을 관통하는 문화 코드를 분석해 봤다."@ko ;
+    skos:definition "음식을 직접 해서 먹는 행위를 보여 주는 방송."@ko ;
+    kno:origin "(해먹放)" ;
+    kno:frequency kno:KN2015-0253-freq-NN-2017 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:urimalTargetCode "1359790" ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "해먹방"@ko ;
+    kno:frequency kno:KN2015-0253-freq-NN-total ;
+    kno:frequency kno:KN2015-0253-freq-NN-2015 ;
+    kno:frequency kno:KN2015-0253-freq-NN-2016 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2017"^^xsd:gYear .
+kno:KN2015-0253-c1 kno:formative kno:F006998 ;
+    kno:fullForm "해먹다"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "해먹"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "해먹(다)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2015-0253-c2 kno:role "고정항"@ko ;
+    kno:fullForm "방송"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "방(송)(放)"@ko ;
+    kno:formative kno:F000509 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "방"@ko ;
+    kno:position "2"^^xsd:integer .

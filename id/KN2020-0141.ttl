@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0141 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0141-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0141-form ;
-    ontolex:sense kno:KN2020-0141-sense .
-
-kno:KN2020-0141-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0004568671> .
-
-kno:KN2020-0141-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0141-freq-nn,
-        kno:KN2020-0141-freq-yt ;
-    ontolex:writtenRep "비말^차단^마스크"@ko .
-
-kno:KN2020-0141-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2431 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0141-freq-yt a frac:CorpusFrequency ;
-    rdf:value 136 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0141-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0141 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0141-freq-NN-2020 ;
+    kno:slotFiller "차단(遮斷) (1성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    skos:definition "병원체의 감염을 매개할 수 있는 침방울의 유입을 차단하기 위해 쓰는 마스크. 주로 비말을 매개로 전파되는 코로나19를 예방하기 위해 쓰는 마스크의 한 종류이다. 보건 마스크에 비해 두께가 얇아 숨쉬기 편하면서도 덴탈 마스크와 비슷한 수준의 침방울 차단 효과가 있다. =비말 마스크, 비말 차단용 마스크."@ko ;
+    kno:componentString "비말(飛沫), 차단(遮斷), 마스크(mask)"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "비말^차단^마스크"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0141-c2 ;
+    kno:origin "(飛沫遮斷<영>mask)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1507074> ;
+    kno:example "¶코로나19의 재확산으로 {비말 차단 마스크를} 쓰던 사람들도 다시 보건용 마스크를 찾기 시작했다."@ko ;
+    kno:frequency kno:KN2020-0141-freq-NN-2023 ;
+    kno:component kno:KN2020-0141-c1 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0141-freq-NN-2021 ;
+    kno:indexForm "비말차단마스크"@ko ;
+    kno:frequency kno:KN2020-0141-freq-NN-2025 ;
+    kno:languageType "한^한^영" ;
+    kno:frequency kno:KN2020-0141-freq-NN-total ;
+    kno:instantiates kno:S001421 ;
+    kno:frequency kno:KN2020-0141-freq-NN-2024 ;
+    kno:predicate "쓰다"@ko ;
+    kno:frequency kno:KN2020-0141-freq-NN-2022 ;
+    kno:component kno:KN2020-0141-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:urimalTargetCode "1507074" ;
+    kno:registration "우리말샘"@ko .
+kno:KN2020-0141-c2 kno:semanticTag kno:usas-A1.7m ;
+    rdfs:label "차단(遮斷)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001809 ;
+    kno:fullForm "차단"@ko ;
+    kno:surfaceForm "차단"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0141-c1 kno:surfaceForm "비말"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000362 ;
+    rdfs:label "비말(飛沫)"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "비말"@ko .
+kno:KN2020-0141-c3 a kno:Component ;
+    kno:fullForm "마스크"@ko ;
+    kno:formative kno:F000038 ;
+    kno:surfaceForm "마스크"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "마스크(mask)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

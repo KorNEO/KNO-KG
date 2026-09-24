@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0268 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0268 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0268-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0268-form ;
-    ontolex:sense kno:KN2021-0268-sense .
-
-kno:KN2021-0268-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0004826321> .
-
-kno:KN2021-0268-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0268-freq-nn,
-        kno:KN2021-0268-freq-yt ;
-    ontolex:writtenRep "코로나^손실^보상법"@ko .
-
-kno:KN2021-0268-freq-nn a frac:CorpusFrequency ;
-    rdf:value 730 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0268-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0268-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0268 kno:slotFiller "손실(損失)+보상법(補償法) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0268-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0268-c2 ;
+    kno:componentString "코로나(바이러스)(corona virus), 손실(損失), 보상법(補償法)"@ko ;
+    kno:component kno:KN2021-0268-c1 ;
+    kno:predicate "주다"@ko ;
+    kno:frequency kno:KN2021-0268-freq-NN-2025 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2021-0268-freq-NN-2024 ;
+    kno:languageType "영^한^한" ;
+    rdfs:label "코로나^손실^보상법"@ko ;
+    kno:frequency kno:KN2021-0268-freq-NN-total ;
+    kno:indexForm "코로나손실보상법"@ko ;
+    kno:example "¶{코로나 손실 보상법에} 의해 국가의 재정 지출 증가가 장기화되지 않도록 면밀한 모니터링이 필요하다."@ko ;
+    kno:component kno:KN2021-0268-c3 ;
+    kno:origin "(<영>←corona virus損失補償法)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%EC%86%90%EC%8B%A4%EB%B3%B4%EC%83%81%EB%B2%95> ;
+    skos:definition "코로나19의 감염과 확산을 막기 위한 방역 지침으로 인해 영업 손실을 입은 소상공인에게 국가가 손실의 일정 부분을 보상해 주는 법률. 정식 명칭은 ‘소상공인 보호 및 지원에 관한 법률’이다. 2021년 1월에 발의되어 2021년 7월에 통과되었으며, 2021년 10월에 시행되었다."@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000005 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0268-freq-NN-2021 .
+kno:KN2021-0268-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A9m ;
+    kno:surfaceForm "손실"@ko ;
+    rdfs:label "손실(損失)"@ko ;
+    kno:formative kno:F001493 ;
+    a kno:Component ;
+    kno:fullForm "손실"@ko ;
+    kno:semanticTag kno:usas-I1.1m .
+kno:KN2021-0268-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko .
+kno:KN2021-0268-c3 kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F003887 ;
+    a kno:Component ;
+    rdfs:label "보상법(補償法)"@ko ;
+    kno:surfaceForm "보상법"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "보상법"@ko .

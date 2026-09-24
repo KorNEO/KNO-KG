@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0193 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0193 kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(반짝이<영>look)" ;
+    kno:example "¶공개된 캐릭터 카드에는 트로트를 대표하는 ‘꺾기 내공’과 ‘{반짝이 룩} 소화력’, ‘디너쇼 끝판왕’이라는 내용이 담겨 34년 동안 트로트 외길 인생을 걸어 온 OOO의 능력치를 잘 반영하고 있다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:predicate "주다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0193-c1 ;
+    kno:component kno:KN2016-0193-c2 ;
+    kno:slotFiller "반짝이 (1성분)"@ko ;
+    kno:frequency kno:KN2016-0193-freq-NN-total ;
+    kno:indexForm "반짝이룩"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000007 ;
+    kno:componentString "반짝이, 룩(look)"@ko ;
+    rdfs:label "반짝이^룩"@ko ;
+    skos:definition "반짝이가 많이 붙어 있어 매우 화려한 느낌을 주는 옷. 또는 그런 옷차림. 주로 트로트 가수들이 즐겨 입는다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372628> ;
+    kno:frequency kno:KN2016-0193-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0193-freq-NN-2015 ;
+    kno:languageType "고^영" ;
+    kno:urimalTargetCode "1372628" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0193-freq-NN-2019 .
+kno:KN2016-0193-c1 kno:fullForm "반짝이"@ko ;
+    kno:surfaceForm "반짝이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W2 ;
+    kno:formative kno:F003691 ;
+    rdfs:label "반짝이"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0193-c2 a kno:Component ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 ;
+    rdfs:label "룩(look)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "룩"@ko ;
+    kno:surfaceForm "룩"@ko .

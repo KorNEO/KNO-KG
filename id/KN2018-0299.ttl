@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0299 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0299 kno:activeYears "6"^^xsd:integer ;
+    kno:origin "(情緖的흙수저)" ;
+    kno:frequency kno:KN2018-0299-freq-NN-2023 ;
+    kno:frequency kno:KN2018-0299-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%84%9C%EC%A0%81%20%ED%9D%99%EC%88%98%EC%A0%80> ;
+    kno:frequency kno:KN2018-0299-freq-NN-total ;
+    rdfs:label "정서적 흙수저"@ko ;
+    skos:definition "정신이 건강하지 않고 인성이 바르지 않아 정서적으로 빈곤한 사람을, 경제적으로 좋지 않은 환경을 누리는 사람을 뜻하는 흙수저에 빗대어 이르는 말. 주로 부모와 정서적으로 유대감을 갖지 못하고, 애착이 제대로 형성되지 않아 성숙한 자아 정체성을 형성하지 못한 사람을 뜻한다."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0299-freq-NN-2019 ;
+    a kno:Neologism ;
+    kno:indexForm "정서적흙수저"@ko ;
+    kno:languageType "한_고" ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "정서적(情緖的), 흙수저"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0299-freq-NN-2017 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0299-freq-NN-2025 ;
+    kno:slotFiller "흙수저 (1성분)"@ko ;
+    kno:example "¶‘{정서적 흙수저’는} 평생 계속해서 수많은 문제 행동을 낳는다는 점에서 위험하다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000575 ;
+    kno:frequency kno:KN2018-0299-freq-NN-2018 ;
+    kno:component kno:KN2018-0299-c2 ;
+    kno:component kno:KN2018-0299-c1 .
+kno:KN2018-0299-c2 a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:formative kno:F000243 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "흙수저"@ko ;
+    kno:surfaceForm "흙수저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "흙수저"@ko .
+kno:KN2018-0299-c1 kno:surfaceForm "정서적"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:formative kno:F000920 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "정서적(情緖的)"@ko ;
+    kno:fullForm "정서적"@ko ;
+    kno:truncated "false"^^xsd:boolean .

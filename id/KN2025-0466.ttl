@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0466 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0466 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0466-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0466-form ;
-    ontolex:sense kno:KN2025-0466-sense .
-
-kno:KN2025-0466-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002223270> .
-
-kno:KN2025-0466-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0466-freq-nn,
-        kno:KN2025-0466-freq-yt ;
-    ontolex:writtenRep "윤 네버"@ko .
-
-kno:KN2025-0466-freq-nn a frac:CorpusFrequency ;
-    rdf:value 57 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0466-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0466-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0466 kno:indexForm "윤네버"@ko ;
+    kno:example "(LLM) 당내 쇄신을 말하려면 {윤네버를} 분명히 하고 새 지도부를 꾸려야 한다는 목소리가 나왔다."@ko ;
+    kno:origin "(尹<영>never)" ;
+    skos:definition "(LLM) 윤석열 전 대통령과의 정치적 연계나 영향력에서 벗어나 그 노선과 거리를 두어야 한다는 주장."@ko ;
+    kno:slotFiller "네버(never) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0466-freq-NN-2025 ;
+    kno:component kno:KN2025-0466-c1 ;
+    kno:predicate "한다다"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A4%20%EB%84%A4%EB%B2%84> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001606 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "윤(尹), 네버(never)"@ko ;
+    kno:languageType "한_영" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0466-freq-NN-total ;
+    rdfs:label "윤 네버"@ko ;
+    kno:component kno:KN2025-0466-c2 ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0466-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "윤"@ko ;
+    kno:surfaceForm "윤"@ko ;
+    kno:formative kno:F000568 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "윤(尹)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0466-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z6 ;
+    rdfs:label "네버(never)"@ko ;
+    kno:surfaceForm "네버"@ko ;
+    kno:formative kno:F000690 ;
+    a kno:Component ;
+    kno:fullForm "네버"@ko ;
+    kno:role "슬롯 채움"@ko .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0397 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0397 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0397-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0397-form ;
-    ontolex:sense kno:KN2020-0397-sense .
-
-kno:KN2020-0397-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003272989> .
-
-kno:KN2020-0397-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0397-freq-nn,
-        kno:KN2020-0397-freq-yt ;
-    ontolex:writtenRep "학부모^안심^학년"@ko .
-
-kno:KN2020-0397-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0397-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0397-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0397 kno:instantiates kno:S001762 ;
+    kno:frequency kno:KN2020-0397-freq-NN-total ;
+    kno:example "¶교육부는 올해부터 초등학교 1학년을 {학부모 안심 학년으로} 정하여 한글이나 산수 등 기초 학습과 안전, 돌봄 관련 제도를 강화하기로 했다."@ko ;
+    kno:componentString "학부모(學父母), 안심(安心), 학년(學年)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%EB%B6%80%EB%AA%A8%EC%95%88%EC%8B%AC%ED%95%99%EB%85%84> ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2020-0397-c1 ;
+    kno:frequency kno:KN2020-0397-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "학년(學年) (1성분)"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0397-c2 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "학부모^안심^학년"@ko ;
+    kno:indexForm "학부모안심학년"@ko ;
+    skos:definition "학교에 처음 입학하여 적응하는 데 도움이 필요한 ‘초등학교 1학년’을 가리키는 말. 2020년부터 교육부에서 시행한 ‘학부모 안심 학년제’에서 나온 말이다."@ko ;
+    kno:component kno:KN2020-0397-c3 ;
+    kno:origin "(學父母安心學年)" .
+kno:KN2020-0397-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "학부모"@ko ;
+    rdfs:label "학부모(學父母)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "학부모"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001992 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0397-c2 kno:fullForm "안심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "안심"@ko ;
+    kno:semanticTag kno:usas-E6p ;
+    kno:role "고정항"@ko ;
+    rdfs:label "안심(安心)"@ko ;
+    kno:formative kno:F000088 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0397-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "학년"@ko ;
+    a kno:Component ;
+    kno:fullForm "학년"@ko ;
+    rdfs:label "학년(學年)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F006945 .

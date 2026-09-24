@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0138 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0138 kno:formation kno:W05 ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "레깅진"@ko ;
+    kno:frequency kno:KN2013-0138-freq-NN-2012 ;
+    kno:component kno:KN2013-0138-c2 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A0%88%EA%B9%85%EC%A7%84> ;
+    kno:component kno:KN2013-0138-c1 ;
+    kno:frequency kno:KN2013-0138-freq-NN-total ;
+    kno:origin "(←leggings jean)" ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶이밖에 OO에서는 남성 슬림 카키 컬러 팬츠, 여성 {레깅진} 컬러 팬츠 등 OO의 가을 신상품을 만나볼 수 있다."@ko ;
+    skos:definition "진 소재로 만든 레깅스."@ko ;
+    rdfs:label "레깅진"@ko ;
+    kno:languageType "영+영" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:componentString "레깅(스)(leggings), 진(jean)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2013-0138-c2 a kno:Component ;
+    kno:formative kno:F005915 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "진(jean)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "진"@ko ;
+    kno:surfaceForm "진"@ko .
+kno:KN2013-0138-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "레깅"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "레깅스"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:formative kno:F003202 ;
+    rdfs:label "레깅(스)(leggings)"@ko .

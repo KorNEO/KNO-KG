@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0091 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0091 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0091-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0091-form ;
-    ontolex:sense kno:KN2025-0091-sense .
-
-kno:KN2025-0091-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0003001670> .
-
-kno:KN2025-0091-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0091-freq-nn,
-        kno:KN2025-0091-freq-yt ;
-    ontolex:writtenRep "김병기 방지법"@ko .
-
-kno:KN2025-0091-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0091-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0091-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0091 rdfs:label "김병기 방지법"@ko ;
+    kno:component kno:KN2025-0091-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0091-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0091-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%B3%91%EA%B8%B0%20%EB%B0%A9%EC%A7%80%EB%B2%95> ;
+    kno:component kno:KN2025-0091-c1 ;
+    skos:definition "(LLM) 국회의원의 보좌진에 대한 부당한 대우(갑질)나 가족ㆍ친인척 등의 인사 개입, 채용ㆍ인사 청탁 등 이해충돌 소지가 있는 행위를 금지하고, 위반 시 강한 제재를 부과하자는 취지로 거론되는 법안(또는 법) 명칭."@ko ;
+    kno:example "(LLM) 보좌진에 대한 부당한 지시와 가족의 인사 개입 논란이 이어지자, 정치권에서는 {김병기방지법이} 필요하다는 주장도 나왔다."@ko ;
+    kno:indexForm "김병기방지법"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "인명; X=김병기 (1성분)"@ko ;
+    kno:componentString "김병기, 방지법(防止法)"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000054 .
+kno:KN2025-0091-c2 kno:semanticTag kno:usas-G2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "방지법"@ko ;
+    kno:surfaceForm "방지법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "방지법(防止法)"@ko ;
+    kno:formative kno:F000032 .
+kno:KN2025-0091-c1 kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "김병기"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "김병기"@ko ;
+    kno:surfaceForm "김병기"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002615 ;
+    kno:role "슬롯 채움"@ko .

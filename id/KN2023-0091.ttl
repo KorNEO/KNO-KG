@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0091 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0091 a ontolex:Word ;
-    frac:attestation kno:KN2023-0091-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0091-form ;
-    ontolex:sense kno:KN2023-0091-sense .
-
-kno:KN2023-0091-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/117/0003323630> .
-
-kno:KN2023-0091-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0091-freq-nn,
-        kno:KN2023-0091-freq-yt ;
-    ontolex:writtenRep "맞-폭"@ko .
-
-kno:KN2023-0091-freq-nn a frac:CorpusFrequency ;
-    rdf:value 207 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0091-freq-yt a frac:CorpusFrequency ;
-    rdf:value 90 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0091-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0091 kno:instantiates kno:S000210 ;
+    kno:frequency kno:KN2023-0091-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "맞-폭"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "맞폭"@ko ;
+    kno:example "¶최근 학교 폭력 피해 학생들이 가해 학생들로부터 맞신고를 당하는 이른바 ‘{맞폭’} 현상이 만연한 것으로 나타났다."@ko ;
+    kno:component kno:KN2023-0091-c2 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2023-0091-freq-NN-2024 ;
+    kno:slotFiller "폭력(暴力) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0091-freq-NN-2025 ;
+    kno:formation kno:W03 ;
+    kno:component kno:KN2023-0091-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%9E%ED%8F%AD> ;
+    kno:languageType "고+한" ;
+    kno:componentString "맞-, 폭력(暴力)"@ko ;
+    a ontolex:Word ;
+    kno:origin "(맞暴)" ;
+    skos:definition "상대방이 폭력을 당한 행동이나 태도에 대하여 본인도 폭력을 당한 적이 있다고 맞서서 대응함."@ko ;
+    kno:frequency kno:KN2023-0091-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0091-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "폭력"@ko ;
+    kno:surfaceForm "폭력"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "폭력(暴力)"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    kno:formative kno:F000435 ;
+    a kno:Component .
+kno:KN2023-0091-c1 kno:formative kno:F000170 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.1.2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "맞-"@ko ;
+    kno:fullForm "맞"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "맞"@ko ;
+    kno:role "고정항"@ko .

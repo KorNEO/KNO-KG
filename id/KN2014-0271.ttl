@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0271 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0271 rdfs:label "콤섹^지수"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:component kno:KN2014-0271-c1 ;
+    a kno:Neologism ;
+    kno:componentString "콤섹(commsec), 지수(指數)"@ko ;
+    kno:example "¶{콤섹 지수에} 따르면 와이파이가 되고 레티나 디스플레이를 장착한 16기가바이트 OO의 소비자 가격은 아르헨티나에서는 1094.11달러인 데 비해 말레이시아에서는 473.77달러로 나타났다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000025 ;
+    kno:languageType "영^한" ;
+    kno:origin "(<영>commsec指數)" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2014-0271-c2 ;
+    kno:frequency kno:KN2014-0271-freq-NN-total ;
+    skos:definition "호주의 코먼웰스 은행이 전 세계의 55개국에서 판매되는 애플사의 아이팟 가격을 근거로 각국의 구매력과 물가를 쉽게 비교할 수 있도록 만든 지수."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2014-0271-freq-NN-2013 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%A4%EC%84%B9%EC%A7%80%EC%88%98> ;
+    kno:indexForm "콤섹지수"@ko ;
+    kno:slotFiller "콤섹(commsec) (1성분)"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2014-0271-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:surfaceForm "콤섹"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "콤섹(commsec)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006308 ;
+    kno:fullForm "콤섹"@ko ;
+    kno:semanticTag kno:usas-I1.3 .
+kno:KN2014-0271-c2 kno:fullForm "지수"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "지수"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:formative kno:F000035 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.1 .

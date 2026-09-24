@@ -1,37 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0341 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0341 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0341-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0341-form ;
-    ontolex:sense kno:KN2024-0341-sense .
-
-kno:KN2024-0341-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000607859> .
-
-kno:KN2024-0341-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0341-freq-nn,
-        kno:KN2024-0341-freq-yt ;
-    ontolex:writtenRep "통뼈 캐슬"@ko .
-
-kno:KN2024-0341-freq-nn a frac:CorpusFrequency ;
-    rdf:value 77 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0341-freq-yt a frac:CorpusFrequency ;
-    rdf:value 74 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0341-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B3%A0%EB%8D%95%20%EB%A1%AF%EB%8D%B0%EC%BA%90%EC%8A%AC%20%EB%B2%A0%EB%84%A4%EB%A3%A8%EC%B2%B4> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0341 kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0341-freq-NN-2023 ;
+    kno:componentString "통뼈, 캐슬(castle)"@ko ;
+    kno:example "¶아파트 외벽에 철근이 드러난 사례가 나타나면서 {통뼈 캐슬이라는} 우려 섞인 별칭도 등장하였다."@ko ;
+    kno:frequency kno:KN2024-0341-freq-NN-2024 ;
+    kno:origin "(통뼈<영>castle)" ;
+    kno:frequency kno:KN2024-0341-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%B5%EB%BC%88%20%EC%BA%90%EC%8A%AC> ;
+    kno:indexForm "통뼈캐슬"@ko ;
+    skos:definition "부실 시공된 아파트를 비하하여 이르는 말. 롯데건설에서 지은 한 아파트에서 철근이 콘크리트 밖으로 돌출되면서 붙여진 이름이다."@ko ;
+    a kno:Neologism ;
+    rdfs:label "통뼈 캐슬"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0341-c1 ;
+    kno:component kno:KN2024-0341-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0341-c1 rdfs:label "통뼈"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "통뼈"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:fullForm "통뼈"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006506 .
+kno:KN2024-0341-c2 kno:surfaceForm "캐슬"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006219 ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:fullForm "캐슬"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "캐슬(castle)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

@@ -1,36 +1,76 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0059 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0059 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0059-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0059-form ;
-    ontolex:sense kno:KN2022-0059-sense .
-
-kno:KN2022-0059-att-nn a frac:Attestation ;
-    dcterms:date "2022-03-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004939789> .
-
-kno:KN2022-0059-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0059-freq-nn,
-        kno:KN2022-0059-freq-yt ;
-    ontolex:writtenRep "국가^지도^통신^차량"@ko .
-
-kno:KN2022-0059-freq-nn a frac:CorpusFrequency ;
-    rdf:value 158 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0059-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0059-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0059 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0059-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶인수 위원회는 O 당선자가 이동용 지휘소라 할 수 있는 ‘{국가 지도 통신 차량’을} 활용하여 국가 재난 상황과 안보 위기 상황에 대응하기로 하였다."@ko ;
+    kno:indexForm "국가지도통신차량"@ko ;
+    kno:component kno:KN2022-0059-c3 ;
+    skos:definition "국가가 위기 상황에 처할 경우 국가 위기 관리 센터를 대신하여 그 역할을 수행하는 차량. =국가 지도 차량."@ko ;
+    kno:frequency kno:KN2022-0059-freq-NN-total ;
+    rdfs:label "국가^지도^통신^차량"@ko ;
+    kno:instantiates kno:S001233 ;
+    kno:instantiates kno:S001229 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:predicate "수행하다"@ko ;
+    kno:component kno:KN2022-0059-c1 ;
+    kno:frequency kno:KN2022-0059-freq-NN-2025 ;
+    kno:component kno:KN2022-0059-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EA%B0%80%EC%A7%80%EB%8F%84%ED%86%B5%EC%8B%A0%EC%B0%A8%EB%9F%89> ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0059-freq-NN-2022 ;
+    kno:component kno:KN2022-0059-c4 ;
+    kno:origin "(國家指導通信車輛)" ;
+    kno:slotFiller "지도(指導)+통신(通信) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "국가(國家), 지도(指導), 통신(通信), 차량(車輛)"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:slotFiller "통신(通信)+차량(車輛) (2성분)"@ko ;
+    a kno:Neologism .
+kno:KN2022-0059-c3 rdfs:label "통신(通信)"@ko ;
+    kno:formative kno:F006508 ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:fullForm "통신"@ko ;
+    kno:surfaceForm "통신"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0059-c1 rdfs:label "국가(國家)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "국가"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000020 ;
+    kno:fullForm "국가"@ko ;
+    a kno:Component .
+kno:KN2022-0059-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "지도"@ko ;
+    kno:formative kno:F001786 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "지도"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    rdfs:label "지도(指導)"@ko .
+kno:KN2022-0059-c4 kno:position "4"^^xsd:integer ;
+    rdfs:label "차량(車輛)"@ko ;
+    a kno:Component ;
+    kno:fullForm "차량"@ko ;
+    kno:surfaceForm "차량"@ko ;
+    kno:formative kno:F000595 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0570 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0570 kno:origin "(韓完얼)" ;
+    kno:component kno:KN2016-0570-c1 ;
+    kno:example "¶당시 OOO은 작은 얼굴과 큰 키와 함께 또렷한 이목구비로 완벽한 한복 자태를 뽐내며 ‘{한완얼’이라는} 말을 만들어 내기도 했다."@ko ;
+    kno:frequency kno:KN2016-0570-freq-NN-total ;
+    kno:frequency kno:KN2016-0570-freq-NN-2016 ;
+    kno:componentString "한(복)(韓), 완(성)(完), 얼(굴)"@ko ;
+    kno:indexForm "한완얼"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%9C%EC%99%84%EC%96%BC> ;
+    kno:instantiates kno:S000173 ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2016-0570-freq-NN-2020 ;
+    a kno:Neologism ;
+    skos:definition "‘한복을 완성하는 것은 얼굴’을 줄여 이르는 말. 얼굴이 잘생기거나 예쁘면 어떤 한복 모양도 잘 어울림을 뜻한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0570-c3 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "한완얼"@ko ;
+    kno:slotFiller "한(복)(韓) (1성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:languageType "한+한+고" ;
+    kno:component kno:KN2016-0570-c2 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2016-0570-c1 kno:semanticTag kno:usas-B5 ;
+    kno:formative kno:F006957 ;
+    rdfs:label "한(복)(韓)"@ko ;
+    kno:fullForm "한복"@ko ;
+    kno:surfaceForm "한"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0570-c3 kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000117 ;
+    kno:fullForm "얼굴"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "얼"@ko ;
+    rdfs:label "얼(굴)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2016-0570-c2 a kno:Component ;
+    kno:formative kno:F000225 ;
+    rdfs:label "완(성)(完)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "완"@ko ;
+    kno:fullForm "완성"@ko .

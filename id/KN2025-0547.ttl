@@ -1,37 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0547 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0547 a ontolex:Word ;
-    frac:attestation kno:KN2025-0547-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0547-form ;
-    ontolex:sense kno:KN2025-0547-sense .
-
-kno:KN2025-0547-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001911540> .
-
-kno:KN2025-0547-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0547-freq-nn,
-        kno:KN2025-0547-freq-yt ;
-    ontolex:writtenRep "짱북송"@ko .
-
-kno:KN2025-0547-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0547-freq-yt a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0547-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%ED%8C%A8%EB%A5%9C%EC%86%A1> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0547 kno:origin "(짱北<영>song)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0547-c3 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%B1%EB%B6%81%EC%86%A1> ;
+    a ontolex:Word ;
+    kno:example "(LLM) 집회 현장에서 확성기로 {짱북송이} 재생되자, 일부 참가자들이 혐오를 조장한다며 중단을 요구했다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "짱(깨), 북(한)(北韓), 송(song)"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2025-0547-c2 ;
+    kno:languageType "고+한+영" ;
+    rdfs:label "짱북-송"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0547-freq-NN-total ;
+    kno:instantiates kno:S000950 ;
+    skos:definition "(LLM) 중국인과 북한을 비하ㆍ조롱하는 표현을 가사나 구호처럼 반복해 반중ㆍ반북 정서를 드러내는 노래."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "짱북송"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "짱(깨)+북(한)(北韓) (2성분)"@ko ;
+    kno:component kno:KN2025-0547-c1 ;
+    kno:predicate "드러내다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0547-freq-NN-2025 .
+kno:KN2025-0547-c3 kno:fullForm "송"@ko ;
+    kno:surfaceForm "송"@ko ;
+    rdfs:label "송(song)"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:formative kno:F000535 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0547-c2 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "북(한)(北韓)"@ko ;
+    kno:surfaceForm "북"@ko ;
+    a kno:Component ;
+    kno:fullForm "북한"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003964 .
+kno:KN2025-0547-c1 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "짱(깨)"@ko ;
+    kno:formative kno:F001802 ;
+    kno:semanticTag kno:usas-S1.2.3m ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "짱"@ko ;
+    kno:fullForm "짱깨"@ko .

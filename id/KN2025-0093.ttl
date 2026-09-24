@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0093 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0093 a ontolex:Word ;
-    frac:attestation kno:KN2025-0093-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0093-form ;
-    ontolex:sense kno:KN2025-0093-sense .
-
-kno:KN2025-0093-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002152299> .
-
-kno:KN2025-0093-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0093-freq-nn,
-        kno:KN2025-0093-freq-yt ;
-    ontolex:writtenRep "김하늘 법"@ko .
-
-kno:KN2025-0093-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0093-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0093-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0093 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%ED%95%98%EB%8A%98%EB%B2%95> ;
+    kno:origin "(金하늘法)" ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "김하늘법"@ko ;
+    kno:frequency kno:KN2025-0093-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0093-freq-NN-total ;
+    kno:example "(LLM) 유족과 시민단체는 교원의 위험 징후를 조기에 발견해 필요한 치료와 직무 조정이 이뤄지도록 {김하늘법} 제정을 촉구했다."@ko ;
+    kno:component kno:KN2025-0093-c1 ;
+    kno:instantiates kno:S000015 ;
+    kno:component kno:KN2025-0093-c2 ;
+    kno:formation kno:W01 ;
+    kno:languageType "한+고_한" ;
+    rdfs:label "김하늘-법"@ko ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 초등학생 사망 사건을 계기로, 학교 안전을 강화하고 정신적 문제 등으로 위험 징후를 보이는 교원에 대한 관리ㆍ치료ㆍ직무 조정 등을 제도화하려는 입법안 또는 제도를 통틀어 이르는 말."@ko ;
+    kno:componentString "김하늘, 법(法)"@ko ;
+    kno:slotFiller "김하늘 (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0093-c1 kno:fullForm "김하늘"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002618 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "김하늘"@ko ;
+    kno:surfaceForm "김하늘"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0093-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "법(法)"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko .

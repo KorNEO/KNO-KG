@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0237 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0237 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0237-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0237-form ;
-    ontolex:sense kno:KN2025-0237-sense .
-
-kno:KN2025-0237-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000864130> .
-
-kno:KN2025-0237-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0237-freq-nn,
-        kno:KN2025-0237-freq-yt ;
-    ontolex:writtenRep "몸빵 재테크"@ko .
-
-kno:KN2025-0237-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0237-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0237-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0237 a kno:Neologism ;
+    kno:example "(LLM) 허위 서류로 대출을 받아 챙기고도 ‘어차피 몇 년만 살다 나오면 된다’며 {몸빵재테크를} 권하는 말이 돌았다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0237-c1 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%B8%EB%B9%B5%20%EC%9E%AC%20%ED%85%8C%ED%81%AC> ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "고_(한+영)" ;
+    kno:frequency kno:KN2025-0237-freq-NN-total ;
+    rdfs:label "몸빵 재 테크"@ko ;
+    kno:slotFiller "몸빵 (1성분)"@ko ;
+    kno:indexForm "몸빵재테크"@ko ;
+    kno:origin "(몸빵財<영>tech)" ;
+    kno:frequency kno:KN2025-0237-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000423 ;
+    kno:componentString "몸빵, 재테크(財tech)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 사기ㆍ불법 대출 등 범죄로 돈을 챙긴 뒤, 처벌이 크지 않다고 여기며 수감 생활까지 감수하는 것을 ‘재테크’처럼 여기는 돈벌이 방식."@ko ;
+    kno:component kno:KN2025-0237-c2 .
+kno:KN2025-0237-c1 kno:semanticTag kno:usas-S8p ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "몸빵"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "몸빵"@ko ;
+    kno:surfaceForm "몸빵"@ko ;
+    kno:formative kno:F003511 ;
+    a kno:Component .
+kno:KN2025-0237-c2 kno:surfaceForm "재테크"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000581 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "재테크"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "재테크(財tech)"@ko .

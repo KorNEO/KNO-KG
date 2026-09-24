@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0221 a ontolex:Word ;
+    kno:example "¶순수 국내산 {웹툰컬의} 탄생은 지난해 초연한 OO 예술단의 ‘OO’부터라고 볼 수 있습니다."@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:year "2017"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B9%ED%88%B0%EC%BB%AC> ;
+    kno:component kno:KN2017-0221-c1 ;
+    kno:componentString "웹툰(webtoon), (뮤지)컬(musical)"@ko ;
+    kno:frequency kno:KN2017-0221-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2017-0221-freq-NN-total ;
+    kno:origin "(<영>▼webtoon←musical)" ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    rdfs:label "웹툰컬"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "웹툰컬"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2017-0221-c2 ;
+    skos:definition "웹툰을 원작으로 하여 만든 뮤지컬."@ko .
+kno:KN2017-0221-c1 kno:formative kno:F001671 ;
+    rdfs:label "웹툰(webtoon)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "웹툰"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:fullForm "웹툰"@ko .
+kno:KN2017-0221-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "컬"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006250 ;
+    rdfs:label "(뮤지)컬(musical)"@ko ;
+    kno:fullForm "뮤지컬"@ko ;
+    kno:position "2"^^xsd:integer .

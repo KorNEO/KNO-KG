@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0104 kno:component kno:KN2016-0104-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한_고" ;
+    kno:pos "「구」"@ko ;
+    skos:definition "도시 생활에서 겪게 되는 경제적인 어려움. 또는 그런 상태."@ko ;
+    kno:example "¶‘{도시 가난’을} 상징하는 달동네는 이제 그동안의 개발 사업으로 인해 자취를 감추었지만 OO구 OO동의 ‘OO마을’은 마지막 달동네로 남아 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "도시(都市), 가난"@ko ;
+    rdfs:label "도시 가난"@ko ;
+    kno:frequency kno:KN2016-0104-freq-NN-2020 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0104-freq-NN-2015 ;
+    kno:origin "(都市가난)" ;
+    kno:frequency kno:KN2016-0104-freq-NN-total ;
+    kno:component kno:KN2016-0104-c2 ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EC%8B%9C%20%EA%B0%80%EB%82%9C> ;
+    kno:instantiates kno:S001328 ;
+    kno:slotFiller "가난 (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2016-0104-freq-NN-2016 ;
+    kno:indexForm "도시가난"@ko .
+kno:KN2016-0104-c1 a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "도시"@ko ;
+    kno:surfaceForm "도시"@ko ;
+    rdfs:label "도시(都市)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000347 .
+kno:KN2016-0104-c2 kno:fullForm "가난"@ko ;
+    rdfs:label "가난"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002070 ;
+    kno:surfaceForm "가난"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

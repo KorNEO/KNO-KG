@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0098 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0098 kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    rdfs:label "느와르^컷"@ko ;
+    skos:definition "영화나 드라마 따위에서, 시각적으로 복잡하고 어두운 장면."@ko ;
+    kno:frequency kno:KN2013-0098-freq-NN-2013 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8A%90%EC%99%80%EB%A5%B4%EC%BB%B7> ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶마치 ‘남자들의 전성시대’를 연상시키는 {느와르 컷에서} 극중 오른팔 OOO와 왼팔 OOO를 거느린 OOO의 카리스마가 폭발했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "느와르(noir) (1성분)"@ko ;
+    kno:origin "(<프>noir<영>cut)" ;
+    kno:languageType "프^영" ;
+    kno:component kno:KN2013-0098-c2 ;
+    kno:component kno:KN2013-0098-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "느와르(noir), 컷(cut)"@ko ;
+    kno:frequency kno:KN2013-0098-freq-NN-total ;
+    kno:instantiates kno:S000437 ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "느와르컷"@ko .
+kno:KN2013-0098-c2 kno:semanticTag kno:usas-C1 ;
+    a kno:Component ;
+    kno:fullForm "컷"@ko ;
+    rdfs:label "컷(cut)"@ko ;
+    kno:formative kno:F000607 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "컷"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2013-0098-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "느와르"@ko ;
+    rdfs:label "느와르(noir)"@ko ;
+    kno:surfaceForm "느와르"@ko ;
+    kno:formative kno:F002826 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K4 .

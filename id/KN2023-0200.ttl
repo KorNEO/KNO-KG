@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0200 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0200 a ontolex:Word ;
-    frac:attestation kno:KN2023-0200-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0200-form ;
-    ontolex:sense kno:KN2023-0200-sense .
-
-kno:KN2023-0200-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003755469> .
-
-kno:KN2023-0200-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0200-freq-nn,
-        kno:KN2023-0200-freq-yt ;
-    ontolex:writtenRep "완냉-족"@ko .
-
-kno:KN2023-0200-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0200-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0200-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0200 kno:formation kno:W02 ;
+    skos:definition "냉면 한 그릇을 완전하게 비우는 사람. 또는 그런 무리."@ko ;
+    kno:slotFiller "완냉(完冷) (1성분)"@ko ;
+    kno:languageType "한+한" ;
+    kno:componentString "완냉(完冷), -족(族)"@ko ;
+    rdfs:label "완냉-족"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "비우다"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0200-freq-NN-2024 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:indexForm "완냉족"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0200-freq-NN-total ;
+    kno:component kno:KN2023-0200-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%84%EB%83%89%EC%A1%B1> ;
+    kno:example "¶남북 정상 회담에서 평양냉면이 소개된 이후로, 평양냉면 맛집을 찾아다니며 인증 숏을 찍어 올리는 {완냉족이} 크게 늘었다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2023-0200-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0200-freq-NN-2023 ;
+    kno:origin "(完冷族)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
+kno:KN2023-0200-c2 rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2023-0200-c1 kno:formative kno:F005167 ;
+    kno:fullForm "완냉"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "완냉"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "완냉(完冷)"@ko .

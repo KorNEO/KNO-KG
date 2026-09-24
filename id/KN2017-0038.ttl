@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0038 kno:componentString "깃털, 눈썹"@ko ;
+    kno:component kno:KN2017-0038-c2 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "깃털눈썹"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:urimalTargetCode "1380348" ;
+    kno:frequency kno:KN2017-0038-freq-NN-2024 ;
+    kno:frequency kno:KN2017-0038-freq-NN-2017 ;
+    a kno:Neologism ;
+    kno:languageType "고_고" ;
+    rdfs:label "깃털 눈썹"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "새의 깃털 모양처럼 생긴 눈썹. 눈썹의 가운데에 약간 공백을 두고 절반은 위로, 절반은 아래로 나누어 고정하는 방식의 눈썹 화장법이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2017-0038-c1 ;
+    kno:frequency kno:KN2017-0038-freq-NN-total ;
+    kno:example "¶한 메이크업 아티스트가 에스엔에스(SNS)에 공개한 ‘{깃털 눈썹’이} 화제입니다."@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380348> .
+kno:KN2017-0038-c2 rdfs:label "눈썹"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "눈썹"@ko ;
+    kno:surfaceForm "눈썹"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002815 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2017-0038-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-L2 ;
+    rdfs:label "깃털"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002622 ;
+    kno:fullForm "깃털"@ko ;
+    kno:surfaceForm "깃털"@ko .

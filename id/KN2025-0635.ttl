@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0635 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0635 a ontolex:Word ;
-    frac:attestation kno:KN2025-0635-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0635-form ;
-    ontolex:sense kno:KN2025-0635-sense .
-
-kno:KN2025-0635-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005441639> .
-
-kno:KN2025-0635-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0635-freq-nn,
-        kno:KN2025-0635-freq-yt ;
-    ontolex:writtenRep "페미닌 코어"@ko .
-
-kno:KN2025-0635-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0635-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0635-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0635 kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:indexForm "페미닌코어"@ko ;
+    kno:frequency kno:KN2025-0635-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "페미닌(feminine) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000077 ;
+    kno:example "(LLM) 패션업계에서는 리본 디테일과 연한 색조 메이크업을 앞세운 {페미닌코어가} 봄 시즌 트렌드로 떠오르고 있다고 설명한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 리본ㆍ레이스ㆍ파스텔 톤 등 부드럽고 여성스러운 요소를 강조해 로맨틱한 분위기를 내는 패션ㆍ메이크업 중심의 스타일 경향."@ko ;
+    kno:origin "(<영>femininecore)" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0635-freq-NN-total ;
+    kno:component kno:KN2025-0635-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%98%EB%AF%B8%EB%8B%8C%EC%BD%94%EC%96%B4> ;
+    kno:component kno:KN2025-0635-c1 ;
+    kno:componentString "페미닌(feminine), 코어(core)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W07 ;
+    rdfs:label "페미닌코어"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0635-c2 rdfs:label "코어(core)"@ko ;
+    kno:formative kno:F000043 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "코어"@ko ;
+    kno:surfaceForm "코어"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2025-0635-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006684 ;
+    rdfs:label "페미닌(feminine)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "페미닌"@ko ;
+    kno:surfaceForm "페미닌"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 .

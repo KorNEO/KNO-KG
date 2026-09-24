@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0026 kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2019-0026-freq-NN-total ;
+    kno:frequency kno:KN2019-0026-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0026-freq-NN-2019 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "껑충, 타법(打法)"@ko ;
+    rdfs:label "껑충^타법"@ko ;
+    skos:definition "골프에서, 공을 멀리 보내기 위해 두 뒤꿈치를 모두 떼거나 껑충 뛰면서 공을 치는 방법."@ko ;
+    kno:frequency kno:KN2019-0026-freq-NN-2018 ;
+    kno:component kno:KN2019-0026-c1 ;
+    kno:component kno:KN2019-0026-c2 ;
+    kno:predicate "치다"@ko ;
+    kno:languageType "고^한" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:indexForm "껑충타법"@ko ;
+    kno:origin "(껑충打法)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BB%91%EC%B6%A9%ED%83%80%EB%B2%95> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶{‘껑충 타법’은} 장타자가 득세하는 현실에서 어쩔 수 없이 받아들여야 하는 숙명 같은 동작일 수도 있다."@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2019-0026-c1 kno:formative kno:F002644 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "껑충"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "껑충"@ko ;
+    kno:surfaceForm "껑충"@ko ;
+    kno:semanticTag kno:usas-M1 .
+kno:KN2019-0026-c2 rdfs:label "타법(打法)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "타법"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "타법"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:formative kno:F006387 ;
+    kno:truncated "false"^^xsd:boolean .

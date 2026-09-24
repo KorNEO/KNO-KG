@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0355 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0355 kno:frequency kno:KN2012-0355-freq-NN-2013 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2012-0355-freq-NN-2012 ;
+    kno:slotFiller "인터렉션(interaction) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0355-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "인터렉션-북"@ko ;
+    kno:componentString "인터렉션(interaction), 북(book)"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0355-freq-NN-total ;
+    kno:indexForm "인터렉션북"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶OO은 단순히 텍스트를 떠나 그림을 움직이게 하고 게임, 음악 등의 콘텐츠와 상호 작용을 통해 이야기를 전달하는 {인터렉션북이다}."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98%EB%B6%81> ;
+    kno:origin "(interaction book)" ;
+    kno:instantiates kno:S000899 ;
+    kno:component kno:KN2012-0355-c1 ;
+    skos:definition "상호 작용을 할 수 있게 만든 책."@ko ;
+    kno:languageType "영+영" .
+kno:KN2012-0355-c2 kno:semanticTag kno:usas-Q4.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000276 ;
+    kno:fullForm "북"@ko ;
+    kno:surfaceForm "북"@ko ;
+    rdfs:label "북(book)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2012-0355-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    rdfs:label "인터렉션(interaction)"@ko ;
+    kno:fullForm "인터렉션"@ko ;
+    kno:formative kno:F005456 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "인터렉션"@ko .

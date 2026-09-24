@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0245 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0245 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0245-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0245-form ;
-    ontolex:sense kno:KN2022-0245-sense .
-
-kno:KN2022-0245-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004660244> .
-
-kno:KN2022-0245-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0245-freq-nn,
-        kno:KN2022-0245-freq-yt ;
-    ontolex:writtenRep "재택^키트"@ko .
-
-kno:KN2022-0245-freq-nn a frac:CorpusFrequency ;
-    rdf:value 52 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0245-freq-yt a frac:CorpusFrequency ;
-    rdf:value 48 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0245-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0245 kno:frequency kno:KN2022-0245-freq-NN-2022 ;
+    kno:example "¶재택 치료 대상자가 증가하면서 {재택 키트의} 공급이 부족해졌다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "재택^키트"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한^영" ;
+    kno:componentString "재택(在宅), 키트(kit)"@ko ;
+    skos:definition "코로나19 확진자가 집에서 치료받기 위해 필요한 물품 세트. 코로나19가 장기화되면서 경증 또는 무증상 환자의 경우 재택 치료를 받을 수 있도록 제공되었으며 체온계, 산소 포화도 측정기 등이 포함된다. =재택 치료 키트."@ko ;
+    kno:frequency kno:KN2022-0245-freq-NN-2021 ;
+    kno:origin "(在宅<영>kit)" ;
+    kno:instantiates kno:S000325 ;
+    kno:slotFiller "키트(kit) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%83%9D%ED%82%A4%ED%8A%B8> ;
+    kno:component kno:KN2022-0245-c1 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0245-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0245-freq-NN-total ;
+    kno:slotFiller "재택(在宅) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000441 ;
+    kno:indexForm "재택키트"@ko ;
+    a kno:Neologism .
+kno:KN2022-0245-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000404 ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "재택"@ko ;
+    a kno:Component ;
+    rdfs:label "재택(在宅)"@ko ;
+    kno:surfaceForm "재택"@ko .
+kno:KN2022-0245-c2 rdfs:label "키트(kit)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F000966 ;
+    a kno:Component ;
+    kno:fullForm "키트"@ko ;
+    kno:surfaceForm "키트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0063 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0063 kno:unitType "구"@ko ;
+    kno:component kno:KN2014-0063-c1 ;
+    kno:origin "(突出年俸)" ;
+    rdfs:label "돌출^연봉"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%8C%EC%B6%9C%EC%97%B0%EB%B4%89> ;
+    kno:component kno:KN2014-0063-c2 ;
+    kno:slotFiller "돌출(突出) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "돌출연봉"@ko ;
+    kno:predicate "높은"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶보고서는 “언론이 임원 연봉과 종업원 연봉 격차를 강조하면서 해당 연봉의 적정성에까지 개입하는 양상을 보였다.”라며 “특정 대기업 회장 또는 그 일가의 연봉에 초점을 두며 전문 경영인과의 차이를 강조하면서 ‘황제 연봉’, ‘{돌출 연봉’이라는} 신조어를 탄생시키기도 했다.”라고 분석했다."@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    skos:definition "평균보다 지나치게 높은 연봉."@ko ;
+    kno:instantiates kno:S000414 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "돌출(突出), 연봉(年俸)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2014-0063-c1 kno:formative kno:F003012 ;
+    kno:surfaceForm "돌출"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "돌출"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "돌출(突出)"@ko ;
+    kno:semanticTag kno:usas-O4.4 .
+kno:KN2014-0063-c2 a kno:Component ;
+    kno:formative kno:F000862 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "연봉"@ko ;
+    rdfs:label "연봉(年俸)"@ko ;
+    kno:surfaceForm "연봉"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean .

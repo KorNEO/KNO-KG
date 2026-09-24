@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0344 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0344-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0344-form ;
-    ontolex:sense kno:KN2025-0344-sense .
-
-kno:KN2025-0344-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003554155> .
-
-kno:KN2025-0344-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0344-freq-nn,
-        kno:KN2025-0344-freq-yt ;
-    ontolex:writtenRep "셰셰 정책"@ko .
-
-kno:KN2025-0344-freq-nn a frac:CorpusFrequency ;
-    rdf:value 39 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0344-freq-yt a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0344-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0344 kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "중_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%B0%EC%85%B0%20%EC%A0%95%EC%B1%85> ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 정부의 대외 정책이나 내국인ㆍ외국인 관련 제도가 자국민보다 외국인에게 유리하게 설계ㆍ집행된다고 보고 이를 비판적으로 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0344-freq-NN-total ;
+    kno:component kno:KN2025-0344-c1 ;
+    kno:componentString "셰셰(xièxie), 정책(政策)"@ko ;
+    kno:indexForm "셰셰정책"@ko ;
+    kno:instantiates kno:S000218 ;
+    rdfs:label "셰셰 정책"@ko ;
+    kno:slotFiller "정책(政策) (1성분)"@ko ;
+    kno:origin "(<중>xièxie[謝謝]政策)" ;
+    kno:example "(LLM) 야당은 외국인 지원을 확대하는 대책을 두고 {셰셰정책이라고} 부르며 내국인 역차별 논란을 제기했다."@ko ;
+    kno:component kno:KN2025-0344-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0344-freq-NN-2025 ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0344-c1 kno:fullForm "셰셰"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000372 ;
+    rdfs:label "셰셰(xièxie)"@ko ;
+    kno:surfaceForm "셰셰"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component .
+kno:KN2025-0344-c2 rdfs:label "정책(政策)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000921 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "정책"@ko ;
+    kno:surfaceForm "정책"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

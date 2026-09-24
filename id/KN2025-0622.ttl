@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0622 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0622 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0622-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0622-form ;
-    ontolex:sense kno:KN2025-0622-sense .
-
-kno:KN2025-0622-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/346/0000101942> .
-
-kno:KN2025-0622-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0622-freq-nn,
-        kno:KN2025-0622-freq-yt ;
-    ontolex:writtenRep "티라노 자세"@ko .
-
-kno:KN2025-0622-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0622-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0622-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0622 kno:frequency kno:KN2025-0622-freq-NN-2025 ;
+    skos:definition "(LLM) 티라노사우루스처럼 팔꿈치를 굽혀 양팔을 몸 안쪽으로 모아 붙인 채 웅크리는 자세."@ko ;
+    kno:frequency kno:KN2025-0622-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8B%B0%EB%9D%BC%EB%85%B8%20%EC%9E%90%EC%84%B8> ;
+    kno:languageType "영_한" ;
+    kno:instantiates kno:S001008 ;
+    kno:predicate "웅크리다"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0622-c2 ;
+    kno:example "(LLM) 자고 일어나면 자꾸 팔을 안쪽으로 끌어안고 {티라노자세로} 잤다며 어깨가 뻐근하다고 했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "티라노(사우루스)(Tyrannosaurus) (1성분)"@ko ;
+    kno:componentString "티라노(사우루스)(Tyrannosaurus), 자세(姿勢)"@ko ;
+    kno:indexForm "티라노자세"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "티라노 자세"@ko ;
+    kno:origin "(←Tyrannosaurus姿勢)" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0622-c1 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0622-c2 kno:fullForm "자세"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "자세(姿勢)"@ko ;
+    kno:formative kno:F001727 ;
+    kno:surfaceForm "자세"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2025-0622-c1 rdfs:label "티라노(사우루스)(Tyrannosaurus)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "티라노사우루스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F006588 ;
+    kno:surfaceForm "티라노"@ko ;
+    kno:semanticTag kno:usas-L2 .

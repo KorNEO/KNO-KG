@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0475 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0475 a ontolex:Word ;
-    frac:attestation kno:KN2025-0475-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0475-form ;
-    ontolex:sense kno:KN2025-0475-sense .
-
-kno:KN2025-0475-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000427997> .
-
-kno:KN2025-0475-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0475-freq-nn,
-        kno:KN2025-0475-freq-yt ;
-    ontolex:writtenRep "이중성핑"@ko .
-
-kno:KN2025-0475-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0475-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0475-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0475 kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:languageType "한+고" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0475-c2 ;
+    kno:instantiates kno:S000766 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(二重性핑)" ;
+    kno:frequency kno:KN2025-0475-freq-NN-2025 ;
+    kno:slotFiller "이중성(二重性) (1성분)"@ko ;
+    rdfs:label "이중성핑"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0475-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:example "(LLM) 회의 때는 엄청 꼼꼼하게 챙기다가도 끝나면 칼같이 거리 두는 거, 진짜 {이중성핑이} 따로 없다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EC%A4%91%EC%84%B1%ED%95%91> ;
+    kno:componentString "이중성(二重性), (티니)핑"@ko ;
+    kno:frequency kno:KN2025-0475-freq-NN-total ;
+    kno:indexForm "이중성핑"@ko ;
+    skos:definition "(LLM) 사람이나 대상의 상반된 성격ㆍ태도ㆍ면모를 인기 캐릭터 이름처럼 ‘~핑’ 형태로 붙여 장난스럽게 이르는 말."@ko .
+kno:KN2025-0475-c2 kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "핑"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001989 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(티니)핑"@ko ;
+    kno:fullForm "티니핑"@ko .
+kno:KN2025-0475-c1 a kno:Component ;
+    kno:fullForm "이중성"@ko ;
+    kno:surfaceForm "이중성"@ko ;
+    kno:formative kno:F005411 ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "이중성(二重性)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

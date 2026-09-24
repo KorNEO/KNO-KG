@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0071 a kno:Neologism ;
+    kno:componentString "노(no), 머니(money), -족(族)"@ko ;
+    kno:frequency kno:KN2018-0071-freq-NN-2017 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0071-freq-NN-2018 ;
+    kno:example "¶{노 머니족은} 청년 실업난과 저성장 등으로 젊은 층의 소비력이 위축되면서 자연스레 부각됐다."@ko ;
+    kno:component kno:KN2018-0071-c2 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "노머니족"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0071-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383723> ;
+    kno:component kno:KN2018-0071-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:predicate "하다"@ko ;
+    skos:definition "돈을 아끼며 꼭 필요한 일에만 최소한의 지출을 하는 사람. 또는 그런 무리."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0071-freq-NN-2020 ;
+    kno:slotFiller "머니(money) (1성분)"@ko ;
+    kno:indexForm "노머니족"@ko ;
+    kno:component kno:KN2018-0071-c1 ;
+    kno:origin "(<영>no money族)" ;
+    kno:languageType "영_(영+한)" ;
+    kno:urimalTargetCode "1383723" ;
+    kno:instantiates kno:S000291 .
+kno:KN2018-0071-c2 kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:formative kno:F000500 ;
+    rdfs:label "머니(money)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "머니"@ko ;
+    kno:surfaceForm "머니"@ko .
+kno:KN2018-0071-c3 kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0071-c1 kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "노"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "노(no)"@ko ;
+    kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "노"@ko ;
+    a kno:Component .

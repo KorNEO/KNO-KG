@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0139 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0139 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0139-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0139-form ;
-    ontolex:sense kno:KN2020-0139-sense .
-
-kno:KN2020-0139-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004430237> .
-
-kno:KN2020-0139-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0139-freq-nn,
-        kno:KN2020-0139-freq-yt ;
-    ontolex:writtenRep "비말 차단"@ko .
-
-kno:KN2020-0139-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5306 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0139-freq-yt a frac:CorpusFrequency ;
-    rdf:value 407 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0139-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0139 a kno:Neologism ;
+    kno:component kno:KN2020-0139-c1 ;
+    kno:component kno:KN2020-0139-c2 ;
+    skos:definition "병원체의 감염을 매개할 수 있는 침방울을 통하지 못하게 함. 주로 비말로 매개되는 코로나19의 감염원을 차단한다는 의미에서 생겨난 말이다."@ko ;
+    kno:frequency kno:KN2020-0139-freq-NN-total ;
+    kno:frequency kno:KN2020-0139-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0139-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0139-freq-NN-2022 ;
+    kno:languageType "한_한" ;
+    kno:indexForm "비말차단"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "비말 차단"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶코로나19 감염이 확산되면서 {비말 차단을} 위한 칸막이나 가림막 등과 관련된 특허 출원이 늘고 있다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EB%A7%90%20%EC%B0%A8%EB%8B%A8> ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0139-freq-NN-2021 ;
+    kno:origin "(飛沫遮斷)" ;
+    kno:componentString "비말(飛沫), 차단(遮斷)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0139-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0139-freq-NN-2020 ;
+    kno:instantiates kno:S000523 ;
+    kno:slotFiller "차단(遮斷) (1성분)"@ko .
+kno:KN2020-0139-c1 kno:formative kno:F000362 ;
+    rdfs:label "비말(飛沫)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "비말"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "비말"@ko ;
+    a kno:Component .
+kno:KN2020-0139-c2 kno:formative kno:F001809 ;
+    kno:semanticTag kno:usas-A1.7m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "차단"@ko ;
+    kno:surfaceForm "차단"@ko ;
+    rdfs:label "차단(遮斷)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

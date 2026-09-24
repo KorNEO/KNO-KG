@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0300 kno:frequency kno:KN2014-0300-freq-NN-2014 ;
+    kno:component kno:KN2014-0300-c2 ;
+    skos:definition "폭설과 한파에 의한 경기 둔화 현상."@ko ;
+    kno:componentString "프로즈(←frozen), (이코)노믹스(economics)"@ko ;
+    kno:frequency kno:KN2014-0300-freq-NN-total ;
+    rdfs:label "프로즈노믹스"@ko ;
+    kno:slotFiller "프로즈(←frozen) (1성분)"@ko ;
+    kno:indexForm "프로즈노믹스"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000020 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358383> ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(<영>←frozen economics)" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "영+영" ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:example "¶미국 동부의 폭설을 동반한 한파는 경기 둔화로 이어져 ‘{프로즈노믹스’라는} 용어까지 등장했다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2014-0300-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1358383" .
+kno:KN2014-0300-c2 rdfs:label "(이코)노믹스(economics)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000027 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "이코노믹스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "노믹스"@ko .
+kno:KN2014-0300-c1 kno:surfaceForm "프로즈"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.6m ;
+    kno:fullForm "프로즈"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "프로즈(←frozen)"@ko ;
+    kno:formative kno:F006811 .

@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0057 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0057 a kno:Neologism ;
+    kno:frequency kno:KN2016-0057-freq-NN-2016 ;
+    kno:componentString "김영란법(金英蘭法), 메뉴(menu)"@ko ;
+    kno:component kno:KN2016-0057-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372492> ;
+    kno:urimalTargetCode "1372492" ;
+    kno:frequency kno:KN2016-0057-freq-NN-2017 ;
+    skos:definition "‘부정 청탁 및 금품 등 수수의 금지에 관한 법률’에 저촉되지 않는 범위의 금액으로 먹을 수 있는 음식 종류."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0057-freq-NN-2024 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2016-0057-c2 ;
+    kno:origin "(金英蘭法<영>menu)" ;
+    kno:instantiates kno:S000376 ;
+    kno:example "¶정부 부처 인근의 식당들은 몇 가지 반찬을 뺀 이른바 ‘{김영란법 메뉴’를} 만들고 있고, 유통업계도 상한선에 맞춘 선물 세트를 준비 중입니다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "김영란법^메뉴"@ko ;
+    kno:frequency kno:KN2016-0057-freq-NN-total ;
+    kno:indexForm "김영란법메뉴"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:slotFiller "김영란법(金英蘭法) (1성분)"@ko ;
+    kno:languageType "한^영" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0057-c1 kno:fullForm "김영란법"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    rdfs:label "김영란법(金英蘭法)"@ko ;
+    kno:surfaceForm "김영란법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002617 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0057-c2 kno:surfaceForm "메뉴"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "메뉴"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "메뉴(menu)"@ko ;
+    kno:formative kno:F000748 ;
+    a kno:Component .

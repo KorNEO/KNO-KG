@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0380 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0380 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2016-0380-freq-NN-2016 ;
+    a ontolex:Word ;
+    rdfs:label "연타남"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0380-c3 ;
+    kno:slotFiller "남(자)(男) (1성분)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S001557 ;
+    kno:component kno:KN2016-0380-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    skos:definition "‘연금 타는 남자’를 줄여 이르는 말. 노인 빈곤율이 높은 상황에서 노후에 연금을 받아 안정적으로 생활할 수 있는 사람이 이성에게 긍정적인 평가를 받게 되어 만들어진 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%ED%83%80%EB%82%A8> ;
+    kno:indexForm "연타남"@ko ;
+    kno:frequency kno:KN2016-0380-freq-NN-total ;
+    a kno:Neologism ;
+    kno:slotFiller "연(금)(年)+타(다) (2성분)"@ko ;
+    kno:instantiates kno:S000031 ;
+    kno:frequency kno:KN2016-0380-freq-NN-2023 ;
+    kno:languageType "(한+고)+한" ;
+    kno:example "¶요즘 가장 인기 있는 사람은 ‘{연타남’과} ‘연타녀’라고 합니다."@ko ;
+    kno:origin "(年타男)" ;
+    kno:componentString "연(금)(年), 타(다), 남(자)(男)"@ko ;
+    kno:component kno:KN2016-0380-c2 .
+kno:KN2016-0380-c3 kno:role "고정항"@ko ;
+    kno:fullForm "남자"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "남(자)(男)"@ko ;
+    kno:formative kno:F000023 .
+kno:KN2016-0380-c1 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "연(금)(年)"@ko ;
+    kno:surfaceForm "연"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "연금"@ko ;
+    kno:formative kno:F001609 .
+kno:KN2016-0380-c2 kno:formative kno:F000968 ;
+    rdfs:label "타(다)"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "타다"@ko ;
+    kno:surfaceForm "타"@ko ;
+    kno:truncated "true"^^xsd:boolean .

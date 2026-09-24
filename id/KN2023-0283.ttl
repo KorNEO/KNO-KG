@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0283 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0283 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0283-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0283-form ;
-    ontolex:sense kno:KN2023-0283-sense .
-
-kno:KN2023-0283-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003749362> .
-
-kno:KN2023-0283-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0283-freq-nn,
-        kno:KN2023-0283-freq-yt ;
-    ontolex:writtenRep "층간^소음^사후^인증제"@ko .
-
-kno:KN2023-0283-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0283-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0283-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0283 kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001685 ;
+    rdfs:label "층간^소음^사후^인증제"@ko ;
+    kno:componentString "층간(層間), 소음(騷音), 사후(事後), 인증제(認證制)"@ko ;
+    kno:frequency kno:KN2023-0283-freq-NN-2024 ;
+    kno:slotFiller "소음(騷音)+사후(事後)+인증제(認證制) (3성분)"@ko ;
+    kno:component kno:KN2023-0283-c2 ;
+    kno:indexForm "층간소음사후인증제"@ko ;
+    kno:frequency kno:KN2023-0283-freq-NN-2023 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2023-0283-c1 ;
+    kno:component kno:KN2023-0283-c3 ;
+    kno:component kno:KN2023-0283-c4 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0283-freq-NN-total ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(層間騷音事後認證制)" ;
+    skos:definition "아파트의 입주 직전에 소음을 직접 측정하여 층간 소음 기준을 통과하였음을 인증해 주는 제도. 층간 소음 기준을 통과하지 못하면 입주가 지연될 수 있으며, 건설사들은 추가 시공을 통하여 층간 소음 기준을 충족시켜야 한다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^한^한^한" ;
+    kno:example "¶정부는 지난해부터 {층간 소음 사후 인증제를} 도입하여 규제를 강화하고 있지만, 층간 소음과 관련된 이웃 간 갈등과 민원은 여전히 증가하고 있다."@ko ;
+    kno:predicate "주다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B8%B5%EA%B0%84%EC%86%8C%EC%9D%8C%EC%82%AC%ED%9B%84%EC%9D%B8%EC%A6%9D%EC%A0%9C> ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
+kno:KN2023-0283-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001488 ;
+    kno:semanticTag kno:usas-X3.2m ;
+    rdfs:label "소음(騷音)"@ko ;
+    kno:fullForm "소음"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "소음"@ko .
+kno:KN2023-0283-c1 kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F001835 ;
+    kno:fullForm "층간"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "층간(層間)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "층간"@ko ;
+    a kno:Component .
+kno:KN2023-0283-c3 a kno:Component ;
+    rdfs:label "사후(事後)"@ko ;
+    kno:surfaceForm "사후"@ko ;
+    kno:semanticTag kno:usas-T1.1.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F004188 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "사후"@ko .
+kno:KN2023-0283-c4 kno:position "4"^^xsd:integer ;
+    kno:formative kno:F005452 ;
+    kno:fullForm "인증제"@ko ;
+    kno:surfaceForm "인증제"@ko ;
+    kno:semanticTag kno:usas-A5.4p ;
+    a kno:Component ;
+    rdfs:label "인증제(認證制)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .

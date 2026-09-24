@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0294 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0294 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0294-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0294-form ;
-    ontolex:sense kno:KN2025-0294-sense .
-
-kno:KN2025-0294-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/031/0000985566> .
-
-kno:KN2025-0294-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0294-freq-nn,
-        kno:KN2025-0294-freq-yt ;
-    ontolex:writtenRep "분노 미끼"@ko .
-
-kno:KN2025-0294-freq-nn a frac:CorpusFrequency ;
-    rdf:value 196 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0294-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0294-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0294 a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0294-c2 ;
+    kno:frequency kno:KN2025-0294-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(憤怒미끼)" ;
+    kno:componentString "분노(憤怒), 미끼"@ko ;
+    skos:definition "(LLM) 온라인에서 이용자의 분노ㆍ짜증 같은 부정적 감정을 일부러 자극해 조회 수나 반응(댓글ㆍ공유 등)을 끌어내려는 글ㆍ그림ㆍ영상 등의 콘텐츠."@ko ;
+    kno:languageType "한_고" ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "분노 미끼"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%84%EB%85%B8%20%EB%AF%B8%EB%81%BC> ;
+    kno:slotFiller "미끼 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0294-freq-NN-2025 ;
+    kno:component kno:KN2025-0294-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001411 ;
+    kno:indexForm "분노미끼"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 댓글창을 싸움판으로 만들려고 일부러 자극적인 문구를 단 {분노미끼를} 던진 것 같아 그냥 넘겼다."@ko .
+kno:KN2025-0294-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003593 ;
+    rdfs:label "미끼"@ko ;
+    kno:surfaceForm "미끼"@ko ;
+    a kno:Component ;
+    kno:fullForm "미끼"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 .
+kno:KN2025-0294-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "분노"@ko ;
+    kno:surfaceForm "분노"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    a kno:Component ;
+    kno:formative kno:F001390 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "분노(憤怒)"@ko .

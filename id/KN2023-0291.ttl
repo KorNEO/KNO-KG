@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0291 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0291 a ontolex:Word ;
-    frac:attestation kno:KN2023-0291-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0291-form ;
-    ontolex:sense kno:KN2023-0291-sense .
-
-kno:KN2023-0291-att-nn a frac:Attestation ;
-    dcterms:date "2022-12-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005063085> .
-
-kno:KN2023-0291-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0291-freq-nn,
-        kno:KN2023-0291-freq-yt ;
-    ontolex:writtenRep "케이크플레이션"@ko .
-
-kno:KN2023-0291-freq-nn a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0291-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0291-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0291 skos:definition "케이크의 가격이 급등하는 현상. 원재료 가격 상승과 인건비 인상으로 인해 발생한 인플레이션이다."@ko ;
+    kno:predicate "급등하다"@ko ;
+    kno:frequency kno:KN2023-0291-freq-NN-2022 ;
+    kno:component kno:KN2023-0291-c1 ;
+    kno:slotFiller "음식; X=케이크(cake) (1성분)"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:indexForm "케이크플레이션"@ko ;
+    a kno:Neologism ;
+    kno:example "¶경기 침체와 ‘{케이크플레이션’이} 맞물리자 소비자들은 마트에서 파는 가격이 저렴한 케이크로 눈길을 돌리고 있다."@ko ;
+    kno:componentString "케이크(cake), (인)플레이션(inflation)"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000053 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2023-0291-c2 ;
+    kno:frequency kno:KN2023-0291-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "영+영" ;
+    kno:frequency kno:KN2023-0291-freq-NN-total ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BC%80%EC%9D%B4%ED%81%AC%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:frequency kno:KN2023-0291-freq-NN-2023 ;
+    rdfs:label "케이크플레이션"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(<영>▼←cake inflation)" ;
+    kno:frequency kno:KN2023-0291-freq-NN-2024 .
+kno:KN2023-0291-c1 a kno:Component ;
+    kno:surfaceForm "케이크"@ko ;
+    rdfs:label "케이크(cake)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000958 ;
+    kno:fullForm "케이크"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0291-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:semanticTag kno:usas-I1.3p ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "플레이션"@ko ;
+    kno:formative kno:F000009 ;
+    a kno:Component .

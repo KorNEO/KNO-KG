@@ -1,30 +1,49 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0322 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0322 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2024-0322-form ;
-    ontolex:sense kno:KN2024-0322-sense .
-
-kno:KN2024-0322-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0322-freq-nn,
-        kno:KN2024-0322-freq-yt ;
-    ontolex:writtenRep "쾌룡-적"@ko .
-
-kno:KN2024-0322-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0322-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0322-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0322 kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "쾌룡적"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0322-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(快龍的)" ;
+    kno:languageType "한+한" ;
+    skos:definition "외모나 재주 등이 아주 우세하여 남을 능가할 만한. 또는 그런 것. =폭룡적."@ko ;
+    kno:slotFiller "쾌룡(快龍) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "쾌룡-적"@ko ;
+    kno:component kno:KN2024-0322-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BE%8C%EB%A3%A1%EC%A0%81> ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000194 ;
+    kno:componentString "쾌룡(快龍), -적(的)"@ko ;
+    a kno:Neologism ;
+    kno:example "¶저 피아니스트의 연주는 정말 {쾌룡적이다.}"@ko ;
+    kno:pos "「관ㆍ명」"@ko .
+kno:KN2024-0322-c2 rdfs:label "-적(的)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "적"@ko ;
+    kno:surfaceForm "적"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000229 ;
+    kno:role "고정항"@ko .
+kno:KN2024-0322-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "쾌룡(快龍)"@ko ;
+    kno:fullForm "쾌룡"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "쾌룡"@ko ;
+    kno:formative kno:F006312 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component .

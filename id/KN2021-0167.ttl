@@ -1,36 +1,74 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0167 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0167 a ontolex:Word ;
-    frac:attestation kno:KN2021-0167-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0167-form ;
-    ontolex:sense kno:KN2021-0167-sense .
-
-kno:KN2021-0167-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004686161> .
-
-kno:KN2021-0167-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0167-freq-nn,
-        kno:KN2021-0167-freq-yt ;
-    ontolex:writtenRep "쉽살재빙"@ko .
-
-kno:KN2021-0167-freq-nn a frac:CorpusFrequency ;
-    rdf:value 30 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0167-freq-yt a frac:CorpusFrequency ;
-    rdf:value 68 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0167-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0167 kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2021-0167-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0167-c2 ;
+    kno:component kno:KN2021-0167-c1 ;
+    kno:origin "(쉽살재<영>←bingo)" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0167-freq-NN-2022 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "쉽(다), 살, 재(미), 빙(고)(bingo)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%89%BD%EC%82%B4%EC%9E%AC%EB%B9%99> ;
+    skos:definition "‘쉽게만 살아가면 재미없어 빙고’를 줄여 이르는 말. 혼성 그룹 거북이의 히트곡인 ‘빙고’의 가사로 만든 말이다."@ko ;
+    kno:frequency kno:KN2021-0167-freq-NN-2020 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0167-freq-NN-total ;
+    kno:languageType "고+고+고+영" ;
+    kno:example "¶배우 OOO은 자신의 에스엔에스(SNS)에 ‘{쉽살재빙’이라는} 말과 함께 여러 장의 사진을 업로드하였다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2021-0167-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0167-freq-NN-2021 ;
+    kno:component kno:KN2021-0167-c4 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0167-freq-NN-2023 ;
+    rdfs:label "쉽살재빙"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:indexForm "쉽살재빙"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2021-0167-c3 kno:surfaceForm "재"@ko ;
+    kno:formative kno:F005578 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "재미"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "재(미)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-X5.2p .
+kno:KN2021-0167-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "살"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000796 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "살"@ko ;
+    kno:surfaceForm "살"@ko .
+kno:KN2021-0167-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "쉽다"@ko ;
+    kno:semanticTag kno:usas-A12p ;
+    kno:surfaceForm "쉽"@ko ;
+    rdfs:label "쉽(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004515 .
+kno:KN2021-0167-c4 kno:semanticTag kno:usas-K5.2 ;
+    kno:formative kno:F004108 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빙"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "빙고"@ko ;
+    rdfs:label "빙(고)(bingo)"@ko .

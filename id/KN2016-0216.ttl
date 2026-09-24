@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0216 kno:languageType "(한+영)+한" ;
+    rdfs:label "부모러브-족"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2016-0216-freq-NN-total ;
+    skos:definition "부모와 여행이나 쇼핑 등을 함께하는 사람. 또는 그런 무리. 친구나 연인들과 함께 했던 것들을 부모와 함께 즐기려는 미혼들이다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "부모(父母), 러브(love), -족(族)"@ko ;
+    kno:formation kno:W02 ;
+    kno:example "¶최근 일본에서는 고민 상담부터 쇼핑, 여행 등 이전에 친구나 연인과 함께 하던 것들을 이제는 부모와 함께 하는 젊은이들이 늘면서 ‘{부모러브족’이라는} 신조어가 유행하고 있다."@ko ;
+    kno:origin "(父母<영>love族)" ;
+    kno:component kno:KN2016-0216-c2 ;
+    kno:frequency kno:KN2016-0216-freq-NN-2017 ;
+    kno:predicate "함께하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%EB%AA%A8%EB%9F%AC%EB%B8%8C%EC%A1%B1> ;
+    kno:component kno:KN2016-0216-c1 ;
+    kno:slotFiller "부모(父母)+러브(love) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0216-c3 ;
+    kno:indexForm "부모러브족"@ko ;
+    kno:frequency kno:KN2016-0216-freq-NN-2016 ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000001 .
+kno:KN2016-0216-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "러브"@ko ;
+    kno:surfaceForm "러브"@ko ;
+    rdfs:label "러브(love)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E2 ;
+    kno:formative kno:F001235 .
+kno:KN2016-0216-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000515 ;
+    kno:surfaceForm "부모"@ko ;
+    a kno:Component ;
+    kno:fullForm "부모"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "부모(父母)"@ko .
+kno:KN2016-0216-c3 kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:role "고정항"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0054 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0054 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0054-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0054-form ;
-    ontolex:sense kno:KN2021-0054-sense .
-
-kno:KN2021-0054-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003859285> .
-
-kno:KN2021-0054-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0054-freq-nn,
-        kno:KN2021-0054-freq-yt ;
-    ontolex:writtenRep "꼬마^개미"@ko .
-
-kno:KN2021-0054-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0054-freq-yt a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0054-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0054 kno:slotFiller "꼬마 (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    skos:definition "주식 시장에서 개인적으로 주식 투자를 하는 어린아이를 이르는 말."@ko ;
+    kno:frequency kno:KN2021-0054-freq-NN-total ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "고^고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BC%AC%EB%A7%88%EA%B0%9C%EB%AF%B8> ;
+    kno:indexForm "꼬마개미"@ko ;
+    kno:component kno:KN2021-0054-c2 ;
+    rdfs:label "꼬마^개미"@ko ;
+    kno:example "¶최근 주식 투자를 처음 시작하는 연령이 낮아지며 {꼬마 개미들이} 주식 시장에서 주목받고 있다."@ko ;
+    kno:componentString "꼬마, 개미"@ko ;
+    kno:component kno:KN2021-0054-c1 ;
+    kno:frequency kno:KN2021-0054-freq-NN-2021 ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000070 .
+kno:KN2021-0054-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "개미"@ko ;
+    kno:surfaceForm "개미"@ko ;
+    kno:formative kno:F000083 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    rdfs:label "개미"@ko .
+kno:KN2021-0054-c1 rdfs:label "꼬마"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "꼬마"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002648 ;
+    kno:surfaceForm "꼬마"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

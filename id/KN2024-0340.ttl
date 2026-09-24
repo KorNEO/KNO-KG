@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0340 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0340 a ontolex:Word ;
-    frac:attestation kno:KN2024-0340-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0340-form ;
-    ontolex:sense kno:KN2024-0340-sense .
-
-kno:KN2024-0340-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011610883> .
-
-kno:KN2024-0340-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0340-freq-nn,
-        kno:KN2024-0340-freq-yt ;
-    ontolex:writtenRep "통-꾸02"@ko .
-
-kno:KN2024-0340-freq-nn a frac:CorpusFrequency ;
-    rdf:value 64 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0340-freq-yt a frac:CorpusFrequency ;
-    rdf:value 149 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0340-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0340 kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0340-freq-NN-2024 ;
+    kno:slotFiller "통(장)(通帳) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0340-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0340-freq-NN-total ;
+    kno:componentString "통(장)(通帳), 꾸(미다)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%B5%EA%BE%B8> ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0340-c1 ;
+    kno:origin "(通꾸)" ;
+    kno:languageType "한+고" ;
+    rdfs:label "통꾸"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "통꾸"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2024-0340-freq-NN-2025 ;
+    kno:example "¶노동으로 생각하면 하기 싫은 일을 {통꾸로} 생각하면 할 수 있다는 사고의 전환은 꾸미기의 본질은 즐겁다는 시대적 합의를 바탕으로 한다."@ko ;
+    skos:definition "‘통장 꾸미기’를 줄여 이르는 말. 돈을 열심히 벌어 통장에 모으는 행위를 말한다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000030 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2024-0340-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000056 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "꾸"@ko ;
+    rdfs:label "꾸(미다)"@ko ;
+    kno:fullForm "꾸미다"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0340-c1 kno:formative kno:F006500 ;
+    kno:fullForm "통장"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "통(장)(通帳)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:surfaceForm "통"@ko .

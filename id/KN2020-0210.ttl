@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0210 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0210-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0210-form ;
-    ontolex:sense kno:KN2020-0210-sense .
-
-kno:KN2020-0210-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000231357> .
-
-kno:KN2020-0210-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0210-freq-nn,
-        kno:KN2020-0210-freq-yt ;
-    ontolex:writtenRep "안심^외래^진료소"@ko .
-
-kno:KN2020-0210-freq-nn a frac:CorpusFrequency ;
-    rdf:value 206 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0210-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0210-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0210 kno:unitType "구"@ko ;
+    kno:example "¶병원을 방문하는 모든 환자들은 병원 입구에서 체온, 여행력 등을 확인한 후 호흡기 증상이 있으면 {안심 외래 진료소로} 간다."@ko ;
+    kno:component kno:KN2020-0210-c1 ;
+    kno:componentString "안심(安心), 외래(外來), 진료소(診療所)"@ko ;
+    kno:slotFiller "안심(安心)+외래(外來) (2성분)"@ko ;
+    kno:indexForm "안심외래진료소"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    rdfs:label "안심^외래^진료소"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0210-freq-NN-2020 ;
+    kno:slotFiller "외래(外來)+진료소(診療所) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:component kno:KN2020-0210-c3 ;
+    kno:frequency kno:KN2020-0210-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0210-freq-NN-total ;
+    kno:instantiates kno:S000223 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0210-freq-NN-2022 ;
+    skos:definition "코로나19의 확산을 방지하고자 호흡기 질환 증상이 있는 환자들을 따로 진찰하기 위하여 마련한 진료소."@ko ;
+    kno:frequency kno:KN2020-0210-freq-NN-2021 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000618 ;
+    kno:component kno:KN2020-0210-c2 ;
+    kno:origin "(安心外來診療所)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%8B%AC%EC%99%B8%EB%9E%98%EC%A7%84%EB%A3%8C%EC%86%8C> .
+kno:KN2020-0210-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E6p ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000088 ;
+    kno:fullForm "안심"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "안심"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "안심(安心)"@ko .
+kno:KN2020-0210-c3 kno:surfaceForm "진료소"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000305 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "진료소(診療所)"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "진료소"@ko .
+kno:KN2020-0210-c2 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "외래"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    rdfs:label "외래(外來)"@ko ;
+    a kno:Component ;
+    kno:fullForm "외래"@ko ;
+    kno:formative kno:F005180 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

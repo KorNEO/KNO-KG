@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0271 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0271 kno:example "¶이처럼 사자 수가 늘어난 가장 큰 원인은 이른바 ‘{세실 효과}’ 때문이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2016-0271-freq-NN-total ;
+    rdfs:label "세실 효과"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%8B%A4%20%ED%9A%A8%EA%B3%BC> ;
+    kno:instantiates kno:S000456 ;
+    a kno:Neologism ;
+    kno:origin "(Cecil效果)" ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "세실(Cecil) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0271-c1 ;
+    skos:definition "짐바브웨의 국립 공원에 서식하는 사자 개체 수를 현저하게 증가시킨 효과. 황게 국립 공원의 숫사자 ‘세실’이 사살된 것에 대한 짐바브웨 국민들의 분노로 인하여 사자 사냥꾼의 수가 줄어들어 사자의 수가 증가하였다."@ko ;
+    kno:componentString "세실(Cecil), 효과(效果)"@ko ;
+    kno:component kno:KN2016-0271-c2 ;
+    kno:indexForm "세실효과"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2016-0271-freq-NN-2016 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0271-freq-NN-2015 .
+kno:KN2016-0271-c1 kno:formative kno:F004354 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세실(Cecil)"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    a kno:Component ;
+    kno:fullForm "세실"@ko ;
+    kno:surfaceForm "세실"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0271-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "효과(效果)"@ko ;
+    kno:formative kno:F000326 ;
+    kno:semanticTag kno:usas-A2.2 ;
+    kno:fullForm "효과"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "효과"@ko .

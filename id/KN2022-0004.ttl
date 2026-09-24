@@ -1,36 +1,83 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0004 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0004 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0004-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0004-form ;
-    ontolex:sense kno:KN2022-0004-sense .
-
-kno:KN2022-0004-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/123/0002261756> .
-
-kno:KN2022-0004-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0004-freq-nn,
-        kno:KN2022-0004-freq-yt ;
-    ontolex:writtenRep "가입자^퇴직^급여^보장법"@ko .
-
-kno:KN2022-0004-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0004-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0004-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0004 kno:origin "(加入者退職給與保障法)" ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^한^한^한" ;
+    kno:instantiates kno:S000386 ;
+    kno:component kno:KN2022-0004-c2 ;
+    kno:componentString "가입자(加入者), 퇴직(退職), 급여(給與), 보장(保障), 법(法)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0004-c5 ;
+    rdfs:label "가입자^퇴직^급여^보장법"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0004-freq-NN-total ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:example "¶‘{가입자 퇴직 급여 보장법’이} 여야의 합의에 의해 국회 본회의를 통과하면서 퇴직 연금 가입자의 지시가 따로 없어도 금융 회사가 사전에 미리 정한 방법으로 퇴직 연금을 운용하게 된다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%9E%85%EC%9E%90%ED%87%B4%EC%A7%81%EA%B8%89%EC%97%AC%EB%B3%B4%EC%9E%A5%EB%B2%95> ;
+    skos:definition "가입자가 별도로 지시하지 않아도 금융 회사가 사전에 정해진 방법으로 퇴직 연금을 운용하여 퇴직 연금 가입자의 노후 대비 자산 형성에 이바지하고자 제정한 법률."@ko ;
+    kno:indexForm "가입자퇴직급여보장법"@ko ;
+    kno:slotFiller "가입자(加入者)+퇴직(退職)+급여(給與) (3성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2022-0004-freq-NN-2022 ;
+    kno:component kno:KN2022-0004-c4 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0004-freq-NN-2021 ;
+    kno:component kno:KN2022-0004-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0004-c3 .
+kno:KN2022-0004-c2 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "퇴직"@ko ;
+    rdfs:label "퇴직(退職)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001912 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "퇴직"@ko .
+kno:KN2022-0004-c5 kno:position "5"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0004-c4 kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000359 ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:semanticTag kno:usas-A15p ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "보장"@ko ;
+    kno:surfaceForm "보장"@ko ;
+    rdfs:label "보장(保障)"@ko ;
+    a kno:Component .
+kno:KN2022-0004-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S5p ;
+    rdfs:label "가입자(加入者)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "가입자"@ko ;
+    kno:formative kno:F002090 ;
+    kno:surfaceForm "가입자"@ko .
+kno:KN2022-0004-c3 kno:fullForm "급여"@ko ;
+    kno:surfaceForm "급여"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "급여(給與)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:formative kno:F001110 .

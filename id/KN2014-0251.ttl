@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0251 kno:origin "(廳舍病)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "청사-병"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0251-freq-NN-2020 ;
+    kno:example "¶급기야 ‘{청사병’이란} 신조어까지 만들어졌다. OO청사에 근무하는 40대 공직자는 유달리 더위를 타는 탓에 지난해 여름을 떠올리면 울렁증이 와 닿는다고 했다."@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:urimalTargetCode "1358301" ;
+    kno:instantiates kno:S000021 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2014-0251-freq-NN-2014 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358301> ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2014-0251-freq-NN-2016 ;
+    skos:definition "여름철 공공기관의 실내 온도 제한으로 인해 청사 안이 매우 더움을 비유적으로 이르는 말."@ko ;
+    kno:component kno:KN2014-0251-c2 ;
+    kno:frequency kno:KN2014-0251-freq-NN-total ;
+    kno:componentString "청사(廳舍), 병(病)"@ko ;
+    a ontolex:Word ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "청사(廳舍) (1성분)"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:indexForm "청사병"@ko ;
+    kno:component kno:KN2014-0251-c1 ;
+    kno:pos "「명」"@ko .
+kno:KN2014-0251-c2 kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F000033 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "병"@ko ;
+    rdfs:label "병(病)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "병"@ko .
+kno:KN2014-0251-c1 kno:formative kno:F006054 ;
+    kno:fullForm "청사"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "청사"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "청사(廳舍)"@ko .

@@ -1,0 +1,70 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0349 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0349 kno:pos "「명」"@ko ;
+    kno:component kno:KN2013-0349-c3 ;
+    kno:component kno:KN2013-0349-c2 ;
+    kno:frequency kno:KN2013-0349-freq-NN-2018 ;
+    kno:componentString "자, 칼(군무), (아이)돌(idol)"@ko ;
+    kno:languageType "고+영" ;
+    kno:frequency kno:KN2013-0349-freq-NN-2017 ;
+    rdfs:label "자칼돌"@ko ;
+    kno:instantiates kno:S000047 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0349-freq-NN-2016 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0349-freq-NN-2020 ;
+    kno:origin "(자칼←<영>idol)" ;
+    kno:instantiates kno:S001620 ;
+    kno:slotFiller "칼(군무)+(아이)돌(idol) (2성분)"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0349-freq-NN-2014 ;
+    kno:predicate "추다"@ko ;
+    kno:frequency kno:KN2013-0349-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0349-freq-NN-total ;
+    kno:indexForm "자칼돌"@ko ;
+    kno:component kno:KN2013-0349-c1 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:slotFiller "자+칼(군무) (2성분)"@ko ;
+    kno:example "¶OO로 인기 고공 행진을 펼치고 있는 OO은 컴백 일주일 만에 OO과 OO 1위 후보에 올라 ‘{자칼돌’의} 저력을 과시한 바 있다."@ko ;
+    skos:definition "자로 잰 듯이 조금도 어긋나지 않게 동작을 정확하게 맞추어 춤을 추는 아이돌."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EC%B9%BC%EB%8F%8C> ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0349-c3 rdfs:label "(아이)돌(idol)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "돌"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    a kno:Component ;
+    kno:fullForm "아이돌"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000098 .
+kno:KN2013-0349-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "칼"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006206 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "칼(군무)"@ko ;
+    kno:fullForm "칼군무"@ko ;
+    kno:semanticTag kno:usas-K2 .
+kno:KN2013-0349-c1 a kno:Component ;
+    rdfs:label "자"@ko ;
+    kno:formative kno:F001719 ;
+    kno:semanticTag kno:usas-N3.7 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

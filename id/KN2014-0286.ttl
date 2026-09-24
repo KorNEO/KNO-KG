@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0286 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0286 skos:definition "부도덕한 행위나 불법 행위를 저지르고 도망치는 일을 재미로 삼는 일."@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%80%EB%86%80%EC%9D%B4> ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0286-c2 ;
+    kno:formation kno:W01 ;
+    kno:example "¶이에 대해 OO 경찰서 관계자는 “예전에 장난으로 벨을 누르고 도망가는 수준이었다면, 최근 유행하는 {튀놀이는} 엄연한 범죄에 해당한다.”라며 “인근 피시방ㆍ독서실 등에서 탐문 수사를 벌일 예정.”이라고 말했다."@ko ;
+    kno:slotFiller "튀 (1성분)"@ko ;
+    kno:instantiates kno:S000821 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "튀놀이"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "삼다"@ko ;
+    kno:component kno:KN2014-0286-c1 ;
+    kno:componentString "튀, 놀이"@ko ;
+    rdfs:label "튀-놀이"@ko .
+kno:KN2014-0286-c2 a kno:Component ;
+    kno:fullForm "놀이"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:formative kno:F000206 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "놀이"@ko ;
+    kno:surfaceForm "놀이"@ko .
+kno:KN2014-0286-c1 a kno:Component ;
+    kno:formative kno:F006529 ;
+    rdfs:label "튀"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "튀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "튀"@ko .

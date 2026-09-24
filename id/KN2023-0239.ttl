@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0239 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0239 a ontolex:Word ;
-    frac:attestation kno:KN2023-0239-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0239-form ;
-    ontolex:sense kno:KN2023-0239-sense .
-
-kno:KN2023-0239-att-nn a frac:Attestation ;
-    dcterms:date "2023-10-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003257871> .
-
-kno:KN2023-0239-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0239-freq-nn,
-        kno:KN2023-0239-freq-yt ;
-    ontolex:writtenRep "재택-이몽"@ko .
-
-kno:KN2023-0239-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0239-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0239-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0239 skos:definition "직장에 출근하지 않고 집에서 직장 업무를 하는 것에 대해 회사 측과 직원들의 생각이 다름을 동상이몽에 빗대어 이르는 말. 코로나19의 팬데믹 기간 동안 재택근무의 도입에 적극적이었던 아이티(IT) 기업들이 최근에 사무실에 출근하는 것으로 근무 방식을 전환하게 되면서 생겨난 말이다."@ko ;
+    kno:component kno:KN2023-0239-c2 ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2023-0239-c1 ;
+    kno:origin "(在宅異夢)" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:indexForm "재택이몽"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%83%9D%EC%9D%B4%EB%AA%BD> ;
+    kno:componentString "재택(在宅), (동상)이몽(同床異夢)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶업무의 효율성과 생산성을 높이기 위해 사무실로 출근하라는 회사와 재택근무가 업무에 효율적이라고 주장하는 직원들은 {재택이몽에} 빠져 있다."@ko ;
+    rdfs:label "재택이몽"@ko ;
+    kno:languageType "한+한" .
+kno:KN2023-0239-c2 kno:fullForm "동상이몽"@ko ;
+    kno:surfaceForm "이몽"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(동상)이몽(同床異夢)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005390 .
+kno:KN2023-0239-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "재택"@ko ;
+    kno:surfaceForm "재택"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "재택(在宅)"@ko ;
+    kno:formative kno:F000404 .

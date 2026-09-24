@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0035 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0035-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0035-form ;
-    ontolex:sense kno:KN2025-0035-sense .
-
-kno:KN2025-0035-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013568548> .
-
-kno:KN2025-0035-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0035-freq-nn,
-        kno:KN2025-0035-freq-yt ;
-    ontolex:writtenRep "경제 단두대 법"@ko .
-
-kno:KN2025-0035-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0035-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0035-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0035-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 일각에서는 해당 개정안을 두고 {경제단두대법이} 기업의 손해배상 청구를 지나치게 제한해 투자와 고용에 악영향을 줄 수 있다고 주장했다."@ko ;
+    kno:slotFiller "단두대(斷頭臺)+법(法) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A0%9C%20%EB%8B%A8%EB%91%90%EB%8C%80%20%EB%B2%95> ;
+    kno:indexForm "경제단두대법"@ko ;
+    kno:frequency kno:KN2025-0035-freq-NN-total ;
+    kno:component kno:KN2025-0035-c1 ;
+    kno:component kno:KN2025-0035-c2 ;
+    kno:unitType "구"@ko ;
+    skos:definition "(LLM) ‘노동조합 및 노동 관계 조정법’ 2ㆍ3조 개정안(일명 노란봉투법)을 경제에 해가 된다는 취지로 비난조로 이르는 말."@ko ;
+    kno:instantiates kno:S000285 ;
+    kno:slotFiller "경제(經濟)+단두대(斷頭臺) (2성분)"@ko ;
+    rdfs:label "경제 단두대 법"@ko ;
+    kno:component kno:KN2025-0035-c3 ;
+    kno:languageType "한_한_한" ;
+    a kno:Neologism ;
+    kno:origin "(經濟斷頭臺法)" ;
+    kno:instantiates kno:S000010 ;
+    kno:componentString "경제(經濟), 단두대(斷頭臺), 법(法)"@ko .
+kno:KN2025-0035-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "경제"@ko ;
+    kno:formative kno:F000029 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:surfaceForm "경제"@ko .
+kno:KN2025-0035-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "단두대"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    a kno:Component ;
+    rdfs:label "단두대(斷頭臺)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002864 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "단두대"@ko .
+kno:KN2025-0035-c3 kno:role "고정항"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:fullForm "법"@ko .

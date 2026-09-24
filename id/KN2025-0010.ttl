@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0010 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0010-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0010-form ;
-    ontolex:sense kno:KN2025-0010-sense .
-
-kno:KN2025-0010-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0015256919> .
-
-kno:KN2025-0010-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0010-freq-nn,
-        kno:KN2025-0010-freq-yt ;
-    ontolex:writtenRep "LLM 그루밍"@ko .
-
-kno:KN2025-0010-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0010-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0010-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0010 kno:indexForm "LLM그루밍"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=LLM%20%EA%B7%B8%EB%A3%A8%EB%B0%8D> ;
+    kno:component kno:KN2025-0010-c1 ;
+    kno:frequency kno:KN2025-0010-freq-NN-total ;
+    kno:example "(LLM) 특정 단체가 기사와 게시물을 조직적으로 쏟아내 이런 정보가 학습ㆍ인용되면, 챗봇의 답변이 한쪽 주장으로 기울어지는 {LLM그루밍이} 발생할 수 있다."@ko ;
+    kno:componentString "LLM, 그루밍(grooming)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0010-c2 ;
+    kno:frequency kno:KN2025-0010-freq-NN-2025 ;
+    rdfs:label "LLM 그루밍"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    skos:definition "(LLM) 대형 언어 모델이 특정 주장이나 이해관계에 유리한 답을 내놓도록, 허위ㆍ편향 정보를 대량으로 생산ㆍ유포해 학습 데이터나 검색ㆍ요약 등 출력 결과를 왜곡하는 조작 행위."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "구"@ko .
+kno:KN2025-0010-c1 kno:formative kno:F002055 ;
+    rdfs:label "LLM"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "LLM"@ko ;
+    kno:surfaceForm "LLM"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 .
+kno:KN2025-0010-c2 kno:surfaceForm "그루밍"@ko ;
+    rdfs:label "그루밍(grooming)"@ko ;
+    kno:formative kno:F002524 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "그루밍"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

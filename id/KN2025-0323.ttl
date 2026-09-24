@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0323 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0323 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0323-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0323-form ;
-    ontolex:sense kno:KN2025-0323-sense .
-
-kno:KN2025-0323-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/417/0001100740> .
-
-kno:KN2025-0323-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0323-freq-nn,
-        kno:KN2025-0323-freq-yt ;
-    ontolex:writtenRep "삼통 분립 시대"@ko .
-
-kno:KN2025-0323-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0323-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0323-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0323 kno:instantiates kno:S001443 ;
+    rdfs:label "삼통 분립 시대"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0323-freq-NN-total ;
+    kno:component kno:KN2025-0323-c2 ;
+    kno:component kno:KN2025-0323-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 국가 운영의 핵심 권력이 단일한 최고 권력자나 공식 국가기관의 합의ㆍ조정 체계가 아니라, 대통령을 포함한 복수의 핵심 실세에게 나뉘어 행사되는 듯한 상황을 비판적으로 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:componentString "삼통(三通), 분립(分立), 시대(時代)"@ko ;
+    kno:component kno:KN2025-0323-c3 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%ED%86%B5%20%EB%B6%84%EB%A6%BD%20%EC%8B%9C%EB%8C%80> ;
+    kno:example "(LLM) 여권 안팎에서는 주요 현안이 정부 공식 라인보다 몇몇 실세의 판단에 따라 좌우된다며 {삼통분립시대}라는 말까지 나온다."@ko ;
+    kno:frequency kno:KN2025-0323-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000018 ;
+    kno:slotFiller "삼통(三通)+분립(分立) (2성분)"@ko ;
+    kno:indexForm "삼통분립시대"@ko ;
+    kno:slotFiller "시대(時代) (1성분)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0323-c2 kno:surfaceForm "분립"@ko ;
+    rdfs:label "분립(分立)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "분립"@ko ;
+    kno:formative kno:F000782 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component .
+kno:KN2025-0323-c1 kno:formative kno:F000797 ;
+    kno:fullForm "삼통"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "삼통"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "삼통(三通)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component .
+kno:KN2025-0323-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "시대"@ko ;
+    rdfs:label "시대(時代)"@ko ;
+    kno:formative kno:F000049 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:fullForm "시대"@ko .

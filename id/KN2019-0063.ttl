@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0063 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0063 kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2019-0063-c2 ;
+    kno:example "¶이런 {도둑 환자를} 막기 위해 입원 환자의 경우는 앞으로 병원에서 본인 확인을 거쳐야 합니다."@ko ;
+    skos:definition "건강 보험에 가입하지 않은 상태에서 건강 보험 가입자의 인적 사항을 이용해 병원에서 치료받고 보험 혜택을 받는 사람을 비유적으로 이르는 말."@ko ;
+    rdfs:label "도둑 환자"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0063-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0063-c1 ;
+    kno:origin "(도둑患者)" ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "도둑 (1성분)"@ko ;
+    kno:componentString "도둑, 환자(患者)"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000455 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EB%91%91%20%ED%99%98%EC%9E%90> ;
+    kno:frequency kno:KN2019-0063-freq-NN-total ;
+    kno:indexForm "도둑환자"@ko .
+kno:KN2019-0063-c2 kno:fullForm "환자"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000645 ;
+    kno:surfaceForm "환자"@ko ;
+    rdfs:label "환자(患者)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    a kno:Component .
+kno:KN2019-0063-c1 a kno:Component ;
+    kno:surfaceForm "도둑"@ko ;
+    rdfs:label "도둑"@ko ;
+    kno:formative kno:F002976 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "도둑"@ko .

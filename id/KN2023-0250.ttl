@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0250 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0250 a ontolex:Word ;
-    frac:attestation kno:KN2023-0250-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0250-form ;
-    ontolex:sense kno:KN2023-0250-sense .
-
-kno:KN2023-0250-att-nn a frac:Attestation ;
-    dcterms:date "2022-06-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001750626> .
-
-kno:KN2023-0250-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0250-freq-nn,
-        kno:KN2023-0250-freq-yt ;
-    ontolex:writtenRep "정부완박"@ko .
-
-kno:KN2023-0250-freq-nn a frac:CorpusFrequency ;
-    rdf:value 524 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0250-freq-yt a frac:CorpusFrequency ;
-    rdf:value 145 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0250-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0250 kno:instantiates kno:S000051 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "정부(政府) (1성분)"@ko ;
+    kno:origin "(政府完剝)" ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EB%B6%80%EC%99%84%EB%B0%95> ;
+    kno:componentString "정부(政府), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    kno:component kno:KN2023-0250-c2 ;
+    kno:indexForm "정부완박"@ko ;
+    a ontolex:Word ;
+    skos:definition "‘정부의 권한을 완전히 박탈함’을 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2023-0250-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0250-freq-NN-2022 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0250-freq-NN-total ;
+    kno:frequency kno:KN2023-0250-freq-NN-2024 ;
+    kno:component kno:KN2023-0250-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶여당과 야당 간에 의견이 팽팽히 맞서고 있는 법안에 대한 발의가 예고되자, O 씨는 해당 법안을 {정부완박이라며} 비난하였다."@ko ;
+    rdfs:label "정부완박"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2023-0250-c1 ;
+    a kno:Neologism .
+kno:KN2023-0250-c2 kno:formative kno:F000031 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "완전"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "완"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0250-c3 kno:position "3"^^xsd:integer ;
+    kno:fullForm "박탈"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:formative kno:F000040 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "박"@ko ;
+    kno:semanticTag kno:usas-A9 .
+kno:KN2023-0250-c1 kno:surfaceForm "정부"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "정부(政府)"@ko ;
+    kno:fullForm "정부"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:formative kno:F000584 .

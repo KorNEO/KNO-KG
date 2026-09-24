@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0592 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0592 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0592-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0592-form ;
-    ontolex:sense kno:KN2025-0592-sense .
-
-kno:KN2025-0592-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003344180> .
-
-kno:KN2025-0592-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0592-freq-nn,
-        kno:KN2025-0592-freq-yt ;
-    ontolex:writtenRep "키세스 부대"@ko .
-
-kno:KN2025-0592-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0592-freq-yt a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0592-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0592 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0592-freq-NN-total ;
+    kno:component kno:KN2025-0592-c2 ;
+    a kno:Neologism ;
+    rdfs:label "키세스 부대"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0592-freq-NN-2025 ;
+    kno:origin "(Kisses部隊)" ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "키세스부대"@ko ;
+    kno:example "(LLM) 강추위가 이어지자 {키세스부대가} 은박 보온담요를 두르고 밤샘 집회를 이어 갔다."@ko ;
+    kno:languageType "영_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%A4%EC%84%B8%EC%8A%A4%20%EB%B6%80%EB%8C%80> ;
+    kno:component kno:KN2025-0592-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 은박 보온담요 등을 몸에 두른 채 혹한 속에서 철야 농성이나 집회를 이어 가는 시위 참가자들을 비유적으로 이르는 말."@ko ;
+    kno:componentString "키세스(Kisses), 부대(部隊)"@ko ;
+    kno:instantiates kno:S000229 ;
+    kno:slotFiller "부대(部隊) (1성분)"@ko .
+kno:KN2025-0592-c2 kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "부대(部隊)"@ko ;
+    kno:formative kno:F003946 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "부대"@ko ;
+    kno:surfaceForm "부대"@ko .
+kno:KN2025-0592-c1 rdfs:label "키세스(Kisses)"@ko ;
+    kno:surfaceForm "키세스"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000314 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "키세스"@ko .

@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0031 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0031 kno:frequency kno:KN2016-0031-freq-NN-total ;
+    a kno:Neologism ;
+    kno:example "¶실제로는 허혈성 심장병은 {관상 죽상 경화에} 의해 생기는 경우가 대부분이므로 관상 동맥 질환으로 불리는 경우도 있다."@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:origin "(冠狀粥狀硬化)" ;
+    kno:predicate "딱딱해지다"@ko ;
+    kno:componentString "관상(冠狀), 죽상(粥狀), 경화(硬化)"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "관상 동맥에 지방 침착물 따위가 쌓여서 죽종이 생기고, 이로 인하여 동맥이 좁아지고 딱딱해지는 증상. 혈액 공급이 제대로 되지 않으며 심장이 제 기능을 발휘하지 못하는 질환으로 가슴 통증을 유발할 수 있다."@ko ;
+    kno:frequency kno:KN2016-0031-freq-NN-2015 ;
+    rdfs:label "관상^죽상^경화"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0031-c3 ;
+    kno:instantiates kno:S000786 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%80%EC%83%81%EC%A3%BD%EC%83%81%EA%B2%BD%ED%99%94> ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "관상(冠狀)+죽상(粥狀) (2성분)"@ko ;
+    kno:component kno:KN2016-0031-c1 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0031-c2 ;
+    kno:indexForm "관상죽상경화"@ko .
+kno:KN2016-0031-c3 kno:role "고정항"@ko ;
+    kno:fullForm "경화"@ko ;
+    kno:surfaceForm "경화"@ko ;
+    rdfs:label "경화(硬化)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F001059 ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0031-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F002395 ;
+    rdfs:label "관상(冠狀)"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:fullForm "관상"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:surfaceForm "관상"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0031-c2 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "죽상"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "죽상(粥狀)"@ko ;
+    kno:semanticTag kno:usas-E4.1m ;
+    kno:formative kno:F005811 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "죽상"@ko ;
+    a kno:Component .

@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2025-0697 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2025-0697-att-nn ;
+    ontolex:canonicalForm kno:KN2025-0697-form ;
+    ontolex:sense kno:KN2025-0697-sense .
+
+kno:KN2025-0697-att-nn a frac:Attestation ;
+    dcterms:date "2025-11-27"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/029/0002996114> .
+
+kno:KN2025-0697-form a ontolex:Form ;
+    frac:frequency kno:KN2025-0697-freq-nn,
+        kno:KN2025-0697-freq-yt ;
+    ontolex:writtenRep "환율 오적"@ko .
+
+kno:KN2025-0697-freq-nn a frac:CorpusFrequency ;
+    rdf:value 4 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2025-0697-freq-yt a frac:CorpusFrequency ;
+    rdf:value 19 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2025-0697-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%ED%99%98%EC%9C%A8%20%EB%B6%95%EA%B4%B4%205%EC%A0%81> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

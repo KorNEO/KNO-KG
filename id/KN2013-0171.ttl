@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0171 a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:pos "「명」"@ko ;
+    skos:definition "‘멀티미디어실001’의 준말."@ko ;
+    kno:formation kno:W02 ;
+    rdfs:label "멀미-실"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0171-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%80%EB%AF%B8%EC%8B%A4> ;
+    kno:componentString "멀(티), 미(디어)(multimedia), -실(室)"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "멀미실"@ko ;
+    kno:component kno:KN2013-0171-c1 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:origin "(←multimedia室)" ;
+    kno:component kno:KN2013-0171-c2 ;
+    kno:example "¶예를 들면 재학생들이 ‘{멀미실’이라고} 부르는 것을 새내기들은 ‘멀티미디어실’이라고 한다."@ko ;
+    kno:slotFiller "멀(티)+미(디어)(multimedia) (2성분)"@ko ;
+    kno:instantiates kno:S001168 .
+kno:KN2013-0171-c3 rdfs:label "-실(室)"@ko ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:formative kno:F001555 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "실"@ko ;
+    kno:surfaceForm "실"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .
+kno:KN2013-0171-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "멀티"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "멀(티)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F003422 ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:surfaceForm "멀"@ko .
+kno:KN2013-0171-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "미"@ko ;
+    kno:formative kno:F003582 ;
+    kno:fullForm "미디어"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "미(디어)(multimedia)"@ko .

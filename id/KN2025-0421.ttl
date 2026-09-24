@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0421 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0421 a ontolex:Word ;
-    frac:attestation kno:KN2025-0421-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0421-form ;
-    ontolex:sense kno:KN2025-0421-sense .
-
-kno:KN2025-0421-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000866567> .
-
-kno:KN2025-0421-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0421-freq-nn,
-        kno:KN2025-0421-freq-yt ;
-    ontolex:writtenRep "역덕질"@ko .
-
-kno:KN2025-0421-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0421-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0421-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0421 kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0421-freq-NN-2025 ;
+    kno:predicate "보이다"@ko ;
+    kno:componentString "역(逆)-, 덕질"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "역덕질"@ko ;
+    kno:frequency kno:KN2025-0421-freq-NN-total ;
+    kno:component kno:KN2025-0421-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "역-덕질"@ko ;
+    skos:definition "(LLM) 유명인이나 창작자 등이 팬의 응원ㆍ홍보 활동을 지켜보거나 직접 참여하며 반응을 보이는 일."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000152 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AD%EB%8D%95%EC%A7%88> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "(LLM) 가수가 팬이 만든 편집 영상을 직접 공유하고 댓글까지 달아 {역덕질을} 했다는 후기가 올라왔다."@ko ;
+    kno:formation kno:W03 ;
+    kno:component kno:KN2025-0421-c1 ;
+    kno:slotFiller "덕질 (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism .
+kno:KN2025-0421-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "덕질"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "덕질"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:formative kno:F001181 ;
+    a kno:Component ;
+    kno:surfaceForm "덕질"@ko .
+kno:KN2025-0421-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "역"@ko ;
+    kno:formative kno:F000147 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:fullForm "역"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "역(逆)-"@ko .

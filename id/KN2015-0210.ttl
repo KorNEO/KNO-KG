@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0210 kno:frequency kno:KN2015-0210-freq-NN-2014 ;
+    kno:instantiates kno:S000189 ;
+    kno:component kno:KN2015-0210-c2 ;
+    kno:slotFiller "카레(←curry) (1성분)"@ko ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:urimalTargetCode "1359748" ;
+    rdfs:label "카레-국"@ko ;
+    kno:origin "(<영>←curry國)" ;
+    kno:frequency kno:KN2015-0210-freq-NN-total ;
+    kno:frequency kno:KN2015-0210-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    kno:languageType "영+한" ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2015-0210-c1 ;
+    kno:indexForm "카레국"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359748> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0210-freq-NN-2025 ;
+    kno:componentString "카레(←curry), -국(國)"@ko ;
+    skos:definition "‘인도’를 비유적으로 이르는 말. 인도의 대표 음식인 ‘카레’에 나라를 의미하는 한자어 ‘국(國)’을 결합하여 만든 말이다."@ko ;
+    a kno:Neologism ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이외에 중국은 대륙, 미국은 천조국, 러시아 불곰국, 캐나다 단풍국, 인도 {카레국}, 네덜란드 풍차국 등 대부분 음식, 건물, 국기 등 일종의 랜드마크라고 할 수 있는 것들로 붙어진 별명이다."@ko .
+kno:KN2015-0210-c2 kno:fullForm "국"@ko ;
+    kno:surfaceForm "국"@ko ;
+    kno:formative kno:F000161 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "-국(國)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2015-0210-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006191 ;
+    kno:fullForm "카레"@ko ;
+    kno:surfaceForm "카레"@ko ;
+    a kno:Component ;
+    rdfs:label "카레(←curry)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko .

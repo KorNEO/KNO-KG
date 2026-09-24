@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0128 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0128 a ontolex:Word ;
-    frac:attestation kno:KN2022-0128-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0128-form ;
-    ontolex:sense kno:KN2022-0128-sense .
-
-kno:KN2022-0128-att-nn a frac:Attestation ;
-    dcterms:date "2022-05-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003273538> .
-
-kno:KN2022-0128-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0128-freq-nn,
-        kno:KN2022-0128-freq-yt ;
-    ontolex:writtenRep "떠돌이-쉬파리"@ko .
-
-kno:KN2022-0128-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0128-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0128-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:unitType "단어"@ko ;
+    kno:componentString "떠돌이, 쉬파리"@ko ;
+    kno:frequency kno:KN2022-0128-freq-NN-2022 ;
+    skos:definition "쉬파릿과의 곤충. 몸의 길이는 8~14mm이며, 가슴은 회색을 띠고 앞가슴 등판에 세 개의 검은색 세로줄이 있다. 날개는 투명하고 다리는 검은색이며, 사람과 동물의 배설물 주위에 모인다. ◁Boettcherisca peregrina▷"@ko ;
+    kno:indexForm "떠돌이쉬파리"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0128-c2 ;
+    kno:year "2022"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:example "¶법곤충 감정에서 {떠돌이쉬파리의} 산란 시기는 유골의 사망 시점을 추정하는 단서 중 하나이다."@ko ;
+    kno:component kno:KN2022-0128-c1 ;
+    rdfs:label "떠돌이-쉬파리"@ko ;
+    kno:frequency kno:KN2022-0128-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%96%A0%EB%8F%8C%EC%9D%B4%EC%89%AC%ED%8C%8C%EB%A6%AC> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0128-c2 rdfs:label "쉬파리"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "쉬파리"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004510 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "쉬파리"@ko .
+kno:KN2022-0128-c1 rdfs:label "떠돌이"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:fullForm "떠돌이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "떠돌이"@ko ;
+    kno:formative kno:F003119 .

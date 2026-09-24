@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0314 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0314 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0314-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0314-form ;
-    ontolex:sense kno:KN2025-0314-sense .
-
-kno:KN2025-0314-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005258980> .
-
-kno:KN2025-0314-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0314-freq-nn,
-        kno:KN2025-0314-freq-yt ;
-    ontolex:writtenRep "사형 경제학"@ko .
-
-kno:KN2025-0314-freq-nn a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0314-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0314-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0314-freq-NN-total ;
+    kno:origin "(死刑經濟學)" ;
+    kno:instantiates kno:S000163 ;
+    kno:languageType "한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%98%95%20%EA%B2%BD%EC%A0%9C%ED%95%99> ;
+    kno:componentString "사형(死刑), 경제학(經濟學)"@ko ;
+    skos:definition "(LLM) 물가 통제나 시장 질서 확립을 내세워 매점매석 같은 경제 행위를 사형에 준하는 극형으로 다스려야 한다는 주장이나 발언을 비꼬아 이르는 말."@ko ;
+    kno:slotFiller "사형(死刑) (1성분)"@ko ;
+    kno:component kno:KN2025-0314-c2 ;
+    kno:component kno:KN2025-0314-c1 ;
+    kno:indexForm "사형경제학"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 대통령의 ‘옛날엔 매점매석을 엄벌했다’는 발언이 나오자 야당은 {사형경제학이} 아니라 실효성 있는 물가 대책을 내놓으라고 비판했다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "사형 경제학"@ko ;
+    kno:frequency kno:KN2025-0314-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0314-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경제학"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "경제학"@ko ;
+    rdfs:label "경제학(經濟學)"@ko ;
+    kno:formative kno:F000331 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0314-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "사형(死刑)"@ko ;
+    kno:formative kno:F004186 ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "사형"@ko ;
+    kno:surfaceForm "사형"@ko .

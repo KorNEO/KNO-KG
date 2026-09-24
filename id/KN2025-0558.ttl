@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0558 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0558 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0558-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0558-form ;
-    ontolex:sense kno:KN2025-0558-sense .
-
-kno:KN2025-0558-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/123/0002362874> .
-
-kno:KN2025-0558-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0558-freq-nn,
-        kno:KN2025-0558-freq-yt ;
-    ontolex:writtenRep "청년 근심 주택"@ko .
-
-kno:KN2025-0558-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0558-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0558-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0558 a kno:Neologism ;
+    kno:indexForm "청년근심주택"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0558-c3 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%20%EA%B7%BC%EC%8B%AC%20%EC%A3%BC%ED%83%9D> ;
+    kno:example "(LLM) 보증보험 가입 여부가 불투명한 임대 단지가 늘자 입주 예정자들 사이에서는 {청년근심주택이라는} 말까지 나온다."@ko ;
+    kno:slotFiller "근심 (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000587 ;
+    skos:definition "(LLM) 청년을 대상으로 공급된 임대 주택이 보증보험 미가입, 경매 진행 등으로 인해 오히려 입주자의 주거 불안을 키우는 상황을 비유적으로 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:componentString "청년(靑年), 근심, 주택(住宅)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한_고_한" ;
+    kno:origin "(靑年근심住宅)" ;
+    kno:component kno:KN2025-0558-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "청년 근심 주택"@ko ;
+    kno:component kno:KN2025-0558-c1 ;
+    kno:frequency kno:KN2025-0558-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0558-freq-NN-total .
+kno:KN2025-0558-c3 kno:role "고정항"@ko ;
+    kno:fullForm "주택"@ko ;
+    kno:surfaceForm "주택"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000073 ;
+    rdfs:label "주택(住宅)"@ko .
+kno:KN2025-0558-c2 kno:formative kno:F001102 ;
+    kno:fullForm "근심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E6m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "근심"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "근심"@ko .
+kno:KN2025-0558-c1 kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000042 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:fullForm "청년"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0125 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0125 a ontolex:Word ;
-    frac:attestation kno:KN2025-0125-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0125-form ;
-    ontolex:sense kno:KN2025-0125-sense .
-
-kno:KN2025-0125-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002727269> .
-
-kno:KN2025-0125-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0125-freq-nn,
-        kno:KN2025-0125-freq-yt ;
-    ontolex:writtenRep "내복 수괴"@ko .
-
-kno:KN2025-0125-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0125-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0125-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0125 kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 체포ㆍ조사 등 공권력 집행에 맞서 속옷 차림을 내세우며 버티는 사람을 비꼬아 이르는 말."@ko ;
+    kno:componentString "내복(內服), 수괴(首魁)"@ko ;
+    kno:instantiates kno:S000262 ;
+    kno:example "(LLM) 체포영장 집행을 앞두고도 속옷 차림으로 끝까지 버티는 모습을 두고 야권에서는 {내복수괴가} 따로 없다고 비판했다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한_한" ;
+    kno:slotFiller "내복(內服) (1성분)"@ko ;
+    rdfs:label "내복-수괴"@ko ;
+    kno:component kno:KN2025-0125-c2 ;
+    kno:component kno:KN2025-0125-c1 ;
+    kno:indexForm "내복수괴"@ko ;
+    kno:frequency kno:KN2025-0125-freq-NN-2025 ;
+    kno:origin "(內服首魁)" ;
+    a ontolex:Word ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0125-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%B3%B5%EC%88%98%EA%B4%B4> ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0125-c2 rdfs:label "수괴(首魁)"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    a kno:Component ;
+    kno:fullForm "수괴"@ko ;
+    kno:surfaceForm "수괴"@ko ;
+    kno:formative kno:F000538 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0125-c1 rdfs:label "내복(內服)"@ko ;
+    kno:formative kno:F002717 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "내복"@ko ;
+    kno:surfaceForm "내복"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

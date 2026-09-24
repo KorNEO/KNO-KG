@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0179 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0179 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0179-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0179-form ;
-    ontolex:sense kno:KN2024-0179-sense .
-
-kno:KN2024-0179-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005222023> .
-
-kno:KN2024-0179-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0179-freq-nn,
-        kno:KN2024-0179-freq-yt ;
-    ontolex:writtenRep "역사 보행 공간"@ko .
-
-kno:KN2024-0179-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0179-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0179-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0179 kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0179-c2 ;
+    kno:frequency kno:KN2024-0179-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AD%EC%82%AC%20%EB%B3%B4%ED%96%89%20%EA%B3%B5%EA%B0%84> ;
+    kno:languageType "한_한_한" ;
+    a kno:Neologism ;
+    kno:indexForm "역사보행공간"@ko ;
+    kno:component kno:KN2024-0179-c3 ;
+    kno:slotFiller "역사(歷史)+보행(步行) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(歷史步行空間)" ;
+    kno:predicate "연결되다"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0179-freq-NN-2024 ;
+    kno:componentString "역사(歷史), 보행(步行), 공간(空間)"@ko ;
+    skos:definition "근대 문화유산인 환구단의 정문에 설치되어 있는 철제 울타리를 철거한 후에 조성될 예정인 공간으로, 환구단부터 서울 광장과 덕수궁까지 연결되는 산책길."@ko ;
+    kno:instantiates kno:S000790 ;
+    kno:frequency kno:KN2024-0179-freq-NN-2023 ;
+    kno:example "¶시는 장기적으로는 환구단부터 덕수궁까지를 연결하는 {역사 보행 공간을} 조성하여 문화재와 상생하는 도시의 공간을 구현하겠다는 계획이다."@ko ;
+    kno:component kno:KN2024-0179-c1 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "역사 보행 공간"@ko .
+kno:KN2024-0179-c2 kno:surfaceForm "보행"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "보행(步行)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "보행"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F003904 .
+kno:KN2024-0179-c3 a kno:Component ;
+    rdfs:label "공간(空間)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000335 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "공간"@ko ;
+    kno:surfaceForm "공간"@ko .
+kno:KN2024-0179-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "역사"@ko ;
+    kno:formative kno:F005034 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.1.1 ;
+    kno:fullForm "역사"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "역사(歷史)"@ko .

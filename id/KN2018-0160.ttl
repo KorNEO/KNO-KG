@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0160 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0160 kno:registration "우리말샘"@ko ;
+    kno:example "¶여기서 {빠미니스트는} 아빠와 페미니스트를 합친 단어인데요. 최근 미투 열풍을 타고 딸 가진 아버지의 젠더 감수성이 주목받고 있다고 합니다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416226> ;
+    kno:instantiates kno:S000721 ;
+    kno:componentString "(아)빠, (페)미니스트(feminist)"@ko ;
+    kno:languageType "고+영" ;
+    kno:indexForm "빠미니스트"@ko ;
+    kno:urimalTargetCode "1416226" ;
+    a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2018-0160-c1 ;
+    kno:frequency kno:KN2018-0160-freq-NN-2021 ;
+    kno:slotFiller "(페)미니스트(feminist) (1성분)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0160-freq-NN-total ;
+    skos:definition "딸을 위해 페미니스트가 된 아빠."@ko ;
+    kno:origin "(빠<영>←feminist)" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2018-0160-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0160-freq-NN-2018 ;
+    a ontolex:Word ;
+    rdfs:label "빠미니스트"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2018-0160-c1 kno:surfaceForm "빠"@ko ;
+    kno:formative kno:F000522 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "아빠"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(아)빠"@ko .
+kno:KN2018-0160-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003598 ;
+    rdfs:label "(페)미니스트(feminist)"@ko ;
+    kno:surfaceForm "미니스트"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "페미니스트"@ko ;
+    a kno:Component .

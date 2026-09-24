@@ -1,37 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0498 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0498 a ontolex:Word ;
-    frac:attestation kno:KN2025-0498-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0498-form ;
-    ontolex:sense kno:KN2025-0498-sense .
-
-kno:KN2025-0498-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001906866> .
-
-kno:KN2025-0498-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0498-freq-nn,
-        kno:KN2025-0498-freq-yt ;
-    ontolex:writtenRep "저숭라라"@ko .
-
-kno:KN2025-0498-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0498-freq-yt a frac:CorpusFrequency ;
-    rdf:value 547 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0498-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%A7%80%EC%98%A5> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0498 kno:slotFiller "저-+숭 (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:predicate "흐려지다"@ko ;
+    kno:component kno:KN2025-0498-c3 ;
+    kno:instantiates kno:S000842 ;
+    skos:definition "(LLM) 극심한 고통이나 충격, 또는 강한 쾌감 등으로 정신이 아득해져 현실감이 흐려지는 상태."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%80%EC%88%AD%EB%9D%BC%EB%9D%BC> ;
+    kno:frequency kno:KN2025-0498-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0498-c1 ;
+    kno:example "(LLM) 며칠째 변비가 계속돼 배가 너무 아파서 {저숭라라} 갈 것 같았다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "저-, 숭, 라라"@ko ;
+    kno:frequency kno:KN2025-0498-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W08 ;
+    kno:instantiates kno:S001634 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0498-c2 ;
+    kno:slotFiller "숭+라라 (2성분)"@ko ;
+    rdfs:label "저숭라라"@ko ;
+    kno:indexForm "저숭라라"@ko .
+kno:KN2025-0498-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "라라"@ko ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "라라"@ko ;
+    kno:surfaceForm "라라"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001228 .
+kno:KN2025-0498-c1 kno:fullForm "저"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001742 ;
+    a kno:Component ;
+    rdfs:label "저-"@ko ;
+    kno:surfaceForm "저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0498-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "숭"@ko ;
+    kno:semanticTag kno:usas-E4.1m ;
+    kno:formative kno:F004504 ;
+    kno:semanticTag kno:usas-X1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "숭"@ko ;
+    a kno:Component ;
+    rdfs:label "숭"@ko .

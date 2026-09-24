@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0170 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0170 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0170-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0170-form ;
-    ontolex:sense kno:KN2025-0170-sense .
-
-kno:KN2025-0170-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0015794177> .
-
-kno:KN2025-0170-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0170-freq-nn,
-        kno:KN2025-0170-freq-yt ;
-    ontolex:writtenRep "두바이 김밥"@ko .
-
-kno:KN2025-0170-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0170-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0170-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0170 kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "두바이(Dubai), 김밥"@ko ;
+    kno:origin "(<영>Dubai김밥)" ;
+    kno:slotFiller "김밥 (1성분)"@ko ;
+    kno:frequency kno:KN2025-0170-freq-NN-2025 ;
+    kno:component kno:KN2025-0170-c2 ;
+    skos:definition "(LLM) 마시멜로ㆍ초콜릿 등으로 만든 겉을 김처럼 말고, 피스타치오 스프레드나 카다이프 등을 속 재료로 넣어 김밥 모양으로 만든 롤 형태의 디저트."@ko ;
+    kno:component kno:KN2025-0170-c1 ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) SNS에서 {두바이김밥이} 화제라서 주말에 팝업 매장에 들렀는데, 점심 전에 이미 품절이었다."@ko ;
+    kno:languageType "영_고" ;
+    kno:frequency kno:KN2025-0170-freq-NN-total ;
+    rdfs:label "두바이 김밥"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%91%90%EB%B0%94%EC%9D%B4%20%EA%B9%80%EB%B0%A5> ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000501 ;
+    kno:indexForm "두바이김밥"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0170-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002614 ;
+    a kno:Component ;
+    rdfs:label "김밥"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "김밥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "김밥"@ko .
+kno:KN2025-0170-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "두바이"@ko ;
+    kno:formative kno:F000719 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "두바이(Dubai)"@ko ;
+    kno:fullForm "두바이"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:role "고정항"@ko .

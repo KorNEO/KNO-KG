@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0279 a ontolex:Word ;
-    frac:attestation kno:KN2021-0279-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0279-form ;
-    ontolex:sense kno:KN2021-0279-sense .
-
-kno:KN2021-0279-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000522030> .
-
-kno:KN2021-0279-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0279-freq-nn,
-        kno:KN2021-0279-freq-yt ;
-    ontolex:writtenRep "턱스크-족"@ko .
-
-kno:KN2021-0279-freq-nn a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0279-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0279-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0279 kno:activeYears "3"^^xsd:integer ;
+    skos:definition "마스크를 올바르게 착용하지 않고 턱에 걸친 사람. 또는 그런 무리. ‘턱스크’는 여러 사람이 모이는 장소에서 코로나19의 확산을 방지하기 위해 마스크가 입과 코를 완전히 덮도록 착용해야 한다는 정부의 방역 지침에 어긋나는 행위이다."@ko ;
+    kno:indexForm "턱스크족"@ko ;
+    kno:origin "(턱<영>←mask族)" ;
+    kno:frequency kno:KN2021-0279-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0279-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W02 ;
+    kno:languageType "(고+영)+한" ;
+    rdfs:label "턱스크-족"@ko ;
+    kno:component kno:KN2021-0279-c1 ;
+    kno:frequency kno:KN2021-0279-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶날씨가 더워지면서 코와 입을 완벽하게 가리지 않은 {턱스크족이} 늘고 있다."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%84%B1%EC%8A%A4%ED%81%AC%EC%A1%B1> ;
+    kno:instantiates kno:S000001 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:componentString "턱스크(턱←mask), -족(族)"@ko ;
+    kno:frequency kno:KN2021-0279-freq-NN-2020 ;
+    kno:slotFiller "턱스크(턱←mask) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0279-freq-NN-total .
+kno:KN2021-0279-c2 kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2021-0279-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "턱스크(턱←mask)"@ko ;
+    kno:fullForm "턱스크"@ko ;
+    kno:surfaceForm "턱스크"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006440 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

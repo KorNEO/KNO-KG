@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0365 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0365 kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "죽컵"@ko ;
+    kno:component kno:KN2013-0365-c2 ;
+    kno:instantiates kno:S000184 ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:predicate "쓰다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BD%EC%BB%B5> ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "죽(粥) (1성분)"@ko ;
+    kno:component kno:KN2013-0365-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "죽을 담아 먹는 데 쓰는 컵."@ko ;
+    a kno:Neologism ;
+    rdfs:label "죽-컵"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶OOO와 OO는 탄자니아를 방문해…물컵 겸 {죽컵} 나누어 주기, 어린이 급식 지원 및 학용품 전달, 극빈 가정 구호품 전달 등 봉사 활동을 펼쳤다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(粥<영>cup)" ;
+    kno:componentString "죽(粥), 컵(cup)"@ko .
+kno:KN2013-0365-c2 kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "컵(cup)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "컵"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000417 ;
+    kno:surfaceForm "컵"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2013-0365-c1 kno:fullForm "죽"@ko ;
+    kno:surfaceForm "죽"@ko ;
+    kno:formative kno:F005808 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "죽(粥)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko .

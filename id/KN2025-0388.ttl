@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0388 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0388 a ontolex:Word ;
-    frac:attestation kno:KN2025-0388-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0388-form ;
-    ontolex:sense kno:KN2025-0388-sense .
-
-kno:KN2025-0388-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/088/0000974118> .
-
-kno:KN2025-0388-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0388-freq-nn,
-        kno:KN2025-0388-freq-yt ;
-    ontolex:writtenRep "안미친미"@ko .
-
-kno:KN2025-0388-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0388-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0388-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0388 kno:registration "신어DB"@ko ;
+    kno:componentString "안(보)(安保), 미(국)(美國), 친(親)-, 미(국)(美國)"@ko ;
+    a ontolex:Word ;
+    kno:origin "(安美親美)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:example "(LLM) 일각에서는 새 정부의 대미 전략이 {안미친미로} 기울면 동맹의 신뢰가 흔들릴 수 있다고 지적했다."@ko ;
+    kno:component kno:KN2025-0388-c1 ;
+    kno:indexForm "안미친미"@ko ;
+    kno:slotFiller "친(親)-+미(국)(美國) (2성분)"@ko ;
+    kno:instantiates kno:S001520 ;
+    skos:definition "(LLM) 안보에서는 미국과 거리를 두고, 경제ㆍ교류 등에서는 미국과 협력하거나 가까이 지내려는 대외 노선."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0388-c3 ;
+    kno:component kno:KN2025-0388-c2 ;
+    rdfs:label "안미친미"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EB%AF%B8%EC%B9%9C%EB%AF%B8> ;
+    kno:component kno:KN2025-0388-c4 ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0388-c1 kno:fullForm "안보"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "안"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "안(보)(安保)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:formative kno:F000381 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0388-c3 kno:semanticTag kno:usas-S3.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "친"@ko ;
+    rdfs:label "친(親)-"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000951 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "친"@ko .
+kno:KN2025-0388-c2 rdfs:label "미(국)(美國)"@ko ;
+    kno:surfaceForm "미"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000757 ;
+    a kno:Component ;
+    kno:fullForm "미국"@ko .
+kno:KN2025-0388-c4 kno:fullForm "미국"@ko ;
+    rdfs:label "미(국)(美國)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:surfaceForm "미"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000757 .

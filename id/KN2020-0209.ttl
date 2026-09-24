@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0209 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0209 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0209-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0209-form ;
-    ontolex:sense kno:KN2020-0209-sense .
-
-kno:KN2020-0209-att-nn a frac:Attestation ;
-    dcterms:date "2020-04-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/082/0000996240> .
-
-kno:KN2020-0209-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0209-freq-nn,
-        kno:KN2020-0209-freq-yt ;
-    ontolex:writtenRep "안심 면회"@ko .
-
-kno:KN2020-0209-freq-nn a frac:CorpusFrequency ;
-    rdf:value 419 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0209-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0209-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0209 kno:component kno:KN2020-0209-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0209-freq-NN-2022 ;
+    kno:slotFiller "면회(面會) (1성분)"@ko ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2020-0209-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0209-freq-NN-2021 ;
+    kno:origin "(安心面會)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%8B%AC%20%EB%A9%B4%ED%9A%8C> ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "다른 사람과 직접 접촉하지 않고 가림막을 사이에 두거나 온라인으로 하는 면회. 주로 요양원이나 병원 등 코로나19의 감염에 취약한 사람들이 많은 장소에서 시행되기 시작했다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:indexForm "안심면회"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000223 ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2020-0209-c1 ;
+    kno:componentString "안심(安心), 면회(面會)"@ko ;
+    kno:frequency kno:KN2020-0209-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶코로나19로 오랫동안 만나지 못한 가족들을 위해 병원에서는 환자와 보호자 사이에 보호 비닐을 설치한 면회실을 마련하여 {안심 면회를} 실시하고 있다."@ko ;
+    rdfs:label "안심 면회"@ko .
+kno:KN2020-0209-c2 kno:formative kno:F003463 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "면회(面會)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "면회"@ko ;
+    kno:surfaceForm "면회"@ko .
+kno:KN2020-0209-c1 kno:fullForm "안심"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "안심"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000088 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "안심(安心)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E6p .

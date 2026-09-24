@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0255 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0255 kno:frequency kno:KN2019-0255-freq-NN-total ;
+    kno:instantiates kno:S001083 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0255-freq-NN-2019 ;
+    kno:instantiates kno:S001673 ;
+    kno:component kno:KN2019-0255-c1 ;
+    skos:definition "차박 캠핑을 하기 위하여 차에 설치하는 텐트."@ko ;
+    kno:slotFiller "텐트(tent) (1성분)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0255-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "차박텐트"@ko ;
+    kno:frequency kno:KN2019-0255-freq-NN-2021 ;
+    kno:predicate "설치하다"@ko ;
+    kno:frequency kno:KN2019-0255-freq-NN-2024 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%EB%B0%95%20%ED%85%90%ED%8A%B8> ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한_영" ;
+    kno:unitType "구"@ko ;
+    rdfs:label "차박 텐트"@ko ;
+    kno:frequency kno:KN2019-0255-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0255-freq-NN-2025 ;
+    kno:componentString "차박(車泊), 텐트(tent)"@ko ;
+    kno:component kno:KN2019-0255-c2 ;
+    kno:slotFiller "차박(車泊) (1성분)"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2019-0255-freq-NN-2022 ;
+    kno:example "¶OO O 대표는 “팩 다운이 필요 없는 {차박 텐트는} 주차장, 부둣가 등 장소를 가리지 않기 때문에…간편한 설치와 철수, 기온이나 계절적인 영향을 거의 받지 않는 새로운 형태의 캠핑 문화를 만들었다.”라고 말했다."@ko ;
+    kno:origin "(車泊<영>tent)" .
+kno:KN2019-0255-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F001810 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "차박(車泊)"@ko ;
+    a kno:Component ;
+    kno:fullForm "차박"@ko ;
+    kno:surfaceForm "차박"@ko ;
+    kno:semanticTag kno:usas-K1 .
+kno:KN2019-0255-c2 a kno:Component ;
+    kno:fullForm "텐트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "텐트"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001900 ;
+    rdfs:label "텐트(tent)"@ko .

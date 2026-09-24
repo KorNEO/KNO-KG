@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0120 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0120 rdfs:label "듣보작"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:example "¶OO은 {듣보작의} 흥행 요소와 인기 비결 등을 지극히 주관적인 시선으로 풀어 보는 코너다."@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2013-0120-c1 ;
+    kno:slotFiller "듣+보 (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0120-c3 ;
+    kno:componentString "듣, 보, 작(품)(作)"@ko ;
+    kno:component kno:KN2013-0120-c2 ;
+    kno:indexForm "듣보작"@ko ;
+    kno:origin "(듣보作)" ;
+    skos:definition "‘듣도 보도 못한 작품’을 줄여 이르는 말."@ko ;
+    kno:languageType "고+고+한" ;
+    kno:instantiates kno:S001009 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%A3%EB%B3%B4%EC%9E%91> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2013-0120-c1 kno:formative kno:F003063 ;
+    a kno:Component ;
+    kno:fullForm "듣"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "듣"@ko ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "듣"@ko .
+kno:KN2013-0120-c3 rdfs:label "작(품)(作)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "작품"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:surfaceForm "작"@ko ;
+    kno:formative kno:F001731 ;
+    a kno:Component .
+kno:KN2013-0120-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "보"@ko ;
+    kno:surfaceForm "보"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:formative kno:F003866 ;
+    kno:fullForm "보"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

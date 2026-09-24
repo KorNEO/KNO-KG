@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2024-0197 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2024-0197-att-nn ;
+    ontolex:canonicalForm kno:KN2024-0197-form ;
+    ontolex:sense kno:KN2024-0197-sense .
+
+kno:KN2024-0197-att-nn a frac:Attestation ;
+    dcterms:date "2021-08-20"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/005/0001465402> .
+
+kno:KN2024-0197-form a ontolex:Form ;
+    frac:frequency kno:KN2024-0197-freq-nn,
+        kno:KN2024-0197-freq-yt ;
+    ontolex:writtenRep "오송^참사"@ko .
+
+kno:KN2024-0197-freq-nn a frac:CorpusFrequency ;
+    rdf:value 14177 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2024-0197-freq-yt a frac:CorpusFrequency ;
+    rdf:value 1802 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2024-0197-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EC%B2%AD%EC%A3%BC%20%EA%B6%81%ED%8F%892%EC%A7%80%ED%95%98%EC%B0%A8%EB%8F%84%20%EC%B9%A8%EC%88%98%20%EC%82%AC%EA%B3%A0> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

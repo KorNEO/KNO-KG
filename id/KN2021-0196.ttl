@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0196 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0196 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0196-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0196-form ;
-    ontolex:sense kno:KN2021-0196-sense .
-
-kno:KN2021-0196-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004612550> .
-
-kno:KN2021-0196-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0196-freq-nn,
-        kno:KN2021-0196-freq-yt ;
-    ontolex:writtenRep "엠 뷰티"@ko .
-
-kno:KN2021-0196-freq-nn a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0196-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0196-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0196 kno:componentString "엠(M), 뷰티(beauty)"@ko ;
+    kno:component kno:KN2021-0196-c1 ;
+    kno:instantiates kno:S000388 ;
+    a kno:Neologism ;
+    kno:example "¶최근 군대와 연관된 다양한 신조어들이 나타나고 있는데, 피엑스(PX)에서 인기가 있는 상품을 뜻하는 ‘밀슐랭’, 장병들에게 인기가 많은 화장품을 뜻하는 ‘{엠 뷰티’가} 있다."@ko ;
+    kno:component kno:KN2021-0196-c2 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0196-freq-NN-total ;
+    kno:frequency kno:KN2021-0196-freq-NN-2020 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>▼M beauty)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%A0%20%EB%B7%B0%ED%8B%B0> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0196-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0196-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0196-freq-NN-2024 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0196-freq-NN-2025 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:languageType "영_영" ;
+    rdfs:label "엠 뷰티"@ko ;
+    kno:unitType "구"@ko ;
+    skos:definition "군인들에게 인기가 많은 미용 용품이나 화장품을 이르는 말."@ko ;
+    kno:indexForm "엠뷰티"@ko ;
+    kno:frequency kno:KN2021-0196-freq-NN-2022 ;
+    kno:slotFiller "엠(M) (1성분)"@ko .
+kno:KN2021-0196-c1 rdfs:label "엠(M)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005016 ;
+    kno:fullForm "엠"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "엠"@ko .
+kno:KN2021-0196-c2 kno:surfaceForm "뷰티"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "뷰티(beauty)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000173 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:fullForm "뷰티"@ko .

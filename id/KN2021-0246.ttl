@@ -1,36 +1,75 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0246 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0246 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0246-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0246-form ;
-    ontolex:sense kno:KN2021-0246-sense .
-
-kno:KN2021-0246-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0012170186> .
-
-kno:KN2021-0246-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0246-freq-nn,
-        kno:KN2021-0246-freq-yt ;
-    ontolex:writtenRep "중앙^예방^접종^센터"@ko .
-
-kno:KN2021-0246-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5996 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0246-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0246-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0246 kno:unitType "구"@ko ;
+    kno:origin "(中央豫防接種center)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EC%95%99%EC%98%88%EB%B0%A9%EC%A0%91%EC%A2%85%EC%84%BC%ED%84%B0> ;
+    rdfs:label "중앙^예방^접종^센터"@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0246-c4 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0246-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "중앙(中央), 예방(豫防), 접종(接種), 센터(center)"@ko ;
+    kno:frequency kno:KN2021-0246-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "중앙예방접종센터"@ko ;
+    kno:instantiates kno:S001025 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2021-0246-c1 ;
+    kno:languageType "한^한^한^영" ;
+    kno:frequency kno:KN2021-0246-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0246-freq-NN-2022 ;
+    skos:definition "코로나19 예방 접종을 체계적으로 관리하는 중심 기관. 국립 중앙 의료원에 설치되었으며, 2021년 2월에 코로나19 환자 치료 병원의 종사자를 대상으로 한 첫 번째 예방 접종이 시행되었다. 코로나19 예방 접종 시행 외에도, 적정 온도 유지가 필수적인 엠아르엔에이(mRNA) 백신의 보관 및 유통을 관리하고, 예방 접종 매뉴얼을 마련하여 권역 및 지역 예방 접종 센터로 전달하는 등의 기능을 수행한다."@ko ;
+    kno:component kno:KN2021-0246-c3 ;
+    kno:frequency kno:KN2021-0246-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0246-freq-NN-2023 ;
+    kno:example "¶{중앙 예방 접종 센터에서} 수도권 소재 의료 기관의 의료진들을 대상으로 국내 첫 백신 접종이 이루어졌다."@ko ;
+    kno:frequency kno:KN2021-0246-freq-NN-2024 ;
+    kno:slotFiller "중앙(中央)+예방(豫防) (2성분)"@ko .
+kno:KN2021-0246-c4 kno:fullForm "센터"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "센터"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    rdfs:label "센터(center)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000141 ;
+    kno:semanticTag kno:usas-H1 .
+kno:KN2021-0246-c2 rdfs:label "예방(豫防)"@ko ;
+    kno:fullForm "예방"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "예방"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F000866 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2021-0246-c1 rdfs:label "중앙(中央)"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:fullForm "중앙"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "중앙"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005838 .
+kno:KN2021-0246-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000917 ;
+    rdfs:label "접종(接種)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "접종"@ko ;
+    kno:surfaceForm "접종"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B3 .

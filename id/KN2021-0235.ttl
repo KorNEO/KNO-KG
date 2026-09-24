@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0235 a ontolex:Word ;
-    frac:attestation kno:KN2021-0235-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0235-form ;
-    ontolex:sense kno:KN2021-0235-sense .
-
-kno:KN2021-0235-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004556620> .
-
-kno:KN2021-0235-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0235-freq-nn,
-        kno:KN2021-0235-freq-yt ;
-    ontolex:writtenRep "제당슈만"@ko .
-
-kno:KN2021-0235-freq-nn a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0235-freq-yt a frac:CorpusFrequency ;
-    rdf:value 94 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0235-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0235 kno:frequency kno:KN2021-0235-freq-NN-2024 ;
+    a ontolex:Word ;
+    kno:component kno:KN2021-0235-c1 ;
+    kno:componentString "제, 당(신)(當身), 슈(퍼스타)(superstar), 만(들다)"@ko ;
+    rdfs:label "제당슈만"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2021-0235-freq-NN-2021 ;
+    kno:languageType "고+한+영+고" ;
+    kno:example "¶이제 팬들은 문화를 소비할 뿐만 아니라 능동적으로 문화를 만드는 주체가 되어 ‘{제당슈만’을} 외친다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0235-c4 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2021-0235-c3 ;
+    kno:frequency kno:KN2021-0235-freq-NN-2023 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%9C%EB%8B%B9%EC%8A%88%EB%A7%8C> ;
+    kno:origin "(제當<영>←super star만)" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0235-c2 ;
+    kno:indexForm "제당슈만"@ko ;
+    skos:definition "‘제가 당신을 슈퍼스타로 만들어 드릴게요.’를 줄여 이르는 말. 좋아하는 연예인이 더 높은 인기를 얻을 수 있도록 해당 연예인과 관련된 물건을 구매하는 등의 적극적인 행동을 하고자 하는 마음을 표현하는 말이다. 일본의 티브이(TV) 애니메이션 대사에서 유래하였다."@ko ;
+    kno:frequency kno:KN2021-0235-freq-NN-2025 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2021-0235-freq-NN-total ;
+    kno:activeYears "4"^^xsd:integer .
+kno:KN2021-0235-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005696 ;
+    rdfs:label "제"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:fullForm "제"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "제"@ko .
+kno:KN2021-0235-c4 kno:position "4"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "만들다"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:formative kno:F001277 ;
+    kno:surfaceForm "만"@ko ;
+    rdfs:label "만(들다)"@ko .
+kno:KN2021-0235-c3 a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "슈퍼스타"@ko ;
+    kno:formative kno:F004518 ;
+    rdfs:label "슈(퍼스타)(superstar)"@ko ;
+    kno:surfaceForm "슈"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko .
+kno:KN2021-0235-c2 kno:formative kno:F002890 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "당"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:fullForm "당신"@ko ;
+    rdfs:label "당(신)(當身)"@ko ;
+    kno:position "2"^^xsd:integer .

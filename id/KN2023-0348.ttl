@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0348 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0348 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0348-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0348-form ;
-    ontolex:sense kno:KN2023-0348-sense .
-
-kno:KN2023-0348-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002607849> .
-
-kno:KN2023-0348-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0348-freq-nn,
-        kno:KN2023-0348-freq-yt ;
-    ontolex:writtenRep "합성^가뭄^지수"@ko .
-
-kno:KN2023-0348-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0348-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0348-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0348 kno:componentString "합성(合成), 가뭄, 지수(指數)"@ko ;
+    kno:frequency kno:KN2023-0348-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0348-c3 ;
+    kno:frequency kno:KN2023-0348-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:languageType "한^고^한" ;
+    kno:component kno:KN2023-0348-c1 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000025 ;
+    kno:indexForm "합성가뭄지수"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%A9%EC%84%B1%EA%B0%80%EB%AD%84%EC%A7%80%EC%88%98> ;
+    kno:component kno:KN2023-0348-c2 ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶한 연구 센터가 유럽 지역의 {합성 가뭄 지수를} 분석한 결과, 많은 국가가 토양 수분 함량이 적어 ‘경계’ 수준인 것으로 나타났다."@ko ;
+    rdfs:label "합성^가뭄^지수"@ko ;
+    skos:definition "연평균 강우량, 연평균 유출량, 정규 식생 지수 등 다양한 변수를 활용하여 가뭄으로 인한 결과를 나타낸 지수."@ko ;
+    kno:slotFiller "합성(合成)+가뭄 (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(合成가뭄指數)" .
+kno:KN2023-0348-c3 kno:formative kno:F000035 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:fullForm "지수"@ko ;
+    kno:surfaceForm "지수"@ko ;
+    a kno:Component ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2023-0348-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006978 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "합성(合成)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:fullForm "합성"@ko ;
+    kno:surfaceForm "합성"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0348-c2 rdfs:label "가뭄"@ko ;
+    kno:surfaceForm "가뭄"@ko ;
+    kno:formative kno:F002078 ;
+    kno:fullForm "가뭄"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

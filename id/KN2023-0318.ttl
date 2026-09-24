@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0318 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0318 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0318-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0318-form ;
-    ontolex:sense kno:KN2023-0318-sense .
-
-kno:KN2023-0318-att-nn a frac:Attestation ;
-    dcterms:date "2023-05-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003279475> .
-
-kno:KN2023-0318-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0318-freq-nn,
-        kno:KN2023-0318-freq-yt ;
-    ontolex:writtenRep "퇴톡^금지법"@ko .
-
-kno:KN2023-0318-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0318-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0318-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0318 kno:unitType "구"@ko ;
+    rdfs:label "퇴톡^금지법"@ko ;
+    kno:example "¶퇴근 후 카톡 등으로 업무 지시를 내리는 사례가 증가하자 ‘{퇴톡 금지법’에} 대한 논의가 다시 등장하기 시작했다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000059 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "금지하다"@ko ;
+    kno:componentString "퇴(근)(退勤), (카카오)톡(←Kakaotalk), 금지법(禁止法)"@ko ;
+    kno:component kno:KN2023-0318-c1 ;
+    kno:component kno:KN2023-0318-c3 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0318-freq-NN-total ;
+    kno:component kno:KN2023-0318-c2 ;
+    kno:languageType "(한+영)^한" ;
+    kno:origin "(退←Kakaotalk禁止法)" ;
+    kno:indexForm "퇴톡금지법"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0318-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    skos:definition "직장인이 퇴근 후에 카카오톡 등을 통한 업무 연락을 받지 않을 수 있도록 연락을 금지하는 법안. 소셜 미디 어가 보편화됨에 따라 퇴근 이후에도 업무 지시를 받는 사례가 증가하자 논의된 법안으로, 2016년 6월 발의되었으나 2020년 5월 폐기되었다."@ko ;
+    kno:slotFiller "퇴(근)(退勤)+(카카오)톡(←Kakaotalk) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%86%A1%EA%B8%88%EC%A7%80%EB%B2%95> .
+kno:KN2023-0318-c1 a kno:Component ;
+    kno:surfaceForm "퇴"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "퇴(근)(退勤)"@ko ;
+    kno:formative kno:F000621 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "퇴근"@ko .
+kno:KN2023-0318-c3 rdfs:label "금지법(禁止法)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "금지법"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000128 ;
+    a kno:Component ;
+    kno:fullForm "금지법"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2023-0318-c2 kno:semanticTag kno:usas-Q1.3 ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F000106 ;
+    rdfs:label "(카카오)톡(←Kakaotalk)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "카카오톡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "톡"@ko ;
+    kno:position "2"^^xsd:integer .

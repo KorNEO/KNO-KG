@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0148 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0148 kno:frequency kno:KN2017-0148-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:componentString "세(상)(世), 젤, 무(섭다)"@ko ;
+    kno:slotFiller "무(섭다) (1성분)"@ko ;
+    kno:component kno:KN2017-0148-c2 ;
+    kno:instantiates kno:S000217 ;
+    kno:frequency kno:KN2017-0148-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%A0%A4%EB%AC%B4> ;
+    kno:indexForm "세젤무"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "한+고+고" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(世젤무)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0148-c3 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:year "2017"^^xsd:gYear ;
+    skos:definition "‘세상에서 제일 무서운 사람’을 줄여 이르는 말."@ko ;
+    kno:example "¶OOO이 “어머님을 {세젤무라고} 한다.”라고 말하자 OOO의 어머니는 조심스럽게 “세상에서 제일 무서운 사람?”이라며 답을 말했다."@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:component kno:KN2017-0148-c1 ;
+    rdfs:label "세젤무"@ko .
+kno:KN2017-0148-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:fullForm "젤"@ko ;
+    kno:surfaceForm "젤"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000232 ;
+    rdfs:label "젤"@ko .
+kno:KN2017-0148-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "무"@ko ;
+    kno:fullForm "무섭다"@ko ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F003522 ;
+    rdfs:label "무(섭다)"@ko .
+kno:KN2017-0148-c1 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "세(상)(世)"@ko ;
+    kno:fullForm "세상"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000283 ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "세"@ko ;
+    a kno:Component .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0012 kno:origin "(空間痕)" ;
+    skos:definition "범죄 현장에 남겨진 혈흔 중에서 특정 물체의 모양만큼 혈흔이 비어 있는 흔적. 피의자가 혈흔이 남겨진 범죄 현장에서 사건을 은폐하기 위해 중요한 물건을 가지고 도주한 경우, 혈흔이 그 물건의 모양만큼 비어서 남게 되는 흔적을 말한다."@ko ;
+    kno:instantiates kno:S000081 ;
+    kno:component kno:KN2015-0012-c1 ;
+    kno:indexForm "공간흔"@ko ;
+    rdfs:label "공간-흔"@ko ;
+    kno:frequency kno:KN2015-0012-freq-NN-total ;
+    kno:frequency kno:KN2015-0012-freq-NN-2015 ;
+    a kno:Neologism ;
+    kno:component kno:KN2015-0012-c2 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:slotFiller "공간(空間) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B0%84%ED%9D%94> ;
+    kno:example "¶피가 튀거나 뿌려지는 방향에 있던 물체가 막아서는 바람에 벽ㆍ바닥 등, 그 부분만 혈흔이 없는 현상인 ‘{공간흔’의} 중요성에 대해 말하던 OOO이 지친 모습을 보이자 O 분석관이 나섰다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "공간(空間), -흔(痕)"@ko ;
+    kno:languageType "한+한" ;
+    kno:predicate "있다"@ko .
+kno:KN2015-0012-c1 rdfs:label "공간(空間)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000335 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "공간"@ko ;
+    kno:surfaceForm "공간"@ko .
+kno:KN2015-0012-c2 rdfs:label "-흔(痕)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "흔"@ko ;
+    kno:surfaceForm "흔"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000197 .

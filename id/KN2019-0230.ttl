@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0230 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0230 kno:unitType "단어"@ko ;
+    kno:origin "(妊<영>←coming-out)" ;
+    kno:example "¶그는 “육아 휴직도 3개월만 쓰려고 한다.”라며 “출산 후 주요 업무에서 배제되며 결국 회사를 떠나야 했던 선배 사원들을 여럿 봤다. 임신 사실을 알리는 {‘임밍아웃’이} 주저되는 이유.”라고 말했다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1516504> ;
+    kno:slotFiller "임(신)(妊) (1성분)"@ko ;
+    kno:frequency kno:KN2019-0230-freq-NN-2025 ;
+    kno:frequency kno:KN2019-0230-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0230-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0230-freq-NN-2019 ;
+    kno:urimalTargetCode "1516504" ;
+    kno:predicate "밝히다"@ko ;
+    kno:component kno:KN2019-0230-c1 ;
+    kno:instantiates kno:S000118 ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0230-freq-NN-2024 ;
+    rdfs:label "임밍아웃"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "임밍아웃"@ko ;
+    kno:frequency kno:KN2019-0230-freq-NN-2022 ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2019-0230-c2 ;
+    kno:frequency kno:KN2019-0230-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0230-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "임(신)(妊), (커)밍아웃(coming-out)"@ko ;
+    a ontolex:Word ;
+    skos:definition "임신 사실을 공개적으로 밝히는 일. ⇒규범 표기는 미확정이다."@ko .
+kno:KN2019-0230-c1 kno:fullForm "임신"@ko ;
+    kno:surfaceForm "임"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005480 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "임(신)(妊)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0230-c2 kno:formative kno:F000270 ;
+    kno:fullForm "커밍아웃"@ko ;
+    kno:surfaceForm "밍아웃"@ko ;
+    rdfs:label "(커)밍아웃(coming-out)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

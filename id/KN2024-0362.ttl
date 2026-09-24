@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0362 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0362 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0362-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0362-form ;
-    ontolex:sense kno:KN2024-0362-sense .
-
-kno:KN2024-0362-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/002/0002159427> .
-
-kno:KN2024-0362-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0362-freq-nn,
-        kno:KN2024-0362-freq-yt ;
-    ontolex:writtenRep "피드 블록"@ko .
-
-kno:KN2024-0362-freq-nn a frac:CorpusFrequency ;
-    rdf:value 69 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0362-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0362-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0362 skos:definition "난연성 스티로폼을 첨가하여 블록의 형태로 가공한 것으로, 갈색거저리의 애벌레인 밀웜의 먹이."@ko ;
+    kno:componentString "피드(feed), 블록(block)"@ko ;
+    kno:component kno:KN2024-0362-c2 ;
+    kno:instantiates kno:S000902 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0362-freq-NN-2025 ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "피드블록"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%EB%93%9C%20%EB%B8%94%EB%A1%9D> ;
+    kno:example "¶{피드 블록을} 급여한 밀웜은 스티로폼 처리 속도가 45% 정도 빠르고, 밀웜이 거의 죽지 않는다는 장점이 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "피드(feed) (1성분)"@ko ;
+    kno:frequency kno:KN2024-0362-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0362-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>feed block)" ;
+    kno:component kno:KN2024-0362-c1 ;
+    rdfs:label "피드 블록"@ko .
+kno:KN2024-0362-c2 kno:fullForm "블록"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "블록(block)"@ko ;
+    kno:surfaceForm "블록"@ko ;
+    kno:formative kno:F000518 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2024-0362-c1 kno:formative kno:F006870 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "피드"@ko ;
+    a kno:Component ;
+    rdfs:label "피드(feed)"@ko ;
+    kno:surfaceForm "피드"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

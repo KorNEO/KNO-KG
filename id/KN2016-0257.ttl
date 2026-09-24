@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0257 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0257 kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "고_한_한" ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶특히 주말에 몰아서 운동을 하는 ‘{살찐 주말 병정’의} 경우…운동 이전에 충분한 준비 운동과 허벅지 근력을 강화하는 웨이트 트레이닝을 해야 한다."@ko ;
+    kno:frequency kno:KN2016-0257-freq-NN-2015 ;
+    skos:definition "평소에는 운동을 하지 않다가 주말이나 휴일에만 무리하여 운동을 하는 사람을 병정에 비유하여 이르는 말."@ko ;
+    kno:component kno:KN2016-0257-c1 ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%B4%EC%B0%90%20%EC%A3%BC%EB%A7%90%20%EB%B3%91%EC%A0%95> ;
+    rdfs:label "살찐 주말 병정"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0257-c3 ;
+    kno:origin "(살찐週末兵丁)" ;
+    kno:component kno:KN2016-0257-c2 ;
+    kno:instantiates kno:S001441 ;
+    kno:slotFiller "주말(週末)+병정(兵丁) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0257-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "살찐, 주말(週末), 병정(兵丁)"@ko ;
+    kno:indexForm "살찐주말병정"@ko .
+kno:KN2016-0257-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F001442 ;
+    rdfs:label "살찐"@ko ;
+    kno:surfaceForm "살찐"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "살찐"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2016-0257-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "병정"@ko ;
+    a kno:Component ;
+    rdfs:label "병정(兵丁)"@ko ;
+    kno:formative kno:F003861 ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "병정"@ko .
+kno:KN2016-0257-c2 kno:semanticTag kno:usas-T1.3 ;
+    rdfs:label "주말(週末)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주말"@ko ;
+    kno:surfaceForm "주말"@ko ;
+    kno:formative kno:F005791 ;
+    a kno:Component .

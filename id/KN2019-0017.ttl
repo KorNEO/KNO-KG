@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0017 kno:frequency kno:KN2019-0017-freq-NN-2021 ;
+    kno:urimalTargetCode "1459102" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "재화나 서비스를 이용하기 위해 생산 및 유통을 담당하는 공식 홈페이지를 주로 이용하는 사람. 또는 그런 무리. 판매 대행업체보다 공식 홈페이지를 통해 재화나 서비스를 구매하는 사람이 많아지면서 만들어진 말이다."@ko ;
+    kno:frequency kno:KN2019-0017-freq-NN-total ;
+    kno:example "¶OO 호텔이 미국 뉴욕 등 글로벌 호텔 인프라를 기반으로 파격적 혜택을 내걸고 {‘공홈족’의} 마음을 사로잡기 위해 팔을 걷어붙였다."@ko ;
+    a kno:Neologism ;
+    kno:indexForm "공홈족"@ko ;
+    kno:component kno:KN2019-0017-c1 ;
+    kno:slotFiller "공(식)(公)+홈(페이지)(homepage) (2성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1459102> ;
+    kno:frequency kno:KN2019-0017-freq-NN-2022 ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:predicate "이용하다"@ko ;
+    kno:frequency kno:KN2019-0017-freq-NN-2020 ;
+    kno:languageType "(한+영)+한" ;
+    kno:component kno:KN2019-0017-c3 ;
+    kno:origin "(公<영>←homepage族)" ;
+    kno:component kno:KN2019-0017-c2 ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0017-freq-NN-2019 ;
+    kno:instantiates kno:S000001 ;
+    kno:frequency kno:KN2019-0017-freq-NN-2024 ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "공(식)(公), 홈(페이지)(homepage), -족(族)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "공홈-족"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2019-0017-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0017-freq-NN-2025 .
+kno:KN2019-0017-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.4p ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "공(식)(公)"@ko ;
+    kno:surfaceForm "공"@ko ;
+    kno:formative kno:F002336 ;
+    kno:fullForm "공식"@ko .
+kno:KN2019-0017-c3 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2019-0017-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "홈페이지"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002022 ;
+    rdfs:label "홈(페이지)(homepage)"@ko ;
+    kno:surfaceForm "홈"@ko ;
+    kno:truncated "true"^^xsd:boolean .

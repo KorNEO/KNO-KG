@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0104 kno:frequency kno:KN2017-0104-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380448> ;
+    kno:year "2017"^^xsd:gYear ;
+    skos:definition "특정 지자체에서 출산 장려를 위해 아이를 낳은 가정에 지급하는 돈만 받은 후 다른 지역으로 이사 가는 현상. 출산 장려금을 많이 주는 지자체로 주소지를 임시로 옮긴 뒤, 출산 장려금만 받고 다시 돌아가는 일을 이른다."@ko ;
+    kno:example "¶4년째 출산율 1위인 전남 OO군이 {먹튀 출산과} 재정 악화 문제로 골머리를 앓고 있다."@ko ;
+    kno:origin "(먹튀出産)" ;
+    kno:frequency kno:KN2017-0104-freq-NN-total ;
+    rdfs:label "먹튀 출산"@ko ;
+    kno:instantiates kno:S000509 ;
+    kno:componentString "먹튀, 출산(出産)"@ko ;
+    kno:indexForm "먹튀출산"@ko ;
+    kno:predicate "가다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2017-0104-c1 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:urimalTargetCode "1380448" ;
+    kno:languageType "고_한" ;
+    kno:frequency kno:KN2017-0104-freq-NN-2023 ;
+    kno:frequency kno:KN2017-0104-freq-NN-2020 ;
+    kno:slotFiller "출산(出産) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0104-freq-NN-2022 ;
+    kno:component kno:KN2017-0104-c2 ;
+    kno:frequency kno:KN2017-0104-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0104-freq-NN-2021 ;
+    kno:frequency kno:KN2017-0104-freq-NN-2018 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0104-freq-NN-2016 ;
+    kno:pos "「구」"@ko .
+kno:KN2017-0104-c1 a kno:Component ;
+    rdfs:label "먹튀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000746 ;
+    kno:fullForm "먹튀"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "먹튀"@ko .
+kno:KN2017-0104-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000600 ;
+    rdfs:label "출산(出産)"@ko ;
+    kno:fullForm "출산"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "출산"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

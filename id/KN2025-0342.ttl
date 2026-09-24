@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0342 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0342 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0342-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0342-form ;
-    ontolex:sense kno:KN2025-0342-sense .
-
-kno:KN2025-0342-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0005093570> .
-
-kno:KN2025-0342-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0342-freq-nn,
-        kno:KN2025-0342-freq-yt ;
-    ontolex:writtenRep "셰셰 정당"@ko .
-
-kno:KN2025-0342-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0342-freq-yt a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0342-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0342 kno:component kno:KN2025-0342-c2 ;
+    kno:indexForm "셰셰정당"@ko ;
+    kno:slotFiller "셰셰(xièxie) (1성분)"@ko ;
+    kno:component kno:KN2025-0342-c1 ;
+    kno:slotFiller "정당(政黨) (1성분)"@ko ;
+    kno:instantiates kno:S000218 ;
+    a kno:Neologism ;
+    kno:componentString "셰셰(xièxie), 정당(政黨)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%B0%EC%85%B0%20%EC%A0%95%EB%8B%B9> ;
+    kno:instantiates kno:S000627 ;
+    kno:frequency kno:KN2025-0342-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "중_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "셰셰 정당"@ko ;
+    kno:example "(LLM) 대중 외교 노선을 둘러싼 공방이 이어지자 일부에서는 야당을 {셰셰정당이라고} 몰아붙이며 공세 수위를 높였다."@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "(LLM) 특정 정당이 중국에 지나치게 우호적이거나 중국의 입장을 대변한다고 보아 비판적으로 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<중>xièxie[謝謝]政黨)" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0342-freq-NN-2025 .
+kno:KN2025-0342-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "정당"@ko ;
+    kno:surfaceForm "정당"@ko ;
+    a kno:Component ;
+    rdfs:label "정당(政黨)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000231 .
+kno:KN2025-0342-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000372 ;
+    rdfs:label "셰셰(xièxie)"@ko ;
+    kno:surfaceForm "셰셰"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:fullForm "셰셰"@ko .

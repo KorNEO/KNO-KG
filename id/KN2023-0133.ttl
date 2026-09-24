@@ -1,30 +1,61 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0133 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2023-0133-form ;
-    ontolex:sense kno:KN2023-0133-sense .
-
-kno:KN2023-0133-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0133-freq-nn,
-        kno:KN2023-0133-freq-yt ;
-    ontolex:writtenRep "세계^구매자^지수"@ko .
-
-kno:KN2023-0133-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0133-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0133-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0133 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B3%84%EA%B5%AC%EB%A7%A4%EC%9E%90%EC%A7%80%EC%88%98> ;
+    kno:component kno:KN2023-0133-c1 ;
+    kno:frequency kno:KN2023-0133-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    rdfs:label "세계^구매자^지수"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(世界購買者指數)" ;
+    kno:componentString "세계(世界), 구매자(購買者), 지수(指數)"@ko ;
+    kno:instantiates kno:S001453 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0133-c3 ;
+    kno:component kno:KN2023-0133-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2023-0133-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "구매자(購買者) (1성분)"@ko ;
+    kno:indexForm "세계구매자지수"@ko ;
+    skos:definition "세계 각국 제조업 분야의 구매 활동을 평가하기 위한 지수. 주로 기업의 구매 관리자를 대상으로 한 설문 조사를 통해 조사되며, 일반적으로 이 지수가 높다는 것은 경기 확장을 의미한다."@ko ;
+    kno:example "¶이번 해 조사된 {세계 구매자 지수에} 따르면, 세계 제조업 시장은 여전히 침체 국면을 벗어나지 못하고 있다."@ko .
+kno:KN2023-0133-c1 a kno:Component ;
+    kno:fullForm "세계"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세계"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:formative kno:F000219 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "세계(世界)"@ko .
+kno:KN2023-0133-c3 rdfs:label "지수(指數)"@ko ;
+    kno:surfaceForm "지수"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000035 ;
+    kno:fullForm "지수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.1 .
+kno:KN2023-0133-c2 rdfs:label "구매자(購買者)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "구매자"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "구매자"@ko ;
+    kno:formative kno:F002449 .

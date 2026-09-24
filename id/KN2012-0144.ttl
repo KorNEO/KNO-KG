@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0144 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0144 kno:indexForm "발습력"@ko ;
+    kno:example "¶OO은 우유 섬유에 실크와 모달을 합성해 부드럽고 {발습력이} 뛰어난데다 물세탁까지 가능한 신제품 OO을 출시했다."@ko ;
+    kno:origin "(發濕力)" ;
+    kno:frequency kno:KN2012-0144-freq-NN-total ;
+    a kno:Neologism ;
+    skos:definition "습기를 밖으로 내보내는 힘."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%9C%EC%8A%B5%EB%A0%A5> ;
+    kno:frequency kno:KN2012-0144-freq-NN-2016 ;
+    kno:predicate "내보내다"@ko ;
+    kno:slotFiller "발습(發濕) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "발습-력"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0144-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "발습(發濕), -력(力)"@ko ;
+    kno:formation kno:W02 ;
+    kno:instantiates kno:S000006 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2012-0144-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear .
+kno:KN2012-0144-c1 kno:fullForm "발습"@ko ;
+    kno:formative kno:F003702 ;
+    rdfs:label "발습(發濕)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "발습"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0144-c2 kno:fullForm "력"@ko ;
+    kno:surfaceForm "력"@ko ;
+    kno:formative kno:F000010 ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-력(力)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

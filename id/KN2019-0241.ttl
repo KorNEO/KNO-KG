@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0241 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0241 kno:instantiates kno:S000425 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0241-freq-NN-total ;
+    kno:frequency kno:KN2019-0241-freq-NN-2019 ;
+    kno:componentString "제트(jet), 주사(注射)"@ko ;
+    kno:slotFiller "제트(jet) (1성분)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0241-c2 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "제트주사"@ko ;
+    kno:example "¶금속 바늘 대신 주사액을 초속 200m 속도로 뿌려 흡수되도록 하는 분사형도 최근 미국에서 개발돼 에프디에이(FDA) 승인을 받았다. 초고속으로 분사돼 통증을 느낄 수 없는 것이 특징으로 일명 {‘제트 주사’로} 불린다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%9C%ED%8A%B8%EC%A3%BC%EC%82%AC> ;
+    kno:frequency kno:KN2019-0241-freq-NN-2020 ;
+    skos:definition "주삿바늘을 쓰지 않고 분사 주사기를 이용하여 액체 약물을 고압으로 미세하게 분사시켜 피부밑에 주입하는 일. =분사 주사."@ko ;
+    kno:frequency kno:KN2019-0241-freq-NN-2018 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2019-0241-c1 ;
+    kno:origin "(<영>jet注射)" ;
+    rdfs:label "제트^주사"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^한" ;
+    kno:predicate "주입하다"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2019-0241-c2 kno:fullForm "주사"@ko ;
+    kno:surfaceForm "주사"@ko ;
+    rdfs:label "주사(注射)"@ko ;
+    kno:formative kno:F000302 ;
+    kno:semanticTag kno:usas-B3 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0241-c1 kno:fullForm "제트"@ko ;
+    kno:formative kno:F001761 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "제트(jet)"@ko ;
+    kno:surfaceForm "제트"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M5 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .

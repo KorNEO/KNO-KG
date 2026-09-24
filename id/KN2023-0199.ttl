@@ -1,36 +1,69 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0199 a ontolex:Word ;
-    frac:attestation kno:KN2023-0199-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0199-form ;
-    ontolex:sense kno:KN2023-0199-sense .
-
-kno:KN2023-0199-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003439358> .
-
-kno:KN2023-0199-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0199-freq-nn,
-        kno:KN2023-0199-freq-yt ;
-    ontolex:writtenRep "예테크-족"@ko .
-
-kno:KN2023-0199-freq-nn a frac:CorpusFrequency ;
-    rdf:value 298 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0199-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0199-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0199 kno:frequency kno:KN2023-0199-freq-NN-2023 ;
+    kno:instantiates kno:S000116 ;
+    kno:frequency kno:KN2023-0199-freq-NN-2024 ;
+    kno:component kno:KN2023-0199-c2 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001568 ;
+    kno:origin "(預<영>tech族)" ;
+    kno:example "¶하루가 다르게 치솟는 시중 금리로 인해 {예테크족의} 고민 또한 깊어지고 있다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%88%ED%85%8C%ED%81%AC%EC%A1%B1> ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0199-freq-NN-2025 ;
+    rdfs:label "예테크-족"@ko ;
+    skos:definition "예ㆍ적금 상품의 이자를 이용하여 재테크를 하는 사람. 또는 그런 무리. =예금테크족."@ko ;
+    kno:languageType "(한+영)+한" ;
+    kno:frequency kno:KN2023-0199-freq-NN-2022 ;
+    kno:component kno:KN2023-0199-c3 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2023-0199-c1 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0199-freq-NN-total ;
+    kno:slotFiller "예(금)(預金) (1성분)"@ko ;
+    kno:indexForm "예테크족"@ko ;
+    kno:componentString "예(금)(預金), (재)테크(財tech), -족(族)"@ko ;
+    kno:slotFiller "(재)테크(財tech)+-족(族) (2성분)"@ko .
+kno:KN2023-0199-c2 rdfs:label "(재)테크(財tech)"@ko ;
+    kno:formative kno:F000065 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "테크"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "재테크"@ko ;
+    a kno:Component .
+kno:KN2023-0199-c3 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2023-0199-c1 a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "예(금)(預金)"@ko ;
+    kno:formative kno:F001619 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "예금"@ko ;
+    kno:surfaceForm "예"@ko .

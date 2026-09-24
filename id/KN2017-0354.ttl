@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0354 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0354 kno:registration "우리말샘"@ko ;
+    rdfs:label "혼골-족"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0354-freq-NN-2016 ;
+    kno:urimalTargetCode "1380644" ;
+    kno:frequency kno:KN2017-0354-freq-NN-total ;
+    kno:indexForm "혼골족"@ko ;
+    kno:frequency kno:KN2017-0354-freq-NN-2018 ;
+    kno:component kno:KN2017-0354-c2 ;
+    kno:languageType "(고+영)+한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380644> ;
+    skos:definition "혼자 골프를 치는 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2017-0354-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0354-freq-NN-2020 ;
+    kno:frequency kno:KN2017-0354-freq-NN-2021 ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2017-0354-c1 ;
+    kno:origin "(혼<영>←golf族)" ;
+    kno:componentString "혼(자), 골(프)(golf), -족(族)"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:component kno:KN2017-0354-c3 ;
+    kno:instantiates kno:S000029 ;
+    kno:predicate "치다"@ko ;
+    kno:frequency kno:KN2017-0354-freq-NN-2019 ;
+    a ontolex:Word ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:example "¶마침 {혼골족을} 위한 골프 대회가 열린다고 해서 O 씨는 바로 참가 신청서를 냈다."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:slotFiller "골(프)(golf) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0354-freq-NN-2017 .
+kno:KN2017-0354-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000457 ;
+    kno:fullForm "골프"@ko ;
+    kno:surfaceForm "골"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "골(프)(golf)"@ko ;
+    kno:semanticTag kno:usas-K5.1 .
+kno:KN2017-0354-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "혼(자)"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0354-c3 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 .

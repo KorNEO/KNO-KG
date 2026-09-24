@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0383 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0383 a ontolex:Word ;
-    frac:attestation kno:KN2025-0383-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0383-form ;
-    ontolex:sense kno:KN2025-0383-sense .
-
-kno:KN2025-0383-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/382/0001221370> .
-
-kno:KN2025-0383-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0383-freq-nn,
-        kno:KN2025-0383-freq-yt ;
-    ontolex:writtenRep "쓸빠녀"@ko .
-
-kno:KN2025-0383-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0383-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0383-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0383 kno:componentString "쓸(개), 빠(지다), -녀(女)"@ko ;
+    skos:definition "(LLM) ‘쓸개 빠진 여자’를 줄여 이르는 말."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000909 ;
+    kno:languageType "고+고+한" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 친구들은 그가 연애만 시작하면 뭐든 다 맞춰 준다며 {쓸빠녀라고} 놀렸다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%93%B8%EB%B9%A0%EB%85%80> ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0383-c3 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2025-0383-c1 ;
+    kno:frequency kno:KN2025-0383-freq-NN-total ;
+    rdfs:label "쓸빠녀"@ko ;
+    kno:slotFiller "쓸(개) (1성분)"@ko ;
+    kno:indexForm "쓸빠녀"@ko ;
+    kno:component kno:KN2025-0383-c2 ;
+    a ontolex:Word ;
+    kno:origin "(쓸빠女)" ;
+    kno:frequency kno:KN2025-0383-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0383-c3 kno:formative kno:F000004 ;
+    kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-녀(女)"@ko .
+kno:KN2025-0383-c1 a kno:Component ;
+    kno:surfaceForm "쓸"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "쓸개"@ko ;
+    rdfs:label "쓸(개)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F004780 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0383-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000364 ;
+    rdfs:label "빠(지다)"@ko ;
+    kno:surfaceForm "빠"@ko ;
+    kno:fullForm "빠지다"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

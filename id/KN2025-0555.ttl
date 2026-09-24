@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0555 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0555 a ontolex:Word ;
-    frac:attestation kno:KN2025-0555-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0555-form ;
-    ontolex:sense kno:KN2025-0555-sense .
-
-kno:KN2025-0555-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002494088> .
-
-kno:KN2025-0555-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0555-freq-nn,
-        kno:KN2025-0555-freq-yt ;
-    ontolex:writtenRep "채포자"@ko .
-
-kno:KN2025-0555-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0555-freq-yt a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0555-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0555 kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    skos:definition "(LLM) ‘채식을 포기한 사람’을 줄여 이르는 말."@ko ;
+    kno:componentString "채(식)(菜食), 포(기)(抛棄), -자(者)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "채포자"@ko ;
+    kno:frequency kno:KN2025-0555-freq-NN-2025 ;
+    kno:slotFiller "채(식)(菜食) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0555-c3 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0555-freq-NN-total ;
+    kno:instantiates kno:S001121 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B1%84%ED%8F%AC%EC%9E%90> ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0555-c1 ;
+    kno:indexForm "채포자"@ko ;
+    kno:formation kno:W06 ;
+    kno:origin "(菜抛者)" ;
+    kno:example "(LLM) 회식이 잦아지면서 채식을 이어 가기 어렵다며 스스로 {채포자가} 됐다고 말했다."@ko ;
+    kno:component kno:KN2025-0555-c2 ;
+    kno:languageType "한+한" .
+kno:KN2025-0555-c3 kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko .
+kno:KN2025-0555-c1 kno:fullForm "채식"@ko ;
+    a kno:Component ;
+    rdfs:label "채(식)(菜食)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "채"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F006015 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0555-c2 rdfs:label "포(기)(抛棄)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "포기"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000998 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "포"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 .

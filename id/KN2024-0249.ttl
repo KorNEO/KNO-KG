@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0249 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0249-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0249-form ;
-    ontolex:sense kno:KN2024-0249-sense .
-
-kno:KN2024-0249-att-nn a frac:Attestation ;
-    dcterms:date "2021-09-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/609/0000489709> .
-
-kno:KN2024-0249-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0249-freq-nn,
-        kno:KN2024-0249-freq-yt ;
-    ontolex:writtenRep "자퇴 각"@ko .
-
-kno:KN2024-0249-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0249-freq-yt a frac:CorpusFrequency ;
-    rdf:value 135 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0249-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0249 a kno:Neologism ;
+    kno:component kno:KN2024-0249-c1 ;
+    kno:indexForm "자퇴각"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0249-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%ED%87%B4%20%EA%B0%81> ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2024-0249-freq-NN-2024 ;
+    kno:example "¶새벽까지 과제를 했지만 제출 직전에 파일이 날아가자, 그의 머릿속에는 {자퇴 각이라는} 말밖에 떠오르지 않았다."@ko ;
+    skos:definition "스스로 학교를 그만두고 싶을 만한 상황이나 일."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "자퇴 각"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "자퇴(自退), 각(角)"@ko ;
+    kno:component kno:KN2024-0249-c2 ;
+    kno:origin "(自退角)" .
+kno:KN2024-0249-c1 rdfs:label "자퇴(自退)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "자퇴"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005533 ;
+    kno:fullForm "자퇴"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0249-c2 kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "각"@ko ;
+    kno:formative kno:F000124 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "각(角)"@ko ;
+    a kno:Component ;
+    kno:fullForm "각"@ko ;
+    kno:semanticTag kno:usas-O4.4 .

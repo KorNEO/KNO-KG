@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0180 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0180 kno:formation kno:W06 ;
+    kno:component kno:KN2014-0180-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368777> ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1368777" ;
+    kno:instantiates kno:S000180 ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶제가 사는 아파트 1층 {얼집에서} 원아를 모집한다는 전단지를 봤습니다."@ko ;
+    rdfs:label "얼집"@ko ;
+    kno:component kno:KN2014-0180-c2 ;
+    a ontolex:Word ;
+    kno:slotFiller "얼(←어린이) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    skos:definition "‘어린이집’의 준말."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:componentString "얼(←어린이), 집"@ko ;
+    kno:indexForm "얼집"@ko ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2014-0180-c1 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004969 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "얼"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    rdfs:label "얼(←어린이)"@ko ;
+    kno:surfaceForm "얼"@ko .
+kno:KN2014-0180-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "집"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "집"@ko ;
+    kno:formative kno:F000064 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "집"@ko .

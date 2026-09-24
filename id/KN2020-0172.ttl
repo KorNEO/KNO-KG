@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0172 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0172 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0172-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0172-form ;
-    ontolex:sense kno:KN2020-0172-sense .
-
-kno:KN2020-0172-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0009636542> .
-
-kno:KN2020-0172-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0172-freq-nn,
-        kno:KN2020-0172-freq-yt ;
-    ontolex:writtenRep "소부장^특별법"@ko .
-
-kno:KN2020-0172-freq-nn a frac:CorpusFrequency ;
-    rdf:value 670 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0172-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0172-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0172 kno:frequency kno:KN2020-0172-freq-NN-2021 ;
+    kno:example "¶{소부장 특별법이} 시행되면서 정책 범위가 소재 및 부품에서 소재ㆍ부품ㆍ장비까지 확장되었다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0172-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0172-freq-NN-total ;
+    rdfs:label "소부장^특별법"@ko ;
+    kno:component kno:KN2020-0172-c2 ;
+    kno:frequency kno:KN2020-0172-freq-NN-2024 ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(素部裝特別法)" ;
+    kno:unitType "구"@ko ;
+    kno:componentString "소부장(素部裝), 특별법(特別法)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0172-freq-NN-2025 ;
+    kno:indexForm "소부장특별법"@ko ;
+    kno:frequency kno:KN2020-0172-freq-NN-2023 ;
+    kno:slotFiller "특별법(特別法) (1성분)"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2020-0172-freq-NN-2020 ;
+    kno:component kno:KN2020-0172-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:urimalTargetCode "1456042" ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "소부장(素部裝) (1성분)"@ko ;
+    kno:instantiates kno:S000027 ;
+    skos:definition "소재ㆍ부품ㆍ장비와 관련한 산업의 대외 의존도를 낮추고 경쟁력을 강화하기 위해 제정한 법률. 2019년 7월부터 일본 정부가 반도체 생산에 필수적인 품목들을 한국으로 수출하는 데에 규제를 강화하였고, 이에 대응하기 위해 한국 정부에서 시행하였다. 2001년 제정된 ‘소재ㆍ부품 특별법’을 전면 개편하여 2019년 9월 국회에 발의되고 2020년 4월에 시행되었다. 정식 명칭은 ‘소재ㆍ부품ㆍ장비 산업 경쟁력 강화를 위한 특별 조치법’이다. =소재ㆍ부품ㆍ장비 산업 특별법."@ko ;
+    kno:instantiates kno:S001465 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1456042> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0172-freq-NN-2022 .
+kno:KN2020-0172-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:surfaceForm "특별법"@ko ;
+    kno:fullForm "특별법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0172-c1 kno:surfaceForm "소부장"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:fullForm "소부장"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    rdfs:label "소부장(素部裝)"@ko ;
+    kno:formative kno:F001484 .

@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0132 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0132 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0132-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0132-form ;
-    ontolex:sense kno:KN2025-0132-sense .
-
-kno:KN2025-0132-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005611904> .
-
-kno:KN2025-0132-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0132-freq-nn,
-        kno:KN2025-0132-freq-yt ;
-    ontolex:writtenRep "노멀 휴먼"@ko .
-
-kno:KN2025-0132-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0132-freq-yt a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0132-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0132 kno:slotFiller "휴먼(human) (1성분)"@ko ;
+    kno:instantiates kno:S001295 ;
+    kno:frequency kno:KN2025-0132-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0132-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0132-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EB%A9%80%20%ED%9C%B4%EB%A8%BC> ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "노멀 휴먼"@ko ;
+    kno:componentString "노멀(normal), 휴먼(human)"@ko ;
+    skos:definition "(LLM) 인공 지능(AI) 같은 자동화 도구의 도움을 거의 받지 않고, 사람의 판단과 노동으로만 과업을 수행하는 사람을 자조적ㆍ대조적으로 이르는 말."@ko ;
+    kno:component kno:KN2025-0132-c2 ;
+    kno:example "(LLM) 회의록을 다들 AI로 요약해 공유하는데, 나는 끝까지 직접 정리해서 올리니 {노멀휴먼으로} 남은 기분이 들었다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "노멀휴먼"@ko .
+kno:KN2025-0132-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "노멀"@ko ;
+    kno:surfaceForm "노멀"@ko ;
+    kno:semanticTag kno:usas-A6.2p ;
+    rdfs:label "노멀(normal)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000341 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0132-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "휴먼"@ko ;
+    kno:formative kno:F000443 ;
+    a kno:Component ;
+    rdfs:label "휴먼(human)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "휴먼"@ko ;
+    kno:role "슬롯 채움"@ko .

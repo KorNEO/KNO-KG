@@ -1,0 +1,76 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0032 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0032 kno:predicate "빠지다"@ko ;
+    kno:component kno:KN2014-0032-c4 ;
+    kno:frequency kno:KN2014-0032-freq-NN-2016 ;
+    a ontolex:Word ;
+    rdfs:label "금사빠-녀"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:indexForm "금사빠녀"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:origin "(今사빠女)" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0032-freq-NN-2014 ;
+    skos:definition "금방 사랑에 빠지는 여자."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000909 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358088> ;
+    kno:component kno:KN2014-0032-c2 ;
+    kno:frequency kno:KN2014-0032-freq-NN-2015 ;
+    a kno:Neologism ;
+    kno:example "¶이 날 방송을 본 시청자들은…“OOO, {금사빠녀} 등극.”, “OOO, 새침한 모습 너무 귀여워.” 등의 반응을 보였다."@ko ;
+    kno:component kno:KN2014-0032-c1 ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2014-0032-c3 ;
+    kno:componentString "금(방)(今), 사(랑), 빠(지다), -녀(女)"@ko ;
+    kno:slotFiller "금(방)(今)+사(랑) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1358088" ;
+    kno:languageType "(한+고)+한" ;
+    kno:frequency kno:KN2014-0032-freq-NN-total .
+kno:KN2014-0032-c4 kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000004 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2.1 .
+kno:KN2014-0032-c2 kno:semanticTag kno:usas-E2 ;
+    kno:fullForm "사랑"@ko ;
+    kno:surfaceForm "사"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004141 ;
+    a kno:Component ;
+    rdfs:label "사(랑)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2014-0032-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "금(방)(今)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F002557 ;
+    kno:fullForm "금방"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "금"@ko ;
+    kno:semanticTag kno:usas-T1.3m .
+kno:KN2014-0032-c3 rdfs:label "빠(지다)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "빠지다"@ko ;
+    kno:formative kno:F000364 ;
+    kno:surfaceForm "빠"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 .

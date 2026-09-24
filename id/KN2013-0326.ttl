@@ -1,0 +1,69 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0326 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0326 kno:instantiates kno:S000001 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:componentString "월(세)(月), 천(만)(千), -족(族)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0326-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:slotFiller "월(세)(月)+천(만)(千) (2성분)"@ko ;
+    kno:component kno:KN2013-0326-c2 ;
+    kno:example "¶이처럼 실제 ‘{월천족’의} 대다수는 시이오(CEO)나 외국계 기업의 임원, 미군 부대 관계자, 대사관 직원, 소득이 많은 금융업 종사자 등이다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2013-0326-freq-NN-2013 ;
+    kno:languageType "한+한+한" ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:label "월천족"@ko ;
+    kno:component kno:KN2013-0326-c3 ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373299> ;
+    kno:frequency kno:KN2013-0326-freq-NN-2012 ;
+    kno:frequency kno:KN2013-0326-freq-NN-2016 ;
+    kno:component kno:KN2013-0326-c1 ;
+    a ontolex:Word ;
+    kno:origin "(月千族)" ;
+    kno:unitType "단어"@ko ;
+    skos:definition "월세로 천만 원을 내고 사는 사람. 또는 그런 무리. 여유 자금이 있어 고급 주택이나 빌라에서 살고자 하지만 매매 과정이 번거롭고 관리하기가 힘든 집을 소유하는 대신에 비싼 임대료를 지불하더라도 짧은 기간 동안 살고 이사하기에 편리한 월셋집을 선호하는 사람들을 가리킨다."@ko ;
+    kno:frequency kno:KN2013-0326-freq-NN-2015 ;
+    kno:urimalTargetCode "1373299" ;
+    kno:frequency kno:KN2013-0326-freq-NN-total ;
+    kno:predicate "사다"@ko ;
+    kno:indexForm "월천족"@ko .
+kno:KN2013-0326-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006039 ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "천(만)(千)"@ko ;
+    kno:surfaceForm "천"@ko ;
+    kno:fullForm "천만"@ko .
+kno:KN2013-0326-c3 kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2013-0326-c1 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "월"@ko ;
+    kno:formative kno:F005259 ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "월(세)(月)"@ko ;
+    kno:fullForm "월세"@ko .

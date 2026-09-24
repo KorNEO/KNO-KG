@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0116 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0116-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0116-form ;
-    ontolex:sense kno:KN2023-0116-sense .
-
-kno:KN2023-0116-att-nn a frac:Attestation ;
-    dcterms:date "2023-05-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003223964> .
-
-kno:KN2023-0116-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0116-freq-nn,
-        kno:KN2023-0116-freq-yt ;
-    ontolex:writtenRep "불법^일임^투자"@ko .
-
-kno:KN2023-0116-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0116-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0116-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0116 kno:indexForm "불법일임투자"@ko ;
+    kno:slotFiller "일임(一任)+투자(投資) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0116-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0116-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0116-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%88%EB%B2%95%EC%9D%BC%EC%9E%84%ED%88%AC%EC%9E%90> ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0116-freq-NN-total ;
+    kno:example "¶이들이 {불법 일임 투자에} 참여했다는 이유만으로 모두가 주가 조작을 인지하고 있던 공범이라고 간주하기는 어려워 보인다."@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:instantiates kno:S000679 ;
+    kno:origin "(不法一任投資)" ;
+    skos:definition "법률에서 금하고 있는 방식이나 내용으로, 자산의 운용에 대한 권한이나 투자 자금을 자산 운용 회사, 투자 자문 회사, 증권 회사 등에 전부 맡기기로 하는 투자."@ko ;
+    rdfs:label "불법^일임^투자"@ko ;
+    kno:component kno:KN2023-0116-c2 ;
+    kno:componentString "불법(不法), 일임(一任), 투자(投資)"@ko ;
+    kno:languageType "한^한^한" .
+kno:KN2023-0116-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000517 ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "불법"@ko ;
+    kno:surfaceForm "불법"@ko ;
+    rdfs:label "불법(不法)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2023-0116-c3 kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "투자"@ko ;
+    rdfs:label "투자(投資)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000427 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "투자"@ko .
+kno:KN2023-0116-c2 kno:semanticTag kno:usas-S7.1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "일임(一任)"@ko ;
+    kno:formative kno:F005474 ;
+    kno:fullForm "일임"@ko ;
+    kno:surfaceForm "일임"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0019 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0019 a ontolex:Word ;
-    frac:attestation kno:KN2025-0019-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0019-form ;
-    ontolex:sense kno:KN2025-0019-sense .
-
-kno:KN2025-0019-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/117/0003964034> .
-
-kno:KN2025-0019-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0019-freq-nn,
-        kno:KN2025-0019-freq-yt ;
-    ontolex:writtenRep "갓반중"@ko .
-
-kno:KN2025-0019-freq-nn a frac:CorpusFrequency ;
-    rdf:value 40 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0019-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0019-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0019 kno:frequency kno:KN2025-0019-freq-NN-2025 ;
+    kno:example "(LLM) 학부모들 사이에서는 내신과 진학 실적이 좋다는 소문이 나면 그 학교를 {갓반중으로} 부르며 전학을 고민하기도 한다."@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%93%EB%B0%98%EC%A4%91> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0019-c2 ;
+    kno:slotFiller "(일)반중 (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0019-freq-NN-total ;
+    kno:componentString "갓(god), (일)반중"@ko ;
+    a kno:Neologism ;
+    rdfs:label "갓반중"@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "(LLM) 일반 중학교 가운데서도 상위권 학생 비율이 높고 특목고ㆍ자사고 등 상급학교 진학 실적이 뛰어나다고 평가되는 학교를 이르는 말."@ko ;
+    kno:instantiates kno:S000055 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0019-c1 ;
+    a ontolex:Word ;
+    kno:indexForm "갓반중"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0019-c2 kno:surfaceForm "반중"@ko ;
+    kno:formative kno:F003690 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(일)반중"@ko ;
+    kno:fullForm "일반중"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2025-0019-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S9p ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "갓"@ko ;
+    kno:surfaceForm "갓"@ko ;
+    rdfs:label "갓(god)"@ko ;
+    kno:formative kno:F000094 .

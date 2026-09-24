@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0145 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0145 kno:componentString "서(점)(書), (바)캉스(vacance)"@ko ;
+    kno:frequency kno:KN2019-0145-freq-NN-2018 ;
+    kno:indexForm "서캉스"@ko ;
+    skos:definition "서점에서 책을 읽으며 보내는 휴가."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0145-c2 ;
+    kno:origin "(書<프>←vacance)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:slotFiller "서(점)(書) (1성분)"@ko ;
+    kno:predicate "보내다"@ko ;
+    kno:component kno:KN2019-0145-c1 ;
+    kno:languageType "한+프" ;
+    kno:frequency kno:KN2019-0145-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0145-freq-NN-2019 ;
+    rdfs:label "서캉스"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000014 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EC%BA%89%EC%8A%A4> ;
+    kno:example "¶올여름엔 책 읽으면서 ‘{서캉스}’ 즐기시는 건 어떨까요?"@ko .
+kno:KN2019-0145-c2 rdfs:label "(바)캉스(vacance)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000017 ;
+    kno:surfaceForm "캉스"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:fullForm "바캉스"@ko .
+kno:KN2019-0145-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004277 ;
+    kno:fullForm "서점"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    rdfs:label "서(점)(書)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "서"@ko ;
+    a kno:Component .

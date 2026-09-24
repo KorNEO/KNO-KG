@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0551 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0551 a ontolex:Word ;
-    frac:attestation kno:KN2025-0551-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0551-form ;
-    ontolex:sense kno:KN2025-0551-sense .
-
-kno:KN2025-0551-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003648361> .
-
-kno:KN2025-0551-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0551-freq-nn,
-        kno:KN2025-0551-freq-yt ;
-    ontolex:writtenRep "차포자"@ko .
-
-kno:KN2025-0551-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0551-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0551-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0551 kno:indexForm "차포자"@ko ;
+    kno:componentString "(자동)차(自動車), 포(기)(抛棄), -자(者)"@ko ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2025-0551-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%ED%8F%AC%EC%9E%90> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 비용 부담이나 생활 방식 등의 이유로 자가용을 구매하거나 소유하지 않기로 한 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2025-0551-freq-NN-2025 ;
+    kno:instantiates kno:S001121 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0551-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0551-c3 ;
+    rdfs:label "차포자"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0551-c2 ;
+    kno:formation kno:W06 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 유지비가 부담돼 {차포자가} 된 뒤로는 출퇴근은 카풀로 하고, 주말에는 필요할 때만 차량 공유 서비스를 이용한다."@ko ;
+    kno:origin "(車抛者)" ;
+    kno:slotFiller "(자동)차(自動車) (1성분)"@ko ;
+    a ontolex:Word .
+kno:KN2025-0551-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005979 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "차"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    rdfs:label "(자동)차(自動車)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "자동차"@ko .
+kno:KN2025-0551-c3 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0551-c2 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:surfaceForm "포"@ko ;
+    rdfs:label "포(기)(抛棄)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000998 ;
+    kno:fullForm "포기"@ko ;
+    kno:position "2"^^xsd:integer .

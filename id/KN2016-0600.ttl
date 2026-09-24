@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0600 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0600 kno:indexForm "혼텔"@ko ;
+    skos:definition "혼자 호텔에 감. 또는 그렇게 가는 호텔."@ko ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "혼(자) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0600-c1 ;
+    kno:example "¶{혼텔} 경험이 있는 응답자 가운데 6개월~1년에 한 번꼴로 {혼텔을} 한다는 답변이 남성과 여성 모두 가장 많았다."@ko ;
+    kno:component kno:KN2016-0600-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "(호)텔(hotel) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "고+영" ;
+    rdfs:label "혼텔"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373035> ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000769 ;
+    kno:origin "(혼<영>←hotel)" ;
+    kno:componentString "혼(자), (호)텔(hotel)"@ko ;
+    kno:urimalTargetCode "1373035" ;
+    kno:instantiates kno:S000017 .
+kno:KN2016-0600-c1 kno:fullForm "혼자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "혼(자)"@ko ;
+    kno:surfaceForm "혼"@ko .
+kno:KN2016-0600-c2 kno:surfaceForm "텔"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F000425 ;
+    kno:fullForm "호텔"@ko ;
+    rdfs:label "(호)텔(hotel)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

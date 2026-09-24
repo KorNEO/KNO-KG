@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0292 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0292 kno:frequency kno:KN2018-0292-freq-NN-total ;
+    kno:urimalTargetCode "1384958" ;
+    kno:frequency kno:KN2018-0292-freq-NN-2018 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384958> ;
+    kno:component kno:KN2018-0292-c2 ;
+    skos:definition "여러 방면에 걸쳐 잡다한 지식이나 정보를 다양하게 많이 알고 있는 사람. ‘잡다한 지식’을 뜻하는 ‘잡학(雜學)’과 ‘백과사전’을 뜻하는 ‘인사이클로피디아(encyclopedia)’를 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2018-0292-freq-NN-2019 ;
+    kno:origin "(雜學<영>←encyclopedia)" ;
+    kno:example "¶먼저 OO 내 ‘{잡학피디아’인} OOO는 독서와 인터넷 기사를 찾아보며 지식을 습득한다고 말해 탄성을 자아냈으며,…파충류 카페에서 많은 질문을 하는 모습을 보여 주며 몸소 ‘질문형 인간’임을 검증하기도 했다."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한+영" ;
+    kno:componentString "잡학(雜學), (인사이클로)피디아(encyclopedia)"@ko ;
+    kno:indexForm "잡학피디아"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0292-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    rdfs:label "잡학피디아"@ko .
+kno:KN2018-0292-c2 kno:surfaceForm "피디아"@ko ;
+    rdfs:label "(인사이클로)피디아(encyclopedia)"@ko ;
+    kno:fullForm "인사이클로피디아"@ko ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:formative kno:F006871 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0292-c1 kno:semanticTag kno:usas-X2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "잡학"@ko ;
+    kno:formative kno:F005555 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "잡학"@ko ;
+    rdfs:label "잡학(雜學)"@ko ;
+    kno:position "1"^^xsd:integer .

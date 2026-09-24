@@ -1,0 +1,59 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0296 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0296 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "트릭포토월"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "트릭(trick), 포토(photo), 월(wall)"@ko ;
+    kno:frequency kno:KN2017-0296-freq-NN-2016 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:component kno:KN2017-0296-c2 ;
+    kno:component kno:KN2017-0296-c1 ;
+    kno:frequency kno:KN2017-0296-freq-NN-total ;
+    rdfs:label "트릭 포토 월"@ko ;
+    skos:definition "인공 암벽 등반 시설물에 자연물의 배경을 입혀 만든 벽. 실제 자연 속의 암벽을 등반하는 느낌이 들도록 만드는 것이 핵심이다."@ko ;
+    kno:languageType "영_영_영" ;
+    kno:component kno:KN2017-0296-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%A6%AD%20%ED%8F%AC%ED%86%A0%20%EC%9B%94> ;
+    kno:origin "(<영>trick photo wall)" ;
+    kno:example "¶현장 소비자 이벤트로는 실제 자연 속 암벽에 도전하는 듯한 착각을 일으키는 {트릭 포토 월} 이벤트와 아마추어 포토그래퍼가 참여한 사진 공모전 등이 진행되었다."@ko .
+kno:KN2017-0296-c2 rdfs:label "포토(photo)"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "포토"@ko ;
+    kno:surfaceForm "포토"@ko ;
+    kno:formative kno:F001000 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0296-c1 kno:semanticTag kno:usas-A5.4m ;
+    kno:fullForm "트릭"@ko ;
+    kno:surfaceForm "트릭"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006565 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "트릭(trick)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2017-0296-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "월"@ko ;
+    rdfs:label "월(wall)"@ko ;
+    kno:formative kno:F005257 ;
+    kno:surfaceForm "월"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .

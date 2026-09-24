@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0490 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0490 kno:frequency kno:KN2012-0490-freq-NN-2021 ;
+    kno:component kno:KN2012-0490-c1 ;
+    kno:frequency kno:KN2012-0490-freq-NN-total ;
+    rdfs:label "환경템"@ko ;
+    kno:frequency kno:KN2012-0490-freq-NN-2023 ;
+    kno:languageType "한+영" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    kno:slotFiller "환경(環境) (1성분)"@ko ;
+    kno:indexForm "환경템"@ko ;
+    kno:origin "(環境←item)" ;
+    kno:formation kno:W05 ;
+    kno:componentString "환경(環境), (아이)템(item)"@ko ;
+    kno:component kno:KN2012-0490-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EA%B2%BD%ED%85%9C> ;
+    kno:example "¶무점포 아이템 중 {환경템은} 2030 세대 관심이 높은 아이템이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "환경과 관련된 소재."@ko ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2012-0490-freq-NN-2022 .
+kno:KN2012-0490-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W5 ;
+    kno:formative kno:F002029 ;
+    rdfs:label "환경(環境)"@ko ;
+    a kno:Component ;
+    kno:fullForm "환경"@ko ;
+    kno:surfaceForm "환경"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0490-c2 kno:formative kno:F000007 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "템"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "아이템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "(아이)템(item)"@ko .

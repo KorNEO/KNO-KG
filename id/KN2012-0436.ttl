@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0436 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0436 kno:frequency kno:KN2012-0436-freq-NN-2024 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:predicate "나다"@ko ;
+    kno:indexForm "투익률"@ko ;
+    rdfs:label "투익-률"@ko ;
+    kno:component kno:KN2012-0436-c1 ;
+    kno:example "¶미(美) 연기금 헤지 펀드 {투익률} 연간 1.9% 그쳐."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2012-0436-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%88%AC%EC%9D%B5%EB%A5%A0> ;
+    skos:definition "투자에 대비하여 수익이 나는 비율."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0436-c2 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "투익(投益), -률(率)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(投益率)" ;
+    a ontolex:Word .
+kno:KN2012-0436-c1 kno:fullForm "투익"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "투익"@ko ;
+    kno:formative kno:F006525 ;
+    rdfs:label "투익(投益)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1p .
+kno:KN2012-0436-c2 kno:surfaceForm "률"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-률(率)"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001257 ;
+    kno:fullForm "률"@ko .

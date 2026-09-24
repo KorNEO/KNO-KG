@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0146 kno:frequency kno:KN2012-0146-freq-NN-2013 ;
+    kno:example "¶{방송툰은} OOO 작가가 방송을 모니터링한 후 웹툰으로 재창조한 것이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "방송된 프로그램의 내용을 재구성하여 만든 웹툰."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:indexForm "방송툰"@ko ;
+    kno:frequency kno:KN2012-0146-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0146-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0146-c1 ;
+    kno:frequency kno:KN2012-0146-freq-NN-total ;
+    kno:languageType "한+영" ;
+    kno:componentString "방송(放送), (카)툰(cartoon)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000026 ;
+    kno:slotFiller "방송(放送) (1성분)"@ko ;
+    kno:component kno:KN2012-0146-c2 ;
+    kno:origin "(放送←cartoon)" ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%A9%EC%86%A1%ED%88%B0> ;
+    rdfs:label "방송툰"@ko ;
+    kno:formation kno:W05 .
+kno:KN2012-0146-c1 a kno:Component ;
+    rdfs:label "방송(放送)"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001344 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "방송"@ko ;
+    kno:surfaceForm "방송"@ko .
+kno:KN2012-0146-c2 kno:semanticTag kno:usas-C1 ;
+    a kno:Component ;
+    kno:surfaceForm "툰"@ko ;
+    kno:fullForm "카툰"@ko ;
+    rdfs:label "(카)툰(cartoon)"@ko ;
+    kno:formative kno:F000067 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

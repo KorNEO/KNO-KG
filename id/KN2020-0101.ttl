@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0101 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0101-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0101-form ;
-    ontolex:sense kno:KN2020-0101-sense .
-
-kno:KN2020-0101-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-17"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/343/0000097511> .
-
-kno:KN2020-0101-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0101-freq-nn,
-        kno:KN2020-0101-freq-yt ;
-    ontolex:writtenRep "랜선 운동"@ko .
-
-kno:KN2020-0101-freq-nn a frac:CorpusFrequency ;
-    rdf:value 151 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0101-freq-yt a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0101-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0101 kno:predicate "하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "온라인상에 있는 영상이나 글을 보면서 집 안에서 하는 운동. 혹은 집 안에서 화상 회의 프로그램을 통해 다른 사람들과 함께 하는 운동. 코로나19의 확산과 그에 따른 사회적 거리 두기의 시행으로 인해 현실 공간의 체육 시설 따위의 사용이 제한되자 전파되었다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%EC%84%A0%20%EC%9A%B4%EB%8F%99> ;
+    kno:componentString "랜선(LAN線), 운동(運動)"@ko ;
+    kno:frequency kno:KN2020-0101-freq-NN-2020 ;
+    kno:languageType "(영+한)_한" ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "랜선 운동"@ko ;
+    kno:component kno:KN2020-0101-c2 ;
+    kno:component kno:KN2020-0101-c1 ;
+    kno:frequency kno:KN2020-0101-freq-NN-2021 ;
+    kno:origin "(<영>LAN線運動)" ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000032 ;
+    kno:frequency kno:KN2020-0101-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:example "¶신규 프로그램 OO은 출연자들이 다양한 운동을 하면서 전후의 몸무게를 비교해 시청자들의 {랜선 운동을} 도와준다."@ko ;
+    kno:indexForm "랜선운동"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "운동(運動) (1성분)"@ko ;
+    kno:instantiates kno:S000057 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:slotFiller "랜선(LAN線) (1성분)"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2020-0101-c2 kno:formative kno:F000053 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "운동(運動)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "운동"@ko ;
+    kno:surfaceForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0101-c1 kno:fullForm "랜선"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F000099 ;
+    kno:surfaceForm "랜선"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "랜선(LAN線)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

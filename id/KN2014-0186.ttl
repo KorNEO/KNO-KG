@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0186 kno:year "2014"^^xsd:gYear ;
+    kno:example "¶2일 OO가 올 상반기 국내 소비자 503명을 포함해…3만 명을 대상으로 조사한 결과에 따르면 쇼루밍을 선호하는 품목과 {역쇼루밍을} 선호하는 품목이 뚜렷이 구분됐다."@ko ;
+    kno:frequency kno:KN2014-0186-freq-NN-2016 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2019 ;
+    kno:frequency kno:KN2014-0186-freq-NN-total ;
+    kno:frequency kno:KN2014-0186-freq-NN-2023 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358215> ;
+    kno:formation kno:W03 ;
+    a kno:Neologism ;
+    skos:definition "온라인 쇼핑몰에서 제품을 살펴본 뒤, 오프라인 매장에서 제품을 구매하는 현상."@ko ;
+    kno:frequency kno:KN2014-0186-freq-NN-2017 ;
+    kno:origin "(逆<영>showrooming)" ;
+    kno:instantiates kno:S000152 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2014-0186-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2020 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2018 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2021 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2022 ;
+    kno:frequency kno:KN2014-0186-freq-NN-2013 ;
+    kno:componentString "역(逆)-, 쇼루밍(showrooming)"@ko ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:activeYears "12"^^xsd:integer ;
+    kno:component kno:KN2014-0186-c1 ;
+    rdfs:label "역-쇼루밍"@ko ;
+    kno:slotFiller "쇼루밍(showrooming) (1성분)"@ko ;
+    kno:urimalTargetCode "1358215" ;
+    kno:registration "우리말샘"@ko ;
+    kno:predicate "구매하다"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2014-0186-freq-NN-2024 ;
+    kno:component kno:KN2014-0186-c2 ;
+    kno:indexForm "역쇼루밍"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
+kno:KN2014-0186-c1 kno:fullForm "역"@ko ;
+    kno:surfaceForm "역"@ko ;
+    rdfs:label "역(逆)-"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000147 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2014-0186-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000812 ;
+    kno:fullForm "쇼루밍"@ko ;
+    kno:surfaceForm "쇼루밍"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "쇼루밍(showrooming)"@ko .

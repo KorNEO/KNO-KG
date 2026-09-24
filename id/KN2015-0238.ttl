@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0238 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0238 kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0238-freq-NN-2014 ;
+    kno:instantiates kno:S000155 ;
+    kno:urimalTargetCode "1374950" ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶80년대 이후 우리나라 경제 성장을 이끌었던 베이비 부머 세대가 은퇴 후 ‘{펫 부머’로} 급격히 부상하고 있다."@ko ;
+    kno:origin "(<영>pet←baby boomer)" ;
+    kno:component kno:KN2015-0238-c2 ;
+    kno:registration "우리말샘"@ko ;
+    kno:indexForm "펫부머"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2015-0238-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "펫(pet), (베이비)부머(baby boomer)"@ko ;
+    kno:slotFiller "(베이비)부머(baby boomer) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "펫 부머"@ko ;
+    kno:frequency kno:KN2015-0238-freq-NN-total ;
+    kno:frequency kno:KN2015-0238-freq-NN-2024 ;
+    kno:frequency kno:KN2015-0238-freq-NN-2021 ;
+    kno:languageType "영_영" ;
+    skos:definition "애완동물에 관심이 있거나 애완동물을 키우는 베이비 붐 세대. 주로 은퇴한 후에 애완동물을 키우는 베이비 붐 세대를 가리키는 말이다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374950> .
+kno:KN2015-0238-c2 kno:semanticTag kno:usas-T3p ;
+    kno:formative kno:F003949 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "베이비부머"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(베이비)부머(baby boomer)"@ko ;
+    kno:surfaceForm "부머"@ko .
+kno:KN2015-0238-c1 rdfs:label "펫(pet)"@ko ;
+    kno:formative kno:F000054 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "펫"@ko ;
+    kno:surfaceForm "펫"@ko .

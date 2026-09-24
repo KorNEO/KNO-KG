@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0247 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0247 kno:component kno:KN2013-0247-c2 ;
+    kno:indexForm "소두족"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%91%90%EC%A1%B1> ;
+    kno:predicate "작은"@ko ;
+    rdfs:label "소두-족"@ko ;
+    a kno:Neologism ;
+    kno:componentString "소두(小頭), -족(族)"@ko ;
+    kno:example "¶네티즌들 사이에서는…“OOO 소두, 사실상 연예계 {소두족} 종결”, “OOO 소두, 더 작은 연예인 없나.”라는 등의 의견이 나오고 있다."@ko ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "소두(小頭) (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0247-c1 ;
+    kno:languageType "한+한" ;
+    kno:origin "(小頭族)" ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "머리가 작은 사람. 또는 그런 무리."@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000001 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko .
+kno:KN2013-0247-c2 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0247-c1 a kno:Component ;
+    kno:fullForm "소두"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "소두"@ko ;
+    rdfs:label "소두(小頭)"@ko ;
+    kno:formative kno:F004401 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 .

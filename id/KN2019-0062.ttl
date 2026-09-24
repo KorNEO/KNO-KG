@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0062 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0062 kno:component kno:KN2019-0062-c1 ;
+    kno:frequency kno:KN2019-0062-freq-NN-2018 ;
+    kno:slotFiller "덕후 (1성분)"@ko ;
+    kno:predicate "사용하다"@ko ;
+    kno:indexForm "덕후템"@ko ;
+    kno:frequency kno:KN2019-0062-freq-NN-2020 ;
+    kno:origin "(덕후<영>←item)" ;
+    kno:example "¶같은 기간 동안 게임기, 레트로 인테리어 용품 등 OO 대표 {덕후템도} OO 온라인 몰에서 최대 87% 할인 판매한다."@ko ;
+    skos:definition "어떤 분야나 대상을 열성적으로 좋아하는 사람이 그에 관한 지식과 경험을 쌓기 위해 사용하는 물건."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    rdfs:label "덕후-템"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:formation kno:W01 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0062-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "고+영" ;
+    kno:componentString "덕후, (아이)템(item)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0062-c2 ;
+    kno:instantiates kno:S000004 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8D%95%ED%9B%84%ED%85%9C> ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0062-freq-NN-2022 .
+kno:KN2019-0062-c1 kno:fullForm "덕후"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X5.2p ;
+    a kno:Component ;
+    kno:surfaceForm "덕후"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "덕후"@ko ;
+    kno:formative kno:F000712 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2019-0062-c2 a kno:Component ;
+    kno:fullForm "아이템"@ko ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean .

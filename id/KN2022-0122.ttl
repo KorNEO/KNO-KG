@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0122 a ontolex:Word ;
-    frac:attestation kno:KN2022-0122-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0122-form ;
-    ontolex:sense kno:KN2022-0122-sense .
-
-kno:KN2022-0122-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000765006> .
-
-kno:KN2022-0122-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0122-freq-nn,
-        kno:KN2022-0122-freq-yt ;
-    ontolex:writtenRep "득템-력"@ko .
-
-kno:KN2022-0122-freq-nn a frac:CorpusFrequency ;
-    rdf:value 177 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0122-freq-yt a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0122-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0122 kno:instantiates kno:S000006 ;
+    kno:componentString "득템(得←item), -력(力)"@ko ;
+    kno:component kno:KN2022-0122-c2 ;
+    rdfs:label "득템-력"@ko ;
+    kno:frequency kno:KN2022-0122-freq-NN-total ;
+    kno:example "¶{득템력은} 단순히 높은 가격이 아니라 희소성을 차별화 요소로 두는 복합적인 사회ㆍ문화적인 트렌드에 해당한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0122-freq-NN-2023 ;
+    kno:languageType "(한+영)+한" ;
+    kno:indexForm "득템력"@ko ;
+    kno:component kno:KN2022-0122-c1 ;
+    kno:frequency kno:KN2022-0122-freq-NN-2022 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0122-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%9D%ED%85%9C%EB%A0%A5> ;
+    kno:slotFiller "득템(得←item) (1성분)"@ko ;
+    kno:predicate "획득하다"@ko ;
+    a kno:Neologism ;
+    kno:origin "(得<영>←item力)" ;
+    kno:pos "「명」"@ko ;
+    skos:definition "경제적 지불 능력만으로는 구매할 수 없는 희소한 물건을 획득하는 능력."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0122-freq-NN-2024 ;
+    kno:formation kno:W02 .
+kno:KN2022-0122-c2 rdfs:label "-력(力)"@ko ;
+    kno:fullForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000010 ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "력"@ko .
+kno:KN2022-0122-c1 kno:formative kno:F003062 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:fullForm "득템"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "득템"@ko ;
+    rdfs:label "득템(得←item)"@ko .

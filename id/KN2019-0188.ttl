@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0188 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0188 kno:frequency kno:KN2019-0188-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000659 ;
+    kno:component kno:KN2019-0188-c1 ;
+    kno:component kno:KN2019-0188-c2 ;
+    kno:frequency kno:KN2019-0188-freq-NN-2019 ;
+    rdfs:label "아만추"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0188-freq-NN-2018 ;
+    kno:example "¶인만추, {아만추보다는} ‘자연스러운 만남 추구’합시다."@ko ;
+    skos:definition "‘아무나 만나는 것을 추구’를 줄여 이르는 말. 조건을 따지지 않고 사람을 만나는 것을 추구하는 연애관을 말한다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0188-freq-NN-total ;
+    kno:slotFiller "아(무)+만(나) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%A7%8C%EC%B6%94> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "아만추"@ko ;
+    kno:formation kno:W06 ;
+    kno:languageType "고+고+한" ;
+    kno:componentString "아(무), 만(나), 추(구)(追)"@ko ;
+    kno:component kno:KN2019-0188-c3 ;
+    kno:origin "(아만追)" .
+kno:KN2019-0188-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "아"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004792 ;
+    kno:fullForm "아무"@ko ;
+    rdfs:label "아(무)"@ko .
+kno:KN2019-0188-c2 rdfs:label "만(나)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "만나"@ko ;
+    kno:formative kno:F003364 ;
+    kno:surfaceForm "만"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0188-c3 rdfs:label "추(구)(追)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "추"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:formative kno:F000947 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "추구"@ko ;
+    a kno:Component .

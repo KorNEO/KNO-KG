@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0235 a kno:Neologism ;
+    rdfs:label "자해계"@ko ;
+    kno:origin "(自害計)" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2019-0235-freq-NN-2025 ;
+    kno:indexForm "자해계"@ko ;
+    kno:frequency kno:KN2019-0235-freq-NN-2018 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "자해(自害), 계(정)(計)"@ko ;
+    kno:frequency kno:KN2019-0235-freq-NN-2021 ;
+    skos:definition "자해한 상처를 찍은 사진이나 자해할 정도로 우울한 감정을 표현한 글 따위를 게시하기 위해 만든 계정. 주로 누리 소통망 서비스(SNS)에서, 일상적으로 이용하는 계정은 따로 두고 자해와 관련된 내용만을 게시하기 위해 비밀스럽게 운영하는 계정이다."@ko ;
+    kno:frequency kno:KN2019-0235-freq-NN-2024 ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2019-0235-c1 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:frequency kno:KN2019-0235-freq-NN-2020 ;
+    kno:component kno:KN2019-0235-c2 ;
+    kno:example "¶OOO 씨는 입원 치료를 받으면서 그린 그림과 자해 사진을 OO에 올렸다.…{자해계를} 만든 지 4개월 만에 팔로워가 2천 명이 훌쩍 넘었다."@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0235-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%ED%95%B4%EA%B3%84> ;
+    kno:frequency kno:KN2019-0235-freq-NN-2022 ;
+    kno:frequency kno:KN2019-0235-freq-NN-2019 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0235-freq-NN-2023 .
+kno:KN2019-0235-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "자해"@ko ;
+    kno:surfaceForm "자해"@ko ;
+    rdfs:label "자해(自害)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001730 .
+kno:KN2019-0235-c2 kno:formative kno:F001060 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "계"@ko ;
+    kno:fullForm "계정"@ko ;
+    rdfs:label "계(정)(計)"@ko ;
+    kno:position "2"^^xsd:integer .

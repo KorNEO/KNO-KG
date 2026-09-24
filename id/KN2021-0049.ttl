@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0049 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0049 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0049-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0049-form ;
-    ontolex:sense kno:KN2021-0049-sense .
-
-kno:KN2021-0049-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002539024> .
-
-kno:KN2021-0049-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0049-freq-nn,
-        kno:KN2021-0049-freq-yt ;
-    ontolex:writtenRep "기초^학술^기본법"@ko .
-
-kno:KN2021-0049-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0049-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0049-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0049 kno:slotFiller "학술(學術)+기본법(基本法) (2성분)"@ko ;
+    kno:example "¶지난해 인문ㆍ사회 분야를 포함한 기초 학술을 진흥하기 위한 근간이 되는 기본법의 필요성이 대두되며 {기초 학술 기본법이} 발의되었지만 후속 논의는 이루어지지 않았다."@ko ;
+    kno:componentString "기초(基礎), 학술(學術), 기본법(基本法)"@ko ;
+    kno:component kno:KN2021-0049-c2 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0049-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%B4%88%ED%95%99%EC%88%A0%EA%B8%B0%EB%B3%B8%EB%B2%95> ;
+    rdfs:label "기초^학술^기본법"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:indexForm "기초학술기본법"@ko ;
+    kno:slotFiller "기초(基礎)+학술(學術) (2성분)"@ko ;
+    kno:instantiates kno:S000622 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001251 ;
+    kno:frequency kno:KN2021-0049-freq-NN-2022 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0049-freq-NN-total ;
+    skos:definition "인문학, 사회 과학 등의 기초 학술 분야를 지원하고 육성하는 데에 필요한 사항을 규정한 법안. 2021년 3월 24일에 국회에서 발의되었다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(基礎學術基本法)" ;
+    kno:component kno:KN2021-0049-c1 ;
+    kno:frequency kno:KN2021-0049-freq-NN-2021 ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0049-c2 kno:fullForm "학술"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "학술"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    rdfs:label "학술(學術)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006949 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0049-c3 kno:surfaceForm "기본법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "기본법(基本法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000468 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "기본법"@ko .
+kno:KN2021-0049-c1 a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "기초"@ko ;
+    kno:surfaceForm "기초"@ko ;
+    kno:formative kno:F001118 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "기초(基礎)"@ko .

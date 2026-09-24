@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0053 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%8C%80%EC%A7%A4> ;
+    kno:component kno:KN2013-0053-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶이를 접한 네티즌들은 “OOO 미모 빛난다 빛나.”, “OOO 옆 라인 소름 돋네요.”, “분위기 확 바뀐 OOO {기대짤}.”,“OOO 빨리 브라운관에서 보길.”, “OOO 진짜 예쁘다. 드라마 기대할게요.” 등 뜨거운 반응을 보였다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "기대(期待), 짤"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0053-freq-NN-2013 ;
+    kno:origin "(期待짤)" ;
+    kno:instantiates kno:S000052 ;
+    kno:indexForm "기대짤"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2013-0053-c2 ;
+    rdfs:label "기대-짤"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "사람들의 기대에 미치는 사진."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0053-freq-NN-total ;
+    kno:predicate "미치다"@ko ;
+    kno:slotFiller "기대(期待) (1성분)"@ko ;
+    kno:languageType "한+고" .
+kno:KN2013-0053-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "기대"@ko ;
+    kno:surfaceForm "기대"@ko ;
+    kno:formative kno:F001113 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X2.6p ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "기대(期待)"@ko .
+kno:KN2013-0053-c2 kno:role "고정항"@ko ;
+    rdfs:label "짤"@ko ;
+    kno:surfaceForm "짤"@ko ;
+    kno:fullForm "짤"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:formative kno:F000074 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

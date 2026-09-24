@@ -1,0 +1,48 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0248 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0248 kno:component kno:KN2017-0248-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "존똑"@ko ;
+    kno:languageType "고+고" ;
+    kno:component kno:KN2017-0248-c1 ;
+    kno:componentString "존(나), 똑(같다)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "똑(같다) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "존똑"@ko ;
+    skos:definition "매우 똑같음. 또는 그런 모양."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B4%EB%98%91> ;
+    kno:example "¶그대로인 얼굴에 풋풋한 느낌이 살아 있는 OOO의 과거 사진을 본 누리꾼들은 “지금이랑 ‘{존똑’이네}.”…등의 뜨거운 반응을 보였다."@ko ;
+    kno:instantiates kno:S000576 .
+kno:KN2017-0248-c2 a kno:Component ;
+    rdfs:label "똑(같다)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "똑"@ko ;
+    kno:formative kno:F003127 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "똑같다"@ko ;
+    kno:semanticTag kno:usas-A6.1p .
+kno:KN2017-0248-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A13.3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "존나"@ko ;
+    rdfs:label "존(나)"@ko ;
+    kno:surfaceForm "존"@ko ;
+    kno:formative kno:F000586 .

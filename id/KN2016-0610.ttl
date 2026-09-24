@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0610 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0610 kno:languageType "한^그" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0610-c2 ;
+    rdfs:label "회계^올림픽"@ko ;
+    skos:definition "회계와 관련된 주제로 비교적 긴 시간에 걸쳐 열리는 국제회의. 아시아와 태평양 주변에 위치한 국가의 회계사들이 참여하며, 4년마다 열리기 때문에 올림픽에 비유하여 이르는 말이다."@ko ;
+    kno:frequency kno:KN2016-0610-freq-NN-total ;
+    kno:predicate "열리다"@ko ;
+    kno:component kno:KN2016-0610-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373045> ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0610-freq-NN-2015 ;
+    a kno:Neologism ;
+    kno:indexForm "회계올림픽"@ko ;
+    kno:componentString "회계(會計), 올림픽(←Olympic)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(會計←Olympic)" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶{회계 올림픽으로} 불리는 OO는 한국, 미국, 중국, 일본, 인도, 스리랑카, 호주, 뉴질랜드 등 아시아 태평양 지역 국가의 회계사회가 모인 지역 기구로, 4년에 한 번씩 이 행사를 개최한다."@ko ;
+    kno:urimalTargetCode "1373045" .
+kno:KN2016-0610-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005149 ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "올림픽"@ko ;
+    rdfs:label "올림픽(←Olympic)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "올림픽"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0610-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "회계"@ko ;
+    kno:surfaceForm "회계"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "회계(會計)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001024 .

@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0228 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0228 kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0228-c3 ;
+    kno:component kno:KN2013-0228-c2 ;
+    kno:languageType "한+영+영" ;
+    kno:componentString "사(장님)(社), 나(이스)(nice), 샷(shot)"@ko ;
+    skos:definition "‘사장님 나이스 샷’을 줄여 이르는 말."@ko ;
+    kno:instantiates kno:S000809 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2013-0228-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EB%82%98%EC%83%B7> ;
+    kno:slotFiller "사(장님)(社) (1성분)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0228-freq-NN-total ;
+    kno:frequency kno:KN2013-0228-freq-NN-2012 ;
+    rdfs:label "사나샷"@ko ;
+    kno:origin "(社←<영>nice shot)" ;
+    kno:example "¶이어 OOO은 ‘사장님 나이스 샷’이라는 뜻의 ‘{사나샷’을} 소개하며 부장인 OOO에게는 “부나샷!”이라고 외치는 센스를 선보이기도 했다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "사나샷"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism .
+kno:KN2013-0228-c3 kno:role "고정항"@ko ;
+    rdfs:label "샷(shot)"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:formative kno:F000140 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "샷"@ko ;
+    kno:surfaceForm "샷"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0228-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "나"@ko ;
+    kno:fullForm "나이스"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A5.1p ;
+    rdfs:label "나(이스)(nice)"@ko ;
+    kno:formative kno:F001135 .
+kno:KN2013-0228-c1 kno:semanticTag kno:usas-S7.1p ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:fullForm "사장님"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004149 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "사(장님)(社)"@ko ;
+    kno:surfaceForm "사"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

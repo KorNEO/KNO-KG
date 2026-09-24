@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0005 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0005 kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0005-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0005-freq-NN-total ;
+    kno:origin "(家族<영>←entertainer)" ;
+    kno:component kno:KN2018-0005-c2 ;
+    rdfs:label "가족테이너"@ko ;
+    kno:instantiates kno:S000233 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415703> ;
+    kno:urimalTargetCode "1415703" ;
+    kno:component kno:KN2018-0005-c1 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:indexForm "가족테이너"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2018-0005-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2018-0005-freq-NN-2018 ;
+    a kno:Neologism ;
+    skos:definition "유명인이 되어 공인으로서 활동하는 연예인의 가족을 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
+    kno:example "¶이처럼 ‘가족 예능’이 대중의 관심을 한 몸에 받자, 방송사들은 신선한 얼굴을 찾는 모양새다. 대중에게 익히 알려진 연예인 출연자의 일반인 가족의 출연, 이른바 ‘{가족테이너’의} 활약이 늘어나고 있다."@ko ;
+    kno:slotFiller "가족(家族) (1성분)"@ko ;
+    kno:componentString "가족(家族), (엔터)테이너(entertainer)"@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:frequency kno:KN2018-0005-freq-NN-2017 ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0005-c2 kno:semanticTag kno:usas-K4 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "엔터테이너"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000617 ;
+    rdfs:label "(엔터)테이너(entertainer)"@ko ;
+    kno:surfaceForm "테이너"@ko .
+kno:KN2018-0005-c1 kno:fullForm "가족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "가족"@ko ;
+    rdfs:label "가족(家族)"@ko ;
+    kno:formative kno:F000245 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

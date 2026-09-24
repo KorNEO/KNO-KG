@@ -1,0 +1,68 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0481 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0481 a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0481-c2 ;
+    skos:definition "미취업 청년들의 구직을 돕기 위해 국가가 지급하기로 한 비용."@ko ;
+    kno:frequency kno:KN2016-0481-freq-NN-2017 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "취업(就業)+활동비(活動費) (2성분)"@ko ;
+    kno:instantiates kno:S001147 ;
+    kno:origin "(靑年就業活動費)" ;
+    kno:frequency kno:KN2016-0481-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:example "¶OOO 대통령도 비대위원장 시절에 {청년 취업 활동비로} 30만 원을 지급한다고 제안한 적 있다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372916> ;
+    kno:frequency kno:KN2016-0481-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000107 ;
+    kno:urimalTargetCode "1372916" ;
+    kno:component kno:KN2016-0481-c3 ;
+    kno:slotFiller "청년(靑年)+취업(就業) (2성분)"@ko ;
+    kno:componentString "청년(靑年), 취업(就業), 활동비(活動費)"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2016-0481-c1 ;
+    kno:frequency kno:KN2016-0481-freq-NN-2015 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "청년취업활동비"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:frequency kno:KN2016-0481-freq-NN-total ;
+    rdfs:label "청년^취업^활동비"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0481-c2 kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F000412 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "취업(就業)"@ko ;
+    a kno:Component ;
+    kno:fullForm "취업"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "취업"@ko .
+kno:KN2016-0481-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "활동비"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "활동비(活動費)"@ko ;
+    kno:fullForm "활동비"@ko ;
+    kno:formative kno:F002031 .
+kno:KN2016-0481-c1 kno:semanticTag kno:usas-T3m ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "청년"@ko ;
+    kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000042 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .

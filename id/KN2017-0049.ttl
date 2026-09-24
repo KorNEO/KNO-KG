@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0049 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0049 a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001290 ;
+    kno:example "¶한국 경제의 특성상 대기업 계열사의 부실화가 가속되면 이른바 {네거티브 낙수 효과가} 현실화될 위험도 높아진다."@ko ;
+    rdfs:label "네거티브^낙수^효과"@ko ;
+    kno:component kno:KN2017-0049-c2 ;
+    kno:instantiates kno:S000810 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0049-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "낙수(落水)+효과(效果) (2성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "네거티브(negative), 낙수(落水), 효과(效果)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%A4%EA%B1%B0%ED%8B%B0%EB%B8%8C%EB%82%99%EC%88%98%ED%9A%A8%EA%B3%BC> ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>negative落水效果)" ;
+    skos:definition "대기업의 부실화가 계속되면 대기업과 연관된 중소기업 역시 부실화되어 가계가 위축되고 소비가 둔화하며, 경제 성장 역시 둔화하는 효과. ‘낙수 효과’에 상대되는 말이다."@ko ;
+    kno:component kno:KN2017-0049-c1 ;
+    kno:slotFiller "네거티브(negative) (1성분)"@ko ;
+    kno:indexForm "네거티브낙수효과"@ko ;
+    a kno:Neologism ;
+    kno:predicate "둔화하다"@ko ;
+    kno:languageType "영^한^한" .
+kno:KN2017-0049-c2 kno:fullForm "낙수"@ko ;
+    kno:surfaceForm "낙수"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "낙수(落水)"@ko ;
+    kno:formative kno:F000688 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0049-c3 kno:surfaceForm "효과"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000326 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "효과"@ko ;
+    rdfs:label "효과(效果)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A2.2 .
+kno:KN2017-0049-c1 kno:surfaceForm "네거티브"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "네거티브"@ko ;
+    kno:semanticTag kno:usas-A5.1m ;
+    kno:formative kno:F001145 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "네거티브(negative)"@ko ;
+    kno:role "고정항"@ko .

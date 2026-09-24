@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0242 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0242 kno:example "¶{비행기 좌석제가} 연상되는 이름부터 관객들의 정서를 건드렸다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0242-c2 ;
+    kno:frequency kno:KN2016-0242-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "비행기(飛行機), 좌석제(座席制)"@ko ;
+    kno:frequency kno:KN2016-0242-freq-NN-2016 ;
+    kno:component kno:KN2016-0242-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%ED%96%89%EA%B8%B0%20%EC%A2%8C%EC%84%9D%EC%A0%9C> ;
+    kno:languageType "한_한" ;
+    skos:definition "영화관 좌석의 위치와 영화 상영 시간에 따라 다른 금액의 요금을 소비자에게 부과하는 제도를 비행기 요금제에 빗대어 이르는 말. 영화관의 좌석을 비행기 좌석의 등급과 같이 구분하여 차등 요금을 적용한다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(飛行機座席制)" ;
+    rdfs:label "비행기 좌석제"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "비행기좌석제"@ko .
+kno:KN2016-0242-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H5 ;
+    rdfs:label "좌석제(座席制)"@ko ;
+    kno:fullForm "좌석제"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "좌석제"@ko ;
+    kno:formative kno:F005773 .
+kno:KN2016-0242-c1 rdfs:label "비행기(飛行機)"@ko ;
+    kno:semanticTag kno:usas-M5 ;
+    kno:fullForm "비행기"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "비행기"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004090 .

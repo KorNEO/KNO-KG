@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0359 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0359 kno:slotFiller "참(여)(參) (1성분)"@ko ;
+    skos:definition "시위나 집회에 혼자 참여하는 사람. 또는 그런 무리."@ko ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "혼참족"@ko ;
+    kno:predicate "참여하다"@ko ;
+    kno:origin "(혼參族)" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0359-freq-NN-total ;
+    rdfs:label "혼참-족"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0359-c3 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1380649" ;
+    kno:example "¶이날 ‘혼자 온 사람들’의 깃발 아래 모인 {혼참족들은} 40여 명이었다."@ko ;
+    kno:frequency kno:KN2017-0359-freq-NN-2016 ;
+    kno:component kno:KN2017-0359-c1 ;
+    kno:componentString "혼(자), 참(여)(參), -족(族)"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380649> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "(고+한)+한" ;
+    kno:frequency kno:KN2017-0359-freq-NN-2017 ;
+    kno:instantiates kno:S000029 ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0359-c2 .
+kno:KN2017-0359-c3 kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2017-0359-c1 rdfs:label "혼(자)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0359-c2 kno:surfaceForm "참"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001814 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.3p ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "참(여)(參)"@ko ;
+    kno:fullForm "참여"@ko .

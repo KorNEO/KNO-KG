@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0026 a kno:Neologism ;
+    kno:slotFiller "카(드)(card)+충(전)(充) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0026-freq-NN-2014 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0026-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2014-0026-freq-NN-total ;
+    kno:instantiates kno:S000668 ;
+    kno:componentString "교(통)(交), 카(드)(card), 충(전)(充)"@ko ;
+    rdfs:label "교카충"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%B9%B4%EC%B6%A9> ;
+    a ontolex:Word ;
+    kno:example "¶{교카충은} 들어 봤는데, 수시충은 또 뭐야?"@ko ;
+    kno:component kno:KN2014-0026-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2014-0026-c3 ;
+    kno:frequency kno:KN2014-0026-freq-NN-2015 ;
+    kno:indexForm "교카충"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "‘교통 카드 충전’을 줄여 이르는 말."@ko ;
+    kno:origin "(交<영>←card充)" ;
+    kno:formation kno:W06 ;
+    kno:languageType "한+영+한" .
+kno:KN2014-0026-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000669 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "교"@ko ;
+    rdfs:label "교(통)(交)"@ko ;
+    kno:fullForm "교통"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2014-0026-c2 kno:formative kno:F000952 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "카(드)(card)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "카"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "카드"@ko .
+kno:KN2014-0026-c3 kno:surfaceForm "충"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F006142 ;
+    kno:semanticTag kno:usas-O3 ;
+    kno:fullForm "충전"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "충(전)(充)"@ko .

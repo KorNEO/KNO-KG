@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0039 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2021-0039 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0039-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0039-form ;
-    ontolex:sense kno:KN2021-0039-sense .
-
-kno:KN2021-0039-att-nn a frac:Attestation ;
-    dcterms:date "2021-02-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003596158> .
-
-kno:KN2021-0039-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0039-freq-nn,
-        kno:KN2021-0039-freq-yt ;
-    ontolex:writtenRep "금융 소송원"@ko .
-
-kno:KN2021-0039-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0039-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0039-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:frequency kno:KN2021-0039-freq-NN-total ;
+    kno:example "¶금융 감독원이 피소된 소송 건수가 지난해 77건에 이르자 금융 감독원이 아니라 ‘{금융 소송원’이라는} 말까지 나오고 있다."@ko ;
+    kno:languageType "한_한" ;
+    kno:slotFiller "소송원(訴訟院) (1성분)"@ko ;
+    kno:component kno:KN2021-0039-c2 ;
+    kno:componentString "금융(金融), 소송원(訴訟院)"@ko ;
+    kno:origin "(金融訴訟院)" ;
+    kno:component kno:KN2021-0039-c1 ;
+    kno:indexForm "금융소송원"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:label "금융 소송원"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EC%9C%B5%20%EC%86%8C%EC%86%A1%EC%9B%90> ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "최근 피소 횟수가 많아진 ‘금융 감독원’을 이르는 말. 금융 감독원이 진행하는 금융사에 대한 종합 검사 과정에서, 제재ㆍ징계 등 검사 결과에 반발하는 금융사가 금융 감독원에 대한 소송을 제기하는 수가 많아지며 생겨난 말이다."@ko ;
+    kno:frequency kno:KN2021-0039-freq-NN-2021 ;
+    kno:instantiates kno:S000204 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0039-c2 a kno:Component ;
+    kno:fullForm "소송원"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "소송원"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "소송원(訴訟院)"@ko ;
+    kno:formative kno:F004412 .
+kno:KN2021-0039-c1 kno:formative kno:F000068 ;
+    rdfs:label "금융(金融)"@ko ;
+    kno:fullForm "금융"@ko ;
+    kno:surfaceForm "금융"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean .

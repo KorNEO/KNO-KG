@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0158 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0158 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0158-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0158-form ;
-    ontolex:sense kno:KN2024-0158-sense .
-
-kno:KN2024-0158-att-nn a frac:Attestation ;
-    dcterms:date "2023-12-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/081/0003419699> .
-
-kno:KN2024-0158-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0158-freq-nn,
-        kno:KN2024-0158-freq-yt ;
-    ontolex:writtenRep "신바벨^시대"@ko .
-
-kno:KN2024-0158-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0158-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0158-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0158 kno:slotFiller "신(新)-+바벨(Babel) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000018 ;
+    kno:component kno:KN2024-0158-c2 ;
+    kno:instantiates kno:S000311 ;
+    kno:example "¶{신바벨 시대가} 본격화되면 모국어만 잘 알아도 다양한 정보와 지식에 접근하는 데 어려움이 없기 때문에 외국어 학습 수요가 감소할 가능성이 크다."@ko ;
+    skos:definition "인공 지능 기반의 기계 번역 기술로 인해 동시 통번역이 가능한 시대."@ko ;
+    kno:frequency kno:KN2024-0158-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0158-freq-NN-2023 ;
+    kno:origin "(新Babel時代)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0158-c3 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "(한+영)^한" ;
+    rdfs:label "신바벨^시대"@ko ;
+    kno:slotFiller "바벨(Babel)+시대(時代) (2성분)"@ko ;
+    kno:componentString "신(新)-, 바벨(Babel), 시대(時代)"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EB%B0%94%EB%B2%A8%EC%8B%9C%EB%8C%80> ;
+    kno:frequency kno:KN2024-0158-freq-NN-total ;
+    kno:indexForm "신바벨시대"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0158-c1 .
+kno:KN2024-0158-c2 kno:role "슬롯 채움"@ko ;
+    rdfs:label "바벨(Babel)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "바벨"@ko ;
+    kno:formative kno:F003645 ;
+    kno:surfaceForm "바벨"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2024-0158-c3 a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:fullForm "시대"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "시대"@ko ;
+    kno:formative kno:F000049 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "시대(時代)"@ko .
+kno:KN2024-0158-c1 kno:semanticTag kno:usas-T3 ;
+    a kno:Component ;
+    kno:formative kno:F000145 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "신"@ko ;
+    kno:surfaceForm "신"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "신(新)-"@ko .

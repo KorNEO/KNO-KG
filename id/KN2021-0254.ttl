@@ -1,30 +1,61 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0254 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2021-0254-form ;
-    ontolex:sense kno:KN2021-0254-sense .
-
-kno:KN2021-0254-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0254-freq-nn,
-        kno:KN2021-0254-freq-yt ;
-    ontolex:writtenRep "차박튀"@ko .
-
-kno:KN2021-0254-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0254-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0254-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0254 kno:instantiates kno:S000328 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:languageType "한+고+고" ;
+    skos:definition "‘차를 박고 튀다.’를 줄여 이르는 말로, 주차되어 있는 다른 사람의 차를 들이박고 달아나는 일. 또는 그런 사람."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2021-0254-c2 ;
+    kno:componentString "차(車), 박(다), 튀(다)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:label "차박튀"@ko ;
+    kno:example "¶뺑소니와 달리 {차박튀라는} 말은 주차된 차를 들이박고 달아난다는 특정 상황에 한하여 사용된다."@ko ;
+    kno:instantiates kno:S000134 ;
+    a ontolex:Word ;
+    kno:slotFiller "박(다)+튀(다) (2성분)"@ko ;
+    kno:component kno:KN2021-0254-c1 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "차(車)+박(다) (2성분)"@ko ;
+    kno:origin "(車박튀)" ;
+    kno:indexForm "차박튀"@ko ;
+    kno:component kno:KN2021-0254-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%EB%B0%95%ED%8A%80> .
+kno:KN2021-0254-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "박(다)"@ko ;
+    kno:surfaceForm "박"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "박다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003664 .
+kno:KN2021-0254-c1 kno:surfaceForm "차"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:formative kno:F000075 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "차"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "차(車)"@ko .
+kno:KN2021-0254-c3 kno:fullForm "튀다"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F000315 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "튀(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "튀"@ko .

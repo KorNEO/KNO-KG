@@ -1,30 +1,53 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0298 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0298 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2022-0298-form ;
-    ontolex:sense kno:KN2022-0298-sense .
-
-kno:KN2022-0298-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0298-freq-nn,
-        kno:KN2022-0298-freq-yt ;
-    ontolex:writtenRep "프로토니즘 이론"@ko .
-
-kno:KN2022-0298-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0298-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0298-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0298 kno:indexForm "프로토니즘이론"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2022"^^xsd:gYear ;
+    skos:definition "평화와 긍정적인 사고를 고취시키기 위한 문학 비평 이론. 1990년 미국의 시인 잭 마리나이가 제창하였다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2022-0298-freq-NN-2025 ;
+    kno:componentString "프로토니즘(protonism), 이론(理論)"@ko ;
+    kno:slotFiller "프로토니즘(protonism) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EB%A1%9C%ED%86%A0%EB%8B%88%EC%A6%98%20%EC%9D%B4%EB%A1%A0> ;
+    kno:component kno:KN2022-0298-c1 ;
+    kno:frequency kno:KN2022-0298-freq-NN-2021 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000263 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶잭 마리나이는 철학자이자 평론가로서 ‘{프로토니즘 이론’의} 창시자이기도 하다."@ko ;
+    kno:origin "(<영>protonism理論)" ;
+    kno:frequency kno:KN2022-0298-freq-NN-total ;
+    kno:component kno:KN2022-0298-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "프로토니즘 이론"@ko .
+kno:KN2022-0298-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "프로토니즘(protonism)"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:formative kno:F006812 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "프로토니즘"@ko ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    a kno:Component ;
+    kno:surfaceForm "프로토니즘"@ko .
+kno:KN2022-0298-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000570 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "이론(理論)"@ko ;
+    kno:fullForm "이론"@ko ;
+    kno:surfaceForm "이론"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:truncated "false"^^xsd:boolean .

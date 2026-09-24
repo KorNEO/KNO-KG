@@ -1,37 +1,75 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0257 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0257 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0257-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0257-form ;
-    ontolex:sense kno:KN2024-0257-sense .
-
-kno:KN2024-0257-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/656/0000059163> .
-
-kno:KN2024-0257-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0257-freq-nn,
-        kno:KN2024-0257-freq-yt ;
-    ontolex:writtenRep "전세^사기^피해자법"@ko .
-
-kno:KN2024-0257-freq-nn a frac:CorpusFrequency ;
-    rdf:value 846 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0257-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0257-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%A0%84%EC%84%B8%EC%82%AC%EA%B8%B0%ED%94%BC%ED%95%B4%EC%9E%90%20%EC%A7%80%EC%9B%90%20%EB%B0%8F%20%EC%A3%BC%EA%B1%B0%EC%95%88%EC%A0%95%EC%97%90%20%EA%B4%80%ED%95%9C%20%ED%8A%B9%EB%B3%84%EB%B2%95> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0257 kno:languageType "한^한^한" ;
+    kno:instantiates kno:S000010 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2024-0257-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0257-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2024-0257-c1 ;
+    kno:slotFiller "전세(傳貰)+사기(詐欺)+피해자(被害者) (3성분)"@ko ;
+    kno:component kno:KN2024-0257-c2 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%84%B8%EC%82%AC%EA%B8%B0%ED%94%BC%ED%95%B4%EC%9E%90%EB%B2%95> ;
+    rdfs:label "전세^사기^피해자법"@ko ;
+    kno:frequency kno:KN2024-0257-freq-NN-2025 ;
+    kno:instantiates kno:S001638 ;
+    kno:component kno:KN2024-0257-c3 ;
+    kno:slotFiller "피해자(被害者)+법(法) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0257-freq-NN-2023 ;
+    kno:indexForm "전세사기피해자법"@ko ;
+    kno:example "¶국토 교통부는 {전세 사기 피해자법에} 근거해 피해 주택을 처음으로 매입했다고 밝혔다."@ko ;
+    kno:componentString "전세(傳貰), 사기(詐欺), 피해자(被害者), 법(法)"@ko ;
+    skos:definition "전세 사기 피해를 당한 임차인의 주거권을 보장하기 위해 제정한 법률. 거주하고 있는 임차 주택의 우선 매수권을 부여하거나 장기 및 낮은 금리의 융자 지원, 피해 주택을 매입한 후 공공 임대 주택을 제공하는 방안 등이 포함된다. 정식 명칭은 ‘전세 사기 피해자 지원 및 주거 안정을 위한 특별법’이다."@ko ;
+    kno:component kno:KN2024-0257-c4 ;
+    kno:origin "(傳貰詐欺被害者法)" ;
+    a kno:Neologism .
+kno:KN2024-0257-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "전세"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000230 ;
+    kno:surfaceForm "전세"@ko ;
+    a kno:Component ;
+    rdfs:label "전세(傳貰)"@ko .
+kno:KN2024-0257-c2 kno:role "고정항"@ko ;
+    kno:fullForm "사기"@ko ;
+    kno:formative kno:F000278 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G2.1m ;
+    rdfs:label "사기(詐欺)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "사기"@ko .
+kno:KN2024-0257-c3 rdfs:label "피해자(被害者)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001007 ;
+    kno:fullForm "피해자"@ko ;
+    kno:surfaceForm "피해자"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A15m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0257-c4 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "법"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000002 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko .

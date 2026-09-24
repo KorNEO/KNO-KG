@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0389 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0389 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0389-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0389-form ;
-    ontolex:sense kno:KN2024-0389-sense .
-
-kno:KN2024-0389-att-nn a frac:Attestation ;
-    dcterms:date "2024-04-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/022/0003928366> .
-
-kno:KN2024-0389-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0389-freq-nn,
-        kno:KN2024-0389-freq-yt ;
-    ontolex:writtenRep "현생 공감"@ko .
-
-kno:KN2024-0389-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0389-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0389-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0389 kno:unitType "구"@ko ;
+    kno:example "¶짠내 나는 아저씨의 {현생 공감} 블랙 코미디 영화가 10월 23일 개봉한다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0389-c2 ;
+    skos:definition "현실적인 삶과 관련된 예시에 대해 자기도 그렇다고 느낌. 또는 그렇게 느끼는 기분."@ko ;
+    kno:component kno:KN2024-0389-c1 ;
+    kno:componentString "현생(現生), 공감(共感)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%84%EC%83%9D%20%EA%B3%B5%EA%B0%90> ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    rdfs:label "현생 공감"@ko ;
+    kno:frequency kno:KN2024-0389-freq-NN-total ;
+    kno:origin "(現生共感)" ;
+    kno:indexForm "현생공감"@ko ;
+    kno:frequency kno:KN2024-0389-freq-NN-2024 .
+kno:KN2024-0389-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000336 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "공감"@ko ;
+    rdfs:label "공감(共感)"@ko ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:surfaceForm "공감"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0389-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "현생"@ko ;
+    kno:formative kno:F007075 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "현생"@ko ;
+    kno:semanticTag kno:usas-T1.1.2 ;
+    rdfs:label "현생(現生)"@ko .

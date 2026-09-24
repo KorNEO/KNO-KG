@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0027 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0027-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0027-form ;
-    ontolex:sense kno:KN2025-0027-sense .
-
-kno:KN2025-0027-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0008607151> .
-
-kno:KN2025-0027-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0027-freq-nn,
-        kno:KN2025-0027-freq-yt ;
-    ontolex:writtenRep "검사 입틀막 법"@ko .
-
-kno:KN2025-0027-freq-nn a frac:CorpusFrequency ;
-    rdf:value 37 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0027-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0027-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0027 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0027-c2 ;
+    skos:definition "(LLM) 검사의 수사ㆍ기소 활동을 위축시킨다는 비판을 받는, 검사에 대한 탄핵 절차를 거치지 않은 파면 등을 가능하게 하는 취지의 법률(개정)안을 비난조로 이르는 말."@ko ;
+    rdfs:label "검사 입틀막 법"@ko ;
+    kno:slotFiller "검사(檢事)+입틀막 (2성분)"@ko ;
+    kno:instantiates kno:S001200 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%82%AC%20%EC%9E%85%ED%8B%80%EB%A7%89%20%EB%B2%95> ;
+    kno:frequency kno:KN2025-0027-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0027-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:component kno:KN2025-0027-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "입틀막+법(法) (2성분)"@ko ;
+    kno:componentString "검사(檢事), 입틀막, 법(法)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 야당은 해당 개정안이 검찰의 독립성을 훼손한다며 {검사입틀막법} 추진을 즉각 중단하라고 요구했다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "검사입틀막법"@ko ;
+    kno:component kno:KN2025-0027-c3 ;
+    a kno:Neologism .
+kno:KN2025-0027-c2 kno:semanticTag kno:usas-Q2.2 ;
+    kno:semanticTag kno:usas-S7.4m ;
+    a kno:Component ;
+    kno:surfaceForm "입틀막"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "입틀막"@ko ;
+    rdfs:label "입틀막"@ko ;
+    kno:formative kno:F005496 .
+kno:KN2025-0027-c1 rdfs:label "검사(檢事)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "검사"@ko ;
+    kno:surfaceForm "검사"@ko ;
+    kno:formative kno:F001050 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0027-c3 kno:surfaceForm "법"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000002 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "법"@ko .

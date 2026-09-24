@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0281 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0281 kno:languageType "한+고" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0281-freq-NN-total ;
+    kno:frequency kno:KN2019-0281-freq-NN-2019 ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "투알못"@ko ;
+    kno:componentString "투(자)(投), 알(다), 못(하다)"@ko ;
+    kno:frequency kno:KN2019-0281-freq-NN-2018 ;
+    skos:definition "‘투자를 알지 못하는 사람’을 줄여 이르는 말. 투자하는 방법이나 투자에 대한 정보를 잘 알지 못하는 사람을 뜻한다."@ko ;
+    kno:frequency kno:KN2019-0281-freq-NN-2024 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2019-0281-c2 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0281-freq-NN-2021 ;
+    kno:origin "(投알못)" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2019-0281-c3 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "투(자)(投) (1성분)"@ko ;
+    kno:frequency kno:KN2019-0281-freq-NN-2020 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "투알못"@ko ;
+    kno:frequency kno:KN2019-0281-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%88%AC%EC%95%8C%EB%AA%BB> ;
+    kno:component kno:KN2019-0281-c1 ;
+    kno:instantiates kno:S000022 ;
+    kno:example "¶예적금을 제외하고는 투자 경험이 전혀 없는 이른바 {‘투알못’인} 데다 일하는 와중에 투자 계획을 짤 여유가 전혀 없었기에 별다른 고민 없이 해당 서비스를 실행했다."@ko .
+kno:KN2019-0281-c2 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X2.2p ;
+    rdfs:label "알(다)"@ko ;
+    kno:formative kno:F000025 ;
+    kno:fullForm "알다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "알"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0281-c3 kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "못"@ko ;
+    kno:fullForm "못하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000039 ;
+    a kno:Component ;
+    rdfs:label "못(하다)"@ko .
+kno:KN2019-0281-c1 a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    rdfs:label "투(자)(投)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "투자"@ko ;
+    kno:surfaceForm "투"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006520 .

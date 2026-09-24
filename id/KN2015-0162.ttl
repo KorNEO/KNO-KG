@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0162 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0162 kno:registration "우리말샘"@ko ;
+    skos:definition "연애를 잘 못하는 사람을 고자에 빗대어 이르는 말."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359842> ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:indexForm "연애고자"@ko ;
+    kno:frequency kno:KN2015-0162-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:componentString "연애(戀愛), 고자(鼓子)"@ko ;
+    kno:frequency kno:KN2015-0162-freq-NN-total ;
+    kno:instantiates kno:S001560 ;
+    kno:frequency kno:KN2015-0162-freq-NN-2023 ;
+    kno:example "¶OO은 {연애고자인} 두 남녀의 성과 사랑에 대한 이야기에 코믹함을 더해 솔직하고 속 시원하게 풀어냈다는 평가를 받고 있다."@ko ;
+    kno:origin "(戀愛鼓子)" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2015-0162-c2 ;
+    kno:languageType "한+한" ;
+    kno:urimalTargetCode "1359842" ;
+    kno:frequency kno:KN2015-0162-freq-NN-2015 ;
+    kno:component kno:KN2015-0162-c1 ;
+    kno:frequency kno:KN2015-0162-freq-NN-2018 ;
+    kno:frequency kno:KN2015-0162-freq-NN-2020 ;
+    rdfs:label "연애-고자"@ko ;
+    kno:frequency kno:KN2015-0162-freq-NN-2024 ;
+    kno:slotFiller "고자(鼓子) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2015-0162-freq-NN-2019 ;
+    kno:frequency kno:KN2015-0162-freq-NN-2017 ;
+    kno:frequency kno:KN2015-0162-freq-NN-2016 ;
+    kno:formation kno:W01 ;
+    kno:activeYears "9"^^xsd:integer .
+kno:KN2015-0162-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:fullForm "고자"@ko ;
+    kno:surfaceForm "고자"@ko ;
+    kno:formative kno:F001064 ;
+    a kno:Component ;
+    rdfs:label "고자(鼓子)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2015-0162-c1 kno:surfaceForm "연애"@ko ;
+    kno:semanticTag kno:usas-S3 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000389 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "연애"@ko ;
+    rdfs:label "연애(戀愛)"@ko ;
+    a kno:Component .

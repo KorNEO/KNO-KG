@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0096 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0096 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0096-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0096-form ;
-    ontolex:sense kno:KN2023-0096-sense .
-
-kno:KN2023-0096-att-nn a frac:Attestation ;
-    dcterms:date "2022-06-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/468/0000822129> .
-
-kno:KN2023-0096-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0096-freq-nn,
-        kno:KN2023-0096-freq-yt ;
-    ontolex:writtenRep "명품 테크족"@ko .
-
-kno:KN2023-0096-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0096-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0096-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0096 kno:year "2023"^^xsd:gYear ;
+    kno:slotFiller "명품(名品) (1성분)"@ko ;
+    kno:component kno:KN2023-0096-c3 ;
+    kno:instantiates kno:S001381 ;
+    kno:predicate "하다"@ko ;
+    kno:origin "(名品<영>tech族)" ;
+    kno:example "¶온라인 유통 플랫폼이 활성화되자 {명품 테크족은} 특가 행사 때마다 오픈 런을 할 필요가 없어지게 되었다."@ko ;
+    a kno:Neologism ;
+    kno:componentString "명품(名品), (재)테크(財tech), -족(族)"@ko ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "명품테크-족"@ko ;
+    kno:slotFiller "(재)테크(財tech)+-족(族) (2성분)"@ko ;
+    kno:component kno:KN2023-0096-c1 ;
+    kno:component kno:KN2023-0096-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "명품테크족"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000116 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%85%ED%92%88%ED%85%8C%ED%81%AC%EC%A1%B1> ;
+    skos:definition "명품 브랜드 제품의 시세 차익을 통해 재테크를 하는 사람. 또는 그런 무리."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "한_(영+한)" .
+kno:KN2023-0096-c3 rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2023-0096-c1 kno:formative kno:F000752 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "명품"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "명품"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1p ;
+    rdfs:label "명품(名品)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2023-0096-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "테크"@ko ;
+    kno:fullForm "재테크"@ko ;
+    a kno:Component ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:formative kno:F000065 .

@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0345 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0345 kno:slotFiller "은근(慇懃) (1성분)"@ko ;
+    skos:definition "은근히 노출을 즐기는 여자."@ko ;
+    kno:origin "(慇懃女)" ;
+    kno:component kno:KN2012-0345-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "즐기다"@ko ;
+    kno:component kno:KN2012-0345-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "은근(慇懃), -녀(女)"@ko ;
+    kno:languageType "한+한" ;
+    a kno:Neologism ;
+    kno:indexForm "은근녀"@ko ;
+    kno:example "¶최근 거리를 지나다보면 완전한 노출보다는 살짝 피부를 드러내거나 뒤태를 강조한 ‘{은근녀’들이} 유독 눈에 띈다."@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "은근-녀"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:instantiates kno:S000009 ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%80%EA%B7%BC%EB%85%80> .
+kno:KN2012-0345-c2 kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000004 ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-녀(女)"@ko .
+kno:KN2012-0345-c1 kno:surfaceForm "은근"@ko ;
+    kno:semanticTag kno:usas-A11.2m ;
+    a kno:Component ;
+    rdfs:label "은근(慇懃)"@ko ;
+    kno:fullForm "은근"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005346 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0015 a ontolex:Word ;
-    frac:attestation kno:KN2024-0015-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0015-form ;
-    ontolex:sense kno:KN2024-0015-sense .
-
-kno:KN2024-0015-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-26"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/584/0000026056> .
-
-kno:KN2024-0015-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0015-freq-nn,
-        kno:KN2024-0015-freq-yt ;
-    ontolex:writtenRep "교자성-체"@ko .
-
-kno:KN2024-0015-freq-nn a frac:CorpusFrequency ;
-    rdf:value 67 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0015-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0015-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0015 kno:example "¶전문가들은 강자성과 반강자성의 장점만을 지닌 {교자성체를} 활용할 경우, 기존 메모리보다 처리 속도가 수십 배 향상될 것으로 전망하고 있다."@ko ;
+    kno:languageType "한+한" ;
+    kno:componentString "교자성(交磁性), -체(體)"@ko ;
+    kno:indexForm "교자성체"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000080 ;
+    kno:frequency kno:KN2024-0015-freq-NN-2024 ;
+    skos:definition "교자성의 성질을 가지는 물체. 강자성체와 반강자성체의 중간 성질을 가지며, 강자성체처럼 스핀으로 정보를 저장할 수 있으면서 외부 자기장에는 영향을 덜 받아 초고속 스위칭이 가능한 물질이다."@ko ;
+    kno:component kno:KN2024-0015-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0015-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "교자성-체"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%9E%90%EC%84%B1%EC%B2%B4> ;
+    a kno:Neologism ;
+    kno:predicate "가지다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(交磁性體)" ;
+    kno:component kno:KN2024-0015-c1 ;
+    kno:slotFiller "교자성(交磁性) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0015-freq-NN-total .
+kno:KN2024-0015-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-체(體)"@ko ;
+    kno:fullForm "체"@ko ;
+    kno:surfaceForm "체"@ko ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:formative kno:F000091 .
+kno:KN2024-0015-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "교자성"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "교자성"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:formative kno:F002435 ;
+    rdfs:label "교자성(交磁性)"@ko .

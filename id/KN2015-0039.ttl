@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0039 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0039 a kno:Neologism ;
+    kno:frequency kno:KN2015-0039-freq-NN-2016 ;
+    kno:frequency kno:KN2015-0039-freq-NN-2021 ;
+    kno:componentString "뇌(腦), 섹(시)(sexy), -인(人)"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2015-0039-freq-NN-2019 ;
+    kno:frequency kno:KN2015-0039-freq-NN-2020 ;
+    kno:urimalTargetCode "1359982" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0039-freq-NN-2024 ;
+    kno:slotFiller "-인(人) (1성분)"@ko ;
+    kno:instantiates kno:S000492 ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    skos:definition "‘뇌가 섹시한 인간’을 줄여 이르는 말. 주관이 뚜렷하고 언변이 뛰어나며 재치가 있고 지적인 매력이 있는 사람을 가리킨다."@ko ;
+    kno:component kno:KN2015-0039-c3 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2015-0039-freq-NN-total ;
+    kno:frequency kno:KN2015-0039-freq-NN-2015 ;
+    kno:component kno:KN2015-0039-c1 ;
+    kno:origin "(腦<영>←sexy人)" ;
+    kno:frequency kno:KN2015-0039-freq-NN-2025 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359982> ;
+    kno:instantiates kno:S000282 ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:languageType "(한+영)+한" ;
+    kno:example "¶요즘은 {뇌섹인이} 인기라면서요?"@ko ;
+    kno:indexForm "뇌섹인"@ko ;
+    kno:frequency kno:KN2015-0039-freq-NN-2017 ;
+    rdfs:label "뇌섹-인"@ko ;
+    kno:frequency kno:KN2015-0039-freq-NN-2018 ;
+    kno:component kno:KN2015-0039-c2 ;
+    kno:slotFiller "뇌(腦)+섹(시)(sexy) (2성분)"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2015-0039-c3 rdfs:label "-인(人)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "인"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000573 ;
+    kno:fullForm "인"@ko ;
+    a kno:Component .
+kno:KN2015-0039-c1 kno:surfaceForm "뇌"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "뇌(腦)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000057 ;
+    kno:fullForm "뇌"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2015-0039-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000114 ;
+    a kno:Component ;
+    kno:fullForm "섹시"@ko ;
+    rdfs:label "섹(시)(sexy)"@ko ;
+    kno:surfaceForm "섹"@ko .

@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0683 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0683 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0683-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0683-form ;
-    ontolex:sense kno:KN2025-0683-sense .
-
-kno:KN2025-0683-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/119/0003013197> .
-
-kno:KN2025-0683-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0683-freq-nn,
-        kno:KN2025-0683-freq-yt ;
-    ontolex:writtenRep "호텔 경제학자"@ko .
-
-kno:KN2025-0683-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0683-freq-yt a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0683-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0683 kno:frequency kno:KN2025-0683-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%ED%85%94%20%EA%B2%BD%EC%A0%9C%ED%95%99%EC%9E%90> ;
+    kno:componentString "호텔(hotel), 경제학자(經濟學者)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "(LLM) 야당은 해당 공약을 두고 돈이 돌기만 하면 된다는 식의 주장이라며 {호텔경제학자}식 발상이라고 비판했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "호텔경제학자"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0683-c2 ;
+    kno:slotFiller "경제학자(經濟學者) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0683-freq-NN-total ;
+    skos:definition "(LLM) 현실의 경제 구조나 비용ㆍ수요를 고려하지 않은 채, 돈이 한곳에서 돌기만 하면 경제적 이익이 자동으로 생긴다는 식의 단순한 순환 논리를 펴는 사람을 비꼬아 이르는 말."@ko ;
+    rdfs:label "호텔 경제학자"@ko ;
+    kno:languageType "영_한" ;
+    kno:instantiates kno:S000157 ;
+    kno:origin "(<영>hotel經濟學者)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0683-c1 ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0683-c2 kno:fullForm "경제학자"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "경제학자"@ko ;
+    rdfs:label "경제학자(經濟學者)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F002241 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0683-c1 kno:surfaceForm "호텔"@ko ;
+    a kno:Component ;
+    kno:fullForm "호텔"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000155 ;
+    kno:semanticTag kno:usas-H1 ;
+    rdfs:label "호텔(hotel)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

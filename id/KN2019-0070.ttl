@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0070 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0070 kno:indexForm "또티지"@ko ;
+    kno:languageType "고+영" ;
+    kno:componentString "또, (빈)티지(vintage)"@ko ;
+    skos:definition "액세서리 따위에서 낡고 오래된 느낌을 중요하게 생각하는 경향. 빈티지를 선호하는 경향성이 다시 돌아왔다는 의미에서 ‘또’를 ‘빈티지’에 붙여서 만든 말이다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S001353 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0070-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "생각하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(또<영>←vintage)" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:slotFiller "(빈)티지(vintage) (1성분)"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%98%90%ED%8B%B0%EC%A7%80> ;
+    kno:frequency kno:KN2019-0070-freq-NN-2019 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0070-freq-NN-total ;
+    kno:example "¶{‘또티지’는} ‘또? 빈티지’를 뜻하며, 새로울 것 같지 않은 예스러움이 현시대에 맞게 재해석되는 흐름을 담았다."@ko ;
+    kno:component kno:KN2019-0070-c1 ;
+    rdfs:label "또티지"@ko ;
+    kno:formation kno:W05 .
+kno:KN2019-0070-c2 kno:formative kno:F006594 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(빈)티지(vintage)"@ko ;
+    kno:surfaceForm "티지"@ko ;
+    kno:fullForm "빈티지"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0070-c1 a kno:Component ;
+    rdfs:label "또"@ko ;
+    kno:formative kno:F000208 ;
+    kno:semanticTag kno:usas-N6 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "또"@ko ;
+    kno:surfaceForm "또"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0363 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0363 kno:origin "(剩餘族)" ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2012-0363-freq-NN-2013 ;
+    kno:slotFiller "잉여(剩餘) (1성분)"@ko ;
+    skos:definition "스스로 경쟁에서 뒤처진 쓸모없는 존재라고 인식하는 사람. 또는 그런 무리."@ko ;
+    kno:componentString "잉여(剩餘), -족(族)"@ko ;
+    kno:frequency kno:KN2012-0363-freq-NN-2017 ;
+    kno:slotFiller "-족(族) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357235> ;
+    kno:example "¶니트는 15~34세의 젊은이 중 취업 의욕도 없고 일도 하지 않는 이른바 {잉여족으로}, 최근 그 수량이 급증하면서 일본의 사회 문제로 떠올랐다."@ko ;
+    kno:urimalTargetCode "1357235" ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2012-0363-c1 ;
+    kno:indexForm "잉여족"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2012-0363-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:languageType "한+한" ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2012-0363-freq-NN-2016 ;
+    kno:instantiates kno:S000324 ;
+    kno:frequency kno:KN2012-0363-freq-NN-2014 ;
+    kno:component kno:KN2012-0363-c2 ;
+    kno:instantiates kno:S000001 ;
+    kno:frequency kno:KN2012-0363-freq-NN-2015 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    rdfs:label "잉여-족"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:predicate "인식하다"@ko .
+kno:KN2012-0363-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "잉여"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5.2p ;
+    kno:role "고정항"@ko ;
+    rdfs:label "잉여(剩餘)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "잉여"@ko ;
+    kno:formative kno:F000402 .
+kno:KN2012-0363-c2 kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko .

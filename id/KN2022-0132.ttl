@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0132 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0132 a ontolex:Word ;
-    frac:attestation kno:KN2022-0132-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0132-form ;
-    ontolex:sense kno:KN2022-0132-sense .
-
-kno:KN2022-0132-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0000965034> .
-
-kno:KN2022-0132-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0132-freq-nn,
-        kno:KN2022-0132-freq-yt ;
-    ontolex:writtenRep "리뷰-깡"@ko .
-
-kno:KN2022-0132-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0132-freq-yt a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0132-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0132 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0132-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0132-freq-NN-2022 ;
+    skos:definition "배달 음식의 리뷰를 악의적으로 작성한 후, 해당 리뷰를 삭제하는 조건으로 음식값을 환불받는 행위."@ko ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "리뷰(review) (1성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:example "¶최근 배달업계에서는 무리한 배달 요청 사항을 남기는 진상 고객에 이어, {리뷰깡까지} 등장하는 등 자영업자들의 고충이 커져 가고 있다."@ko ;
+    kno:indexForm "리뷰깡"@ko ;
+    kno:frequency kno:KN2022-0132-freq-NN-total ;
+    kno:predicate "환불받다"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000165 ;
+    kno:origin "(<영>review깡)" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "리뷰(review), 깡"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EB%B7%B0%EA%B9%A1> ;
+    rdfs:label "리뷰-깡"@ko ;
+    kno:component kno:KN2022-0132-c2 ;
+    kno:languageType "영+고" .
+kno:KN2022-0132-c1 kno:surfaceForm "리뷰"@ko ;
+    rdfs:label "리뷰(review)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "리뷰"@ko ;
+    kno:semanticTag kno:usas-A5.1 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:formative kno:F000738 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0132-c2 kno:fullForm "깡"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "깡"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E5 ;
+    rdfs:label "깡"@ko ;
+    kno:formative kno:F000204 ;
+    a kno:Component .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0361 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0361 kno:example "¶‘나 홀로 열풍’은 혼밥과 혼술, {혼커가} 점차 보편화되고 있음을 보여 준다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "혼(자), 커(피)(coffee)"@ko ;
+    kno:component kno:KN2017-0361-c1 ;
+    kno:slotFiller "커(피)(coffee) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:languageType "고+영" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:label "혼커"@ko ;
+    kno:origin "(혼<영>←coffee)" ;
+    skos:definition "혼자서 커피를 마심. 또는 그렇게 마시는 커피."@ko ;
+    kno:component kno:KN2017-0361-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000017 ;
+    kno:indexForm "혼커"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "혼(자) (1성분)"@ko ;
+    kno:instantiates kno:S000435 ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1380651" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380651> .
+kno:KN2017-0361-c1 rdfs:label "혼(자)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0361-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:fullForm "커피"@ko ;
+    rdfs:label "커(피)(coffee)"@ko ;
+    kno:surfaceForm "커"@ko ;
+    kno:formative kno:F000416 .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0110 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0110 kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "출금되다"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    rdfs:label "리플레이^어택"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416177> ;
+    kno:indexForm "리플레이어택"@ko ;
+    kno:urimalTargetCode "1416177" ;
+    kno:languageType "영^영" ;
+    kno:origin "(<영>replay attack)" ;
+    kno:component kno:KN2018-0110-c1 ;
+    kno:unitType "구"@ko ;
+    skos:definition "이용자의 전자 지갑에 저장된 가상 화폐가 해킹으로 인해 기존의 전자 지갑과 유사한 다른 전자 지갑으로 중복되어 출금되는 현상."@ko ;
+    kno:componentString "리플레이(replay), 어택(attack)"@ko ;
+    kno:example "¶에스디케이(SDK) 스푸핑 또는 {리플레이 어택으로} 불리는 이 광고 사기는 사용자 정보 없이도 개인 디바이스를 해킹하고, 이 과정에서 얻은 정보를 가짜 앱 설치에 활용한다."@ko ;
+    kno:frequency kno:KN2018-0110-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0110-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0110-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2018-0110-c2 .
+kno:KN2018-0110-c1 kno:surfaceForm "리플레이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N6p ;
+    rdfs:label "리플레이(replay)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "리플레이"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003325 .
+kno:KN2018-0110-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "어택"@ko ;
+    rdfs:label "어택(attack)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004960 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "어택"@ko .

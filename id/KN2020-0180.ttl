@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0180 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0180 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0180-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0180-form ;
-    ontolex:sense kno:KN2020-0180-sense .
-
-kno:KN2020-0180-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004371479> .
-
-kno:KN2020-0180-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0180-freq-nn,
-        kno:KN2020-0180-freq-yt ;
-    ontolex:writtenRep "수소 리포머"@ko .
-
-kno:KN2020-0180-freq-nn a frac:CorpusFrequency ;
-    rdf:value 490 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0180-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0180-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0180 kno:indexForm "수소리포머"@ko ;
+    kno:frequency kno:KN2020-0180-freq-NN-2022 ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0180-freq-NN-total ;
+    kno:componentString "수소(水素), 리포머(reformer)"@ko ;
+    kno:frequency kno:KN2020-0180-freq-NN-2021 ;
+    kno:component kno:KN2020-0180-c1 ;
+    kno:year "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%86%8C%20%EB%A6%AC%ED%8F%AC%EB%A8%B8> ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "리포머(reformer) (1성분)"@ko ;
+    skos:definition "액화 천연가스에서 수소를 추출하는 장치."@ko ;
+    kno:component kno:KN2020-0180-c2 ;
+    kno:instantiates kno:S000533 ;
+    kno:unitType "구"@ko ;
+    kno:predicate "추출하다"@ko ;
+    kno:frequency kno:KN2020-0180-freq-NN-2020 ;
+    kno:example "¶{수소 리포머에서} 생산된 수소는 수소 버스 충전소에 공급된다."@ko ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:label "수소 리포머"@ko ;
+    kno:origin "(水素<영>reformer)" ;
+    a kno:Neologism .
+kno:KN2020-0180-c1 kno:fullForm "수소"@ko ;
+    kno:surfaceForm "수소"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "수소(水素)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000541 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O1.3 .
+kno:KN2020-0180-c2 kno:fullForm "리포머"@ko ;
+    kno:surfaceForm "리포머"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "리포머(reformer)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003322 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .

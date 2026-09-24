@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0171 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0171-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0171-form ;
-    ontolex:sense kno:KN2020-0171-sense .
-
-kno:KN2020-0171-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002578093> .
-
-kno:KN2020-0171-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0171-freq-nn,
-        kno:KN2020-0171-freq-yt ;
-    ontolex:writtenRep "소부장^산업"@ko .
-
-kno:KN2020-0171-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4081 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0171-freq-yt a frac:CorpusFrequency ;
-    rdf:value 742 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0171-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0171 kno:instantiates kno:S000124 ;
+    kno:frequency kno:KN2020-0171-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0171-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0171-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    kno:instantiates kno:S001465 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0171-freq-NN-2023 ;
+    skos:definition "소재 산업, 부품 산업, 장비 산업을 아울러 이르는 말."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1573464> ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:urimalTargetCode "1573464" ;
+    kno:frequency kno:KN2020-0171-freq-NN-2024 ;
+    kno:slotFiller "소부장(素部裝) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0171-freq-NN-2022 ;
+    kno:slotFiller "산업(産業) (1성분)"@ko ;
+    kno:component kno:KN2020-0171-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0171-freq-NN-2020 ;
+    kno:componentString "소부장(素部裝), 산업(産業)"@ko ;
+    kno:example "¶정부는 기술 제휴와 국산화 등을 포함한 다양한 방법으로 {소부장 산업을} 육성하겠다고 밝혔다."@ko ;
+    kno:origin "(素部裝産業)" ;
+    kno:languageType "한^한" ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "소부장^산업"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0171-c1 ;
+    kno:indexForm "소부장산업"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0171-freq-NN-total .
+kno:KN2020-0171-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000058 ;
+    rdfs:label "산업(産業)"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "산업"@ko ;
+    kno:surfaceForm "산업"@ko .
+kno:KN2020-0171-c1 rdfs:label "소부장(素部裝)"@ko ;
+    kno:fullForm "소부장"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001484 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "소부장"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component .

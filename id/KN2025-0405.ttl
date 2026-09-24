@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0405 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0405 a ontolex:Word ;
-    frac:attestation kno:KN2025-0405-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0405-form ;
-    ontolex:sense kno:KN2025-0405-sense .
-
-kno:KN2025-0405-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013036882> .
-
-kno:KN2025-0405-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0405-freq-nn,
-        kno:KN2025-0405-freq-yt ;
-    ontolex:writtenRep "얼축신"@ko .
-
-kno:KN2025-0405-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0405-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0405-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0405 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EC%8B%A0%EC%B6%95> ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "얼(다), (죽다), 신축(新築)"@ko ;
+    kno:slotFiller "(죽다)+신축(新築) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "얼신축"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2025-0405-c1 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2025-0405-c3 ;
+    kno:component kno:KN2025-0405-c2 ;
+    kno:example "(LLM) 구축 아파트는 거래가 뜸한데도 신축 분양만 나오면 경쟁률이 치솟는 걸 보면 {얼신축이} 확실히 있는 것 같다."@ko ;
+    a kno:Neologism ;
+    rdfs:label "얼신축"@ko ;
+    skos:definition "(LLM) 새로 지은 아파트를 유독 선호하는 현상."@ko ;
+    kno:instantiates kno:S000687 ;
+    kno:predicate "선호하다"@ko .
+kno:KN2025-0405-c1 rdfs:label "얼(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "얼다"@ko ;
+    kno:formative kno:F000385 ;
+    kno:surfaceForm "얼"@ko ;
+    kno:semanticTag kno:usas-O4.6m ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0405-c3 a kno:Component ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F004710 ;
+    rdfs:label "신축(新築)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "신축"@ko ;
+    kno:surfaceForm "신축"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0405-c2 kno:surfaceForm "None"@ko ;
+    kno:formative kno:F002050 ;
+    a kno:Component ;
+    rdfs:label "(죽다)"@ko ;
+    kno:semanticTag kno:usas-L1m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "죽다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .

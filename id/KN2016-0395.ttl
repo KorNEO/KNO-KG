@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0395 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0395 kno:instantiates kno:S000318 ;
+    skos:definition "우주에서 일정 기간 동안 생활할 수 있도록 만든 캡슐 형태의 숙박 시설. 우주 정거장에 설치되어 시험 가동 중이며, 아주 가벼운 특수 섬유를 이용하여 우주 방사선이나 고열을 견디도록 설계하였다."@ko ;
+    kno:indexForm "우주캡슐호텔"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0395-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EC%A3%BC%EC%BA%A1%EC%8A%90%ED%98%B8%ED%85%94> ;
+    kno:component kno:KN2016-0395-c2 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶백색의 ‘{우주 캡슐 호텔}’, OO이 모습을 드러냅니다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:label "우주^캡슐^호텔"@ko ;
+    kno:instantiates kno:S001144 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "한^영^영" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "우주(宇宙)+캡슐(capsule) (2성분)"@ko ;
+    kno:origin "(宇宙<영>capsule hotel)" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "캡슐(capsule)+호텔(hotel) (2성분)"@ko ;
+    kno:frequency kno:KN2016-0395-freq-NN-2016 ;
+    kno:component kno:KN2016-0395-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0395-c1 ;
+    kno:componentString "우주(宇宙), 캡슐(capsule), 호텔(hotel)"@ko .
+kno:KN2016-0395-c2 kno:semanticTag kno:usas-B3 ;
+    a kno:Component ;
+    kno:surfaceForm "캡슐"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "캡슐(capsule)"@ko ;
+    kno:formative kno:F001852 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "캡슐"@ko .
+kno:KN2016-0395-c3 a kno:Component ;
+    kno:fullForm "호텔"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "호텔"@ko ;
+    kno:formative kno:F000155 ;
+    rdfs:label "호텔(hotel)"@ko .
+kno:KN2016-0395-c1 kno:fullForm "우주"@ko ;
+    a kno:Component ;
+    rdfs:label "우주(宇宙)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "우주"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000296 .

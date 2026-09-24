@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0011 kno:year "2019"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A0%9C%EC%A3%BC%EB%8F%84%EA%B0%9C%EB%85%90> ;
+    kno:predicate "결정하다"@ko ;
+    kno:componentString "경제(經濟), 주도(主導), 개념(槪念)"@ko ;
+    kno:origin "(經濟主導槪念)" ;
+    kno:frequency kno:KN2019-0011-freq-NN-total ;
+    rdfs:label "경제^주도^개념"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2019-0011-c1 ;
+    kno:component kno:KN2019-0011-c3 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000285 ;
+    kno:indexForm "경제주도개념"@ko ;
+    skos:definition "경제 성장을 우선적으로 고려하여 국가나 단체 따위의 발전 방향을 결정하는 관점."@ko ;
+    kno:component kno:KN2019-0011-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한^한^한" ;
+    kno:frequency kno:KN2019-0011-freq-NN-2019 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "주도(主導)+개념(槪念) (2성분)"@ko ;
+    kno:example "¶두 명의 정상이 비핵화 및 {경제 주도 개념을} 발전시키기 위해 다양한 방식으로 논의했지만, 이번에는 아무런 합의에도 도달하지 못했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear .
+kno:KN2019-0011-c1 a kno:Component ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경제"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "경제"@ko ;
+    kno:formative kno:F000029 ;
+    kno:semanticTag kno:usas-I1 .
+kno:KN2019-0011-c3 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "개념"@ko ;
+    kno:surfaceForm "개념"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001046 ;
+    rdfs:label "개념(槪念)"@ko ;
+    kno:semanticTag kno:usas-X2.1 .
+kno:KN2019-0011-c2 rdfs:label "주도(主導)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F000926 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주도"@ko ;
+    kno:surfaceForm "주도"@ko .

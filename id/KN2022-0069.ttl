@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0069 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0069 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0069-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0069-form ;
-    ontolex:sense kno:KN2022-0069-sense .
-
-kno:KN2022-0069-att-nn a frac:Attestation ;
-    dcterms:date "2021-09-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004606515> .
-
-kno:KN2022-0069-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0069-freq-nn,
-        kno:KN2022-0069-freq-yt ;
-    ontolex:writtenRep "국제^메탄^서약"@ko .
-
-kno:KN2022-0069-freq-nn a frac:CorpusFrequency ;
-    rdf:value 759 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0069-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0069-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0069 kno:component kno:KN2022-0069-c1 ;
+    kno:languageType "한^영^한" ;
+    kno:instantiates kno:S000478 ;
+    kno:frequency kno:KN2022-0069-freq-NN-2025 ;
+    kno:instantiates kno:S000867 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EC%A0%9C%EB%A9%94%ED%83%84%EC%84%9C%EC%95%BD> ;
+    kno:slotFiller "메탄(methane)+서약(誓約) (2성분)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:indexForm "국제메탄서약"@ko ;
+    kno:component kno:KN2022-0069-c3 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:origin "(國際<영>methane誓約)" ;
+    kno:componentString "국제(國際), 메탄(methane), 서약(誓約)"@ko ;
+    kno:frequency kno:KN2022-0069-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0069-freq-NN-2021 ;
+    kno:slotFiller "국제(國際) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2022-0069-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0069-freq-NN-2023 ;
+    skos:definition "2020년과 비교하여 2030년까지 메탄의 배출을 최소 30% 이상 줄인다는 내용의 서약. 메탄이 기후 변화에 영향을 미치는 온실가스이므로 이와 관련하여 국제적 메탄 감축 협력에 대한 논의가 반영된 것이다. =글로벌 메탄 서약."@ko ;
+    kno:frequency kno:KN2022-0069-freq-NN-2022 ;
+    kno:example "¶인도는 130억 달러 규모의 ‘클린 인디아’ 프로젝트는 추진하고 있지만, ‘{국제 메탄 서약’에는} 참여하지 않고 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "국제^메탄^서약"@ko ;
+    kno:component kno:KN2022-0069-c2 .
+kno:KN2022-0069-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000463 ;
+    kno:surfaceForm "국제"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    rdfs:label "국제(國際)"@ko ;
+    a kno:Component ;
+    kno:fullForm "국제"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0069-c3 rdfs:label "서약(誓約)"@ko ;
+    kno:formative kno:F001462 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "서약"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "서약"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0069-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001297 ;
+    rdfs:label "메탄(methane)"@ko ;
+    kno:fullForm "메탄"@ko ;
+    kno:surfaceForm "메탄"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O1.3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

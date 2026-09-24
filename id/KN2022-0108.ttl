@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0108 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0108 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0108-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0108-form ;
-    ontolex:sense kno:KN2022-0108-sense .
-
-kno:KN2022-0108-att-nn a frac:Attestation ;
-    dcterms:date "2021-09-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003096852> .
-
-kno:KN2022-0108-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0108-freq-nn,
-        kno:KN2022-0108-freq-yt ;
-    ontolex:writtenRep "닭^피^부모"@ko .
-
-kno:KN2022-0108-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0108-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0108-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0108 kno:example "¶최근 중국에서는 엘리트 그룹에 자녀를 밀어 넣기 위해 물불을 가리지 않는 {닭 피 부모가} 늘어나고 있다."@ko ;
+    kno:frequency kno:KN2022-0108-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%AD%ED%94%BC%EB%B6%80%EB%AA%A8> ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0108-freq-NN-2021 ;
+    kno:component kno:KN2022-0108-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "고^고^한" ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "닭, 피, 부모(父母)"@ko ;
+    kno:indexForm "닭피부모"@ko ;
+    kno:component kno:KN2022-0108-c1 ;
+    kno:component kno:KN2022-0108-c3 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "닭^피^부모"@ko ;
+    kno:origin "(닭피父母)" ;
+    skos:definition "중국 사회에서 닭의 피를 사람에게 수혈하듯, 자녀의 교육에 수단과 방법을 가리지 않는 열성적인 부모를 이르는 말."@ko ;
+    kno:slotFiller "닭+피 (2성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000895 .
+kno:KN2022-0108-c2 a kno:Component ;
+    rdfs:label "피"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "피"@ko ;
+    kno:fullForm "피"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F001004 .
+kno:KN2022-0108-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "닭"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "닭"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F001163 ;
+    rdfs:label "닭"@ko .
+kno:KN2022-0108-c3 kno:fullForm "부모"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "부모(父母)"@ko ;
+    kno:formative kno:F000515 ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "부모"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

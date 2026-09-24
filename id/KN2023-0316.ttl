@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0316 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2023-0316 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0316-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0316-form ;
-    ontolex:sense kno:KN2023-0316-sense .
-
-kno:KN2023-0316-att-nn a frac:Attestation ;
-    dcterms:date "2023-06-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002643546> .
-
-kno:KN2023-0316-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0316-freq-nn,
-        kno:KN2023-0316-freq-yt ;
-    ontolex:writtenRep "통합^무기^작전"@ko .
-
-kno:KN2023-0316-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0316-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0316-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:instantiates kno:S001721 ;
+    kno:indexForm "통합무기작전"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "통합(統合), 무기(武器), 작전(作戰)"@ko ;
+    rdfs:label "통합^무기^작전"@ko ;
+    kno:origin "(統合武器作戰)" ;
+    kno:slotFiller "무기(武器)+작전(作戰) (2성분)"@ko ;
+    kno:component kno:KN2023-0316-c3 ;
+    skos:definition "탱크ㆍ대포ㆍ전투기ㆍ보병 간에 항시적인 소통 시스템을 가동하여 수행하는 작전."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0316-c2 ;
+    kno:frequency kno:KN2023-0316-freq-NN-total ;
+    kno:frequency kno:KN2023-0316-freq-NN-2023 ;
+    kno:languageType "한^한^한" ;
+    kno:component kno:KN2023-0316-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%B5%ED%95%A9%EB%AC%B4%EA%B8%B0%EC%9E%91%EC%A0%84> ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶우크라이나는 반격을 위해 {통합 무기 작전을} 수행할 수 있는 3만 명 가량의 병사들을 투입하였다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "수행하다"@ko .
+kno:KN2023-0316-c3 kno:position "3"^^xsd:integer ;
+    rdfs:label "작전(作戰)"@ko ;
+    kno:formative kno:F005539 ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "작전"@ko ;
+    kno:surfaceForm "작전"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0316-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "무기(武器)"@ko ;
+    kno:surfaceForm "무기"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001314 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "무기"@ko .
+kno:KN2023-0316-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000620 ;
+    kno:fullForm "통합"@ko ;
+    rdfs:label "통합(統合)"@ko ;
+    kno:surfaceForm "통합"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "고정항"@ko .

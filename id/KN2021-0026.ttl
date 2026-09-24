@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0026 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0026-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0026-form ;
-    ontolex:sense kno:KN2021-0026-sense .
-
-kno:KN2021-0026-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002670152> .
-
-kno:KN2021-0026-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0026-freq-nn,
-        kno:KN2021-0026-freq-yt ;
-    ontolex:writtenRep "공정^벌금"@ko .
-
-kno:KN2021-0026-freq-nn a frac:CorpusFrequency ;
-    rdf:value 189 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0026-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0026-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0026 kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0026-c1 ;
+    skos:definition "범죄인의 재산이나 소득에 비례하여 차등적으로 부과하는 벌금."@ko ;
+    kno:frequency kno:KN2021-0026-freq-NN-2021 ;
+    kno:languageType "한^한" ;
+    kno:slotFiller "공정(公正) (1성분)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "벌금(罰金) (1성분)"@ko ;
+    kno:componentString "공정(公正), 벌금(罰金)"@ko ;
+    rdfs:label "공정^벌금"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶개인의 소득에 따라 벌금 5만 원에 대한 무게가 같지 않으므로 재산에 비례해 벌금을 내도록 해야 한다는 {공정 벌금이} 논의되고 있다."@ko ;
+    kno:indexForm "공정벌금"@ko ;
+    kno:frequency kno:KN2021-0026-freq-NN-total ;
+    kno:instantiates kno:S000475 ;
+    kno:frequency kno:KN2021-0026-freq-NN-2022 ;
+    kno:predicate "부과하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EC%A0%95%EB%B2%8C%EA%B8%88> ;
+    kno:component kno:KN2021-0026-c2 ;
+    kno:instantiates kno:S000879 ;
+    kno:origin "(公正罰金)" .
+kno:KN2021-0026-c1 rdfs:label "공정(公正)"@ko ;
+    kno:fullForm "공정"@ko ;
+    kno:formative kno:F000459 ;
+    kno:surfaceForm "공정"@ko ;
+    kno:semanticTag kno:usas-G2.2p ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2021-0026-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "벌금"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:formative kno:F001360 ;
+    rdfs:label "벌금(罰金)"@ko ;
+    kno:surfaceForm "벌금"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

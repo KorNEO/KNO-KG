@@ -1,30 +1,51 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0155 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0155 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2023-0155-form ;
-    ontolex:sense kno:KN2023-0155-sense .
-
-kno:KN2023-0155-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0155-freq-nn,
-        kno:KN2023-0155-freq-yt ;
-    ontolex:writtenRep "신파 프레임"@ko .
-
-kno:KN2023-0155-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0155-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0155-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0155 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "신파 영화가 가지고 있는 틀에 박힌 구성이나 내용을 이르는 말."@ko ;
+    kno:component kno:KN2023-0155-c2 ;
+    kno:slotFiller "프레임(frame) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%ED%8C%8C%20%ED%94%84%EB%A0%88%EC%9E%84> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:componentString "신파(新派), 프레임(frame)"@ko ;
+    kno:frequency kno:KN2023-0155-freq-NN-2022 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2023-0155-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_영" ;
+    kno:instantiates kno:S001499 ;
+    kno:origin "(新派<영>frame)" ;
+    kno:indexForm "신파프레임"@ko ;
+    kno:component kno:KN2023-0155-c1 ;
+    kno:example "¶이 영화는 애국심을 유발하고자 하는 억지스러운 구성으로 인해 {신파 프레임을} 가지고 있다며 비판 받고 있다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "신파 프레임"@ko .
+kno:KN2023-0155-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "프레임"@ko ;
+    kno:surfaceForm "프레임"@ko ;
+    rdfs:label "프레임(frame)"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
+    kno:formative kno:F006803 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0155-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "신파"@ko ;
+    kno:surfaceForm "신파"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "신파(新派)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001554 ;
+    kno:semanticTag kno:usas-K4 .

@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0180 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0180 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0180-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0180-form ;
-    ontolex:sense kno:KN2022-0180-sense .
-
-kno:KN2022-0180-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004684273> .
-
-kno:KN2022-0180-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0180-freq-nn,
-        kno:KN2022-0180-freq-yt ;
-    ontolex:writtenRep "소상공인^방역^지원금"@ko .
-
-kno:KN2022-0180-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2277 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0180-freq-yt a frac:CorpusFrequency ;
-    rdf:value 79 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0180-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0180 kno:instantiates kno:S000076 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶정부가 발표한 {소상공인 방역 지원금}으로 인하여, 쌀값 하락과 관련해서는 아무런 조치가 없었기 때문에 농민들의 박탈감이 가중될 것이라는 우려도 제기된다."@ko ;
+    kno:indexForm "소상공인방역지원금"@ko ;
+    kno:instantiates kno:S001467 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0180-freq-NN-total ;
+    kno:frequency kno:KN2022-0180-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0180-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0180-c3 ;
+    kno:origin "(小商工人防疫支援金)" ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%EB%B0%A9%EC%97%AD%EC%A7%80%EC%9B%90%EA%B8%88> ;
+    kno:predicate "지급하다"@ko ;
+    skos:definition "코로나19의 확산에 따른 사회적 거리 두기의 시행으로 인하여 매출이 줄어든 소상공인에게 정부가 지급하는 지원금. 1차 지원금은 2021년 12월 27일부터 100만 원이, 2차 지원금은 2022년 2월 23일부터 300만 원이 지원금 대상자에게 지급되었다."@ko ;
+    kno:component kno:KN2022-0180-c1 ;
+    kno:componentString "소상공인(小商工人), 방역(防疫), 지원금(支援金)"@ko ;
+    rdfs:label "소상공인^방역^지원금"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:slotFiller "방역(防疫)+지원금(支援金) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "소상공인(小商工人)+방역(防疫) (2성분)"@ko ;
+    kno:component kno:KN2022-0180-c2 ;
+    kno:frequency kno:KN2022-0180-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0180-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0180-freq-NN-2025 .
+kno:KN2022-0180-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "지원금"@ko ;
+    kno:surfaceForm "지원금"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "지원금(支援金)"@ko ;
+    kno:formative kno:F000036 ;
+    a kno:Component .
+kno:KN2022-0180-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "소상공인"@ko ;
+    rdfs:label "소상공인(小商工人)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001485 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "소상공인"@ko .
+kno:KN2022-0180-c2 kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "방역"@ko ;
+    kno:surfaceForm "방역"@ko ;
+    rdfs:label "방역(防疫)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000078 ;
+    kno:truncated "false"^^xsd:boolean .

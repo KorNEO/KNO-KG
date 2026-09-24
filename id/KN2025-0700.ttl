@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0700 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0700 a ontolex:Word ;
-    frac:attestation kno:KN2025-0700-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0700-form ;
-    ontolex:sense kno:KN2025-0700-sense .
-
-kno:KN2025-0700-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/117/0003903222> .
-
-kno:KN2025-0700-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0700-freq-nn,
-        kno:KN2025-0700-freq-yt ;
-    ontolex:writtenRep "효소교"@ko .
-
-kno:KN2025-0700-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0700-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0700-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0700 kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9A%A8%EC%86%8C%EA%B5%90> ;
+    kno:indexForm "효소교"@ko ;
+    skos:definition "(LLM) 특정 인플루언서나 판매자가 권하는 효소 관련 건강식품을 맹신해 집단적으로 구매ㆍ섭취하며, 그들을 추종하는 무리를 비유적으로 이르는 말."@ko ;
+    kno:component kno:KN2025-0700-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "효소(酵素) (1성분)"@ko ;
+    kno:componentString "효소(酵素), -교(敎)"@ko ;
+    kno:formation kno:W02 ;
+    kno:origin "(酵素敎)" ;
+    rdfs:label "효소-교"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0700-freq-NN-2025 ;
+    kno:component kno:KN2025-0700-c2 ;
+    kno:example "(LLM) 그 사람이 추천한 효소 제품이 품절되자 댓글창에서는 {효소교가} 또 몰려왔다며 과열된 분위기를 걱정하는 반응도 나왔다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001154 ;
+    kno:frequency kno:KN2025-0700-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism .
+kno:KN2025-0700-c1 kno:fullForm "효소"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F007183 ;
+    a kno:Component ;
+    kno:surfaceForm "효소"@ko ;
+    rdfs:label "효소(酵素)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2025-0700-c2 kno:formative kno:F001086 ;
+    a kno:Component ;
+    rdfs:label "-교(敎)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "교"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "교"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0360 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0360 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0360-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0360-form ;
-    ontolex:sense kno:KN2020-0360-sense .
-
-kno:KN2020-0360-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004520977> .
-
-kno:KN2020-0360-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0360-freq-nn,
-        kno:KN2020-0360-freq-yt ;
-    ontolex:writtenRep "코로나 팬데믹"@ko .
-
-kno:KN2020-0360-freq-nn a frac:CorpusFrequency ;
-    rdf:value 54283 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0360-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3467 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0360-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0360 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%8C%AC%EB%8D%B0%EB%AF%B9> ;
+    kno:componentString "코로나(바이러스)(corona virus), 팬데믹(pandemic)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0360-c2 ;
+    kno:frequency kno:KN2020-0360-freq-NN-2020 ;
+    kno:origin "(<영>←corona virus pandemic)" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:instantiates kno:S000005 ;
+    kno:frequency kno:KN2020-0360-freq-NN-2024 ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2020-0360-c1 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0360-freq-NN-2025 ;
+    kno:predicate "유행하다"@ko ;
+    rdfs:label "코로나 팬데믹"@ko ;
+    kno:slotFiller "팬데믹(pandemic) (1성분)"@ko ;
+    skos:definition "코로나19가 세계적으로 크게 유행하는 현상."@ko ;
+    kno:example "¶확진자 증가세가 이런 추세라면 {코로나 팬데믹은} 시간문제이다."@ko ;
+    kno:frequency kno:KN2020-0360-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0360-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0360-freq-NN-2022 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0360-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "코로나팬데믹"@ko .
+kno:KN2020-0360-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "팬데믹"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    rdfs:label "팬데믹(pandemic)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006661 ;
+    kno:surfaceForm "팬데믹"@ko .
+kno:KN2020-0360-c1 rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000003 .

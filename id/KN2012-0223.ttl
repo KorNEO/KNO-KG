@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0223 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0223 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0223-freq-NN-2012 ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2012-0223-freq-NN-2013 ;
+    kno:component kno:KN2012-0223-c1 ;
+    rdfs:label "스마트폰 계급"@ko ;
+    kno:componentString "스마트폰(smart phone), 계급(階級)"@ko ;
+    kno:instantiates kno:S000787 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2012-0223-freq-NN-total ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:slotFiller "계급(階級) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0%20%EA%B3%84%EA%B8%89> ;
+    kno:indexForm "스마트폰계급"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2012-0223-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:slotFiller "스마트폰(smart phone) (1성분)"@ko ;
+    skos:definition "스마트폰의 기종을 성능에 따라 나눈 계급."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(smart phone階級)" ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000310 ;
+    kno:component kno:KN2012-0223-c2 ;
+    kno:example "¶한눈에 {스마트폰 계급을} 알 수 있는 ‘스마트폰 계급도’가 온라인에서 화제다."@ko .
+kno:KN2012-0223-c1 kno:semanticTag kno:usas-Q1.3 ;
+    a kno:Component ;
+    rdfs:label "스마트폰(smart phone)"@ko ;
+    kno:fullForm "스마트폰"@ko ;
+    kno:formative kno:F000179 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "스마트폰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0223-c2 kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000332 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "계급"@ko ;
+    kno:surfaceForm "계급"@ko ;
+    a kno:Component ;
+    rdfs:label "계급(階級)"@ko .

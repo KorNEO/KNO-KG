@@ -1,0 +1,76 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0482 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0482 kno:component kno:KN2016-0482-c3 ;
+    kno:indexForm "청년희망둥지법"@ko ;
+    a kno:Neologism ;
+    kno:example "¶OOO는 이날 보도 자료를 통해 “청년 세대에게 희망과 일자리를 위해 OO 1호 법안 ‘{청년 희망 둥지법’과}…청년 일자리 창출 프로그램 구축을 위해 강력하게 추진해 나가겠다.”라고 밝혔다."@ko ;
+    kno:origin "(靑年希望둥지法)" ;
+    kno:frequency kno:KN2016-0482-freq-NN-2016 ;
+    kno:slotFiller "청년(靑年)+희망(希望)+둥지 (3성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "청년 세대에게 주거를 지원하기 위한 법."@ko ;
+    kno:component kno:KN2016-0482-c4 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "둥지+법(法) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0482-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%ED%9D%AC%EB%A7%9D%EB%91%A5%EC%A7%80%EB%B2%95> ;
+    kno:languageType "한^한^(고+한)" ;
+    kno:component kno:KN2016-0482-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0482-freq-NN-2017 ;
+    kno:componentString "청년(靑年), 희망(希望), 둥지, 법(法)"@ko ;
+    kno:instantiates kno:S000691 ;
+    kno:component kno:KN2016-0482-c2 ;
+    rdfs:label "청년^희망^둥지법"@ko .
+kno:KN2016-0482-c3 a kno:Component ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003044 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "둥지"@ko ;
+    kno:surfaceForm "둥지"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "둥지"@ko .
+kno:KN2016-0482-c4 rdfs:label "법(法)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "법"@ko .
+kno:KN2016-0482-c1 kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000042 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "청년"@ko ;
+    kno:surfaceForm "청년"@ko .
+kno:KN2016-0482-c2 a kno:Component ;
+    kno:surfaceForm "희망"@ko ;
+    kno:formative kno:F000444 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "희망(希望)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:fullForm "희망"@ko .

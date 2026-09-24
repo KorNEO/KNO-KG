@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2021-0029 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2021-0029-att-nn ;
+    ontolex:canonicalForm kno:KN2021-0029-form ;
+    ontolex:sense kno:KN2021-0029-sense .
+
+kno:KN2021-0029-att-nn a frac:Attestation ;
+    dcterms:date "2020-09-08"^^xsd:date ;
+    frac:locus <https://m.entertain.naver.com/article/293/0000030787> .
+
+kno:KN2021-0029-form a ontolex:Form ;
+    frac:frequency kno:KN2021-0029-freq-nn,
+        kno:KN2021-0029-freq-yt ;
+    ontolex:writtenRep "구글^갑질^방지법"@ko .
+
+kno:KN2021-0029-freq-nn a frac:CorpusFrequency ;
+    rdf:value 4381 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2021-0029-freq-yt a frac:CorpusFrequency ;
+    rdf:value 61 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2021-0029-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EC%A0%84%EA%B8%B0%ED%86%B5%EC%8B%A0%EC%82%AC%EC%97%85%EB%B2%95%20%EC%8B%9C%ED%96%89%EB%A0%B9%20%EA%B0%9C%EC%A0%95%20%EB%85%BC%EB%9E%80> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

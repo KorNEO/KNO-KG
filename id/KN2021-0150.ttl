@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0150 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0150 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0150-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0150-form ;
-    ontolex:sense kno:KN2021-0150-sense .
-
-kno:KN2021-0150-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/308/0000028147> .
-
-kno:KN2021-0150-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0150-freq-nn,
-        kno:KN2021-0150-freq-yt ;
-    ontolex:writtenRep "사이버 레커"@ko .
-
-kno:KN2021-0150-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4708 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0150-freq-yt a frac:CorpusFrequency ;
-    rdf:value 81 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0150-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0150 kno:frequency kno:KN2021-0150-freq-NN-2023 ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2021-0150-c2 ;
+    kno:slotFiller "레커(wrecker) (1성분)"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:indexForm "사이버레커"@ko ;
+    kno:example "¶{사이버 레커가} 끔찍한 사고 현장을 그대로 촬영 후 송출하여 사람들의 눈살을 찌푸리게 만들었다."@ko ;
+    skos:definition "사회적 이슈가 생겼을 때, 그와 관련된 영상을 자극적으로 만들어 인터넷에 올리는 사람을 비유적으로 이르는 말."@ko ;
+    kno:frequency kno:KN2021-0150-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0150-freq-NN-2024 ;
+    kno:instantiates kno:S000215 ;
+    kno:componentString "사이버(cyber), 레커(wrecker)"@ko ;
+    kno:component kno:KN2021-0150-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0150-freq-NN-total ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0150-freq-NN-2025 ;
+    kno:origin "(<영>▼cyber wrecker)" ;
+    rdfs:label "사이버 레커"@ko ;
+    kno:frequency kno:KN2021-0150-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%9D%B4%EB%B2%84%20%EB%A0%88%EC%BB%A4> ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0150-c2 kno:fullForm "레커"@ko ;
+    kno:surfaceForm "레커"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003215 ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "레커(wrecker)"@ko .
+kno:KN2021-0150-c1 a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000366 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "사이버(cyber)"@ko ;
+    kno:fullForm "사이버"@ko ;
+    kno:surfaceForm "사이버"@ko .

@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0502 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0502 a ontolex:Word ;
-    frac:attestation kno:KN2025-0502-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0502-form ;
-    ontolex:sense kno:KN2025-0502-sense .
-
-kno:KN2025-0502-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003349151> .
-
-kno:KN2025-0502-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0502-freq-nn,
-        kno:KN2025-0502-freq-yt ;
-    ontolex:writtenRep "전업 손주"@ko .
-
-kno:KN2025-0502-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0502-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0502-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0502 kno:origin "(專業孫주)" ;
+    kno:example "(LLM) 취업 준비는 잠시 쉬고 할아버지 약 타는 일부터 병원 동행까지 맡다 보니, 친구들한테 {전업손주가} 됐다고 말했다."@ko ;
+    kno:frequency kno:KN2025-0502-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0502-freq-NN-total ;
+    skos:definition "(LLM) 경제 활동이나 구직 활동을 잠시 미루고 조부모와 함께 지내며 병원 동행, 집안일, 돌봄 등을 전담하는 손주."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "전업-손주"@ko ;
+    kno:componentString "전업(專業), 손(孫), 주"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0502-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%97%85%EC%86%90%EC%A3%BC> ;
+    kno:component kno:KN2025-0502-c3 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:predicate "전담하다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:languageType "한_(한+고)" ;
+    kno:component kno:KN2025-0502-c1 ;
+    kno:indexForm "전업손주"@ko .
+kno:KN2025-0502-c2 kno:fullForm "손"@ko ;
+    rdfs:label "손(孫)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F004435 ;
+    kno:surfaceForm "손"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0502-c3 kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "주"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005779 ;
+    kno:fullForm "주"@ko ;
+    kno:surfaceForm "주"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0502-c1 kno:semanticTag kno:usas-I3.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "전업"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "전업"@ko ;
+    rdfs:label "전업(專業)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005635 .

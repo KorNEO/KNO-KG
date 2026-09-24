@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0330 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0330 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0330-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0330-form ;
-    ontolex:sense kno:KN2024-0330-sense .
-
-kno:KN2024-0330-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003262840> .
-
-kno:KN2024-0330-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0330-freq-nn,
-        kno:KN2024-0330-freq-yt ;
-    ontolex:writtenRep "탄핵^만능주의자"@ko .
-
-kno:KN2024-0330-freq-nn a frac:CorpusFrequency ;
-    rdf:value 22 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0330-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0330-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0330 rdfs:label "탄핵^만능주의자"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%ED%95%B5%EB%A7%8C%EB%8A%A5%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0330-freq-NN-total ;
+    kno:origin "(彈劾萬能主義者)" ;
+    kno:component kno:KN2024-0330-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:languageType "한^한" ;
+    kno:frequency kno:KN2024-0330-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "만능주의자(萬能主義者) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "탄핵을 통해 모든 정치적 문제를 해결할 수 있다고 믿거나 주장하는 사람."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶해당 의원들은 {탄핵 만능주의자와} 정치적 수단으로 탄핵을 언급하는 정치인을 당직에서 전면 배제해야 한다고 주장했다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "탄핵만능주의자"@ko ;
+    kno:component kno:KN2024-0330-c1 ;
+    kno:predicate "주장하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "탄핵(彈劾), 만능주의자(萬能主義者)"@ko ;
+    kno:instantiates kno:S000595 .
+kno:KN2024-0330-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003369 ;
+    kno:surfaceForm "만능주의자"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "만능주의자(萬能主義者)"@ko ;
+    a kno:Component ;
+    kno:fullForm "만능주의자"@ko .
+kno:KN2024-0330-c1 kno:surfaceForm "탄핵"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000420 ;
+    kno:fullForm "탄핵"@ko ;
+    rdfs:label "탄핵(彈劾)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

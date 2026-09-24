@@ -1,36 +1,76 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0257 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0257 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0257-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0257-form ;
-    ontolex:sense kno:KN2021-0257-sense .
-
-kno:KN2021-0257-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0010069627> .
-
-kno:KN2021-0257-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0257-freq-nn,
-        kno:KN2021-0257-freq-yt ;
-    ontolex:writtenRep "청년^특별^구직^지원금"@ko .
-
-kno:KN2021-0257-freq-nn a frac:CorpusFrequency ;
-    rdf:value 972 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0257-freq-yt a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0257-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0257 kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:label "청년^특별^구직^지원금"@ko ;
+    kno:component kno:KN2021-0257-c2 ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0257-c4 ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0257-c3 ;
+    kno:origin "(靑年特別求職支援金)" ;
+    kno:frequency kno:KN2021-0257-freq-NN-total ;
+    kno:example "¶정부는 청년들의 어려운 취업 여건을 고려하여 기준 중위 소득 이하에 해당하는 청년 구직자들에게 1회에 50만 원씩 {청년 특별 구직 지원금을} 지급하기로 했다."@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:slotFiller "특별(特別)+구직(求職)+지원금(支援金) (3성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0257-freq-NN-2021 ;
+    kno:instantiates kno:S000107 ;
+    kno:slotFiller "청년(靑年)+특별(特別)+구직(求職) (3성분)"@ko ;
+    kno:predicate "지급하다"@ko ;
+    kno:frequency kno:KN2021-0257-freq-NN-2020 ;
+    kno:indexForm "청년특별구직지원금"@ko ;
+    kno:instantiates kno:S000076 ;
+    skos:definition "전국적인 재난 사태로 인해 구직 기간이 길어짐에 따라 경제적인 어려움을 겪는 미취업 상태의 저소득층 청년들을 지원하기 위해 정부가 지급하는 지원금. 코로나19의 확산과 그에 따른 경제 위기로 인해 마련된 제도이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0257-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%ED%8A%B9%EB%B3%84%EA%B5%AC%EC%A7%81%EC%A7%80%EC%9B%90%EA%B8%88> ;
+    kno:componentString "청년(靑年), 특별(特別), 구직(求職), 지원금(支援金)"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2021-0257-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특별"@ko ;
+    kno:surfaceForm "특별"@ko ;
+    kno:semanticTag kno:usas-A6.2m ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "특별(特別)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000081 .
+kno:KN2021-0257-c4 kno:role "고정항"@ko ;
+    kno:formative kno:F000036 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "지원금"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "지원금"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "지원금(支援金)"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2021-0257-c3 kno:fullForm "구직"@ko ;
+    kno:surfaceForm "구직"@ko ;
+    a kno:Component ;
+    rdfs:label "구직(求職)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002454 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2021-0257-c1 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:surfaceForm "청년"@ko ;
+    kno:formative kno:F000042 ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:fullForm "청년"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

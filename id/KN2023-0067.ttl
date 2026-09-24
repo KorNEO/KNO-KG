@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0067 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0067-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0067-form ;
-    ontolex:sense kno:KN2023-0067-sense .
-
-kno:KN2023-0067-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011523734> .
-
-kno:KN2023-0067-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0067-freq-nn,
-        kno:KN2023-0067-freq-yt ;
-    ontolex:writtenRep "녹색^항로"@ko .
-
-kno:KN2023-0067-freq-nn a frac:CorpusFrequency ;
-    rdf:value 145 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0067-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0067-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0067 kno:frequency kno:KN2023-0067-freq-NN-2025 ;
+    rdfs:label "녹색^항로"@ko ;
+    kno:frequency kno:KN2023-0067-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%EC%83%89%ED%95%AD%EB%A1%9C> ;
+    kno:slotFiller "녹색(綠色) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "항로(航路) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0067-freq-NN-2024 ;
+    kno:instantiates kno:S001139 ;
+    kno:activeYears "4"^^xsd:integer ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "해당 항로를 이용하는 선박들은 온실가스의 배출이 없거나 낮은 연료를 사용해야 하는 특정 항로."@ko ;
+    kno:frequency kno:KN2023-0067-freq-NN-total ;
+    kno:languageType "한^한" ;
+    kno:component kno:KN2023-0067-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "녹색항로"@ko ;
+    kno:frequency kno:KN2023-0067-freq-NN-2023 ;
+    kno:example "¶이번 토론회에서는 국제 해운 분야에서 2050년 탄소 중립의 목표를 달성하기 위한 기술 개발과 {녹색 항로의} 도입 등 해운 탈탄소화를 위한 협력 방안에 대해 협의할 계획이다."@ko ;
+    kno:componentString "녹색(綠色), 항로(航路)"@ko ;
+    kno:origin "(綠色航路)" ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000490 ;
+    kno:component kno:KN2023-0067-c1 .
+kno:KN2023-0067-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "항로"@ko ;
+    rdfs:label "항로(航路)"@ko ;
+    kno:surfaceForm "항로"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001015 .
+kno:KN2023-0067-c1 kno:role "고정항"@ko ;
+    rdfs:label "녹색(綠色)"@ko ;
+    kno:surfaceForm "녹색"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:formative kno:F000478 ;
+    kno:fullForm "녹색"@ko .

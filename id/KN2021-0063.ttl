@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0063 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0063 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0063-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0063-form ;
-    ontolex:sense kno:KN2021-0063-sense .
-
-kno:KN2021-0063-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0010193818> .
-
-kno:KN2021-0063-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0063-freq-nn,
-        kno:KN2021-0063-freq-yt ;
-    ontolex:writtenRep "단일^정액제"@ko .
-
-kno:KN2021-0063-freq-nn a frac:CorpusFrequency ;
-    rdf:value 108 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0063-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0063-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0063 kno:indexForm "단일정액제"@ko ;
+    kno:languageType "한^한" ;
+    kno:origin "(單一定額制)" ;
+    kno:frequency kno:KN2021-0063-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0063-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0063-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EC%9D%BC%EC%A0%95%EC%95%A1%EC%A0%9C> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "단일^정액제"@ko ;
+    kno:component kno:KN2021-0063-c2 ;
+    skos:definition "부동산 거래 시 중개 수수료를, 매매의 경우 0.5% 이하에서, 임대차 계약의 경우 0.4% 이하에서 정하는 제도. 부동산 가격이 급격하게 올라가면서 중개 수수료의 부담을 낮추기 위해 제안된 제도이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0063-c1 ;
+    kno:componentString "단일(單一), 정액제(定額制)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0063-freq-NN-2020 ;
+    kno:example "¶{단일 정액제를} 적용하기 위해서는 관계 부처와 공인 중개사 협회의 협의가 필수적이다."@ko .
+kno:KN2021-0063-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "정액제"@ko ;
+    kno:surfaceForm "정액제"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005680 ;
+    rdfs:label "정액제(定額制)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0063-c1 kno:semanticTag kno:usas-N1 ;
+    kno:role "성분"@ko ;
+    rdfs:label "단일(單一)"@ko ;
+    a kno:Component ;
+    kno:fullForm "단일"@ko ;
+    kno:formative kno:F002871 ;
+    kno:surfaceForm "단일"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

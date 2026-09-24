@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0360 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0360 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0360-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0360-form ;
-    ontolex:sense kno:KN2025-0360-sense .
-
-kno:KN2025-0360-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0002271040> .
-
-kno:KN2025-0360-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0360-freq-nn,
-        kno:KN2025-0360-freq-yt ;
-    ontolex:writtenRep "쉬었음 세대"@ko .
-
-kno:KN2025-0360-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0360-freq-yt a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0360-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0360 kno:unitType "구"@ko ;
+    kno:indexForm "쉬었음세대"@ko ;
+    kno:example "(LLM) 취업 준비를 오래 하다 지친 그는 한동안 아무것도 하지 않고 지내며 스스로를 {쉬었음세대}라고 말했다."@ko ;
+    kno:languageType "고_한" ;
+    kno:frequency kno:KN2025-0360-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%89%AC%EC%97%88%EC%9D%8C%20%EC%84%B8%EB%8C%80> ;
+    skos:definition "(LLM) 취업이나 구직 활동을 하지 않아 비경제활동 인구 가운데 ‘쉬었음’으로 분류되는 청년층을 중심으로 한 세대."@ko ;
+    kno:frequency kno:KN2025-0360-freq-NN-2025 ;
+    kno:component kno:KN2025-0360-c2 ;
+    kno:origin "(쉬었음世代)" ;
+    kno:instantiates kno:S000002 ;
+    kno:slotFiller "쉬었음 (1성분)"@ko ;
+    kno:componentString "쉬었음, 세대(世代)"@ko ;
+    kno:component kno:KN2025-0360-c1 ;
+    rdfs:label "쉬었음 세대"@ko ;
+    a kno:Neologism .
+kno:KN2025-0360-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:fullForm "세대"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2025-0360-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "쉬었음"@ko ;
+    kno:formative kno:F004509 ;
+    kno:semanticTag kno:usas-M8 ;
+    a kno:Component ;
+    kno:fullForm "쉬었음"@ko ;
+    kno:surfaceForm "쉬었음"@ko ;
+    kno:role "슬롯 채움"@ko .

@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0079 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0079-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0079-form ;
-    ontolex:sense kno:KN2020-0079-sense .
-
-kno:KN2020-0079-att-nn a frac:Attestation ;
-    dcterms:date "2023-01-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005069732> .
-
-kno:KN2020-0079-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0079-freq-nn,
-        kno:KN2020-0079-freq-yt ;
-    ontolex:writtenRep "노튜버 존"@ko .
-
-kno:KN2020-0079-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0079-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0079-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:slotFiller "(유)튜버(YouTuber) (1성분)"@ko ;
+    kno:indexForm "노튜버존"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%ED%8A%9C%EB%B2%84%20%EC%A1%B4> ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "개인 방송용으로 영상을 촬영하는 사람들의 출입을 금지하는 곳."@ko ;
+    kno:frequency kno:KN2020-0079-freq-NN-2023 ;
+    kno:component kno:KN2020-0079-c3 ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:example "¶일인 방송을 하는 사람들이 가게 영업을 방해하거나 다른 손님과 말다툼을 하는 사례가 많아지면서 {노튜버 존을} 선언하는 식당들도 생겨나고 있다."@ko ;
+    kno:component kno:KN2020-0079-c2 ;
+    kno:instantiates kno:S000035 ;
+    kno:component kno:KN2020-0079-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "노(no), (유)튜버(YouTuber), 존(zone)"@ko ;
+    kno:frequency kno:KN2020-0079-freq-NN-2019 ;
+    rdfs:label "노튜버 존"@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>▼no←YouTuber zone)" ;
+    kno:frequency kno:KN2020-0079-freq-NN-total ;
+    kno:predicate "금지하다"@ko .
+kno:KN2020-0079-c3 kno:surfaceForm "존"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:fullForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    kno:formative kno:F000034 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2020-0079-c2 kno:formative kno:F000980 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "튜버"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    rdfs:label "(유)튜버(YouTuber)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "유튜버"@ko .
+kno:KN2020-0079-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "노(no)"@ko ;
+    kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "노"@ko ;
+    kno:surfaceForm "노"@ko .

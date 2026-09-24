@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0253 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0253 kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000989 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358302> ;
+    kno:urimalTargetCode "1358302" ;
+    kno:example "¶OO의 경우 {최하옵으로} 설정하면 그럭저럭 즐길 만한 수준은 된다."@ko ;
+    kno:frequency kno:KN2014-0253-freq-NN-2018 ;
+    kno:frequency kno:KN2014-0253-freq-NN-2020 ;
+    kno:componentString "최하(最下), 옵(션)(option)"@ko ;
+    kno:component kno:KN2014-0253-c2 ;
+    kno:languageType "한+영" ;
+    rdfs:label "최하옵"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:predicate "사용하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:origin "(最下<영>←option)" ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "최하(最下) (1성분)"@ko ;
+    kno:frequency kno:KN2014-0253-freq-NN-total ;
+    kno:frequency kno:KN2014-0253-freq-NN-2023 ;
+    kno:frequency kno:KN2014-0253-freq-NN-2014 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2014-0253-c1 ;
+    skos:definition "게임에서 부가로 사용하는 그래픽 효과나 기능을 최소로 사용하는 것."@ko ;
+    kno:frequency kno:KN2014-0253-freq-NN-2019 ;
+    kno:indexForm "최하옵"@ko .
+kno:KN2014-0253-c2 kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "옵"@ko ;
+    kno:semanticTag kno:usas-X6 ;
+    kno:formative kno:F000872 ;
+    a kno:Component ;
+    kno:fullForm "옵션"@ko ;
+    rdfs:label "옵(션)(option)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2014-0253-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006113 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "최하(最下)"@ko ;
+    kno:semanticTag kno:usas-A5.1mmm ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "최하"@ko ;
+    a kno:Component ;
+    kno:fullForm "최하"@ko .

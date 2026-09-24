@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0112 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0112 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0112-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0112-form ;
-    ontolex:sense kno:KN2025-0112-sense .
-
-kno:KN2025-0112-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005949307> .
-
-kno:KN2025-0112-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0112-freq-nn,
-        kno:KN2025-0112-freq-yt ;
-    ontolex:writtenRep "내란 보호 위원회"@ko .
-
-kno:KN2025-0112-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0112-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0112-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0112 kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0112-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "내란보호위원회"@ko ;
+    kno:frequency kno:KN2025-0112-freq-NN-2025 ;
+    kno:origin "(內亂保護委員會)" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0112-c2 ;
+    kno:componentString "내란(內亂), 보호(保護), 위원회(委員會)"@ko ;
+    kno:instantiates kno:S000890 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "보호(保護) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0112-freq-NN-total ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EB%B3%B4%ED%98%B8%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
+    skos:definition "(LLM) 국가인권위원회가 비상계엄 선포 등 내란 혐의를 받는 권력자나 관련 피고인을 두둔ㆍ옹호하는 기관으로 변질됐다는 비판을 담아, 국가인권위원회를 비꼬아 이르는 말."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "내란(內亂) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0112-c1 ;
+    kno:languageType "한_한_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001280 ;
+    kno:example "(LLM) 시민단체는 인권위가 계엄 관련 피고인들의 처우 개선을 권고하자, 인권위가 {내란보호위원회로} 전락했다며 위원장 사퇴를 요구했다."@ko ;
+    rdfs:label "내란 보호 위원회"@ko .
+kno:KN2025-0112-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "위원회(委員會)"@ko ;
+    kno:fullForm "위원회"@ko ;
+    kno:surfaceForm "위원회"@ko ;
+    kno:formative kno:F000148 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2025-0112-c2 kno:fullForm "보호"@ko ;
+    kno:surfaceForm "보호"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "보호(保護)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000137 ;
+    kno:semanticTag kno:usas-A15p ;
+    kno:role "고정항"@ko .
+kno:KN2025-0112-c1 kno:semanticTag kno:usas-G3m ;
+    kno:role "고정항"@ko ;
+    rdfs:label "내란(內亂)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "내란"@ko ;
+    kno:surfaceForm "내란"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000052 .

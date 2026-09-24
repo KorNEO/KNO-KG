@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0187 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0187 a ontolex:Word ;
-    frac:attestation kno:KN2023-0187-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0187-form ;
-    ontolex:sense kno:KN2023-0187-sense .
-
-kno:KN2023-0187-att-nn a frac:Attestation ;
-    dcterms:date "2022-11-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004778117> .
-
-kno:KN2023-0187-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0187-freq-nn,
-        kno:KN2023-0187-freq-yt ;
-    ontolex:writtenRep "얼죽크"@ko .
-
-kno:KN2023-0187-freq-nn a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0187-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0187-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0187 kno:indexForm "얼죽크"@ko ;
+    kno:slotFiller "크(롭트)(cropped) (1성분)"@ko ;
+    kno:origin "(얼죽<영>←cropped)" ;
+    skos:definition "‘얼어 죽어도 크롭트’를 줄여 이르는 말. 추운 날씨에도 멋을 위해서 길이가 짧은 윗옷이나 외투를 입는 것을 말한다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EC%A3%BD%ED%81%AC> ;
+    kno:componentString "얼(다), 죽(다), 크(롭트)(cropped)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶{얼죽크의} 인기가 온몸을 휘감은 검정색의 롱 패딩, 일명 김밥 패션을 밀어냈다."@ko ;
+    rdfs:label "얼죽크"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2023-0187-freq-NN-total ;
+    kno:formation kno:W06 ;
+    kno:languageType "고+고+영" ;
+    kno:frequency kno:KN2023-0187-freq-NN-2022 ;
+    kno:instantiates kno:S000314 ;
+    kno:component kno:KN2023-0187-c3 ;
+    kno:component kno:KN2023-0187-c2 ;
+    kno:component kno:KN2023-0187-c1 ;
+    kno:frequency kno:KN2023-0187-freq-NN-2023 ;
+    a ontolex:Word .
+kno:KN2023-0187-c3 kno:role "슬롯 채움"@ko ;
+    rdfs:label "크(롭트)(cropped)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "크"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "크롭트"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001875 ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2023-0187-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "죽"@ko ;
+    kno:fullForm "죽다"@ko ;
+    kno:semanticTag kno:usas-L1m ;
+    rdfs:label "죽(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000303 .
+kno:KN2023-0187-c1 kno:surfaceForm "얼"@ko ;
+    rdfs:label "얼(다)"@ko ;
+    kno:fullForm "얼다"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.6m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000385 ;
+    a kno:Component .

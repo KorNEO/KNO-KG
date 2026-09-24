@@ -1,36 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0032 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0032 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0032-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0032-form ;
-    ontolex:sense kno:KN2020-0032-sense .
-
-kno:KN2020-0032-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0002968736> .
-
-kno:KN2020-0032-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0032-freq-nn,
-        kno:KN2020-0032-freq-yt ;
-    ontolex:writtenRep "귀가 안심 보험"@ko .
-
-kno:KN2020-0032-freq-nn a frac:CorpusFrequency ;
-    rdf:value 83 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0032-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0032-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0032 kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0032-freq-NN-2024 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:origin "(歸家安心保險)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1461995> ;
+    kno:example "¶30대 중반 직장인 OOO씨는 회식과 야근으로 귀가 시간이 늦어지는 일이 잦자 {귀가 안심 보험에} 가입했다."@ko ;
+    kno:componentString "귀가(歸家), 안심(安心), 보험(保險)"@ko ;
+    kno:frequency kno:KN2020-0032-freq-NN-2021 ;
+    kno:indexForm "귀가안심보험"@ko ;
+    kno:instantiates kno:S000387 ;
+    kno:languageType "한_한_한" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1461995" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0032-freq-NN-2023 ;
+    kno:component kno:KN2020-0032-c2 ;
+    rdfs:label "귀가 안심 보험"@ko ;
+    kno:frequency kno:KN2020-0032-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "집으로 돌아가는 길에 발생할 수 있는 사고로 인한 손해를 보상하는 보험."@ko ;
+    kno:component kno:KN2020-0032-c1 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0032-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0032-freq-NN-2020 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "귀가(歸家)+안심(安心) (2성분)"@ko ;
+    kno:predicate "보상하다"@ko ;
+    kno:component kno:KN2020-0032-c3 ;
+    kno:frequency kno:KN2020-0032-freq-NN-2019 .
+kno:KN2020-0032-c2 kno:surfaceForm "안심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E6p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000088 ;
+    kno:fullForm "안심"@ko ;
+    a kno:Component ;
+    rdfs:label "안심(安心)"@ko .
+kno:KN2020-0032-c1 kno:fullForm "귀가"@ko ;
+    kno:surfaceForm "귀가"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F001095 ;
+    rdfs:label "귀가(歸家)"@ko .
+kno:KN2020-0032-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000776 ;
+    kno:fullForm "보험"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "보험"@ko ;
+    a kno:Component ;
+    rdfs:label "보험(保險)"@ko .

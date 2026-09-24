@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0140 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0140 rdfs:label "벌집^계좌"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0140-c1 ;
+    kno:frequency kno:KN2018-0140-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0140-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2018-0140-c2 ;
+    kno:indexForm "벌집계좌"@ko ;
+    kno:frequency kno:KN2018-0140-freq-NN-total ;
+    skos:definition "법인 계좌 아래에 여러 개의 개인 계좌를 개설하는 일. 또는 그런 형태의 계좌. 은행이 가상 화폐 거래를 목적으로 하는 가상 계좌 발급을 중단하자 일부 가상 화폐 거래소가 편법으로 운영한 계좌의 형태를 말한다."@ko ;
+    kno:frequency kno:KN2018-0140-freq-NN-2025 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383154> ;
+    kno:frequency kno:KN2018-0140-freq-NN-2019 ;
+    kno:predicate "개설하다"@ko ;
+    kno:frequency kno:KN2018-0140-freq-NN-2018 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(벌집計座)" ;
+    kno:instantiates kno:S000356 ;
+    kno:slotFiller "벌집 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:example "¶{벌집 계좌는} 자금 세탁 소지가 크고, 해킹과 같은 사고가 생겼을 때 거래 자금이 뒤엉킬 수 있다."@ko ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:languageType "고^한" ;
+    kno:frequency kno:KN2018-0140-freq-NN-2023 ;
+    kno:componentString "벌집, 계좌(計座)"@ko ;
+    kno:frequency kno:KN2018-0140-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0140-freq-NN-2024 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:urimalTargetCode "1383154" .
+kno:KN2018-0140-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "벌집"@ko ;
+    kno:surfaceForm "벌집"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    kno:formative kno:F003794 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "벌집"@ko .
+kno:KN2018-0140-c2 kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "계좌"@ko ;
+    kno:formative kno:F000201 ;
+    kno:surfaceForm "계좌"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "계좌(計座)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

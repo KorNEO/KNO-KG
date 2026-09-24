@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0289 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0289 kno:slotFiller "티처(teacher) (1성분)"@ko ;
+    kno:instantiates kno:S000042 ;
+    kno:formation kno:W01 ;
+    kno:componentString "티처(teacher), 맘(mom)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8B%B0%EC%B2%98%EB%A7%98> ;
+    rdfs:label "티처-맘"@ko ;
+    kno:indexForm "티처맘"@ko ;
+    kno:origin "(<영>teacher mom)" ;
+    kno:frequency kno:KN2014-0289-freq-NN-total ;
+    kno:component kno:KN2014-0289-c1 ;
+    a kno:Neologism ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶교육에 관심이 많은 ‘{티처맘’들이} 주로 구매하는 서적은 ‘유아/어린이’, ‘가정/생활’ 등 자녀의 교육과 아이와의 교감을 중시하는 책이 단연 인기였다."@ko ;
+    kno:component kno:KN2014-0289-c2 ;
+    skos:definition "자녀 교육에 관심이 많은 엄마."@ko ;
+    kno:languageType "영+영" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0289-freq-NN-2014 ;
+    a ontolex:Word .
+kno:KN2014-0289-c1 kno:fullForm "티처"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001927 ;
+    kno:surfaceForm "티처"@ko ;
+    rdfs:label "티처(teacher)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0289-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000021 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "맘"@ko ;
+    kno:surfaceForm "맘"@ko .

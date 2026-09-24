@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0330 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0330 kno:frequency kno:KN2013-0330-freq-NN-2017 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0330-freq-NN-2012 ;
+    rdfs:label "육아^휴학"@ko ;
+    kno:example "¶OO 대학교 대학생들이 {육아 휴학을} 할 수 있게 됐다."@ko ;
+    kno:frequency kno:KN2013-0330-freq-NN-2015 ;
+    kno:origin "(育兒休學)" ;
+    kno:frequency kno:KN2013-0330-freq-NN-2019 ;
+    kno:slotFiller "휴학(休學) (1성분)"@ko ;
+    kno:component kno:KN2013-0330-c2 ;
+    kno:unitType "구"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "학교에 적을 둔 사람이 자녀의 양육을 위하여 일정 기간 동안 학교를 쉬는 일."@ko ;
+    kno:activeYears "13"^^xsd:integer ;
+    kno:frequency kno:KN2013-0330-freq-NN-2021 ;
+    kno:frequency kno:KN2013-0330-freq-NN-2023 ;
+    kno:languageType "한^한" ;
+    kno:frequency kno:KN2013-0330-freq-NN-2018 ;
+    kno:frequency kno:KN2013-0330-freq-NN-2014 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "육아휴학"@ko ;
+    kno:component kno:KN2013-0330-c1 ;
+    kno:frequency kno:KN2013-0330-freq-NN-2022 ;
+    kno:componentString "육아(育兒), 휴학(休學)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "쉬다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357384> ;
+    kno:frequency kno:KN2013-0330-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0330-freq-NN-total ;
+    kno:instantiates kno:S000088 ;
+    kno:urimalTargetCode "1357384" ;
+    kno:frequency kno:KN2013-0330-freq-NN-2025 ;
+    kno:frequency kno:KN2013-0330-freq-NN-2016 ;
+    kno:frequency kno:KN2013-0330-freq-NN-2024 ;
+    a ontolex:MultiwordExpression .
+kno:KN2013-0330-c2 rdfs:label "휴학(休學)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F007215 ;
+    a kno:Component ;
+    kno:fullForm "휴학"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "휴학"@ko .
+kno:KN2013-0330-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "육아(育兒)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "육아"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "육아"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000118 .

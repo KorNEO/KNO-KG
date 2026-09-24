@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0360 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0360 kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EB%B8%94%EB%A6%AC%20%EB%A3%A9> ;
+    kno:component kno:KN2013-0360-c2 ;
+    kno:indexForm "정블리룩"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2013-0360-freq-NN-total ;
+    kno:languageType "(한+영)_영" ;
+    kno:slotFiller "정(丁)+(러)블리(lovely) (2성분)"@ko ;
+    skos:definition "사랑스러운 옷. 또는 그런 옷차림."@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0360-freq-NN-2013 ;
+    a kno:Neologism ;
+    kno:origin "(丁←<영>lovely look)" ;
+    kno:component kno:KN2013-0360-c3 ;
+    kno:example "¶드라마 속 된장녀의 면모와는 다르게 순수하면서도 사랑스러운 모습인 ‘{정블리룩’의} 모습이 공개됐다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000007 ;
+    rdfs:label "정블리 룩"@ko ;
+    kno:componentString "정(丁), (러)블리(lovely), 룩(look)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2013-0360-c1 ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2013-0360-c2 a kno:Component ;
+    rdfs:label "(러)블리(lovely)"@ko ;
+    kno:surfaceForm "블리"@ko ;
+    kno:fullForm "러블리"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001404 ;
+    kno:semanticTag kno:usas-E2 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0360-c3 kno:fullForm "룩"@ko ;
+    kno:surfaceForm "룩"@ko ;
+    rdfs:label "룩(look)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000005 .
+kno:KN2013-0360-c1 kno:semanticTag kno:usas-N1 ;
+    kno:fullForm "정"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005664 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "정(丁)"@ko ;
+    kno:surfaceForm "정"@ko .

@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0189 kno:unitType "구"@ko ;
+    kno:frequency kno:KN2015-0189-freq-NN-total ;
+    kno:componentString "잉글리시(english), 푸어(poor)"@ko ;
+    kno:frequency kno:KN2015-0189-freq-NN-2016 ;
+    kno:frequency kno:KN2015-0189-freq-NN-2014 ;
+    kno:frequency kno:KN2015-0189-freq-NN-2017 ;
+    a kno:Neologism ;
+    rdfs:label "잉글리시^푸어"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%89%EA%B8%80%EB%A6%AC%EC%8B%9C%ED%91%B8%EC%96%B4> ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶지속되는 취업난 속 경제적 빈곤 경제적 어려움을 반영한 하우스 푸어, 렌트 푸어, 에듀 푸어에 이어 {잉글리시 푸어도} 등장했다."@ko ;
+    kno:component kno:KN2015-0189-c2 ;
+    skos:definition "취업을 위한 영어 공부에 과다한 교육비를 지출해 가난한 사람. 또는 그런 현상."@ko ;
+    kno:indexForm "잉글리시푸어"@ko ;
+    kno:component kno:KN2015-0189-c1 ;
+    kno:slotFiller "잉글리시(english) (1성분)"@ko ;
+    kno:languageType "영^영" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(<영>english poor)" ;
+    kno:instantiates kno:S000028 .
+kno:KN2015-0189-c2 rdfs:label "푸어(poor)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:formative kno:F000050 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "푸어"@ko ;
+    kno:surfaceForm "푸어"@ko .
+kno:KN2015-0189-c1 rdfs:label "잉글리시(english)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005499 ;
+    kno:fullForm "잉글리시"@ko ;
+    kno:surfaceForm "잉글리시"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q3 .

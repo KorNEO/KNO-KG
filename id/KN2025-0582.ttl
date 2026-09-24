@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0582 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0582 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0582-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0582-form ;
-    ontolex:sense kno:KN2025-0582-sense .
-
-kno:KN2025-0582-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002489484> .
-
-kno:KN2025-0582-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0582-freq-nn,
-        kno:KN2025-0582-freq-yt ;
-    ontolex:writtenRep "쿠팡 게이트"@ko .
-
-kno:KN2025-0582-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0582-freq-yt a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0582-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0582 a kno:Neologism ;
+    kno:instantiates kno:S001699 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "쿠팡(Coupang) (1성분)"@ko ;
+    kno:origin "(Coupang<영>gate)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BF%A0%ED%8C%A1%20%EA%B2%8C%EC%9D%B4%ED%8A%B8> ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 시민단체는 {쿠팡게이트에} 대한 진상 규명이 필요하다며 국회 차원의 조사와 책임자 처벌을 촉구했다."@ko ;
+    kno:componentString "쿠팡(Coupang), 게이트(gate)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "쿠팡 게이트"@ko ;
+    kno:frequency kno:KN2025-0582-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0582-c1 ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S000071 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "쿠팡게이트"@ko ;
+    skos:definition "(LLM) 쿠팡을 둘러싼 노동ㆍ인사 등 각종 위법 의혹과, 그에 대한 수사ㆍ처분 과정에서 제기된 봐주기ㆍ유착 의혹까지 아울러 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0582-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0582-c2 ;
+    kno:slotFiller "게이트(gate) (1성분)"@ko .
+kno:KN2025-0582-c1 a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:fullForm "쿠팡"@ko ;
+    kno:formative kno:F000963 ;
+    kno:surfaceForm "쿠팡"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "쿠팡(Coupang)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0582-c2 kno:fullForm "게이트"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "게이트"@ko ;
+    rdfs:label "게이트(gate)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:formative kno:F000126 .

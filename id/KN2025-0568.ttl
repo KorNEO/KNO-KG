@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0568 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0568 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0568-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0568-form ;
-    ontolex:sense kno:KN2025-0568-sense .
-
-kno:KN2025-0568-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/449/0000302268> .
-
-kno:KN2025-0568-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0568-freq-nn,
-        kno:KN2025-0568-freq-yt ;
-    ontolex:writtenRep "침묵 소비"@ko .
-
-kno:KN2025-0568-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0568-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0568-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0568 kno:frequency kno:KN2025-0568-freq-NN-total ;
+    kno:indexForm "침묵소비"@ko ;
+    kno:instantiates kno:S000024 ;
+    kno:componentString "침묵(沈默), 소비(消費)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0568-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:label "침묵 소비"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%A8%EB%AC%B5%20%EC%86%8C%EB%B9%84> ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 직원과 말 섞는 게 부담스러워서 무인 매장을 찾아 {침묵소비를} 하며 필요한 물건만 빠르게 골랐다."@ko ;
+    kno:component kno:KN2025-0568-c2 ;
+    kno:languageType "한_한" ;
+    skos:definition "(LLM) 판매자나 타인과의 대화ㆍ응대를 피하거나 최소화하기 위해, 무인ㆍ비대면 환경이나 조용한 이용 조건 등에 비용을 지불하는 소비 행태."@ko ;
+    kno:origin "(沈默消費)" ;
+    kno:component kno:KN2025-0568-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "침묵(沈默) (1성분)"@ko ;
+    kno:predicate "지불하다"@ko .
+kno:KN2025-0568-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000030 ;
+    kno:fullForm "소비"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "소비"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "소비(消費)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0568-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001840 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "침묵(沈默)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q2.2m ;
+    kno:fullForm "침묵"@ko ;
+    kno:surfaceForm "침묵"@ko .

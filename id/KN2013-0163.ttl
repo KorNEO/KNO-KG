@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0163 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0163 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EB%A9%98> ;
+    rdfs:label "매멘"@ko ;
+    kno:component kno:KN2013-0163-c2 ;
+    kno:languageType "영+영" ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "매멘"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2013-0163-c1 ;
+    kno:componentString "매(드라이프)(madlife), (아)멘(amen)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(▼←madlife amen)" ;
+    kno:formation kno:W05 ;
+    a kno:Neologism ;
+    kno:example "¶이미 월드 클래스를 넘어선 우주 클래스 ‘{매멘}’ OO O 선수와 그에 맞설 OOO 선수는 어떤 플레이 를 보여 줄지 기대가 됩니다."@ko ;
+    skos:definition "게임을 잘하는 사람을 신에 비유하여 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2013-0163-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "멘"@ko ;
+    a kno:Component ;
+    rdfs:label "(아)멘(amen)"@ko ;
+    kno:fullForm "아멘"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:formative kno:F003448 .
+kno:KN2013-0163-c1 kno:surfaceForm "매"@ko ;
+    kno:fullForm "매드라이프"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z1 ;
+    rdfs:label "매(드라이프)(madlife)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003390 ;
+    kno:role "성분"@ko ;
+    a kno:Component .

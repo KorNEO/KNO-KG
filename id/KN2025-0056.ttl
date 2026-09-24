@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0056 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0056 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0056-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0056-form ;
-    ontolex:sense kno:KN2025-0056-sense .
-
-kno:KN2025-0056-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-10"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/442/0000188154> .
-
-kno:KN2025-0056-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0056-freq-nn,
-        kno:KN2025-0056-freq-yt ;
-    ontolex:writtenRep "고봉밥 패치"@ko .
-
-kno:KN2025-0056-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0056-freq-yt a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0056-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0056 kno:slotFiller "고봉(高捧)+밥 (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EB%B4%89%20%EB%B0%A5%20%ED%8C%A8%EC%B9%98> ;
+    kno:unitType "구"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 게임에서 여러 개선 사항이나 변경점을 수시로 나누어 적용하지 않고, 특정 행사ㆍ방송ㆍ대형 업데이트 일정에 맞추어 한꺼번에 많이 몰아서 내놓는 업데이트 방식."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "고봉 밥 패치"@ko ;
+    kno:component kno:KN2025-0056-c2 ;
+    a kno:Neologism ;
+    kno:indexForm "고봉밥패치"@ko ;
+    kno:origin "(高捧밥<영>patch)" ;
+    kno:instantiates kno:S000448 ;
+    kno:componentString "고봉(高捧), 밥, 패치(patch)"@ko ;
+    kno:frequency kno:KN2025-0056-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0056-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:example "(LLM) 편의성 개선은 그때그때 해도 될 텐데, 이번에도 {고봉밥패치로} 행사 시즌에 맞춰 한 번에 쏟아내는 느낌이라 아쉽다."@ko ;
+    kno:component kno:KN2025-0056-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한+고_영" ;
+    kno:component kno:KN2025-0056-c3 .
+kno:KN2025-0056-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000086 ;
+    kno:fullForm "밥"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "밥"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "밥"@ko .
+kno:KN2025-0056-c1 kno:fullForm "고봉"@ko ;
+    rdfs:label "고봉(高捧)"@ko ;
+    kno:surfaceForm "고봉"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002292 ;
+    kno:semanticTag kno:usas-N5p .
+kno:KN2025-0056-c3 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "패치(patch)"@ko ;
+    kno:fullForm "패치"@ko ;
+    kno:surfaceForm "패치"@ko ;
+    kno:formative kno:F000989 ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 .

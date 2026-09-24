@@ -1,30 +1,50 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0235 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2020-0235-form ;
-    ontolex:sense kno:KN2020-0235-sense .
-
-kno:KN2020-0235-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0235-freq-nn,
-        kno:KN2020-0235-freq-yt ;
-    ontolex:writtenRep "연령 서열주의"@ko .
-
-kno:KN2020-0235-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0235-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0235-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0235 kno:languageType "한_한" ;
+    skos:definition "나이의 많고 적음을 중시하는 사고방식."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EB%A0%B9%20%EC%84%9C%EC%97%B4%EC%A3%BC%EC%9D%98> ;
+    kno:componentString "연령(年齡), 서열주의(序列主義)"@ko ;
+    kno:example "¶이 작품에서 소녀는 {연령 서열주의에} 의해 주체적으로 사고하고 행동하지 못하는 모습을 보인다."@ko ;
+    rdfs:label "연령 서열주의"@ko ;
+    kno:component kno:KN2020-0235-c1 ;
+    kno:frequency kno:KN2020-0235-freq-NN-total ;
+    kno:component kno:KN2020-0235-c2 ;
+    a kno:Neologism ;
+    kno:predicate "중시하다"@ko ;
+    kno:frequency kno:KN2020-0235-freq-NN-2019 ;
+    kno:origin "(年齡序列主義)" ;
+    kno:indexForm "연령서열주의"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2020-0235-c1 kno:formative kno:F001612 ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "연령(年齡)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "연령"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "연령"@ko ;
+    kno:role "성분"@ko .
+kno:KN2020-0235-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "서열주의"@ko ;
+    kno:surfaceForm "서열주의"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004286 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    rdfs:label "서열주의(序列主義)"@ko ;
+    a kno:Component .

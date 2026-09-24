@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0289 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0289 kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0289-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:component kno:KN2013-0289-c2 ;
+    skos:definition "주변 사람들로부터 원하는 만큼 충분히 애정을 받지 못하여 정서가 불안정한 여자."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%A0%EC%A0%95%20%EA%B2%B0%ED%95%8D%EB%85%80> ;
+    kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2013-0289-c3 ;
+    kno:indexForm "애정결핍녀"@ko ;
+    kno:component kno:KN2013-0289-c1 ;
+    kno:frequency kno:KN2013-0289-freq-NN-2017 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2013-0289-freq-NN-2015 ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶결국 이 {애정 결핍녀는} 손목을 긋는 자살 시도를 하고 피범벅이 된다."@ko ;
+    kno:origin "(愛情缺乏女)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2013-0289-freq-NN-2012 ;
+    rdfs:label "애정 결핍녀"@ko ;
+    kno:componentString "애정(愛情), 결핍(缺乏), -녀(女)"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2013-0289-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002225 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:fullForm "결핍"@ko ;
+    kno:surfaceForm "결핍"@ko ;
+    a kno:Component ;
+    rdfs:label "결핍(缺乏)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2013-0289-c3 kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000004 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    kno:surfaceForm "녀"@ko .
+kno:KN2013-0289-c1 kno:semanticTag kno:usas-E2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "애정"@ko ;
+    kno:surfaceForm "애정"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "애정(愛情)"@ko ;
+    kno:formative kno:F001576 .

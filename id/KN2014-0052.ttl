@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0052 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0052 kno:activeYears "4"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0052-freq-NN-total ;
+    kno:frequency kno:KN2014-0052-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0052-freq-NN-2013 ;
+    kno:componentString "눔프(NOOMP), -족(族)"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368995> ;
+    rdfs:label "눔프-족"@ko ;
+    kno:indexForm "눔프족"@ko ;
+    kno:frequency kno:KN2014-0052-freq-NN-2016 ;
+    kno:registration "우리말샘"@ko ;
+    kno:languageType "영+한" ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:example "¶‘복지는 좋지만 내 주머니에서 돈이 나가는 것은 안 된다’는 {눔프족이} 여론 조사 때마다 절반 가까이 된다."@ko ;
+    kno:formation kno:W02 ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:slotFiller "눔프(NOOMP) (1성분)"@ko ;
+    kno:urimalTargetCode "1368995" ;
+    kno:component kno:KN2014-0052-c1 ;
+    kno:frequency kno:KN2014-0052-freq-NN-2017 ;
+    kno:component kno:KN2014-0052-c2 ;
+    skos:definition "복지가 필요하다고 생각하지만 복지 비용을 위한 증세에는 반대하는 사람. 또는 그런 무리."@ko ;
+    kno:origin "(<영>NOOMP族)" ;
+    kno:predicate "반대하다"@ko ;
+    kno:instantiates kno:S000001 .
+kno:KN2014-0052-c1 kno:surfaceForm "눔프"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "눔프(NOOMP)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "눔프"@ko ;
+    kno:formative kno:F002816 .
+kno:KN2014-0052-c2 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

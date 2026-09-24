@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0182 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0182-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0182-form ;
-    ontolex:sense kno:KN2022-0182-sense .
-
-kno:KN2022-0182-att-nn a frac:Attestation ;
-    dcterms:date "2022-02-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/079/0003612759> .
-
-kno:KN2022-0182-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0182-freq-nn,
-        kno:KN2022-0182-freq-yt ;
-    ontolex:writtenRep "소주 런"@ko .
-
-kno:KN2022-0182-freq-nn a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0182-freq-yt a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0182-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0182 kno:slotFiller "소주(燒酒) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0182-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%A3%BC%20%EB%9F%B0> ;
+    kno:indexForm "소주런"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "런(run) (1성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:predicate "몰려드다"@ko ;
+    kno:frequency kno:KN2022-0182-freq-NN-total ;
+    kno:instantiates kno:S000038 ;
+    kno:instantiates kno:S001469 ;
+    rdfs:label "소주 런"@ko ;
+    kno:languageType "한_영" ;
+    a kno:Neologism ;
+    kno:origin "(燒酒<영>run)" ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶주류업체의 출고가 인상으로 인해 마트나 편의점에는 ‘{소주런’도} 발생하였다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0182-c1 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "소주 가격의 인상으로 인해 소주를 구입하려는 사람들이 아직 가격이 오르지 않은 가게로 몰려드는 일."@ko ;
+    kno:component kno:KN2022-0182-c2 ;
+    kno:componentString "소주(燒酒), 런(run)"@ko .
+kno:KN2022-0182-c1 rdfs:label "소주(燒酒)"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    a kno:Component ;
+    kno:formative kno:F000811 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "소주"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "소주"@ko .
+kno:KN2022-0182-c2 kno:fullForm "런"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "런"@ko ;
+    kno:formative kno:F000072 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M1 ;
+    rdfs:label "런(run)"@ko .

@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0006 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0006 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0006-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0006-form ;
-    ontolex:sense kno:KN2021-0006-sense .
-
-kno:KN2021-0006-att-nn a frac:Attestation ;
-    dcterms:date "2020-09-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004470488> .
-
-kno:KN2021-0006-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0006-freq-nn,
-        kno:KN2021-0006-freq-yt ;
-    ontolex:writtenRep "가상 출국 여행"@ko .
-
-kno:KN2021-0006-freq-nn a frac:CorpusFrequency ;
-    rdf:value 202 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0006-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0006-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0006 kno:instantiates kno:S000098 ;
+    kno:instantiates kno:S000126 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "가상(假想), 출국(出國), 여행(旅行)"@ko ;
+    skos:definition "실제 해외여행처럼 비행기를 타고 출국하지만 목적지에 착륙하지 않고, 낮은 고도로 목적지 상공을 비행하며 돌아본 후 출발지로 돌아오는 여행. 코로나19의 확산으로 해외여행이 제한되며 생겨난 여행 상품이다."@ko ;
+    kno:predicate "돌아오다"@ko ;
+    kno:frequency kno:KN2021-0006-freq-NN-2022 ;
+    kno:origin "(假想出國旅行)" ;
+    kno:slotFiller "가상(假想)+출국(出國) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0006-freq-NN-total ;
+    kno:component kno:KN2021-0006-c1 ;
+    kno:indexForm "가상출국여행"@ko ;
+    kno:component kno:KN2021-0006-c2 ;
+    kno:unitType "구"@ko ;
+    rdfs:label "가상 출국 여행"@ko ;
+    kno:example "¶감염병의 확산으로 국가 간의 이동이 어려운 상황에서 {가상 출국 여행을} 즐기려는 수요가 늘고 있다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1523591> ;
+    kno:urimalTargetCode "1523591" ;
+    kno:slotFiller "출국(出國)+여행(旅行) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0006-freq-NN-2021 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2021-0006-c3 ;
+    kno:languageType "한_한_한" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0006-freq-NN-2020 .
+kno:KN2021-0006-c1 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000157 ;
+    rdfs:label "가상(假想)"@ko ;
+    kno:fullForm "가상"@ko ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:surfaceForm "가상"@ko .
+kno:KN2021-0006-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "출국"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "출국"@ko ;
+    kno:formative kno:F006132 ;
+    rdfs:label "출국(出國)"@ko ;
+    a kno:Component .
+kno:KN2021-0006-c3 kno:formative kno:F000090 ;
+    a kno:Component ;
+    kno:fullForm "여행"@ko ;
+    kno:surfaceForm "여행"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "여행(旅行)"@ko .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0046 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0046 kno:example "¶지난 4월 OO의 개봉을 앞두고 한국 영화들은 몸 사리기에 나섰다. 국내 영화사들은 OO의 정확한 개봉일을 알기 위해 정보력을 가동했고, 자신들의 영화들을 언제 선보여야 좋을지 고심했다.…{당천 영화라는} 신조어까지 만들어졌다."@ko ;
+    kno:languageType "한^한" ;
+    kno:indexForm "당천영화"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2015-0046-freq-NN-2015 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%B9%EC%B2%9C%EC%98%81%ED%99%94> ;
+    skos:definition "당연히 천만 명 이상의 관객을 유치할 영화. 출연 배우나 감독이 유명하고 줄거리, 영상 따위가 좋으며 홍보가 잘되어 흥행이 잘될 것으로 기대되는 영화를 이르는 말이다."@ko ;
+    kno:instantiates kno:S000983 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "당천^영화"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2015-0046-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:component kno:KN2015-0046-c1 ;
+    kno:componentString "당천(當千), 영화(映畫)"@ko ;
+    kno:component kno:KN2015-0046-c2 ;
+    kno:slotFiller "당천(當千) (1성분)"@ko ;
+    kno:origin "(當千映畫)" .
+kno:KN2015-0046-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "당천"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:formative kno:F002894 ;
+    kno:surfaceForm "당천"@ko ;
+    kno:semanticTag kno:usas-N5p ;
+    rdfs:label "당천(當千)"@ko .
+kno:KN2015-0046-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "영화"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001618 ;
+    rdfs:label "영화(映畫)"@ko ;
+    kno:semanticTag kno:usas-K4 ;
+    kno:fullForm "영화"@ko .

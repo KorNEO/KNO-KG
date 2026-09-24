@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0124 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0124 kno:frequency kno:KN2013-0124-freq-NN-2013 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%B1%EC%95%A1%ED%88%AC%ED%91%9C> ;
+    kno:component kno:KN2013-0124-c2 ;
+    skos:definition "후보자와 당선자의 수가 같은 투표."@ko ;
+    kno:languageType "한+한" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "등액투표"@ko ;
+    kno:frequency kno:KN2013-0124-freq-NN-total ;
+    rdfs:label "등액-투표"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0124-c1 ;
+    kno:formation kno:W01 ;
+    kno:origin "(等額投票)" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:example "¶후보자와 당선자 수가 같은 {등액투표} 방식으로 진행되기 때문에 당선은 이미 정해진 수순이지만 얼마든지 반대표를 던질 수 있다."@ko ;
+    kno:componentString "등액(等額), 투표(投票)"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2013-0124-c2 kno:formative kno:F000978 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "투표"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "투표(投票)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "투표"@ko .
+kno:KN2013-0124-c1 kno:semanticTag kno:usas-A6.1p ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003077 ;
+    kno:surfaceForm "등액"@ko ;
+    rdfs:label "등액(等額)"@ko ;
+    kno:semanticTag kno:usas-N5 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "등액"@ko .

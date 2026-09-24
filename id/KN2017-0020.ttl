@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0020 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0020 kno:instantiates kno:S001209 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:component kno:KN2017-0020-c3 ;
+    kno:indexForm "고시삼자동락설"@ko ;
+    skos:definition "고시에서 떨어지면 친구와 여자, 돈까지도 함께 없어질 수 있음을 이르는 말."@ko ;
+    kno:origin "(考試三者同落說)" ;
+    kno:component kno:KN2017-0020-c1 ;
+    kno:componentString "고시(考試), 삼자(三者), 동락설(同落說)"@ko ;
+    kno:frequency kno:KN2017-0020-freq-NN-2016 ;
+    kno:slotFiller "삼자(三者)+동락설(同落說) (2성분)"@ko ;
+    kno:frequency kno:KN2017-0020-freq-NN-total ;
+    kno:languageType "한_한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EC%8B%9C%20%EC%82%BC%EC%9E%90%20%EB%8F%99%EB%9D%BD%EC%84%A4> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0020-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶‘{고시 삼자 동락설’이} 판치는 속에…‘십시’들은 좀비처럼 시험공부를 하고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "고시 삼자 동락설"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0020-c3 a kno:Component ;
+    rdfs:label "동락설(同落說)"@ko ;
+    kno:fullForm "동락설"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "동락설"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:semanticTag kno:usas-A9m ;
+    kno:formative kno:F003021 .
+kno:KN2017-0020-c1 kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000247 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "고시"@ko ;
+    rdfs:label "고시(考試)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "고시"@ko .
+kno:KN2017-0020-c2 kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:surfaceForm "삼자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004217 ;
+    rdfs:label "삼자(三者)"@ko ;
+    kno:fullForm "삼자"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 .

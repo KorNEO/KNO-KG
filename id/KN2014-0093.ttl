@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0093 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0093 kno:component kno:KN2014-0093-c1 ;
+    kno:instantiates kno:S001376 ;
+    kno:urimalTargetCode "1358180" ;
+    kno:frequency kno:KN2014-0093-freq-NN-2016 ;
+    a ontolex:Word ;
+    kno:languageType "(고+영)+영" ;
+    rdfs:label "맞디스-랩"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2014-0093-freq-NN-2013 ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2014-0093-c3 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000846 ;
+    kno:component kno:KN2014-0093-c2 ;
+    kno:componentString "맞-, 디스(리스펙트)(disrespect), 랩(rap)"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0093-freq-NN-total ;
+    kno:frequency kno:KN2014-0093-freq-NN-2018 ;
+    kno:activeYears "3"^^xsd:integer ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358180> ;
+    kno:origin "(맞<영>←disrespect rap)" ;
+    kno:slotFiller "맞-+디스(리스펙트)(disrespect) (2성분)"@ko ;
+    kno:indexForm "맞디스랩"@ko ;
+    kno:slotFiller "랩(rap) (1성분)"@ko ;
+    kno:example "¶그는 후배 래퍼 OOO의 도발적인 공개 디스에 {맞디스랩을} 공개하며 힙합 강자로서의 면모를 과시했다."@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "자신을 비방하는 내용의 곡에 맞서기 위해 상대방을 비방하는 내용으로 가사를 쓴 랩."@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear .
+kno:KN2014-0093-c1 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "맞-"@ko ;
+    kno:semanticTag kno:usas-S1.1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "맞"@ko ;
+    kno:surfaceForm "맞"@ko ;
+    kno:formative kno:F000170 .
+kno:KN2014-0093-c3 kno:semanticTag kno:usas-Y1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "랩"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "랩"@ko ;
+    rdfs:label "랩(rap)"@ko ;
+    kno:formative kno:F000728 ;
+    a kno:Component .
+kno:KN2014-0093-c2 a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.2.4m ;
+    kno:fullForm "디스리스펙트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001214 ;
+    rdfs:label "디스(리스펙트)(disrespect)"@ko ;
+    kno:surfaceForm "디스"@ko ;
+    kno:role "고정항"@ko .

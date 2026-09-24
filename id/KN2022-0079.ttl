@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0079 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0079 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0079-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0079-form ;
-    ontolex:sense kno:KN2022-0079-sense .
-
-kno:KN2022-0079-att-nn a frac:Attestation ;
-    dcterms:date "2022-05-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0004831505> .
-
-kno:KN2022-0079-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0079-freq-nn,
-        kno:KN2022-0079-freq-yt ;
-    ontolex:writtenRep "기후^영향^사업"@ko .
-
-kno:KN2022-0079-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0079-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0079-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0079 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%EC%98%81%ED%96%A5%EC%82%AC%EC%97%85> ;
+    skos:definition "온실가스를 줄이는 감축 사업이나 연료 소비를 증가시키는 배출 사업 등 기후에 영향을 미치는 사업."@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0079-freq-NN-2022 ;
+    kno:example "¶서울시는 올해 125개의 사업에서 3,725억 원의 규모를 ‘{기후 영향 사업’으로} 분류하였으며, 이를 통해 99만 톤의 온실가스 감축이 예상된다."@ko ;
+    kno:componentString "기후(氣候), 영향(影響), 사업(事業)"@ko ;
+    kno:slotFiller "영향(影響)+사업(事業) (2성분)"@ko ;
+    rdfs:label "기후^영향^사업"@ko ;
+    kno:instantiates kno:S000056 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0079-c3 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0079-c1 ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "기후(氣候)+영향(影響) (2성분)"@ko ;
+    kno:component kno:KN2022-0079-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "미치다"@ko ;
+    kno:frequency kno:KN2022-0079-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000170 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(氣候影響事業)" ;
+    kno:indexForm "기후영향사업"@ko .
+kno:KN2022-0079-c3 rdfs:label "사업(事業)"@ko ;
+    kno:fullForm "사업"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000216 ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "사업"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0079-c1 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    rdfs:label "기후(氣候)"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:formative kno:F000069 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0079-c2 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "영향"@ko ;
+    kno:surfaceForm "영향"@ko ;
+    kno:formative kno:F005085 ;
+    rdfs:label "영향(影響)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A2.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

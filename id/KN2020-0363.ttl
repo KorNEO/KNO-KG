@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0363 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0363 a ontolex:Word ;
-    frac:attestation kno:KN2020-0363-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0363-form ;
-    ontolex:sense kno:KN2020-0363-sense .
-
-kno:KN2020-0363-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/437/0000234885> .
-
-kno:KN2020-0363-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0363-freq-nn,
-        kno:KN2020-0363-freq-yt ;
-    ontolex:writtenRep "코로나-돌이"@ko .
-
-kno:KN2020-0363-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0363-freq-yt a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0363-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0363 kno:languageType "영+고" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "코로나-돌이"@ko ;
+    kno:frequency kno:KN2020-0363-freq-NN-2020 ;
+    kno:slotFiller "-돌이 (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2020-0363-c1 ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), -돌이"@ko ;
+    kno:indexForm "코로나돌이"@ko ;
+    skos:definition "코로나19가 유행하는 기간에 치른 선거에서 당선된 사람."@ko ;
+    kno:component kno:KN2020-0363-c2 ;
+    kno:instantiates kno:S001160 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%EB%8F%8C%EC%9D%B4> ;
+    kno:origin "(<영>←corona virus돌이)" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:example "¶이번 21대 총선에선 {코로나돌이가} 대거 탄생해, 그 사람들이 어떤 역할을 해 낼지 모르겠다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2020-0363-freq-NN-total ;
+    kno:instantiates kno:S000334 .
+kno:KN2020-0363-c1 kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:fullForm "코로나바이러스"@ko ;
+    a kno:Component .
+kno:KN2020-0363-c2 kno:surfaceForm "돌이"@ko ;
+    rdfs:label "-돌이"@ko ;
+    kno:fullForm "돌이"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001197 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2.2 .

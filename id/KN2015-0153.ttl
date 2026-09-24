@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0153 kno:componentString "엄지, 맘(mom)"@ko ;
+    kno:frequency kno:KN2015-0153-freq-NN-2015 ;
+    skos:definition "아이를 돌보면서 모바일 쇼핑을 즐기는 어머니."@ko ;
+    kno:predicate "즐기다"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000042 ;
+    kno:formation kno:W01 ;
+    rdfs:label "엄지-맘"@ko ;
+    kno:frequency kno:KN2015-0153-freq-NN-2016 ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "엄지맘"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2015-0153-c1 ;
+    kno:slotFiller "엄지 (1성분)"@ko ;
+    kno:example "¶아이들을 돌보면서도 시간과 장소에 구애받지 않고 쇼핑할 수 있는 편의성 때문에 모바일로 유아용품, 생필품 등을 구매하는 이른바 ‘{엄지맘’이} 크게 증가하면서 모바일 시장이 급성장하고 있다."@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2015-0153-freq-NN-2014 ;
+    kno:languageType "고+영" ;
+    kno:origin "(엄지<영>mom)" ;
+    kno:urimalTargetCode "1359835" ;
+    a ontolex:Word ;
+    kno:component kno:KN2015-0153-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359835> ;
+    kno:frequency kno:KN2015-0153-freq-NN-total .
+kno:KN2015-0153-c1 a kno:Component ;
+    kno:fullForm "엄지"@ko ;
+    kno:formative kno:F001590 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "엄지"@ko ;
+    kno:surfaceForm "엄지"@ko .
+kno:KN2015-0153-c2 kno:semanticTag kno:usas-S4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:fullForm "맘"@ko ;
+    kno:surfaceForm "맘"@ko ;
+    kno:formative kno:F000021 ;
+    a kno:Component .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0003 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0003 a ontolex:Word ;
-    frac:attestation kno:KN2024-0003-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0003-form ;
-    ontolex:sense kno:KN2024-0003-sense .
-
-kno:KN2024-0003-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005152434> .
-
-kno:KN2024-0003-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0003-freq-nn,
-        kno:KN2024-0003-freq-yt ;
-    ontolex:writtenRep "갈고리즘"@ko .
-
-kno:KN2024-0003-freq-nn a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0003-freq-yt a frac:CorpusFrequency ;
-    rdf:value 32 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0003-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0003 rdfs:label "갈고리즘"@ko ;
+    kno:example "¶정책위 의장은 SNS를 통해 알고리즘이 악의적인 도구로 변질되어 극단적 팬덤을 유입시키는 {갈고리즘이} 되고 있다고 비판했다."@ko ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2024-0003-c2 ;
+    kno:componentString "갈고리, (알고)리즘(algorism)"@ko ;
+    kno:languageType "고+영" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(갈고리<영>ism)" ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "갈고리즘"@ko ;
+    kno:component kno:KN2024-0003-c1 ;
+    skos:definition "추천 알고리즘이 갈고리처럼 이용자를 끌어당겨 원하는 콘텐츠를 계속 소비하게 만드는 현상을 비유적으로 이르는 말. 물건을 끌어당기는 데 쓰이는 ‘갈고리’와 문제를 해결하는 단계적 방법인 ‘알고리즘(algorism)’을 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2024-0003-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%88%EA%B3%A0%EB%A6%AC%EC%A6%98> ;
+    kno:frequency kno:KN2024-0003-freq-NN-total ;
+    a kno:Neologism .
+kno:KN2024-0003-c2 kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "(알고)리즘(algorism)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "리즘"@ko ;
+    kno:fullForm "알고리즘"@ko ;
+    kno:formative kno:F003312 .
+kno:KN2024-0003-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "갈고리"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:fullForm "갈고리"@ko ;
+    kno:formative kno:F002106 ;
+    kno:surfaceForm "갈고리"@ko ;
+    kno:truncated "false"^^xsd:boolean .

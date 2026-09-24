@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0200 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0200 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0200-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0200-form ;
-    ontolex:sense kno:KN2025-0200-sense .
-
-kno:KN2025-0200-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005516153> .
-
-kno:KN2025-0200-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0200-freq-nn,
-        kno:KN2025-0200-freq-yt ;
-    ontolex:writtenRep "랜선 조부모"@ko .
-
-kno:KN2025-0200-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0200-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0200-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0200 kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>LAN線祖父母)" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "조부모(祖父母) (1성분)"@ko ;
+    kno:instantiates kno:S000086 ;
+    kno:frequency kno:KN2025-0200-freq-NN-total ;
+    kno:indexForm "랜선조부모"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 퇴근길에 라이브 방송으로 {랜선조부모를} 보면서 인생 조언을 듣는 게 요즘 내 힐링 루틴이야."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%20%EC%84%A0%20%EC%A1%B0%EB%B6%80%EB%AA%A8> ;
+    kno:component kno:KN2025-0200-c1 ;
+    rdfs:label "랜 선 조부모"@ko ;
+    kno:component kno:KN2025-0200-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0200-c3 ;
+    kno:frequency kno:KN2025-0200-freq-NN-2025 ;
+    skos:definition "(LLM) 온라인을 통해 친근하게 소통하며 젊은 세대에게 조언이나 정서적 위로를 건네는 노년층(또는 그와 같은 역할을 하는 인물)."@ko ;
+    a kno:Neologism ;
+    kno:componentString "랜(LAN), 선(線), 조부모(祖父母)"@ko ;
+    kno:languageType "(영+한)_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0200-c1 kno:formative kno:F000134 ;
+    kno:fullForm "랜"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "랜"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "랜(LAN)"@ko .
+kno:KN2025-0200-c2 rdfs:label "선(線)"@ko ;
+    kno:formative kno:F000176 ;
+    kno:fullForm "선"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "선"@ko ;
+    kno:semanticTag kno:usas-O2 .
+kno:KN2025-0200-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "조부모(祖父母)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005734 ;
+    kno:fullForm "조부모"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "조부모"@ko ;
+    kno:position "3"^^xsd:integer .

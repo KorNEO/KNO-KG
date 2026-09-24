@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0020 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0020 kno:frequency kno:KN2016-0020-freq-NN-2015 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372455> ;
+    kno:frequency kno:KN2016-0020-freq-NN-2023 ;
+    kno:origin "(곰팡이肺炎▽)" ;
+    kno:componentString "곰팡이, 폐렴(肺炎)"@ko ;
+    skos:definition "곰팡이균을 흡입하여 생기는 폐렴. 주로 조류에게서 나타난다."@ko ;
+    kno:predicate "생기다"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶병원 관계자도 임상 증상만 놓고 보면 {곰팡이 폐렴과} 유사하다고 밝혔습니다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0020-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "곰팡이폐렴"@ko ;
+    kno:urimalTargetCode "1372455" ;
+    kno:languageType "고^한" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S001117 ;
+    rdfs:label "곰팡이^폐렴"@ko ;
+    kno:component kno:KN2016-0020-c2 ;
+    kno:slotFiller "곰팡이 (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0020-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2016-0020-c1 kno:semanticTag kno:usas-L3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "곰팡이"@ko ;
+    kno:formative kno:F002319 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "곰팡이"@ko ;
+    kno:surfaceForm "곰팡이"@ko ;
+    a kno:Component .
+kno:KN2016-0020-c2 kno:surfaceForm "폐렴"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000996 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "폐렴"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    rdfs:label "폐렴(肺炎)"@ko .

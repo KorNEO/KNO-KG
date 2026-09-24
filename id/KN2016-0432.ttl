@@ -1,0 +1,58 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0432 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0432 kno:frequency kno:KN2016-0432-freq-NN-total ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "자살(自殺), 각(角)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EC%82%B4%EA%B0%81> ;
+    kno:frequency kno:KN2016-0432-freq-NN-2015 ;
+    kno:example "¶한 네티즌은 “취직에 실패하고 3000명 선발마저 탈락하면 {자살각인가?”라며} 3,000명 선발 인원 수에 대해 꼬집었다."@ko ;
+    rdfs:label "자살-각"@ko ;
+    kno:frequency kno:KN2016-0432-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0432-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0432-freq-NN-2016 ;
+    kno:origin "(自殺角)" ;
+    a kno:Neologism ;
+    kno:slotFiller "자살(自殺) (1성분)"@ko ;
+    kno:component kno:KN2016-0432-c2 ;
+    kno:instantiates kno:S000069 ;
+    kno:indexForm "자살각"@ko ;
+    kno:frequency kno:KN2016-0432-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2016-0432-freq-NN-2025 ;
+    kno:component kno:KN2016-0432-c1 ;
+    kno:frequency kno:KN2016-0432-freq-NN-2023 ;
+    skos:definition "자살하고 싶을 만큼 힘든 상황을 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0432-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "각(角)"@ko ;
+    kno:fullForm "각"@ko ;
+    kno:surfaceForm "각"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:formative kno:F000124 ;
+    kno:role "고정항"@ko .
+kno:KN2016-0432-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "자살(自殺)"@ko ;
+    kno:fullForm "자살"@ko ;
+    kno:semanticTag kno:usas-L1m ;
+    kno:surfaceForm "자살"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000904 .

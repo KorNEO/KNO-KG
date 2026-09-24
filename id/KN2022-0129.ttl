@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0129 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0129 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0129-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0129-form ;
-    ontolex:sense kno:KN2022-0129-sense .
-
-kno:KN2022-0129-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005379790> .
-
-kno:KN2022-0129-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0129-freq-nn,
-        kno:KN2022-0129-freq-yt ;
-    ontolex:writtenRep "러스틱 라이프"@ko .
-
-kno:KN2022-0129-freq-nn a frac:CorpusFrequency ;
-    rdf:value 352 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0129-freq-yt a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0129-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0129 kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0129-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0129-c2 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "도시를 떠나 시골에서 편안함과 매력을 느끼며 사는 생활 방식을 이르는 말. ‘시골 특유의’를 의미하는 영어 단어 ‘러스틱(rustic)’과 ‘삶’을 의미하는 영어 단어 ‘라이프(life)’를 결합하여 만든 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9F%AC%EC%8A%A4%ED%8B%B1%20%EB%9D%BC%EC%9D%B4%ED%94%84> ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0129-freq-NN-2023 ;
+    kno:slotFiller "러스틱(rustic) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0129-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0129-freq-NN-2022 ;
+    kno:instantiates kno:S000167 ;
+    kno:example "¶누군가는 복잡한 도시가 아닌 지방에서 ‘{러스틱 라이프’를} 즐기며 행복감을 느낀다."@ko ;
+    kno:frequency kno:KN2022-0129-freq-NN-2021 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:origin "(<영>rustic life)" ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0129-freq-NN-total ;
+    rdfs:label "러스틱 라이프"@ko ;
+    kno:indexForm "러스틱라이프"@ko ;
+    kno:component kno:KN2022-0129-c1 ;
+    kno:componentString "러스틱(rustic), 라이프(life)"@ko .
+kno:KN2022-0129-c2 kno:fullForm "라이프"@ko ;
+    kno:surfaceForm "라이프"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L1 ;
+    kno:formative kno:F000259 ;
+    rdfs:label "라이프(life)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0129-c1 kno:semanticTag kno:usas-W3 ;
+    kno:fullForm "러스틱"@ko ;
+    kno:surfaceForm "러스틱"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "러스틱(rustic)"@ko ;
+    kno:formative kno:F003188 .

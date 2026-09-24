@@ -1,0 +1,47 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0307 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0307 kno:formation kno:W01 ;
+    kno:pos "「부」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    skos:definition "자그마한 덩어리들이 고르지 아니하게 많이 벌여 있는 모양."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "오막쪼막"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A4%EB%A7%89%EC%AA%BC%EB%A7%89> ;
+    kno:predicate "있다"@ko ;
+    kno:languageType "고+고" ;
+    rdfs:label "오막-쪼막"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0307-c1 ;
+    kno:componentString "오막, 쪼막"@ko ;
+    kno:example "¶서울 여자들은 요래 {오막쪼막} 오동통 돌이 신랑 좋아하나?"@ko ;
+    kno:component kno:KN2012-0307-c2 .
+kno:KN2012-0307-c1 kno:role "성분"@ko ;
+    kno:fullForm "오막"@ko ;
+    kno:surfaceForm "오막"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005116 ;
+    kno:semanticTag kno:usas-O4.4 ;
+    rdfs:label "오막"@ko .
+kno:KN2012-0307-c2 kno:fullForm "쪼막"@ko ;
+    kno:surfaceForm "쪼막"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "쪼막"@ko ;
+    kno:formative kno:F005962 ;
+    kno:truncated "false"^^xsd:boolean .

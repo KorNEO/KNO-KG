@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0029 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0029 a ontolex:Word ;
-    frac:attestation kno:KN2024-0029-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0029-form ;
-    ontolex:sense kno:KN2024-0029-sense .
-
-kno:KN2024-0029-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0012217250> .
-
-kno:KN2024-0029-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0029-freq-nn,
-        kno:KN2024-0029-freq-yt ;
-    ontolex:writtenRep "김모-족"@ko .
-
-kno:KN2024-0029-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0029-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0029-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0029 kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0029-freq-NN-total ;
+    skos:definition "김장을 모르거나 김장 경험이 없는 사람. 또는 그런 무리."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0029-c3 ;
+    kno:example "¶고물가로 인해 김장에 대한 부담감이 증가하면서, 김장 경험이 없는 {김모족이} 늘어나고 있는 추세이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "김모족"@ko ;
+    kno:component kno:KN2024-0029-c1 ;
+    kno:predicate "없다"@ko ;
+    rdfs:label "김모-족"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0029-freq-NN-2023 ;
+    kno:slotFiller "김(장)+모(르다) (2성분)"@ko ;
+    kno:componentString "김(장), 모(르다), -족(族)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0029-c2 ;
+    kno:origin "(김모族)" ;
+    kno:instantiates kno:S000001 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%AA%A8%EC%A1%B1> .
+kno:KN2024-0029-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2024-0029-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "김(장)"@ko ;
+    kno:surfaceForm "김"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "김장"@ko ;
+    kno:formative kno:F002613 .
+kno:KN2024-0029-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "모르다"@ko ;
+    rdfs:label "모(르다)"@ko ;
+    kno:formative kno:F003478 ;
+    kno:surfaceForm "모"@ko ;
+    kno:semanticTag kno:usas-X2.2m ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

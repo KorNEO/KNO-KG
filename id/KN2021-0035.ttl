@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0035 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0035-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0035-form ;
-    ontolex:sense kno:KN2021-0035-sense .
-
-kno:KN2021-0035-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003306174> .
-
-kno:KN2021-0035-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0035-freq-nn,
-        kno:KN2021-0035-freq-yt ;
-    ontolex:writtenRep "근력 저축 운동"@ko .
-
-kno:KN2021-0035-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0035-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0035-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0035 kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:componentString "근력(筋力), 저축(貯蓄), 운동(運動)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶O 교수는 어르신들에게 {근력 저축 운동을} 틈틈이 할 것을 권했다."@ko ;
+    kno:frequency kno:KN2021-0035-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0035-c1 ;
+    skos:definition "돈을 차곡차곡 모으듯이 근육의 힘을 점진적으로 기르기 위한 운동. 코로나19의 확산으로 야외 활동이 제한된 상황에서, 실내에서 자주 할 수 있는 간단한 동작으로 구성된 운동이다."@ko ;
+    kno:frequency kno:KN2021-0035-freq-NN-2020 ;
+    kno:component kno:KN2021-0035-c2 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000032 ;
+    kno:origin "(筋力貯蓄運動)" ;
+    kno:indexForm "근력저축운동"@ko ;
+    kno:slotFiller "근력(筋力)+저축(貯蓄) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0035-freq-NN-2021 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:languageType "한_한_한" ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0035-c3 ;
+    kno:frequency kno:KN2021-0035-freq-NN-2023 ;
+    rdfs:label "근력 저축 운동"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EB%A0%A5%20%EC%A0%80%EC%B6%95%20%EC%9A%B4%EB%8F%99> .
+kno:KN2021-0035-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F002543 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "근력"@ko ;
+    a kno:Component ;
+    rdfs:label "근력(筋力)"@ko ;
+    kno:surfaceForm "근력"@ko .
+kno:KN2021-0035-c2 rdfs:label "저축(貯蓄)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:fullForm "저축"@ko ;
+    kno:formative kno:F000914 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "저축"@ko .
+kno:KN2021-0035-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "운동"@ko ;
+    kno:surfaceForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:formative kno:F000053 ;
+    rdfs:label "운동(運動)"@ko .

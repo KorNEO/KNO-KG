@@ -1,0 +1,94 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0035 kno:pos "「구」"@ko ;
+    kno:component kno:KN2018-0035-c6 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000802 ;
+    kno:urimalTargetCode "1415815" ;
+    kno:component kno:KN2018-0035-c3 ;
+    kno:frequency kno:KN2018-0035-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:label "공공^기관^채용^부정^근절법"@ko ;
+    kno:component kno:KN2018-0035-c5 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "공공기관채용부정근절법"@ko ;
+    kno:languageType "한^한^한^한^한" ;
+    kno:componentString "공공(公共), 기관(機關), 채용(採用), 부정(不正), 근절(根絕), 법(法)"@ko ;
+    kno:frequency kno:KN2018-0035-freq-NN-2017 ;
+    kno:slotFiller "기관(機關)+채용(採用)+부정(不正)+근절(根絕) (4성분)"@ko ;
+    kno:origin "(公共機關採用不正根絕法)" ;
+    skos:definition "국민의 일자리를 보장하고 공공 업무를 적절히 수행하기 위해, 공공 기관에서 인사 채용 부정 행위의 처벌 및 예방에 필요한 사항을 개정한 법률. ‘공공 기관의 운영에 관한 법률’을 개정한 것으로 2017년 11월에 발의하였으며 2018년 2월에 국회 본회를 통과하여 2018년 상반기에 시행될 예정이다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0035-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415815> ;
+    kno:slotFiller "공공(公共)+기관(機關)+채용(採用)+부정(不正) (4성분)"@ko ;
+    kno:example "¶O 의원이 대표 발의한 일명 ‘{공공 기관 채용 부정 근절법’은} 청년 일자리가 부족한 가운데 공공 기관의 채용 비리가 대거 발생해도 규제 조항이 현행법에 없다는 점에서 착안했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S001215 ;
+    kno:component kno:KN2018-0035-c4 ;
+    kno:component kno:KN2018-0035-c1 .
+kno:KN2018-0035-c6 rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "6"^^xsd:integer ;
+    kno:fullForm "법"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko .
+kno:KN2018-0035-c3 a kno:Component ;
+    kno:formative kno:F000597 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "채용(採用)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "채용"@ko ;
+    kno:surfaceForm "채용"@ko .
+kno:KN2018-0035-c5 kno:formative kno:F001103 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:position "5"^^xsd:integer ;
+    kno:fullForm "근절"@ko ;
+    a kno:Component ;
+    rdfs:label "근절(根絕)"@ko ;
+    kno:surfaceForm "근절"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2018-0035-c2 rdfs:label "기관(機關)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002583 ;
+    kno:surfaceForm "기관"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "기관"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2018-0035-c4 a kno:Component ;
+    kno:formative kno:F003956 ;
+    kno:fullForm "부정"@ko ;
+    kno:surfaceForm "부정"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    rdfs:label "부정(不正)"@ko .
+kno:KN2018-0035-c1 kno:fullForm "공공"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000084 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "공공(公共)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "공공"@ko ;
+    a kno:Component .

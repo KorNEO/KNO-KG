@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0094 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0094 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0094-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0094-form ;
-    ontolex:sense kno:KN2021-0094-sense .
-
-kno:KN2021-0094-att-nn a frac:Attestation ;
-    dcterms:date "2020-10-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000602511> .
-
-kno:KN2021-0094-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0094-freq-nn,
-        kno:KN2021-0094-freq-yt ;
-    ontolex:writtenRep "레이어드^홈"@ko .
-
-kno:KN2021-0094-freq-nn a frac:CorpusFrequency ;
-    rdf:value 589 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0094-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0094-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0094 kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0094-freq-NN-2020 ;
+    kno:indexForm "레이어드홈"@ko ;
+    kno:slotFiller "레이어드(layered) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0094-freq-NN-2025 ;
+    kno:componentString "레이어드(layered), 홈(home)"@ko ;
+    skos:definition "단순히 거주하는 것뿐만 아니라 업무와 여가 생활 등의 다양한 활동을 할 수 있는 집."@ko ;
+    kno:component kno:KN2021-0094-c1 ;
+    kno:component kno:KN2021-0094-c2 ;
+    kno:frequency kno:KN2021-0094-freq-NN-2024 ;
+    kno:example "¶{레이어드 홈이} 트렌드로 자리 잡으면서 휴식, 업무, 영화 감상 등의 활동에 알맞은 인테리어가 인기를 끌고 있다."@ko ;
+    kno:origin "(<영>layered home)" ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:label "레이어드^홈"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0094-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0094-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0094-freq-NN-total ;
+    kno:instantiates kno:S001145 ;
+    kno:frequency kno:KN2021-0094-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A0%88%EC%9D%B4%EC%96%B4%EB%93%9C%ED%99%88> ;
+    kno:predicate "있다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영^영" .
+kno:KN2021-0094-c1 a kno:Component ;
+    kno:fullForm "레이어드"@ko ;
+    kno:formative kno:F003211 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "레이어드(layered)"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "레이어드"@ko .
+kno:KN2021-0094-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "홈"@ko ;
+    kno:surfaceForm "홈"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000045 ;
+    rdfs:label "홈(home)"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0269 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0269 kno:registration "신어DB"@ko ;
+    kno:languageType "영_고" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:componentString "스팸(spam), 뽀글이"@ko ;
+    rdfs:label "스팸 뽀글이"@ko ;
+    kno:component kno:KN2013-0269-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "봉지라면에 뜨거운 물을 붓고, 햄을 넣어 익힌 음식."@ko ;
+    kno:frequency kno:KN2013-0269-freq-NN-2015 ;
+    kno:component kno:KN2013-0269-c1 ;
+    kno:frequency kno:KN2013-0269-freq-NN-2014 ;
+    kno:indexForm "스팸뽀글이"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%8C%B8%20%EB%BD%80%EA%B8%80%EC%9D%B4> ;
+    kno:origin "(spam뽀글이)" ;
+    kno:frequency kno:KN2013-0269-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶특히, 극중 취사반의 OOO 병장은 럭셔리 군대 음식으로 ‘{스팸 뽀글이’를} 소개해 눈길을 끌었다."@ko ;
+    kno:frequency kno:KN2013-0269-freq-NN-2013 .
+kno:KN2013-0269-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "뽀글이"@ko ;
+    kno:surfaceForm "뽀글이"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004128 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "뽀글이"@ko .
+kno:KN2013-0269-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "스팸(spam)"@ko ;
+    kno:semanticTag kno:usas-Q1.2m ;
+    kno:formative kno:F000825 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "스팸"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "스팸"@ko .

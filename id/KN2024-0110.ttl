@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0110 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0110 a ontolex:Word ;
-    frac:attestation kno:KN2024-0110-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0110-form ;
-    ontolex:sense kno:KN2024-0110-sense .
-
-kno:KN2024-0110-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001705062> .
-
-kno:KN2024-0110-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0110-freq-nn,
-        kno:KN2024-0110-freq-yt ;
-    ontolex:writtenRep "뼈말라-약"@ko .
-
-kno:KN2024-0110-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0110-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0110-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0110 kno:origin "(뼈말라藥)" ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "뼈말라, 약(藥)"@ko ;
+    skos:definition "뼈가 드러나 보일 정도의 마른 체형이 되기 위해 사용되는 불법 다이어트 보조제."@ko ;
+    kno:slotFiller "약(藥) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2024-0110-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%BC%88%EB%A7%90%EB%9D%BC%EC%95%BD> ;
+    kno:component kno:KN2024-0110-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0110-freq-NN-2024 ;
+    kno:indexForm "뼈말라약"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0110-freq-NN-total ;
+    kno:example "¶미성년자를 대상으로 하여 {뼈말라약으로} 불리는 다이어트 보조제가 중고 거래 사이트에서 불법적으로 판매되고 있다."@ko ;
+    rdfs:label "뼈말라-약"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:instantiates kno:S001432 ;
+    kno:languageType "고+한" .
+kno:KN2024-0110-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.2 ;
+    rdfs:label "뼈말라"@ko ;
+    kno:fullForm "뼈말라"@ko ;
+    kno:surfaceForm "뼈말라"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001426 .
+kno:KN2024-0110-c2 a kno:Component ;
+    rdfs:label "약(藥)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001580 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "약"@ko ;
+    kno:surfaceForm "약"@ko .

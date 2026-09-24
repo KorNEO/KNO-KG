@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0116 kno:componentString "배려(配慮), 식(食)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0116-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2017-0116-freq-NN-2021 ;
+    skos:definition "음식물 섭취에 각별히 주의를 기울여야 하는 고령자를 대상으로 하여, 영양분이나 식감에 마음을 써서 만든 음식."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2017-0116-c2 ;
+    kno:indexForm "배려식"@ko ;
+    kno:frequency kno:KN2017-0116-freq-NN-2018 ;
+    rdfs:label "배려-식"@ko ;
+    a ontolex:Word ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:urimalTargetCode "1380459" ;
+    kno:example "¶고령식 공급 사업은 ‘OO’이라는 브랜드를 내세워 {배려식을} 판매하는 것이 골자로, OO대 식품 영양학과와 공동 연구를 진행하고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0116-freq-NN-2019 ;
+    kno:component kno:KN2017-0116-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380459> ;
+    kno:frequency kno:KN2017-0116-freq-NN-2017 ;
+    kno:origin "(配慮食)" ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2017-0116-freq-NN-2020 .
+kno:KN2017-0116-c2 kno:semanticTag kno:usas-A4.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "식"@ko ;
+    kno:formative kno:F004679 ;
+    rdfs:label "식(食)"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "식"@ko .
+kno:KN2017-0116-c1 a kno:Component ;
+    rdfs:label "배려(配慮)"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:fullForm "배려"@ko ;
+    kno:surfaceForm "배려"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003733 ;
+    kno:role "성분"@ko .

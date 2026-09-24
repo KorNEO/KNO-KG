@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0349 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0349 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0349-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0349-form ;
-    ontolex:sense kno:KN2024-0349-sense .
-
-kno:KN2024-0349-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002643420> .
-
-kno:KN2024-0349-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0349-freq-nn,
-        kno:KN2024-0349-freq-yt ;
-    ontolex:writtenRep "편법 휴진"@ko .
-
-kno:KN2024-0349-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0349-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0349-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0349 kno:indexForm "편법휴진"@ko ;
+    kno:component kno:KN2024-0349-c1 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0349-freq-NN-2024 ;
+    kno:predicate "진료하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EB%B2%95%20%ED%9C%B4%EC%A7%84> ;
+    kno:origin "(便法休診)" ;
+    kno:frequency kno:KN2024-0349-freq-NN-total ;
+    kno:example "¶대통령 역시 {편법 휴진에} 엄정하게 대응할 것을 주문하는 등 강경한 대응 방침을 밝혔다."@ko ;
+    rdfs:label "편법 휴진"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0349-c2 ;
+    kno:componentString "편법(便法), 휴진(休診)"@ko ;
+    skos:definition "개원의가 휴진 신고를 하지 않은 채로 자리를 비워 진료를 하지 않거나 오전에 소수의 환자만을 진료하는 행위. 윤석열 정부의 의대 정원 증원에 반대하며 일어난 시위의 하나이다."@ko ;
+    kno:slotFiller "휴진(休診) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:instantiates kno:S001738 .
+kno:KN2024-0349-c1 rdfs:label "편법(便法)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "편법"@ko ;
+    kno:surfaceForm "편법"@ko ;
+    kno:formative kno:F001957 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X4.2 .
+kno:KN2024-0349-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "휴진(休診)"@ko ;
+    kno:fullForm "휴진"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "휴진"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    a kno:Component ;
+    kno:formative kno:F007214 .

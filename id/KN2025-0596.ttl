@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0596 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0596 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0596-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0596-form ;
-    ontolex:sense kno:KN2025-0596-sense .
-
-kno:KN2025-0596-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001570399> .
-
-kno:KN2025-0596-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0596-freq-nn,
-        kno:KN2025-0596-freq-yt ;
-    ontolex:writtenRep "키워드 납치"@ko .
-
-kno:KN2025-0596-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0596-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0596-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0596 kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "넣다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>key word拉致)" ;
+    kno:componentString "키워드(key word), 납치(拉致)"@ko ;
+    kno:example "(LLM) 내용은 제품 후기인데 제목에 유명 연예인 이름을 넣어 {키워드납치가} 아니냐는 비판이 나왔다."@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "(LLM) 온라인에서 노출이나 클릭 수를 늘리려고 글ㆍ영상의 제목, 태그, 본문 등에 실제 내용과 무관한 인기 검색어(키워드)를 끼워 넣는 행위."@ko ;
+    rdfs:label "키워드 납치"@ko ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2025-0596-freq-NN-2025 ;
+    kno:component kno:KN2025-0596-c1 ;
+    kno:component kno:KN2025-0596-c2 ;
+    kno:frequency kno:KN2025-0596-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%A4%EC%9B%8C%EB%93%9C%20%EB%82%A9%EC%B9%98> ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "키워드납치"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2025-0596-c1 kno:surfaceForm "키워드"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "키워드(key word)"@ko ;
+    kno:fullForm "키워드"@ko ;
+    kno:formative kno:F001883 ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0596-c2 rdfs:label "납치(拉致)"@ko ;
+    kno:formative kno:F002704 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "납치"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "납치"@ko ;
+    kno:truncated "false"^^xsd:boolean .

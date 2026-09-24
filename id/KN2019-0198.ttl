@@ -1,0 +1,69 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0198 kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0198-freq-NN-total ;
+    kno:component kno:KN2019-0198-c3 ;
+    kno:frequency kno:KN2019-0198-freq-NN-2025 ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1425223> ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0198-freq-NN-2019 ;
+    kno:component kno:KN2019-0198-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0198-freq-NN-2021 ;
+    kno:example "¶혹시 평소에 {얼죽아를} 외치셨나요? 몸에서 철분이 부족하지 않은지 확인해 보세요."@ko ;
+    rdfs:label "얼죽아"@ko ;
+    kno:frequency kno:KN2019-0198-freq-NN-2020 ;
+    a ontolex:Word ;
+    kno:origin "(얼죽<영>←ice)" ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "얼(다), 죽(다), 아(이스)(ice)"@ko ;
+    kno:frequency kno:KN2019-0198-freq-NN-2022 ;
+    skos:definition "‘얼어 죽어도 아이스’를 줄여 이르는 말. 추운 겨울철에도 차가운 음식을 즐기는 것을 말한다."@ko ;
+    kno:frequency kno:KN2019-0198-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0198-freq-NN-2023 ;
+    kno:slotFiller "아(이스)(ice) (1성분)"@ko ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:indexForm "얼죽아"@ko ;
+    kno:languageType "고+고+영" ;
+    kno:urimalTargetCode "1425223" ;
+    kno:component kno:KN2019-0198-c2 ;
+    kno:instantiates kno:S000314 .
+kno:KN2019-0198-c3 kno:surfaceForm "아"@ko ;
+    kno:formative kno:F004794 ;
+    kno:semanticTag kno:usas-O4.6m ;
+    kno:fullForm "아이스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "아(이스)(ice)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2019-0198-c1 kno:semanticTag kno:usas-O4.6m ;
+    a kno:Component ;
+    kno:surfaceForm "얼"@ko ;
+    rdfs:label "얼(다)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "얼다"@ko ;
+    kno:formative kno:F000385 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2019-0198-c2 rdfs:label "죽(다)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "죽"@ko ;
+    kno:semanticTag kno:usas-L1m ;
+    a kno:Component ;
+    kno:fullForm "죽다"@ko ;
+    kno:formative kno:F000303 ;
+    kno:position "2"^^xsd:integer .

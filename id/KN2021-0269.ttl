@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0269 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0269 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0269-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0269-form ;
-    ontolex:sense kno:KN2021-0269-sense .
-
-kno:KN2021-0269-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003587339> .
-
-kno:KN2021-0269-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0269-freq-nn,
-        kno:KN2021-0269-freq-yt ;
-    ontolex:writtenRep "코비디오 파티"@ko .
-
-kno:KN2021-0269-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0269-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0269-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0269 kno:predicate "여다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%B9%84%EB%94%94%EC%98%A4%20%ED%8C%8C%ED%8B%B0> ;
+    skos:definition "코로나19의 확산과 그에 따른 사회적 거리 두기의 시행으로 인해 사람들이 직접 만나지 못하고 집에서 화상 회의 프로그램을 통하여 여는 파티. ‘코비디오’는 ‘코로나19’와 ‘비디오’를 결합하여 만든 말이다."@ko ;
+    rdfs:label "코비디오 파티"@ko ;
+    kno:component kno:KN2021-0269-c1 ;
+    kno:componentString "코비디오(covideo), 파티(party)"@ko ;
+    kno:instantiates kno:S000187 ;
+    kno:origin "(<영>covideo party)" ;
+    kno:example "¶사회적 거리 두기로 인해 사람들이 각자 자기 집에서 온라인 화상 프로그램을 통해 대화를 즐기며 술을 마시는 랜선 파티는 ‘{코비디오 파티’라고} 부른다."@ko ;
+    kno:slotFiller "코비디오(covideo) (1성분)"@ko ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2021-0269-freq-NN-2021 ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2021-0269-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "코비디오파티"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0269-freq-NN-total ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0269-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    a kno:Component ;
+    kno:fullForm "코비디오"@ko ;
+    kno:surfaceForm "코비디오"@ko ;
+    kno:formative kno:F006288 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "코비디오(covideo)"@ko .
+kno:KN2021-0269-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000316 ;
+    kno:fullForm "파티"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "파티(party)"@ko ;
+    kno:surfaceForm "파티"@ko .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0014 a ontolex:Word ;
-    frac:attestation kno:KN2021-0014-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0014-form ;
-    ontolex:sense kno:KN2021-0014-sense .
-
-kno:KN2021-0014-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003326349> .
-
-kno:KN2021-0014-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0014-freq-nn,
-        kno:KN2021-0014-freq-yt ;
-    ontolex:writtenRep "갭코노미"@ko .
-
-kno:KN2021-0014-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0014-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0014-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0014 kno:activeYears "2"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2021-0014-freq-NN-2021 ;
+    kno:formation kno:W07 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:instantiates kno:S000048 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "자산 시장과 실물 경제의 괴리가 커지고 사람들 사이의 자산 격차가 벌어지는 경제 상황을 이르는 말."@ko ;
+    kno:slotFiller "갭(gap) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%AD%EC%BD%94%EB%85%B8%EB%AF%B8> ;
+    kno:component kno:KN2021-0014-c2 ;
+    kno:frequency kno:KN2021-0014-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0014-freq-NN-total ;
+    kno:component kno:KN2021-0014-c1 ;
+    kno:origin "(<영>gapconomy)" ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:componentString "갭(gap), (이)코노미(economy)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "갭코노미"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶코로나19의 확산 이후 금융 지식에 대한 사람들 간의 차이가 벌어지면서 {갭코노미의} 골은 점점 더 깊어지고 있다."@ko ;
+    kno:indexForm "갭코노미"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear .
+kno:KN2021-0014-c2 kno:surfaceForm "코노미"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(이)코노미(economy)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "이코노미"@ko ;
+    kno:formative kno:F000105 .
+kno:KN2021-0014-c1 a kno:Component ;
+    kno:formative kno:F000450 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:fullForm "갭"@ko ;
+    kno:surfaceForm "갭"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "갭(gap)"@ko .

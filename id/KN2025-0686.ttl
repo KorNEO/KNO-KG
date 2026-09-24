@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0686 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0686 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0686-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0686-form ;
-    ontolex:sense kno:KN2025-0686-sense .
-
-kno:KN2025-0686-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0006018419> .
-
-kno:KN2025-0686-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0686-freq-nn,
-        kno:KN2025-0686-freq-yt ;
-    ontolex:writtenRep "호텔 정치학"@ko .
-
-kno:KN2025-0686-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0686-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0686-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0686 kno:component kno:KN2025-0686-c2 ;
+    a kno:Neologism ;
+    kno:slotFiller "정치학(政治學) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0686-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>hotel政治學)" ;
+    kno:indexForm "호텔정치학"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "호텔(hotel), 정치학(政治學)"@ko ;
+    kno:example "(LLM) 야당은 정부의 해명을 두고 {호텔정치학이} 복잡한 민생 문제를 지나치게 단순한 비유로 포장한다고 비판했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    skos:definition "(LLM) 정치적 사안이나 정책을 설명ㆍ비판하면서, 호텔 예약금ㆍ취소 수수료 등 ‘호텔’의 소비ㆍ환불 구조를 비유로 끌어와 논리를 전개하는 정치적 수사 또는 담론을 낮잡아 이르는 말."@ko ;
+    rdfs:label "호텔 정치학"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%ED%85%94%20%EC%A0%95%EC%B9%98%ED%95%99> ;
+    kno:component kno:KN2025-0686-c1 ;
+    kno:instantiates kno:S000157 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0686-freq-NN-total .
+kno:KN2025-0686-c2 kno:formative kno:F005691 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "정치학"@ko ;
+    kno:surfaceForm "정치학"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    rdfs:label "정치학(政治學)"@ko .
+kno:KN2025-0686-c1 rdfs:label "호텔(hotel)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:fullForm "호텔"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "호텔"@ko ;
+    kno:formative kno:F000155 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0393 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0393 a ontolex:Word ;
-    frac:attestation kno:KN2024-0393-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0393-form ;
-    ontolex:sense kno:KN2024-0393-sense .
-
-kno:KN2024-0393-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0007426738> .
-
-kno:KN2024-0393-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0393-freq-nn,
-        kno:KN2024-0393-freq-yt ;
-    ontolex:writtenRep "호랑무늬-딱총새우"@ko .
-
-kno:KN2024-0393-freq-nn a frac:CorpusFrequency ;
-    rdf:value 107 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0393-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0393-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0393 kno:year "2024"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0393-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EB%9E%91%EB%AC%B4%EB%8A%AC%EB%94%B1%EC%B4%9D%EC%83%88%EC%9A%B0> ;
+    kno:languageType "(한+고)+(고+한+고)" ;
+    kno:componentString "호랑무늬(虎狼무늬), 딱총새우(딱銃새우)"@ko ;
+    a ontolex:Word ;
+    kno:formation kno:W01 ;
+    kno:example "¶{호랑무늬딱총새우는} 2018년부터 서귀포 연안에서 발견되었으나 이번에 정확한 종이 확인됐다."@ko ;
+    kno:origin "(虎狼무늬딱銃새우)" ;
+    rdfs:label "호랑무늬-딱총새우"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "호랑무늬딱총새우"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0393-freq-NN-total ;
+    skos:definition "딱총새웃과의 갑각류. 몸은 5㎝ 정도이며 호랑이 무늬를 연상시키는 얼룩무늬가 있다. 주로 열대 및 아열대 바다에서 서식한다."@ko ;
+    kno:component kno:KN2024-0393-c2 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0393-c1 .
+kno:KN2024-0393-c2 kno:fullForm "딱총새우"@ko ;
+    kno:surfaceForm "딱총새우"@ko ;
+    rdfs:label "딱총새우(딱銃새우)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003113 ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0393-c1 rdfs:label "호랑무늬(虎狼무늬)"@ko ;
+    kno:formative kno:F007106 ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "호랑무늬"@ko ;
+    kno:surfaceForm "호랑무늬"@ko .

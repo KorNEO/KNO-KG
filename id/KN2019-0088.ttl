@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0088 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0088 kno:formation kno:W06 ;
+    skos:definition "‘매무새의 완성은 얼굴’을 줄여 이르는 말로, 얼굴이 잘생기거나 예쁘면 평범한 옷이나 머리 따위의 모양새도 맵시 있게 보인다는 말."@ko ;
+    kno:frequency kno:KN2019-0088-freq-NN-total ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0088-freq-NN-2018 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "매(무새), 완(성)(完), 얼(굴)"@ko ;
+    kno:component kno:KN2019-0088-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EC%99%84%EC%96%BC> ;
+    kno:component kno:KN2019-0088-c2 ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:predicate "보인다다"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "매(무새) (1성분)"@ko ;
+    kno:languageType "고+한+고" ;
+    kno:origin "(매完얼)" ;
+    rdfs:label "매완얼"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2019-0088-c3 ;
+    kno:example "¶허름한 옷을 입고 투덜거리는 OOO을 달래며 “{매완얼}. 매무새 완성은 얼굴이라잖아.”라는 OOO."@ko ;
+    kno:indexForm "매완얼"@ko ;
+    kno:instantiates kno:S000173 .
+kno:KN2019-0088-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003391 ;
+    kno:surfaceForm "매"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "매무새"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "매(무새)"@ko ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2019-0088-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "완성"@ko ;
+    kno:formative kno:F000225 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    rdfs:label "완(성)(完)"@ko ;
+    kno:surfaceForm "완"@ko .
+kno:KN2019-0088-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F000117 ;
+    rdfs:label "얼(굴)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "얼굴"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "얼"@ko .

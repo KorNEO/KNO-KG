@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0323 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0323 a ontolex:Word ;
-    frac:attestation kno:KN2020-0323-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0323-form ;
-    ontolex:sense kno:KN2020-0323-sense .
-
-kno:KN2020-0323-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003684620> .
-
-kno:KN2020-0323-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0323-freq-nn,
-        kno:KN2020-0323-freq-yt ;
-    ontolex:writtenRep "청포-족"@ko .
-
-kno:KN2020-0323-freq-nn a frac:CorpusFrequency ;
-    rdf:value 284 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0323-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0323-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0323 kno:frequency kno:KN2020-0323-freq-NN-total ;
+    skos:definition "아파트 청약 제도를 이용해서 아파트를 구매하는 일을 포기하는 사람. 또는 그런 무리."@ko ;
+    kno:slotFiller "포(기)(抛棄)+-족(族) (2성분)"@ko ;
+    kno:frequency kno:KN2020-0323-freq-NN-2022 ;
+    kno:instantiates kno:S000690 ;
+    kno:frequency kno:KN2020-0323-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0323-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0323-c2 ;
+    kno:origin "(請抛族)" ;
+    kno:frequency kno:KN2020-0323-freq-NN-2019 ;
+    kno:formation kno:W02 ;
+    kno:languageType "(한+한)+한" ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "청포족"@ko ;
+    kno:component kno:KN2020-0323-c1 ;
+    kno:slotFiller "청(약)(請約)+포(기)(抛棄) (2성분)"@ko ;
+    kno:component kno:KN2020-0323-c3 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1471088> ;
+    kno:frequency kno:KN2020-0323-freq-NN-2020 ;
+    rdfs:label "청포-족"@ko ;
+    kno:example "¶정부가 분양가 통제를 강화하면서 청약 경쟁률이 치솟아 30대는 점점 ‘{청포족’이} 늘고 있다."@ko ;
+    a ontolex:Word ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:instantiates kno:S000001 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1471088" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0323-freq-NN-2023 ;
+    kno:predicate "포기하다"@ko ;
+    kno:componentString "청(약)(請約), 포(기)(抛棄), -족(族)"@ko ;
+    kno:frequency kno:KN2020-0323-freq-NN-2021 .
+kno:KN2020-0323-c2 rdfs:label "포(기)(抛棄)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "포"@ko ;
+    kno:fullForm "포기"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:formative kno:F000998 .
+kno:KN2020-0323-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "청"@ko ;
+    kno:formative kno:F000945 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    rdfs:label "청(약)(請約)"@ko ;
+    a kno:Component ;
+    kno:fullForm "청약"@ko .
+kno:KN2020-0323-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko .

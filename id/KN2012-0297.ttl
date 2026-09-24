@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0297 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0297 kno:year "2012"^^xsd:gYear ;
+    kno:origin "(女超<프>café)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶{여초 카페에서도} 남자 아이돌을 보고 만만치 않게 표현한다."@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2015 ;
+    kno:urimalTargetCode "1413051" ;
+    a kno:Neologism ;
+    skos:definition "여성 회원이 다수를 차지하는 인터넷카페."@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2022 ;
+    kno:predicate "차지하다"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2014 ;
+    kno:languageType "한_프" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2021 ;
+    kno:component kno:KN2012-0297-c2 ;
+    kno:frequency kno:KN2012-0297-freq-NN-2025 ;
+    rdfs:label "여초 카페"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2019 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000181 ;
+    kno:slotFiller "카페(café) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2018 ;
+    kno:frequency kno:KN2012-0297-freq-NN-2024 ;
+    kno:frequency kno:KN2012-0297-freq-NN-2023 ;
+    kno:slotFiller "여초(女超) (1성분)"@ko ;
+    kno:indexForm "여초카페"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2012 ;
+    kno:component kno:KN2012-0297-c1 ;
+    kno:frequency kno:KN2012-0297-freq-NN-total ;
+    kno:componentString "여초(女超), 카페(café)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2012-0297-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001553 ;
+    kno:frequency kno:KN2012-0297-freq-NN-2017 ;
+    kno:frequency kno:KN2012-0297-freq-NN-2016 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1413051> ;
+    kno:activeYears "13"^^xsd:integer .
+kno:KN2012-0297-c2 kno:formative kno:F000150 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "카페(café)"@ko ;
+    kno:surfaceForm "카페"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "카페"@ko .
+kno:KN2012-0297-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "여초(女超)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "여초"@ko ;
+    kno:formative kno:F001606 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "여초"@ko .

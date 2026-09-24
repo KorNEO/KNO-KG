@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0023 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0023 kno:frequency kno:KN2014-0023-freq-NN-2021 ;
+    kno:example "¶필러 시술로는 주로 이마 필러, 눈 밑 필러, {광대 필러}, 팔자주름 필러, 코 필러 등 윤곽 필러 주사 시술이 주를 이루고 있다."@ko ;
+    kno:frequency kno:KN2014-0023-freq-NN-2013 ;
+    skos:definition "판판하거나 움푹하게 꺼진 광대 부분을 둥글게 튀어나오도록 하기 위하여 쓰는 주사제."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "쓰다"@ko ;
+    kno:componentString "광대, 필러(filler)"@ko ;
+    kno:component kno:KN2014-0023-c1 ;
+    kno:frequency kno:KN2014-0023-freq-NN-2015 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001134 ;
+    kno:frequency kno:KN2014-0023-freq-NN-2014 ;
+    rdfs:label "광대^필러"@ko ;
+    kno:indexForm "광대필러"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:slotFiller "광대 (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0023-c2 ;
+    kno:frequency kno:KN2014-0023-freq-NN-2018 ;
+    kno:origin "(광대<영>filler)" ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0023-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%91%EB%8C%80%ED%95%84%EB%9F%AC> ;
+    kno:languageType "고^영" .
+kno:KN2014-0023-c1 rdfs:label "광대"@ko ;
+    kno:surfaceForm "광대"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002412 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "광대"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2014-0023-c2 a kno:Component ;
+    kno:formative kno:F001010 ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "필러"@ko ;
+    kno:surfaceForm "필러"@ko ;
+    rdfs:label "필러(filler)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

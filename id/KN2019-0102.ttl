@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0102 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0102 kno:origin "(猫르신)" ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0102-freq-NN-2020 ;
+    kno:indexForm "묘르신"@ko ;
+    kno:frequency kno:KN2019-0102-freq-NN-total ;
+    kno:frequency kno:KN2019-0102-freq-NN-2023 ;
+    kno:component kno:KN2019-0102-c1 ;
+    kno:frequency kno:KN2019-0102-freq-NN-2018 ;
+    kno:example "¶이곳에선 나이가 많거나 몸이 아픈 ‘{묘르신}’ 약 스무 마리가 자원봉사자들의 보호 아래 남은 생을 보내고 있습니다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0102-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0102-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%98%EB%A5%B4%EC%8B%A0> ;
+    rdfs:label "묘르신"@ko ;
+    kno:component kno:KN2019-0102-c2 ;
+    skos:definition "늙은 고양이를 비유적으로 이르는 말로, 고양이를 뜻하는 한자 ‘묘(猫)’와 ‘어르신’을 결합하여 만든 말이다."@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0102-freq-NN-2022 ;
+    a ontolex:Word ;
+    kno:languageType "한+고" ;
+    kno:componentString "묘(猫), (어)르신"@ko .
+kno:KN2019-0102-c1 kno:formative kno:F003519 ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "묘(猫)"@ko ;
+    kno:surfaceForm "묘"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "묘"@ko .
+kno:KN2019-0102-c2 kno:surfaceForm "르신"@ko ;
+    rdfs:label "(어)르신"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "어르신"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003277 .

@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0040 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0040 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0040-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0040-form ;
-    ontolex:sense kno:KN2021-0040-sense .
-
-kno:KN2021-0040-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000575434> .
-
-kno:KN2021-0040-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0040-freq-nn,
-        kno:KN2021-0040-freq-yt ;
-    ontolex:writtenRep "금융 치료01"@ko .
-
-kno:KN2021-0040-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1220 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0040-freq-yt a frac:CorpusFrequency ;
-    rdf:value 49681 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0040-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0040 kno:frequency kno:KN2021-0040-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0040-freq-NN-2023 ;
+    skos:definition "범죄나 나쁜 일을 저질렀을 때 과태료나 합의금, 배상금 등을 물어 반성하게 만드는 것을 비유적으로 이르는 말."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0040-c1 ;
+    kno:frequency kno:KN2021-0040-freq-NN-total ;
+    kno:indexForm "금융치료"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0040-freq-NN-2024 ;
+    kno:instantiates kno:S000204 ;
+    kno:slotFiller "치료01 (1성분)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "금융 치료01"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:languageType "한_한" ;
+    kno:example "¶음주 운전으로 내 차를 들이받은 운전자에게 {금융 치료를} 시켜줬다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2021-0040-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0040-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0040-c2 ;
+    kno:componentString "금융(金融), 치료01"@ko ;
+    kno:origin "(金融治療)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EC%9C%B5%20%EC%B9%98%EB%A3%8C01> .
+kno:KN2021-0040-c1 kno:formative kno:F000068 ;
+    kno:surfaceForm "금융"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "금융(金融)"@ko ;
+    kno:fullForm "금융"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2021-0040-c2 rdfs:label "치료01"@ko ;
+    kno:formative kno:F006164 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "치료01"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "치료01"@ko ;
+    kno:truncated "false"^^xsd:boolean .

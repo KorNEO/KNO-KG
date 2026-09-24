@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0068 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0068 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0068-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0068-form ;
-    ontolex:sense kno:KN2023-0068-sense .
-
-kno:KN2023-0068-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/082/0001167269> .
-
-kno:KN2023-0068-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0068-freq-nn,
-        kno:KN2023-0068-freq-yt ;
-    ontolex:writtenRep "녹색^해운^항로"@ko .
-
-kno:KN2023-0068-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1380 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0068-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0068-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0068 kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:slotFiller "녹색(綠色)+해운(海運) (2성분)"@ko ;
+    kno:componentString "녹색(綠色), 해운(海運), 항로(航路)"@ko ;
+    kno:component kno:KN2023-0068-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%EC%83%89%ED%95%B4%EC%9A%B4%ED%95%AD%EB%A1%9C> ;
+    kno:frequency kno:KN2023-0068-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0068-freq-NN-2024 ;
+    kno:instantiates kno:S001139 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:predicate "운항되다"@ko ;
+    kno:frequency kno:KN2023-0068-freq-NN-2025 ;
+    kno:component kno:KN2023-0068-c1 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2023-0068-c2 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "녹색^해운^항로"@ko ;
+    kno:instantiates kno:S000490 ;
+    kno:slotFiller "해운(海運)+항로(航路) (2성분)"@ko ;
+    skos:definition "2050년까지 해운업의 탄소 중립 실현을 목표로 친환경 암모니아나 친환경 메탄올 등의 무탄소 연료 추진 선박으로 운항되는 항로. 부산항과 미국 서부의 타코마항 간에 구축 합의의 내용을 2022년 11월에 공식적으로 발표하였다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0068-freq-NN-2022 ;
+    kno:origin "(綠色海運航路)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "녹색해운항로"@ko ;
+    kno:example "¶해운 협력의 일환으로 미국 주요 항만과 부산항 사이의 탈탄소 항로 구축을 위하여 추진 중인 {녹색 해운 항로의} 동참을 위하여 일부 선박은 향후 미주 항로에 투입될 계획이다."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0068-freq-NN-total .
+kno:KN2023-0068-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F001015 ;
+    kno:fullForm "항로"@ko ;
+    kno:surfaceForm "항로"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "항로(航路)"@ko .
+kno:KN2023-0068-c1 kno:semanticTag kno:usas-O4.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000478 ;
+    kno:fullForm "녹색"@ko ;
+    kno:surfaceForm "녹색"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "녹색(綠色)"@ko .
+kno:KN2023-0068-c2 kno:fullForm "해운"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "해운"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F007007 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M4 ;
+    rdfs:label "해운(海運)"@ko .

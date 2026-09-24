@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0336 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0336 rdfs:label "할류 열풍"@ko ;
+    kno:slotFiller "할(아버지)+(한)류(流) (2성분)"@ko ;
+    kno:componentString "할(아버지), (한)류(流), 열풍(烈風)"@ko ;
+    kno:frequency kno:KN2017-0336-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0336-freq-NN-2016 ;
+    kno:instantiates kno:S000415 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2017-0336-freq-NN-2018 ;
+    kno:component kno:KN2017-0336-c2 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:example "¶{할류 열풍을} 일으키는 할빠, 할마들은 언제나 멋지다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380626> ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2017-0336-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0336-c3 ;
+    kno:component kno:KN2017-0336-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(할流烈風)" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:indexForm "할류열풍"@ko ;
+    kno:languageType "(고+한)_한" ;
+    kno:predicate "이루다"@ko ;
+    skos:definition "할아버지나 할머니가 고가의 유아용품을 구매해 소비 시장의 주류를 이루는 현상. ‘할아버지’ 또는 ‘할머니’와 해외에서 한국의 대중문화를 열렬히 좋아하고 선망하는 현상을 뜻하는 ‘한류 열풍’을 결합하여 만든 말이다."@ko ;
+    kno:urimalTargetCode "1380626" .
+kno:KN2017-0336-c2 kno:formative kno:F003274 ;
+    kno:fullForm "한류"@ko ;
+    kno:surfaceForm "류"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(한)류(流)"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2017-0336-c3 kno:fullForm "열풍"@ko ;
+    a kno:Component ;
+    rdfs:label "열풍(烈風)"@ko ;
+    kno:surfaceForm "열풍"@ko ;
+    kno:formative kno:F000864 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A11.2p ;
+    kno:role "고정항"@ko .
+kno:KN2017-0336-c1 kno:semanticTag kno:usas-S4 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000439 ;
+    kno:surfaceForm "할"@ko ;
+    rdfs:label "할(아버지)"@ko ;
+    kno:fullForm "할아버지"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer .

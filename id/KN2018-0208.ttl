@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0208 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0208 kno:instantiates kno:S000062 ;
+    skos:definition "황사나 미세 먼지로부터 몸을 보호하기 위한 옷차림."@ko ;
+    kno:frequency kno:KN2018-0208-freq-NN-2018 ;
+    kno:slotFiller "스모그(smog) (1성분)"@ko ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S000537 ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1415672" ;
+    kno:origin "(<영>smog fashion)" ;
+    kno:slotFiller "패션(fashion) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0208-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶이미지 스타일리스트 OOO 씨는 “올해 많은 패션 브랜드들이 방수ㆍ방진 기능을 강화한 다양한 기능성 소재 의상들을 선보이고 있다.”라며 “‘{스모그 패션’이} 봄철 환절기 패션을 넘어 트렌치코트나 선글라스 같은 전 시즌 아이템으로 확대될 가능성이 크다.”라고 말했다."@ko ;
+    kno:componentString "스모그(smog), 패션(fashion)"@ko ;
+    kno:component kno:KN2018-0208-c1 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415672> ;
+    kno:component kno:KN2018-0208-c2 ;
+    rdfs:label "스모그 패션"@ko ;
+    kno:indexForm "스모그패션"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2018-0208-c1 a kno:Component ;
+    kno:semanticTag kno:usas-W4 ;
+    rdfs:label "스모그(smog)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000820 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "스모그"@ko ;
+    kno:surfaceForm "스모그"@ko .
+kno:KN2018-0208-c2 kno:formative kno:F000123 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "패션"@ko ;
+    kno:surfaceForm "패션"@ko ;
+    rdfs:label "패션(fashion)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B5 .

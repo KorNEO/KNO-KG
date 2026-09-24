@@ -1,37 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0105 a ontolex:Word ;
-    frac:attestation kno:KN2022-0105-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0105-form ;
-    ontolex:sense kno:KN2022-0105-sense .
-
-kno:KN2022-0105-att-nn a frac:Attestation ;
-    dcterms:date "2021-05-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002543061> .
-
-kno:KN2022-0105-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0105-freq-nn,
-        kno:KN2022-0105-freq-yt ;
-    ontolex:writtenRep "다누리-호"@ko .
-
-kno:KN2022-0105-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2474 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0105-freq-yt a frac:CorpusFrequency ;
-    rdf:value 378 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0105-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%8B%A4%EB%88%84%EB%A6%AC> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0105 kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2022-0105-c2 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "다누리호"@ko ;
+    rdfs:label "다누리-호"@ko ;
+    kno:componentString "다누리, -호(號)"@ko ;
+    kno:frequency kno:KN2022-0105-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1742237" ;
+    skos:definition "우리나라 최초의 달 궤도 탐사선. 2022년 8월에 미국 케이프커내버럴 항공 우주국 기지에서 발사에 성공하였다. 2022년 12월부터 2023년 12월까지 약 1년간, 달의 남북극 상공 100km를 통과하는 원 궤도를 돌며 달의 표면을 관측하는 역할을 한다."@ko ;
+    kno:languageType "고+한" ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶{다누리호는} 카메라와 자기장 측정기를 활용하여 달을 관측하고 달 착륙 후보지를 탐색하는 등의 임무를 수행한다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1742237> ;
+    kno:component kno:KN2022-0105-c1 ;
+    kno:frequency kno:KN2022-0105-freq-NN-2022 ;
+    kno:origin "(다누리號)" ;
+    kno:frequency kno:KN2022-0105-freq-NN-total ;
+    kno:frequency kno:KN2022-0105-freq-NN-2025 ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2022-0105-freq-NN-2023 .
+kno:KN2022-0105-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:formative kno:F007100 ;
+    kno:surfaceForm "호"@ko ;
+    rdfs:label "-호(號)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "호"@ko .
+kno:KN2022-0105-c1 kno:formative kno:F002848 ;
+    kno:fullForm "다누리"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "다누리"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "다누리"@ko .

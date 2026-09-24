@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0396 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0396 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372831> ;
+    rdfs:label "울라질"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "울(산)(蔚), (브)라질(Brazil)"@ko ;
+    kno:frequency kno:KN2016-0396-freq-NN-2015 ;
+    kno:origin "(蔚←Brazil)" ;
+    kno:component kno:KN2016-0396-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0396-freq-NN-2018 ;
+    kno:formation kno:W05 ;
+    kno:indexForm "울라질"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0396-freq-NN-total ;
+    kno:component kno:KN2016-0396-c2 ;
+    skos:definition "여름에 다른 지역보다 기온이 높아 지나치게 더운 울산을 비유적으로 이르는 말. ‘울산’과 ‘브라질’을 결합한 말이다."@ko ;
+    kno:urimalTargetCode "1372831" ;
+    kno:example "¶전통적으로 더위로 유명한 대구가 ‘대프리카’로 불린 데 이어 올해는 ‘울프리카’, ‘{울라질}’ 등이 유행하고 있다."@ko ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko .
+kno:KN2016-0396-c1 rdfs:label "울(산)(蔚)"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:surfaceForm "울"@ko ;
+    kno:formative kno:F005228 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "울산"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0396-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(브)라질(Brazil)"@ko ;
+    kno:surfaceForm "라질"@ko ;
+    kno:fullForm "브라질"@ko ;
+    kno:formative kno:F003159 .

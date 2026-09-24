@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0150 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0150 a ontolex:MultiwordExpression ;
+    kno:component kno:KN2013-0150-c1 ;
+    kno:componentString "립(lip), 겔(gel), 패치(patch)"@ko ;
+    kno:slotFiller "립(lip)+겔(gel) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000448 ;
+    kno:languageType "영_독_영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%BD%20%EA%B2%94%20%ED%8C%A8%EC%B9%98> ;
+    kno:frequency kno:KN2013-0150-freq-NN-2012 ;
+    kno:unitType "구"@ko ;
+    rdfs:label "립 겔 패치"@ko ;
+    kno:component kno:KN2013-0150-c2 ;
+    kno:component kno:KN2013-0150-c3 ;
+    kno:frequency kno:KN2013-0150-freq-NN-2015 ;
+    skos:definition "젤 타입의 입술 마사지용 패치."@ko ;
+    kno:frequency kno:KN2013-0150-freq-NN-total ;
+    kno:frequency kno:KN2013-0150-freq-NN-2014 ;
+    kno:example "¶립 마스크, {립겔패치}, 립에센스로 구성된 3단계 립 케어 제품으로 입술의 묵은 각질을 제거하는 립 마스크와 밀착력이 높은 패치형 젤리 팩인 {립겔패치}, 그리고 립에센스가 건강한 입술 관리를 돕는다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0150-freq-NN-2013 ;
+    a kno:Neologism ;
+    kno:indexForm "립겔패치"@ko ;
+    kno:origin "(lip<독>gel<영>patch)" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear .
+kno:KN2013-0150-c1 kno:surfaceForm "립"@ko ;
+    rdfs:label "립(lip)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001263 ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "립"@ko .
+kno:KN2013-0150-c2 kno:fullForm "겔"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002207 ;
+    kno:surfaceForm "겔"@ko ;
+    rdfs:label "겔(gel)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0150-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "패치"@ko ;
+    kno:formative kno:F000989 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "패치(patch)"@ko ;
+    kno:fullForm "패치"@ko .

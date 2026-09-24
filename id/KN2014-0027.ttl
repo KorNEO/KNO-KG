@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0027 a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000273 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_영" ;
+    skos:definition "소리를 이용하여 상대편을 괴롭게 하거나 불쾌감을 주는 행위."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:slotFiller "귀 (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%80%20%ED%85%8C%EB%9F%AC> ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:origin "(귀<영>terror)" ;
+    kno:frequency kno:KN2014-0027-freq-NN-2013 ;
+    kno:predicate "주다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0027-freq-NN-2014 ;
+    rdfs:label "귀 테러"@ko ;
+    kno:frequency kno:KN2014-0027-freq-NN-2015 ;
+    kno:componentString "귀, 테러(terror)"@ko ;
+    kno:frequency kno:KN2014-0027-freq-NN-2024 ;
+    kno:frequency kno:KN2014-0027-freq-NN-total ;
+    kno:component kno:KN2014-0027-c2 ;
+    kno:indexForm "귀테러"@ko ;
+    kno:component kno:KN2014-0027-c1 ;
+    a kno:Neologism ;
+    kno:example "¶OOO가 음치라면, 이건 완전 {귀 테러} 아니야?"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0027-freq-NN-2016 .
+kno:KN2014-0027-c2 rdfs:label "테러(terror)"@ko ;
+    kno:formative kno:F000422 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "테러"@ko ;
+    kno:surfaceForm "테러"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3m .
+kno:KN2014-0027-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "귀"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    rdfs:label "귀"@ko ;
+    a kno:Component ;
+    kno:fullForm "귀"@ko ;
+    kno:formative kno:F000675 .

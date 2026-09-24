@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0036 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0036 kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "국민(國民), 흔(하다), 녀(女)"@ko ;
+    kno:frequency kno:KN2013-0036-freq-NN-2013 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%AF%BC%20%ED%9D%94%EB%85%80> ;
+    skos:definition "국민 대다수가 인정할 만큼 평범한 여자."@ko ;
+    kno:component kno:KN2013-0036-c1 ;
+    rdfs:label "국민 흔녀"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한_(고+한)" ;
+    kno:instantiates kno:S000063 ;
+    kno:origin "(國民흔女)" ;
+    kno:frequency kno:KN2013-0036-freq-NN-total ;
+    kno:frequency kno:KN2013-0036-freq-NN-2012 ;
+    kno:component kno:KN2013-0036-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2013-0036-c3 ;
+    kno:frequency kno:KN2013-0036-freq-NN-2024 ;
+    kno:indexForm "국민흔녀"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶OOO이 {국민 흔녀들에게} 응원 메시지를 남겼다."@ko ;
+    kno:slotFiller "흔(하다)+녀(女) (2성분)"@ko .
+kno:KN2013-0036-c1 rdfs:label "국민(國民)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국민"@ko ;
+    a kno:Component ;
+    kno:fullForm "국민"@ko ;
+    kno:formative kno:F000055 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2013-0036-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "흔하다"@ko ;
+    kno:semanticTag kno:usas-A6.2p ;
+    rdfs:label "흔(하다)"@ko ;
+    kno:formative kno:F002041 ;
+    kno:surfaceForm "흔"@ko ;
+    a kno:Component .
+kno:KN2013-0036-c3 kno:surfaceForm "녀"@ko ;
+    kno:formative kno:F000024 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    rdfs:label "녀(女)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2.1 .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0014 skos:definition "부모의 지위, 재산, 직업 따위에 따라서 금수저, 은수저, 흙수저 등으로 자녀의 사회 계급을 나눈 것."@ko ;
+    kno:instantiates kno:S000406 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "계급 수저"@ko ;
+    kno:origin "(階級수저)" ;
+    kno:frequency kno:KN2016-0014-freq-NN-total ;
+    kno:example "¶나는…최근 자조적으로 이야기가 나오는 헬조선론이나 {계급 수저} 등의 용어는 고성장의 부작용 때문에 생긴 것이라는 생각이 든다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "계급수저"@ko ;
+    kno:frequency kno:KN2016-0014-freq-NN-2016 ;
+    kno:component kno:KN2016-0014-c2 ;
+    kno:frequency kno:KN2016-0014-freq-NN-2021 ;
+    kno:slotFiller "계급(階級) (1성분)"@ko ;
+    kno:componentString "계급(階級), 수저"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0014-c1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EA%B8%89%20%EC%88%98%EC%A0%80> ;
+    kno:languageType "한_고" ;
+    kno:pos "「구」"@ko .
+kno:KN2016-0014-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "수저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "수저"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000048 ;
+    kno:fullForm "수저"@ko .
+kno:KN2016-0014-c1 kno:fullForm "계급"@ko ;
+    kno:surfaceForm "계급"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    a kno:Component ;
+    kno:formative kno:F000332 ;
+    rdfs:label "계급(階級)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .

@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0464 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0464 kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0464-freq-NN-2017 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "피콕(peacock), 배스(bass)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:label "피콕-배스"@ko ;
+    kno:languageType "영+영" ;
+    kno:component kno:KN2012-0464-c2 ;
+    skos:definition "조기강 농어목의 한 과. 브라질 등 남미에 서식하며 몸 길이가 75cm 정도인 큰 물고기이다. 피라니아의 천적으로 배스처럼 생겼으나 시클리드에 속하는 물고기이다."@ko ;
+    kno:frequency kno:KN2012-0464-freq-NN-total ;
+    kno:example "¶브라질 환경ㆍ재생 자원 연구소는 피라니아 개체수가 폭발적으로 증가한 것은 {피콕배스와} 같은 피라니아의 천적 수가 줄어들었기 때문인 것으로 분석했다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0464-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%EC%BD%95%EB%B0%B0%EC%8A%A4> ;
+    kno:origin "(peacock bass)" ;
+    kno:frequency kno:KN2012-0464-freq-NN-2015 ;
+    kno:indexForm "피콕배스"@ko ;
+    kno:formation kno:W01 .
+kno:KN2012-0464-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "배스"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "배스(bass)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003738 ;
+    kno:surfaceForm "배스"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2012-0464-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "피콕"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "피콕"@ko ;
+    kno:formative kno:F006885 ;
+    rdfs:label "피콕(peacock)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-L2 .

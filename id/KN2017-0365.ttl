@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0365 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0365 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%94%EC%9D%B4%ED%8A%B8%ED%94%84%EB%9E%98%EC%A7%88%EB%A6%AC%ED%8B%B0> ;
+    kno:componentString "화이트(white), 프래질리티(fragility)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:example "¶OO에 따르면, {화이트 프래질리티는} 사회적 특권을 위협받고 있는 백인의 방어 행동을 일컫는다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>white fragility)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2017-0365-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0365-freq-NN-total ;
+    kno:instantiates kno:S000613 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영^영" ;
+    kno:frequency kno:KN2017-0365-freq-NN-2017 ;
+    kno:component kno:KN2017-0365-c1 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:indexForm "화이트프래질리티"@ko ;
+    skos:definition "인종적 편견 때문에 흑인에 대한 사회적 지위를 인정하지 않는 백인의 방어적 태도."@ko ;
+    kno:slotFiller "프래질리티(fragility) (1성분)"@ko ;
+    rdfs:label "화이트^프래질리티"@ko .
+kno:KN2017-0365-c2 kno:fullForm "프래질리티"@ko ;
+    rdfs:label "프래질리티(fragility)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "프래질리티"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A15m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006798 .
+kno:KN2017-0365-c1 kno:formative kno:F000441 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "화이트(white)"@ko ;
+    kno:fullForm "화이트"@ko ;
+    kno:surfaceForm "화이트"@ko ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:position "1"^^xsd:integer .

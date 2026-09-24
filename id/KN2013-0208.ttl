@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0208 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0208 kno:formation kno:W01 ;
+    kno:frequency kno:KN2013-0208-freq-NN-2013 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0208-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:indexForm "붑튜브"@ko ;
+    skos:definition "어깨끈 없이 몸에 딱 달라붙으면서 허리 에서 가슴까지 가리는 여성용 상의."@ko ;
+    kno:component kno:KN2013-0208-c1 ;
+    kno:languageType "영+영" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2013-0208-c2 ;
+    kno:componentString "붑(boob), 튜브(tube)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0208-freq-NN-2024 ;
+    rdfs:label "붑-튜브"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:example "¶이는 1970년 대는 디스코 열풍이 뜨거웠던 댄스장에서 크게 유행했던 디자인으로 조명 아래 빛날 수 있는 골드, 실버의 {붑튜브와} 홀터넥 드레스가 인상적이다."@ko ;
+    kno:origin "(boob tube)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%91%ED%8A%9C%EB%B8%8C> .
+kno:KN2013-0208-c1 kno:fullForm "붑"@ko ;
+    kno:formative kno:F004005 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "붑"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "붑(boob)"@ko .
+kno:KN2013-0208-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001918 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "튜브(tube)"@ko ;
+    kno:fullForm "튜브"@ko ;
+    kno:surfaceForm "튜브"@ko .

@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0522 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0522 kno:slotFiller "작업(作業)+-단(團) (2성분)"@ko ;
+    kno:origin "(土地作業團)" ;
+    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%A0%EC%A7%80%20%EC%9E%91%EC%97%85%EB%8B%A8> ;
+    kno:component kno:KN2016-0522-c2 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0522-c3 ;
+    kno:example "¶O 씨 등은 땅 주인이 나이가 많고 권리 변동이 장기간 이뤄지지 않은 점을 악용하여, 공문서 위조를 담당하는 ‘{토지 작업단’과} 불법 대출을 진행할 팀으로 역할을 분담해 금융권으로부터 33억 5천 700여만 원을 대출받아 가로챘다."@ko ;
+    skos:definition "토지와 관련된 공문서를 위조하여 이를 담보로 대출을 받는 등의 사기 범죄를 저지르는 사람. 또는 그런 무리."@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:componentString "토지(土地), 작업(作業), -단(團)"@ko ;
+    rdfs:label "토지 작업단"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "저지르다"@ko ;
+    kno:component kno:KN2016-0522-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "토지작업단"@ko ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2016-0522-freq-NN-2016 ;
+    kno:slotFiller "토지(土地) (1성분)"@ko ;
+    kno:frequency kno:KN2016-0522-freq-NN-total ;
+    kno:instantiates kno:S001720 ;
+    kno:instantiates kno:S001011 .
+kno:KN2016-0522-c2 kno:fullForm "작업"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "작업"@ko ;
+    kno:formative kno:F000228 ;
+    rdfs:label "작업(作業)"@ko ;
+    a kno:Component .
+kno:KN2016-0522-c3 kno:fullForm "단"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000255 ;
+    rdfs:label "-단(團)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "단"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    a kno:Component .
+kno:KN2016-0522-c1 kno:semanticTag kno:usas-W3 ;
+    rdfs:label "토지(土地)"@ko ;
+    kno:surfaceForm "토지"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001903 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "토지"@ko .

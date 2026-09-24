@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0219 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0219 kno:indexForm "빅테인먼트"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "빅(←BICT) (1성분)"@ko ;
+    kno:example "¶이동 통신 3사의 {빅테인먼트} 경쟁은 엘티이(LTE) 가입자 2000만 명 시대와 맞물려 프로 야구 모바일 중계로 모아졌다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2013-0219-freq-NN-2014 ;
+    kno:frequency kno:KN2013-0219-freq-NN-2015 ;
+    kno:languageType "영+영+영" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:origin "(▼←baseball information and comunication technology entertainment)" ;
+    kno:component kno:KN2013-0219-c1 ;
+    kno:frequency kno:KN2013-0219-freq-NN-2017 ;
+    kno:instantiates kno:S000234 ;
+    kno:componentString "빅(←BICT), (엔터)테인먼트(entertainment)"@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2013-0219-freq-NN-2013 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:component kno:KN2013-0219-c2 ;
+    skos:definition "야구와 관련된 모바일 컨텐츠를 생산하고 창조하며 유통시키는 기업이나 조직 분야."@ko ;
+    rdfs:label "빅테인먼트"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0219-freq-NN-2018 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%85%ED%85%8C%EC%9D%B8%EB%A8%BC%ED%8A%B8> ;
+    kno:frequency kno:KN2013-0219-freq-NN-total ;
+    kno:frequency kno:KN2013-0219-freq-NN-2016 .
+kno:KN2013-0219-c1 kno:formative kno:F004092 ;
+    kno:surfaceForm "빅"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "빅(←BICT)"@ko ;
+    kno:semanticTag kno:usas-N3.2p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "빅"@ko ;
+    a kno:Component .
+kno:KN2013-0219-c2 kno:fullForm "엔터테인먼트"@ko ;
+    rdfs:label "(엔터)테인먼트(entertainment)"@ko ;
+    kno:formative kno:F000618 ;
+    kno:surfaceForm "테인먼트"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:truncated "true"^^xsd:boolean .

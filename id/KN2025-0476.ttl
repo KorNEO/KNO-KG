@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0476 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0476 a ontolex:Word ;
-    frac:attestation kno:KN2025-0476-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0476-form ;
-    ontolex:sense kno:KN2025-0476-sense .
-
-kno:KN2025-0476-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/057/0001895632> .
-
-kno:KN2025-0476-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0476-freq-nn,
-        kno:KN2025-0476-freq-yt ;
-    ontolex:writtenRep "익충 라이팅"@ko .
-
-kno:KN2025-0476-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0476-freq-yt a frac:CorpusFrequency ;
-    rdf:value 114 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0476-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0476 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B5%EC%B6%A9%EB%9D%BC%EC%9D%B4%ED%8C%85> ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:origin "(益蟲<영>←gaslighting)" ;
+    kno:component kno:KN2025-0476-c1 ;
+    kno:component kno:KN2025-0476-c2 ;
+    kno:frequency kno:KN2025-0476-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "익충라이팅"@ko ;
+    skos:definition "(LLM) 해충으로 여겨질 만한 곤충이나 그로 인한 피해를 축소하고, 이로움만을 과장해 사람들에게 긍정적으로 받아들이게 하려는 말하기 방식."@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+영" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000339 ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 농가에서는 피해가 크다고 하는데도 일부 콘텐츠가 장점만 부각하니 {익충라이팅이라는} 비판이 나온다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0476-freq-NN-2025 ;
+    rdfs:label "익충라이팅"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "익충(益蟲), (가스)라이팅(gaslighting)"@ko ;
+    kno:slotFiller "익충(益蟲) (1성분)"@ko .
+kno:KN2025-0476-c1 kno:fullForm "익충"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F005426 ;
+    a kno:Component ;
+    kno:surfaceForm "익충"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "익충(益蟲)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0476-c2 kno:formative kno:F000726 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(가스)라이팅(gaslighting)"@ko ;
+    kno:fullForm "가스라이팅"@ko ;
+    kno:semanticTag kno:usas-S7.1m ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "라이팅"@ko .

@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0227 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0227 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0227-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0227-form ;
-    ontolex:sense kno:KN2021-0227-sense .
-
-kno:KN2021-0227-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004811432> .
-
-kno:KN2021-0227-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0227-freq-nn,
-        kno:KN2021-0227-freq-yt ;
-    ontolex:writtenRep "전략^장거리포"@ko .
-
-kno:KN2021-0227-freq-nn a frac:CorpusFrequency ;
-    rdf:value 32 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0227-freq-yt a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0227-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0227 kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "한^한" ;
+    rdfs:label "전략^장거리포"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EB%9E%B5%EC%9E%A5%EA%B1%B0%EB%A6%AC%ED%8F%AC> ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:componentString "전략(戰略), 장거리포(長距離砲)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    skos:definition "사정거리가 1,600킬로미터 이상으로 긴 대포."@ko ;
+    kno:component kno:KN2021-0227-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0227-freq-NN-total ;
+    kno:frequency kno:KN2021-0227-freq-NN-2021 ;
+    kno:component kno:KN2021-0227-c1 ;
+    kno:frequency kno:KN2021-0227-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(戰略長距離砲)" ;
+    kno:indexForm "전략장거리포"@ko ;
+    kno:example "¶2023년경에 출시될 {전략 장거리포는} 미 육군이 개발 중인 장거리 무기이며, 군용 트럭이 끌어서 움직일 수 있도록 설계되었다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0227-c2 rdfs:label "장거리포(長距離砲)"@ko ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005565 ;
+    kno:fullForm "장거리포"@ko ;
+    kno:surfaceForm "장거리포"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3 .
+kno:KN2021-0227-c1 a kno:Component ;
+    kno:fullForm "전략"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-X7 ;
+    rdfs:label "전략(戰略)"@ko ;
+    kno:formative kno:F000061 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "전략"@ko .

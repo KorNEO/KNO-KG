@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0086 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0086 a ontolex:MultiwordExpression ;
+    kno:predicate "찾다"@ko ;
+    kno:urimalTargetCode "1371269" ;
+    kno:origin "(半退世代)" ;
+    kno:slotFiller "반퇴(半退) (1성분)"@ko ;
+    kno:component kno:KN2015-0086-c2 ;
+    kno:frequency kno:KN2015-0086-freq-NN-2020 ;
+    kno:frequency kno:KN2015-0086-freq-NN-2019 ;
+    kno:frequency kno:KN2015-0086-freq-NN-2017 ;
+    kno:example "¶하지만 직장생활에만 익숙해진 {반퇴 세대들은} 사업 경험이 전무하여 성공적인 창업이 어려운 것이 사실이다."@ko ;
+    kno:slotFiller "세대(世代) (1성분)"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    skos:definition "조기 퇴직을 한 후 다시 새로운 일자리를 찾는 세대. 평균 수명은 늘어났지만 은퇴 시기는 앞당겨져 경제적인 문제 등으로 재취업이나 창업을 하며 계속 직업을 가져야 하는 세대를 말한다."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "반퇴^세대"@ko ;
+    kno:frequency kno:KN2015-0086-freq-NN-total ;
+    kno:instantiates kno:S000002 ;
+    kno:frequency kno:KN2015-0086-freq-NN-2015 ;
+    kno:instantiates kno:S000301 ;
+    kno:languageType "한^한" ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:indexForm "반퇴세대"@ko ;
+    kno:frequency kno:KN2015-0086-freq-NN-2018 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371269> ;
+    kno:frequency kno:KN2015-0086-freq-NN-2016 ;
+    kno:componentString "반퇴(半退), 세대(世代)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:component kno:KN2015-0086-c1 ;
+    kno:pos "「구」"@ko .
+kno:KN2015-0086-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "세대"@ko ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:formative kno:F000006 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "세대"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2015-0086-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "반퇴"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "반퇴"@ko ;
+    kno:formative kno:F000355 ;
+    a kno:Component ;
+    rdfs:label "반퇴(半退)"@ko .

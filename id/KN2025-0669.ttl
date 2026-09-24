@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0669 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0669 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0669-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0669-form ;
-    ontolex:sense kno:KN2025-0669-sense .
-
-kno:KN2025-0669-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002464183> .
-
-kno:KN2025-0669-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0669-freq-nn,
-        kno:KN2025-0669-freq-yt ;
-    ontolex:writtenRep "햇빛 배당 소득"@ko .
-
-kno:KN2025-0669-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0669-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0669-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0669 kno:indexForm "햇빛배당소득"@ko ;
+    skos:definition "(LLM) 태양광 발전 등 햇빛을 활용한 에너지 사업에서 발생한 수익을 출자자나 지역 주민 등에게 배당 형태로 나누어 받아 얻는 소득."@ko ;
+    kno:component kno:KN2025-0669-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "고_한_한" ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0669-c2 ;
+    kno:instantiates kno:S001766 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%96%87%EB%B9%9B%20%EB%B0%B0%EB%8B%B9%20%EC%86%8C%EB%93%9D> ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "배당(配當) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "얻다"@ko ;
+    kno:component kno:KN2025-0669-c1 ;
+    kno:origin "(햇빛配當所得)" ;
+    kno:frequency kno:KN2025-0669-freq-NN-total ;
+    kno:componentString "햇빛, 배당(配當), 소득(所得)"@ko ;
+    kno:frequency kno:KN2025-0669-freq-NN-2025 ;
+    kno:example "(LLM) 마을이 공공부지에 태양광 설비를 설치해 운영 수익을 주민에게 돌려주면서 {햇빛배당소득을} 기대하는 사람이 늘었다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "햇빛 배당 소득"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko .
+kno:KN2025-0669-c3 kno:semanticTag kno:usas-I1.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "소득"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "소득"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000047 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "소득(所得)"@ko .
+kno:KN2025-0669-c2 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "배당"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003732 ;
+    rdfs:label "배당(配當)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "배당"@ko .
+kno:KN2025-0669-c1 a kno:Component ;
+    kno:fullForm "햇빛"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F002005 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "햇빛"@ko ;
+    kno:surfaceForm "햇빛"@ko .

@@ -1,0 +1,72 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0038 kno:instantiates kno:S000001 ;
+    kno:slotFiller "내+(레)시피(recipe) (2성분)"@ko ;
+    kno:example "¶가심비, 소확행 등 개인의 취향이나 입맛을 중시하는 트렌드가 확산되면서 {내시피족이} 늘고 있다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2019-0038-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0038-freq-NN-2019 ;
+    kno:instantiates kno:S000145 ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "내, (레)시피(recipe), -족(族)"@ko ;
+    kno:component kno:KN2019-0038-c3 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:urimalTargetCode "1447147" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "(고+영)+한" ;
+    kno:frequency kno:KN2019-0038-freq-NN-total ;
+    rdfs:label "내시피-족"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0038-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0038-freq-NN-2024 ;
+    kno:slotFiller "(레)시피(recipe)+-족(族) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(내<영>←recipe族)" ;
+    kno:frequency kno:KN2019-0038-freq-NN-2025 ;
+    kno:indexForm "내시피족"@ko ;
+    kno:frequency kno:KN2019-0038-freq-NN-2021 ;
+    skos:definition "자신만의 조리법으로 만든 음식을 즐기는 사람. 또는 그런 무리. ⇒규범 표기는 미확정이다."@ko ;
+    kno:predicate "즐기다"@ko ;
+    kno:component kno:KN2019-0038-c2 ;
+    kno:component kno:KN2019-0038-c1 ;
+    kno:formation kno:W02 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1447147> ;
+    a ontolex:Word .
+kno:KN2019-0038-c3 kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component .
+kno:KN2019-0038-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "레시피"@ko ;
+    kno:surfaceForm "시피"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(레)시피(recipe)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001546 ;
+    kno:semanticTag kno:usas-F1 .
+kno:KN2019-0038-c1 rdfs:label "내"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "내"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "내"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000071 .

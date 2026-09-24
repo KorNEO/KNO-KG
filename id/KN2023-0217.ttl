@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0217 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0217 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0217-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0217-form ;
-    ontolex:sense kno:KN2023-0217-sense .
-
-kno:KN2023-0217-att-nn a frac:Attestation ;
-    dcterms:date "2022-10-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003458387> .
-
-kno:KN2023-0217-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0217-freq-nn,
-        kno:KN2023-0217-freq-yt ;
-    ontolex:writtenRep "유리^세대"@ko .
-
-kno:KN2023-0217-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0217-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0217-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0217 kno:unitType "구"@ko ;
+    kno:componentString "유리(琉璃), 세대(世代)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0217-c1 ;
+    kno:frequency kno:KN2023-0217-freq-NN-total ;
+    skos:definition "스마트폰이나 태블릿 컴퓨터 등 유리로 된 화면을 통해 읽거나 쓰는 것이 익숙한 세대."@ko ;
+    kno:example "¶2010년 이후에 태어난 아이들은 태어나자마자 스마트 기기의 스크린에 노출되었고, 이를 능숙하게 사용한다는 점에서 ‘{유리 세대’라고} 불리기도 한다."@ko ;
+    kno:slotFiller "유리(琉璃) (1성분)"@ko ;
+    rdfs:label "유리^세대"@ko ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000002 ;
+    kno:slotFiller "세대(世代) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EB%A6%AC%EC%84%B8%EB%8C%80> ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "유리세대"@ko ;
+    kno:component kno:KN2023-0217-c2 ;
+    kno:instantiates kno:S000561 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2023-0217-freq-NN-2022 ;
+    kno:origin "(琉璃世代)" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear .
+kno:KN2023-0217-c1 kno:surfaceForm "유리"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:formative kno:F000397 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "유리(琉璃)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "유리"@ko .
+kno:KN2023-0217-c2 kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "세대(世代)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "세대"@ko ;
+    kno:surfaceForm "세대"@ko .

@@ -1,0 +1,74 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0293 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0293 kno:frequency kno:KN2012-0293-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "에스엔에스(SNS) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0293-freq-NN-total ;
+    kno:frequency kno:KN2012-0293-freq-NN-2017 ;
+    kno:frequency kno:KN2012-0293-freq-NN-2013 ;
+    kno:example "¶‘{에스엔에스 피로 증후군’도} 정보화 시대의 그늘이다."@ko ;
+    kno:frequency kno:KN2012-0293-freq-NN-2015 ;
+    kno:origin "(SNS疲勞症候群)" ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:instantiates kno:S001546 ;
+    kno:frequency kno:KN2012-0293-freq-NN-2024 ;
+    kno:frequency kno:KN2012-0293-freq-NN-2022 ;
+    kno:frequency kno:KN2012-0293-freq-NN-2018 ;
+    kno:languageType "영^한^한" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0293-freq-NN-2014 ;
+    kno:component kno:KN2012-0293-c1 ;
+    kno:predicate "하다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373275> ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "에스엔에스피로증후군"@ko ;
+    skos:definition "누리 소통망 서비스(SNS)의 과다한 이용으로 인해 발생하는 피로감 등을 주된 특징으로 하는 증후군."@ko ;
+    kno:instantiates kno:S001131 ;
+    kno:urimalTargetCode "1373275" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2012-0293-c2 ;
+    rdfs:label "에스엔에스^피로^증후군"@ko ;
+    kno:component kno:KN2012-0293-c3 ;
+    kno:slotFiller "피로(疲勞)+증후군(症候群) (2성분)"@ko ;
+    kno:componentString "에스엔에스(SNS), 피로(疲勞), 증후군(症候群)"@ko ;
+    kno:frequency kno:KN2012-0293-freq-NN-2019 .
+kno:KN2012-0293-c1 rdfs:label "에스엔에스(SNS)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "에스엔에스"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "에스엔에스"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001594 .
+kno:KN2012-0293-c2 kno:surfaceForm "피로"@ko ;
+    kno:formative kno:F000634 ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "피로"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "피로(疲勞)"@ko .
+kno:KN2012-0293-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "증후군"@ko ;
+    rdfs:label "증후군(症候群)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "증후군"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000062 .

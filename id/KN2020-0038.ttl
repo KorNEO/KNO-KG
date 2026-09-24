@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0038 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0038-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0038-form ;
-    ontolex:sense kno:KN2020-0038-sense .
-
-kno:KN2020-0038-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003007646> .
-
-kno:KN2020-0038-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0038-freq-nn,
-        kno:KN2020-0038-freq-yt ;
-    ontolex:writtenRep "기간^안정^산업^기금"@ko .
-
-kno:KN2020-0038-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0038-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0038-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0038 kno:component kno:KN2020-0038-c3 ;
+    kno:slotFiller "기간(基幹)+안정(安定)+산업(産業) (3성분)"@ko ;
+    kno:frequency kno:KN2020-0038-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EA%B0%84%EC%95%88%EC%A0%95%EC%82%B0%EC%97%85%EA%B8%B0%EA%B8%88> ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0038-c4 ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0038-c2 ;
+    skos:definition "기간산업의 경영난 및 그에 따른 근로자의 고용 불안을 해소하기 위해 정부가 지급하는 기금. 코로나19의 확산으로 인해 기간산업계가 어려움을 겪자 정부가 지원하는 돈으로, 한국 산업 은행이 기업에 자금을 빌려주고 정부에서 지급 보증을 해 주는 형식으로 운영된다. 기간산업을 영위하는 기업이나 기간산업 기업을 지원하기 위해 설립된 회사 및 기구를 지원 대상으로 한다. =기간산업 기금, 기간산업 안정 기금."@ko ;
+    kno:frequency kno:KN2020-0038-freq-NN-2020 ;
+    kno:languageType "한^한^한^한" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(基幹安定産業基金)" ;
+    kno:instantiates kno:S000072 ;
+    rdfs:label "기간^안정^산업^기금"@ko ;
+    kno:predicate "지급하다"@ko ;
+    kno:component kno:KN2020-0038-c1 ;
+    kno:indexForm "기간안정산업기금"@ko ;
+    kno:componentString "기간(基幹), 안정(安定), 산업(産業), 기금(基金)"@ko ;
+    kno:example "¶OO 기업 관계자는 “현실적으로 {기간 안정 산업 기금의} 지원 없이 사업을 지속하는 것은 쉽지 않다.”라며 지원에 대한 절실함을 보였다."@ko .
+kno:KN2020-0038-c3 kno:fullForm "산업"@ko ;
+    kno:surfaceForm "산업"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000058 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "산업(産業)"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2020-0038-c4 kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "기금"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "기금"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000096 ;
+    rdfs:label "기금(基金)"@ko .
+kno:KN2020-0038-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "안정(安定)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A15 ;
+    kno:surfaceForm "안정"@ko ;
+    kno:formative kno:F000181 ;
+    kno:fullForm "안정"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0038-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "기간"@ko ;
+    kno:surfaceForm "기간"@ko ;
+    rdfs:label "기간(基幹)"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F002582 .

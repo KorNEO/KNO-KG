@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0315 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0315 kno:frequency kno:KN2018-0315-freq-NN-total ;
+    rdfs:label "체액^생검"@ko ;
+    kno:urimalTargetCode "1415892" ;
+    kno:languageType "한^한" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0315-freq-NN-2021 ;
+    kno:frequency kno:KN2018-0315-freq-NN-2018 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:predicate "검사하다"@ko ;
+    kno:frequency kno:KN2018-0315-freq-NN-2017 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "체액생검"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(體液生檢)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415892> ;
+    kno:frequency kno:KN2018-0315-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "체액(體液), 생검(生檢)"@ko ;
+    kno:example "¶환자에게 침습적인 조직 생검이 아닌 비침습적인 {체액 생검을} 통해 혈액 몇 방울로 실시간 암 진단 및 표적 약물 치료의 유전자 변이를 확인할 수 있다."@ko ;
+    kno:frequency kno:KN2018-0315-freq-NN-2020 ;
+    skos:definition "병을 진단하거나 치료 경과를 검사하기 위하여 혈관이나 조직 사이를 채우고 있는 혈액, 림프, 뇌척수액 따위를 채취하여 현미경으로 검사하는 일. 특히 암을 진단하거나 유전자 변이 등을 확인할 수 있다."@ko ;
+    kno:component kno:KN2018-0315-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0315-freq-NN-2019 ;
+    kno:component kno:KN2018-0315-c2 ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2018-0315-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "체액(體液)"@ko ;
+    kno:fullForm "체액"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006064 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "체액"@ko .
+kno:KN2018-0315-c2 kno:fullForm "생검"@ko ;
+    kno:surfaceForm "생검"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "생검(生檢)"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004257 .

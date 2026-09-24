@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0072 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0072 a ontolex:Word ;
-    frac:attestation kno:KN2022-0072-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0072-form ;
-    ontolex:sense kno:KN2022-0072-sense .
-
-kno:KN2022-0072-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/123/0002264978> .
-
-kno:KN2022-0072-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0072-freq-nn,
-        kno:KN2022-0072-freq-yt ;
-    ontolex:writtenRep "굿힘당"@ko .
-
-kno:KN2022-0072-freq-nn a frac:CorpusFrequency ;
-    rdf:value 36 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0072-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6411 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0072-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0072 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0072-c3 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0072-freq-NN-total ;
+    kno:slotFiller "(국민의)힘 (1성분)"@ko ;
+    kno:component kno:KN2022-0072-c1 ;
+    kno:frequency kno:KN2022-0072-freq-NN-2022 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0072-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%BF%ED%9E%98%EB%8B%B9> ;
+    a kno:Neologism ;
+    kno:indexForm "굿힘당"@ko ;
+    kno:example "¶야당 국회 의원인 그는 국민의 힘은 당분간 ‘{굿힘당’이라는} 비판에서 벗어나기 어려울 것이라고 지적하였다."@ko ;
+    skos:definition "‘굿’과 ‘국민의 힘’을 결합하여 만든 말로, 국민의 힘 후보의 선거 대책 본부에 무속인이 개입되었음을 이르는 말. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주의가 필요하다."@ko ;
+    kno:formation kno:W05 ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+(고+한)" ;
+    kno:componentString "굿, (국민의)힘, 당(黨)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001236 ;
+    a ontolex:Word ;
+    rdfs:label "굿힘당"@ko ;
+    kno:origin "(굿힘黨)" .
+kno:KN2022-0072-c3 kno:surfaceForm "당"@ko ;
+    kno:formative kno:F000345 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "당(黨)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "당"@ko .
+kno:KN2022-0072-c1 a kno:Component ;
+    kno:formative kno:F000671 ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    rdfs:label "굿"@ko ;
+    kno:surfaceForm "굿"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "굿"@ko .
+kno:KN2022-0072-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F007235 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "힘"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "국민의힘"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(국민의)힘"@ko .

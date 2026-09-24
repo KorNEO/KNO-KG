@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0094 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0094 kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2012-0094-c2 ;
+    kno:year "2012"^^xsd:gYear ;
+    skos:definition "여러 명이 동시에 참여하는 카카오톡 채팅."@ko ;
+    kno:indexForm "떼카"@ko ;
+    kno:example "¶여름 방학이 돼서도 O 양은 ‘{떼카’로} 지속적인 괴롭힘을 당했고, 결국 불면증과 신경 쇠약에 걸렸다."@ko ;
+    kno:origin "(-←kakao talk)" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2012-0094-c1 ;
+    rdfs:label "떼카"@ko ;
+    kno:instantiates kno:S000295 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "고+영" ;
+    kno:slotFiller "카(카오톡)(←kakao talk) (1성분)"@ko ;
+    kno:componentString "떼, 카(카오톡)(←kakao talk)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%96%BC%EC%B9%B4> .
+kno:KN2012-0094-c2 kno:formative kno:F006188 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:fullForm "카카오톡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "카(카오톡)(←kakao talk)"@ko ;
+    kno:surfaceForm "카"@ko .
+kno:KN2012-0094-c1 kno:surfaceForm "떼"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000258 ;
+    rdfs:label "떼"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "떼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 .

@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0649 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0649 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0649-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0649-form ;
-    ontolex:sense kno:KN2025-0649-sense .
-
-kno:KN2025-0649-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/112/0003755204> .
-
-kno:KN2025-0649-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0649-freq-nn,
-        kno:KN2025-0649-freq-yt ;
-    ontolex:writtenRep "프로 차안러"@ko .
-
-kno:KN2025-0649-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0649-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0649-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0649 skos:definition "(LLM) 차 안에서 보내는 시간이 많아 차량 내부에서의 생활에 익숙하고, 필요한 물건을 미리 챙기는 등 준비가 철저한 사람."@ko ;
+    kno:component kno:KN2025-0649-c4 ;
+    kno:component kno:KN2025-0649-c2 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "프로차안러"@ko ;
+    kno:example "(LLM) 촬영 대기 시간이 길어지자 그는 텀블러와 쿠션, 간식까지 챙겨 온 {프로차안러답게} 차 안에서 여유롭게 시간을 보냈다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "프로(페셔널)(professional)+차(車)+안 (3성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "영_(한+고+영)" ;
+    kno:origin "(<영>←professional車안<영>←er)" ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "차(車)+안+-어(←-er) (3성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0649-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EB%A1%9C%20%EC%B0%A8%20%EC%95%88%20%EB%9F%AC> ;
+    kno:component kno:KN2025-0649-c3 ;
+    kno:frequency kno:KN2025-0649-freq-NN-total ;
+    kno:component kno:KN2025-0649-c1 ;
+    kno:instantiates kno:S000693 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001169 ;
+    rdfs:label "프로 차 안 러"@ko ;
+    kno:componentString "프로(페셔널)(professional), 차(車), 안, -어(←-er)"@ko .
+kno:KN2025-0649-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "어"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-어(←-er)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000182 ;
+    a kno:Component ;
+    kno:surfaceForm "어"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2025-0649-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000075 ;
+    rdfs:label "차(車)"@ko ;
+    kno:surfaceForm "차"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:fullForm "차"@ko .
+kno:KN2025-0649-c3 kno:formative kno:F000380 ;
+    kno:semanticTag kno:usas-M6 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "안"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "안"@ko ;
+    kno:surfaceForm "안"@ko .
+kno:KN2025-0649-c1 kno:fullForm "프로페셔널"@ko ;
+    rdfs:label "프로(페셔널)(professional)"@ko ;
+    kno:formative kno:F000051 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.2p ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "프로"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean .

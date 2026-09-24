@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0254 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0254-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0254-form ;
-    ontolex:sense kno:KN2023-0254-sense .
-
-kno:KN2023-0254-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003707169> .
-
-kno:KN2023-0254-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0254-freq-nn,
-        kno:KN2023-0254-freq-yt ;
-    ontolex:writtenRep "젤로 스킨"@ko .
-
-kno:KN2023-0254-freq-nn a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0254-freq-yt a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0254-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0254 kno:component kno:KN2023-0254-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0254-freq-NN-2024 ;
+    kno:languageType "영_영" ;
+    kno:indexForm "젤로스킨"@ko ;
+    kno:frequency kno:KN2023-0254-freq-NN-2022 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:example "¶겨울철 추운 날씨에도 탄력 넘치는 {젤로 스킨을} 유지하기 위해서는 피부 내 콜라겐의 함유량을 높여야 한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%A4%EB%A1%9C%20%EC%8A%A4%ED%82%A8> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "젤로(jello), 스킨(skin)"@ko ;
+    kno:frequency kno:KN2023-0254-freq-NN-total ;
+    kno:origin "(<영>jello skin)" ;
+    kno:component kno:KN2023-0254-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "젤로 스킨"@ko ;
+    skos:definition "젤리처럼 탄력 있고 말랑말랑한 피부."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko .
+kno:KN2023-0254-c1 kno:formative kno:F005720 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "젤로"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    rdfs:label "젤로(jello)"@ko ;
+    a kno:Component ;
+    kno:fullForm "젤로"@ko .
+kno:KN2023-0254-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "스킨"@ko ;
+    kno:surfaceForm "스킨"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001524 ;
+    a kno:Component ;
+    rdfs:label "스킨(skin)"@ko .

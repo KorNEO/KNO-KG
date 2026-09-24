@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0044 kno:frequency kno:KN2015-0044-freq-NN-2021 ;
+    kno:frequency kno:KN2015-0044-freq-NN-2019 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:urimalTargetCode "1371207" ;
+    kno:origin "(達觀世代)" ;
+    kno:frequency kno:KN2015-0044-freq-NN-2015 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶OOO OO대 사회학과 교수는 “높은 수준의 교육을 받은 이들은 점차 증가하고 있지만 일자리는 부족하기 때문에 취업을 위해 눈높이를 낮추는 현상이 나타나고 있다.”라며 이들을 자신의 가치를 스스로 낮추는 {달관 세대라} 일컬었다."@ko ;
+    rdfs:label "달관^세대"@ko ;
+    kno:frequency kno:KN2015-0044-freq-NN-2025 ;
+    kno:frequency kno:KN2015-0044-freq-NN-2018 ;
+    kno:frequency kno:KN2015-0044-freq-NN-2017 ;
+    kno:indexForm "달관세대"@ko ;
+    kno:frequency kno:KN2015-0044-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000002 ;
+    kno:component kno:KN2015-0044-c1 ;
+    kno:componentString "달관(達觀), 세대(世代)"@ko ;
+    kno:languageType "한^한" ;
+    kno:predicate "행동하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2015-0044-freq-NN-total ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "사소한 사물이나 일에 얽매이지 않고 세속을 벗어난 것처럼 행동하는 세대. 취직이나 결혼, 내 집 마련 따위를 포기한 젊은 세대의 무기력한 모습을 이르는 말이다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2015-0044-c2 ;
+    kno:slotFiller "달관(達觀) (1성분)"@ko ;
+    kno:frequency kno:KN2015-0044-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371207> ;
+    kno:frequency kno:KN2015-0044-freq-NN-2020 .
+kno:KN2015-0044-c1 kno:surfaceForm "달관"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "달관(達觀)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002879 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "달관"@ko .
+kno:KN2015-0044-c2 rdfs:label "세대(世代)"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:fullForm "세대"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

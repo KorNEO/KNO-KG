@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0375 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0375 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2013-0375-freq-NN-total ;
+    kno:componentString "차(車), 완(성)(完), 얼(굴)"@ko ;
+    kno:origin "(車完얼)" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:slotFiller "차(車) (1성분)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:slotFiller "완(성)(完)+얼(굴) (2성분)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%A8%EC%99%84%EC%96%BC> ;
+    kno:component kno:KN2013-0375-c3 ;
+    kno:component kno:KN2013-0375-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000173 ;
+    kno:formation kno:W06 ;
+    kno:languageType "한+한+고" ;
+    kno:example "¶최근 한 온라인 게시판에는 ‘{차완얼’이라는} 제목의 게시글이 게재돼 네티즌들의 관심을 모으고 있다."@ko ;
+    kno:instantiates kno:S000328 ;
+    kno:component kno:KN2013-0375-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "차완얼"@ko ;
+    skos:definition "‘차의 완성은 얼굴’을 줄여 이르는 말. 운전자의 얼굴에 따라 타고 있는 차의 좋고 나쁨이 결정됨을 말한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:indexForm "차완얼"@ko ;
+    kno:frequency kno:KN2013-0375-freq-NN-2013 .
+kno:KN2013-0375-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000117 ;
+    kno:fullForm "얼굴"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "얼"@ko ;
+    rdfs:label "얼(굴)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2013-0375-c1 kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "차"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000075 ;
+    rdfs:label "차(車)"@ko ;
+    kno:surfaceForm "차"@ko .
+kno:KN2013-0375-c2 kno:surfaceForm "완"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "완(성)(完)"@ko ;
+    kno:fullForm "완성"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000225 ;
+    kno:role "고정항"@ko .

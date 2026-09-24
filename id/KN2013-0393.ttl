@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0393 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0393 kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(←Kakaotalk-)" ;
+    rdfs:label "카따"@ko ;
+    kno:languageType "영+고" ;
+    a kno:Neologism ;
+    kno:example "¶직장인 OOO 씨는 “카카오톡으로 속한 그룹만 학교 동창, 직장 동기 등 4곳이다.”라며 “실시간 대화에 조금이라도 소홀하면 ‘{카따’가} 될 수 있어 노심초사한다.”라고 말했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "카(카오톡)(Kakaotalk) (1성분)"@ko ;
+    skos:definition "모바일 메신저인 카카오톡 채팅 상에서 따돌림을 당하는 사람."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000840 ;
+    kno:component kno:KN2013-0393-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0393-c1 ;
+    kno:indexForm "카따"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%B4%EB%94%B0> ;
+    kno:predicate "당하다"@ko ;
+    kno:componentString "카(카오톡)(Kakaotalk), 따(돌림)"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko .
+kno:KN2013-0393-c2 kno:surfaceForm "따"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001218 ;
+    kno:semanticTag kno:usas-S8m ;
+    rdfs:label "따(돌림)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "따돌림"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2013-0393-c1 kno:formative kno:F001841 ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:fullForm "카카오톡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "카(카오톡)(Kakaotalk)"@ko ;
+    kno:surfaceForm "카"@ko ;
+    kno:position "1"^^xsd:integer .

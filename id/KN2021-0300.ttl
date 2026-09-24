@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0300 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0300-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0300-form ;
-    ontolex:sense kno:KN2021-0300-sense .
-
-kno:KN2021-0300-att-nn a frac:Attestation ;
-    dcterms:date "2021-02-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001545754> .
-
-kno:KN2021-0300-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0300-freq-nn,
-        kno:KN2021-0300-freq-yt ;
-    ontolex:writtenRep "확장 가상 세계"@ko .
-
-kno:KN2021-0300-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3150 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0300-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0300-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0300 kno:frequency kno:KN2021-0300-freq-NN-total ;
+    kno:languageType "한_한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%95%EC%9E%A5%20%EA%B0%80%EC%83%81%20%EC%84%B8%EA%B3%84> ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0300-c1 ;
+    kno:frequency kno:KN2021-0300-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0300-freq-NN-2022 ;
+    kno:origin "(擴張假想世界)" ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0300-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2021-0300-c2 ;
+    kno:componentString "확장(擴張), 가상(假想), 세계(世界)"@ko ;
+    kno:frequency kno:KN2021-0300-freq-NN-2025 ;
+    kno:indexForm "확장가상세계"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶이날 간담회는 {확장 가상 세계에} 마련된 회의장에서 진행되어 사람들의 눈길을 끌었다."@ko ;
+    kno:component kno:KN2021-0300-c3 ;
+    skos:definition "3차원의 가상 세계에서 자신의 역할을 대신하는 가상의 캐릭터를 통해 현실 세계에서처럼 경제, 사회, 문화적 활동을 함으로써 가상 세계와 현실 세계의 경계가 허물어진 세계. =멀티 버스."@ko ;
+    kno:frequency kno:KN2021-0300-freq-NN-2023 ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:label "확장 가상 세계"@ko .
+kno:KN2021-0300-c1 kno:formative kno:F002028 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "확장"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-N5p ;
+    rdfs:label "확장(擴張)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "확장"@ko .
+kno:KN2021-0300-c2 kno:formative kno:F000157 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.4m ;
+    rdfs:label "가상(假想)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "가상"@ko ;
+    kno:surfaceForm "가상"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2021-0300-c3 rdfs:label "세계(世界)"@ko ;
+    kno:formative kno:F000219 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "세계"@ko ;
+    kno:surfaceForm "세계"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:truncated "false"^^xsd:boolean .

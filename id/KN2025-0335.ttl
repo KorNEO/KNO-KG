@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0335 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0335 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0335-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0335-form ;
-    ontolex:sense kno:KN2025-0335-sense .
-
-kno:KN2025-0335-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-07"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/009/0005425387> .
-
-kno:KN2025-0335-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0335-freq-nn,
-        kno:KN2025-0335-freq-yt ;
-    ontolex:writtenRep "세계 기반 모델"@ko .
-
-kno:KN2025-0335-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0335-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0335-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0335 kno:componentString "세계(世界), 기반(基盤), 모델(model)"@ko ;
+    kno:component kno:KN2025-0335-c1 ;
+    kno:origin "(世界基盤<영>model)" ;
+    kno:instantiates kno:S000641 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한_한_영" ;
+    rdfs:label "세계 기반 모델"@ko ;
+    kno:frequency kno:KN2025-0335-freq-NN-total ;
+    kno:example "(LLM) 연구팀은 로봇이 다양한 지형에서도 안정적으로 걷도록 학습시키기 위해 {세계기반모델을} 활용해 시뮬레이션 데이터를 대량으로 생성했다."@ko ;
+    kno:indexForm "세계기반모델"@ko ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 현실 세계의 물리 법칙과 인과관계 등을 학습하여, 가상 환경에서의 움직임과 상호작용을 예측하거나 생성하도록 설계된 인공지능 모델."@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0335-freq-NN-2025 ;
+    kno:slotFiller "기반(基盤)+모델(model) (2성분)"@ko ;
+    kno:instantiates kno:S000624 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0335-c3 ;
+    kno:component kno:KN2025-0335-c2 ;
+    kno:slotFiller "세계(世界)+기반(基盤) (2성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B3%84%20%EA%B8%B0%EB%B0%98%20%EB%AA%A8%EB%8D%B8> ;
+    kno:unitType "구"@ko .
+kno:KN2025-0335-c1 a kno:Component ;
+    kno:fullForm "세계"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세계"@ko ;
+    kno:formative kno:F000219 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "세계(世界)"@ko .
+kno:KN2025-0335-c3 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "모델"@ko ;
+    kno:surfaceForm "모델"@ko ;
+    kno:semanticTag kno:usas-X4.2 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "모델(model)"@ko ;
+    kno:formative kno:F000172 .
+kno:KN2025-0335-c2 kno:formative kno:F001115 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "기반"@ko ;
+    kno:surfaceForm "기반"@ko ;
+    rdfs:label "기반(基盤)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:position "2"^^xsd:integer .

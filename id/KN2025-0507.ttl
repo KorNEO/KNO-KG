@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0507 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0507 a ontolex:Word ;
-    frac:attestation kno:KN2025-0507-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0507-form ;
-    ontolex:sense kno:KN2025-0507-sense .
-
-kno:KN2025-0507-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/296/0000093503> .
-
-kno:KN2025-0507-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0507-freq-nn,
-        kno:KN2025-0507-freq-yt ;
-    ontolex:writtenRep "접지 주의자"@ko .
-
-kno:KN2025-0507-freq-nn a frac:CorpusFrequency ;
-    rdf:value 8 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0507-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0507-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:origin "(接地主義者)" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0507-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0507-freq-NN-2025 ;
+    rdfs:label "접지주의-자"@ko ;
+    kno:component kno:KN2025-0507-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "접지주의자"@ko ;
+    kno:slotFiller "주의(主義)+-자(者) (2성분)"@ko ;
+    kno:componentString "접지(接地), 주의(主義), -자(者)"@ko ;
+    kno:instantiates kno:S001034 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0507-c2 ;
+    kno:predicate "실천하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 공원 황톳길에서 맨발 걷기를 하는 {접지주의자들이} 늘면서, 지자체에 안전한 맨발 산책로를 더 만들어 달라는 요구도 나온다."@ko ;
+    skos:definition "(LLM) 맨발로 땅을 밟는 ‘접지(어싱)’가 건강 증진이나 질병 예방ㆍ치료에 도움이 된다고 믿고 이를 실천하는 사람."@ko ;
+    kno:slotFiller "접지(接地) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한_(한+한)" ;
+    kno:instantiates kno:S000574 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%91%EC%A7%80%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+    kno:component kno:KN2025-0507-c3 ;
+    kno:formation kno:W02 .
+kno:KN2025-0507-c1 kno:semanticTag kno:usas-O1.1 ;
+    rdfs:label "접지(接地)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "접지"@ko ;
+    kno:surfaceForm "접지"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000918 .
+kno:KN2025-0507-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "주의"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:formative kno:F000080 ;
+    kno:surfaceForm "주의"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    a kno:Component .
+kno:KN2025-0507-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko ;
+    a kno:Component .

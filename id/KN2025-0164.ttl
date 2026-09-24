@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0164 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0164 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0164-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0164-form ;
-    ontolex:sense kno:KN2025-0164-sense .
-
-kno:KN2025-0164-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005595748> .
-
-kno:KN2025-0164-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0164-freq-nn,
-        kno:KN2025-0164-freq-yt ;
-    ontolex:writtenRep "도파민 뱅킹"@ko .
-
-kno:KN2025-0164-freq-nn a frac:CorpusFrequency ;
-    rdf:value 57 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0164-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0164-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0164 kno:origin "(<영>dopamine banking)" ;
+    kno:languageType "영_영" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:predicate "유도하다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 이 은행은 출석 체크와 소비 미션을 달성하면 포인트를 주는 {도파민뱅킹을} 내세워 앱 방문 빈도를 끌어올렸다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "도파민(dopamine), 뱅킹(banking)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0164-c2 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0164-c1 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "도파민 뱅킹"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%ED%8C%8C%EB%AF%BC%20%EB%B1%85%ED%82%B9> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0164-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0164-freq-NN-total ;
+    kno:indexForm "도파민뱅킹"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "(LLM) 도파민(흥분ㆍ쾌락에 관여하는 신경 전달 물질)과 ‘뱅킹’을 결합한 말로, 미션ㆍ보상ㆍ랭킹 등 게임화 요소나 즉각적 피드백을 금융 앱ㆍ서비스에 적용해 이용자의 참여와 체류를 유도하는 방식."@ko ;
+    kno:slotFiller "뱅킹(banking) (1성분)"@ko ;
+    kno:instantiates kno:S001331 .
+kno:KN2025-0164-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003762 ;
+    rdfs:label "뱅킹(banking)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "뱅킹"@ko ;
+    kno:surfaceForm "뱅킹"@ko .
+kno:KN2025-0164-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "도파민"@ko ;
+    kno:formative kno:F001192 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "도파민"@ko ;
+    rdfs:label "도파민(dopamine)"@ko ;
+    kno:position "1"^^xsd:integer .

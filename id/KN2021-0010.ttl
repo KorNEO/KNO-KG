@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0010 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0010-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0010-form ;
-    ontolex:sense kno:KN2021-0010-sense .
-
-kno:KN2021-0010-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003918054> .
-
-kno:KN2021-0010-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0010-freq-nn,
-        kno:KN2021-0010-freq-yt ;
-    ontolex:writtenRep "감마^변이"@ko .
-
-kno:KN2021-0010-freq-nn a frac:CorpusFrequency ;
-    rdf:value 834 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0010-freq-yt a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0010-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0010 kno:indexForm "감마변이"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0010-freq-NN-2021 ;
+    kno:urimalTargetCode "1572519" ;
+    kno:languageType "그^한" ;
+    kno:slotFiller "감마(gamma) (1성분)"@ko ;
+    kno:component kno:KN2021-0010-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0010-freq-NN-2023 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000257 ;
+    kno:frequency kno:KN2021-0010-freq-NN-2024 ;
+    skos:definition "일본에서 최초로 발견된 코로나19의 변이 바이러스. 브라질에서 일본으로 입국한 사람에게서 처음 발견되었다. 국가에 대한 낙인 효과를 제거하기 위해 바이러스의 이름을 그리스어 숫자로 대체하게 되었다."@ko ;
+    kno:origin "(<그>gamma變異)" ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2021-0010-freq-NN-2022 ;
+    rdfs:label "감마^변이"@ko ;
+    kno:example "¶브라질에서 일본으로 입국한 여행객에게서 처음 발견된 {감마 변이가} 아시아와 아프리카를 중심으로 퍼지고 있다."@ko ;
+    kno:frequency kno:KN2021-0010-freq-NN-total ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1572519> ;
+    kno:componentString "감마(gamma), 변이(變異)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0010-c1 ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0010-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "변이"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "변이(變異)"@ko ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:formative kno:F000514 ;
+    kno:fullForm "변이"@ko ;
+    a kno:Component .
+kno:KN2021-0010-c1 kno:surfaceForm "감마"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "감마(gamma)"@ko ;
+    a kno:Component ;
+    kno:fullForm "감마"@ko ;
+    kno:formative kno:F002117 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "슬롯 채움"@ko .

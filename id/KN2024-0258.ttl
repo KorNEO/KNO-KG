@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0258 a ontolex:Word ;
-    frac:attestation kno:KN2024-0258-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0258-form ;
-    ontolex:sense kno:KN2024-0258-sense .
-
-kno:KN2024-0258-att-nn a frac:Attestation ;
-    dcterms:date "2024-04-18"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004974651> .
-
-kno:KN2024-0258-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0258-freq-nn,
-        kno:KN2024-0258-freq-yt ;
-    ontolex:writtenRep "전투-템"@ko .
-
-kno:KN2024-0258-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0258-freq-yt a frac:CorpusFrequency ;
-    rdf:value 50 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0258-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0258 kno:unitType "단어"@ko ;
+    kno:slotFiller "전투(戰鬪) (1성분)"@ko ;
+    kno:formation kno:W01 ;
+    kno:example "¶셰프들은 요리할 때 튀어 오르는 기름을 막아 주는 특수 조리복을 주방의 필수 {전투템으로} 꼽는다."@ko ;
+    kno:component kno:KN2024-0258-c1 ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%ED%88%AC%ED%85%9C> ;
+    kno:instantiates kno:S000004 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "전투-템"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "전투(戰鬪), (아이)템(item)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "전투템"@ko ;
+    kno:origin "(戰鬪<영>←item)" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0258-c2 ;
+    skos:definition "실제 사용 환경에서 튼튼하고 편리한 물건을 비유적으로 이르는 말."@ko .
+kno:KN2024-0258-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001751 ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "전투(戰鬪)"@ko ;
+    kno:fullForm "전투"@ko ;
+    kno:surfaceForm "전투"@ko .
+kno:KN2024-0258-c2 kno:surfaceForm "템"@ko ;
+    a kno:Component ;
+    kno:fullForm "아이템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

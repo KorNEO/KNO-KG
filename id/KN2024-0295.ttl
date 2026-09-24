@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0295 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0295 a ontolex:Word ;
-    frac:attestation kno:KN2024-0295-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0295-form ;
-    ontolex:sense kno:KN2024-0295-sense .
-
-kno:KN2024-0295-att-nn a frac:Attestation ;
-    dcterms:date "2024-01-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003810460> .
-
-kno:KN2024-0295-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0295-freq-nn,
-        kno:KN2024-0295-freq-yt ;
-    ontolex:writtenRep "짭투리"@ko .
-
-kno:KN2024-0295-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0295-freq-yt a frac:CorpusFrequency ;
-    rdf:value 108 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0295-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0295 kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:componentString "짭, (사)투리"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶그는 부산 출신이라고 우겼지만 {짭투리를} 쓰다 곧 부산 사람이 아님이 들통났다."@ko ;
+    kno:component kno:KN2024-0295-c2 ;
+    skos:definition "실제 사투리 화자가 아닌 사람이 따라하거나 흉내 낸 사투리."@ko ;
+    kno:frequency kno:KN2024-0295-freq-NN-total ;
+    kno:instantiates kno:S001669 ;
+    kno:component kno:KN2024-0295-c1 ;
+    kno:slotFiller "(사)투리 (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%AD%ED%88%AC%EB%A6%AC> ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0295-freq-NN-2024 ;
+    rdfs:label "짭투리"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:indexForm "짭투리"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2024-0295-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "사투리"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:formative kno:F006522 ;
+    a kno:Component ;
+    rdfs:label "(사)투리"@ko ;
+    kno:surfaceForm "투리"@ko .
+kno:KN2024-0295-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "짭"@ko ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:fullForm "짭"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001800 ;
+    kno:surfaceForm "짭"@ko .

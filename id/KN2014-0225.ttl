@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0225 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0225 a ontolex:Word ;
+    kno:languageType "포+프" ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:urimalTargetCode "1358260" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358260> ;
+    kno:indexForm "자몽뱅쇼"@ko ;
+    kno:origin "(<포>←zamboa<프>vin chaud)" ;
+    kno:component kno:KN2014-0225-c1 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0225-freq-NN-2013 ;
+    skos:definition "자몽과 와인을 한데 넣고 끓여 만든 음료."@ko ;
+    kno:frequency kno:KN2014-0225-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "자몽-뱅쇼"@ko ;
+    kno:example "¶짙은 자줏빛으로 유혹하는 {자몽뱅쇼로} 연인과 달콤한 디저트 시간을 가져 보길."@ko ;
+    kno:componentString "자몽(←zamboa), 뱅쇼(vin chaud)"@ko ;
+    kno:component kno:KN2014-0225-c2 .
+kno:KN2014-0225-c1 kno:fullForm "자몽"@ko ;
+    a kno:Component ;
+    rdfs:label "자몽(←zamboa)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "자몽"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-L3 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F005518 .
+kno:KN2014-0225-c2 rdfs:label "뱅쇼(vin chaud)"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003761 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "뱅쇼"@ko ;
+    kno:surfaceForm "뱅쇼"@ko ;
+    kno:truncated "false"^^xsd:boolean .

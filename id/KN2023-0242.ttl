@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0242 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0242 a ontolex:Word ;
-    frac:attestation kno:KN2023-0242-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0242-form ;
-    ontolex:sense kno:KN2023-0242-sense .
-
-kno:KN2023-0242-att-nn a frac:Attestation ;
-    dcterms:date "2023-05-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/648/0000016664> .
-
-kno:KN2023-0242-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0242-freq-nn,
-        kno:KN2023-0242-freq-yt ;
-    ontolex:writtenRep "잼-테크"@ko .
-
-kno:KN2023-0242-freq-nn a frac:CorpusFrequency ;
-    rdf:value 55 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0242-freq-yt a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0242-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0242 kno:indexForm "잼테크"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "잼(←재미), (재)테크(財tech)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "추구하다"@ko ;
+    kno:slotFiller "잼(←재미) (1성분)"@ko ;
+    kno:example "¶OO 은행은 엠제트 세대에게 다가가기 위해, 혜택과 함께 재미를 추구하는 {잼테크}를 활용한 마케팅을 실시하고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000160 ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%BC%ED%85%8C%ED%81%AC> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:origin "(잼<영>tech)" ;
+    kno:frequency kno:KN2023-0242-freq-NN-2023 ;
+    kno:languageType "고+영" ;
+    rdfs:label "잼테크"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0242-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0242-freq-NN-total ;
+    skos:definition "재미를 추구하는 재테크. ‘재미’와 ‘재테크’를 결합하여 만든 말로, 금융 플랫폼에서 캐릭터를 공유하여 임무를 수행하거나 지인과 함께 포인트를 받는 과정을 재미있게 느끼면서 재테크를 하는 것을 말한다."@ko ;
+    kno:component kno:KN2023-0242-c2 ;
+    kno:component kno:KN2023-0242-c1 .
+kno:KN2023-0242-c2 kno:fullForm "재테크"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000065 ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "테크"@ko .
+kno:KN2023-0242-c1 kno:semanticTag kno:usas-E4.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "잼"@ko ;
+    kno:surfaceForm "잼"@ko ;
+    kno:formative kno:F000911 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "잼(←재미)"@ko .

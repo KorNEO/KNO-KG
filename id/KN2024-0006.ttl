@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0006 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0006 a ontolex:Word ;
-    frac:attestation kno:KN2024-0006-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0006-form ;
-    ontolex:sense kno:KN2024-0006-sense .
-
-kno:KN2024-0006-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/021/0002588869> .
-
-kno:KN2024-0006-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0006-freq-nn,
-        kno:KN2024-0006-freq-yt ;
-    ontolex:writtenRep "강서용송"@ko .
-
-kno:KN2024-0006-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0006-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0006-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0006-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EC%84%9C%EC%9A%A9%EC%86%A1> ;
+    kno:indexForm "강서용송"@ko ;
+    skos:definition "집값이 높은 강남, 서초, 용산, 송파를 아울러 이르는 말."@ko ;
+    kno:component kno:KN2024-0006-c1 ;
+    kno:example "¶같은 서울 안에서도 목동과 {강서용송} 등 일부 지역은 최고가 경신이 이어지는 반면, 여전히 하락세인 곳도 적지 않다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(江瑞龍松)" ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "강서용송"@ko ;
+    kno:component kno:KN2024-0006-c4 ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0006-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "강(남)(江南), 서(초), 용(산)(龍山), 송(파구)(松坡區)"@ko .
+kno:KN2024-0006-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "서"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "서초"@ko ;
+    a kno:Component ;
+    rdfs:label "서(초)"@ko ;
+    kno:formative kno:F004278 .
+kno:KN2024-0006-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "강남"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "강(남)(江南)"@ko ;
+    kno:formative kno:F002138 ;
+    kno:surfaceForm "강"@ko .
+kno:KN2024-0006-c4 rdfs:label "송(파구)(松坡區)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:formative kno:F001495 ;
+    kno:surfaceForm "송"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "송파구"@ko .
+kno:KN2024-0006-c3 kno:position "3"^^xsd:integer ;
+    kno:formative kno:F001649 ;
+    rdfs:label "용(산)(龍山)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "용"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "용산"@ko .

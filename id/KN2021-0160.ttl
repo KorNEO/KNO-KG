@@ -1,36 +1,83 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0160 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0160 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0160-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0160-form ;
-    ontolex:sense kno:KN2021-0160-sense .
-
-kno:KN2021-0160-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/417/0000582387> .
-
-kno:KN2021-0160-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0160-freq-nn,
-        kno:KN2021-0160-freq-yt ;
-    ontolex:writtenRep "세계^백신^면역^개발^연합"@ko .
-
-kno:KN2021-0160-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0160-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0160-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0160 kno:component kno:KN2021-0160-c1 ;
+    kno:componentString "세계(世界), 백신(vaccine), 면역(免疫), 개발(開發), 연합(聯合)"@ko ;
+    a kno:Neologism ;
+    kno:origin "(世界<영>vaccine免疫開發聯合)" ;
+    kno:component kno:KN2021-0160-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B3%84%EB%B0%B1%EC%8B%A0%EB%A9%B4%EC%97%AD%EA%B0%9C%EB%B0%9C%EC%97%B0%ED%95%A9> ;
+    kno:component kno:KN2021-0160-c5 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "백신(vaccine)+면역(免疫)+개발(開發)+연합(聯合) (4성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0160-c2 ;
+    kno:indexForm "세계백신면역개발연합"@ko ;
+    kno:frequency kno:KN2021-0160-freq-NN-2020 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000641 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "개발 도상국 어린이들의 면역화를 지원하기 위한 목적으로 2000년에 설립된 국제 기구. 백신 공급 및 접종, 의료 환경 개선, 의료 전문 인력 양성 등에 기여하는 여러 사업들을 수행한다."@ko ;
+    kno:example "¶백신의 공정한 분배를 주도해 온 {세계 백신 면역 개발 연합이} 평화상 후보에 올랐다."@ko ;
+    kno:component kno:KN2021-0160-c4 ;
+    kno:frequency kno:KN2021-0160-freq-NN-total ;
+    rdfs:label "세계^백신^면역^개발^연합"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^영^한^한^한" ;
+    kno:frequency kno:KN2021-0160-freq-NN-2021 .
+kno:KN2021-0160-c1 rdfs:label "세계(世界)"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:formative kno:F000219 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "세계"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세계"@ko .
+kno:KN2021-0160-c3 kno:formative kno:F000751 ;
+    kno:semanticTag kno:usas-B2p ;
+    rdfs:label "면역(免疫)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "면역"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "면역"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2021-0160-c5 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "연합"@ko ;
+    kno:position "5"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000863 ;
+    kno:surfaceForm "연합"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    rdfs:label "연합(聯合)"@ko .
+kno:KN2021-0160-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "백신"@ko ;
+    kno:surfaceForm "백신"@ko ;
+    kno:formative kno:F000079 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "백신(vaccine)"@ko .
+kno:KN2021-0160-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "개발"@ko ;
+    kno:surfaceForm "개발"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:semanticTag kno:usas-A2.1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000246 ;
+    rdfs:label "개발(開發)"@ko .

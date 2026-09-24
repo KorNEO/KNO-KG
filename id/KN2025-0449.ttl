@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0449 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0449 a ontolex:Word ;
-    frac:attestation kno:KN2025-0449-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0449-form ;
-    ontolex:sense kno:KN2025-0449-sense .
-
-kno:KN2025-0449-att-nn a frac:Attestation ;
-    dcterms:date "2020-05-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/643/0000027624> .
-
-kno:KN2025-0449-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0449-freq-nn,
-        kno:KN2025-0449-freq-yt ;
-    ontolex:writtenRep "원스코"@ko .
-
-kno:KN2025-0449-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0449-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0449-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0449 kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000961 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0449-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%EC%8A%A4%EC%BD%94> ;
+    a ontolex:Word ;
+    rdfs:label "원스코"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0449-freq-NN-total ;
+    kno:slotFiller "원(화)(貨) (1성분)"@ko ;
+    kno:component kno:KN2025-0449-c1 ;
+    kno:component kno:KN2025-0449-c3 ;
+    kno:indexForm "원스코"@ko ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 가치가 원화에 연동되도록 설계된 스테이블코인."@ko ;
+    kno:componentString "원(화)(貨), 스(테이블)(stable), 코(인)(coin)"@ko ;
+    kno:example "(LLM) 국회에서는 디지털 자산 제도 정비와 함께 {원스코} 도입 필요성을 놓고 논의가 이어졌다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0449-c2 .
+kno:KN2025-0449-c1 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "원"@ko ;
+    rdfs:label "원(화)(貨)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005246 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "원화"@ko .
+kno:KN2025-0449-c3 kno:formative kno:F000312 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:fullForm "코인"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "코(인)(coin)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0449-c2 kno:semanticTag kno:usas-A2.1m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "스"@ko ;
+    kno:fullForm "스테이블"@ko ;
+    kno:formative kno:F001515 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "스(테이블)(stable)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

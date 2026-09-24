@@ -1,0 +1,70 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0107 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0107 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:example "¶{롱 테일 데이터는} 연구가 완료된 경우라도 연구자의 가설과 부합하지 않아 사장되는 데이터와 실패 사례에서 나온 데이터를 포함한다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416170> ;
+    skos:definition "전체 데이터에서 차지하는 용량은 작으나, 다수의 데이터보다 더 중요하고 가치 있는 정보를 가지는 데이터."@ko ;
+    kno:component kno:KN2018-0107-c2 ;
+    kno:languageType "영^영^영" ;
+    kno:frequency kno:KN2018-0107-freq-NN-2017 ;
+    kno:instantiates kno:S000368 ;
+    kno:component kno:KN2018-0107-c3 ;
+    kno:frequency kno:KN2018-0107-freq-NN-2024 ;
+    kno:instantiates kno:S001366 ;
+    kno:origin "(<영>long tail data)" ;
+    kno:indexForm "롱테일데이터"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0107-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0107-freq-NN-2023 ;
+    kno:slotFiller "롱(long)+테일(tail) (2성분)"@ko ;
+    kno:predicate "가지다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:urimalTargetCode "1416170" ;
+    kno:slotFiller "테일(tail)+데이터(data) (2성분)"@ko ;
+    kno:frequency kno:KN2018-0107-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "롱^테일^데이터"@ko ;
+    kno:frequency kno:KN2018-0107-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0107-freq-NN-total ;
+    kno:componentString "롱(long), 테일(tail), 데이터(data)"@ko ;
+    kno:frequency kno:KN2018-0107-freq-NN-2019 ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2018-0107-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "테일(tail)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F006463 ;
+    kno:fullForm "테일"@ko ;
+    kno:surfaceForm "테일"@ko .
+kno:KN2018-0107-c3 kno:fullForm "데이터"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "데이터"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F000132 ;
+    rdfs:label "데이터(data)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2018-0107-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "롱"@ko ;
+    kno:surfaceForm "롱"@ko ;
+    kno:semanticTag kno:usas-N3.7p ;
+    rdfs:label "롱(long)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000734 ;
+    a kno:Component ;
+    kno:role "고정항"@ko .

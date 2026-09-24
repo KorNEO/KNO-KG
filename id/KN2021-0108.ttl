@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0108 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2021-0108 a ontolex:Word ;
-    frac:attestation kno:KN2021-0108-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0108-form ;
-    ontolex:sense kno:KN2021-0108-sense .
-
-kno:KN2021-0108-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0001714334> .
-
-kno:KN2021-0108-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0108-freq-nn,
-        kno:KN2021-0108-freq-yt ;
-    ontolex:writtenRep "마드름"@ko .
-
-kno:KN2021-0108-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0108-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0108-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:frequency kno:KN2021-0108-freq-NN-total ;
+    kno:component kno:KN2021-0108-c2 ;
+    kno:component kno:KN2021-0108-c1 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "오랜 시간 마스크를 착용해서 생긴 여드름. 코로나19의 전 세계적인 유행으로 인하여 마스크를 일상적으로 착용하게 된 상황에서 나온 말이다. =마스크네."@ko ;
+    kno:frequency kno:KN2021-0108-freq-NN-2020 ;
+    kno:formation kno:W05 ;
+    kno:languageType "영+고" ;
+    a kno:Neologism ;
+    kno:componentString "마(스크)(mask), (여)드름"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:example "¶여러 화장품 회사들이 장시간 마스크 착용으로 인해 생긴 {마드름을} 해결하기 위한 신제품을 앞다퉈 출시했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "마드름"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "(여)드름 (1성분)"@ko ;
+    kno:indexForm "마드름"@ko ;
+    kno:origin "(<영>←mask드름)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%93%9C%EB%A6%84> ;
+    kno:instantiates kno:S000297 ;
+    kno:registration "신어DB"@ko .
+kno:KN2021-0108-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(여)드름"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "드름"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003058 ;
+    kno:fullForm "여드름"@ko .
+kno:KN2021-0108-c1 kno:surfaceForm "마"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "마(스크)(mask)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "마스크"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:formative kno:F000497 ;
+    kno:role "고정항"@ko .

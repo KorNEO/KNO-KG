@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0189 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0189-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0189-form ;
-    ontolex:sense kno:KN2025-0189-sense .
-
-kno:KN2025-0189-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002781263> .
-
-kno:KN2025-0189-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0189-freq-nn,
-        kno:KN2025-0189-freq-yt ;
-    ontolex:writtenRep "딸깍 도서"@ko .
-
-kno:KN2025-0189-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0189-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0189-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0189 kno:pos "「구」"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 생성형 인공지능으로 원고를 빠르게 만들어 낸 뒤 최소한의 편집만 거쳐 단기간에 대량으로 출간한 책."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "딸깍 (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0189-c2 ;
+    kno:instantiates kno:S001351 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "도서(圖書) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0189-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:origin "(딸깍圖書)" ;
+    kno:frequency kno:KN2025-0189-freq-NN-2025 ;
+    kno:instantiates kno:S000370 ;
+    rdfs:label "딸깍 도서"@ko ;
+    kno:component kno:KN2025-0189-c1 ;
+    kno:example "(LLM) 전자책 서점에 비슷한 주제의 신간이 한꺼번에 쏟아지자 독자들 사이에서 {딸깍도서가} 아니냐는 말이 나왔다."@ko ;
+    kno:componentString "딸깍, 도서(圖書)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B8%EA%B9%8D%20%EB%8F%84%EC%84%9C> ;
+    kno:indexForm "딸깍도서"@ko .
+kno:KN2025-0189-c2 rdfs:label "도서(圖書)"@ko ;
+    kno:surfaceForm "도서"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000714 ;
+    kno:fullForm "도서"@ko ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0189-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "딸깍"@ko ;
+    kno:formative kno:F000348 ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:semanticTag kno:usas-A12p ;
+    kno:fullForm "딸깍"@ko ;
+    kno:surfaceForm "딸깍"@ko .

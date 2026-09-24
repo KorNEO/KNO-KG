@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0146 kno:example "¶인스턴트 연애에 지쳐 고모가 주선해 준 {선개팅으로} 처음 만난 남자 친구는 듬직한 매력으로 한 번에 그의 마음을 사로잡았다."@ko ;
+    kno:slotFiller "선+(소)개(介) (2성분)"@ko ;
+    kno:languageType "고+(한+영)" ;
+    kno:component kno:KN2019-0146-c2 ;
+    kno:indexForm "선개팅"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "선, (소)개(介), (미)팅(meeting)"@ko ;
+    kno:instantiates kno:S000731 ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    skos:definition "누군가의 주선으로 결혼할 당사자들이 일대일로 직접 만나는 일."@ko ;
+    kno:frequency kno:KN2019-0146-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0146-freq-NN-2019 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A0%EA%B0%9C%ED%8C%85> ;
+    rdfs:label "선개팅"@ko ;
+    kno:frequency kno:KN2019-0146-freq-NN-total ;
+    kno:component kno:KN2019-0146-c3 ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0146-c1 ;
+    kno:predicate "만나다"@ko ;
+    kno:origin "(선介<영>←meeting)" ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2019-0146-freq-NN-2018 ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0146-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    rdfs:label "(소)개(介)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "개"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "소개"@ko ;
+    kno:formative kno:F002156 .
+kno:KN2019-0146-c3 kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "(미)팅(meeting)"@ko ;
+    kno:surfaceForm "팅"@ko ;
+    kno:formative kno:F001930 ;
+    kno:fullForm "미팅"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2019-0146-c1 a kno:Component ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:surfaceForm "선"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "선"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004297 ;
+    kno:fullForm "선"@ko .

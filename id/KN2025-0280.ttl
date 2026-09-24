@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0280 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0280-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0280-form ;
-    ontolex:sense kno:KN2025-0280-sense .
-
-kno:KN2025-0280-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/145/0000021786> .
-
-kno:KN2025-0280-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0280-freq-nn,
-        kno:KN2025-0280-freq-yt ;
-    ontolex:writtenRep "버터 수면"@ko .
-
-kno:KN2025-0280-freq-nn a frac:CorpusFrequency ;
-    rdf:value 35 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0280-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0280-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0280 skos:definition "(LLM) 잠들기 전 영유아에게 버터를 먹이면 숙면에 도움이 된다는 취지로, 육아 관련 소셜 미디어ㆍ커뮤니티에서 회자되는 수면 유도 방식."@ko ;
+    rdfs:label "버터 수면"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%84%ED%84%B0%20%EC%88%98%EB%A9%B4> ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:componentString "버터(butter), 수면(睡眠)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0280-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0280-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>butter睡眠)" ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 아이가 밤마다 자주 깨서 {버터수면을} 해 볼까 고민 중인데, 효과가 있다는 말도 있고 안전성은 더 확인해 봐야겠다는 의견도 많다."@ko ;
+    kno:component kno:KN2025-0280-c1 ;
+    kno:indexForm "버터수면"@ko ;
+    kno:component kno:KN2025-0280-c2 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "영_한" .
+kno:KN2025-0280-c1 kno:formative kno:F003781 ;
+    kno:surfaceForm "버터"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "버터(butter)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "버터"@ko .
+kno:KN2025-0280-c2 kno:formative kno:F000816 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "수면"@ko ;
+    kno:surfaceForm "수면"@ko ;
+    rdfs:label "수면(睡眠)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

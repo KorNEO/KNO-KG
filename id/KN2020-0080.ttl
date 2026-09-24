@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0080 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0080-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0080-form ;
-    ontolex:sense kno:KN2020-0080-sense .
-
-kno:KN2020-0080-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-04"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000608751> .
-
-kno:KN2020-0080-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0080-freq-nn,
-        kno:KN2020-0080-freq-yt ;
-    ontolex:writtenRep "녹녹^갈등"@ko .
-
-kno:KN2020-0080-freq-nn a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0080-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0080-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:component kno:KN2020-0080-c1 ;
+    kno:frequency kno:KN2020-0080-freq-NN-total ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:slotFiller "녹녹(綠綠) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    kno:origin "(綠綠葛藤)" ;
+    kno:frequency kno:KN2020-0080-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:indexForm "녹녹갈등"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:example "¶풍력, 태양열 등 재생 가능 에너지로의 전환은 당면한 시대적 흐름이지만 환경 파괴를 일으키며 {녹녹 갈등이} 있는 것도 사실이다."@ko ;
+    kno:frequency kno:KN2020-0080-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%EB%85%B9%EA%B0%88%EB%93%B1> ;
+    skos:definition "‘녹색과 녹색의 갈등’을 줄여 이르는 말. 온실가스 배출 등의 환경 문제를 해결하기 위해 풍력, 수력 따위의 재생 가능 에너지 개발을 추구하는 과정에서 오히려 또 다른 환경 문제가 발생할 경우에 생기는 의견 대립을 말한다."@ko ;
+    kno:frequency kno:KN2020-0080-freq-NN-2019 ;
+    kno:instantiates kno:S000353 ;
+    kno:frequency kno:KN2020-0080-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0080-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0080-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "녹녹(綠綠), 갈등(葛藤)"@ko ;
+    rdfs:label "녹녹^갈등"@ko .
+kno:KN2020-0080-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "녹녹(綠綠)"@ko ;
+    kno:formative kno:F002788 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "녹녹"@ko ;
+    kno:semanticTag kno:usas-A12p ;
+    kno:surfaceForm "녹녹"@ko .
+kno:KN2020-0080-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E3m ;
+    a kno:Component ;
+    rdfs:label "갈등(葛藤)"@ko ;
+    kno:fullForm "갈등"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "갈등"@ko ;
+    kno:formative kno:F000651 .

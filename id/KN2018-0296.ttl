@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0296 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0296 kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0296-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    kno:origin "(裁判致死)" ;
+    rdfs:label "재판 치사"@ko ;
+    kno:example "¶OOO 의원은 “…{재판 치사란} 말이 나올 만큼 이러다가 돌아가시겠다는 말도 나온다.”라고 말했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "재판(裁判), 치사(致死)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%8C%90%20%EC%B9%98%EC%82%AC> ;
+    kno:unitType "구"@ko ;
+    skos:definition "재판으로 인해 극심한 스트레스를 받아 사람이 죽게 되는 일을 이르는 말."@ko ;
+    kno:component kno:KN2018-0296-c1 ;
+    kno:indexForm "재판치사"@ko ;
+    kno:component kno:KN2018-0296-c2 ;
+    kno:frequency kno:KN2018-0296-freq-NN-2017 .
+kno:KN2018-0296-c1 kno:semanticTag kno:usas-G2.1 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "재판"@ko ;
+    kno:formative kno:F005593 ;
+    rdfs:label "재판(裁判)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "재판"@ko .
+kno:KN2018-0296-c2 kno:semanticTag kno:usas-L1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006168 ;
+    rdfs:label "치사(致死)"@ko ;
+    kno:surfaceForm "치사"@ko ;
+    kno:fullForm "치사"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

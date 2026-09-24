@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0001 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0001 kno:frequency kno:KN2018-0001-freq-NN-2017 ;
+    kno:registration "우리말샘"@ko ;
+    kno:instantiates kno:S000004 ;
+    kno:frequency kno:KN2018-0001-freq-NN-2025 ;
+    kno:frequency kno:KN2018-0001-freq-NN-2023 ;
+    skos:definition "가격 대비 성능의 비율이 좋은 물건. ‘가격 대비 성능의 비율’을 뜻하는 ‘가성비’와 물건을 뜻하는 ‘아이템(item)’을 결합하여 만든 말이다."@ko ;
+    kno:example "¶OO 디지털관은…온라인에서 인기를 끌고 있는 제품, 소위 {가성비템이라고} 소문난 알짜 제품 위주로 구성돼 있다."@ko ;
+    a ontolex:Word ;
+    kno:predicate "좋은"@ko ;
+    kno:frequency kno:KN2018-0001-freq-NN-2021 ;
+    kno:frequency kno:KN2018-0001-freq-NN-2019 ;
+    kno:slotFiller "(아이)템(item) (1성분)"@ko ;
+    kno:component kno:KN2018-0001-c1 ;
+    kno:instantiates kno:S001183 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415699> ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(價性比<영>←item)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0001-c2 ;
+    kno:slotFiller "가성비(價性比) (1성분)"@ko ;
+    kno:urimalTargetCode "1415699" ;
+    kno:frequency kno:KN2018-0001-freq-NN-2018 ;
+    rdfs:label "가성비템"@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2018-0001-freq-NN-2020 ;
+    kno:languageType "한+영" ;
+    kno:frequency kno:KN2018-0001-freq-NN-2022 ;
+    kno:componentString "가성비(價性比), (아이)템(item)"@ko ;
+    kno:frequency kno:KN2018-0001-freq-NN-2024 ;
+    kno:indexForm "가성비템"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0001-freq-NN-total .
+kno:KN2018-0001-c1 kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000648 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1.3 ;
+    rdfs:label "가성비(價性比)"@ko ;
+    kno:fullForm "가성비"@ko ;
+    kno:surfaceForm "가성비"@ko .
+kno:KN2018-0001-c2 kno:formative kno:F000007 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "템"@ko ;
+    kno:fullForm "아이템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "(아이)템(item)"@ko .

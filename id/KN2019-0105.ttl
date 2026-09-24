@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0105 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0105 kno:frequency kno:KN2019-0105-freq-NN-total ;
+    kno:slotFiller "재난(災難) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001019 ;
+    kno:slotFiller "무전(無錢) (1성분)"@ko ;
+    kno:indexForm "무전재난"@ko ;
+    kno:example "¶구 관계자는 2015년부터 취약 계층에 소화기 등을 지원하고 있으며,…전기, 가스, 난방으로 대상 사업을 늘려 {무전 재난으로부터} 구민 누구나 안전하고 행복한 삶을 누릴 수 있도록 안전 정책 추진에 박차를 가한다는 구상이다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "무전 재난"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0105-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B4%EC%A0%84%20%EC%9E%AC%EB%82%9C> ;
+    kno:origin "(無錢災難)" ;
+    kno:componentString "무전(無錢), 재난(災難)"@ko ;
+    kno:frequency kno:KN2019-0105-freq-NN-2018 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000513 ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2019-0105-c1 ;
+    skos:definition "가난으로 인해 피하지 못한 재난. 일정한 돈을 들여 예방할 수 있는 화재 따위의 재난을 말한다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0105-freq-NN-2019 ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0105-c2 kno:surfaceForm "재난"@ko ;
+    kno:formative kno:F000013 ;
+    kno:fullForm "재난"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A15m ;
+    rdfs:label "재난(災難)"@ko .
+kno:KN2019-0105-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:fullForm "무전"@ko ;
+    kno:formative kno:F000504 ;
+    kno:surfaceForm "무전"@ko ;
+    rdfs:label "무전(無錢)"@ko ;
+    kno:role "고정항"@ko .

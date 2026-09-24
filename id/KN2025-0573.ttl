@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0573 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0573 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0573-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0573-form ;
-    ontolex:sense kno:KN2025-0573-sense .
-
-kno:KN2025-0573-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/374/0000440066> .
-
-kno:KN2025-0573-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0573-freq-nn,
-        kno:KN2025-0573-freq-yt ;
-    ontolex:writtenRep "캐피털 워싱"@ko .
-
-kno:KN2025-0573-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0573-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0573-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0573 kno:year "2025"^^xsd:gYear ;
+    rdfs:label "캐피털 워싱"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%ED%94%BC%ED%84%B8%20%EC%9B%8C%EC%8B%B1> ;
+    kno:slotFiller "캐피털(capital) (1성분)"@ko ;
+    kno:indexForm "캐피털워싱"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0573-freq-NN-total ;
+    skos:definition "(LLM) 자본성 증권 발행 등 회계ㆍ규제상 자본으로 인정되는 항목을 늘려, 실제 재무 건전성보다 자본이 충분한 것처럼 보이게 하는 행위."@ko ;
+    kno:example "(LLM) 일부 보험사가 신종자본증권을 반복 발행해 실질 건전성 개선 없이 자본비율만 높이는 {캐피털워싱} 논란이 커지고 있다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2025-0573-c2 ;
+    kno:origin "(<영>capital washing)" ;
+    kno:frequency kno:KN2025-0573-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:componentString "캐피털(capital), 워싱(washing)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000176 ;
+    kno:predicate "하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0573-c1 .
+kno:KN2025-0573-c2 kno:formative kno:F000395 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "워싱"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "워싱"@ko ;
+    rdfs:label "워싱(washing)"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0573-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "캐피털"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "캐피털(capital)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "캐피털"@ko ;
+    kno:formative kno:F006221 .

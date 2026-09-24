@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0071 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0071-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0071-form ;
-    ontolex:sense kno:KN2020-0071-sense .
-
-kno:KN2020-0071-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-12"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/417/0000516686> .
-
-kno:KN2020-0071-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0071-freq-nn,
-        kno:KN2020-0071-freq-yt ;
-    ontolex:writtenRep "긴급^청년^수당"@ko .
-
-kno:KN2020-0071-freq-nn a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0071-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0071-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0071 kno:component kno:KN2020-0071-c1 ;
+    kno:origin "(緊急靑年手當)" ;
+    kno:predicate "지급하다"@ko ;
+    kno:frequency kno:KN2020-0071-freq-NN-2020 ;
+    a kno:Neologism ;
+    kno:languageType "한^한^한" ;
+    kno:instantiates kno:S000483 ;
+    rdfs:label "긴급^청년^수당"@ko ;
+    kno:componentString "긴급(緊急), 청년(靑年), 수당(手當)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0071-c2 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:example "¶OO시가 코로나19의 확산으로 알바 등의 일자리를 잃은 청년들에게 {긴급 청년 수당을} 지원한다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "긴급청년수당"@ko ;
+    kno:slotFiller "청년(靑年) (1성분)"@ko ;
+    skos:definition "전국적인 재난 사태로 인해 일자리를 잃거나 구직에 어려움을 겪고 있는 청년들을 위해 정부에서 긴급하게 지급하는 수당. 코로나19로 인한 재난 상황에서 지급되기 시작했다. =청년 긴급 수당."@ko ;
+    kno:frequency kno:KN2020-0071-freq-NN-total ;
+    kno:component kno:KN2020-0071-c3 ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EC%B2%AD%EB%85%84%EC%88%98%EB%8B%B9> .
+kno:KN2020-0071-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "긴급"@ko ;
+    kno:formative kno:F000016 ;
+    kno:surfaceForm "긴급"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    rdfs:label "긴급(緊急)"@ko .
+kno:KN2020-0071-c2 kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:surfaceForm "청년"@ko ;
+    kno:formative kno:F000042 ;
+    rdfs:label "청년(靑年)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "청년"@ko ;
+    kno:semanticTag kno:usas-T3m .
+kno:KN2020-0071-c3 kno:fullForm "수당"@ko ;
+    kno:surfaceForm "수당"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000100 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "수당(手當)"@ko .

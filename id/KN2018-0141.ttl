@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0141 kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%94%ED%8A%80%EB%A5%B4%ED%81%AC%EC%A3%BC%EC%9D%98> ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "범(汎), 튀르크(Türk), 주의(主義)"@ko ;
+    kno:slotFiller "범(汎)+튀르크(Türk) (2성분)"@ko ;
+    kno:frequency kno:KN2018-0141-freq-NN-2020 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2018-0141-c3 ;
+    kno:indexForm "범튀르크주의"@ko ;
+    kno:frequency kno:KN2018-0141-freq-NN-2018 ;
+    kno:example "¶2002년 터키에서 집권한 OOO이…신오스만주의와 범이슬람주의와 {범튀르크주의를} 조합하여 유라시아의 튀르크-이슬람 세계에 매력 공세를 펼친다."@ko ;
+    rdfs:label "범튀르크-주의"@ko ;
+    kno:component kno:KN2018-0141-c2 ;
+    skos:definition "중앙 아시아, 넓게는 아시아 전체를 아울러 같은 튀르크 민족에 포함할 것을 주장한 사상."@ko ;
+    kno:frequency kno:KN2018-0141-freq-NN-2019 ;
+    a kno:Neologism ;
+    kno:component kno:KN2018-0141-c1 ;
+    kno:frequency kno:KN2018-0141-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(汎Türk主義)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "(한+터)+한" ;
+    kno:frequency kno:KN2018-0141-freq-NN-2025 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000075 ;
+    kno:frequency kno:KN2018-0141-freq-NN-2023 .
+kno:KN2018-0141-c3 a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000080 ;
+    kno:fullForm "주의"@ko ;
+    kno:surfaceForm "주의"@ko .
+kno:KN2018-0141-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "튀르크(Türk)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006530 ;
+    kno:fullForm "튀르크"@ko ;
+    kno:surfaceForm "튀르크"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 .
+kno:KN2018-0141-c1 rdfs:label "범(汎)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003797 ;
+    a kno:Component ;
+    kno:fullForm "범"@ko ;
+    kno:surfaceForm "범"@ko ;
+    kno:role "슬롯 채움"@ko .

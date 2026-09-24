@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0191 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0191 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0191-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0191-form ;
-    ontolex:sense kno:KN2024-0191-sense .
-
-kno:KN2024-0191-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005218540> .
-
-kno:KN2024-0191-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0191-freq-nn,
-        kno:KN2024-0191-freq-yt ;
-    ontolex:writtenRep "예산 탄핵"@ko .
-
-kno:KN2024-0191-freq-nn a frac:CorpusFrequency ;
-    rdf:value 219 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0191-freq-yt a frac:CorpusFrequency ;
-    rdf:value 181 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0191-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0191 kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0191-c2 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0191-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0191-freq-NN-2023 ;
+    skos:definition "정부의 예산안에 대해 대규모의 수정을 요구한 것을 두고 자격을 빼앗거나 처벌하는 것에 빗대어 이르는 말."@ko ;
+    kno:component kno:KN2024-0191-c1 ;
+    kno:example "¶얼마 전 주요한 정부의 사업 예산이 삭감된 것을 두고 국정을 방해하는 것을 넘어 {예산 탄핵이라는} 지적이 제기되었다."@ko ;
+    kno:origin "(豫算彈劾)" ;
+    a kno:Neologism ;
+    kno:indexForm "예산탄핵"@ko ;
+    kno:frequency kno:KN2024-0191-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    rdfs:label "예산 탄핵"@ko ;
+    kno:frequency kno:KN2024-0191-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "예산(豫算), 탄핵(彈劾)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%88%EC%82%B0%20%ED%83%84%ED%95%B5> .
+kno:KN2024-0191-c2 kno:role "성분"@ko ;
+    kno:fullForm "탄핵"@ko ;
+    kno:surfaceForm "탄핵"@ko ;
+    kno:formative kno:F000420 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "탄핵(彈劾)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.2 .
+kno:KN2024-0191-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "예산"@ko ;
+    kno:surfaceForm "예산"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "예산(豫算)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001620 .

@@ -1,36 +1,74 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0176 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0176 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0176-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0176-form ;
-    ontolex:sense kno:KN2021-0176-sense .
-
-kno:KN2021-0176-att-nn a frac:Attestation ;
-    dcterms:date "2021-04-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005307205> .
-
-kno:KN2021-0176-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0176-freq-nn,
-        kno:KN2021-0176-freq-yt ;
-    ontolex:writtenRep "신속^진단^검사^센터"@ko .
-
-kno:KN2021-0176-freq-nn a frac:CorpusFrequency ;
-    rdf:value 195 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0176-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0176-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0176 kno:slotFiller "진단(診斷)+검사(檢査)+센터(center) (3성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:indexForm "신속진단검사센터"@ko ;
+    kno:frequency kno:KN2021-0176-freq-NN-2022 ;
+    kno:component kno:KN2021-0176-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%86%8D%EC%A7%84%EB%8B%A8%EA%B2%80%EC%82%AC%EC%84%BC%ED%84%B0> ;
+    kno:component kno:KN2021-0176-c1 ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    skos:definition "질병 혹은 바이러스 등의 감염 여부를 빠르게 진단하기 위해 만든 검사 센터. 코로나19가 전 세계적으로 유행하는 상황에서 학생들이 원활하게 수업을 들을 수 있도록 2021년 4월에 한 대학교에서 시범적으로 운영되었다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0176-c3 ;
+    kno:instantiates kno:S000151 ;
+    kno:slotFiller "신속(迅速)+진단(診斷) (2성분)"@ko ;
+    kno:languageType "한^한^한^영" ;
+    a kno:Neologism ;
+    kno:origin "(迅速診斷檢査<영>center)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "신속^진단^검사^센터"@ko ;
+    kno:example "¶OO대에서는 대면 수업 전환을 위해 1~2시간 안에 검사 결과를 받아 볼 수 있는 {신속 진단 검사 센터를} 캠퍼스 내에 설치해 운영할 계획이라고 밝혔다."@ko ;
+    kno:instantiates kno:S000778 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0176-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0176-freq-NN-total ;
+    kno:componentString "신속(迅速), 진단(診斷), 검사(檢査), 센터(center)"@ko ;
+    kno:component kno:KN2021-0176-c2 .
+kno:KN2021-0176-c4 kno:formative kno:F000141 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-H1 ;
+    rdfs:label "센터(center)"@ko ;
+    a kno:Component ;
+    kno:fullForm "센터"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "센터"@ko .
+kno:KN2021-0176-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.8p ;
+    kno:fullForm "신속"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "신속"@ko ;
+    kno:formative kno:F000291 ;
+    rdfs:label "신속(迅速)"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2021-0176-c3 kno:formative kno:F000328 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "검사(檢査)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "검사"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:fullForm "검사"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2021-0176-c2 rdfs:label "진단(診斷)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "진단"@ko ;
+    kno:formative kno:F001794 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "진단"@ko .

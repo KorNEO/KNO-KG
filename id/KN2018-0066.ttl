@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0066 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0066 kno:example "¶또 다른 OO 이용자는 최근 “수많은 직장인들이 ‘{넵병’을} 앓고 있다.”라며 OO 대화창을 편집한 사진을 올렸다."@ko ;
+    kno:urimalTargetCode "1379712" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(넵病)" ;
+    kno:instantiates kno:S000021 ;
+    kno:instantiates kno:S001292 ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2018-0066-c2 ;
+    kno:componentString "넵, 병(病)"@ko ;
+    kno:slotFiller "넵 (1성분)"@ko ;
+    kno:languageType "고+한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1379712> ;
+    skos:definition "직장인들이 메신저 따위에서 상사의 지시에 대하여 주로 ‘넵’이라고 대답하며 감정 표현을 최소화하는 현상을 이르는 말. 상사에게 답할 때마다 딱딱하게 들리는 ‘네’나 장난스러워 보일 수 있는 ‘넹’ 대신, 명료하고 활기찬 느낌을 주는 ‘넵’을 자주 사용하는 현상을 병에 빗대어 이르는 말이다."@ko ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "병(病) (1성분)"@ko ;
+    rdfs:label "넵-병"@ko ;
+    kno:indexForm "넵병"@ko ;
+    kno:component kno:KN2018-0066-c1 ;
+    a kno:Neologism .
+kno:KN2018-0066-c2 kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "병"@ko ;
+    kno:surfaceForm "병"@ko ;
+    kno:formative kno:F000033 ;
+    rdfs:label "병(病)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0066-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z4 ;
+    kno:fullForm "넵"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001148 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "넵"@ko ;
+    kno:surfaceForm "넵"@ko .

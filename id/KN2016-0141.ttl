@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0141 kno:example "¶{리플 현수막} 중 OO당의 노동 개혁 입법 촉구를 강조한 “OOO 정부 일 좀 하게 해 주세요.”라는 문구를 패러디한 야당의 현수막이 많은 네티즌들의 공감을 사고 있다."@ko ;
+    kno:component kno:KN2016-0141-c1 ;
+    kno:indexForm "리플현수막"@ko ;
+    kno:origin "(<영>←reply懸垂幕)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%94%8C%20%ED%98%84%EC%88%98%EB%A7%89> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0141-c2 ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "리플 현수막"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "인터넷에 올라온 글에 대해 읽는 이의 감상을 짧게 표현한 글을 활용하여 만든 현수막."@ko ;
+    kno:componentString "리플(라이)(reply), 현수막(懸垂幕)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0141-freq-NN-total ;
+    kno:frequency kno:KN2016-0141-freq-NN-2016 ;
+    a kno:Neologism .
+kno:KN2016-0141-c1 kno:fullForm "리플라이"@ko ;
+    kno:formative kno:F003324 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "리플"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "리플(라이)(reply)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0141-c2 kno:formative kno:F007076 ;
+    kno:fullForm "현수막"@ko ;
+    rdfs:label "현수막(懸垂幕)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "현수막"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 .

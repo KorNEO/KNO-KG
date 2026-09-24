@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0081 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0081 a ontolex:Word ;
-    frac:attestation kno:KN2023-0081-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0081-form ;
-    ontolex:sense kno:KN2023-0081-sense .
-
-kno:KN2023-0081-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005470974> .
-
-kno:KN2023-0081-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0081-freq-nn,
-        kno:KN2023-0081-freq-yt ;
-    ontolex:writtenRep "두더-집"@ko .
-
-kno:KN2023-0081-freq-nn a frac:CorpusFrequency ;
-    rdf:value 150 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0081-freq-yt a frac:CorpusFrequency ;
-    rdf:value 35 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0081-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0081 kno:component kno:KN2023-0081-c1 ;
+    kno:example "¶온라인 교류를 통해 어느 정도 훈련을 마친 청년들은 오프라인 쉼터인 {두더집으로} 나오기도 한다."@ko ;
+    kno:frequency kno:KN2023-0081-freq-NN-total ;
+    a kno:Neologism ;
+    kno:languageType "고+고" ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "두더집"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%91%90%EB%8D%94%EC%A7%91> ;
+    kno:componentString "두더(지), 집"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000180 ;
+    kno:formation kno:W05 ;
+    skos:definition "‘두더지’와 ‘집’을 결합하여 만든 말로, 서울시에서 고립ㆍ은둔 청년의 사회 복귀를 도울 수 있도록 마련한 사회 복지 시설."@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2023-0081-freq-NN-2024 ;
+    kno:indexForm "두더집"@ko ;
+    kno:frequency kno:KN2023-0081-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "두더(지) (1성분)"@ko ;
+    kno:component kno:KN2023-0081-c2 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2023-0081-freq-NN-2025 .
+kno:KN2023-0081-c1 kno:formative kno:F003036 ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "두더지"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "두더(지)"@ko ;
+    kno:surfaceForm "두더"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0081-c2 kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "집"@ko ;
+    kno:formative kno:F000064 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "집"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "집"@ko ;
+    kno:role "고정항"@ko .

@@ -1,0 +1,80 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0294 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0294 kno:slotFiller "재난(災難)+-적(的)+의료비(醫療費) (3성분)"@ko ;
+    kno:example "¶OO당 OOO 의원은 10일, 과중한 의료비 지출로 인해 가계가 파탄에 이르는 문제에 대한 방안으로 {재난적 의료비 지원법을} 대표 발의했다고 밝혔다."@ko ;
+    kno:component kno:KN2018-0294-c2 ;
+    kno:component kno:KN2018-0294-c3 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2018-0294-freq-NN-2023 ;
+    kno:component kno:KN2018-0294-c1 ;
+    kno:frequency kno:KN2018-0294-freq-NN-2018 ;
+    kno:instantiates kno:S000267 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:indexForm "재난적의료비지원법"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(災難的醫療費支援法)" ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416346> ;
+    kno:slotFiller "-적(的)+의료비(醫療費)+지원법(支援法) (3성분)"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "재난(災難), -적(的), 의료비(醫療費), 지원법(支援法)"@ko ;
+    kno:frequency kno:KN2018-0294-freq-NN-2022 ;
+    kno:component kno:KN2018-0294-c4 ;
+    kno:frequency kno:KN2018-0294-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "소득 수준에 비하여 과도한 의료비 지출로 인해 경제적 어려움을 겪는 국민들에게 의료비의 일부를 지원하여 의료 이용의 접근성을 높이고자 만들어진 법안. 환자가 부담하는 의료비가 가정 경제에 과도한 부담이 되는 경우를 방지하기 위하여 2017년 8월 국회에서 발의되었고, 2017년 12월 국회 본회의에서 통과되었다. ‘과부담 의료비 지원에 관한 법률안’이라고도 한다."@ko ;
+    kno:frequency kno:KN2018-0294-freq-NN-2017 ;
+    kno:instantiates kno:S000153 ;
+    kno:frequency kno:KN2018-0294-freq-NN-2019 ;
+    rdfs:label "재난적^의료비^지원법"@ko ;
+    kno:urimalTargetCode "1416346" ;
+    kno:frequency kno:KN2018-0294-freq-NN-total ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2018-0294-c2 kno:surfaceForm "적"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000229 ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-적(的)"@ko ;
+    kno:fullForm "적"@ko ;
+    a kno:Component .
+kno:KN2018-0294-c3 kno:fullForm "의료비"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "의료비"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F005368 ;
+    rdfs:label "의료비(醫療費)"@ko ;
+    a kno:Component .
+kno:KN2018-0294-c1 kno:fullForm "재난"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A15m ;
+    rdfs:label "재난(災難)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "재난"@ko ;
+    kno:formative kno:F000013 ;
+    a kno:Component .
+kno:KN2018-0294-c4 kno:fullForm "지원법"@ko ;
+    kno:surfaceForm "지원법"@ko ;
+    kno:formative kno:F000591 ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "지원법(支援法)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2021-0199 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0199-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0199-form ;
-    ontolex:sense kno:KN2021-0199-sense .
-
-kno:KN2021-0199-att-nn a frac:Attestation ;
-    dcterms:date "2020-07-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003019901> .
-
-kno:KN2021-0199-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0199-freq-nn,
-        kno:KN2021-0199-freq-yt ;
-    ontolex:writtenRep "영끌 매수"@ko .
-
-kno:KN2021-0199-freq-nn a frac:CorpusFrequency ;
-    rdf:value 648 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0199-freq-yt a frac:CorpusFrequency ;
-    rdf:value 161 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0199-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:frequency kno:KN2021-0199-freq-NN-2025 ;
+    kno:example "¶전셋값이나 주택 매맷값이 상승한 데에 놀라서 {영끌 매수를} 하기보다는 자신의 능력을 고려한 부동산 구매가 필요하다."@ko ;
+    kno:frequency kno:KN2021-0199-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0199-freq-NN-2023 ;
+    skos:definition "영혼을 끌어모으듯이 자신이 받을 수 있는 최대한의 대출을 받아 물건을 사들임. 주로 최대한의 대출을 받아 주택을 사는 행위를 이르는 말이다."@ko ;
+    rdfs:label "영끌 매수"@ko ;
+    kno:predicate "물건다"@ko ;
+    kno:slotFiller "매수 (1성분)"@ko ;
+    kno:component kno:KN2021-0199-c1 ;
+    kno:frequency kno:KN2021-0199-freq-NN-2022 ;
+    kno:activeYears "6"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%EB%81%8C%20%EB%A7%A4%EC%88%98> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0199-freq-NN-2020 ;
+    kno:instantiates kno:S001564 ;
+    kno:languageType "(한+고)_한" ;
+    kno:componentString "영끌(靈끌), 매수"@ko ;
+    kno:frequency kno:KN2021-0199-freq-NN-total ;
+    kno:component kno:KN2021-0199-c2 ;
+    kno:indexForm "영끌매수"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(靈끌買收)" ;
+    kno:frequency kno:KN2021-0199-freq-NN-2024 .
+kno:KN2021-0199-c1 kno:formative kno:F000294 ;
+    kno:fullForm "영끌"@ko ;
+    kno:surfaceForm "영끌"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    rdfs:label "영끌(靈끌)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0199-c2 kno:fullForm "매수"@ko ;
+    kno:surfaceForm "매수"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "매수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:formative kno:F003396 .

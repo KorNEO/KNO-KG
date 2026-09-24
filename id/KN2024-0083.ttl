@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0083 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0083 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0083-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0083-form ;
-    ontolex:sense kno:KN2024-0083-sense .
-
-kno:KN2024-0083-att-nn a frac:Attestation ;
-    dcterms:date "2024-04-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004978766> .
-
-kno:KN2024-0083-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0083-freq-nn,
-        kno:KN2024-0083-freq-yt ;
-    ontolex:writtenRep "법맥 경화"@ko .
-
-kno:KN2024-0083-freq-nn a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0083-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0083-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0083 kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0083-freq-NN-total ;
+    kno:instantiates kno:S000786 ;
+    kno:origin "(法脈硬化)" ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko ;
+    rdfs:label "법맥 경화"@ko ;
+    kno:slotFiller "법맥(法脈) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶법사위 권한 남용으로 빚어진 {법맥 경화} 논란이 새 국회에선 되풀이되지 않도록 제도 개선이 필요하다."@ko ;
+    skos:definition "법안 처리가 막혀 입법이 원활히 이루어지지 못하는 상황을 ‘동맥 경화’에 빗대어 이르는 말."@ko ;
+    kno:componentString "법맥(法脈), 경화(硬化)"@ko ;
+    kno:indexForm "법맥경화"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%95%EB%A7%A5%20%EA%B2%BD%ED%99%94> ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0083-c2 ;
+    kno:frequency kno:KN2024-0083-freq-NN-2024 ;
+    kno:component kno:KN2024-0083-c1 .
+kno:KN2024-0083-c2 kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "경화"@ko ;
+    kno:formative kno:F001059 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "경화"@ko ;
+    rdfs:label "경화(硬化)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0083-c1 kno:formative kno:F003805 ;
+    a kno:Component ;
+    rdfs:label "법맥(法脈)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "법맥"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "법맥"@ko .

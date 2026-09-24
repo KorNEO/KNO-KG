@@ -1,30 +1,70 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0264 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0264 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2024-0264-form ;
-    ontolex:sense kno:KN2024-0264-sense .
-
-kno:KN2024-0264-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0264-freq-nn,
-        kno:KN2024-0264-freq-yt ;
-    ontolex:writtenRep "조비이락"@ko .
-
-kno:KN2024-0264-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0264-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0264-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0264 kno:registration "신어DB"@ko ;
+    kno:languageType "한+한+한+한" ;
+    kno:formation kno:W01 ;
+    a ontolex:Word ;
+    kno:origin "(曺飛李落)" ;
+    kno:componentString "조(曺), 비(飛), 이(李), 낙(落)"@ko ;
+    kno:frequency kno:KN2024-0264-freq-NN-total ;
+    kno:component kno:KN2024-0264-c2 ;
+    kno:component kno:KN2024-0264-c3 ;
+    kno:frequency kno:KN2024-0264-freq-NN-2024 ;
+    kno:component kno:KN2024-0264-c1 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B0%EB%B9%84%EC%9D%B4%EB%9D%BD> ;
+    rdfs:label "조비이락"@ko ;
+    kno:example "¶당내 계파 간 경쟁이 치열해지자 {조비이락이라는} 표현이 다시 등장했다."@ko ;
+    skos:definition "조씨가 날면 이씨가 떨어진다는 뜻으로, 한 사람의 성공이 다른 사람의 실패로 이어짐을 비유적으로 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0264-c4 ;
+    kno:indexForm "조비이락"@ko .
+kno:KN2024-0264-c2 kno:formative kno:F004055 ;
+    kno:fullForm "비"@ko ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "비"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    rdfs:label "비(飛)"@ko .
+kno:KN2024-0264-c3 kno:formative kno:F005373 ;
+    kno:fullForm "이"@ko ;
+    kno:surfaceForm "이"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "이(李)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 .
+kno:KN2024-0264-c1 a kno:Component ;
+    kno:formative kno:F005726 ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:fullForm "조"@ko ;
+    kno:surfaceForm "조"@ko ;
+    rdfs:label "조(曺)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko .
+kno:KN2024-0264-c4 kno:semanticTag kno:usas-E4.1p ;
+    rdfs:label "낙(落)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002680 ;
+    a kno:Component ;
+    kno:fullForm "낙"@ko ;
+    kno:surfaceForm "낙"@ko ;
+    kno:position "4"^^xsd:integer .

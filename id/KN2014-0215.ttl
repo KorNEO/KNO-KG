@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0215 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0215 kno:component kno:KN2014-0215-c1 ;
+    kno:urimalTargetCode "1373894" ;
+    kno:frequency kno:KN2014-0215-freq-NN-2013 ;
+    kno:frequency kno:KN2014-0215-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0215-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "익상견갑골"@ko ;
+    kno:example "¶실제로 ‘{익상 견갑골’은} 스스로 어깨를 120도 이상 굴곡시키는 것이 힘들고 가만있어도 통증이 심하다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373894> ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "익상(翼狀), 견갑골(肩胛骨)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    skos:definition "견갑골이 새의 날개와 같은 모양이 되면서 통증을 동반하는 증상. 주로 능형근의 손상으로 발생한다."@ko ;
+    kno:predicate "동반하다"@ko ;
+    rdfs:label "익상^견갑골"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2014-0215-c2 ;
+    kno:origin "(翼狀肩胛骨)" ;
+    kno:languageType "한^한" .
+kno:KN2014-0215-c1 rdfs:label "익상(翼狀)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005423 ;
+    kno:surfaceForm "익상"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:fullForm "익상"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0215-c2 kno:surfaceForm "견갑골"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002213 ;
+    kno:fullForm "견갑골"@ko ;
+    rdfs:label "견갑골(肩胛骨)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 .

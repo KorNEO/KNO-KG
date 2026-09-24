@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0149 kno:formation kno:W05 ;
+    skos:definition "인도에서, 투표를 했다는 표시로 일정 기간 동안 지워지지 않는 특수한 잉크를 묻힌 자기 손가락의 사진을 스스로 찍는 일. 또는 그렇게 찍은 사진."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0149-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0149-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0149-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    rdfs:label "셀핑크"@ko ;
+    kno:component kno:KN2014-0149-c2 ;
+    kno:indexForm "셀핑크"@ko ;
+    kno:frequency kno:KN2014-0149-freq-NN-2017 ;
+    kno:languageType "영+영" ;
+    kno:example "¶{셀핑크는} 자신의 모습을 직접 찍는 셀피와 잉크를 합한 신조어다."@ko ;
+    kno:predicate "찍다"@ko ;
+    kno:component kno:KN2014-0149-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>←selfie ink)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%80%ED%95%91%ED%81%AC> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2014-0149-freq-NN-2020 ;
+    kno:frequency kno:KN2014-0149-freq-NN-2022 ;
+    kno:componentString "셀(피)(selfie), 핑크(←ink)"@ko .
+kno:KN2014-0149-c2 kno:formative kno:F006914 ;
+    kno:semanticTag kno:usas-O4.3 ;
+    rdfs:label "핑크(←ink)"@ko ;
+    kno:fullForm "핑크"@ko ;
+    kno:surfaceForm "핑크"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0149-c1 kno:semanticTag kno:usas-C1 ;
+    rdfs:label "셀(피)(selfie)"@ko ;
+    kno:formative kno:F004371 ;
+    kno:surfaceForm "셀"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "셀피"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .

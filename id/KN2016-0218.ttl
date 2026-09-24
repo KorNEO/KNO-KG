@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0218 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0218 kno:origin "(負債強迫症)" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0218-freq-NN-total ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "국가의 재정이 충분해 채무의 위험이 없음에도 불구하고 채무 수준이 낮아야 한다고 생각하는 강박 충동. 부채를 늘려 재정 지출을 확대했을 때 기대할 수 있는 이익을 스스로 포기하는 셈이다."@ko ;
+    kno:component kno:KN2016-0218-c2 ;
+    kno:slotFiller "부채(負債) (1성분)"@ko ;
+    kno:languageType "한^한" ;
+    kno:indexForm "부채강박증"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372653> ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0218-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0218-freq-NN-2017 ;
+    rdfs:label "부채^강박증"@ko ;
+    kno:example "¶이 보고서는 한국을 {부채 강박증에} 빠진 국가 중 하나로 분류하면서 “적극적인 재정 정책에 나서야 한다.”라고 조언했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000776 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S001410 ;
+    kno:frequency kno:KN2016-0218-freq-NN-2016 ;
+    kno:componentString "부채(負債), 강박증(強迫症)"@ko ;
+    kno:frequency kno:KN2016-0218-freq-NN-2022 ;
+    kno:slotFiller "강박증(強迫症) (1성분)"@ko ;
+    kno:urimalTargetCode "1372653" .
+kno:KN2016-0218-c2 kno:formative kno:F001041 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    rdfs:label "강박증(強迫症)"@ko ;
+    kno:fullForm "강박증"@ko ;
+    kno:surfaceForm "강박증"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2016-0218-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "부채"@ko ;
+    rdfs:label "부채(負債)"@ko ;
+    kno:surfaceForm "부채"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001388 .

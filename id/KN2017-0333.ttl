@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0333 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0333 kno:year "2017"^^xsd:gYear ;
+    kno:languageType "영_한" ;
+    kno:component kno:KN2017-0333-c3 ;
+    kno:frequency kno:KN2017-0333-freq-NN-2016 ;
+    kno:frequency kno:KN2017-0333-freq-NN-total ;
+    kno:frequency kno:KN2017-0333-freq-NN-2017 ;
+    kno:slotFiller "픽(pick)+미(me) (2성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380594> ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "픽미세대"@ko ;
+    kno:component kno:KN2017-0333-c1 ;
+    rdfs:label "픽미 세대"@ko ;
+    kno:instantiates kno:S000002 ;
+    kno:component kno:KN2017-0333-c2 ;
+    kno:origin "(<영>pick me世代)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:urimalTargetCode "1380594" ;
+    kno:predicate "하다"@ko ;
+    kno:example "¶O 교수는 현재 대한민국의 20대를 ‘{픽미 세대’라고} 정의했다."@ko ;
+    kno:frequency kno:KN2017-0333-freq-NN-2018 ;
+    skos:definition "자신의 특별한 행동이나 외모를 다른 사람들에게 인정받고 싶어 하는 세대. 많은 사람들에게 선택을 받아야 살아남을 수 있는 오디션 프로그램 참가자들이 부른 노래에서 유래하였다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "픽(pick), 미(me), 세대(世代)"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression .
+kno:KN2017-0333-c3 kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "세대"@ko ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 .
+kno:KN2017-0333-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X7p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "픽(pick)"@ko ;
+    a kno:Component ;
+    kno:fullForm "픽"@ko ;
+    kno:surfaceForm "픽"@ko ;
+    kno:formative kno:F001008 .
+kno:KN2017-0333-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "미"@ko ;
+    kno:formative kno:F000505 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "미(me)"@ko ;
+    kno:fullForm "미"@ko .

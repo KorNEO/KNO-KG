@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0055 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0055 kno:slotFiller "채권자(債權者) (1성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0055-freq-NN-2022 ;
+    kno:indexForm "기후채권자"@ko ;
+    rdfs:label "기후 채권자"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0055-freq-NN-2016 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0055-c1 ;
+    skos:definition "기후 변화를 야기하는 원인을 제공하지 않았지만 기후 변화로 피해를 받고 있는 나라의 사람들."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000056 ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2016-0055-c2 ;
+    kno:example "¶OOO는 “최저 개발국, 작은 섬들을 비롯한 세계 전역의 취약한 공동체에 속한 수백만 인구는 기후 변화의 원인을 제공한 일이 없음에도 기후 변화로 고통을 받고 있다.”라며 이른바 ‘{기후 채권자’의} 권리를 주장했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(氣候債權者)" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "기후(氣候), 채권자(債權者)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%20%EC%B1%84%EA%B6%8C%EC%9E%90> ;
+    kno:frequency kno:KN2016-0055-freq-NN-total .
+kno:KN2016-0055-c1 kno:role "고정항"@ko ;
+    kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    rdfs:label "기후(氣候)"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000069 .
+kno:KN2016-0055-c2 kno:formative kno:F006017 ;
+    kno:fullForm "채권자"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "채권자"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "채권자(債權者)"@ko .

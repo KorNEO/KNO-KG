@@ -1,30 +1,72 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0019 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0019 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2022-0019-form ;
-    ontolex:sense kno:KN2022-0019-sense .
-
-kno:KN2022-0019-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0019-freq-nn,
-        kno:KN2022-0019-freq-yt ;
-    ontolex:writtenRep "검수더박"@ko .
-
-kno:KN2022-0019-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0019-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0019-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0019 kno:frequency kno:KN2022-0019-freq-NN-2022 ;
+    kno:languageType "한+한+고+한" ;
+    kno:component kno:KN2022-0019-c3 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "검수더박"@ko ;
+    kno:component kno:KN2022-0019-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EB%8D%94%EB%B0%95> ;
+    kno:instantiates kno:S000284 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶O 위원은 한국에서 검찰의 직접 수사가 지나치게 많이 이루어지고 있으므로 ‘검수완박’은 부당하지만 ‘{검수더박’은} 옳은 방향이라고 주장하였다."@ko ;
+    kno:indexForm "검수더박"@ko ;
+    kno:formation kno:W06 ;
+    kno:componentString "검(찰)(檢察), 수(사권)(搜査權), 더, 박(탈)(剝奪)"@ko ;
+    kno:slotFiller "더 (1성분)"@ko ;
+    kno:component kno:KN2022-0019-c2 ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(檢搜더剝)" ;
+    skos:definition "‘검찰의 수사권을 더 박탈함’을 줄여 이르는 말. 검찰의 수사권을 현재보다 더 제한하는 것을 말한다."@ko ;
+    kno:component kno:KN2022-0019-c4 ;
+    kno:frequency kno:KN2022-0019-freq-NN-total ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0019-c3 kno:fullForm "더"@ko ;
+    kno:formative kno:F002942 ;
+    a kno:Component ;
+    kno:surfaceForm "더"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "더"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0019-c1 kno:surfaceForm "검"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "검(찰)(檢察)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "검찰"@ko ;
+    kno:formative kno:F000159 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0019-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "수사권"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "수(사권)(搜査權)"@ko ;
+    kno:surfaceForm "수"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000178 ;
+    a kno:Component .
+kno:KN2022-0019-c4 kno:fullForm "박탈"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000040 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "박"@ko ;
+    kno:semanticTag kno:usas-A9 .

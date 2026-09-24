@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0458 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0458 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0458-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0458-form ;
-    ontolex:sense kno:KN2025-0458-sense .
-
-kno:KN2025-0458-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000770139> .
-
-kno:KN2025-0458-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0458-freq-nn,
-        kno:KN2025-0458-freq-yt ;
-    ontolex:writtenRep "유령 배관"@ko .
-
-kno:KN2025-0458-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0458-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0458-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EB%A0%B9%20%EB%B0%B0%EA%B4%80> ;
+    kno:frequency kno:KN2025-0458-freq-NN-total ;
+    kno:frequency kno:KN2025-0458-freq-NN-2025 ;
+    rdfs:label "유령 배관"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 지도나 전산 기록, 관망도 등에 등재되지 않아 정확한 위치ㆍ규격ㆍ상태를 확인하기 어려운 지하 매설 배관."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0458-c2 ;
+    kno:componentString "유령(幽靈), 배관(配管)"@ko ;
+    a kno:Neologism ;
+    kno:example "(LLM) 관망도에 표시되지 않은 {유령배관이} 파손되면서 도로 아래 토사가 유실돼 땅꺼짐 위험이 커졌다는 지적이 나왔다."@ko ;
+    kno:component kno:KN2025-0458-c1 ;
+    kno:indexForm "유령배관"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(幽靈配管)" .
+kno:KN2025-0458-c2 kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "배관"@ko ;
+    kno:surfaceForm "배관"@ko ;
+    kno:formative kno:F003726 ;
+    rdfs:label "배관(配管)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "성분"@ko .
+kno:KN2025-0458-c1 a kno:Component ;
+    rdfs:label "유령(幽靈)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005309 ;
+    kno:fullForm "유령"@ko ;
+    kno:surfaceForm "유령"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0311 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0311 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0311-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0311-form ;
-    ontolex:sense kno:KN2023-0311-sense .
-
-kno:KN2023-0311-att-nn a frac:Attestation ;
-    dcterms:date "2022-06-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003698069> .
-
-kno:KN2023-0311-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0311-freq-nn,
-        kno:KN2023-0311-freq-yt ;
-    ontolex:writtenRep "탐욕^인플레이션"@ko .
-
-kno:KN2023-0311-freq-nn a frac:CorpusFrequency ;
-    rdf:value 44 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0311-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0311-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0311 kno:origin "(貪慾<영>inflation)" ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0311-freq-NN-2025 ;
+    kno:indexForm "탐욕인플레이션"@ko ;
+    kno:frequency kno:KN2023-0311-freq-NN-total ;
+    kno:componentString "탐욕(貪慾), 인플레이션(inflation)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%90%EC%9A%95%EC%9D%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:component kno:KN2023-0311-c2 ;
+    kno:activeYears "4"^^xsd:integer ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0311-freq-NN-2024 ;
+    kno:component kno:KN2023-0311-c1 ;
+    kno:frequency kno:KN2023-0311-freq-NN-2023 ;
+    kno:predicate "나타나다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0311-freq-NN-2022 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "탐욕^인플레이션"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "기업의 이윤 증대를 위한 지나친 욕심이 주된 원인이 되어 나타나는 인플레이션. =탐욕플레이션."@ko ;
+    kno:example "¶일각에서는 “대기업들이 러시아와 우크라이나 간의 전쟁을 핑계 삼아 제품 가격을 과도하게 올려 인플레이션을 가중시키고 있다.”라며 {탐욕 인플레이션이라고} 비판하고 있다."@ko ;
+    kno:languageType "한^영" .
+kno:KN2023-0311-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005462 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "인플레이션(inflation)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:surfaceForm "인플레이션"@ko .
+kno:KN2023-0311-c1 kno:formative kno:F001887 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "탐욕"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "탐욕"@ko ;
+    rdfs:label "탐욕(貪慾)"@ko .

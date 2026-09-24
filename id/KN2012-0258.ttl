@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0258 kno:componentString "아내, -앓이"@ko ;
+    kno:example "¶OOO의 {아내앓이가} 결혼 못한 사람들의 속을 긁어놨다."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2012-0258-freq-NN-2015 ;
+    kno:indexForm "아내앓이"@ko ;
+    kno:pos "「명」"@ko ;
+    skos:definition "자기 아내를 매우 좋아해서 아내를 보지 못하거나 만나지 못하면 괴로워하는 일."@ko ;
+    kno:languageType "고+고" ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2012-0258-c2 ;
+    kno:component kno:KN2012-0258-c1 ;
+    kno:predicate "괴로워하다"@ko ;
+    kno:frequency kno:KN2012-0258-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0258-freq-NN-total ;
+    kno:slotFiller "아내 (1성분)"@ko ;
+    rdfs:label "아내-앓이"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%82%B4%EC%95%93%EC%9D%B4> ;
+    kno:instantiates kno:S000040 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2012-0258-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E1m ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000089 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "앓이"@ko ;
+    kno:surfaceForm "앓이"@ko ;
+    a kno:Component ;
+    rdfs:label "-앓이"@ko .
+kno:KN2012-0258-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "아내"@ko ;
+    kno:surfaceForm "아내"@ko ;
+    rdfs:label "아내"@ko ;
+    kno:formative kno:F004800 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 .

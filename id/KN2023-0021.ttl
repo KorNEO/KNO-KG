@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0021 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0021 a ontolex:Word ;
-    frac:attestation kno:KN2023-0021-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0021-form ;
-    ontolex:sense kno:KN2023-0021-sense .
-
-kno:KN2023-0021-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0011728673> .
-
-kno:KN2023-0021-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0021-freq-nn,
-        kno:KN2023-0021-freq-yt ;
-    ontolex:writtenRep "계묘-늑약"@ko .
-
-kno:KN2023-0021-freq-nn a frac:CorpusFrequency ;
-    rdf:value 132 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0021-freq-yt a frac:CorpusFrequency ;
-    rdf:value 43 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0021-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0021 kno:frequency kno:KN2023-0021-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000470 ;
+    kno:componentString "계묘(癸卯), (을사)늑약(乙巳勒約)"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0021-c1 ;
+    rdfs:label "계묘늑약"@ko ;
+    kno:frequency kno:KN2023-0021-freq-NN-2023 ;
+    kno:slotFiller "(을사)늑약(乙巳勒約) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0021-freq-NN-total ;
+    kno:languageType "한+한" ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0021-freq-NN-2024 ;
+    skos:definition "계묘년에 일어난 억지로 맺은 조약이라는 뜻으로, 일제 강점기 강제 징용 피해 배상안의 내용을 을사늑약에 빗대어 이르는 말."@ko ;
+    kno:formation kno:W05 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "계묘늑약"@ko ;
+    kno:example "¶일제 강점기 강제 노역에 대한 피해 배상에 대한 해법을 두고 일부에서는 을사늑약에 준하는 {계묘늑약이라고} 비판하고 있다."@ko ;
+    kno:component kno:KN2023-0021-c2 ;
+    kno:origin "(癸卯勒約)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EB%AC%98%EB%8A%91%EC%95%BD> .
+kno:KN2023-0021-c1 rdfs:label "계묘(癸卯)"@ko ;
+    kno:formative kno:F000661 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "계묘"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "계묘"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 .
+kno:KN2023-0021-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "늑약"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002828 ;
+    rdfs:label "(을사)늑약(乙巳勒約)"@ko ;
+    kno:fullForm "을사늑약"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

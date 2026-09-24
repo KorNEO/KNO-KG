@@ -1,30 +1,62 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0259 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0259 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2023-0259-form ;
-    ontolex:sense kno:KN2023-0259-sense .
-
-kno:KN2023-0259-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0259-freq-nn,
-        kno:KN2023-0259-freq-yt ;
-    ontolex:writtenRep "중꺾허"@ko .
-
-kno:KN2023-0259-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0259-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0259-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0259 kno:origin "(重꺾허)" ;
+    kno:component kno:KN2023-0259-c3 ;
+    kno:component kno:KN2023-0259-c1 ;
+    skos:definition "‘중요한 것은 꺾이지 않는 허리’를 줄여 이르는 말. 허리 건강의 중요성을 ‘중요한 것은 꺾이지 않는 마음’을 줄인 말인 ‘중 꺾마’에 빗대어 재미있게 이르는 말이다."@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000581 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EA%BA%BE%ED%97%88> ;
+    kno:frequency kno:KN2023-0259-freq-NN-total ;
+    rdfs:label "중꺾허"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "중(요하다), 꺾(이다), 허(리)"@ko ;
+    kno:frequency kno:KN2023-0259-freq-NN-2023 ;
+    kno:example "¶오십이 넘은 사람들에게 가장 필요한 것은 ‘중꺾마’가 아니라 바로 ‘{중꺾허’이다.}"@ko ;
+    kno:slotFiller "허(리) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2023-0259-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한+고+고" ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "중꺾허"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2023-0259-c3 kno:fullForm "허리"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "허"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B1 ;
+    rdfs:label "허(리)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F002009 .
+kno:KN2023-0259-c1 rdfs:label "중(요하다)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "중요하다"@ko ;
+    kno:formative kno:F000929 ;
+    kno:surfaceForm "중"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0259-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "꺾"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:fullForm "꺾이다"@ko ;
+    kno:formative kno:F000685 ;
+    rdfs:label "꺾(이다)"@ko .

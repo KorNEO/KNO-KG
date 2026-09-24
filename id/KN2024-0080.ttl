@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0080 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0080-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0080-form ;
-    ontolex:sense kno:KN2024-0080-sense .
-
-kno:KN2024-0080-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0001128719> .
-
-kno:KN2024-0080-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0080-freq-nn,
-        kno:KN2024-0080-freq-yt ;
-    ontolex:writtenRep "배터리^환경성^계수"@ko .
-
-kno:KN2024-0080-freq-nn a frac:CorpusFrequency ;
-    rdf:value 140 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0080-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0080-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0080 a kno:Neologism ;
+    kno:component kno:KN2024-0080-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2024-0080-freq-NN-total ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0080-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B0%ED%84%B0%EB%A6%AC%ED%99%98%EA%B2%BD%EC%84%B1%EA%B3%84%EC%88%98> ;
+    kno:frequency kno:KN2024-0080-freq-NN-2024 ;
+    kno:indexForm "배터리환경성계수"@ko ;
+    kno:component kno:KN2024-0080-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0080-freq-NN-2025 ;
+    rdfs:label "배터리^환경성^계수"@ko ;
+    kno:componentString "배터리(battery), 환경성(環境性), 계수(係數)"@ko ;
+    skos:definition "전기 자동차 배터리의 재활용 가능성, 유해성 저감, 자원 순환성 등을 종합적으로 평가하여 수치로 나타낸 값. 전기차 보조금 지원 기준으로 활용된다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>battery環境性係數)" ;
+    kno:example "¶올해부터 {배터리 환경성 계수가} 적용되어, 전기차 폐배터리의 재활용 가치가 보조금 산정에 반영된다."@ko ;
+    kno:languageType "영^한^한" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2024-0080-c1 kno:formative kno:F000511 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "배터리(battery)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "배터리"@ko ;
+    kno:surfaceForm "배터리"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 .
+kno:KN2024-0080-c3 kno:formative kno:F002253 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "계수(係數)"@ko ;
+    kno:fullForm "계수"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:surfaceForm "계수"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0080-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F007155 ;
+    rdfs:label "환경성(環境性)"@ko ;
+    kno:surfaceForm "환경성"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-W5p ;
+    kno:fullForm "환경성"@ko .

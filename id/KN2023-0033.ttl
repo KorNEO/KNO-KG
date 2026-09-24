@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0033 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0033 a ontolex:Word ;
-    frac:attestation kno:KN2023-0033-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0033-form ;
-    ontolex:sense kno:KN2023-0033-sense .
-
-kno:KN2023-0033-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/031/0000521606> .
-
-kno:KN2023-0033-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0033-freq-nn,
-        kno:KN2023-0033-freq-yt ;
-    ontolex:writtenRep "국폭01"@ko .
-
-kno:KN2023-0033-freq-nn a frac:CorpusFrequency ;
-    rdf:value 575 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0033-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1761 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0033-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0033 kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2023-0033-c1 ;
+    kno:example "¶O 의원은 국회에서 힘자랑에 여념이 없는 행태를 보며 {국폭이냐며} 고함을 질렀다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:origin "(國暴)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0033-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2023-0033-freq-NN-2024 ;
+    skos:definition "‘국회 폭력’을 줄여 이르는 말."@ko ;
+    kno:frequency kno:KN2023-0033-freq-NN-total ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2023-0033-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%ED%8F%AD01> ;
+    kno:indexForm "국폭"@ko ;
+    a ontolex:Word ;
+    kno:componentString "국(회)(國會), 폭(력)(暴力)"@ko ;
+    rdfs:label "국폭01"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0033-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "국"@ko ;
+    kno:fullForm "국회"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F002467 ;
+    rdfs:label "국(회)(國會)"@ko .
+kno:KN2023-0033-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "폭"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    rdfs:label "폭(력)(暴力)"@ko ;
+    kno:formative kno:F001963 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "폭력"@ko ;
+    kno:position "2"^^xsd:integer .

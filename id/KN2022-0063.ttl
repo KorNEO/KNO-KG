@@ -1,36 +1,89 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0063 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0063 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0063-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0063-form ;
-    ontolex:sense kno:KN2022-0063-sense .
-
-kno:KN2022-0063-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/011/0003995576> .
-
-kno:KN2022-0063-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0063-freq-nn,
-        kno:KN2022-0063-freq-yt ;
-    ontolex:writtenRep "국가^첨단^전략^산업^특별법"@ko .
-
-kno:KN2022-0063-freq-nn a frac:CorpusFrequency ;
-    rdf:value 458 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0063-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0063-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0063 kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0063-freq-NN-2024 ;
+    rdfs:label "국가^첨단^전략^산업^특별법"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "국가(國家), 첨단(尖端), 전략(戰略), 산업(産業), 특별법(特別法)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0063-freq-NN-2023 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:slotFiller "첨단(尖端)+전략(戰略)+산업(産業) (3성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한^한^한" ;
+    kno:frequency kno:KN2022-0063-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0063-freq-NN-2025 ;
+    kno:origin "(國家尖端戰略産業特別法)" ;
+    skos:definition "반도체와 같은 국가 전략 기술이 성장할 수 있도록 하기 위한 지원에 필요한 사항을 규정한 법."@ko ;
+    kno:frequency kno:KN2022-0063-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0063-c4 ;
+    kno:component kno:KN2022-0063-c1 ;
+    kno:indexForm "국가첨단전략산업특별법"@ko ;
+    kno:component kno:KN2022-0063-c2 ;
+    kno:frequency kno:KN2022-0063-freq-NN-2021 ;
+    kno:instantiates kno:S000476 ;
+    kno:slotFiller "특별법(特別法) (1성분)"@ko ;
+    kno:instantiates kno:S000917 ;
+    kno:component kno:KN2022-0063-c5 ;
+    kno:slotFiller "국가(國家)+첨단(尖端)+전략(戰略) (3성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EA%B0%80%EC%B2%A8%EB%8B%A8%EC%A0%84%EB%9E%B5%EC%82%B0%EC%97%85%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:component kno:KN2022-0063-c3 ;
+    kno:instantiates kno:S000477 ;
+    a kno:Neologism ;
+    kno:example "¶산업 통상 자원부는 ‘{국가 첨단 전략 산업 특별법’을} 근거로 하여 첨단 전략 기술 및 이에 기반한 산업의 생산 시설과 투자 인센티브, 개발 업무 등의 전폭적인 지원책을 펼칠 예정이다."@ko .
+kno:KN2022-0063-c4 kno:semanticTag kno:usas-I4 ;
+    a kno:Component ;
+    kno:fullForm "산업"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000058 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "산업"@ko ;
+    rdfs:label "산업(産業)"@ko .
+kno:KN2022-0063-c1 kno:role "고정항"@ko ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:formative kno:F000020 ;
+    kno:surfaceForm "국가"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:fullForm "국가"@ko .
+kno:KN2022-0063-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "첨단"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "첨단"@ko ;
+    rdfs:label "첨단(尖端)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000411 ;
+    a kno:Component .
+kno:KN2022-0063-c5 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특별법"@ko ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:position "5"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:surfaceForm "특별법"@ko .
+kno:KN2022-0063-c3 kno:formative kno:F000061 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "전략(戰略)"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:fullForm "전략"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "전략"@ko ;
+    a kno:Component .

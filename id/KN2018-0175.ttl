@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0175 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0175 kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0175-c2 ;
+    kno:componentString "생(년)(生), 빈(티지)(vintage)"@ko ;
+    kno:slotFiller "생(년)(生) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2018-0175-c1 ;
+    rdfs:label "생빈"@ko ;
+    kno:instantiates kno:S000907 ;
+    kno:languageType "한+영" ;
+    kno:origin "(生<영>←vintage)" ;
+    kno:indexForm "생빈"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%B9%88> ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    skos:definition "자신이 태어난 해에 양조원에서 만든 고급 포도주. 태어난 생년에 따라 개인의 생빈이 달라진다. ‘태어난’을 의미하는 ‘생(生)’과 ‘포도가 풍작인 해에 정평 있는 양조원에서 양질의 포도로 만든 고급 포도주’를 의미하는 ‘빈티지(vintage)’를 결합하여 만든 말이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶돌아오는 길에 자신의 ‘{생빈}’ 와인이나 소중한 누군가의 ‘{생빈}’ 와인을 사오는 이들도 많다."@ko .
+kno:KN2018-0175-c2 kno:semanticTag kno:usas-T3p ;
+    kno:surfaceForm "빈"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "빈티지"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001414 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "빈(티지)(vintage)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0175-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T1.3 ;
+    a kno:Component ;
+    rdfs:label "생(년)(生)"@ko ;
+    kno:fullForm "생년"@ko ;
+    kno:surfaceForm "생"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004252 .

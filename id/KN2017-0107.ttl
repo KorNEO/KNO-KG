@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0107 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0107 kno:activeYears "5"^^xsd:integer ;
+    rdfs:label "메포츠"@ko ;
+    kno:component kno:KN2017-0107-c1 ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0107-c2 ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2017-0107-freq-NN-2016 ;
+    kno:componentString "메(디컬)(medical), (스)포츠(sport)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0107-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0107-freq-NN-total ;
+    kno:indexForm "메포츠"@ko ;
+    kno:frequency kno:KN2017-0107-freq-NN-2024 ;
+    a ontolex:Word ;
+    skos:definition "의사의 처방에 맞게 적절한 운동을 하면서 질환을 치료하고 건강을 회복하는 의료 방법. 의학을 뜻하는 ‘메디컬(medical)’과 ‘스포츠(sports)’를 결합하여 만든 말이다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2017-0107-freq-NN-2023 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:origin "(<영>←medical sport)" ;
+    kno:example "¶고령화 시대를 맞아 의학과 스포츠를 융합한 일명 ‘{메포츠’가} 주목받고 있습니다."@ko ;
+    kno:languageType "영+영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%94%ED%8F%AC%EC%B8%A0> ;
+    kno:frequency kno:KN2017-0107-freq-NN-2021 ;
+    kno:registration "신어DB"@ko .
+kno:KN2017-0107-c1 kno:surfaceForm "메"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003430 ;
+    kno:fullForm "메디컬"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "메(디컬)(medical)"@ko .
+kno:KN2017-0107-c2 kno:fullForm "스포츠"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:surfaceForm "포츠"@ko ;
+    kno:formative kno:F006735 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(스)포츠(sport)"@ko .

@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0067 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0067-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0067-form ;
-    ontolex:sense kno:KN2025-0067-sense .
-
-kno:KN2025-0067-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0015286873> .
-
-kno:KN2025-0067-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0067-freq-nn,
-        kno:KN2025-0067-freq-yt ;
-    ontolex:writtenRep "관광객 참여 예산"@ko .
-
-kno:KN2025-0067-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0067-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0067-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0067 kno:component kno:KN2025-0067-c1 ;
+    kno:component kno:KN2025-0067-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%80%EA%B4%91%EA%B0%9D%20%EC%B0%B8%EC%97%AC%20%EC%98%88%EC%82%B0> ;
+    kno:origin "(觀光客參與豫算)" ;
+    kno:frequency kno:KN2025-0067-freq-NN-total ;
+    kno:componentString "관광객(觀光客), 참여(參與), 예산(豫算)"@ko ;
+    skos:definition "(LLM) 관광객이 지방 자치 단체의 예산 편성 과정에 참여해 관광 관련 공공사업을 제안하고, 그 제안을 예산에 반영하도록 하는 제도."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0067-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001221 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "관광객 참여 예산"@ko ;
+    kno:component kno:KN2025-0067-c3 ;
+    kno:predicate "하다"@ko ;
+    kno:slotFiller "참여(參與)+예산(豫算) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "관광객참여예산"@ko ;
+    kno:example "(LLM) 제주를 여행하며 불편했던 점을 정리해 {관광객참여예산에} 관광지 안내 표지 정비 사업을 제안했다."@ko .
+kno:KN2025-0067-c1 kno:fullForm "관광객"@ko ;
+    kno:formative kno:F001084 ;
+    kno:surfaceForm "관광객"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "관광객(觀光客)"@ko .
+kno:KN2025-0067-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "참여(參與)"@ko ;
+    kno:fullForm "참여"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "참여"@ko ;
+    kno:formative kno:F000942 ;
+    kno:semanticTag kno:usas-S1.1.3p ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0067-c3 kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001620 ;
+    a kno:Component ;
+    kno:fullForm "예산"@ko ;
+    kno:surfaceForm "예산"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "예산(豫算)"@ko .

@@ -1,36 +1,81 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0058 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0058 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0058-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0058-form ;
-    ontolex:sense kno:KN2023-0058-sense .
-
-kno:KN2023-0058-att-nn a frac:Attestation ;
-    dcterms:date "2023-03-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/088/0000806257> .
-
-kno:KN2023-0058-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0058-freq-nn,
-        kno:KN2023-0058-freq-yt ;
-    ontolex:writtenRep "깡통^전세^공공^매입^특별법"@ko .
-
-kno:KN2023-0058-freq-nn a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0058-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0058-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0058 kno:component kno:KN2023-0058-c4 ;
+    kno:example "¶전세 사기에 대한 대책으로 제시된 {깡통 전세 공공 매입 특별법은} 공공 기관이 보증금 채권을 매입하여 공공 임대 주택으로 활용하고, 피해 임차인들에게 우선적으로 지원하는 것을 주요 내용으로 한다."@ko ;
+    kno:slotFiller "깡통+전세(傳貰)+공공(公共)+매입(買入) (4성분)"@ko ;
+    kno:languageType "(고+한)^한^한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%A1%ED%86%B5%EC%A0%84%EC%84%B8%EA%B3%B5%EA%B3%B5%EB%A7%A4%EC%9E%85%ED%8A%B9%EB%B3%84%EB%B2%95> ;
+    kno:indexForm "깡통전세공공매입특별법"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(깡筒傳貰公共買入特別法)" ;
+    kno:frequency kno:KN2023-0058-freq-NN-total ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0058-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0058-c3 ;
+    kno:componentString "깡통, 전세(傳貰), 공공(公共), 매입(買入), 특별법(特別法)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0058-freq-NN-2023 ;
+    kno:instantiates kno:S000027 ;
+    kno:component kno:KN2023-0058-c5 ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0058-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "깡통^전세^공공^매입^특별법"@ko ;
+    skos:definition "전세 보증금과 담보 대출이 매매가를 웃도는 전세 주택의 공공 매입 절차를 규정하고, 피해자를 구제하는 데 필요한 사항을 제정한 법률. 공공 기관이 채권을 매입하여 전세 사기 피해를 먼저 보상하고, 이후에 구상권 청구 등을 통해 비용을 회수하는 것을 목적으로 한다. 정식 명칭은 ‘임대 보증금 미반환 주택 임차인 보호를 위한 특별법’이다."@ko .
+kno:KN2023-0058-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "매입"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F001285 ;
+    a kno:Component ;
+    kno:fullForm "매입"@ko ;
+    rdfs:label "매입(買入)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0058-c2 kno:formative kno:F000230 ;
+    kno:surfaceForm "전세"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "전세(傳貰)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:fullForm "전세"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0058-c3 kno:formative kno:F000084 ;
+    rdfs:label "공공(公共)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "공공"@ko ;
+    kno:surfaceForm "공공"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0058-c5 kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F000044 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:surfaceForm "특별법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "특별법"@ko ;
+    kno:position "5"^^xsd:integer .
+kno:KN2023-0058-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "깡통"@ko ;
+    kno:surfaceForm "깡통"@ko ;
+    a kno:Component ;
+    kno:fullForm "깡통"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002631 ;
+    kno:semanticTag kno:usas-O2 .

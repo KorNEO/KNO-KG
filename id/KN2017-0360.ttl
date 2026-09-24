@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0360 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0360 kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000017 ;
+    kno:example "¶동전 노래방이 다시 인기를 끄는 것은 최근 젊은 층을 중심으로 ‘혼자 노는 문화’가 퍼진 것도 한 요인이다. 젊은 층의 개인적 성향이 ‘혼밥’, ‘혼술’뿐만 아니라 ‘{혼창’까지} 확산했다는 설명이다."@ko ;
+    a kno:Neologism ;
+    skos:definition "혼자서 노래를 부름. 또는 그렇게 부르는 노래."@ko ;
+    kno:languageType "고+한" ;
+    kno:slotFiller "창(唱) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "혼(자), 창(唱)"@ko ;
+    rdfs:label "혼창"@ko ;
+    kno:component kno:KN2017-0360-c2 ;
+    kno:indexForm "혼창"@ko ;
+    kno:origin "(혼唱)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380650> ;
+    a ontolex:Word ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1380650" ;
+    kno:component kno:KN2017-0360-c1 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 .
+kno:KN2017-0360-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:fullForm "창"@ko ;
+    kno:surfaceForm "창"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006005 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "창(唱)"@ko .
+kno:KN2017-0360-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "혼자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko ;
+    kno:formative kno:F000011 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "혼(자)"@ko .

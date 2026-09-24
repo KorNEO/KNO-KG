@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0522 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0522 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0522-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0522-form ;
-    ontolex:sense kno:KN2025-0522-sense .
-
-kno:KN2025-0522-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013378485> .
-
-kno:KN2025-0522-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0522-freq-nn,
-        kno:KN2025-0522-freq-yt ;
-    ontolex:writtenRep "주진우 방지법"@ko .
-
-kno:KN2025-0522-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0522-freq-yt a frac:CorpusFrequency ;
-    rdf:value 34 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0522-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0522 kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0522-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EC%A7%84%EC%9A%B0%20%EB%B0%A9%EC%A7%80%EB%B2%95> ;
+    kno:componentString "주진우, 방지법(防止法)"@ko ;
+    rdfs:label "주진우 방지법"@ko ;
+    kno:frequency kno:KN2025-0522-freq-NN-2025 ;
+    kno:slotFiller "인명; X=주진우 (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0522-c2 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000054 ;
+    kno:indexForm "주진우방지법"@ko ;
+    skos:definition "(LLM) 병역을 기피한 사람에 대해 공소시효를 적용하지 않거나 공소시효를 대폭 늘려, 시간이 지나도 처벌할 수 있게 하자는 취지의 병역 관련 법률 개정안을 이르는 말."@ko ;
+    kno:component kno:KN2025-0522-c1 ;
+    a kno:Neologism ;
+    kno:example "(LLM) 일부 인사의 병역 기피 의혹이 불거지자, 국회에서는 {주진우방지법을} 추진해 처벌의 사각지대를 없애야 한다는 주장이 나왔다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0522-c2 kno:surfaceForm "방지법"@ko ;
+    rdfs:label "방지법(防止法)"@ko ;
+    kno:fullForm "방지법"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000032 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0522-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "주진우"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005800 ;
+    rdfs:label "주진우"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    a kno:Component ;
+    kno:fullForm "주진우"@ko .

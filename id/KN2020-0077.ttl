@@ -1,37 +1,80 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0077 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0077 a ontolex:Word ;
-    frac:attestation kno:KN2020-0077-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0077-form ;
-    ontolex:sense kno:KN2020-0077-sense .
-
-kno:KN2020-0077-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002489214> .
-
-kno:KN2020-0077-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0077-freq-nn,
-        kno:KN2020-0077-freq-yt ;
-    ontolex:writtenRep "내돈내산"@ko .
-
-kno:KN2020-0077-freq-nn a frac:CorpusFrequency ;
-    rdf:value 6654 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0077-freq-yt a frac:CorpusFrequency ;
-    rdf:value 21662 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0077-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EB%82%B4%EB%8F%88%EB%82%B4%EC%82%B0> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0077 kno:frequency kno:KN2020-0077-freq-NN-2023 ;
+    kno:componentString "내, 돈, 내, 사(다)"@ko ;
+    kno:frequency kno:KN2020-0077-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0077-freq-NN-2020 ;
+    kno:component kno:KN2020-0077-c1 ;
+    kno:frequency kno:KN2020-0077-freq-NN-2021 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0077-freq-NN-2025 ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1463718" ;
+    kno:component kno:KN2020-0077-c2 ;
+    kno:frequency kno:KN2020-0077-freq-NN-2022 ;
+    skos:definition "‘내 돈 주고 내가 삼’을 줄여 이르는 말. 주로 특정 제품의 사용 후기를 남길 때, 그 제품을 생산한 업체로부터 광고비를 일절 받지 않고 스스로 구매하여 남기는 솔직한 후기라는 사실을 강조하여 이르는 말이다."@ko ;
+    kno:instantiates kno:S001274 ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:instantiates kno:S001277 ;
+    kno:component kno:KN2020-0077-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "내돈내산"@ko ;
+    kno:component kno:KN2020-0077-c4 ;
+    kno:frequency kno:KN2020-0077-freq-NN-total ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "고+고+고+고" ;
+    kno:slotFiller "돈 (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:example "¶인기 배우 OOO이 광고 없이 {내돈내산으로} 구매했다는 제품의 판매량이 지난달에 비해 크게 증가했다."@ko ;
+    kno:frequency kno:KN2020-0077-freq-NN-2019 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1463718> ;
+    kno:slotFiller "사(다) (1성분)"@ko ;
+    rdfs:label "내돈내산"@ko .
+kno:KN2020-0077-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "내"@ko ;
+    rdfs:label "내"@ko ;
+    kno:formative kno:F000071 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "내"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z8 .
+kno:KN2020-0077-c2 a kno:Component ;
+    kno:fullForm "돈"@ko ;
+    kno:surfaceForm "돈"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000257 ;
+    rdfs:label "돈"@ko .
+kno:KN2020-0077-c3 kno:formative kno:F000071 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "내"@ko ;
+    rdfs:label "내"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "내"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0077-c4 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "사"@ko ;
+    kno:fullForm "사다"@ko ;
+    a kno:Component ;
+    rdfs:label "사(다)"@ko ;
+    kno:formative kno:F000138 ;
+    kno:role "고정항"@ko .

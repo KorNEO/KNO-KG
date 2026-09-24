@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0152 rdfs:label "소파쇼핑족"@ko ;
+    kno:unitType "구"@ko ;
+    kno:predicate "구매하다"@ko ;
+    kno:componentString "소파(sofa), 쇼핑(shopping), -족(族)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0152-c1 ;
+    kno:languageType "영_(영+한)" ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2017-0152-c3 ;
+    kno:origin "(<영>sofa shopping族)" ;
+    kno:slotFiller "소파(sofa) (1성분)"@ko ;
+    kno:indexForm "소파쇼핑족"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶빠르게 늘어나는 심야 ‘{소파 쇼핑족}’."@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:component kno:KN2017-0152-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%8C%8C%EC%87%BC%ED%95%91%EC%A1%B1> ;
+    kno:instantiates kno:S000952 ;
+    skos:definition "소파에서 휴식을 취하면서 모바일 기기로 물건을 구매하는 사람. 또는 그런 무리. =모바일 소파족."@ko .
+kno:KN2017-0152-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "소파(sofa)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "소파"@ko ;
+    kno:formative kno:F001489 ;
+    a kno:Component ;
+    kno:surfaceForm "소파"@ko ;
+    kno:semanticTag kno:usas-H5 .
+kno:KN2017-0152-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko .
+kno:KN2017-0152-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "쇼핑(shopping)"@ko ;
+    kno:formative kno:F000286 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:fullForm "쇼핑"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "쇼핑"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

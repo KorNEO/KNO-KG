@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0010 kno:frequency kno:KN2017-0010-freq-NN-2017 ;
+    kno:component kno:KN2017-0010-c2 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "개헌론파"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2017-0010-freq-NN-total ;
+    kno:predicate "주장하다"@ko ;
+    kno:origin "(改憲論派)" ;
+    kno:year "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380312> ;
+    kno:languageType "한+한" ;
+    rdfs:label "개헌론-파"@ko ;
+    kno:example "¶‘제3 지대’, ‘비패권 지대’, ‘{개헌론파’로} 분류돼 온 세 사람은 15일 OO의 한 식당에서 만나 분권형 이원 집정부제 개헌을 적극 추진하기로 의견을 모았다."@ko ;
+    kno:urimalTargetCode "1380312" ;
+    kno:component kno:KN2017-0010-c1 ;
+    kno:instantiates kno:S000196 ;
+    a ontolex:Word ;
+    kno:slotFiller "개헌론(改憲論) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:componentString "개헌론(改憲論), -파(派)"@ko ;
+    skos:definition "헌법을 고쳐야 한다고 주장하는 사람. 또는 그런 무리."@ko .
+kno:KN2017-0010-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "파"@ko ;
+    rdfs:label "-파(派)"@ko ;
+    kno:formative kno:F000428 ;
+    kno:fullForm "파"@ko ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2017-0010-c1 kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "개헌론(改憲論)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "개헌론"@ko ;
+    kno:formative kno:F002166 ;
+    kno:surfaceForm "개헌론"@ko .

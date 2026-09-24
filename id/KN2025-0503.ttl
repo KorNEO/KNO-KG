@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0503 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0503 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0503-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0503-form ;
-    ontolex:sense kno:KN2025-0503-sense .
-
-kno:KN2025-0503-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/119/0002966338> .
-
-kno:KN2025-0503-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0503-freq-nn,
-        kno:KN2025-0503-freq-yt ;
-    ontolex:writtenRep "전역 룩"@ko .
-
-kno:KN2025-0503-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0503-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0503-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0503 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:predicate "입다"@ko ;
+    kno:componentString "전역(轉役), 룩(look)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%97%AD%20%EB%A3%A9> ;
+    kno:example "(LLM) 그는 전투복 대신 깔끔한 셔츠와 슬랙스를 갖춰 입고 {전역룩으로} 가족을 만났다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(轉役<영>look)" ;
+    rdfs:label "전역 룩"@ko ;
+    kno:component kno:KN2025-0503-c1 ;
+    kno:slotFiller "전역(轉役) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0503-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0503-freq-NN-total ;
+    kno:indexForm "전역룩"@ko ;
+    kno:component kno:KN2025-0503-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    skos:definition "(LLM) 군 복무를 마치고 부대를 나오는 날에 입는 옷차림."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000007 .
+kno:KN2025-0503-c1 rdfs:label "전역(轉役)"@ko ;
+    kno:fullForm "전역"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "전역"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005636 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G3 .
+kno:KN2025-0503-c2 a kno:Component ;
+    kno:formative kno:F000005 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "룩"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "룩(look)"@ko ;
+    kno:surfaceForm "룩"@ko .

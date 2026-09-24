@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0346 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0346 kno:frequency kno:KN2013-0346-freq-NN-2013 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2013-0346-freq-NN-total ;
+    kno:example "¶정신적인 스트레스는 생명 {잉태력을} 크게 약화시킨다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "배다"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:slotFiller "잉태(孕胎) (1성분)"@ko ;
+    kno:component kno:KN2013-0346-c2 ;
+    kno:component kno:KN2013-0346-c1 ;
+    kno:indexForm "잉태력"@ko ;
+    kno:origin "(孕胎力)" ;
+    skos:definition "아이나 새끼를 배는 능력."@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%89%ED%83%9C%EB%A0%A5> ;
+    rdfs:label "잉태-력"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:instantiates kno:S000006 ;
+    kno:componentString "잉태(孕胎), -력(力)"@ko .
+kno:KN2013-0346-c2 a kno:Component ;
+    kno:surfaceForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-력(力)"@ko ;
+    kno:formative kno:F000010 ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:fullForm "력"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0346-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "잉태(孕胎)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F005501 ;
+    kno:fullForm "잉태"@ko ;
+    kno:surfaceForm "잉태"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .

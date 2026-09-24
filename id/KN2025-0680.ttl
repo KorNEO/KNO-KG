@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0680 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0680 a ontolex:Word ;
-    frac:attestation kno:KN2025-0680-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0680-form ;
-    ontolex:sense kno:KN2025-0680-sense .
-
-kno:KN2025-0680-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/382/0001190454> .
-
-kno:KN2025-0680-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0680-freq-nn,
-        kno:KN2025-0680-freq-yt ;
-    ontolex:writtenRep "혀수저"@ko .
-
-kno:KN2025-0680-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0680-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0680-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0680 kno:languageType "고+고" ;
+    kno:component kno:KN2025-0680-c1 ;
+    kno:indexForm "혀수저"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0680-freq-NN-total ;
+    kno:frequency kno:KN2025-0680-freq-NN-2025 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "혀 (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "혀-수저"@ko ;
+    kno:formation kno:W01 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%80%EC%88%98%EC%A0%80> ;
+    skos:definition "(LLM) 혀가 유난히 두껍거나 커서 발음이 부정확해 보이거나 혀의 존재감이 두드러지는 사람을 비유적으로 이르는 말."@ko ;
+    kno:component kno:KN2025-0680-c2 ;
+    kno:instantiates kno:S000043 ;
+    a kno:Neologism ;
+    kno:componentString "혀, 수저"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 영상에서 그는 빠르게 말하려다 혀가 꼬이는 모습을 보이자 시청자들이 ‘{혀수저’라고} 놀리며 댓글을 달았다."@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2025-0680-c1 kno:semanticTag kno:usas-B1 ;
+    rdfs:label "혀"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F007064 ;
+    kno:fullForm "혀"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "혀"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0680-c2 kno:fullForm "수저"@ko ;
+    kno:surfaceForm "수저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000048 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "수저"@ko .

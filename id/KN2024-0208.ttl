@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0208 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0208 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0208-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0208-form ;
-    ontolex:sense kno:KN2024-0208-sense .
-
-kno:KN2024-0208-att-nn a frac:Attestation ;
-    dcterms:date "2024-04-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003291232> .
-
-kno:KN2024-0208-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0208-freq-nn,
-        kno:KN2024-0208-freq-yt ;
-    ontolex:writtenRep "용산 로펌"@ko .
-
-kno:KN2024-0208-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0208-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0208-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0208 a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0208-c1 ;
+    kno:frequency kno:KN2024-0208-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0208-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:indexForm "용산로펌"@ko ;
+    rdfs:label "용산 로펌"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(龍山<영>law firm)" ;
+    kno:slotFiller "용산(龍山) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "법률 수석실을 신설하는 것을 두고 대통령과 관련된 특검을 준비하는 법률 회사에 빗대어 이르는 말."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "용산(龍山), 로펌(law firm)"@ko ;
+    kno:example "¶그는 민정 수석실의 부활에 대한 논평에서 중앙 집권적인 대통령제를 강화하기 위해 활용될 것이며, 대통령 개인을 위한 {용산 로펌이} 될 것이라고 비판하였다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2024-0208-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_영" ;
+    kno:instantiates kno:S000851 ;
+    kno:component kno:KN2024-0208-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%A9%EC%82%B0%20%EB%A1%9C%ED%8E%8C> .
+kno:KN2024-0208-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "용산"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:formative kno:F005206 ;
+    rdfs:label "용산(龍山)"@ko ;
+    kno:surfaceForm "용산"@ko .
+kno:KN2024-0208-c2 kno:fullForm "로펌"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "로펌"@ko ;
+    rdfs:label "로펌(law firm)"@ko ;
+    kno:formative kno:F001250 ;
+    kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

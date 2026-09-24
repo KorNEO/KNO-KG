@@ -1,0 +1,61 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0008 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0008 kno:year "2013"^^xsd:gYear ;
+    skos:definition "사람들이 매우 좋아하여 가수의 의도와는 상관없이 정해진 후속곡."@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:instantiates kno:S000143 ;
+    kno:indexForm "강제후속곡"@ko ;
+    kno:frequency kno:KN2013-0008-freq-NN-2012 ;
+    kno:componentString "강제(強制), 후속(後續), -곡(曲)"@ko ;
+    kno:component kno:KN2013-0008-c3 ;
+    a kno:Neologism ;
+    kno:example "¶OOO의 OO가 {강제 후속곡이} 될 수 있을지 관심이 쏠리고 있다."@ko ;
+    kno:component kno:KN2013-0008-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2013-0008-freq-NN-total ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2013-0008-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(強制後續曲)" ;
+    rdfs:label "강제 후속곡"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EC%A0%9C%20%ED%9B%84%EC%86%8D%EA%B3%A1> ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "후속(後續)+-곡(曲) (2성분)"@ko .
+kno:KN2013-0008-c3 kno:fullForm "곡"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "곡"@ko ;
+    rdfs:label "-곡(曲)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000334 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2013-0008-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-N4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F007192 ;
+    a kno:Component ;
+    kno:fullForm "후속"@ko ;
+    rdfs:label "후속(後續)"@ko ;
+    kno:surfaceForm "후속"@ko .
+kno:KN2013-0008-c1 kno:surfaceForm "강제"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "강제(強制)"@ko ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:fullForm "강제"@ko ;
+    kno:formative kno:F000198 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

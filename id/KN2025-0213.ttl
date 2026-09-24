@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0213 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0213 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0213-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0213-form ;
-    ontolex:sense kno:KN2025-0213-sense .
-
-kno:KN2025-0213-att-nn a frac:Attestation ;
-    dcterms:date "2023-09-15"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/117/0003771003> .
-
-kno:KN2025-0213-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0213-freq-nn,
-        kno:KN2025-0213-freq-yt ;
-    ontolex:writtenRep "리버스 내추럴 사이클"@ko .
-
-kno:KN2025-0213-freq-nn a frac:CorpusFrequency ;
-    rdf:value 40 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0213-freq-yt a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0213-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0213 kno:componentString "리버스(reverse), 내추럴(natural), 사이클(cycle)"@ko ;
+    kno:indexForm "리버스내추럴사이클"@ko ;
+    kno:frequency kno:KN2025-0213-freq-NN-total ;
+    kno:component kno:KN2025-0213-c1 ;
+    kno:frequency kno:KN2025-0213-freq-NN-2025 ;
+    kno:languageType "영_영_영" ;
+    kno:instantiates kno:S000914 ;
+    kno:origin "(<영>reverse natural cycle)" ;
+    kno:slotFiller "리버스(reverse)+내추럴(natural) (2성분)"@ko ;
+    skos:definition "(LLM) 야구에서, 한 경기에서 홈런ㆍ3루타ㆍ2루타ㆍ단타를 이 순서대로 쳐 사이클링 히트를 완성하는 일."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EB%B2%84%EC%8A%A4%20%EB%82%B4%EC%B6%94%EB%9F%B4%20%EC%82%AC%EC%9D%B4%ED%81%B4> ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "완성하다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 그는 첫 타석에서 홈런을 친 데 이어 다음 타석에서 3루타까지 보태 {리버스내추럴사이클을} 달성하려면 2루타와 단타만 남겨 두었다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "리버스 내추럴 사이클"@ko ;
+    kno:component kno:KN2025-0213-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0213-c3 .
+kno:KN2025-0213-c1 kno:semanticTag kno:usas-M6 ;
+    a kno:Component ;
+    rdfs:label "리버스(reverse)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "리버스"@ko ;
+    kno:surfaceForm "리버스"@ko ;
+    kno:formative kno:F003295 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0213-c2 kno:fullForm "내추럴"@ko ;
+    kno:surfaceForm "내추럴"@ko ;
+    kno:formative kno:F002725 ;
+    kno:semanticTag kno:usas-A5.4p ;
+    rdfs:label "내추럴(natural)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0213-c3 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "사이클(cycle)"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000792 ;
+    kno:fullForm "사이클"@ko ;
+    kno:surfaceForm "사이클"@ko .

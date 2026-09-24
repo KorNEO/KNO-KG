@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0270 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0270 kno:origin "(癡呆<영>poor)" ;
+    kno:instantiates kno:S000028 ;
+    kno:indexForm "치매푸어"@ko ;
+    rdfs:label "치매 푸어"@ko ;
+    kno:instantiates kno:S001687 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2017-0270-freq-NN-total ;
+    kno:languageType "한_영" ;
+    kno:frequency kno:KN2017-0270-freq-NN-2019 ;
+    kno:predicate "겪다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:component kno:KN2017-0270-c2 ;
+    kno:urimalTargetCode "1380256" ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2017"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380256> ;
+    kno:slotFiller "치매(癡呆) (1성분)"@ko ;
+    kno:componentString "치매(癡呆), 푸어(poor)"@ko ;
+    kno:frequency kno:KN2017-0270-freq-NN-2018 ;
+    kno:component kno:KN2017-0270-c1 ;
+    kno:slotFiller "푸어(poor) (1성분)"@ko ;
+    kno:example "¶치매에 걸리면…{치매 푸어라는} 말이 생길 정도로 비용도 많이 들어간다."@ko ;
+    skos:definition "치매 환자를 돌보는 데 들어가는 비용으로 인하여 경제적으로 어려움을 겪는 사람. ⇒규범 표기는 미확정이다."@ko .
+kno:KN2017-0270-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "푸어"@ko ;
+    kno:formative kno:F000050 ;
+    kno:surfaceForm "푸어"@ko ;
+    rdfs:label "푸어(poor)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:role "고정항"@ko .
+kno:KN2017-0270-c1 kno:surfaceForm "치매"@ko ;
+    a kno:Component ;
+    kno:fullForm "치매"@ko ;
+    rdfs:label "치매(癡呆)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F000950 .

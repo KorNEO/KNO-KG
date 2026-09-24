@@ -1,0 +1,67 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0389 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0389 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%98%EB%A7%A5%20%EC%8B%9C%EC%A6%8C> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2013-0389-freq-NN-total ;
+    kno:slotFiller "맥(주)(麥)+시즌(season) (2성분)"@ko ;
+    kno:languageType "(영+한)_영" ;
+    kno:componentString "치(킨)(chicken), 맥(주)(麥), 시즌(season)"@ko ;
+    kno:example "¶그는 “…날씨가 본격적으로 더워지면서 {치맥 시즌} 영향으로 일매출은 더욱 늘어날 것으로 보고 있다.”라고 말했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2013-0389-freq-NN-2018 ;
+    rdfs:label "치맥 시즌"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0389-freq-NN-2013 ;
+    kno:origin "(←chicken麥<영>season)" ;
+    kno:component kno:KN2013-0389-c3 ;
+    kno:frequency kno:KN2013-0389-freq-NN-2014 ;
+    kno:frequency kno:KN2013-0389-freq-NN-2019 ;
+    kno:predicate "좋은"@ko ;
+    kno:frequency kno:KN2013-0389-freq-NN-2016 ;
+    kno:instantiates kno:S001686 ;
+    skos:definition "치킨을 먹으면서 맥주를 마시기 좋은 계절."@ko ;
+    kno:frequency kno:KN2013-0389-freq-NN-2025 ;
+    kno:component kno:KN2013-0389-c1 ;
+    kno:component kno:KN2013-0389-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "치맥시즌"@ko ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2013-0389-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "시즌"@ko ;
+    kno:surfaceForm "시즌"@ko ;
+    kno:formative kno:F004668 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "시즌(season)"@ko .
+kno:KN2013-0389-c1 kno:fullForm "치킨"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "치"@ko ;
+    kno:formative kno:F000092 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "치(킨)(chicken)"@ko .
+kno:KN2013-0389-c2 rdfs:label "맥(주)(麥)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000171 ;
+    kno:surfaceForm "맥"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "맥주"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "true"^^xsd:boolean .

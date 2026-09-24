@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0236 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0236 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0236-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0236-form ;
-    ontolex:sense kno:KN2025-0236-sense .
-
-kno:KN2025-0236-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-11"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/144/0001045633> .
-
-kno:KN2025-0236-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0236-freq-nn,
-        kno:KN2025-0236-freq-yt ;
-    ontolex:writtenRep "몸또 사기"@ko .
-
-kno:KN2025-0236-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0236-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0236-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0236 kno:frequency kno:KN2025-0236-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0236-freq-NN-2025 ;
+    skos:definition "(LLM) 영상 통화 등에서 알몸이나 성적 행위를 하도록 유도해 이를 촬영한 뒤, 유포를 빌미로 금전을 요구하는 협박성 사기 범죄."@ko ;
+    kno:componentString "몸또, 사기(士氣)"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%B8%EB%98%90%20%EC%82%AC%EA%B8%B0> ;
+    kno:indexForm "몸또사기"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0236-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 랜덤 채팅에서 만난 사람이 영상 통화를 하자고 하더니, 녹화한 영상을 퍼뜨리겠다며 {몸또사기}로 돈을 요구했다."@ko ;
+    rdfs:label "몸또 사기"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0236-c2 .
+kno:KN2025-0236-c1 rdfs:label "몸또"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "몸또"@ko ;
+    kno:surfaceForm "몸또"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003510 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0236-c2 kno:fullForm "사기"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "사기"@ko ;
+    kno:formative kno:F004153 ;
+    rdfs:label "사기(士氣)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G2.1m .

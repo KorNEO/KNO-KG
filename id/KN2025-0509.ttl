@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0509 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0509 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0509-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0509-form ;
-    ontolex:sense kno:KN2025-0509-sense .
-
-kno:KN2025-0509-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005568929> .
-
-kno:KN2025-0509-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0509-freq-nn,
-        kno:KN2025-0509-freq-yt ;
-    ontolex:writtenRep "정서적 연봉"@ko .
-
-kno:KN2025-0509-freq-nn a frac:CorpusFrequency ;
-    rdf:value 113 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0509-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0509-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0509 kno:instantiates kno:S000575 ;
+    rdfs:label "정서적 연봉"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0509-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "정서적연봉"@ko ;
+    kno:slotFiller "정서적(情緖的) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000414 ;
+    kno:slotFiller "연봉(年俸) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    kno:componentString "정서적(情緖的), 연봉(年俸)"@ko ;
+    kno:origin "(情緖的年俸)" ;
+    kno:component kno:KN2025-0509-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0509-freq-NN-total ;
+    kno:example "(LLM) 연봉은 비슷했지만 유연근무와 교육 지원이 잘 갖춰진 회사가 {정서적연봉이} 더 높게 느껴졌다."@ko ;
+    kno:component kno:KN2025-0509-c2 ;
+    skos:definition "(LLM) 직장에서 얻는 소속감ㆍ성장 기회ㆍ유연근무ㆍ복지 등 비금전적 만족과 보상을 연봉에 빗대어 평가한 값."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%84%9C%EC%A0%81%20%EC%97%B0%EB%B4%89> .
+kno:KN2025-0509-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:fullForm "정서적"@ko ;
+    kno:surfaceForm "정서적"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000920 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "정서적(情緖的)"@ko .
+kno:KN2025-0509-c2 a kno:Component ;
+    kno:fullForm "연봉"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "연봉(年俸)"@ko ;
+    kno:surfaceForm "연봉"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000862 ;
+    kno:truncated "false"^^xsd:boolean .

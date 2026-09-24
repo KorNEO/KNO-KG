@@ -1,36 +1,73 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0166 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2020-0166 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0166-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0166-form ;
-    ontolex:sense kno:KN2020-0166-sense .
-
-kno:KN2020-0166-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003504401> .
-
-kno:KN2020-0166-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0166-freq-nn,
-        kno:KN2020-0166-freq-yt ;
-    ontolex:writtenRep "세계^보건^안전^지수"@ko .
-
-kno:KN2020-0166-freq-nn a frac:CorpusFrequency ;
-    rdf:value 39 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0166-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0166-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:component kno:KN2020-0166-c3 ;
+    kno:frequency kno:KN2020-0166-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶{세계 보건 안전 지수에} 따르면 우리나라는 195개국 가운데 9위를 차지해, 아시아에서 두 번째로 높은 것으로 나타났다."@ko ;
+    kno:instantiates kno:S001453 ;
+    kno:frequency kno:KN2020-0166-freq-NN-2020 ;
+    kno:languageType "한^한^한^한" ;
+    kno:frequency kno:KN2020-0166-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(世界保健安全指數)" ;
+    rdfs:label "세계^보건^안전^지수"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B3%84%EB%B3%B4%EA%B1%B4%EC%95%88%EC%A0%84%EC%A7%80%EC%88%98> ;
+    kno:component kno:KN2020-0166-c1 ;
+    kno:slotFiller "보건(保健)+안전(安全) (2성분)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    skos:definition "전 세계 국가를 대상으로 전염병 대응 체계, 감지 및 보고, 대응의 신속성, 보건 체계 등을 평가하여 국가의 보건 안정성을 나타낸 지수. 영국의 경제 분석 기관인 이코노미스트 인텔리전스 유닛과 미국의 존스 홉킨스 대학이 공동으로 개발하였다."@ko ;
+    kno:frequency kno:KN2020-0166-freq-NN-2021 ;
+    kno:component kno:KN2020-0166-c4 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0166-c2 ;
+    kno:componentString "세계(世界), 보건(保健), 안전(安全), 지수(指數)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "세계보건안전지수"@ko .
+kno:KN2020-0166-c3 kno:formative kno:F000180 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "안전"@ko ;
+    kno:surfaceForm "안전"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "안전(安全)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A15p .
+kno:KN2020-0166-c1 rdfs:label "세계(世界)"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:formative kno:F000219 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세계"@ko ;
+    kno:fullForm "세계"@ko ;
+    a kno:Component .
+kno:KN2020-0166-c4 a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:surfaceForm "지수"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000035 ;
+    kno:fullForm "지수"@ko ;
+    kno:semanticTag kno:usas-N3.1 .
+kno:KN2020-0166-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "보건(保健)"@ko ;
+    kno:formative kno:F003874 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "보건"@ko ;
+    kno:surfaceForm "보건"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B2 .

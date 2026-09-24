@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0279 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0279-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0279-form ;
-    ontolex:sense kno:KN2025-0279-sense .
-
-kno:KN2025-0279-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/056/0011915977> .
-
-kno:KN2025-0279-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0279-freq-nn,
-        kno:KN2025-0279-freq-yt ;
-    ontolex:writtenRep "버드 돔"@ko .
-
-kno:KN2025-0279-freq-nn a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0279-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0279-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0279 kno:indexForm "버드돔"@ko ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2025-0279-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0279-c2 ;
+    kno:origin "(<영>bird dome)" ;
+    kno:component kno:KN2025-0279-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%84%EB%93%9C%20%EB%8F%94> ;
+    kno:example "(LLM) 해당 공항은 레이더와 열화상 카메라, 드론 순찰, 전담 인력의 현장 대응을 묶은 {버드돔을} 구축해 조류 충돌 사고를 예방하겠다고 밝혔다."@ko ;
+    skos:definition "(LLM) 공항 주변에서 조류의 접근을 거리ㆍ고도 등 구역별로 탐지ㆍ감시하고, 경보ㆍ유도ㆍ퇴치 등의 대응을 연계해 항공기와의 충돌 위험을 줄이려는 통합 안전 관리 체계."@ko ;
+    rdfs:label "버드 돔"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:componentString "버드(bird), 돔(dome)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0279-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000833 ;
+    kno:slotFiller "버드(bird) (1성분)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0279-c2 rdfs:label "돔(dome)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000716 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "돔"@ko ;
+    kno:surfaceForm "돔"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0279-c1 kno:formative kno:F001355 ;
+    kno:surfaceForm "버드"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:fullForm "버드"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "버드(bird)"@ko .

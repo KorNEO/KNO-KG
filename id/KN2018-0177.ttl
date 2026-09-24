@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0177 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0177 kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2018-0177-freq-NN-2023 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0177-freq-NN-2022 ;
+    kno:component kno:KN2018-0177-c1 ;
+    kno:frequency kno:KN2018-0177-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0177-freq-NN-2021 ;
+    rdfs:label "서베리아"@ko ;
+    kno:urimalTargetCode "1382418" ;
+    kno:component kno:KN2018-0177-c2 ;
+    kno:instantiates kno:S000738 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0177-freq-NN-2019 ;
+    kno:origin "(서울←Siberia)" ;
+    kno:frequency kno:KN2018-0177-freq-NN-2018 ;
+    kno:slotFiller "서(울) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    kno:instantiates kno:S000308 ;
+    kno:slotFiller "(시)베리아(Siberia) (1성분)"@ko ;
+    kno:languageType "고+영" ;
+    kno:year "2018"^^xsd:gYear ;
+    skos:definition "극심한 한파로 추워진 서울을 시베리아(Siberia)에 비유하여 이르는 말."@ko ;
+    kno:componentString "서(울), (시)베리아(Siberia)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1382418> ;
+    kno:indexForm "서베리아"@ko ;
+    kno:pos "「명」"@ko ;
+    a ontolex:Word ;
+    kno:example "¶여기에 지난주부터 연일 최저 기온이 영하 10도를 훌쩍 넘어가는 걸 보면 정말 서울 대신 ‘{서베리아’에} 살고 있다는 말이 납득이 가는 날씨입니다."@ko ;
+    kno:frequency kno:KN2018-0177-freq-NN-total .
+kno:KN2018-0177-c1 kno:surfaceForm "서"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "서(울)"@ko ;
+    kno:fullForm "서울"@ko ;
+    kno:formative kno:F000218 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 .
+kno:KN2018-0177-c2 kno:fullForm "시베리아"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001366 ;
+    rdfs:label "(시)베리아(Siberia)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "베리아"@ko .

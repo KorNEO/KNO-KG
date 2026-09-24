@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0187 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0187 kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:origin "(밥毒面)" ;
+    rdfs:label "밥독면"@ko ;
+    kno:component kno:KN2013-0187-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001394 ;
+    kno:slotFiller "(방)독면(毒面) (1성분)"@ko ;
+    kno:component kno:KN2013-0187-c2 ;
+    kno:languageType "고+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "밥독면"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶구내식당 등에서 사용하는 식판으로 방독면을 패러디한 ‘{밥독면’은} 얼핏 보면 진짜 방독면을 쓴 것처럼 보여 감탄을 불러일으킨다."@ko ;
+    kno:componentString "밥, (방)독면(毒面)"@ko ;
+    kno:frequency kno:KN2013-0187-freq-NN-2012 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%A5%EB%8F%85%EB%A9%B4> ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0187-freq-NN-total ;
+    kno:formation kno:W05 ;
+    skos:definition "식판을 구부려 만든 방독면 모양의 물건."@ko .
+kno:KN2013-0187-c1 kno:surfaceForm "밥"@ko ;
+    kno:formative kno:F000086 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "밥"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "밥"@ko .
+kno:KN2013-0187-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002999 ;
+    kno:semanticTag kno:usas-B5 ;
+    rdfs:label "(방)독면(毒面)"@ko ;
+    kno:fullForm "방독면"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "독면"@ko ;
+    kno:semanticTag kno:usas-G3 .

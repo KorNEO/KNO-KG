@@ -1,37 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0177 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0177 a ontolex:Word ;
-    frac:attestation kno:KN2024-0177-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0177-form ;
-    ontolex:sense kno:KN2024-0177-sense .
-
-kno:KN2024-0177-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-24"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/006/0000119487> .
-
-kno:KN2024-0177-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0177-freq-nn,
-        kno:KN2024-0177-freq-yt ;
-    ontolex:writtenRep "엔시티피케이션"@ko .
-
-kno:KN2024-0177-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0177-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0177-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/%EC%97%94%EC%8B%9C%ED%8B%B0%ED%94%BC%EC%BC%80%EC%9D%B4%EC%85%98> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0177 kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0177-c1 ;
+    kno:frequency kno:KN2024-0177-freq-NN-2025 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(<영>enshittification)" ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "엔(en)-, 시트(shit), 이피케이션(-ification)"@ko ;
+    kno:frequency kno:KN2024-0177-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0177-freq-NN-2023 ;
+    rdfs:label "엔시티피케이션"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%94%EC%8B%9C%ED%8B%B0%ED%94%BC%EC%BC%80%EC%9D%B4%EC%85%98> ;
+    skos:definition "사용자에게 무료로 양질의 콘텐츠를 제공하던 온라인 플랫폼이 수익의 창출을 우선시하게 되면서 사용자의 만족도 및 서비스 품질이 하락하는 현상. =엔시트화."@ko ;
+    kno:indexForm "엔시티피케이션"@ko ;
+    kno:frequency kno:KN2024-0177-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001003 ;
+    kno:formation kno:W07 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶플랫폼 기업들이 광고 등의 수익성만을 앞세우고 콘텐츠의 품질에는 신경을 쓰지 않는 {엔시티피케이션이} 심화되고 있어 플랫폼 운영에 대한 기업들의 책임감 있는 태도가 요구된다."@ko ;
+    kno:slotFiller "이피케이션(-ification) (1성분)"@ko ;
+    kno:predicate "하락하다"@ko ;
+    kno:component kno:KN2024-0177-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0177-c2 ;
+    kno:instantiates kno:S001550 ;
+    kno:slotFiller "엔(en)-+시트(shit) (2성분)"@ko .
+kno:KN2024-0177-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001600 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "엔"@ko ;
+    kno:surfaceForm "엔"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    rdfs:label "엔(en)-"@ko .
+kno:KN2024-0177-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A2.1 ;
+    a kno:Component ;
+    rdfs:label "이피케이션(-ification)"@ko ;
+    kno:fullForm "이피케이션"@ko ;
+    kno:surfaceForm "이피케이션"@ko ;
+    kno:formative kno:F001701 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2024-0177-c2 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A5.1m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001544 ;
+    rdfs:label "시트(shit)"@ko ;
+    a kno:Component ;
+    kno:fullForm "시트"@ko ;
+    kno:surfaceForm "시트"@ko ;
+    kno:position "2"^^xsd:integer .

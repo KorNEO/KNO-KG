@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0421 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0421 kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000816 ;
+    kno:component kno:KN2018-0421-c1 ;
+    kno:componentString "혼(자), 코(인)(coin), 노(래방)"@ko ;
+    kno:frequency kno:KN2018-0421-freq-NN-2025 ;
+    skos:definition "‘혼자서 코인 노래방에 감’을 줄여 이르는 말."@ko ;
+    kno:component kno:KN2018-0421-c2 ;
+    a ontolex:Word ;
+    kno:origin "(혼<영>←coin노)" ;
+    rdfs:label "혼코노"@ko ;
+    kno:frequency kno:KN2018-0421-freq-NN-total ;
+    kno:urimalTargetCode "1382531" ;
+    kno:component kno:KN2018-0421-c3 ;
+    kno:instantiates kno:S001776 ;
+    kno:languageType "고+영+고" ;
+    kno:example "¶OO 오디션은 최근 ‘{혼코노’를} 즐기는 사람들을 위한 신개념 오디션 프로모션으로, 5월부터 7월까지 약 3개월간 진행된다."@ko ;
+    kno:frequency kno:KN2018-0421-freq-NN-2019 ;
+    kno:slotFiller "혼(자)+코(인)(coin) (2성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1382531> ;
+    kno:frequency kno:KN2018-0421-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0421-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0421-freq-NN-2024 ;
+    kno:frequency kno:KN2018-0421-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0421-freq-NN-2017 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "혼코노"@ko ;
+    kno:frequency kno:KN2018-0421-freq-NN-2021 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0421-freq-NN-2023 ;
+    kno:formation kno:W06 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "9"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "노(래방) (1성분)"@ko .
+kno:KN2018-0421-c1 rdfs:label "혼(자)"@ko ;
+    kno:fullForm "혼자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "혼"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000011 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0421-c2 kno:formative kno:F000312 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "코인"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "코(인)(coin)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "코"@ko .
+kno:KN2018-0421-c3 a kno:Component ;
+    kno:fullForm "노래방"@ko ;
+    kno:formative kno:F000691 ;
+    kno:surfaceForm "노"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "노(래방)"@ko ;
+    kno:truncated "true"^^xsd:boolean .

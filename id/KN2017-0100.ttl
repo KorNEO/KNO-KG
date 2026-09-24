@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0100 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0100 kno:pos "「구」"@ko ;
+    kno:example "¶신형 OO는 디스플레이 자동 변환 기술인 {매직 툴바를} 탑재하고 있어 키보드 윗줄의 펑션 키는 사라지게 됐다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0100-c2 ;
+    kno:indexForm "매직툴바"@ko ;
+    kno:origin "(<영>magic toolbar)" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EC%A7%81%20%ED%88%B4%EB%B0%94> ;
+    kno:predicate "놓은"@ko ;
+    rdfs:label "매직 툴바"@ko ;
+    kno:languageType "영_영" ;
+    skos:definition "키보드의 펑션 키를 대신해 컴퓨터 운영 체제나 웹 브라우저 따위의 응용 프로그램 가운데 사용자가 자주 사용하는 명령어들을 따로 모아 아이콘 모양으로 만들어 놓은 것."@ko ;
+    kno:frequency kno:KN2017-0100-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0100-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0100-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:componentString "매직(magic), 툴바(toolbar)"@ko .
+kno:KN2017-0100-c2 kno:formative kno:F006527 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "툴바"@ko ;
+    rdfs:label "툴바(toolbar)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "툴바"@ko .
+kno:KN2017-0100-c1 kno:role "성분"@ko ;
+    rdfs:label "매직(magic)"@ko ;
+    kno:fullForm "매직"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "매직"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001286 .

@@ -1,0 +1,74 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0108 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0108 kno:frequency kno:KN2012-0108-freq-NN-2019 ;
+    kno:componentString "롱(long), 디(스턴스)(distance), 연애(戀愛)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0108-freq-NN-2021 ;
+    kno:instantiates kno:S001366 ;
+    kno:predicate "이루어지다"@ko ;
+    kno:slotFiller "디(스턴스)(distance)+연애(戀愛) (2성분)"@ko ;
+    kno:instantiates kno:S000982 ;
+    kno:frequency kno:KN2012-0108-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:example "¶하지만 이에 앞서 여자 4호는 자기소개가 끝난 뒤 여자들과의 수다에서 “다들 대부분 지방이던데… 지방은 너무 멀어서 좀 그렇다.”라며 {롱디 연애에} 대한 약간의 거부감을 드러냈다."@ko ;
+    kno:frequency kno:KN2012-0108-freq-NN-2018 ;
+    kno:frequency kno:KN2012-0108-freq-NN-2024 ;
+    kno:component kno:KN2012-0108-c1 ;
+    kno:frequency kno:KN2012-0108-freq-NN-2016 ;
+    kno:frequency kno:KN2012-0108-freq-NN-2017 ;
+    kno:origin "(←long distance戀愛)" ;
+    rdfs:label "롱디 연애"@ko ;
+    kno:frequency kno:KN2012-0108-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2012-0108-freq-NN-total ;
+    kno:slotFiller "롱(long)+디(스턴스)(distance) (2성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373309> ;
+    kno:urimalTargetCode "1373309" ;
+    kno:component kno:KN2012-0108-c3 ;
+    kno:indexForm "롱디연애"@ko ;
+    kno:activeYears "10"^^xsd:integer ;
+    kno:component kno:KN2012-0108-c2 ;
+    kno:frequency kno:KN2012-0108-freq-NN-2020 ;
+    kno:languageType "영+영_한" ;
+    kno:frequency kno:KN2012-0108-freq-NN-2023 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    skos:definition "서로 먼 거리에 떨어져 살고 있는 남녀 사이에 이루어지는 연애."@ko .
+kno:KN2012-0108-c1 kno:fullForm "롱"@ko ;
+    kno:surfaceForm "롱"@ko ;
+    kno:semanticTag kno:usas-N3.7p ;
+    rdfs:label "롱(long)"@ko ;
+    kno:formative kno:F000734 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0108-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S3 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "연애(戀愛)"@ko ;
+    kno:formative kno:F000389 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "연애"@ko ;
+    kno:surfaceForm "연애"@ko .
+kno:KN2012-0108-c2 kno:fullForm "디스턴스"@ko ;
+    kno:formative kno:F003085 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "디(스턴스)(distance)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "디"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N3.3 .

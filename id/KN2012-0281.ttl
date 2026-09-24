@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0281 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0281 rdfs:label "약-빨다"@ko ;
+    kno:example "¶OOO는 콩트가 끝나고 관객에게 “{약빨고} 연기하는 OOO가 연관 검색어인데 절대 아니다.”라며 평소와 같은 모습을 보이려고 노력했다."@ko ;
+    kno:component kno:KN2012-0281-c2 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:pos "「동」"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000910 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "약(藥), 빨다"@ko ;
+    kno:origin "(藥--)" ;
+    kno:languageType "한+고" ;
+    kno:slotFiller "약(藥) (1성분)"@ko ;
+    kno:urimalTargetCode "1394841" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1394841> ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2012-0281-c1 ;
+    skos:definition "마약을 먹은 것처럼 제정신이 아닌 듯하다."@ko ;
+    kno:indexForm "약빨다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism .
+kno:KN2012-0281-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001421 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "빨다"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F3 ;
+    kno:fullForm "빨다"@ko ;
+    kno:surfaceForm "빨다"@ko .
+kno:KN2012-0281-c1 rdfs:label "약(藥)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "약"@ko ;
+    kno:formative kno:F001580 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "약"@ko ;
+    a kno:Component .

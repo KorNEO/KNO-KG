@@ -1,30 +1,63 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0303 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0303 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2022-0303-form ;
-    ontolex:sense kno:KN2022-0303-sense .
-
-kno:KN2022-0303-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0303-freq-nn,
-        kno:KN2022-0303-freq-yt ;
-    ontolex:writtenRep "해산물주의-자"@ko .
-
-kno:KN2022-0303-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0303-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0303-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0303 kno:example "¶아내는 육식주의자이고, 딸은 채식주의자이고, 나는 해산물을 즐기는 ‘{해산물주의자’이다.}"@ko ;
+    kno:frequency kno:KN2022-0303-freq-NN-2021 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:componentString "해산물(海産物), 주의(主義), -자(者)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "해산물(海産物) (1성분)"@ko ;
+    kno:origin "(海産物主義者)" ;
+    kno:frequency kno:KN2022-0303-freq-NN-total ;
+    skos:definition "해산물을 즐기는 식생활을 하는 사람."@ko ;
+    rdfs:label "해산물-주의자"@ko ;
+    kno:instantiates kno:S001034 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EC%82%B0%EB%AC%BC%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+    kno:predicate "하다"@ko ;
+    kno:indexForm "해산물주의자"@ko ;
+    kno:component kno:KN2022-0303-c3 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2022-0303-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0303-c1 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0303-c3 kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000014 ;
+    rdfs:label "-자(者)"@ko .
+kno:KN2022-0303-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주의"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:formative kno:F000080 ;
+    kno:surfaceForm "주의"@ko .
+kno:KN2022-0303-c1 kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "해산물"@ko ;
+    kno:formative kno:F007003 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "해산물(海産物)"@ko ;
+    a kno:Component ;
+    kno:fullForm "해산물"@ko .

@@ -1,36 +1,80 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0231 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0231 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0231-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0231-form ;
-    ontolex:sense kno:KN2020-0231-sense .
-
-kno:KN2020-0231-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002483518> .
-
-kno:KN2020-0231-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0231-freq-nn,
-        kno:KN2020-0231-freq-yt ;
-    ontolex:writtenRep "엔 번 방 사건"@ko .
-
-kno:KN2020-0231-freq-nn a frac:CorpusFrequency ;
-    rdf:value 203 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0231-freq-yt a frac:CorpusFrequency ;
-    rdf:value 165 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0231-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0231 kno:instantiates kno:S000553 ;
+    kno:component kno:KN2020-0231-c4 ;
+    kno:example "¶청년들은 {엔 번 방 사건을} 보고만 있을 수 없다며 사이트를 만들어 관련 정보를 모으는 등 직접 행동에 나섰다."@ko ;
+    kno:origin "(<영>n番房事件)" ;
+    kno:slotFiller "엔(n)+번(番)+방(房) (3성분)"@ko ;
+    kno:frequency kno:KN2020-0231-freq-NN-2021 ;
+    kno:indexForm "엔번방사건"@ko ;
+    rdfs:label "엔 번 방 사건"@ko ;
+    kno:frequency kno:KN2020-0231-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0231-freq-NN-2019 ;
+    kno:component kno:KN2020-0231-c3 ;
+    kno:frequency kno:KN2020-0231-freq-NN-2020 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0231-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영_한_한_한" ;
+    kno:instantiates kno:S000393 ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "엔(n), 번(番), 방(房), 사건(事件)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0231-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%94%20%EB%B2%88%20%EB%B0%A9%20%EC%82%AC%EA%B1%B4> ;
+    kno:component kno:KN2020-0231-c2 ;
+    kno:frequency kno:KN2020-0231-freq-NN-total ;
+    kno:frequency kno:KN2020-0231-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:slotFiller "번(番)+방(房)+사건(事件) (3성분)"@ko ;
+    skos:definition "2019년 초 개설된 성 착취물 공유 단체 채팅방을 통해 일어난 사건. 대화 내용이 남지 않는 온라인 메신저를 이용하여 아동 및 청소년 등의 피해자를 협박해 성 착취물을 제작하고 이를 무상 또는 유상으로 유포한 디지털 성범죄 사건을 가리킨다."@ko ;
+    kno:frequency kno:KN2020-0231-freq-NN-2022 .
+kno:KN2020-0231-c4 rdfs:label "사건(事件)"@ko ;
+    kno:fullForm "사건"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "사건"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:formative kno:F000789 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0231-c3 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "방(房)"@ko ;
+    kno:fullForm "방"@ko ;
+    kno:surfaceForm "방"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-H2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000077 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2020-0231-c1 kno:formative kno:F000184 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N1 ;
+    rdfs:label "엔(n)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "엔"@ko ;
+    kno:surfaceForm "엔"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0231-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003787 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "번"@ko ;
+    a kno:Component ;
+    rdfs:label "번(番)"@ko ;
+    kno:surfaceForm "번"@ko ;
+    kno:semanticTag kno:usas-N1 .

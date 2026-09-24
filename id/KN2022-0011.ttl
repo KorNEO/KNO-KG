@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0011 a ontolex:Word ;
-    frac:attestation kno:KN2022-0011-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0011-form ;
-    ontolex:sense kno:KN2022-0011-sense .
-
-kno:KN2022-0011-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003647921> .
-
-kno:KN2022-0011-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0011-freq-nn,
-        kno:KN2022-0011-freq-yt ;
-    ontolex:writtenRep "갈대-멍"@ko .
-
-kno:KN2022-0011-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0011-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0011-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0011 kno:slotFiller "갈대 (1성분)"@ko ;
+    rdfs:label "갈대-멍"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "갈대의 움직임을 멍하니 바라보며 아무 생각 없이 시간을 보내는 일."@ko ;
+    a ontolex:Word ;
+    kno:componentString "갈대, 멍"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%88%EB%8C%80%EB%A9%8D> ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0011-freq-NN-2021 ;
+    kno:predicate "보내다"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶가을에는 낭만이 흐르는 강진만 갈대 축제에 가서 {갈대멍을} 하며 시간을 보낼 것을 추천한다."@ko ;
+    kno:indexForm "갈대멍"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0011-c2 ;
+    kno:component kno:KN2022-0011-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000122 ;
+    kno:frequency kno:KN2022-0011-freq-NN-total ;
+    kno:languageType "고+고" .
+kno:KN2022-0011-c2 rdfs:label "멍"@ko ;
+    kno:formative kno:F000264 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "멍"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X5.1m ;
+    kno:surfaceForm "멍"@ko .
+kno:KN2022-0011-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "갈대"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "갈대"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002107 ;
+    kno:semanticTag kno:usas-L3 ;
+    rdfs:label "갈대"@ko .

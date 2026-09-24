@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0350 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0350 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0350-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0350-form ;
-    ontolex:sense kno:KN2023-0350-sense .
-
-kno:KN2023-0350-att-nn a frac:Attestation ;
-    dcterms:date "2023-02-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003481495> .
-
-kno:KN2023-0350-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0350-freq-nn,
-        kno:KN2023-0350-freq-yt ;
-    ontolex:writtenRep "해양^레저^호텔"@ko .
-
-kno:KN2023-0350-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0350-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0350-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0350 skos:definition "사람들이 바다나 섬 따위에서 여가를 즐길 수 있게 공간을 마련하고 관련 상품을 제공하는 호텔."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:componentString "해양(海洋), 레저(leisure), 호텔(hotel)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0350-c1 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EC%96%91%EB%A0%88%EC%A0%80%ED%98%B8%ED%85%94> ;
+    kno:component kno:KN2023-0350-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "해양(海洋)+레저(leisure) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0350-freq-NN-2023 ;
+    rdfs:label "해양^레저^호텔"@ko ;
+    kno:component kno:KN2023-0350-c3 ;
+    kno:frequency kno:KN2023-0350-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "해양레저호텔"@ko ;
+    kno:predicate "제공하다"@ko ;
+    kno:origin "(海洋<영>leisure hotel)" ;
+    kno:example "¶최근 경상남도에서는 관광 활성화를 위해 {해양 레저 호텔과} 해양 박물관 등의 해양 레저 시설이 밀집한 대규모 관광지 조성 사업 계획을 발표하였다."@ko ;
+    kno:instantiates kno:S001144 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:languageType "한^영^영" .
+kno:KN2023-0350-c1 kno:surfaceForm "해양"@ko ;
+    kno:formative kno:F007006 ;
+    kno:semanticTag kno:usas-W3 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "해양(海洋)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "해양"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0350-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "레저"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001243 ;
+    a kno:Component ;
+    rdfs:label "레저(leisure)"@ko ;
+    kno:surfaceForm "레저"@ko ;
+    kno:semanticTag kno:usas-K1 .
+kno:KN2023-0350-c3 kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "호텔(hotel)"@ko ;
+    a kno:Component ;
+    kno:fullForm "호텔"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "호텔"@ko ;
+    kno:formative kno:F000155 .

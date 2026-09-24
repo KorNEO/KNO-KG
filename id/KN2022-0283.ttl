@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0283 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0283 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0283-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0283-form ;
-    ontolex:sense kno:KN2022-0283-sense .
-
-kno:KN2022-0283-att-nn a frac:Attestation ;
-    dcterms:date "2022-02-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0013014232> .
-
-kno:KN2022-0283-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0283-freq-nn,
-        kno:KN2022-0283-freq-yt ;
-    ontolex:writtenRep "탄소^중립^직불제"@ko .
-
-kno:KN2022-0283-freq-nn a frac:CorpusFrequency ;
-    rdf:value 55 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0283-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0283-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0283 kno:year "2022"^^xsd:gYear ;
+    kno:indexForm "탄소중립직불제"@ko ;
+    rdfs:label "탄소^중립^직불제"@ko ;
+    kno:predicate "주다"@ko ;
+    kno:componentString "탄소(炭素), 중립(中立), 직불제(直拂制)"@ko ;
+    kno:origin "(炭素中立直拂制)" ;
+    kno:example "¶기후 위기 시대에 유럽 연합의 사례를 참고하여 {탄소 중립 직불제를} 신설할 필요가 있다는 주장이 나오고 있다."@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "기후 변화를 완화하는 데에 이바지하는 생산자의 소득을 정부가 직접 보조해 주는 제도."@ko ;
+    kno:component kno:KN2022-0283-c3 ;
+    kno:frequency kno:KN2022-0283-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:slotFiller "탄소(炭素)+중립(中立) (2성분)"@ko ;
+    kno:frequency kno:KN2022-0283-freq-NN-2022 ;
+    kno:slotFiller "직불제(直拂制) (1성분)"@ko ;
+    kno:instantiates kno:S001042 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0283-freq-NN-total ;
+    kno:frequency kno:KN2022-0283-freq-NN-2024 ;
+    kno:languageType "한^한^한" ;
+    kno:component kno:KN2022-0283-c2 ;
+    kno:frequency kno:KN2022-0283-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%EC%86%8C%EC%A4%91%EB%A6%BD%EC%A7%81%EB%B6%88%EC%A0%9C> ;
+    kno:component kno:KN2022-0283-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001707 .
+kno:KN2022-0283-c3 kno:formative kno:F001792 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "직불제"@ko ;
+    a kno:Component ;
+    rdfs:label "직불제(直拂制)"@ko ;
+    kno:fullForm "직불제"@ko .
+kno:KN2022-0283-c2 kno:surfaceForm "중립"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A6.1 ;
+    rdfs:label "중립(中立)"@ko ;
+    kno:formative kno:F000930 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "중립"@ko .
+kno:KN2022-0283-c1 kno:semanticTag kno:usas-O1.1 ;
+    a kno:Component ;
+    rdfs:label "탄소(炭素)"@ko ;
+    kno:surfaceForm "탄소"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "탄소"@ko ;
+    kno:formative kno:F000970 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

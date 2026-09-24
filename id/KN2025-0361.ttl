@@ -1,37 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0361 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0361 a ontolex:Word ;
-    frac:attestation kno:KN2025-0361-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0361-form ;
-    ontolex:sense kno:KN2025-0361-sense .
-
-kno:KN2025-0361-att-nn a frac:Attestation ;
-    dcterms:date "2025-09-30"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/015/0005191975> .
-
-kno:KN2025-0361-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0361-freq-nn,
-        kno:KN2025-0361-freq-yt ;
-    ontolex:writtenRep "쉰스타"@ko .
-
-kno:KN2025-0361-freq-nn a frac:CorpusFrequency ;
-    rdf:value 25 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0361-freq-yt a frac:CorpusFrequency ;
-    rdf:value 50 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0361-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/2025%EB%85%84%20%EC%B9%B4%EC%B9%B4%EC%98%A4%ED%86%A1%20%EB%8C%80%EA%B0%9C%ED%8E%B8> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0361 kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0361-freq-NN-2025 ;
+    kno:origin "(쉰←Instagram)" ;
+    rdfs:label "쉰스타"@ko ;
+    skos:definition "(LLM) 인스타그램을 흉내 내거나 인스타그램과 비슷한 화면 구성을 한 서비스ㆍ기능이 촌스럽고 시대에 뒤떨어져 보인다는 뜻으로 비꼬아 이르는 말."@ko ;
+    kno:slotFiller "쉬(다) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%89%B0%EC%8A%A4%ED%83%80> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001480 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0361-c1 ;
+    kno:indexForm "쉰스타"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "쉬(다), (인)스타(Instagram)"@ko ;
+    kno:frequency kno:KN2025-0361-freq-NN-total ;
+    kno:instantiates kno:S000751 ;
+    kno:slotFiller "(인)스타(Instagram) (1성분)"@ko ;
+    kno:component kno:KN2025-0361-c2 ;
+    kno:languageType "고+영" ;
+    kno:example "(LLM) 업데이트 후 화면이 예전 유행 같아 보여서 이용자들 사이에서 {쉰스타}라는 말까지 나왔다."@ko .
+kno:KN2025-0361-c1 kno:semanticTag kno:usas-A5.1m ;
+    rdfs:label "쉬(다)"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "쉬다"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001512 ;
+    kno:surfaceForm "쉬"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2025-0361-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "인스타"@ko ;
+    kno:formative kno:F001526 ;
+    rdfs:label "(인)스타(Instagram)"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "스타"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0196 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0196 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0196-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0196-form ;
-    ontolex:sense kno:KN2022-0196-sense .
-
-kno:KN2022-0196-att-nn a frac:Attestation ;
-    dcterms:date "2021-10-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/366/0000765006> .
-
-kno:KN2022-0196-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0196-freq-nn,
-        kno:KN2022-0196-freq-yt ;
-    ontolex:writtenRep "실재감^테크"@ko .
-
-kno:KN2022-0196-freq-nn a frac:CorpusFrequency ;
-    rdf:value 52 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0196-freq-yt a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0196-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0196 kno:indexForm "실재감테크"@ko ;
+    skos:definition "시공간의 물리적 한계를 극복하여 가상 세계를 실제로 존재하는 세계처럼 느낄 수 있게 하는 기술."@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EC%9E%AC%EA%B0%90%ED%85%8C%ED%81%AC> ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^영" ;
+    kno:predicate "하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:example "¶엔터테인먼트 업계도 브이아르(VR) 콘서트와 같은 {실재감 테크를} 활용하고 있다."@ko ;
+    kno:component kno:KN2022-0196-c2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0196-freq-NN-total ;
+    kno:frequency kno:KN2022-0196-freq-NN-2021 ;
+    kno:instantiates kno:S000186 ;
+    rdfs:label "실재감^테크"@ko ;
+    kno:slotFiller "실재감(實在感) (1성분)"@ko ;
+    kno:component kno:KN2022-0196-c1 ;
+    kno:frequency kno:KN2022-0196-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(實在感<영>tech)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "실재감(實在感), 테크(놀로지)(technology)"@ko .
+kno:KN2022-0196-c2 a kno:Component ;
+    kno:fullForm "테크놀로지"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "테크"@ko ;
+    kno:formative kno:F000239 ;
+    rdfs:label "테크(놀로지)(technology)"@ko .
+kno:KN2022-0196-c1 kno:fullForm "실재감"@ko ;
+    kno:surfaceForm "실재감"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004724 ;
+    rdfs:label "실재감(實在感)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A3p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

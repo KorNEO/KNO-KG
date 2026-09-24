@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0087 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0087 kno:indexForm "등골캠핑"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%B1%EA%B3%A8%20%EC%BA%A0%ED%95%91> ;
+    kno:slotFiller "등골(등骨) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "등골(등骨), 캠핑(camping)"@ko ;
+    kno:instantiates kno:S000271 ;
+    rdfs:label "등골 캠핑"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    skos:definition "경제적으로 큰 부담이 되는 캠핑."@ko ;
+    kno:component kno:KN2012-0087-c1 ;
+    a kno:Neologism ;
+    kno:predicate "되다"@ko ;
+    kno:component kno:KN2012-0087-c2 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "(고+한)+영" ;
+    kno:example "¶지난해 수십만 원대의 아웃도어 재킷의 등장으로 소비자들의 등골을 휘게 한다는 ‘등골 브레이커’ 등장에 이어 캠핑 업계에도 ‘{등골 캠핑’이라는} 신조어가 탄생할 판이다."@ko ;
+    kno:origin "(-骨camping)" ;
+    kno:registration "신어DB"@ko .
+kno:KN2012-0087-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "등골(등骨)"@ko ;
+    kno:fullForm "등골"@ko ;
+    kno:surfaceForm "등골"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F003072 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0087-c2 a kno:Component ;
+    kno:fullForm "캠핑"@ko ;
+    rdfs:label "캠핑(camping)"@ko ;
+    kno:surfaceForm "캠핑"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:formative kno:F000310 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

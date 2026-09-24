@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0159 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0159 a ontolex:Word ;
-    frac:attestation kno:KN2023-0159-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0159-form ;
-    ontolex:sense kno:KN2023-0159-sense .
-
-kno:KN2023-0159-att-nn a frac:Attestation ;
-    dcterms:date "2023-01-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003741608> .
-
-kno:KN2023-0159-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0159-freq-nn,
-        kno:KN2023-0159-freq-yt ;
-    ontolex:writtenRep "쌉-극혐"@ko .
-
-kno:KN2023-0159-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0159-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1156 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0159-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0159 rdfs:label "쌉-극혐"@ko ;
+    kno:indexForm "쌉극혐"@ko ;
+    kno:componentString "쌉-, 극혐(極嫌)"@ko ;
+    kno:slotFiller "극혐(極嫌) (1성분)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:origin "(쌉極嫌)" ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘극혐’을 강조하여 이르는 말."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2023-0159-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000312 ;
+    kno:frequency kno:KN2023-0159-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0159-freq-NN-total ;
+    kno:component kno:KN2023-0159-c1 ;
+    kno:formation kno:W03 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8C%89%EA%B7%B9%ED%98%90> ;
+    a kno:Neologism ;
+    kno:example "¶젊어 보이고 싶어서 의식적으로 유행어를 쓰다가는 ‘{쌉극혐’이라는} 말을 들을 수도 있다."@ko ;
+    kno:languageType "고+한" .
+kno:KN2023-0159-c2 kno:fullForm "극혐"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "극혐(極嫌)"@ko ;
+    kno:surfaceForm "극혐"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E2mmm ;
+    kno:formative kno:F002537 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0159-c1 kno:fullForm "쌉"@ko ;
+    rdfs:label "쌉-"@ko ;
+    kno:surfaceForm "쌉"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:formative kno:F000550 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

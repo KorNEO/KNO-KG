@@ -1,36 +1,67 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0292 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0292 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0292-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0292-form ;
-    ontolex:sense kno:KN2021-0292-sense .
-
-kno:KN2021-0292-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-29"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003623175> .
-
-kno:KN2021-0292-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0292-freq-nn,
-        kno:KN2021-0292-freq-yt ;
-    ontolex:writtenRep "한국 여행 놀이"@ko .
-
-kno:KN2021-0292-freq-nn a frac:CorpusFrequency ;
-    rdf:value 88 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0292-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0292-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0292 kno:instantiates kno:S001763 ;
+    rdfs:label "한국 여행 놀이"@ko ;
+    kno:instantiates kno:S000248 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:predicate "내다"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "한국(韓國)+여행(旅行) (2성분)"@ko ;
+    kno:frequency kno:KN2021-0292-freq-NN-total ;
+    kno:indexForm "한국여행놀이"@ko ;
+    kno:frequency kno:KN2021-0292-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0292-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "여행(旅行)+놀이 (2성분)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0292-freq-NN-2024 ;
+    skos:definition "외국에서, 자국을 떠나지 않고 한국을 여행하는 흉내를 내는 놀이. 주로 일본에서, 일본 내에 있는 코리아타운을 방문하거나, 집이나 호텔에서 한국 음식을 먹고 한국 콘텐츠를 감상하면서 한국을 여행하는 기분을 내며 즐기는 일을 가리키는 말이다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한_한_고" ;
+    kno:component kno:KN2021-0292-c3 ;
+    kno:origin "(韓國旅行놀이)" ;
+    kno:frequency kno:KN2021-0292-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%9C%EA%B5%AD%20%EC%97%AC%ED%96%89%20%EB%86%80%EC%9D%B4> ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0292-c1 ;
+    kno:componentString "한국(韓國), 여행(旅行), 놀이"@ko ;
+    kno:example "¶일본에서 {한국 여행 놀이가} 유행하자 한국 관광 공사는 {한국 여행 놀이에서} 빼놓을 수 없는 음식으로 한국 치킨을 소개했다."@ko ;
+    kno:component kno:KN2021-0292-c2 .
+kno:KN2021-0292-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000206 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "놀이"@ko ;
+    kno:surfaceForm "놀이"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    rdfs:label "놀이"@ko .
+kno:KN2021-0292-c1 kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "한국"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "한국(韓國)"@ko ;
+    kno:surfaceForm "한국"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:formative kno:F001996 .
+kno:KN2021-0292-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "여행(旅行)"@ko ;
+    kno:formative kno:F000090 ;
+    a kno:Component ;
+    kno:fullForm "여행"@ko ;
+    kno:surfaceForm "여행"@ko ;
+    kno:role "슬롯 채움"@ko .

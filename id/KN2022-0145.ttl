@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0145 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0145 a ontolex:Word ;
-    frac:attestation kno:KN2022-0145-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0145-form ;
-    ontolex:sense kno:KN2022-0145-sense .
-
-kno:KN2022-0145-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-05"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002574338> .
-
-kno:KN2022-0145-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0145-freq-nn,
-        kno:KN2022-0145-freq-yt ;
-    ontolex:writtenRep "메타버시안"@ko .
-
-kno:KN2022-0145-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0145-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0145-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0145 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%94%ED%83%80%EB%B2%84%EC%8B%9C%EC%95%88> ;
+    kno:indexForm "메타버시안"@ko ;
+    kno:formation kno:W07 ;
+    kno:languageType "영" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0145-freq-NN-total ;
+    kno:componentString "메타버스(metaverse), -안(-ian)"@ko ;
+    kno:example "¶메타버스는 생각보다 가깝고 우리의 물리적 현실과 떼려야 뗄 수 없는 관계가 될 것이라며 가상 세계의 참가자를 이르는 {메타버시안이라는} 용어를 소개했다."@ko ;
+    kno:component kno:KN2022-0145-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0145-freq-NN-2022 ;
+    kno:predicate "활용하다"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    skos:definition "웹상에서 아바타를 활용하여 사회문화적ㆍ경제적 활동을 하는 등 가상 공간을 적극적으로 활용하는 사람. =메타사피엔스."@ko ;
+    rdfs:label "메타버시안"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0145-c1 ;
+    kno:origin "(<영>metaversian)" .
+kno:KN2022-0145-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "-안(-ian)"@ko ;
+    kno:formative kno:F004832 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "안"@ko ;
+    kno:surfaceForm "안"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    a kno:Component .
+kno:KN2022-0145-c1 kno:formative kno:F003445 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "메타버스"@ko ;
+    kno:surfaceForm "메타버스"@ko ;
+    rdfs:label "메타버스(metaverse)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0144 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0144 kno:frequency kno:KN2013-0144-freq-NN-2018 ;
+    kno:frequency kno:KN2013-0144-freq-NN-2016 ;
+    kno:frequency kno:KN2013-0144-freq-NN-2014 ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "록부심"@ko ;
+    kno:origin "(rock負心)" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0144-freq-NN-total ;
+    kno:urimalTargetCode "1357655" ;
+    kno:activeYears "8"^^xsd:integer ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:example "¶보통 로커들은 ‘{록부심’이라는} 말도 있을 만큼 스스로에 대한, 음악에 대한 자부심이 크지 않은가."@ko ;
+    kno:frequency kno:KN2013-0144-freq-NN-2021 ;
+    kno:component kno:KN2013-0144-c2 ;
+    kno:frequency kno:KN2013-0144-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    kno:languageType "영+한" ;
+    rdfs:label "록부심"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357655> ;
+    kno:frequency kno:KN2013-0144-freq-NN-2013 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0144-freq-NN-2017 ;
+    kno:instantiates kno:S000037 ;
+    kno:componentString "록(rock), (자)부심(負心)"@ko ;
+    kno:frequency kno:KN2013-0144-freq-NN-2024 ;
+    kno:component kno:KN2013-0144-c1 ;
+    kno:slotFiller "록(rock) (1성분)"@ko ;
+    skos:definition "록 음악을 사랑하는 사람이 가지는 록에 대한 자부심."@ko .
+kno:KN2013-0144-c2 kno:fullForm "자부심"@ko ;
+    kno:formative kno:F000087 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "부심"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(자)부심(負心)"@ko ;
+    kno:semanticTag kno:usas-E4.2p .
+kno:KN2013-0144-c1 rdfs:label "록(rock)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000496 ;
+    kno:fullForm "록"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "록"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K2 .

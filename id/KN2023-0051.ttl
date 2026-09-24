@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0051 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0051 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0051-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0051-form ;
-    ontolex:sense kno:KN2023-0051-sense .
-
-kno:KN2023-0051-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002755591> .
-
-kno:KN2023-0051-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0051-freq-nn,
-        kno:KN2023-0051-freq-yt ;
-    ontolex:writtenRep "기후^배상"@ko .
-
-kno:KN2023-0051-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0051-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0051-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0051 kno:indexForm "기후배상"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:example "¶세계 200여 개 국가가 참여한 기후 정상 회의에서 처음으로 {기후 배상}이 공식 의제로 상정됐다."@ko ;
+    kno:frequency kno:KN2023-0051-freq-NN-2022 ;
+    kno:component kno:KN2023-0051-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0051-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    rdfs:label "기후^배상"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0051-freq-NN-2023 ;
+    kno:origin "(氣候賠償)" ;
+    kno:languageType "한^한" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000056 ;
+    kno:component kno:KN2023-0051-c2 ;
+    kno:slotFiller "배상(賠償) (1성분)"@ko ;
+    kno:predicate "배상하다"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%EB%B0%B0%EC%83%81> ;
+    kno:frequency kno:KN2023-0051-freq-NN-2025 ;
+    kno:componentString "기후(氣候), 배상(賠償)"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "선진국이 온실가스의 배출량이 상대적으로 적은 개발 도상국에게 기후 위기의 손해를 입힌 것에 대해 배상하는 일."@ko .
+kno:KN2023-0051-c1 rdfs:label "기후(氣候)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:formative kno:F000069 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2023-0051-c2 kno:semanticTag kno:usas-I1 ;
+    rdfs:label "배상(賠償)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "배상"@ko ;
+    kno:surfaceForm "배상"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003736 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

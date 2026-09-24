@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0118 kno:frequency kno:KN2012-0118-freq-NN-2012 ;
+    a kno:Neologism ;
+    rdfs:label "매너-어깨"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2012-0118-freq-NN-total ;
+    kno:component kno:KN2012-0118-c2 ;
+    kno:languageType "영+고" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    skos:definition "주변 사람이 기댈 수 있도록 내어놓은 어깨를 이르는 말."@ko ;
+    kno:instantiates kno:S001377 ;
+    kno:componentString "매너(manner), 어깨"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(manner어깨)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EB%84%88%EC%96%B4%EA%B9%A8> ;
+    kno:example "¶그는 이날 구두가 잘 벗겨지지 않아 곤란해 하는 송지효에게 어깨를 빌려줘 ‘{매너어깨’라는} 신조어를 탄생시키며 훈훈한 커플 탄생을 예감케 했다."@ko ;
+    kno:slotFiller "어깨 (1성분)"@ko ;
+    kno:component kno:KN2012-0118-c1 ;
+    kno:indexForm "매너어깨"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2012-0118-freq-NN-2013 ;
+    kno:lastAttestationYear "2013"^^xsd:gYear .
+kno:KN2012-0118-c2 a kno:Component ;
+    kno:fullForm "어깨"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "어깨"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000850 ;
+    kno:semanticTag kno:usas-B1 ;
+    rdfs:label "어깨"@ko .
+kno:KN2012-0118-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000745 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "매너"@ko ;
+    kno:surfaceForm "매너"@ko ;
+    rdfs:label "매너(manner)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component .

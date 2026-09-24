@@ -1,0 +1,37 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+@prefix kno: <https://w3id.org/kno/id/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+kno:KN2024-0341 a ontolex:MultiwordExpression ;
+    frac:attestation kno:KN2024-0341-att-nn ;
+    ontolex:canonicalForm kno:KN2024-0341-form ;
+    ontolex:sense kno:KN2024-0341-sense .
+
+kno:KN2024-0341-att-nn a frac:Attestation ;
+    dcterms:date "2023-07-09"^^xsd:date ;
+    frac:locus <https://n.news.naver.com/article/422/0000607859> .
+
+kno:KN2024-0341-form a ontolex:Form ;
+    frac:frequency kno:KN2024-0341-freq-nn,
+        kno:KN2024-0341-freq-yt ;
+    ontolex:writtenRep "통뼈 캐슬"@ko .
+
+kno:KN2024-0341-freq-nn a frac:CorpusFrequency ;
+    rdf:value 77 ;
+    frac:corpus kno:corpus-NN .
+
+kno:KN2024-0341-freq-yt a frac:CorpusFrequency ;
+    rdf:value 74 ;
+    frac:corpus kno:corpus-YT .
+
+kno:KN2024-0341-sense a ontolex:LexicalSense ;
+    dcterms:isReferencedBy <https://namu.wiki/w/%EA%B3%A0%EB%8D%95%20%EB%A1%AF%EB%8D%B0%EC%BA%90%EC%8A%AC%20%EB%B2%A0%EB%84%A4%EB%A3%A8%EC%B2%B4> .
+
+kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
+
+kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
+

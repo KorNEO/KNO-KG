@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0103 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0103 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0103-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0103-form ;
-    ontolex:sense kno:KN2023-0103-sense .
-
-kno:KN2023-0103-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005311256> .
-
-kno:KN2023-0103-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0103-freq-nn,
-        kno:KN2023-0103-freq-yt ;
-    ontolex:writtenRep "바지 임대인"@ko .
-
-kno:KN2023-0103-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1070 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0103-freq-yt a frac:CorpusFrequency ;
-    rdf:value 26 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0103-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0103 a kno:Neologism ;
+    kno:frequency kno:KN2023-0103-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0103-freq-NN-2024 ;
+    skos:definition "부동산을 소유하거나 계약에 대한 돈을 받은 것이 아니라, 임대차 계약에 필요한 명의만 빌려준 사람."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶전세 사기 피해 방지를 위하여 집주인이 {바지 임대인으로} 갑자기 변경되더라도 이를 알릴 의무가 없다는 허점에 대해서는 개선이 필요하다는 의견이 다수로 나타났다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0103-c2 ;
+    kno:frequency kno:KN2023-0103-freq-NN-total ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:origin "(바지賃貸人)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%94%EC%A7%80%20%EC%9E%84%EB%8C%80%EC%9D%B8> ;
+    rdfs:label "바지 임대인"@ko ;
+    kno:componentString "바지, 임대인(賃貸人)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0103-freq-NN-2025 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:languageType "고_한" ;
+    kno:component kno:KN2023-0103-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "바지임대인"@ko ;
+    kno:frequency kno:KN2023-0103-freq-NN-2023 .
+kno:KN2023-0103-c2 kno:role "성분"@ko ;
+    kno:fullForm "임대인"@ko ;
+    rdfs:label "임대인(賃貸人)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "임대인"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000902 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H4 .
+kno:KN2023-0103-c1 kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A5.4m ;
+    rdfs:label "바지"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "바지"@ko ;
+    kno:formative kno:F003661 ;
+    kno:surfaceForm "바지"@ko ;
+    kno:truncated "false"^^xsd:boolean .

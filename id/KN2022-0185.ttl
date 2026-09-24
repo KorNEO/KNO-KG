@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0185 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0185 a ontolex:Word ;
-    frac:attestation kno:KN2022-0185-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0185-form ;
-    ontolex:sense kno:KN2022-0185-sense .
-
-kno:KN2022-0185-att-nn a frac:Attestation ;
-    dcterms:date "2020-11-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/311/0001220551> .
-
-kno:KN2022-0185-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0185-freq-nn,
-        kno:KN2022-0185-freq-yt ;
-    ontolex:writtenRep "술쓰"@ko .
-
-kno:KN2022-0185-freq-nn a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0185-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4760 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0185-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    rdfs:label "술쓰"@ko ;
+    kno:frequency kno:KN2022-0185-freq-NN-total ;
+    kno:slotFiller "쓰(레기) (1성분)"@ko ;
+    kno:instantiates kno:S000150 ;
+    skos:definition "‘술 쓰레기’를 줄여 이르는 말. 술을 잘 못 마시는 사람을 이르는 말이다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:languageType "고+고" ;
+    kno:example "¶‘알쓰’, ‘{술쓰}’ 같은 말은 술자리에서 자신의 적은 주량을 미리 고백할 때 유머러스하게 사용되기도 한다."@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "술쓰"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0185-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:componentString "술, 쓰(레기)"@ko ;
+    kno:component kno:KN2022-0185-c1 ;
+    kno:frequency kno:KN2022-0185-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A0%EC%93%B0> .
+kno:KN2022-0185-c2 rdfs:label "쓰(레기)"@ko ;
+    kno:fullForm "쓰레기"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W5m ;
+    kno:formative kno:F001563 ;
+    kno:semanticTag kno:usas-O1 ;
+    a kno:Component ;
+    kno:surfaceForm "쓰"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2022-0185-c1 a kno:Component ;
+    kno:formative kno:F000142 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "술"@ko ;
+    kno:surfaceForm "술"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "술"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean .

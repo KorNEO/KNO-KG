@@ -1,36 +1,59 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0220 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2022-0220 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0220-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0220-form ;
-    ontolex:sense kno:KN2022-0220-sense .
-
-kno:KN2022-0220-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/018/0005129926> .
-
-kno:KN2022-0220-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0220-freq-nn,
-        kno:KN2022-0220-freq-yt ;
-    ontolex:writtenRep "예측^범죄^지도"@ko .
-
-kno:KN2022-0220-freq-nn a frac:CorpusFrequency ;
-    rdf:value 111 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0220-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0220-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "시시 티브이로 과거 범죄 빅데이터를 분석해 시간대별로 범죄 우려가 있는 지역을 표시해 주는 감시 시스템."@ko ;
+    kno:component kno:KN2022-0220-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%88%EC%B8%A1%EB%B2%94%EC%A3%84%EC%A7%80%EB%8F%84> ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:label "예측^범죄^지도"@ko ;
+    kno:origin "(豫測犯罪地圖)" ;
+    kno:component kno:KN2022-0220-c1 ;
+    kno:indexForm "예측범죄지도"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0220-c2 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0220-freq-NN-2022 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶인공 지능을 활용해 시시 티브이 화면과 {예측 범죄 지도를} 비교해 범죄 율을 예측하는 기술을 선보일 예정이다."@ko ;
+    kno:frequency kno:KN2022-0220-freq-NN-total ;
+    kno:componentString "예측(豫測), 범죄(犯罪), 지도(地圖)"@ko .
+kno:KN2022-0220-c3 kno:surfaceForm "지도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F005869 ;
+    kno:role "성분"@ko ;
+    rdfs:label "지도(地圖)"@ko ;
+    kno:fullForm "지도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0220-c1 kno:fullForm "예측"@ko ;
+    kno:surfaceForm "예측"@ko ;
+    kno:semanticTag kno:usas-X2.6p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005094 ;
+    kno:role "성분"@ko ;
+    rdfs:label "예측(豫測)"@ko ;
+    a kno:Component .
+kno:KN2022-0220-c2 kno:formative kno:F000513 ;
+    kno:fullForm "범죄"@ko ;
+    kno:surfaceForm "범죄"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "범죄(犯罪)"@ko ;
+    kno:semanticTag kno:usas-G2.1m .

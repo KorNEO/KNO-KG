@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0170 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0170 a ontolex:Word ;
-    frac:attestation kno:KN2022-0170-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0170-form ;
-    ontolex:sense kno:KN2022-0170-sense .
-
-kno:KN2022-0170-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001493913> .
-
-kno:KN2022-0170-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0170-freq-nn,
-        kno:KN2022-0170-freq-yt ;
-    ontolex:writtenRep "삶포-자"@ko .
-
-kno:KN2022-0170-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0170-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0170-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0170 kno:instantiates kno:S000016 ;
+    kno:componentString "삶포, -자(者)"@ko ;
+    kno:frequency kno:KN2022-0170-freq-NN-2021 ;
+    kno:origin "(삶抛者)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2022-0170-c2 ;
+    kno:component kno:KN2022-0170-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%B6%ED%8F%AC%EC%9E%90> ;
+    rdfs:label "삶포-자"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "삶포 (1성분)"@ko ;
+    kno:example "¶학창 시절 우스갯소리로 말하던 ‘수포자’, ‘과포자’ 이후, ‘삼포 세대’, ‘오포 세대’ 등의 씁쓸한 단어가 나오더니, 최근에서 ‘{삶포자’라는} 말까지 나오고 있다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "‘삶을 포기한 사람’을 줄여 이르는 말."@ko ;
+    kno:indexForm "삶포자"@ko ;
+    kno:frequency kno:KN2022-0170-freq-NN-total ;
+    kno:languageType "(고+한)+한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear .
+kno:KN2022-0170-c2 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-자(者)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "자"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:formative kno:F000014 .
+kno:KN2022-0170-c1 a kno:Component ;
+    kno:fullForm "삶포"@ko ;
+    kno:formative kno:F004203 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "삶포"@ko ;
+    kno:surfaceForm "삶포"@ko .

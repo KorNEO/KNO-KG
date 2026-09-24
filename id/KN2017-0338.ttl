@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0338 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0338 kno:lastAttestationYear "2016"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "해군(海軍) (1성분)"@ko ;
+    kno:indexForm "해군콩"@ko ;
+    kno:frequency kno:KN2017-0338-freq-NN-2016 ;
+    kno:component kno:KN2017-0338-c1 ;
+    kno:example "¶일명 ‘{해군콩’이라고도} 불리는 이 콩은 미 해군의 완벽한 영양 보충원으로 쓰여 네이비 빈(navy bean)으로 불리게 되었으며…저항성 전분이 함유되어 있다."@ko ;
+    kno:instantiates kno:S000439 ;
+    kno:componentString "해군(海軍), 콩"@ko ;
+    kno:languageType "한+고" ;
+    skos:definition "미국에서 해군들의 영양 보충을 위해 식량으로 사용되는 흰 강낭콩."@ko ;
+    rdfs:label "해군-콩"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EA%B5%B0%EC%BD%A9> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0338-c2 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0338-freq-NN-total ;
+    kno:origin "(海軍콩)" ;
+    kno:registration "신어DB"@ko .
+kno:KN2017-0338-c1 kno:fullForm "해군"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:formative kno:F006993 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "해군"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "해군(海軍)"@ko .
+kno:KN2017-0338-c2 kno:formative kno:F000962 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "콩"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "콩"@ko ;
+    kno:surfaceForm "콩"@ko .

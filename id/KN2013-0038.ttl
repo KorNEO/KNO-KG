@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0038 kno:formation kno:W05 ;
+    kno:component kno:KN2013-0038-c1 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "군부대 안에서 구할 수 있는 재료로 만드는 카나페. 크래커 위에 소시지와 참치 따위를 얹어 만든다."@ko ;
+    kno:componentString "군(부대)(軍), (카)나페(canapé)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "군나페"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%B0%EB%82%98%ED%8E%98> ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0038-freq-NN-total ;
+    kno:frequency kno:KN2013-0038-freq-NN-2013 ;
+    kno:origin "(軍←<프>canapé)" ;
+    kno:example "¶그는 크래커 과자 위에 참치와 막대 소시지 그리고 군대 전용 양념을 올려 그럴싸해 보이는 ‘{군나페’를} 완성했다."@ko ;
+    kno:predicate "만드다"@ko ;
+    kno:languageType "한+프" ;
+    kno:indexForm "군나페"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0038-c2 ;
+    a kno:Neologism .
+kno:KN2013-0038-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002483 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "군(부대)(軍)"@ko ;
+    kno:surfaceForm "군"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:fullForm "군부대"@ko .
+kno:KN2013-0038-c2 kno:fullForm "카나페"@ko ;
+    rdfs:label "(카)나페(canapé)"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "나페"@ko ;
+    kno:formative kno:F002679 .

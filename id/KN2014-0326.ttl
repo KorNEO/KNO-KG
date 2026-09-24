@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0326 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0326 kno:indexForm "혼자녀"@ko ;
+    kno:languageType "고+한" ;
+    kno:frequency kno:KN2014-0326-freq-NN-total ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:predicate "사다"@ko ;
+    kno:frequency kno:KN2014-0326-freq-NN-2019 ;
+    kno:activeYears "6"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "혼자 (1성분)"@ko ;
+    rdfs:label "혼자-녀"@ko ;
+    kno:frequency kno:KN2014-0326-freq-NN-2016 ;
+    kno:frequency kno:KN2014-0326-freq-NN-2015 ;
+    kno:component kno:KN2014-0326-c1 ;
+    kno:componentString "혼자, -녀(女)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2014-0326-freq-NN-2017 ;
+    kno:example "¶혼자남, {혼자녀들은} 먹방을 보며 대화창에서 이야기를 나누는 등 혼자 사는 외로움을 달랬다."@ko ;
+    kno:instantiates kno:S001779 ;
+    skos:definition "남편이나 남자친구 없이 혼자 사는 여자."@ko ;
+    kno:component kno:KN2014-0326-c2 ;
+    a kno:Neologism ;
+    kno:origin "(혼자女)" ;
+    kno:frequency kno:KN2014-0326-freq-NN-2013 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0326-freq-NN-2014 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%BC%EC%9E%90%EB%85%80> ;
+    kno:instantiates kno:S000009 ;
+    kno:slotFiller "-녀(女) (1성분)"@ko .
+kno:KN2014-0326-c1 kno:fullForm "혼자"@ko ;
+    kno:surfaceForm "혼자"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    rdfs:label "혼자"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002019 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0326-c2 kno:formative kno:F000004 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 .

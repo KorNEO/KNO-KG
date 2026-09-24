@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0178 rdfs:label "서브 푸드"@ko ;
+    kno:frequency kno:KN2018-0178-freq-NN-total ;
+    kno:urimalTargetCode "1416244" ;
+    kno:indexForm "서브푸드"@ko ;
+    kno:frequency kno:KN2018-0178-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0178-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2018-0178-freq-NN-2020 ;
+    kno:example "¶최근 피로와 무기력감을 느끼는 춘곤증을 경험하는 이들을 도와줄 ‘{서브 푸드’가} 인기를 끌고 있다."@ko ;
+    kno:component kno:KN2018-0178-c1 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:languageType "영_영" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416244> ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2018-0178-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "카페인이 들어간 음식을 대체하기 위한 음식. ⇒규범 표기는 미확정이다."@ko ;
+    kno:frequency kno:KN2018-0178-freq-NN-2023 ;
+    kno:slotFiller "서브(스티튜트)(substitute) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:instantiates kno:S000188 ;
+    kno:origin "(<영>▼←substitute food)" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:componentString "서브(스티튜트)(substitute), 푸드(food)"@ko .
+kno:KN2018-0178-c1 kno:surfaceForm "서브"@ko ;
+    kno:semanticTag kno:usas-A6.1 ;
+    rdfs:label "서브(스티튜트)(substitute)"@ko ;
+    kno:fullForm "서브스티튜트"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004282 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2018-0178-c2 kno:formative kno:F000108 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "푸드"@ko ;
+    kno:surfaceForm "푸드"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "푸드(food)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

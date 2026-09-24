@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0342 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0342 kno:frequency kno:KN2016-0342-freq-NN-2016 ;
+    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:frequency kno:KN2016-0342-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0342-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372773> ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "파워(power) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "아재, 파워(power)"@ko ;
+    kno:example "¶배우 OOO이 통쾌한 ‘{아재 파워’를} 선보일 예정이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "아재파워"@ko ;
+    kno:component kno:KN2016-0342-c2 ;
+    kno:origin "(아재<영>power)" ;
+    kno:component kno:KN2016-0342-c1 ;
+    skos:definition "아저씨가 가진 힘이나 능력."@ko ;
+    kno:urimalTargetCode "1372773" ;
+    kno:languageType "고_영" ;
+    kno:instantiates kno:S001097 ;
+    rdfs:label "아재 파워"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000045 .
+kno:KN2016-0342-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000626 ;
+    rdfs:label "파워(power)"@ko ;
+    kno:fullForm "파워"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "파워"@ko .
+kno:KN2016-0342-c1 kno:surfaceForm "아재"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000028 ;
+    kno:fullForm "아재"@ko ;
+    rdfs:label "아재"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.2 .

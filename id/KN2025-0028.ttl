@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0028 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0028 a ontolex:Word ;
-    frac:attestation kno:KN2025-0028-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0028-form ;
-    ontolex:sense kno:KN2025-0028-sense .
-
-kno:KN2025-0028-att-nn a frac:Attestation ;
-    dcterms:date "2025-06-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/087/0001124097> .
-
-kno:KN2025-0028-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0028-freq-nn,
-        kno:KN2025-0028-freq-yt ;
-    ontolex:writtenRep "검수완장"@ko .
-
-kno:KN2025-0028-freq-nn a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0028-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0028-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0028 kno:frequency kno:KN2025-0028-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EC%99%84%EC%9E%A5> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 일각에서는 이번 수사ㆍ기소 분리 논의가 사실상 {검수완장}을 채우려는 것이라며 반발하고 있다."@ko ;
+    kno:component kno:KN2025-0028-c2 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    rdfs:label "검수완장"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:componentString "검(찰)(檢札), 수(사권)(搜査權), 완장"@ko ;
+    kno:component kno:KN2025-0028-c3 ;
+    skos:definition "(LLM) 검찰의 수사권을 둘러싼 제도 개편 과정에서, 특정 세력이 검찰을 통제하거나 수사권을 과도하게 제한ㆍ박탈하려 한다는 뜻으로 비판적으로 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0028-freq-NN-2025 ;
+    kno:component kno:KN2025-0028-c1 ;
+    a ontolex:Word ;
+    kno:indexForm "검수완장"@ko .
+kno:KN2025-0028-c2 rdfs:label "수(사권)(搜査權)"@ko ;
+    kno:formative kno:F000178 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "수"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "수사권"@ko .
+kno:KN2025-0028-c3 kno:surfaceForm "완장"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "완장"@ko ;
+    kno:formative kno:F005169 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "완장"@ko .
+kno:KN2025-0028-c1 kno:semanticTag kno:usas-G2.1 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002194 ;
+    kno:fullForm "검찰"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "검(찰)(檢札)"@ko ;
+    kno:surfaceForm "검"@ko ;
+    kno:truncated "true"^^xsd:boolean .

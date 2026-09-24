@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0127 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0127 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0127-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0127-form ;
-    ontolex:sense kno:KN2025-0127-sense .
-
-kno:KN2025-0127-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/053/0000051884> .
-
-kno:KN2025-0127-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0127-freq-nn,
-        kno:KN2025-0127-freq-yt ;
-    ontolex:writtenRep "내신 원정"@ko .
-
-kno:KN2025-0127-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0127-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0127-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0127 skos:definition "(LLM) 고등학교에서 더 유리한 성적(등급)을 받기 위해 경쟁이 덜한 학교ㆍ지역으로 전학하거나 거주지를 옮기는 일."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:origin "(內申遠征)" ;
+    kno:frequency kno:KN2025-0127-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0127-c1 ;
+    kno:example "(LLM) 의대 지역인재전형을 노리고 가족이 비수도권으로 내려가면서 {내신원정이} 늘고 있다는 말이 나온다."@ko ;
+    kno:indexForm "내신원정"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "옮기다"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0127-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EC%8B%A0%20%EC%9B%90%EC%A0%95> ;
+    kno:component kno:KN2025-0127-c2 ;
+    kno:componentString "내신(內申), 원정(遠征)"@ko ;
+    kno:languageType "한_한" ;
+    rdfs:label "내신 원정"@ko .
+kno:KN2025-0127-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002723 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "내신(內申)"@ko ;
+    kno:fullForm "내신"@ko ;
+    kno:surfaceForm "내신"@ko .
+kno:KN2025-0127-c2 kno:formative kno:F001667 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "원정(遠征)"@ko ;
+    kno:fullForm "원정"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "원정"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 .

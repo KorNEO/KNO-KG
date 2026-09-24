@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0315 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0315 kno:languageType "한_(프+한)" ;
+    kno:predicate "이용하다"@ko ;
+    skos:definition "편의점에서 커피를 즐겨 마시거나, 편의점에서 파는 커피를 즐겨 이용하는 사람. 또는 그런 무리."@ko ;
+    kno:frequency kno:KN2017-0315-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:example "¶편의점에서 커피를 마시는 ‘{편의점 카페족’이} 늘면서 도시락에 이어 커피가 편의점 효자 상품으로 뜨고 있다."@ko ;
+    kno:slotFiller "카페(café)+-족(族) (2성분)"@ko ;
+    kno:instantiates kno:S000012 ;
+    kno:indexForm "편의점카페족"@ko ;
+    kno:frequency kno:KN2017-0315-freq-NN-2016 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2017-0315-c1 ;
+    kno:component kno:KN2017-0315-c2 ;
+    kno:component kno:KN2017-0315-c3 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:componentString "편의점(便宜店), 카페(café), -족(族)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EC%9D%98%EC%A0%90%EC%B9%B4%ED%8E%98%EC%A1%B1> ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "편의점(便宜店)+카페(café) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001739 ;
+    rdfs:label "편의점카페족"@ko ;
+    kno:origin "(便宜店<프>café族)" ;
+    kno:frequency kno:KN2017-0315-freq-NN-2017 .
+kno:KN2017-0315-c1 rdfs:label "편의점(便宜店)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001958 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:fullForm "편의점"@ko ;
+    kno:surfaceForm "편의점"@ko ;
+    a kno:Component .
+kno:KN2017-0315-c2 kno:formative kno:F000150 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "카페(café)"@ko ;
+    kno:fullForm "카페"@ko ;
+    kno:surfaceForm "카페"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0315-c3 a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko .

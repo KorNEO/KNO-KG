@@ -1,36 +1,61 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0122 a ontolex:Word ;
-    frac:attestation kno:KN2024-0122-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0122-form ;
-    ontolex:sense kno:KN2024-0122-sense .
-
-kno:KN2024-0122-att-nn a frac:Attestation ;
-    dcterms:date "2024-03-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003345483> .
-
-kno:KN2024-0122-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0122-freq-nn,
-        kno:KN2024-0122-freq-yt ;
-    ontolex:writtenRep "서오녀01"@ko .
-
-kno:KN2024-0122-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0122-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0122-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0122 kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:origin "(서五女)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0122-c2 ;
+    kno:component kno:KN2024-0122-c3 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0122-c1 ;
+    kno:languageType "고+한+한" ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EC%98%A4%EB%85%8001> ;
+    rdfs:label "서오녀01"@ko ;
+    kno:componentString "서(울대학교), 오(십)(五十), -녀(女)"@ko ;
+    kno:example "¶이번 인사이동에서 승진 발령을 통해 보직이 변경된 O 차장과 O 원장의 공통점은 {서오녀라는} 점이다."@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001448 ;
+    skos:definition "‘서울대 출신의 오십 대 여자’를 줄여 이르는 말."@ko ;
+    kno:slotFiller "오(십)(五十)+-녀(女) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "서오녀"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000009 ;
+    kno:slotFiller "서(울대학교)+오(십)(五十) (2성분)"@ko .
+kno:KN2024-0122-c2 kno:semanticTag kno:usas-N1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005104 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "오(십)(五十)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "오"@ko ;
+    kno:fullForm "오십"@ko .
+kno:KN2024-0122-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:fullForm "녀"@ko ;
+    kno:formative kno:F000004 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0122-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "서(울대학교)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001458 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "서울대학교"@ko ;
+    kno:surfaceForm "서"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 .

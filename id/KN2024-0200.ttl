@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0200 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0200 a ontolex:Word ;
-    frac:attestation kno:KN2024-0200-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0200-form ;
-    ontolex:sense kno:KN2024-0200-sense .
-
-kno:KN2024-0200-att-nn a frac:Attestation ;
-    dcterms:date "2023-09-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002655380> .
-
-kno:KN2024-0200-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0200-freq-nn,
-        kno:KN2024-0200-freq-yt ;
-    ontolex:writtenRep "온세뉴"@ko .
-
-kno:KN2024-0200-freq-nn a frac:CorpusFrequency ;
-    rdf:value 12 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0200-freq-yt a frac:CorpusFrequency ;
-    rdf:value 155 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0200-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0200 kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:indexForm "온세뉴"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2024-0200-freq-NN-2023 ;
+    kno:component kno:KN2024-0200-c1 ;
+    kno:frequency kno:KN2024-0200-freq-NN-2024 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0200-c3 ;
+    skos:definition "‘온 세상이 뉴진스’를 줄여 이르는 말. 아이돌 그룹인 뉴진스가 국내뿐만 아니라 해외에서도 인기를 얻게 되면서 생겨난 말이다."@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(온世←NewJeans)" ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0200-freq-NN-total ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0200-c2 ;
+    kno:componentString "온, 세(상)(世上), 뉴(진스)(NewJeans)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A8%EC%84%B8%EB%89%B4> ;
+    kno:example "¶연초부터 국내외 유명한 시상식에서 수상을 이어가며 작년에 이어 올해 상반기에도 {온세뉴가} 계속되고 있다."@ko ;
+    kno:languageType "고+한+영" ;
+    rdfs:label "온세뉴"@ko .
+kno:KN2024-0200-c1 rdfs:label "온"@ko ;
+    kno:fullForm "온"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:surfaceForm "온"@ko ;
+    kno:formative kno:F001632 ;
+    kno:role "성분"@ko .
+kno:KN2024-0200-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002822 ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    rdfs:label "뉴(진스)(NewJeans)"@ko ;
+    kno:surfaceForm "뉴"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "뉴진스"@ko ;
+    kno:semanticTag kno:usas-K2 .
+kno:KN2024-0200-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "세상"@ko ;
+    kno:formative kno:F001471 ;
+    kno:surfaceForm "세"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "세(상)(世上)"@ko ;
+    kno:semanticTag kno:usas-W1 .

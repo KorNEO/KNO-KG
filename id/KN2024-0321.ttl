@@ -1,36 +1,103 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0321 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0321 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0321-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0321-form ;
-    ontolex:sense kno:KN2024-0321-sense .
-
-kno:KN2024-0321-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004956535> .
-
-kno:KN2024-0321-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0321-freq-nn,
-        kno:KN2024-0321-freq-yt ;
-    ontolex:writtenRep "코스피^이백^위클리^커버드^콜^에이티엠^지수"@ko .
-
-kno:KN2024-0321-freq-nn a frac:CorpusFrequency ;
-    rdf:value 91 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0321-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0321-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0321 kno:componentString "코스피(KOSPI), 이백(二百), 위클리(weekly), 커버드(covered), 콜(call), 에이티엠(ATM), 지수(指數)"@ko ;
+    kno:frequency kno:KN2024-0321-freq-NN-total ;
+    kno:component kno:KN2024-0321-c5 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "코스피이백위클리커버드콜에이티엠지수"@ko ;
+    skos:definition "코스피 200 지수에 기반하여 주간 단위로 계산되는 금융 지수. 코스피 200 지수를 현물로 매수하는 동시에, 코스피 200 옵션 시장에 상장된 가장 가까운 만기의 에이티엠(ATM) 콜옵션을 매도하는 ‘커버드 콜 매도 전략’을 주간 단위로 실행하여 산출된다."@ko ;
+    kno:frequency kno:KN2024-0321-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "코스피^이백^위클리^커버드^콜^에이티엠^지수"@ko ;
+    kno:slotFiller "코스피(KOSPI)+이백(二百)+위클리(weekly)+커버드(covered)+콜(call)+에이티엠(ATM) (6성분)"@ko ;
+    kno:frequency kno:KN2024-0321-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EC%8A%A4%ED%94%BC%EC%9D%B4%EB%B0%B1%EC%9C%84%ED%81%B4%EB%A6%AC%EC%BB%A4%EB%B2%84%EB%93%9C%EC%BD%9C%EC%97%90%EC%9D%B4%ED%8B%B0%EC%97%A0%EC%A7%80%EC%88%98> ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶‘{코스피 이백 위클리 커버드 콜 에이티엠 지수’가} 산출된 2019년 이후 현재까지 월 평균 옵션 프리미엄은 월 3% 수준이다."@ko ;
+    kno:instantiates kno:S000025 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "영^한^영^영^영^영^한" ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0321-c3 ;
+    kno:component kno:KN2024-0321-c7 ;
+    kno:component kno:KN2024-0321-c1 ;
+    kno:frequency kno:KN2024-0321-freq-NN-2023 ;
+    kno:origin "(KOSPI二百weekly covered call ATM指數)" ;
+    kno:component kno:KN2024-0321-c6 ;
+    kno:component kno:KN2024-0321-c2 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0321-c4 .
+kno:KN2024-0321-c5 kno:position "5"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:formative kno:F000610 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "콜(call)"@ko ;
+    kno:fullForm "콜"@ko ;
+    kno:surfaceForm "콜"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0321-c3 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "위클리(weekly)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "위클리"@ko ;
+    kno:formative kno:F005283 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "위클리"@ko .
+kno:KN2024-0321-c7 kno:role "고정항"@ko ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:formative kno:F000035 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:fullForm "지수"@ko ;
+    kno:surfaceForm "지수"@ko ;
+    a kno:Component ;
+    kno:position "7"^^xsd:integer .
+kno:KN2024-0321-c1 rdfs:label "코스피(KOSPI)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "코스피"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006293 ;
+    kno:surfaceForm "코스피"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0321-c6 kno:truncated "false"^^xsd:boolean ;
+    kno:position "6"^^xsd:integer ;
+    kno:formative kno:F005002 ;
+    kno:fullForm "에이티엠"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "에이티엠"@ko ;
+    rdfs:label "에이티엠(ATM)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2024-0321-c2 rdfs:label "이백(二百)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "이백"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005393 ;
+    kno:surfaceForm "이백"@ko .
+kno:KN2024-0321-c4 kno:semanticTag kno:usas-I1 ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "커버드(covered)"@ko ;
+    kno:fullForm "커버드"@ko ;
+    kno:surfaceForm "커버드"@ko ;
+    kno:formative kno:F006240 ;
+    kno:truncated "false"^^xsd:boolean .

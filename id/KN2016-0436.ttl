@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0436 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0436 kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0436-freq-NN-2024 ;
+    kno:instantiates kno:S000881 ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%91%EC%9D%80%EB%B9%A8%EA%B0%84%EB%B2%8C%EB%A0%88> ;
+    kno:componentString "작은, 빨간, 벌레"@ko ;
+    kno:component kno:KN2016-0436-c3 ;
+    kno:component kno:KN2016-0436-c1 ;
+    kno:activeYears "3"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "진드기의 하나. 몸의 길이는 1밀리미터(mm) 정도로 비교적 큰 진드깃과에 속하며, 난원형으로 온몸이 붉다. 빌딩 옥상이나 주택 외벽 등에 대량으로 출몰하는 경향을 보인다.◁Balaustium murorum▷"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "작은+빨간 (2성분)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2016-0436-c2 ;
+    kno:frequency kno:KN2016-0436-freq-NN-2019 ;
+    rdfs:label "작은^빨간^벌레"@ko ;
+    kno:indexForm "작은빨간벌레"@ko ;
+    kno:frequency kno:KN2016-0436-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0436-freq-NN-total ;
+    kno:languageType "고^고^고" ;
+    kno:example "¶경남 김해 지역에 최근 진드기 일종인 일명 ‘{작은 빨간 벌레’가} 잇따라 출몰하자 보건 당국이 방제에 나섰습니다."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2016-0436-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "벌레"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:surfaceForm "벌레"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001362 ;
+    rdfs:label "벌레"@ko .
+kno:KN2016-0436-c1 a kno:Component ;
+    kno:formative kno:F005538 ;
+    kno:surfaceForm "작은"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "작은"@ko ;
+    kno:semanticTag kno:usas-N3.2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "작은"@ko .
+kno:KN2016-0436-c2 rdfs:label "빨간"@ko ;
+    kno:surfaceForm "빨간"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:fullForm "빨간"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004122 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

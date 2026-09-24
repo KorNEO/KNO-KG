@@ -1,0 +1,62 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0235 skos:definition "스페인의 유로존 탈퇴를 비유적으로 이르는 말."@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2012-0235-freq-NN-2020 ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(←Spain exit)" ;
+    kno:indexForm "스펙시트"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000114 ;
+    kno:componentString "스페(인)(Spain), (엑)시트(exit)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373468> ;
+    kno:frequency kno:KN2012-0235-freq-NN-2014 ;
+    kno:example "¶그리스 위기와 맞물려 ‘{스펙시트’마저} 현실화하면서 유럽 재정 위기가 정점을 찍은 지난해 11월의 악몽이 재연될 것으로 우려되고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0235-freq-NN-2021 ;
+    kno:component kno:KN2012-0235-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0235-freq-NN-2016 ;
+    kno:formation kno:W05 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:label "스펙시트"@ko ;
+    kno:frequency kno:KN2012-0235-freq-NN-2015 ;
+    kno:frequency kno:KN2012-0235-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0235-freq-NN-2022 ;
+    kno:slotFiller "스페(인)(Spain) (1성분)"@ko ;
+    kno:frequency kno:KN2012-0235-freq-NN-2025 ;
+    kno:frequency kno:KN2012-0235-freq-NN-2023 ;
+    kno:frequency kno:KN2012-0235-freq-NN-total ;
+    kno:activeYears "10"^^xsd:integer ;
+    kno:frequency kno:KN2012-0235-freq-NN-2013 ;
+    kno:urimalTargetCode "1373468" ;
+    kno:component kno:KN2012-0235-c2 ;
+    kno:languageType "영+영" .
+kno:KN2012-0235-c1 kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "스페인"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004604 ;
+    kno:surfaceForm "스페"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "스페(인)(Spain)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0235-c2 kno:fullForm "엑시트"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F000289 ;
+    rdfs:label "(엑)시트(exit)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "시트"@ko .

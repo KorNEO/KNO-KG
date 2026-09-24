@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0022 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0022 kno:origin "(<영>gold三寸)" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:example "¶최근 30대 이상의 ‘만혼’ 및 ‘비혼’ 현상이 늘어나면서 소득은 안정된 반면 부양가족이 없어 조카에게 애정과 관심을 쏟는 이른바 ‘{골드 삼촌}ㆍ이모’로 불리는 미혼의 삼촌, 이모들의 아동 매장 방문이 늘면서 아동 관련 상품 매출이 크게 늘어난 것으로 풀이된다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380324> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0022-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:slotFiller "삼촌(三寸) (1성분)"@ko ;
+    kno:urimalTargetCode "1380324" ;
+    kno:component kno:KN2017-0022-c2 ;
+    skos:definition "경제적으로 여유가 있으며 결혼을 하지 않고 조카를 위해 지출을 아끼지 않는 삼촌을 이르는 말."@ko ;
+    kno:languageType "영_한" ;
+    kno:instantiates kno:S001211 ;
+    kno:component kno:KN2017-0022-c1 ;
+    kno:frequency kno:KN2017-0022-freq-NN-2017 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "골드삼촌"@ko ;
+    kno:frequency kno:KN2017-0022-freq-NN-2016 ;
+    kno:componentString "골드(gold), 삼촌(三寸)"@ko ;
+    rdfs:label "골드 삼촌"@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2017-0022-c2 kno:fullForm "삼촌"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "삼촌"@ko ;
+    rdfs:label "삼촌(三寸)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F004218 .
+kno:KN2017-0022-c1 rdfs:label "골드(gold)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001067 ;
+    kno:fullForm "골드"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "골드"@ko .

@@ -1,0 +1,71 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0269 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0269 kno:instantiates kno:S000951 ;
+    kno:unitType "구"@ko ;
+    skos:definition "성대 결절을 일어나게 할 정도로 고음역대의 노래."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0269-freq-NN-total ;
+    kno:componentString "성대(聲帶), 결절(結節), 유발(誘發), 송(song)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한_(한+영)" ;
+    kno:frequency kno:KN2016-0269-freq-NN-2016 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EB%8C%80%20%EA%B2%B0%EC%A0%88%20%EC%9C%A0%EB%B0%9C%EC%86%A1> ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:origin "(聲帶結節誘發<영>song)" ;
+    kno:example "¶특히 ‘{성대 결절 유발송’으로} 알려진 OO은 2005년부터 2010년까지 한국인이 가장 많이 부르는 팝송으로 폭발적인 인기를 모았다."@ko ;
+    kno:component kno:KN2016-0269-c2 ;
+    kno:component kno:KN2016-0269-c3 ;
+    kno:component kno:KN2016-0269-c1 ;
+    kno:slotFiller "성대(聲帶)+결절(結節)+유발(誘發) (3성분)"@ko ;
+    kno:indexForm "성대결절유발송"@ko ;
+    kno:component kno:KN2016-0269-c4 ;
+    rdfs:label "성대 결절 유발송"@ko .
+kno:KN2016-0269-c2 kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002221 ;
+    kno:fullForm "결절"@ko ;
+    kno:surfaceForm "결절"@ko ;
+    rdfs:label "결절(結節)"@ko .
+kno:KN2016-0269-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "유발(誘發)"@ko ;
+    kno:semanticTag kno:usas-A2.2 ;
+    kno:formative kno:F005312 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "유발"@ko ;
+    kno:surfaceForm "유발"@ko ;
+    a kno:Component .
+kno:KN2016-0269-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "성대"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "성대(聲帶)"@ko ;
+    kno:formative kno:F004333 ;
+    a kno:Component ;
+    kno:surfaceForm "성대"@ko .
+kno:KN2016-0269-c4 kno:formative kno:F000535 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "송"@ko ;
+    kno:surfaceForm "송"@ko ;
+    rdfs:label "송(song)"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:position "4"^^xsd:integer .

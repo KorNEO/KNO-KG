@@ -1,30 +1,50 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0242 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0242 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2024-0242-form ;
-    ontolex:sense kno:KN2024-0242-sense .
-
-kno:KN2024-0242-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0242-freq-nn,
-        kno:KN2024-0242-freq-yt ;
-    ontolex:writtenRep "인솔 밴드"@ko .
-
-kno:KN2024-0242-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0242-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0242-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0242 kno:frequency kno:KN2024-0242-freq-NN-total ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한_영" ;
+    kno:example "¶교사는 아이들이 {인솔 밴드를} 단단히 잡고 있는지 확인하며 이동했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "인솔(引率), 밴드(band)"@ko ;
+    kno:frequency kno:KN2024-0242-freq-NN-2024 ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(引率<영>band)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    skos:definition "여러 사람을 이끌고 갈 때 사용하는 밴드. 주로 어린이집이나 유치원에서 아이들을 안전하게 인솔하기 위해 사용한다."@ko ;
+    rdfs:label "인솔 밴드"@ko ;
+    kno:predicate "사용하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EC%86%94%20%EB%B0%B4%EB%93%9C> ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0242-c1 ;
+    kno:indexForm "인솔밴드"@ko ;
+    kno:component kno:KN2024-0242-c2 .
+kno:KN2024-0242-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "인솔"@ko ;
+    kno:formative kno:F005443 ;
+    rdfs:label "인솔(引率)"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "인솔"@ko .
+kno:KN2024-0242-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001352 ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:fullForm "밴드"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "밴드"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "밴드(band)"@ko .

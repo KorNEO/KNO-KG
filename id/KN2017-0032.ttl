@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0032 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0032 kno:registration "신어DB"@ko ;
+    rdfs:label "국민 아이스바"@ko ;
+    kno:component kno:KN2017-0032-c1 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "아이스바(ice bar) (1성분)"@ko ;
+    kno:instantiates kno:S000063 ;
+    kno:componentString "국민(國民), 아이스바(ice bar)"@ko ;
+    kno:languageType "한_영" ;
+    kno:component kno:KN2017-0032-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%AF%BC%20%EC%95%84%EC%9D%B4%EC%8A%A4%EB%B0%94> ;
+    kno:origin "(國民▼ice bar)" ;
+    kno:frequency kno:KN2017-0032-freq-NN-2017 ;
+    kno:indexForm "국민아이스바"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "국민 대다수가 즐겨 먹는, 막대기에 꽂혀 있는 형태의 긴 얼음과자를 이르는 말."@ko ;
+    kno:example "¶OO는 1992년 출시부터 지난해까지 약 29억 개가 팔린 ‘{국민 아이스바’다}."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0032-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0032-freq-NN-total .
+kno:KN2017-0032-c1 rdfs:label "국민(國民)"@ko ;
+    kno:formative kno:F000055 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "국민"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국민"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2017-0032-c2 kno:surfaceForm "아이스바"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004818 ;
+    rdfs:label "아이스바(ice bar)"@ko ;
+    kno:fullForm "아이스바"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

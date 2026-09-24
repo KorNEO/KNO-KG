@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0195 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0195 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0195-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0195-form ;
-    ontolex:sense kno:KN2025-0195-sense .
-
-kno:KN2025-0195-att-nn a frac:Attestation ;
-    dcterms:date "2025-02-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/422/0000715259> .
-
-kno:KN2025-0195-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0195-freq-nn,
-        kno:KN2025-0195-freq-yt ;
-    ontolex:writtenRep "라지 웨딩"@ko .
-
-kno:KN2025-0195-freq-nn a frac:CorpusFrequency ;
-    rdf:value 71 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0195-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0195-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0195 kno:predicate "치르다"@ko ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S000995 ;
+    rdfs:label "라지 웨딩"@ko ;
+    kno:frequency kno:KN2025-0195-freq-NN-2025 ;
+    kno:componentString "라지(large), 웨딩(wedding)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0195-freq-NN-total ;
+    skos:definition "(LLM) 하객 수와 진행 요소를 많이 늘려, 행사 규모를 크게 잡아 성대하게 치르는 결혼식."@ko ;
+    kno:slotFiller "라지(large) (1성분)"@ko ;
+    kno:example "(LLM) 양가 친지와 지인들을 최대한 초대해 하객 수를 크게 잡는 {라지웨딩을} 하기로 했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0195-c1 ;
+    kno:indexForm "라지웨딩"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9D%BC%EC%A7%80%20%EC%9B%A8%EB%94%A9> ;
+    kno:origin "(<영>large wedding)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0195-c2 ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0195-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "라지(large)"@ko ;
+    kno:fullForm "라지"@ko ;
+    kno:semanticTag kno:usas-N3.2p ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "라지"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003158 .
+kno:KN2025-0195-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "웨딩"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    a kno:Component ;
+    kno:fullForm "웨딩"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000566 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "웨딩(wedding)"@ko .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0010 kno:component kno:KN2018-0010-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%91%EC%A7%88%20%EC%B6%9C%EC%9E%A5> ;
+    kno:frequency kno:KN2018-0010-freq-NN-total ;
+    kno:origin "(甲질出張)" ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "갑질출장"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "(한+고)_한" ;
+    kno:componentString "갑질(甲질), 출장(出張)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0010-freq-NN-2018 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "출장 시 지나친 의전을 요구하거나, 출장비 명목의 지원금을 용무 외의 용도로 사용하는 것을 이르는 말."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2018-0010-c1 ;
+    kno:example "¶이는 O 원장이 피감 기관의 지원으로 해외 출장을 간 것을 두고 ‘{갑질 출장’이라며} 야권이 사퇴를 요구하는 것에 대한 대응책으로 풀이된다."@ko ;
+    kno:instantiates kno:S001188 ;
+    kno:slotFiller "출장(出張) (1성분)"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    rdfs:label "갑질 출장"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2018-0010-c2 rdfs:label "출장(出張)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006135 ;
+    kno:fullForm "출장"@ko ;
+    kno:surfaceForm "출장"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2018-0010-c1 kno:fullForm "갑질"@ko ;
+    rdfs:label "갑질(甲질)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "갑질"@ko ;
+    kno:semanticTag kno:usas-A5.1m ;
+    kno:formative kno:F000652 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.1p ;
+    a kno:Component .

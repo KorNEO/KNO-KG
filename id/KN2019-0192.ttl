@@ -1,0 +1,60 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0192 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0192 kno:componentString "어른이, 보험(保險)"@ko ;
+    kno:component kno:KN2019-0192-c2 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0192-freq-NN-2020 ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:example "¶18일 업계 관계자는 “소비자 입장에서는 이른바 {‘어른이 보험’에} 가입할 적기.”라면서 “나이 탓에 가입을 못 했던 20대의 문의가 크게 늘고 있다.”라고 전했다."@ko ;
+    kno:languageType "고^한" ;
+    kno:instantiates kno:S000387 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0192-freq-NN-2019 ;
+    skos:definition "기존 어린이 보험의 가입 연령을 높여 어른도 가입할 수 있는 보험. 일반적으로 성인 보험 상품보다 넓은 범위로 보장되며 최대 만 30세까지 가입할 수 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0192-freq-NN-total ;
+    kno:frequency kno:KN2019-0192-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%A5%B8%EC%9D%B4%EB%B3%B4%ED%97%98> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "어른이 (1성분)"@ko ;
+    kno:component kno:KN2019-0192-c1 ;
+    kno:frequency kno:KN2019-0192-freq-NN-2022 ;
+    kno:frequency kno:KN2019-0192-freq-NN-2018 ;
+    kno:predicate "있다"@ko ;
+    kno:origin "(어른이保險)" ;
+    kno:frequency kno:KN2019-0192-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0192-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "어른이^보험"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0192-freq-NN-2023 ;
+    kno:indexForm "어른이보험"@ko .
+kno:KN2019-0192-c2 kno:fullForm "보험"@ko ;
+    kno:surfaceForm "보험"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "보험(保險)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000776 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0192-c1 kno:formative kno:F004948 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "어른이"@ko ;
+    kno:surfaceForm "어른이"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "어른이"@ko ;
+    a kno:Component .

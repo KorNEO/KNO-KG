@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0297 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0297 a ontolex:Word ;
-    frac:attestation kno:KN2024-0297-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0297-form ;
-    ontolex:sense kno:KN2024-0297-sense .
-
-kno:KN2024-0297-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004951851> .
-
-kno:KN2024-0297-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0297-freq-nn,
-        kno:KN2024-0297-freq-yt ;
-    ontolex:writtenRep "찐명-일색"@ko .
-
-kno:KN2024-0297-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0297-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0297-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0297 kno:instantiates kno:S001672 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%90%EB%AA%85%EC%9D%BC%EC%83%89> ;
+    kno:origin "(眞▽明一色)" ;
+    kno:formation kno:W01 ;
+    rdfs:label "찐명-일색"@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0297-c1 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:componentString "찐명(眞明), 일색(一色)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:example "¶공천 결과가 발표되자, 후보 명단이 ‘{찐명일색’이라는} 평가가 정치권 안팎으로 퍼져 나갔다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0297-c2 ;
+    kno:unitType "단어"@ko ;
+    a ontolex:Word ;
+    kno:indexForm "찐명일색"@ko ;
+    skos:definition "특정 집단이 친이재명계 인사로만 이루어진 상태."@ko ;
+    kno:slotFiller "일색(一色) (1성분)"@ko ;
+    kno:languageType "한+한" .
+kno:KN2024-0297-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "찐명"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "찐명"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001806 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "찐명(眞明)"@ko .
+kno:KN2024-0297-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005472 ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "일색"@ko ;
+    rdfs:label "일색(一色)"@ko ;
+    kno:surfaceForm "일색"@ko .

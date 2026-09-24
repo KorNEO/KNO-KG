@@ -1,0 +1,64 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0275 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0275 kno:frequency kno:KN2013-0275-freq-NN-2014 ;
+    kno:slotFiller "친(구)(親)+며(느리) (2성분)"@ko ;
+    kno:languageType "한+한+고" ;
+    kno:instantiates kno:S001493 ;
+    kno:component kno:KN2013-0275-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0275-c1 ;
+    kno:component kno:KN2013-0275-c3 ;
+    kno:frequency kno:KN2013-0275-freq-NN-2015 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    rdfs:label "시친며"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2013-0275-freq-NN-total ;
+    kno:origin "(媤親며)" ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    skos:definition "‘시어머니 친구의 며느리’를 줄여 이르는 말. 주로 학벌, 집안, 재산, 외모 따위의 조건이 좋고, 효심이 지극하며 살림을 잘하는 완벽한 며느리를 뜻한다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:example "¶{시친며와의} 비교 때문에 며느리들이 고부갈등을 겪고 있다."@ko ;
+    kno:indexForm "시친며"@ko ;
+    kno:frequency kno:KN2013-0275-freq-NN-2012 ;
+    kno:componentString "시(어머니)(媤), 친(구)(親), 며(느리)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%B9%9C%EB%A9%B0> .
+kno:KN2013-0275-c2 kno:semanticTag kno:usas-S3.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "친(구)(親)"@ko ;
+    kno:formative kno:F000308 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "친"@ko ;
+    a kno:Component ;
+    kno:fullForm "친구"@ko .
+kno:KN2013-0275-c1 kno:role "고정항"@ko ;
+    rdfs:label "시(어머니)(媤)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001539 ;
+    kno:surfaceForm "시"@ko ;
+    kno:fullForm "시어머니"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S4 .
+kno:KN2013-0275-c3 kno:formative kno:F003452 ;
+    kno:surfaceForm "며"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "며느리"@ko ;
+    rdfs:label "며(느리)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .

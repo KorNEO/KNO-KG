@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0147 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0147 a ontolex:Word ;
-    frac:attestation kno:KN2022-0147-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0147-form ;
-    ontolex:sense kno:KN2022-0147-sense .
-
-kno:KN2022-0147-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-18"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/082/0001107601> .
-
-kno:KN2022-0147-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0147-freq-nn,
-        kno:KN2022-0147-freq-yt ;
-    ontolex:writtenRep "무-피장타"@ko .
-
-kno:KN2022-0147-freq-nn a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0147-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0147-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0147 kno:indexForm "무피장타"@ko ;
+    rdfs:label "무-피장타"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    skos:definition "야구에서, 투수가 타자에게 장타를 허용하지 않는 일."@ko ;
+    kno:example "¶프로 야구 선수 OOO은 최근 94명의 타자에 대해 연속 2루타 이상을 허용하지 않는 {무피장타} 기록을 이어가며 좋은 경기력을 보여 주고 있다."@ko ;
+    kno:slotFiller "피장타(被長打) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2022-0147-c2 ;
+    kno:componentString "무(無)-, 피장타(被長打)"@ko ;
+    kno:frequency kno:KN2022-0147-freq-NN-2021 ;
+    kno:component kno:KN2022-0147-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0147-freq-NN-total ;
+    kno:predicate "않다"@ko ;
+    kno:origin "(無被長打)" ;
+    kno:formation kno:W03 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000213 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B4%ED%94%BC%EC%9E%A5%ED%83%80> .
+kno:KN2022-0147-c2 kno:fullForm "피장타"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "피장타"@ko ;
+    kno:formative kno:F006879 ;
+    rdfs:label "피장타(被長打)"@ko ;
+    a kno:Component .
+kno:KN2022-0147-c1 a kno:Component ;
+    rdfs:label "무(無)-"@ko ;
+    kno:fullForm "무"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "무"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000266 .

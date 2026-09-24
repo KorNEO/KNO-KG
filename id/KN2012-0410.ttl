@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0410 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0410 kno:year "2012"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶미국에서는 현장에서…‘카가이’ 대신 여자(gal)라는 단어를 접목한 ‘{카갤’이란} 신조어가 등장했다."@ko ;
+    kno:languageType "영+영" ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B9%B4%EA%B0%A4> ;
+    kno:component kno:KN2012-0410-c2 ;
+    kno:component kno:KN2012-0410-c1 ;
+    kno:componentString "카(car), 갤(gal)"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000588 ;
+    kno:indexForm "카갤"@ko ;
+    skos:definition "자동차를 생산하고 제조하는 여성 기술자."@ko ;
+    kno:origin "(car gal)" ;
+    rdfs:label "카-갤"@ko ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "갤(gal) (1성분)"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2012-0410-c2 kno:surfaceForm "갤"@ko ;
+    kno:formative kno:F002171 ;
+    rdfs:label "갤(gal)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "갤"@ko .
+kno:KN2012-0410-c1 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:fullForm "카"@ko ;
+    kno:surfaceForm "카"@ko ;
+    kno:formative kno:F000604 ;
+    rdfs:label "카(car)"@ko ;
+    kno:position "1"^^xsd:integer .

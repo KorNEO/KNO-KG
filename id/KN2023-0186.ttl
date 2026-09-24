@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0186 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0186-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0186-form ;
-    ontolex:sense kno:KN2023-0186-sense .
-
-kno:KN2023-0186-att-nn a frac:Attestation ;
-    dcterms:date "2023-08-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004930051> .
-
-kno:KN2023-0186-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0186-freq-nn,
-        kno:KN2023-0186-freq-yt ;
-    ontolex:writtenRep "얼리 케어족"@ko .
-
-kno:KN2023-0186-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0186-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0186-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0186 kno:frequency kno:KN2023-0186-freq-NN-total ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:origin "(<영>▼early care族)" ;
+    kno:slotFiller "얼리(early)+케어(care) (2성분)"@ko ;
+    kno:component kno:KN2023-0186-c2 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "젊은"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2023-0186-freq-NN-2023 ;
+    kno:languageType "영_(영+한)" ;
+    rdfs:label "얼리케어-족"@ko ;
+    skos:definition "자신이 건강하게 사는 것을 최우선으로 생각하는 젊은 사람. 또는 그런 무리. 주로 운동이나 건강 기능 식품에 시간과 돈을 투자하여 젊을 때부터 미리 몸을 챙기고자 하는 이삼십 대를 이르는 말이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "얼리케어족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:component kno:KN2023-0186-c1 ;
+    kno:component kno:KN2023-0186-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EB%A6%AC%EC%BC%80%EC%96%B4%EC%A1%B1> ;
+    kno:example "¶건강에 관심을 갖는 연령대가 낮아지면서 ‘{얼리 케어족’이} 건강식 시장의 중요 소비층으로 급부상하고 있다."@ko ;
+    kno:componentString "얼리(early), 케어(care), -족(族)"@ko .
+kno:KN2023-0186-c2 kno:fullForm "케어"@ko ;
+    kno:surfaceForm "케어"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "케어(care)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000418 ;
+    kno:semanticTag kno:usas-S8 .
+kno:KN2023-0186-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T4 ;
+    kno:fullForm "얼리"@ko ;
+    rdfs:label "얼리(early)"@ko ;
+    kno:surfaceForm "얼리"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000558 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0186-c3 kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

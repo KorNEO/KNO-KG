@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0137 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0137 a ontolex:Word ;
-    frac:attestation kno:KN2022-0137-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0137-form ;
-    ontolex:sense kno:KN2022-0137-sense .
-
-kno:KN2022-0137-att-nn a frac:Attestation ;
-    dcterms:date "2022-03-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005945065> .
-
-kno:KN2022-0137-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0137-freq-nn,
-        kno:KN2022-0137-freq-yt ;
-    ontolex:writtenRep "멍미노피자"@ko .
-
-kno:KN2022-0137-freq-nn a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0137-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0137-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0137 kno:languageType "고+영" ;
+    kno:frequency kno:KN2022-0137-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0137-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "반려견이 먹을 수 있도록 만든 피자. 피자 전문점인 ‘도미노 피자’에 빗대어 이르는 말이다."@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "(도)미노피자(Domino pizza) (1성분)"@ko ;
+    kno:origin "(멍←Domino pizza)" ;
+    kno:componentString "멍(멍이), (도)미노피자(Domino pizza)"@ko ;
+    kno:indexForm "멍미노피자"@ko ;
+    kno:example "¶반려견과 반려인이 함께 이용할 수 있는 이른바 ‘퍼피 시네마’에서는 반려견 전용 메뉴인 ‘{멍미노피자’와} ‘멍스킨라빈스’를 판매한다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%8D%EB%AF%B8%EB%85%B8%ED%94%BC%EC%9E%90> ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0137-c1 ;
+    kno:component kno:KN2022-0137-c2 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000101 ;
+    kno:formation kno:W05 ;
+    rdfs:label "멍미노피자"@ko .
+kno:KN2022-0137-c1 a kno:Component ;
+    kno:formative kno:F000211 ;
+    kno:fullForm "멍멍이"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    rdfs:label "멍(멍이)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "멍"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0137-c2 rdfs:label "(도)미노피자(Domino pizza)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "도미노피자"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "미노피자"@ko ;
+    kno:formative kno:F003596 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:position "2"^^xsd:integer .

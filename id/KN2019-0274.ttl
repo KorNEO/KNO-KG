@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0274 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0274 kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2019-0274-c1 ;
+    kno:frequency kno:KN2019-0274-freq-NN-2019 ;
+    kno:origin "(脫덕<영>rush)" ;
+    a kno:Neologism ;
+    rdfs:label "탈덕 러시"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%EB%8D%95%20%EB%9F%AC%EC%8B%9C> ;
+    kno:example "¶이 과정에서 대중의 사랑을 받던 아이돌 스타 OOO, OOO, OOO, OOO 등의 끔찍한 민낯까지 드러나면서 이들을 응원했던 팬들의 {탈덕 러시가} 이어지고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0274-c2 ;
+    kno:indexForm "탈덕러시"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0274-freq-NN-2021 ;
+    kno:instantiates kno:S000848 ;
+    kno:predicate "그만두다"@ko ;
+    kno:frequency kno:KN2019-0274-freq-NN-total ;
+    kno:slotFiller "탈덕(脫덕) (1성분)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    skos:definition "열성적으로 어떤 분야나 사람을 좋아하던 사람들이, 한꺼번에 좋아하는 일을 그만두는 현상."@ko ;
+    kno:languageType "(한+고)_영" ;
+    kno:unitType "구"@ko ;
+    kno:componentString "탈덕(脫덕), 러시(rush)"@ko .
+kno:KN2019-0274-c1 a kno:Component ;
+    rdfs:label "탈덕(脫덕)"@ko ;
+    kno:formative kno:F006403 ;
+    kno:surfaceForm "탈덕"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-X5.2m ;
+    kno:fullForm "탈덕"@ko .
+kno:KN2019-0274-c2 kno:formative kno:F001236 ;
+    rdfs:label "러시(rush)"@ko ;
+    a kno:Component ;
+    kno:fullForm "러시"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "러시"@ko .

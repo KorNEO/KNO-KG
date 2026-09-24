@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0041 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0041 kno:frequency kno:KN2014-0041-freq-NN-total ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2014-0041-c2 ;
+    a ontolex:Word ;
+    kno:slotFiller "꾸러기 (1성분)"@ko ;
+    kno:frequency kno:KN2014-0041-freq-NN-2013 ;
+    rdfs:label "꾸러기템"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BE%B8%EB%9F%AC%EA%B8%B0%ED%85%9C> ;
+    kno:component kno:KN2014-0041-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2014-0041-freq-NN-2016 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶쓸쓸한 OOO를 결코 쓸쓸하지 않게 만드는 {꾸러기템}, 살펴봤다."@ko ;
+    kno:languageType "고+영" ;
+    kno:origin "(꾸러기<영>←item)" ;
+    kno:componentString "꾸러기, (아이)템(item)"@ko ;
+    kno:indexForm "꾸러기템"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000004 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2014-0041-freq-NN-2015 ;
+    skos:definition "장난꾸러기처럼 활동적이고 쾌활한 느낌을 주는 옷이나 소품."@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2014-0041-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "아이템"@ko ;
+    rdfs:label "(아이)템(item)"@ko .
+kno:KN2014-0041-c1 kno:semanticTag kno:usas-T3m ;
+    rdfs:label "꾸러기"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F001132 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "꾸러기"@ko ;
+    kno:surfaceForm "꾸러기"@ko .

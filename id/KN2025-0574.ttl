@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0574 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0574 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0574-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0574-form ;
-    ontolex:sense kno:KN2025-0574-sense .
-
-kno:KN2025-0574-att-nn a frac:Attestation ;
-    dcterms:date "2025-07-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003334998> .
-
-kno:KN2025-0574-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0574-freq-nn,
-        kno:KN2025-0574-freq-yt ;
-    ontolex:writtenRep "컨텍스트 엔지니어"@ko .
-
-kno:KN2025-0574-freq-nn a frac:CorpusFrequency ;
-    rdf:value 27 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0574-freq-yt a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0574-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0574 kno:pos "「구」"@ko ;
+    kno:origin "(<영>context engineer)" ;
+    kno:componentString "컨텍스트(context), 엔지니어(engineer)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "컨텍스트 엔지니어"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "컨텍스트엔지니어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:languageType "영_영" ;
+    skos:definition "(LLM) 인공지능이 더 정확하고 일관된 결과를 내도록 관련 정보ㆍ배경지식ㆍ자료를 수집ㆍ정리해 입력 맥락을 설계하고 연결하는 일을 하는 사람."@ko ;
+    kno:component kno:KN2025-0574-c1 ;
+    kno:frequency kno:KN2025-0574-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 사내 문서와 고객 문의 이력을 묶어 답변 품질을 높이기 위해 {컨텍스트엔지니어를} 별도로 채용하기로 했다."@ko ;
+    kno:frequency kno:KN2025-0574-freq-NN-total ;
+    kno:component kno:KN2025-0574-c2 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BB%A8%ED%85%8D%EC%8A%A4%ED%8A%B8%20%EC%97%94%EC%A7%80%EB%8B%88%EC%96%B4> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0574-c1 rdfs:label "컨텍스트(context)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:fullForm "컨텍스트"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "컨텍스트"@ko ;
+    kno:formative kno:F006249 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2025-0574-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "엔지니어"@ko ;
+    kno:surfaceForm "엔지니어"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    rdfs:label "엔지니어(engineer)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005011 ;
+    kno:truncated "false"^^xsd:boolean .

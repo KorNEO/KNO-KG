@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0160 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0160 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0160-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0160-form ;
-    ontolex:sense kno:KN2020-0160-sense .
-
-kno:KN2020-0160-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0011491760> .
-
-kno:KN2020-0160-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0160-freq-nn,
-        kno:KN2020-0160-freq-yt ;
-    ontolex:writtenRep "생활^속^거리^두기"@ko .
-
-kno:KN2020-0160-freq-nn a frac:CorpusFrequency ;
-    rdf:value 32187 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0160-freq-yt a frac:CorpusFrequency ;
-    rdf:value 530 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0160-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0160 kno:componentString "생활(生活), 속, 거리(距離), 두기"@ko ;
+    kno:frequency kno:KN2020-0160-freq-NN-2023 ;
+    kno:component kno:KN2020-0160-c1 ;
+    rdfs:label "생활^속^거리^두기"@ko ;
+    kno:component kno:KN2020-0160-c2 ;
+    kno:frequency kno:KN2020-0160-freq-NN-total ;
+    kno:slotFiller "속+거리(距離)+두기 (3성분)"@ko ;
+    skos:definition "일상생활 속에서 전염병이 발생하거나 확산되는 것을 막기 위해 타인과 일정한 거리를 유지하는 일. 코로나19의 감염과 확산을 막기 위해 생겨난 말이다."@ko ;
+    kno:example "¶13일부터 방역 체계가 {생활 속 거리 두기로} 전환됨에 따라 저학년부터 순차적으로 개학을 할 예정이다."@ko ;
+    kno:frequency kno:KN2020-0160-freq-NN-2021 ;
+    kno:predicate "유지하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0160-freq-NN-2025 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:indexForm "생활속거리두기"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1497987> ;
+    kno:frequency kno:KN2020-0160-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0160-freq-NN-2022 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0160-freq-NN-2020 ;
+    kno:component kno:KN2020-0160-c3 ;
+    kno:instantiates kno:S000640 ;
+    kno:component kno:KN2020-0160-c4 ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1497987" ;
+    kno:languageType "한^고^한^고" ;
+    kno:origin "(生活속距離두기)" ;
+    kno:activeYears "6"^^xsd:integer .
+kno:KN2020-0160-c1 kno:fullForm "생활"@ko ;
+    kno:surfaceForm "생활"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-L1 ;
+    a kno:Component ;
+    rdfs:label "생활(生活)"@ko ;
+    kno:formative kno:F000059 ;
+    kno:role "고정항"@ko .
+kno:KN2020-0160-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "속"@ko ;
+    kno:formative kno:F001490 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "속"@ko ;
+    rdfs:label "속"@ko ;
+    kno:semanticTag kno:usas-M6 .
+kno:KN2020-0160-c3 a kno:Component ;
+    kno:fullForm "거리"@ko ;
+    kno:surfaceForm "거리"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-N3.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002181 ;
+    rdfs:label "거리(距離)"@ko .
+kno:KN2020-0160-c4 kno:formative kno:F003034 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M2 ;
+    kno:surfaceForm "두기"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "두기"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "두기"@ko .

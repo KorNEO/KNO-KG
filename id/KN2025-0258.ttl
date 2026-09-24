@@ -1,36 +1,55 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0258 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0258-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0258-form ;
-    ontolex:sense kno:KN2025-0258-sense .
-
-kno:KN2025-0258-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-18"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/011/0004462451> .
-
-kno:KN2025-0258-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0258-freq-nn,
-        kno:KN2025-0258-freq-yt ;
-    ontolex:writtenRep "바이브 코딩"@ko .
-
-kno:KN2025-0258-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1390 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0258-freq-yt a frac:CorpusFrequency ;
-    rdf:value 341 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0258-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0258 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1845086> ;
+    kno:languageType "영_영" ;
+    kno:indexForm "바이브코딩"@ko ;
+    kno:componentString "바이브(vibe), 코딩(coding)"@ko ;
+    rdfs:label "바이브 코딩"@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "코딩(coding) (1성분)"@ko ;
+    kno:instantiates kno:S001391 ;
+    kno:urimalTargetCode "1845086" ;
+    kno:component kno:KN2025-0258-c2 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:origin "(<영>vibe coding)" ;
+    kno:frequency kno:KN2025-0258-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "(LLM) 프로그램의 세부 코드 작성ㆍ수정은 인공지능에 맡기고, 사람은 의도와 요구 사항을 제시하며 결과물을 빠르게 만들어 가는 개발 방식."@ko ;
+    kno:slotFiller "바이브(vibe) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0258-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:instantiates kno:S001068 ;
+    kno:frequency kno:KN2025-0258-freq-NN-2024 ;
+    kno:component kno:KN2025-0258-c1 ;
+    kno:pos "「구」"@ko ;
+    kno:example "(LLM) 기획자가 기능 요구만 정리해 주면 개발자는 {바이브코딩으로} 시제품을 빠르게 만들어 사용자 반응을 먼저 확인했다."@ko .
+kno:KN2025-0258-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "코딩(coding)"@ko ;
+    kno:surfaceForm "코딩"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000959 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "코딩"@ko .
+kno:KN2025-0258-c1 rdfs:label "바이브(vibe)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000761 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "바이브"@ko ;
+    kno:surfaceForm "바이브"@ko ;
+    kno:role "고정항"@ko .

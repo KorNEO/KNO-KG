@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0132 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0132 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0132-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0132-form ;
-    ontolex:sense kno:KN2021-0132-sense .
-
-kno:KN2021-0132-att-nn a frac:Attestation ;
-    dcterms:date "2020-12-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003059204> .
-
-kno:KN2021-0132-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0132-freq-nn,
-        kno:KN2021-0132-freq-yt ;
-    ontolex:writtenRep "백신 절벽"@ko .
-
-kno:KN2021-0132-freq-nn a frac:CorpusFrequency ;
-    rdf:value 75 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0132-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0132-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0132 kno:frequency kno:KN2021-0132-freq-NN-2021 ;
+    rdfs:label "백신 절벽"@ko ;
+    kno:componentString "백신(vaccine), 절벽(絕壁)"@ko ;
+    kno:example "¶내년 봄, 백신 보유량이 급격히 줄어드는 {백신 절벽을} 마주할 것이라는 전망이 보건 전문가들 사이에서 나왔다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2021-0132-c1 ;
+    kno:slotFiller "절벽(絕壁) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:origin "(<영>vaccine絕壁)" ;
+    kno:frequency kno:KN2021-0132-freq-NN-total ;
+    kno:frequency kno:KN2021-0132-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    skos:definition "백신 확보량 부족으로 인해 백신 공급이 급격하게 줄어드는 현상. 코로나19가 전 세계적으로 유행한 상황에서 나온 말이다."@ko ;
+    kno:component kno:KN2021-0132-c2 ;
+    kno:predicate "줄어드다"@ko ;
+    kno:instantiates kno:S000065 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2021-0132-freq-NN-2022 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:indexForm "백신절벽"@ko ;
+    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:instantiates kno:S000061 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%8B%A0%20%EC%A0%88%EB%B2%BD> ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0132-c1 a kno:Component ;
+    rdfs:label "백신(vaccine)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "백신"@ko ;
+    kno:surfaceForm "백신"@ko ;
+    kno:formative kno:F000079 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0132-c2 kno:semanticTag kno:usas-N5m ;
+    kno:fullForm "절벽"@ko ;
+    kno:surfaceForm "절벽"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000119 ;
+    rdfs:label "절벽(絕壁)"@ko .

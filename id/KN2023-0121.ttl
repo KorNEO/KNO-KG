@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0121 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0121 a ontolex:Word ;
-    frac:attestation kno:KN2023-0121-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0121-form ;
-    ontolex:sense kno:KN2023-0121-sense .
-
-kno:KN2023-0121-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-06"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004721121> .
-
-kno:KN2023-0121-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0121-freq-nn,
-        kno:KN2023-0121-freq-yt ;
-    ontolex:writtenRep "빵플레이션"@ko .
-
-kno:KN2023-0121-freq-nn a frac:CorpusFrequency ;
-    rdf:value 512 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0121-freq-yt a frac:CorpusFrequency ;
-    rdf:value 49 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0121-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0121 kno:slotFiller "(인)플레이션(inflation) (1성분)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:componentString "빵, (인)플레이션(inflation)"@ko ;
+    kno:component kno:KN2023-0121-c2 ;
+    rdfs:label "빵플레이션"@ko ;
+    kno:languageType "고+영" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0121-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000053 ;
+    kno:frequency kno:KN2023-0121-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0121-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0121-freq-NN-2025 ;
+    kno:indexForm "빵플레이션"@ko ;
+    kno:slotFiller "음식; X=빵 (1성분)"@ko ;
+    kno:predicate "일어나다"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:origin "(빵<영>←inflation)" ;
+    skos:definition "빵의 주 재료인 밀가루 따위의 가격 상승과 물류 비용 증가 등이 원인이 되어 일어나는 인플레이션."@ko ;
+    kno:frequency kno:KN2023-0121-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:instantiates kno:S000214 ;
+    kno:example "¶러시아의 우크라이나 침공으로 인해 폭등한 밀가루 가격 때문에 앞으로 ‘{빵플레이션’이} 본격화될 것이라는 우려가 나오고 있다."@ko ;
+    kno:component kno:KN2023-0121-c1 ;
+    kno:pos "「명」"@ko .
+kno:KN2023-0121-c2 kno:formative kno:F000009 ;
+    kno:surfaceForm "플레이션"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1.3p ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(인)플레이션(inflation)"@ko .
+kno:KN2023-0121-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "빵"@ko ;
+    kno:surfaceForm "빵"@ko ;
+    kno:formative kno:F000175 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "빵"@ko .

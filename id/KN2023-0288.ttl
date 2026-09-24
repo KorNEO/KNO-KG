@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0288 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0288 a ontolex:Word ;
-    frac:attestation kno:KN2023-0288-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0288-form ;
-    ontolex:sense kno:KN2023-0288-sense .
-
-kno:KN2023-0288-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-07"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003702393> .
-
-kno:KN2023-0288-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0288-freq-nn,
-        kno:KN2023-0288-freq-yt ;
-    ontolex:writtenRep "컴프테크"@ko .
-
-kno:KN2023-0288-freq-nn a frac:CorpusFrequency ;
-    rdf:value 16 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0288-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0288-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0288 kno:frequency kno:KN2023-0288-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:instantiates kno:S001082 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:example "¶기술이 발달해감에 따라, 블록체인 네트워크의 다양한 기술을 통해 규제를 더욱 효율적으로 준수할 수 있도록 하는 {컴프테크를} 제도적으로 반영하고 활용할 필요성도 커져가고 있다."@ko ;
+    kno:componentString "컴프(라이언스)(compliance), 테크(놀로지)(technology)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "컴프(라이언스)(compliance) (1성분)"@ko ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BB%B4%ED%94%84%ED%85%8C%ED%81%AC> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2023-0288-freq-NN-2024 ;
+    skos:definition "정보 기술이 점점 발달됨에 따라 정부의 규제가 점점 복잡해지자, 빅 데이터, 인공 지능, 클라우드 따위의 첨단 정보 기술을 활용하여 은행이나 기업이 이를 효율적으로 준수할 수 있도록 도와주는 금융 서비스."@ko ;
+    rdfs:label "컴프테크"@ko ;
+    kno:frequency kno:KN2023-0288-freq-NN-2022 ;
+    kno:component kno:KN2023-0288-c2 ;
+    kno:languageType "영" ;
+    kno:frequency kno:KN2023-0288-freq-NN-total ;
+    a kno:Neologism ;
+    kno:origin "(<영>comptech)" ;
+    kno:indexForm "컴프테크"@ko ;
+    kno:component kno:KN2023-0288-c1 ;
+    kno:formation kno:W07 .
+kno:KN2023-0288-c2 kno:semanticTag kno:usas-Y1 ;
+    rdfs:label "테크(놀로지)(technology)"@ko ;
+    kno:surfaceForm "테크"@ko ;
+    kno:formative kno:F000239 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "테크놀로지"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0288-c1 kno:semanticTag kno:usas-G2.1p ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "컴프(라이언스)(compliance)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "컴프라이언스"@ko ;
+    kno:surfaceForm "컴프"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006259 .

@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0194 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0194 skos:definition "‘생활력이 강한 여자’를 줄여 이르는 말."@ko ;
+    kno:component kno:KN2012-0194-c3 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:slotFiller "생(활력)(生)+강(하다)(強) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EA%B0%95%EB%85%80> ;
+    kno:component kno:KN2012-0194-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2012-0194-freq-NN-2015 ;
+    a ontolex:Word ;
+    kno:example "¶이와 동시에 내 집 마련을 위해 2세 계획까지 미룬 채 알뜰살뜰 악착같이 허리띠를 졸라매는 억척 ‘{생강녀}’ OOO가 남편의 당첨 여부와 금액을 알게 될 경우 어떤 반응을 보일지에 대한 기대감 또한 상승하고 있다."@ko ;
+    kno:origin "(生強女)" ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "생강녀"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2012-0194-freq-NN-total ;
+    kno:component kno:KN2012-0194-c1 ;
+    kno:frequency kno:KN2012-0194-freq-NN-2014 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0194-freq-NN-2013 ;
+    rdfs:label "생강녀"@ko ;
+    kno:instantiates kno:S000041 ;
+    kno:componentString "생(활력)(生), 강(하다)(強), 녀(女)"@ko ;
+    kno:frequency kno:KN2012-0194-freq-NN-2016 ;
+    kno:languageType "한+한+한" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0194-freq-NN-2012 .
+kno:KN2012-0194-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    rdfs:label "녀(女)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000024 ;
+    kno:fullForm "녀"@ko .
+kno:KN2012-0194-c2 kno:surfaceForm "강"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:fullForm "강하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002142 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "강(하다)(強)"@ko .
+kno:KN2012-0194-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "생활력"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "생"@ko ;
+    kno:formative kno:F004255 ;
+    kno:semanticTag kno:usas-X9.1p ;
+    rdfs:label "생(활력)(生)"@ko .

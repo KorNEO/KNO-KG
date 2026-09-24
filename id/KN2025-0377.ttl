@@ -1,36 +1,47 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0377 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0377 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0377-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0377-form ;
-    ontolex:sense kno:KN2025-0377-sense .
-
-kno:KN2025-0377-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003893332> .
-
-kno:KN2025-0377-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0377-freq-nn,
-        kno:KN2025-0377-freq-yt ;
-    ontolex:writtenRep "식물성 지식인"@ko .
-
-kno:KN2025-0377-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0377-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0377-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0377 kno:registration "신어DB"@ko ;
+    kno:componentString "식물성(植物性), 지식인(知識人)"@ko ;
+    rdfs:label "식물성 지식인"@ko ;
+    kno:example "(LLM) 현장에서는 당장 해결책을 요구하는데도 그는 토론회에서만 중립적인 말만 반복해 {식물성지식인이라는} 비판을 들었다."@ko ;
+    kno:indexForm "식물성지식인"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9D%EB%AC%BC%EC%84%B1%20%EC%A7%80%EC%8B%9D%EC%9D%B8> ;
+    kno:component kno:KN2025-0377-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0377-c1 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "(LLM) 사회적ㆍ정치적 현안에 대해 적극적으로 참여하거나 행동하지 않고, 안전한 거리에서 원론적 발언만 하며 관망하는 태도의 지식인."@ko ;
+    kno:languageType "한_한" ;
+    kno:origin "(植物性知識人)" .
+kno:KN2025-0377-c2 rdfs:label "지식인(知識人)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-X2.2p ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005882 ;
+    kno:fullForm "지식인"@ko ;
+    kno:surfaceForm "지식인"@ko .
+kno:KN2025-0377-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "식물성"@ko ;
+    kno:formative kno:F004684 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "식물성(植物性)"@ko ;
+    kno:surfaceForm "식물성"@ko ;
+    kno:semanticTag kno:usas-L3 .

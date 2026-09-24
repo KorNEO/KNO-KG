@@ -1,36 +1,85 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0287 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2024-0287 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0287-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0287-form ;
-    ontolex:sense kno:KN2024-0287-sense .
-
-kno:KN2024-0287-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003512237> .
-
-kno:KN2024-0287-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0287-freq-nn,
-        kno:KN2024-0287-freq-yt ;
-    ontolex:writtenRep "지방^분권^균형^발전법"@ko .
-
-kno:KN2024-0287-freq-nn a frac:CorpusFrequency ;
-    rdf:value 442 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0287-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0287-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2024-0287-c4 ;
+    kno:component kno:KN2024-0287-c1 ;
+    kno:component kno:KN2024-0287-c5 ;
+    rdfs:label "지방^분권^균형^발전법"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0287-c3 ;
+    kno:instantiates kno:S001661 ;
+    kno:languageType "한^한^한^한" ;
+    kno:slotFiller "분권(分權)+균형(均衡)+발전(發展)+법(法) (4성분)"@ko ;
+    kno:frequency kno:KN2024-0287-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:frequency kno:KN2024-0287-freq-NN-2024 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶지방 시대 시행 계획은 {지방 분권 균형 발전법에} 따라 매년 수립되는 법정 계획이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EB%B0%A9%EB%B6%84%EA%B6%8C%EA%B7%A0%ED%98%95%EB%B0%9C%EC%A0%84%EB%B2%95> ;
+    kno:slotFiller "지방(地方)+분권(分權)+균형(均衡)+발전(發展) (4성분)"@ko ;
+    kno:indexForm "지방분권균형발전법"@ko ;
+    kno:frequency kno:KN2024-0287-freq-NN-2023 ;
+    kno:component kno:KN2024-0287-c2 ;
+    skos:definition "지역 간 불균형을 해소하고 지역의 특성에 맞는 자립적 발전을 추진하기 위해 제정한 법률. 정식 명칭은 ‘지방 자치 분권 및 지역 균형 발전에 관한 특별법’이다."@ko ;
+    kno:componentString "지방(地方), 분권(分權), 균형(均衡), 발전(發展), 법(法)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(地方分權均衡發展法)" ;
+    kno:frequency kno:KN2024-0287-freq-NN-total .
+kno:KN2024-0287-c4 kno:fullForm "발전"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A2.1p ;
+    rdfs:label "발전(發展)"@ko ;
+    kno:surfaceForm "발전"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000763 .
+kno:KN2024-0287-c1 kno:formative kno:F000590 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "지방(地方)"@ko ;
+    kno:fullForm "지방"@ko ;
+    kno:surfaceForm "지방"@ko .
+kno:KN2024-0287-c5 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "법"@ko ;
+    kno:position "5"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 .
+kno:KN2024-0287-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000678 ;
+    kno:fullForm "균형"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    a kno:Component ;
+    kno:surfaceForm "균형"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "균형(均衡)"@ko .
+kno:KN2024-0287-c2 kno:fullForm "분권"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "분권(分權)"@ko ;
+    kno:surfaceForm "분권"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:formative kno:F003967 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

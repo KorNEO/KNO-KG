@@ -1,36 +1,63 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0034 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0034 a ontolex:Word ;
-    frac:attestation kno:KN2024-0034-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0034-form ;
-    ontolex:sense kno:KN2024-0034-sense .
-
-kno:KN2024-0034-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/109/0005016096> .
-
-kno:KN2024-0034-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0034-freq-nn,
-        kno:KN2024-0034-freq-yt ;
-    ontolex:writtenRep "남타커"@ko .
-
-kno:KN2024-0034-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0034-freq-yt a frac:CorpusFrequency ;
-    rdf:value 65 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0034-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0034 kno:indexForm "남타커"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%A8%ED%83%80%EC%BB%A4> ;
+    a kno:Neologism ;
+    kno:origin "(남타<영>←coffee)" ;
+    kno:component kno:KN2024-0034-c3 ;
+    kno:frequency kno:KN2024-0034-freq-NN-2025 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0034-freq-NN-total ;
+    kno:languageType "고+고+영" ;
+    kno:component kno:KN2024-0034-c1 ;
+    kno:component kno:KN2024-0034-c2 ;
+    skos:definition "‘남이 타준 커피’를 줄여 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "남타커"@ko ;
+    a ontolex:Word ;
+    kno:componentString "남, 타(다), 커(피)(coffee)"@ko ;
+    kno:instantiates kno:S000435 ;
+    kno:example "¶역시 홈카페보단 {남타커가} 맛있어."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2024-0034-freq-NN-2024 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "남+타(다) (2성분)"@ko .
+kno:KN2024-0034-c3 kno:fullForm "커피"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-F2 ;
+    rdfs:label "커(피)(coffee)"@ko ;
+    kno:surfaceForm "커"@ko ;
+    kno:formative kno:F000416 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2024-0034-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "남"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000339 ;
+    a kno:Component ;
+    rdfs:label "남"@ko .
+kno:KN2024-0034-c2 kno:position "2"^^xsd:integer ;
+    rdfs:label "타(다)"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:fullForm "타다"@ko ;
+    kno:surfaceForm "타"@ko ;
+    kno:formative kno:F000968 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .

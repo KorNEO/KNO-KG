@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0163 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0163 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0163-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0163-form ;
-    ontolex:sense kno:KN2023-0163-sense .
-
-kno:KN2023-0163-att-nn a frac:Attestation ;
-    dcterms:date "2022-02-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0005911624> .
-
-kno:KN2023-0163-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0163-freq-nn,
-        kno:KN2023-0163-freq-yt ;
-    ontolex:writtenRep "아트 테크족"@ko .
-
-kno:KN2023-0163-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0163-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0163-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0163 a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶최근 예술과 전시 관람에 대한 젊은층의 관심이 늘면서 미술품에 투자하는 ‘{아트 테크족’이} 증가하고 있다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "아트(art) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%ED%8A%B8%ED%85%8C%ED%81%AC%EC%A1%B1> ;
+    kno:component kno:KN2023-0163-c3 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2023-0163-c1 ;
+    kno:frequency kno:KN2023-0163-freq-NN-total ;
+    kno:instantiates kno:S000116 ;
+    kno:frequency kno:KN2023-0163-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0163-c2 ;
+    kno:indexForm "아트테크족"@ko ;
+    kno:formation kno:W02 ;
+    kno:origin "(<영>art tech族)" ;
+    kno:componentString "아트(art), (재)테크(財tech), -족(族)"@ko ;
+    kno:languageType "영_(영+한)" ;
+    rdfs:label "아트테크-족"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "예술품의 소장 가치를 활용하여 재테크를 하는 사람. 또는 그런 무리."@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0163-c3 kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko .
+kno:KN2023-0163-c1 kno:fullForm "아트"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "아트(art)"@ko ;
+    kno:surfaceForm "아트"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004825 .
+kno:KN2023-0163-c2 kno:formative kno:F000065 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "테크"@ko ;
+    kno:fullForm "재테크"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0543 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0543 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0543-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0543-form ;
-    ontolex:sense kno:KN2025-0543-sense .
-
-kno:KN2025-0543-att-nn a frac:Attestation ;
-    dcterms:date "2025-12-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0005297323> .
-
-kno:KN2025-0543-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0543-freq-nn,
-        kno:KN2025-0543-freq-yt ;
-    ontolex:writtenRep "집밥 경제"@ko .
-
-kno:KN2025-0543-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0543-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0543-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0543 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0543-freq-NN-total ;
+    kno:slotFiller "집밥 (1성분)"@ko ;
+    kno:indexForm "집밥경제"@ko ;
+    kno:frequency kno:KN2025-0543-freq-NN-2025 ;
+    skos:definition "(LLM) 외식보다 집에서 해 먹는 식사를 선호하는 흐름이 강해지면서 간편식ㆍ밀키트ㆍ식재료ㆍ주방 관련 서비스 등 ‘집에서 먹는 것’ 중심으로 소비와 산업이 재편되는 경제 현상."@ko ;
+    rdfs:label "집밥 경제"@ko ;
+    kno:component kno:KN2025-0543-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%91%EB%B0%A5%20%EA%B2%BD%EC%A0%9C> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:predicate "먹다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(집밥經濟)" ;
+    kno:component kno:KN2025-0543-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000049 ;
+    kno:componentString "집밥, 경제(經濟)"@ko ;
+    kno:example "(LLM) 고물가가 이어지자 외식 대신 간편식과 밀키트 매출이 늘면서 {집밥경제가} 유통ㆍ식품업계의 핵심 변수로 떠올랐다."@ko ;
+    a kno:Neologism .
+kno:KN2025-0543-c1 kno:surfaceForm "집밥"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "집밥"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001797 ;
+    kno:fullForm "집밥"@ko .
+kno:KN2025-0543-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000029 ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경제"@ko ;
+    kno:surfaceForm "경제"@ko .

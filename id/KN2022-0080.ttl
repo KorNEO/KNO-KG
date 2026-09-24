@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0080 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0080-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0080-form ;
-    ontolex:sense kno:KN2022-0080-sense .
-
-kno:KN2022-0080-att-nn a frac:Attestation ;
-    dcterms:date "2021-08-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004959103> .
-
-kno:KN2022-0080-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0080-freq-nn,
-        kno:KN2022-0080-freq-yt ;
-    ontolex:writtenRep "기후^인지^예산제"@ko .
-
-kno:KN2022-0080-freq-nn a frac:CorpusFrequency ;
-    rdf:value 29 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0080-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0080-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0080 kno:component kno:KN2022-0080-c3 ;
+    kno:frequency kno:KN2022-0080-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0080-freq-NN-2022 ;
+    kno:instantiates kno:S000984 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "기후인지예산제"@ko ;
+    kno:instantiates kno:S000056 ;
+    kno:componentString "기후(氣候), 인지(認知), 예산제(豫算制)"@ko ;
+    kno:predicate "반영하다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:label "기후^인지^예산제"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0080-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%EC%9D%B8%EC%A7%80%EC%98%88%EC%82%B0%EC%A0%9C> ;
+    kno:slotFiller "인지(認知)+예산제(豫算制) (2성분)"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:slotFiller "기후(氣候)+인지(認知) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶경상남도는 기후에 부정적인 영향을 미치는 사업에 대해서는 사업 계획의 수립 시에 온실가스를 감축하는 방안을 함께 마련할 것을 촉구하였으며, ‘{기후 인지 예산제’의} 시행을 통하여 온실가스의 감축 효과를 확대해 나가고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2022-0080-c1 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0080-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(氣候認知豫算制)" ;
+    skos:definition "환경 및 기후가 미치는 효과를 사전에 파악하여 예산의 편성 및 집행에 반영하는 제도. 2022년에 경상남도에서 전국 최초로 시행하였다."@ko ;
+    kno:frequency kno:KN2022-0080-freq-NN-total ;
+    kno:unitType "구"@ko .
+kno:KN2022-0080-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "예산제"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001621 ;
+    rdfs:label "예산제(豫算制)"@ko ;
+    kno:surfaceForm "예산제"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component .
+kno:KN2022-0080-c2 kno:semanticTag kno:usas-X2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "인지"@ko ;
+    kno:formative kno:F001710 ;
+    a kno:Component ;
+    kno:fullForm "인지"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "인지(認知)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2022-0080-c1 kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "기후(氣候)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:formative kno:F000069 .

@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0258 kno:formation kno:W06 ;
+    kno:languageType "고+영" ;
+    kno:example "¶OOO를 탐탁지 않게 생각하던 OOO와, OOO에게 ‘{짜스’라고} 불리며 불편한 심경을 드러낸 OOO가 티격태격하는 모습이 시청자들의 웃음을 자아냈다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%9C%EC%8A%A4> ;
+    kno:component kno:KN2017-0258-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "스(타일)(style) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2017-0258-c2 ;
+    kno:indexForm "짜스"@ko ;
+    kno:slotFiller "짜(증) (1성분)"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "짜(증), 스(타일)(style)"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "‘짜증나는 스타일’을 줄여 이르는 말."@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000625 ;
+    kno:origin "(짜<영>←style)" ;
+    rdfs:label "짜스"@ko ;
+    kno:instantiates kno:S001668 ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2017-0258-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F001799 ;
+    rdfs:label "짜(증)"@ko ;
+    kno:surfaceForm "짜"@ko ;
+    kno:fullForm "짜증"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E3m .
+kno:KN2017-0258-c2 kno:fullForm "스타일"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "스"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "스(타일)(style)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000542 .

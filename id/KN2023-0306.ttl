@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0306 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0306 a ontolex:Word ;
-    frac:attestation kno:KN2023-0306-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0306-form ;
-    ontolex:sense kno:KN2023-0306-sense .
-
-kno:KN2023-0306-att-nn a frac:Attestation ;
-    dcterms:date "2022-07-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003211190> .
-
-kno:KN2023-0306-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0306-freq-nn,
-        kno:KN2023-0306-freq-yt ;
-    ontolex:writtenRep "킹-받드라쉬"@ko .
-
-kno:KN2023-0306-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0306-freq-yt a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0306-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0306 kno:languageType "영+고" ;
+    kno:indexForm "킹받드라쉬"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0306-freq-NN-total ;
+    kno:pos "「동」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0306-freq-NN-2022 ;
+    kno:component kno:KN2023-0306-c1 ;
+    kno:componentString "킹(king), 받다, 라쉬"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:instantiates kno:S001706 ;
+    kno:example "¶최근에는 ‘열받다’를 강조하기 위해 사용한 ‘킹받다’의 유사 표현으로 ‘{킹받드라쉬’도} 사용되고 있다."@ko ;
+    kno:component kno:KN2023-0306-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%B9%EB%B0%9B%EB%93%9C%EB%9D%BC%EC%89%AC> ;
+    kno:slotFiller "받다+라쉬 (2성분)"@ko ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:label "킹-받드라쉬"@ko ;
+    skos:definition "어떠한 일에 자극을 받아 화가 나다. 영어 단어 ‘킹(king)’과 ‘받다’를 결합하여 만든 말인 ‘킹받다’를 변형하여 이르는 말이다."@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0306-c2 ;
+    kno:origin "(<영>king받드라쉬)" .
+kno:KN2023-0306-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F000122 ;
+    kno:fullForm "킹"@ko ;
+    kno:surfaceForm "킹"@ko ;
+    rdfs:label "킹(king)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0306-c3 rdfs:label "라쉬"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-E3m ;
+    kno:fullForm "라쉬"@ko ;
+    kno:surfaceForm "라쉬"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003151 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0306-c2 a kno:Component ;
+    kno:surfaceForm "받다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A9p ;
+    rdfs:label "받다"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003696 ;
+    kno:fullForm "받다"@ko ;
+    kno:truncated "false"^^xsd:boolean .

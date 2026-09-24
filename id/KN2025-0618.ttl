@@ -1,36 +1,53 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0618 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0618 a ontolex:Word ;
-    frac:attestation kno:KN2025-0618-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0618-form ;
-    ontolex:sense kno:KN2025-0618-sense .
-
-kno:KN2025-0618-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-05"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/584/0000014956> .
-
-kno:KN2025-0618-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0618-freq-nn,
-        kno:KN2025-0618-freq-yt ;
-    ontolex:writtenRep "트리토 노믹스"@ko .
-
-kno:KN2025-0618-freq-nn a frac:CorpusFrequency ;
-    rdf:value 40 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0618-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0618-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0618 kno:formation kno:W05 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%A6%AC%ED%86%A0%EB%85%B8%EB%AF%B9%EC%8A%A4> ;
+    kno:component kno:KN2025-0618-c2 ;
+    kno:predicate "쓰다"@ko ;
+    kno:instantiates kno:S000020 ;
+    kno:frequency kno:KN2025-0618-freq-NN-2025 ;
+    kno:example "(LLM) 여행은 미루면서도 좋아하는 가수의 콘서트 티켓에는 과감히 지갑을 여는 {트리토노믹스가} 확산하고 있다."@ko ;
+    kno:component kno:KN2025-0618-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "트리트(treat), (이코)노믹스(economics)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0618-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "트리트(treat) (1성분)"@ko ;
+    skos:definition "(LLM) 경기 침체나 불확실성이 커진 상황에서 큰 지출은 줄이되, 만족감이 큰 소액의 사치나 특별한 경험에는 돈을 쓰는 소비 경향."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001725 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "트리토노믹스"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "트리토노믹스"@ko ;
+    kno:slotFiller "(이코)노믹스(economics) (1성분)"@ko .
+kno:KN2025-0618-c2 kno:role "고정항"@ko ;
+    kno:fullForm "이코노믹스"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "노믹스"@ko ;
+    kno:formative kno:F000027 ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    rdfs:label "(이코)노믹스(economics)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0618-c1 kno:role "고정항"@ko ;
+    rdfs:label "트리트(treat)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001921 ;
+    kno:fullForm "트리트"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "트리트"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0170 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0170 a ontolex:Word ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:urimalTargetCode "1416236" ;
+    kno:formation kno:W01 ;
+    kno:example "¶O 씨는 “천정부지 오른 계란 값도 짜증 났는데 살충제를 잔뜩 쓴 {살충란이었다고} 생각하니 억울하기까지 하다. 믿고 먹을 음식이 대체 뭐가 있는지 모르겠다.”라고 토로했다."@ko ;
+    rdfs:label "살충-란"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "살충란"@ko ;
+    kno:componentString "살충(殺蟲), 란(卵)"@ko ;
+    kno:origin "(殺蟲卵)" ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0170-freq-NN-total ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416236> ;
+    skos:definition "인체에 해로운 살충제 성분이 검출된 계란."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2018-0170-c2 ;
+    kno:component kno:KN2018-0170-c1 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2018-0170-freq-NN-2017 .
+kno:KN2018-0170-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "란"@ko ;
+    kno:surfaceForm "란"@ko ;
+    rdfs:label "란(卵)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003163 .
+kno:KN2018-0170-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "살충(殺蟲)"@ko ;
+    kno:fullForm "살충"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004201 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "살충"@ko .

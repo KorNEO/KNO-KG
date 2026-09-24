@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0207 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0207 a kno:Neologism ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2016-0207-freq-NN-total ;
+    kno:instantiates kno:S000137 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372642> ;
+    kno:slotFiller "병역(兵役)+적체(積滯) (2성분)"@ko ;
+    kno:component kno:KN2016-0207-c3 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0207-freq-NN-2016 ;
+    kno:origin "(兵役積滯現象)" ;
+    kno:componentString "병역(兵役), 적체(積滯), 현상(現象)"@ko ;
+    kno:indexForm "병역적체현상"@ko ;
+    rdfs:label "병역^적체^현상"@ko ;
+    kno:urimalTargetCode "1372642" ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0207-c2 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶육군 현역 입영 경쟁률 자체가 7.5 대 1 이상으로 올라가 ‘입대 전쟁’으로 불릴 만큼 {병역 적체 현상이} 생긴 것도 의경 지원자가 늘어난 이유 중 하나로 분석된다."@ko ;
+    kno:frequency kno:KN2016-0207-freq-NN-2015 ;
+    kno:component kno:KN2016-0207-c1 ;
+    skos:definition "취업난으로 병역 이행을 희망하는 청년들이 많아지면서 입대가 어려워진 현상을 이르는 말."@ko .
+kno:KN2016-0207-c3 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "현상(現象)"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "현상"@ko ;
+    kno:surfaceForm "현상"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000323 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2016-0207-c2 kno:fullForm "적체"@ko ;
+    rdfs:label "적체(積滯)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:surfaceForm "적체"@ko ;
+    kno:formative kno:F005615 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2016-0207-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:surfaceForm "병역"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003859 ;
+    kno:fullForm "병역"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "병역(兵役)"@ko .

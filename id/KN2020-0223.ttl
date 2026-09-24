@@ -1,36 +1,58 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0223 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0223 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0223-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0223-form ;
-    ontolex:sense kno:KN2020-0223-sense .
-
-kno:KN2020-0223-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/047/0002273968> .
-
-kno:KN2020-0223-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0223-freq-nn,
-        kno:KN2020-0223-freq-yt ;
-    ontolex:writtenRep "언택트 러닝"@ko .
-
-kno:KN2020-0223-freq-nn a frac:CorpusFrequency ;
-    rdf:value 60 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0223-freq-yt a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0223-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0223 kno:component kno:KN2020-0223-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2020-0223-freq-NN-2022 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:indexForm "언택트러닝"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "교사와 학생이 접촉하지 않고 이루어지는 학습. 코로나19의 확산을 방지하기 위해 비대면으로 하는 학습 활동이 일반화되는 상황에서 나온 말이다."@ko ;
+    kno:slotFiller "언택트(un←contact) (1성분)"@ko ;
+    rdfs:label "언택트 러닝"@ko ;
+    kno:frequency kno:KN2020-0223-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%ED%83%9D%ED%8A%B8%20%EB%9F%AC%EB%8B%9D> ;
+    kno:componentString "언택트(un←contact), 러닝(learning)"@ko ;
+    kno:frequency kno:KN2020-0223-freq-NN-2021 ;
+    kno:component kno:KN2020-0223-c1 ;
+    kno:instantiates kno:S000105 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>▼un←contact learning)" ;
+    kno:frequency kno:KN2020-0223-freq-NN-2023 ;
+    kno:slotFiller "러닝(learning) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0223-freq-NN-total ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S000847 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶이번에 개최한 포럼에서 참여자들은 {언택트 러닝을} 시도한 새로운 수업 모델 개발 사례를 발표했다."@ko ;
+    kno:frequency kno:KN2020-0223-freq-NN-2020 ;
+    kno:predicate "이루어지다"@ko .
+kno:KN2020-0223-c2 rdfs:label "러닝(learning)"@ko ;
+    a kno:Component ;
+    kno:fullForm "러닝"@ko ;
+    kno:formative kno:F001234 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "러닝"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2020-0223-c1 kno:semanticTag kno:usas-S1.1.1m ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "언택트(un←contact)"@ko ;
+    kno:surfaceForm "언택트"@ko ;
+    kno:formative kno:F000183 ;
+    kno:fullForm "언택트"@ko ;
+    a kno:Component .

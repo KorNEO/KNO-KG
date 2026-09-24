@@ -1,36 +1,57 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0324 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0324 a ontolex:Word ;
-    frac:attestation kno:KN2020-0324-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0324-form ;
-    ontolex:sense kno:KN2020-0324-sense .
-
-kno:KN2020-0324-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/117/0003318446> .
-
-kno:KN2020-0324-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0324-freq-nn,
-        kno:KN2020-0324-freq-yt ;
-    ontolex:writtenRep "촌므파탈"@ko .
-
-kno:KN2020-0324-freq-nn a frac:CorpusFrequency ;
-    rdf:value 108 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0324-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0324-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0324 kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2020-0324-freq-NN-2025 ;
+    kno:indexForm "촌므파탈"@ko ;
+    kno:frequency kno:KN2020-0324-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0324-freq-NN-2023 ;
+    kno:year "2020"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2020-0324-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2020-0324-c2 ;
+    kno:languageType "한+프" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1463712> ;
+    kno:urimalTargetCode "1463712" ;
+    rdfs:label "촌므파탈"@ko ;
+    kno:frequency kno:KN2020-0324-freq-NN-2019 ;
+    kno:formation kno:W05 ;
+    skos:definition "세련됨이 없이 어수룩한 데가 있지만 매력적인 남성 캐릭터를 이르는 말."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(村<프>←homme fatale)" ;
+    kno:example "¶얼핏 보면 촌스럽지만 한번 빠지게 되면 헤어 나오기 힘든 마성의 {촌므파탈로} 시청자들을 사로잡는 캐릭터가 탄생했다."@ko ;
+    kno:frequency kno:KN2020-0324-freq-NN-2020 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0324-c1 ;
+    kno:componentString "촌(스럽다), (옴)므파탈(homme fatale)"@ko ;
+    kno:frequency kno:KN2020-0324-freq-NN-2021 .
+kno:KN2020-0324-c2 kno:semanticTag kno:usas-S2.2 ;
+    rdfs:label "(옴)므파탈(homme fatale)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "므파탈"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "옴므파탈"@ko ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:formative kno:F003575 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0324-c1 kno:surfaceForm "촌"@ko ;
+    kno:formative kno:F006099 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O4.2m ;
+    kno:fullForm "촌스럽다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "촌(스럽다)"@ko .

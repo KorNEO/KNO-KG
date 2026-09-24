@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0012 kno:component kno:KN2017-0012-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "갭투자족"@ko ;
+    kno:example "¶O 교수는 “지금처럼 대출이 강화된 상태에서 집값이 내려가지 않는다면 {갭 투자족들은} 더 늘어날 수 있다.”라면서…경고했다."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2017-0012-freq-NN-total ;
+    kno:componentString "갭(gap), 투자(投資), -족(族)"@ko ;
+    kno:frequency kno:KN2017-0012-freq-NN-2019 ;
+    kno:urimalTargetCode "1380314" ;
+    kno:frequency kno:KN2017-0012-freq-NN-2018 ;
+    kno:instantiates kno:S001088 ;
+    kno:frequency kno:KN2017-0012-freq-NN-2025 ;
+    kno:frequency kno:KN2017-0012-freq-NN-2024 ;
+    kno:component kno:KN2017-0012-c2 ;
+    skos:definition "전세가와 매매가의 차이가 적은 주택을 구입하여 전세를 놓은 후, 매매가 상승에서 시세 차익을 얻을 목적으로 투자하는 사람. 또는 그런 무리."@ko ;
+    rdfs:label "갭^투자족"@ko ;
+    kno:frequency kno:KN2017-0012-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "투자(投資)+-족(族) (2성분)"@ko ;
+    kno:slotFiller "갭(gap) (1성분)"@ko ;
+    kno:languageType "영^한" ;
+    kno:origin "(<영>gap投資族)" ;
+    kno:frequency kno:KN2017-0012-freq-NN-2017 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:predicate "투자하다"@ko ;
+    kno:frequency kno:KN2017-0012-freq-NN-2022 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "8"^^xsd:integer ;
+    kno:frequency kno:KN2017-0012-freq-NN-2023 ;
+    kno:component kno:KN2017-0012-c3 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380314> ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001193 .
+kno:KN2017-0012-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "갭(gap)"@ko ;
+    kno:formative kno:F000450 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "갭"@ko ;
+    kno:surfaceForm "갭"@ko .
+kno:KN2017-0012-c2 kno:fullForm "투자"@ko ;
+    rdfs:label "투자(投資)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000427 ;
+    kno:surfaceForm "투자"@ko ;
+    kno:semanticTag kno:usas-I1 .
+kno:KN2017-0012-c3 rdfs:label "-족(族)"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    a kno:Component .

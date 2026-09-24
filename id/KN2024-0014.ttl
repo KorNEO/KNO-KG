@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0014 a ontolex:Word ;
-    frac:attestation kno:KN2024-0014-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0014-form ;
-    ontolex:sense kno:KN2024-0014-sense .
-
-kno:KN2024-0014-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0004815588> .
-
-kno:KN2024-0014-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0014-freq-nn,
-        kno:KN2024-0014-freq-yt ;
-    ontolex:writtenRep "교-자성"@ko .
-
-kno:KN2024-0014-freq-nn a frac:CorpusFrequency ;
-    rdf:value 108 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0014-freq-yt a frac:CorpusFrequency ;
-    rdf:value 97 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0014-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0014 a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0014-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "교자성"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%9E%90%EC%84%B1> ;
+    rdfs:label "교-자성"@ko ;
+    kno:frequency kno:KN2024-0014-freq-NN-2024 ;
+    kno:predicate "사라지다"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "외부 자기장이 가해지면 강한 자화를 띠고, 자기장이 제거되면 자화가 사라지는 성질. 스스로 자기적 성질을 가지는 ‘강자성’과 자성이 없는 ‘반강자성’의 성질을 동시에 보이는 새로운 자성 상태를 나타낸다."@ko ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0014-freq-NN-total ;
+    kno:example "¶{교자성이} 실재한다면, 강자성과 반강자성에 기반한 기존 자성 이론을 재정립해야 하기에, 이는 물리학계에서 큰 관심을 보이고 있다."@ko ;
+    kno:componentString "교(交), 자성(磁性)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2024-0014-c2 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(交磁性)" ;
+    kno:frequency kno:KN2024-0014-freq-NN-2025 ;
+    kno:languageType "한+한" .
+kno:KN2024-0014-c1 rdfs:label "교(交)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "교"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002425 ;
+    kno:surfaceForm "교"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 .
+kno:KN2024-0014-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "자성"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y1 ;
+    rdfs:label "자성(磁性)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005525 ;
+    kno:fullForm "자성"@ko .

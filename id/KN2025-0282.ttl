@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0282 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0282 a ontolex:Word ;
-    frac:attestation kno:KN2025-0282-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0282-form ;
-    ontolex:sense kno:KN2025-0282-sense .
-
-kno:KN2025-0282-att-nn a frac:Attestation ;
-    dcterms:date "2025-05-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005587213> .
-
-kno:KN2025-0282-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0282-freq-nn,
-        kno:KN2025-0282-freq-yt ;
-    ontolex:writtenRep "법제완박"@ko .
-
-kno:KN2025-0282-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0282-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0282-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0282 kno:frequency kno:KN2025-0282-freq-NN-total ;
+    kno:component kno:KN2025-0282-c2 ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0282-c1 ;
+    kno:componentString "법(률)(法律), 제(도)(制度), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    a kno:Neologism ;
+    kno:origin "(法制完剝)" ;
+    kno:instantiates kno:S000051 ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%95%EC%A0%9C%EC%99%84%EB%B0%95> ;
+    kno:indexForm "법제완박"@ko ;
+    kno:slotFiller "법(률)(法律)+제(도)(制度) (2성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "(LLM) 법률ㆍ제도 개정으로 특정 기관이나 절차의 권한을 완전히 박탈해, 해당 사안의 수사ㆍ심의ㆍ처벌 등이 제대로 이루어지지 못하게 만든다는 뜻으로 비판적으로 이르는 말."@ko ;
+    kno:component kno:KN2025-0282-c4 ;
+    kno:example "(LLM) 일부에서는 이번 개정안이 사실상 {법제완박}이라며, 제도의 취지를 무력화한다고 반발했다."@ko ;
+    kno:frequency kno:KN2025-0282-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:languageType "한+한+한+한" ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "법제완박"@ko ;
+    kno:component kno:KN2025-0282-c3 .
+kno:KN2025-0282-c2 kno:formative kno:F005698 ;
+    kno:fullForm "제도"@ko ;
+    kno:surfaceForm "제"@ko ;
+    rdfs:label "제(도)(制度)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0282-c1 kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "법(률)(法律)"@ko ;
+    kno:fullForm "법률"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003803 .
+kno:KN2025-0282-c4 kno:role "고정항"@ko ;
+    kno:surfaceForm "박"@ko ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:fullForm "박탈"@ko ;
+    rdfs:label "박(탈)(剝奪)"@ko ;
+    a kno:Component ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F000040 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0282-c3 kno:surfaceForm "완"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000031 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A13.2 ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:fullForm "완전"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

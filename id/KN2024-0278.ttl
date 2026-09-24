@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0278 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0278 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0278-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0278-form ;
-    ontolex:sense kno:KN2024-0278-sense .
-
-kno:KN2024-0278-att-nn a frac:Attestation ;
-    dcterms:date "2024-05-30"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/005/0001699991> .
-
-kno:KN2024-0278-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0278-freq-nn,
-        kno:KN2024-0278-freq-yt ;
-    ontolex:writtenRep "증빙^어음"@ko .
-
-kno:KN2024-0278-freq-nn a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0278-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0278-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0278 kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "증빙어음"@ko ;
+    kno:frequency kno:KN2024-0278-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "금전 거래 등의 사실을 증명하기 위해 발행된 어음."@ko ;
+    kno:languageType "한^고" ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(證憑어음)" ;
+    kno:component kno:KN2024-0278-c2 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0278-freq-NN-2024 ;
+    rdfs:label "증빙^어음"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A6%9D%EB%B9%99%EC%96%B4%EC%9D%8C> ;
+    kno:componentString "증빙(證憑), 어음"@ko ;
+    kno:example "¶재판부는 {증빙 어음을} 금전적 지원이 이루어진 사실을 입증하는 증거로 삼았다."@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2024-0278-c1 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2024-0278-c2 kno:formative kno:F004958 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "어음"@ko ;
+    a kno:Component ;
+    kno:fullForm "어음"@ko ;
+    kno:surfaceForm "어음"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0278-c1 kno:surfaceForm "증빙"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005848 ;
+    kno:semanticTag kno:usas-A5.4p ;
+    rdfs:label "증빙(證憑)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "증빙"@ko ;
+    kno:role "성분"@ko .

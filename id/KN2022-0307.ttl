@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0307 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0307 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0307-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0307-form ;
-    ontolex:sense kno:KN2022-0307-sense .
-
-kno:KN2022-0307-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-22"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000619057> .
-
-kno:KN2022-0307-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0307-freq-nn,
-        kno:KN2022-0307-freq-yt ;
-    ontolex:writtenRep "호모 미그라티오"@ko .
-
-kno:KN2022-0307-freq-nn a frac:CorpusFrequency ;
-    rdf:value 27 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0307-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0307-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0307 kno:example "¶‘게르만족의 대이동’부터 ‘아이리시 엑소더스’까지 인류의 역사는 ‘{호모 미그라티오’의} 역사라는 견해가 설득력을 얻고 있다."@ko ;
+    kno:origin "(<라>homo migratio)" ;
+    kno:frequency kno:KN2022-0307-freq-NN-2023 ;
+    a kno:Neologism ;
+    skos:definition "이주하는 인간. 더 나은 환경을 찾아 거처를 옮겨 다니는 것이 본질적 특성이라는 관점에서 인간을 정의한 말이다."@ko ;
+    kno:indexForm "호모미그라티오"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2022-0307-freq-NN-2024 ;
+    kno:instantiates kno:S000109 ;
+    kno:component kno:KN2022-0307-c1 ;
+    kno:component kno:KN2022-0307-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:slotFiller "미그라티오(migratio) (1성분)"@ko ;
+    rdfs:label "호모 미그라티오"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EB%AA%A8%20%EB%AF%B8%EA%B7%B8%EB%9D%BC%ED%8B%B0%EC%98%A4> ;
+    kno:frequency kno:KN2022-0307-freq-NN-total ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "라_라" ;
+    kno:frequency kno:KN2022-0307-freq-NN-2021 ;
+    kno:predicate "이주하다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:componentString "호모(Homo), 미그라티오(migratio)"@ko .
+kno:KN2022-0307-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "호모(Homo)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:formative kno:F000026 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "호모"@ko ;
+    kno:surfaceForm "호모"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0307-c2 kno:surfaceForm "미그라티오"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "미그라티오(migratio)"@ko ;
+    kno:formative kno:F003592 ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "미그라티오"@ko ;
+    kno:truncated "false"^^xsd:boolean .

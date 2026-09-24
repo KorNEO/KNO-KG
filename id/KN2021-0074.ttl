@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0074 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0074 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0074-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0074-form ;
-    ontolex:sense kno:KN2021-0074-sense .
-
-kno:KN2021-0074-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-13"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004527856> .
-
-kno:KN2021-0074-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0074-freq-nn,
-        kno:KN2021-0074-freq-yt ;
-    ontolex:writtenRep "데이터^담보^대출"@ko .
-
-kno:KN2021-0074-freq-nn a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0074-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0074-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0074 kno:instantiates kno:S000497 ;
+    kno:frequency kno:KN2021-0074-freq-NN-total ;
+    kno:component kno:KN2021-0074-c3 ;
+    kno:slotFiller "데이터(data)+담보(擔保) (2성분)"@ko ;
+    kno:indexForm "데이터담보대출"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0074-c1 ;
+    kno:frequency kno:KN2021-0074-freq-NN-2022 ;
+    kno:example "¶산업계에서는 이 같은 {데이터 담보 대출로} 대출 시장이 크게 변화할 것으로 예측하고 있다."@ko ;
+    rdfs:label "데이터^담보^대출"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:component kno:KN2021-0074-c2 ;
+    skos:definition "데이터를 담보로 하여 돈을 빌려주거나 빌리는 일."@ko ;
+    kno:instantiates kno:S000249 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8D%B0%EC%9D%B4%ED%84%B0%EB%8B%B4%EB%B3%B4%EB%8C%80%EC%B6%9C> ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2021-0074-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0074-freq-NN-2021 ;
+    kno:slotFiller "담보(擔保)+대출(貸出) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:languageType "영^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>data擔保貸出)" ;
+    kno:componentString "데이터(data), 담보(擔保), 대출(貸出)"@ko ;
+    kno:predicate "빌리다"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2021-0074-c3 kno:semanticTag kno:usas-I1.2 ;
+    kno:fullForm "대출"@ko ;
+    rdfs:label "대출(貸出)"@ko ;
+    kno:surfaceForm "대출"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000167 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0074-c1 kno:fullForm "데이터"@ko ;
+    kno:surfaceForm "데이터"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000132 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "데이터(data)"@ko .
+kno:KN2021-0074-c2 kno:fullForm "담보"@ko ;
+    kno:surfaceForm "담보"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "담보(擔保)"@ko ;
+    kno:formative kno:F002884 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

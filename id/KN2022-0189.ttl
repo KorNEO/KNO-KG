@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0189 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0189-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0189-form ;
-    ontolex:sense kno:KN2022-0189-sense .
-
-kno:KN2022-0189-att-nn a frac:Attestation ;
-    dcterms:date "2021-12-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/016/0001922312> .
-
-kno:KN2022-0189-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0189-freq-nn,
-        kno:KN2022-0189-freq-yt ;
-    ontolex:writtenRep "스텔스^오미크론"@ko .
-
-kno:KN2022-0189-freq-nn a frac:CorpusFrequency ;
-    rdf:value 10469 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0189-freq-yt a frac:CorpusFrequency ;
-    rdf:value 161 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0189-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0189 kno:frequency kno:KN2022-0189-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "오미크론(omikron) (1성분)"@ko ;
+    kno:languageType "영^그" ;
+    kno:component kno:KN2022-0189-c2 ;
+    kno:instantiates kno:S000220 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "코로나19의 변이 바이러스인 ‘오미크론’의 하위 변이. 피시아르(PCR) 검사를 통해서도 감염 여부가 잘 확인되지 않는 특징을 레이더에 탐지되지 않는 ‘스텔스’에 빗대어 이르는 말이다."@ko ;
+    kno:origin "(<영>stealth<그>omikron)" ;
+    kno:frequency kno:KN2022-0189-freq-NN-2021 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%ED%85%94%EC%8A%A4%EC%98%A4%EB%AF%B8%ED%81%AC%EB%A1%A0> ;
+    kno:example "¶{스텔스 오미크론에} 감염되면 피시아르 검사에서 코로나 감염자로 나오지만 오미크론 변이 여부는 확인이 되지 않는다고 한다."@ko ;
+    kno:frequency kno:KN2022-0189-freq-NN-total ;
+    kno:frequency kno:KN2022-0189-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "스텔스(stealth), 오미크론(omikron)"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2022-0189-freq-NN-2022 ;
+    kno:component kno:KN2022-0189-c1 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:label "스텔스^오미크론"@ko ;
+    kno:indexForm "스텔스오미크론"@ko .
+kno:KN2022-0189-c2 kno:fullForm "오미크론"@ko ;
+    a kno:Component ;
+    rdfs:label "오미크론(omikron)"@ko ;
+    kno:surfaceForm "오미크론"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F005120 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m .
+kno:KN2022-0189-c1 kno:semanticTag kno:usas-A10 ;
+    kno:surfaceForm "스텔스"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000375 ;
+    kno:fullForm "스텔스"@ko ;
+    rdfs:label "스텔스(stealth)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .

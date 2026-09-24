@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0472 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0472 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0472-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0472-form ;
-    ontolex:sense kno:KN2025-0472-sense .
-
-kno:KN2025-0472-att-nn a frac:Attestation ;
-    dcterms:date "2024-12-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003606785> .
-
-kno:KN2025-0472-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0472-freq-nn,
-        kno:KN2025-0472-freq-yt ;
-    ontolex:writtenRep "응원봉 세대"@ko .
-
-kno:KN2025-0472-freq-nn a frac:CorpusFrequency ;
-    rdf:value 27 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0472-freq-yt a frac:CorpusFrequency ;
-    rdf:value 28 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0472-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0472 kno:example "(LLM) 광장에 모인 {응원봉세대는} 각자 가져온 불빛을 흔들며 구호를 외치고, 서로의 참여를 독려했다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "응원봉세대"@ko ;
+    kno:frequency kno:KN2025-0472-freq-NN-2025 ;
+    kno:slotFiller "응원봉(應援棒) (1성분)"@ko ;
+    kno:predicate "젊은"@ko ;
+    kno:instantiates kno:S000002 ;
+    kno:component kno:KN2025-0472-c1 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "응원봉(應援棒), 세대(世代)"@ko ;
+    kno:frequency kno:KN2025-0472-freq-NN-total ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0472-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "응원봉 세대"@ko ;
+    kno:component kno:KN2025-0472-c2 ;
+    kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(應援棒世代)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%91%EC%9B%90%EB%B4%89%20%EC%84%B8%EB%8C%80> ;
+    skos:definition "(LLM) 케이팝 공연 문화에서 쓰이는 응원봉을 흔드는 방식의 집단 응원에 익숙하며, 집회ㆍ시위 등 공적 공간에서도 응원봉을 상징적 도구로 들고 참여하는 젊은 층."@ko .
+kno:KN2025-0472-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005362 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "응원봉(應援棒)"@ko ;
+    kno:fullForm "응원봉"@ko ;
+    kno:surfaceForm "응원봉"@ko .
+kno:KN2025-0472-c2 kno:semanticTag kno:usas-T3 ;
+    kno:surfaceForm "세대"@ko ;
+    rdfs:label "세대(世代)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean .

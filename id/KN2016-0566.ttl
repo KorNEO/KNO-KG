@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0566 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0566 kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶맛, 영양, 기능 등 식품에 대한 소비자들의 니즈가 다양해지면서 최근에는 첨단 기술력이 접목된 이른바 {하이테크 푸드가} 주목받고 있다."@ko ;
+    kno:languageType "영_영" ;
+    kno:slotFiller "하이테크(hightech) (1성분)"@ko ;
+    kno:componentString "하이테크(hightech), 푸드(food)"@ko ;
+    kno:frequency kno:KN2016-0566-freq-NN-2015 ;
+    kno:origin "(<영>hightech food)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000188 ;
+    skos:definition "첨단 과학 기술이 적용되어 만들어진 음식. 조리 과정에서 손실되는 영양소를 최소화하고, 원재료의 맛과 기능을 최대한 유지하기 위한 기술이 접목되어 만들어진 음식을 말한다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373001> ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0566-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:label "하이테크 푸드"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0566-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0566-freq-NN-2016 ;
+    kno:component kno:KN2016-0566-c2 ;
+    kno:indexForm "하이테크푸드"@ko ;
+    kno:urimalTargetCode "1373001" .
+kno:KN2016-0566-c1 kno:fullForm "하이테크"@ko ;
+    kno:surfaceForm "하이테크"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F006934 ;
+    a kno:Component ;
+    rdfs:label "하이테크(hightech)"@ko .
+kno:KN2016-0566-c2 rdfs:label "푸드(food)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "푸드"@ko ;
+    kno:surfaceForm "푸드"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000108 .

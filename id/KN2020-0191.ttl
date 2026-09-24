@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0191 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0191 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0191-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0191-form ;
-    ontolex:sense kno:KN2020-0191-sense .
-
-kno:KN2020-0191-att-nn a frac:Attestation ;
-    dcterms:date "2020-03-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0009768702> .
-
-kno:KN2020-0191-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0191-freq-nn,
-        kno:KN2020-0191-freq-yt ;
-    ontolex:writtenRep "신속 전액 보증"@ko .
-
-kno:KN2020-0191-freq-nn a frac:CorpusFrequency ;
-    rdf:value 20 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0191-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0191-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0191 kno:languageType "한_한_한" ;
+    kno:predicate "보증하다"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "신속 전액 보증"@ko ;
+    kno:slotFiller "신속(迅速)+전액(全額) (2성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%86%8D%20%EC%A0%84%EC%95%A1%20%EB%B3%B4%EC%A6%9D> ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000151 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0191-freq-NN-2020 ;
+    kno:example "¶연매출 1억 원 이하의 영세 기업은 {신속 전액 보증을} 지원받을 수 있다."@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(迅速全額保證)" ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0191-c1 ;
+    kno:indexForm "신속전액보증"@ko ;
+    kno:instantiates kno:S000889 ;
+    kno:frequency kno:KN2020-0191-freq-NN-total ;
+    kno:component kno:KN2020-0191-c2 ;
+    skos:definition "국가적 재난 상황으로 인한 경기 침체를 극복하기 위해, 경제적 위기를 겪은 영세 기업과 소상공인에게 일정 금액을 국가가 전액 신속하게 보증하는 일. 코로나19로 경제적 어려움을 겪은 영세 기업과 소상공인에게 최대 5,000만 원까지 국가가 전액 보증한다."@ko ;
+    kno:componentString "신속(迅速), 전액(全額), 보증(保證)"@ko ;
+    kno:slotFiller "전액(全額)+보증(保證) (2성분)"@ko ;
+    kno:component kno:KN2020-0191-c3 .
+kno:KN2020-0191-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "신속"@ko ;
+    kno:semanticTag kno:usas-N3.8p ;
+    kno:formative kno:F000291 ;
+    kno:fullForm "신속"@ko ;
+    rdfs:label "신속(迅速)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2020-0191-c2 kno:formative kno:F005634 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "전액"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "전액"@ko ;
+    rdfs:label "전액(全額)"@ko .
+kno:KN2020-0191-c3 kno:semanticTag kno:usas-I1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "보증"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "보증(保證)"@ko ;
+    kno:formative kno:F001374 ;
+    a kno:Component ;
+    kno:fullForm "보증"@ko .

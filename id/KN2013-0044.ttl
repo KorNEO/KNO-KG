@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0044 kno:formation kno:W03 ;
+    kno:year "2013"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B9%EC%98%B5> ;
+    kno:slotFiller "옵(션)(option) (1성분)"@ko ;
+    skos:definition "더할 수 없는 정도로 좋은 옵션."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "극옵"@ko ;
+    kno:slotFiller "극(極)- (1성분)"@ko ;
+    kno:languageType "한+영" ;
+    rdfs:label "극-옵"@ko ;
+    kno:componentString "극(極)-, 옵(션)(option)"@ko ;
+    kno:component kno:KN2013-0044-c2 ;
+    a kno:Neologism ;
+    kno:example "¶OO의 소위 ‘지존’ 아이템은 ‘트리플 옵션’이 {극옵으로} 달린 것들이 대부분이다."@ko ;
+    kno:origin "(極←<영>option)" ;
+    kno:instantiates kno:S000202 ;
+    kno:instantiates kno:S000989 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:predicate "좋은"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2013-0044-c1 .
+kno:KN2013-0044-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "옵(션)(option)"@ko ;
+    kno:surfaceForm "옵"@ko ;
+    kno:fullForm "옵션"@ko ;
+    kno:formative kno:F000872 ;
+    kno:semanticTag kno:usas-X6 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0044-c1 kno:role "고정항"@ko ;
+    kno:fullForm "극"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "극"@ko ;
+    rdfs:label "극(極)-"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000202 .

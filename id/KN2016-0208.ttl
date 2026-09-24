@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0208 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0208 a kno:Neologism ;
+    kno:languageType "(고+한)_고" ;
+    kno:component kno:KN2016-0208-c2 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "직무를 수행하기 위해 필요한 학력, 경력, 자격증 따위를 모두 갖춘 지원자를 비유적으로 이르는 말. 색깔이 보라색인 다람쥐가 현실에서 존재하기 어렵다는 뜻으로 사용한 말이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:origin "(보라色다람쥐)" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2016-0208-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0208-freq-NN-2020 ;
+    kno:indexForm "보라색다람쥐"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2016-0208-c1 ;
+    rdfs:label "보라색 다람쥐"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶물론 여전히 능력을 두루 갖춘 이른바 ‘{보라색 다람쥐}’ 찾기에 시간을 많이 투자하는 기업이 있기는 하지만 신속 채용 절차가 점차 인기를 끌 것으로 보인다."@ko ;
+    kno:frequency kno:KN2016-0208-freq-NN-2022 ;
+    kno:componentString "보라색(보라色), 다람쥐"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0208-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%B4%EB%9D%BC%EC%83%89%20%EB%8B%A4%EB%9E%8C%EC%A5%90> ;
+    kno:lastAttestationYear "2022"^^xsd:gYear .
+kno:KN2016-0208-c2 a kno:Component ;
+    kno:fullForm "다람쥐"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001156 ;
+    kno:surfaceForm "다람쥐"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "다람쥐"@ko ;
+    kno:role "성분"@ko .
+kno:KN2016-0208-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003881 ;
+    rdfs:label "보라색(보라色)"@ko ;
+    kno:fullForm "보라색"@ko ;
+    kno:surfaceForm "보라색"@ko .

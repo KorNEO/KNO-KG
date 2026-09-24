@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0037 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0037 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0037-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0037-form ;
-    ontolex:sense kno:KN2021-0037-sense .
-
-kno:KN2021-0037-att-nn a frac:Attestation ;
-    dcterms:date "2021-06-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003362802> .
-
-kno:KN2021-0037-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0037-freq-nn,
-        kno:KN2021-0037-freq-yt ;
-    ontolex:writtenRep "근육 적금"@ko .
-
-kno:KN2021-0037-freq-nn a frac:CorpusFrequency ;
-    rdf:value 68 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0037-freq-yt a frac:CorpusFrequency ;
-    rdf:value 6 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0037-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0037 rdfs:label "근육 적금"@ko ;
+    kno:frequency kno:KN2021-0037-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0037-freq-NN-2021 ;
+    kno:origin "(筋肉積金)" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0037-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:example "¶노년층에게는 은퇴 후 받는 연금만큼 ‘{근육 적금’이} 중요하다."@ko ;
+    kno:frequency kno:KN2021-0037-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0037-c1 ;
+    skos:definition "운동하여 근육을 차곡차곡 쌓는 일을 적금에 빗대어 이르는 말."@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EC%9C%A1%20%EC%A0%81%EA%B8%88> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2021-0037-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "근육(筋肉) (1성분)"@ko ;
+    kno:component kno:KN2021-0037-c2 ;
+    kno:instantiates kno:S001022 ;
+    kno:instantiates kno:S000203 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:slotFiller "적금(積金) (1성분)"@ko ;
+    kno:componentString "근육(筋肉), 적금(積金)"@ko ;
+    kno:indexForm "근육적금"@ko .
+kno:KN2021-0037-c1 kno:semanticTag kno:usas-B1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "근육(筋肉)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "근육"@ko ;
+    kno:formative kno:F000163 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "근육"@ko .
+kno:KN2021-0037-c2 kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "적금(積金)"@ko ;
+    kno:formative kno:F001746 ;
+    kno:fullForm "적금"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "적금"@ko ;
+    kno:role "고정항"@ko .

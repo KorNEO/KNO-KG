@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0059 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0059 a ontolex:Word ;
-    frac:attestation kno:KN2023-0059-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0059-form ;
-    ontolex:sense kno:KN2023-0059-sense .
-
-kno:KN2023-0059-att-nn a frac:Attestation ;
-    dcterms:date "2022-09-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003716479> .
-
-kno:KN2023-0059-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0059-freq-nn,
-        kno:KN2023-0059-freq-yt ;
-    ontolex:writtenRep "꼬이직"@ko .
-
-kno:KN2023-0059-freq-nn a frac:CorpusFrequency ;
-    rdf:value 21 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0059-freq-yt a frac:CorpusFrequency ;
-    rdf:value 91 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0059-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0059 kno:pos "「명」"@ko ;
+    kno:component kno:KN2023-0059-c2 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0059-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0059-freq-NN-2024 ;
+    kno:example "¶공무원의 보수 문제가 화제로 다루어질 때마다 철밥통, {꼬이직} 등과 같은 댓글이 등장한다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:indexForm "꼬이직"@ko ;
+    a kno:Neologism ;
+    kno:componentString "꼬(우다), 이직(移職)"@ko ;
+    skos:definition "‘꼬우면 이직해’를 줄여 이르는 말. 공무원들이 임금 인상을 요구하는 시위를 하자, 일부 사람들이 온라인상에서 이를 조롱하는 의미로 사용한다."@ko ;
+    kno:frequency kno:KN2023-0059-freq-NN-total ;
+    kno:component kno:KN2023-0059-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%BC%AC%EC%9D%B4%EC%A7%81> ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "고+한" ;
+    kno:frequency kno:KN2023-0059-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "꼬이직"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(꼬移職)" .
+kno:KN2023-0059-c2 kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F001700 ;
+    kno:fullForm "이직"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "이직(移職)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "이직"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0059-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "꼬(우다)"@ko ;
+    kno:surfaceForm "꼬"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002647 ;
+    kno:fullForm "꼬우다"@ko ;
+    a kno:Component .

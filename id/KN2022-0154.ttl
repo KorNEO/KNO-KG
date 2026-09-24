@@ -1,36 +1,66 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0154 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0154-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0154-form ;
-    ontolex:sense kno:KN2022-0154-sense .
-
-kno:KN2022-0154-att-nn a frac:Attestation ;
-    dcterms:date "2021-07-16"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0010611485> .
-
-kno:KN2022-0154-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0154-freq-nn,
-        kno:KN2022-0154-freq-yt ;
-    ontolex:writtenRep "백신^국가^책임제"@ko .
-
-kno:KN2022-0154-freq-nn a frac:CorpusFrequency ;
-    rdf:value 288 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0154-freq-yt a frac:CorpusFrequency ;
-    rdf:value 4 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0154-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0154 kno:origin "(<영>vaccine國家責任制)" ;
+    kno:example "¶코로나19의 확산을 방지하기 위한 대책으로 {백신 국가 책임제가} 논의되고 있다."@ko ;
+    kno:instantiates kno:S000796 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%8B%A0%EA%B5%AD%EA%B0%80%EC%B1%85%EC%9E%84%EC%A0%9C> ;
+    kno:frequency kno:KN2022-0154-freq-NN-total ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0154-c1 ;
+    rdfs:label "백신^국가^책임제"@ko ;
+    skos:definition "감염병 따위의 치료를 위한 백신의 개발과 생산, 접종, 부작용 추적 및 관리 등에 있어서, 국가가 법률적 주체가 되어 사회적 부담을 책임지는 제도."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "국가(國家)+책임제(責任制) (2성분)"@ko ;
+    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    kno:indexForm "백신국가책임제"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "책임지다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:languageType "영^한^한" ;
+    kno:componentString "백신(vaccine), 국가(國家), 책임제(責任制)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0154-c3 ;
+    kno:frequency kno:KN2022-0154-freq-NN-2021 ;
+    kno:component kno:KN2022-0154-c2 ;
+    kno:frequency kno:KN2022-0154-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0154-freq-NN-2022 ;
+    kno:instantiates kno:S000065 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0154-c1 kno:semanticTag kno:usas-B3 ;
+    rdfs:label "백신(vaccine)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "백신"@ko ;
+    kno:surfaceForm "백신"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000079 .
+kno:KN2022-0154-c3 kno:semanticTag kno:usas-S6p ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "책임제(責任制)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "책임제"@ko ;
+    kno:surfaceForm "책임제"@ko ;
+    kno:formative kno:F001819 .
+kno:KN2022-0154-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:fullForm "국가"@ko ;
+    kno:surfaceForm "국가"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000020 .

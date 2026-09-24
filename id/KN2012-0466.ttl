@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0466 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0466 kno:frequency kno:KN2012-0466-freq-NN-2014 ;
+    kno:frequency kno:KN2012-0466-freq-NN-total ;
+    rdfs:label "픽스-력"@ko ;
+    kno:component kno:KN2012-0466-c2 ;
+    kno:component kno:KN2012-0466-c1 ;
+    kno:frequency kno:KN2012-0466-freq-NN-2012 ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:example "¶야외의 열기 때문에 메이크업이 흐트러지기 쉬워 메이크업 대용으로 사용할 수 있거나 메이크업 {픽스력이} 갖춰져 있는 제품을 선택한다면 결혼식이 끝날 때까지 변함없는 모습을 연출할 수 있을 것이다."@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(fix力)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BD%EC%8A%A4%EB%A0%A5> ;
+    kno:slotFiller "픽스(fix) (1성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "픽스(fix), -력(力)"@ko ;
+    kno:instantiates kno:S000006 ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "화장이 흐트러지지 않고 오래 지속되도록 하는 힘."@ko ;
+    kno:slotFiller "-력(力) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:indexForm "픽스력"@ko ;
+    kno:instantiates kno:S001753 .
+kno:KN2012-0466-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-력(力)"@ko ;
+    kno:formative kno:F000010 ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:fullForm "력"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "력"@ko .
+kno:KN2012-0466-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "픽스"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:formative kno:F001987 ;
+    rdfs:label "픽스(fix)"@ko ;
+    a kno:Component ;
+    kno:fullForm "픽스"@ko .

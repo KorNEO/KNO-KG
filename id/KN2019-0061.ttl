@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0061 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0061 kno:year "2019"^^xsd:gYear ;
+    kno:activeYears "7"^^xsd:integer ;
+    kno:frequency kno:KN2019-0061-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0061-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶빠순이란 단어는 내 새끼에게 한없이 헌신하는 자신을 자조할 때 쓰는 단어이다. 아니면 {덕질 메이트끼리} 처지를 한탄할 때 감히 빠순이라는 단어를 입에 올릴 수 있다."@ko ;
+    kno:indexForm "덕질메이트"@ko ;
+    kno:frequency kno:KN2019-0061-freq-NN-2022 ;
+    kno:origin "(덕질<영>mate)" ;
+    kno:frequency kno:KN2019-0061-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0061-freq-NN-2020 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_영" ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2019-0061-freq-NN-2021 ;
+    kno:component kno:KN2019-0061-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8D%95%EC%A7%88%20%EB%A9%94%EC%9D%B4%ED%8A%B8> ;
+    skos:definition "공통된 대상에 대해 덕질을 할 때 서로 정보를 공유하고 함께 즐기는 사람."@ko ;
+    rdfs:label "덕질 메이트"@ko ;
+    kno:component kno:KN2019-0061-c1 ;
+    kno:componentString "덕질, 메이트(mate)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2019-0061-freq-NN-total ;
+    kno:frequency kno:KN2019-0061-freq-NN-2024 ;
+    kno:predicate "즐기다"@ko .
+kno:KN2019-0061-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "메이트"@ko ;
+    kno:formative kno:F003441 ;
+    kno:semanticTag kno:usas-S3.1 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "메이트"@ko ;
+    rdfs:label "메이트(mate)"@ko ;
+    a kno:Component .
+kno:KN2019-0061-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "덕질"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:formative kno:F001181 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "덕질"@ko ;
+    kno:surfaceForm "덕질"@ko ;
+    kno:truncated "false"^^xsd:boolean .

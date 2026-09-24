@@ -1,0 +1,57 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0190 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0190 kno:predicate "않다"@ko ;
+    kno:urimalTargetCode "1415654" ;
+    kno:origin "(<영>social blackout)" ;
+    kno:slotFiller "블랙아웃(blackout) (1성분)"@ko ;
+    skos:definition "스마트폰이나 인터넷의 사용을 자제하거나 소셜 미디어를 이용하지 않는 일. 생각이나 의견 따위를 표현하거나 공유하기 위한 콘텐츠를 의미하는 ‘소셜 미디어(social media)’와 전력 공급을 중단하는 현상을 의미하는 ‘블랙아웃(blackout)’을 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2018-0190-freq-NN-2023 ;
+    kno:componentString "소셜(social), 블랙아웃(blackout)"@ko ;
+    rdfs:label "소셜^블랙아웃"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영^영" ;
+    kno:component kno:KN2018-0190-c2 ;
+    kno:indexForm "소셜블랙아웃"@ko ;
+    kno:instantiates kno:S000532 ;
+    kno:frequency kno:KN2018-0190-freq-NN-2019 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415654> ;
+    kno:frequency kno:KN2018-0190-freq-NN-total ;
+    kno:example "¶이와 함께 주말이면 휴대폰을 꺼 두거나 소셜 네트워크 서비스(SNS) 애플리케이션을 탈퇴ㆍ삭제 후 ‘잠수’를 타는 이른바 ‘{소셜 블랙아웃’도} 젊은 층을 중심으로 유행하고 있다."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2018-0190-freq-NN-2020 ;
+    kno:component kno:KN2018-0190-c1 ;
+    kno:frequency kno:KN2018-0190-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0190-freq-NN-2017 ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0190-c2 kno:semanticTag kno:usas-O4.3 ;
+    rdfs:label "블랙아웃(blackout)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "블랙아웃"@ko ;
+    kno:formative kno:F001402 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "블랙아웃"@ko .
+kno:KN2018-0190-c1 rdfs:label "소셜(social)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "소셜"@ko ;
+    kno:surfaceForm "소셜"@ko ;
+    kno:formative kno:F000220 ;
+    kno:role "고정항"@ko .

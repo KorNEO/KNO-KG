@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0227 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0227 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0227-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0227-form ;
-    ontolex:sense kno:KN2024-0227-sense .
-
-kno:KN2024-0227-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-28"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003264094> .
-
-kno:KN2024-0227-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0227-freq-nn,
-        kno:KN2024-0227-freq-yt ;
-    ontolex:writtenRep "육아^친화^주택"@ko .
-
-kno:KN2024-0227-freq-nn a frac:CorpusFrequency ;
-    rdf:value 7 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0227-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0227-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0227 kno:example "¶신혼 부부를 대상으로 한 설문 결과, 많은 부부가 주거비 지원과 함께 {육아 친화 주택의} 조성을 가장 필요한 정책으로 응답했다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0227-freq-NN-2025 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(育兒親和住宅)" ;
+    skos:definition "어린이집, 놀이터 등 육아에 필요한 시설을 갖춘 주택 단지."@ko ;
+    kno:slotFiller "육아(育兒)+친화(親和) (2성분)"@ko ;
+    kno:component kno:KN2024-0227-c1 ;
+    kno:indexForm "육아친화주택"@ko ;
+    kno:frequency kno:KN2024-0227-freq-NN-2023 ;
+    rdfs:label "육아^친화^주택"@ko ;
+    kno:slotFiller "친화(親和)+주택(住宅) (2성분)"@ko ;
+    kno:componentString "육아(育兒), 친화(親和), 주택(住宅)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%EC%95%84%EC%B9%9C%ED%99%94%EC%A3%BC%ED%83%9D> ;
+    kno:component kno:KN2024-0227-c2 ;
+    kno:component kno:KN2024-0227-c3 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0227-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0227-freq-NN-2024 ;
+    kno:languageType "한^한^한" ;
+    kno:instantiates kno:S000088 ;
+    kno:instantiates kno:S000266 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2024-0227-c1 kno:fullForm "육아"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "육아(育兒)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000118 ;
+    kno:surfaceForm "육아"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2024-0227-c2 kno:formative kno:F006178 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "친화(親和)"@ko ;
+    kno:fullForm "친화"@ko ;
+    kno:surfaceForm "친화"@ko ;
+    kno:semanticTag kno:usas-S1.2.1p ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2024-0227-c3 rdfs:label "주택(住宅)"@ko ;
+    a kno:Component ;
+    kno:fullForm "주택"@ko ;
+    kno:surfaceForm "주택"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000073 ;
+    kno:truncated "false"^^xsd:boolean .

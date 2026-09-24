@@ -1,0 +1,77 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0144 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0144 kno:frequency kno:KN2014-0144-freq-NN-2021 ;
+    kno:frequency kno:KN2014-0144-freq-NN-2024 ;
+    rdfs:label "셀기꾼"@ko ;
+    kno:frequency kno:KN2014-0144-freq-NN-total ;
+    kno:frequency kno:KN2014-0144-freq-NN-2016 ;
+    kno:component kno:KN2014-0144-c3 ;
+    kno:year "2014"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2014-0144-freq-NN-2023 ;
+    skos:definition "셀카로 찍은 사진이 실제 모습보다 더 예쁘거나 멋있게 나오는 사람."@ko ;
+    kno:slotFiller "(사)기(欺)+-꾼 (2성분)"@ko ;
+    kno:example "¶팬들이 나를 {셀기꾼이라고} 부른다."@ko ;
+    kno:urimalTargetCode "1369444" ;
+    kno:instantiates kno:S000138 ;
+    kno:indexForm "셀기꾼"@ko ;
+    kno:slotFiller "셀(카)(←self camera)+(사)기(欺) (2성분)"@ko ;
+    kno:predicate "나오다"@ko ;
+    kno:frequency kno:KN2014-0144-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0144-freq-NN-2017 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0144-freq-NN-2020 ;
+    kno:origin "(<영>←self camera欺꾼)" ;
+    kno:component kno:KN2014-0144-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369444> ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "셀(카)(←self camera), (사)기(欺), -꾼"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2014-0144-freq-NN-2025 ;
+    kno:instantiates kno:S000529 ;
+    kno:component kno:KN2014-0144-c1 ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2014-0144-freq-NN-2014 ;
+    kno:activeYears "12"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2014-0144-freq-NN-2019 ;
+    kno:frequency kno:KN2014-0144-freq-NN-2018 ;
+    kno:languageType "영+(한+고)" ;
+    kno:frequency kno:KN2014-0144-freq-NN-2022 .
+kno:KN2014-0144-c3 kno:surfaceForm "꾼"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-꾼"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000165 ;
+    kno:fullForm "꾼"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2014-0144-c2 a kno:Component ;
+    rdfs:label "(사)기(欺)"@ko ;
+    kno:formative kno:F002579 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "사기"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "기"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2014-0144-c1 kno:semanticTag kno:usas-C1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "셀(카)(←self camera)"@ko ;
+    kno:fullForm "셀카"@ko ;
+    kno:surfaceForm "셀"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000804 .

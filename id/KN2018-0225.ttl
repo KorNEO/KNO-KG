@@ -1,0 +1,53 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0225 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0225 kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:slotFiller "공포증(恐怖症) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%A7%88%EC%A1%B4%20%EA%B3%B5%ED%8F%AC%EC%A6%9D> ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0225-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶온ㆍ오프라인 유통과 인공 지능, 자율 주행, 드론에 이르기까지 무차별적인 인수ㆍ합병은 {아마존 공포증까지} 불러일으켰다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2018-0225-freq-NN-2017 ;
+    kno:origin "(Amazon恐怖症)" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:componentString "아마존(Amazon), 공포증(恐怖症)"@ko ;
+    kno:languageType "영_한" ;
+    kno:indexForm "아마존공포증"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2018-0225-freq-NN-total ;
+    kno:predicate "갖다"@ko ;
+    kno:component kno:KN2018-0225-c1 ;
+    kno:instantiates kno:S001512 ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "미국의 전자 상거래 기업인 ‘아마존’이 다양한 분야의 회사를 무차별적으로 인수 합병하는 것에 두려움이나 거부감을 갖는 증세. =아마존 포비아."@ko ;
+    rdfs:label "아마존 공포증"@ko .
+kno:KN2018-0225-c2 rdfs:label "공포증(恐怖症)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002365 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "공포증"@ko ;
+    kno:surfaceForm "공포증"@ko .
+kno:KN2018-0225-c1 kno:fullForm "아마존"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "아마존(Amazon)"@ko ;
+    kno:formative kno:F001569 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "아마존"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I2.2 .

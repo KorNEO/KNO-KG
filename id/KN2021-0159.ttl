@@ -1,37 +1,68 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0159 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0159 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0159-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0159-form ;
-    ontolex:sense kno:KN2021-0159-sense .
-
-kno:KN2021-0159-att-nn a frac:Attestation ;
-    dcterms:date "2020-08-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/015/0004391776> .
-
-kno:KN2021-0159-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0159-freq-nn,
-        kno:KN2021-0159-freq-yt ;
-    ontolex:writtenRep "서학^개미^운동"@ko .
-
-kno:KN2021-0159-freq-nn a frac:CorpusFrequency ;
-    rdf:value 107 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0159-freq-yt a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0159-sense a ontolex:LexicalSense ;
-    dcterms:isReferencedBy <https://namu.wiki/w/2020%EB%85%84%20%EC%A3%BC%EA%B0%80%20%EB%8C%80%ED%8F%AD%EB%9D%BD> .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0159 kno:pos "「구」"@ko ;
+    kno:component kno:KN2021-0159-c3 ;
+    kno:frequency kno:KN2021-0159-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0159-freq-NN-2022 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%ED%95%99%EA%B0%9C%EB%AF%B8%EC%9A%B4%EB%8F%99> ;
+    kno:instantiates kno:S001449 ;
+    rdfs:label "서학^개미^운동"@ko ;
+    kno:componentString "서학(西學), 개미, 운동(運動)"@ko ;
+    kno:frequency kno:KN2021-0159-freq-NN-2025 ;
+    kno:origin "(西學개미運動)" ;
+    kno:frequency kno:KN2021-0159-freq-NN-2020 ;
+    kno:indexForm "서학개미운동"@ko ;
+    kno:frequency kno:KN2021-0159-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:example "¶동학 개미 운동 이후, 최근에는 미국을 비롯한 해외 주식까지 사들이는 {서학 개미 운동이} 활발하게 이어지고 있다."@ko ;
+    kno:component kno:KN2021-0159-c2 ;
+    kno:slotFiller "개미+운동(運動) (2성분)"@ko ;
+    kno:slotFiller "서학(西學) (1성분)"@ko ;
+    kno:instantiates kno:S000777 ;
+    kno:component kno:KN2021-0159-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한^고^한" ;
+    skos:definition "해외 주식에 대한 국내 개인 투자자들의 대규모 매수세를 이르는 말. 코스피 지수 및 코스닥 지수를 회복시킨 ‘동학 개미 운동’ 이후, 국내 개인 투자자들이 해외 주식 또한 대규모로 매수하며 사용된 말이다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0159-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0159-freq-NN-2021 .
+kno:KN2021-0159-c3 kno:formative kno:F000053 ;
+    rdfs:label "운동(運動)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "운동"@ko ;
+    kno:surfaceForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0159-c2 kno:role "고정항"@ko ;
+    kno:formative kno:F000083 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "개미"@ko ;
+    kno:surfaceForm "개미"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "개미"@ko .
+kno:KN2021-0159-c1 kno:fullForm "서학"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "서학"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001463 ;
+    rdfs:label "서학(西學)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 .

@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0423 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0423 kno:year "2013"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2013-0423-c1 ;
+    kno:frequency kno:KN2013-0423-freq-NN-total ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:componentString "특(特), 항공권(航空券)"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    skos:definition "행사 등의 이유로 특별히 싸게 파는 항공권."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(特航空券)" ;
+    kno:component kno:KN2013-0423-c2 ;
+    kno:predicate "파다"@ko ;
+    rdfs:label "특-항공권"@ko ;
+    kno:example "¶OO은…부산~홍콩 노선의 증편을 기념해 지난달 28일부터 이달 13일까지 해당 노선의 {특항공권을} 판매하고, 이날부터 18일까지는 부산~칭다오 취항 1주년을 맞아 ‘1+1’ 특가 행사를 진행 중이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "특항공권"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2013-0423-freq-NN-2013 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B9%ED%95%AD%EA%B3%B5%EA%B6%8C> ;
+    kno:formation kno:W01 .
+kno:KN2013-0423-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "특"@ko ;
+    rdfs:label "특(特)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006572 ;
+    kno:surfaceForm "특"@ko ;
+    kno:semanticTag kno:usas-A6.2m ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0423-c2 kno:formative kno:F006984 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "항공권(航空券)"@ko ;
+    kno:semanticTag kno:usas-M5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "항공권"@ko ;
+    kno:surfaceForm "항공권"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:role "성분"@ko .

@@ -1,0 +1,73 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0313 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0313 kno:example "¶OOO의 사진을 접한 네티즌들은 “역시 패셔니스타”,…“{올레드 룩은} 아무나 소화하기가 쉽지 않은데”…등의 호응을 보였다."@ko ;
+    kno:componentString "올(all), 레드(red), 룩(look)"@ko ;
+    kno:frequency kno:KN2012-0313-freq-NN-2023 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:slotFiller "올(all)+레드(red) (2성분)"@ko ;
+    kno:frequency kno:KN2012-0313-freq-NN-2018 ;
+    kno:indexForm "올레드룩"@ko ;
+    kno:activeYears "12"^^xsd:integer ;
+    kno:frequency kno:KN2012-0313-freq-NN-2022 ;
+    kno:component kno:KN2012-0313-c3 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2012-0313-freq-NN-2020 ;
+    kno:predicate "입은"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2012-0313-freq-NN-2019 ;
+    kno:frequency kno:KN2012-0313-freq-NN-2024 ;
+    kno:frequency kno:KN2012-0313-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0313-freq-NN-2016 ;
+    kno:frequency kno:KN2012-0313-freq-NN-2021 ;
+    kno:frequency kno:KN2012-0313-freq-NN-2014 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000007 ;
+    kno:origin "(all red look)" ;
+    kno:component kno:KN2012-0313-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%AC%EB%A0%88%EB%93%9C%20%EB%A3%A9> ;
+    kno:frequency kno:KN2012-0313-freq-NN-2025 ;
+    rdfs:label "올레드 룩"@ko ;
+    kno:component kno:KN2012-0313-c2 ;
+    kno:frequency kno:KN2012-0313-freq-NN-total ;
+    kno:frequency kno:KN2012-0313-freq-NN-2013 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    skos:definition "머리부터 발끝까지 의상과 소품 따위의 색상을 모두 빨강으로 맞추어 입은 옷차림."@ko .
+kno:KN2012-0313-c3 kno:surfaceForm "룩"@ko ;
+    rdfs:label "룩(look)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "룩"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000005 .
+kno:KN2012-0313-c1 kno:formative kno:F000871 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "올(all)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "올"@ko ;
+    kno:surfaceForm "올"@ko .
+kno:KN2012-0313-c2 kno:formative kno:F001241 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "레드(red)"@ko ;
+    kno:fullForm "레드"@ko ;
+    kno:surfaceForm "레드"@ko ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

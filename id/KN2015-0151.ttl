@@ -1,0 +1,74 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0151 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0151 kno:frequency kno:KN2015-0151-freq-NN-2019 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2021 ;
+    kno:slotFiller "얼굴+몰아주(다) (2성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고_고" ;
+    kno:frequency kno:KN2015-0151-freq-NN-2020 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2024 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2015-0151-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359834> ;
+    kno:instantiates kno:S001156 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2023 ;
+    kno:frequency kno:KN2015-0151-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2015-0151-freq-NN-2015 ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0151-freq-NN-2025 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2016 ;
+    skos:definition "여러 사람이 함께 사진을 찍을 때 주인공이 되는 한 사람을 위해, 나머지가 일부러 우스꽝스러운 표정을 지어 주인공을 돋보이게 함. 또는 그런 행동."@ko ;
+    rdfs:label "얼굴 몰아주기"@ko ;
+    kno:component kno:KN2015-0151-c1 ;
+    kno:instantiates kno:S000551 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2014 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2017 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2022 ;
+    kno:frequency kno:KN2015-0151-freq-NN-2018 ;
+    kno:indexForm "얼굴몰아주기"@ko ;
+    kno:urimalTargetCode "1359834" ;
+    kno:slotFiller "몰아주(다)+-기 (2성분)"@ko ;
+    kno:component kno:KN2015-0151-c3 ;
+    kno:componentString "얼굴, 몰아주(다), -기"@ko ;
+    kno:activeYears "12"^^xsd:integer ;
+    kno:example "¶공개된 사진에서 OOO을 제외한 OO 멤버들은 {얼굴 몰아주기를} 위해 얼굴을 망가뜨리고 있다."@ko .
+kno:KN2015-0151-c2 rdfs:label "몰아주(다)"@ko ;
+    kno:fullForm "몰아주다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F003508 ;
+    kno:semanticTag kno:usas-A9m ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "몰아주"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2015-0151-c1 rdfs:label "얼굴"@ko ;
+    kno:formative kno:F000222 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "얼굴"@ko ;
+    kno:surfaceForm "얼굴"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2015-0151-c3 kno:fullForm "기"@ko ;
+    rdfs:label "-기"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:formative kno:F000250 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "기"@ko ;
+    kno:truncated "false"^^xsd:boolean .

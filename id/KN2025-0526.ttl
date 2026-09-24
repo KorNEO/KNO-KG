@@ -1,30 +1,51 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0526 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0526 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2025-0526-form ;
-    ontolex:sense kno:KN2025-0526-sense .
-
-kno:KN2025-0526-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0526-freq-nn,
-        kno:KN2025-0526-freq-yt ;
-    ontolex:writtenRep "줍줍 소비"@ko .
-
-kno:KN2025-0526-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0526-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0526-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0526 a kno:Neologism ;
+    kno:component kno:KN2025-0526-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000580 ;
+    kno:instantiates kno:S000024 ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%8D%EC%A4%8D%20%EC%86%8C%EB%B9%84> ;
+    kno:indexForm "줍줍소비"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "고_한" ;
+    kno:example "(LLM) 주변 시세보다 분양가가 낮게 책정되자 {줍줍소비가} 확산되며 단기간에 계약이 마감됐다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:predicate "기대하다"@ko ;
+    kno:component kno:KN2025-0526-c2 ;
+    kno:slotFiller "소비(消費) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:slotFiller "줍줍 (1성분)"@ko ;
+    kno:origin "(줍줍消費)" ;
+    skos:definition "(LLM) 시세보다 낮게 나온 분양ㆍ청약 물건을 재빨리 확보해 향후 시세 차익을 기대하는 소비 행태."@ko ;
+    rdfs:label "줍줍 소비"@ko ;
+    kno:componentString "줍줍, 소비(消費)"@ko .
+kno:KN2025-0526-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "줍줍"@ko ;
+    kno:surfaceForm "줍줍"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:formative kno:F000407 ;
+    rdfs:label "줍줍"@ko .
+kno:KN2025-0526-c2 rdfs:label "소비(消費)"@ko ;
+    kno:formative kno:F000030 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:fullForm "소비"@ko ;
+    kno:surfaceForm "소비"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0136 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0136 a ontolex:Word ;
-    frac:attestation kno:KN2022-0136-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0136-form ;
-    ontolex:sense kno:KN2022-0136-sense .
-
-kno:KN2022-0136-att-nn a frac:Attestation ;
-    dcterms:date "2021-08-10"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/001/0012589380> .
-
-kno:KN2022-0136-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0136-freq-nn,
-        kno:KN2022-0136-freq-yt ;
-    ontolex:writtenRep "맘시생"@ko .
-
-kno:KN2022-0136-freq-nn a frac:CorpusFrequency ;
-    rdf:value 49 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0136-freq-yt a frac:CorpusFrequency ;
-    rdf:value 82 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0136-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0136 kno:formation kno:W05 ;
+    kno:slotFiller "(공)시생(公試生) (1성분)"@ko ;
+    kno:component kno:KN2022-0136-c2 ;
+    skos:definition "자녀를 둔 여성 공시생을 이르는 말. 어머니를 뜻하는 영어 단어 ‘맘(mom)’과 공무원 채용 시험을 준비하는 사람을 뜻하는 ‘공시생’을 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2022-0136-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%98%EC%8B%9C%EC%83%9D> ;
+    kno:indexForm "맘시생"@ko ;
+    kno:componentString "맘(mom), (공)시생(公試生)"@ko ;
+    kno:frequency kno:KN2022-0136-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0136-freq-NN-total ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2022-0136-c1 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:example "¶{맘시생들은} 공무원 채용 시험 준비 과정에서 체력 부족을 가장 큰 어려움으로 꼽았다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2022-0136-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0136-freq-NN-2025 ;
+    kno:instantiates kno:S000147 ;
+    kno:origin "(<영>mom試生)" ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:label "맘시생"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2022-0136-freq-NN-2022 .
+kno:KN2022-0136-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:fullForm "공시생"@ko ;
+    kno:surfaceForm "시생"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(공)시생(公試生)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004657 ;
+    a kno:Component .
+kno:KN2022-0136-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "맘"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000021 ;
+    kno:surfaceForm "맘"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:role "고정항"@ko .

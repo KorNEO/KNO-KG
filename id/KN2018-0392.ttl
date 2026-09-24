@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0392 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0392 kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0392-c1 ;
+    kno:formation kno:W02 ;
+    kno:urimalTargetCode "1415994" ;
+    kno:indexForm "푸스펙족"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415994> ;
+    kno:origin "(<영>←food spec族)" ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0392-freq-NN-2017 ;
+    kno:component kno:KN2018-0392-c2 ;
+    kno:componentString "푸스펙(←food spec), -족(族)"@ko ;
+    kno:predicate "살펴보다"@ko ;
+    kno:example "¶{푸스펙족은} 유기농 제품이나 안전 성분은 물론 믿을 수 있는 유통 과정까지 따져 보고 구매를 결정한다."@ko ;
+    kno:languageType "영+한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "푸스펙(←food spec) (1성분)"@ko ;
+    rdfs:label "푸스펙-족"@ko ;
+    skos:definition "좋은 음식을 섭취하기 위해 음식의 제조 일자, 각종 원료의 출처 및 영양소 함량 따위를 꼼꼼히 살펴보는 사람. 또는 그런 무리."@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2018-0392-freq-NN-total .
+kno:KN2018-0392-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006778 ;
+    a kno:Component ;
+    rdfs:label "푸스펙(←food spec)"@ko ;
+    kno:fullForm "푸스펙"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "푸스펙"@ko .
+kno:KN2018-0392-c2 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component .

@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2017-0151 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2017-0151 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%8C%8C%20%EC%82%AC%EC%9A%B4%EB%93%9C> ;
+    kno:componentString "소파(SOFAR), 사운드(sound)"@ko ;
+    kno:predicate "열리다"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶또한 OOO은…2시간 30여 분간 진행된 공연 동안 관객들과의 직접적인 대화와 소통으로 거리감이 느껴지지 않는 ‘{소파 사운드’를} 구현했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "정해진 공연장을 벗어나 집, 사무실, 옥상, 마당과 같이 작은 공간에서 소규모로 열리는 공연."@ko ;
+    kno:component kno:KN2017-0151-c1 ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0151-freq-NN-2017 ;
+    kno:component kno:KN2017-0151-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>SOFAR sound)" ;
+    rdfs:label "소파 사운드"@ko ;
+    kno:frequency kno:KN2017-0151-freq-NN-total ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:languageType "영_영" ;
+    kno:indexForm "소파사운드"@ko .
+kno:KN2017-0151-c1 kno:fullForm "소파"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "소파(SOFAR)"@ko ;
+    kno:surfaceForm "소파"@ko ;
+    kno:semanticTag kno:usas-H5 ;
+    kno:formative kno:F004427 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0151-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "사운드"@ko ;
+    kno:surfaceForm "사운드"@ko ;
+    kno:formative kno:F000791 ;
+    rdfs:label "사운드(sound)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-X3.2 ;
+    kno:truncated "false"^^xsd:boolean .

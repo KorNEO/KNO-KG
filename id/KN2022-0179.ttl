@@ -1,36 +1,71 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0179 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0179 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0179-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0179-form ;
-    ontolex:sense kno:KN2022-0179-sense .
-
-kno:KN2022-0179-att-nn a frac:Attestation ;
-    dcterms:date "2022-04-21"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0004823986> .
-
-kno:KN2022-0179-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0179-freq-nn,
-        kno:KN2022-0179-freq-yt ;
-    ontolex:writtenRep "소상공인^긴급^금융^구조안"@ko .
-
-kno:KN2022-0179-freq-nn a frac:CorpusFrequency ;
-    rdf:value 70 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0179-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0179-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0179 kno:registration "신어DB"@ko ;
+    kno:componentString "소상공인(小商工人), 긴급(緊急), 금융(金融), 구조안(救助案)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0179-freq-NN-2022 ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%83%81%EA%B3%B5%EC%9D%B8%EA%B8%B4%EA%B8%89%EA%B8%88%EC%9C%B5%EA%B5%AC%EC%A1%B0%EC%95%88> ;
+    kno:instantiates kno:S001467 ;
+    kno:frequency kno:KN2022-0179-freq-NN-total ;
+    skos:definition "코로나19로 인해 대출 이자의 부담이 늘어난 소상공인을 위하여 제시한 방안. 대출 금리의 부담을 낮추고 상환 기간은 늘리며, 과잉 부채를 감면하는 것이 주요 내용이다."@ko ;
+    kno:origin "(小商工人緊急金融救助案)" ;
+    kno:slotFiller "긴급(緊急)+금융(金融)+구조안(救助案) (3성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0179-c2 ;
+    kno:component kno:KN2022-0179-c3 ;
+    kno:indexForm "소상공인긴급금융구조안"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "소상공인^긴급^금융^구조안"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶소상공인을 위한 금융 지원책으로 ‘{소상공인 긴급 금융 구조안’이} 마련될 예정이며, 여기에는 소상공인을 위한 저금리 대출 및 대출 만기의 연장을 포함하여 세제 지원책도 포함된다."@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:component kno:KN2022-0179-c4 ;
+    kno:component kno:KN2022-0179-c1 .
+kno:KN2022-0179-c2 kno:formative kno:F000016 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "긴급"@ko ;
+    rdfs:label "긴급(緊急)"@ko ;
+    kno:surfaceForm "긴급"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2022-0179-c3 rdfs:label "금융(金融)"@ko ;
+    kno:fullForm "금융"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "금융"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000068 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0179-c4 kno:formative kno:F002453 ;
+    rdfs:label "구조안(救助案)"@ko ;
+    kno:surfaceForm "구조안"@ko ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "구조안"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2022-0179-c1 a kno:Component ;
+    kno:fullForm "소상공인"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "소상공인"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001485 ;
+    rdfs:label "소상공인(小商工人)"@ko ;
+    kno:semanticTag kno:usas-I2.1 .

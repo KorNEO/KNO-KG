@@ -1,36 +1,49 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0650 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0650 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0650-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0650-form ;
-    ontolex:sense kno:KN2025-0650-sense .
-
-kno:KN2025-0650-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-10"^^xsd:date ;
-    frac:locus <https://m.sports.naver.com/article/468/0000624504> .
-
-kno:KN2025-0650-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0650-freq-nn,
-        kno:KN2025-0650-freq-yt ;
-    ontolex:writtenRep "프리 윤"@ko .
-
-kno:KN2025-0650-freq-nn a frac:CorpusFrequency ;
-    rdf:value 30 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0650-freq-yt a frac:CorpusFrequency ;
-    rdf:value 87 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0650-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0650 kno:indexForm "프리윤"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0650-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    kno:example "(LLM) 집회 참가자들은 현수막에 {프리윤을} 적어 들고 석방을 촉구했다."@ko ;
+    kno:frequency kno:KN2025-0650-freq-NN-total ;
+    kno:component kno:KN2025-0650-c1 ;
+    kno:languageType "영_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EB%A6%AC%20%EC%9C%A4> ;
+    skos:definition "(LLM) 윤석열 전 대통령의 석방을 요구하는 구호 또는 해시태그."@ko ;
+    kno:component kno:KN2025-0650-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:componentString "프리(free), 윤(尹)"@ko ;
+    kno:origin "(<영>free尹)" ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "프리 윤"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0650-c1 kno:surfaceForm "프리"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1.3m ;
+    kno:fullForm "프리"@ko ;
+    kno:formative kno:F000632 ;
+    rdfs:label "프리(free)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0650-c2 kno:semanticTag kno:usas-Z1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "윤"@ko ;
+    kno:surfaceForm "윤"@ko ;
+    kno:formative kno:F000568 ;
+    kno:role "성분"@ko ;
+    rdfs:label "윤(尹)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

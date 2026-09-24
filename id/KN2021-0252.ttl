@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0252 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0252 a ontolex:Word ;
-    frac:attestation kno:KN2021-0252-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0252-form ;
-    ontolex:sense kno:KN2021-0252-sense .
-
-kno:KN2021-0252-att-nn a frac:Attestation ;
-    dcterms:date "2021-01-31"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0004838685> .
-
-kno:KN2021-0252-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0252-freq-nn,
-        kno:KN2021-0252-freq-yt ;
-    ontolex:writtenRep "쫌쫌-따리01"@ko .
-
-kno:KN2021-0252-freq-nn a frac:CorpusFrequency ;
-    rdf:value 23 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0252-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1771 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0252-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0252 kno:predicate "하찮은"@ko ;
+    skos:definition "매우 적고 하찮은 양."@ko ;
+    kno:frequency kno:KN2021-0252-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0252-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:component kno:KN2021-0252-c2 ;
+    kno:frequency kno:KN2021-0252-freq-NN-2020 ;
+    kno:formation kno:W08 ;
+    kno:componentString "쫌쫌, 따리"@ko ;
+    kno:frequency kno:KN2021-0252-freq-NN-total ;
+    kno:indexForm "쫌쫌따리"@ko ;
+    kno:frequency kno:KN2021-0252-freq-NN-2023 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%AB%8C%EC%AB%8C%EB%94%B0%EB%A6%AC01> ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2021-0252-freq-NN-2021 ;
+    kno:activeYears "5"^^xsd:integer ;
+    rdfs:label "쫌쫌-따리01"@ko ;
+    kno:component kno:KN2021-0252-c1 ;
+    kno:example "¶앱 테크로 버는 돈이 {쫌쫌따리이기는} 하지만, 모이면 적은 금액이 아니다."@ko .
+kno:KN2021-0252-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "따리"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:surfaceForm "따리"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001220 ;
+    rdfs:label "따리"@ko .
+kno:KN2021-0252-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-N5m ;
+    rdfs:label "쫌쫌"@ko ;
+    kno:surfaceForm "쫌쫌"@ko ;
+    kno:formative kno:F001805 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "쫌쫌"@ko .

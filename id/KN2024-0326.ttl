@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0326 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0326 a ontolex:Word ;
-    frac:attestation kno:KN2024-0326-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0326-form ;
-    ontolex:sense kno:KN2024-0326-sense .
-
-kno:KN2024-0326-att-nn a frac:Attestation ;
-    dcterms:date "2023-11-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/028/0002664599> .
-
-kno:KN2024-0326-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0326-freq-nn,
-        kno:KN2024-0326-freq-yt ;
-    ontolex:writtenRep "키슐랭"@ko .
-
-kno:KN2024-0326-freq-nn a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0326-freq-yt a frac:CorpusFrequency ;
-    rdf:value 10 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0326-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0326 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0326-c1 ;
+    kno:frequency kno:KN2024-0326-freq-NN-2024 ;
+    a ontolex:Word ;
+    skos:definition "아동과 가족의 방문을 환영하는 식당 및 카페. 아동 친화적인 외식 문화를 지원하기 위해 서울 성동구에서 만든 ‘아이사랑 맛집’ 인증 제도로, ‘키즈( kids)’와 ‘미슐랭(Michelin)’을 결합하여 만든 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%A4%EC%8A%90%EB%9E%AD> ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "키슐랭"@ko ;
+    kno:component kno:KN2024-0326-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0326-freq-NN-total ;
+    kno:languageType "영+프" ;
+    a kno:Neologism ;
+    kno:example "¶O 씨는 {키슐랭} 식당을 운영하면서, 성동구에 거주하는 6살 이하 아이를 동반하는 가족에게는 할인 혜택을 제공한다."@ko ;
+    kno:indexForm "키슐랭"@ko ;
+    kno:frequency kno:KN2024-0326-freq-NN-2023 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(<영>▼←kids Michelin)" ;
+    kno:componentString "키(즈)(kids), (미)슐랭(Michelin)"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0326-c1 a kno:Component ;
+    kno:fullForm "키즈"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F006365 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3m ;
+    rdfs:label "키(즈)(kids)"@ko ;
+    kno:surfaceForm "키"@ko .
+kno:KN2024-0326-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004525 ;
+    kno:surfaceForm "슐랭"@ko ;
+    rdfs:label "(미)슐랭(Michelin)"@ko ;
+    kno:fullForm "미슐랭"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component .

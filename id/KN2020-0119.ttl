@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0119 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0119 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0119-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0119-form ;
-    ontolex:sense kno:KN2020-0119-sense .
-
-kno:KN2020-0119-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-24"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0013138071> .
-
-kno:KN2020-0119-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0119-freq-nn,
-        kno:KN2020-0119-freq-yt ;
-    ontolex:writtenRep "미세 먼지 점검단"@ko .
-
-kno:KN2020-0119-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0119-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0119-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0119 kno:slotFiller "점검단(點檢團) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(微細먼지點檢團)" ;
+    kno:component kno:KN2020-0119-c1 ;
+    kno:indexForm "미세먼지점검단"@ko ;
+    kno:frequency kno:KN2020-0119-freq-NN-2025 ;
+    kno:component kno:KN2020-0119-c3 ;
+    kno:languageType "한_고_한" ;
+    kno:componentString "미세(微細), 먼지, 점검단(點檢團)"@ko ;
+    kno:example "¶미세 먼지 불법 배출을 방지하기 위하여 오는 19일부터 {미세 먼지 점검단이} 2인 1조로 활동하게 된다."@ko ;
+    kno:instantiates kno:S000515 ;
+    rdfs:label "미세 먼지 점검단"@ko ;
+    kno:frequency kno:KN2020-0119-freq-NN-2019 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0119-freq-NN-total ;
+    skos:definition "미세 먼지 발생을 줄이기 위하여 과도한 미세 먼지 배출을 감시하고 단속하는 사람들의 무리. 불법적인 소각을 단속하고, 사업장에서 미세 먼지 저감 조치를 준수하는지 등을 확인하는 일을 한다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2020-0119-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EC%84%B8%20%EB%A8%BC%EC%A7%80%20%EC%A0%90%EA%B2%80%EB%8B%A8> ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0119-c1 kno:surfaceForm "미세"@ko ;
+    a kno:Component ;
+    kno:fullForm "미세"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000506 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.2m ;
+    rdfs:label "미세(微細)"@ko .
+kno:KN2020-0119-c3 a kno:Component ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:fullForm "점검단"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "점검단(點檢團)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F005655 ;
+    kno:surfaceForm "점검단"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0119-c2 a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000747 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "먼지"@ko ;
+    kno:surfaceForm "먼지"@ko ;
+    rdfs:label "먼지"@ko ;
+    kno:semanticTag kno:usas-O1.1 .

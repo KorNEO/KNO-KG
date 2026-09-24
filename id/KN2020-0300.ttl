@@ -1,30 +1,61 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0300 a ontolex:MultiwordExpression ;
-    ontolex:canonicalForm kno:KN2020-0300-form ;
-    ontolex:sense kno:KN2020-0300-sense .
-
-kno:KN2020-0300-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0300-freq-nn,
-        kno:KN2020-0300-freq-yt ;
-    ontolex:writtenRep "재미 슬쩍꾼"@ko .
-
-kno:KN2020-0300-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0300-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0300-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0300 kno:slotFiller "재미+슬쩍 (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0300-c2 ;
+    kno:instantiates kno:S001157 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0300-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0300-freq-NN-total ;
+    kno:componentString "재미, 슬쩍, -꾼"@ko ;
+    rdfs:label "재미 슬쩍꾼"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶생방송을 즐겨 보는 친구가 전형적인 {재미 슬쩍꾼이라서} 나는 대부분의 드라마를 김이 샌 상태로 본다."@ko ;
+    kno:predicate "만드다"@ko ;
+    kno:component kno:KN2020-0300-c3 ;
+    kno:languageType "고_고" ;
+    kno:year "2020"^^xsd:gYear ;
+    skos:definition "이야기나 영화 따위의 줄거리를 아직 모르는 사람이 직접 내용을 확인하기 전에 중요한 내용을 그 사람에게 미리 알려서 재미를 잃게 만드는 사람."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EB%AF%B8%20%EC%8A%AC%EC%A9%8D%EA%BE%BC> ;
+    kno:indexForm "재미슬쩍꾼"@ko ;
+    kno:component kno:KN2020-0300-c1 .
+kno:KN2020-0300-c2 kno:surfaceForm "슬쩍"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "슬쩍"@ko ;
+    kno:semanticTag kno:usas-A10m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004622 ;
+    kno:fullForm "슬쩍"@ko .
+kno:KN2020-0300-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000165 ;
+    kno:fullForm "꾼"@ko ;
+    kno:surfaceForm "꾼"@ko ;
+    a kno:Component ;
+    rdfs:label "-꾼"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2020-0300-c1 rdfs:label "재미"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:fullForm "재미"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "재미"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001738 .

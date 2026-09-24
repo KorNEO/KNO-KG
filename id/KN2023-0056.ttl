@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0056 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0056 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0056-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0056-form ;
-    ontolex:sense kno:KN2023-0056-sense .
-
-kno:KN2023-0056-att-nn a frac:Attestation ;
-    dcterms:date "2023-06-14"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/020/0003503548> .
-
-kno:KN2023-0056-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0056-freq-nn,
-        kno:KN2023-0056-freq-yt ;
-    ontolex:writtenRep "길티 팁"@ko .
-
-kno:KN2023-0056-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0056-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0056-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0056 kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "길티(guilty), 팁(tip)"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "길티 팁"@ko ;
+    kno:component kno:KN2023-0056-c1 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0056-freq-NN-2023 ;
+    kno:origin "(<영>▼guilty tip)" ;
+    kno:instantiates kno:S000445 ;
+    kno:slotFiller "길티(guilty) (1성분)"@ko ;
+    kno:example "¶신용 카드로 결제하는 문화가 확산되면서 팁을 주지 않는 경우가 많아지자, 사회적 압박에 따른 {길티 팁이} 과도하다는 불만도 있다."@ko ;
+    skos:definition "고객이 제공받은 서비스에 대한 대가로 자발적 으로 주는 것이 아닌, 사회적 압박 때문에 죄책감을 느껴 지불하는 팁. =죄책감 팁."@ko ;
+    kno:frequency kno:KN2023-0056-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B8%ED%8B%B0%20%ED%8C%81> ;
+    kno:predicate "지불하다"@ko ;
+    kno:indexForm "길티팁"@ko ;
+    kno:languageType "영_영" ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0056-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0056-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "길티"@ko ;
+    kno:formative kno:F002612 ;
+    rdfs:label "길티(guilty)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "길티"@ko .
+kno:KN2023-0056-c2 kno:semanticTag kno:usas-Q2.2 ;
+    rdfs:label "팁(tip)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000195 ;
+    kno:fullForm "팁"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "팁"@ko .

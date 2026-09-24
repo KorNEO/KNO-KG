@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0035 kno:frequency kno:KN2019-0035-freq-NN-2019 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고" ;
+    kno:frequency kno:KN2019-0035-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%AF%EC%84%A4%EB%A0%98> ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶낯선 여행지에서 새로운 친구와 함께 ‘{낯설렘}’ 느껴 볼까?"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2019-0035-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "낯설렘"@ko ;
+    kno:frequency kno:KN2019-0035-freq-NN-2020 ;
+    kno:componentString "낯(설다), 설렘"@ko ;
+    kno:component kno:KN2019-0035-c1 ;
+    kno:frequency kno:KN2019-0035-freq-NN-2018 ;
+    skos:definition "낯선 곳이나, 낯선 경험 따위로 인해 마음이 가라앉지 아니하고 들떠서 두근거림. 또는 그런 느낌."@ko ;
+    a kno:Neologism ;
+    kno:formation kno:W05 ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:label "낯설렘"@ko .
+kno:KN2019-0035-c2 kno:semanticTag kno:usas-E4.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "설렘"@ko ;
+    kno:formative kno:F001464 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "설렘"@ko ;
+    kno:surfaceForm "설렘"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0035-c1 a kno:Component ;
+    kno:formative kno:F002709 ;
+    rdfs:label "낯(설다)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "낯"@ko ;
+    kno:fullForm "낯설다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A6.2m ;
+    kno:role "성분"@ko .

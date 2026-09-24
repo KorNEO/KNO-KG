@@ -1,0 +1,66 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0428 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0428 a ontolex:Word ;
+    kno:frequency kno:KN2018-0428-freq-NN-total ;
+    kno:componentString "회(사)(會), 알(다), 못(하다)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:indexForm "회알못"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:origin "(會알못)" ;
+    kno:instantiates kno:S000022 ;
+    kno:example "¶이들이 꼽은 면접장 최악의 꼴불견 지원자는 온다고 해 놓고 나타나지 않는 노쇼족 지원자가…1위를 차지했다. 2위는 정보도 없이 지원한 ‘{회알못}’ 지원자가, 3위는 면접 시간에 늦게 나타나는 지각 지원자가 각각 꼽혔다."@ko ;
+    kno:component kno:KN2018-0428-c2 ;
+    kno:component kno:KN2018-0428-c3 ;
+    kno:frequency kno:KN2018-0428-freq-NN-2017 ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:languageType "한+고+고" ;
+    kno:frequency kno:KN2018-0428-freq-NN-2019 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9A%8C%EC%95%8C%EB%AA%BB> ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "회알못"@ko ;
+    skos:definition "‘회사에 대해 알지 못하는 사람’을 줄여 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2018-0428-c1 ;
+    kno:formation kno:W06 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0428-freq-NN-2021 ;
+    kno:frequency kno:KN2018-0428-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0428-freq-NN-2022 ;
+    kno:slotFiller "회(사)(會) (1성분)"@ko .
+kno:KN2018-0428-c2 rdfs:label "알(다)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X2.2p ;
+    kno:surfaceForm "알"@ko ;
+    kno:formative kno:F000025 ;
+    kno:fullForm "알다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2018-0428-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:fullForm "못하다"@ko ;
+    kno:formative kno:F000039 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "못"@ko ;
+    a kno:Component ;
+    rdfs:label "못(하다)"@ko .
+kno:KN2018-0428-c1 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F007174 ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "회사"@ko ;
+    rdfs:label "회(사)(會)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "회"@ko ;
+    kno:position "1"^^xsd:integer .

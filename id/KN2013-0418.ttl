@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0418 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0418 kno:year "2013"^^xsd:gYear ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:slotFiller "톨게이트(tollgate) (1성분)"@ko ;
+    kno:example "¶{톨게이트료} 징수가 제대로 규범화되어 있지 않아 현재 중국의 고속도로에는 많은 문제가 산재한 상태이다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:languageType "영+한" ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357458> ;
+    kno:frequency kno:KN2013-0418-freq-NN-total ;
+    rdfs:label "톨게이트-료"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2013-0418-c2 ;
+    kno:frequency kno:KN2013-0418-freq-NN-2012 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:instantiates kno:S000462 ;
+    skos:definition "톨게이트를 지나가는 데 드는 통행료."@ko ;
+    a ontolex:Word ;
+    kno:indexForm "톨게이트료"@ko ;
+    kno:urimalTargetCode "1357458" ;
+    kno:component kno:KN2013-0418-c1 ;
+    kno:origin "(tollgate料)" ;
+    kno:componentString "톨게이트(tollgate), -료(料)"@ko ;
+    kno:predicate "드다"@ko .
+kno:KN2013-0418-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-료(料)"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:fullForm "료"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000735 ;
+    kno:surfaceForm "료"@ko .
+kno:KN2013-0418-c1 kno:semanticTag kno:usas-I1.3 ;
+    rdfs:label "톨게이트(tollgate)"@ko ;
+    kno:formative kno:F006490 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "톨게이트"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "톨게이트"@ko .

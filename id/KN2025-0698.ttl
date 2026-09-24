@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0698 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0698 a ontolex:Word ;
-    frac:attestation kno:KN2025-0698-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0698-form ;
-    ontolex:sense kno:KN2025-0698-sense .
-
-kno:KN2025-0698-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-15"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/003/0009654494> .
-
-kno:KN2025-0698-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0698-freq-nn,
-        kno:KN2025-0698-freq-yt ;
-    ontolex:writtenRep "활먹"@ko .
-
-kno:KN2025-0698-freq-nn a frac:CorpusFrequency ;
-    rdf:value 33 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0698-freq-yt a frac:CorpusFrequency ;
-    rdf:value 132 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0698-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0698 rdfs:label "활먹"@ko ;
+    kno:component kno:KN2025-0698-c2 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:example "(LLM) 빵집에서 막 나온 베이글을 받자마자 길에서 {활먹}하느라 커피는 한참 뒤에 마셨다."@ko ;
+    kno:component kno:KN2025-0698-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0698-freq-NN-2025 ;
+    kno:indexForm "활먹"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0698-freq-NN-total ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 갓 나온 음식이나 갓 구운 빵 따위를 식기 전에 바로 먹는 일."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%9C%EB%A8%B9> ;
+    kno:predicate "먹다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "활(활) (1성분)"@ko ;
+    kno:instantiates kno:S000864 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "활(활), 먹(다)"@ko .
+kno:KN2025-0698-c2 kno:semanticTag kno:usas-F1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "먹"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000263 ;
+    rdfs:label "먹(다)"@ko ;
+    kno:fullForm "먹다"@ko .
+kno:KN2025-0698-c1 rdfs:label "활(활)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F007163 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "활활"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "활"@ko ;
+    kno:semanticTag kno:usas-O4.6p .

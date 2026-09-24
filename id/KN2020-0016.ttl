@@ -1,36 +1,60 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0016 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0016-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0016-form ;
-    ontolex:sense kno:KN2020-0016-sense .
-
-kno:KN2020-0016-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-26"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0002978887> .
-
-kno:KN2020-0016-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0016-freq-nn,
-        kno:KN2020-0016-freq-yt ;
-    ontolex:writtenRep "공적^마스크"@ko .
-
-kno:KN2020-0016-freq-nn a frac:CorpusFrequency ;
-    rdf:value 24133 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0016-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1722 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0016-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0016 kno:example "¶정부가 약국ㆍ우체국 등을 통해 1개당 1500원, 1인당 5장 한정으로 {공적 마스크를} 판매한다고 발표했다."@ko ;
+    kno:component kno:KN2020-0016-c1 ;
+    kno:instantiates kno:S000374 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    rdfs:label "공적^마스크"@ko ;
+    kno:componentString "공적(公的), 마스크(mask)"@ko ;
+    kno:indexForm "공적마스크"@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2020-0016-freq-NN-total ;
+    kno:frequency kno:KN2020-0016-freq-NN-2024 ;
+    kno:predicate "관리하다"@ko ;
+    kno:origin "(公的<영>mask)" ;
+    kno:slotFiller "마스크(mask) (1성분)"@ko ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "공적(公的) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0016-freq-NN-2023 ;
+    kno:languageType "한^영" ;
+    kno:instantiates kno:S000474 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2021 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1484323> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0016-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "정부가 수급을 관리하는 마스크. 코로나19의 확산으로 마스크 품귀 현상이 발생함에 따라, 마스크 공급 문제를 해결하기 위해 생산량의 대부분을 정부에서 구매하여 공적 판매처를 통해 판매한 마스크이다."@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:urimalTargetCode "1484323" .
+kno:KN2020-0016-c1 kno:role "고정항"@ko ;
+    kno:fullForm "공적"@ko ;
+    kno:surfaceForm "공적"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:formative kno:F000458 ;
+    rdfs:label "공적(公的)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0016-c2 kno:semanticTag kno:usas-B5 ;
+    rdfs:label "마스크(mask)"@ko ;
+    kno:fullForm "마스크"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000038 ;
+    kno:surfaceForm "마스크"@ko .

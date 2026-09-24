@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0660 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0660 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0660-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0660-form ;
-    ontolex:sense kno:KN2025-0660-sense .
-
-kno:KN2025-0660-att-nn a frac:Attestation ;
-    dcterms:date "2025-04-17"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/050/0000089472> .
-
-kno:KN2025-0660-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0660-freq-nn,
-        kno:KN2025-0660-freq-yt ;
-    ontolex:writtenRep "핑크 관세"@ko .
-
-kno:KN2025-0660-freq-nn a frac:CorpusFrequency ;
-    rdf:value 24 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0660-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0660-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0660 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%91%ED%81%AC%20%EA%B4%80%EC%84%B8> ;
+    kno:indexForm "핑크관세"@ko ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 같은 종류의 상품이라도 여성용으로 분류되거나 여성 소비자를 겨냥했다는 이유로 관세율이 더 높게 적용되거나 관세 부담이 더 커지는 현상."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "커지다"@ko ;
+    kno:component kno:KN2025-0660-c1 ;
+    kno:frequency kno:KN2025-0660-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "핑크 관세"@ko ;
+    kno:componentString "핑크(pink), 관세(關稅)"@ko ;
+    kno:languageType "영_한" ;
+    kno:example "(LLM) 일부 품목에서 여성용 제품에 더 높은 관세가 매겨지면 {핑크관세가} 가격 차별을 고착화한다는 비판이 나올 수 있다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0660-c2 ;
+    kno:frequency kno:KN2025-0660-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000360 ;
+    kno:slotFiller "핑크(pink) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>pink關稅)" .
+kno:KN2025-0660-c1 kno:surfaceForm "핑크"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001011 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "핑크(pink)"@ko ;
+    a kno:Component ;
+    kno:fullForm "핑크"@ko .
+kno:KN2025-0660-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "관세"@ko ;
+    kno:surfaceForm "관세"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000462 ;
+    rdfs:label "관세(關稅)"@ko ;
+    kno:semanticTag kno:usas-I1.3 .

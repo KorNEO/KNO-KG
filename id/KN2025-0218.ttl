@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0218 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0218 a ontolex:Word ;
-    frac:attestation kno:KN2025-0218-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0218-form ;
-    ontolex:sense kno:KN2025-0218-sense .
-
-kno:KN2025-0218-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/421/0008002986> .
-
-kno:KN2025-0218-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0218-freq-nn,
-        kno:KN2025-0218-freq-yt ;
-    ontolex:writtenRep "마라 카레"@ko .
-
-kno:KN2025-0218-freq-nn a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0218-freq-yt a frac:CorpusFrequency ;
-    rdf:value 14 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0218-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0218 kno:origin "(<중>mala[麻辣]<일>karê)" ;
+    kno:languageType "중_일" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%9D%BC%EC%B9%B4%EB%A0%88> ;
+    kno:indexForm "마라카레"@ko ;
+    rdfs:label "마라-카레"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 얼얼하면서 매운 맛을 내는 ‘마라’ 풍미가 나는 요리에 카레 가루(또는 카레)를 더해 만든 음식."@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 어제 먹고 남은 마라샹궈에 카레 가루를 넣어 {마라카레를} 만들어 먹었다."@ko ;
+    kno:frequency kno:KN2025-0218-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0218-c1 ;
+    kno:component kno:KN2025-0218-c2 ;
+    kno:componentString "마라(mala[麻辣]), 카레(karê)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0218-freq-NN-2025 ;
+    a ontolex:Word .
+kno:KN2025-0218-c1 kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F003347 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "마라"@ko ;
+    kno:surfaceForm "마라"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "마라(mala[麻辣])"@ko .
+kno:KN2025-0218-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "카레(karê)"@ko ;
+    kno:fullForm "카레"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006192 ;
+    kno:surfaceForm "카레"@ko .

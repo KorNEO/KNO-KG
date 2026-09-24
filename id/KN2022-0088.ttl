@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0088 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0088 a ontolex:Word ;
-    frac:attestation kno:KN2022-0088-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0088-form ;
-    ontolex:sense kno:KN2022-0088-sense .
-
-kno:KN2022-0088-att-nn a frac:Attestation ;
-    dcterms:date "2023-01-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/079/0003729170> .
-
-kno:KN2022-0088-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0088-freq-nn,
-        kno:KN2022-0088-freq-yt ;
-    ontolex:writtenRep "내돈내받"@ko .
-
-kno:KN2022-0088-freq-nn a frac:CorpusFrequency ;
-    rdf:value 3 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0088-freq-yt a frac:CorpusFrequency ;
-    rdf:value 9 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0088-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0088 a kno:Neologism ;
+    kno:componentString "내, 돈, 내, 받(다)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2022-0088-c4 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "받(다) (1성분)"@ko ;
+    kno:instantiates kno:S001277 ;
+    rdfs:label "내돈내받"@ko ;
+    kno:frequency kno:KN2022-0088-freq-NN-2021 ;
+    kno:component kno:KN2022-0088-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%8F%88%EB%82%B4%EB%B0%9B> ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "고+고+고+고" ;
+    kno:component kno:KN2022-0088-c3 ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:indexForm "내돈내받"@ko ;
+    kno:example "¶조세 부담률이 오른 상황에서 재난 지원금 역시 {내돈내받인} 셈이 아니냐는 지적이 나오고 있다."@ko ;
+    kno:component kno:KN2022-0088-c1 ;
+    kno:frequency kno:KN2022-0088-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0088-freq-NN-total ;
+    kno:formation kno:W06 ;
+    skos:definition "‘내 돈 내고 내가 받음’을 줄여 이르는 말. 국민연금 혹은 여러 복지 정책으로 지원금을 받지만 결국 자신이 납부한 세금을 돌려받는 것에 불과한 상황을 비판적으로 이르는 말이다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear .
+kno:KN2022-0088-c4 kno:surfaceForm "받"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "받다"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:formative kno:F003695 ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "받(다)"@ko .
+kno:KN2022-0088-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "돈"@ko ;
+    kno:surfaceForm "돈"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "돈"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000257 .
+kno:KN2022-0088-c3 kno:fullForm "내"@ko ;
+    kno:surfaceForm "내"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000071 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    rdfs:label "내"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2022-0088-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000071 ;
+    a kno:Component ;
+    rdfs:label "내"@ko ;
+    kno:surfaceForm "내"@ko ;
+    kno:fullForm "내"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "고정항"@ko .

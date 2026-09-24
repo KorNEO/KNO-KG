@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0324 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0324 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0324-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0324-form ;
-    ontolex:sense kno:KN2024-0324-sense .
-
-kno:KN2024-0324-att-nn a frac:Attestation ;
-    dcterms:date "2024-06-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/029/0002877919> .
-
-kno:KN2024-0324-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0324-freq-nn,
-        kno:KN2024-0324-freq-yt ;
-    ontolex:writtenRep "클린^임대인^제도"@ko .
-
-kno:KN2024-0324-freq-nn a frac:CorpusFrequency ;
-    rdf:value 88 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0324-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0324-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0324 kno:frequency kno:KN2024-0324-freq-NN-2025 ;
+    kno:indexForm "클린임대인제도"@ko ;
+    kno:predicate "인증하다"@ko ;
+    kno:componentString "클린(clean), 임대인(賃貸人), 제도(制度)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "클린^임대인^제도"@ko ;
+    kno:component kno:KN2024-0324-c2 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0324-c1 ;
+    skos:definition "서울시가 임차 주택의 권리 관계와 임대인의 신용 정보 등을 확인해, 안심하고 거래할 수 있는 매물임을 인증하는 제도. =클린 임대제."@ko ;
+    kno:languageType "영^한^한" ;
+    kno:example "¶서울시는 위축된 빌라 전세 시장이 {클린 임대인 제도를} 통해서 활력을 찾고, 안심하고 거래가 가능한 임대차 계약 문화가 정착되길 바란다고 말했다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0324-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%81%B4%EB%A6%B0%EC%9E%84%EB%8C%80%EC%9D%B8%EC%A0%9C%EB%8F%84> ;
+    kno:component kno:KN2024-0324-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "클린(clean)+임대인(賃貸人) (2성분)"@ko ;
+    kno:origin "(<영>clean賃貸人制度)" ;
+    kno:slotFiller "임대인(賃貸人)+제도(制度) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2024-0324-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000039 ;
+    kno:instantiates kno:S001701 .
+kno:KN2024-0324-c2 kno:semanticTag kno:usas-H4 ;
+    kno:surfaceForm "임대인"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "임대인(賃貸人)"@ko ;
+    kno:fullForm "임대인"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000902 .
+kno:KN2024-0324-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F001878 ;
+    kno:surfaceForm "클린"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "클린(clean)"@ko ;
+    a kno:Component ;
+    kno:fullForm "클린"@ko ;
+    kno:semanticTag kno:usas-B4 .
+kno:KN2024-0324-c3 a kno:Component ;
+    kno:surfaceForm "제도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:formative kno:F000041 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "제도(制度)"@ko .

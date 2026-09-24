@@ -1,30 +1,62 @@
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0128 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0128 a ontolex:Word ;
-    ontolex:canonicalForm kno:KN2020-0128-form ;
-    ontolex:sense kno:KN2020-0128-sense .
-
-kno:KN2020-0128-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0128-freq-nn,
-        kno:KN2020-0128-freq-yt ;
-    ontolex:writtenRep "비-화이트국"@ko .
-
-kno:KN2020-0128-freq-nn a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0128-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0128-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0128 kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%ED%99%94%EC%9D%B4%ED%8A%B8%EA%B5%AD> ;
+    kno:componentString "비(非)-, 화이트(white), -국(局)"@ko ;
+    kno:component kno:KN2020-0128-c2 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2020-0128-c3 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "정부가 외국과 교역 시 전략 물자 수출 절차를 간소화할 수 있도록 정한 우대국에 해당하지 않는 국가. =비백색 국가."@ko ;
+    kno:component kno:KN2020-0128-c1 ;
+    kno:example "¶한국 정부는 OO이 한국을 화이트국에서 {비화이트국으로} 격하한 것에 대해 깊은 유감을 표명하였다."@ko ;
+    kno:origin "(非<영>white國)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2020-0128-freq-NN-2019 ;
+    kno:predicate "않다"@ko ;
+    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2020-0128-freq-NN-total ;
+    kno:formation kno:W02 ;
+    kno:languageType "한+(영+한)" ;
+    kno:indexForm "비화이트국"@ko ;
+    kno:frequency kno:KN2020-0128-freq-NN-2023 ;
+    rdfs:label "비-화이트국"@ko .
+kno:KN2020-0128-c2 kno:surfaceForm "화이트"@ko ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "화이트(white)"@ko ;
+    kno:formative kno:F000441 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "화이트"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2020-0128-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "국"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F002461 ;
+    kno:fullForm "국"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-국(局)"@ko .
+kno:KN2020-0128-c1 kno:surfaceForm "비"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "비"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:formative kno:F000520 ;
+    rdfs:label "비(非)-"@ko .

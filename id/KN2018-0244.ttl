@@ -1,0 +1,54 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2018-0244 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2018-0244 kno:activeYears "1"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000550 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶이 커피는 현재 에스엔에스(SNS)에서 ‘셀피 커피’ 혹은 ‘{얼굴라테}’ 등으로 통한다."@ko ;
+    kno:slotFiller "얼굴 (1성분)"@ko ;
+    kno:component kno:KN2018-0244-c1 ;
+    kno:slotFiller "라테(latte) (1성분)"@ko ;
+    rdfs:label "얼굴-라테"@ko ;
+    kno:componentString "얼굴, 라테(latte)"@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "얼굴라테"@ko ;
+    kno:instantiates kno:S000373 ;
+    kno:origin "(얼굴<이>latte)" ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%EB%9D%BC%ED%85%8C> ;
+    kno:frequency kno:KN2018-0244-freq-NN-total ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0244-freq-NN-2017 ;
+    kno:year "2018"^^xsd:gYear ;
+    skos:definition "에스프레소 커피 위에 우유 거품으로 얼굴 그림을 그린 커피."@ko ;
+    kno:languageType "고+이" ;
+    kno:component kno:KN2018-0244-c2 .
+kno:KN2018-0244-c1 kno:semanticTag kno:usas-B1 ;
+    rdfs:label "얼굴"@ko ;
+    kno:formative kno:F000222 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "얼굴"@ko ;
+    kno:surfaceForm "얼굴"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2018-0244-c2 rdfs:label "라테(latte)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000260 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "라테"@ko ;
+    kno:surfaceForm "라테"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    a kno:Component .

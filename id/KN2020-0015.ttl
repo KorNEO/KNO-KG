@@ -1,36 +1,78 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0015 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0015-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0015-form ;
-    ontolex:sense kno:KN2020-0015-sense .
-
-kno:KN2020-0015-att-nn a frac:Attestation ;
-    dcterms:date "2020-02-02"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/055/0000789677> .
-
-kno:KN2020-0015-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0015-freq-nn,
-        kno:KN2020-0015-freq-yt ;
-    ontolex:writtenRep "공익^기능^증진^직불제"@ko .
-
-kno:KN2020-0015-freq-nn a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0015-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0015-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0015 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0015-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0015-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶농림 축산 식품부는 {공익 기능 증진 직불제의} 시행으로 보조금이 확대되면서 농가의 양극화 해소, 농가 소득 증진 등의 효과가 기대된다고 밝혔다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001218 ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:frequency kno:KN2020-0015-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0015-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0015-freq-NN-2019 ;
+    skos:definition "농업, 어업 활동을 통해 지역을 유지하고 환경을 보전하는 등 사회 구성원 모두가 누릴 수 있는 편익을 높이기 위해 생산자에게 정부가 직접 보조금을 주는 제도."@ko ;
+    kno:indexForm "공익기능증진직불제"@ko ;
+    kno:component kno:KN2020-0015-c4 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EC%9D%B5%EA%B8%B0%EB%8A%A5%EC%A6%9D%EC%A7%84%EC%A7%81%EB%B6%88%EC%A0%9C> ;
+    kno:component kno:KN2020-0015-c2 ;
+    kno:componentString "공익(公益), 기능(機能), 증진(增進), 직불제(直拂制)"@ko ;
+    kno:component kno:KN2020-0015-c1 ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "공익(公益)+기능(機能)+증진(增進) (3성분)"@ko ;
+    kno:frequency kno:KN2020-0015-freq-NN-total ;
+    kno:origin "(公益機能增進直拂制)" ;
+    kno:slotFiller "직불제(直拂制) (1성분)"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:instantiates kno:S001042 ;
+    kno:component kno:KN2020-0015-c3 ;
+    kno:predicate "주다"@ko ;
+    rdfs:label "공익^기능^증진^직불제"@ko ;
+    a kno:Neologism .
+kno:KN2020-0015-c4 rdfs:label "직불제(直拂制)"@ko ;
+    kno:fullForm "직불제"@ko ;
+    kno:surfaceForm "직불제"@ko ;
+    kno:formative kno:F001792 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2020-0015-c2 kno:surfaceForm "기능"@ko ;
+    kno:formative kno:F001112 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X9.1p ;
+    rdfs:label "기능(機能)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "기능"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0015-c1 kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "공익"@ko ;
+    kno:formative kno:F001076 ;
+    a kno:Component ;
+    rdfs:label "공익(公益)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "공익"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0015-c3 kno:fullForm "증진"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N5p ;
+    rdfs:label "증진(增進)"@ko ;
+    kno:surfaceForm "증진"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000932 ;
+    kno:truncated "false"^^xsd:boolean .

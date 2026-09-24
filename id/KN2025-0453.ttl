@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0453 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0453 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0453-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0453-form ;
-    ontolex:sense kno:KN2025-0453-sense .
-
-kno:KN2025-0453-att-nn a frac:Attestation ;
-    dcterms:date "2025-11-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/014/0005431770> .
-
-kno:KN2025-0453-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0453-freq-nn,
-        kno:KN2025-0453-freq-yt ;
-    ontolex:writtenRep "웰빙 네이티브"@ko .
-
-kno:KN2025-0453-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0453-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0453-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0453 kno:predicate "하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B0%EB%B9%99%20%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C> ;
+    skos:definition "(LLM) 어릴 때부터 건강한 식습관과 운동 등 몸 관리를 자연스럽게 익혀, 웰니스 관련 소비와 실천을 일상적으로 하는 세대."@ko ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S001599 ;
+    kno:indexForm "웰빙네이티브"@ko ;
+    kno:frequency kno:KN2025-0453-freq-NN-2025 ;
+    kno:componentString "웰빙(well-being), 네이티브(native)"@ko ;
+    kno:component kno:KN2025-0453-c1 ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "웰빙 네이티브"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2025-0453-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "네이티브(native) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>well-being native)" ;
+    kno:example "(LLM) 웨어러블 기기로 수면 점수를 확인하고 영양제 조합을 기록하는 {웰빙네이티브가} 늘면서 헬스케어 앱 시장도 함께 커지고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0453-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0453-c1 a kno:Component ;
+    kno:fullForm "웰빙"@ko ;
+    kno:formative kno:F001670 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "웰빙"@ko ;
+    kno:semanticTag kno:usas-B2p ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "웰빙(well-being)"@ko .
+kno:KN2025-0453-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "네이티브"@ko ;
+    kno:surfaceForm "네이티브"@ko ;
+    a kno:Component ;
+    rdfs:label "네이티브(native)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002748 .

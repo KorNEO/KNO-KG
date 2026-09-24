@@ -1,0 +1,49 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0281 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0281 kno:slotFiller "십삼호(十三號) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W01 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:example "¶그런 성향을…서구인의 새하얀 피부색에나 어울리는 파운데이션 호수인 ‘13호’를 선호한다고 해서 ‘{십삼호병’이라고도} 부른답니다."@ko ;
+    skos:definition "파운데이션이나 파우더 따위의 화장품에서 색상을 구분하는 호수 가운데 자신의 피부색과 어울리지 않는 밝은 색인 십삼 호를 선호하는 현상을 비유적으로 이르는 말."@ko ;
+    kno:origin "(十三號病)" ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0281-c1 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%AD%EC%82%BC%ED%98%B8%EB%B3%91> ;
+    kno:instantiates kno:S000021 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "십삼호(十三號), 병(病)"@ko ;
+    rdfs:label "십삼호-병"@ko ;
+    kno:indexForm "십삼호병"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2013-0281-c2 ;
+    a ontolex:Word .
+kno:KN2013-0281-c1 a kno:Component ;
+    rdfs:label "십삼호(十三號)"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "십삼호"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004745 ;
+    kno:surfaceForm "십삼호"@ko .
+kno:KN2013-0281-c2 kno:semanticTag kno:usas-B2m ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "병(病)"@ko ;
+    kno:formative kno:F000033 ;
+    a kno:Component ;
+    kno:fullForm "병"@ko ;
+    kno:surfaceForm "병"@ko .

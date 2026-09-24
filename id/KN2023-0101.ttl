@@ -1,36 +1,54 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0101 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0101-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0101-form ;
-    ontolex:sense kno:KN2023-0101-sense .
-
-kno:KN2023-0101-att-nn a frac:Attestation ;
-    dcterms:date "2023-04-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/277/0005251533> .
-
-kno:KN2023-0101-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0101-freq-nn,
-        kno:KN2023-0101-freq-yt ;
-    ontolex:writtenRep "문화^워싱"@ko .
-
-kno:KN2023-0101-freq-nn a frac:CorpusFrequency ;
-    rdf:value 30 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0101-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0101-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0101 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0101-c2 ;
+    kno:languageType "한^영" ;
+    kno:componentString "문화(文化), 워싱(washing)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2023-0101-freq-NN-2024 ;
+    kno:origin "(文化<영>washing)" ;
+    skos:definition "박람회 등과 같은 문화 행사를 이용하여 국가나 지역의 부정적인 이미지를 세탁하는 행위."@ko ;
+    kno:example "¶이번 박람회는 과거의 인권 탄압에 대한 비판을 피하기 위해 개최하는 {문화 워싱에} 가까운 행사였기 때문에 서방 국가들은 참석하지 않았다."@ko ;
+    kno:instantiates kno:S000176 ;
+    kno:frequency kno:KN2023-0101-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B8%ED%99%94%EC%9B%8C%EC%8B%B1> ;
+    kno:component kno:KN2023-0101-c1 ;
+    kno:frequency kno:KN2023-0101-freq-NN-2023 ;
+    kno:indexForm "문화워싱"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    rdfs:label "문화^워싱"@ko ;
+    kno:predicate "세탁하다"@ko ;
+    kno:slotFiller "문화(文化) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0101-freq-NN-total ;
+    a ontolex:MultiwordExpression .
+kno:KN2023-0101-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "워싱(washing)"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "워싱"@ko ;
+    kno:formative kno:F000395 ;
+    kno:surfaceForm "워싱"@ko ;
+    a kno:Component .
+kno:KN2023-0101-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:fullForm "문화"@ko ;
+    kno:surfaceForm "문화"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "문화(文化)"@ko ;
+    kno:formative kno:F000267 .

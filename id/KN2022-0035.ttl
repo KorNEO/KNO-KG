@@ -1,36 +1,72 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2022-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0035 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2022-0035-att-nn ;
-    ontolex:canonicalForm kno:KN2022-0035-form ;
-    ontolex:sense kno:KN2022-0035-sense .
-
-kno:KN2022-0035-att-nn a frac:Attestation ;
-    dcterms:date "2022-01-03"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/215/0001007139> .
-
-kno:KN2022-0035-form a ontolex:Form ;
-    frac:frequency kno:KN2022-0035-freq-nn,
-        kno:KN2022-0035-freq-yt ;
-    ontolex:writtenRep "고소^절연^작업^차"@ko .
-
-kno:KN2022-0035-freq-nn a frac:CorpusFrequency ;
-    rdf:value 58 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2022-0035-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2022-0035-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2022-0035 kno:frequency kno:KN2022-0035-freq-NN-2023 ;
+    kno:origin "(高所絕緣作業車)" ;
+    kno:component kno:KN2022-0035-c4 ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2022-0035-c1 ;
+    kno:languageType "한^한^한^한" ;
+    kno:slotFiller "고소(高所)+절연(絕緣) (2성분)"@ko ;
+    kno:frequency kno:KN2022-0035-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:component kno:KN2022-0035-c3 ;
+    skos:definition "높은 위치에 있는 고압 전기 시설에 대한 작업이 가능하도록 절연 설비를 갖춘 차량."@ko ;
+    kno:instantiates kno:S001010 ;
+    rdfs:label "고소^절연^작업^차"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EC%86%8C%EC%A0%88%EC%97%B0%EC%9E%91%EC%97%85%EC%B0%A8> ;
+    kno:frequency kno:KN2022-0035-freq-NN-total ;
+    kno:example "¶이번 사고는 고압 전기 작업에 사용되는 {고소 절연 작업 차가} 아닌 일반 트럭을 타고 작업하면서 발생한 것이다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0035-c2 ;
+    kno:indexForm "고소절연작업차"@ko ;
+    kno:componentString "고소(高所), 절연(絕緣), 작업(作業), 차(車)"@ko .
+kno:KN2022-0035-c4 kno:fullForm "차"@ko ;
+    kno:surfaceForm "차"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "차(車)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-M3 ;
+    a kno:Component ;
+    kno:formative kno:F000075 ;
+    kno:role "고정항"@ko .
+kno:KN2022-0035-c1 a kno:Component ;
+    kno:semanticTag kno:usas-X3.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002295 ;
+    rdfs:label "고소(高所)"@ko ;
+    kno:fullForm "고소"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "고소"@ko .
+kno:KN2022-0035-c3 kno:semanticTag kno:usas-I3.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000228 ;
+    kno:surfaceForm "작업"@ko ;
+    a kno:Component ;
+    rdfs:label "작업(作業)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "작업"@ko .
+kno:KN2022-0035-c2 kno:fullForm "절연"@ko ;
+    kno:semanticTag kno:usas-S3.1m ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "절연"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "절연(絕緣)"@ko ;
+    kno:formative kno:F005650 .

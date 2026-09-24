@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0157 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0157 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0157-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0157-form ;
-    ontolex:sense kno:KN2023-0157-sense .
-
-kno:KN2023-0157-att-nn a frac:Attestation ;
-    dcterms:date "2022-08-25"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0005009284> .
-
-kno:KN2023-0157-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0157-freq-nn,
-        kno:KN2023-0157-freq-yt ;
-    ontolex:writtenRep "심야 호출비"@ko .
-
-kno:KN2023-0157-freq-nn a frac:CorpusFrequency ;
-    rdf:value 13 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0157-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0157-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0157 kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2023-0157-freq-NN-total ;
+    kno:frequency kno:KN2023-0157-freq-NN-2022 ;
+    kno:componentString "심야(深夜), 호출비(呼出費)"@ko ;
+    kno:example "¶정부는 택시난을 해소하기 위해 택시 이용객의 목적지를 미리 노출하지 않고, {심야 호출비를} 인상하는 방안을 발표하였다."@ko ;
+    kno:component kno:KN2023-0157-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "심야호출비"@ko ;
+    skos:definition "밤 열 시부터 새벽 두 시 사이에 택시를 이용할 때 추가적으로 내는 비용."@ko ;
+    kno:component kno:KN2023-0157-c2 ;
+    kno:languageType "한_한" ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%AC%EC%95%BC%20%ED%98%B8%EC%B6%9C%EB%B9%84> ;
+    kno:origin "(深夜呼出費)" ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0157-freq-NN-2023 ;
+    rdfs:label "심야 호출비"@ko ;
+    kno:predicate "내다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0157-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004738 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:fullForm "심야"@ko ;
+    kno:surfaceForm "심야"@ko ;
+    rdfs:label "심야(深夜)"@ko .
+kno:KN2023-0157-c2 kno:semanticTag kno:usas-I1.3 ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F007110 ;
+    rdfs:label "호출비(呼出費)"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "호출비"@ko ;
+    kno:surfaceForm "호출비"@ko .

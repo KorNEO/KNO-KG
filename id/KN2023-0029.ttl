@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0029 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0029 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2023-0029-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0029-form ;
-    ontolex:sense kno:KN2023-0029-sense .
-
-kno:KN2023-0029-att-nn a frac:Attestation ;
-    dcterms:date "2023-06-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/469/0000745520> .
-
-kno:KN2023-0029-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0029-freq-nn,
-        kno:KN2023-0029-freq-yt ;
-    ontolex:writtenRep "관광^워싱"@ko .
-
-kno:KN2023-0029-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0029-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0029-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0029 kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "관광(觀光) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "관광을 이용하여 국가나 지역의 부정적인 이미지를 세탁하는 행위."@ko ;
+    kno:componentString "관광(觀光), 워싱(washing)"@ko ;
+    kno:indexForm "관광워싱"@ko ;
+    kno:origin "(觀光<영>washing)" ;
+    kno:frequency kno:KN2023-0029-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^영" ;
+    kno:component kno:KN2023-0029-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:predicate "세탁하다"@ko ;
+    rdfs:label "관광^워싱"@ko ;
+    kno:component kno:KN2023-0029-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%80%EA%B4%91%EC%9B%8C%EC%8B%B1> ;
+    kno:instantiates kno:S000176 ;
+    kno:example "¶의도한 것이 아니었다고 하더라도, 인권 탄압 논란이 심한 나라를 방문한 것은 {관광 워싱의} 조력자가 된 것 같아 씁쓸하다."@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0029-freq-NN-2023 ;
+    kno:pos "「구」"@ko .
+kno:KN2023-0029-c1 a kno:Component ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002389 ;
+    kno:fullForm "관광"@ko ;
+    kno:surfaceForm "관광"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "관광(觀光)"@ko .
+kno:KN2023-0029-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "워싱"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000395 ;
+    rdfs:label "워싱(washing)"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "워싱"@ko .

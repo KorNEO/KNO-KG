@@ -1,36 +1,62 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0038 a ontolex:Word ;
-    frac:attestation kno:KN2024-0038-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0038-form ;
-    ontolex:sense kno:KN2024-0038-sense .
-
-kno:KN2024-0038-att-nn a frac:Attestation ;
-    dcterms:date "2024-02-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/050/0000071734> .
-
-kno:KN2024-0038-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0038-freq-nn,
-        kno:KN2024-0038-freq-yt ;
-    ontolex:writtenRep "노가완"@ko .
-
-kno:KN2024-0038-freq-nn a frac:CorpusFrequency ;
-    rdf:value 17 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0038-freq-yt a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0038-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0038 kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "노(조)(勞組)+가(입)(加入) (2성분)"@ko ;
+    kno:component kno:KN2024-0038-c2 ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0038-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EA%B0%80%EC%99%84> ;
+    skos:definition "‘노조 가입 완료’를 줄여 이르는 말. 사내 게시판에서 노동조합 가입 인증을 하거나 노동조합에 가입한 사람들 간 연대감을 드러내기 위해 사용하는 표현이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "노가완"@ko ;
+    kno:frequency kno:KN2024-0038-freq-NN-2024 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000417 ;
+    a kno:Neologism ;
+    kno:componentString "노(조)(勞組), 가(입)(加入), 완(료)(完了)"@ko ;
+    kno:frequency kno:KN2024-0038-freq-NN-total ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2024-0038-c3 ;
+    kno:indexForm "노가완"@ko ;
+    kno:languageType "한+한+한" ;
+    kno:origin "(勞加完)" ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶회사의 커뮤니티에 직원들이 게시글을 올릴 때 ‘노조 가입 완료’를 의미하는 ‘{노가완’을} 꼭 제목에 붙여 준다."@ko .
+kno:KN2024-0038-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "가(입)(加入)"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "가입"@ko ;
+    kno:surfaceForm "가"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001028 .
+kno:KN2024-0038-c1 rdfs:label "노(조)(勞組)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "노조"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "노"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002764 .
+kno:KN2024-0038-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "완(료)(完了)"@ko ;
+    kno:formative kno:F000874 ;
+    kno:surfaceForm "완"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "완료"@ko .

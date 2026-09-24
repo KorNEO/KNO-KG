@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0128 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0128 a ontolex:Word ;
-    frac:attestation kno:KN2025-0128-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0128-form ;
-    ontolex:sense kno:KN2025-0128-sense .
-
-kno:KN2025-0128-att-nn a frac:Attestation ;
-    dcterms:date "2020-06-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/009/0004586004> .
-
-kno:KN2025-0128-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0128-freq-nn,
-        kno:KN2025-0128-freq-yt ;
-    ontolex:writtenRep "냥 굿즈"@ko .
-
-kno:KN2025-0128-freq-nn a frac:CorpusFrequency ;
-    rdf:value 19 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0128-freq-yt a frac:CorpusFrequency ;
-    rdf:value 401 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0128-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0128 kno:registration "신어DB"@ko ;
+    kno:slotFiller "굿즈(goods) (1성분)"@ko ;
+    rdfs:label "냥굿즈"@ko ;
+    kno:component kno:KN2025-0128-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%83%A5%EA%B5%BF%EC%A6%88> ;
+    kno:example "(LLM) 고양이를 키우지는 않지만 박람회에 갈 때마다 {냥굿즈를} 몇 개씩 사 와서 책상 위에 모아 둔다."@ko ;
+    kno:componentString "냥(냥이), 굿즈(goods)"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "냥굿즈"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(냥<영>goods)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000289 ;
+    kno:component kno:KN2025-0128-c1 ;
+    kno:languageType "고+영" ;
+    skos:definition "(LLM) 고양이를 소재로 하여 만든 기획 상품이나 관련 상품. 주로 인형, 문구, 소품 따위의 형태로 판매된다."@ko ;
+    kno:frequency kno:KN2025-0128-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0128-freq-NN-total ;
+    a kno:Neologism .
+kno:KN2025-0128-c2 a kno:Component ;
+    kno:formative kno:F000337 ;
+    kno:fullForm "굿즈"@ko ;
+    kno:surfaceForm "굿즈"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-O2 ;
+    rdfs:label "굿즈(goods)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0128-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "냥냥이"@ko ;
+    kno:formative kno:F000474 ;
+    rdfs:label "냥(냥이)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "냥"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    a kno:Component .

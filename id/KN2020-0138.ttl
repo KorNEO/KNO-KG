@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2020-0138 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0138 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2020-0138-att-nn ;
-    ontolex:canonicalForm kno:KN2020-0138-form ;
-    ontolex:sense kno:KN2020-0138-sense .
-
-kno:KN2020-0138-att-nn a frac:Attestation ;
-    dcterms:date "2020-01-01"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/052/0001383425> .
-
-kno:KN2020-0138-form a ontolex:Form ;
-    frac:frequency kno:KN2020-0138-freq-nn,
-        kno:KN2020-0138-freq-yt ;
-    ontolex:writtenRep "비례^전문^정당"@ko .
-
-kno:KN2020-0138-freq-nn a frac:CorpusFrequency ;
-    rdf:value 190 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2020-0138-freq-yt a frac:CorpusFrequency ;
-    rdf:value 31 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2020-0138-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2020-0138 kno:component kno:KN2020-0138-c2 ;
+    kno:frequency kno:KN2020-0138-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0138-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0138-freq-NN-2023 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EB%A1%80%EC%A0%84%EB%AC%B8%EC%A0%95%EB%8B%B9> ;
+    rdfs:label "비례^전문^정당"@ko ;
+    kno:example "¶{비례 전문 정당들은} 언론의 조명과 인재 영입으로 외형적으로 정당의 틀만 갖췄을 뿐이라는 지적이 나오고 있다."@ko ;
+    a kno:Neologism ;
+    kno:componentString "비례(比例), 전문(專門), 정당(政黨)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0138-freq-NN-2020 ;
+    kno:component kno:KN2020-0138-c3 ;
+    kno:slotFiller "전문(專門) (1성분)"@ko ;
+    kno:instantiates kno:S000303 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0138-freq-NN-total ;
+    kno:frequency kno:KN2020-0138-freq-NN-2024 ;
+    kno:origin "(比例專門政黨)" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:languageType "한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    skos:definition "연동형 비례 대표 선거제를 대비해서 정당들이 비례 대표 의석을 확보하기 위해 만든 정당."@ko ;
+    kno:indexForm "비례전문정당"@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2020-0138-c1 ;
+    kno:unitType "구"@ko .
+kno:KN2020-0138-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001749 ;
+    rdfs:label "전문(專門)"@ko ;
+    kno:fullForm "전문"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "전문"@ko .
+kno:KN2020-0138-c3 kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "정당(政黨)"@ko ;
+    kno:surfaceForm "정당"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000231 ;
+    kno:fullForm "정당"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0138-c1 kno:semanticTag kno:usas-N3.1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000113 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "비례(比例)"@ko ;
+    kno:fullForm "비례"@ko ;
+    kno:surfaceForm "비례"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko .

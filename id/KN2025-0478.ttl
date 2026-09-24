@@ -1,36 +1,64 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0478 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0478 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0478-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0478-form ;
-    ontolex:sense kno:KN2025-0478-sense .
-
-kno:KN2025-0478-att-nn a frac:Attestation ;
-    dcterms:date "2025-03-27"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/032/0003359605> .
-
-kno:KN2025-0478-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0478-freq-nn,
-        kno:KN2025-0478-freq-yt ;
-    ontolex:writtenRep "인간 동물 주의"@ko .
-
-kno:KN2025-0478-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0478-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0478-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0478 kno:languageType "한_한_한" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 동물 실험과 공장식 축산을 둘러싼 논쟁에서 {인간동물주의} 관점은 인간의 편의만을 기준으로 삼는 태도를 비판한다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:slotFiller "동물(動物)+주의(主義) (2성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001614 ;
+    kno:frequency kno:KN2025-0478-freq-NN-2025 ;
+    kno:predicate "한다다"@ko ;
+    kno:slotFiller "인간(人間)+동물(動物) (2성분)"@ko ;
+    skos:definition "(LLM) 인간과 다른 동물을 위계적으로 구분하지 않고, 지각력(고통ㆍ쾌락을 느끼는 능력)을 지닌 존재로서 동등한 도덕적 고려와 존중을 해야 한다는 입장."@ko ;
+    kno:frequency kno:KN2025-0478-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "인간 동물 주의"@ko ;
+    kno:instantiates kno:S000426 ;
+    kno:component kno:KN2025-0478-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(人間動物主義)" ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EA%B0%84%20%EB%8F%99%EB%AC%BC%20%EC%A3%BC%EC%9D%98> ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0478-c3 ;
+    kno:component kno:KN2025-0478-c1 ;
+    kno:componentString "인간(人間), 동물(動物), 주의(主義)"@ko ;
+    kno:indexForm "인간동물주의"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2025-0478-c2 a kno:Component ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:formative kno:F000717 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "동물(動物)"@ko ;
+    kno:fullForm "동물"@ko ;
+    kno:surfaceForm "동물"@ko .
+kno:KN2025-0478-c3 kno:surfaceForm "주의"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:formative kno:F000080 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "주의"@ko .
+kno:KN2025-0478-c1 kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000892 ;
+    a kno:Component ;
+    rdfs:label "인간(人間)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "인간"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "인간"@ko .

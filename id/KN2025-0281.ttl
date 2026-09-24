@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0281 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0281 a ontolex:Word ;
-    frac:attestation kno:KN2025-0281-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0281-form ;
-    ontolex:sense kno:KN2025-0281-sense .
-
-kno:KN2025-0281-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-11"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/030/0003339862> .
-
-kno:KN2025-0281-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0281-freq-nn,
-        kno:KN2025-0281-freq-yt ;
-    ontolex:writtenRep "번식범"@ko .
-
-kno:KN2025-0281-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0281-freq-yt a frac:CorpusFrequency ;
-    rdf:value 5 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0281-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0281 kno:component kno:KN2025-0281-c1 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "번식-범"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(繁殖犯)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%88%EC%8B%9D%EB%B2%94> ;
+    kno:indexForm "번식범"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:slotFiller "번식(繁殖) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:example "(LLM) 인구 통제가 엄격한 구역에서는 몰래 아이를 키우다 적발되면 {번식범으로} 분류돼 처벌을 받는다."@ko ;
+    skos:definition "(LLM) 출산이 금지되거나 강하게 제한된 사회에서 아이를 낳거나 기르는 일을 범죄로 규정할 때, 그 범죄의 당사자를 이르는 말."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0281-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0281-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:instantiates kno:S000463 ;
+    kno:frequency kno:KN2025-0281-freq-NN-2025 ;
+    kno:componentString "번식(繁殖), -범(犯)"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word .
+kno:KN2025-0281-c1 kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-L1p ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003790 ;
+    kno:fullForm "번식"@ko ;
+    kno:surfaceForm "번식"@ko ;
+    rdfs:label "번식(繁殖)"@ko .
+kno:KN2025-0281-c2 kno:surfaceForm "범"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-범(犯)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "범"@ko ;
+    kno:formative kno:F000770 ;
+    a kno:Component .

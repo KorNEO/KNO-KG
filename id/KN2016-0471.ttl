@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0471 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0471 kno:component kno:KN2016-0471-c2 ;
+    kno:frequency kno:KN2016-0471-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%AC%EC%A7%9C%EB%B3%B6> ;
+    kno:frequency kno:KN2016-0471-freq-NN-total ;
+    kno:languageType "일+중+고" ;
+    a ontolex:Word ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000892 ;
+    kno:origin "(<일>←champon[混合]<중>zhajiangmian[炸醬麵]볶)" ;
+    kno:indexForm "짬짜볶"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶금일 방송될 OO ‘OO’에서는 중국집 3대 요리 {짬짜볶을} 만드는 ‘불’ 맛의 비법이 공개될 예정이다."@ko ;
+    kno:component kno:KN2016-0471-c1 ;
+    skos:definition "짬뽕, 짜장면, 볶음밥을 줄여 이르는말."@ko ;
+    kno:component kno:KN2016-0471-c3 ;
+    kno:slotFiller "짬(뽕)(champon)+짜(장면)(zhajiangmian) (2성분)"@ko ;
+    kno:componentString "짬(뽕)(champon), 짜(장면)(zhajiangmian), 볶(음밥)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2016-0471-freq-NN-2015 ;
+    rdfs:label "짬짜볶"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2016-0471-c2 kno:fullForm "짜장면"@ko ;
+    kno:formative kno:F001798 ;
+    a kno:Component ;
+    kno:surfaceForm "짜"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "짜(장면)(zhajiangmian)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0471-c1 kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "짬(뽕)(champon)"@ko ;
+    kno:formative kno:F005957 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "짬뽕"@ko ;
+    kno:surfaceForm "짬"@ko ;
+    a kno:Component .
+kno:KN2016-0471-c3 rdfs:label "볶(음밥)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001379 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "볶음밥"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "볶"@ko .

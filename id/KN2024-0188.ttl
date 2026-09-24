@@ -1,36 +1,65 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2024-0188 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0188 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2024-0188-att-nn ;
-    ontolex:canonicalForm kno:KN2024-0188-form ;
-    ontolex:sense kno:KN2024-0188-sense .
-
-kno:KN2024-0188-att-nn a frac:Attestation ;
-    dcterms:date "2023-07-08"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/008/0004909460> .
-
-kno:KN2024-0188-form a ontolex:Form ;
-    frac:frequency kno:KN2024-0188-freq-nn,
-        kno:KN2024-0188-freq-yt ;
-    ontolex:writtenRep "영아^피난^제도"@ko .
-
-kno:KN2024-0188-freq-nn a frac:CorpusFrequency ;
-    rdf:value 1 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2024-0188-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2024-0188-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2024-0188 kno:component kno:KN2024-0188-c1 ;
+    kno:slotFiller "영아(嬰兒)+피난(避難) (2성분)"@ko ;
+    kno:slotFiller "피난(避難)+제도(制度) (2성분)"@ko ;
+    kno:frequency kno:KN2024-0188-freq-NN-total ;
+    kno:frequency kno:KN2024-0188-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0188-c3 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S001566 ;
+    kno:indexForm "영아피난제도"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:component kno:KN2024-0188-c2 ;
+    kno:componentString "영아(嬰兒), 피난(避難), 제도(制度)"@ko ;
+    a kno:Neologism ;
+    skos:definition "미국에서 생후 72시간 혹은 50일 이내의 영아를 정해진 피난소에 유기하는 행동에 대해 법적 책임을 면제하고 산모의 익명성을 보장하는 것을 주된 내용으로 하는 제도. 제도의 취지는 영아의 생명을 보장하고 임산부의 안전과 건강을 보호하는 것이다. =영아 피난제."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:example "¶미국은 {영아 피난 제도를} 시행하여, 임산부와 신생아의 안전과 생명을 보호하고 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%EC%95%84%ED%94%BC%EB%82%9C%EC%A0%9C%EB%8F%84> ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(嬰兒避難制度)" ;
+    kno:instantiates kno:S000039 ;
+    rdfs:label "영아^피난^제도"@ko .
+kno:KN2024-0188-c1 kno:semanticTag kno:usas-T3m ;
+    kno:formative kno:F001616 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "영아(嬰兒)"@ko ;
+    kno:fullForm "영아"@ko ;
+    kno:surfaceForm "영아"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0188-c3 a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000041 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제도"@ko ;
+    kno:surfaceForm "제도"@ko ;
+    rdfs:label "제도(制度)"@ko .
+kno:KN2024-0188-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "피난"@ko ;
+    rdfs:label "피난(避難)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006863 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:fullForm "피난"@ko .

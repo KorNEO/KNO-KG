@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0006 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0006 kno:component kno:KN2019-0006-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1386692> ;
+    kno:component kno:KN2019-0006-c3 ;
+    kno:urimalTargetCode "1386692" ;
+    kno:languageType "고+한+고" ;
+    kno:origin "(갑雰띠)" ;
+    rdfs:label "갑분띠"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000201 ;
+    kno:frequency kno:KN2019-0006-freq-NN-2018 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2019-0006-c1 ;
+    kno:frequency kno:KN2019-0006-freq-NN-total ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "갑분띠"@ko ;
+    kno:example "¶특히 가사에는 ‘롬곡이 흐른다’, ‘난 너무 솔직해 난 {갑분띠}’ 등 요즘 10대들 사이에서 유행하는 ‘급식체’가 그대로 반영되어 있어 눈길을 끌었다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0006-freq-NN-2022 ;
+    kno:componentString "갑(자기), 분(위기)(雰), 띠(용)"@ko ;
+    kno:slotFiller "띠(용) (1성분)"@ko ;
+    kno:frequency kno:KN2019-0006-freq-NN-2019 ;
+    skos:definition "‘갑자기 분위기 띠용’을 줄여 이르는 말. 어떤 계기에 의해 뜻하지 않게 분위기가 혼란스러워지는 경우를 가리키는 말이다."@ko ;
+    a ontolex:Word .
+kno:KN2019-0006-c2 kno:formative kno:F000360 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E1 ;
+    kno:surfaceForm "분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "분위기"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "분(위기)(雰)"@ko .
+kno:KN2019-0006-c3 rdfs:label "띠(용)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:surfaceForm "띠"@ko ;
+    kno:fullForm "띠용"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F003139 .
+kno:KN2019-0006-c1 kno:fullForm "갑자기"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T1.1.2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000327 ;
+    rdfs:label "갑(자기)"@ko ;
+    kno:surfaceForm "갑"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko .

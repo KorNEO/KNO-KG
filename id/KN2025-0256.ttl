@@ -1,36 +1,51 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0256 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0256-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0256-form ;
-    ontolex:sense kno:KN2025-0256-sense .
-
-kno:KN2025-0256-att-nn a frac:Attestation ;
-    dcterms:date "2025-10-19"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/025/0003476147> .
-
-kno:KN2025-0256-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0256-freq-nn,
-        kno:KN2025-0256-freq-yt ;
-    ontolex:writtenRep "바비 수술"@ko .
-
-kno:KN2025-0256-freq-nn a frac:CorpusFrequency ;
-    rdf:value 11 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0256-freq-yt a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0256-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0256 kno:component kno:KN2025-0256-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 허리를 더 가늘게 보이게 하려고 {바비수술을} 알아보는 사람이 늘면서 안전성에 대한 논의도 함께 커지고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "바비수술"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%94%EB%B9%84%20%EC%88%98%EC%88%A0> ;
+    kno:instantiates kno:S000958 ;
+    kno:frequency kno:KN2025-0256-freq-NN-total ;
+    kno:component kno:KN2025-0256-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    rdfs:label "바비 수술"@ko ;
+    kno:frequency kno:KN2025-0256-freq-NN-2025 ;
+    kno:slotFiller "바비(Barbie) (1성분)"@ko ;
+    skos:definition "(LLM) 바늘로 피부에 작은 구멍을 내어 기구를 삽입한 뒤 갈비뼈 일부를 변형시키는 방식으로 허리 둘레를 줄이려는 미용 목적의 성형수술."@ko ;
+    kno:componentString "바비(Barbie), 수술(手術)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(Barbie手術)" .
+kno:KN2025-0256-c1 kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    kno:formative kno:F003646 ;
+    rdfs:label "바비(Barbie)"@ko ;
+    kno:surfaceForm "바비"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "바비"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0256-c2 kno:fullForm "수술"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F000817 ;
+    kno:surfaceForm "수술"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    rdfs:label "수술(手術)"@ko .

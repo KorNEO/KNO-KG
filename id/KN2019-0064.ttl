@@ -1,0 +1,65 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2019-0064 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2019-0064 kno:slotFiller "돈 (1성분)"@ko ;
+    kno:indexForm "돈알못"@ko ;
+    kno:frequency kno:KN2019-0064-freq-NN-total ;
+    kno:instantiates kno:S000499 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    skos:definition "‘돈을 알지 못하는 사람’을 줄여 이르는 말."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:slotFiller "알(다)+못(하다) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1510835> ;
+    kno:component kno:KN2019-0064-c1 ;
+    kno:example "¶이 프로그램은 20~30대 {‘돈알못’들의} 사연을 통해 돈에 관한 다양한 고민을 듣고,…재테크 팁을 제공한다."@ko ;
+    kno:component kno:KN2019-0064-c3 ;
+    kno:languageType "고+고+고" ;
+    kno:instantiates kno:S000022 ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:label "돈알못"@ko ;
+    kno:urimalTargetCode "1510835" ;
+    kno:frequency kno:KN2019-0064-freq-NN-2018 ;
+    kno:formation kno:W06 ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "돈, 알(다), 못(하다)"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2019-0064-freq-NN-2019 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2019-0064-c2 .
+kno:KN2019-0064-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000257 ;
+    kno:fullForm "돈"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    a kno:Component ;
+    kno:surfaceForm "돈"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    rdfs:label "돈"@ko .
+kno:KN2019-0064-c3 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "못하다"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    rdfs:label "못(하다)"@ko ;
+    kno:formative kno:F000039 ;
+    kno:surfaceForm "못"@ko .
+kno:KN2019-0064-c2 kno:fullForm "알다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "알(다)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X2.2p ;
+    kno:surfaceForm "알"@ko ;
+    kno:formative kno:F000025 .

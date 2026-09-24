@@ -1,0 +1,55 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2014-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2014-0152 kno:frequency kno:KN2014-0152-freq-NN-2013 ;
+    kno:languageType "영+한" ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2014-0152-freq-NN-total ;
+    kno:indexForm "소셜력"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶소셜 미디어는 기업들의 좋은 비즈니스 기회이기도 하지만 리스크이기도 하다. 따라서 기업 측면에서 리스크를 사전에 예측하고 미연에 방지할 수 있는 체계적인 관리가 필요하며 이를 수행할 수 있는 ‘{소셜력’을} 직원들의 업무 능력으로 요구하고 있다."@ko ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2014-0152-c1 ;
+    kno:instantiates kno:S000006 ;
+    kno:slotFiller "-력(力) (1성분)"@ko ;
+    a ontolex:Word ;
+    skos:definition "누리 소통망 서비스(SNS)에 올라온 각종 정보를 통해 미래를 예측하고 이에 대응하는 능력."@ko ;
+    kno:componentString "소셜(social), -력(力)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2014-0152-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%85%9C%EB%A0%A5> ;
+    kno:slotFiller "소셜(social) (1성분)"@ko ;
+    kno:origin "(<영>social力)" ;
+    rdfs:label "소셜-력"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:predicate "대응하다"@ko ;
+    kno:instantiates kno:S001468 ;
+    kno:unitType "단어"@ko .
+kno:KN2014-0152-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    rdfs:label "소셜(social)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000220 ;
+    kno:fullForm "소셜"@ko ;
+    kno:surfaceForm "소셜"@ko .
+kno:KN2014-0152-c2 kno:surfaceForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-력(力)"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:fullForm "력"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000010 ;
+    a kno:Component .

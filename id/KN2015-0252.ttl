@@ -1,0 +1,56 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2015-0252 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2015-0252 kno:instantiates kno:S000003 ;
+    kno:frequency kno:KN2015-0252-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2015-0252-freq-NN-2015 ;
+    kno:component kno:KN2015-0252-c2 ;
+    kno:indexForm "해먹남"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359789> ;
+    kno:component kno:KN2015-0252-c1 ;
+    kno:example "¶라면을 끓여 먹거나 전자레인지에 냉동식품을 데워 먹는 수준에 그쳤던 ‘혼자 먹는 남자’들이 ‘{해먹남’으로} 진화하고 있다."@ko ;
+    kno:urimalTargetCode "1359789" ;
+    kno:registration "우리말샘"@ko ;
+    a kno:Neologism ;
+    rdfs:label "해먹-남"@ko ;
+    kno:slotFiller "해먹 (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(해먹男)" ;
+    skos:definition "음식을 직접 해서 먹는 남자. 주로 조리 과정이 단순하지 않은 음식을 직접 요리해서 먹는 남자를 의미한다."@ko ;
+    kno:predicate "먹다"@ko ;
+    kno:componentString "해먹, -남(男)"@ko ;
+    kno:languageType "고+한" ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2015-0252-freq-NN-2017 ;
+    a ontolex:Word ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0252-freq-NN-2016 .
+kno:KN2015-0252-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "남"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000008 ;
+    rdfs:label "-남(男)"@ko ;
+    kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 .
+kno:KN2015-0252-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H5 ;
+    rdfs:label "해먹"@ko ;
+    kno:formative kno:F006997 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "해먹"@ko ;
+    kno:surfaceForm "해먹"@ko .

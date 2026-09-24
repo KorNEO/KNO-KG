@@ -1,36 +1,50 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0008 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0008 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2025-0008-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0008-form ;
-    ontolex:sense kno:KN2025-0008-sense .
-
-kno:KN2025-0008-att-nn a frac:Attestation ;
-    dcterms:date "2025-08-19"^^xsd:date ;
-    frac:locus <https://m.entertain.naver.com/article/092/0002386838> .
-
-kno:KN2025-0008-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0008-freq-nn,
-        kno:KN2025-0008-freq-yt ;
-    ontolex:writtenRep "AI 피봇"@ko .
-
-kno:KN2025-0008-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0008-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0008-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0008 kno:registration "신어DB"@ko ;
+    kno:slotFiller "피봇(pivot) (1성분)"@ko ;
+    kno:component kno:KN2025-0008-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=AI%20%ED%94%BC%EB%B4%87> ;
+    kno:predicate "전환하다"@ko ;
+    kno:example "(LLM) 우리 회사는 {AI피봇을} 추진하면서 파일럿만 반복하던 방식을 멈추고, 전사 데이터 표준화와 보안ㆍ권한 체계를 먼저 정비하기로 했다."@ko ;
+    kno:componentString "AI, 피봇(pivot)"@ko ;
+    kno:frequency kno:KN2025-0008-freq-NN-total ;
+    kno:instantiates kno:S000110 ;
+    kno:frequency kno:KN2025-0008-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "AI피봇"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "AI 피봇"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 조직이 생성형 인공지능을 시범적으로 도입하는 수준을 넘어, 업무 방식과 투자ㆍ운영 체계를 인공지능 중심으로 재편하여 실제 성과를 내는 단계로 전환하는 일."@ko ;
+    kno:component kno:KN2025-0008-c2 .
+kno:KN2025-0008-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "AI"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "AI"@ko ;
+    kno:formative kno:F000156 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "AI"@ko .
+kno:KN2025-0008-c2 kno:semanticTag kno:usas-A2.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "피봇"@ko ;
+    rdfs:label "피봇(pivot)"@ko ;
+    kno:formative kno:F006873 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "피봇"@ko .

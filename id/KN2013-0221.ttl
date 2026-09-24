@@ -1,0 +1,63 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2013-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2013-0221 kno:component kno:KN2013-0221-c1 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2013-0221-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%BB%94%EC%83%9D%20%EC%8B%A4%ED%97%98> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "검증하다"@ko ;
+    skos:definition "뻔한 생활 정보를 검증하는 실험."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "실험(實驗) (1성분)"@ko ;
+    kno:instantiates kno:S001430 ;
+    kno:frequency kno:KN2013-0221-freq-NN-2013 ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0221-c2 ;
+    kno:indexForm "뻔생실험"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "(고+한)_한" ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "뻔생 실험"@ko ;
+    kno:origin "(뻔生實驗)" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0221-freq-NN-total ;
+    kno:example "¶촬영 현장에 등장한 얼짱 OOO는…혹독한 {뻔생 실험으로} 검증된, 끈적임 없이 선크림 바르는 비법을 공개하며 선크림의 신임을 입증했다."@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:componentString "뻔(하다), 생(활 정보)(生), 실험(實驗)"@ko .
+kno:KN2013-0221-c1 kno:fullForm "뻔하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "뻔(하다)"@ko ;
+    kno:formative kno:F001423 ;
+    kno:surfaceForm "뻔"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.2p ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2013-0221-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "실험(實驗)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:fullForm "실험"@ko ;
+    kno:surfaceForm "실험"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F004727 .
+kno:KN2013-0221-c2 kno:formative kno:F001453 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "생"@ko ;
+    rdfs:label "생(활 정보)(生)"@ko ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:fullForm "생활 정보"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2021-0098 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0098 a ontolex:MultiwordExpression ;
-    frac:attestation kno:KN2021-0098-att-nn ;
-    ontolex:canonicalForm kno:KN2021-0098-form ;
-    ontolex:sense kno:KN2021-0098-sense .
-
-kno:KN2021-0098-att-nn a frac:Attestation ;
-    dcterms:date "2021-03-09"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/036/0000044517> .
-
-kno:KN2021-0098-form a ontolex:Form ;
-    frac:frequency kno:KN2021-0098-freq-nn,
-        kno:KN2021-0098-freq-yt ;
-    ontolex:writtenRep "록다운^세대"@ko .
-
-kno:KN2021-0098-freq-nn a frac:CorpusFrequency ;
-    rdf:value 18 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2021-0098-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2021-0098-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2021-0098 kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0098-c2 ;
+    kno:indexForm "록다운세대"@ko ;
+    kno:origin "(<영>lockdown世代)" ;
+    rdfs:label "록다운^세대"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000002 ;
+    kno:slotFiller "록다운(lockdown) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0098-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0098-c1 ;
+    kno:frequency kno:KN2021-0098-freq-NN-2021 ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "코로나19 이후로 교육과 직업 훈련, 소득, 일자리가 줄어들어 어려움을 겪는 청년 세대. 국제 노동 기구에서 청년 세대의 상황을 ‘봉쇄’에 빗대어 표현한 말이다."@ko ;
+    kno:languageType "영^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A1%9D%EB%8B%A4%EC%9A%B4%EC%84%B8%EB%8C%80> ;
+    kno:example "¶대통령은 {록다운 세대가} 될 위기에 처한 청년들을 위한 특단의 대책을 강구해야 한다고 말했다."@ko ;
+    kno:componentString "록다운(lockdown), 세대(世代)"@ko .
+kno:KN2021-0098-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "세대"@ko .
+kno:KN2021-0098-c1 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "록다운"@ko ;
+    kno:surfaceForm "록다운"@ko ;
+    kno:semanticTag kno:usas-S7.4m ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "록다운(lockdown)"@ko ;
+    kno:formative kno:F003250 .

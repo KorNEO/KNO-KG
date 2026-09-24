@@ -1,0 +1,51 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2016-0239 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2016-0239 a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0239-freq-NN-total ;
+    kno:componentString "비저너리(visionary), 작가(作家)"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "초현실적이고 몽상적이며 신비로운 분위기를 자아내는 사진이나 그림, 조각 따위의 예술품을 창작하는 사람. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:predicate "창작하다"@ko ;
+    kno:indexForm "비저너리작가"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%A0%80%EB%84%88%EB%A6%AC%20%EC%9E%91%EA%B0%80> ;
+    kno:example "¶현재 이곳에서는 ‘{비저너리 작가’로} 불리는 OO 화가 OOO(1896~1985년)의 작품이 전시되고 있다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2016-0239-freq-NN-2016 ;
+    kno:origin "(<영>visionary作家)" ;
+    kno:component kno:KN2016-0239-c1 ;
+    rdfs:label "비저너리 작가"@ko ;
+    kno:component kno:KN2016-0239-c2 ;
+    kno:languageType "영_한" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0239-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "비저너리"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
+    rdfs:label "비저너리(visionary)"@ko ;
+    kno:formative kno:F004080 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "비저너리"@ko .
+kno:KN2016-0239-c2 kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "작가"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005536 ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:fullForm "작가"@ko ;
+    rdfs:label "작가(作家)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

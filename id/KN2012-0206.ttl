@@ -1,0 +1,52 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0206 kno:unitType "구"@ko ;
+    kno:indexForm "소셜기프팅"@ko ;
+    kno:languageType "영^영" ;
+    kno:component kno:KN2012-0206-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357040> ;
+    kno:instantiates kno:S000532 ;
+    kno:registration "우리말샘"@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0206-c2 ;
+    kno:example "¶앞서 OO은 지난 4월 사진 공유 사이트인 OO을 인수했으며,…{소셜 기프팅} 업체인 OO 등을 인수하기도 했다."@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(▼social gifting)" ;
+    kno:slotFiller "기프팅(gifting) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "소셜(social), 기프팅(gifting)"@ko ;
+    kno:urimalTargetCode "1357040" ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "소셜 미디어에서 선물을 하기 위한 목적으로 행해지는 거래 행위."@ko ;
+    kno:frequency kno:KN2012-0206-freq-NN-total ;
+    rdfs:label "소셜^기프팅"@ko ;
+    kno:frequency kno:KN2012-0206-freq-NN-2012 .
+kno:KN2012-0206-c1 kno:semanticTag kno:usas-S1.1.1 ;
+    kno:fullForm "소셜"@ko ;
+    kno:surfaceForm "소셜"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    rdfs:label "소셜(social)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000220 .
+kno:KN2012-0206-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "기프팅"@ko ;
+    kno:surfaceForm "기프팅"@ko ;
+    kno:formative kno:F001119 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "기프팅(gifting)"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A9 .

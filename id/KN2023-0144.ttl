@@ -1,36 +1,56 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2023-0144 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0144 a ontolex:Word ;
-    frac:attestation kno:KN2023-0144-att-nn ;
-    ontolex:canonicalForm kno:KN2023-0144-form ;
-    ontolex:sense kno:KN2023-0144-sense .
-
-kno:KN2023-0144-att-nn a frac:Attestation ;
-    dcterms:date "2023-02-23"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/023/0003748064> .
-
-kno:KN2023-0144-form a ontolex:Form ;
-    frac:frequency kno:KN2023-0144-freq-nn,
-        kno:KN2023-0144-freq-yt ;
-    ontolex:writtenRep "술플레이션"@ko .
-
-kno:KN2023-0144-freq-nn a frac:CorpusFrequency ;
-    rdf:value 15 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2023-0144-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2023-0144-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2023-0144 kno:component kno:KN2023-0144-c1 ;
+    kno:instantiates kno:S000011 ;
+    kno:frequency kno:KN2023-0144-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0144-freq-NN-2023 ;
+    kno:slotFiller "(인)플레이션(inflation) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:example "¶주세 인상, 소주와 맥주 출고가 인상 등으로 인해 {술플레이션이} 더 심해져 소비자들은 외식을 줄이고 있다."@ko ;
+    kno:predicate "급등하다"@ko ;
+    rdfs:label "술플레이션"@ko ;
+    skos:definition "술의 가격이 급등하는 현상. 곡물 등 술의 주재료의 가격 상승과 물류 비용 증가 등 복합적 원인에 의해 발생한 인플레이션이다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "술, (인)플레이션(inflation)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A0%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "고+영" ;
+    kno:instantiates kno:S000150 ;
+    a kno:Neologism ;
+    kno:indexForm "술플레이션"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(술<영>←inflation)" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0144-c2 ;
+    kno:frequency kno:KN2023-0144-freq-NN-total ;
+    kno:slotFiller "술 (1성분)"@ko .
+kno:KN2023-0144-c1 kno:surfaceForm "술"@ko ;
+    kno:formative kno:F000142 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "술"@ko ;
+    rdfs:label "술"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2023-0144-c2 kno:fullForm "인플레이션"@ko ;
+    kno:semanticTag kno:usas-I1.3p ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000009 ;
+    kno:surfaceForm "플레이션"@ko ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .

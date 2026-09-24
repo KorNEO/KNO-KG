@@ -1,0 +1,50 @@
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2012-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
+
+kno:KN2012-0141 kno:pos "「명」"@ko ;
+    kno:indexForm "반모"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2012-0141-c1 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384692> ;
+    skos:definition "‘반말 모드’를 줄여 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1384692" ;
+    kno:origin "(半←mode)" ;
+    rdfs:label "반모"@ko ;
+    kno:slotFiller "반(말)(半) (1성분)"@ko ;
+    kno:component kno:KN2012-0141-c2 ;
+    kno:example "¶‘{반모’는} 반말 모드, ‘사디’는 사람들이 무선 헤 드폰을 끼고 즐기는 파티인 사일런트 디스코를 각각 줄인 말로 사용된다."@ko ;
+    kno:componentString "반(말)(半), 모(드)(mode)"@ko ;
+    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000868 ;
+    kno:registration "우리말샘"@ko .
+kno:KN2012-0141-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "반말"@ko ;
+    a kno:Component ;
+    rdfs:label "반(말)(半)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003677 ;
+    kno:surfaceForm "반"@ko ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0141-c2 kno:semanticTag kno:usas-A4.1 ;
+    rdfs:label "모(드)(mode)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F001303 ;
+    kno:surfaceForm "모"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "모드"@ko .

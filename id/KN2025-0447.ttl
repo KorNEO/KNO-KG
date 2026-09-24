@@ -1,36 +1,52 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
-@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
-@prefix kno: <https://w3id.org/kno/id/> .
-@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix kno: <https://w3id.org/kno/> .
+@prefix ontolex: <http://www.w3.org/ns/lemon/ontolex#> .
+@prefix frac: <http://www.w3.org/ns/lemon/frac#> .
+# KN2025-0447 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0447 a ontolex:Word ;
-    frac:attestation kno:KN2025-0447-att-nn ;
-    ontolex:canonicalForm kno:KN2025-0447-form ;
-    ontolex:sense kno:KN2025-0447-sense .
-
-kno:KN2025-0447-att-nn a frac:Attestation ;
-    dcterms:date "2025-01-20"^^xsd:date ;
-    frac:locus <https://n.news.naver.com/article/144/0001013922> .
-
-kno:KN2025-0447-form a ontolex:Form ;
-    frac:frequency kno:KN2025-0447-freq-nn,
-        kno:KN2025-0447-freq-yt ;
-    ontolex:writtenRep "웃파민"@ko .
-
-kno:KN2025-0447-freq-nn a frac:CorpusFrequency ;
-    rdf:value 2 ;
-    frac:corpus kno:corpus-NN .
-
-kno:KN2025-0447-freq-yt a frac:CorpusFrequency ;
-    rdf:value 0 ;
-    frac:corpus kno:corpus-YT .
-
-kno:KN2025-0447-sense a ontolex:LexicalSense .
-
-kno:corpus-NN skos:prefLabel "신문 말뭉치"@ko .
-
-kno:corpus-YT skos:prefLabel "댓글 말뭉치"@ko .
-
+kno:KN2025-0447 kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0447-freq-NN-total ;
+    rdfs:label "웃파민"@ko ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2025-0447-c2 ;
+    kno:languageType "고+영" ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:slotFiller "웃(음) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "웃(음), (도)파민(dopamine)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "(LLM) 짧은 개그 영상만 몇 개 봤는데도 {웃파민이} 올라서 괜히 기분이 들뜨더라."@ko ;
+    kno:indexForm "웃파민"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%83%ED%8C%8C%EB%AF%BC> ;
+    kno:origin "(웃<영>←dopamine)" ;
+    skos:definition "(LLM) 웃음으로 인해 기분이 좋아지고 스트레스가 완화되는 듯한 각성ㆍ상승감을, 뇌의 보상 물질인 도파민에 빗대어 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000725 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0447-freq-NN-2025 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0447-c1 .
+kno:KN2025-0447-c2 kno:semanticTag kno:usas-B1 ;
+    rdfs:label "(도)파민(dopamine)"@ko ;
+    kno:surfaceForm "파민"@ko ;
+    a kno:Component ;
+    kno:fullForm "도파민"@ko ;
+    kno:formative kno:F001935 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2025-0447-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "웃(음)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001657 ;
+    kno:surfaceForm "웃"@ko ;
+    kno:semanticTag kno:usas-E4.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "웃음"@ko .
