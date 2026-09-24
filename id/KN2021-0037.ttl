@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0037 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0037 skos:definition "운동하여 근육을 차곡차곡 쌓는 일을 적금에 빗대어 이르는 말."@ko ;
-    kno:slotFiller "근육(筋肉) (1성분)"@ko ;
-    kno:languageType "한_한" ;
+kno:KN2021-0037 kno:unitType "구"@ko ;
+    kno:instantiates kno:S000202 ;
     a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0037-freq-NN-2021 ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2021-0037-freq-NN-2025 ;
+    kno:slotFiller "적금(積金) (1성분)"@ko ;
+    rdfs:label "근육 적금"@ko ;
+    skos:definition "운동하여 근육을 차곡차곡 쌓는 일을 적금에 빗대어 이르는 말."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2021-0037-c1 ;
     kno:example "¶노년층에게는 은퇴 후 받는 연금만큼 ‘{근육 적금’이} 중요하다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EC%9C%A1%20%EC%A0%81%EA%B8%88> ;
+    a kno:Neologism ;
+    kno:indexForm "근육적금"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0037-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0037-freq-NN-2024 ;
+    kno:component kno:KN2021-0037-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(筋肉積金)" ;
+    kno:instantiates kno:S001022 ;
+    kno:slotFiller "근육(筋肉) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0037-freq-NN-total ;
     kno:year "2021"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2021-0037-freq-NN-total ;
-    kno:instantiates kno:S001022 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2021-0037-freq-NN-2024 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2021-0037-freq-NN-2021 ;
-    kno:componentString "근육(筋肉), 적금(積金)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "근육적금"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EC%9C%A1%20%EC%A0%81%EA%B8%88> ;
-    kno:instantiates kno:S000202 ;
-    kno:origin "(筋肉積金)" ;
-    rdfs:label "근육 적금"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:slotFiller "적금(積金) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2021-0037-freq-NN-2025 ;
-    kno:component kno:KN2021-0037-c1 ;
-    kno:frequency kno:KN2021-0037-freq-NN-2022 ;
-    kno:component kno:KN2021-0037-c2 .
-kno:KN2021-0037-c1 rdfs:label "근육(筋肉)"@ko ;
+    kno:componentString "근육(筋肉), 적금(積金)"@ko .
+kno:KN2021-0037-c1 kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:fullForm "근육"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "근육(筋肉)"@ko ;
     kno:semanticTag kno:usas-B1 ;
-    kno:surfaceForm "근육"@ko ;
-    kno:formative kno:F000163 ;
-    kno:role "고정항"@ko .
-kno:KN2021-0037-c2 kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "적금"@ko ;
-    kno:formative kno:F001746 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:surfaceForm "적금"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "적금(積金)"@ko .
+    kno:formative kno:F000163 ;
+    kno:fullForm "근육"@ko ;
+    kno:surfaceForm "근육"@ko .
+kno:KN2021-0037-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "적금"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "적금(積金)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001746 ;
+    kno:fullForm "적금"@ko .

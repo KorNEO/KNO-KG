@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0402 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0402 kno:predicate "내다"@ko ;
+kno:KN2020-0402 kno:unitType "단어"@ko ;
+    kno:component kno:KN2020-0402-c1 ;
+    kno:frequency kno:KN2020-0402-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0402-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0402-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0402-freq-NN-2020 ;
+    rdfs:label "홈터파크"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "홈(home), (워)터파크(water park)"@ko ;
+    kno:frequency kno:KN2020-0402-freq-NN-total ;
+    kno:pos "「명」"@ko ;
     kno:origin "(<영>▼home←water park)" ;
-    kno:example "¶바캉스 시즌임에도 코로나19로 외출이 어려워 집에서 일명 ‘{홈터 파크’를} 즐기는 사람들이 늘어나고 있다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%88%ED%84%B0%ED%8C%8C%ED%81%AC> ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:component kno:KN2020-0402-c2 ;
+    skos:definition "집에서 물놀이를 하며 워터 파크에서 노는 듯한 분위기를 내는 일. 또는 그 공간. 코로나19로 인해 외부 활동에 제약이 생기면서 사용되는 말이다. =집터 파크."@ko ;
+    kno:instantiates kno:S000232 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:predicate "내다"@ko ;
+    kno:example "¶바캉스 시즌임에도 코로나19로 외출이 어려워 집에서 일명 ‘{홈터 파크’를} 즐기는 사람들이 늘어나고 있다."@ko ;
     kno:formation kno:W05 ;
+    kno:activeYears "4"^^xsd:integer ;
     a ontolex:Word ;
     kno:languageType "영+영" ;
-    kno:frequency kno:KN2020-0402-freq-NN-total ;
-    kno:activeYears "4"^^xsd:integer ;
-    skos:definition "집에서 물놀이를 하며 워터 파크에서 노는 듯한 분위기를 내는 일. 또는 그 공간. 코로나19로 인해 외부 활동에 제약이 생기면서 사용되는 말이다. =집터 파크."@ko ;
-    rdfs:label "홈터파크"@ko ;
-    kno:frequency kno:KN2020-0402-freq-NN-2022 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2020-0402-freq-NN-2021 ;
-    kno:componentString "홈(home), (워)터파크(water park)"@ko ;
-    kno:frequency kno:KN2020-0402-freq-NN-2020 ;
-    kno:slotFiller "(워)터파크(water park) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
     kno:year "2020"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2020-0402-c1 ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000232 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%88%ED%84%B0%ED%8C%8C%ED%81%AC> ;
+    kno:slotFiller "(워)터파크(water park) (1성분)"@ko ;
     kno:indexForm "홈터파크"@ko ;
-    kno:frequency kno:KN2020-0402-freq-NN-2023 .
-kno:KN2020-0402-c2 kno:semanticTag kno:usas-K1 ;
-    kno:surfaceForm "터파크"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "워터파크"@ko ;
-    rdfs:label "(워)터파크(water park)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F006438 ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component .
-kno:KN2020-0402-c1 kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-H4 ;
+    a kno:Neologism .
+kno:KN2020-0402-c1 a kno:Component ;
     kno:fullForm "홈"@ko ;
+    kno:semanticTag kno:usas-H4 ;
     kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "홈"@ko ;
+    kno:formative kno:F000045 ;
     rdfs:label "홈(home)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2020-0402-c2 kno:fullForm "워터파크"@ko ;
+    rdfs:label "(워)터파크(water park)"@ko ;
+    kno:formative kno:F006438 ;
+    kno:truncated "true"^^xsd:boolean ;
     a kno:Component ;
-    kno:formative kno:F000045 .
+    kno:semanticTag kno:usas-K1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "터파크"@ko .

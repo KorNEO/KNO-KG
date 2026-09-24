@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0344 kno:instantiates kno:S000937 ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
+kno:KN2023-0344 a kno:Neologism ;
+    kno:indexForm "학폭세탁"@ko ;
     kno:component kno:KN2023-0344-c2 ;
-    rdfs:label "학폭 세탁"@ko ;
-    kno:componentString "학폭(學暴), 세탁(洗濯)"@ko ;
-    kno:slotFiller "학폭(學暴) (1성분)"@ko ;
-    kno:component kno:KN2023-0344-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%ED%8F%AD%20%EC%84%B8%ED%83%81> ;
-    kno:unitType "구"@ko ;
-    kno:example "¶앞으로 검정고시를 통한 {학폭 세탁을} 원천적으로 차단하기 위해 자퇴생도 대학 입시 때 학생부에 학폭 징계 내용을 포함하여 제출하도록 한다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2023-0344-freq-NN-total ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "만드다"@ko ;
+    kno:component kno:KN2023-0344-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000937 ;
+    kno:origin "(學暴洗濯)" ;
+    kno:example "¶앞으로 검정고시를 통한 {학폭 세탁을} 원천적으로 차단하기 위해 자퇴생도 대학 입시 때 학생부에 학폭 징계 내용을 포함하여 제출하도록 한다."@ko ;
     skos:definition "학교 폭력을 저지른 사람이 스스로 자퇴 한 후, 검정고시를 치르어 자신의 학생부에 학교 폭력 기록이 남지 않도록 만드는 일."@ko ;
     kno:languageType "한_한" ;
-    a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "학폭세탁"@ko ;
+    kno:componentString "학폭(學暴), 세탁(洗濯)"@ko ;
+    rdfs:label "학폭 세탁"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%ED%8F%AD%20%EC%84%B8%ED%83%81> ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:slotFiller "학폭(學暴) (1성분)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
     kno:frequency kno:KN2023-0344-freq-NN-2023 ;
-    kno:origin "(學暴洗濯)" ;
-    kno:predicate "만드다"@ko .
-kno:KN2023-0344-c2 kno:formative kno:F001474 ;
-    kno:position "2"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2023-0344-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "세탁"@ko ;
+    kno:formative kno:F001474 ;
     kno:semanticTag kno:usas-B4 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "세탁(洗濯)"@ko ;
     kno:role "고정항"@ko ;
-    kno:fullForm "세탁"@ko ;
-    kno:surfaceForm "세탁"@ko .
-kno:KN2023-0344-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "세탁"@ko ;
     a kno:Component ;
-    kno:formative kno:F001994 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0344-c1 kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "학폭"@ko ;
-    rdfs:label "학폭(學暴)"@ko ;
-    kno:semanticTag kno:usas-P1 ;
     kno:semanticTag kno:usas-E3m ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001994 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "학폭(學暴)"@ko ;
     kno:fullForm "학폭"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    kno:semanticTag kno:usas-P1 .

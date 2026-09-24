@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0214 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0214 kno:example "¶염화 숙련, 기공 {숙련팟} 찾습니다."@ko ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:indexForm "숙련팟"@ko ;
-    kno:componentString "숙련(熟練), 팟(←party)"@ko ;
-    kno:component kno:KN2012-0214-c1 ;
-    kno:frequency kno:KN2012-0214-freq-NN-total ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2012-0214 kno:slotFiller "숙련(熟練) (1성분)"@ko ;
     kno:frequency kno:KN2012-0214-freq-NN-2020 ;
-    kno:slotFiller "숙련(熟練) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000448 ;
-    skos:definition "게임에서, 숙련된 사람들로 구성된 모임."@ko ;
-    kno:component kno:KN2012-0214-c2 ;
-    kno:registration "신어DB"@ko ;
     kno:origin "(熟練←party)" ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%99%EB%A0%A8%ED%8C%9F> ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0214-c1 ;
+    kno:example "¶염화 숙련, 기공 {숙련팟} 찾습니다."@ko ;
     kno:unitType "단어"@ko ;
     kno:formation kno:W06 ;
-    a kno:Neologism ;
+    kno:frequency kno:KN2012-0214-freq-NN-total ;
+    kno:indexForm "숙련팟"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한+영" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "숙련(熟練), 팟(←party)"@ko ;
+    skos:definition "게임에서, 숙련된 사람들로 구성된 모임."@ko ;
+    kno:instantiates kno:S000448 ;
     rdfs:label "숙련팟"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%99%EB%A0%A8%ED%8C%9F> .
-kno:KN2012-0214-c1 a kno:Component ;
+    kno:component kno:KN2012-0214-c2 ;
+    kno:pos "「명」"@ko .
+kno:KN2012-0214-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "숙련"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F004493 ;
     kno:fullForm "숙련"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "숙련(熟練)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "숙련"@ko ;
-    kno:semanticTag kno:usas-X9.1p .
-kno:KN2012-0214-c2 kno:role "고정항"@ko ;
+    rdfs:label "숙련(熟練)"@ko .
+kno:KN2012-0214-c2 kno:formative kno:F000986 ;
     kno:fullForm "팟"@ko ;
-    rdfs:label "팟(←party)"@ko ;
-    kno:surfaceForm "팟"@ko ;
     kno:semanticTag kno:usas-S5 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000986 ;
     a kno:Component ;
+    kno:surfaceForm "팟"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "팟(←party)"@ko ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean .

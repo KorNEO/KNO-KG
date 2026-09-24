@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0175 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0175 kno:unitType "단어"@ko ;
+kno:KN2018-0175 kno:formation kno:W05 ;
     skos:definition "자신이 태어난 해에 양조원에서 만든 고급 포도주. 태어난 생년에 따라 개인의 생빈이 달라진다. ‘태어난’을 의미하는 ‘생(生)’과 ‘포도가 풍작인 해에 정평 있는 양조원에서 양질의 포도로 만든 고급 포도주’를 의미하는 ‘빈티지(vintage)’를 결합하여 만든 말이다."@ko ;
-    kno:origin "(生<영>←vintage)" ;
-    kno:languageType "한+영" ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%B9%88> ;
-    kno:example "¶돌아오는 길에 자신의 ‘{생빈}’ 와인이나 소중한 누군가의 ‘{생빈}’ 와인을 사오는 이들도 많다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W05 ;
-    kno:component kno:KN2018-0175-c2 ;
-    kno:indexForm "생빈"@ko ;
-    kno:componentString "생(년)(生), 빈(티지)(vintage)"@ko ;
-    kno:slotFiller "생(년)(生) (1성분)"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2018-0175-c1 ;
-    a ontolex:Word ;
+    a kno:Neologism ;
+    kno:languageType "한+영" ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶돌아오는 길에 자신의 ‘{생빈}’ 와인이나 소중한 누군가의 ‘{생빈}’ 와인을 사오는 이들도 많다."@ko ;
+    kno:componentString "생(년)(生), 빈(티지)(vintage)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "생(년)(生) (1성분)"@ko ;
     kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:instantiates kno:S000907 ;
-    rdfs:label "생빈"@ko .
-kno:KN2018-0175-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-T3p ;
-    kno:formative kno:F001414 ;
-    kno:surfaceForm "빈"@ko ;
-    rdfs:label "빈(티지)(vintage)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "빈티지"@ko .
-kno:KN2018-0175-c1 kno:surfaceForm "생"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%B9%88> ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "생빈"@ko ;
+    kno:component kno:KN2018-0175-c2 ;
+    rdfs:label "생빈"@ko ;
+    kno:origin "(生<영>←vintage)" .
+kno:KN2018-0175-c1 kno:fullForm "생년"@ko ;
+    kno:surfaceForm "생"@ko ;
     kno:semanticTag kno:usas-T1.3 ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "생(년)(生)"@ko ;
-    kno:fullForm "생년"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:formative kno:F004252 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component .
+    rdfs:label "생(년)(生)"@ko .
+kno:KN2018-0175-c2 kno:formative kno:F001414 ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빈"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "빈(티지)(vintage)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "빈티지"@ko .

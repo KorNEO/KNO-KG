@@ -9,49 +9,49 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0319 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0319 kno:instantiates kno:S000112 ;
-    kno:predicate "심각성다"@ko ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶{‘학폭투’라는} 현상의 이면에는 이러한 학교 폭력의 보편성과 잔인성의 심각함이 자리해 있다."@ko ;
-    kno:component kno:KN2019-0319-c2 ;
-    kno:formation kno:W05 ;
+kno:KN2019-0319 kno:origin "(學暴<영>←me-too)" ;
     kno:indexForm "학폭투"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0319-freq-NN-2023 ;
+    a kno:Neologism ;
+    kno:componentString "학폭(學暴), (미)투(me-too)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0319-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "심각성다"@ko ;
+    rdfs:label "학폭투"@ko ;
+    kno:instantiates kno:S000112 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2019-0319-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0319-freq-NN-total ;
+    kno:example "¶{‘학폭투’라는} 현상의 이면에는 이러한 학교 폭력의 보편성과 잔인성의 심각함이 자리해 있다."@ko ;
     kno:slotFiller "학폭(學暴) (1성분)"@ko ;
     kno:component kno:KN2019-0319-c1 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2019-0319-freq-NN-total ;
-    skos:definition "학교 폭력 피해 경험을 밝혀, 학교 폭력 문제의 심각성을 알림. 또는 그런 활동을 하는 운동. ‘학교 폭력’과 ‘나도 당했음’을 뜻하는 ‘미 투(me too)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다. =학투."@ko ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2019-0319-freq-NN-2020 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0319-freq-NN-2021 ;
+    kno:formation kno:W05 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%99%ED%8F%AD%ED%88%AC> ;
-    rdfs:label "학폭투"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:componentString "학폭(學暴), (미)투(me-too)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2019-0319-freq-NN-2023 ;
-    kno:unitType "단어"@ko ;
-    kno:origin "(學暴<영>←me-too)" ;
-    kno:frequency kno:KN2019-0319-freq-NN-2019 .
-kno:KN2019-0319-c2 kno:semanticTag kno:usas-Q2.2 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:frequency kno:KN2019-0319-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0319-freq-NN-2021 ;
+    skos:definition "학교 폭력 피해 경험을 밝혀, 학교 폭력 문제의 심각성을 알림. 또는 그런 활동을 하는 운동. ‘학교 폭력’과 ‘나도 당했음’을 뜻하는 ‘미 투(me too)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다. =학투."@ko ;
+    kno:languageType "한+영" ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear .
+kno:KN2019-0319-c2 kno:fullForm "미투"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
     kno:surfaceForm "투"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "미투"@ko ;
+    kno:formative kno:F000241 ;
+    a kno:Component ;
     rdfs:label "(미)투(me-too)"@ko ;
-    kno:formative kno:F000241 .
-kno:KN2019-0319-c1 kno:formative kno:F001994 ;
-    kno:surfaceForm "학폭"@ko ;
-    rdfs:label "학폭(學暴)"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:semanticTag kno:usas-E3m ;
-    kno:fullForm "학폭"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko .
+kno:KN2019-0319-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001994 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "학폭(學暴)"@ko ;
+    kno:fullForm "학폭"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    kno:semanticTag kno:usas-P1 ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component .
+    a kno:Component ;
+    kno:surfaceForm "학폭"@ko .

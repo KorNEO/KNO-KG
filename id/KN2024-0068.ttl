@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0068 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0068 kno:instantiates kno:S000236 ;
-    kno:frequency kno:KN2024-0068-freq-NN-total ;
-    a ontolex:Word ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0068-c2 ;
-    kno:componentString "맥(주)(麥酒), (오)마카세(omakase)"@ko ;
-    kno:unitType "단어"@ko ;
+kno:KN2024-0068 kno:component kno:KN2024-0068-c1 ;
     kno:indexForm "맥마카세"@ko ;
+    kno:componentString "맥(주)(麥酒), (오)마카세(omakase)"@ko ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2024-0068-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000236 ;
+    kno:component kno:KN2024-0068-c2 ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "맥마카세"@ko ;
+    skos:definition "편의점에서 맥주를 묶음으로 다양하게 할인하는 행사를 이르는 말. ‘맥주’와 ‘오마카세’를 결합하여 만든 말이다."@ko ;
+    kno:frequency kno:KN2024-0068-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "맥(주)(麥酒) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A5%EB%A7%88%EC%B9%B4%EC%84%B8> ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
     kno:origin "(麥<일>←omaka[御任]se)" ;
     kno:example "¶이번 달은 맥주 애호가들을 위해 취향에 맞게 맥주를 골라 구매할 수 있는 {맥마카세}의 콘셉트로 행사가 진행된다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A5%EB%A7%88%EC%B9%B4%EC%84%B8> ;
-    kno:component kno:KN2024-0068-c1 ;
-    skos:definition "편의점에서 맥주를 묶음으로 다양하게 할인하는 행사를 이르는 말. ‘맥주’와 ‘오마카세’를 결합하여 만든 말이다."@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    rdfs:label "맥마카세"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "한+일" ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2024-0068-freq-NN-2024 ;
-    kno:formation kno:W05 ;
-    kno:slotFiller "맥(주)(麥酒) (1성분)"@ko ;
-    a kno:Neologism .
-kno:KN2024-0068-c2 kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "(오)마카세(omakase)"@ko ;
-    kno:fullForm "오마카세"@ko ;
-    kno:formative kno:F000351 ;
-    kno:surfaceForm "마카세"@ko ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 .
-kno:KN2024-0068-c1 kno:surfaceForm "맥"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-F2 ;
-    rdfs:label "맥(주)(麥酒)"@ko ;
+    kno:languageType "한+일" .
+kno:KN2024-0068-c1 kno:semanticTag kno:usas-F2 ;
+    kno:formative kno:F003406 ;
+    kno:surfaceForm "맥"@ko ;
     kno:fullForm "맥주"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F003406 ;
+    rdfs:label "맥(주)(麥酒)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2024-0068-c2 kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "오마카세"@ko ;
+    rdfs:label "(오)마카세(omakase)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000351 ;
+    kno:surfaceForm "마카세"@ko .

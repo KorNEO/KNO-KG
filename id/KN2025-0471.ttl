@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0471 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0471 kno:component kno:KN2025-0471-c1 ;
-    kno:slotFiller "읍(邑) (1성분)"@ko ;
-    kno:componentString "읍(邑), (역)세권(驛勢圈)"@ko ;
+kno:KN2025-0471 kno:frequency kno:KN2025-0471-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
     kno:instantiates kno:S000008 ;
-    kno:component kno:KN2025-0471-c2 ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W05 ;
-    a ontolex:Word ;
-    kno:languageType "한+한" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:frequency kno:KN2025-0471-freq-NN-total ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%8D%EC%84%B8%EA%B6%8C> ;
-    kno:example "(LLM) 차가 없으면 장 보러 나가기가 어려워서, 집은 {읍세권을} 우선으로 알아보는 게 낫겠더라."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2025-0471-freq-NN-2025 ;
-    kno:origin "(邑勢圈)" ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
     rdfs:label "읍세권"@ko ;
-    a kno:Neologism ;
-    kno:indexForm "읍세권"@ko ;
+    kno:slotFiller "읍(邑) (1성분)"@ko ;
+    kno:example "(LLM) 차가 없으면 장 보러 나가기가 어려워서, 집은 {읍세권을} 우선으로 알아보는 게 낫겠더라."@ko ;
     skos:definition "(LLM) 읍(邑) 단위 중심지에 생활 편의 시설이 인접해 있어 비교적 편리하게 이용할 수 있는 주거 지역의 범위."@ko ;
-    kno:year "2025"^^xsd:gYear .
-kno:KN2025-0471-c1 kno:formative kno:F005358 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2025-0471-c1 ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0471-c2 ;
+    kno:componentString "읍(邑), (역)세권(驛勢圈)"@ko ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(邑勢圈)" ;
+    kno:indexForm "읍세권"@ko .
+kno:KN2025-0471-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005358 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "읍"@ko ;
+    a kno:Component ;
     rdfs:label "읍(邑)"@ko ;
     kno:surfaceForm "읍"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-M7 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "읍"@ko .
-kno:KN2025-0471-c2 rdfs:label "(역)세권(驛勢圈)"@ko ;
-    kno:formative kno:F000012 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "역세권"@ko ;
-    kno:surfaceForm "세권"@ko ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2025-0471-c2 kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
-    a kno:Component .
+    kno:fullForm "역세권"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000012 ;
+    kno:surfaceForm "세권"@ko ;
+    rdfs:label "(역)세권(驛勢圈)"@ko .

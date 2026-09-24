@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0265 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0265 kno:component kno:KN2024-0265-c1 ;
-    skos:definition "학교나 직장에서 조퇴한 뒤 병원이나 맛집, 행사장 등 대기 시간이 긴 곳에 서둘러 가는 일. 또는 그곳에 사람이 몰리는 현상."@ko ;
+kno:KN2024-0265 kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2024-0265-freq-NN-total ;
+    kno:componentString "조퇴(早退), 런(run)"@ko ;
     kno:year "2024"^^xsd:gYear ;
-    kno:languageType "한_영" ;
-    kno:instantiates kno:S000038 ;
-    kno:frequency kno:KN2024-0265-freq-NN-2023 ;
+    kno:example "¶독감 환자가 몰리면서 {조퇴 런을} 해도 진료를 못 받고 발길을 돌리는 사례가 속출했다."@ko ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2024-0265-c2 ;
+    a ontolex:MultiwordExpression ;
     kno:origin "(早退<영>run)" ;
+    kno:frequency kno:KN2024-0265-freq-NN-2023 ;
     kno:slotFiller "조퇴(早退) (1성분)"@ko ;
+    kno:languageType "한_영" ;
     rdfs:label "조퇴 런"@ko ;
+    kno:predicate "가다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:pos "「구」"@ko ;
     kno:indexForm "조퇴런"@ko ;
-    kno:componentString "조퇴(早退), 런(run)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2024-0265-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
+    skos:definition "학교나 직장에서 조퇴한 뒤 병원이나 맛집, 행사장 등 대기 시간이 긴 곳에 서둘러 가는 일. 또는 그곳에 사람이 몰리는 현상."@ko ;
+    kno:component kno:KN2024-0265-c2 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000038 ;
+    kno:component kno:KN2024-0265-c1 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B0%ED%87%B4%20%EB%9F%B0> ;
-    kno:example "¶독감 환자가 몰리면서 {조퇴 런을} 해도 진료를 못 받고 발길을 돌리는 사례가 속출했다."@ko ;
-    kno:predicate "가다"@ko ;
-    a kno:Neologism .
-kno:KN2024-0265-c1 kno:role "슬롯 채움"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0265-c2 kno:semanticTag kno:usas-M1 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000072 ;
+    kno:fullForm "런"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "런"@ko ;
+    rdfs:label "런(run)"@ko .
+kno:KN2024-0265-c1 kno:fullForm "조퇴"@ko ;
+    rdfs:label "조퇴(早退)"@ko ;
+    kno:surfaceForm "조퇴"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
     kno:semanticTag kno:usas-M1 ;
-    rdfs:label "조퇴(早退)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F005746 ;
-    kno:fullForm "조퇴"@ko ;
-    kno:surfaceForm "조퇴"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2024-0265-c2 kno:fullForm "런"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "런(run)"@ko ;
-    kno:surfaceForm "런"@ko ;
-    kno:formative kno:F000072 ;
-    kno:semanticTag kno:usas-M1 .
+    kno:role "슬롯 채움"@ko .

@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0164 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0164 kno:example "¶이 병원은 모든 방문자에게 {선별 문진 표를} 작성하게 하고, 비접촉 체온계와 손소독제를 사용하는 등 코로나19 방역에 힘쓰고 있다고 밝혔다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A0%EB%B3%84%EB%AC%B8%EC%A7%84%ED%91%9C> ;
-    kno:predicate "답하다"@ko ;
-    kno:slotFiller "선별(選別)+문진(問診) (2성분)"@ko ;
-    kno:instantiates kno:S001450 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:indexForm "선별문진표"@ko ;
-    kno:frequency kno:KN2020-0164-freq-NN-total ;
-    rdfs:label "선별^문진^표"@ko ;
-    kno:component kno:KN2020-0164-c1 ;
-    kno:frequency kno:KN2020-0164-freq-NN-2020 ;
-    kno:component kno:KN2020-0164-c3 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2020-0164-freq-NN-2021 ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:component kno:KN2020-0164-c2 ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:origin "(選別問診表)" ;
+kno:KN2020-0164 kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:componentString "선별(選別), 문진(問診), 표(表)"@ko ;
-    kno:slotFiller "문진(問診)+표(表) (2성분)"@ko ;
     kno:instantiates kno:S001128 ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0164-freq-NN-total ;
+    kno:slotFiller "문진(問診)+표(表) (2성분)"@ko ;
+    kno:frequency kno:KN2020-0164-freq-NN-2020 ;
+    kno:indexForm "선별문진표"@ko ;
+    kno:component kno:KN2020-0164-c1 ;
+    kno:instantiates kno:S001450 ;
+    kno:predicate "답하다"@ko ;
+    kno:languageType "한^한^한" ;
     kno:pos "「구」"@ko ;
+    kno:componentString "선별(選別), 문진(問診), 표(表)"@ko ;
+    kno:component kno:KN2020-0164-c3 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    rdfs:label "선별^문진^표"@ko ;
+    kno:frequency kno:KN2020-0164-freq-NN-2021 ;
+    kno:slotFiller "선별(選別)+문진(問診) (2성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:example "¶이 병원은 모든 방문자에게 {선별 문진 표를} 작성하게 하고, 비접촉 체온계와 손소독제를 사용하는 등 코로나19 방역에 힘쓰고 있다고 밝혔다."@ko ;
+    kno:component kno:KN2020-0164-c2 ;
+    a kno:Neologism ;
+    kno:origin "(選別問診表)" ;
     skos:definition "전염병 등의 감염 여부를 파악하기 위하여, 사전에 준비된 질문에 간단히 답하는 문서. 코로나19의 감염 여부를 사전에 파악하기 위하여 발열 여부와 해외 방문 이력 등을 표시한다."@ko ;
-    kno:languageType "한^한^한" .
-kno:KN2020-0164-c1 kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-X6 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A0%EB%B3%84%EB%AC%B8%EC%A7%84%ED%91%9C> ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2020-0164-c1 kno:fullForm "선별"@ko ;
     kno:formative kno:F000282 ;
-    rdfs:label "선별(選別)"@ko ;
-    kno:fullForm "선별"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
     kno:surfaceForm "선별"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2020-0164-c3 kno:surfaceForm "표"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "선별(選別)"@ko ;
+    kno:semanticTag kno:usas-X6 .
+kno:KN2020-0164-c3 kno:role "고정항"@ko ;
+    kno:formative kno:F001969 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
     kno:fullForm "표"@ko ;
     rdfs:label "표(表)"@ko ;
-    kno:formative kno:F001969 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0164-c2 kno:role "슬롯 채움"@ko ;
-    kno:fullForm "문진"@ko ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "문진"@ko ;
-    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "표"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2020-0164-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "문진"@ko ;
+    rdfs:label "문진(問診)"@ko ;
     kno:formative kno:F003550 ;
-    rdfs:label "문진(問診)"@ko .
+    kno:fullForm "문진"@ko .

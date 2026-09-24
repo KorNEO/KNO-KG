@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0336 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0336 kno:example "¶최근 OO도 이 때문에 {웹앱형} 태블릿 피시 버전 웹사이트를 선보였다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    a kno:Neologism ;
-    skos:definition "인터넷에서 이용할 수 있는 애플리케이션의 유형."@ko ;
-    rdfs:label "웹앱-형"@ko ;
-    kno:formation kno:W02 ;
-    kno:component kno:KN2012-0336-c1 ;
-    kno:slotFiller "앱(app)+-형(型) (2성분)"@ko ;
+kno:KN2012-0336 kno:unitType "단어"@ko ;
     kno:slotFiller "웹(web)+앱(app) (2성분)"@ko ;
+    kno:slotFiller "앱(app)+-형(型) (2성분)"@ko ;
+    kno:componentString "웹(web), 앱(app), -형(型)"@ko ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2012-0336-c3 ;
     kno:instantiates kno:S000197 ;
-    kno:indexForm "웹앱형"@ko ;
+    rdfs:label "웹앱-형"@ko ;
+    kno:component kno:KN2012-0336-c2 ;
+    kno:component kno:KN2012-0336-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B9%EC%95%B1%ED%98%95> ;
+    skos:definition "인터넷에서 이용할 수 있는 애플리케이션의 유형."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "웹(web), 앱(app), -형(型)"@ko ;
+    kno:example "¶최근 OO도 이 때문에 {웹앱형} 태블릿 피시 버전 웹사이트를 선보였다."@ko ;
     kno:origin "(web app型)" ;
     kno:languageType "영+한" ;
     a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B9%EC%95%B1%ED%98%95> ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2012-0336-c2 ;
-    kno:instantiates kno:S000321 .
-kno:KN2012-0336-c1 kno:semanticTag kno:usas-Y2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "웹"@ko ;
-    kno:surfaceForm "웹"@ko ;
-    kno:formative kno:F000298 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "웹(web)"@ko .
+    kno:instantiates kno:S000321 ;
+    kno:indexForm "웹앱형"@ko ;
+    a kno:Neologism .
 kno:KN2012-0336-c3 kno:semanticTag kno:usas-A4.1 ;
     kno:formative kno:F000109 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    rdfs:label "-형(型)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "형"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "형"@ko .
-kno:KN2012-0336-c2 kno:fullForm "앱"@ko ;
-    kno:surfaceForm "앱"@ko ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "-형(型)"@ko ;
+    kno:fullForm "형"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "형"@ko ;
+    a kno:Component .
+kno:KN2012-0336-c2 kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-Y2 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "앱"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
     rdfs:label "앱(app)"@ko ;
     kno:formative kno:F000116 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "앱"@ko .
+kno:KN2012-0336-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "웹"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "웹"@ko ;
+    kno:formative kno:F000298 ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "웹(web)"@ko .

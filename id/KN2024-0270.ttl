@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0270 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0270 kno:origin "(株價<영>lithium比率)" ;
-    kno:example "¶이차 전지 종목이 연일 상한가를 기록하면서, 투자자들 사이에서는 {주가 리튬 비율이라는} 말이 농담처럼 쓰이기 시작했다."@ko ;
-    kno:component kno:KN2024-0270-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:slotFiller "리튬(lithium) (1성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EA%B0%80%20%EB%A6%AC%ED%8A%AC%20%EB%B9%84%EC%9C%A8> ;
-    a ontolex:MultiwordExpression ;
-    kno:year "2024"^^xsd:gYear ;
-    skos:definition "리튬 관련주의 급등 현상을 이르는 말. 리튬을 원재료로 하는 이차 전지 종목의 가격이 비정상적으로 오르자, 기존의 주가 수익 비율로는 설명하기 어렵다는 뜻에서 나온 표현이다."@ko ;
-    kno:instantiates kno:S000578 ;
-    kno:indexForm "주가리튬비율"@ko ;
-    kno:languageType "한_영_한" ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "주가 리튬 비율"@ko ;
+kno:KN2024-0270 kno:activeYears "1"^^xsd:integer ;
     kno:componentString "주가(株價), 리튬(lithium), 비율(比率)"@ko ;
-    a kno:Neologism ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "주가리튬비율"@ko ;
+    rdfs:label "주가 리튬 비율"@ko ;
+    kno:component kno:KN2024-0270-c2 ;
+    kno:component kno:KN2024-0270-c1 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0270-freq-NN-2023 ;
+    kno:slotFiller "리튬(lithium) (1성분)"@ko ;
+    kno:instantiates kno:S000578 ;
+    skos:definition "리튬 관련주의 급등 현상을 이르는 말. 리튬을 원재료로 하는 이차 전지 종목의 가격이 비정상적으로 오르자, 기존의 주가 수익 비율로는 설명하기 어렵다는 뜻에서 나온 표현이다."@ko ;
     kno:component kno:KN2024-0270-c3 ;
     kno:frequency kno:KN2024-0270-freq-NN-total ;
-    kno:component kno:KN2024-0270-c1 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2024-0270-freq-NN-2023 ;
-    kno:pos "「구」"@ko .
-kno:KN2024-0270-c2 kno:surfaceForm "리튬"@ko ;
+    kno:example "¶이차 전지 종목이 연일 상한가를 기록하면서, 투자자들 사이에서는 {주가 리튬 비율이라는} 말이 농담처럼 쓰이기 시작했다."@ko ;
+    a kno:Neologism ;
+    kno:origin "(株價<영>lithium比率)" ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%EA%B0%80%20%EB%A6%AC%ED%8A%AC%20%EB%B9%84%EC%9C%A8> ;
+    kno:languageType "한_영_한" ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0270-c2 a kno:Component ;
+    kno:semanticTag kno:usas-Y1 ;
     kno:position "2"^^xsd:integer ;
     kno:formative kno:F001260 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     kno:fullForm "리튬"@ko ;
-    a kno:Component ;
     rdfs:label "리튬(lithium)"@ko ;
+    kno:surfaceForm "리튬"@ko .
+kno:KN2024-0270-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Y1 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2024-0270-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "비율"@ko ;
+    kno:fullForm "주가"@ko ;
+    rdfs:label "주가(株價)"@ko ;
+    kno:surfaceForm "주가"@ko ;
+    kno:formative kno:F000923 ;
+    kno:semanticTag kno:usas-I1.3 ;
+    a kno:Component .
+kno:KN2024-0270-c3 kno:formative kno:F000786 ;
     kno:surfaceForm "비율"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:formative kno:F000786 ;
     kno:semanticTag kno:usas-N3.1 ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "비율(比率)"@ko .
-kno:KN2024-0270-c1 kno:fullForm "주가"@ko ;
-    kno:surfaceForm "주가"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000923 ;
-    rdfs:label "주가(株價)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:role "고정항"@ko ;
-    a kno:Component .
+    kno:fullForm "비율"@ko ;
+    rdfs:label "비율(比率)"@ko .

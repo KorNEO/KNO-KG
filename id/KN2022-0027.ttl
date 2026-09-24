@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0027 skos:definition "결혼해서 죄송하다. 코로나19에 따른 방역 지침으로 인해 결혼식을 미루거나 친족 외에는 초대하지 못하는 상황에서 나온 말이다."@ko ;
-    kno:componentString "결송(結悚), -하다"@ko ;
-    kno:languageType "한+고" ;
-    a kno:Neologism ;
-    kno:formation kno:W02 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=340099> ;
+kno:KN2022-0027 kno:instantiates kno:S000034 ;
+    kno:component kno:KN2022-0027-c1 ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "결송(結悚), -하다"@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:component kno:KN2022-0027-c2 ;
+    kno:formation kno:W02 ;
+    rdfs:label "결송-하다"@ko ;
+    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(結悚하다)" ;
     kno:urimalTargetCode "340099" ;
     kno:slotFiller "결송(結悚) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000034 ;
-    kno:pos "「형」"@ko ;
-    kno:component kno:KN2022-0027-c1 ;
-    kno:component kno:KN2022-0027-c2 ;
-    rdfs:label "결송-하다"@ko ;
-    kno:unitType "단어"@ko ;
     kno:indexForm "결송하다"@ko ;
-    kno:origin "(結悚하다)" ;
-    kno:example "¶코로나19에 따른 방역 지침으로 인해, 지인들을 초대하지 못하고 이런 때 결혼해 죄송하다고 말하면서 ‘{결송합니다’라는} 말이 나오고 있다."@ko .
-kno:KN2022-0027-c1 rdfs:label "결송(結悚)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "결송"@ko ;
-    kno:formative kno:F002218 ;
-    kno:surfaceForm "결송"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 ;
+    kno:pos "「형」"@ko ;
+    skos:definition "결혼해서 죄송하다. 코로나19에 따른 방역 지침으로 인해 결혼식을 미루거나 친족 외에는 초대하지 못하는 상황에서 나온 말이다."@ko ;
+    kno:example "¶코로나19에 따른 방역 지침으로 인해, 지인들을 초대하지 못하고 이런 때 결혼해 죄송하다고 말하면서 ‘{결송합니다’라는} 말이 나오고 있다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=340099> ;
+    a kno:Neologism ;
+    kno:languageType "한+고" ;
+    kno:registration "우리말샘"@ko .
+kno:KN2022-0027-c1 kno:semanticTag kno:usas-G2.1 ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2022-0027-c2 rdfs:label "-하다"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "결송"@ko ;
+    kno:formative kno:F002218 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "결송"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "하다"@ko ;
-    kno:fullForm "하다"@ko ;
+    a kno:Component ;
+    rdfs:label "결송(結悚)"@ko .
+kno:KN2022-0027-c2 kno:surfaceForm "하다"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000019 ;
-    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Z5 ;
-    kno:position "2"^^xsd:integer .
+    a kno:Component ;
+    kno:fullForm "하다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "-하다"@ko ;
+    kno:role "고정항"@ko .

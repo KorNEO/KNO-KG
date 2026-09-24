@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0415 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0415 kno:languageType "한+한" ;
+kno:KN2013-0415 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371024> ;
     kno:indexForm "택포"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
     a ontolex:Word ;
-    kno:example "¶OO 상품권 50매 {택포} 48만 원요."@ko ;
-    kno:component kno:KN2013-0415-c1 ;
-    kno:year "2013"^^xsd:gYear ;
-    rdfs:label "택포"@ko ;
+    kno:urimalTargetCode "1371024" ;
+    a kno:Neologism ;
+    kno:formation kno:W06 ;
     kno:unitType "단어"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371024> ;
-    kno:componentString "택(배비)(宅), 포(함)(包)"@ko ;
+    kno:example "¶OO 상품권 50매 {택포} 48만 원요."@ko ;
+    skos:definition "‘택배비 포함’을 줄여 이르는 말."@ko ;
+    rdfs:label "택포"@ko ;
     kno:component kno:KN2013-0415-c2 ;
     kno:origin "(宅包)" ;
-    kno:urimalTargetCode "1371024" ;
-    skos:definition "‘택배비 포함’을 줄여 이르는 말."@ko ;
     kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    a kno:Neologism .
-kno:KN2013-0415-c1 kno:role "성분"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2013-0415-c1 ;
+    kno:componentString "택(배비)(宅), 포(함)(包)"@ko ;
+    kno:languageType "한+한" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0415-c2 kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F006724 ;
+    kno:semanticTag kno:usas-A1.8p ;
+    kno:fullForm "포함"@ko ;
     a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "포(함)(包)"@ko ;
+    kno:surfaceForm "포"@ko .
+kno:KN2013-0415-c1 kno:formative kno:F006424 ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "택"@ko ;
     kno:fullForm "택배비"@ko ;
     rdfs:label "택(배비)(宅)"@ko ;
-    kno:formative kno:F006424 ;
-    kno:surfaceForm "택"@ko ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2013-0415-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A1.8p ;
-    kno:formative kno:F006724 ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:fullForm "포함"@ko ;
-    rdfs:label "포(함)(包)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "포"@ko .
+    kno:position "1"^^xsd:integer .

@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0169 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0169 kno:pos "「관ㆍ명」"@ko ;
+kno:KN2024-0169 kno:instantiates kno:S000193 ;
+    kno:component kno:KN2024-0169-c2 ;
+    kno:languageType "한+한" ;
+    kno:example "¶저 배우 외모에 비해 연기력은 {암룡적이라} 아쉽네."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    a ontolex:Word ;
+    kno:slotFiller "암룡(暗龍) (1성분)"@ko ;
     a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
+    kno:pos "「관ㆍ명」"@ko ;
     kno:componentString "암룡(暗龍), -적(的)"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:label "암룡-적"@ko ;
-    kno:indexForm "암룡적"@ko ;
-    kno:example "¶저 배우 외모에 비해 연기력은 {암룡적이라} 아쉽네."@ko ;
-    a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%94%EB%A3%A1%EC%A0%81> ;
-    kno:formation kno:W02 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:languageType "한+한" ;
-    kno:component kno:KN2024-0169-c1 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2024-0169-c2 ;
-    kno:slotFiller "암룡(暗龍) (1성분)"@ko ;
     kno:origin "(暗龍的)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%94%EB%A3%A1%EC%A0%81> ;
+    rdfs:label "암룡-적"@ko ;
     skos:definition "외모나 재주 등의 수준이 낮은. 또는 그런 것."@ko ;
-    kno:instantiates kno:S000193 .
-kno:KN2024-0169-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F004862 ;
-    kno:semanticTag kno:usas-S2.1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "암룡"@ko ;
-    rdfs:label "암룡(暗龍)"@ko ;
-    kno:surfaceForm "암룡"@ko .
-kno:KN2024-0169-c2 kno:position "2"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2024-0169-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "암룡적"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0169-c2 kno:fullForm "적"@ko ;
     kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:fullForm "적"@ko ;
-    kno:surfaceForm "적"@ko ;
     kno:semanticTag kno:usas-Z5 ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-적(的)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "적"@ko ;
     kno:formative kno:F000229 ;
-    rdfs:label "-적(的)"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0169-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "암룡(暗龍)"@ko ;
+    kno:formative kno:F004862 ;
+    kno:fullForm "암룡"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "암룡"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .

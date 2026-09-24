@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0255 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0255 kno:example "¶당 대표는 방역을 철저히 한다는 것을 전제로 유치원생과 초등학교 저학년 학생부터 대면 수업을 하는 {책임 등교를} 제안했다."@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2021-0255 kno:indexForm "책임등교"@ko ;
+    kno:predicate "등교하다"@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    rdfs:label "책임 등교"@ko ;
     kno:frequency kno:KN2021-0255-freq-NN-total ;
-    kno:component kno:KN2021-0255-c1 ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B1%85%EC%9E%84%20%EB%93%B1%EA%B5%90> ;
-    kno:languageType "한_한" ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2021-0255-freq-NN-2021 ;
-    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2021-0255-freq-NN-2020 ;
+    a kno:Neologism ;
+    kno:origin "(責任登校)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0255-c1 ;
+    kno:example "¶당 대표는 방역을 철저히 한다는 것을 전제로 유치원생과 초등학교 저학년 학생부터 대면 수업을 하는 {책임 등교를} 제안했다."@ko ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2021-0255-c2 ;
     skos:definition "원격 수업에 스스로 참여하기 어려운 유치원생과 초등학교 저학년 학생들이 우선적으로 등교하는 일. 코로나19로 인하여 학교에 등교하지 않고 비대면으로 수업하는 기간이 길어지면서 스스로 원격 수업에 참여할 수 있는 중고등학생 및 초등학교 고학년 학생들과 그보다 더 어린 학생들 사이의 학습 격차가 심각해지는 상황에서 나온 말이다."@ko ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:predicate "등교하다"@ko ;
-    rdfs:label "책임 등교"@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B1%85%EC%9E%84%20%EB%93%B1%EA%B5%90> ;
     kno:componentString "책임(責任), 등교(登校)"@ko ;
-    kno:origin "(責任登校)" ;
-    kno:indexForm "책임등교"@ko .
-kno:KN2021-0255-c1 kno:formative kno:F006025 ;
-    kno:semanticTag kno:usas-S6p ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0255-freq-NN-2021 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear .
+kno:KN2021-0255-c1 kno:surfaceForm "책임"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    rdfs:label "책임(責任)"@ko ;
-    kno:surfaceForm "책임"@ko ;
     a kno:Component ;
     kno:fullForm "책임"@ko ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:role "성분"@ko ;
+    rdfs:label "책임(責任)"@ko ;
+    kno:formative kno:F006025 ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2021-0255-c2 kno:semanticTag kno:usas-P1 ;
-    kno:surfaceForm "등교"@ko ;
-    kno:formative kno:F003073 ;
+kno:KN2021-0255-c2 a kno:Component ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "등교"@ko ;
     rdfs:label "등교(登校)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:formative kno:F003073 ;
+    kno:surfaceForm "등교"@ko .

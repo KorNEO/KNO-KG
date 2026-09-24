@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0581 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0581 kno:unitType "단어"@ko ;
-    kno:formation kno:W06 ;
-    kno:example "¶전문가들은 “{행특을} 만드는 건 결국 학생.”이라며 “{행특} 기재에 학생이 더 적극적으로 참여해야 한다.”라고 조언한다."@ko ;
-    a ontolex:Word ;
+kno:KN2016-0581 kno:slotFiller "행(동)(行) (1성분)"@ko ;
     kno:indexForm "행특"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373016> ;
     kno:languageType "한+한" ;
-    kno:urimalTargetCode "1373016" ;
-    kno:registration "우리말샘"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
     kno:instantiates kno:S001093 ;
-    rdfs:label "행특"@ko ;
-    skos:definition "‘행동 특성 및 종합 의견’을 줄여 이르는 말. 학교 생활 기록부의 항목 중 하나이다."@ko ;
-    kno:slotFiller "행(동)(行) (1성분)"@ko ;
     kno:componentString "행(동)(行), 특(성)(特)"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:origin "(行特)" ;
     kno:component kno:KN2016-0581-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:formation kno:W06 ;
+    rdfs:label "행특"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2016-0581-c1 ;
     a kno:Neologism ;
-    kno:component kno:KN2016-0581-c1 .
+    skos:definition "‘행동 특성 및 종합 의견’을 줄여 이르는 말. 학교 생활 기록부의 항목 중 하나이다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373016> ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(行特)" ;
+    kno:example "¶전문가들은 “{행특을} 만드는 건 결국 학생.”이라며 “{행특} 기재에 학생이 더 적극적으로 참여해야 한다.”라고 조언한다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:urimalTargetCode "1373016" ;
+    a ontolex:Word .
 kno:KN2016-0581-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "특(성)(特)"@ko ;
-    kno:semanticTag kno:usas-O4.1 ;
     kno:formative kno:F001924 ;
+    rdfs:label "특(성)(特)"@ko ;
     kno:role "고정항"@ko ;
-    a kno:Component ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "특성"@ko ;
     kno:surfaceForm "특"@ko ;
-    kno:fullForm "특성"@ko .
-kno:KN2016-0581-c1 kno:formative kno:F007022 ;
-    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O4.1 .
+kno:KN2016-0581-c1 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "행동"@ko ;
+    kno:surfaceForm "행"@ko ;
+    rdfs:label "행(동)(行)"@ko ;
     kno:position "1"^^xsd:integer ;
     a kno:Component ;
     kno:semanticTag kno:usas-A1.1.1 ;
-    rdfs:label "행(동)(行)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "행"@ko ;
-    kno:fullForm "행동"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F007022 .

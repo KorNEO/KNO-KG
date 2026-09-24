@@ -9,68 +9,68 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0005 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0005 kno:indexForm "가상전화면접방식"@ko ;
-    rdfs:label "가상 전화 면접 방식"@ko ;
-    kno:component kno:KN2021-0005-c1 ;
-    kno:componentString "가상(假想), 전화(電話), 면접(面接), 방식(方式)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2021-0005-c2 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:component kno:KN2021-0005-c4 ;
+kno:KN2021-0005 a ontolex:MultiwordExpression ;
     skos:definition "가상으로 부여된 전화번호를 통해 전화로 말을 주고받으며 면접 조사를 진행하는 방식."@ko ;
-    kno:languageType "한_한_한_한" ;
-    a ontolex:MultiwordExpression ;
+    rdfs:label "가상 전화 면접 방식"@ko ;
+    kno:predicate "진행하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0005-c4 ;
+    kno:componentString "가상(假想), 전화(電話), 면접(面接), 방식(方式)"@ko ;
     kno:example "¶이번 조사는 코로나19 확산세에 대비하여 스마트폰을 활용한 {가상 전화 면접 방식으로} 진행한다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0005-c3 ;
+    kno:indexForm "가상전화면접방식"@ko ;
+    kno:frequency kno:KN2021-0005-freq-NN-total ;
+    kno:frequency kno:KN2021-0005-freq-NN-2021 ;
+    a kno:Neologism ;
+    kno:languageType "한_한_한_한" ;
+    kno:instantiates kno:S000098 ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0005-c2 ;
+    kno:slotFiller "전화(電話)+면접(面接)+방식(方式) (3성분)"@ko ;
+    kno:component kno:KN2021-0005-c1 ;
+    kno:frequency kno:KN2021-0005-freq-NN-2024 ;
+    kno:year "2021"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%83%81%20%EC%A0%84%ED%99%94%20%EB%A9%B4%EC%A0%91%20%EB%B0%A9%EC%8B%9D> ;
     kno:origin "(假想電話面接方式)" ;
     kno:instantiates kno:S000381 ;
-    kno:frequency kno:KN2021-0005-freq-NN-2024 ;
-    kno:frequency kno:KN2021-0005-freq-NN-2021 ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "가상(假想)+전화(電話)+면접(面接) (3성분)"@ko ;
-    kno:instantiates kno:S000098 ;
-    kno:component kno:KN2021-0005-c3 ;
-    kno:pos "「구」"@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:predicate "진행하다"@ko ;
-    kno:slotFiller "전화(電話)+면접(面接)+방식(方式) (3성분)"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:frequency kno:KN2021-0005-freq-NN-total .
-kno:KN2021-0005-c1 a kno:Component ;
-    kno:formative kno:F000157 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:slotFiller "가상(假想)+전화(電話)+면접(面接) (3성분)"@ko .
+kno:KN2021-0005-c4 kno:position "4"^^xsd:integer ;
+    kno:fullForm "방식"@ko ;
+    rdfs:label "방식(方式)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "방식"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000765 ;
+    kno:semanticTag kno:usas-X4.2 .
+kno:KN2021-0005-c3 a kno:Component ;
+    rdfs:label "면접(面接)"@ko ;
+    kno:formative kno:F003459 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "면접"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "면접"@ko ;
+    kno:semanticTag kno:usas-I3.1 .
+kno:KN2021-0005-c2 kno:semanticTag kno:usas-Q1.3 ;
+    a kno:Component ;
+    kno:formative kno:F001752 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "전화"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "전화(電話)"@ko ;
+    kno:fullForm "전화"@ko .
+kno:KN2021-0005-c1 kno:fullForm "가상"@ko ;
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:surfaceForm "가상"@ko ;
     kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "가상"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
     rdfs:label "가상(假想)"@ko ;
-    kno:fullForm "가상"@ko ;
-    kno:semanticTag kno:usas-A5.4m .
-kno:KN2021-0005-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "전화"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "전화"@ko ;
-    rdfs:label "전화(電話)"@ko ;
-    kno:formative kno:F001752 ;
-    kno:semanticTag kno:usas-Q1.3 .
-kno:KN2021-0005-c4 kno:role "고정항"@ko ;
-    kno:formative kno:F000765 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "방식(方式)"@ko ;
-    kno:surfaceForm "방식"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:fullForm "방식"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-X4.2 .
-kno:KN2021-0005-c3 kno:semanticTag kno:usas-Q2.2 ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F003459 ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "면접"@ko ;
-    kno:surfaceForm "면접"@ko ;
-    rdfs:label "면접(面接)"@ko .
+    kno:formative kno:F000157 .

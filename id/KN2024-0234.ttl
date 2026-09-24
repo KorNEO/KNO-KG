@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0234 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0234 kno:formation kno:W05 ;
-    a ontolex:Word ;
+kno:KN2024-0234 a ontolex:Word ;
+    kno:componentString "의(사)(醫師), (대)한민국"@ko ;
     kno:year "2024"^^xsd:gYear ;
-    kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%ED%95%9C%EB%AF%BC%EA%B5%AD> ;
+    kno:indexForm "의한민국"@ko ;
+    kno:component kno:KN2024-0234-c2 ;
+    kno:example "¶과거에는 이공계를 선택하는 수재들이 많았지만, 이제는 모두 의과 대학만 지원해 {의한민국이라는} 말까지 나온다."@ko ;
+    kno:component kno:KN2024-0234-c1 ;
+    kno:pos "「명」"@ko ;
     rdfs:label "의한민국"@ko ;
     kno:frequency kno:KN2024-0234-freq-NN-total ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%ED%95%9C%EB%AF%BC%EA%B5%AD> ;
-    kno:component kno:KN2024-0234-c1 ;
-    kno:slotFiller "(대)한민국 (1성분)"@ko ;
-    skos:definition "의사가 되는 것을 다른 진로보다 압도적으로 중시하는 대한민국의 사회적 풍조를 비판적으로 이르는 말."@ko ;
-    kno:origin "(醫韓民國)" ;
-    kno:componentString "의(사)(醫師), (대)한민국"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000225 ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶과거에는 이공계를 선택하는 수재들이 많았지만, 이제는 모두 의과 대학만 지원해 {의한민국이라는} 말까지 나온다."@ko ;
     a kno:Neologism ;
+    skos:definition "의사가 되는 것을 다른 진로보다 압도적으로 중시하는 대한민국의 사회적 풍조를 비판적으로 이르는 말."@ko ;
     kno:frequency kno:KN2024-0234-freq-NN-2025 ;
-    kno:component kno:KN2024-0234-c2 ;
-    kno:indexForm "의한민국"@ko ;
+    kno:instantiates kno:S000225 ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W05 ;
+    kno:origin "(醫韓民國)" ;
+    kno:languageType "한+한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0234-freq-NN-2024 .
-kno:KN2024-0234-c1 kno:position "1"^^xsd:integer ;
-    rdfs:label "의(사)(醫師)"@ko ;
-    kno:surfaceForm "의"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000398 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:fullForm "의사"@ko .
-kno:KN2024-0234-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "한민국"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "대한민국"@ko ;
+    kno:frequency kno:KN2024-0234-freq-NN-2024 ;
+    kno:slotFiller "(대)한민국 (1성분)"@ko ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0234-c2 kno:semanticTag kno:usas-Z2 ;
     kno:formative kno:F006966 ;
-    kno:semanticTag kno:usas-Z2 ;
+    kno:role "슬롯 채움"@ko ;
     rdfs:label "(대)한민국"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "대한민국"@ko ;
+    kno:surfaceForm "한민국"@ko .
+kno:KN2024-0234-c1 kno:surfaceForm "의"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "의사"@ko ;
+    rdfs:label "의(사)(醫師)"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F000398 ;
     a kno:Component .

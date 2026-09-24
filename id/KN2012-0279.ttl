@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0279 a ontolex:MultiwordExpression ;
-    kno:languageType "한_영" ;
+kno:KN2012-0279 kno:componentString "약국(藥局), -형(型), 스토어(store)"@ko ;
     rdfs:label "약국형 스토어"@ko ;
-    kno:registration "우리말샘"@ko ;
-    skos:definition "의약품뿐만 아니라 화장품, 건강용품, 식료품, 생활용품 등 다양한 품목을 판매하는 소매점."@ko ;
-    kno:urimalTargetCode "1357190" ;
-    kno:componentString "약국(藥局), -형(型), 스토어(store)"@ko ;
-    kno:predicate "판매하다"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357190> ;
-    a kno:Neologism ;
-    kno:component kno:KN2012-0279-c2 ;
-    kno:slotFiller "-형(型)+스토어(store) (2성분)"@ko ;
-    kno:component kno:KN2012-0279-c1 ;
-    kno:pos "「구」"@ko ;
     kno:instantiates kno:S001530 ;
-    kno:origin "(藥局型store)" ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357190> ;
     kno:component kno:KN2012-0279-c3 ;
+    kno:component kno:KN2012-0279-c2 ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:registration "우리말샘"@ko ;
+    kno:predicate "판매하다"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "의약품뿐만 아니라 화장품, 건강용품, 식료품, 생활용품 등 다양한 품목을 판매하는 소매점."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:slotFiller "-형(型)+스토어(store) (2성분)"@ko ;
+    kno:origin "(藥局型store)" ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "약국형스토어"@ko ;
+    kno:languageType "한_영" ;
     kno:example "¶화장품 구매 장소로는 {약국형 스토어가} 49.9%로 가장 높았고, 백화점, 생활용품점, 온라인 쇼핑몰, 대형 마트 순이었다."@ko ;
-    kno:indexForm "약국형스토어"@ko .
-kno:KN2012-0279-c2 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000109 ;
-    kno:fullForm "형"@ko ;
-    rdfs:label "-형(型)"@ko ;
-    kno:surfaceForm "형"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A4.1 .
-kno:KN2012-0279-c1 kno:semanticTag kno:usas-B3 ;
-    kno:surfaceForm "약국"@ko ;
-    kno:formative kno:F001581 ;
-    rdfs:label "약국(藥局)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "약국"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component .
-kno:KN2012-0279-c3 rdfs:label "스토어(store)"@ko ;
-    kno:formative kno:F004591 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:component kno:KN2012-0279-c1 ;
+    kno:urimalTargetCode "1357190" .
+kno:KN2012-0279-c3 kno:formative kno:F004591 ;
+    kno:position "3"^^xsd:integer ;
     a kno:Component ;
     kno:fullForm "스토어"@ko ;
+    rdfs:label "스토어(store)"@ko ;
     kno:semanticTag kno:usas-I2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "스토어"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:role "슬롯 채움"@ko .
+kno:KN2012-0279-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "-형(型)"@ko ;
+    kno:fullForm "형"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:formative kno:F000109 ;
+    kno:surfaceForm "형"@ko .
+kno:KN2012-0279-c1 kno:fullForm "약국"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "약국"@ko ;
+    rdfs:label "약국(藥局)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F001581 ;
+    kno:truncated "false"^^xsd:boolean .

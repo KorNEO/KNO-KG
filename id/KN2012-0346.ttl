@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0346 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0346 kno:component kno:KN2012-0346-c3 ;
-    kno:pos "「명」"@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
+kno:KN2012-0346 kno:componentString "은(행)(銀), 삼(성)(三), (자동)차(車)"@ko ;
+    kno:indexForm "은삼차"@ko ;
+    kno:frequency kno:KN2012-0346-freq-NN-total ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%80%EC%82%BC%EC%B0%A8> ;
+    kno:activeYears "2"^^xsd:integer ;
     rdfs:label "은삼차"@ko ;
     kno:origin "(銀三車)" ;
-    kno:frequency kno:KN2012-0346-freq-NN-2012 ;
-    kno:component kno:KN2012-0346-c1 ;
-    kno:languageType "한+한+한" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:year "2012"^^xsd:gYear ;
     a ontolex:Word ;
-    kno:example "¶{은삼차는} 최근 증시를 쥐락펴락하고 있다."@ko ;
     kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "은(행)(銀), 삼(성)(三), (자동)차(車)"@ko ;
-    kno:frequency kno:KN2012-0346-freq-NN-2013 ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
+    kno:component kno:KN2012-0346-c3 ;
     kno:component kno:KN2012-0346-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%80%EC%82%BC%EC%B0%A8> ;
-    kno:frequency kno:KN2012-0346-freq-NN-total ;
-    kno:indexForm "은삼차"@ko ;
+    kno:frequency kno:KN2012-0346-freq-NN-2013 ;
+    kno:component kno:KN2012-0346-c1 ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0346-freq-NN-2012 ;
+    kno:example "¶{은삼차는} 최근 증시를 쥐락펴락하고 있다."@ko ;
+    kno:languageType "한+한+한" ;
+    kno:formation kno:W06 ;
     skos:definition "주식 시장을 주도했던 ‘은행, 삼성전자, 자동차’를 줄여 이르는 말."@ko .
-kno:KN2012-0346-c3 rdfs:label "(자동)차(車)"@ko ;
-    kno:surfaceForm "차"@ko ;
+kno:KN2012-0346-c3 kno:role "성분"@ko ;
+    kno:formative kno:F005980 ;
+    rdfs:label "(자동)차(車)"@ko ;
     kno:semanticTag kno:usas-M3 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
+    a kno:Component ;
     kno:position "3"^^xsd:integer ;
     kno:fullForm "자동차"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005980 .
-kno:KN2012-0346-c1 kno:role "성분"@ko ;
-    a kno:Component ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "은행"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F005345 ;
-    rdfs:label "은(행)(銀)"@ko ;
-    kno:surfaceForm "은"@ko ;
-    kno:semanticTag kno:usas-I1 .
-kno:KN2012-0346-c2 a kno:Component ;
+    kno:surfaceForm "차"@ko .
+kno:KN2012-0346-c2 rdfs:label "삼(성)(三)"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
     kno:formative kno:F004206 ;
-    kno:surfaceForm "삼"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "삼(성)(三)"@ko ;
-    kno:role "성분"@ko ;
-    kno:fullForm "삼성"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Z3 .
+    kno:fullForm "삼성"@ko ;
+    kno:surfaceForm "삼"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0346-c1 a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "은(행)(銀)"@ko ;
+    kno:fullForm "은행"@ko ;
+    kno:surfaceForm "은"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005345 .

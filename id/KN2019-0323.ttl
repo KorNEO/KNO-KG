@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0323 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0323 kno:formation kno:W03 ;
+kno:KN2019-0323 kno:instantiates kno:S000036 ;
+    kno:frequency kno:KN2019-0323-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0323-freq-NN-total ;
+    kno:activeYears "7"^^xsd:integer ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1470524> ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0323-freq-NN-2025 ;
-    kno:unitType "단어"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶학생 OOO은 “내가 {‘핵아싸’여서} 학과에서는 친구가 한 명도 없다.”라면서 “OO 캠프에서 만난 친구들과 가끔 모여 저녁 먹는 정도.”라고 털어놨다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0323-c1 ;
+    kno:frequency kno:KN2019-0323-freq-NN-2020 ;
+    kno:origin "(核<영>←outsider)" ;
+    kno:formation kno:W03 ;
+    kno:urimalTargetCode "1470524" ;
+    kno:frequency kno:KN2019-0323-freq-NN-2023 ;
     rdfs:label "핵-아싸"@ko ;
+    skos:definition "어떤 사회나 집단의 구성원으로 받아들여지지 않는 정도가 몹시 심한 사람."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2019-0323-c2 ;
+    a ontolex:Word ;
     kno:languageType "한+영" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0323-freq-NN-2019 ;
+    kno:example "¶학생 OOO은 “내가 {‘핵아싸’여서} 학과에서는 친구가 한 명도 없다.”라면서 “OO 캠프에서 만난 친구들과 가끔 모여 저녁 먹는 정도.”라고 털어놨다."@ko ;
+    kno:frequency kno:KN2019-0323-freq-NN-2025 ;
     kno:indexForm "핵아싸"@ko ;
     kno:frequency kno:KN2019-0323-freq-NN-2018 ;
-    kno:component kno:KN2019-0323-c1 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2019-0323-freq-NN-2023 ;
-    kno:instantiates kno:S000036 ;
-    skos:definition "어떤 사회나 집단의 구성원으로 받아들여지지 않는 정도가 몹시 심한 사람."@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0323-freq-NN-2021 ;
-    kno:activeYears "7"^^xsd:integer ;
-    kno:frequency kno:KN2019-0323-freq-NN-2020 ;
-    kno:component kno:KN2019-0323-c2 ;
-    kno:registration "우리말샘"@ko ;
-    kno:frequency kno:KN2019-0323-freq-NN-2019 ;
-    kno:origin "(核<영>←outsider)" ;
-    a ontolex:Word ;
     kno:slotFiller "아싸(←outsider) (1성분)"@ko ;
-    kno:frequency kno:KN2019-0323-freq-NN-2024 ;
-    kno:urimalTargetCode "1470524" ;
-    kno:frequency kno:KN2019-0323-freq-NN-total ;
-    kno:componentString "핵(核)-, 아싸(←outsider)"@ko .
-kno:KN2019-0323-c1 rdfs:label "핵(核)-"@ko ;
-    kno:formative kno:F000082 ;
+    kno:frequency kno:KN2019-0323-freq-NN-2021 ;
+    kno:componentString "핵(核)-, 아싸(←outsider)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko .
+kno:KN2019-0323-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "핵"@ko ;
     kno:surfaceForm "핵"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-A13.3 ;
-    a kno:Component .
-kno:KN2019-0323-c2 kno:fullForm "아싸"@ko ;
-    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000082 ;
+    kno:fullForm "핵"@ko ;
+    rdfs:label "핵(核)-"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2019-0323-c2 a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "아싸(←outsider)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S5m ;
     kno:surfaceForm "아싸"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    rdfs:label "아싸(←outsider)"@ko ;
-    kno:formative kno:F004810 .
+    kno:formative kno:F004810 ;
+    kno:fullForm "아싸"@ko .

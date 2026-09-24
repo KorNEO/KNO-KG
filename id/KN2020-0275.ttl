@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0275 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0275 kno:component kno:KN2020-0275-c2 ;
-    kno:unitType "구"@ko ;
+kno:KN2020-0275 kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0275-c1 ;
+    kno:componentString "임시(臨時), 지방(地方), 공휴일(公休日)"@ko ;
+    skos:definition "그때그때의 필요에 따라 지방 자치 단체에서 정한 공휴일."@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:origin "(臨時地方公休日)" ;
-    kno:pos "「구」"@ko ;
-    kno:languageType "한_한_한" ;
-    kno:year "2020"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%84%EC%8B%9C%20%EC%A7%80%EB%B0%A9%20%EA%B3%B5%ED%9C%B4%EC%9D%BC> ;
-    skos:definition "그때그때의 필요에 따라 지방 자치 단체에서 정한 공휴일."@ko ;
-    kno:component kno:KN2020-0275-c3 ;
-    kno:component kno:KN2020-0275-c1 ;
-    rdfs:label "임시 지방 공휴일"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2020-0275-freq-NN-2020 ;
-    kno:indexForm "임시지방공휴일"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2020-0275-freq-NN-total ;
-    kno:componentString "임시(臨時), 지방(地方), 공휴일(公休日)"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    a kno:Neologism ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0275-freq-NN-2020 ;
     kno:example "¶관련 단체에서는 오일팔 민주화 운동 사십 주년을 기념하여 올해 5월 18일을 {임시 지방 공휴일로} 정하는 방안을 제안했다."@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2020-0275-c2 rdfs:label "지방(地方)"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:role "성분"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%84%EC%8B%9C%20%EC%A7%80%EB%B0%A9%20%EA%B3%B5%ED%9C%B4%EC%9D%BC> ;
+    kno:languageType "한_한_한" ;
+    kno:indexForm "임시지방공휴일"@ko ;
+    kno:component kno:KN2020-0275-c2 ;
+    rdfs:label "임시 지방 공휴일"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0275-c3 .
+kno:KN2020-0275-c1 kno:semanticTag kno:usas-T1.3m ;
+    rdfs:label "임시(臨時)"@ko ;
+    kno:fullForm "임시"@ko ;
     a kno:Component ;
-    kno:fullForm "지방"@ko ;
+    kno:surfaceForm "임시"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F005485 .
+kno:KN2020-0275-c2 kno:fullForm "지방"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000590 ;
     kno:surfaceForm "지방"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "지방(地方)"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0275-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "공휴일"@ko ;
-    kno:fullForm "공휴일"@ko ;
+    kno:role "성분"@ko .
+kno:KN2020-0275-c3 kno:fullForm "공휴일"@ko ;
     rdfs:label "공휴일(公休日)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
     kno:formative kno:F002367 ;
-    kno:semanticTag kno:usas-K1 .
-kno:KN2020-0275-c1 kno:semanticTag kno:usas-T1.3m ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "임시"@ko ;
-    kno:surfaceForm "임시"@ko ;
-    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
     a kno:Component ;
-    kno:formative kno:F005485 ;
-    rdfs:label "임시(臨時)"@ko .
+    kno:surfaceForm "공휴일"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K1 .

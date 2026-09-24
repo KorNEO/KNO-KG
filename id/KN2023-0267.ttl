@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0267 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0267 kno:instantiates kno:S001169 ;
+kno:KN2023-0267 kno:slotFiller "직장인(職場人)+수능(修能) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0267-freq-NN-total ;
     kno:year "2023"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2023-0267-c1 ;
-    kno:slotFiller "수능(修能)+-어(←-er) (2성분)"@ko ;
-    kno:frequency kno:KN2023-0267-freq-NN-2022 ;
     kno:pos "「구」"@ko ;
-    kno:componentString "직장인(職場人), 수능(修能), -어(←-er)"@ko ;
-    kno:languageType "한_(한+영)" ;
-    kno:component kno:KN2023-0267-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%81%EC%9E%A5%EC%9D%B8%20%EC%88%98%EB%8A%A5%EB%9F%AC> ;
-    kno:predicate "응시하다"@ko ;
+    kno:slotFiller "수능(修能)+-어(←-er) (2성분)"@ko ;
+    kno:example "¶정부의 의과대학 정원 확대에 대한 지침 발표 후, 최근 몇 년간 증가하고 있던 {직장인 수능러들이} 급증하는 양상이 나타났다."@ko ;
     kno:instantiates kno:S001664 ;
     kno:frequency kno:KN2023-0267-freq-NN-2024 ;
-    kno:frequency kno:KN2023-0267-freq-NN-total ;
-    kno:slotFiller "직장인(職場人)+수능(修能) (2성분)"@ko ;
-    kno:component kno:KN2023-0267-c3 ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    skos:definition "직장인 중에서 대학 수학 능력 시험을 준비하거나 응시하는 사람."@ko ;
-    kno:example "¶정부의 의과대학 정원 확대에 대한 지침 발표 후, 최근 몇 년간 증가하고 있던 {직장인 수능러들이} 급증하는 양상이 나타났다."@ko ;
+    kno:instantiates kno:S001169 ;
     a kno:Neologism ;
-    kno:origin "(職場人修能<영>←er)" ;
+    skos:definition "직장인 중에서 대학 수학 능력 시험을 준비하거나 응시하는 사람."@ko ;
+    kno:component kno:KN2023-0267-c1 ;
+    kno:languageType "한_(한+영)" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:componentString "직장인(職場人), 수능(修能), -어(←-er)"@ko ;
     kno:indexForm "직장인수능러"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0267-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:predicate "응시하다"@ko ;
     rdfs:label "직장인 수능러"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear .
-kno:KN2023-0267-c1 kno:position "1"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0267-freq-NN-2022 ;
+    kno:component kno:KN2023-0267-c3 ;
+    kno:origin "(職場人修能<영>←er)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%81%EC%9E%A5%EC%9D%B8%20%EC%88%98%EB%8A%A5%EB%9F%AC> .
+kno:KN2023-0267-c1 kno:fullForm "직장인"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
     kno:surfaceForm "직장인"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     rdfs:label "직장인(職場人)"@ko ;
-    kno:formative kno:F001793 ;
-    kno:fullForm "직장인"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2023-0267-c2 rdfs:label "수능(修能)"@ko ;
-    kno:formative kno:F000539 ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F001793 .
+kno:KN2023-0267-c2 kno:formative kno:F000539 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
     kno:fullForm "수능"@ko ;
-    kno:surfaceForm "수능"@ko .
-kno:KN2023-0267-c3 kno:semanticTag kno:usas-S2 ;
-    kno:fullForm "어"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "수능(修能)"@ko ;
+    kno:surfaceForm "수능"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0267-c3 kno:fullForm "어"@ko ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "어"@ko ;
     a kno:Component ;
-    kno:formative kno:F000182 ;
+    kno:surfaceForm "어"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "-어(←-er)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:formative kno:F000182 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:position "3"^^xsd:integer .

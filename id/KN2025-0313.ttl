@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0313 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0313 kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0313-c2 ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2025-0313-freq-NN-2025 ;
-    skos:definition "(LLM) 사전 투표 참여를 독려하기 위해 유세 현장이나 온라인에서 진행하는 홍보 행사나 캠페인."@ko ;
-    kno:componentString "사전(事前), 투표(投票), (인스타)그램(Instagram)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "사전 투표그램"@ko ;
-    kno:slotFiller "사전(事前)+투표(投票) (2성분)"@ko ;
-    kno:instantiates kno:S000350 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%20%ED%88%AC%ED%91%9C%EA%B7%B8%EB%9E%A8> ;
-    kno:component kno:KN2025-0313-c1 ;
-    kno:component kno:KN2025-0313-c3 ;
+kno:KN2025-0313 kno:year "2025"^^xsd:gYear ;
     a ontolex:Word ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0313-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000350 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0313-c3 ;
     kno:indexForm "사전투표그램"@ko ;
+    kno:formation kno:W06 ;
+    skos:definition "(LLM) 사전 투표 참여를 독려하기 위해 유세 현장이나 온라인에서 진행하는 홍보 행사나 캠페인."@ko ;
+    kno:slotFiller "사전(事前)+투표(投票) (2성분)"@ko ;
+    kno:component kno:KN2025-0313-c2 ;
+    kno:component kno:KN2025-0313-c1 ;
+    kno:pos "「명」"@ko ;
     kno:example "(LLM) 후보 측은 선거 막바지에 {사전투표그램을} 열어 유권자들에게 사전 투표 참여를 거듭 요청했다."@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2025-0313-c2 kno:surfaceForm "투표"@ko ;
-    kno:formative kno:F000978 ;
-    kno:fullForm "투표"@ko ;
+    rdfs:label "사전 투표그램"@ko ;
+    kno:componentString "사전(事前), 투표(投票), (인스타)그램(Instagram)"@ko ;
+    kno:frequency kno:KN2025-0313-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%20%ED%88%AC%ED%91%9C%EA%B7%B8%EB%9E%A8> ;
+    kno:frequency kno:KN2025-0313-freq-NN-2025 .
+kno:KN2025-0313-c3 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "그램"@ko ;
+    kno:fullForm "인스타그램"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    rdfs:label "(인스타)그램(Instagram)"@ko ;
+    kno:formative kno:F000680 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0313-c2 kno:formative kno:F000978 ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "투표"@ko ;
     rdfs:label "투표(投票)"@ko ;
     kno:semanticTag kno:usas-G1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "투표"@ko .
+kno:KN2025-0313-c1 kno:formative kno:F000367 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "사전"@ko ;
     a kno:Component ;
+    rdfs:label "사전(事前)"@ko ;
+    kno:surfaceForm "사전"@ko ;
+    kno:semanticTag kno:usas-T4 ;
     kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko .
-kno:KN2025-0313-c1 kno:fullForm "사전"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000367 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-T4 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "사전(事前)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "사전"@ko .
-kno:KN2025-0313-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000680 ;
-    rdfs:label "(인스타)그램(Instagram)"@ko ;
-    kno:fullForm "인스타그램"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:surfaceForm "그램"@ko ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko .

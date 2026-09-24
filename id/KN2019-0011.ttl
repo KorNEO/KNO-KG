@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0011 kno:component kno:KN2019-0011-c3 ;
-    kno:component kno:KN2019-0011-c1 ;
-    kno:registration "신어DB"@ko ;
+kno:KN2019-0011 kno:languageType "한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A0%9C%EC%A3%BC%EB%8F%84%EA%B0%9C%EB%85%90> ;
     kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:example "¶두 명의 정상이 비핵화 및 {경제 주도 개념을} 발전시키기 위해 다양한 방식으로 논의했지만, 이번에는 아무런 합의에도 도달하지 못했다."@ko ;
-    kno:predicate "결정하다"@ko ;
-    kno:origin "(經濟主導槪念)" ;
-    a kno:Neologism ;
     kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2019-0011-freq-NN-2019 ;
-    kno:languageType "한^한^한" ;
-    kno:slotFiller "주도(主導)+개념(槪念) (2성분)"@ko ;
-    skos:definition "경제 성장을 우선적으로 고려하여 국가나 단체 따위의 발전 방향을 결정하는 관점."@ko ;
-    kno:instantiates kno:S000286 ;
-    rdfs:label "경제^주도^개념"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A0%9C%EC%A3%BC%EB%8F%84%EA%B0%9C%EB%85%90> ;
+    a kno:Neologism ;
     kno:year "2019"^^xsd:gYear ;
-    kno:componentString "경제(經濟), 주도(主導), 개념(槪念)"@ko ;
-    kno:component kno:KN2019-0011-c2 ;
-    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000286 ;
+    kno:origin "(經濟主導槪念)" ;
     kno:indexForm "경제주도개념"@ko ;
     kno:frequency kno:KN2019-0011-freq-NN-total ;
-    a ontolex:MultiwordExpression .
-kno:KN2019-0011-c3 kno:formative kno:F001046 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "개념"@ko ;
-    rdfs:label "개념(槪念)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "개념"@ko ;
+    kno:component kno:KN2019-0011-c3 ;
+    kno:example "¶두 명의 정상이 비핵화 및 {경제 주도 개념을} 발전시키기 위해 다양한 방식으로 논의했지만, 이번에는 아무런 합의에도 도달하지 못했다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "주도(主導)+개념(槪念) (2성분)"@ko ;
+    skos:definition "경제 성장을 우선적으로 고려하여 국가나 단체 따위의 발전 방향을 결정하는 관점."@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0011-c2 ;
+    kno:component kno:KN2019-0011-c1 ;
+    kno:predicate "결정하다"@ko ;
+    kno:componentString "경제(經濟), 주도(主導), 개념(槪念)"@ko ;
+    rdfs:label "경제^주도^개념"@ko .
+kno:KN2019-0011-c3 rdfs:label "개념(槪念)"@ko ;
     kno:semanticTag kno:usas-X2.1 ;
-    kno:position "3"^^xsd:integer .
-kno:KN2019-0011-c1 kno:formative kno:F000029 ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "개념"@ko ;
+    kno:surfaceForm "개념"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001046 .
+kno:KN2019-0011-c2 a kno:Component ;
+    kno:fullForm "주도"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000926 ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "주도"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "주도(主導)"@ko .
+kno:KN2019-0011-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
     kno:semanticTag kno:usas-I1 ;
-    rdfs:label "경제(經濟)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "경제"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000029 ;
     kno:surfaceForm "경제"@ko .
-kno:KN2019-0011-c2 a kno:Component ;
-    kno:semanticTag kno:usas-S7.1p ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "주도(主導)"@ko ;
-    kno:surfaceForm "주도"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "주도"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000926 .

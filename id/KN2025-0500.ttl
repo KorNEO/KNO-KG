@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0500 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0500 kno:predicate "여기다"@ko ;
-    rdfs:label "전광판피셜"@ko ;
+kno:KN2025-0500 kno:activeYears "1"^^xsd:integer ;
+    kno:predicate "여기다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EA%B4%91%ED%8C%90%ED%94%BC%EC%85%9C> ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "전광판피셜"@ko ;
+    kno:origin "(電光板<영>←official)" ;
+    kno:slotFiller "전광판(電光板) (1성분)"@ko ;
     kno:instantiates kno:S000237 ;
     kno:frequency kno:KN2025-0500-freq-NN-2025 ;
-    kno:formation kno:W05 ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2025-0500-freq-NN-total ;
-    kno:indexForm "전광판피셜"@ko ;
-    kno:year "2025"^^xsd:gYear ;
     kno:example "(LLM) 경기 시작 전 전광판에 새 영입 선수 이름이 뜨자 팬들은 {전광판피셜이} 떴다며 발표가 난 거나 다름없다고 했다."@ko ;
+    kno:component kno:KN2025-0500-c1 ;
+    rdfs:label "전광판피셜"@ko ;
+    kno:componentString "전광판(電光板), (오)피셜(official)"@ko ;
+    kno:formation kno:W05 ;
+    kno:year "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2025-0500-c2 ;
     skos:definition "(LLM) 경기장ㆍ행사장 등의 전광판에 표시된 안내나 소개 문구를 근거로 어떤 사실이 공식적으로 확인된 것처럼 여기는 일."@ko ;
-    kno:slotFiller "전광판(電光板) (1성분)"@ko ;
-    kno:componentString "전광판(電光板), (오)피셜(official)"@ko ;
-    kno:origin "(電光板<영>←official)" ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EA%B4%91%ED%8C%90%ED%94%BC%EC%85%9C> ;
-    kno:component kno:KN2025-0500-c1 ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear .
-kno:KN2025-0500-c2 kno:fullForm "오피셜"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "(오)피셜(official)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "피셜"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0500-freq-NN-total ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko .
+kno:KN2025-0500-c1 kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-A5.2p ;
-    kno:formative kno:F000636 ;
-    kno:role "고정항"@ko .
-kno:KN2025-0500-c1 kno:formative kno:F005622 ;
     kno:semanticTag kno:usas-Y2 ;
     kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "전광판"@ko ;
     rdfs:label "전광판(電光板)"@ko ;
     kno:surfaceForm "전광판"@ko ;
+    kno:formative kno:F005622 .
+kno:KN2025-0500-c2 rdfs:label "(오)피셜(official)"@ko ;
+    kno:formative kno:F000636 ;
+    kno:fullForm "오피셜"@ko ;
+    kno:surfaceForm "피셜"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A5.2p ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    kno:position "2"^^xsd:integer .

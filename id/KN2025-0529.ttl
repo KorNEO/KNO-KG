@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0529 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0529 kno:instantiates kno:S000059 ;
-    kno:component kno:KN2025-0529-c1 ;
-    kno:component kno:KN2025-0529-c2 ;
-    kno:componentString "중국(中國), 비판(批判), 금지법(禁止法)"@ko ;
-    kno:slotFiller "중국(中國)+비판(批判) (2성분)"@ko ;
-    kno:frequency kno:KN2025-0529-freq-NN-total ;
-    kno:origin "(中國批判禁止法)" ;
-    kno:slotFiller "비판(批判)+금지법(禁止法) (2성분)"@ko ;
-    a kno:Neologism ;
+kno:KN2025-0529 kno:indexForm "중국비판금지법"@ko ;
+    kno:languageType "한_한_한" ;
     kno:instantiates kno:S001651 ;
+    kno:origin "(中國批判禁止法)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EA%B5%AD%20%EB%B9%84%ED%8C%90%20%EA%B8%88%EC%A7%80%EB%B2%95> ;
+    skos:definition "(LLM) 중국 또는 중국인을 비판하는 표현을 금지하거나 처벌하는 내용의 법률ㆍ법안을 비판적으로 이르는 말."@ko ;
+    kno:example "(LLM) 일각에서는 해당 조항이 특정 국가에 대한 비판을 위축시켜 사실상 {중국비판금지법으로} 작동할 수 있다며 재검토를 요구했다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000059 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0529-c3 ;
+    kno:frequency kno:KN2025-0529-freq-NN-total ;
+    kno:frequency kno:KN2025-0529-freq-NN-2025 ;
+    kno:slotFiller "중국(中國)+비판(批判) (2성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "중국 비판 금지법"@ko ;
+    kno:componentString "중국(中國), 비판(批判), 금지법(禁止法)"@ko ;
+    kno:slotFiller "비판(批判)+금지법(禁止法) (2성분)"@ko ;
     kno:year "2025"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EA%B5%AD%20%EB%B9%84%ED%8C%90%20%EA%B8%88%EC%A7%80%EB%B2%95> ;
-    kno:example "(LLM) 일각에서는 해당 조항이 특정 국가에 대한 비판을 위축시켜 사실상 {중국비판금지법으로} 작동할 수 있다며 재검토를 요구했다."@ko ;
-    kno:indexForm "중국비판금지법"@ko ;
-    kno:frequency kno:KN2025-0529-freq-NN-2025 ;
-    skos:definition "(LLM) 중국 또는 중국인을 비판하는 표현을 금지하거나 처벌하는 내용의 법률ㆍ법안을 비판적으로 이르는 말."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2025-0529-c3 ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0529-c2 ;
     a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko ;
-    rdfs:label "중국 비판 금지법"@ko ;
-    kno:languageType "한_한_한" .
-kno:KN2025-0529-c1 kno:fullForm "중국"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Z2 ;
-    rdfs:label "중국(中國)"@ko ;
-    kno:formative kno:F001780 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "중국"@ko .
-kno:KN2025-0529-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "비판"@ko ;
-    kno:surfaceForm "비판"@ko ;
-    kno:semanticTag kno:usas-Q2.2m ;
-    rdfs:label "비판(批判)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004088 ;
-    a kno:Component .
-kno:KN2025-0529-c3 kno:position "3"^^xsd:integer ;
-    rdfs:label "금지법(禁止法)"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
+    kno:component kno:KN2025-0529-c1 .
+kno:KN2025-0529-c3 kno:fullForm "금지법"@ko ;
     kno:formative kno:F000128 ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:fullForm "금지법"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "금지법"@ko ;
-    kno:role "고정항"@ko .
+    kno:semanticTag kno:usas-G2.1 ;
+    rdfs:label "금지법(禁止法)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2025-0529-c2 kno:semanticTag kno:usas-Q2.2m ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "비판"@ko ;
+    kno:formative kno:F004088 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "비판"@ko ;
+    rdfs:label "비판(批判)"@ko .
+kno:KN2025-0529-c1 rdfs:label "중국(中國)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "중국"@ko ;
+    kno:formative kno:F001780 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "중국"@ko .

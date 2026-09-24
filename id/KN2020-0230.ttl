@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0230 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0230 kno:activeYears "1"^^xsd:integer ;
+kno:KN2020-0230 kno:predicate "수집하다"@ko ;
     kno:origin "(<영>echo profiling)" ;
-    kno:languageType "영_영" ;
-    rdfs:label "에코 프로파일링"@ko ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:componentString "에코(echo), 프로파일링(profiling)"@ko ;
+    kno:frequency kno:KN2020-0230-freq-NN-total ;
+    kno:frequency kno:KN2020-0230-freq-NN-2019 ;
     kno:component kno:KN2020-0230-c1 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%BD%94%20%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81> ;
+    kno:languageType "영_영" ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    a kno:Neologism ;
     kno:example "¶작가는 {에코 프로파일링의} 방법을 적용하여 생존자들이 소리로만 기억하는 사건 장소를 디지털 이미지로 시각화했다."@ko ;
+    kno:component kno:KN2020-0230-c2 ;
+    kno:componentString "에코(echo), 프로파일링(profiling)"@ko ;
+    rdfs:label "에코 프로파일링"@ko ;
+    kno:indexForm "에코프로파일링"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%BD%94%20%ED%94%84%EB%A1%9C%ED%8C%8C%EC%9D%BC%EB%A7%81> ;
     kno:registration "신어DB"@ko ;
     kno:year "2020"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
     skos:definition "범죄의 피해자나 증인에게 소리를 들려주고 사건과 관련한 기억을 떠올리게 하여 진술과 증거를 수집하는 방식."@ko ;
-    kno:indexForm "에코프로파일링"@ko ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2020-0230-c2 ;
-    kno:frequency kno:KN2020-0230-freq-NN-2019 ;
-    kno:frequency kno:KN2020-0230-freq-NN-total ;
-    kno:pos "「구」"@ko ;
-    kno:predicate "수집하다"@ko .
-kno:KN2020-0230-c1 kno:fullForm "에코"@ko ;
+    a ontolex:MultiwordExpression .
+kno:KN2020-0230-c1 kno:semanticTag kno:usas-W5 ;
+    rdfs:label "에코(echo)"@ko ;
     kno:formative kno:F001598 ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "에코(echo)"@ko ;
-    kno:semanticTag kno:usas-W5 ;
-    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "에코"@ko ;
-    kno:role "성분"@ko .
-kno:KN2020-0230-c2 kno:surfaceForm "프로파일링"@ko ;
-    kno:formative kno:F006814 ;
-    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "에코"@ko ;
     kno:role "성분"@ko ;
+    kno:surfaceForm "에코"@ko ;
+    a kno:Component .
+kno:KN2020-0230-c2 rdfs:label "프로파일링(profiling)"@ko ;
+    kno:fullForm "프로파일링"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-X2.4 ;
-    rdfs:label "프로파일링(profiling)"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "프로파일링"@ko ;
+    kno:semanticTag kno:usas-X2.4 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "프로파일링"@ko .
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F006814 ;
+    kno:role "성분"@ko .

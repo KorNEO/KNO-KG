@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0480 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0480 a kno:Neologism ;
-    kno:instantiates kno:S000003 ;
-    kno:indexForm "헉남"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%89%EB%82%A8> ;
-    kno:component kno:KN2012-0480-c1 ;
-    kno:predicate "포옹하다"@ko ;
-    kno:languageType "영+한" ;
-    a ontolex:Word ;
-    kno:formation kno:W02 ;
-    kno:slotFiller "헉(←hug) (1성분)"@ko ;
+kno:KN2012-0480 kno:origin "(←hug男)" ;
+    kno:registration "신어DB"@ko ;
     kno:componentString "헉(←hug), -남(男)"@ko ;
-    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%89%EB%82%A8> ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000003 ;
+    kno:component kno:KN2012-0480-c1 ;
+    kno:component kno:KN2012-0480-c2 ;
+    kno:languageType "영+한" ;
+    kno:slotFiller "헉(←hug) (1성분)"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:indexForm "헉남"@ko ;
     kno:activeYears "0"^^xsd:integer ;
     kno:example "¶그리고 30일 방송될 11회에서는 OOO를 집 앞으로 불러낸 OOO이 뒤에서 그녀를 안는 최고 로맨틱 ‘백허그’는 물론 ‘애틋 포옹’을 해 이 시대 최고의 달콤 ‘{헉남’에} 등극할 전망이다."@ko ;
-    skos:definition "포옹하는 남자."@ko ;
-    kno:origin "(←hug男)" ;
+    kno:formation kno:W02 ;
     rdfs:label "헉-남"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2012-0480-c2 ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear .
-kno:KN2012-0480-c1 kno:formative kno:F007048 ;
-    kno:truncated "false"^^xsd:boolean ;
+    a ontolex:Word ;
+    skos:definition "포옹하는 남자."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "포옹하다"@ko .
+kno:KN2012-0480-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F007048 ;
     kno:fullForm "헉"@ko ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-E5 ;
     kno:surfaceForm "헉"@ko ;
+    kno:semanticTag kno:usas-E5 ;
     rdfs:label "헉(←hug)"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2012-0480-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "남"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2012-0480-c2 kno:surfaceForm "남"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
     rdfs:label "-남(男)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:formative kno:F000008 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "남"@ko ;
-    kno:semanticTag kno:usas-S2.2 .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "남"@ko .

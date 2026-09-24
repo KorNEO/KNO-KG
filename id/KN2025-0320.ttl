@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0320 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0320 rdfs:label "삼봉 오란"@ko ;
-    a kno:Neologism ;
-    kno:year "2025"^^xsd:gYear ;
+kno:KN2025-0320 kno:unitType "구"@ko ;
     kno:indexForm "삼봉오란"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0320-freq-NN-total ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "한_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0320-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0320-c2 ;
+    kno:componentString "삼봉(三封), 오란(五卵)"@ko ;
+    skos:definition "(LLM) 라면 세 봉지에 달걀 다섯 개를 넣어 끓인 라면."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EB%B4%89%20%EC%98%A4%EB%9E%80> ;
+    rdfs:label "삼봉 오란"@ko ;
+    kno:year "2025"^^xsd:gYear ;
     kno:example "(LLM) 오늘은 배가 너무 고파서 {삼봉오란을} 끓여 가족들이랑 같이 먹었다."@ko ;
     kno:component kno:KN2025-0320-c1 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2025-0320-freq-NN-total ;
-    kno:origin "(三封五卵)" ;
-    kno:componentString "삼봉(三封), 오란(五卵)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2025-0320-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EB%B4%89%20%EC%98%A4%EB%9E%80> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "한_한" ;
-    a ontolex:MultiwordExpression ;
-    skos:definition "(LLM) 라면 세 봉지에 달걀 다섯 개를 넣어 끓인 라면."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0320-freq-NN-2025 .
-kno:KN2025-0320-c1 kno:role "성분"@ko ;
-    kno:surfaceForm "삼봉"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004214 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "삼봉"@ko ;
-    rdfs:label "삼봉(三封)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-N1 .
+    kno:origin "(三封五卵)" .
 kno:KN2025-0320-c2 rdfs:label "오란(五卵)"@ko ;
-    kno:formative kno:F005112 ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "오란"@ko ;
+    kno:formative kno:F005112 ;
     kno:semanticTag kno:usas-F1 ;
     kno:surfaceForm "오란"@ko ;
     kno:role "성분"@ko ;
-    a kno:Component .
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0320-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    rdfs:label "삼봉(三封)"@ko ;
+    kno:fullForm "삼봉"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004214 ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:surfaceForm "삼봉"@ko .

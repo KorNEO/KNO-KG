@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0283 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0283 kno:instantiates kno:S000570 ;
-    kno:pos "「구」"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:component kno:KN2020-0283-c2 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EB%82%9C%EA%B5%AC%EC%A1%B0%EC%88%98%EB%8B%B9> ;
-    kno:example "¶모 의원은 전 국민에게 기본 소득을 지급하기보다는 코로나19로 인해 생계 위기에 처한 국민에게 신청을 받아 {재난 구조 수당을} 지급하는 방안에 찬성한다고 밝혔다."@ko ;
-    kno:languageType "한^한^한" ;
+kno:KN2020-0283 kno:example "¶모 의원은 전 국민에게 기본 소득을 지급하기보다는 코로나19로 인해 생계 위기에 처한 국민에게 신청을 받아 {재난 구조 수당을} 지급하는 방안에 찬성한다고 밝혔다."@ko ;
+    kno:origin "(災難救助手當)" ;
     kno:indexForm "재난구조수당"@ko ;
-    kno:componentString "재난(災難), 구조(救助), 수당(手當)"@ko ;
-    kno:frequency kno:KN2020-0283-freq-NN-total ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:predicate "지급하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "재난을 당하여 어려움에 빠진 사람을 돕기 위해 정부에서 지급하는 수당. 코로나19의 대유행으로 인한 경제적 위기 상황을 극복하기 위해 정부에서 국민들에게 지원금을 지급하는 방안을 논의하는 과정에서 나온 말이다."@ko ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0283-c2 ;
     kno:frequency kno:KN2020-0283-freq-NN-2020 ;
     kno:component kno:KN2020-0283-c3 ;
+    a kno:Neologism ;
     kno:slotFiller "구조(救助) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "재난^구조^수당"@ko ;
-    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
     kno:component kno:KN2020-0283-c1 ;
-    kno:predicate "지급하다"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0283-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EB%82%9C%EA%B5%AC%EC%A1%B0%EC%88%98%EB%8B%B9> ;
+    kno:componentString "재난(災難), 구조(救助), 수당(手當)"@ko ;
+    rdfs:label "재난^구조^수당"@ko ;
+    kno:year "2020"^^xsd:gYear ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(災難救助手當)" ;
-    skos:definition "재난을 당하여 어려움에 빠진 사람을 돕기 위해 정부에서 지급하는 수당. 코로나19의 대유행으로 인한 경제적 위기 상황을 극복하기 위해 정부에서 국민들에게 지원금을 지급하는 방안을 논의하는 과정에서 나온 말이다."@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2020-0283-c2 kno:formative kno:F002452 ;
-    kno:fullForm "구조"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
+    kno:instantiates kno:S000570 .
+kno:KN2020-0283-c2 kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "구조"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S8p ;
+    rdfs:label "구조(救助)"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "구조(救助)"@ko .
-kno:KN2020-0283-c3 kno:formative kno:F000100 ;
-    kno:surfaceForm "수당"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002452 ;
+    kno:fullForm "구조"@ko .
+kno:KN2020-0283-c3 kno:role "고정항"@ko ;
     rdfs:label "수당(手當)"@ko ;
     a kno:Component ;
+    kno:surfaceForm "수당"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000100 ;
     kno:semanticTag kno:usas-I1 ;
     kno:fullForm "수당"@ko ;
     kno:position "3"^^xsd:integer .
 kno:KN2020-0283-c1 rdfs:label "재난(災難)"@ko ;
-    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-A15m ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     kno:formative kno:F000013 ;
     kno:fullForm "재난"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A15m ;
     kno:surfaceForm "재난"@ko .

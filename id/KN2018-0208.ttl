@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0208 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0208 kno:activeYears "1"^^xsd:integer ;
-    skos:definition "황사나 미세 먼지로부터 몸을 보호하기 위한 옷차림."@ko ;
-    kno:component kno:KN2018-0208-c1 ;
-    kno:frequency kno:KN2018-0208-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    kno:instantiates kno:S000062 ;
+kno:KN2018-0208 rdfs:label "스모그 패션"@ko ;
     kno:example "¶이미지 스타일리스트 OOO 씨는 “올해 많은 패션 브랜드들이 방수ㆍ방진 기능을 강화한 다양한 기능성 소재 의상들을 선보이고 있다.”라며 “‘{스모그 패션’이} 봄철 환절기 패션을 넘어 트렌치코트나 선글라스 같은 전 시즌 아이템으로 확대될 가능성이 크다.”라고 말했다."@ko ;
-    kno:slotFiller "스모그(smog) (1성분)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:component kno:KN2018-0208-c1 ;
+    kno:instantiates kno:S000062 ;
+    kno:component kno:KN2018-0208-c2 ;
+    kno:instantiates kno:S000538 ;
+    a kno:Neologism ;
+    kno:slotFiller "패션(fashion) (1성분)"@ko ;
+    kno:origin "(<영>smog fashion)" ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415672> ;
     kno:urimalTargetCode "1415672" ;
     kno:frequency kno:KN2018-0208-freq-NN-2018 ;
-    kno:component kno:KN2018-0208-c2 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415672> ;
-    kno:unitType "구"@ko ;
-    kno:componentString "스모그(smog), 패션(fashion)"@ko ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    rdfs:label "스모그 패션"@ko ;
-    kno:languageType "영_영" ;
-    kno:origin "(<영>smog fashion)" ;
-    kno:instantiates kno:S000538 ;
-    kno:slotFiller "패션(fashion) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0208-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:registration "우리말샘"@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:indexForm "스모그패션"@ko .
-kno:KN2018-0208-c1 kno:fullForm "스모그"@ko ;
-    rdfs:label "스모그(smog)"@ko ;
+    kno:indexForm "스모그패션"@ko ;
+    kno:slotFiller "스모그(smog) (1성분)"@ko ;
+    kno:languageType "영_영" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "스모그(smog), 패션(fashion)"@ko ;
+    skos:definition "황사나 미세 먼지로부터 몸을 보호하기 위한 옷차림."@ko .
+kno:KN2018-0208-c1 kno:formative kno:F000820 ;
     kno:surfaceForm "스모그"@ko ;
-    kno:semanticTag kno:usas-W4 ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:formative kno:F000820 ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:fullForm "스모그"@ko ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2018-0208-c2 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
+    rdfs:label "스모그(smog)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0208-c2 kno:semanticTag kno:usas-B5 ;
     kno:fullForm "패션"@ko ;
     rdfs:label "패션(fashion)"@ko ;
-    kno:surfaceForm "패션"@ko ;
+    kno:role "고정항"@ko ;
     kno:formative kno:F000123 ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B5 .
+    kno:surfaceForm "패션"@ko ;
+    kno:truncated "false"^^xsd:boolean .

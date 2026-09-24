@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0355 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0355 kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98%EB%B6%81> ;
-    kno:instantiates kno:S000899 ;
-    kno:formation kno:W01 ;
-    skos:definition "상호 작용을 할 수 있게 만든 책."@ko ;
-    kno:componentString "인터렉션(interaction), 북(book)"@ko ;
-    a kno:Neologism ;
+kno:KN2012-0355 kno:formation kno:W01 ;
     kno:frequency kno:KN2012-0355-freq-NN-2013 ;
-    kno:frequency kno:KN2012-0355-freq-NN-2012 ;
     kno:lastAttestationYear "2013"^^xsd:gYear ;
+    skos:definition "상호 작용을 할 수 있게 만든 책."@ko ;
+    rdfs:label "인터렉션-북"@ko ;
+    kno:instantiates kno:S000899 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(interaction book)" ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0355-c1 ;
+    kno:component kno:KN2012-0355-c2 ;
+    kno:frequency kno:KN2012-0355-freq-NN-2012 ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:languageType "영+영" ;
     kno:frequency kno:KN2012-0355-freq-NN-total ;
     kno:example "¶OO은 단순히 텍스트를 떠나 그림을 움직이게 하고 게임, 음악 등의 콘텐츠와 상호 작용을 통해 이야기를 전달하는 {인터렉션북이다}."@ko ;
-    rdfs:label "인터렉션-북"@ko ;
-    a ontolex:Word ;
-    kno:origin "(interaction book)" ;
-    kno:languageType "영+영" ;
     kno:indexForm "인터렉션북"@ko ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
     kno:slotFiller "인터렉션(interaction) (1성분)"@ko ;
-    kno:component kno:KN2012-0355-c1 ;
-    kno:component kno:KN2012-0355-c2 .
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%ED%84%B0%EB%A0%89%EC%85%98%EB%B6%81> ;
+    kno:componentString "인터렉션(interaction), 북(book)"@ko .
 kno:KN2012-0355-c1 kno:semanticTag kno:usas-S1.1.1 ;
-    kno:fullForm "인터렉션"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
     rdfs:label "인터렉션(interaction)"@ko ;
     kno:surfaceForm "인터렉션"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005456 .
-kno:KN2012-0355-c2 kno:semanticTag kno:usas-Q4.1 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "북"@ko ;
-    rdfs:label "북(book)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "북"@ko ;
-    kno:formative kno:F000276 ;
-    a kno:Component ;
+    kno:formative kno:F005456 ;
+    kno:fullForm "인터렉션"@ko ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0355-c2 rdfs:label "북(book)"@ko ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "북"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "북"@ko ;
+    kno:formative kno:F000276 ;
+    kno:role "고정항"@ko .

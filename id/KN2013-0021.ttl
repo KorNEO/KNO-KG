@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0021 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0021 kno:languageType "한+영" ;
-    kno:example "¶OO 멤버 OOO의 {겸손멘션이} 눈길을 끌고 있다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%B8%EC%86%90%EB%A9%98%EC%85%98> ;
-    a ontolex:Word ;
-    kno:origin "(謙遜<영>mention)" ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
+kno:KN2013-0021 skos:definition "남을 존중하고 자기를 내세우지 않는 말."@ko ;
+    kno:year "2013"^^xsd:gYear ;
     kno:frequency kno:KN2013-0021-freq-NN-2012 ;
+    kno:languageType "한+영" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "않다"@ko ;
+    kno:formation kno:W01 ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0021-c2 ;
+    a kno:Neologism ;
+    kno:origin "(謙遜<영>mention)" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2013-0021-c1 ;
+    kno:example "¶OO 멤버 OOO의 {겸손멘션이} 눈길을 끌고 있다."@ko ;
     kno:frequency kno:KN2013-0021-freq-NN-total ;
     kno:componentString "겸손(謙遜), 멘션(mention)"@ko ;
-    kno:component kno:KN2013-0021-c1 ;
-    kno:component kno:KN2013-0021-c2 ;
-    skos:definition "남을 존중하고 자기를 내세우지 않는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%B8%EC%86%90%EB%A9%98%EC%85%98> ;
     kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    a kno:Neologism ;
-    rdfs:label "겸손-멘션"@ko ;
-    kno:predicate "않다"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:indexForm "겸손멘션"@ko .
-kno:KN2013-0021-c1 kno:formative kno:F002227 ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "겸손"@ko ;
-    rdfs:label "겸손(謙遜)"@ko ;
-    kno:surfaceForm "겸손"@ko ;
-    kno:semanticTag kno:usas-S1.2.4p ;
-    a kno:Component .
-kno:KN2013-0021-c2 rdfs:label "멘션(mention)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:indexForm "겸손멘션"@ko ;
+    rdfs:label "겸손-멘션"@ko .
+kno:KN2013-0021-c2 a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
     kno:fullForm "멘션"@ko ;
+    rdfs:label "멘션(mention)"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "멘션"@ko ;
-    kno:formative kno:F003449 .
+    kno:formative kno:F003449 ;
+    kno:semanticTag kno:usas-Q2.2 .
+kno:KN2013-0021-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "겸손"@ko ;
+    kno:formative kno:F002227 ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "겸손"@ko ;
+    rdfs:label "겸손(謙遜)"@ko ;
+    a kno:Component ;
+    kno:role "성분"@ko .

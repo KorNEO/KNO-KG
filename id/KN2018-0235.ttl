@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0235 kno:instantiates kno:S000376 ;
-    kno:pos "「명」"@ko ;
-    skos:definition "‘양고기’와 ‘맥주’를 아울러 이르는 말."@ko ;
-    kno:activeYears "0"^^xsd:integer ;
+kno:KN2018-0235 a kno:Neologism ;
+    kno:unitType "단어"@ko ;
     kno:origin "(羊麥)" ;
-    kno:slotFiller "양(고기)(羊) (1성분)"@ko ;
-    kno:formation kno:W06 ;
-    kno:year "2018"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:indexForm "양맥"@ko ;
-    kno:component kno:KN2018-0235-c2 ;
+    skos:definition "‘양고기’와 ‘맥주’를 아울러 이르는 말."@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416278> ;
-    kno:component kno:KN2018-0235-c1 ;
-    kno:registration "우리말샘"@ko ;
-    kno:example "¶치맥 대신 {양맥이라는} 말이 나올 정도로 요즘 양고기가 인기를 끌고 있다는데요."@ko ;
-    a ontolex:Word ;
+    kno:slotFiller "양(고기)(羊) (1성분)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
     kno:languageType "한+한" ;
-    rdfs:label "양맥"@ko ;
-    kno:componentString "양(고기)(羊), 맥(주)(麥)"@ko ;
+    kno:indexForm "양맥"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000376 ;
     kno:urimalTargetCode "1416278" ;
-    kno:unitType "단어"@ko .
-kno:KN2018-0235-c2 kno:formative kno:F000171 ;
-    kno:fullForm "맥주"@ko ;
+    rdfs:label "양맥"@ko ;
+    kno:component kno:KN2018-0235-c1 ;
+    kno:example "¶치맥 대신 {양맥이라는} 말이 나올 정도로 요즘 양고기가 인기를 끌고 있다는데요."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "양(고기)(羊), 맥(주)(麥)"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2018-0235-c2 ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2018-0235-c1 kno:semanticTag kno:usas-F1 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    rdfs:label "맥(주)(麥)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "맥"@ko ;
-    kno:semanticTag kno:usas-F2 .
-kno:KN2018-0235-c1 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "양(고기)(羊)"@ko ;
-    kno:surfaceForm "양"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
     kno:formative kno:F004922 ;
     kno:fullForm "양고기"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 .
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "양"@ko ;
+    rdfs:label "양(고기)(羊)"@ko .
+kno:KN2018-0235-c2 rdfs:label "맥(주)(麥)"@ko ;
+    kno:surfaceForm "맥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000171 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    a kno:Component ;
+    kno:fullForm "맥주"@ko .

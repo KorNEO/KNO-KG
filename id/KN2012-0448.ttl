@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0448 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0448 kno:component kno:KN2012-0448-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0448-c3 ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    skos:definition "게임에서, 적에게 정해진 비율에 따라 피해를 주는 캐릭터."@ko ;
-    kno:predicate "주다"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
+kno:KN2012-0448 kno:indexForm "퍼뎀캐"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8D%BC%EB%8E%80%EC%BA%90> ;
     kno:componentString "퍼(센트)(percent), 뎀(이지)(damage), 캐(릭터)(character)"@ko ;
-    kno:slotFiller "퍼(센트)(percent) (1성분)"@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2012-0448-freq-NN-2017 ;
+    kno:origin "(▼←percent damage character)" ;
+    skos:definition "게임에서, 적에게 정해진 비율에 따라 피해를 주는 캐릭터."@ko ;
+    rdfs:label "퍼뎀캐"@ko ;
+    kno:example "¶대표적인…애초 정해진 컨셉대로 {퍼뎀캐는} 초반엔 약하지만 투자를 할수록 강해지고, 고뎀캐는 초반부터 상당히 강하지만 투자를 하더라도 강해지는 정도가 다소 떨어진다."@ko ;
+    kno:languageType "영+영" ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
     kno:instantiates kno:S000830 ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2012-0448-c2 ;
     kno:frequency kno:KN2012-0448-freq-NN-total ;
-    rdfs:label "퍼뎀캐"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:slotFiller "퍼(센트)(percent) (1성분)"@ko ;
     a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2012-0448-c1 ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "영+영" ;
-    kno:example "¶대표적인…애초 정해진 컨셉대로 {퍼뎀캐는} 초반엔 약하지만 투자를 할수록 강해지고, 고뎀캐는 초반부터 상당히 강하지만 투자를 하더라도 강해지는 정도가 다소 떨어진다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2012-0448-freq-NN-2017 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8D%BC%EB%8E%80%EC%BA%90> ;
-    kno:origin "(▼←percent damage character)" ;
-    kno:indexForm "퍼뎀캐"@ko .
-kno:KN2012-0448-c1 kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-N1 ;
-    rdfs:label "퍼(센트)(percent)"@ko ;
-    kno:formative kno:F006668 ;
+    kno:predicate "주다"@ko ;
+    kno:component kno:KN2012-0448-c3 .
+kno:KN2012-0448-c2 rdfs:label "뎀(이지)(damage)"@ko ;
+    kno:surfaceForm "뎀"@ko ;
+    kno:fullForm "뎀이지"@ko ;
+    kno:formative kno:F001186 ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.1.2 .
+kno:KN2012-0448-c1 kno:fullForm "퍼센트"@ko ;
+    rdfs:label "퍼(센트)(percent)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "퍼"@ko ;
-    kno:fullForm "퍼센트"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2012-0448-c3 kno:fullForm "캐릭터"@ko ;
+    kno:formative kno:F006668 ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .
+kno:KN2012-0448-c3 kno:position "3"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:surfaceForm "캐"@ko ;
-    kno:semanticTag kno:usas-K4 ;
-    kno:position "3"^^xsd:integer ;
     kno:formative kno:F000192 ;
-    rdfs:label "캐(릭터)(character)"@ko .
-kno:KN2012-0448-c2 a kno:Component ;
-    kno:surfaceForm "뎀"@ko ;
-    kno:semanticTag kno:usas-A1.1.2 ;
-    kno:formative kno:F001186 ;
-    kno:fullForm "뎀이지"@ko ;
-    rdfs:label "뎀(이지)(damage)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko .
+    rdfs:label "캐(릭터)(character)"@ko ;
+    kno:surfaceForm "캐"@ko ;
+    kno:fullForm "캐릭터"@ko ;
+    kno:semanticTag kno:usas-K4 .

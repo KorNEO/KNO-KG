@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0042 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0042 a ontolex:Word ;
-    kno:example "¶백화점 측은 밤에 캠핑을 즐기는 ‘{나핑족}’, 록 페스티벌 캠핑 마니아 ‘록페족’이라는 신조어가 등장할 정도로 야간의 열대야 현상과 블랙아웃을 피하기 위해 도심 속에서 캠핑을 즐기는 사람들이 늘어나는 추세에 힘입어 이 같은 행사를 준비했다고 설명했다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2014-0042-c2 ;
-    kno:predicate "즐기다"@ko ;
+kno:KN2014-0042 kno:predicate "즐기다"@ko ;
+    kno:componentString "나(이트)(night), (캠)핑(camping), -족(族)"@ko ;
+    kno:origin "(<영>←night camping族)" ;
+    kno:frequency kno:KN2014-0042-freq-NN-total ;
     skos:definition "밤에 산이나 들 또는 바닷가 따위로 나가 텐트를 치고 야영하는 것을 즐기는 사람. 또는 그런 무리."@ko ;
-    kno:component kno:KN2014-0042-c3 ;
+    a kno:Neologism ;
+    kno:component kno:KN2014-0042-c1 ;
+    kno:component kno:KN2014-0042-c2 ;
     kno:urimalTargetCode "1369057" ;
-    kno:slotFiller "(캠)핑(camping) (1성분)"@ko ;
     rdfs:label "나핑-족"@ko ;
     kno:lastAttestationYear "2013"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2014-0042-c1 ;
-    kno:origin "(<영>←night camping族)" ;
     kno:indexForm "나핑족"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:frequency kno:KN2014-0042-freq-NN-total ;
-    a kno:Neologism ;
-    kno:componentString "나(이트)(night), (캠)핑(camping), -족(族)"@ko ;
-    kno:frequency kno:KN2014-0042-freq-NN-2013 ;
     kno:languageType "영+한" ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2014-0042-freq-NN-2013 ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "단어"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369057> ;
+    kno:component kno:KN2014-0042-c3 ;
+    kno:slotFiller "(캠)핑(camping) (1성분)"@ko ;
     kno:formation kno:W02 ;
-    kno:instantiates kno:S001271 ;
-    kno:registration "우리말샘"@ko .
-kno:KN2014-0042-c2 a kno:Component ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:example "¶백화점 측은 밤에 캠핑을 즐기는 ‘{나핑족}’, 록 페스티벌 캠핑 마니아 ‘록페족’이라는 신조어가 등장할 정도로 야간의 열대야 현상과 블랙아웃을 피하기 위해 도심 속에서 캠핑을 즐기는 사람들이 늘어나는 추세에 힘입어 이 같은 행사를 준비했다고 설명했다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S001271 .
+kno:KN2014-0042-c1 rdfs:label "나(이트)(night)"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:role "고정항"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "나이트"@ko ;
+    kno:surfaceForm "나"@ko ;
+    kno:formative kno:F001136 .
+kno:KN2014-0042-c2 kno:fullForm "캠핑"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F006910 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     rdfs:label "(캠)핑(camping)"@ko ;
-    kno:fullForm "캠핑"@ko ;
-    kno:semanticTag kno:usas-K1 ;
-    kno:formative kno:F006910 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "핑"@ko .
-kno:KN2014-0042-c3 kno:surfaceForm "족"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "-족(族)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "핑"@ko ;
+    kno:semanticTag kno:usas-K1 .
+kno:KN2014-0042-c3 kno:semanticTag kno:usas-S5 ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
     kno:formative kno:F000001 ;
     a kno:Component ;
-    kno:fullForm "족"@ko .
-kno:KN2014-0042-c1 rdfs:label "나(이트)(night)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F001136 ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:fullForm "나이트"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "나"@ko .
+    rdfs:label "-족(族)"@ko ;
+    kno:position "3"^^xsd:integer .

@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0127 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0127 kno:pos "「구」"@ko ;
-    kno:indexForm "배배테크"@ko ;
-    kno:origin "(倍賠<영>tech)" ;
-    kno:instantiates kno:S000239 ;
-    kno:componentString "배배(倍賠), (재)테크(財tech)"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B0%EB%B0%B0%ED%85%8C%ED%81%AC> ;
+kno:KN2021-0127 kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0127-c1 ;
     kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "배배^테크"@ko ;
+    a kno:Neologism ;
+    kno:componentString "배배(倍賠), (재)테크(財tech)"@ko ;
+    kno:pos "「구」"@ko ;
     skos:definition "‘배액 배상 재테크’를 줄여 이르는 말. 매수인이 재테크를 할 수 있을 정도로 배액 배상이 흔해진 부동산 시장을 비꼬아 이르는 말이다."@ko ;
+    kno:component kno:KN2021-0127-c2 ;
+    rdfs:label "배배^테크"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:slotFiller "배배(倍賠) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0127-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶집값이 빠르게 올라 기존 계약을 파기하는 경우가 빈번하게 발생했고 이로 인해 ‘{배배 테크’가} 가능하다는 일종의 풍자도 나오고 있다."@ko ;
+    kno:unitType "구"@ko ;
     a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2021-0127-freq-NN-2020 ;
-    kno:frequency kno:KN2021-0127-freq-NN-total ;
-    kno:component kno:KN2021-0127-c2 ;
-    kno:component kno:KN2021-0127-c1 ;
-    kno:example "¶집값이 빠르게 올라 기존 계약을 파기하는 경우가 빈번하게 발생했고 이로 인해 ‘{배배 테크’가} 가능하다는 일종의 풍자도 나오고 있다."@ko ;
-    kno:slotFiller "배배(倍賠) (1성분)"@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
+    kno:instantiates kno:S000239 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B0%EB%B0%B0%ED%85%8C%ED%81%AC> ;
+    kno:indexForm "배배테크"@ko ;
+    kno:origin "(倍賠<영>tech)" ;
     kno:languageType "한^영" .
-kno:KN2021-0127-c2 kno:position "2"^^xsd:integer ;
-    kno:fullForm "재테크"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:surfaceForm "테크"@ko ;
-    rdfs:label "(재)테크(財tech)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000065 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko .
-kno:KN2021-0127-c1 kno:fullForm "배배"@ko ;
-    kno:surfaceForm "배배"@ko ;
-    kno:formative kno:F003735 ;
+kno:KN2021-0127-c1 kno:role "슬롯 채움"@ko ;
     rdfs:label "배배(倍賠)"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "배배"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component .
+    a kno:Component ;
+    kno:surfaceForm "배배"@ko ;
+    kno:formative kno:F003735 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0127-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "재테크"@ko ;
+    kno:formative kno:F000065 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "테크"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(재)테크(財tech)"@ko .

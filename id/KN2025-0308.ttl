@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0308 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0308 kno:instantiates kno:S000213 ;
-    kno:unitType "단어"@ko ;
+kno:KN2025-0308 a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(빵<영>taxi)" ;
+    rdfs:label "빵-택시"@ko ;
+    kno:instantiates kno:S000213 ;
+    kno:year "2025"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:example "(LLM) 대전에 도착하자마자 {빵택시를} 예약해 추천 코스대로 빵집 여러 곳을 편하게 돌았다."@ko ;
     kno:frequency kno:KN2025-0308-freq-NN-2025 ;
-    rdfs:label "빵-택시"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:slotFiller "택시(taxi) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0308-c1 ;
-    kno:component kno:KN2025-0308-c2 ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    a kno:Neologism ;
-    kno:origin "(빵<영>taxi)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%ED%83%9D%EC%8B%9C> ;
-    kno:languageType "고+영" ;
     kno:indexForm "빵택시"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고+영" ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "(LLM) 지역의 유명 빵집을 관광하듯 둘러볼 수 있도록 이동을 제공하고, 빵집 정보ㆍ추천 코스 안내 등을 함께 하는 택시(또는 택시형 관광 서비스)."@ko ;
+    kno:component kno:KN2025-0308-c2 ;
     kno:componentString "빵, 택시(taxi)"@ko ;
-    a ontolex:Word ;
     kno:frequency kno:KN2025-0308-freq-NN-total ;
-    skos:definition "(LLM) 지역의 유명 빵집을 관광하듯 둘러볼 수 있도록 이동을 제공하고, 빵집 정보ㆍ추천 코스 안내 등을 함께 하는 택시(또는 택시형 관광 서비스)."@ko .
-kno:KN2025-0308-c1 kno:role "고정항"@ko ;
-    kno:surfaceForm "빵"@ko ;
-    rdfs:label "빵"@ko ;
-    kno:fullForm "빵"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F000175 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0308-c2 kno:fullForm "택시"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "택시"@ko ;
-    a kno:Component ;
+    kno:component kno:KN2025-0308-c1 ;
+    kno:formation kno:W01 ;
+    kno:slotFiller "택시(taxi) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%ED%83%9D%EC%8B%9C> .
+kno:KN2025-0308-c2 kno:surfaceForm "택시"@ko ;
     kno:semanticTag kno:usas-M3 ;
     kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "택시(taxi)"@ko ;
-    kno:formative kno:F001891 .
+    kno:formative kno:F001891 ;
+    a kno:Component ;
+    kno:fullForm "택시"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "택시(taxi)"@ko .
+kno:KN2025-0308-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000175 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "빵"@ko ;
+    kno:fullForm "빵"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "빵"@ko .

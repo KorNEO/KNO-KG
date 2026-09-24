@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0246 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0246 kno:instantiates kno:S000128 ;
-    kno:component kno:KN2025-0246-c3 ;
-    kno:componentString "물소, 떼, 전략(戰略)"@ko ;
+kno:KN2025-0246 kno:example "(LLM) 대통령실은 장관 후보자 논란이 커지자 청문회가 끝난 뒤 여러 인선을 한 번에 발표하는 {물소떼전략을} 검토하는 것 아니냐는 관측이 나왔다."@ko ;
+    kno:slotFiller "물소+떼 (2성분)"@ko ;
     kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0246-c2 ;
+    a kno:Neologism ;
+    kno:componentString "물소, 떼, 전략(戰略)"@ko ;
+    kno:component kno:KN2025-0246-c3 ;
+    kno:instantiates kno:S000128 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "물소떼전략"@ko ;
     kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%BC%EC%86%8C%EB%96%BC%20%EC%A0%84%EB%9E%B5> ;
-    kno:pos "「구」"@ko ;
-    skos:definition "(LLM) 여러 사안이나 조치를 한꺼번에 밀어붙여 비판ㆍ공격의 초점을 분산시키거나 특정 사안에 대한 주목도를 낮추려는 정치적 대응 방식."@ko ;
-    kno:component kno:KN2025-0246-c2 ;
-    kno:example "(LLM) 대통령실은 장관 후보자 논란이 커지자 청문회가 끝난 뒤 여러 인선을 한 번에 발표하는 {물소떼전략을} 검토하는 것 아니냐는 관측이 나왔다."@ko ;
-    kno:frequency kno:KN2025-0246-freq-NN-2025 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0246-freq-NN-total ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:label "물소떼 전략"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "물소+떼 (2성분)"@ko ;
     kno:component kno:KN2025-0246-c1 ;
-    kno:indexForm "물소떼전략"@ko ;
+    rdfs:label "물소떼 전략"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0246-freq-NN-2025 ;
+    skos:definition "(LLM) 여러 사안이나 조치를 한꺼번에 밀어붙여 비판ㆍ공격의 초점을 분산시키거나 특정 사안에 대한 주목도를 낮추려는 정치적 대응 방식."@ko ;
     kno:unitType "구"@ko ;
-    a kno:Neologism .
-kno:KN2025-0246-c3 kno:position "3"^^xsd:integer ;
-    kno:fullForm "전략"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000061 ;
-    kno:semanticTag kno:usas-X7 ;
-    kno:surfaceForm "전략"@ko ;
-    rdfs:label "전략(戰略)"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component .
-kno:KN2025-0246-c2 kno:formative kno:F000258 ;
-    kno:surfaceForm "떼"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0246-freq-NN-total .
+kno:KN2025-0246-c2 kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S5 ;
-    kno:role "슬롯 채움"@ko ;
     rdfs:label "떼"@ko ;
+    kno:surfaceForm "떼"@ko ;
+    kno:formative kno:F000258 ;
     a kno:Component ;
-    kno:fullForm "떼"@ko .
-kno:KN2025-0246-c1 kno:surfaceForm "물소"@ko ;
-    rdfs:label "물소"@ko ;
-    kno:formative kno:F003561 ;
-    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "떼"@ko .
+kno:KN2025-0246-c3 kno:semanticTag kno:usas-X7 ;
+    kno:formative kno:F000061 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "전략(戰略)"@ko ;
+    kno:fullForm "전략"@ko ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
+    kno:surfaceForm "전략"@ko .
+kno:KN2025-0246-c1 kno:formative kno:F003561 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-L2 ;
     kno:fullForm "물소"@ko ;
-    kno:semanticTag kno:usas-L2 .
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "물소"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "물소"@ko .

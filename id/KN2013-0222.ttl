@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0222 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0222 kno:componentString "뻔(하다), 생(활 정보)(生), 토크(talk)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:example "¶OO의 엠시 OOO는 얼짱 OOO의 노하우를 검증하기 위해, 베스트와 워스트 1순위를 가려내기 위한 강도 높은 {뻔생 토크를} 실시했다."@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
+kno:KN2013-0222 kno:component kno:KN2013-0222-c3 ;
     kno:frequency kno:KN2013-0222-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2013-0222-c1 ;
+    skos:definition "뻔한 생활 정보에 대한 이야기."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a kno:Neologism ;
+    rdfs:label "뻔생 토크"@ko ;
     kno:origin "(뻔生<영>talk)" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2013-0222-freq-NN-2013 ;
+    kno:example "¶OO의 엠시 OOO는 얼짱 OOO의 노하우를 검증하기 위해, 베스트와 워스트 1순위를 가려내기 위한 강도 높은 {뻔생 토크를} 실시했다."@ko ;
+    kno:languageType "(고+한)_영" ;
     kno:instantiates kno:S001430 ;
     kno:registration "신어DB"@ko ;
-    skos:definition "뻔한 생활 정보에 대한 이야기."@ko ;
     kno:slotFiller "토크(talk) (1성분)"@ko ;
-    kno:languageType "(고+한)_영" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%BB%94%EC%83%9D%20%ED%86%A0%ED%81%AC> ;
-    a kno:Neologism ;
-    kno:indexForm "뻔생토크"@ko ;
     kno:component kno:KN2013-0222-c2 ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:frequency kno:KN2013-0222-freq-NN-2013 ;
-    kno:component kno:KN2013-0222-c1 ;
-    rdfs:label "뻔생 토크"@ko ;
+    kno:indexForm "뻔생토크"@ko ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2013-0222-c3 .
-kno:KN2013-0222-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F001453 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "생"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "생(활 정보)(生)"@ko ;
-    kno:semanticTag kno:usas-X2.2 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:componentString "뻔(하다), 생(활 정보)(生), 토크(talk)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%BB%94%EC%83%9D%20%ED%86%A0%ED%81%AC> .
+kno:KN2013-0222-c3 kno:role "슬롯 채움"@ko ;
+    rdfs:label "토크(talk)"@ko ;
+    kno:formative kno:F006484 ;
+    kno:surfaceForm "토크"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
-    kno:fullForm "생활 정보"@ko .
-kno:KN2013-0222-c1 a kno:Component ;
-    kno:semanticTag kno:usas-A11.2p ;
-    rdfs:label "뻔(하다)"@ko ;
-    kno:formative kno:F001423 ;
-    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q2.1 ;
+    kno:fullForm "토크"@ko .
+kno:KN2013-0222-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
     kno:fullForm "뻔하다"@ko ;
     kno:surfaceForm "뻔"@ko ;
+    rdfs:label "뻔(하다)"@ko ;
+    kno:semanticTag kno:usas-A11.2p ;
+    kno:formative kno:F001423 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0222-c2 rdfs:label "생(활 정보)(生)"@ko ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:fullForm "생활 정보"@ko ;
+    kno:surfaceForm "생"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko .
-kno:KN2013-0222-c3 kno:formative kno:F006484 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "토크"@ko ;
-    rdfs:label "토크(talk)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "토크"@ko ;
-    kno:semanticTag kno:usas-Q2.1 .
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001453 .

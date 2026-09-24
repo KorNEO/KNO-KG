@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0697 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0697 kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2025-0697-freq-NN-total ;
-    rdfs:label "환율 오적"@ko ;
-    kno:example "(LLM) 원화 약세가 길어지자 온라인에서는 {환율오적을} 거론하며 환율 상승의 책임이 누구에게 있는지 따지는 글이 이어졌다."@ko ;
+kno:KN2025-0697 kno:origin "(換率五賊)" ;
     a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2025-0697-freq-NN-total ;
+    kno:frequency kno:KN2025-0697-freq-NN-2025 ;
+    kno:component kno:KN2025-0697-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EC%9C%A8%20%EC%98%A4%EC%A0%81> ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한_한" ;
+    kno:componentString "환율(換率), 오적(五賊)"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
     kno:indexForm "환율오적"@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EC%9C%A8%20%EC%98%A4%EC%A0%81> ;
-    skos:definition "(LLM) 환율 상승(원화 약세)과 관련해 책임이 있다고 지목되는 다섯 집단이나 요인을 묶어 비판적으로 이르는 말."@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "환율(換率), 오적(五賊)"@ko ;
-    kno:component kno:KN2025-0697-c2 ;
-    kno:languageType "한_한" ;
+    kno:example "(LLM) 원화 약세가 길어지자 온라인에서는 {환율오적을} 거론하며 환율 상승의 책임이 누구에게 있는지 따지는 글이 이어졌다."@ko ;
+    rdfs:label "환율 오적"@ko ;
     kno:year "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0697-c1 ;
-    kno:frequency kno:KN2025-0697-freq-NN-2025 ;
-    kno:origin "(換率五賊)" .
-kno:KN2025-0697-c2 kno:role "성분"@ko ;
-    rdfs:label "오적(五賊)"@ko ;
+    skos:definition "(LLM) 환율 상승(원화 약세)과 관련해 책임이 있다고 지목되는 다섯 집단이나 요인을 묶어 비판적으로 이르는 말."@ko .
+kno:KN2025-0697-c2 a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "오적"@ko ;
-    kno:fullForm "오적"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F005125 ;
-    kno:semanticTag kno:usas-G1.2 .
-kno:KN2025-0697-c1 kno:surfaceForm "환율"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:fullForm "환율"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
     kno:role "성분"@ko ;
+    kno:formative kno:F005125 ;
+    kno:surfaceForm "오적"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "오적(五賊)"@ko ;
+    kno:fullForm "오적"@ko .
+kno:KN2025-0697-c1 kno:formative kno:F002030 ;
+    kno:fullForm "환율"@ko ;
+    rdfs:label "환율(換率)"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:formative kno:F002030 ;
-    rdfs:label "환율(換率)"@ko .
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "환율"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean .

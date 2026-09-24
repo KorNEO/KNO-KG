@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0216 kno:predicate "함께하다"@ko ;
-    kno:example "¶최근 일본에서는 고민 상담부터 쇼핑, 여행 등 이전에 친구나 연인과 함께 하던 것들을 이제는 부모와 함께 하는 젊은이들이 늘면서 ‘{부모러브족’이라는} 신조어가 유행하고 있다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "부모(父母)+러브(love) (2성분)"@ko ;
-    kno:languageType "(한+영)+한" ;
-    kno:componentString "부모(父母), 러브(love), -족(族)"@ko ;
-    kno:frequency kno:KN2016-0216-freq-NN-2017 ;
-    kno:component kno:KN2016-0216-c1 ;
-    rdfs:label "부모러브-족"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:component kno:KN2016-0216-c2 ;
-    kno:frequency kno:KN2016-0216-freq-NN-2016 ;
-    kno:registration "신어DB"@ko ;
-    kno:indexForm "부모러브족"@ko ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%EB%AA%A8%EB%9F%AC%EB%B8%8C%EC%A1%B1> ;
-    kno:instantiates kno:S000001 ;
-    a ontolex:Word ;
+kno:KN2016-0216 kno:lastAttestationYear "2017"^^xsd:gYear ;
     kno:formation kno:W02 ;
-    kno:origin "(父母<영>love族)" ;
     skos:definition "부모와 여행이나 쇼핑 등을 함께하는 사람. 또는 그런 무리. 친구나 연인들과 함께 했던 것들을 부모와 함께 즐기려는 미혼들이다."@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2016-0216-freq-NN-2017 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:languageType "(한+영)+한" ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0216-c1 ;
+    kno:slotFiller "부모(父母)+러브(love) (2성분)"@ko ;
+    kno:indexForm "부모러브족"@ko ;
+    kno:componentString "부모(父母), 러브(love), -족(族)"@ko ;
+    kno:predicate "함께하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%EB%AA%A8%EB%9F%AC%EB%B8%8C%EC%A1%B1> ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2016-0216-freq-NN-total ;
+    kno:origin "(父母<영>love族)" ;
     kno:component kno:KN2016-0216-c3 ;
-    kno:year "2016"^^xsd:gYear ;
+    rdfs:label "부모러브-족"@ko ;
+    kno:component kno:KN2016-0216-c2 ;
     a kno:Neologism ;
-    kno:frequency kno:KN2016-0216-freq-NN-total .
+    kno:frequency kno:KN2016-0216-freq-NN-2016 ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶최근 일본에서는 고민 상담부터 쇼핑, 여행 등 이전에 친구나 연인과 함께 하던 것들을 이제는 부모와 함께 하는 젊은이들이 늘면서 ‘{부모러브족’이라는} 신조어가 유행하고 있다."@ko ;
+    kno:year "2016"^^xsd:gYear .
 kno:KN2016-0216-c1 a kno:Component ;
-    kno:surfaceForm "부모"@ko ;
+    rdfs:label "부모(父母)"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
     kno:formative kno:F000515 ;
-    kno:semanticTag kno:usas-S4 ;
-    rdfs:label "부모(父母)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:fullForm "부모"@ko ;
+    kno:surfaceForm "부모"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0216-c3 kno:fullForm "족"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "부모"@ko .
-kno:KN2016-0216-c2 kno:position "2"^^xsd:integer ;
+    kno:position "3"^^xsd:integer .
+kno:KN2016-0216-c2 kno:surfaceForm "러브"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E2 ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "러브"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-E2 ;
-    kno:surfaceForm "러브"@ko ;
+    rdfs:label "러브(love)"@ko ;
     kno:formative kno:F001235 ;
-    a kno:Component ;
-    rdfs:label "러브(love)"@ko .
-kno:KN2016-0216-c3 rdfs:label "-족(族)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:fullForm "족"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "족"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:formative kno:F000001 .
+    kno:role "슬롯 채움"@ko .

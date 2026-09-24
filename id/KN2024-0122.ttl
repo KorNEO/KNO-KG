@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0122 kno:instantiates kno:S000009 ;
-    rdfs:label "서오녀01"@ko ;
+kno:KN2024-0122 a kno:Neologism ;
     kno:unitType "단어"@ko ;
+    kno:languageType "고+한+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶이번 인사이동에서 승진 발령을 통해 보직이 변경된 O 차장과 O 원장의 공통점은 {서오녀라는} 점이다."@ko ;
     kno:component kno:KN2024-0122-c3 ;
-    kno:formation kno:W06 ;
-    kno:component kno:KN2024-0122-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S001448 ;
+    skos:definition "‘서울대 출신의 오십 대 여자’를 줄여 이르는 말."@ko ;
+    kno:origin "(서五女)" ;
+    kno:instantiates kno:S000009 ;
+    rdfs:label "서오녀01"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EC%98%A4%EB%85%8001> ;
     kno:slotFiller "오(십)(五十)+-녀(女) (2성분)"@ko ;
     kno:componentString "서(울대학교), 오(십)(五十), -녀(女)"@ko ;
-    kno:origin "(서五女)" ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "서(울대학교)+오(십)(五十) (2성분)"@ko ;
-    kno:languageType "고+한+한" ;
-    a ontolex:Word ;
-    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0122-c2 ;
+    kno:formation kno:W06 ;
     kno:indexForm "서오녀"@ko ;
-    skos:definition "‘서울대 출신의 오십 대 여자’를 줄여 이르는 말."@ko ;
-    kno:example "¶이번 인사이동에서 승진 발령을 통해 보직이 변경된 O 차장과 O 원장의 공통점은 {서오녀라는} 점이다."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%9C%EC%98%A4%EB%85%8001> ;
-    a kno:Neologism ;
-    kno:instantiates kno:S001448 ;
-    kno:component kno:KN2024-0122-c2 .
-kno:KN2024-0122-c3 kno:fullForm "녀"@ko ;
-    kno:surfaceForm "녀"@ko ;
-    kno:role "고정항"@ko ;
+    kno:slotFiller "서(울대학교)+오(십)(五十) (2성분)"@ko ;
+    kno:component kno:KN2024-0122-c1 ;
+    a ontolex:Word .
+kno:KN2024-0122-c3 rdfs:label "-녀(女)"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000004 ;
-    rdfs:label "-녀(女)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2.1 .
-kno:KN2024-0122-c1 kno:fullForm "서울대학교"@ko ;
-    kno:surfaceForm "서"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
-    rdfs:label "서(울대학교)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F001458 ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
-    a kno:Component .
-kno:KN2024-0122-c2 kno:surfaceForm "오"@ko ;
-    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:fullForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "녀"@ko ;
+    kno:formative kno:F000004 .
+kno:KN2024-0122-c2 kno:position "2"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-N1 ;
-    kno:formative kno:F005104 ;
+    rdfs:label "오(십)(五十)"@ko ;
     kno:fullForm "오십"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "오(십)(五十)"@ko .
+    kno:surfaceForm "오"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005104 ;
+    a kno:Component .
+kno:KN2024-0122-c1 kno:surfaceForm "서"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001458 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "서(울대학교)"@ko ;
+    kno:fullForm "서울대학교"@ko ;
+    kno:semanticTag kno:usas-Z3 .

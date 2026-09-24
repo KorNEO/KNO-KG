@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0370 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0370 kno:componentString "코로(나바이러스)(corona virus), (이코)노미(economy), 쇼크(shock)"@ko ;
-    a kno:Neologism ;
+kno:KN2020-0370 kno:slotFiller "코로(나바이러스)(corona virus)+(이코)노미(economy) (2성분)"@ko ;
     kno:example "¶경제 활동 인구의 이동이 제한되고, 국제 분업 체계가 변화하며, 실업 대란이 발생하는 등의 현상을 세계 언론은 ‘{코로노미 쇼크’란} 용어로 압축하여 표현했다."@ko ;
-    kno:component kno:KN2020-0370-c3 ;
-    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "코로나19의 확산에 영향을 받아 발생하는 경제적 충격을 이르는 말."@ko ;
     kno:origin "(<영>←corona virus←economy shock)" ;
-    kno:registration "우리말샘"@ko ;
-    kno:slotFiller "코로(나바이러스)(corona virus)+(이코)노미(economy) (2성분)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2020-0370-c2 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1500229> ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:year "2020"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:urimalTargetCode "1500229" ;
     kno:instantiates kno:S000097 ;
     kno:frequency kno:KN2020-0370-freq-NN-total ;
-    kno:languageType "영_영" ;
-    kno:frequency kno:KN2020-0370-freq-NN-2020 ;
-    kno:component kno:KN2020-0370-c1 ;
-    kno:pos "「구」"@ko ;
+    kno:componentString "코로(나바이러스)(corona virus), (이코)노미(economy), 쇼크(shock)"@ko ;
     rdfs:label "코로노미 쇼크"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:urimalTargetCode "1500229" ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:indexForm "코로노미쇼크"@ko ;
-    skos:definition "코로나19의 확산에 영향을 받아 발생하는 경제적 충격을 이르는 말."@ko ;
+    kno:component kno:KN2020-0370-c2 ;
+    kno:languageType "영_영" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1500229> ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0370-c3 ;
     kno:frequency kno:KN2020-0370-freq-NN-2021 ;
-    a ontolex:MultiwordExpression .
-kno:KN2020-0370-c3 a kno:Component ;
-    kno:fullForm "쇼크"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
+    kno:indexForm "코로노미쇼크"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0370-c1 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2020-0370-freq-NN-2020 .
+kno:KN2020-0370-c2 kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001151 ;
+    kno:fullForm "이코노미"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(이코)노미(economy)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "노미"@ko ;
+    kno:semanticTag kno:usas-I1 .
+kno:KN2020-0370-c3 kno:fullForm "쇼크"@ko ;
     kno:semanticTag kno:usas-E5m ;
     kno:surfaceForm "쇼크"@ko ;
-    kno:formative kno:F000177 ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    rdfs:label "쇼크(shock)"@ko .
-kno:KN2020-0370-c2 rdfs:label "(이코)노미(economy)"@ko ;
-    kno:formative kno:F001151 ;
-    kno:surfaceForm "노미"@ko ;
-    kno:fullForm "이코노미"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component .
-kno:KN2020-0370-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "코로(나바이러스)(corona virus)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000177 ;
+    rdfs:label "쇼크(shock)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0370-c1 kno:role "슬롯 채움"@ko ;
     kno:fullForm "코로나바이러스"@ko ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:surfaceForm "코로"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:formative kno:F006283 ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component .
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "코로"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-B2m ;
+    rdfs:label "코로(나바이러스)(corona virus)"@ko .

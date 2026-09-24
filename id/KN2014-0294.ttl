@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0294 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0294 a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
+kno:KN2014-0294 kno:component kno:KN2014-0294-c1 ;
+    rdfs:label "페메"@ko ;
     kno:indexForm "페메"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    skos:definition "‘페이스북 메시지’를 줄여 이르는 말."@ko ;
-    kno:example "¶정말 많은 사람들이…{페메}, 문자, 전화해 주셨어."@ko ;
-    rdfs:label "페메"@ko ;
-    kno:component kno:KN2014-0294-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%98%EB%A9%94> ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(▼←Facebook<영>message)" ;
     kno:componentString "페(이스북)(Facebook), 메(시지)(message)"@ko ;
+    a ontolex:Word ;
+    kno:origin "(▼←Facebook<영>message)" ;
+    kno:year "2014"^^xsd:gYear ;
+    skos:definition "‘페이스북 메시지’를 줄여 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%98%EB%A9%94> ;
+    kno:component kno:KN2014-0294-c2 ;
+    kno:example "¶정말 많은 사람들이…{페메}, 문자, 전화해 주셨어."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W06 ;
     kno:languageType "영+영" ;
-    kno:component kno:KN2014-0294-c1 .
-kno:KN2014-0294-c2 a kno:Component ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko .
+kno:KN2014-0294-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "페"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:formative kno:F000992 ;
+    kno:fullForm "페이스북"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "페(이스북)(Facebook)"@ko .
+kno:KN2014-0294-c2 kno:formative kno:F003432 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "메시지"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "메"@ko ;
     kno:semanticTag kno:usas-Q1.2 ;
-    kno:fullForm "메시지"@ko ;
-    rdfs:label "메(시지)(message)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003432 .
-kno:KN2014-0294-c1 kno:fullForm "페이스북"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "페(이스북)(Facebook)"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:semanticTag kno:usas-Z3 ;
-    kno:surfaceForm "페"@ko ;
-    kno:formative kno:F000992 ;
-    kno:role "성분"@ko ;
-    a kno:Component .
+    rdfs:label "메(시지)(message)"@ko .

@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0181 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0181 skos:definition "사별이나 이혼 따위로 다시 혼자가 된 노인을 이르는 말."@ko ;
-    kno:instantiates kno:S000103 ;
-    kno:origin "(<영>silver돌←single)" ;
-    kno:example "¶{실버 돌싱이라는} 그녀는 “아이를 낳고도 혼자 미역국을 끓였어야 했다.”라면서 남편이 가정에 책임을 지지 않았다고 했다."@ko ;
-    kno:languageType "영_(고+영)" ;
-    kno:component kno:KN2019-0181-c2 ;
-    kno:frequency kno:KN2019-0181-freq-NN-2018 ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2019-0181-c1 ;
-    kno:frequency kno:KN2019-0181-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "돌(아오다)+싱(글)(single) (2성분)"@ko ;
-    kno:indexForm "실버돌싱"@ko ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
+kno:KN2019-0181 a kno:Neologism ;
     kno:year "2019"^^xsd:gYear ;
+    kno:slotFiller "돌(아오다)+싱(글)(single) (2성분)"@ko ;
+    kno:instantiates kno:S000103 ;
+    kno:indexForm "실버돌싱"@ko ;
     rdfs:label "실버 돌싱"@ko ;
-    kno:component kno:KN2019-0181-c3 ;
     kno:registration "신어DB"@ko ;
+    kno:example "¶{실버 돌싱이라는} 그녀는 “아이를 낳고도 혼자 미역국을 끓였어야 했다.”라면서 남편이 가정에 책임을 지지 않았다고 했다."@ko ;
+    kno:component kno:KN2019-0181-c1 ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2019-0181-c2 ;
+    kno:component kno:KN2019-0181-c3 ;
+    kno:frequency kno:KN2019-0181-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0181-freq-NN-total ;
+    skos:definition "사별이나 이혼 따위로 다시 혼자가 된 노인을 이르는 말."@ko ;
     kno:componentString "실버(silver), 돌(아오다), 싱(글)(single)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EB%B2%84%20%EB%8F%8C%EC%8B%B1> .
-kno:KN2019-0181-c2 kno:surfaceForm "돌"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>silver돌←single)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EB%B2%84%20%EB%8F%8C%EC%8B%B1> ;
+    kno:languageType "영_(고+영)" ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2019-0181-c1 kno:fullForm "실버"@ko ;
+    kno:formative kno:F000146 ;
+    kno:surfaceForm "실버"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "실버(silver)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0181-c2 kno:semanticTag kno:usas-M1 ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
     rdfs:label "돌(아오다)"@ko ;
+    a kno:Component ;
     kno:formative kno:F001196 ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
     kno:fullForm "돌아오다"@ko ;
-    a kno:Component .
-kno:KN2019-0181-c1 kno:semanticTag kno:usas-T3 ;
-    rdfs:label "실버(silver)"@ko ;
-    kno:surfaceForm "실버"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:fullForm "실버"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000146 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:surfaceForm "돌"@ko ;
+    kno:role "슬롯 채움"@ko .
 kno:KN2019-0181-c3 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
     kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F000837 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "싱(글)(single)"@ko ;
     kno:fullForm "싱글"@ko ;
     kno:surfaceForm "싱"@ko ;
-    kno:formative kno:F000837 ;
-    rdfs:label "싱(글)(single)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    a kno:Component .

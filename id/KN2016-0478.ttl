@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0478 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0478 kno:frequency kno:KN2016-0478-freq-NN-2016 ;
+kno:KN2016-0478 kno:component kno:KN2016-0478-c3 ;
+    kno:frequency kno:KN2016-0478-freq-NN-2016 ;
     kno:origin "(天然紀念傳貰)" ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2016-0478-c2 ;
-    skos:definition "저렴하고 질이 좋은 전셋집이 천연기념물만큼이나 희귀함을 이르는 말."@ko ;
+    kno:languageType "한^한" ;
+    a kno:Neologism ;
+    rdfs:label "천연기념^전세"@ko ;
     kno:example "¶특히 서울은 ‘{천연기념 전세}’, ‘전세 품귀’…등 신조어를 양산해 내고 있는 가운데, 극심한 전세난이 가중될 전망이다."@ko ;
     kno:componentString "천연(天然), 기념(紀念), 전세(傳貰)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
     kno:frequency kno:KN2016-0478-freq-NN-total ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%9C%EC%97%B0%EA%B8%B0%EB%85%90%EC%A0%84%EC%84%B8> ;
     a ontolex:MultiwordExpression ;
-    kno:component kno:KN2016-0478-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2016-0478-c3 ;
-    kno:languageType "한^한" ;
     kno:indexForm "천연기념전세"@ko ;
-    rdfs:label "천연기념^전세"@ko .
-kno:KN2016-0478-c2 kno:surfaceForm "기념"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "저렴하고 질이 좋은 전셋집이 천연기념물만큼이나 희귀함을 이르는 말."@ko ;
+    kno:component kno:KN2016-0478-c1 .
+kno:KN2016-0478-c3 kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000230 ;
+    kno:fullForm "전세"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "전세"@ko ;
+    rdfs:label "전세(傳貰)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0478-c2 rdfs:label "기념(紀念)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002586 ;
     kno:semanticTag kno:usas-X2.2 ;
     a kno:Component ;
-    rdfs:label "기념(紀念)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002586 ;
-    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "기념"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2016-0478-c1 kno:formative kno:F006040 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "기념"@ko .
+kno:KN2016-0478-c1 kno:surfaceForm "천연"@ko ;
     kno:semanticTag kno:usas-W5 ;
-    kno:fullForm "천연"@ko ;
-    kno:surfaceForm "천연"@ko ;
     a kno:Component ;
-    rdfs:label "천연(天然)"@ko .
-kno:KN2016-0478-c3 rdfs:label "전세(傳貰)"@ko ;
-    kno:surfaceForm "전세"@ko ;
-    kno:fullForm "전세"@ko ;
+    kno:formative kno:F006040 ;
+    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000230 ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-H4 .
+    rdfs:label "천연(天然)"@ko ;
+    kno:fullForm "천연"@ko ;
+    kno:role "성분"@ko .

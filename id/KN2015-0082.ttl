@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0082 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0082 kno:instantiates kno:S000758 ;
-    rdfs:label "문송"@ko ;
-    kno:pos "「명」"@ko ;
+kno:KN2015-0082 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359928> ;
     kno:urimalTargetCode "1359928" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:year "2015"^^xsd:gYear ;
-    a kno:Neologism ;
     kno:component kno:KN2015-0082-c1 ;
-    kno:origin "(文悚)" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359928> ;
-    kno:slotFiller "문(과)(文) (1성분)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2015-0082-c2 ;
-    kno:formation kno:W05 ;
-    a ontolex:Word ;
     kno:componentString "문(과)(文), (죄)송(悚)"@ko ;
-    kno:languageType "한+한" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:year "2015"^^xsd:gYear ;
     skos:definition "‘문과라서 죄송’을 줄여 이르는 말. 인문계 출신 대학 졸업자들이 졸업 후에도 취업을 하지 못하는 상황을 자조적으로 이르는 말이다."@ko ;
-    kno:indexForm "문송"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:instantiates kno:S000758 ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
     kno:example "¶그중에서도 ‘인구론’(인문계 대졸자 90%가 논다)과 ‘{문송’이라는} 신조어가 나올 정도로 인문계를 졸업한 취업 준비생의 취업난은 극히 열악하다."@ko ;
-    kno:unitType "단어"@ko .
-kno:KN2015-0082-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:indexForm "문송"@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+한" ;
+    kno:slotFiller "문(과)(文) (1성분)"@ko ;
+    kno:component kno:KN2015-0082-c2 ;
+    a ontolex:Word ;
+    kno:origin "(文悚)" ;
+    rdfs:label "문송"@ko .
+kno:KN2015-0082-c1 kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:fullForm "문과"@ko ;
-    kno:formative kno:F003545 ;
-    kno:surfaceForm "문"@ko ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "문(과)(文)"@ko ;
     kno:semanticTag kno:usas-P1 ;
-    rdfs:label "문(과)(文)"@ko .
-kno:KN2015-0082-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "송"@ko ;
+    kno:fullForm "문과"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "문"@ko ;
+    kno:formative kno:F003545 .
+kno:KN2015-0082-c2 kno:semanticTag kno:usas-S1.2.4p ;
+    rdfs:label "(죄)송(悚)"@ko ;
     kno:fullForm "죄송"@ko ;
     kno:formative kno:F001496 ;
-    rdfs:label "(죄)송(悚)"@ko ;
-    kno:semanticTag kno:usas-S1.2.4p ;
-    kno:position "2"^^xsd:integer .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "송"@ko .

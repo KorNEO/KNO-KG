@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0016 kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 근무 시간으로 잡혀 있으나 실제 성과로 이어지는 핵심 업무가 아니라 불필요한 회의ㆍ보고ㆍ대기ㆍ잡무 등으로 소모되는 시간."@ko ;
-    kno:component kno:KN2025-0016-c3 ;
-    kno:componentString "가짜(假짜), 노동(勞動), 시간(時間)"@ko ;
-    kno:frequency kno:KN2025-0016-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A7%9C%20%EB%85%B8%EB%8F%99%20%EC%8B%9C%EA%B0%84> ;
-    kno:slotFiller "노동(勞動)+시간(時間) (2성분)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko ;
-    kno:languageType "(한+고)_한_한" ;
-    kno:component kno:KN2025-0016-c1 ;
-    a kno:Neologism ;
+kno:KN2025-0016 kno:componentString "가짜(假짜), 노동(勞動), 시간(時間)"@ko ;
+    kno:predicate "소모되다"@ko ;
     kno:example "(LLM) 팀장은 보고용 자료를 계속 고치느라 정작 본업을 못 한다며, 이런 {가짜노동시간이} 줄어야 생산성이 오른다고 말했다."@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0016-c2 ;
-    kno:origin "(假짜勞動時間)" ;
-    kno:registration "신어DB"@ko ;
     kno:instantiates kno:S001184 ;
-    kno:indexForm "가짜노동시간"@ko ;
+    kno:origin "(假짜勞動時間)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0016-freq-NN-total ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0016-c2 ;
+    kno:component kno:KN2025-0016-c3 ;
     rdfs:label "가짜 노동 시간"@ko ;
+    kno:indexForm "가짜노동시간"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2025-0016-freq-NN-2025 ;
-    kno:predicate "소모되다"@ko .
-kno:KN2025-0016-c3 kno:semanticTag kno:usas-T1.3 ;
+    kno:component kno:KN2025-0016-c1 ;
+    kno:languageType "(한+고)_한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A7%9C%20%EB%85%B8%EB%8F%99%20%EC%8B%9C%EA%B0%84> ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "노동(勞動)+시간(時間) (2성분)"@ko ;
+    skos:definition "(LLM) 근무 시간으로 잡혀 있으나 실제 성과로 이어지는 핵심 업무가 아니라 불필요한 회의ㆍ보고ㆍ대기ㆍ잡무 등으로 소모되는 시간."@ko .
+kno:KN2025-0016-c2 rdfs:label "노동(勞動)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "노동"@ko ;
     a kno:Component ;
-    kno:fullForm "시간"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "시간"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000829 ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "시간(時間)"@ko .
-kno:KN2025-0016-c1 kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000166 ;
+    kno:surfaceForm "노동"@ko ;
+    kno:semanticTag kno:usas-I3.1 .
+kno:KN2025-0016-c3 a kno:Component ;
+    rdfs:label "시간(時間)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000829 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "시간"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "시간"@ko ;
+    kno:semanticTag kno:usas-T1.3 .
+kno:KN2025-0016-c1 kno:formative kno:F000649 ;
     kno:semanticTag kno:usas-A5.4m ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "가짜"@ko ;
     a kno:Component ;
     rdfs:label "가짜(假짜)"@ko ;
-    kno:fullForm "가짜"@ko ;
     kno:surfaceForm "가짜"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000649 .
-kno:KN2025-0016-c2 kno:fullForm "노동"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "노동"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000166 ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "노동(勞動)"@ko ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean .

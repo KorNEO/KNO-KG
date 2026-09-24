@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0064 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0064 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%20%EC%A3%BC%EC%B7%A8%EC%9E%90%20%EC%A1%B4> ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2023-0064 kno:origin "(<영>no酒醉者<영>zone)" ;
+    kno:languageType "영_한_영" ;
+    kno:component kno:KN2023-0064-c1 ;
+    kno:unitType "구"@ko ;
+    kno:example "¶주취자는 주변에 피해를 줄 수 있음에도 불구하고 한국에서 {노 주취자 존은} 찾아보기 힘들다."@ko ;
+    kno:slotFiller "주취자(酒醉者) (1성분)"@ko ;
     kno:frequency kno:KN2023-0064-freq-NN-2022 ;
-    kno:origin "(<영>no酒醉者<영>zone)" ;
     kno:instantiates kno:S000035 ;
+    a kno:Neologism ;
+    kno:year "2023"^^xsd:gYear ;
     kno:component kno:KN2023-0064-c3 ;
     kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2023-0064-freq-NN-total ;
-    kno:component kno:KN2023-0064-c2 ;
-    kno:languageType "영_한_영" ;
-    rdfs:label "노 주취자 존"@ko ;
-    kno:component kno:KN2023-0064-c1 ;
-    a ontolex:MultiwordExpression ;
-    kno:predicate "금지하다"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:indexForm "노주취자존"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "주취자(酒醉者) (1성분)"@ko ;
-    skos:definition "주취자의 출입을 금지하는 곳."@ko ;
-    kno:example "¶주취자는 주변에 피해를 줄 수 있음에도 불구하고 한국에서 {노 주취자 존은} 찾아보기 힘들다."@ko ;
-    kno:year "2023"^^xsd:gYear ;
     kno:componentString "노(no), 주취자(酒醉者), 존(zone)"@ko ;
-    kno:unitType "구"@ko .
-kno:KN2023-0064-c3 rdfs:label "존(zone)"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:formative kno:F000034 ;
-    kno:fullForm "존"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "존"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer .
-kno:KN2023-0064-c2 rdfs:label "주취자(酒醉者)"@ko ;
-    kno:semanticTag kno:usas-F2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "주취자"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "주취자"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F005802 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2023-0064-c1 kno:position "1"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2023-0064-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "노 주취자 존"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%20%EC%A3%BC%EC%B7%A8%EC%9E%90%20%EC%A1%B4> ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "노주취자존"@ko ;
+    kno:frequency kno:KN2023-0064-freq-NN-total ;
+    kno:predicate "금지하다"@ko ;
+    skos:definition "주취자의 출입을 금지하는 곳."@ko .
+kno:KN2023-0064-c1 kno:formative kno:F000015 ;
+    kno:surfaceForm "노"@ko ;
     rdfs:label "노(no)"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:formative kno:F000015 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-Z6 ;
     kno:fullForm "노"@ko ;
-    kno:surfaceForm "노"@ko .
+    kno:role "고정항"@ko .
+kno:KN2023-0064-c3 kno:surfaceForm "존"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000034 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2023-0064-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "주취자(酒醉者)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "주취자"@ko ;
+    kno:formative kno:F005802 ;
+    kno:surfaceForm "주취자"@ko ;
+    kno:semanticTag kno:usas-F2 .

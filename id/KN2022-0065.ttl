@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0065 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0065 kno:example "¶뮤지컬 전담 기관인 {국립 뮤지컬 진흥원이} 설립될 경우 한국 뮤지컬 산업의 중추적인 역할을 할 수 있게 될 것으로 보인다."@ko ;
-    kno:frequency kno:KN2022-0065-freq-NN-total ;
-    kno:origin "(國立<영>musical振興院)" ;
-    kno:indexForm "국립뮤지컬진흥원"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:languageType "한^영^한" ;
-    rdfs:label "국립^뮤지컬^진흥원"@ko ;
+kno:KN2022-0065 kno:component kno:KN2022-0065-c3 ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2022-0065-freq-NN-2022 ;
     kno:slotFiller "뮤지컬(musical)+진흥원(振興院) (2성분)"@ko ;
     kno:component kno:KN2022-0065-c1 ;
-    a ontolex:MultiwordExpression ;
+    kno:languageType "한^영^한" ;
+    kno:instantiates kno:S001234 ;
+    kno:frequency kno:KN2022-0065-freq-NN-total ;
+    kno:year "2022"^^xsd:gYear ;
     kno:componentString "국립(國立), 뮤지컬(musical), 진흥원(振興院)"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:origin "(國立<영>musical振興院)" ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "국립^뮤지컬^진흥원"@ko ;
+    a kno:Neologism ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "국립뮤지컬진흥원"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:component kno:KN2022-0065-c2 ;
     skos:definition "한국 뮤지컬 산업의 기반 조성과 체계화된 지원 정책을 설계하고 실행하기 위해 미래에 설립될 기관."@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:frequency kno:KN2022-0065-freq-NN-2022 ;
-    kno:component kno:KN2022-0065-c3 ;
-    kno:instantiates kno:S001234 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%A6%BD%EB%AE%A4%EC%A7%80%EC%BB%AC%EC%A7%84%ED%9D%A5%EC%9B%90> .
-kno:KN2022-0065-c1 kno:formative kno:F001090 ;
-    kno:semanticTag kno:usas-G1.1 ;
+    kno:example "¶뮤지컬 전담 기관인 {국립 뮤지컬 진흥원이} 설립될 경우 한국 뮤지컬 산업의 중추적인 역할을 할 수 있게 될 것으로 보인다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EB%A6%BD%EB%AE%A4%EC%A7%80%EC%BB%AC%EC%A7%84%ED%9D%A5%EC%9B%90> ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0065-c3 kno:position "3"^^xsd:integer ;
+    kno:formative kno:F005933 ;
+    kno:fullForm "진흥원"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "진흥원"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "진흥원(振興院)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2022-0065-c1 rdfs:label "국립(國立)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F001090 ;
     kno:fullForm "국립"@ko ;
-    kno:surfaceForm "국립"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "국립(國立)"@ko ;
+    kno:surfaceForm "국립"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component .
 kno:KN2022-0065-c2 kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "뮤지컬"@ko ;
+    kno:formative kno:F003571 ;
     kno:surfaceForm "뮤지컬"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F003571 ;
-    kno:semanticTag kno:usas-K4 ;
     rdfs:label "뮤지컬(musical)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component .
-kno:KN2022-0065-c3 kno:fullForm "진흥원"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F005933 ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:surfaceForm "진흥원"@ko ;
     a kno:Component ;
-    rdfs:label "진흥원(振興院)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K4 .

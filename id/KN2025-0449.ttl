@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0449 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0449 kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:indexForm "원스코"@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2025-0449 kno:indexForm "원스코"@ko ;
+    kno:componentString "원(화)(貨), 스(테이블)(stable), 코(인)(coin)"@ko ;
     kno:slotFiller "원(화)(貨) (1성분)"@ko ;
     kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
+    kno:component kno:KN2025-0449-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%EC%8A%A4%EC%BD%94> ;
     rdfs:label "원스코"@ko ;
-    skos:definition "(LLM) 가치가 원화에 연동되도록 설계된 스테이블코인."@ko ;
-    kno:frequency kno:KN2025-0449-freq-NN-total ;
-    kno:component kno:KN2025-0449-c3 ;
+    kno:instantiates kno:S000961 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0449-freq-NN-2025 ;
     a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "원(화)(貨), 스(테이블)(stable), 코(인)(coin)"@ko ;
-    kno:component kno:KN2025-0449-c1 ;
-    kno:example "(LLM) 국회에서는 디지털 자산 제도 정비와 함께 {원스코} 도입 필요성을 놓고 논의가 이어졌다."@ko ;
+    a kno:Neologism ;
+    skos:definition "(LLM) 가치가 원화에 연동되도록 설계된 스테이블코인."@ko ;
+    kno:frequency kno:KN2025-0449-freq-NN-total ;
     kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000961 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%EC%8A%A4%EC%BD%94> ;
+    kno:formation kno:W06 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2025-0449-c2 ;
-    kno:frequency kno:KN2025-0449-freq-NN-2025 .
-kno:KN2025-0449-c3 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "코인"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "코"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000312 ;
-    rdfs:label "코(인)(coin)"@ko ;
-    kno:semanticTag kno:usas-I1 .
-kno:KN2025-0449-c1 kno:formative kno:F005246 ;
-    kno:fullForm "원화"@ko ;
+    kno:example "(LLM) 국회에서는 디지털 자산 제도 정비와 함께 {원스코} 도입 필요성을 놓고 논의가 이어졌다."@ko ;
+    kno:component kno:KN2025-0449-c3 .
+kno:KN2025-0449-c1 kno:fullForm "원화"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
     kno:surfaceForm "원"@ko ;
     rdfs:label "원(화)(貨)"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005246 ;
+    kno:role "슬롯 채움"@ko .
 kno:KN2025-0449-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "스테이블"@ko ;
+    kno:semanticTag kno:usas-A2.1m ;
     kno:formative kno:F001515 ;
+    kno:surfaceForm "스"@ko ;
     rdfs:label "스(테이블)(stable)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
-    kno:fullForm "스테이블"@ko ;
-    kno:semanticTag kno:usas-A2.1m ;
-    a kno:Component ;
-    kno:surfaceForm "스"@ko .
+    a kno:Component .
+kno:KN2025-0449-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코인"@ko ;
+    rdfs:label "코(인)(coin)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000312 ;
+    kno:surfaceForm "코"@ko .

@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0332 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0332 kno:frequency kno:KN2024-0332-freq-NN-2024 ;
-    a ontolex:Word ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:slotFiller "(쿠)팡(Coupang) (1성분)"@ko ;
-    kno:frequency kno:KN2024-0332-freq-NN-total ;
-    rdfs:label "탈팡-족"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%ED%8C%A1%EC%A1%B1> ;
-    kno:origin "(脫←Coupang族)" ;
+kno:KN2024-0332 kno:component kno:KN2024-0332-c1 ;
+    kno:instantiates kno:S001708 ;
     kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0332-freq-NN-total ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2024-0332-freq-NN-2025 ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%ED%8C%A1%EC%A1%B1> ;
     skos:definition "‘탈쿠팡족’의 준말."@ko ;
-    kno:indexForm "탈팡족"@ko ;
+    kno:slotFiller "(쿠)팡(Coupang) (1성분)"@ko ;
+    kno:languageType "한+영+한" ;
+    kno:pos "「명」"@ko ;
     kno:component kno:KN2024-0332-c3 ;
     kno:component kno:KN2024-0332-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
+    kno:indexForm "탈팡족"@ko ;
     kno:componentString "탈(脫)-, (쿠)팡(Coupang), -족(族)"@ko ;
-    kno:languageType "한+영+한" ;
-    kno:formation kno:W02 ;
-    kno:component kno:KN2024-0332-c1 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(脫←Coupang族)" ;
+    rdfs:label "탈팡-족"@ko ;
     kno:example "¶{탈팡족이} 적은 이유는 요금 인상을 고려해도 무료 반품, 무료 배달 등 멤버십 혜택이 더 크기 때문으로 보인다."@ko ;
-    kno:frequency kno:KN2024-0332-freq-NN-2025 ;
-    kno:instantiates kno:S001708 .
-kno:KN2024-0332-c3 kno:fullForm "족"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "족"@ko ;
-    rdfs:label "-족(族)"@ko ;
-    kno:formative kno:F000001 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S2 .
-kno:KN2024-0332-c2 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "쿠팡"@ko ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "팡"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "(쿠)팡(Coupang)"@ko ;
-    kno:formative kno:F001941 .
-kno:KN2024-0332-c1 kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000152 ;
-    kno:surfaceForm "탈"@ko ;
-    a kno:Component ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0332-freq-NN-2024 ;
+    a ontolex:Word ;
+    a kno:Neologism .
+kno:KN2024-0332-c1 kno:formative kno:F000152 ;
     rdfs:label "탈(脫)-"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "탈"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "탈"@ko ;
+    kno:semanticTag kno:usas-A1.8m ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-A1.8m .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0332-c3 kno:role "고정항"@ko ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000001 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0332-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "쿠팡"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001941 ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "(쿠)팡(Coupang)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "팡"@ko .

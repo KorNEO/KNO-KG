@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0030 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0030 kno:languageType "한_한_한" ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000479 ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:example "¶가정 폭력 전과자는 {국제 초청 결혼을} 하지 못하게 하는 법안이 발표되었다."@ko ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0030-freq-NN-2019 ;
-    a kno:Neologism ;
-    skos:definition "국적이 다른 외국인을 초청하여 국내로 불러 결혼하는 일."@ko ;
-    kno:component kno:KN2020-0030-c1 ;
-    kno:slotFiller "초청(招請)+결혼(結婚) (2성분)"@ko ;
-    kno:componentString "국제(國際), 초청(招請), 결혼(結婚)"@ko ;
+kno:KN2020-0030 kno:predicate "결혼하다"@ko ;
     kno:indexForm "국제초청결혼"@ko ;
-    kno:predicate "결혼하다"@ko ;
-    kno:unitType "구"@ko ;
+    kno:example "¶가정 폭력 전과자는 {국제 초청 결혼을} 하지 못하게 하는 법안이 발표되었다."@ko ;
+    a ontolex:MultiwordExpression ;
     kno:component kno:KN2020-0030-c3 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EC%A0%9C%20%EC%B4%88%EC%B2%AD%20%EA%B2%B0%ED%98%BC> ;
+    kno:slotFiller "초청(招請)+결혼(結婚) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0030-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2020-0030-c2 ;
+    kno:frequency kno:KN2020-0030-freq-NN-total ;
+    kno:languageType "한_한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EC%A0%9C%20%EC%B4%88%EC%B2%AD%20%EA%B2%B0%ED%98%BC> ;
+    a kno:Neologism ;
     rdfs:label "국제 초청 결혼"@ko ;
+    skos:definition "국적이 다른 외국인을 초청하여 국내로 불러 결혼하는 일."@ko ;
+    kno:unitType "구"@ko ;
     kno:pos "「구」"@ko ;
     kno:origin "(國際招請結婚)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2020-0030-freq-NN-total .
-kno:KN2020-0030-c1 kno:formative kno:F000463 ;
-    kno:semanticTag kno:usas-G1.1 ;
-    a kno:Component ;
+    kno:instantiates kno:S000479 ;
+    kno:frequency kno:KN2020-0030-freq-NN-2019 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:componentString "국제(國際), 초청(招請), 결혼(結婚)"@ko .
+kno:KN2020-0030-c3 kno:fullForm "결혼"@ko ;
+    kno:semanticTag kno:usas-S4 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "결혼"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "결혼(結婚)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002226 .
+kno:KN2020-0030-c1 kno:fullForm "국제"@ko ;
     rdfs:label "국제(國際)"@ko ;
     kno:role "고정항"@ko ;
-    kno:fullForm "국제"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
     kno:surfaceForm "국제"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2020-0030-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002226 ;
-    kno:fullForm "결혼"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "결혼"@ko ;
-    rdfs:label "결혼(結婚)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:position "3"^^xsd:integer .
-kno:KN2020-0030-c2 kno:surfaceForm "초청"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F000463 .
+kno:KN2020-0030-c2 kno:surfaceForm "초청"@ko ;
     rdfs:label "초청(招請)"@ko ;
-    kno:formative kno:F001826 ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:fullForm "초청"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001826 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "초청"@ko ;
+    kno:semanticTag kno:usas-Q2.2 .

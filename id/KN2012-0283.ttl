@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0283 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0283 kno:frequency kno:KN2012-0283-freq-NN-2013 ;
-    kno:origin "(養育mom)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "직장에 다니지 않고 직접 아이를 돌보는 엄마."@ko ;
+kno:KN2012-0283 kno:component kno:KN2012-0283-c1 ;
     kno:indexForm "양육맘"@ko ;
-    rdfs:label "양육-맘"@ko ;
-    kno:frequency kno:KN2012-0283-freq-NN-2025 ;
-    kno:component kno:KN2012-0283-c1 ;
-    kno:frequency kno:KN2012-0283-freq-NN-2012 ;
+    a ontolex:Word ;
     kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9C%A1%EB%A7%98> ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2012-0283-freq-NN-total ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:formation kno:W01 ;
-    a kno:Neologism ;
+    rdfs:label "양육-맘"@ko ;
+    kno:componentString "양육(養育), 맘(mom)"@ko ;
     kno:example "¶O 센터장은 “점심시간 직장 근처나 퇴근 시간 집 근처로 직접 찾아가는 상담 서비스를 지원하고 앞으로는 직장맘과 {양육맘이} 정보를 공유하고 서로가 멘토가 될 수 있는 장도 마련할 계획.”이라고 밝혔다."@ko ;
+    skos:definition "직장에 다니지 않고 직접 아이를 돌보는 엄마."@ko ;
     kno:slotFiller "양육(養育) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2012-0283-freq-NN-total ;
+    kno:predicate "돌보다"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2012-0283-c2 ;
+    kno:frequency kno:KN2012-0283-freq-NN-2013 ;
+    kno:origin "(養育mom)" ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한+영" ;
+    kno:frequency kno:KN2012-0283-freq-NN-2012 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9C%A1%EB%A7%98> ;
     kno:activeYears "3"^^xsd:integer ;
     kno:instantiates kno:S000042 ;
-    kno:predicate "돌보다"@ko ;
-    kno:component kno:KN2012-0283-c2 ;
-    kno:componentString "양육(養育), 맘(mom)"@ko ;
-    kno:languageType "한+영" ;
-    a ontolex:Word .
-kno:KN2012-0283-c1 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "양육"@ko ;
-    rdfs:label "양육(養育)"@ko ;
+    kno:frequency kno:KN2012-0283-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2012-0283-c1 kno:surfaceForm "양육"@ko ;
+    kno:semanticTag kno:usas-S4 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F000847 ;
-    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "양육"@ko ;
+    rdfs:label "양육(養育)"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "양육"@ko .
-kno:KN2012-0283-c2 rdfs:label "맘(mom)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000021 ;
-    kno:fullForm "맘"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:surfaceForm "맘"@ko ;
     a kno:Component .
+kno:KN2012-0283-c2 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "맘"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000021 ;
+    rdfs:label "맘(mom)"@ko ;
+    kno:surfaceForm "맘"@ko ;
+    kno:truncated "false"^^xsd:boolean .

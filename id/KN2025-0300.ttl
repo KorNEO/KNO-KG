@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0300 kno:pos "「구」"@ko ;
-    kno:component kno:KN2025-0300-c2 ;
+kno:KN2025-0300 a kno:Neologism ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%A0%84%20%EC%96%B8%EC%96%B4%20%EC%97%90%EC%9D%B4%EC%A0%84%ED%8A%B8> ;
-    kno:languageType "영_한_영" ;
     kno:frequency kno:KN2025-0300-freq-NN-total ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:instantiates kno:S000414 ;
-    kno:instantiates kno:S001423 ;
+    kno:slotFiller "비전(vision)+언어(言語) (2성분)"@ko ;
+    kno:origin "(<영>vision言語<영>agent)" ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "영_한_영" ;
     kno:component kno:KN2025-0300-c3 ;
+    kno:frequency kno:KN2025-0300-freq-NN-2025 ;
+    kno:example "(LLM) 운영자가 음성으로 수색 구역을 지정하자 {비전언어에이전트가} 카메라 영상에서 목표물을 식별하고 이동 경로를 스스로 계획해 임무를 수행했다."@ko ;
     kno:indexForm "비전언어에이전트"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:componentString "비전(vision), 언어(言語), 에이전트(agent)"@ko ;
-    skos:definition "(LLM) 이미지ㆍ영상 등 시각 정보와 자연어를 함께 처리하여, 사람의 지시를 이해하고 환경을 인식한 뒤 과업 수행을 위한 행동을 계획ㆍ실행하도록 설계된 인공 지능 기반 자율 수행 체계."@ko ;
-    a kno:Neologism ;
-    kno:origin "(<영>vision言語<영>agent)" ;
-    kno:slotFiller "비전(vision)+언어(言語) (2성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:example "(LLM) 운영자가 음성으로 수색 구역을 지정하자 {비전언어에이전트가} 카메라 영상에서 목표물을 식별하고 이동 경로를 스스로 계획해 임무를 수행했다."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:label "비전 언어 에이전트"@ko ;
-    kno:component kno:KN2025-0300-c1 ;
-    kno:slotFiller "에이전트(agent) (1성분)"@ko ;
+    kno:instantiates kno:S001423 ;
+    kno:instantiates kno:S000414 ;
     kno:unitType "구"@ko ;
-    kno:frequency kno:KN2025-0300-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "비전 언어 에이전트"@ko ;
+    kno:component kno:KN2025-0300-c2 ;
+    skos:definition "(LLM) 이미지ㆍ영상 등 시각 정보와 자연어를 함께 처리하여, 사람의 지시를 이해하고 환경을 인식한 뒤 과업 수행을 위한 행동을 계획ㆍ실행하도록 설계된 인공 지능 기반 자율 수행 체계."@ko ;
+    kno:component kno:KN2025-0300-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "에이전트(agent) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:componentString "비전(vision), 언어(言語), 에이전트(agent)"@ko ;
     kno:activeYears "1"^^xsd:integer .
-kno:KN2025-0300-c2 kno:formative kno:F000383 ;
-    kno:fullForm "언어"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "언어(言語)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Q3 ;
-    kno:surfaceForm "언어"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer .
 kno:KN2025-0300-c3 rdfs:label "에이전트(agent)"@ko ;
-    kno:formative kno:F000857 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "에이전트"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:formative kno:F000857 ;
     a kno:Component ;
     kno:semanticTag kno:usas-S8 ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "에이전트"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "에이전트"@ko .
-kno:KN2025-0300-c1 a kno:Component ;
-    kno:fullForm "비전"@ko ;
+kno:KN2025-0300-c2 kno:fullForm "언어"@ko ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000521 ;
-    rdfs:label "비전(vision)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "언어"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "언어(言語)"@ko ;
+    kno:formative kno:F000383 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q3 .
+kno:KN2025-0300-c1 kno:formative kno:F000521 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
     kno:semanticTag kno:usas-X3.4 ;
+    kno:fullForm "비전"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "비전(vision)"@ko ;
     kno:surfaceForm "비전"@ko .

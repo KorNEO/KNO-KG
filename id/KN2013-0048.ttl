@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0048 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0048 kno:unitType "단어"@ko ;
-    skos:definition "컴퓨터에서 만들어진 영상 신호를 모니터로 전송해 주는 하드웨어."@ko ;
-    kno:component kno:KN2013-0048-c1 ;
+kno:KN2013-0048 kno:formation kno:W06 ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%80%ED%94%BD%EC%B9%B4%EB%93%9C> ;
+    a ontolex:Word ;
+    kno:languageType "영+영" ;
     kno:example "¶{글픽카드} 80도 넘게 올라가서 다리가 뜨뜻하네요. 겨울에 하기 좋을 듯."@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:componentString "글픽(←graphic), 카드(card)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(←graphic card)" ;
     kno:indexForm "글픽카드"@ko ;
     kno:registration "신어DB"@ko ;
     kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    kno:origin "(←graphic card)" ;
     kno:component kno:KN2013-0048-c2 ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:languageType "영+영" ;
     kno:predicate "주다"@ko ;
     rdfs:label "글픽카드"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%80%ED%94%BD%EC%B9%B4%EB%93%9C> .
-kno:KN2013-0048-c1 kno:semanticTag kno:usas-Y2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "글픽"@ko ;
+    kno:componentString "글픽(←graphic), 카드(card)"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0048-c1 ;
+    skos:definition "컴퓨터에서 만들어진 영상 신호를 모니터로 전송해 주는 하드웨어."@ko .
+kno:KN2013-0048-c2 rdfs:label "카드(card)"@ko ;
+    kno:formative kno:F001843 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "카드"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "카드"@ko .
+kno:KN2013-0048-c1 kno:role "성분"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "글픽"@ko ;
-    rdfs:label "글픽(←graphic)"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
     kno:formative kno:F002555 ;
-    kno:role "성분"@ko ;
+    rdfs:label "글픽(←graphic)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "글픽"@ko ;
     a kno:Component .
-kno:KN2013-0048-c2 kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    rdfs:label "카드(card)"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F001843 ;
-    kno:fullForm "카드"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "카드"@ko .

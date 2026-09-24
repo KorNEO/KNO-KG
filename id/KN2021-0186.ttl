@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0186 kno:frequency kno:KN2021-0186-freq-NN-total ;
-    kno:component kno:KN2021-0186-c2 ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000875 ;
-    rdfs:label "아재 백신"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2021-0186-c1 ;
+kno:KN2021-0186 rdfs:label "아재 백신"@ko ;
+    kno:componentString "아재, 백신(vaccine)"@ko ;
+    kno:indexForm "아재백신"@ko ;
     kno:origin "(←AstraZeneca<영>vaccine)" ;
+    kno:registration "신어DB"@ko ;
     kno:instantiates kno:S000045 ;
-    kno:example "¶잔여 백신 접종을 예약하려는 시민들은 “부작용 때문에 {아재 백신이라더니} 잔여 백신이 없어서 못 맞을 줄은 몰랐다.”라는 반응을 보였다."@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2021-0186-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
+    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:component kno:KN2021-0186-c1 ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0186-c2 ;
     skos:definition "코로나19를 예방하기 위한 백신 가운데 ‘아스트라제네카 백신’을 줄여 이르는 말. 백신의 부작용이 젊은 층보다 중고령층에서 더 적게 나타나는 경향성이 있어서 해당 백신을 ‘아저씨’를 의미하는 ‘아재’에 빗대어 이르는 말이다."@ko ;
     kno:frequency kno:KN2021-0186-freq-NN-2021 ;
-    kno:registration "신어DB"@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EC%9E%AC%20%EB%B0%B1%EC%8B%A0> ;
-    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
-    kno:indexForm "아재백신"@ko ;
-    kno:componentString "아재, 백신(vaccine)"@ko ;
+    kno:instantiates kno:S000875 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:example "¶잔여 백신 접종을 예약하려는 시민들은 “부작용 때문에 {아재 백신이라더니} 잔여 백신이 없어서 못 맞을 줄은 몰랐다.”라는 반응을 보였다."@ko ;
     kno:year "2021"^^xsd:gYear ;
-    kno:languageType "영_영" .
-kno:KN2021-0186-c2 rdfs:label "백신(vaccine)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000079 ;
+    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EC%9E%AC%20%EB%B0%B1%EC%8B%A0> ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2021-0186-c1 kno:semanticTag kno:usas-T3p ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:surfaceForm "백신"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "백신"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-B3 .
-kno:KN2021-0186-c1 kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-S2.2 ;
-    kno:formative kno:F000028 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "아재"@ko ;
-    rdfs:label "아재"@ko ;
     kno:role "고정항"@ko ;
+    kno:fullForm "아재"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "아재"@ko ;
+    kno:surfaceForm "아재"@ko ;
+    kno:formative kno:F000028 .
+kno:KN2021-0186-c2 kno:surfaceForm "백신"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000079 ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "백신"@ko ;
+    rdfs:label "백신(vaccine)"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-T3p ;
-    kno:fullForm "아재"@ko .
+    kno:position "2"^^xsd:integer .

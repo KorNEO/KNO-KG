@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0380 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0380 kno:componentString "실(제)(實際), 압(력)(壓力), 근(육)(筋肉)"@ko ;
-    a ontolex:Word ;
-    kno:example "(LLM) 체격은 왜소해 보이는데도 악력이랑 코어 힘이 좋아서 주변에서 {실압근이라고} 부르더라."@ko ;
-    kno:year "2025"^^xsd:gYear ;
+kno:KN2025-0380 a kno:Neologism ;
+    kno:frequency kno:KN2025-0380-freq-NN-total ;
+    kno:formation kno:W06 ;
+    rdfs:label "실압근"@ko ;
+    kno:indexForm "실압근"@ko ;
+    kno:componentString "실(제)(實際), 압(력)(壓力), 근(육)(筋肉)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0380-c1 ;
     kno:component kno:KN2025-0380-c2 ;
+    a ontolex:Word ;
     kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:unitType "단어"@ko ;
+    kno:languageType "한+한+한" ;
     kno:origin "(實壓筋)" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EC%95%95%EA%B7%BC> ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    kno:indexForm "실압근"@ko ;
-    kno:component kno:KN2025-0380-c3 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 겉으로 드러나는 근육량은 크지 않지만 실제로는 힘이 단단하고 효율적으로 나오는 체형이나 근력을 이르는 말."@ko ;
+    kno:year "2025"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2025-0380-freq-NN-total ;
-    kno:frequency kno:KN2025-0380-freq-NN-2025 ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "실압근"@ko ;
-    kno:component kno:KN2025-0380-c1 ;
-    kno:languageType "한+한+한" .
-kno:KN2025-0380-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-X9.1p ;
-    kno:surfaceForm "압"@ko ;
+    kno:example "(LLM) 체격은 왜소해 보이는데도 악력이랑 코어 힘이 좋아서 주변에서 {실압근이라고} 부르더라."@ko ;
+    kno:component kno:KN2025-0380-c3 ;
+    skos:definition "(LLM) 겉으로 드러나는 근육량은 크지 않지만 실제로는 힘이 단단하고 효율적으로 나오는 체형이나 근력을 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0380-freq-NN-2025 .
+kno:KN2025-0380-c1 kno:surfaceForm "실"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "실(제)(實際)"@ko ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:formative kno:F001556 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "실제"@ko .
+kno:KN2025-0380-c2 kno:fullForm "압력"@ko ;
+    kno:role "성분"@ko ;
     kno:formative kno:F004866 ;
     rdfs:label "압(력)(壓力)"@ko ;
-    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:fullForm "압력"@ko ;
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "압"@ko ;
     kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0380-c3 a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
+kno:KN2025-0380-c3 rdfs:label "근(육)(筋肉)"@ko ;
     kno:surfaceForm "근"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "근육"@ko ;
-    kno:formative kno:F002542 ;
-    rdfs:label "근(육)(筋肉)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko .
-kno:KN2025-0380-c1 kno:formative kno:F001556 ;
-    kno:surfaceForm "실"@ko ;
-    kno:fullForm "실제"@ko ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A5.4p ;
-    rdfs:label "실(제)(實際)"@ko ;
+    kno:formative kno:F002542 ;
+    kno:fullForm "근육"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component .

@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0344 kno:component kno:KN2025-0344-c1 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2025-0344 a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2025-0344-freq-NN-2025 ;
     kno:slotFiller "정책(政策) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "셰셰(xièxie), 정책(政策)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%B0%EC%85%B0%20%EC%A0%95%EC%B1%85> ;
-    kno:languageType "중_한" ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0344-c1 ;
     kno:instantiates kno:S000217 ;
     kno:example "(LLM) 야당은 외국인 지원을 확대하는 대책을 두고 {셰셰정책이라고} 부르며 내국인 역차별 논란을 제기했다."@ko ;
+    kno:componentString "셰셰(xièxie), 정책(政策)"@ko ;
     skos:definition "(LLM) 정부의 대외 정책이나 내국인ㆍ외국인 관련 제도가 자국민보다 외국인에게 유리하게 설계ㆍ집행된다고 보고 이를 비판적으로 이르는 말."@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0344-c2 ;
-    kno:origin "(<중>xièxie[謝謝]政策)" ;
-    rdfs:label "셰셰 정책"@ko ;
-    kno:unitType "구"@ko ;
     a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%B0%EC%85%B0%20%EC%A0%95%EC%B1%85> ;
     kno:frequency kno:KN2025-0344-freq-NN-total ;
-    kno:indexForm "셰셰정책"@ko .
-kno:KN2025-0344-c1 rdfs:label "셰셰(xièxie)"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "셰셰 정책"@ko ;
+    kno:indexForm "셰셰정책"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:origin "(<중>xièxie[謝謝]政策)" ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "중_한" ;
+    kno:unitType "구"@ko .
+kno:KN2025-0344-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000372 ;
-    a kno:Component ;
+    kno:surfaceForm "셰셰"@ko ;
     kno:semanticTag kno:usas-Q2.2 ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "셰셰"@ko ;
-    kno:surfaceForm "셰셰"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2025-0344-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.2 ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "셰셰(xièxie)"@ko ;
+    kno:fullForm "셰셰"@ko .
+kno:KN2025-0344-c2 kno:fullForm "정책"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "정책"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     rdfs:label "정책(政策)"@ko ;
-    kno:formative kno:F000921 ;
-    kno:fullForm "정책"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "정책"@ko .
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000921 .

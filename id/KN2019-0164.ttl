@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0164 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0164 skos:definition "좋아하는 가수의 음원 또는 영상 재생 수를 늘리기 위해 음악 파일이나 동영상 파일을 인터넷에 연결된 상태에서 숨 쉬듯 끊임없이 재생하는 일. ⇒규범 표기는 미확정이다. =숨스."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "숨밍"@ko ;
-    kno:example "¶이를 위해 팬덤은 각종 스트리밍 서비스를 총동원해 ‘스밍 총공’에 나섰고, 권장 플레이 리스트를 만들어 {‘숨밍’을} 이어 갔다."@ko ;
-    a ontolex:Word ;
-    kno:year "2019"^^xsd:gYear ;
+kno:KN2019-0164 kno:slotFiller "(스트리)밍(streaming) (1성분)"@ko ;
     kno:predicate "재생하다"@ko ;
-    kno:component kno:KN2019-0164-c2 ;
-    rdfs:label "숨밍"@ko ;
-    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이를 위해 팬덤은 각종 스트리밍 서비스를 총동원해 ‘스밍 총공’에 나섰고, 권장 플레이 리스트를 만들어 {‘숨밍’을} 이어 갔다."@ko ;
     kno:languageType "고+영" ;
-    kno:slotFiller "(스트리)밍(streaming) (1성분)"@ko ;
+    kno:instantiates kno:S000736 ;
+    kno:slotFiller "숨 (1성분)"@ko ;
+    kno:component kno:KN2019-0164-c1 ;
+    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    skos:definition "좋아하는 가수의 음원 또는 영상 재생 수를 늘리기 위해 음악 파일이나 동영상 파일을 인터넷에 연결된 상태에서 숨 쉬듯 끊임없이 재생하는 일. ⇒규범 표기는 미확정이다. =숨스."@ko ;
+    kno:componentString "숨, (스트리)밍(streaming)"@ko ;
     kno:formation kno:W05 ;
     kno:origin "(숨<영>←streaming)" ;
-    kno:slotFiller "숨 (1성분)"@ko ;
     kno:instantiates kno:S000536 ;
-    kno:instantiates kno:S000736 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A8%EB%B0%8D> ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2019-0164-c1 ;
-    a kno:Neologism ;
-    kno:componentString "숨, (스트리)밍(streaming)"@ko .
-kno:KN2019-0164-c2 a kno:Component ;
-    kno:fullForm "스트리밍"@ko ;
-    rdfs:label "(스트리)밍(streaming)"@ko ;
-    kno:formative kno:F001333 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "밍"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Y2 .
-kno:KN2019-0164-c1 kno:role "고정항"@ko ;
-    kno:surfaceForm "숨"@ko ;
-    a kno:Component ;
+    rdfs:label "숨밍"@ko ;
+    kno:indexForm "숨밍"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A8%EB%B0%8D> ;
+    a ontolex:Word ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0164-c2 .
+kno:KN2019-0164-c1 rdfs:label "숨"@ko ;
+    kno:fullForm "숨"@ko ;
     kno:formative kno:F000818 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "숨"@ko ;
+    kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "숨"@ko ;
-    kno:fullForm "숨"@ko .
+    kno:semanticTag kno:usas-B1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0164-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(스트리)밍(streaming)"@ko ;
+    kno:fullForm "스트리밍"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "밍"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:formative kno:F001333 ;
+    kno:role "고정항"@ko .

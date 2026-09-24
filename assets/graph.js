@@ -625,7 +625,7 @@
           + (n.regr != null ? statCard(Math.round(n.regr * 100), '%', '우리말샘 등재율') : '')
           + (n.t3 ? statCard(n.t3.replace('-', '.') + '.', '', '타입 빈도 3 도달 · 첫 사례 후 ' + n.m3 + '개월') : '')
           + '</div>';
-        html += '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 문서 1억 2,583만 건, 약 250억 어절) 기준</div>' + (n.Hn != null ? '<div class="ip-note">* 정규화 H(정규화 엔트로피): 스키마 사례들에 토큰이 얼마나 고르게 퍼져 있는지. 0에 가까울수록 한두 사례에 토큰이 몰려 있고, 1에 가까울수록 여러 사례에 고르게 퍼져 있다.</div>' : '');
+        html += '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 약 250억 어절) 기준</div>' + (n.Hn != null ? '<div class="ip-note">* 정규화 H(정규화 엔트로피): 스키마 사례들에 토큰이 얼마나 고르게 퍼져 있는지. 0에 가까울수록 한두 사례에 토큰이 몰려 있고, 1에 가까울수록 여러 사례에 고르게 퍼져 있다.</div>' : '');
       }
       var fx = []; (n.usas_f || []).forEach(function (t) { t.split('/').forEach(function (u) { if (u && fx.indexOf(u) < 0) fx.push(u); }); });
       var xs = (n.usas_x || []).slice(0, 6), xt = 0; (n.usas_x || []).forEach(function (t) { xt += t[1]; });
@@ -648,7 +648,7 @@
       html += extBtns(n);
       if (n.nn) {
         html += '<div class="ip-stats">' + statCard(n.nn.toLocaleString(), '회', '절대빈도') + statCard(n.nndoc.toLocaleString(), '건', '출현 문서 수')
-          + (n.first ? statCard(n.first.slice(0, 7).replace('-', '.') + '.', '', '최초 출현 시점') : '') + '</div>' + '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 문서 1억 2,583만 건, 약 250억 어절) 기준</div>';
+          + (n.first ? statCard(n.first.slice(0, 7).replace('-', '.') + '.', '', '최초 출현 시점') : '') + '</div>' + '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 약 250억 어절) 기준</div>';
       }
       if (n.usas.length) html += '<div class="u-cards">' + usasCard('USAS · 구성 성분', n.usas.map(function (t) { return usasRow(t); })) + '</div>';
     }

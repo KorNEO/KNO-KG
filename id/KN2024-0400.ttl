@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0400 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0400 a ontolex:MultiwordExpression ;
-    kno:componentString "환형(換刑), 유치율(留置率)"@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2024-0400 kno:frequency kno:KN2024-0400-freq-NN-2023 ;
     kno:example "¶대검찰청에 따르면 벌금형 대상 범죄자 중 노역형으로 전환된 비율인 {환형 유치율이} 지난달 기준 6.76%로 나타났다."@ko ;
-    kno:predicate "실행되다"@ko ;
-    rdfs:label "환형^유치율"@ko ;
-    kno:frequency kno:KN2024-0400-freq-NN-2023 ;
-    kno:indexForm "환형유치율"@ko ;
-    skos:definition "벌금이나 과료를 내지 못하는 사람을 노역장에 유치하는 등의 환형이 실행되는 비율."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%ED%98%95%EC%9C%A0%EC%B9%98%EC%9C%A8> ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0400-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:origin "(換刑留置率)" ;
+    kno:component kno:KN2024-0400-c1 ;
+    kno:registration "신어DB"@ko ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:languageType "한^한" ;
     kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0400-c1 ;
+    kno:frequency kno:KN2024-0400-freq-NN-total ;
+    kno:componentString "환형(換刑), 유치율(留置率)"@ko ;
     kno:component kno:KN2024-0400-c2 ;
-    a kno:Neologism .
-kno:KN2024-0400-c1 kno:semanticTag kno:usas-G2.1 ;
-    kno:role "성분"@ko ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%ED%98%95%EC%9C%A0%EC%B9%98%EC%9C%A8> ;
+    skos:definition "벌금이나 과료를 내지 못하는 사람을 노역장에 유치하는 등의 환형이 실행되는 비율."@ko ;
+    a kno:Neologism ;
+    kno:predicate "실행되다"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:label "환형^유치율"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "환형유치율"@ko .
+kno:KN2024-0400-c1 kno:formative kno:F007160 ;
     kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "환형"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "환형"@ko ;
-    kno:formative kno:F007160 ;
-    a kno:Component ;
-    rdfs:label "환형(換刑)"@ko .
-kno:KN2024-0400-c2 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G2.1 ;
+    rdfs:label "환형(換刑)"@ko ;
+    kno:fullForm "환형"@ko .
+kno:KN2024-0400-c2 kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "유치율"@ko ;
-    rdfs:label "유치율(留置率)"@ko ;
-    kno:fullForm "유치율"@ko ;
+    kno:semanticTag kno:usas-N2 ;
     kno:formative kno:F005326 ;
-    kno:role "성분"@ko ;
+    kno:fullForm "유치율"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-N2 .
+    rdfs:label "유치율(留置率)"@ko ;
+    kno:role "성분"@ko .

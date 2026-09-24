@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0108 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0108 skos:definition "‘미세 먼지’를 줄여 이르는 말."@ko ;
+kno:KN2019-0108 kno:formation kno:W06 ;
+    rdfs:label "미먼"@ko ;
+    kno:example "¶안 한다던 경유세 인상 검토…기재부 “{미먼} 때문에.”"@ko ;
     kno:component kno:KN2019-0108-c1 ;
-    kno:indexForm "미먼"@ko ;
-    kno:origin "(微먼)" ;
-    kno:languageType "한+고" ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
     a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:languageType "한+고" ;
+    kno:unitType "단어"@ko ;
     kno:componentString "미(세)(微), 먼(지)"@ko ;
     kno:component kno:KN2019-0108-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "‘미세 먼지’를 줄여 이르는 말."@ko ;
     a ontolex:Word ;
-    rdfs:label "미먼"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%A8%BC> ;
-    kno:example "¶안 한다던 경유세 인상 검토…기재부 “{미먼} 때문에.”"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:activeYears "0"^^xsd:integer .
+    kno:registration "신어DB"@ko ;
+    kno:origin "(微먼)" ;
+    kno:indexForm "미먼"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%A8%BC> .
 kno:KN2019-0108-c1 rdfs:label "미(세)(微)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F003586 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
     kno:surfaceForm "미"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-N3.2m ;
-    kno:fullForm "미세"@ko .
-kno:KN2019-0108-c2 kno:formative kno:F001292 ;
-    rdfs:label "먼(지)"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "미세"@ko ;
+    kno:formative kno:F003586 ;
     a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-N3.2m .
+kno:KN2019-0108-c2 kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-O1.1 ;
+    kno:fullForm "먼지"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001292 ;
     kno:surfaceForm "먼"@ko ;
-    kno:fullForm "먼지"@ko .
+    rdfs:label "먼(지)"@ko .

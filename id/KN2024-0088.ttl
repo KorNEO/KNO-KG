@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0088 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0088 kno:pos "「명」"@ko ;
-    kno:slotFiller "분유(粉乳) (1성분)"@ko ;
+kno:KN2024-0088 a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:instantiates kno:S000735 ;
-    kno:frequency kno:KN2024-0088-freq-NN-2023 ;
-    rdfs:label "분유로이드"@ko ;
-    kno:frequency kno:KN2024-0088-freq-NN-total ;
+    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W05 ;
+    kno:indexForm "분유로이드"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%84%EC%9C%A0%EB%A1%9C%EC%9D%B4%EB%93%9C> ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한+영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     skos:definition "어린 자녀를 둔 가장이 경제적 책임을 다하기 위해, 성과급이나 계약 체결 등에 평소 이상으로 강한 의욕과 에너지를 드러내는 모습을 약물에 빗대어 이르는 말."@ko ;
-    a ontolex:Word ;
     kno:year "2024"^^xsd:gYear ;
     kno:origin "(粉乳<영>←steroid)" ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%84%EC%9C%A0%EB%A1%9C%EC%9D%B4%EB%93%9C> ;
-    kno:example "¶10개월 된 딸을 둔 OOO 선수는 최근 스테로이드를 맞은 것처럼 월등한 실력을 보여주면서 {분유로이드라는} 별명을 얻었다."@ko ;
-    kno:indexForm "분유로이드"@ko ;
-    kno:formation kno:W05 ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2024-0088-c1 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:componentString "분유(粉乳), (스테)로이드(steroid)"@ko ;
     kno:component kno:KN2024-0088-c2 ;
-    kno:languageType "한+영" ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko .
-kno:KN2024-0088-c1 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "분유"@ko ;
-    kno:surfaceForm "분유"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    rdfs:label "분유(粉乳)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F003978 .
-kno:KN2024-0088-c2 kno:position "2"^^xsd:integer ;
-    kno:fullForm "스테로이드"@ko ;
-    kno:role "고정항"@ko ;
+    rdfs:label "분유로이드"@ko ;
+    kno:frequency kno:KN2024-0088-freq-NN-2023 ;
+    kno:componentString "분유(粉乳), (스테)로이드(steroid)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "분유(粉乳) (1성분)"@ko ;
+    kno:frequency kno:KN2024-0088-freq-NN-total ;
+    kno:example "¶10개월 된 딸을 둔 OOO 선수는 최근 스테로이드를 맞은 것처럼 월등한 실력을 보여주면서 {분유로이드라는} 별명을 얻었다."@ko .
+kno:KN2024-0088-c1 kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "분유"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "분유(粉乳)"@ko ;
+    kno:formative kno:F003978 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "분유"@ko .
+kno:KN2024-0088-c2 kno:role "고정항"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "로이드"@ko ;
     rdfs:label "(스테)로이드(steroid)"@ko ;
-    kno:formative kno:F001249 .
+    kno:formative kno:F001249 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "로이드"@ko ;
+    kno:fullForm "스테로이드"@ko ;
+    kno:semanticTag kno:usas-B3 .

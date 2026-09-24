@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0078 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0078 kno:instantiates kno:S000176 ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2025-0078-c3 ;
-    skos:definition "(LLM) 공정한 감시ㆍ심의ㆍ조사 기능을 해야 할 위원회나 기관이 특정 권력(정권ㆍ권력자)을 비호하고 방어하는 쪽으로 변질되었다는 뜻으로, 비판하거나 조롱하는 말."@ko ;
-    rdfs:label "권력 보위 위원회"@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2025-0078 kno:slotFiller "권력(權力)+보위(保衛) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "한_한_한" ;
+    kno:componentString "권력(權力), 보위(保衛), 위원회(委員會)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B6%8C%EB%A0%A5%20%EB%B3%B4%EC%9C%84%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
     kno:frequency kno:KN2025-0078-freq-NN-2025 ;
-    kno:componentString "권력(權力), 보위(保衛), 위원회(委員會)"@ko ;
-    kno:example "(LLM) 야당은 해당 위원회가 권력 감시는커녕 정권을 두둔한다며 {권력보위위원회로} 전락했다고 비판했다."@ko ;
-    kno:origin "(權力保衛委員會)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:slotFiller "권력(權力)+보위(保衛) (2성분)"@ko ;
-    kno:predicate "조롱하다"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0078-freq-NN-total ;
-    kno:component kno:KN2025-0078-c2 ;
+    skos:definition "(LLM) 공정한 감시ㆍ심의ㆍ조사 기능을 해야 할 위원회나 기관이 특정 권력(정권ㆍ권력자)을 비호하고 방어하는 쪽으로 변질되었다는 뜻으로, 비판하거나 조롱하는 말."@ko ;
     kno:indexForm "권력보위위원회"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0078-c3 ;
+    rdfs:label "권력 보위 위원회"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:predicate "조롱하다"@ko ;
+    kno:instantiates kno:S000176 ;
+    a kno:Neologism ;
+    kno:origin "(權力保衛委員會)" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0078-c1 ;
+    kno:frequency kno:KN2025-0078-freq-NN-total ;
+    kno:example "(LLM) 야당은 해당 위원회가 권력 감시는커녕 정권을 두둔한다며 {권력보위위원회로} 전락했다고 비판했다."@ko ;
+    kno:component kno:KN2025-0078-c2 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:languageType "한_한_한" ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0078-c1 .
+    kno:activeYears "1"^^xsd:integer .
 kno:KN2025-0078-c3 kno:formative kno:F000148 ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "위원회"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "위원회(委員會)"@ko ;
     kno:semanticTag kno:usas-S5 ;
     kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
-    rdfs:label "위원회(委員會)"@ko ;
+    kno:surfaceForm "위원회"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:fullForm "위원회"@ko .
-kno:KN2025-0078-c2 kno:fullForm "보위"@ko ;
-    kno:surfaceForm "보위"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S8p ;
-    rdfs:label "보위(保衛)"@ko ;
-    kno:formative kno:F003893 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0078-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+kno:KN2025-0078-c1 kno:surfaceForm "권력"@ko ;
     kno:formative kno:F002497 ;
-    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
     kno:fullForm "권력"@ko ;
-    rdfs:label "권력(權力)"@ko ;
-    kno:surfaceForm "권력"@ko .
+    rdfs:label "권력(權力)"@ko .
+kno:KN2025-0078-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:formative kno:F003893 ;
+    rdfs:label "보위(保衛)"@ko ;
+    kno:surfaceForm "보위"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "보위"@ko ;
+    kno:truncated "false"^^xsd:boolean .

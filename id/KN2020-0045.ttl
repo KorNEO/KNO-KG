@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0045 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0045 kno:example "¶지원금이 지급된 후 별도의 신청을 하지 않고 3개월이 지나면 {기부금 특별법에} 의해 자동으로 기부금으로 전환된다."@ko ;
-    kno:frequency kno:KN2020-0045-freq-NN-total ;
+kno:KN2020-0045 kno:frequency kno:KN2020-0045-freq-NN-total ;
+    kno:indexForm "기부금특별법"@ko ;
+    kno:frequency kno:KN2020-0045-freq-NN-2020 ;
+    kno:component kno:KN2020-0045-c1 ;
+    a ontolex:MultiwordExpression ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:slotFiller "기부금(寄附金) (1성분)"@ko ;
+    kno:origin "(寄附金特別法)" ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "기부금(寄附金), 특별법(特別法)"@ko ;
+    kno:instantiates kno:S000027 ;
+    skos:definition "지급된 긴급 재난 지원금을 수령하지 않고 국고로 기탁하는 금전에 대한 사항을 제정한 법률. 주요 내용은 코로나19의 경제적 파장으로 인해 국민에게 지급된 긴급 재난 지원금을 수령자가 스스로 국고로 기부 의사를 밝히고 기탁하거나 일정 기간 이내에 수령하지 않을 경우 자동적으로 기부금으로 간주된다는 것 따위이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한^한" ;
+    kno:example "¶지원금이 지급된 후 별도의 신청을 하지 않고 3개월이 지나면 {기부금 특별법에} 의해 자동으로 기부금으로 전환된다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0045-c2 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%B6%80%EA%B8%88%ED%8A%B9%EB%B3%84%EB%B2%95> ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "기부금특별법"@ko ;
     kno:pos "「구」"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:instantiates kno:S000027 ;
-    kno:componentString "기부금(寄附金), 특별법(特別法)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(寄附金特別法)" ;
-    kno:frequency kno:KN2020-0045-freq-NN-2020 ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "지급된 긴급 재난 지원금을 수령하지 않고 국고로 기탁하는 금전에 대한 사항을 제정한 법률. 주요 내용은 코로나19의 경제적 파장으로 인해 국민에게 지급된 긴급 재난 지원금을 수령자가 스스로 국고로 기부 의사를 밝히고 기탁하거나 일정 기간 이내에 수령하지 않을 경우 자동적으로 기부금으로 간주된다는 것 따위이다."@ko ;
-    kno:component kno:KN2020-0045-c2 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:component kno:KN2020-0045-c1 ;
-    kno:languageType "한^한" ;
-    rdfs:label "기부금^특별법"@ko ;
-    kno:slotFiller "기부금(寄附金) (1성분)"@ko .
-kno:KN2020-0045-c2 a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "특별법"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "특별법"@ko ;
-    rdfs:label "특별법(特別法)"@ko ;
-    kno:formative kno:F000044 .
-kno:KN2020-0045-c1 kno:role "슬롯 채움"@ko ;
-    kno:fullForm "기부금"@ko ;
-    kno:surfaceForm "기부금"@ko ;
+    rdfs:label "기부금^특별법"@ko .
+kno:KN2020-0045-c1 kno:fullForm "기부금"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001117 ;
-    a kno:Component ;
     kno:semanticTag kno:usas-S8p ;
+    a kno:Component ;
+    kno:surfaceForm "기부금"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "기부금(寄附金)"@ko ;
-    kno:semanticTag kno:usas-I1.1 .
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001117 .
+kno:KN2020-0045-c2 kno:surfaceForm "특별법"@ko ;
+    rdfs:label "특별법(特別法)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000044 ;
+    kno:fullForm "특별법"@ko .

@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0066 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0066 a ontolex:Word ;
-    kno:year "2024"^^xsd:gYear ;
+kno:KN2024-0066 kno:instantiates kno:S000823 ;
     kno:registration "신어DB"@ko ;
-    kno:example "¶남주는 특유의 그렁그렁한 {맑눈으로} 팬심을 사로잡았다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "맑(다), 눈"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
     rdfs:label "맑눈"@ko ;
-    kno:formation kno:W06 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%91%EB%88%88> ;
-    kno:instantiates kno:S000823 ;
-    kno:frequency kno:KN2024-0066-freq-NN-2024 ;
-    kno:instantiates kno:S001373 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0066-freq-NN-total ;
-    kno:languageType "고+고" ;
+    kno:unitType "단어"@ko ;
     kno:slotFiller "눈 (1성분)"@ko ;
+    kno:component kno:KN2024-0066-c2 ;
+    kno:componentString "맑(다), 눈"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:languageType "고+고" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%91%EB%88%88> ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:example "¶남주는 특유의 그렁그렁한 {맑눈으로} 팬심을 사로잡았다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0066-freq-NN-total ;
+    kno:frequency kno:KN2024-0066-freq-NN-2024 ;
+    kno:slotFiller "맑(다) (1성분)"@ko ;
+    kno:component kno:KN2024-0066-c1 ;
+    a kno:Neologism ;
     kno:pos "「명」"@ko ;
     kno:indexForm "맑눈"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2024-0066-c2 ;
-    kno:component kno:KN2024-0066-c1 ;
     skos:definition "‘맑은 눈’을 줄여 이르는 말로, 티없이 깨끗하고 또렷한 눈을 이르는 말."@ko ;
-    kno:slotFiller "맑(다) (1성분)"@ko .
-kno:KN2024-0066-c2 rdfs:label "눈"@ko ;
-    kno:fullForm "눈"@ko ;
-    kno:surfaceForm "눈"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:role "고정항"@ko ;
+    kno:instantiates kno:S001373 .
+kno:KN2024-0066-c2 kno:semanticTag kno:usas-B1 ;
     kno:formative kno:F000253 ;
-    a kno:Component .
-kno:KN2024-0066-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
     a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "눈"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "눈"@ko ;
+    kno:surfaceForm "눈"@ko .
+kno:KN2024-0066-c1 kno:fullForm "맑다"@ko ;
     kno:formative kno:F001280 ;
-    kno:fullForm "맑다"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-O4.3 ;
     kno:surfaceForm "맑"@ko ;
-    rdfs:label "맑(다)"@ko .
+    rdfs:label "맑(다)"@ko ;
+    kno:semanticTag kno:usas-O4.3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component .

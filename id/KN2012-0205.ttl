@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0205 kno:pos "「구」"@ko ;
-    kno:languageType "한_한_한" ;
-    rdfs:label "소방 훈련 지역"@ko ;
-    kno:instantiates kno:S000178 ;
-    kno:origin "(消防訓鍊地域)" ;
-    kno:indexForm "소방훈련지역"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%B0%A9%20%ED%9B%88%EB%A0%A8%20%EC%A7%80%EC%97%AD> ;
-    skos:definition "화재가 발생하였을 때 효율적으로 피난하거나 대처할 수 있는 훈련을 실시하는 지역."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "훈련(訓鍊)+지역(地域) (2성분)"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "소방(消防)+훈련(訓鍊) (2성분)"@ko ;
-    kno:component kno:KN2012-0205-c2 ;
-    kno:component kno:KN2012-0205-c3 ;
-    kno:componentString "소방(消防), 훈련(訓鍊), 지역(地域)"@ko ;
-    kno:component kno:KN2012-0205-c1 ;
+kno:KN2012-0205 kno:component kno:KN2012-0205-c2 ;
     kno:unitType "구"@ko ;
+    kno:componentString "소방(消防), 훈련(訓鍊), 지역(地域)"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "소방 훈련 지역"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%B0%A9%20%ED%9B%88%EB%A0%A8%20%EC%A7%80%EC%97%AD> ;
     kno:example "¶이중 정중앙 지역은 콘크리트가 덮힌 {소방 훈련 지역이고} 우측의 직사각형 모양은 자동차 바퀴 세척 지역으로 시멘트 콘크리트 내의 철망으로 인해 이상 징후가 발견된 것으로 분석됐다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(消防訓鍊地域)" ;
+    skos:definition "화재가 발생하였을 때 효율적으로 피난하거나 대처할 수 있는 훈련을 실시하는 지역."@ko ;
+    kno:instantiates kno:S000178 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:predicate "실시하다"@ko ;
+    kno:component kno:KN2012-0205-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "소방훈련지역"@ko ;
+    kno:slotFiller "소방(消防)+훈련(訓鍊) (2성분)"@ko ;
     kno:instantiates kno:S001464 ;
-    kno:predicate "실시하다"@ko .
-kno:KN2012-0205-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-P1 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "훈련(訓鍊)+지역(地域) (2성분)"@ko ;
+    kno:languageType "한_한_한" ;
+    kno:component kno:KN2012-0205-c3 .
+kno:KN2012-0205-c2 kno:semanticTag kno:usas-P1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "훈련"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "훈련(訓鍊)"@ko ;
     kno:formative kno:F002039 ;
     kno:fullForm "훈련"@ko ;
-    rdfs:label "훈련(訓鍊)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "훈련"@ko ;
-    kno:position "2"^^xsd:integer ;
     a kno:Component .
-kno:KN2012-0205-c3 a kno:Component ;
-    rdfs:label "지역(地域)"@ko ;
+kno:KN2012-0205-c1 kno:semanticTag kno:usas-S8p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "소방"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001483 ;
+    a kno:Component ;
+    rdfs:label "소방(消防)"@ko ;
+    kno:surfaceForm "소방"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0205-c3 kno:semanticTag kno:usas-M7 ;
+    a kno:Component ;
     kno:fullForm "지역"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "지역"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000063 ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:role "고정항"@ko .
-kno:KN2012-0205-c1 kno:surfaceForm "소방"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:fullForm "소방"@ko ;
-    rdfs:label "소방(消防)"@ko ;
-    kno:formative kno:F001483 ;
+    rdfs:label "지역(地域)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S8p .
+    kno:surfaceForm "지역"@ko ;
+    kno:formative kno:F000063 .

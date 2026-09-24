@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0029 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0029 kno:component kno:KN2024-0029-c1 ;
-    kno:frequency kno:KN2024-0029-freq-NN-total ;
-    kno:component kno:KN2024-0029-c3 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0029-freq-NN-2023 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2024-0029-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%AA%A8%EC%A1%B1> ;
+kno:KN2024-0029 a ontolex:Word ;
+    kno:predicate "없다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:instantiates kno:S000001 ;
     a kno:Neologism ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2024-0029-c1 ;
+    kno:example "¶고물가로 인해 김장에 대한 부담감이 증가하면서, 김장 경험이 없는 {김모족이} 늘어나고 있는 추세이다."@ko ;
+    kno:component kno:KN2024-0029-c3 ;
+    kno:componentString "김(장), 모(르다), -족(族)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(김모族)" ;
+    skos:definition "김장을 모르거나 김장 경험이 없는 사람. 또는 그런 무리."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%AA%A8%EC%A1%B1> ;
+    kno:frequency kno:KN2024-0029-freq-NN-total ;
     kno:languageType "고+한" ;
     kno:formation kno:W02 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:componentString "김(장), 모(르다), -족(族)"@ko ;
-    kno:example "¶고물가로 인해 김장에 대한 부담감이 증가하면서, 김장 경험이 없는 {김모족이} 늘어나고 있는 추세이다."@ko ;
-    kno:origin "(김모族)" ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "김(장)+모(르다) (2성분)"@ko ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:predicate "없다"@ko ;
     kno:indexForm "김모족"@ko ;
+    kno:slotFiller "김(장)+모(르다) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
     rdfs:label "김모-족"@ko ;
-    skos:definition "김장을 모르거나 김장 경험이 없는 사람. 또는 그런 무리."@ko .
-kno:KN2024-0029-c1 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "김장"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0029-freq-NN-2023 ;
+    kno:component kno:KN2024-0029-c2 .
+kno:KN2024-0029-c1 kno:fullForm "김장"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F002613 ;
-    kno:position "1"^^xsd:integer ;
     rdfs:label "김(장)"@ko ;
-    kno:surfaceForm "김"@ko .
-kno:KN2024-0029-c3 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "김"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0029-c3 kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "족"@ko ;
-    rdfs:label "-족(族)"@ko ;
-    kno:fullForm "족"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000001 ;
     kno:semanticTag kno:usas-S5 ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:formative kno:F000001 .
-kno:KN2024-0029-c2 kno:role "슬롯 채움"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "족"@ko ;
     a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0029-c2 kno:fullForm "모르다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "모"@ko ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "모(르다)"@ko ;
     kno:formative kno:F003478 ;
-    kno:fullForm "모르다"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-X2.2m ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "모"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X2.2m .

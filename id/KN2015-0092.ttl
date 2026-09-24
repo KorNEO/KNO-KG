@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0092 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0092 a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2015-0092-c1 ;
-    a kno:Neologism ;
+kno:KN2015-0092 kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:indexForm "백수오덕"@ko ;
+    kno:example "¶그는 대학을 나오지 않았다. 취업해 본 적도 없다. 이른바 {백수 오덕의} 상징 격이다."@ko ;
     kno:frequency kno:KN2015-0092-freq-NN-2015 ;
-    kno:component kno:KN2015-0092-c2 ;
-    kno:frequency kno:KN2015-0092-freq-NN-total ;
-    kno:origin "(白手<일>←otaku[御宅])" ;
-    kno:componentString "백수(白手), 오덕(←otaku)"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    a kno:Neologism ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%88%98%20%EC%98%A4%EB%8D%95> ;
-    rdfs:label "백수 오덕"@ko ;
-    kno:predicate "집착하다"@ko ;
+    kno:origin "(白手<일>←otaku[御宅])" ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:component kno:KN2015-0092-c2 ;
     kno:languageType "한_일" ;
     kno:year "2015"^^xsd:gYear ;
-    kno:example "¶그는 대학을 나오지 않았다. 취업해 본 적도 없다. 이른바 {백수 오덕의} 상징 격이다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "백수오덕"@ko ;
-    kno:pos "「구」"@ko ;
-    skos:definition "직업이 없이 어떤 일에 병적으로 집중하거나 집착하는 사람."@ko .
-kno:KN2015-0092-c1 a kno:Component ;
-    rdfs:label "백수(白手)"@ko ;
-    kno:formative kno:F001350 ;
-    kno:fullForm "백수"@ko ;
-    kno:semanticTag kno:usas-I3.1m ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "백수"@ko .
+    skos:definition "직업이 없이 어떤 일에 병적으로 집중하거나 집착하는 사람."@ko ;
+    kno:frequency kno:KN2015-0092-freq-NN-total ;
+    rdfs:label "백수 오덕"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2015-0092-c1 ;
+    kno:componentString "백수(白手), 오덕(←otaku)"@ko ;
+    kno:predicate "집착하다"@ko .
 kno:KN2015-0092-c2 kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "오덕(←otaku)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005108 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "오덕"@ko ;
+    kno:formative kno:F005108 ;
     kno:semanticTag kno:usas-X5.2p ;
-    kno:fullForm "오덕"@ko .
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "오덕"@ko ;
+    rdfs:label "오덕(←otaku)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2015-0092-c1 kno:fullForm "백수"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    rdfs:label "백수(白手)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "백수"@ko ;
+    kno:formative kno:F001350 .

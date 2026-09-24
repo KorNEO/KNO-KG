@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0218 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0218 kno:example "(LLM) 어제 먹고 남은 마라샹궈에 카레 가루를 넣어 {마라카레를} 만들어 먹었다."@ko ;
-    a kno:Neologism ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0218-freq-NN-2025 ;
+kno:KN2025-0218 kno:unitType "단어"@ko ;
     kno:indexForm "마라카레"@ko ;
+    kno:component kno:KN2025-0218-c2 ;
+    skos:definition "(LLM) 얼얼하면서 매운 맛을 내는 ‘마라’ 풍미가 나는 요리에 카레 가루(또는 카레)를 더해 만든 음식."@ko ;
     kno:origin "(<중>mala[麻辣]<일>karê)" ;
-    rdfs:label "마라-카레"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W01 ;
     kno:frequency kno:KN2025-0218-freq-NN-total ;
+    kno:componentString "마라(mala[麻辣]), 카레(karê)"@ko ;
+    kno:component kno:KN2025-0218-c1 ;
+    kno:frequency kno:KN2025-0218-freq-NN-2025 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:example "(LLM) 어제 먹고 남은 마라샹궈에 카레 가루를 넣어 {마라카레를} 만들어 먹었다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:languageType "중_일" ;
+    rdfs:label "마라-카레"@ko ;
+    kno:year "2025"^^xsd:gYear ;
     a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "마라(mala[麻辣]), 카레(karê)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 얼얼하면서 매운 맛을 내는 ‘마라’ 풍미가 나는 요리에 카레 가루(또는 카레)를 더해 만든 음식."@ko ;
-    kno:languageType "중_일" ;
-    kno:component kno:KN2025-0218-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%9D%BC%EC%B9%B4%EB%A0%88> ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0218-c1 ;
-    kno:formation kno:W01 .
-kno:KN2025-0218-c2 a kno:Component ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:surfaceForm "카레"@ko ;
-    kno:fullForm "카레"@ko ;
-    kno:role "성분"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%9D%BC%EC%B9%B4%EB%A0%88> .
+kno:KN2025-0218-c2 kno:semanticTag kno:usas-F1 ;
     kno:formative kno:F006192 ;
-    kno:position "2"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "카레(karê)"@ko .
-kno:KN2025-0218-c1 kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F003347 ;
-    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "카레"@ko ;
     kno:role "성분"@ko ;
-    kno:fullForm "마라"@ko ;
+    kno:fullForm "카레"@ko ;
+    rdfs:label "카레(karê)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0218-c1 kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "마라"@ko ;
     a kno:Component ;
     rdfs:label "마라(mala[麻辣])"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "마라"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F003347 ;
+    kno:role "성분"@ko .

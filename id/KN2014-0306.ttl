@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0306 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0306 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358350> ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "하루, -족(族)"@ko ;
-    a kno:Neologism ;
+kno:KN2014-0306 kno:languageType "고+한" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358350> ;
+    kno:origin "(하루族)" ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0306-c2 ;
+    kno:formation kno:W02 ;
     kno:component kno:KN2014-0306-c1 ;
-    kno:frequency kno:KN2014-0306-freq-NN-total ;
-    kno:slotFiller "하루 (1성분)"@ko ;
-    kno:languageType "고+한" ;
-    rdfs:label "하루-족"@ko ;
-    kno:instantiates kno:S000001 ;
+    a ontolex:Word ;
+    kno:example "¶최근의 명절 세태를 빗대는…‘{하루족}’ 등의 신조어가 속속 등장할 정도고 귀성 분위기도 확연히 달라지고 있다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:year "2014"^^xsd:gYear ;
+    kno:instantiates kno:S000001 ;
+    kno:frequency kno:KN2014-0306-freq-NN-total ;
     kno:predicate "머무다"@ko ;
+    kno:componentString "하루, -족(族)"@ko ;
+    rdfs:label "하루-족"@ko ;
+    kno:pos "「명」"@ko ;
     kno:indexForm "하루족"@ko ;
+    kno:urimalTargetCode "1358350" ;
+    kno:slotFiller "하루 (1성분)"@ko ;
     skos:definition "명절 때 고향집에서 하루만 머무는 사람. 또는 그런 무리."@ko ;
+    a kno:Neologism ;
     kno:frequency kno:KN2014-0306-freq-NN-2014 ;
     kno:registration "우리말샘"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2014-0306-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2014"^^xsd:gYear ;
-    kno:urimalTargetCode "1358350" ;
-    a ontolex:Word ;
-    kno:formation kno:W02 ;
-    kno:example "¶최근의 명절 세태를 빗대는…‘{하루족}’ 등의 신조어가 속속 등장할 정도고 귀성 분위기도 확연히 달라지고 있다."@ko ;
-    kno:origin "(하루族)" .
-kno:KN2014-0306-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "하루"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "하루"@ko ;
-    rdfs:label "하루"@ko ;
-    kno:semanticTag kno:usas-T1.3 ;
+    kno:unitType "단어"@ko .
+kno:KN2014-0306-c2 kno:fullForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "족"@ko ;
     a kno:Component ;
-    kno:formative kno:F006924 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2014-0306-c2 kno:formative kno:F000001 ;
     rdfs:label "-족(族)"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-S5 ;
     kno:semanticTag kno:usas-S2 ;
-    kno:fullForm "족"@ko ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "족"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0306-c1 kno:formative kno:F006924 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "하루"@ko ;
+    rdfs:label "하루"@ko ;
+    kno:surfaceForm "하루"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-T1.3 .

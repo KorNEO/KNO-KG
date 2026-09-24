@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0075 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0075 rdfs:label "끼니 노동"@ko ;
-    kno:frequency kno:KN2020-0075-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
+kno:KN2020-0075 kno:frequency kno:KN2020-0075-freq-NN-total ;
+    rdfs:label "끼니 노동"@ko ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000248 ;
     kno:componentString "끼니, 노동(勞動)"@ko ;
-    kno:indexForm "끼니노동"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%81%BC%EB%8B%88%20%EB%85%B8%EB%8F%99> ;
+    skos:definition "가정주부가 가족들의 끼니를 챙기기 위하여 들이는 노력. 또는 그러한 일."@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:languageType "고_한" ;
     kno:registration "신어DB"@ko ;
     kno:year "2020"^^xsd:gYear ;
-    skos:definition "가정주부가 가족들의 끼니를 챙기기 위하여 들이는 노력. 또는 그러한 일."@ko ;
-    a kno:Neologism ;
-    kno:example "¶주말 점심, 가족들이 이야기하는 “간단히 먹자.”라는 말은 {끼니 노동의} 부담을 줄여 주지 못한다. 간단히 식사할 수 있는 음식은 많고 다양하지만 간단히 조리할 수 있는 음식은 없다."@ko ;
+    kno:indexForm "끼니노동"@ko ;
     kno:component kno:KN2020-0075-c1 ;
-    kno:instantiates kno:S000248 ;
-    kno:predicate "들이다"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:example "¶주말 점심, 가족들이 이야기하는 “간단히 먹자.”라는 말은 {끼니 노동의} 부담을 줄여 주지 못한다. 간단히 식사할 수 있는 음식은 많고 다양하지만 간단히 조리할 수 있는 음식은 없다."@ko ;
     kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%81%BC%EB%8B%88%20%EB%85%B8%EB%8F%99> ;
+    kno:origin "(끼니勞動)" ;
+    a ontolex:MultiwordExpression ;
     kno:slotFiller "끼니 (1성분)"@ko ;
     kno:component kno:KN2020-0075-c2 ;
-    kno:pos "「구」"@ko ;
+    kno:predicate "들이다"@ko ;
     kno:frequency kno:KN2020-0075-freq-NN-2019 ;
-    kno:languageType "고_한" ;
-    kno:origin "(끼니勞動)" ;
-    kno:activeYears "2"^^xsd:integer ;
     kno:frequency kno:KN2020-0075-freq-NN-2020 .
-kno:KN2020-0075-c1 kno:formative kno:F002662 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "끼니"@ko ;
+kno:KN2020-0075-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     rdfs:label "끼니"@ko ;
     kno:fullForm "끼니"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component .
-kno:KN2020-0075-c2 a kno:Component ;
-    kno:formative kno:F000166 ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "노동"@ko ;
-    kno:fullForm "노동"@ko ;
-    rdfs:label "노동(勞動)"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F002662 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "끼니"@ko ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0075-c2 kno:fullForm "노동"@ko ;
+    kno:formative kno:F000166 ;
+    a kno:Component ;
+    rdfs:label "노동(勞動)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "노동"@ko ;
+    kno:semanticTag kno:usas-I3.1 .

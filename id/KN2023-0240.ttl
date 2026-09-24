@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0240 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0240 a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2023-0240-freq-NN-2023 ;
-    kno:example "¶정부는 재해 우려 구역에 대하여 개보수 공사 및 안전한 곳으로의 이주를 지원하겠다는 방침을 밝혔으며, {재해 우려 주택에} 거주하는 사람들을 대상으로 민간 및 공공 이주의 지원도 실시할 계획이라고 하였다."@ko ;
-    kno:instantiates kno:S001632 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:origin "(災害憂慮住宅)" ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    skos:definition "산사태, 지진, 태풍, 폭우, 해일, 홍수 등으로 피해를 입을 가능성이 큰 주택."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%95%B4%EC%9A%B0%EB%A0%A4%EC%A3%BC%ED%83%9D> ;
+kno:KN2023-0240 kno:indexForm "재해우려주택"@ko ;
+    rdfs:label "재해^우려^주택"@ko ;
     kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0240-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
     kno:slotFiller "우려(憂慮) (1성분)"@ko ;
-    kno:indexForm "재해우려주택"@ko ;
-    a kno:Neologism ;
+    kno:component kno:KN2023-0240-c1 ;
+    kno:frequency kno:KN2023-0240-freq-NN-2025 ;
     kno:frequency kno:KN2023-0240-freq-NN-2022 ;
     kno:frequency kno:KN2023-0240-freq-NN-2024 ;
-    kno:frequency kno:KN2023-0240-freq-NN-2025 ;
-    kno:languageType "한^한^한" ;
-    kno:componentString "재해(災害), 우려(憂慮), 주택(住宅)"@ko ;
-    kno:component kno:KN2023-0240-c3 ;
-    kno:frequency kno:KN2023-0240-freq-NN-total ;
-    kno:component kno:KN2023-0240-c1 ;
     kno:component kno:KN2023-0240-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(災害憂慮住宅)" ;
+    kno:componentString "재해(災害), 우려(憂慮), 주택(住宅)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶정부는 재해 우려 구역에 대하여 개보수 공사 및 안전한 곳으로의 이주를 지원하겠다는 방침을 밝혔으며, {재해 우려 주택에} 거주하는 사람들을 대상으로 민간 및 공공 이주의 지원도 실시할 계획이라고 하였다."@ko ;
+    kno:component kno:KN2023-0240-c3 ;
+    kno:languageType "한^한^한" ;
     kno:pos "「구」"@ko ;
-    rdfs:label "재해^우려^주택"@ko .
-kno:KN2023-0240-c3 kno:surfaceForm "주택"@ko ;
-    rdfs:label "주택(住宅)"@ko ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000073 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "주택"@ko .
-kno:KN2023-0240-c1 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:frequency kno:KN2023-0240-freq-NN-2023 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "산사태, 지진, 태풍, 폭우, 해일, 홍수 등으로 피해를 입을 가능성이 큰 주택."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    a kno:Neologism ;
+    kno:instantiates kno:S001632 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%95%B4%EC%9A%B0%EB%A0%A4%EC%A3%BC%ED%83%9D> ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0240-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001741 ;
     kno:fullForm "재해"@ko ;
-    rdfs:label "재해(災害)"@ko ;
     kno:semanticTag kno:usas-A1.1.2 ;
-    kno:surfaceForm "재해"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F001741 .
-kno:KN2023-0240-c2 kno:surfaceForm "우려"@ko ;
-    kno:semanticTag kno:usas-E6m ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "재해"@ko ;
+    rdfs:label "재해(災害)"@ko ;
+    a kno:Component .
+kno:KN2023-0240-c2 kno:formative kno:F005214 ;
+    kno:surfaceForm "우려"@ko ;
+    a kno:Component ;
     rdfs:label "우려(憂慮)"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E6m ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005214 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "우려"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2023-0240-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000073 ;
+    kno:surfaceForm "주택"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:fullForm "주택"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:fullForm "우려"@ko .
+    rdfs:label "주택(住宅)"@ko .

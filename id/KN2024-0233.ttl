@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0233 kno:example "¶지방 의과 대학의 정원 확대 소식이 전해지자 {의준생을} 둔 학부모들의 상담 문의가 학원가를 중심으로 크게 늘고 있다."@ko ;
-    skos:definition "‘의과 대학 입학 준비생’을 줄여 이르는 말."@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "의(사)(醫師), 준(準), 생(生)"@ko ;
-    kno:frequency kno:KN2024-0233-freq-NN-total ;
-    kno:languageType "한+한+한" ;
-    kno:component kno:KN2024-0233-c2 ;
-    kno:origin "(醫準生)" ;
-    kno:indexForm "의준생"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:component kno:KN2024-0233-c1 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:slotFiller "준(準)+생(生) (2성분)"@ko ;
+kno:KN2024-0233 a ontolex:Word ;
     kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000225 ;
-    kno:unitType "단어"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "준(準)+생(生) (2성분)"@ko ;
+    kno:indexForm "의준생"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(醫準生)" ;
+    kno:languageType "한+한+한" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%98%EC%A4%80%EC%83%9D> ;
     rdfs:label "의준생"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:frequency kno:KN2024-0233-freq-NN-2024 ;
+    kno:componentString "의(사)(醫師), 준(準), 생(生)"@ko ;
     kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0233-freq-NN-total ;
+    kno:example "¶지방 의과 대학의 정원 확대 소식이 전해지자 {의준생을} 둔 학부모들의 상담 문의가 학원가를 중심으로 크게 늘고 있다."@ko ;
+    kno:component kno:KN2024-0233-c1 ;
+    a kno:Neologism ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000225 ;
     kno:component kno:KN2024-0233-c3 ;
-    a kno:Neologism .
-kno:KN2024-0233-c2 kno:surfaceForm "준"@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "‘의과 대학 입학 준비생’을 줄여 이르는 말."@ko ;
+    kno:component kno:KN2024-0233-c2 .
+kno:KN2024-0233-c1 kno:formative kno:F000398 ;
+    kno:surfaceForm "의"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "의사"@ko ;
+    rdfs:label "의(사)(醫師)"@ko .
+kno:KN2024-0233-c3 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "생"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L1p ;
+    kno:surfaceForm "생"@ko ;
+    rdfs:label "생(生)"@ko ;
+    kno:formative kno:F000368 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0233-c2 a kno:Component ;
     kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "준"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-A6.1p ;
     kno:fullForm "준"@ko ;
     rdfs:label "준(準)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005814 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2024-0233-c1 kno:fullForm "의사"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "의(사)(醫師)"@ko ;
-    kno:surfaceForm "의"@ko ;
-    kno:formative kno:F000398 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2024-0233-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000368 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-L1p ;
-    rdfs:label "생(生)"@ko ;
-    kno:fullForm "생"@ko ;
-    kno:surfaceForm "생"@ko .
+    kno:formative kno:F005814 .

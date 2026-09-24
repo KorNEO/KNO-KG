@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0454 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0454 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%AD%EC%A3%BD%ED%86%A0> ;
-    kno:origin "(爆竹吐)" ;
-    kno:unitType "단어"@ko ;
+kno:KN2012-0454 kno:formation kno:W01 ;
     kno:example "¶OOO은 “생일 케이크 위에 떨어지면 {폭죽토} 치우고 먹으라고 말하면 된다.”라고 말해 웃음을 자아냈다."@ko ;
-    kno:indexForm "폭죽토"@ko ;
-    skos:definition "폭죽 안에서 터지는 형형색색의 색종이."@ko ;
-    kno:component kno:KN2012-0454-c1 ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    a kno:Neologism ;
-    kno:componentString "폭죽(爆竹), 토(吐)"@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "폭죽(爆竹), 토(吐)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%AD%EC%A3%BD%ED%86%A0> ;
     kno:component kno:KN2012-0454-c2 ;
+    kno:year "2012"^^xsd:gYear ;
+    a kno:Neologism ;
+    skos:definition "폭죽 안에서 터지는 형형색색의 색종이."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:origin "(爆竹吐)" ;
+    kno:registration "신어DB"@ko ;
     a ontolex:Word ;
     rdfs:label "폭죽-토"@ko ;
-    kno:languageType "한+한" .
-kno:KN2012-0454-c1 rdfs:label "폭죽(爆竹)"@ko ;
-    kno:formative kno:F006754 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "폭죽"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "폭죽"@ko ;
-    kno:semanticTag kno:usas-K1 ;
-    kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2012-0454-c2 rdfs:label "토(吐)"@ko ;
-    a kno:Component ;
+    kno:component kno:KN2012-0454-c1 ;
+    kno:languageType "한+한" ;
+    kno:indexForm "폭죽토"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2012-0454-c2 kno:surfaceForm "토"@ko ;
     kno:fullForm "토"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F006472 ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "토"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B1 .
+    kno:formative kno:F006472 ;
+    rdfs:label "토(吐)"@ko .
+kno:KN2012-0454-c1 kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "폭죽"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "폭죽"@ko ;
+    rdfs:label "폭죽(爆竹)"@ko ;
+    kno:formative kno:F006754 ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean .

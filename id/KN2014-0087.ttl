@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0087 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0087 kno:frequency kno:KN2014-0087-freq-NN-total ;
-    kno:year "2014"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%97%88%EC%84%A4%ED%8C%8C> ;
+kno:KN2014-0087 a kno:Neologism ;
+    kno:unitType "단어"@ko ;
     kno:languageType "영+한" ;
+    kno:origin "(<영>rehearsal派)" ;
+    kno:slotFiller "리허설(rehearsal) (1성분)"@ko ;
+    skos:definition "공연에 앞서 리허설을 위주로 연습하는 사람들의 집단."@ko ;
+    kno:formation kno:W02 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000195 ;
+    kno:frequency kno:KN2014-0087-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%97%88%EC%84%A4%ED%8C%8C> ;
+    kno:component kno:KN2014-0087-c2 ;
+    kno:example "¶배우들은 수능 공부를 하듯 한시도 손에서 대본을 떼 놓지 않은 채 무한 열정을 쏟아낸 OOO과 OOO으로 이뤄진 ‘열공파’와 대본을 읽고 또 읽으며 실전을 방불케 한…‘{리허설파’로} 나눠져 눈길을 끈다."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2014-0087-c1 ;
+    kno:componentString "리허설(rehearsal), -파(派)"@ko ;
+    kno:frequency kno:KN2014-0087-freq-NN-2014 ;
+    rdfs:label "리허설-파"@ko ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:indexForm "리허설파"@ko ;
     a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "리허설(rehearsal), -파(派)"@ko ;
-    kno:lastAttestationYear "2014"^^xsd:gYear ;
-    kno:instantiates kno:S000195 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2014-0087-freq-NN-2014 ;
-    kno:component kno:KN2014-0087-c2 ;
-    skos:definition "공연에 앞서 리허설을 위주로 연습하는 사람들의 집단."@ko ;
-    kno:origin "(<영>rehearsal派)" ;
-    kno:example "¶배우들은 수능 공부를 하듯 한시도 손에서 대본을 떼 놓지 않은 채 무한 열정을 쏟아낸 OOO과 OOO으로 이뤄진 ‘열공파’와 대본을 읽고 또 읽으며 실전을 방불케 한…‘{리허설파’로} 나눠져 눈길을 끈다."@ko ;
-    kno:component kno:KN2014-0087-c1 ;
-    rdfs:label "리허설-파"@ko ;
-    kno:slotFiller "리허설(rehearsal) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "리허설파"@ko ;
-    a kno:Neologism ;
-    kno:formation kno:W02 .
-kno:KN2014-0087-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0087-c2 a kno:Component ;
+    kno:surfaceForm "파"@ko ;
+    rdfs:label "-파(派)"@ko ;
     kno:formative kno:F000428 ;
     kno:fullForm "파"@ko ;
-    rdfs:label "-파(派)"@ko ;
-    kno:surfaceForm "파"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
     kno:role "고정항"@ko ;
-    a kno:Component .
-kno:KN2014-0087-c1 kno:formative kno:F003328 ;
-    kno:semanticTag kno:usas-K4 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "리허설"@ko ;
-    rdfs:label "리허설(rehearsal)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0087-c1 kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:surfaceForm "리허설"@ko ;
+    rdfs:label "리허설(rehearsal)"@ko ;
+    kno:formative kno:F003328 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    kno:semanticTag kno:usas-K4 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "리허설"@ko ;
+    kno:surfaceForm "리허설"@ko .

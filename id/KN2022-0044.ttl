@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0044 a ontolex:Word ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:instantiates kno:S000051 ;
-    kno:frequency kno:KN2022-0044-freq-NN-2022 ;
+kno:KN2022-0044 kno:origin "(公搜完剝)" ;
+    kno:component kno:KN2022-0044-c1 ;
     kno:unitType "단어"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EC%88%98%EC%99%84%EB%B0%95> ;
-    kno:origin "(公搜完剝)" ;
-    rdfs:label "공수완박"@ko ;
-    kno:component kno:KN2022-0044-c3 ;
-    kno:example "¶검찰의 개혁을 주장하던 정당이 ‘검찰의 수사권 완전 박탈’을 의미하는 ‘검수완박’의 법안을 입법하면서 ‘{공수완박’이라는} 논란이 불거졌다."@ko ;
-    kno:componentString "공수(처)(公搜處), 완(전)(完全), 박(탈)(剝奪)"@ko ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:componentString "공수(처)(公搜處), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    kno:indexForm "공수완박"@ko ;
+    kno:year "2022"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
     kno:pos "「명」"@ko ;
+    rdfs:label "공수완박"@ko ;
+    kno:component kno:KN2022-0044-c3 ;
+    kno:component kno:KN2022-0044-c2 ;
     kno:languageType "한+한+한+한" ;
     kno:formation kno:W06 ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000051 ;
+    kno:frequency kno:KN2022-0044-freq-NN-2022 ;
+    a ontolex:Word ;
+    skos:definition "‘공수처 수사권을 완전히 박탈함’을 줄여 이르는 말. 검찰의 수사권을 박탈하는 법안이 국회를 통과할 경우 고위 공직자 범죄 수사처의 수사권 또한 영향을 받을 것이라는 내용을 말한다."@ko ;
     kno:slotFiller "공수(처)(公搜處) (1성분)"@ko ;
-    kno:indexForm "공수완박"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    a kno:Neologism ;
     kno:frequency kno:KN2022-0044-freq-NN-total ;
-    kno:component kno:KN2022-0044-c2 ;
-    kno:component kno:KN2022-0044-c1 ;
-    skos:definition "‘공수처 수사권을 완전히 박탈함’을 줄여 이르는 말. 검찰의 수사권을 박탈하는 법안이 국회를 통과할 경우 고위 공직자 범죄 수사처의 수사권 또한 영향을 받을 것이라는 내용을 말한다."@ko .
-kno:KN2022-0044-c3 kno:formative kno:F000040 ;
+    kno:example "¶검찰의 개혁을 주장하던 정당이 ‘검찰의 수사권 완전 박탈’을 의미하는 ‘검수완박’의 법안을 입법하면서 ‘{공수완박’이라는} 논란이 불거졌다."@ko .
+kno:KN2022-0044-c1 kno:fullForm "공수처"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-A9 ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:fullForm "박탈"@ko ;
-    rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002354 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "공수"@ko ;
+    rdfs:label "공수(처)(公搜處)"@ko .
+kno:KN2022-0044-c3 kno:semanticTag kno:usas-A9 ;
     kno:surfaceForm "박"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2022-0044-c2 kno:surfaceForm "완"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000040 ;
+    kno:fullForm "박탈"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0044-c2 kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "완(전)(完全)"@ko ;
+    kno:surfaceForm "완"@ko ;
+    kno:formative kno:F000031 ;
     kno:semanticTag kno:usas-A13.2 ;
     kno:fullForm "완전"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000031 .
-kno:KN2022-0044-c1 rdfs:label "공수(처)(公搜處)"@ko ;
-    kno:semanticTag kno:usas-G1.1 ;
-    a kno:Component ;
-    kno:formative kno:F002354 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "공수"@ko ;
-    kno:fullForm "공수처"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    a kno:Component .

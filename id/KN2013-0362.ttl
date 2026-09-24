@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0362 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0362 kno:registration "신어DB"@ko ;
+kno:KN2013-0362 kno:unitType "단어"@ko ;
+    kno:component kno:KN2013-0362-c2 ;
+    kno:languageType "고+한" ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "족(집게), 강(講)"@ko ;
+    kno:origin "(족講)" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "족강"@ko ;
+    kno:component kno:KN2013-0362-c1 ;
+    skos:definition "‘족집게 강의’를 줄여 이르는 말."@ko ;
     kno:pos "「명」"@ko ;
     kno:formation kno:W06 ;
-    a kno:Neologism ;
-    kno:component kno:KN2013-0362-c1 ;
-    kno:indexForm "족강"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "족강"@ko ;
-    skos:definition "‘족집게 강의’를 줄여 이르는 말."@ko ;
-    kno:componentString "족(집게), 강(講)"@ko ;
-    kno:languageType "고+한" ;
-    kno:example "¶입시 전문가들은 “남은 기간 수험생들은 새로운 문제를 풀거나 {족강} 같은 ‘대박’을 좇지 말고 그동안 공부했던 내용을 다시 정리하고 잡생각을 버리고 당일 시험표에 맞춘 ‘수능형 생활’을 해야 한다.”라고 조언한다."@ko ;
-    kno:origin "(족講)" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B1%EA%B0%95> ;
-    kno:component kno:KN2013-0362-c2 .
-kno:KN2013-0362-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "족강"@ko ;
+    kno:example "¶입시 전문가들은 “남은 기간 수험생들은 새로운 문제를 풀거나 {족강} 같은 ‘대박’을 좇지 말고 그동안 공부했던 내용을 다시 정리하고 잡생각을 버리고 당일 시험표에 맞춘 ‘수능형 생활’을 해야 한다.”라고 조언한다."@ko ;
+    a kno:Neologism .
+kno:KN2013-0362-c2 kno:semanticTag kno:usas-P1 ;
+    kno:fullForm "강"@ko ;
     a kno:Component ;
-    kno:formative kno:F005747 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "강(講)"@ko ;
     kno:role "성분"@ko ;
-    kno:surfaceForm "족"@ko ;
-    kno:semanticTag kno:usas-A5.3p ;
+    kno:formative kno:F002137 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "강"@ko .
+kno:KN2013-0362-c1 kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
     rdfs:label "족(집게)"@ko ;
-    kno:fullForm "족집게"@ko .
-kno:KN2013-0362-c2 kno:fullForm "강"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "강"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F002137 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "강(講)"@ko ;
-    kno:semanticTag kno:usas-P1 .
+    kno:semanticTag kno:usas-A5.3p ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F005747 ;
+    kno:fullForm "족집게"@ko .

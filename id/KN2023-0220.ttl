@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0220 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0220 kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "이사완박"@ko ;
-    kno:slotFiller "이사(移徙) (1성분)"@ko ;
-    kno:formation kno:W06 ;
+kno:KN2023-0220 kno:formation kno:W06 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:component kno:KN2023-0220-c1 ;
+    kno:frequency kno:KN2023-0220-freq-NN-2022 ;
+    kno:component kno:KN2023-0220-c2 ;
+    kno:frequency kno:KN2023-0220-freq-NN-total ;
     a kno:Neologism ;
     kno:origin "(移徙完剝)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EC%82%AC%EC%99%84%EB%B0%95> ;
-    kno:component kno:KN2023-0220-c3 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0220-c2 ;
-    kno:componentString "이사(移徙), 완(전)(完全), 박(탈)(剝奪)"@ko ;
-    kno:frequency kno:KN2023-0220-freq-NN-2022 ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2023-0220-freq-NN-total ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
+    kno:componentString "이사(移徙), 완(전)(完全), 박(탈)(剝奪)"@ko ;
     kno:languageType "한+한+한" ;
-    skos:definition "‘이사할 자유를 완전히 박탈함’을 줄여 이르는 말. 정부의 잘못된 부동산 정책으로 인해 국민들이 주거 불안을 느끼게 되자, 이를 비판하기 위해 나온 말이다."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:indexForm "이사완박"@ko ;
     kno:example "¶정부가 발표한 부동산 대책에 대해 ‘{이사완박’이라는} 비판이 거세지고 있다."@ko ;
-    rdfs:label "이사완박"@ko ;
+    kno:registration "신어DB"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2023-0220-c3 ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2023-0220-c1 ;
-    kno:instantiates kno:S000051 .
-kno:KN2023-0220-c3 a kno:Component ;
-    rdfs:label "박(탈)(剝奪)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000040 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "박"@ko ;
-    kno:semanticTag kno:usas-A9 ;
-    kno:fullForm "박탈"@ko .
-kno:KN2023-0220-c2 kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "완"@ko ;
-    kno:semanticTag kno:usas-A13.2 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000031 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "완(전)(完全)"@ko ;
-    kno:fullForm "완전"@ko .
-kno:KN2023-0220-c1 kno:semanticTag kno:usas-M1 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "이사(移徙)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005397 ;
-    a kno:Component ;
-    kno:surfaceForm "이사"@ko ;
+    skos:definition "‘이사할 자유를 완전히 박탈함’을 줄여 이르는 말. 정부의 잘못된 부동산 정책으로 인해 국민들이 주거 불안을 느끼게 되자, 이를 비판하기 위해 나온 말이다."@ko ;
+    kno:instantiates kno:S000051 ;
+    rdfs:label "이사완박"@ko ;
+    kno:slotFiller "이사(移徙) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EC%82%AC%EC%99%84%EB%B0%95> .
+kno:KN2023-0220-c1 kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "이사"@ko .
+    kno:fullForm "이사"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F005397 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "이사"@ko ;
+    a kno:Component ;
+    rdfs:label "이사(移徙)"@ko .
+kno:KN2023-0220-c2 kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "완"@ko ;
+    kno:formative kno:F000031 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "완전"@ko .
+kno:KN2023-0220-c3 kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A9 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000040 ;
+    kno:surfaceForm "박"@ko ;
+    kno:fullForm "박탈"@ko ;
+    rdfs:label "박(탈)(剝奪)"@ko .

@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0191 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0191 kno:instantiates kno:S000434 ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "고+한+영" ;
-    kno:pos "「명」"@ko ;
+kno:KN2019-0191 a ontolex:Word ;
     kno:component kno:KN2019-0191-c1 ;
-    kno:frequency kno:KN2019-0191-freq-NN-total ;
-    rdfs:label "어결치"@ko ;
-    kno:formation kno:W06 ;
+    kno:activeYears "1"^^xsd:integer ;
     a kno:Neologism ;
-    kno:component kno:KN2019-0191-c2 ;
-    kno:componentString "어(차피), 결(론)(結), 치(킨)(chicken)"@ko ;
-    skos:definition "‘어차피 결론은 치킨집’을 줄여 이르는 말. 근로자의 조기 퇴직이 잦아지고 자영업자의 수가 늘어나는 현상에서 비롯된 말이다."@ko ;
-    kno:origin "(어結<영>←chicken)" ;
-    kno:slotFiller "결(론)(結)+치(킨)(chicken) (2성분)"@ko ;
-    a ontolex:Word ;
-    kno:slotFiller "어(차피)+결(론)(結) (2성분)"@ko ;
-    kno:frequency kno:KN2019-0191-freq-NN-2018 ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:year "2019"^^xsd:gYear ;
-    kno:component kno:KN2019-0191-c3 ;
     kno:instantiates kno:S000548 ;
     kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2019-0191-freq-NN-2018 ;
+    kno:example "¶은퇴한 베이비 부머가 치킨 프랜차이즈에 뛰어들면서 {‘어결치’라는} 말도 한때 등장했다."@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:origin "(어結<영>←chicken)" ;
+    skos:definition "‘어차피 결론은 치킨집’을 줄여 이르는 말. 근로자의 조기 퇴직이 잦아지고 자영업자의 수가 늘어나는 현상에서 비롯된 말이다."@ko ;
+    kno:instantiates kno:S000434 ;
+    kno:component kno:KN2019-0191-c3 ;
+    kno:slotFiller "결(론)(結)+치(킨)(chicken) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EA%B2%B0%EC%B9%98> ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:indexForm "어결치"@ko ;
-    kno:example "¶은퇴한 베이비 부머가 치킨 프랜차이즈에 뛰어들면서 {‘어결치’라는} 말도 한때 등장했다."@ko .
-kno:KN2019-0191-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-A7 ;
+    kno:component kno:KN2019-0191-c2 ;
+    kno:slotFiller "어(차피)+결(론)(結) (2성분)"@ko ;
+    rdfs:label "어결치"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+한+영" ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0191-freq-NN-total ;
+    kno:componentString "어(차피), 결(론)(結), 치(킨)(chicken)"@ko .
+kno:KN2019-0191-c1 kno:semanticTag kno:usas-A7 ;
     rdfs:label "어(차피)"@ko ;
-    kno:fullForm "어차피"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "어"@ko ;
+    kno:fullForm "어차피"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component ;
-    kno:formative kno:F000849 .
-kno:KN2019-0191-c2 kno:surfaceForm "결"@ko ;
-    rdfs:label "결(론)(結)"@ko ;
+    kno:formative kno:F000849 ;
+    kno:surfaceForm "어"@ko .
+kno:KN2019-0191-c3 kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000092 ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "치(킨)(chicken)"@ko ;
+    a kno:Component ;
+    kno:fullForm "치킨"@ko ;
+    kno:surfaceForm "치"@ko .
+kno:KN2019-0191-c2 kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:fullForm "결론"@ko ;
     kno:semanticTag kno:usas-X2.1 ;
-    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "결"@ko ;
+    kno:formative kno:F002215 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:formative kno:F002215 .
-kno:KN2019-0191-c3 a kno:Component ;
-    rdfs:label "치(킨)(chicken)"@ko ;
-    kno:formative kno:F000092 ;
-    kno:fullForm "치킨"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:surfaceForm "치"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    rdfs:label "결(론)(結)"@ko .

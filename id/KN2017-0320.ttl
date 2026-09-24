@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0320 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0320 a ontolex:MultiwordExpression ;
+kno:KN2017-0320 kno:instantiates kno:S000046 ;
     rdfs:label "프로 놀람러"@ko ;
-    kno:example "¶한편 OOO는 이날 방송된 OO 특집에서…귀신과의 만남에 소리치고 욕까지 하며 놀라는 모습을 보여 ‘{프로 놀람러’로} 등극했다."@ko ;
-    kno:instantiates kno:S000046 ;
+    kno:year "2017"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0320-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EB%A1%9C%20%EB%86%80%EB%9E%8C%EB%9F%AC> ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "프로(페셔널)(professional), 놀람, -러(←-er)"@ko ;
+    kno:origin "(<영>←professional놀람<영>←er)" ;
+    kno:frequency kno:KN2017-0320-freq-NN-2017 ;
+    kno:languageType "영_(고+영)" ;
     kno:indexForm "프로놀람러"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:origin "(<영>←professional놀람<영>←er)" ;
-    kno:component kno:KN2017-0320-c3 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2017-0320-freq-NN-2016 ;
-    kno:frequency kno:KN2017-0320-freq-NN-2018 ;
-    kno:slotFiller "놀람 (1성분)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:languageType "영_(고+영)" ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:component kno:KN2017-0320-c1 ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:frequency kno:KN2017-0320-freq-NN-total ;
+    kno:component kno:KN2017-0320-c3 ;
+    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2017-0320-freq-NN-2016 ;
+    kno:example "¶한편 OOO는 이날 방송된 OO 특집에서…귀신과의 만남에 소리치고 욕까지 하며 놀라는 모습을 보여 ‘{프로 놀람러’로} 등극했다."@ko ;
     skos:definition "시각이나 청각 등 특정한 자극으로 인해 평소와 다르게 심한 반응을 보이는 사람을 이르는 말."@ko ;
-    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0320-freq-NN-2018 ;
     kno:component kno:KN2017-0320-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EB%A1%9C%20%EB%86%80%EB%9E%8C%EB%9F%AC> ;
-    kno:componentString "프로(페셔널)(professional), 놀람, -러(←-er)"@ko ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:frequency kno:KN2017-0320-freq-NN-2017 .
-kno:KN2017-0320-c3 kno:role "고정항"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "러"@ko ;
-    kno:formative kno:F000022 ;
-    kno:surfaceForm "러"@ko ;
-    rdfs:label "-러(←-er)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S2 .
-kno:KN2017-0320-c1 a kno:Component ;
-    kno:fullForm "프로페셔널"@ko ;
-    kno:role "고정항"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:slotFiller "놀람 (1성분)"@ko .
+kno:KN2017-0320-c1 kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000051 ;
-    kno:semanticTag kno:usas-I3.2p ;
+    a kno:Component ;
     kno:surfaceForm "프로"@ko ;
+    kno:fullForm "프로페셔널"@ko ;
+    kno:semanticTag kno:usas-I3.2p ;
+    kno:formative kno:F000051 ;
     rdfs:label "프로(페셔널)(professional)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2017-0320-c2 kno:surfaceForm "놀람"@ko ;
-    rdfs:label "놀람"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2017-0320-c3 kno:formative kno:F000022 ;
+    kno:surfaceForm "러"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002793 ;
-    kno:fullForm "놀람"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "-러(←-er)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "러"@ko .
+kno:KN2017-0320-c2 kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-E5m ;
+    kno:fullForm "놀람"@ko ;
     kno:role "슬롯 채움"@ko ;
+    rdfs:label "놀람"@ko ;
+    kno:surfaceForm "놀람"@ko ;
+    kno:formative kno:F002793 ;
     a kno:Component ;
     kno:position "2"^^xsd:integer .
