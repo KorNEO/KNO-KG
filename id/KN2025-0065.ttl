@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0065 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0065 a ontolex:Word ;
-    kno:slotFiller "과외(課外) (1성분)"@ko ;
+kno:KN2025-0065 kno:component kno:KN2025-0065-c2 ;
+    kno:componentString "과외(課外), (역)세권(驛勢圈)"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0065-c1 ;
+    a ontolex:Word ;
+    kno:registration "신어DB"@ko ;
     kno:origin "(課外勢圈)" ;
     kno:indexForm "과외세권"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0065-freq-NN-2025 ;
-    a kno:Neologism ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0065-freq-NN-total ;
-    rdfs:label "과외세권"@ko ;
-    kno:example "(LLM) 대학가랑 학원가가 가까운 이 동네는 {과외세권이라} 주말마다 수업 문의가 끊이지 않는다고 한다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%BC%EC%99%B8%EC%84%B8%EA%B6%8C> ;
-    kno:formation kno:W05 ;
-    kno:component kno:KN2025-0065-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0065-c2 ;
-    skos:definition "(LLM) 학생을 구하기 쉬운 대학가ㆍ학원가 등이 가까워 개인 교습을 하기에 유리하다고 여겨지는 주거 지역."@ko ;
-    kno:componentString "과외(課外), (역)세권(驛勢圈)"@ko ;
-    kno:languageType "한+한" ;
     kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000008 .
-kno:KN2025-0065-c1 kno:formative kno:F001079 ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Neologism ;
+    kno:example "(LLM) 대학가랑 학원가가 가까운 이 동네는 {과외세권이라} 주말마다 수업 문의가 끊이지 않는다고 한다."@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 학생을 구하기 쉬운 대학가ㆍ학원가 등이 가까워 개인 교습을 하기에 유리하다고 여겨지는 주거 지역."@ko ;
+    rdfs:label "과외세권"@ko ;
+    kno:instantiates kno:S000008 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%BC%EC%99%B8%EC%84%B8%EA%B6%8C> ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W05 ;
+    kno:languageType "한+한" ;
+    kno:frequency kno:KN2025-0065-freq-NN-2025 ;
+    kno:slotFiller "과외(課外) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0065-freq-NN-total .
+kno:KN2025-0065-c2 rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "역세권"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000012 ;
+    kno:surfaceForm "세권"@ko .
+kno:KN2025-0065-c1 kno:semanticTag kno:usas-P1 ;
+    rdfs:label "과외(課外)"@ko ;
     kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    rdfs:label "과외(課外)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:fullForm "과외"@ko ;
     kno:surfaceForm "과외"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:fullForm "과외"@ko .
-kno:KN2025-0065-c2 kno:formative kno:F000012 ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:surfaceForm "세권"@ko ;
-    a kno:Component ;
-    rdfs:label "(역)세권(驛勢圈)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "역세권"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:formative kno:F001079 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0256 kno:unitType "구"@ko ;
-    kno:predicate "수행하다"@ko ;
-    kno:origin "(前官用役)" ;
+kno:KN2024-0256 kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2024-0256-freq-NN-2023 ;
+    kno:indexForm "전관용역"@ko ;
+    kno:component kno:KN2024-0256-c1 ;
+    a kno:Neologism ;
+    kno:predicate "수행하다"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0256-c2 ;
+    kno:frequency kno:KN2024-0256-freq-NN-total ;
+    skos:definition "공공 기관에서 퇴직한 고위 공직자가 소속된 업체가 수주하거나 수행하는 용역. 퇴직한 전관의 영향력이나 인맥을 기반으로 특정 용역 사업을 독점하거나 과점하는 행태를 비판적으로 이르는 표현이다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶감사원은 {전관 용역으로} 의심되는 일부 입찰 과정에 대한 조사에 착수했다."@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EA%B4%80%EC%9A%A9%EC%97%AD> ;
     kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2024-0256-c1 ;
     rdfs:label "전관^용역"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:componentString "전관(前官), 용역(用役)"@ko ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0256-freq-NN-total ;
     kno:languageType "한^한" ;
-    kno:example "¶감사원은 {전관 용역으로} 의심되는 일부 입찰 과정에 대한 조사에 착수했다."@ko ;
-    skos:definition "공공 기관에서 퇴직한 고위 공직자가 소속된 업체가 수주하거나 수행하는 용역. 퇴직한 전관의 영향력이나 인맥을 기반으로 특정 용역 사업을 독점하거나 과점하는 행태를 비판적으로 이르는 표현이다."@ko ;
-    kno:component kno:KN2024-0256-c2 ;
-    kno:indexForm "전관용역"@ko ;
+    kno:origin "(前官用役)" ;
     kno:year "2024"^^xsd:gYear .
-kno:KN2024-0256-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:surfaceForm "전관"@ko ;
-    a kno:Component ;
+kno:KN2024-0256-c1 kno:surfaceForm "전관"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:fullForm "전관"@ko ;
     rdfs:label "전관(前官)"@ko ;
-    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F005621 .
 kno:KN2024-0256-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I3.1 ;
-    rdfs:label "용역(用役)"@ko ;
-    kno:role "성분"@ko ;
+    kno:formative kno:F005209 ;
     kno:surfaceForm "용역"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "용역"@ko ;
-    kno:formative kno:F005209 .
+    rdfs:label "용역(用役)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:truncated "false"^^xsd:boolean .

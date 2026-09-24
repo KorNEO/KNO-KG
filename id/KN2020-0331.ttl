@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0331 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0331 kno:pos "「구」"@ko ;
-    skos:definition "감염병에 걸렸는지를 간편하고 빠르게 진단하는 검사 기구 가운데 한국에서 개발하여 생산하는 검사 기구를 이르는 말. 코로나19의 전 세계적 확산 상황에서 사용되기 시작하였다."@ko ;
-    kno:component kno:KN2020-0331-c2 ;
+kno:KN2020-0331 a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0331-c1 ;
     kno:slotFiller "진단(診斷)+키트(kit) (2성분)"@ko ;
-    kno:frequency kno:KN2020-0331-freq-NN-2021 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BC%80%EC%9D%B4%20%EC%A7%84%EB%8B%A8%20%ED%82%A4%ED%8A%B8> ;
     kno:registration "신어DB"@ko ;
-    kno:componentString "케이(K), 진단(診斷), 키트(kit)"@ko ;
+    kno:frequency kno:KN2020-0331-freq-NN-2021 ;
+    kno:component kno:KN2020-0331-c3 ;
+    kno:slotFiller "케이(K)+진단(診斷) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
     a kno:Neologism ;
+    kno:componentString "케이(K), 진단(診斷), 키트(kit)"@ko ;
     kno:instantiates kno:S001693 ;
     kno:frequency kno:KN2020-0331-freq-NN-total ;
-    kno:instantiates kno:S000441 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BC%80%EC%9D%B4%20%EC%A7%84%EB%8B%A8%20%ED%82%A4%ED%8A%B8> ;
+    kno:activeYears "3"^^xsd:integer ;
+    skos:definition "감염병에 걸렸는지를 간편하고 빠르게 진단하는 검사 기구 가운데 한국에서 개발하여 생산하는 검사 기구를 이르는 말. 코로나19의 전 세계적 확산 상황에서 사용되기 시작하였다."@ko ;
+    kno:indexForm "케이진단키트"@ko ;
+    kno:instantiates kno:S000442 ;
+    kno:component kno:KN2020-0331-c2 ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:frequency kno:KN2020-0331-freq-NN-2020 ;
-    kno:example "¶코로나19 확산 이후 {케이(K) 진단 키트에} 대한 세계 각국의 수요가 폭발적으로 증가하고 있다."@ko ;
-    kno:origin "(K診斷kit)" ;
-    kno:frequency kno:KN2020-0331-freq-NN-2023 ;
-    a ontolex:MultiwordExpression ;
-    kno:unitType "구"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:component kno:KN2020-0331-c3 ;
+    kno:pos "「구」"@ko ;
     rdfs:label "케이 진단 키트"@ko ;
-    kno:indexForm "케이진단키트"@ko ;
+    kno:year "2020"^^xsd:gYear ;
     kno:languageType "영_한_영" ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:component kno:KN2020-0331-c1 ;
-    kno:slotFiller "케이(K)+진단(診斷) (2성분)"@ko .
-kno:KN2020-0331-c2 a kno:Component ;
+    kno:example "¶코로나19 확산 이후 {케이(K) 진단 키트에} 대한 세계 각국의 수요가 폭발적으로 증가하고 있다."@ko ;
+    kno:frequency kno:KN2020-0331-freq-NN-2023 ;
+    kno:origin "(K診斷kit)" .
+kno:KN2020-0331-c1 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "케이"@ko ;
+    kno:surfaceForm "케이"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000957 ;
+    rdfs:label "케이(K)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z2 .
+kno:KN2020-0331-c3 kno:semanticTag kno:usas-O2 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000966 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "키트"@ko ;
+    rdfs:label "키트(kit)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "키트"@ko .
+kno:KN2020-0331-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "진단(診斷)"@ko ;
-    kno:formative kno:F001794 ;
+    kno:fullForm "진단"@ko ;
     kno:surfaceForm "진단"@ko ;
     kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-B3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "진단"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2020-0331-c3 kno:fullForm "키트"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "키트"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000966 ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "키트(kit)"@ko .
-kno:KN2020-0331-c1 kno:fullForm "케이"@ko ;
-    kno:formative kno:F000957 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "케이(K)"@ko ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "케이"@ko .
+    kno:formative kno:F001794 .

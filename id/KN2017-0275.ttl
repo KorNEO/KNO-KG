@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0275 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0275 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380261> ;
-    kno:unitType "단어"@ko ;
-    a kno:Neologism ;
+kno:KN2017-0275 kno:languageType "고+영" ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:instantiates kno:S000590 ;
+    a ontolex:Word ;
     kno:urimalTargetCode "1380261" ;
     rdfs:label "칼박"@ko ;
-    kno:example "¶실제…박스가 흠집이나 구겨짐이 전혀 없이 칼날 같은 모서리를 유지하고 있는 것을 뜻하는 ‘{칼박}’ 등 포장 관련 신조어도 있다."@ko ;
-    kno:indexForm "칼박"@ko ;
-    kno:predicate "있다"@ko ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:instantiates kno:S000589 ;
-    kno:origin "(칼<영>←box)" ;
     kno:componentString "칼, 박(스)(box)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "박(스)(box) (1성분)"@ko ;
-    kno:formation kno:W06 ;
-    kno:activeYears "0"^^xsd:integer ;
-    skos:definition "개봉 후에도 구겨지거나 흠집 없이 원래의 형태를 가지고 있는 상자."@ko ;
-    kno:languageType "고+영" ;
-    kno:component kno:KN2017-0275-c1 ;
-    kno:registration "우리말샘"@ko ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2017-0275-c2 ;
-    a ontolex:Word .
-kno:KN2017-0275-c1 kno:semanticTag kno:usas-O2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000605 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "칼"@ko ;
-    kno:fullForm "칼"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:predicate "있다"@ko ;
+    a kno:Neologism ;
+    skos:definition "개봉 후에도 구겨지거나 흠집 없이 원래의 형태를 가지고 있는 상자."@ko ;
+    kno:component kno:KN2017-0275-c1 ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "박(스)(box) (1성분)"@ko ;
+    kno:example "¶실제…박스가 흠집이나 구겨짐이 전혀 없이 칼날 같은 모서리를 유지하고 있는 것을 뜻하는 ‘{칼박}’ 등 포장 관련 신조어도 있다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380261> ;
+    kno:origin "(칼<영>←box)" ;
+    kno:indexForm "칼박"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2017-0275-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:surfaceForm "칼"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2017-0275-c2 kno:formative kno:F001339 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "박스"@ko ;
-    a kno:Component ;
+    kno:formative kno:F001339 ;
     rdfs:label "박(스)(box)"@ko ;
     kno:semanticTag kno:usas-O2 ;
+    kno:fullForm "박스"@ko ;
     kno:surfaceForm "박"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0275-c1 kno:formative kno:F000605 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "칼"@ko ;
+    kno:surfaceForm "칼"@ko ;
+    rdfs:label "칼"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

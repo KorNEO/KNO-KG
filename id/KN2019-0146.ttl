@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0146 kno:languageType "고+(한+영)" ;
-    kno:frequency kno:KN2019-0146-freq-NN-2018 ;
-    kno:frequency kno:KN2019-0146-freq-NN-2019 ;
-    kno:instantiates kno:S000731 ;
-    kno:component kno:KN2019-0146-c2 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:predicate "만나다"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶인스턴트 연애에 지쳐 고모가 주선해 준 {선개팅으로} 처음 만난 남자 친구는 듬직한 매력으로 한 번에 그의 마음을 사로잡았다."@ko ;
-    kno:slotFiller "선+(소)개(介) (2성분)"@ko ;
-    kno:year "2019"^^xsd:gYear ;
+kno:KN2019-0146 kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0146-freq-NN-2020 ;
+    kno:formation kno:W05 ;
     a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶인스턴트 연애에 지쳐 고모가 주선해 준 {선개팅으로} 처음 만난 남자 친구는 듬직한 매력으로 한 번에 그의 마음을 사로잡았다."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:componentString "선, (소)개(介), (미)팅(meeting)"@ko ;
     rdfs:label "선개팅"@ko ;
-    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2019-0146-c1 ;
-    kno:origin "(선介<영>←meeting)" ;
+    kno:languageType "고+(한+영)" ;
+    skos:definition "누군가의 주선으로 결혼할 당사자들이 일대일로 직접 만나는 일."@ko ;
+    kno:frequency kno:KN2019-0146-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0146-freq-NN-total ;
+    kno:predicate "만나다"@ko ;
+    kno:instantiates kno:S000731 ;
     kno:indexForm "선개팅"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(선介<영>←meeting)" ;
+    kno:component kno:KN2019-0146-c2 ;
     a kno:Neologism ;
     kno:component kno:KN2019-0146-c3 ;
-    kno:frequency kno:KN2019-0146-freq-NN-2020 ;
-    kno:componentString "선, (소)개(介), (미)팅(meeting)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    skos:definition "누군가의 주선으로 결혼할 당사자들이 일대일로 직접 만나는 일."@ko ;
-    kno:frequency kno:KN2019-0146-freq-NN-total ;
-    kno:formation kno:W05 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A0%EA%B0%9C%ED%8C%85> ;
-    kno:registration "신어DB"@ko .
-kno:KN2019-0146-c2 rdfs:label "(소)개(介)"@ko ;
+    kno:slotFiller "선+(소)개(介) (2성분)"@ko ;
+    kno:frequency kno:KN2019-0146-freq-NN-2019 .
+kno:KN2019-0146-c1 kno:semanticTag kno:usas-O4.4 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "선"@ko ;
+    kno:fullForm "선"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "선"@ko ;
     kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004297 .
+kno:KN2019-0146-c2 kno:formative kno:F002156 ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F002156 ;
+    rdfs:label "(소)개(介)"@ko ;
     kno:fullForm "소개"@ko ;
     a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-Q2.2 ;
-    kno:surfaceForm "개"@ko .
-kno:KN2019-0146-c1 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "선"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004297 ;
-    kno:surfaceForm "선"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "선"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-O4.4 .
-kno:KN2019-0146-c3 kno:fullForm "미팅"@ko ;
-    kno:formative kno:F001930 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "개"@ko .
+kno:KN2019-0146-c3 rdfs:label "(미)팅(meeting)"@ko ;
+    kno:fullForm "미팅"@ko ;
+    kno:surfaceForm "팅"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(미)팅(meeting)"@ko ;
-    kno:surfaceForm "팅"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:formative kno:F001930 .

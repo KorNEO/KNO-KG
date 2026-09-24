@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0300 kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%8C%EB%9E%AB%ED%8F%BC%EB%B6%84%EC%9F%81%EC%A1%B0%EC%A0%95%EC%9C%84> ;
+kno:KN2022-0300 kno:component kno:KN2022-0300-c3 ;
+    kno:unitType "구"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "플랫폼 사업자, 이용 사업자, 최종 이용자 간 분쟁을 신속하고 효율적으로 해결하기 위해 조직된 위원회. 코로나19의 확산으로 인해 증가한 비대면 온라인 서비스의 분쟁을 해결하고자 조직되었다."@ko ;
+    kno:languageType "영^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0300-c2 ;
+    kno:frequency kno:KN2022-0300-freq-NN-total ;
     kno:lastAttestationYear "2021"^^xsd:gYear ;
     kno:slotFiller "분쟁(分爭)+조정위(調停委) (2성분)"@ko ;
-    rdfs:label "플랫폼^분쟁^조정위"@ko ;
-    kno:origin "(<영>platform分爭調停委)" ;
-    kno:component kno:KN2022-0300-c3 ;
-    kno:frequency kno:KN2022-0300-freq-NN-2021 ;
-    kno:component kno:KN2022-0300-c2 ;
-    kno:example "¶정부에서는 온라인 플랫폼 기업과 개인 사업자 간의 분쟁을 신속하게 해결하기 위해 ‘{플랫폼 분쟁 조정위’를} 마련하였다."@ko ;
-    kno:frequency kno:KN2022-0300-freq-NN-total ;
-    kno:languageType "영^한^한" ;
+    kno:instantiates kno:S000694 ;
+    a ontolex:MultiwordExpression ;
     kno:indexForm "플랫폼분쟁조정위"@ko ;
-    kno:unitType "구"@ko ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0300-c1 ;
+    rdfs:label "플랫폼^분쟁^조정위"@ko ;
+    kno:example "¶정부에서는 온라인 플랫폼 기업과 개인 사업자 간의 분쟁을 신속하게 해결하기 위해 ‘{플랫폼 분쟁 조정위’를} 마련하였다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%8C%EB%9E%AB%ED%8F%BC%EB%B6%84%EC%9F%81%EC%A1%B0%EC%A0%95%EC%9C%84> ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0300-freq-NN-2021 ;
+    skos:definition "플랫폼 사업자, 이용 사업자, 최종 이용자 간 분쟁을 신속하고 효율적으로 해결하기 위해 조직된 위원회. 코로나19의 확산으로 인해 증가한 비대면 온라인 서비스의 분쟁을 해결하고자 조직되었다."@ko ;
+    kno:origin "(<영>platform分爭調停委)" ;
+    a kno:Neologism ;
     kno:componentString "플랫폼(platform), 분쟁(分爭), 조정위(調停委)"@ko ;
-    kno:instantiates kno:S000694 .
-kno:KN2022-0300-c3 kno:semanticTag kno:usas-G2.1 ;
-    kno:formative kno:F005743 ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "조정위(調停委)"@ko ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:fullForm "조정위"@ko ;
-    kno:surfaceForm "조정위"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2022-0300-c2 kno:surfaceForm "분쟁"@ko ;
-    kno:fullForm "분쟁"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S8m ;
-    rdfs:label "분쟁(分爭)"@ko ;
+    kno:component kno:KN2022-0300-c1 ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0300-c3 kno:surfaceForm "조정위"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
     kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005743 ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "조정위(調停委)"@ko ;
+    kno:fullForm "조정위"@ko .
+kno:KN2022-0300-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F003979 ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component .
-kno:KN2022-0300-c1 a kno:Component ;
-    rdfs:label "플랫폼(platform)"@ko ;
-    kno:semanticTag kno:usas-Y2 ;
-    kno:formative kno:F000154 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S8m ;
+    kno:fullForm "분쟁"@ko ;
+    kno:surfaceForm "분쟁"@ko ;
+    rdfs:label "분쟁(分爭)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2022-0300-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "플랫폼"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "플랫폼"@ko ;
-    kno:role "고정항"@ko .
+    a kno:Component ;
+    kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "플랫폼(platform)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000154 .

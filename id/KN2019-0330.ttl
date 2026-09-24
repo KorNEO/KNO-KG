@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0330 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0330 kno:component kno:KN2019-0330-c3 ;
+kno:KN2019-0330 a ontolex:MultiwordExpression ;
+    rdfs:label "호모 더스트쿠스"@ko ;
+    kno:instantiates kno:S000613 ;
+    kno:componentString "호모(Homo), 더스트(dust), (피테)쿠스(pithecus)"@ko ;
+    kno:component kno:KN2019-0330-c3 ;
+    skos:definition "미세 먼지에 적응하는 인간. 일상에서 미세 먼지를 피하기 위한 행동을 생활화하는 현대인을 이른다."@ko ;
+    kno:frequency kno:KN2019-0330-freq-NN-2018 ;
+    kno:indexForm "호모더스트쿠스"@ko ;
+    kno:example "¶인간과 먼지의 합성어인 {‘호모 더스트쿠스’들을} 겨냥한 제품들도 높은 판매고를 기록 중이다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1682969> ;
     kno:unitType "구"@ko ;
     kno:component kno:KN2019-0330-c1 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1682969> ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0330-freq-NN-2018 ;
-    kno:example "¶인간과 먼지의 합성어인 {‘호모 더스트쿠스’들을} 겨냥한 제품들도 높은 판매고를 기록 중이다."@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:slotFiller "더스트(dust) (1성분)"@ko ;
-    rdfs:label "호모 더스트쿠스"@ko ;
-    kno:indexForm "호모더스트쿠스"@ko ;
-    kno:pos "「구」"@ko ;
     a kno:Neologism ;
-    kno:languageType "라_(영+라)" ;
-    kno:instantiates kno:S000612 ;
-    kno:frequency kno:KN2019-0330-freq-NN-2023 ;
-    skos:definition "미세 먼지에 적응하는 인간. 일상에서 미세 먼지를 피하기 위한 행동을 생활화하는 현대인을 이른다."@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:origin "(<라>▼Homo<영>dust<라>←pithecus )" ;
-    kno:predicate "적응하다"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:slotFiller "더스트(dust) (1성분)"@ko ;
     kno:component kno:KN2019-0330-c2 ;
+    kno:frequency kno:KN2019-0330-freq-NN-total ;
+    kno:origin "(<라>▼Homo<영>dust<라>←pithecus )" ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2019-0330-freq-NN-2023 ;
+    kno:predicate "적응하다"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:urimalTargetCode "1682969" ;
-    kno:componentString "호모(Homo), 더스트(dust), (피테)쿠스(pithecus)"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0330-freq-NN-total .
+    kno:pos "「구」"@ko ;
+    kno:languageType "라_(영+라)" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear .
 kno:KN2019-0330-c3 rdfs:label "(피테)쿠스(pithecus)"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "피테쿠스"@ko ;
     kno:formative kno:F000611 ;
-    kno:semanticTag kno:usas-L2 ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "피테쿠스"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:position "3"^^xsd:integer ;
     kno:surfaceForm "쿠스"@ko .
 kno:KN2019-0330-c1 kno:fullForm "호모"@ko ;
-    kno:formative kno:F000026 ;
-    rdfs:label "호모(Homo)"@ko ;
+    kno:surfaceForm "호모"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "호모"@ko .
-kno:KN2019-0330-c2 kno:formative kno:F000709 ;
-    kno:fullForm "더스트"@ko ;
+    kno:formative kno:F000026 ;
+    rdfs:label "호모(Homo)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2019-0330-c2 kno:semanticTag kno:usas-O1.1 ;
+    kno:fullForm "더스트"@ko ;
     kno:surfaceForm "더스트"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-O1.1 ;
     rdfs:label "더스트(dust)"@ko ;
-    a kno:Component .
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000709 ;
+    kno:truncated "false"^^xsd:boolean .

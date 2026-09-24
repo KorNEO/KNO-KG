@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0132 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0132 kno:instantiates kno:S000065 ;
-    skos:definition "백신 확보량 부족으로 인해 백신 공급이 급격하게 줄어드는 현상. 코로나19가 전 세계적으로 유행한 상황에서 나온 말이다."@ko ;
+kno:KN2021-0132 rdfs:label "백신 절벽"@ko ;
+    kno:indexForm "백신절벽"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶내년 봄, 백신 보유량이 급격히 줄어드는 {백신 절벽을} 마주할 것이라는 전망이 보건 전문가들 사이에서 나왔다."@ko ;
+    kno:component kno:KN2021-0132-c2 ;
     kno:componentString "백신(vaccine), 절벽(絕壁)"@ko ;
-    kno:predicate "줄어드다"@ko ;
-    kno:languageType "영_한" ;
-    a ontolex:MultiwordExpression ;
+    skos:definition "백신 확보량 부족으로 인해 백신 공급이 급격하게 줄어드는 현상. 코로나19가 전 세계적으로 유행한 상황에서 나온 말이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%8B%A0%20%EC%A0%88%EB%B2%BD> ;
     kno:instantiates kno:S000061 ;
-    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    kno:frequency kno:KN2021-0132-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0132-c1 ;
+    kno:frequency kno:KN2021-0132-freq-NN-total ;
     kno:slotFiller "절벽(絕壁) (1성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0132-freq-NN-2021 ;
+    kno:pos "「구」"@ko ;
     kno:origin "(<영>vaccine絕壁)" ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EC%8B%A0%20%EC%A0%88%EB%B2%BD> ;
-    kno:component kno:KN2021-0132-c2 ;
-    kno:frequency kno:KN2021-0132-freq-NN-2021 ;
-    kno:frequency kno:KN2021-0132-freq-NN-total ;
-    kno:indexForm "백신절벽"@ko ;
-    kno:example "¶내년 봄, 백신 보유량이 급격히 줄어드는 {백신 절벽을} 마주할 것이라는 전망이 보건 전문가들 사이에서 나왔다."@ko ;
-    kno:unitType "구"@ko ;
     kno:year "2021"^^xsd:gYear ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:label "백신 절벽"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2021-0132-c1 ;
+    kno:frequency kno:KN2021-0132-freq-NN-2020 ;
     a kno:Neologism ;
-    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
-    kno:frequency kno:KN2021-0132-freq-NN-2022 ;
-    kno:frequency kno:KN2021-0132-freq-NN-2020 .
-kno:KN2021-0132-c2 rdfs:label "절벽(絕壁)"@ko ;
+    kno:predicate "줄어드다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000065 .
+kno:KN2021-0132-c2 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:role "고정항"@ko ;
+    rdfs:label "절벽(絕壁)"@ko ;
     kno:formative kno:F000119 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "절벽"@ko ;
+    kno:fullForm "절벽"@ko ;
     kno:semanticTag kno:usas-N5m ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "절벽"@ko .
-kno:KN2021-0132-c1 kno:surfaceForm "백신"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "백신"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000079 ;
+    kno:surfaceForm "절벽"@ko .
+kno:KN2021-0132-c1 kno:semanticTag kno:usas-B3 ;
     rdfs:label "백신(vaccine)"@ko ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000079 ;
+    kno:fullForm "백신"@ko ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-B3 .
+    a kno:Component ;
+    kno:surfaceForm "백신"@ko .

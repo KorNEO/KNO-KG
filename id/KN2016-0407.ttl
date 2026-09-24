@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0407 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0407 kno:componentString "유수(留守), 가정(家庭)"@ko ;
-    rdfs:label "유수^가정"@ko ;
-    kno:frequency kno:KN2016-0407-freq-NN-2015 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EC%88%98%EA%B0%80%EC%A0%95> ;
-    kno:indexForm "유수가정"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
+kno:KN2016-0407 kno:component kno:KN2016-0407-c1 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "유수(留守), 가정(家庭)"@ko ;
+    a kno:Neologism ;
     a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    kno:registration "신어DB"@ko ;
-    a kno:Neologism ;
     kno:example "¶아이 3명 가운데 2명은 부모가 돈을 벌러 도시로 간 이른바 ‘{유수 가정}’ 출신이었습니다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:year "2016"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EC%88%98%EA%B0%80%EC%A0%95> ;
+    skos:definition "중국에서, 경제적인 이유로 부모가 자식과 떨어져 지내면서 자식을 양육할 수 없는 가정을 이르는 말."@ko ;
     kno:frequency kno:KN2016-0407-freq-NN-total ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
     kno:component kno:KN2016-0407-c2 ;
-    kno:component kno:KN2016-0407-c1 ;
-    kno:origin "(留守家庭)" ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
+    rdfs:label "유수^가정"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:languageType "한^한" ;
-    skos:definition "중국에서, 경제적인 이유로 부모가 자식과 떨어져 지내면서 자식을 양육할 수 없는 가정을 이르는 말."@ko .
-kno:KN2016-0407-c2 kno:role "성분"@ko ;
-    kno:fullForm "가정"@ko ;
-    rdfs:label "가정(家庭)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:surfaceForm "가정"@ko ;
-    kno:formative kno:F001033 ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2016-0407-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "유수"@ko ;
-    kno:semanticTag kno:usas-M8 ;
+    kno:indexForm "유수가정"@ko ;
+    kno:origin "(留守家庭)" ;
+    kno:frequency kno:KN2016-0407-freq-NN-2015 .
+kno:KN2016-0407-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "유수"@ko ;
     a kno:Component ;
     rdfs:label "유수(留守)"@ko ;
-    kno:formative kno:F005314 ;
+    kno:semanticTag kno:usas-M8 ;
     kno:role "성분"@ko ;
-    kno:surfaceForm "유수"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:formative kno:F005314 ;
+    kno:fullForm "유수"@ko .
+kno:KN2016-0407-c2 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "가정(家庭)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "가정"@ko ;
+    kno:formative kno:F001033 ;
+    kno:surfaceForm "가정"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S4 .

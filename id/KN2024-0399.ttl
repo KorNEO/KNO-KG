@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0399 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0399 kno:indexForm "환절통"@ko ;
+kno:KN2024-0399 kno:component kno:KN2024-0399-c1 ;
+    a kno:Neologism ;
     skos:definition "계절이 바뀔 때 발생하는 몸이나 마음에 발생하는 통증."@ko ;
-    kno:frequency kno:KN2024-0399-freq-NN-2024 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EC%A0%88%ED%86%B5> ;
-    kno:languageType "한+한" ;
-    kno:origin "(換節痛)" ;
-    kno:formation kno:W01 ;
+    kno:componentString "환절(換節), 통(痛)"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2024-0399-freq-NN-total ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2024-0399-c1 ;
-    kno:predicate "발생하다"@ko ;
+    kno:frequency kno:KN2024-0399-freq-NN-2024 ;
+    kno:formation kno:W01 ;
     a ontolex:Word ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:indexForm "환절통"@ko ;
+    kno:instantiates kno:S001085 ;
+    kno:predicate "발생하다"@ko ;
     kno:pos "「명」"@ko ;
     kno:component kno:KN2024-0399-c2 ;
-    rdfs:label "환절-통"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S001085 ;
-    a kno:Neologism ;
     kno:slotFiller "환절(換節) (1성분)"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "환절(換節), 통(痛)"@ko ;
     kno:example "¶이렇게 계절이 바뀔 때면 {환절통을} 앓는 사람들이 있다."@ko ;
-    kno:year "2024"^^xsd:gYear .
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%99%98%EC%A0%88%ED%86%B5> ;
+    kno:origin "(換節痛)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:label "환절-통"@ko .
 kno:KN2024-0399-c1 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "환절(換節)"@ko ;
+    kno:formative kno:F007159 ;
+    a kno:Component ;
     kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "환절"@ko ;
-    a kno:Component ;
-    kno:formative kno:F007159 ;
     kno:fullForm "환절"@ko ;
     kno:semanticTag kno:usas-W4 ;
-    kno:position "1"^^xsd:integer .
-kno:KN2024-0399-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F001906 ;
-    kno:surfaceForm "통"@ko ;
-    kno:fullForm "통"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "환절(換節)"@ko .
+kno:KN2024-0399-c2 kno:surfaceForm "통"@ko ;
     rdfs:label "통(痛)"@ko ;
-    kno:semanticTag kno:usas-Q1.3 .
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "통"@ko ;
+    kno:formative kno:F001906 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:position "2"^^xsd:integer .

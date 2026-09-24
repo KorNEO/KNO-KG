@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0124 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0124 kno:formation kno:W05 ;
-    a kno:Neologism ;
-    kno:example "¶굿즈덕은 아이돌과 같은 스타의 얼굴이 그려진 상품을 모으는 덕후이고, 문구덕은 펜, 연필, 노트 등을 모으기 좋아하는 덕후, 그리고 {소품덕은} 인테리어용 작은 물건들을 모으는 마니아입니다."@ko ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:component kno:KN2015-0124-c1 ;
-    kno:componentString "소품(小品), 덕(후)(otaku)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%92%88%EB%8D%95> ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "한+일" ;
-    kno:component kno:KN2015-0124-c2 ;
+kno:KN2015-0124 kno:pos "「명」"@ko ;
+    rdfs:label "소품덕"@ko ;
     skos:definition "소품을 지나치게 좋아하거나 소품에 집착하는 사람. 또는 소품에 전문적인 지식을 지닌 사람."@ko ;
+    kno:component kno:KN2015-0124-c1 ;
+    a ontolex:Word ;
+    kno:component kno:KN2015-0124-c2 ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:year "2015"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%92%88%EB%8D%95> ;
+    kno:formation kno:W05 ;
+    a kno:Neologism ;
+    kno:origin "(小品<일>←otaku[御宅])" ;
+    kno:instantiates kno:S000060 ;
+    kno:componentString "소품(小品), 덕(후)(otaku)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+일" ;
+    kno:predicate "집착하다"@ko ;
     kno:indexForm "소품덕"@ko ;
     kno:slotFiller "소품(小品) (1성분)"@ko ;
-    kno:origin "(小品<일>←otaku[御宅])" ;
-    kno:pos "「명」"@ko ;
-    rdfs:label "소품덕"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:predicate "집착하다"@ko ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000060 .
+    kno:registration "신어DB"@ko ;
+    kno:example "¶굿즈덕은 아이돌과 같은 스타의 얼굴이 그려진 상품을 모으는 덕후이고, 문구덕은 펜, 연필, 노트 등을 모으기 좋아하는 덕후, 그리고 {소품덕은} 인테리어용 작은 물건들을 모으는 마니아입니다."@ko .
 kno:KN2015-0124-c1 kno:formative kno:F004428 ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:fullForm "소품"@ko ;
+    kno:semanticTag kno:usas-K4 ;
     kno:surfaceForm "소품"@ko ;
     kno:semanticTag kno:usas-O2 ;
-    kno:fullForm "소품"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-K4 ;
-    rdfs:label "소품(小品)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "소품(小品)"@ko .
+kno:KN2015-0124-c2 kno:surfaceForm "덕"@ko ;
     a kno:Component ;
-    kno:position "1"^^xsd:integer .
-kno:KN2015-0124-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
     rdfs:label "덕(후)(otaku)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-X5.2p ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "덕"@ko ;
+    kno:role "고정항"@ko ;
     kno:fullForm "덕후"@ko ;
-    kno:formative kno:F000037 .
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000037 ;
+    kno:semanticTag kno:usas-X5.2p .

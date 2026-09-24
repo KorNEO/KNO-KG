@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0485 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0485 kno:activeYears "0"^^xsd:integer ;
-    kno:example "¶OOO는 요즘 온라인상에서 {호광킹이라고} 불린다."@ko ;
-    skos:definition "‘호감형 광고 킹’을 줄여 이르는 말. 광고에 나오는 사람 중에서 가장 호감형인 사람을 뜻한다."@ko ;
-    kno:componentString "호(감형)(好), 광(고)(廣), 킹(king)"@ko ;
-    kno:instantiates kno:S000442 ;
-    rdfs:label "호광킹"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "한+한+영" ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2012-0485-c3 ;
+kno:KN2012-0485 a ontolex:Word ;
     kno:slotFiller "호(감형)(好)+광(고)(廣) (2성분)"@ko ;
-    a kno:Neologism ;
-    kno:year "2012"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:component kno:KN2012-0485-c2 ;
     kno:indexForm "호광킹"@ko ;
-    kno:component kno:KN2012-0485-c1 ;
-    kno:origin "(好廣king)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EA%B4%91%ED%82%B9> ;
     kno:registration "신어DB"@ko ;
-    kno:formation kno:W06 .
-kno:KN2012-0485-c3 rdfs:label "킹(king)"@ko ;
-    kno:formative kno:F000122 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "킹"@ko ;
-    kno:fullForm "킹"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    skos:definition "‘호감형 광고 킹’을 줄여 이르는 말. 광고에 나오는 사람 중에서 가장 호감형인 사람을 뜻한다."@ko ;
+    kno:languageType "한+한+영" ;
+    kno:component kno:KN2012-0485-c1 ;
+    rdfs:label "호광킹"@ko ;
+    kno:component kno:KN2012-0485-c3 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000443 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EA%B4%91%ED%82%B9> ;
+    a kno:Neologism ;
+    kno:example "¶OOO는 요즘 온라인상에서 {호광킹이라고} 불린다."@ko ;
+    kno:component kno:KN2012-0485-c2 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:origin "(好廣king)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "호(감형)(好), 광(고)(廣), 킹(king)"@ko .
+kno:KN2012-0485-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "호감형"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "호"@ko ;
+    rdfs:label "호(감형)(好)"@ko ;
+    kno:formative kno:F007101 ;
+    kno:semanticTag kno:usas-E2p .
+kno:KN2012-0485-c3 kno:formative kno:F000122 ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-S7.1p ;
     kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko .
-kno:KN2012-0485-c2 kno:semanticTag kno:usas-I2.2 ;
+    rdfs:label "킹(king)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "킹"@ko ;
+    kno:surfaceForm "킹"@ko .
+kno:KN2012-0485-c2 kno:surfaceForm "광"@ko ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002405 ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:fullForm "광고"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "광"@ko ;
     rdfs:label "광(고)(廣)"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2012-0485-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "호감형"@ko ;
-    kno:surfaceForm "호"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "호(감형)(好)"@ko ;
-    kno:formative kno:F007101 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-E2p .
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "광고"@ko ;
+    kno:formative kno:F002405 .

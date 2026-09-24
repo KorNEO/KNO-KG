@@ -9,65 +9,65 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0437 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0437 skos:definition "(LLM) 올리브영ㆍ다이소ㆍ무신사ㆍ유니클로를 묶어 이르는 말."@ko ;
+kno:KN2025-0437 kno:component kno:KN2025-0437-c2 ;
+    kno:frequency kno:KN2025-0437-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S001578 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%AC%EB%8B%A4%EB%AC%B4%EC%9C%A0> ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0437-c1 ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0437-c2 ;
-    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "올다무유"@ko ;
     kno:componentString "올(리브영), 다(이소), 무(신사), 유(니클로)"@ko ;
     kno:formation kno:W06 ;
-    kno:frequency kno:KN2025-0437-freq-NN-total ;
+    a kno:Neologism ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0437-c4 ;
+    kno:example "(LLM) 이 상권은 {올다무유를} 한 번에 둘러볼 수 있어 쇼핑 동선이 편하다는 평가를 받는다."@ko ;
     kno:frequency kno:KN2025-0437-freq-NN-2025 ;
     kno:slotFiller "무(신사)+유(니클로) (2성분)"@ko ;
     kno:component kno:KN2025-0437-c3 ;
-    kno:component kno:KN2025-0437-c4 ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:pos "「명」"@ko ;
-    kno:indexForm "올다무유"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%AC%EB%8B%A4%EB%AC%B4%EC%9C%A0> ;
-    kno:registration "신어DB"@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:example "(LLM) 이 상권은 {올다무유를} 한 번에 둘러볼 수 있어 쇼핑 동선이 편하다는 평가를 받는다."@ko ;
-    kno:instantiates kno:S001578 ;
     rdfs:label "올다무유"@ko ;
-    kno:component kno:KN2025-0437-c1 .
-kno:KN2025-0437-c2 kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
-    kno:fullForm "다이소"@ko ;
+    skos:definition "(LLM) 올리브영ㆍ다이소ㆍ무신사ㆍ유니클로를 묶어 이르는 말."@ko .
+kno:KN2025-0437-c2 kno:surfaceForm "다"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "다"@ko ;
-    kno:formative kno:F001155 ;
     rdfs:label "다(이소)"@ko ;
-    a kno:Component .
-kno:KN2025-0437-c3 kno:fullForm "무신사"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "무"@ko ;
-    kno:position "3"^^xsd:integer ;
+    kno:fullForm "다이소"@ko ;
     kno:semanticTag kno:usas-Z3 ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001155 .
+kno:KN2025-0437-c1 kno:fullForm "올리브영"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "무(신사)"@ko ;
-    kno:formative kno:F003523 .
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    rdfs:label "올(리브영)"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F001634 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "올"@ko ;
+    kno:semanticTag kno:usas-I2.2 .
 kno:KN2025-0437-c4 kno:semanticTag kno:usas-Z3 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F005293 ;
-    kno:position "4"^^xsd:integer ;
-    kno:fullForm "유니클로"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-B5 ;
     kno:surfaceForm "유"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    rdfs:label "유(니클로)"@ko .
-kno:KN2025-0437-c1 kno:surfaceForm "올"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "올(리브영)"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F001634 ;
+    kno:formative kno:F005293 ;
+    rdfs:label "유(니클로)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "유니클로"@ko .
+kno:KN2025-0437-c3 kno:formative kno:F003523 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "무신사"@ko ;
     kno:semanticTag kno:usas-Z3 ;
+    a kno:Component ;
+    rdfs:label "무(신사)"@ko ;
     kno:semanticTag kno:usas-I2.2 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "올리브영"@ko .
+    kno:surfaceForm "무"@ko ;
+    kno:role "슬롯 채움"@ko .

@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0194 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0194 kno:instantiates kno:S000151 ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2022-0194-c3 ;
-    kno:example "¶방역 당국은 확진자가 발생한 학교에는 {신속 방문 검사를} 지원할 계획이다."@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:origin "(迅速訪問檢査)" ;
-    kno:indexForm "신속방문검사"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%86%8D%EB%B0%A9%EB%AC%B8%EA%B2%80%EC%82%AC> ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2022-0194 kno:year "2022"^^xsd:gYear ;
     kno:frequency kno:KN2022-0194-freq-NN-2022 ;
-    kno:slotFiller "신속(迅速)+방문(訪問) (2성분)"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2022-0194-freq-NN-total ;
-    kno:component kno:KN2022-0194-c2 ;
-    kno:component kno:KN2022-0194-c1 ;
-    kno:year "2022"^^xsd:gYear ;
-    rdfs:label "신속^방문^검사"@ko ;
-    kno:instantiates kno:S000779 ;
     kno:pos "「구」"@ko ;
-    a kno:Neologism ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     skos:definition "이동형 현장 신속 피시아르(PCR) 검사소를 활용하여 확진자 발생시 학생이 교내에서 빠르게 코로나 감염 여부를 확인할 수 있도록 하는 검사 방식."@ko ;
+    rdfs:label "신속^방문^검사"@ko ;
+    kno:slotFiller "신속(迅速)+방문(訪問) (2성분)"@ko ;
+    kno:origin "(迅速訪問檢査)" ;
     kno:slotFiller "방문(訪問)+검사(檢査) (2성분)"@ko ;
-    kno:componentString "신속(迅速), 방문(訪問), 검사(檢査)"@ko .
-kno:KN2022-0194-c3 kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:fullForm "검사"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "검사"@ko ;
+    kno:component kno:KN2022-0194-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%86%8D%EB%B0%A9%EB%AC%B8%EA%B2%80%EC%82%AC> ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000151 ;
+    kno:instantiates kno:S000779 ;
+    kno:indexForm "신속방문검사"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2022-0194-c1 ;
+    kno:unitType "구"@ko ;
+    kno:componentString "신속(迅速), 방문(訪問), 검사(檢査)"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0194-freq-NN-total ;
+    kno:languageType "한^한^한" ;
+    kno:example "¶방역 당국은 확진자가 발생한 학교에는 {신속 방문 검사를} 지원할 계획이다."@ko ;
+    kno:component kno:KN2022-0194-c2 .
+kno:KN2022-0194-c3 rdfs:label "검사(檢査)"@ko ;
     kno:formative kno:F000328 ;
+    kno:fullForm "검사"@ko ;
+    kno:surfaceForm "검사"@ko ;
     a kno:Component ;
-    rdfs:label "검사(檢査)"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2022-0194-c2 kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "방문"@ko ;
-    kno:formative kno:F003713 ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "방문(訪問)"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "방문"@ko .
-kno:KN2022-0194-c1 kno:fullForm "신속"@ko ;
-    kno:semanticTag kno:usas-N3.8p ;
-    kno:surfaceForm "신속"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
     kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0194-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "신속"@ko ;
+    kno:semanticTag kno:usas-N3.8p ;
     kno:formative kno:F000291 ;
-    a kno:Component ;
+    kno:fullForm "신속"@ko ;
     rdfs:label "신속(迅速)"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .
+kno:KN2022-0194-c2 kno:semanticTag kno:usas-M1 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "방문(訪問)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "방문"@ko ;
+    kno:surfaceForm "방문"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003713 ;
     kno:truncated "false"^^xsd:boolean .

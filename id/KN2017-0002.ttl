@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0002 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0002 kno:component kno:KN2017-0002-c1 ;
-    kno:frequency kno:KN2017-0002-freq-NN-total ;
-    kno:pos "「구」"@ko ;
-    skos:definition "‘가지고 싶은 남자와 여자’를 줄여 이르는 말. 가지고 싶을 정도로 매력이 있는 남녀를 이르는 말이다."@ko ;
-    kno:origin "(가싶男女)" ;
+kno:KN2017-0002 kno:origin "(가싶男女)" ;
+    kno:indexForm "가싶남녀"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:componentString "가(지다), 싶(다), 남녀(男女)"@ko ;
     a kno:Neologism ;
-    kno:slotFiller "가(지다)+싶(다) (2성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "‘가지고 싶은 남자와 여자’를 줄여 이르는 말. 가지고 싶을 정도로 매력이 있는 남녀를 이르는 말이다."@ko ;
+    kno:pos "「구」"@ko ;
     kno:component kno:KN2017-0002-c2 ;
     rdfs:label "가싶 남녀"@ko ;
+    kno:instantiates kno:S000365 ;
     kno:languageType "고_한" ;
-    kno:instantiates kno:S000364 ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:component kno:KN2017-0002-c3 ;
-    kno:indexForm "가싶남녀"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "가(지다), 싶(다), 남녀(男女)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%8B%B6%20%EB%82%A8%EB%85%80> ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
+    kno:example "¶일도 사랑도 모두 완벽한 {가싶 남녀로} 최강 호흡을 선보인 OO ‘OO’의 OOOㆍOOO…커플이 그 주인공이다."@ko ;
     kno:frequency kno:KN2017-0002-freq-NN-2016 ;
-    kno:example "¶일도 사랑도 모두 완벽한 {가싶 남녀로} 최강 호흡을 선보인 OO ‘OO’의 OOOㆍOOO…커플이 그 주인공이다."@ko .
-kno:KN2017-0002-c1 a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "가지다"@ko ;
-    kno:formative kno:F001029 ;
-    rdfs:label "가(지다)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-A9 ;
+    kno:frequency kno:KN2017-0002-freq-NN-total ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2017-0002-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2017-0002-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%8B%B6%20%EB%82%A8%EB%85%80> ;
+    kno:slotFiller "가(지다)+싶(다) (2성분)"@ko .
+kno:KN2017-0002-c2 kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X7p ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "가"@ko .
-kno:KN2017-0002-c2 a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "싶(다)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "싶다"@ko ;
+    kno:surfaceForm "싶"@ko ;
     kno:formative kno:F004752 ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-X7p ;
-    kno:surfaceForm "싶"@ko .
-kno:KN2017-0002-c3 kno:fullForm "남녀"@ko ;
+    rdfs:label "싶(다)"@ko ;
+    kno:fullForm "싶다"@ko .
+kno:KN2017-0002-c1 kno:formative kno:F001029 ;
+    rdfs:label "가(지다)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "가"@ko ;
+    kno:fullForm "가지다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A9 .
+kno:KN2017-0002-c3 kno:formative kno:F000473 ;
+    kno:fullForm "남녀"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "남녀"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "남녀(男女)"@ko ;
-    kno:formative kno:F000473 ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean .
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "남녀(男女)"@ko .

@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0258 kno:indexForm "전투템"@ko ;
+kno:KN2024-0258 kno:component kno:KN2024-0258-c2 ;
+    rdfs:label "전투-템"@ko ;
+    kno:componentString "전투(戰鬪), (아이)템(item)"@ko ;
+    kno:languageType "한+영" ;
+    kno:slotFiller "전투(戰鬪) (1성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%ED%88%AC%ED%85%9C> ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0258-c1 ;
+    kno:indexForm "전투템"@ko ;
+    kno:registration "신어DB"@ko ;
+    skos:definition "실제 사용 환경에서 튼튼하고 편리한 물건을 비유적으로 이르는 말."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000004 ;
     kno:origin "(戰鬪<영>←item)" ;
-    kno:example "¶셰프들은 요리할 때 튀어 오르는 기름을 막아 주는 특수 조리복을 주방의 필수 {전투템으로} 꼽는다."@ko ;
+    kno:formation kno:W01 ;
+    a ontolex:Word ;
     kno:year "2024"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2024-0258-c1 ;
-    rdfs:label "전투-템"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "전투(戰鬪), (아이)템(item)"@ko ;
-    a kno:Neologism ;
-    kno:formation kno:W01 ;
-    kno:languageType "한+영" ;
-    kno:component kno:KN2024-0258-c2 ;
-    skos:definition "실제 사용 환경에서 튼튼하고 편리한 물건을 비유적으로 이르는 말."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%ED%88%AC%ED%85%9C> ;
-    kno:instantiates kno:S000004 ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "전투(戰鬪) (1성분)"@ko .
-kno:KN2024-0258-c1 rdfs:label "전투(戰鬪)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "전투"@ko ;
-    kno:fullForm "전투"@ko ;
-    kno:semanticTag kno:usas-G3 ;
-    a kno:Component ;
-    kno:formative kno:F001751 .
-kno:KN2024-0258-c2 rdfs:label "(아이)템(item)"@ko ;
+    kno:example "¶셰프들은 요리할 때 튀어 오르는 기름을 막아 주는 특수 조리복을 주방의 필수 {전투템으로} 꼽는다."@ko .
+kno:KN2024-0258-c2 kno:formative kno:F000007 ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
+    kno:fullForm "아이템"@ko ;
+    kno:surfaceForm "템"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:surfaceForm "템"@ko ;
-    kno:formative kno:F000007 ;
-    kno:fullForm "아이템"@ko .
+    a kno:Component .
+kno:KN2024-0258-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "전투(戰鬪)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "전투"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "전투"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:formative kno:F001751 .

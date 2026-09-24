@@ -10,43 +10,43 @@
 # KN2025-0564 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
 kno:KN2025-0564 kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B8%B5%EA%B0%84%20%EC%95%88%EB%B6%80> ;
-    kno:year "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 아파트 등 공동 주택에서 위아래층이나 이웃 세대 사이에 서로의 근황을 묻고 안부를 나누는 일."@ko ;
-    kno:example "(LLM) 엘리베이터에서 마주치면 짧게라도 {층간안부를} 나누자는 말이 우리 동네에 퍼졌다."@ko ;
-    kno:frequency kno:KN2025-0564-freq-NN-2025 ;
-    kno:component kno:KN2025-0564-c2 ;
-    kno:componentString "층간(層間), 안부(安否)"@ko ;
-    kno:predicate "나누다"@ko ;
-    kno:indexForm "층간안부"@ko ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "안부(安否) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0564-freq-NN-total ;
     kno:component kno:KN2025-0564-c1 ;
+    a kno:Neologism ;
+    kno:year "2025"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "층간안부"@ko ;
+    kno:example "(LLM) 엘리베이터에서 마주치면 짧게라도 {층간안부를} 나누자는 말이 우리 동네에 퍼졌다."@ko ;
+    skos:definition "(LLM) 아파트 등 공동 주택에서 위아래층이나 이웃 세대 사이에 서로의 근황을 묻고 안부를 나누는 일."@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S001685 ;
+    kno:slotFiller "안부(安否) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(層間安否)" ;
     kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:instantiates kno:S001685 ;
-    a kno:Neologism ;
+    kno:componentString "층간(層間), 안부(安否)"@ko ;
+    kno:predicate "나누다"@ko ;
     rdfs:label "층간 안부"@ko ;
-    kno:frequency kno:KN2025-0564-freq-NN-total ;
-    kno:languageType "한_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B8%B5%EA%B0%84%20%EC%95%88%EB%B6%80> ;
+    kno:frequency kno:KN2025-0564-freq-NN-2025 ;
     kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression .
-kno:KN2025-0564-c2 kno:surfaceForm "안부"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:component kno:KN2025-0564-c2 ;
+    kno:languageType "한_한" .
+kno:KN2025-0564-c1 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F001835 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "층간"@ko ;
+    rdfs:label "층간(層間)"@ko ;
+    kno:surfaceForm "층간"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-H1 .
+kno:KN2025-0564-c2 a kno:Component ;
     kno:fullForm "안부"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Q2.2 ;
-    rdfs:label "안부(安否)"@ko ;
-    a kno:Component ;
     kno:formative kno:F004840 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0564-c1 kno:fullForm "층간"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "층간(層間)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001835 ;
-    kno:surfaceForm "층간"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:role "고정항"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "안부"@ko ;
+    rdfs:label "안부(安否)"@ko .

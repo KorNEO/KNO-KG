@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0315 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0315 rdfs:label "산심비"@ko ;
-    kno:example "(LLM) 왕복 거리는 짧은데 정상 조망이 좋아서 {산심비가} 높은 코스로 추천받았다."@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2025-0315 kno:languageType "한+한" ;
     kno:year "2025"^^xsd:gYear ;
-    kno:origin "(山心比)" ;
-    kno:languageType "한+한" ;
-    kno:slotFiller "산(행)(山行) (1성분)"@ko ;
-    kno:instantiates kno:S000973 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0315-c1 ;
-    skos:definition "(LLM) ‘산행 대비 심리적 만족의 비율’을 줄여 이르는 말. 산에 오르는 데 들인 시간ㆍ체력ㆍ비용에 비해 얻는 심리적 만족도가 얼마나 큰지를 나타낸다."@ko ;
-    kno:componentString "산(행)(山行), 심(리)(心理), -비(比)"@ko ;
-    kno:frequency kno:KN2025-0315-freq-NN-total ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W02 ;
-    kno:indexForm "산심비"@ko ;
-    kno:component kno:KN2025-0315-c3 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%B0%EC%8B%AC%EB%B9%84> ;
+    kno:componentString "산(행)(山行), 심(리)(心理), -비(比)"@ko ;
+    kno:indexForm "산심비"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "산(행)(山行) (1성분)"@ko ;
+    rdfs:label "산심비"@ko ;
+    kno:example "(LLM) 왕복 거리는 짧은데 정상 조망이 좋아서 {산심비가} 높은 코스로 추천받았다."@ko ;
+    skos:definition "(LLM) ‘산행 대비 심리적 만족의 비율’을 줄여 이르는 말. 산에 오르는 데 들인 시간ㆍ체력ㆍ비용에 비해 얻는 심리적 만족도가 얼마나 큰지를 나타낸다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
     a kno:Neologism ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2025-0315-c1 ;
+    kno:instantiates kno:S000973 ;
     kno:frequency kno:KN2025-0315-freq-NN-2025 ;
+    kno:component kno:KN2025-0315-c3 ;
+    a ontolex:Word ;
     kno:component kno:KN2025-0315-c2 ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2025-0315-c1 a kno:Component ;
+    kno:origin "(山心比)" ;
+    kno:frequency kno:KN2025-0315-freq-NN-total .
+kno:KN2025-0315-c1 kno:semanticTag kno:usas-K5.1 ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-K5.1 ;
-    rdfs:label "산(행)(山行)"@ko ;
-    kno:fullForm "산행"@ko ;
     kno:formative kno:F004194 ;
-    kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "산"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0315-c3 kno:semanticTag kno:usas-N2 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    rdfs:label "산(행)(山行)"@ko ;
+    kno:fullForm "산행"@ko .
+kno:KN2025-0315-c3 kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:surfaceForm "비"@ko ;
     kno:formative kno:F001406 ;
-    rdfs:label "-비(比)"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-N2 ;
     kno:fullForm "비"@ko ;
-    kno:position "3"^^xsd:integer ;
+    rdfs:label "-비(比)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-N3.8 ;
-    kno:role "고정항"@ko .
-kno:KN2025-0315-c2 a kno:Component ;
+    a kno:Component .
+kno:KN2025-0315-c2 kno:semanticTag kno:usas-X2.1 ;
+    kno:fullForm "심리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "심(리)(心理)"@ko ;
+    kno:formative kno:F001559 ;
     kno:surfaceForm "심"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "심(리)(心理)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "심리"@ko ;
-    kno:semanticTag kno:usas-X2.1 ;
-    kno:formative kno:F001559 ;
-    kno:position "2"^^xsd:integer .
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean .

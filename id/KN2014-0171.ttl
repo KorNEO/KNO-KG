@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0171 kno:year "2014"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369919> ;
-    kno:example "¶‘OO’은 일명 사생과 {악개}, 안티 등 올바르지 않은 팬덤 현상에 대한 지적과 자정을 통한 극복 과정을 전한다."@ko ;
+kno:KN2014-0171 kno:registration "우리말샘"@ko ;
+    kno:year "2014"^^xsd:gYear ;
     a ontolex:Word ;
-    kno:indexForm "악개"@ko ;
-    kno:pos "「명」"@ko ;
+    skos:definition "‘악질 개인 팬’을 줄여 이르는 말."@ko ;
+    kno:component kno:KN2014-0171-c2 ;
+    kno:component kno:KN2014-0171-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369919> ;
+    kno:languageType "한+한" ;
     kno:componentString "악(질)(惡), 개(인)(個)"@ko ;
     kno:origin "(惡個)" ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2014-0171-c2 ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2014-0171-c1 ;
+    rdfs:label "악개"@ko ;
+    kno:example "¶‘OO’은 일명 사생과 {악개}, 안티 등 올바르지 않은 팬덤 현상에 대한 지적과 자정을 통한 극복 과정을 전한다."@ko ;
     kno:urimalTargetCode "1369919" ;
-    kno:registration "우리말샘"@ko ;
-    kno:languageType "한+한" ;
-    skos:definition "‘악질 개인 팬’을 줄여 이르는 말."@ko ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
     kno:formation kno:W06 ;
-    rdfs:label "악개"@ko .
-kno:KN2014-0171-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S2 ;
-    rdfs:label "개(인)(個)"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "악개"@ko .
+kno:KN2014-0171-c2 rdfs:label "개(인)(個)"@ko ;
+    kno:formative kno:F002153 ;
+    kno:fullForm "개인"@ko ;
     kno:surfaceForm "개"@ko ;
-    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 ;
     kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    kno:fullForm "개인"@ko ;
-    kno:formative kno:F002153 .
-kno:KN2014-0171-c1 kno:formative kno:F004829 ;
-    a kno:Component ;
-    kno:surfaceForm "악"@ko ;
-    kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-G2.2m ;
+    a kno:Component .
+kno:KN2014-0171-c1 kno:semanticTag kno:usas-G2.2m ;
     kno:fullForm "악질"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F004829 ;
+    kno:surfaceForm "악"@ko ;
     rdfs:label "악(질)(惡)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:position "1"^^xsd:integer .

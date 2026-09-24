@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0221 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0221 kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EA%B8%88%EB%AC%B4%EC%A3%84%20%EB%AC%B4%EA%B8%88%EC%9C%A0%EC%A3%84> ;
-    kno:frequency kno:KN2024-0221-freq-NN-2024 ;
-    kno:componentString "유금무죄(有金無罪), 무금유죄(無金有罪)"@ko ;
-    skos:definition "국회 의원은 죄를 지어도 벌을 받지 않고, 국회 의원이 아닌 사람은 벌을 받는다는 뜻으로 법이 모든 사람에게 공평하게 적용되지 않는 상황을 이르는 말. 여기서 ‘금(金)’은 국회 의원임을 표시하는 ‘금배지(金badge)’를 가리킨다."@ko ;
+kno:KN2024-0221 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%EA%B8%88%EB%AC%B4%EC%A3%84%20%EB%AC%B4%EA%B8%88%EC%9C%A0%EC%A3%84> ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0221-c1 ;
     kno:frequency kno:KN2024-0221-freq-NN-total ;
     rdfs:label "유금무죄 무금유죄"@ko ;
-    kno:origin "(有金無罪無金有罪)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2024-0221-c2 ;
-    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2024-0221-freq-NN-2024 ;
     a kno:Neologism ;
-    kno:component kno:KN2024-0221-c1 ;
-    kno:example "¶한 시민 단체는 국회 의원의 특권에 문제를 제기하며, “{유금무죄 무금유죄의} 관행을 반드시 청산해야 한다.”라고 목소리를 높였다."@ko ;
     kno:languageType "한_한" ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:year "2024"^^xsd:gYear ;
+    skos:definition "국회 의원은 죄를 지어도 벌을 받지 않고, 국회 의원이 아닌 사람은 벌을 받는다는 뜻으로 법이 모든 사람에게 공평하게 적용되지 않는 상황을 이르는 말. 여기서 ‘금(金)’은 국회 의원임을 표시하는 ‘금배지(金badge)’를 가리킨다."@ko ;
+    kno:example "¶한 시민 단체는 국회 의원의 특권에 문제를 제기하며, “{유금무죄 무금유죄의} 관행을 반드시 청산해야 한다.”라고 목소리를 높였다."@ko ;
+    kno:componentString "유금무죄(有金無罪), 무금유죄(無金有罪)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:indexForm "유금무죄무금유죄"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2024-0221-c2 kno:formative kno:F003525 ;
-    kno:fullForm "무금유죄"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(有金無罪無金有罪)" ;
+    kno:component kno:KN2024-0221-c2 .
+kno:KN2024-0221-c1 kno:formative kno:F005302 ;
     kno:semanticTag kno:usas-G2.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "무금유죄"@ko ;
-    kno:role "성분"@ko ;
-    rdfs:label "무금유죄(無金有罪)"@ko .
-kno:KN2024-0221-c1 kno:semanticTag kno:usas-G2.1 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "유금무죄"@ko ;
-    kno:formative kno:F005302 ;
+    kno:role "성분"@ko ;
     a kno:Component ;
     kno:fullForm "유금무죄"@ko ;
+    rdfs:label "유금무죄(有金無罪)"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0221-c2 kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "무금유죄"@ko ;
+    rdfs:label "무금유죄(無金有罪)"@ko ;
+    kno:surfaceForm "무금유죄"@ko ;
+    kno:formative kno:F003525 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    rdfs:label "유금무죄(有金無罪)"@ko .
+    a kno:Component .

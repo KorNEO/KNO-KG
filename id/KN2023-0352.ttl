@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0352 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0352 kno:slotFiller "헬스(health)+디깅(digging) (2성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%AC%EC%8A%A4%20%EB%94%94%EA%B9%85%EC%A1%B1> ;
-    kno:frequency kno:KN2023-0352-freq-NN-2023 ;
-    kno:origin "(<영>▼health digging族)" ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:indexForm "헬스디깅족"@ko ;
-    kno:componentString "헬스(health), 디깅(digging), -족(族)"@ko ;
+kno:KN2023-0352 kno:instantiates kno:S000012 ;
+    kno:example "¶{헬스 디깅족} 사이에서는 카페인이나 당의 함량이 높은 기존 제품을 대신해 먹을 수 있는 대체 식품에 대한 관심이 높다."@ko ;
     skos:definition "운동 방법이나 식단 등 건강 관리에 관련된 정보를 적극적으로 찾는 사람. 또는 그런 무리."@ko ;
+    kno:componentString "헬스(health), 디깅(digging), -족(族)"@ko ;
+    kno:indexForm "헬스디깅족"@ko ;
     kno:frequency kno:KN2023-0352-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0352-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0352-freq-NN-2023 ;
     kno:year "2023"^^xsd:gYear ;
     kno:unitType "구"@ko ;
-    kno:component kno:KN2023-0352-c1 ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:label "헬스 디깅족"@ko ;
-    kno:frequency kno:KN2023-0352-freq-NN-2024 ;
-    kno:predicate "찾다"@ko ;
-    kno:languageType "영_(영+한)" ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2023-0352-freq-NN-2025 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
     a kno:Neologism ;
-    kno:example "¶{헬스 디깅족} 사이에서는 카페인이나 당의 함량이 높은 기존 제품을 대신해 먹을 수 있는 대체 식품에 대한 관심이 높다."@ko ;
+    kno:component kno:KN2023-0352-c3 ;
+    rdfs:label "헬스 디깅족"@ko ;
+    kno:predicate "찾다"@ko ;
+    kno:slotFiller "헬스(health)+디깅(digging) (2성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
     kno:component kno:KN2023-0352-c2 ;
-    kno:instantiates kno:S000012 ;
-    kno:component kno:KN2023-0352-c3 .
-kno:KN2023-0352-c1 kno:formative kno:F000642 ;
-    kno:surfaceForm "헬스"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:frequency kno:KN2023-0352-freq-NN-2025 ;
+    kno:origin "(<영>▼health digging族)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%97%AC%EC%8A%A4%20%EB%94%94%EA%B9%85%EC%A1%B1> ;
+    kno:languageType "영_(영+한)" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0352-c1 ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0352-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
     a kno:Component ;
-    rdfs:label "헬스(health)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "헬스"@ko ;
-    kno:semanticTag kno:usas-K5.1 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "족"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "족"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 .
 kno:KN2023-0352-c2 rdfs:label "디깅(digging)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "디깅"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000488 ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-X5.2p ;
-    kno:surfaceForm "디깅"@ko .
-kno:KN2023-0352-c3 kno:semanticTag kno:usas-S5 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000488 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "디깅"@ko ;
+    kno:surfaceForm "디깅"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "족"@ko ;
+    a kno:Component .
+kno:KN2023-0352-c1 kno:formative kno:F000642 ;
     a kno:Component ;
-    kno:formative kno:F000001 ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "족"@ko .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "헬스"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "헬스"@ko ;
+    rdfs:label "헬스(health)"@ko ;
+    kno:position "1"^^xsd:integer .

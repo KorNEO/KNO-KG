@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0355 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0355 a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:instantiates kno:S000017 ;
-    kno:example "¶‘혼밥’, ‘혼술’의 인기에 힘입어 최근 혼자 즐기는 디저트인 ‘{혼디’까지} 유행이 확산되며, 업계에서는 다양한 디저트 제품들을 출시하고 있다."@ko ;
-    a kno:Neologism ;
-    kno:languageType "고+영" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380645> ;
-    kno:component kno:KN2017-0355-c1 ;
+kno:KN2017-0355 kno:year "2017"^^xsd:gYear ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:year "2017"^^xsd:gYear ;
-    skos:definition "혼자서 디저트를 먹음. 또는 그렇게 먹는 디저트."@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:indexForm "혼디"@ko ;
-    kno:formation kno:W06 ;
-    kno:urimalTargetCode "1380645" ;
-    kno:unitType "단어"@ko ;
     kno:component kno:KN2017-0355-c2 ;
-    kno:origin "(혼<영>←dessert)" ;
+    a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380645> ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶‘혼밥’, ‘혼술’의 인기에 힘입어 최근 혼자 즐기는 디저트인 ‘{혼디’까지} 유행이 확산되며, 업계에서는 다양한 디저트 제품들을 출시하고 있다."@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0355-c1 ;
     rdfs:label "혼디"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    skos:definition "혼자서 디저트를 먹음. 또는 그렇게 먹는 디저트."@ko ;
+    kno:slotFiller "디(저트)(dessert) (1성분)"@ko ;
+    kno:instantiates kno:S000017 ;
+    kno:urimalTargetCode "1380645" ;
     kno:componentString "혼(자), 디(저트)(dessert)"@ko ;
-    kno:slotFiller "디(저트)(dessert) (1성분)"@ko .
-kno:KN2017-0355-c1 kno:surfaceForm "혼"@ko ;
-    kno:fullForm "혼자"@ko ;
-    a kno:Component ;
-    rdfs:label "혼(자)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:formative kno:F000011 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2017-0355-c2 kno:formative kno:F000720 ;
-    kno:position "2"^^xsd:integer ;
+    kno:indexForm "혼디"@ko ;
+    kno:languageType "고+영" ;
+    kno:origin "(혼<영>←dessert)" .
+kno:KN2017-0355-c2 rdfs:label "디(저트)(dessert)"@ko ;
     kno:fullForm "디저트"@ko ;
-    a kno:Component ;
-    rdfs:label "디(저트)(dessert)"@ko ;
-    kno:surfaceForm "디"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 .
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "디"@ko ;
+    kno:formative kno:F000720 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2017-0355-c1 kno:formative kno:F000011 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "혼"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "혼자"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "혼(자)"@ko .

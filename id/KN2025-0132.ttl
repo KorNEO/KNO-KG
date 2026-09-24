@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0132 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0132 kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "(LLM) 회의록을 다들 AI로 요약해 공유하는데, 나는 끝까지 직접 정리해서 올리니 {노멀휴먼으로} 남은 기분이 들었다."@ko ;
-    kno:componentString "노멀(normal), 휴먼(human)"@ko ;
+kno:KN2025-0132 skos:definition "(LLM) 인공 지능(AI) 같은 자동화 도구의 도움을 거의 받지 않고, 사람의 판단과 노동으로만 과업을 수행하는 사람을 자조적ㆍ대조적으로 이르는 말."@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EB%A9%80%20%ED%9C%B4%EB%A8%BC> ;
     rdfs:label "노멀 휴먼"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "(LLM) 인공 지능(AI) 같은 자동화 도구의 도움을 거의 받지 않고, 사람의 판단과 노동으로만 과업을 수행하는 사람을 자조적ㆍ대조적으로 이르는 말."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:pos "「구」"@ko ;
-    kno:slotFiller "휴먼(human) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S001295 ;
-    a kno:Neologism ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0132-c1 ;
-    kno:frequency kno:KN2025-0132-freq-NN-total ;
-    kno:component kno:KN2025-0132-c2 ;
     kno:frequency kno:KN2025-0132-freq-NN-2025 ;
+    kno:component kno:KN2025-0132-c1 ;
+    kno:indexForm "노멀휴먼"@ko ;
+    kno:instantiates kno:S001295 ;
+    kno:componentString "노멀(normal), 휴먼(human)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2025-0132-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2025"^^xsd:gYear ;
     a ontolex:MultiwordExpression ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "노멀휴먼"@ko .
+    kno:slotFiller "휴먼(human) (1성분)"@ko ;
+    kno:example "(LLM) 회의록을 다들 AI로 요약해 공유하는데, 나는 끝까지 직접 정리해서 올리니 {노멀휴먼으로} 남은 기분이 들었다."@ko ;
+    kno:component kno:KN2025-0132-c2 .
 kno:KN2025-0132-c1 kno:surfaceForm "노멀"@ko ;
-    kno:fullForm "노멀"@ko ;
-    kno:formative kno:F000341 ;
-    a kno:Component ;
     rdfs:label "노멀(normal)"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-A6.2p ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0132-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "휴먼"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F000341 ;
+    kno:fullForm "노멀"@ko .
+kno:KN2025-0132-c2 kno:fullForm "휴먼"@ko ;
     rdfs:label "휴먼(human)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000443 ;
-    a kno:Component ;
     kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "휴먼"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "휴먼"@ko .
+    a kno:Component ;
+    kno:formative kno:F000443 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0068 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0068 kno:frequency kno:KN2019-0068-freq-NN-total ;
-    kno:formation kno:W02 ;
-    kno:frequency kno:KN2019-0068-freq-NN-2019 ;
-    kno:component kno:KN2019-0068-c1 ;
-    skos:definition "가수가 되는 데 결정적인 계기가 되는 곡."@ko ;
-    kno:predicate "되다"@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2019-0068 kno:activeYears "2"^^xsd:integer ;
     kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0068-freq-NN-total ;
+    rdfs:label "등용-곡"@ko ;
+    kno:component kno:KN2019-0068-c1 ;
+    a ontolex:Word ;
     kno:slotFiller "등용(登用) (1성분)"@ko ;
-    kno:frequency kno:KN2019-0068-freq-NN-2018 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%B1%EC%9A%A9%EA%B3%A1> ;
     kno:component kno:KN2019-0068-c2 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:indexForm "등용곡"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:languageType "한+한" ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "등용(登用), -곡(曲)"@ko ;
+    skos:definition "가수가 되는 데 결정적인 계기가 되는 곡."@ko ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000279 ;
     a kno:Neologism ;
     kno:example "¶OOO는 ‘OO’에서 신인들의 {등용곡으로} 불리는 ‘OO’와 ‘OO’을 부른 가수다."@ko ;
     kno:origin "(登用曲)" ;
-    rdfs:label "등용-곡"@ko ;
-    a ontolex:Word .
+    kno:formation kno:W02 ;
+    kno:languageType "한+한" ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:predicate "되다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%B1%EC%9A%A9%EA%B3%A1> ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2019-0068-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0068-freq-NN-2018 ;
+    kno:componentString "등용(登用), -곡(曲)"@ko ;
+    kno:instantiates kno:S000280 ;
+    kno:indexForm "등용곡"@ko .
 kno:KN2019-0068-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F003078 ;
-    kno:fullForm "등용"@ko ;
     rdfs:label "등용(登用)"@ko ;
+    kno:formative kno:F003078 ;
     kno:semanticTag kno:usas-I3.1 ;
+    a kno:Component ;
+    kno:fullForm "등용"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "등용"@ko ;
-    a kno:Component ;
     kno:role "슬롯 채움"@ko .
-kno:KN2019-0068-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "곡"@ko ;
-    kno:formative kno:F000334 ;
-    rdfs:label "-곡(曲)"@ko ;
-    kno:position "2"^^xsd:integer ;
+kno:KN2019-0068-c2 rdfs:label "-곡(曲)"@ko ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "곡"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:formative kno:F000334 ;
+    kno:position "2"^^xsd:integer ;
     a kno:Component ;
-    kno:semanticTag kno:usas-K2 .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "곡"@ko ;
+    kno:surfaceForm "곡"@ko .

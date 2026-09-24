@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0539 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0539 skos:definition "반려동물을 매우 좋아하여 지극히 돌보는 사람을 비유적으로 이르는 말."@ko ;
+kno:KN2016-0539 kno:instantiates kno:S000231 ;
+    kno:component kno:KN2016-0539-c1 ;
+    kno:slotFiller "펫(pet) (1성분)"@ko ;
+    kno:example "¶유치원에도 최고급 사료가 있지만 {펫맘은} 강아지의 입맛에 꼭 맞는 사료 도시락을 챙긴다."@ko ;
+    a ontolex:Word ;
+    kno:languageType "영+영" ;
+    kno:slotFiller "맘(mom) (1성분)"@ko ;
+    skos:definition "반려동물을 매우 좋아하여 지극히 돌보는 사람을 비유적으로 이르는 말."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372974> ;
+    kno:urimalTargetCode "1372974" ;
+    kno:unitType "단어"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "펫(pet), 맘(mom)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0539-c2 ;
+    kno:origin "(<영>pet mom)" ;
+    kno:indexForm "펫맘"@ko ;
+    kno:instantiates kno:S000042 ;
     kno:registration "우리말샘"@ko ;
     rdfs:label "펫-맘"@ko ;
-    kno:origin "(<영>pet mom)" ;
-    kno:component kno:KN2016-0539-c1 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372974> ;
-    kno:indexForm "펫맘"@ko ;
-    kno:languageType "영+영" ;
-    kno:unitType "단어"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:slotFiller "펫(pet) (1성분)"@ko ;
     kno:pos "「명」"@ko ;
-    kno:example "¶유치원에도 최고급 사료가 있지만 {펫맘은} 강아지의 입맛에 꼭 맞는 사료 도시락을 챙긴다."@ko ;
-    kno:slotFiller "맘(mom) (1성분)"@ko ;
-    kno:componentString "펫(pet), 맘(mom)"@ko ;
-    kno:instantiates kno:S000042 ;
-    a kno:Neologism ;
-    kno:formation kno:W01 ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:instantiates kno:S000232 ;
-    kno:urimalTargetCode "1372974" ;
-    kno:component kno:KN2016-0539-c2 .
-kno:KN2016-0539-c1 a kno:Component ;
-    rdfs:label "펫(pet)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000054 ;
+    kno:formation kno:W01 .
+kno:KN2016-0539-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-L2 ;
     kno:surfaceForm "펫"@ko ;
-    kno:fullForm "펫"@ko .
-kno:KN2016-0539-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "맘"@ko ;
-    kno:formative kno:F000021 ;
-    kno:fullForm "맘"@ko ;
-    rdfs:label "맘(mom)"@ko ;
+    kno:fullForm "펫"@ko ;
+    rdfs:label "펫(pet)"@ko ;
+    kno:formative kno:F000054 ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S4 ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-L2 .
+kno:KN2016-0539-c2 rdfs:label "맘(mom)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000021 ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "맘"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "맘"@ko .

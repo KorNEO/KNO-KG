@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0114 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0114 kno:example "¶투자자들이 {삼쏘공의} 수혜 업종을 찾기 시작하면서 인공 지능 및 로봇, 자율 주행 등 관련주들의 주가가 큰 폭으로 상승하였다."@ko ;
+kno:KN2024-0114 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EC%8F%98%EA%B3%B5> ;
     kno:unitType "단어"@ko ;
-    kno:slotFiller "쏘(다)+공 (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0114-c3 ;
     kno:componentString "삼(성)(Samsung), 쏘(다), 공"@ko ;
     kno:origin "(三쏘공)" ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:instantiates kno:S001442 ;
-    a kno:Neologism ;
-    skos:definition "‘삼성이 쏘아 올린 공’을 줄여 이르는 말. 삼성 그룹의 미래 사업과 관련하여 상승세를 타는 주식 종목을 의미한다."@ko ;
-    kno:component kno:KN2024-0114-c1 ;
-    kno:pos "「명」"@ko ;
     kno:indexForm "삼쏘공"@ko ;
-    kno:frequency kno:KN2024-0114-freq-NN-total ;
-    kno:component kno:KN2024-0114-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EC%8F%98%EA%B3%B5> ;
-    kno:formation kno:W06 ;
     kno:registration "신어DB"@ko ;
-    kno:languageType "한+고+고" ;
     kno:frequency kno:KN2024-0114-freq-NN-2024 ;
+    kno:component kno:KN2024-0114-c2 ;
+    kno:frequency kno:KN2024-0114-freq-NN-total ;
+    skos:definition "‘삼성이 쏘아 올린 공’을 줄여 이르는 말. 삼성 그룹의 미래 사업과 관련하여 상승세를 타는 주식 종목을 의미한다."@ko ;
+    kno:instantiates kno:S001442 ;
+    kno:formation kno:W06 ;
+    a ontolex:Word ;
+    kno:year "2024"^^xsd:gYear ;
     rdfs:label "삼쏘공"@ko ;
-    kno:component kno:KN2024-0114-c3 .
-kno:KN2024-0114-c1 kno:surfaceForm "삼"@ko ;
-    kno:fullForm "삼성"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
-    a kno:Component ;
-    rdfs:label "삼(성)(Samsung)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F001443 .
-kno:KN2024-0114-c2 a kno:Component ;
-    kno:fullForm "쏘다"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004770 ;
-    kno:semanticTag kno:usas-G3 ;
-    rdfs:label "쏘(다)"@ko ;
-    kno:surfaceForm "쏘"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
+    kno:pos "「명」"@ko ;
+    kno:example "¶투자자들이 {삼쏘공의} 수혜 업종을 찾기 시작하면서 인공 지능 및 로봇, 자율 주행 등 관련주들의 주가가 큰 폭으로 상승하였다."@ko ;
+    kno:languageType "한+고+고" ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0114-c1 ;
+    kno:slotFiller "쏘(다)+공 (2성분)"@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear .
 kno:KN2024-0114-c3 a kno:Component ;
     kno:position "3"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "공"@ko ;
+    kno:formative kno:F002322 ;
     kno:semanticTag kno:usas-K5.1 ;
+    kno:surfaceForm "공"@ko ;
     rdfs:label "공"@ko ;
     kno:fullForm "공"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002322 .
+    kno:role "슬롯 채움"@ko .
+kno:KN2024-0114-c2 kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:formative kno:F004770 ;
+    kno:surfaceForm "쏘"@ko ;
+    kno:fullForm "쏘다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "쏘(다)"@ko .
+kno:KN2024-0114-c1 kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001443 ;
+    kno:surfaceForm "삼"@ko ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "삼(성)(Samsung)"@ko ;
+    kno:fullForm "삼성"@ko .

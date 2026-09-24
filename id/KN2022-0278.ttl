@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0278 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0278 kno:unitType "단어"@ko ;
+kno:KN2022-0278 a kno:Neologism ;
     kno:origin "(<영>covidflation)" ;
-    kno:frequency kno:KN2022-0278-freq-NN-total ;
+    skos:definition "코로나19와 관련된 물가 상승 현상을 이르는 말. ‘코비드(COVID)’와 ‘인플레이션(inflation)’을 결합하여 만든 말이다."@ko ;
+    kno:indexForm "코비드플레이션"@ko ;
+    kno:languageType "영" ;
+    kno:slotFiller "코비드(COVID) (1성분)"@ko ;
+    kno:year "2022"^^xsd:gYear ;
     rdfs:label "코비드플레이션"@ko ;
     kno:frequency kno:KN2022-0278-freq-NN-2022 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "코비드플레이션"@ko ;
-    kno:instantiates kno:S000011 ;
-    a kno:Neologism ;
-    skos:definition "코로나19와 관련된 물가 상승 현상을 이르는 말. ‘코비드(COVID)’와 ‘인플레이션(inflation)’을 결합하여 만든 말이다."@ko ;
-    kno:languageType "영" ;
-    kno:example "¶지금의 물가 상승 사태는 코로나19로 인해 시작된 것이므로 {코비드플레이션이다}."@ko ;
-    kno:slotFiller "코비드(COVID) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2022-0278-c1 ;
     kno:component kno:KN2022-0278-c2 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%B9%84%EB%93%9C%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
-    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0278-c1 ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000011 ;
     kno:componentString "코비드(COVID), (인)플레이션(inflation)"@ko ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:formation kno:W07 .
-kno:KN2022-0278-c1 a kno:Component ;
-    kno:surfaceForm "코비드"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W07 ;
+    kno:frequency kno:KN2022-0278-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶지금의 물가 상승 사태는 코로나19로 인해 시작된 것이므로 {코비드플레이션이다}."@ko .
+kno:KN2022-0278-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000009 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    kno:surfaceForm "플레이션"@ko ;
+    kno:semanticTag kno:usas-I1.3p ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "인플레이션"@ko .
+kno:KN2022-0278-c1 kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-B2 ;
     rdfs:label "코비드(COVID)"@ko ;
     kno:fullForm "코비드"@ko ;
-    kno:semanticTag kno:usas-B2 ;
-    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000609 .
-kno:KN2022-0278-c2 kno:role "고정항"@ko ;
-    kno:formative kno:F000009 ;
-    kno:surfaceForm "플레이션"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "(인)플레이션(inflation)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "인플레이션"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1.3p .
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000609 ;
+    kno:surfaceForm "코비드"@ko .

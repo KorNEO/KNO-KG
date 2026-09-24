@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0197 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0197 kno:registration "우리말샘"@ko ;
+kno:KN2014-0197 rdfs:label "완얼"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371217> ;
-    skos:definition "‘완성은 얼굴’을 줄여 이르는 말. 얼굴이 잘생기거나 예쁘면 옷, 머리 모양 등 무엇이든지 그 사람과 잘 어울림을 뜻한다."@ko ;
-    kno:urimalTargetCode "1371217" ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2014-0197-c1 ;
-    kno:languageType "한+고" ;
-    kno:instantiates kno:S000626 ;
-    kno:pos "「명」"@ko ;
+    a ontolex:Word ;
     kno:component kno:KN2014-0197-c2 ;
+    kno:slotFiller "완(성)(完) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:formation kno:W06 ;
     a kno:Neologism ;
+    kno:instantiates kno:S000626 ;
+    skos:definition "‘완성은 얼굴’을 줄여 이르는 말. 얼굴이 잘생기거나 예쁘면 옷, 머리 모양 등 무엇이든지 그 사람과 잘 어울림을 뜻한다."@ko ;
     kno:componentString "완(성)(完), 얼(굴)"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:slotFiller "완(성)(完) (1성분)"@ko ;
-    a ontolex:Word ;
+    kno:urimalTargetCode "1371217" ;
     kno:indexForm "완얼"@ko ;
+    kno:languageType "한+고" ;
+    kno:registration "우리말샘"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
     kno:example "¶얼굴형에 어울리는 헤어 표를 본 누리꾼들은 “얼굴형에 어울리는 헤어, 저건 그림이고 실사는 또 다르다.”, “얼굴형에 어울리는 헤어, 동그란 얼굴이 쇼트커트? 절대 반대.”, “얼굴형에 어울리는 헤어, {완얼이면} 뭐든 가능!” 등의 반응을 보였다."@ko ;
-    kno:origin "(完얼)" ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "완얼"@ko .
-kno:KN2014-0197-c1 kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "완성"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-T2 ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "완(성)(完)"@ko ;
-    kno:surfaceForm "완"@ko ;
-    kno:formative kno:F000225 .
-kno:KN2014-0197-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "얼"@ko ;
-    rdfs:label "얼(굴)"@ko ;
+    kno:component kno:KN2014-0197-c1 ;
+    kno:origin "(完얼)" .
+kno:KN2014-0197-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
     kno:fullForm "얼굴"@ko ;
     kno:formative kno:F000117 ;
+    rdfs:label "얼(굴)"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-B1 ;
-    kno:role "고정항"@ko .
+    kno:surfaceForm "얼"@ko ;
+    a kno:Component .
+kno:KN2014-0197-c1 a kno:Component ;
+    kno:surfaceForm "완"@ko ;
+    kno:formative kno:F000225 ;
+    kno:fullForm "완성"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "완(성)(完)"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .

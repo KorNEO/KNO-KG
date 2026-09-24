@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0348 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0348 kno:frequency kno:KN2017-0348-freq-NN-2018 ;
-    kno:example "¶석 달 전 만난 그는 ‘{호모 고시오패스’의} 모습을 담고 있었다."@ko ;
-    kno:pos "「구」"@ko ;
-    rdfs:label "호모 고시오패스"@ko ;
-    kno:frequency kno:KN2017-0348-freq-NN-2017 ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "호모고시오패스"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1381760> ;
-    kno:frequency kno:KN2017-0348-freq-NN-total ;
+kno:KN2017-0348 kno:componentString "호모(homo), 고시(考試), (소시)오패스(sociopath)"@ko ;
     kno:component kno:KN2017-0348-c1 ;
-    kno:component kno:KN2017-0348-c3 ;
-    a kno:Neologism ;
-    kno:slotFiller "고시(考試)+(소시)오패스(sociopath) (2성분)"@ko ;
-    kno:urimalTargetCode "1381760" ;
-    kno:origin "(<라>▼homo考試<영>←sociopath)" ;
-    skos:definition "오랜 고시 준비로 인해 주변 일에 몹시 예민해지거나 다른 사람들에게 공격적인 성향을 보이는 인간을 비유적으로 이르는 말."@ko ;
-    kno:languageType "라_(한+영)" ;
+    kno:year "2017"^^xsd:gYear ;
     a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1381760> ;
+    kno:origin "(<라>▼homo考試<영>←sociopath)" ;
+    kno:frequency kno:KN2017-0348-freq-NN-2018 ;
+    kno:component kno:KN2017-0348-c3 ;
+    kno:indexForm "호모고시오패스"@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:component kno:KN2017-0348-c2 ;
     kno:instantiates kno:S000058 ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:languageType "라_(한+영)" ;
+    rdfs:label "호모 고시오패스"@ko ;
+    a kno:Neologism ;
     kno:lastAttestationYear "2018"^^xsd:gYear ;
-    kno:componentString "호모(homo), 고시(考試), (소시)오패스(sociopath)"@ko .
-kno:KN2017-0348-c1 a kno:Component ;
-    kno:fullForm "호모"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "호모"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:urimalTargetCode "1381760" ;
+    skos:definition "오랜 고시 준비로 인해 주변 일에 몹시 예민해지거나 다른 사람들에게 공격적인 성향을 보이는 인간을 비유적으로 이르는 말."@ko ;
+    kno:frequency kno:KN2017-0348-freq-NN-2017 ;
+    kno:example "¶석 달 전 만난 그는 ‘{호모 고시오패스’의} 모습을 담고 있었다."@ko ;
+    kno:frequency kno:KN2017-0348-freq-NN-total ;
+    kno:slotFiller "고시(考試)+(소시)오패스(sociopath) (2성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2017-0348-c1 kno:fullForm "호모"@ko ;
     rdfs:label "호모(homo)"@ko ;
-    kno:formative kno:F000026 .
-kno:KN2017-0348-c3 kno:formative kno:F005130 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "호모"@ko ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "(소시)오패스(sociopath)"@ko ;
+    kno:formative kno:F000026 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2017-0348-c3 kno:formative kno:F005130 ;
+    kno:surfaceForm "오패스"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-B2m ;
+    kno:role "슬롯 채움"@ko ;
     kno:fullForm "소시오패스"@ko ;
-    kno:surfaceForm "오패스"@ko .
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "(소시)오패스(sociopath)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2017-0348-c2 rdfs:label "고시(考試)"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000247 ;
+    kno:fullForm "고시"@ko ;
     kno:semanticTag kno:usas-P1 ;
     kno:surfaceForm "고시"@ko ;
-    a kno:Component ;
-    kno:fullForm "고시"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000247 ;
-    kno:truncated "false"^^xsd:boolean .
+    a kno:Component .

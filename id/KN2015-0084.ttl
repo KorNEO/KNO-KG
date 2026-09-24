@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0084 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0084 kno:languageType "한+고" ;
-    a ontolex:Word ;
+kno:KN2015-0084 kno:activeYears "0"^^xsd:integer ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:component kno:KN2015-0084-c1 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%BC%EB%BA%91> ;
+    rdfs:label "물뺑"@ko ;
+    kno:languageType "한+고" ;
     kno:pos "「명」"@ko ;
+    kno:component kno:KN2015-0084-c2 ;
+    kno:example "¶경찰 관계자는 “{물뺑은} 지역 주민의 생활 현실을 보여 주는 지표.”라며 “보다 명확한 처벌 규정 등이 마련돼야 한다.”라고 말했다."@ko ;
     skos:definition "‘물적 피해 뺑소니’를 줄여 이르는 말. 자동차로 다른 사람의 물건에 손해를 끼치고 몰래 달아나는 짓을 이른다."@ko ;
     kno:componentString "물(적)(物), 뺑(소니)"@ko ;
-    a kno:Neologism ;
-    kno:example "¶경찰 관계자는 “{물뺑은} 지역 주민의 생활 현실을 보여 주는 지표.”라며 “보다 명확한 처벌 규정 등이 마련돼야 한다.”라고 말했다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:origin "(物뺑)" ;
-    kno:component kno:KN2015-0084-c1 ;
+    a ontolex:Word ;
     kno:indexForm "물뺑"@ko ;
-    kno:component kno:KN2015-0084-c2 ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "물뺑"@ko .
-kno:KN2015-0084-c1 kno:semanticTag kno:usas-O1.1 ;
-    a kno:Component ;
-    rdfs:label "물(적)(物)"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F003556 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(物뺑)" ;
+    kno:unitType "단어"@ko .
+kno:KN2015-0084-c1 rdfs:label "물(적)(物)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
     kno:surfaceForm "물"@ko ;
-    kno:fullForm "물적"@ko .
-kno:KN2015-0084-c2 kno:formative kno:F004126 ;
+    kno:formative kno:F003556 ;
+    kno:fullForm "물적"@ko ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
-    kno:fullForm "뺑소니"@ko ;
-    kno:surfaceForm "뺑"@ko ;
-    kno:position "2"^^xsd:integer ;
     a kno:Component ;
+    kno:semanticTag kno:usas-O1.1 .
+kno:KN2015-0084-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     rdfs:label "뺑(소니)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "뺑소니"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "뺑"@ko ;
+    kno:formative kno:F004126 ;
+    kno:semanticTag kno:usas-G2.1m .

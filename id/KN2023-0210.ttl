@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0210 kno:slotFiller "채굴(採掘) (1성분)"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:componentString "월급(月給), 채굴(採掘)"@ko ;
+kno:KN2023-0210 a kno:Neologism ;
     kno:component kno:KN2023-0210-c1 ;
-    kno:instantiates kno:S000319 ;
+    kno:component kno:KN2023-0210-c2 ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%EA%B8%89%20%EC%B1%84%EA%B5%B4> ;
     kno:unitType "구"@ko ;
     kno:frequency kno:KN2023-0210-freq-NN-total ;
+    kno:slotFiller "채굴(採掘) (1성분)"@ko ;
     kno:example "¶주식 투자 실패로 마이너스가 된 계좌를 회복시키려면 월급을 받아 메우는 수밖에 없다는 자조적 의미에서 ‘{월급 채굴’이라는} 말도 등장했다."@ko ;
-    kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%EA%B8%89%20%EC%B1%84%EA%B5%B4> ;
-    rdfs:label "월급 채굴"@ko ;
-    a kno:Neologism ;
-    skos:definition "가상의 네트워크 공간에서 컴퓨터로 암호 화폐를 얻는 것처럼, 하루하루 노동을 하며 돈을 모으는 것을 비유적으로 이르는 말. 주로 주식 투자에서의 손실로 인해 잃은 돈을 메워야 하는 상황에서 사용된다."@ko ;
-    kno:frequency kno:KN2023-0210-freq-NN-2022 ;
-    kno:indexForm "월급채굴"@ko ;
-    kno:languageType "한_한" ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2023-0210-c2 ;
+    skos:definition "가상의 네트워크 공간에서 컴퓨터로 암호 화폐를 얻는 것처럼, 하루하루 노동을 하며 돈을 모으는 것을 비유적으로 이르는 말. 주로 주식 투자에서의 손실로 인해 잃은 돈을 메워야 하는 상황에서 사용된다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "월급(月給), 채굴(採掘)"@ko ;
+    kno:instantiates kno:S000320 ;
+    kno:frequency kno:KN2023-0210-freq-NN-2022 ;
+    kno:languageType "한_한" ;
     a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
     kno:origin "(月給採掘)" ;
-    kno:lastAttestationYear "2022"^^xsd:gYear .
-kno:KN2023-0210-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:fullForm "월급"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "월급채굴"@ko ;
+    rdfs:label "월급 채굴"@ko .
+kno:KN2023-0210-c1 kno:surfaceForm "월급"@ko ;
     rdfs:label "월급(月給)"@ko ;
-    kno:surfaceForm "월급"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "월급"@ko ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000297 .
-kno:KN2023-0210-c2 a kno:Component ;
-    kno:surfaceForm "채굴"@ko ;
-    kno:formative kno:F006016 ;
+    kno:formative kno:F000297 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:role "고정항"@ko .
+kno:KN2023-0210-c2 rdfs:label "채굴(採掘)"@ko ;
     kno:semanticTag kno:usas-I4 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "채굴"@ko ;
-    rdfs:label "채굴(採掘)"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:formative kno:F006016 ;
+    kno:surfaceForm "채굴"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component .

@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0151 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0151 kno:slotFiller "방심(放心) (1성분)"@ko ;
+kno:KN2022-0151 kno:instantiates kno:S000276 ;
+    kno:origin "(放心<영>pass)" ;
     a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:indexForm "방심패스"@ko ;
     skos:definition "방역에 대한 사람들의 방심을 유발한 다는 뜻으로 ‘방역 패스’를 비판적으로 이르는 말. 백신 접종 이력으로 다중 이용 시설의 출입 가능 여부를 판단하는 것은 백신 접종만으로 방역이 충분하다는 신호로 여겨질 수 있어, 방역과 관련한 사람들의 경각심이 떨 어질 수 있음을 경계하는 상황에서 나온 말이다."@ko ;
+    kno:indexForm "방심패스"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2022-0151-c1 ;
-    kno:example "¶일부 전문가들은 방역 패스의 시행이 코로나19와 관련된 경각심을 낮추어, 방역 패스가 오히려 {방심 패스가} 될 수도 있다고 지적하였다."@ko ;
-    rdfs:label "방심^패스"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:frequency kno:KN2022-0151-freq-NN-2021 ;
-    kno:languageType "한^영" ;
     kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    rdfs:label "방심^패스"@ko ;
+    kno:languageType "한^영" ;
+    kno:componentString "방심(放心), 패스(pass)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%A9%EC%8B%AC%ED%8C%A8%EC%8A%A4> ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2022-0151-freq-NN-2022 ;
     kno:component kno:KN2022-0151-c2 ;
     kno:year "2022"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%A9%EC%8B%AC%ED%8C%A8%EC%8A%A4> ;
-    kno:origin "(放心<영>pass)" ;
-    kno:frequency kno:KN2022-0151-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0151-freq-NN-2021 ;
     kno:pos "「구」"@ko ;
     kno:frequency kno:KN2022-0151-freq-NN-total ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000275 ;
-    kno:componentString "방심(放心), 패스(pass)"@ko .
-kno:KN2022-0151-c1 a kno:Component ;
-    kno:fullForm "방심"@ko ;
-    kno:surfaceForm "방심"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-X5.2m ;
+    kno:example "¶일부 전문가들은 방역 패스의 시행이 코로나19와 관련된 경각심을 낮추어, 방역 패스가 오히려 {방심 패스가} 될 수도 있다고 지적하였다."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:slotFiller "방심(放心) (1성분)"@ko .
+kno:KN2022-0151-c1 rdfs:label "방심(放心)"@ko ;
     kno:formative kno:F003715 ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "방심(放心)"@ko .
-kno:KN2022-0151-c2 kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "패스(pass)"@ko ;
-    kno:formative kno:F000431 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X5.2m ;
+    kno:fullForm "방심"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "패스"@ko ;
-    kno:fullForm "패스"@ko ;
+    kno:surfaceForm "방심"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2022-0151-c2 rdfs:label "패스(pass)"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-M1 ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "패스"@ko ;
+    kno:surfaceForm "패스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000431 ;
+    kno:role "고정항"@ko .

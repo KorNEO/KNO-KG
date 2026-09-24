@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0202 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0202 rdfs:label "욕로남불"@ko ;
-    kno:formation kno:W05 ;
+kno:KN2023-0202 a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%95%EB%A1%9C%EB%82%A8%EB%B6%88> ;
+    skos:definition "남이 욕설을 쓸 때는 비난하다가 자신이 욕설을 쓸 때는 합리화하는 태도를 이르는 말. ‘욕설’과 ‘내로남불’을 결합하 여 만든 말이다."@ko ;
     kno:instantiates kno:S001584 ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:component kno:KN2023-0202-c3 ;
+    kno:origin "(辱<영>←romance남不)" ;
+    kno:component kno:KN2023-0202-c2 ;
+    kno:indexForm "욕로남불"@ko ;
     kno:year "2023"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0202-c3 ;
+    kno:component kno:KN2023-0202-c4 ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    kno:slotFiller "로(맨스)(romance)+남+불(륜)(不倫) (3성분)"@ko ;
     kno:languageType "한+영+고+한" ;
     kno:frequency kno:KN2023-0202-freq-NN-2022 ;
-    kno:component kno:KN2023-0202-c4 ;
-    kno:component kno:KN2023-0202-c1 ;
-    kno:component kno:KN2023-0202-c2 ;
     kno:frequency kno:KN2023-0202-freq-NN-total ;
-    kno:origin "(辱<영>←romance남不)" ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
-    kno:indexForm "욕로남불"@ko ;
-    kno:slotFiller "로(맨스)(romance)+남+불(륜)(不倫) (3성분)"@ko ;
-    skos:definition "남이 욕설을 쓸 때는 비난하다가 자신이 욕설을 쓸 때는 합리화하는 태도를 이르는 말. ‘욕설’과 ‘내로남불’을 결합하 여 만든 말이다."@ko ;
-    kno:componentString "욕(辱), 로(맨스)(romance), 남, 불(륜)(不倫)"@ko ;
+    kno:component kno:KN2023-0202-c1 ;
+    kno:unitType "단어"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:example "¶대통령의 비속어 사용을 비판한 한 국회의원에게 그의 과거 논란을 들추며 ‘{욕로남불’이라는} 반격이 가해졌다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%95%EB%A1%9C%EB%82%A8%EB%B6%88> .
-kno:KN2023-0202-c3 kno:semanticTag kno:usas-S2 ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:componentString "욕(辱), 로(맨스)(romance), 남, 불(륜)(不倫)"@ko ;
+    rdfs:label "욕로남불"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶대통령의 비속어 사용을 비판한 한 국회의원에게 그의 과거 논란을 들추며 ‘{욕로남불’이라는} 반격이 가해졌다."@ko .
+kno:KN2023-0202-c2 a kno:Component ;
+    kno:surfaceForm "로"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "로맨스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001247 ;
+    rdfs:label "로(맨스)(romance)"@ko .
+kno:KN2023-0202-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "남"@ko ;
     kno:formative kno:F000339 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "남"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "남"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "남"@ko .
-kno:KN2023-0202-c4 kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F003986 ;
-    kno:surfaceForm "불"@ko ;
-    kno:semanticTag kno:usas-S3.2m ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2023-0202-c4 kno:semanticTag kno:usas-S3.2m ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
     kno:fullForm "불륜"@ko ;
-    rdfs:label "불(륜)(不倫)"@ko ;
-    a kno:Component .
-kno:KN2023-0202-c1 a kno:Component ;
-    kno:surfaceForm "욕"@ko ;
-    rdfs:label "욕(辱)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "욕"@ko ;
-    kno:semanticTag kno:usas-Q2.2m ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000393 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0202-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "로맨스"@ko ;
-    kno:formative kno:F001247 ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "로(맨스)(romance)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:surfaceForm "로"@ko ;
-    a kno:Component .
+    rdfs:label "불(륜)(不倫)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F003986 ;
+    kno:surfaceForm "불"@ko .
+kno:KN2023-0202-c1 a kno:Component ;
+    kno:fullForm "욕"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "욕(辱)"@ko ;
+    kno:semanticTag kno:usas-Q2.2m ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000393 ;
+    kno:surfaceForm "욕"@ko ;
+    kno:position "1"^^xsd:integer .

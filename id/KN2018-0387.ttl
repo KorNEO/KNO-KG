@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0387 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0387 kno:frequency kno:KN2018-0387-freq-NN-total ;
-    kno:componentString "평(양냉면)(平), (자)부심(負心)"@ko ;
-    kno:frequency kno:KN2018-0387-freq-NN-2018 ;
-    kno:predicate "자부하다"@ko ;
-    kno:formation kno:W05 ;
-    kno:component kno:KN2018-0387-c1 ;
-    kno:component kno:KN2018-0387-c2 ;
+kno:KN2018-0387 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1386786> ;
+    kno:frequency kno:KN2018-0387-freq-NN-total ;
     kno:slotFiller "평(양냉면)(平) (1성분)"@ko ;
-    kno:registration "우리말샘"@ko ;
     kno:indexForm "평부심"@ko ;
+    kno:componentString "평(양냉면)(平), (자)부심(負心)"@ko ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:languageType "한+한" ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    skos:definition "평양냉면에 대해서 잘 안다고 자부하는 마음."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:label "평부심"@ko ;
+    kno:frequency kno:KN2018-0387-freq-NN-2017 ;
+    kno:example "¶‘{평부심’이란} 신조어까지 만들어 내며 평양냉면은 일종의 문화 현상이 됐다."@ko ;
+    kno:frequency kno:KN2018-0387-freq-NN-2018 ;
+    kno:instantiates kno:S000037 ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1386786" ;
-    rdfs:label "평부심"@ko ;
-    kno:instantiates kno:S000037 ;
-    kno:frequency kno:KN2018-0387-freq-NN-2017 ;
+    kno:predicate "자부하다"@ko ;
     a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+    skos:definition "평양냉면에 대해서 잘 안다고 자부하는 마음."@ko ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:origin "(平負心)" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1386786> ;
-    kno:example "¶‘{평부심’이란} 신조어까지 만들어 내며 평양냉면은 일종의 문화 현상이 됐다."@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    a kno:Neologism .
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2018-0387-c1 ;
+    kno:component kno:KN2018-0387-c2 ;
+    kno:formation kno:W05 .
 kno:KN2018-0387-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F006703 ;
     kno:fullForm "평양냉면"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:surfaceForm "평"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F006703 ;
     a kno:Component ;
-    rdfs:label "평(양냉면)(平)"@ko .
-kno:KN2018-0387-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-E4.2p ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "부심"@ko ;
+    rdfs:label "평(양냉면)(平)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "평"@ko .
+kno:KN2018-0387-c2 rdfs:label "(자)부심(負心)"@ko ;
     kno:formative kno:F000087 ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "자부심"@ko ;
-    rdfs:label "(자)부심(負心)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    a kno:Component ;
+    kno:semanticTag kno:usas-E4.2p ;
+    kno:surfaceForm "부심"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko .

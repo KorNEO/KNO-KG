@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0233 kno:frequency kno:KN2020-0233-freq-NN-total ;
-    kno:instantiates kno:S000032 ;
+kno:KN2020-0233 kno:frequency kno:KN2020-0233-freq-NN-2019 ;
     skos:definition "포털 사이트에 특정 어휘를 검색했을 때 나타나는 부정적인 연관 검색어를 긍정적인 것으로 바꾸려고 힘쓰는 일. 또는 그런 활동."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EA%B4%80%20%EA%B2%80%EC%83%89%EC%96%B4%20%EC%A0%95%ED%99%94%20%EC%9A%B4%EB%8F%99> ;
-    kno:slotFiller "연관(聯關)+검색어(檢索語)+정화(淨化) (3성분)"@ko ;
+    kno:component kno:KN2020-0233-c4 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2020-0233-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:predicate "힘쓰다"@ko ;
+    rdfs:label "연관 검색어 정화 운동"@ko ;
+    kno:languageType "한_한_한_한" ;
+    kno:frequency kno:KN2020-0233-freq-NN-total ;
+    a kno:Neologism ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "연관(聯關)+검색어(檢索語)+정화(淨化) (3성분)"@ko ;
+    kno:indexForm "연관검색어정화운동"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EA%B4%80%20%EA%B2%80%EC%83%89%EC%96%B4%20%EC%A0%95%ED%99%94%20%EC%9A%B4%EB%8F%99> ;
+    kno:component kno:KN2020-0233-c3 ;
+    kno:origin "(聯關檢索語淨化運動)" ;
     kno:unitType "구"@ko ;
     kno:example "¶{연관 검색어 정화 운동에} 참여한 네티즌들은 댓글을 통해 더 많은 사람들이 참여해 주기를 촉구했다."@ko ;
-    kno:component kno:KN2020-0233-c4 ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2020-0233-c3 ;
-    a kno:Neologism ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:origin "(聯關檢索語淨化運動)" ;
-    kno:languageType "한_한_한_한" ;
-    kno:predicate "힘쓰다"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "연관검색어정화운동"@ko ;
     kno:componentString "연관(聯關), 검색어(檢索語), 정화(淨化), 운동(運動)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2020-0233-freq-NN-2019 ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    rdfs:label "연관 검색어 정화 운동"@ko ;
-    kno:component kno:KN2020-0233-c2 .
-kno:KN2020-0233-c1 kno:surfaceForm "연관"@ko ;
-    kno:formative kno:F005046 ;
-    kno:fullForm "연관"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A2.2 ;
-    rdfs:label "연관(聯關)"@ko ;
-    a kno:Component .
-kno:KN2020-0233-c4 a kno:Component ;
-    kno:role "고정항"@ko ;
-    rdfs:label "운동(運動)"@ko ;
-    kno:semanticTag kno:usas-S1.1.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "4"^^xsd:integer ;
-    kno:formative kno:F000053 ;
-    kno:fullForm "운동"@ko ;
-    kno:surfaceForm "운동"@ko .
-kno:KN2020-0233-c3 kno:formative kno:F005695 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "정화(淨化)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0233-c2 ;
+    kno:instantiates kno:S000032 .
+kno:KN2020-0233-c4 kno:role "고정항"@ko ;
     a kno:Component ;
+    kno:surfaceForm "운동"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    rdfs:label "운동(運動)"@ko ;
+    kno:formative kno:F000053 ;
+    kno:position "4"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "운동"@ko .
+kno:KN2020-0233-c1 kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "연관"@ko ;
+    rdfs:label "연관(聯關)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005046 ;
+    a kno:Component ;
+    kno:fullForm "연관"@ko .
+kno:KN2020-0233-c3 kno:semanticTag kno:usas-B4 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "정화"@ko ;
     kno:surfaceForm "정화"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B4 ;
-    kno:fullForm "정화"@ko .
-kno:KN2020-0233-c2 a kno:Component ;
-    kno:semanticTag kno:usas-Y2 ;
-    kno:fullForm "검색어"@ko ;
-    rdfs:label "검색어(檢索語)"@ko ;
-    kno:formative kno:F002196 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005695 ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    rdfs:label "정화(淨化)"@ko .
+kno:KN2020-0233-c2 kno:fullForm "검색어"@ko ;
+    a kno:Component ;
     kno:surfaceForm "검색어"@ko ;
     kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "검색어(檢索語)"@ko ;
+    kno:formative kno:F002196 ;
+    kno:semanticTag kno:usas-Y2 ;
     kno:position "2"^^xsd:integer .

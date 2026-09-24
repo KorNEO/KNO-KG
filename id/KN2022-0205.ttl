@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0205 rdfs:label "약제^배송^로봇"@ko ;
-    kno:languageType "한^한^영" ;
-    kno:component kno:KN2022-0205-c1 ;
-    kno:frequency kno:KN2022-0205-freq-NN-2025 ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2022-0205 kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2022-0205-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(藥劑配送<영>robot)" ;
+    rdfs:label "약제^배송^로봇"@ko ;
+    kno:unitType "구"@ko ;
+    skos:definition "병원 약제팀에서 병동까지 약품을 배송하는 로봇."@ko ;
     kno:indexForm "약제배송로봇"@ko ;
     a kno:Neologism ;
     kno:component kno:KN2022-0205-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2022-0205-freq-NN-2023 ;
+    kno:componentString "약제(藥劑), 배송(配送), 로봇(robot)"@ko ;
     kno:frequency kno:KN2022-0205-freq-NN-2021 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000167 ;
+    kno:frequency kno:KN2022-0205-freq-NN-2022 ;
+    kno:slotFiller "약제(藥劑)+배송(配送) (2성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2022-0205-c1 ;
+    kno:component kno:KN2022-0205-c2 ;
+    kno:frequency kno:KN2022-0205-freq-NN-2025 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EC%A0%9C%EB%B0%B0%EC%86%A1%EB%A1%9C%EB%B4%87> ;
+    kno:languageType "한^한^영" ;
     kno:example "¶대형 병원은 안전한 의료 환경 조성과 서비스 향상을 위해 {약제 배송 로봇을} 도입하고 있다."@ko ;
     a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2022-0205-freq-NN-2023 ;
-    kno:origin "(藥劑配送<영>robot)" ;
-    skos:definition "병원 약제팀에서 병동까지 약품을 배송하는 로봇."@ko ;
-    kno:slotFiller "약제(藥劑)+배송(配送) (2성분)"@ko ;
-    kno:component kno:KN2022-0205-c2 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2022-0205-freq-NN-2022 ;
-    kno:unitType "구"@ko ;
-    kno:predicate "배송하다"@ko ;
-    kno:instantiates kno:S000168 ;
-    kno:frequency kno:KN2022-0205-freq-NN-total ;
-    kno:componentString "약제(藥劑), 배송(配送), 로봇(robot)"@ko ;
-    kno:year "2022"^^xsd:gYear .
-kno:KN2022-0205-c1 rdfs:label "약제(藥劑)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-B3 ;
-    a kno:Component ;
-    kno:fullForm "약제"@ko ;
-    kno:surfaceForm "약제"@ko ;
-    kno:formative kno:F004917 .
-kno:KN2022-0205-c3 kno:semanticTag kno:usas-Y1 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:predicate "배송하다"@ko .
+kno:KN2022-0205-c3 kno:position "3"^^xsd:integer ;
     kno:formative kno:F000135 ;
     kno:fullForm "로봇"@ko ;
-    kno:role "고정항"@ko ;
+    rdfs:label "로봇(robot)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "로봇"@ko ;
-    rdfs:label "로봇(robot)"@ko .
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "로봇"@ko .
+kno:KN2022-0205-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "약제(藥劑)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "약제"@ko ;
+    kno:surfaceForm "약제"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004917 .
 kno:KN2022-0205-c2 a kno:Component ;
     kno:semanticTag kno:usas-M1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001347 ;
-    kno:fullForm "배송"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "배송(配送)"@ko ;
     kno:surfaceForm "배송"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "배송(配送)"@ko .
+    kno:fullForm "배송"@ko ;
+    kno:formative kno:F001347 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko .

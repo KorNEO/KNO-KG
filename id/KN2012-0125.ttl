@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0125 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0125 kno:example "¶명절이 산고의 고통만큼 힘든 일이기에 산후 조리에 버금가는 ‘{명후 조리’를} 해야 한다."@ko ;
-    kno:component kno:KN2012-0125-c2 ;
-    kno:frequency kno:KN2012-0125-freq-NN-2012 ;
-    rdfs:label "명후 조리"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:registration "우리말샘"@ko ;
-    skos:definition "명절을 지낸 후 허약해진 몸과 기력을 회복하도록 보살피는 일."@ko ;
-    kno:urimalTargetCode "1373448" ;
-    kno:frequency kno:KN2012-0125-freq-NN-total ;
-    kno:componentString "명(절)(名), 후(後), 조리(調理)"@ko ;
+kno:KN2012-0125 a kno:Neologism ;
     kno:year "2012"^^xsd:gYear ;
-    kno:languageType "한_한" ;
+    kno:example "¶명절이 산고의 고통만큼 힘든 일이기에 산후 조리에 버금가는 ‘{명후 조리’를} 해야 한다."@ko ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "명후조리"@ko ;
+    rdfs:label "명후 조리"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2012-0125-freq-NN-total ;
+    kno:frequency kno:KN2012-0125-freq-NN-2012 ;
+    kno:unitType "구"@ko ;
+    kno:componentString "명(절)(名), 후(後), 조리(調理)"@ko ;
+    kno:predicate "보살피다"@ko ;
     kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373448> ;
-    kno:origin "(名後 調理)" ;
+    kno:component kno:KN2012-0125-c1 ;
     kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    kno:predicate "보살피다"@ko ;
+    skos:definition "명절을 지낸 후 허약해진 몸과 기력을 회복하도록 보살피는 일."@ko ;
+    kno:languageType "한_한" ;
+    kno:urimalTargetCode "1373448" ;
     kno:component kno:KN2012-0125-c3 ;
-    kno:indexForm "명후조리"@ko ;
-    kno:component kno:KN2012-0125-c1 .
-kno:KN2012-0125-c2 kno:formative kno:F000646 ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "후(後)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "후"@ko ;
-    kno:semanticTag kno:usas-N4 ;
-    kno:fullForm "후"@ko .
-kno:KN2012-0125-c3 rdfs:label "조리(調理)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "조리"@ko ;
-    kno:formative kno:F005732 ;
-    kno:semanticTag kno:usas-B2p ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "조리"@ko .
-kno:KN2012-0125-c1 kno:formative kno:F001301 ;
-    kno:surfaceForm "명"@ko ;
+    kno:origin "(名後 調理)" ;
+    kno:component kno:KN2012-0125-c2 .
+kno:KN2012-0125-c1 a kno:Component ;
     kno:fullForm "명절"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "명"@ko ;
     kno:semanticTag kno:usas-T1.3 ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001301 ;
     kno:role "성분"@ko ;
     rdfs:label "명(절)(名)"@ko .
+kno:KN2012-0125-c3 kno:role "성분"@ko ;
+    kno:fullForm "조리"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "조리"@ko ;
+    kno:formative kno:F005732 ;
+    a kno:Component ;
+    rdfs:label "조리(調理)"@ko ;
+    kno:semanticTag kno:usas-B2p ;
+    kno:position "3"^^xsd:integer .
+kno:KN2012-0125-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000646 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-N4 ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "후"@ko ;
+    kno:surfaceForm "후"@ko ;
+    rdfs:label "후(後)"@ko .

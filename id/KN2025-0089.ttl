@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0089 kno:frequency kno:KN2025-0089-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
+kno:KN2025-0089 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%20%EC%B1%84%EC%B0%8D%20%ED%98%84%EC%83%81> ;
+    rdfs:label "기후 채찍 현상"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0089-c1 ;
+    kno:componentString "기후(氣候), 채찍, 현상(現象)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한_고_한" ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0089-freq-NN-2025 ;
+    skos:definition "(LLM) 한 지역에서 짧은 기간 사이에 폭우ㆍ홍수와 가뭄 같은 상반된 강수 조건이 번갈아 나타나 피해를 키우는 기후 현상."@ko ;
     kno:year "2025"^^xsd:gYear ;
-    kno:slotFiller "채찍+현상(現象) (2성분)"@ko ;
+    kno:frequency kno:KN2025-0089-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 작년에는 집중호우로 침수 피해가 컸던 곳이 올해는 극심한 가뭄을 겪으면서 {기후채찍현상이} 농업과 산불 위험을 동시에 악화시키고 있다."@ko ;
+    kno:slotFiller "기후(氣候)+채찍 (2성분)"@ko ;
     kno:component kno:KN2025-0089-c3 ;
+    kno:origin "(氣候채찍現象)" ;
+    kno:instantiates kno:S000137 ;
+    kno:indexForm "기후채찍현상"@ko ;
     kno:component kno:KN2025-0089-c2 ;
     kno:instantiates kno:S000056 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 작년에는 집중호우로 침수 피해가 컸던 곳이 올해는 극심한 가뭄을 겪으면서 {기후채찍현상이} 농업과 산불 위험을 동시에 악화시키고 있다."@ko ;
-    skos:definition "(LLM) 한 지역에서 짧은 기간 사이에 폭우ㆍ홍수와 가뭄 같은 상반된 강수 조건이 번갈아 나타나 피해를 키우는 기후 현상."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%20%EC%B1%84%EC%B0%8D%20%ED%98%84%EC%83%81> ;
-    rdfs:label "기후 채찍 현상"@ko ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "기후(氣候)+채찍 (2성분)"@ko ;
-    kno:indexForm "기후채찍현상"@ko ;
-    kno:frequency kno:KN2025-0089-freq-NN-2025 ;
-    kno:pos "「구」"@ko ;
-    kno:languageType "한_고_한" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:componentString "기후(氣候), 채찍, 현상(現象)"@ko ;
-    kno:origin "(氣候채찍現象)" ;
-    kno:component kno:KN2025-0089-c1 ;
-    kno:instantiates kno:S000137 .
-kno:KN2025-0089-c3 a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000323 ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "채찍+현상(現象) (2성분)"@ko .
+kno:KN2025-0089-c1 kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "기후"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "기후(氣候)"@ko ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "현상"@ko ;
-    kno:semanticTag kno:usas-A4.1 ;
+    kno:formative kno:F000069 ;
+    kno:surfaceForm "기후"@ko ;
+    kno:semanticTag kno:usas-W4 .
+kno:KN2025-0089-c3 kno:role "고정항"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "현상"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:surfaceForm "현상"@ko ;
+    kno:formative kno:F000323 ;
+    a kno:Component ;
     rdfs:label "현상(現象)"@ko .
-kno:KN2025-0089-c2 kno:semanticTag kno:usas-O2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F006021 ;
-    kno:fullForm "채찍"@ko ;
+kno:KN2025-0089-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "채찍"@ko ;
     rdfs:label "채찍"@ko ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "채찍"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0089-c1 rdfs:label "기후(氣候)"@ko ;
-    kno:formative kno:F000069 ;
+    kno:semanticTag kno:usas-O2 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "기후"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "기후"@ko ;
-    kno:semanticTag kno:usas-W4 ;
-    a kno:Component .
+    kno:formative kno:F006021 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "채찍"@ko .

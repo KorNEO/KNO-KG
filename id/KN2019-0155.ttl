@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0155 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0155 kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:languageType "한+고+한" ;
-    kno:slotFiller "소(소하다)(小)+만(들다) (2성분)"@ko ;
+kno:KN2019-0155 kno:formation kno:W06 ;
+    a kno:Neologism ;
     kno:component kno:KN2019-0155-c3 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:example "¶최근 {‘소만행’을} 찾아 공방 카페를 찾는 이들이 늘고 있다."@ko ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
+    rdfs:label "소만행"@ko ;
+    kno:frequency kno:KN2019-0155-freq-NN-total ;
+    kno:instantiates kno:S000662 ;
+    kno:component kno:KN2019-0155-c1 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%A7%8C%ED%96%89> ;
-    kno:frequency kno:KN2019-0155-freq-NN-2019 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:slotFiller "만(들다)+행(복)(幸) (2성분)"@ko ;
+    kno:slotFiller "소(소하다)(小)+만(들다) (2성분)"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000683 ;
     skos:definition "‘소소하게 만드는 행복’ 또는 ‘소소한 것을 만드는 행복’을 줄여 이르는 말. 주로 작은 용품을 손으로 만들며 느끼는 행복을 말한다."@ko ;
     a ontolex:Word ;
-    kno:instantiates kno:S000683 ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2019-0155-c1 ;
-    a kno:Neologism ;
-    kno:indexForm "소만행"@ko ;
     kno:frequency kno:KN2019-0155-freq-NN-2021 ;
-    kno:component kno:KN2019-0155-c2 ;
-    rdfs:label "소만행"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0155-freq-NN-2019 ;
+    kno:languageType "한+고+한" ;
     kno:origin "(小만幸)" ;
-    kno:instantiates kno:S000662 ;
-    kno:frequency kno:KN2019-0155-freq-NN-total ;
+    kno:example "¶최근 {‘소만행’을} 찾아 공방 카페를 찾는 이들이 늘고 있다."@ko ;
+    kno:component kno:KN2019-0155-c2 ;
+    kno:indexForm "소만행"@ko ;
     kno:componentString "소(소하다)(小), 만(들다), 행(복)(幸)"@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2019-0155-c3 kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "행"@ko ;
-    kno:role "고정항"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "만(들다)+행(복)(幸) (2성분)"@ko .
+kno:KN2019-0155-c3 kno:formative kno:F000640 ;
+    kno:semanticTag kno:usas-E4.1p ;
+    kno:fullForm "행복"@ko ;
     rdfs:label "행(복)(幸)"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-E4.1p ;
+    kno:position "3"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000640 ;
-    kno:fullForm "행복"@ko .
-kno:KN2019-0155-c1 kno:surfaceForm "소"@ko ;
     kno:role "고정항"@ko ;
-    kno:fullForm "소소하다"@ko ;
+    kno:surfaceForm "행"@ko .
+kno:KN2019-0155-c1 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "소"@ko ;
     rdfs:label "소(소하다)(小)"@ko ;
+    kno:fullForm "소소하다"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-N3.2m ;
+    kno:position "1"^^xsd:integer ;
     kno:formative kno:F000808 .
-kno:KN2019-0155-c2 rdfs:label "만(들다)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+kno:KN2019-0155-c2 kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-A1.1.1 ;
-    kno:surfaceForm "만"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F001277 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "만들다"@ko ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko .
+    kno:fullForm "만들다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "만(들다)"@ko ;
+    kno:surfaceForm "만"@ko .

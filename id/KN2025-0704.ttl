@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0704 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0704 kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0704-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9E%98%EC%9A%94%EC%9D%BC> ;
-    kno:indexForm "힘요일"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2025-0704 rdfs:label "힘요일"@ko ;
+    kno:formation kno:W05 ;
+    kno:componentString "힘, (월)요일(月曜日)"@ko ;
+    a ontolex:Word ;
     kno:component kno:KN2025-0704-c1 ;
-    kno:languageType "고+한" ;
+    kno:frequency kno:KN2025-0704-freq-NN-total ;
     kno:unitType "단어"@ko ;
-    rdfs:label "힘요일"@ko ;
-    kno:example "(LLM) 주말에 흐트러진 생활 리듬을 다시 잡으려고 일찍 일어나 운동까지 했더니 오늘은 {힘요일이다}."@ko ;
-    kno:slotFiller "(월)요일(月曜日) (1성분)"@ko ;
+    kno:instantiates kno:S001786 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "고+한" ;
     kno:frequency kno:KN2025-0704-freq-NN-2025 ;
-    kno:origin "(힘曜日)" ;
+    kno:component kno:KN2025-0704-c2 ;
+    kno:slotFiller "(월)요일(月曜日) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
     skos:definition "(LLM) 월요일을 한 주를 다시 시작할 기운을 북돋우는 날로 이르는 말."@ko ;
     kno:pos "「명」"@ko ;
-    kno:componentString "힘, (월)요일(月曜日)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "힘요일"@ko ;
+    kno:example "(LLM) 주말에 흐트러진 생활 리듬을 다시 잡으려고 일찍 일어나 운동까지 했더니 오늘은 {힘요일이다}."@ko ;
     a kno:Neologism ;
-    kno:component kno:KN2025-0704-c2 ;
-    kno:instantiates kno:S001786 ;
-    a ontolex:Word ;
-    kno:formation kno:W05 .
-kno:KN2025-0704-c1 kno:formative kno:F002046 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "힘"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9E%98%EC%9A%94%EC%9D%BC> ;
+    kno:origin "(힘曜日)" .
+kno:KN2025-0704-c1 kno:truncated "false"^^xsd:boolean ;
     rdfs:label "힘"@ko ;
-    kno:semanticTag kno:usas-S7.1p ;
     a kno:Component ;
+    kno:fullForm "힘"@ko ;
     kno:surfaceForm "힘"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2025-0704-c2 kno:surfaceForm "요일"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F002046 ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0704-c2 kno:fullForm "월요일"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "(월)요일(月曜日)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "월요일"@ko ;
     kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "요일"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F005197 ;
-    a kno:Component .
+    a kno:Component ;
+    rdfs:label "(월)요일(月曜日)"@ko .

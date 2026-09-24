@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0326 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0326 kno:frequency kno:KN2025-0326-freq-NN-total ;
-    kno:languageType "한_한" ;
+kno:KN2025-0326 kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0326-c2 ;
+    kno:example "(LLM) 회사 구조조정 소문이 돌자 그는 더 안정적으로 경력을 이어 갈 수 있는 곳으로 {생존이직을} 준비했다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EC%A1%B4%20%EC%9D%B4%EC%A7%81> ;
+    kno:languageType "한_한" ;
     a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0326-freq-NN-total ;
+    kno:origin "(生存移職)" ;
+    kno:indexForm "생존이직"@ko ;
+    kno:instantiates kno:S001446 ;
     kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2025-0326-freq-NN-2025 ;
+    skos:definition "(LLM) 고용 불안이나 산업ㆍ직무 환경 변화에 대비해, 생계와 경력의 지속 가능성을 높일 수 있는 직장으로 옮기는 일."@ko ;
+    kno:unitType "구"@ko ;
     a kno:Neologism ;
-    kno:predicate "옮기다"@ko ;
+    kno:componentString "생존(生存), 이직(移職)"@ko ;
     kno:year "2025"^^xsd:gYear ;
     kno:slotFiller "이직(移職) (1성분)"@ko ;
-    kno:component kno:KN2025-0326-c1 ;
-    kno:componentString "생존(生存), 이직(移職)"@ko ;
-    kno:example "(LLM) 회사 구조조정 소문이 돌자 그는 더 안정적으로 경력을 이어 갈 수 있는 곳으로 {생존이직을} 준비했다."@ko ;
-    kno:origin "(生存移職)" ;
-    kno:unitType "구"@ko ;
-    rdfs:label "생존 이직"@ko ;
-    kno:indexForm "생존이직"@ko ;
-    kno:component kno:KN2025-0326-c2 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 고용 불안이나 산업ㆍ직무 환경 변화에 대비해, 생계와 경력의 지속 가능성을 높일 수 있는 직장으로 옮기는 일."@ko ;
-    kno:instantiates kno:S001446 .
-kno:KN2025-0326-c1 rdfs:label "생존(生存)"@ko ;
-    kno:fullForm "생존"@ko ;
+    kno:predicate "옮기다"@ko ;
+    kno:component kno:KN2025-0326-c1 ;
+    rdfs:label "생존 이직"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EC%A1%B4%20%EC%9D%B4%EC%A7%81> .
+kno:KN2025-0326-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "이직"@ko ;
     a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-L1 ;
-    kno:formative kno:F000800 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "생존"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0326-c2 a kno:Component ;
     kno:semanticTag kno:usas-I3.1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "이직"@ko ;
-    kno:formative kno:F001700 ;
     kno:surfaceForm "이직"@ko ;
+    kno:formative kno:F001700 ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
     rdfs:label "이직(移職)"@ko .
+kno:KN2025-0326-c1 a kno:Component ;
+    kno:formative kno:F000800 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "생존"@ko ;
+    kno:semanticTag kno:usas-L1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "생존"@ko ;
+    rdfs:label "생존(生存)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

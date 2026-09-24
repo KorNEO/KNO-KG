@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0445 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0445 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%ED%99%94%EB%B3%80%EB%A1%A0%EA%B8%88%EC%A7%80%EB%B2%95> ;
-    kno:frequency kno:KN2016-0445-freq-NN-total ;
+kno:KN2016-0445 kno:example "¶법원ㆍ검찰 공무원이 특정 사건과 관련해 전관 변호사로부터 로비를 받는 경우 소속 기관장에게 신고하도록 하는 내용의 이른바 ‘{전화 변론 금지법’이} 추진된다."@ko ;
     kno:instantiates kno:S000059 ;
     kno:activeYears "1"^^xsd:integer ;
+    skos:definition "전관 변호사가 선임되기도 전에 검찰에 전화를 걸어 변론하는 것을 금지하는 법안. 선임서를 제출하지 않고 변론을 할 수 없으며, 전화로 변론을 하는 경우 구두 변론 관리 대장에 이를 기재해야 한다는 내용을 담고 있다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2016-0445-freq-NN-total ;
+    kno:component kno:KN2016-0445-c2 ;
+    kno:predicate "금지하다"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:componentString "전화(電話), 변론(辯論), 금지법(禁止法)"@ko ;
     rdfs:label "전화^변론^금지법"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2016-0445-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(電話辯論禁止法)" ;
-    skos:definition "전관 변호사가 선임되기도 전에 검찰에 전화를 걸어 변론하는 것을 금지하는 법안. 선임서를 제출하지 않고 변론을 할 수 없으며, 전화로 변론을 하는 경우 구두 변론 관리 대장에 이를 기재해야 한다는 내용을 담고 있다."@ko ;
-    kno:indexForm "전화변론금지법"@ko ;
     kno:year "2016"^^xsd:gYear ;
-    kno:predicate "금지하다"@ko ;
-    kno:component kno:KN2016-0445-c2 ;
+    kno:component kno:KN2016-0445-c1 ;
+    a kno:Neologism ;
     kno:component kno:KN2016-0445-c3 ;
+    kno:indexForm "전화변론금지법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%ED%99%94%EB%B3%80%EB%A1%A0%EA%B8%88%EC%A7%80%EB%B2%95> ;
     kno:languageType "한^한^한" ;
-    kno:unitType "구"@ko ;
-    kno:example "¶법원ㆍ검찰 공무원이 특정 사건과 관련해 전관 변호사로부터 로비를 받는 경우 소속 기관장에게 신고하도록 하는 내용의 이른바 ‘{전화 변론 금지법’이} 추진된다."@ko ;
     kno:slotFiller "전화(電話)+변론(辯論) (2성분)"@ko ;
-    kno:pos "「구」"@ko ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
     kno:frequency kno:KN2016-0445-freq-NN-2015 ;
-    a kno:Neologism .
-kno:KN2016-0445-c1 a kno:Component ;
-    rdfs:label "전화(電話)"@ko ;
+    kno:origin "(電話辯論禁止法)" ;
+    kno:pos "「구」"@ko .
+kno:KN2016-0445-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003843 ;
+    rdfs:label "변론(辯論)"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
     kno:role "슬롯 채움"@ko ;
+    kno:fullForm "변론"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "변론"@ko ;
+    kno:semanticTag kno:usas-G2.1 .
+kno:KN2016-0445-c1 a kno:Component ;
     kno:surfaceForm "전화"@ko ;
+    rdfs:label "전화(電話)"@ko ;
     kno:formative kno:F001752 ;
     kno:semanticTag kno:usas-Q1.3 ;
     kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "전화"@ko .
-kno:KN2016-0445-c2 rdfs:label "변론(辯論)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003843 ;
-    a kno:Component ;
-    kno:surfaceForm "변론"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:fullForm "변론"@ko ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2016-0445-c3 kno:surfaceForm "금지법"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "금지법"@ko ;
-    rdfs:label "금지법(禁止法)"@ko ;
-    kno:formative kno:F000128 ;
+    kno:fullForm "전화"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2016-0445-c3 kno:formative kno:F000128 ;
     kno:role "고정항"@ko ;
     a kno:Component ;
+    kno:fullForm "금지법"@ko ;
+    rdfs:label "금지법(禁止法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-G2.1 .
+    kno:surfaceForm "금지법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

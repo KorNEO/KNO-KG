@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0133 kno:pos "「명」"@ko ;
-    kno:origin "(<영>mid grown)" ;
-    kno:example "¶홍차에서 향기를 중시하는 사람이라면 하이그론이 적절하다.…그렇다고 {미드그론이나} 로그론의 향이 약하다는 뜻은 아니다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2018-0133-c1 ;
-    kno:component kno:KN2018-0133-c2 ;
+kno:KN2018-0133 kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
     kno:frequency kno:KN2018-0133-freq-NN-2017 ;
-    kno:instantiates kno:S001385 ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:slotFiller "그론(grown) (1성분)"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(<영>mid grown)" ;
+    skos:definition "고도 600~1200m의 차밭에서 재배된 홍차를 이르는 말. 1200m 이상에서 재배된 것은 ‘하이그론’, 600m 이하에서 재배된 것은 ‘로그론’이라 한다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:component kno:KN2018-0133-c2 ;
+    kno:component kno:KN2018-0133-c1 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%93%9C%EA%B7%B8%EB%A1%A0> ;
+    kno:frequency kno:KN2018-0133-freq-NN-total ;
+    kno:instantiates kno:S001385 ;
+    rdfs:label "미드-그론"@ko ;
+    a ontolex:Word ;
     kno:languageType "영+영" ;
     kno:indexForm "미드그론"@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:frequency kno:KN2018-0133-freq-NN-total ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:formation kno:W07 ;
     kno:componentString "미드(mid), 그론(grown)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    skos:definition "고도 600~1200m의 차밭에서 재배된 홍차를 이르는 말. 1200m 이상에서 재배된 것은 ‘하이그론’, 600m 이하에서 재배된 것은 ‘로그론’이라 한다. ⇒규범 표기는 미확정이다."@ko ;
-    kno:slotFiller "그론(grown) (1성분)"@ko ;
-    a kno:Neologism ;
-    rdfs:label "미드-그론"@ko .
-kno:KN2018-0133-c1 rdfs:label "미드(mid)"@ko ;
-    kno:surfaceForm "미드"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:example "¶홍차에서 향기를 중시하는 사람이라면 하이그론이 적절하다.…그렇다고 {미드그론이나} 로그론의 향이 약하다는 뜻은 아니다."@ko .
+kno:KN2018-0133-c2 kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:formative kno:F001326 ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "미드"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-N3.7 .
-kno:KN2018-0133-c2 rdfs:label "그론(grown)"@ko ;
-    kno:semanticTag kno:usas-F2 ;
+    kno:fullForm "그론"@ko ;
     kno:formative kno:F002523 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "그론"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "그론(grown)"@ko ;
+    kno:semanticTag kno:usas-F2 ;
     kno:semanticTag kno:usas-L3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0133-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "미드"@ko ;
+    kno:surfaceForm "미드"@ko ;
+    kno:semanticTag kno:usas-N3.7 ;
     a kno:Component ;
-    kno:fullForm "그론"@ko .
+    kno:role "고정항"@ko ;
+    rdfs:label "미드(mid)"@ko ;
+    kno:formative kno:F001326 ;
+    kno:position "1"^^xsd:integer .

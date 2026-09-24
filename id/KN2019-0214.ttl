@@ -9,60 +9,60 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0214 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0214 kno:frequency kno:KN2019-0214-freq-NN-2020 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0214-freq-NN-2018 ;
-    kno:pos "「명」"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:instantiates kno:S000649 ;
-    kno:origin "(<영>←worker-customer balance)" ;
-    kno:formation kno:W06 ;
+kno:KN2019-0214 kno:frequency kno:KN2019-0214-freq-NN-2022 ;
     a kno:Neologism ;
-    kno:frequency kno:KN2019-0214-freq-NN-2021 ;
-    kno:languageType "영" ;
     kno:indexForm "워커밸"@ko ;
-    kno:urimalTargetCode "1418675" ;
-    a ontolex:Word ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0214-freq-NN-total ;
-    skos:definition "‘워커 커스터머 밸런스’를 줄여 이르는 말로, 고객을 응대하는 점원과 고객 사이의 균형을 이르는 말. 고객과 직원이 서로 존중하자는 취지에서 생긴 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:origin "(<영>←worker-customer balance)" ;
+    kno:frequency kno:KN2019-0214-freq-NN-2020 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000649 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1418675> ;
-    kno:example "¶주 52시간 근로제와 최저 임금 인상 등 워라밸과 관련된 요소들이 양적인 측면에 대한 것이라면, {워커밸은} 노동의 질적인 측면과 연관된다."@ko ;
-    rdfs:label "워커밸"@ko ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:componentString "워(커)(worker), 커(스터머)(customer), 밸(런스)(balance)"@ko ;
-    kno:frequency kno:KN2019-0214-freq-NN-2022 ;
-    kno:component kno:KN2019-0214-c3 ;
+    kno:formation kno:W06 ;
     kno:slotFiller "워(커)(worker)+커(스터머)(customer) (2성분)"@ko ;
-    kno:frequency kno:KN2019-0214-freq-NN-2019 ;
+    kno:componentString "워(커)(worker), 커(스터머)(customer), 밸(런스)(balance)"@ko ;
+    kno:component kno:KN2019-0214-c2 ;
+    kno:frequency kno:KN2019-0214-freq-NN-2018 ;
     kno:frequency kno:KN2019-0214-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:example "¶주 52시간 근로제와 최저 임금 인상 등 워라밸과 관련된 요소들이 양적인 측면에 대한 것이라면, {워커밸은} 노동의 질적인 측면과 연관된다."@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2019-0214-c3 ;
     kno:component kno:KN2019-0214-c1 ;
+    skos:definition "‘워커 커스터머 밸런스’를 줄여 이르는 말로, 고객을 응대하는 점원과 고객 사이의 균형을 이르는 말. 고객과 직원이 서로 존중하자는 취지에서 생긴 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:frequency kno:KN2019-0214-freq-NN-2021 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:label "워커밸"@ko ;
+    kno:frequency kno:KN2019-0214-freq-NN-2019 ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2019-0214-c2 .
-kno:KN2019-0214-c3 kno:formative kno:F000357 ;
-    kno:fullForm "밸런스"@ko ;
-    rdfs:label "밸(런스)(balance)"@ko ;
-    kno:surfaceForm "밸"@ko ;
-    kno:semanticTag kno:usas-A6.1p ;
+    kno:frequency kno:KN2019-0214-freq-NN-total ;
+    kno:languageType "영" ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:urimalTargetCode "1418675" .
+kno:KN2019-0214-c2 kno:semanticTag kno:usas-I2.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "커(스터머)(customer)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
+    kno:fullForm "커스터머"@ko ;
+    kno:formative kno:F006234 ;
+    kno:surfaceForm "커"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0214-c3 kno:fullForm "밸런스"@ko ;
+    kno:surfaceForm "밸"@ko ;
+    kno:formative kno:F000357 ;
+    a kno:Component ;
+    rdfs:label "밸(런스)(balance)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-A6.1p .
+kno:KN2019-0214-c1 kno:role "슬롯 채움"@ko ;
+    rdfs:label "워(커)(worker)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005235 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko .
-kno:KN2019-0214-c1 rdfs:label "워(커)(worker)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "워커"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:surfaceForm "워"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:fullForm "워커"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:formative kno:F005235 .
-kno:KN2019-0214-c2 kno:formative kno:F006234 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "커"@ko ;
-    rdfs:label "커(스터머)(customer)"@ko ;
-    kno:fullForm "커스터머"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I2.2 ;
-    a kno:Component .
+    kno:semanticTag kno:usas-I3.1 .

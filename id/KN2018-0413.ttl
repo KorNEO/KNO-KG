@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0413 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0413 a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383464> ;
-    kno:component kno:KN2018-0413-c1 ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:urimalTargetCode "1383464" ;
-    a kno:Neologism ;
-    kno:component kno:KN2018-0413-c2 ;
-    kno:formation kno:W05 ;
-    skos:definition "특정 장소가 지나치게 인기를 끌면서 그곳에 사람들이 많이 몰리는 것을 꺼리거나 싫어하여 피함."@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S001773 ;
+kno:KN2018-0413 kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(嫌<영>←hot place)" ;
     kno:indexForm "혐핫"@ko ;
-    kno:registration "우리말샘"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383464> ;
+    kno:instantiates kno:S001773 ;
+    a kno:Neologism ;
+    rdfs:label "혐핫"@ko ;
+    kno:slotFiller "핫(플레이스)(hot place) (1성분)"@ko ;
+    kno:component kno:KN2018-0413-c2 ;
+    skos:definition "특정 장소가 지나치게 인기를 끌면서 그곳에 사람들이 많이 몰리는 것을 꺼리거나 싫어하여 피함."@ko ;
     kno:componentString "혐(오)(嫌), 핫(플레이스)(hot place)"@ko ;
     kno:languageType "한+영" ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "혐핫"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W05 ;
     kno:example "¶트렌드를 추종하고, 거기 끼지 못하면 초조해 하는 현대인들에게 {혐핫이} 자기 찾기의 모멘텀이 되었으면 한다."@ko ;
-    kno:origin "(嫌<영>←hot place)" ;
-    kno:slotFiller "핫(플레이스)(hot place) (1성분)"@ko .
-kno:KN2018-0413-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000324 ;
-    kno:surfaceForm "혐"@ko ;
-    kno:fullForm "혐오"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-E2m ;
-    rdfs:label "혐(오)(嫌)"@ko .
-kno:KN2018-0413-c2 kno:role "슬롯 채움"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2018-0413-c1 ;
+    kno:urimalTargetCode "1383464" .
+kno:KN2018-0413-c2 a kno:Component ;
+    kno:surfaceForm "핫"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F002000 ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "핫(플레이스)(hot place)"@ko ;
     kno:fullForm "핫플레이스"@ko ;
-    kno:surfaceForm "핫"@ko ;
-    rdfs:label "핫(플레이스)(hot place)"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 .
+kno:KN2018-0413-c1 kno:fullForm "혐오"@ko ;
+    kno:semanticTag kno:usas-E2m ;
+    kno:surfaceForm "혐"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000324 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "혐(오)(嫌)"@ko ;
+    a kno:Component .

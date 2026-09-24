@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0102 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0102 kno:registration "신어DB"@ko ;
-    kno:component kno:KN2017-0102-c2 ;
+kno:KN2017-0102 kno:frequency kno:KN2017-0102-freq-NN-2017 ;
+    kno:predicate "감량하다"@ko ;
+    kno:frequency kno:KN2017-0102-freq-NN-total ;
+    kno:instantiates kno:S000210 ;
+    kno:languageType "고+영" ;
+    kno:formation kno:W01 ;
     kno:year "2017"^^xsd:gYear ;
-    kno:indexForm "먹슬림"@ko ;
-    kno:frequency kno:KN2017-0102-freq-NN-2017 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    kno:instantiates kno:S000211 ;
-    skos:definition "식사를 거르지 않으면서 체중을 감량하는 일. 우리말의 ‘먹다’와 영어에서 ‘날씬하다’를 뜻하는 단어 ‘슬림(slim)’을 결합하여 만든 말이다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2017-0102-c1 ;
-    kno:slotFiller "슬림(slim) (1성분)"@ko ;
     a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "먹, 슬림(slim)"@ko ;
+    kno:component kno:KN2017-0102-c1 ;
     kno:origin "(먹<영>slim)" ;
     kno:example "¶건강 분야 탑 10에 오른 제품들만 봐도 ‘{먹슬림’이} 다이어트 시즌을 불문하고 젊은 여성들에게 하나의 트렌드가 된 것을 엿볼 수 있다."@ko ;
-    kno:frequency kno:KN2017-0102-freq-NN-2018 ;
-    a kno:Neologism ;
-    kno:formation kno:W01 ;
+    skos:definition "식사를 거르지 않으면서 체중을 감량하는 일. 우리말의 ‘먹다’와 영어에서 ‘날씬하다’를 뜻하는 단어 ‘슬림(slim)’을 결합하여 만든 말이다."@ko ;
+    kno:component kno:KN2017-0102-c2 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "슬림(slim) (1성분)"@ko ;
+    kno:indexForm "먹슬림"@ko ;
     rdfs:label "먹-슬림"@ko ;
-    kno:predicate "감량하다"@ko ;
-    kno:languageType "고+영" ;
-    kno:frequency kno:KN2017-0102-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B9%EC%8A%AC%EB%A6%BC> .
-kno:KN2017-0102-c2 kno:surfaceForm "슬림"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "슬림"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-N3.2m ;
+    kno:componentString "먹, 슬림(slim)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A8%B9%EC%8A%AC%EB%A6%BC> ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0102-freq-NN-2018 .
+kno:KN2017-0102-c1 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:formative kno:F001537 ;
-    rdfs:label "슬림(slim)"@ko .
-kno:KN2017-0102-c1 a kno:Component ;
-    rdfs:label "먹"@ko ;
-    kno:role "고정항"@ko ;
     kno:surfaceForm "먹"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-F1 ;
     kno:formative kno:F000352 ;
-    kno:fullForm "먹"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "먹"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 .
+    kno:fullForm "먹"@ko .
+kno:KN2017-0102-c2 kno:position "2"^^xsd:integer ;
+    kno:fullForm "슬림"@ko ;
+    kno:surfaceForm "슬림"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001537 ;
+    rdfs:label "슬림(slim)"@ko ;
+    kno:semanticTag kno:usas-N3.2m .

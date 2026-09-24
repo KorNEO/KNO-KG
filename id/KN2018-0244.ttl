@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0244 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0244 a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "고+이" ;
-    kno:example "¶이 커피는 현재 에스엔에스(SNS)에서 ‘셀피 커피’ 혹은 ‘{얼굴라테}’ 등으로 통한다."@ko ;
-    skos:definition "에스프레소 커피 위에 우유 거품으로 얼굴 그림을 그린 커피."@ko ;
-    kno:component kno:KN2018-0244-c2 ;
+kno:KN2018-0244 kno:lastAttestationYear "2017"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:slotFiller "라테(latte) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "얼굴 (1성분)"@ko ;
+    kno:componentString "얼굴, 라테(latte)"@ko ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0244-freq-NN-2017 ;
+    kno:slotFiller "얼굴 (1성분)"@ko ;
+    rdfs:label "얼굴-라테"@ko ;
+    kno:formation kno:W01 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000374 ;
     kno:component kno:KN2018-0244-c1 ;
     kno:indexForm "얼굴라테"@ko ;
-    rdfs:label "얼굴-라테"@ko ;
+    kno:instantiates kno:S000551 ;
+    kno:component kno:KN2018-0244-c2 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%EB%9D%BC%ED%85%8C> ;
-    kno:frequency kno:KN2018-0244-freq-NN-2017 ;
-    kno:componentString "얼굴, 라테(latte)"@ko ;
-    kno:instantiates kno:S000373 ;
+    a ontolex:Word ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "에스프레소 커피 위에 우유 거품으로 얼굴 그림을 그린 커피."@ko ;
+    kno:slotFiller "라테(latte) (1성분)"@ko ;
+    kno:example "¶이 커피는 현재 에스엔에스(SNS)에서 ‘셀피 커피’ 혹은 ‘{얼굴라테}’ 등으로 통한다."@ko ;
     kno:frequency kno:KN2018-0244-freq-NN-total ;
-    kno:instantiates kno:S000550 ;
-    kno:origin "(얼굴<이>latte)" ;
-    kno:formation kno:W01 .
-kno:KN2018-0244-c2 a kno:Component ;
+    kno:languageType "고+이" ;
+    kno:origin "(얼굴<이>latte)" .
+kno:KN2018-0244-c1 a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "라테"@ko ;
-    kno:formative kno:F000260 ;
-    kno:fullForm "라테"@ko ;
-    rdfs:label "라테(latte)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-F2 ;
-    kno:role "고정항"@ko .
-kno:KN2018-0244-c1 kno:semanticTag kno:usas-B1 ;
+    kno:semanticTag kno:usas-B1 ;
     kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "얼굴"@ko ;
-    kno:surfaceForm "얼굴"@ko ;
-    kno:formative kno:F000222 ;
     kno:fullForm "얼굴"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "얼굴"@ko ;
+    rdfs:label "얼굴"@ko ;
+    kno:formative kno:F000222 .
+kno:KN2018-0244-c2 rdfs:label "라테(latte)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000260 ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "라테"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "라테"@ko .

@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0230 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0230 kno:frequency kno:KN2025-0230-freq-NN-2025 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%8D%EC%B9%98%EC%9B%90> ;
+kno:KN2025-0230 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A9%8D%EC%B9%98%EC%9B%90> ;
+    a ontolex:Word ;
+    kno:slotFiller "(유)치원(幼稚園) (1성분)"@ko ;
+    kno:example "(LLM) 맞벌이라 낮에 집이 비는 날에는 {멍치원에} 맡겨서 놀이랑 사회화 수업을 받게 한다."@ko ;
     kno:indexForm "멍치원"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:label "멍치원"@ko ;
-    kno:component kno:KN2025-0230-c1 ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "(유)치원(幼稚園) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 반려견을 일정 시간 맡아 돌봄과 놀이, 사회화 및 기본 예절 교육 등을 제공하는 시설."@ko ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000101 ;
-    kno:frequency kno:KN2025-0230-freq-NN-total ;
-    kno:component kno:KN2025-0230-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "제공하다"@ko ;
     kno:componentString "멍(멍이), (유)치원(幼稚園)"@ko ;
     kno:formation kno:W05 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0230-freq-NN-2025 ;
     kno:year "2025"^^xsd:gYear ;
-    kno:example "(LLM) 맞벌이라 낮에 집이 비는 날에는 {멍치원에} 맡겨서 놀이랑 사회화 수업을 받게 한다."@ko .
-kno:KN2025-0230-c1 kno:fullForm "멍멍이"@ko ;
-    kno:formative kno:F000211 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "멍(멍이)"@ko ;
+    kno:predicate "제공하다"@ko ;
+    rdfs:label "멍치원"@ko ;
+    skos:definition "(LLM) 반려견을 일정 시간 맡아 돌봄과 놀이, 사회화 및 기본 예절 교육 등을 제공하는 시설."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0230-c1 ;
+    kno:instantiates kno:S000101 ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0230-c2 ;
+    kno:frequency kno:KN2025-0230-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2025-0230-c1 rdfs:label "멍(멍이)"@ko ;
     a kno:Component ;
+    kno:fullForm "멍멍이"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-L2 ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "멍"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0230-c2 a kno:Component ;
-    rdfs:label "(유)치원(幼稚園)"@ko ;
-    kno:surfaceForm "치원"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000211 ;
+    kno:surfaceForm "멍"@ko .
+kno:KN2025-0230-c2 kno:formative kno:F006169 ;
     kno:semanticTag kno:usas-P1 ;
+    rdfs:label "(유)치원(幼稚園)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F006169 ;
-    kno:fullForm "유치원"@ko .
+    a kno:Component ;
+    kno:surfaceForm "치원"@ko ;
+    kno:fullForm "유치원"@ko ;
+    kno:position "2"^^xsd:integer .

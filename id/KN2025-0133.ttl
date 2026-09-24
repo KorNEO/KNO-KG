@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0133 a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EC%87%BC%20%EA%B2%BD%EC%A0%9C> ;
+kno:KN2025-0133 kno:origin "(<영>no-show經濟)" ;
+    kno:instantiates kno:S000049 ;
+    kno:componentString "노쇼(no-show), 경제(經濟)"@ko ;
+    kno:indexForm "노쇼경제"@ko ;
     kno:year "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:example "(LLM) 예약 부도 피해가 커지자, 일부에서는 {노쇼경제가} 결과적으로 주변 상권의 소비를 늘린다는 주장까지 내놓았다."@ko ;
+    kno:instantiates kno:S000206 ;
+    kno:slotFiller "노쇼(no-show) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0133-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EC%87%BC%20%EA%B2%BD%EC%A0%9C> ;
+    kno:frequency kno:KN2025-0133-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0133-c1 ;
+    kno:languageType "영_한" ;
+    kno:component kno:KN2025-0133-c2 ;
+    kno:slotFiller "경제(經濟) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
     kno:activeYears "1"^^xsd:integer ;
     skos:definition "(LLM) 식당ㆍ숙박ㆍ공연 등에서 예약만 해 두고 나타나지 않는 ‘노쇼’가 오히려 다른 소비를 유발하거나 비용을 전가해 경제적으로 이득이 된다는 식으로 해석하는 관점 또는 주장."@ko ;
-    kno:indexForm "노쇼경제"@ko ;
-    kno:componentString "노쇼(no-show), 경제(經濟)"@ko ;
-    kno:component kno:KN2025-0133-c2 ;
-    kno:frequency kno:KN2025-0133-freq-NN-2025 ;
-    kno:slotFiller "노쇼(no-show) (1성분)"@ko ;
-    kno:origin "(<영>no-show經濟)" ;
-    kno:frequency kno:KN2025-0133-freq-NN-total ;
-    kno:instantiates kno:S000049 ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "(LLM) 예약 부도 피해가 커지자, 일부에서는 {노쇼경제가} 결과적으로 주변 상권의 소비를 늘린다는 주장까지 내놓았다."@ko ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000207 ;
     rdfs:label "노쇼 경제"@ko ;
-    kno:languageType "영_한" ;
-    kno:component kno:KN2025-0133-c1 ;
-    kno:slotFiller "경제(經濟) (1성분)"@ko .
-kno:KN2025-0133-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "경제"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    rdfs:label "경제(經濟)"@ko ;
-    kno:surfaceForm "경제"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:formative kno:F000029 .
-kno:KN2025-0133-c1 kno:semanticTag kno:usas-S1.1.1m ;
-    kno:role "고정항"@ko ;
-    rdfs:label "노쇼(no-show)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "노쇼"@ko ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0133-c1 kno:truncated "false"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
+    rdfs:label "노쇼(no-show)"@ko ;
+    kno:formative kno:F000342 ;
     kno:fullForm "노쇼"@ko ;
-    kno:formative kno:F000342 .
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "노쇼"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S1.1.1m .
+kno:KN2025-0133-c2 a kno:Component ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "경제"@ko ;
+    rdfs:label "경제(經濟)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000029 ;
+    kno:surfaceForm "경제"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

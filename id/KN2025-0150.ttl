@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0150 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0150 a kno:Neologism ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B0%81%EC%84%A0%20%EC%97%AC%ED%96%89> ;
+kno:KN2025-0150 kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2025-0150-freq-NN-2025 ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "이동하다"@ko ;
-    kno:component kno:KN2025-0150-c2 ;
-    kno:component kno:KN2025-0150-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(對角線旅行)" ;
     kno:instantiates kno:S000126 ;
+    kno:year "2025"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "대각선(對角線) (1성분)"@ko ;
+    kno:indexForm "대각선여행"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B0%81%EC%84%A0%20%EC%97%AC%ED%96%89> ;
+    kno:predicate "이동하다"@ko ;
     kno:componentString "대각선(對角線), 여행(旅行)"@ko ;
+    kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0150-c1 ;
+    kno:component kno:KN2025-0150-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2025-0150-freq-NN-total ;
     kno:example "(LLM) 서울에서 부산까지 한 번에 내려가지 말고 대전, 대구를 찍어 내려가는 {대각선여행을} 해 보자."@ko ;
+    skos:definition "(LLM) 출발지와 목적지를 직선으로 잇듯, 지도 위에서 대각선으로 가로지르는 느낌이 들게 여러 지역을 경유하며 이동하는 여행."@ko ;
     kno:languageType "한_한" ;
     rdfs:label "대각선 여행"@ko ;
-    kno:slotFiller "대각선(對角線) (1성분)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2025-0150-freq-NN-total ;
-    kno:indexForm "대각선여행"@ko ;
-    skos:definition "(LLM) 출발지와 목적지를 직선으로 잇듯, 지도 위에서 대각선으로 가로지르는 느낌이 들게 여러 지역을 경유하며 이동하는 여행."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko .
-kno:KN2025-0150-c2 kno:semanticTag kno:usas-M1 ;
-    rdfs:label "여행(旅行)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "여행"@ko ;
-    kno:formative kno:F000090 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "여행"@ko .
-kno:KN2025-0150-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-O4.4 ;
-    kno:formative kno:F002907 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
+    kno:origin "(對角線旅行)" .
+kno:KN2025-0150-c1 kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "대각선"@ko ;
     rdfs:label "대각선(對角線)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:formative kno:F002907 ;
     kno:fullForm "대각선"@ko .
+kno:KN2025-0150-c2 kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000090 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "여행(旅行)"@ko ;
+    kno:surfaceForm "여행"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "여행"@ko ;
+    kno:semanticTag kno:usas-M1 .

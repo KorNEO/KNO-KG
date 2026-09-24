@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0357 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0357 kno:formation kno:W02 ;
-    kno:indexForm "입갤하다"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:pos "「동」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%85%EA%B0%A4%ED%95%98%EB%8B%A4> ;
+kno:KN2012-0357 kno:component kno:KN2012-0357-c2 ;
     kno:year "2012"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:example "¶OO은 18일 역대 인터넷 기업 공개(IPO)의 최고 수준인 150억 달러 규모로 주식 시장에 {입갤할} 전망이다."@ko ;
-    kno:instantiates kno:S000019 ;
-    kno:registration "신어DB"@ko ;
     a kno:Neologism ;
-    skos:definition "어떤 특정 분야에 들어서다."@ko ;
-    kno:slotFiller "입(入)+갤(러리)(gallery) (2성분)"@ko ;
-    kno:component kno:KN2012-0357-c2 ;
-    kno:componentString "입(入), 갤(러리)(gallery), -하다"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:origin "(入←gallery하다)" ;
     kno:languageType "(한+영)+고" ;
-    rdfs:label "입갤-하다"@ko ;
+    kno:instantiates kno:S000019 ;
+    kno:componentString "입(入), 갤(러리)(gallery), -하다"@ko ;
     kno:component kno:KN2012-0357-c1 ;
+    kno:example "¶OO은 18일 역대 인터넷 기업 공개(IPO)의 최고 수준인 150억 달러 규모로 주식 시장에 {입갤할} 전망이다."@ko ;
+    a ontolex:Word ;
+    kno:pos "「동」"@ko ;
+    skos:definition "어떤 특정 분야에 들어서다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "입갤-하다"@ko ;
+    kno:indexForm "입갤하다"@ko ;
     kno:component kno:KN2012-0357-c3 ;
-    kno:origin "(入←gallery하다)" .
-kno:KN2012-0357-c2 kno:position "2"^^xsd:integer ;
+    kno:slotFiller "입(入)+갤(러리)(gallery) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%85%EA%B0%A4%ED%95%98%EB%8B%A4> ;
+    kno:registration "신어DB"@ko .
+kno:KN2012-0357-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "갤(러리)(gallery)"@ko ;
-    kno:semanticTag kno:usas-K1 ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "갤"@ko ;
-    kno:fullForm "갤러리"@ko ;
     kno:formative kno:F002172 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2012-0357-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000401 ;
-    kno:fullForm "입"@ko ;
-    kno:semanticTag kno:usas-B1 ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "입"@ko ;
+    kno:fullForm "갤러리"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K1 .
+kno:KN2012-0357-c1 kno:semanticTag kno:usas-B1 ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "입(入)"@ko .
-kno:KN2012-0357-c3 kno:role "고정항"@ko ;
-    rdfs:label "-하다"@ko ;
-    kno:fullForm "하다"@ko ;
-    kno:surfaceForm "하다"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000019 ;
-    kno:semanticTag kno:usas-Z5 ;
+    kno:formative kno:F000401 ;
+    rdfs:label "입(入)"@ko ;
+    kno:fullForm "입"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer .
+    kno:surfaceForm "입"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0357-c3 kno:fullForm "하다"@ko ;
+    kno:formative kno:F000019 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    rdfs:label "-하다"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "하다"@ko .

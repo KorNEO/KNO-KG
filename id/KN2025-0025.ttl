@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0025 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0025 a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "(LLM) 선생님은 24를 제시하고 {거구단으로} 3×8, 4×6처럼 가능한 곱셈식을 모두 찾아 보라고 했다."@ko ;
-    a kno:Neologism ;
-    skos:definition "(LLM) 곱셈 구구에서 주어진 곱(결과)을 보고 그에 해당하는 곱셈식을 거꾸로 찾아 말하거나 쓰는 연습."@ko ;
-    kno:frequency kno:KN2025-0025-freq-NN-total ;
-    kno:componentString "거(꾸로), (구)구단"@ko ;
-    kno:formation kno:W05 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EA%B5%AC%EB%8B%A8> ;
+kno:KN2025-0025 kno:activeYears "1"^^xsd:integer ;
     kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0025-c1 ;
-    rdfs:label "거구단"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "쓰다"@ko ;
+    kno:component kno:KN2025-0025-c2 ;
     kno:frequency kno:KN2025-0025-freq-NN-2025 ;
-    kno:indexForm "거구단"@ko ;
+    kno:frequency kno:KN2025-0025-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EA%B5%AC%EB%8B%A8> ;
+    kno:example "(LLM) 선생님은 24를 제시하고 {거구단으로} 3×8, 4×6처럼 가능한 곱셈식을 모두 찾아 보라고 했다."@ko ;
+    kno:componentString "거(꾸로), (구)구단"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:predicate "쓰다"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0025-c2 .
-kno:KN2025-0025-c1 kno:semanticTag kno:usas-M6 ;
-    rdfs:label "거(꾸로)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "거"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F002176 ;
-    kno:fullForm "거꾸로"@ko .
-kno:KN2025-0025-c2 kno:surfaceForm "구단"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0025-c1 ;
+    kno:indexForm "거구단"@ko ;
+    a ontolex:Word ;
+    skos:definition "(LLM) 곱셈 구구에서 주어진 곱(결과)을 보고 그에 해당하는 곱셈식을 거꾸로 찾아 말하거나 쓰는 연습."@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "거구단"@ko ;
+    kno:formation kno:W05 .
+kno:KN2025-0025-c2 kno:fullForm "구구단"@ko ;
+    kno:surfaceForm "구단"@ko ;
     rdfs:label "(구)구단"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "성분"@ko ;
     kno:formative kno:F002444 ;
-    kno:fullForm "구구단"@ko ;
-    kno:semanticTag kno:usas-N2 ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-N2 .
+kno:KN2025-0025-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    rdfs:label "거(꾸로)"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "거"@ko ;
+    kno:formative kno:F002176 ;
+    a kno:Component ;
+    kno:fullForm "거꾸로"@ko .

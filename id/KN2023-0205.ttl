@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0205 kno:lastAttestationYear "2024"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
+kno:KN2023-0205 a ontolex:MultiwordExpression ;
+    kno:slotFiller "항공(航空)+기금(基金) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0205-freq-NN-2023 ;
     kno:registration "신어DB"@ko ;
+    skos:definition "우주 항공 분야의 신생 기업을 지원하기 위해 국가가 설치한 기금."@ko ;
     kno:instantiates kno:S000072 ;
-    kno:frequency kno:KN2023-0205-freq-NN-2024 ;
-    rdfs:label "우주^항공^기금"@ko ;
-    kno:component kno:KN2023-0205-c2 ;
+    kno:component kno:KN2023-0205-c3 ;
     kno:component kno:KN2023-0205-c1 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:slotFiller "우주(宇宙)+항공(航空) (2성분)"@ko ;
+    kno:component kno:KN2023-0205-c2 ;
+    kno:frequency kno:KN2023-0205-freq-NN-total ;
     kno:year "2023"^^xsd:gYear ;
-    kno:origin "(宇宙航空基金)" ;
-    kno:instantiates kno:S000318 ;
+    a kno:Neologism ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EC%A3%BC%ED%95%AD%EA%B3%B5%EA%B8%B0%EA%B8%88> ;
     kno:languageType "한^한^한" ;
-    kno:component kno:KN2023-0205-c3 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0205-freq-NN-total ;
-    kno:componentString "우주(宇宙), 항공(航空), 기금(基金)"@ko ;
     kno:indexForm "우주항공기금"@ko ;
-    kno:frequency kno:KN2023-0205-freq-NN-2023 ;
+    kno:componentString "우주(宇宙), 항공(航空), 기금(基金)"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:label "우주^항공^기금"@ko ;
+    kno:origin "(宇宙航空基金)" ;
+    kno:slotFiller "우주(宇宙)+항공(航空) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0205-freq-NN-2024 ;
     kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    skos:definition "우주 항공 분야의 신생 기업을 지원하기 위해 국가가 설치한 기금."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:example "¶우주 항공청은 우주 항공 산업을 안정적으로 지원하기 위해 연내로 {우주 항공 기금을} 설치할 계획이다."@ko ;
-    kno:slotFiller "항공(航空)+기금(基金) (2성분)"@ko .
-kno:KN2023-0205-c2 rdfs:label "항공(航空)"@ko ;
-    a kno:Component ;
-    kno:fullForm "항공"@ko ;
-    kno:surfaceForm "항공"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F006983 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M5 .
-kno:KN2023-0205-c1 kno:surfaceForm "우주"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000296 ;
-    kno:semanticTag kno:usas-W1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "우주"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "우주(宇宙)"@ko .
-kno:KN2023-0205-c3 rdfs:label "기금(基金)"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:surfaceForm "기금"@ko ;
+    kno:instantiates kno:S000319 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2023-0205-c3 kno:role "고정항"@ko ;
     kno:fullForm "기금"@ko ;
-    kno:formative kno:F000096 ;
+    kno:surfaceForm "기금"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko .
+    kno:formative kno:F000096 ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "기금(基金)"@ko .
+kno:KN2023-0205-c1 kno:semanticTag kno:usas-W1 ;
+    kno:formative kno:F000296 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:fullForm "우주"@ko ;
+    kno:surfaceForm "우주"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "우주(宇宙)"@ko .
+kno:KN2023-0205-c2 kno:semanticTag kno:usas-M5 ;
+    rdfs:label "항공(航空)"@ko ;
+    kno:formative kno:F006983 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "항공"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "항공"@ko .

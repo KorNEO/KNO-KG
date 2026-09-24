@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0244 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0244 kno:indexForm "죄조기술"@ko ;
+kno:KN2019-0244 kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S000163 ;
+    rdfs:label "죄조 기술"@ko ;
+    kno:frequency kno:KN2019-0244-freq-NN-total ;
+    kno:component kno:KN2019-0244-c2 ;
+    kno:component kno:KN2019-0244-c3 ;
+    kno:componentString "죄(罪), (제)조(造), 기술(技術)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0244-freq-NN-2018 ;
+    a kno:Neologism ;
     skos:definition "‘전생에 지은 죄가 많아 제조 기술 직군에서 일함’이라는 뜻으로, 업무량이 많은 제조 기술 분야에 종사하는 사람들이 스스로를 자조적으로 이르는 말."@ko ;
     a ontolex:MultiwordExpression ;
-    kno:origin "(罪造技術)" ;
-    kno:frequency kno:KN2019-0244-freq-NN-2018 ;
-    kno:instantiates kno:S000164 ;
-    kno:languageType "한_한" ;
-    kno:frequency kno:KN2019-0244-freq-NN-total ;
-    kno:component kno:KN2019-0244-c1 ;
-    rdfs:label "죄조 기술"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%84%EC%A1%B0%20%EA%B8%B0%EC%88%A0> ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:slotFiller "죄(罪)+(제)조(造) (2성분)"@ko ;
-    kno:componentString "죄(罪), (제)조(造), 기술(技術)"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
     kno:example "¶OO 게시판에서 OO 공정 업무 직군은 일명 {‘죄조 기술’로} 불립니다."@ko ;
-    a kno:Neologism ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0244-c1 ;
+    kno:slotFiller "죄(罪)+(제)조(造) (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:component kno:KN2019-0244-c2 ;
-    kno:component kno:KN2019-0244-c3 .
-kno:KN2019-0244-c1 rdfs:label "죄(罪)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "죄"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
-    kno:fullForm "죄"@ko ;
-    kno:formative kno:F005775 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer .
+    kno:languageType "한_한" ;
+    kno:origin "(罪造技術)" ;
+    kno:indexForm "죄조기술"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%84%EC%A1%B0%20%EA%B8%B0%EC%88%A0> ;
+    kno:pos "「구」"@ko .
 kno:KN2019-0244-c2 kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "(제)조(造)"@ko ;
-    kno:formative kno:F005725 ;
     a kno:Component ;
-    kno:semanticTag kno:usas-I4 ;
+    kno:formative kno:F005725 ;
     kno:fullForm "제조"@ko ;
-    kno:surfaceForm "조"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(제)조(造)"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "조"@ko .
 kno:KN2019-0244-c3 kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "기술"@ko ;
     kno:semanticTag kno:usas-Y1 ;
-    kno:formative kno:F000129 ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
     rdfs:label "기술(技術)"@ko ;
-    kno:fullForm "기술"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:formative kno:F000129 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "기술"@ko .
+kno:KN2019-0244-c1 kno:semanticTag kno:usas-G2.1m ;
+    kno:fullForm "죄"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "죄"@ko ;
+    kno:formative kno:F005775 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "죄(罪)"@ko .

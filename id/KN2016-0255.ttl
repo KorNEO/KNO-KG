@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0255 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0255 kno:component kno:KN2016-0255-c2 ;
+kno:KN2016-0255 a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0255-c2 ;
     kno:instantiates kno:S001440 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:languageType "한_(고+한)" ;
-    kno:component kno:KN2016-0255-c1 ;
-    rdfs:label "산후 도우미업"@ko ;
-    kno:urimalTargetCode "1372690" ;
-    skos:definition "일정한 보수를 받고 산모를 여러 가지로 도와주는 직업이나 영업의 종류."@ko ;
-    kno:unitType "구"@ko ;
     kno:frequency kno:KN2016-0255-freq-NN-2016 ;
-    kno:frequency kno:KN2016-0255-freq-NN-total ;
     kno:componentString "산후(産後), 도우미, -업(業)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:origin "(産後도우미業)" ;
+    kno:component kno:KN2016-0255-c1 ;
+    a kno:Neologism ;
+    rdfs:label "산후 도우미업"@ko ;
+    kno:example "¶{산후 도우미업은} 산모의 가정으로 산후 도우미를 파견해 산모를 돌보는 것을 말한다."@ko ;
     kno:slotFiller "-업(業) (1성분)"@ko ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(産後도우미業)" ;
+    kno:urimalTargetCode "1372690" ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372690> ;
-    kno:indexForm "산후도우미업"@ko ;
-    kno:example "¶{산후 도우미업은} 산모의 가정으로 산후 도우미를 파견해 산모를 돌보는 것을 말한다."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:pos "「구」"@ko ;
+    kno:languageType "한_(고+한)" ;
+    kno:registration "우리말샘"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "일정한 보수를 받고 산모를 여러 가지로 도와주는 직업이나 영업의 종류."@ko ;
+    kno:frequency kno:KN2016-0255-freq-NN-total ;
+    kno:unitType "구"@ko ;
     kno:component kno:KN2016-0255-c3 ;
-    a kno:Neologism .
-kno:KN2016-0255-c2 kno:formative kno:F001191 ;
-    kno:fullForm "도우미"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "산후도우미업"@ko .
+kno:KN2016-0255-c2 kno:semanticTag kno:usas-S8p ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001191 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
     rdfs:label "도우미"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S8p ;
-    a kno:Component ;
+    kno:fullForm "도우미"@ko ;
     kno:surfaceForm "도우미"@ko .
-kno:KN2016-0255-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001440 ;
+kno:KN2016-0255-c1 kno:formative kno:F001440 ;
     kno:surfaceForm "산후"@ko ;
+    a kno:Component ;
     rdfs:label "산후(産後)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-B1 ;
     kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:fullForm "산후"@ko .
-kno:KN2016-0255-c3 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "-업(業)"@ko ;
+kno:KN2016-0255-c3 kno:semanticTag kno:usas-I2.1 ;
     kno:fullForm "업"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "-업(業)"@ko ;
     kno:formative kno:F004978 ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "업"@ko ;
-    kno:semanticTag kno:usas-I2.1 .
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .

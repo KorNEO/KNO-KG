@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0116 kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "백허두"@ko ;
-    kno:componentString "백(back), 허(그)(hug), 두(頭)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S001398 ;
-    rdfs:label "백허두"@ko ;
-    kno:example "¶백허그는 봤어도 {백허두는} 처음 봤다."@ko ;
-    kno:component kno:KN2014-0116-c1 ;
-    kno:component kno:KN2014-0116-c3 ;
-    kno:formation kno:W05 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2014-0116-c2 ;
-    kno:lastAttestationYear "2014"^^xsd:gYear ;
-    kno:year "2014"^^xsd:gYear ;
-    a ontolex:Word ;
+kno:KN2014-0116 kno:registration "신어DB"@ko ;
     kno:pos "「명」"@ko ;
-    skos:definition "다른 사람의 뒷머리를 쓰다듬음."@ko ;
-    kno:slotFiller "허(그)(hug)+두(頭) (2성분)"@ko ;
+    kno:componentString "백(back), 허(그)(hug), 두(頭)"@ko ;
     a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%ED%97%88%EB%91%90> ;
-    kno:frequency kno:KN2014-0116-freq-NN-total ;
-    kno:languageType "영+한" ;
     kno:frequency kno:KN2014-0116-freq-NN-2014 ;
-    kno:origin "(<영>←back hug頭)" .
-kno:KN2014-0116-c1 kno:role "고정항"@ko ;
-    kno:formative kno:F001348 ;
+    kno:slotFiller "허(그)(hug)+두(頭) (2성분)"@ko ;
+    kno:instantiates kno:S001398 ;
+    kno:frequency kno:KN2014-0116-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%ED%97%88%EB%91%90> ;
+    skos:definition "다른 사람의 뒷머리를 쓰다듬음."@ko ;
+    kno:component kno:KN2014-0116-c3 ;
+    kno:component kno:KN2014-0116-c1 ;
+    kno:example "¶백허그는 봤어도 {백허두는} 처음 봤다."@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0116-c2 ;
+    kno:origin "(<영>←back hug頭)" ;
+    kno:languageType "영+한" ;
+    kno:formation kno:W05 ;
+    a ontolex:Word ;
+    rdfs:label "백허두"@ko ;
+    kno:indexForm "백허두"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2014"^^xsd:gYear .
+kno:KN2014-0116-c3 a kno:Component ;
+    kno:fullForm "두"@ko ;
+    rdfs:label "두(頭)"@ko ;
+    kno:formative kno:F001203 ;
+    kno:surfaceForm "두"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2014-0116-c1 kno:formative kno:F001348 ;
+    rdfs:label "백(back)"@ko ;
     kno:surfaceForm "백"@ko ;
-    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:fullForm "백"@ko ;
     kno:semanticTag kno:usas-N1 ;
-    rdfs:label "백(back)"@ko .
-kno:KN2014-0116-c3 kno:semanticTag kno:usas-B1 ;
-    kno:surfaceForm "두"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001203 ;
-    kno:fullForm "두"@ko ;
-    rdfs:label "두(頭)"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2014-0116-c2 a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
+kno:KN2014-0116-c2 kno:semanticTag kno:usas-S3.2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "허그"@ko ;
+    a kno:Component ;
     kno:formative kno:F007036 ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-S3.2 ;
-    rdfs:label "허(그)(hug)"@ko ;
-    kno:fullForm "허그"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "허"@ko .
+    kno:surfaceForm "허"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "허(그)(hug)"@ko .

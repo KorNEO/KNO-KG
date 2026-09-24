@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0342 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0342 kno:indexForm "코로나비만"@ko ;
+kno:KN2020-0342 a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한" ;
+    rdfs:label "코로나 비만"@ko ;
+    kno:indexForm "코로나비만"@ko ;
+    a kno:Neologism ;
     kno:instantiates kno:S000005 ;
     kno:example "¶{코로나 비만이} 심각하다고 생각하는지에 대한 설문 문항에 긍정적인 답변을 한 사람들이 40% 정도에 달했다."@ko ;
-    kno:predicate "생기다"@ko ;
-    kno:origin "(<영>←corona virus肥滿)" ;
-    kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    kno:year "2020"^^xsd:gYear ;
-    skos:definition "코로나19의 확산으로 활동량이 줄어들면서 생기는 비만."@ko ;
-    rdfs:label "코로나 비만"@ko ;
-    kno:slotFiller "비만(肥滿) (1성분)"@ko ;
-    kno:component kno:KN2020-0342-c1 ;
-    kno:languageType "영_한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EB%B9%84%EB%A7%8C> ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:componentString "코로나(바이러스)(corona virus), 비만(肥滿)"@ko ;
-    kno:frequency kno:KN2020-0342-freq-NN-2020 ;
-    kno:frequency kno:KN2020-0342-freq-NN-2022 ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2020-0342-c2 ;
-    kno:frequency kno:KN2020-0342-freq-NN-2021 ;
-    kno:frequency kno:KN2020-0342-freq-NN-total ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2020-0342-freq-NN-2023 .
-kno:KN2020-0342-c1 a kno:Component ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "코로나"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "코로나바이러스"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:formative kno:F000003 .
-kno:KN2020-0342-c2 kno:position "2"^^xsd:integer ;
+    kno:component kno:KN2020-0342-c1 ;
+    kno:frequency kno:KN2020-0342-freq-NN-2023 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2020-0342-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0342-freq-NN-total ;
+    skos:definition "코로나19의 확산으로 활동량이 줄어들면서 생기는 비만."@ko ;
+    kno:predicate "생기다"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EB%B9%84%EB%A7%8C> ;
+    kno:componentString "코로나(바이러스)(corona virus), 비만(肥滿)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0342-c2 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0342-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0342-freq-NN-2021 ;
+    kno:origin "(<영>←corona virus肥滿)" ;
+    kno:slotFiller "비만(肥滿) (1성분)"@ko .
+kno:KN2020-0342-c1 kno:formative kno:F000003 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko .
+kno:KN2020-0342-c2 kno:fullForm "비만"@ko ;
     kno:surfaceForm "비만"@ko ;
-    kno:semanticTag kno:usas-B2 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "비만(肥滿)"@ko ;
+    kno:formative kno:F001408 ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "비만"@ko ;
-    kno:formative kno:F001408 .
+    a kno:Component ;
+    kno:semanticTag kno:usas-B2 .

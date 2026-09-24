@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0024 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0024 kno:languageType "한+한" ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2023-0024-freq-NN-total ;
+kno:KN2023-0024 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:label "고특-법"@ko ;
+    kno:frequency kno:KN2023-0024-freq-NN-2022 ;
+    kno:example "¶당초 정부는 학령 인구의 감소로 여유가 생긴 초중등학교의 예산을 대학과 평생 교육에 투자하겠다는 취지로 {고특법}의 추진을 발표하였다."@ko ;
+    a ontolex:Word ;
+    kno:componentString "고특(高特), 법(法)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(高特法)" ;
     kno:unitType "단어"@ko ;
-    kno:slotFiller "고특(高特) (1성분)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
     kno:formation kno:W01 ;
     a kno:Neologism ;
-    kno:component kno:KN2023-0024-c2 ;
-    kno:frequency kno:KN2023-0024-freq-NN-2022 ;
-    kno:component kno:KN2023-0024-c1 ;
     skos:definition "지방 교육 재정 교부금 중 유치원 및 초중등 교육에 지원하던 지원금을 대학 지원에도 사용하기 위하여 특별 회계를 설치함을 목적으로 제정한 법률. 정식 명칭은 ‘고등 평생 교육 지원 특별 회계법’이다."@ko ;
-    a ontolex:Word ;
-    kno:indexForm "고특법"@ko ;
-    kno:example "¶당초 정부는 학령 인구의 감소로 여유가 생긴 초중등학교의 예산을 대학과 평생 교육에 투자하겠다는 취지로 {고특법}의 추진을 발표하였다."@ko ;
-    kno:componentString "고특(高特), 법(法)"@ko ;
-    rdfs:label "고특-법"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(高特法)" ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2023-0024-c2 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%ED%8A%B9%EB%B2%95> ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:instantiates kno:S000015 .
-kno:KN2023-0024-c2 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "법(法)"@ko ;
+    kno:indexForm "고특법"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "고특(高特) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0024-freq-NN-total ;
+    kno:instantiates kno:S000015 ;
+    kno:component kno:KN2023-0024-c1 ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2023-0024-c2 kno:formative kno:F000002 ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000002 ;
-    a kno:Component ;
-    kno:surfaceForm "법"@ko ;
     kno:semanticTag kno:usas-G2.1 ;
-    kno:fullForm "법"@ko .
-kno:KN2023-0024-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F001065 ;
-    rdfs:label "고특(高特)"@ko ;
-    kno:semanticTag kno:usas-P1 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "법"@ko .
+kno:KN2023-0024-c1 kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
     kno:fullForm "고특"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "고특"@ko .
+    kno:surfaceForm "고특"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "고특(高特)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:formative kno:F001065 .

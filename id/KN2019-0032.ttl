@@ -9,69 +9,69 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0032 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0032 a kno:Neologism ;
+kno:KN2019-0032 kno:frequency kno:KN2019-0032-freq-NN-total ;
+    kno:componentString "나, 심(리)(心), 비(율)(比), -족(族)"@ko ;
+    kno:component kno:KN2019-0032-c4 ;
+    kno:origin "(나心比族)" ;
     skos:definition "정해진 시장 가격에 상관없이 어떤 품목이나 상품에 대하여 소비자로서 본인이 가지는 만족도를 중요시하는 사람. 또는 그런 무리."@ko ;
     kno:frequency kno:KN2019-0032-freq-NN-2019 ;
-    kno:component kno:KN2019-0032-c2 ;
-    kno:frequency kno:KN2019-0032-freq-NN-total ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0032-freq-NN-2018 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%98%EC%8B%AC%EB%B9%84%EC%A1%B1> ;
+    rdfs:label "나심비-족"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이에 가전업계에서는 냉동고, 의류 관리기, 로봇 청소기 등 집안일을 도와주는 다양한 생활 가전을 잇달아 선보이며 {나심비족} 공략에 나서고 있다."@ko ;
     kno:predicate "중요시하다"@ko ;
+    kno:slotFiller "비(율)(比)+-족(族) (2성분)"@ko ;
+    kno:indexForm "나심비족"@ko ;
     kno:component kno:KN2019-0032-c3 ;
     kno:registration "신어DB"@ko ;
     kno:languageType "(고+한)+한" ;
     kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:component kno:KN2019-0032-c1 ;
-    kno:example "¶이에 가전업계에서는 냉동고, 의류 관리기, 로봇 청소기 등 집안일을 도와주는 다양한 생활 가전을 잇달아 선보이며 {나심비족} 공략에 나서고 있다."@ko ;
-    kno:indexForm "나심비족"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%98%EC%8B%AC%EB%B9%84%EC%A1%B1> ;
-    kno:frequency kno:KN2019-0032-freq-NN-2018 ;
-    kno:unitType "단어"@ko ;
+    kno:pos "「명」"@ko ;
     kno:instantiates kno:S001270 ;
     kno:instantiates kno:S000001 ;
-    rdfs:label "나심비-족"@ko ;
-    kno:origin "(나心比族)" ;
+    kno:component kno:KN2019-0032-c1 ;
+    a kno:Neologism ;
+    kno:component kno:KN2019-0032-c2 ;
     kno:slotFiller "나+심(리)(心)+비(율)(比) (3성분)"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:slotFiller "비(율)(比)+-족(族) (2성분)"@ko ;
-    a ontolex:Word ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W02 ;
-    kno:componentString "나, 심(리)(心), 비(율)(比), -족(族)"@ko ;
-    kno:component kno:KN2019-0032-c4 .
-kno:KN2019-0032-c2 a kno:Component ;
-    kno:surfaceForm "심"@ko ;
-    rdfs:label "심(리)(心)"@ko ;
-    kno:semanticTag kno:usas-X1 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000836 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "심리"@ko .
-kno:KN2019-0032-c3 kno:semanticTag kno:usas-N3.1 ;
-    kno:surfaceForm "비"@ko ;
+    kno:formation kno:W02 .
+kno:KN2019-0032-c4 kno:surfaceForm "족"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000277 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:role "고정항"@ko .
+kno:KN2019-0032-c3 kno:position "3"^^xsd:integer ;
     kno:fullForm "비율"@ko ;
-    rdfs:label "비(율)(比)"@ko .
+    kno:surfaceForm "비"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000277 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "비(율)(比)"@ko ;
+    a kno:Component .
 kno:KN2019-0032-c1 kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "나"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "나"@ko ;
-    kno:semanticTag kno:usas-Z8 ;
     kno:role "고정항"@ko ;
-    rdfs:label "나"@ko ;
     a kno:Component ;
-    kno:formative kno:F000070 .
-kno:KN2019-0032-c4 kno:formative kno:F000001 ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "4"^^xsd:integer ;
-    kno:surfaceForm "족"@ko ;
-    kno:fullForm "족"@ko ;
-    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000070 ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:surfaceForm "나"@ko ;
+    rdfs:label "나"@ko .
+kno:KN2019-0032-c2 kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000836 ;
+    kno:fullForm "심리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "심"@ko ;
+    rdfs:label "심(리)(心)"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:role "고정항"@ko .
+    kno:semanticTag kno:usas-X1 .

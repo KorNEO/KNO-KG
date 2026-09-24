@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0553 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0553 kno:registration "신어DB"@ko ;
-    kno:origin "(贊彈票)" ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "찬(성)(贊成), 탄(핵)(彈劾), 표(票)"@ko ;
+kno:KN2025-0553 kno:component kno:KN2025-0553-c3 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%AC%ED%83%84%ED%91%9C> ;
-    skos:definition "(LLM) 대통령 탄핵에 찬성하는 성향의 유권자들이 선거에서 행사하는 표, 또는 그 표의 향배를 가리키는 말."@ko ;
-    kno:example "(LLM) 오세훈과 유승민이 경선에 불참하면서 남은 후보들이 {찬탄표를} 어디서 얼마나 흡수하느냐가 1차 컷오프의 변수가 됐다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2025-0553-freq-NN-total ;
-    rdfs:label "찬탄-표"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2025-0553-c2 ;
-    kno:indexForm "찬탄표"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0553-c3 ;
     kno:component kno:KN2025-0553-c1 ;
+    skos:definition "(LLM) 대통령 탄핵에 찬성하는 성향의 유권자들이 선거에서 행사하는 표, 또는 그 표의 향배를 가리키는 말."@ko ;
+    rdfs:label "찬탄-표"@ko ;
+    kno:frequency kno:KN2025-0553-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0553-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
     kno:formation kno:W01 ;
     a kno:Neologism ;
+    kno:example "(LLM) 오세훈과 유승민이 경선에 불참하면서 남은 후보들이 {찬탄표를} 어디서 얼마나 흡수하느냐가 1차 컷오프의 변수가 됐다."@ko ;
+    kno:origin "(贊彈票)" ;
     kno:languageType "한+한_한" ;
+    kno:indexForm "찬탄표"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0553-freq-NN-total ;
     a ontolex:Word ;
-    kno:frequency kno:KN2025-0553-freq-NN-2025 .
-kno:KN2025-0553-c2 kno:surfaceForm "탄"@ko ;
-    kno:formative kno:F000969 ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "탄(핵)(彈劾)"@ko ;
-    kno:fullForm "탄핵"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "찬(성)(贊成), 탄(핵)(彈劾), 표(票)"@ko .
+kno:KN2025-0553-c3 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000630 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "표"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "표(票)"@ko ;
+    kno:fullForm "표"@ko .
+kno:KN2025-0553-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "찬(성)(贊成)"@ko ;
+    kno:fullForm "찬성"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000941 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:surfaceForm "찬"@ko .
+kno:KN2025-0553-c2 kno:role "성분"@ko ;
     kno:position "2"^^xsd:integer ;
     a kno:Component ;
-    kno:role "성분"@ko .
-kno:KN2025-0553-c3 rdfs:label "표(票)"@ko ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "표"@ko ;
-    kno:formative kno:F000630 ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "표"@ko ;
-    kno:role "성분"@ko .
-kno:KN2025-0553-c1 kno:semanticTag kno:usas-S7.4p ;
-    kno:fullForm "찬성"@ko ;
-    kno:surfaceForm "찬"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000941 ;
+    rdfs:label "탄(핵)(彈劾)"@ko ;
+    kno:fullForm "탄핵"@ko ;
+    kno:formative kno:F000969 ;
     kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "찬(성)(贊成)"@ko .
+    kno:surfaceForm "탄"@ko .

@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0220 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0220 kno:unitType "구"@ko ;
-    kno:slotFiller "페이(pay) (1성분)"@ko ;
+kno:KN2018-0220 kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
     kno:frequency kno:KN2018-0220-freq-NN-2018 ;
+    kno:unitType "구"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:origin "(<영>silver pay)" ;
+    kno:indexForm "실버페이"@ko ;
+    kno:instantiates kno:S000103 ;
+    kno:example "¶OO이 은퇴자들에게 산악 구조 같은 위험한 업무를 맡기면서도 최저 임금에도 못 미치는 활동비를 지급하기로 해 ‘열정 페이’에 이어 ‘{실버 페이}’ 논란이 일고 있다."@ko ;
+    kno:slotFiller "페이(pay) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0220-freq-NN-2021 ;
+    kno:languageType "영_영" ;
     rdfs:label "실버 페이"@ko ;
-    skos:definition "노인 근로자에게 합당한 대가보다 현저히 낮은 임금을 지급하는 일."@ko ;
+    kno:instantiates kno:S000451 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:pos "「구」"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A4%EB%B2%84%20%ED%8E%98%EC%9D%B4> ;
     kno:componentString "실버(silver), 페이(pay)"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2018-0220-freq-NN-total ;
-    kno:indexForm "실버페이"@ko ;
     kno:predicate "지급하다"@ko ;
-    kno:example "¶OO이 은퇴자들에게 산악 구조 같은 위험한 업무를 맡기면서도 최저 임금에도 못 미치는 활동비를 지급하기로 해 ‘열정 페이’에 이어 ‘{실버 페이}’ 논란이 일고 있다."@ko ;
     kno:slotFiller "실버(silver) (1성분)"@ko ;
-    kno:component kno:KN2018-0220-c2 ;
-    kno:frequency kno:KN2018-0220-freq-NN-2021 ;
-    kno:instantiates kno:S000450 ;
-    kno:origin "(<영>silver pay)" ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:instantiates kno:S000103 ;
-    kno:activeYears "2"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "노인 근로자에게 합당한 대가보다 현저히 낮은 임금을 지급하는 일."@ko ;
     kno:component kno:KN2018-0220-c1 ;
-    kno:languageType "영_영" ;
-    kno:pos "「구」"@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    a kno:Neologism .
-kno:KN2018-0220-c2 a kno:Component ;
-    kno:formative kno:F000433 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "페이"@ko ;
-    rdfs:label "페이(pay)"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:fullForm "페이"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko .
-kno:KN2018-0220-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "실버"@ko ;
-    kno:formative kno:F000146 ;
+    kno:component kno:KN2018-0220-c2 .
+kno:KN2018-0220-c1 kno:formative kno:F000146 ;
     kno:semanticTag kno:usas-T3 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "실버"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "실버(silver)"@ko .
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "실버"@ko ;
+    rdfs:label "실버(silver)"@ko ;
+    kno:surfaceForm "실버"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2018-0220-c2 rdfs:label "페이(pay)"@ko ;
+    kno:formative kno:F000433 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "페이"@ko ;
+    kno:surfaceForm "페이"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .

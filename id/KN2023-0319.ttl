@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0319 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0319 kno:instantiates kno:S001722 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%91%B8> ;
-    kno:example "¶엠제트 세대는 정시 퇴근을 준비하며 ‘{퇴푸’를} 정하는 것을 하루의 소소하지만 커다란 행복으로 삼는다."@ko ;
-    kno:component kno:KN2023-0319-c2 ;
-    kno:componentString "퇴(근)(退勤), 푸(드)(food)"@ko ;
-    kno:component kno:KN2023-0319-c1 ;
-    kno:formation kno:W06 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:indexForm "퇴푸"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:origin "(退<영>←food)" ;
-    kno:frequency kno:KN2023-0319-freq-NN-total ;
-    rdfs:label "퇴푸"@ko ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
+kno:KN2023-0319 rdfs:label "퇴푸"@ko ;
+    kno:slotFiller "푸(드)(food) (1성분)"@ko ;
     kno:languageType "한+영" ;
-    kno:frequency kno:KN2023-0319-freq-NN-2023 ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:example "¶엠제트 세대는 정시 퇴근을 준비하며 ‘{퇴푸’를} 정하는 것을 하루의 소소하지만 커다란 행복으로 삼는다."@ko ;
+    kno:pos "「명」"@ko ;
     a ontolex:Word ;
+    kno:component kno:KN2023-0319-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%91%B8> ;
+    kno:frequency kno:KN2023-0319-freq-NN-total ;
+    kno:origin "(退<영>←food)" ;
+    skos:definition "‘퇴근 후 푸드’를 줄여 이르는 말. ‘퇴근’과 음식을 의미하는 ‘푸드(food)’를 결합하여 만든 말로, 퇴근 후에 먹는 음식을 의미한다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    skos:definition "‘퇴근 후 푸드’를 줄여 이르는 말. ‘퇴근’과 음식을 의미하는 ‘푸드(food)’를 결합하여 만든 말로, 퇴근 후에 먹는 음식을 의미한다."@ko ;
-    kno:slotFiller "푸(드)(food) (1성분)"@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2023-0319-c2 a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "푸"@ko ;
-    kno:formative kno:F001971 ;
-    kno:fullForm "푸드"@ko ;
-    rdfs:label "푸(드)(food)"@ko ;
+    kno:component kno:KN2023-0319-c2 ;
+    kno:componentString "퇴(근)(退勤), 푸(드)(food)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0319-freq-NN-2023 ;
+    kno:indexForm "퇴푸"@ko ;
+    kno:instantiates kno:S001722 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism .
+kno:KN2023-0319-c1 kno:surfaceForm "퇴"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2023-0319-c1 kno:role "고정항"@ko ;
-    kno:formative kno:F000621 ;
-    kno:surfaceForm "퇴"@ko ;
-    a kno:Component ;
-    rdfs:label "퇴(근)(退勤)"@ko ;
-    kno:fullForm "퇴근"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "퇴근"@ko ;
+    kno:formative kno:F000621 ;
+    rdfs:label "퇴(근)(退勤)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    a kno:Component .
+kno:KN2023-0319-c2 kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "푸"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I3.1 .
+    rdfs:label "푸(드)(food)"@ko ;
+    kno:fullForm "푸드"@ko ;
+    kno:formative kno:F001971 .

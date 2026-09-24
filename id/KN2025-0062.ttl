@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0062 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0062 kno:frequency kno:KN2025-0062-freq-NN-total ;
-    kno:origin "(空間<영>brewing)" ;
-    kno:component kno:KN2025-0062-c1 ;
-    kno:frequency kno:KN2025-0062-freq-NN-2025 ;
-    kno:instantiates kno:S001214 ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:label "공간 브루잉"@ko ;
+kno:KN2025-0062 kno:frequency kno:KN2025-0062-freq-NN-2025 ;
+    kno:slotFiller "브루잉(brewing) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B0%84%20%EB%B8%8C%EB%A3%A8%EC%9E%89> ;
     kno:languageType "한_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "공간(空間), 브루잉(brewing)"@ko ;
+    kno:origin "(空間<영>brewing)" ;
+    kno:instantiates kno:S001214 ;
     kno:indexForm "공간브루잉"@ko ;
     kno:example "(LLM) 폐공장을 리모델링해 미디어 아트 전시와 팝업스토어, 공연을 함께 운영하는 {공간브루잉이} 지역 관광의 새 모델로 주목받고 있다."@ko ;
-    kno:componentString "공간(空間), 브루잉(brewing)"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B0%84%20%EB%B8%8C%EB%A3%A8%EC%9E%89> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:slotFiller "브루잉(brewing) (1성분)"@ko ;
-    a kno:Neologism ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "(LLM) 기존의 문화 시설이나 유휴 공간을 새롭게 기획ㆍ재구성하여 전시ㆍ공연ㆍ체험 등 다양한 문화 콘텐츠를 결합해 즐길 수 있도록 만든 복합 문화 공간."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "공간 브루잉"@ko ;
+    kno:component kno:KN2025-0062-c1 ;
+    kno:frequency kno:KN2025-0062-freq-NN-total ;
     kno:component kno:KN2025-0062-c2 ;
-    skos:definition "(LLM) 기존의 문화 시설이나 유휴 공간을 새롭게 기획ㆍ재구성하여 전시ㆍ공연ㆍ체험 등 다양한 문화 콘텐츠를 결합해 즐길 수 있도록 만든 복합 문화 공간."@ko .
-kno:KN2025-0062-c1 kno:surfaceForm "공간"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Neologism ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0062-c1 rdfs:label "공간(空間)"@ko ;
     kno:role "고정항"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-M7 ;
-    kno:fullForm "공간"@ko ;
+    kno:surfaceForm "공간"@ko ;
     kno:formative kno:F000335 ;
-    a kno:Component ;
-    rdfs:label "공간(空間)"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2025-0062-c2 kno:formative kno:F004033 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "브루잉(brewing)"@ko ;
-    kno:semanticTag kno:usas-F2 ;
-    a kno:Component ;
-    kno:surfaceForm "브루잉"@ko ;
-    kno:fullForm "브루잉"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "공간"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0062-c2 rdfs:label "브루잉(brewing)"@ko ;
+    kno:surfaceForm "브루잉"@ko ;
+    kno:formative kno:F004033 ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:fullForm "브루잉"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component .

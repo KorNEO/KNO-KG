@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0223 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0223 kno:unitType "단어"@ko ;
-    kno:languageType "고+고+고" ;
-    kno:frequency kno:KN2025-0223-freq-NN-2025 ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:label "막나귀"@ko ;
+kno:KN2025-0223 kno:indexForm "막나귀"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "막(상), 나(가다), 귀(찮다)"@ko ;
     a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 약속 장소까지 다 정해 놓고도 갑자기 {막나귀가} 와서 그냥 집에 있기로 했다."@ko ;
+    rdfs:label "막나귀"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%89%EB%82%98%EA%B7%80> ;
-    kno:frequency kno:KN2025-0223-freq-NN-total ;
-    a kno:Neologism ;
-    kno:component kno:KN2025-0223-c1 ;
-    kno:componentString "막(상), 나(가다), 귀(찮다)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    kno:registration "신어DB"@ko ;
     skos:definition "(LLM) ‘막상 나가려니 귀찮다’는 뜻을 줄여 이르는 말."@ko ;
-    kno:indexForm "막나귀"@ko ;
+    kno:example "(LLM) 약속 장소까지 다 정해 놓고도 갑자기 {막나귀가} 와서 그냥 집에 있기로 했다."@ko ;
+    kno:component kno:KN2025-0223-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2025-0223-freq-NN-2025 ;
+    kno:component kno:KN2025-0223-c2 ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0223-freq-NN-total ;
     kno:component kno:KN2025-0223-c3 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0223-c2 .
-kno:KN2025-0223-c1 kno:role "성분"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F003363 ;
-    rdfs:label "막(상)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "고+고+고" .
+kno:KN2025-0223-c1 kno:surfaceForm "막"@ko ;
+    kno:role "성분"@ko ;
     a kno:Component ;
+    kno:semanticTag kno:usas-A5.4p ;
     kno:fullForm "막상"@ko ;
-    kno:surfaceForm "막"@ko ;
-    kno:semanticTag kno:usas-A5.4p .
-kno:KN2025-0223-c3 kno:semanticTag kno:usas-X5.2m ;
-    a kno:Component ;
-    kno:surfaceForm "귀"@ko ;
-    kno:fullForm "귀찮다"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "귀(찮다)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F002501 .
-kno:KN2025-0223-c2 rdfs:label "나(가다)"@ko ;
-    kno:role "성분"@ko ;
+    rdfs:label "막(상)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F003363 .
+kno:KN2025-0223-c2 kno:fullForm "나가다"@ko ;
     kno:semanticTag kno:usas-M1 ;
-    kno:surfaceForm "나"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "나"@ko ;
     kno:formative kno:F002664 ;
-    kno:fullForm "나가다"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component .
+    a kno:Component ;
+    rdfs:label "나(가다)"@ko .
+kno:KN2025-0223-c3 kno:fullForm "귀찮다"@ko ;
+    kno:formative kno:F002501 ;
+    a kno:Component ;
+    rdfs:label "귀(찮다)"@ko ;
+    kno:surfaceForm "귀"@ko ;
+    kno:semanticTag kno:usas-X5.2m ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0461 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0461 a kno:Neologism ;
-    kno:frequency kno:KN2016-0461-freq-NN-2016 ;
-    kno:indexForm "지름용"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:componentString "지름, -용(用)"@ko ;
+kno:KN2016-0461 kno:frequency kno:KN2016-0461-freq-NN-2016 ;
+    kno:component kno:KN2016-0461-c2 ;
+    a ontolex:Word ;
     skos:definition "앞뒤 가리지 않고 물건 따위를 사들이는 데 쓰임. 또는 그런 물건."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EB%A6%84%EC%9A%A9> ;
+    kno:frequency kno:KN2016-0461-freq-NN-total ;
     rdfs:label "지름-용"@ko ;
     kno:registration "신어DB"@ko ;
+    kno:example "¶사진 12, 이른바 ‘{지름용}’ 짤로 사용되는 이미지다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2016"^^xsd:gYear ;
     kno:activeYears "1"^^xsd:integer ;
     kno:languageType "고+한" ;
-    kno:component kno:KN2016-0461-c2 ;
-    kno:unitType "단어"@ko ;
     kno:component kno:KN2016-0461-c1 ;
+    kno:componentString "지름, -용(用)"@ko ;
+    kno:pos "「명」"@ko ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:origin "(지름用)" ;
-    kno:frequency kno:KN2016-0461-freq-NN-total ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
     kno:formation kno:W02 ;
-    kno:example "¶사진 12, 이른바 ‘{지름용}’ 짤로 사용되는 이미지다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EB%A6%84%EC%9A%A9> .
+    kno:indexForm "지름용"@ko .
 kno:KN2016-0461-c2 a kno:Component ;
-    rdfs:label "-용(用)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001648 ;
-    kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-A1.5.1 ;
-    kno:fullForm "용"@ko ;
     kno:surfaceForm "용"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2016-0461-c1 a kno:Component ;
-    kno:fullForm "지름"@ko ;
+    rdfs:label "-용(用)"@ko ;
+    kno:formative kno:F001648 ;
+    kno:fullForm "용"@ko ;
     kno:role "성분"@ko ;
-    rdfs:label "지름"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005872 ;
-    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-A1.5.1 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2016-0461-c1 kno:semanticTag kno:usas-I2.2 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "지름"@ko ;
+    rdfs:label "지름"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "지름"@ko .
+    kno:fullForm "지름"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005872 .

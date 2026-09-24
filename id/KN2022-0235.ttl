@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0235 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0235 a ontolex:Word ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶전쟁으로 인한 유럽의 천연 가스값 상승이 ‘{이플레이션’을} 더욱 부채질할 것이라는 우려가 있다."@ko ;
+kno:KN2022-0235 kno:frequency kno:KN2022-0235-freq-NN-2021 ;
+    kno:origin "(<영>▼E←inflation)" ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2022-0235-freq-NN-total ;
-    rdfs:label "이플레이션"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2022-0235-c2 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:formation kno:W05 ;
     kno:frequency kno:KN2022-0235-freq-NN-2022 ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "이(E) (1성분)"@ko ;
+    kno:frequency kno:KN2022-0235-freq-NN-2023 ;
+    a ontolex:Word ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "영+영" ;
+    kno:formation kno:W05 ;
+    kno:componentString "이(E), (인)플레이션(inflation)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "이플레이션"@ko ;
     kno:instantiates kno:S000011 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
     skos:definition "에너지의 수급 불안이 주된 원인이 되어 일어나는 인플레이션."@ko ;
     kno:component kno:KN2022-0235-c1 ;
-    kno:componentString "이(E), (인)플레이션(inflation)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2022-0235-freq-NN-2021 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    kno:example "¶전쟁으로 인한 유럽의 천연 가스값 상승이 ‘{이플레이션’을} 더욱 부채질할 것이라는 우려가 있다."@ko ;
     kno:predicate "일어나다"@ko ;
-    kno:slotFiller "이(E) (1성분)"@ko ;
-    kno:languageType "영+영" ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2022-0235-freq-NN-2023 ;
-    kno:origin "(<영>▼E←inflation)" ;
-    kno:indexForm "이플레이션"@ko .
-kno:KN2022-0235-c2 kno:role "고정항"@ko ;
-    rdfs:label "(인)플레이션(inflation)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "인플레이션"@ko ;
-    kno:semanticTag kno:usas-I1.3p ;
-    kno:surfaceForm "플레이션"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000009 ;
-    a kno:Component .
-kno:KN2022-0235-c1 kno:surfaceForm "이"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:component kno:KN2022-0235-c2 ;
+    a kno:Neologism ;
+    rdfs:label "이플레이션"@ko ;
+    kno:frequency kno:KN2022-0235-freq-NN-total .
+kno:KN2022-0235-c1 kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000891 ;
-    kno:semanticTag kno:usas-Z3 ;
-    rdfs:label "이(E)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
+    kno:surfaceForm "이"@ko ;
     kno:fullForm "이"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "이(E)"@ko ;
+    kno:semanticTag kno:usas-Z3 .
+kno:KN2022-0235-c2 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
+    kno:fullForm "인플레이션"@ko ;
+    kno:formative kno:F000009 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "플레이션"@ko ;
+    kno:semanticTag kno:usas-I1.3p .

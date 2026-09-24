@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0296 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0296 kno:languageType "한_한" ;
-    a ontolex:MultiwordExpression ;
+kno:KN2018-0296 kno:unitType "구"@ko ;
+    rdfs:label "재판 치사"@ko ;
+    kno:frequency kno:KN2018-0296-freq-NN-2017 ;
     kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:componentString "재판(裁判), 치사(致死)"@ko ;
+    kno:frequency kno:KN2018-0296-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%8C%90%20%EC%B9%98%EC%82%AC> ;
+    kno:languageType "한_한" ;
+    kno:example "¶OOO 의원은 “…{재판 치사란} 말이 나올 만큼 이러다가 돌아가시겠다는 말도 나온다.”라고 말했다."@ko ;
     kno:registration "신어DB"@ko ;
+    kno:component kno:KN2018-0296-c1 ;
     kno:year "2018"^^xsd:gYear ;
     a kno:Neologism ;
-    kno:component kno:KN2018-0296-c1 ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2018-0296-c2 ;
-    rdfs:label "재판 치사"@ko ;
-    kno:frequency kno:KN2018-0296-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "재판치사"@ko ;
-    kno:origin "(裁判致死)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%8C%90%20%EC%B9%98%EC%82%AC> ;
-    kno:example "¶OOO 의원은 “…{재판 치사란} 말이 나올 만큼 이러다가 돌아가시겠다는 말도 나온다.”라고 말했다."@ko ;
     skos:definition "재판으로 인해 극심한 스트레스를 받아 사람이 죽게 되는 일을 이르는 말."@ko ;
-    kno:frequency kno:KN2018-0296-freq-NN-2017 ;
-    kno:componentString "재판(裁判), 치사(致死)"@ko .
-kno:KN2018-0296-c1 kno:role "성분"@ko ;
-    kno:formative kno:F005593 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "재판"@ko ;
+    kno:origin "(裁判致死)" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "재판치사"@ko .
+kno:KN2018-0296-c1 kno:formative kno:F005593 ;
     rdfs:label "재판(裁判)"@ko ;
-    kno:fullForm "재판"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2018-0296-c2 rdfs:label "치사(致死)"@ko ;
-    kno:surfaceForm "치사"@ko ;
-    kno:semanticTag kno:usas-L1m ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "치사"@ko ;
-    kno:formative kno:F006168 ;
-    kno:position "2"^^xsd:integer ;
+    kno:fullForm "재판"@ko ;
+    kno:surfaceForm "재판"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0296-c2 kno:fullForm "치사"@ko ;
     a kno:Component ;
-    kno:role "성분"@ko .
+    kno:surfaceForm "치사"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-L1m ;
+    rdfs:label "치사(致死)"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006168 .

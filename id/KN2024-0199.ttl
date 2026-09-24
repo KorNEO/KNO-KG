@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0199 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0199 kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S001574 ;
-    kno:origin "(<영>on device phone)" ;
-    kno:frequency kno:KN2024-0199-freq-NN-2023 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:instantiates kno:S000135 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2024-0199-c3 ;
+kno:KN2024-0199 kno:slotFiller "온(on)+디바이스(device) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "기기 내부에서 자체적으로 인공 지능의 기능을 수행할 수 있도록 한 휴대 전화."@ko ;
     kno:slotFiller "디바이스(device)+폰(phone) (2성분)"@ko ;
+    rdfs:label "온^디바이스^폰"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(<영>on device phone)" ;
+    kno:languageType "영^영^영" ;
+    kno:component kno:KN2024-0199-c3 ;
+    kno:indexForm "온디바이스폰"@ko ;
     kno:unitType "구"@ko ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2024-0199-freq-NN-2023 ;
+    kno:example "¶내년 신제품은 기기의 내부에서 인공 지능의 기능을 수행하는 {온 디바이스 폰이기} 때문에 대용량의 데이터를 실시간으로 처리할 수 있는 램의 중요성이 더욱 강조되고 있다."@ko ;
+    kno:component kno:KN2024-0199-c2 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:instantiates kno:S000135 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%A8%EB%94%94%EB%B0%94%EC%9D%B4%EC%8A%A4%ED%8F%B0> ;
-    kno:slotFiller "온(on)+디바이스(device) (2성분)"@ko ;
+    kno:frequency kno:KN2024-0199-freq-NN-2025 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2024-0199-freq-NN-total ;
     kno:component kno:KN2024-0199-c1 ;
     kno:componentString "온(on), 디바이스(device), 폰(phone)"@ko ;
-    skos:definition "기기 내부에서 자체적으로 인공 지능의 기능을 수행할 수 있도록 한 휴대 전화."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0199-freq-NN-total ;
-    a kno:Neologism ;
-    kno:component kno:KN2024-0199-c2 ;
-    kno:languageType "영^영^영" ;
-    rdfs:label "온^디바이스^폰"@ko ;
-    kno:example "¶내년 신제품은 기기의 내부에서 인공 지능의 기능을 수행하는 {온 디바이스 폰이기} 때문에 대용량의 데이터를 실시간으로 처리할 수 있는 램의 중요성이 더욱 강조되고 있다."@ko ;
-    kno:frequency kno:KN2024-0199-freq-NN-2025 ;
-    kno:indexForm "온디바이스폰"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2024-0199-c3 kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:surfaceForm "폰"@ko ;
-    a kno:Component ;
-    rdfs:label "폰(phone)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "폰"@ko ;
+    kno:instantiates kno:S001574 .
+kno:KN2024-0199-c3 kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000107 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:fullForm "폰"@ko ;
+    kno:surfaceForm "폰"@ko ;
+    rdfs:label "폰(phone)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .
+kno:KN2024-0199-c2 rdfs:label "디바이스(device)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "디바이스"@ko ;
+    kno:surfaceForm "디바이스"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:formative kno:F003090 .
 kno:KN2024-0199-c1 a kno:Component ;
     kno:formative kno:F000870 ;
+    kno:role "고정항"@ko ;
     kno:surfaceForm "온"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:fullForm "온"@ko ;
     rdfs:label "온(on)"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "온"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Z5 ;
-    kno:role "고정항"@ko .
-kno:KN2024-0199-c2 kno:surfaceForm "디바이스"@ko ;
-    rdfs:label "디바이스(device)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F003090 ;
-    kno:semanticTag kno:usas-Y2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "디바이스"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "false"^^xsd:boolean .

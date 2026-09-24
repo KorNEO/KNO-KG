@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0172 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0172 a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W02 ;
+kno:KN2024-0172 kno:activeYears "3"^^xsd:integer ;
     kno:indexForm "어싱족"@ko ;
-    kno:slotFiller "어싱(earthing) (1성분)"@ko ;
-    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2024-0172-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>earthing族)" ;
+    rdfs:label "어싱-족"@ko ;
+    kno:component kno:KN2024-0172-c2 ;
+    kno:predicate "하다"@ko ;
     kno:component kno:KN2024-0172-c1 ;
     kno:frequency kno:KN2024-0172-freq-NN-2024 ;
-    rdfs:label "어싱-족"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2024-0172-c2 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2024-0172-freq-NN-2025 ;
-    kno:componentString "어싱(earthing), -족(族)"@ko ;
-    kno:origin "(<영>earthing族)" ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:predicate "하다"@ko ;
-    skos:definition "공원이나 숲에서 맨발로 걸으며 운동을 하는 사람. 또는 그런 무리."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EC%8B%B1%EC%A1%B1> ;
     kno:frequency kno:KN2024-0172-freq-NN-total ;
+    a ontolex:Word ;
     kno:example "¶점심 시간쯤 찾은 공원의 황톳길에는 맨발 걷기를 하는 {어싱족들의} 발길이 끊이지 않는다."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "어싱(earthing), -족(族)"@ko ;
+    kno:slotFiller "어싱(earthing) (1성분)"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0172-freq-NN-2023 ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EC%8B%B1%EC%A1%B1> ;
     kno:instantiates kno:S000001 ;
-    kno:languageType "영+한" .
-kno:KN2024-0172-c1 a kno:Component ;
-    kno:semanticTag kno:usas-B2 ;
-    kno:formative kno:F004957 ;
-    kno:fullForm "어싱"@ko ;
-    rdfs:label "어싱(earthing)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "어싱"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2024-0172-c2 kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000001 ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean ;
+    skos:definition "공원이나 숲에서 맨발로 걸으며 운동을 하는 사람. 또는 그런 무리."@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2024-0172-freq-NN-2023 ;
+    kno:languageType "영+한" ;
+    kno:formation kno:W02 ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0172-c2 rdfs:label "-족(族)"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
     kno:semanticTag kno:usas-S2 ;
     kno:role "고정항"@ko ;
+    kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
-    rdfs:label "-족(族)"@ko .
+    kno:surfaceForm "족"@ko ;
+    a kno:Component .
+kno:KN2024-0172-c1 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "어싱"@ko ;
+    kno:formative kno:F004957 ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "어싱(earthing)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "어싱"@ko .

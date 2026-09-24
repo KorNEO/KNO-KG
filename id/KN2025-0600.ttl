@@ -9,38 +9,38 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0600 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0600 kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%ED%96%84%EB%B6%80%EA%B8%B0> ;
-    a ontolex:Word ;
+kno:KN2025-0600 kno:indexForm "탄햄부기"@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0600-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
     skos:definition "(LLM) 온라인에서 특정 정치 관련 표현을 직접 쓰기 어렵거나 제재를 피하려는 상황에서, 발음이 비슷한 다른 단어로 바꾸어 우회적으로 이르는 말."@ko ;
     kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2025-0600-freq-NN-total ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:indexForm "탄햄부기"@ko ;
-    kno:component kno:KN2025-0600-c1 ;
+    kno:unitType "단어"@ko ;
     rdfs:label "탄햄부기"@ko ;
-    kno:formation kno:W05 ;
-    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
     kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0600-c2 ;
     kno:example "(LLM) 댓글에 그 단어를 그대로 쓰면 필터에 걸린다길래, 다들 {탄햄부기를} 써서 돌려 말하더라."@ko ;
-    kno:frequency kno:KN2025-0600-freq-NN-2025 ;
-    kno:componentString "탄(핵)(彈劾), 햄부기(←햄버거)(hamburger)"@ko .
-kno:KN2025-0600-c1 kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "탄"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000969 ;
-    rdfs:label "탄(핵)(彈劾)"@ko ;
+    kno:component kno:KN2025-0600-c1 ;
+    kno:componentString "탄(핵)(彈劾), 햄부기(←햄버거)(hamburger)"@ko ;
+    kno:component kno:KN2025-0600-c2 ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%ED%96%84%EB%B6%80%EA%B8%B0> ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0600-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear .
+kno:KN2025-0600-c1 a kno:Component ;
     kno:fullForm "탄핵"@ko ;
-    a kno:Component ;
+    rdfs:label "탄(핵)(彈劾)"@ko ;
+    kno:formative kno:F000969 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "탄"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko .
-kno:KN2025-0600-c2 kno:truncated "false"^^xsd:boolean ;
+kno:KN2025-0600-c2 kno:fullForm "햄부기"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "햄부기(←햄버거)(hamburger)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F007020 ;
     kno:surfaceForm "햄부기"@ko ;
-    a kno:Component ;
     kno:role "성분"@ko ;
-    kno:fullForm "햄부기"@ko .
+    a kno:Component ;
+    kno:formative kno:F007020 .

@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0428 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0428 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%20%ED%8F%AC%ED%8B%B0%20%ED%8F%B0> ;
-    a ontolex:MultiwordExpression ;
+kno:KN2025-0428 kno:slotFiller "영(young)+포티(forty) (2성분)"@ko ;
+    kno:predicate "쓰다"@ko ;
     kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%20%ED%8F%AC%ED%8B%B0%20%ED%8F%B0> ;
     kno:languageType "영_영_영" ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000555 ;
+    kno:instantiates kno:S000135 ;
+    kno:indexForm "영포티폰"@ko ;
+    skos:definition "(LLM) 젊게 사는 40대가 유행에 뒤처지지 않는다는 인상을 얻기 위해 아이폰을 고집해 쓰는 태도. 또는 그런 사람을 낮잡아 이르는 말."@ko ;
+    kno:component kno:KN2025-0428-c1 ;
+    kno:component kno:KN2025-0428-c3 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "영(young), 포티(forty), 폰(phone)"@ko ;
+    kno:example "(LLM) 그는 안드로이드로 바꾸면 ‘아재’ 소리 들을까 봐 끝까지 아이폰만 쓴다며 {영포티폰}이라는 말까지 듣는다."@ko ;
     kno:origin "(young forty phone)" ;
     kno:year "2025"^^xsd:gYear ;
-    rdfs:label "영 포티 폰"@ko ;
-    kno:slotFiller "영(young)+포티(forty) (2성분)"@ko ;
-    kno:predicate "쓰다"@ko ;
-    kno:componentString "영(young), 포티(forty), 폰(phone)"@ko ;
-    kno:component kno:KN2025-0428-c1 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S000554 ;
-    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:slotFiller "포티(forty)+폰(phone) (2성분)"@ko ;
-    kno:instantiates kno:S000135 ;
     kno:pos "「구」"@ko ;
-    skos:definition "(LLM) 젊게 사는 40대가 유행에 뒤처지지 않는다는 인상을 얻기 위해 아이폰을 고집해 쓰는 태도. 또는 그런 사람을 낮잡아 이르는 말."@ko ;
     kno:component kno:KN2025-0428-c2 ;
-    kno:component kno:KN2025-0428-c3 ;
-    a kno:Neologism ;
-    kno:indexForm "영포티폰"@ko ;
-    kno:example "(LLM) 그는 안드로이드로 바꾸면 ‘아재’ 소리 들을까 봐 끝까지 아이폰만 쓴다며 {영포티폰}이라는 말까지 듣는다."@ko .
-kno:KN2025-0428-c1 rdfs:label "영(young)"@ko ;
+    rdfs:label "영 포티 폰"@ko ;
+    a kno:Neologism .
+kno:KN2025-0428-c1 kno:semanticTag kno:usas-T3 ;
+    kno:fullForm "영"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "영(young)"@ko ;
     a kno:Component ;
     kno:surfaceForm "영"@ko ;
+    kno:role "고정항"@ko ;
     kno:formative kno:F000223 ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "영"@ko .
-kno:KN2025-0428-c2 kno:surfaceForm "포티"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000434 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "포티"@ko ;
-    rdfs:label "포티(forty)"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0428-c3 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-N1 .
-kno:KN2025-0428-c3 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:surfaceForm "폰"@ko ;
-    rdfs:label "폰(phone)"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:fullForm "폰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000107 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:fullForm "폰"@ko ;
+    rdfs:label "폰(phone)"@ko ;
+    kno:surfaceForm "폰"@ko .
+kno:KN2025-0428-c2 kno:semanticTag kno:usas-N1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "포티(forty)"@ko ;
+    kno:formative kno:F000434 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "포티"@ko ;
+    kno:surfaceForm "포티"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component .

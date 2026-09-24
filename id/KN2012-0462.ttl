@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0462 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0462 kno:year "2012"^^xsd:gYear ;
-    kno:componentString "피(부과)(皮), 정(신과)(精), 재(활)(再)"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    skos:definition "피부과, 정신과, 재활 의학과를 아울러 이르는 말."@ko ;
-    kno:languageType "한+한+한" ;
-    kno:indexForm "피정재"@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%EC%A0%95%EC%9E%AC> ;
-    rdfs:label "피정재"@ko ;
-    kno:origin "(皮精再)" ;
+kno:KN2012-0462 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%EC%A0%95%EC%9E%AC> ;
     kno:example "¶전공의 차별화는 시대에 따라 계속 변하는데 요즘에는 우울증 등 정신 질환 환자가 많아지고, 신체 재활에 관심이 많아지면서 피안성에서 {피정재로} 인기가 쏠리고 있다."@ko ;
+    a ontolex:Word ;
+    kno:origin "(皮精再)" ;
+    kno:component kno:KN2012-0462-c1 ;
     kno:registration "신어DB"@ko ;
+    rdfs:label "피정재"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "피정재"@ko ;
+    kno:instantiates kno:S000607 ;
+    kno:languageType "한+한+한" ;
     kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2012-0462-c3 ;
-    kno:component kno:KN2012-0462-c2 ;
-    kno:instantiates kno:S000606 ;
-    kno:component kno:KN2012-0462-c1 ;
+    kno:componentString "피(부과)(皮), 정(신과)(精), 재(활)(再)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "정(신과)(精)+재(활)(再) (2성분)"@ko ;
+    kno:year "2012"^^xsd:gYear ;
     kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "정(신과)(精)+재(활)(再) (2성분)"@ko .
-kno:KN2012-0462-c3 kno:semanticTag kno:usas-B3 ;
-    kno:surfaceForm "재"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0462-c2 ;
+    skos:definition "피부과, 정신과, 재활 의학과를 아울러 이르는 말."@ko .
+kno:KN2012-0462-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001005 ;
+    kno:surfaceForm "피"@ko ;
+    rdfs:label "피(부과)(皮)"@ko ;
+    kno:fullForm "피부과"@ko .
+kno:KN2012-0462-c3 rdfs:label "재(활)(再)"@ko ;
     kno:formative kno:F005581 ;
-    kno:fullForm "재활"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "재(활)(再)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2012-0462-c2 a kno:Component ;
-    kno:surfaceForm "정"@ko ;
-    kno:formative kno:F005668 ;
-    rdfs:label "정(신과)(精)"@ko ;
+    kno:surfaceForm "재"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:fullForm "정신과"@ko .
-kno:KN2012-0462-c1 kno:surfaceForm "피"@ko ;
-    rdfs:label "피(부과)(皮)"@ko ;
-    kno:formative kno:F001005 ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "피부과"@ko ;
     a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:semanticTag kno:usas-B3 ;
+    kno:fullForm "재활"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2012-0462-c2 kno:surfaceForm "정"@ko ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F005668 ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "정(신과)(精)"@ko ;
+    kno:fullForm "정신과"@ko .

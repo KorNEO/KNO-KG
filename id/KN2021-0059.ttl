@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0059 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0059 rdfs:label "넷술-족"@ko ;
-    kno:component kno:KN2021-0059-c2 ;
-    kno:example "¶식품 업계에서는 영화를 보면서 간단하게 먹을 수 있는 먹거리 개발로 {넷술족을} 공략하고 있다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2021-0059-freq-NN-2022 ;
-    kno:instantiates kno:S000960 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
+kno:KN2021-0059 kno:activeYears "2"^^xsd:integer ;
     kno:frequency kno:KN2021-0059-freq-NN-total ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:indexForm "넷술족"@ko ;
-    kno:unitType "단어"@ko ;
-    skos:definition "넷플릭스를 시청하면서 혼자 술을 즐기는 사람. 또는 그런 무리."@ko ;
+    kno:languageType "(영+고)+한" ;
     kno:predicate "즐기다"@ko ;
-    kno:slotFiller "넷(플릭스)(Netflix) (1성분)"@ko ;
-    kno:year "2021"^^xsd:gYear ;
+    skos:definition "넷플릭스를 시청하면서 혼자 술을 즐기는 사람. 또는 그런 무리."@ko ;
+    kno:component kno:KN2021-0059-c1 ;
     a ontolex:Word ;
+    kno:instantiates kno:S000960 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "넷술족"@ko ;
     kno:origin "(←Netflix술族)" ;
+    kno:componentString "넷(플릭스)(Netflix), 술, -족(族)"@ko ;
+    kno:frequency kno:KN2021-0059-freq-NN-2022 ;
     kno:component kno:KN2021-0059-c3 ;
     kno:pos "「명」"@ko ;
-    kno:languageType "(영+고)+한" ;
+    rdfs:label "넷술-족"@ko ;
+    kno:example "¶식품 업계에서는 영화를 보면서 간단하게 먹을 수 있는 먹거리 개발로 {넷술족을} 공략하고 있다."@ko ;
+    kno:slotFiller "넷(플릭스)(Netflix) (1성분)"@ko ;
+    a kno:Neologism ;
     kno:formation kno:W02 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%B7%EC%88%A0%EC%A1%B1> ;
     kno:frequency kno:KN2021-0059-freq-NN-2021 ;
-    kno:component kno:KN2021-0059-c1 ;
-    a kno:Neologism ;
-    kno:componentString "넷(플릭스)(Netflix), 술, -족(族)"@ko .
+    kno:component kno:KN2021-0059-c2 ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0059-c1 kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "넷"@ko ;
+    kno:fullForm "넷플릭스"@ko ;
+    kno:formative kno:F002757 ;
+    kno:semanticTag kno:usas-Z3 ;
+    rdfs:label "넷(플릭스)(Netflix)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component .
+kno:KN2021-0059-c3 kno:fullForm "족"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:formative kno:F000001 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component .
 kno:KN2021-0059-c2 kno:formative kno:F000142 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "술"@ko ;
+    kno:surfaceForm "술"@ko ;
     rdfs:label "술"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-F2 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "술"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
-kno:KN2021-0059-c3 kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000001 ;
-    kno:fullForm "족"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "-족(族)"@ko .
-kno:KN2021-0059-c1 a kno:Component ;
-    kno:surfaceForm "넷"@ko ;
-    kno:formative kno:F002757 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "넷플릭스"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "넷(플릭스)(Netflix)"@ko ;
-    kno:semanticTag kno:usas-Q4.3 ;
-    kno:semanticTag kno:usas-Z3 .
+    kno:role "고정항"@ko .

@@ -9,49 +9,49 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0225 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0225 a ontolex:MultiwordExpression ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:example "¶온라인, 오프라인, 모바일을 자유롭게 넘나들며 쇼핑을 즐기는 {크로스 쇼퍼가} 증가하면서 유통 채널 간 경쟁도 그 어느 때보다 치열해지고 있다."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359762> ;
-    kno:registration "우리말샘"@ko ;
-    kno:frequency kno:KN2015-0225-freq-NN-2017 ;
-    kno:urimalTargetCode "1359762" ;
-    kno:indexForm "크로스쇼퍼"@ko ;
-    skos:definition "온라인이나 오프라인 따위와 같이 서로 다른 환경이나 영역을 넘나들며 물건을 사는 사람."@ko ;
+kno:KN2015-0225 kno:component kno:KN2015-0225-c1 ;
     kno:frequency kno:KN2015-0225-freq-NN-2015 ;
-    kno:component kno:KN2015-0225-c2 ;
-    kno:frequency kno:KN2015-0225-freq-NN-2014 ;
-    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000403 ;
     rdfs:label "크로스^쇼퍼"@ko ;
-    kno:languageType "영^영" ;
-    kno:predicate "사다"@ko ;
     kno:frequency kno:KN2015-0225-freq-NN-total ;
-    kno:origin "(<영>cross shopper)" ;
+    kno:component kno:KN2015-0225-c2 ;
     kno:frequency kno:KN2015-0225-freq-NN-2023 ;
-    kno:activeYears "5"^^xsd:integer ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶온라인, 오프라인, 모바일을 자유롭게 넘나들며 쇼핑을 즐기는 {크로스 쇼퍼가} 증가하면서 유통 채널 간 경쟁도 그 어느 때보다 치열해지고 있다."@ko ;
     kno:frequency kno:KN2015-0225-freq-NN-2018 ;
-    kno:pos "「구」"@ko ;
+    kno:origin "(<영>cross shopper)" ;
+    kno:registration "우리말샘"@ko ;
+    kno:predicate "사다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "영^영" ;
+    kno:indexForm "크로스쇼퍼"@ko ;
     a kno:Neologism ;
+    kno:activeYears "5"^^xsd:integer ;
     kno:slotFiller "크로스(cross) (1성분)"@ko ;
-    kno:component kno:KN2015-0225-c1 ;
-    kno:instantiates kno:S000402 ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:componentString "크로스(cross), 쇼퍼(shopper)"@ko .
-kno:KN2015-0225-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000813 ;
-    kno:surfaceForm "쇼퍼"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "쇼퍼(shopper)"@ko ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:fullForm "쇼퍼"@ko .
-kno:KN2015-0225-c1 a kno:Component ;
-    kno:formative kno:F006346 ;
+    kno:componentString "크로스(cross), 쇼퍼(shopper)"@ko ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359762> ;
+    skos:definition "온라인이나 오프라인 따위와 같이 서로 다른 환경이나 영역을 넘나들며 물건을 사는 사람."@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0225-freq-NN-2017 ;
+    kno:frequency kno:KN2015-0225-freq-NN-2014 ;
+    kno:urimalTargetCode "1359762" .
+kno:KN2015-0225-c1 kno:formative kno:F006346 ;
+    kno:semanticTag kno:usas-M6 ;
     kno:position "1"^^xsd:integer ;
     kno:fullForm "크로스"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "크로스(cross)"@ko ;
-    kno:semanticTag kno:usas-M6 ;
     kno:surfaceForm "크로스"@ko ;
-    kno:role "슬롯 채움"@ko .
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "크로스(cross)"@ko .
+kno:KN2015-0225-c2 kno:surfaceForm "쇼퍼"@ko ;
+    rdfs:label "쇼퍼(shopper)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000813 ;
+    kno:fullForm "쇼퍼"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 .

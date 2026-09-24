@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0254 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0254 kno:unitType "단어"@ko ;
-    skos:definition "‘진정한 친구’를 강조하여 이르는 말."@ko ;
-    kno:component kno:KN2019-0254-c2 ;
+kno:KN2019-0254 a ontolex:Word ;
+    kno:instantiates kno:S000661 ;
+    kno:componentString "찐(眞)-, 친(구)(親)"@ko ;
+    kno:languageType "한+한" ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "친(구)(親) (1성분)"@ko ;
     kno:year "2019"^^xsd:gYear ;
-    kno:urimalTargetCode "1523390" ;
+    kno:component kno:KN2019-0254-c1 ;
+    kno:registration "우리말샘"@ko ;
     kno:pos "「명」"@ko ;
     kno:indexForm "찐친"@ko ;
-    kno:formation kno:W05 ;
-    kno:slotFiller "친(구)(親) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:origin "(眞▽親)" ;
-    a ontolex:Word ;
-    kno:componentString "찐(眞)-, 친(구)(親)"@ko ;
-    kno:instantiates kno:S000661 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:slotFiller "찐(眞)- (1성분)"@ko ;
-    kno:component kno:KN2019-0254-c1 ;
+    skos:definition "‘진정한 친구’를 강조하여 이르는 말."@ko ;
     kno:example "¶이미 ‘OO’을 통해 케미를 다진 네 명은 제작 발표회를 마무리하며 “{‘찐친’들이} 친근하게 같이 노는 프로그램이었으면 좋겠다.”라는 바람을 덧붙이기도 했다."@ko ;
-    kno:instantiates kno:S000327 ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:label "찐친"@ko ;
+    kno:formation kno:W05 ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1523390" ;
+    kno:origin "(眞▽親)" ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1523390> ;
-    kno:languageType "한+한" .
-kno:KN2019-0254-c2 kno:role "고정항"@ko ;
-    rdfs:label "친(구)(親)"@ko ;
-    kno:formative kno:F000308 ;
+    kno:instantiates kno:S000328 ;
+    kno:component kno:KN2019-0254-c2 ;
+    rdfs:label "찐친"@ko ;
+    kno:slotFiller "찐(眞)- (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2019-0254-c1 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "친구"@ko ;
-    kno:semanticTag kno:usas-S3.1 ;
-    kno:surfaceForm "친"@ko .
-kno:KN2019-0254-c1 kno:fullForm "찐"@ko ;
-    kno:semanticTag kno:usas-A5.4p ;
-    a kno:Component ;
-    kno:surfaceForm "찐"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "찐(眞)-"@ko ;
     kno:formative kno:F000594 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "찐"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "찐(眞)-"@ko ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:surfaceForm "찐"@ko .
+kno:KN2019-0254-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000308 ;
+    kno:fullForm "친구"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "친"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "친(구)(親)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.1 .

@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0159 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0159 kno:registration "신어DB"@ko ;
-    a kno:Neologism ;
-    kno:example "¶육상 및 해상 실크로드와 {신스파이스 루트의} 격돌 등으로 인해 지구촌의 블록화가 가속화되고 있으며, 이렇게 급변하는 상황 속에서는 각국의 정교한 외교 전략이 요구된다."@ko ;
-    kno:instantiates kno:S000311 ;
+kno:KN2024-0159 a ontolex:MultiwordExpression ;
     kno:component kno:KN2024-0159-c3 ;
+    kno:instantiates kno:S000312 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%8A%A4%ED%8C%8C%EC%9D%B4%EC%8A%A4%20%EB%A3%A8%ED%8A%B8> ;
+    a kno:Neologism ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:origin "(新<영>spice route)" ;
+    kno:component kno:KN2024-0159-c2 ;
+    skos:definition "미국이 구축할 예정인 인도와 중동, 유럽을 잇는 철도 및 해운 수송로. 중국의 신실크 로드 전략에 맞서기 위한 것이다."@ko ;
+    kno:languageType "(한+영)_영" ;
     kno:componentString "신(新)-, 스파이스(spice), 루트(route)"@ko ;
     kno:indexForm "신스파이스루트"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%8A%A4%ED%8C%8C%EC%9D%B4%EC%8A%A4%20%EB%A3%A8%ED%8A%B8> ;
-    kno:component kno:KN2024-0159-c1 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0159-freq-NN-2023 ;
-    kno:component kno:KN2024-0159-c2 ;
-    kno:origin "(新<영>spice route)" ;
-    kno:unitType "구"@ko ;
-    kno:languageType "(한+영)_영" ;
-    skos:definition "미국이 구축할 예정인 인도와 중동, 유럽을 잇는 철도 및 해운 수송로. 중국의 신실크 로드 전략에 맞서기 위한 것이다."@ko ;
+    kno:slotFiller "스파이스(spice)+루트(route) (2성분)"@ko ;
     rdfs:label "신스파이스 루트"@ko ;
+    kno:unitType "구"@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:frequency kno:KN2024-0159-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    kno:slotFiller "스파이스(spice)+루트(route) (2성분)"@ko .
-kno:KN2024-0159-c3 kno:fullForm "루트"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M6 ;
+    kno:component kno:KN2024-0159-c1 ;
+    kno:example "¶육상 및 해상 실크로드와 {신스파이스 루트의} 격돌 등으로 인해 지구촌의 블록화가 가속화되고 있으며, 이렇게 급변하는 상황 속에서는 각국의 정교한 외교 전략이 요구된다."@ko ;
+    kno:frequency kno:KN2024-0159-freq-NN-2023 .
+kno:KN2024-0159-c3 kno:formative kno:F003268 ;
     rdfs:label "루트(route)"@ko ;
-    kno:formative kno:F003268 ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
+    kno:fullForm "루트"@ko ;
+    kno:semanticTag kno:usas-M6 ;
     kno:position "3"^^xsd:integer ;
     kno:surfaceForm "루트"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2024-0159-c1 kno:surfaceForm "신"@ko ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:fullForm "신"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000145 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "신(新)-"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0159-c2 kno:surfaceForm "스파이스"@ko ;
-    kno:formative kno:F004603 ;
-    kno:fullForm "스파이스"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    a kno:Component ;
+kno:KN2024-0159-c2 kno:formative kno:F004603 ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "스파이스(spice)"@ko .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "스파이스"@ko ;
+    kno:surfaceForm "스파이스"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    rdfs:label "스파이스(spice)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component .
+kno:KN2024-0159-c1 a kno:Component ;
+    kno:surfaceForm "신"@ko ;
+    kno:fullForm "신"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "신(新)-"@ko ;
+    kno:formative kno:F000145 ;
+    kno:role "고정항"@ko .

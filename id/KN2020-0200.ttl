@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0200 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0200 a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2020-0200-freq-NN-total ;
-    kno:unitType "단어"@ko ;
+kno:KN2020-0200 kno:frequency kno:KN2020-0200-freq-NN-total ;
     a kno:Neologism ;
-    kno:year "2020"^^xsd:gYear ;
-    skos:definition "마땅히 할 수 있거나 될 수 있음."@ko ;
-    kno:frequency kno:KN2020-0200-freq-NN-2023 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:instantiates kno:S000312 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8C%89%ED%8C%8C%EC%84%9C%EB%B8%94> ;
+    kno:component kno:KN2020-0200-c1 ;
+    kno:frequency kno:KN2020-0200-freq-NN-2022 ;
+    kno:registration "신어DB"@ko ;
     rdfs:label "쌉-파서블"@ko ;
-    kno:slotFiller "파서블(possible) (1성분)"@ko ;
-    kno:formation kno:W03 ;
+    kno:pos "「명」"@ko ;
+    skos:definition "마땅히 할 수 있거나 될 수 있음."@ko ;
     kno:indexForm "쌉파서블"@ko ;
+    kno:instantiates kno:S000313 ;
+    kno:example "¶예전에는 둘이서 떡볶이 4인분도 {쌉파서블이었는데} 이제는 위가 줄어들었는지 2인분을 시켜도 남긴다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:origin "(쌉<영>possible)" ;
+    kno:component kno:KN2020-0200-c2 ;
+    kno:componentString "쌉-, 파서블(possible)"@ko ;
     kno:frequency kno:KN2020-0200-freq-NN-2020 ;
     kno:languageType "고+영" ;
-    kno:componentString "쌉-, 파서블(possible)"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2020-0200-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8C%89%ED%8C%8C%EC%84%9C%EB%B8%94> ;
-    kno:example "¶예전에는 둘이서 떡볶이 4인분도 {쌉파서블이었는데} 이제는 위가 줄어들었는지 2인분을 시켜도 남긴다."@ko ;
-    kno:component kno:KN2020-0200-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2020-0200-freq-NN-2022 .
-kno:KN2020-0200-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "파서블(possible)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "파서블"@ko ;
-    kno:formative kno:F006614 ;
-    kno:fullForm "파서블"@ko ;
-    kno:semanticTag kno:usas-A7p ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2020-0200-c1 rdfs:label "쌉-"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "쌉"@ko ;
+    kno:frequency kno:KN2020-0200-freq-NN-2023 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "파서블(possible) (1성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:formation kno:W03 .
+kno:KN2020-0200-c1 kno:role "고정항"@ko ;
+    rdfs:label "쌉-"@ko ;
     kno:semanticTag kno:usas-A13.2 ;
-    kno:role "고정항"@ko ;
     kno:fullForm "쌉"@ko ;
     kno:formative kno:F000550 ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:surfaceForm "쌉"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2020-0200-c2 a kno:Component ;
+    kno:formative kno:F006614 ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "파서블(possible)"@ko ;
+    kno:semanticTag kno:usas-A7p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "파서블"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "파서블"@ko .

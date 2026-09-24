@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0182 kno:example "¶이 카페는 유명한 바리스타가 직접 내린 맛있는 원두커피와 {연못 뷰로} 유명하다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:languageType "(한+고)_영" ;
-    kno:indexForm "연못뷰"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(蓮못<영>view)" ;
-    a kno:Neologism ;
-    kno:component kno:KN2024-0182-c1 ;
-    kno:componentString "연못(蓮못), 뷰(view)"@ko ;
+kno:KN2024-0182 kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear ;
     kno:frequency kno:KN2024-0182-freq-NN-2024 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EB%AA%BB%20%EB%B7%B0> ;
-    a ontolex:MultiwordExpression ;
-    kno:registration "신어DB"@ko ;
-    kno:predicate "내다보이다"@ko ;
-    skos:definition "연못이 내다보이는 경치."@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2024-0182-freq-NN-total ;
+    kno:example "¶이 카페는 유명한 바리스타가 직접 내린 맛있는 원두커피와 {연못 뷰로} 유명하다."@ko ;
+    kno:component kno:KN2024-0182-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "내다보이다"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "연못이 내다보이는 경치."@ko ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0182-c1 ;
+    kno:indexForm "연못뷰"@ko ;
+    kno:componentString "연못(蓮못), 뷰(view)"@ko ;
+    kno:origin "(蓮못<영>view)" ;
+    kno:languageType "(한+고)_영" ;
+    a kno:Neologism ;
     rdfs:label "연못 뷰"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0182-c2 .
-kno:KN2024-0182-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "연못"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EB%AA%BB%20%EB%B7%B0> .
+kno:KN2024-0182-c2 kno:fullForm "뷰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "뷰"@ko ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000783 ;
+    a kno:Component ;
+    rdfs:label "뷰(view)"@ko ;
+    kno:role "성분"@ko .
+kno:KN2024-0182-c1 rdfs:label "연못(蓮못)"@ko ;
     kno:semanticTag kno:usas-W3 ;
     kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F005050 ;
+    kno:fullForm "연못"@ko ;
     kno:surfaceForm "연못"@ko ;
     kno:role "성분"@ko ;
-    kno:formative kno:F005050 ;
-    rdfs:label "연못(蓮못)"@ko .
-kno:KN2024-0182-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-X3.4 ;
-    kno:formative kno:F000783 ;
-    kno:fullForm "뷰"@ko ;
-    a kno:Component ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "뷰"@ko ;
-    rdfs:label "뷰(view)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:position "1"^^xsd:integer .

@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0382 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0382 a ontolex:Word ;
-    kno:formation kno:W02 ;
+kno:KN2012-0382 kno:example "¶금상에는…OO의 이동 가능한 {지압체를} 갖는 신발용 바닥재가 수상했다."@ko ;
     skos:definition "누르거나 두드리는 물체."@ko ;
-    kno:origin "(指壓體)" ;
+    kno:slotFiller "지압(指壓) (1성분)"@ko ;
+    rdfs:label "지압-체"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2012-0382-c1 ;
     kno:frequency kno:KN2012-0382-freq-NN-2012 ;
     kno:component kno:KN2012-0382-c2 ;
-    kno:example "¶금상에는…OO의 이동 가능한 {지압체를} 갖는 신발용 바닥재가 수상했다."@ko ;
     kno:indexForm "지압체"@ko ;
-    kno:languageType "한+한" ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "지압(指壓) (1성분)"@ko ;
+    kno:instantiates kno:S000080 ;
+    kno:unitType "단어"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:frequency kno:KN2012-0382-freq-NN-total ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EC%95%95%EC%B2%B4> ;
+    kno:frequency kno:KN2012-0382-freq-NN-2022 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "두드리다"@ko ;
     kno:frequency kno:KN2012-0382-freq-NN-2025 ;
     kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
     a kno:Neologism ;
-    kno:frequency kno:KN2012-0382-freq-NN-total ;
-    kno:componentString "지압(指壓), -체(體)"@ko ;
-    kno:predicate "두드리다"@ko ;
-    kno:frequency kno:KN2012-0382-freq-NN-2022 ;
-    kno:instantiates kno:S000080 ;
-    rdfs:label "지압-체"@ko ;
-    kno:component kno:KN2012-0382-c1 ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:activeYears "3"^^xsd:integer .
-kno:KN2012-0382-c2 kno:surfaceForm "체"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000091 ;
+    kno:formation kno:W02 ;
+    kno:origin "(指壓體)" ;
+    kno:languageType "한+한" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:componentString "지압(指壓), -체(體)"@ko .
+kno:KN2012-0382-c1 kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    rdfs:label "-체(體)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "체"@ko ;
-    kno:semanticTag kno:usas-Q3 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2012-0382-c1 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "지압"@ko ;
     kno:semanticTag kno:usas-B3 ;
-    a kno:Component ;
-    kno:fullForm "지압"@ko ;
-    kno:position "1"^^xsd:integer ;
     rdfs:label "지압(指壓)"@ko ;
+    kno:fullForm "지압"@ko ;
+    kno:surfaceForm "지압"@ko ;
+    kno:formative kno:F005884 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0382-c2 kno:role "고정항"@ko ;
+    rdfs:label "-체(體)"@ko ;
+    kno:fullForm "체"@ko ;
+    kno:formative kno:F000091 ;
+    kno:surfaceForm "체"@ko ;
+    kno:semanticTag kno:usas-Q3 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005884 .
+    kno:position "2"^^xsd:integer ;
+    a kno:Component .

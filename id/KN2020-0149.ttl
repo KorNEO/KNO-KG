@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0149 kno:frequency kno:KN2020-0149-freq-NN-total ;
+kno:KN2020-0149 kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%ED%99%98%EC%9E%90%EB%B6%84%EB%A5%98%EC%86%8C> ;
+    kno:languageType "한^한^한" ;
+    rdfs:label "사전^환자^분류소"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2020-0149-c1 ;
     kno:predicate "분류하다"@ko ;
     kno:slotFiller "환자(患者)+분류소(分類所) (2성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2020-0149-c2 ;
-    kno:component kno:KN2020-0149-c3 ;
-    kno:instantiates kno:S000681 ;
-    kno:component kno:KN2020-0149-c1 ;
-    kno:origin "(事前患者分類所)" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:languageType "한^한^한" ;
+    a ontolex:MultiwordExpression ;
     kno:example "¶중증 응급 진료 센터는 {사전 환자 분류소에서} 코로나19 의심 증상 여부와 중증도에 따라 환자를 분류하며, 코로나19 의심 증상이 있는 중증 환자는 별도로 격리된 진료 구역에서 응급 처치를 받는다."@ko ;
     kno:frequency kno:KN2020-0149-freq-NN-2020 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(事前患者分類所)" ;
     kno:componentString "사전(事前), 환자(患者), 분류소(分類所)"@ko ;
-    kno:frequency kno:KN2020-0149-freq-NN-2021 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%A0%84%ED%99%98%EC%9E%90%EB%B6%84%EB%A5%98%EC%86%8C> ;
     kno:indexForm "사전환자분류소"@ko ;
-    skos:definition "응급실에 내원하기 전에 환자를 상태에 따라 분류하는 곳. 코로나19 감염 여부와 중증도에 따라 환자를 분류하는 곳으로, 응급실 내의 감염 문제를 해결하고 중증 응급 환자를 신속히 치료하기 위한 목적으로 설치되었다."@ko ;
-    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    a kno:Neologism ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    rdfs:label "사전^환자^분류소"@ko .
-kno:KN2020-0149-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000645 ;
-    kno:surfaceForm "환자"@ko ;
+    kno:frequency kno:KN2020-0149-freq-NN-total ;
+    kno:frequency kno:KN2020-0149-freq-NN-2021 ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    skos:definition "응급실에 내원하기 전에 환자를 상태에 따라 분류하는 곳. 코로나19 감염 여부와 중증도에 따라 환자를 분류하는 곳으로, 응급실 내의 감염 문제를 해결하고 중증 응급 환자를 신속히 치료하기 위한 목적으로 설치되었다."@ko ;
+    kno:component kno:KN2020-0149-c2 ;
+    kno:component kno:KN2020-0149-c3 ;
+    kno:instantiates kno:S000681 .
+kno:KN2020-0149-c1 kno:surfaceForm "사전"@ko ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-B2m ;
+    rdfs:label "사전(事前)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000367 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T4 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "사전"@ko .
+kno:KN2020-0149-c2 kno:semanticTag kno:usas-B2m ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "환자(患者)"@ko ;
     kno:fullForm "환자"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0149-c3 rdfs:label "분류소(分類所)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "환자"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-A4.1 ;
-    kno:formative kno:F003970 ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000645 .
+kno:KN2020-0149-c3 kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:fullForm "분류소"@ko ;
     kno:surfaceForm "분류소"@ko ;
-    kno:fullForm "분류소"@ko .
-kno:KN2020-0149-c1 kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-T4 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000367 ;
-    kno:surfaceForm "사전"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "분류소(分類所)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "사전(事前)"@ko ;
-    kno:fullForm "사전"@ko .
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:formative kno:F003970 .

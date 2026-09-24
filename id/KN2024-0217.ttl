@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0217 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0217 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%EC%B2%9C%20%EB%8F%84%EC%82%AC> ;
-    kno:languageType "한_한" ;
+kno:KN2024-0217 kno:frequency kno:KN2024-0217-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2024-0217-c1 ;
     kno:example "¶전공의 과정을 거치지 않아도, 소송 위험이 적고 수요가 많은 미용 시술을 익혀 개원하면 곧장 {월천 도사가} 될 수 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "월천(月千), 도사(道士)"@ko ;
+    a kno:Neologism ;
+    kno:languageType "한_한" ;
+    kno:year "2024"^^xsd:gYear ;
+    rdfs:label "월천 도사"@ko ;
+    kno:indexForm "월천도사"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%EC%B2%9C%20%EB%8F%84%EC%82%AC> ;
+    kno:frequency kno:KN2024-0217-freq-NN-2024 ;
     kno:activeYears "1"^^xsd:integer ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    skos:definition "월 소득이 천만 원이 넘는 사람을 도사에 빗대어 이르는 말."@ko ;
-    kno:indexForm "월천도사"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    kno:registration "신어DB"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2024-0217-c1 ;
-    kno:frequency kno:KN2024-0217-freq-NN-2024 ;
-    kno:origin "(月千道士)" ;
-    kno:year "2024"^^xsd:gYear ;
+    skos:definition "월 소득이 천만 원이 넘는 사람을 도사에 빗대어 이르는 말."@ko ;
     kno:component kno:KN2024-0217-c2 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2024-0217-freq-NN-total ;
-    kno:componentString "월천(月千), 도사(道士)"@ko ;
-    rdfs:label "월천 도사"@ko .
-kno:KN2024-0217-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "월천(月千)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005267 ;
-    kno:role "성분"@ko ;
-    kno:fullForm "월천"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(月千道士)" .
+kno:KN2024-0217-c1 kno:fullForm "월천"@ko ;
     kno:semanticTag kno:usas-I1.1p ;
-    kno:surfaceForm "월천"@ko .
-kno:KN2024-0217-c2 kno:surfaceForm "도사"@ko ;
-    kno:formative kno:F002981 ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S9 ;
-    kno:fullForm "도사"@ko ;
-    a kno:Component ;
-    rdfs:label "도사(道士)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "월천"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005267 ;
+    rdfs:label "월천(月千)"@ko ;
     kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    a kno:Component .
+kno:KN2024-0217-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "도사"@ko ;
+    rdfs:label "도사(道士)"@ko ;
+    kno:surfaceForm "도사"@ko ;
+    kno:formative kno:F002981 ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component .

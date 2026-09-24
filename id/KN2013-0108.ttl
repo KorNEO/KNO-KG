@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0108 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0108 kno:year "2013"^^xsd:gYear ;
+kno:KN2013-0108 kno:registration "우리말샘"@ko ;
     kno:frequency kno:KN2013-0108-freq-NN-2013 ;
-    kno:example "¶취업 커뮤니티에서도 최근 이러한 ‘{대공생’의} 처우와 채용 일정을 묻는 글이 상당수다."@ko ;
     kno:frequency kno:KN2013-0108-freq-NN-2012 ;
+    a ontolex:Word ;
     kno:urimalTargetCode "1357626" ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2013-0108-c3 ;
-    skos:definition "‘대기업 공장 생산직’을 줄여 이르는 말."@ko ;
-    kno:instantiates kno:S001317 ;
-    kno:formation kno:W06 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:component kno:KN2013-0108-c2 ;
+    kno:example "¶취업 커뮤니티에서도 최근 이러한 ‘{대공생’의} 처우와 채용 일정을 묻는 글이 상당수다."@ko ;
     kno:frequency kno:KN2013-0108-freq-NN-total ;
     kno:component kno:KN2013-0108-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0108-c2 ;
-    kno:indexForm "대공생"@ko ;
-    a ontolex:Word ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357626> ;
-    kno:pos "「명」"@ko ;
     kno:languageType "한+한+한" ;
-    kno:componentString "대(기업)(大), 공(장)(工), 생(산직)(生)"@ko ;
-    a kno:Neologism ;
+    skos:definition "‘대기업 공장 생산직’을 줄여 이르는 말."@ko ;
+    kno:indexForm "대공생"@ko ;
+    kno:origin "(大工生)" ;
     kno:slotFiller "공(장)(工)+생(산직)(生) (2성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0108-c3 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357626> ;
+    kno:componentString "대(기업)(大), 공(장)(工), 생(산직)(生)"@ko ;
     rdfs:label "대공생"@ko ;
-    kno:origin "(大工生)" .
-kno:KN2013-0108-c3 kno:formative kno:F004254 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:instantiates kno:S001317 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2013-0108-c2 kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "생(산직)(生)"@ko ;
-    kno:fullForm "생산직"@ko ;
-    kno:semanticTag kno:usas-I4 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "생"@ko .
-kno:KN2013-0108-c1 rdfs:label "대(기업)(大)"@ko ;
-    kno:surfaceForm "대"@ko ;
+    kno:fullForm "공장"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "공"@ko ;
+    rdfs:label "공(장)(工)"@ko ;
+    kno:semanticTag kno:usas-I4 ;
+    kno:formative kno:F002340 .
+kno:KN2013-0108-c1 kno:fullForm "대기업"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001170 ;
     kno:semanticTag kno:usas-I2.1 ;
     a kno:Component ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "대(기업)(大)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "대기업"@ko ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F001170 .
-kno:KN2013-0108-c2 kno:semanticTag kno:usas-I4 ;
-    kno:formative kno:F002340 ;
+    kno:surfaceForm "대"@ko .
+kno:KN2013-0108-c3 a kno:Component ;
+    kno:semanticTag kno:usas-I4 ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "공(장)(工)"@ko ;
-    kno:fullForm "공장"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "공"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "생"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "생(산직)(生)"@ko ;
+    kno:formative kno:F004254 ;
+    kno:fullForm "생산직"@ko ;
     kno:truncated "true"^^xsd:boolean .

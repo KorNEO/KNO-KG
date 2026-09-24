@@ -9,62 +9,62 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0497 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0497 kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%80%EB%8B%B9%EA%B3%A0%EB%8B%A8> ;
+kno:KN2025-0497 kno:registration "신어DB"@ko ;
+    kno:componentString "저(低), 당(糖), 고(高), 단(蛋)"@ko ;
     kno:frequency kno:KN2025-0497-freq-NN-2025 ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "(LLM) 식단에서 당류 섭취는 줄이고 단백질 섭취는 늘리는 식생활 방식."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "한+한+한+한" ;
-    kno:frequency kno:KN2025-0497-freq-NN-total ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    a kno:Neologism ;
+    kno:unitType "단어"@ko ;
     kno:formation kno:W01 ;
+    kno:component kno:KN2025-0497-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0497-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(低糖高蛋)" ;
+    skos:definition "(LLM) 식단에서 당류 섭취는 줄이고 단백질 섭취는 늘리는 식생활 방식."@ko ;
+    kno:languageType "한+한+한+한" ;
+    kno:indexForm "저당고단"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%80%EB%8B%B9%EA%B3%A0%EB%8B%A8> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:example "(LLM) 다이어트 중이라 간식도 성분표를 확인하면서 당류는 낮추고 단백질은 높이는 {저당고단} 위주로 골라 먹고 있다."@ko ;
     rdfs:label "저당고단"@ko ;
     kno:component kno:KN2025-0497-c1 ;
-    kno:component kno:KN2025-0497-c3 ;
-    kno:indexForm "저당고단"@ko ;
-    kno:componentString "저(低), 당(糖), 고(高), 단(蛋)"@ko ;
-    kno:origin "(低糖高蛋)" ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0497-c4 ;
-    kno:component kno:KN2025-0497-c2 .
-kno:KN2025-0497-c1 kno:fullForm "저"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-Z8 ;
-    kno:surfaceForm "저"@ko ;
-    kno:formative kno:F005600 ;
-    rdfs:label "저(低)"@ko .
+    a ontolex:Word ;
+    kno:component kno:KN2025-0497-c2 ;
+    kno:component kno:KN2025-0497-c4 .
 kno:KN2025-0497-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "고"@ko ;
     kno:semanticTag kno:usas-N3.7p ;
-    rdfs:label "고(高)"@ko ;
     a kno:Component ;
     kno:role "성분"@ko ;
-    kno:fullForm "고"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000456 .
-kno:KN2025-0497-c4 kno:formative kno:F001162 ;
-    rdfs:label "단(蛋)"@ko ;
-    kno:surfaceForm "단"@ko ;
+    kno:fullForm "고"@ko ;
+    rdfs:label "고(高)"@ko ;
+    kno:formative kno:F000456 ;
+    kno:surfaceForm "고"@ko .
+kno:KN2025-0497-c1 kno:fullForm "저"@ko ;
+    kno:formative kno:F005600 ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z8 ;
     a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "저(低)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "저"@ko .
+kno:KN2025-0497-c2 kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "당"@ko ;
+    rdfs:label "당(糖)"@ko ;
+    kno:surfaceForm "당"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F000704 .
+kno:KN2025-0497-c4 kno:position "4"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "단(蛋)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     kno:role "성분"@ko ;
     kno:fullForm "단"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "4"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 .
-kno:KN2025-0497-c2 kno:position "2"^^xsd:integer ;
     a kno:Component ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F000704 ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "당"@ko ;
-    rdfs:label "당(糖)"@ko ;
-    kno:fullForm "당"@ko .
+    kno:surfaceForm "단"@ko ;
+    kno:formative kno:F001162 .

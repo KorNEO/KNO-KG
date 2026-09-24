@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0010 rdfs:label "강화템"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2012-0010-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶{강화템은} 이용자가 직접 별도의 재료 아이템을 활용해 얻은 산물이다."@ko ;
-    kno:urimalTargetCode "1356876" ;
-    kno:frequency kno:KN2012-0010-freq-NN-2022 ;
+kno:KN2012-0010 kno:formation kno:W05 ;
+    rdfs:label "강화템"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "강화(強化) (1성분)"@ko ;
     kno:componentString "강화(強化), (아이)템(item)"@ko ;
     skos:definition "온라인 게임에서, 기존 아이템을 강화하여 다시 만든 아이템."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2012-0010-freq-NN-2023 ;
-    kno:instantiates kno:S000004 ;
-    kno:component kno:KN2012-0010-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:origin "(強化←item)" ;
-    a kno:Neologism ;
-    kno:languageType "한+영" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356876> ;
-    kno:year "2012"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:formation kno:W05 ;
+    kno:urimalTargetCode "1356876" ;
     kno:frequency kno:KN2012-0010-freq-NN-total ;
-    kno:frequency kno:KN2012-0010-freq-NN-2012 ;
+    a ontolex:Word ;
     kno:indexForm "강화템"@ko ;
+    kno:component kno:KN2012-0010-c1 ;
+    kno:component kno:KN2012-0010-c2 ;
     kno:frequency kno:KN2012-0010-freq-NN-2018 ;
+    kno:example "¶{강화템은} 이용자가 직접 별도의 재료 아이템을 활용해 얻은 산물이다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000004 ;
+    kno:origin "(強化←item)" ;
+    kno:frequency kno:KN2012-0010-freq-NN-2022 ;
+    a kno:Neologism ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:slotFiller "강화(強化) (1성분)"@ko .
-kno:KN2012-0010-c1 a kno:Component ;
-    kno:surfaceForm "강화"@ko ;
-    kno:formative kno:F001043 ;
-    kno:position "1"^^xsd:integer ;
+    kno:frequency kno:KN2012-0010-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0010-freq-NN-2023 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356876> ;
+    kno:languageType "한+영" ;
+    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0010-c1 kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
     rdfs:label "강화(強化)"@ko ;
+    kno:fullForm "강화"@ko ;
+    kno:surfaceForm "강화"@ko ;
     kno:semanticTag kno:usas-A2.1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "강화"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2012-0010-c2 kno:surfaceForm "템"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001043 .
+kno:KN2012-0010-c2 kno:fullForm "아이템"@ko ;
+    kno:role "고정항"@ko ;
     kno:formative kno:F000007 ;
-    kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "(아이)템(item)"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:semanticTag kno:usas-O2 .
