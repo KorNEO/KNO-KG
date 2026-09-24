@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0228 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0228 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%ED%83%9D%ED%8A%B8%20%EC%A1%B4> ;
-    skos:definition "직원과 접촉하지 않고 물건을 구매하거나 서비스를 제공받을 수 있는 곳. 코로나19의 확산을 방지하기 위해 비대면으로 하는 활동이 일반화되는 상황에서 나온 말이다."@ko ;
-    kno:frequency kno:KN2020-0228-freq-NN-2020 ;
+kno:KN2020-0228 kno:origin "(<영>▼un←contact zone)" ;
+    kno:instantiates kno:S000096 ;
+    kno:componentString "언택트(un←contact), 존(zone)"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:slotFiller "존(zone) (1성분)"@ko ;
     kno:slotFiller "언택트(un←contact) (1성분)"@ko ;
-    kno:frequency kno:KN2020-0228-freq-NN-2021 ;
-    kno:instantiates kno:S000105 ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(<영>▼un←contact zone)" ;
-    kno:indexForm "언택트존"@ko ;
-    kno:languageType "영_영" ;
+    kno:frequency kno:KN2020-0228-freq-NN-total ;
     kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0228-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%ED%83%9D%ED%8A%B8%20%EC%A1%B4> ;
+    kno:example "¶{언택트 존에서는} 고객들이 비대면 방식으로 각종 단말기와 통신 서비스를 체험할 수 있다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:frequency kno:KN2020-0228-freq-NN-2021 ;
+    kno:instantiates kno:S000564 ;
+    a kno:Neologism ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2020-0228-freq-NN-2020 ;
+    kno:indexForm "언택트존"@ko ;
+    kno:component kno:KN2020-0228-c2 ;
+    skos:definition "직원과 접촉하지 않고 물건을 구매하거나 서비스를 제공받을 수 있는 곳. 코로나19의 확산을 방지하기 위해 비대면으로 하는 활동이 일반화되는 상황에서 나온 말이다."@ko ;
+    rdfs:label "언택트 존"@ko ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2020-0228-freq-NN-2022 ;
-    kno:component kno:KN2020-0228-c1 ;
-    kno:componentString "언택트(un←contact), 존(zone)"@ko ;
-    kno:slotFiller "존(zone) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000617 ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:label "언택트 존"@ko ;
-    kno:predicate "있다"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:example "¶{언택트 존에서는} 고객들이 비대면 방식으로 각종 단말기와 통신 서비스를 체험할 수 있다."@ko ;
-    kno:component kno:KN2020-0228-c2 ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0228-freq-NN-total .
-kno:KN2020-0228-c1 kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000183 ;
-    kno:surfaceForm "언택트"@ko ;
+    kno:languageType "영_영" ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0228-c1 kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-S1.1.1m ;
-    rdfs:label "언택트(un←contact)"@ko ;
-    kno:fullForm "언택트"@ko ;
-    a kno:Component .
-kno:KN2020-0228-c2 kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "존(zone)"@ko ;
-    kno:formative kno:F000034 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "언택트"@ko ;
+    kno:fullForm "언택트"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000183 ;
+    rdfs:label "언택트(un←contact)"@ko .
+kno:KN2020-0228-c2 kno:position "2"^^xsd:integer ;
     kno:fullForm "존"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:surfaceForm "존"@ko .
+    a kno:Component ;
+    kno:surfaceForm "존"@ko ;
+    rdfs:label "존(zone)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000034 ;
+    kno:semanticTag kno:usas-M7 .

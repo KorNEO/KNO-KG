@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0047 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0047 kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:example "¶{기초 연금 확대법은} 연금 수령의 대상을 100%로 확대하는 안과 만 65세 이상이면서 소득 하위 70%인 경우 기초 연금을 월 30만 원에서 월 40만 원으로 높이는 안으로 각각 발의되어 있다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%B4%88%EC%97%B0%EA%B8%88%ED%99%95%EB%8C%80%EB%B2%95> ;
+kno:KN2023-0047 a kno:Neologism ;
     kno:unitType "구"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:frequency kno:KN2023-0047-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
     kno:component kno:KN2023-0047-c3 ;
-    kno:origin "(基礎年金擴大法)" ;
-    kno:frequency kno:KN2023-0047-freq-NN-total ;
     kno:activeYears "3"^^xsd:integer ;
+    rdfs:label "기초^연금^확대법"@ko ;
+    kno:frequency kno:KN2023-0047-freq-NN-total ;
+    kno:componentString "기초(基礎), 연금(年金), 확대법(擴大法)"@ko ;
+    skos:definition "부부가 함께 기초 연금을 받는 경우 남편 몫과 아내 몫의 연금 수령액을 각각 20%를 감액하는 기초 연금의 부부 감액 제도를 폐지하고, 기초 연금을 월 40만원으로 인상하기 위하여 제정한 법률."@ko ;
+    kno:origin "(基礎年金擴大法)" ;
+    kno:component kno:KN2023-0047-c1 ;
+    kno:indexForm "기초연금확대법"@ko ;
+    kno:instantiates kno:S001173 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%B4%88%EC%97%B0%EA%B8%88%ED%99%95%EB%8C%80%EB%B2%95> ;
+    kno:slotFiller "연금(年金)+확대법(擴大法) (2성분)"@ko ;
+    kno:frequency kno:KN2023-0047-freq-NN-2023 ;
     kno:component kno:KN2023-0047-c2 ;
     kno:year "2023"^^xsd:gYear ;
-    rdfs:label "기초^연금^확대법"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "기초(基礎), 연금(年金), 확대법(擴大法)"@ko ;
-    kno:slotFiller "연금(年金)+확대법(擴大法) (2성분)"@ko ;
-    skos:definition "부부가 함께 기초 연금을 받는 경우 남편 몫과 아내 몫의 연금 수령액을 각각 20%를 감액하는 기초 연금의 부부 감액 제도를 폐지하고, 기초 연금을 월 40만원으로 인상하기 위하여 제정한 법률."@ko ;
-    a kno:Neologism ;
     kno:frequency kno:KN2023-0047-freq-NN-2024 ;
-    kno:instantiates kno:S001251 ;
-    kno:indexForm "기초연금확대법"@ko ;
-    kno:component kno:KN2023-0047-c1 ;
-    kno:frequency kno:KN2023-0047-freq-NN-2023 .
-kno:KN2023-0047-c3 kno:formative kno:F007150 ;
-    a kno:Component ;
+    kno:example "¶{기초 연금 확대법은} 연금 수령의 대상을 100%로 확대하는 안과 만 65세 이상이면서 소득 하위 70%인 경우 기초 연금을 월 30만 원에서 월 40만 원으로 높이는 안으로 각각 발의되어 있다."@ko .
+kno:KN2023-0047-c3 kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "확대법"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "확대법(擴大法)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "확대법(擴大法)"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:fullForm "확대법"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2023-0047-c2 kno:fullForm "연금"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-I1.1 ;
     a kno:Component ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:formative kno:F007150 .
+kno:KN2023-0047-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "기초"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "기초"@ko ;
+    kno:formative kno:F001118 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A11.1p ;
+    rdfs:label "기초(基礎)"@ko .
+kno:KN2023-0047-c2 kno:truncated "false"^^xsd:boolean ;
     rdfs:label "연금(年金)"@ko ;
-    kno:surfaceForm "연금"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
     kno:formative kno:F000388 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0047-c1 kno:fullForm "기초"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "기초"@ko ;
-    a kno:Component ;
-    rdfs:label "기초(基礎)"@ko ;
-    kno:semanticTag kno:usas-A11.1p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001118 .
+    kno:surfaceForm "연금"@ko ;
+    kno:fullForm "연금"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.1 .

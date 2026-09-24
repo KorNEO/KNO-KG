@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0023 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0023 kno:predicate "하다"@ko ;
+kno:KN2021-0023 a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%8F%99%20%EA%B2%A9%EB%A6%AC%EC%9E%90> ;
+    kno:instantiates kno:S000438 ;
+    kno:component kno:KN2021-0023-c2 ;
+    kno:frequency kno:KN2021-0023-freq-NN-2022 ;
+    kno:example "¶정부는 {공동 격리자의} 부담을 완화하기 위해서 병원 진료 등 불가피한 사유에 대해서 외출을 허용하는 방안을 내놓았다."@ko ;
+    kno:frequency kno:KN2021-0023-freq-NN-2023 ;
+    skos:definition "전염병의 확진으로 자가 격리자와 같은 공간에 거주하여 함께 격리해야 하는 사람. 코로나19의 확산을 방지하기 위한 사회적 거리 두기 조치가 시행되었을 때 자가 격리자와 동일한 규제나 지원 제도를 적용받았다."@ko ;
+    kno:frequency kno:KN2021-0023-freq-NN-2020 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2021-0023-freq-NN-2021 ;
+    kno:slotFiller "격리자(隔離者) (1성분)"@ko ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2021-0023-c1 ;
     kno:registration "신어DB"@ko ;
     kno:indexForm "공동격리자"@ko ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2021-0023-freq-NN-2022 ;
-    kno:component kno:KN2021-0023-c2 ;
-    kno:component kno:KN2021-0023-c1 ;
-    kno:languageType "한_한" ;
-    kno:frequency kno:KN2021-0023-freq-NN-2020 ;
-    kno:instantiates kno:S000474 ;
-    kno:frequency kno:KN2021-0023-freq-NN-2023 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0023-freq-NN-total ;
-    rdfs:label "공동 격리자"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%8F%99%20%EA%B2%A9%EB%A6%AC%EC%9E%90> ;
-    skos:definition "전염병의 확진으로 자가 격리자와 같은 공간에 거주하여 함께 격리해야 하는 사람. 코로나19의 확산을 방지하기 위한 사회적 거리 두기 조치가 시행되었을 때 자가 격리자와 동일한 규제나 지원 제도를 적용받았다."@ko ;
-    kno:origin "(共同隔離者)" ;
-    kno:slotFiller "격리자(隔離者) (1성분)"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:componentString "공동(共同), 격리자(隔離者)"@ko ;
     kno:activeYears "4"^^xsd:integer ;
     kno:year "2021"^^xsd:gYear ;
-    kno:example "¶정부는 {공동 격리자의} 부담을 완화하기 위해서 병원 진료 등 불가피한 사유에 대해서 외출을 허용하는 방안을 내놓았다."@ko ;
-    a kno:Neologism ;
-    kno:componentString "공동(共同), 격리자(隔離者)"@ko ;
-    kno:pos "「구」"@ko .
-kno:KN2021-0023-c2 kno:semanticTag kno:usas-B2m ;
-    kno:surfaceForm "격리자"@ko ;
-    rdfs:label "격리자(隔離者)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    rdfs:label "공동 격리자"@ko ;
+    kno:origin "(共同隔離者)" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0023-freq-NN-total .
+kno:KN2021-0023-c2 kno:role "슬롯 채움"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002211 ;
-    kno:fullForm "격리자"@ko .
-kno:KN2021-0023-c1 kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
     a kno:Component ;
-    rdfs:label "공동(共同)"@ko ;
-    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "격리자(隔離者)"@ko ;
+    kno:fullForm "격리자"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "격리자"@ko ;
+    kno:formative kno:F002211 .
+kno:KN2021-0023-c1 kno:role "고정항"@ko ;
+    kno:surfaceForm "공동"@ko ;
     kno:fullForm "공동"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "공동"@ko ;
-    kno:formative kno:F000665 .
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "공동(共同)"@ko ;
+    kno:formative kno:F000665 ;
+    kno:semanticTag kno:usas-S5 ;
+    a kno:Component .

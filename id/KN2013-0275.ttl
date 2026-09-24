@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0275 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0275 kno:unitType "단어"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%B9%9C%EB%A9%B0> ;
-    kno:componentString "시(어머니)(媤), 친(구)(親), 며(느리)"@ko ;
-    kno:frequency kno:KN2013-0275-freq-NN-2012 ;
-    kno:frequency kno:KN2013-0275-freq-NN-total ;
-    kno:frequency kno:KN2013-0275-freq-NN-2014 ;
-    kno:component kno:KN2013-0275-c2 ;
-    skos:definition "‘시어머니 친구의 며느리’를 줄여 이르는 말. 주로 학벌, 집안, 재산, 외모 따위의 조건이 좋고, 효심이 지극하며 살림을 잘하는 완벽한 며느리를 뜻한다."@ko ;
-    kno:example "¶{시친며와의} 비교 때문에 며느리들이 고부갈등을 겪고 있다."@ko ;
+kno:KN2013-0275 kno:component kno:KN2013-0275-c1 ;
     a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "시친며"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0275-c3 ;
-    kno:languageType "한+한+고" ;
+    kno:instantiates kno:S001408 ;
     kno:frequency kno:KN2013-0275-freq-NN-2015 ;
-    kno:origin "(媤親며)" ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:slotFiller "친(구)(親)+며(느리) (2성분)"@ko ;
+    rdfs:label "시친며"@ko ;
     kno:formation kno:W06 ;
-    kno:instantiates kno:S001493 ;
-    kno:component kno:KN2013-0275-c1 ;
+    skos:definition "‘시어머니 친구의 며느리’를 줄여 이르는 말. 주로 학벌, 집안, 재산, 외모 따위의 조건이 좋고, 효심이 지극하며 살림을 잘하는 완벽한 며느리를 뜻한다."@ko ;
+    kno:frequency kno:KN2013-0275-freq-NN-2012 ;
+    kno:slotFiller "친(구)(親)+며(느리) (2성분)"@ko ;
+    kno:indexForm "시친며"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%B9%9C%EB%A9%B0> ;
+    kno:frequency kno:KN2013-0275-freq-NN-2014 ;
+    kno:component kno:KN2013-0275-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2013-0275-c2 ;
+    kno:componentString "시(어머니)(媤), 친(구)(親), 며(느리)"@ko ;
+    kno:frequency kno:KN2013-0275-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(媤親며)" ;
+    kno:unitType "단어"@ko ;
     a kno:Neologism ;
+    kno:languageType "한+한+고" ;
+    kno:year "2013"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
-    kno:indexForm "시친며"@ko .
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:example "¶{시친며와의} 비교 때문에 며느리들이 고부갈등을 겪고 있다."@ko .
+kno:KN2013-0275-c1 kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "시"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:formative kno:F001539 ;
+    rdfs:label "시(어머니)(媤)"@ko ;
+    kno:fullForm "시어머니"@ko .
+kno:KN2013-0275-c3 kno:role "슬롯 채움"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "며(느리)"@ko ;
+    kno:formative kno:F003452 ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "며"@ko ;
+    a kno:Component ;
+    kno:fullForm "며느리"@ko ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2013-0275-c2 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "친(구)(親)"@ko ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S3.1 ;
+    rdfs:label "친(구)(親)"@ko ;
+    kno:fullForm "친구"@ko ;
     kno:formative kno:F000308 ;
     kno:surfaceForm "친"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "친구"@ko .
-kno:KN2013-0275-c3 kno:formative kno:F003452 ;
-    kno:semanticTag kno:usas-S4 ;
-    a kno:Component ;
-    kno:surfaceForm "며"@ko ;
-    rdfs:label "며(느리)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "며느리"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2013-0275-c1 kno:semanticTag kno:usas-S4 ;
-    a kno:Component ;
-    kno:surfaceForm "시"@ko ;
-    rdfs:label "시(어머니)(媤)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "시어머니"@ko ;
-    kno:formative kno:F001539 .
+    kno:semanticTag kno:usas-S3.1 .

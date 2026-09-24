@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0610 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0610 kno:frequency kno:KN2016-0610-freq-NN-total ;
-    kno:indexForm "회계올림픽"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373045> ;
+kno:KN2016-0610 rdfs:label "회계^올림픽"@ko ;
     kno:urimalTargetCode "1373045" ;
-    skos:definition "회계와 관련된 주제로 비교적 긴 시간에 걸쳐 열리는 국제회의. 아시아와 태평양 주변에 위치한 국가의 회계사들이 참여하며, 4년마다 열리기 때문에 올림픽에 비유하여 이르는 말이다."@ko ;
-    kno:example "¶{회계 올림픽으로} 불리는 OO는 한국, 미국, 중국, 일본, 인도, 스리랑카, 호주, 뉴질랜드 등 아시아 태평양 지역 국가의 회계사회가 모인 지역 기구로, 4년에 한 번씩 이 행사를 개최한다."@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    rdfs:label "회계^올림픽"@ko ;
+    kno:component kno:KN2016-0610-c2 ;
     kno:unitType "구"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0610-freq-NN-total ;
+    kno:origin "(會計←Olympic)" ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "회계(會計), 올림픽(←Olympic)"@ko ;
+    skos:definition "회계와 관련된 주제로 비교적 긴 시간에 걸쳐 열리는 국제회의. 아시아와 태평양 주변에 위치한 국가의 회계사들이 참여하며, 4년마다 열리기 때문에 올림픽에 비유하여 이르는 말이다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373045> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0610-freq-NN-2015 ;
+    kno:indexForm "회계올림픽"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:example "¶{회계 올림픽으로} 불리는 OO는 한국, 미국, 중국, 일본, 인도, 스리랑카, 호주, 뉴질랜드 등 아시아 태평양 지역 국가의 회계사회가 모인 지역 기구로, 4년에 한 번씩 이 행사를 개최한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "한^그" ;
     a ontolex:MultiwordExpression ;
     kno:predicate "열리다"@ko ;
-    kno:origin "(會計←Olympic)" ;
-    kno:languageType "한^그" ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2016-0610-c1 ;
-    kno:component kno:KN2016-0610-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "회계(會計), 올림픽(←Olympic)"@ko ;
-    kno:frequency kno:KN2016-0610-freq-NN-2015 ;
-    kno:year "2016"^^xsd:gYear .
-kno:KN2016-0610-c1 kno:position "1"^^xsd:integer ;
+    kno:component kno:KN2016-0610-c1 .
+kno:KN2016-0610-c2 kno:formative kno:F005149 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "올림픽"@ko ;
+    kno:surfaceForm "올림픽"@ko ;
+    rdfs:label "올림픽(←Olympic)"@ko ;
     a kno:Component ;
+    kno:semanticTag kno:usas-K5.1 .
+kno:KN2016-0610-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "회계"@ko ;
     kno:semanticTag kno:usas-I1 ;
     kno:fullForm "회계"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "회계"@ko ;
     kno:formative kno:F001024 ;
     rdfs:label "회계(會計)"@ko .
-kno:KN2016-0610-c2 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "올림픽(←Olympic)"@ko ;
-    kno:surfaceForm "올림픽"@ko ;
-    kno:semanticTag kno:usas-K5.1 ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F005149 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "올림픽"@ko .

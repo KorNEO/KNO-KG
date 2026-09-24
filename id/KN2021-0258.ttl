@@ -9,65 +9,65 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0258 kno:origin "(請무舊사)" ;
-    kno:pos "「명」"@ko ;
+kno:KN2021-0258 kno:component kno:KN2021-0258-c3 ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2021-0258-c2 ;
-    kno:componentString "청(약)(請約), 무(슨), 구(축)(舊築), 사(다)"@ko ;
-    kno:component kno:KN2021-0258-c1 ;
-    kno:example "¶거듭된 청약 실패로 인해 ‘{청무구사’로} 눈을 돌리는 주택 수요자들이 늘고 있다."@ko ;
-    kno:frequency kno:KN2021-0258-freq-NN-total ;
-    kno:frequency kno:KN2021-0258-freq-NN-2021 ;
     kno:component kno:KN2021-0258-c4 ;
-    kno:formation kno:W06 ;
-    kno:instantiates kno:S001678 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%AC%B4%EA%B5%AC%EC%82%AC> ;
+    kno:origin "(請무舊사)" ;
+    kno:component kno:KN2021-0258-c1 ;
+    kno:componentString "청(약)(請約), 무(슨), 구(축)(舊築), 사(다)"@ko ;
     skos:definition "‘청약은 무슨, 구축이나 사.’를 줄여 이르는 말. 아파트의 값이 계속하여 오르는 상황에서, 신축 아파트의 청약은 당첨 확률이 낮으니 구축 아파트라도 사는 것이 낫다는 뜻으로 쓰는 말이다."@ko ;
     kno:slotFiller "구(축)(舊築) (1성분)"@ko ;
-    rdfs:label "청무구사"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%AC%B4%EA%B5%AC%EC%82%AC> ;
-    kno:component kno:KN2021-0258-c3 ;
+    kno:instantiates kno:S001589 ;
     kno:year "2021"^^xsd:gYear ;
-    a ontolex:Word ;
+    kno:frequency kno:KN2021-0258-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0258-freq-NN-total ;
+    rdfs:label "청무구사"@ko ;
+    a kno:Neologism ;
     kno:indexForm "청무구사"@ko ;
     kno:languageType "한+고+한+고" ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2021-0258-freq-NN-2020 ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:registration "신어DB"@ko .
-kno:KN2021-0258-c2 kno:surfaceForm "무"@ko ;
-    kno:formative kno:F001313 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:example "¶거듭된 청약 실패로 인해 ‘{청무구사’로} 눈을 돌리는 주택 수요자들이 늘고 있다."@ko ;
+    kno:frequency kno:KN2021-0258-freq-NN-2020 ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko .
+kno:KN2021-0258-c3 kno:role "슬롯 채움"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "무슨"@ko ;
-    rdfs:label "무(슨)"@ko ;
-    kno:semanticTag kno:usas-Z8 .
-kno:KN2021-0258-c1 rdfs:label "청(약)(請約)"@ko ;
-    kno:fullForm "청약"@ko ;
-    kno:surfaceForm "청"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000945 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I2.2 .
-kno:KN2021-0258-c4 kno:semanticTag kno:usas-I2.2 ;
-    kno:position "4"^^xsd:integer ;
-    kno:formative kno:F000138 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "사"@ko ;
-    a kno:Component ;
-    kno:fullForm "사다"@ko ;
-    rdfs:label "사(다)"@ko .
-kno:KN2021-0258-c3 kno:fullForm "구축"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F002441 ;
+    kno:semanticTag kno:usas-H1 ;
     kno:position "3"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
     a kno:Component ;
     kno:surfaceForm "구"@ko ;
-    kno:formative kno:F002441 ;
     rdfs:label "구(축)(舊築)"@ko ;
-    kno:semanticTag kno:usas-H1 .
+    kno:fullForm "구축"@ko .
+kno:KN2021-0258-c2 kno:fullForm "무슨"@ko ;
+    rdfs:label "무(슨)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001313 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "무"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    a kno:Component .
+kno:KN2021-0258-c4 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000138 ;
+    a kno:Component ;
+    rdfs:label "사(다)"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:role "고정항"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "사"@ko ;
+    kno:fullForm "사다"@ko .
+kno:KN2021-0258-c1 a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "청(약)(請約)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "청"@ko ;
+    kno:formative kno:F000945 ;
+    kno:fullForm "청약"@ko .

@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0524 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0524 kno:languageType "한+한+한" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:Word ;
+kno:KN2025-0524 kno:pos "「명」"@ko ;
     kno:frequency kno:KN2025-0524-freq-NN-total ;
-    kno:origin "(住許制)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0524-c2 ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "주허제"@ko ;
-    kno:instantiates kno:S000466 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%ED%97%88%EC%A0%9C> ;
     kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    kno:slotFiller "주(택)(住宅)+허(가)(許可) (2성분)"@ko ;
+    rdfs:label "주허제"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A3%BC%ED%97%88%EC%A0%9C> ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0524-c2 ;
     kno:example "(LLM) 서울 전역이 토지거래허가구역으로 묶이면서 사실상 {주허제가} 시행되는 것 아니냐는 우려가 나왔다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "주(택)(住宅)+허(가)(許可) (2성분)"@ko ;
+    kno:instantiates kno:S000430 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(住許制)" ;
+    kno:component kno:KN2025-0524-c1 ;
     kno:indexForm "주허제"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) ‘주택 거래 허가제’를 줄여 이르는 말."@ko ;
+    a ontolex:Word ;
     kno:component kno:KN2025-0524-c3 ;
     kno:frequency kno:KN2025-0524-freq-NN-2025 ;
-    skos:definition "(LLM) ‘주택 거래 허가제’를 줄여 이르는 말."@ko ;
-    kno:component kno:KN2025-0524-c1 ;
-    kno:componentString "주(택)(住宅), 허(가)(許可), -제(制)"@ko .
-kno:KN2025-0524-c2 kno:surfaceForm "허"@ko ;
+    kno:formation kno:W06 ;
+    kno:componentString "주(택)(住宅), 허(가)(許可), -제(制)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "한+한+한" .
+kno:KN2025-0524-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "허(가)(許可)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
     kno:semanticTag kno:usas-S7.4p ;
     kno:fullForm "허가"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F007035 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0524-c3 kno:semanticTag kno:usas-S7.1 ;
-    kno:formative kno:F000120 ;
-    kno:surfaceForm "제"@ko ;
-    kno:fullForm "제"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "-제(制)"@ko .
-kno:KN2025-0524-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "허"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0524-c1 kno:semanticTag kno:usas-H4 ;
     a kno:Component ;
     kno:surfaceForm "주"@ko ;
-    kno:semanticTag kno:usas-H4 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005786 ;
     kno:fullForm "주택"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F005786 ;
-    rdfs:label "주(택)(住宅)"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "주(택)(住宅)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0524-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S7.1 ;
+    rdfs:label "-제(制)"@ko ;
+    kno:formative kno:F000120 ;
+    kno:surfaceForm "제"@ko ;
+    kno:fullForm "제"@ko .

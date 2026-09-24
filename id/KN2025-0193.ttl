@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0193 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0193 kno:frequency kno:KN2025-0193-freq-NN-total ;
-    kno:unitType "단어"@ko ;
+kno:KN2025-0193 kno:languageType "고_한" ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2025"^^xsd:gYear ;
     kno:origin "(뜨개植物)" ;
-    kno:indexForm "뜨개식물"@ko ;
-    kno:component kno:KN2025-0193-c2 ;
+    skos:definition "(LLM) 뜨개질로 잎, 줄기, 꽃 따위의 식물 형태를 본떠 만든 실내 장식용 소품."@ko ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2025-0193-c1 ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9C%A8%EA%B0%9C%EC%8B%9D%EB%AC%BC> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0193-c2 ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2025-0193-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0193-freq-NN-2025 ;
     kno:formation kno:W01 ;
     kno:componentString "뜨개, 식물(植物)"@ko ;
-    kno:example "(LLM) 생화는 금방 시들어서, 이번에는 {뜨개식물을} 책상 위에 두고 플랜테리어 분위기만 내기로 했다."@ko ;
-    kno:languageType "고_한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9C%A8%EA%B0%9C%EC%8B%9D%EB%AC%BC> ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko ;
     rdfs:label "뜨개-식물"@ko ;
-    skos:definition "(LLM) 뜨개질로 잎, 줄기, 꽃 따위의 식물 형태를 본떠 만든 실내 장식용 소품."@ko ;
-    kno:frequency kno:KN2025-0193-freq-NN-2025 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2025-0193-c2 kno:position "2"^^xsd:integer ;
-    kno:fullForm "식물"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-L3 ;
-    kno:role "성분"@ko ;
-    rdfs:label "식물(植物)"@ko ;
-    kno:formative kno:F004683 ;
-    kno:surfaceForm "식물"@ko ;
-    a kno:Component .
-kno:KN2025-0193-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "뜨개"@ko ;
-    kno:fullForm "뜨개"@ko ;
-    kno:formative kno:F003135 ;
+    kno:indexForm "뜨개식물"@ko ;
+    kno:example "(LLM) 생화는 금방 시들어서, 이번에는 {뜨개식물을} 책상 위에 두고 플랜테리어 분위기만 내기로 했다."@ko .
+kno:KN2025-0193-c1 kno:surfaceForm "뜨개"@ko ;
     kno:semanticTag kno:usas-B5 ;
-    kno:surfaceForm "뜨개"@ko .
+    kno:fullForm "뜨개"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003135 ;
+    a kno:Component ;
+    rdfs:label "뜨개"@ko .
+kno:KN2025-0193-c2 kno:surfaceForm "식물"@ko ;
+    kno:fullForm "식물"@ko ;
+    rdfs:label "식물(植物)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-L3 ;
+    a kno:Component ;
+    kno:formative kno:F004683 .

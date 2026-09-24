@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0353 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0353 kno:instantiates kno:S000157 ;
-    rdfs:label "호텔 하우스 인테리어"@ko ;
-    kno:component kno:KN2017-0353-c1 ;
-    kno:slotFiller "하우스(house)+인테리어(interior) (2성분)"@ko ;
-    kno:predicate "꾸미다"@ko ;
-    kno:componentString "호텔(hotel), 하우스(house), 인테리어(interior)"@ko ;
-    kno:frequency kno:KN2017-0353-freq-NN-2017 ;
-    kno:origin "(<영>hotel house interior)" ;
-    kno:pos "「구」"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380643> ;
-    kno:indexForm "호텔하우스인테리어"@ko ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:languageType "영_영_영" ;
-    a kno:Neologism ;
-    skos:definition "집 안을 호텔처럼 꾸미는 일. 쾌적한 호텔 분위기를 연출하는 것이 인기를 끌면서 만들어진 말이다."@ko ;
+kno:KN2017-0353 skos:definition "집 안을 호텔처럼 꾸미는 일. 쾌적한 호텔 분위기를 연출하는 것이 인기를 끌면서 만들어진 말이다."@ko ;
     kno:example "¶여기서 더 나아가 최근에는 특급 호텔에서 경험한 편안함을 집에서도 느끼고자 ‘{호텔 하우스 인테리어’에} 투자하는 이들도 적잖이 늘고 있다."@ko ;
+    kno:slotFiller "하우스(house)+인테리어(interior) (2성분)"@ko ;
+    kno:component kno:KN2017-0353-c2 ;
+    kno:instantiates kno:S000146 ;
+    kno:frequency kno:KN2017-0353-freq-NN-2017 ;
+    kno:predicate "꾸미다"@ko ;
+    rdfs:label "호텔 하우스 인테리어"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2017-0353-freq-NN-total ;
+    kno:indexForm "호텔하우스인테리어"@ko ;
+    kno:componentString "호텔(hotel), 하우스(house), 인테리어(interior)"@ko ;
+    kno:component kno:KN2017-0353-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:urimalTargetCode "1380643" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380643> ;
+    kno:languageType "영_영_영" ;
+    kno:year "2017"^^xsd:gYear ;
     kno:registration "우리말샘"@ko ;
     kno:component kno:KN2017-0353-c3 ;
-    kno:frequency kno:KN2017-0353-freq-NN-total ;
-    kno:urimalTargetCode "1380643" ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2017-0353-c2 ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2017-0353-c1 a kno:Component ;
+    kno:origin "(<영>hotel house interior)" .
+kno:KN2017-0353-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000639 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-H1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "하우스(house)"@ko ;
+    kno:fullForm "하우스"@ko ;
+    kno:surfaceForm "하우스"@ko .
+kno:KN2017-0353-c1 kno:surfaceForm "호텔"@ko ;
+    kno:formative kno:F000155 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "호텔(hotel)"@ko ;
     kno:fullForm "호텔"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-H1 ;
-    kno:formative kno:F000155 ;
-    rdfs:label "호텔(hotel)"@ko ;
-    kno:surfaceForm "호텔"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2017-0353-c3 kno:semanticTag kno:usas-H5 ;
-    a kno:Component ;
-    kno:fullForm "인테리어"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "인테리어"@ko ;
-    kno:formative kno:F000898 ;
-    rdfs:label "인테리어(interior)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2017-0353-c2 a kno:Component ;
-    kno:formative kno:F000639 ;
-    kno:surfaceForm "하우스"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2017-0353-c3 kno:fullForm "인테리어"@ko ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "하우스(house)"@ko ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:fullForm "하우스"@ko .
+    rdfs:label "인테리어(interior)"@ko ;
+    kno:surfaceForm "인테리어"@ko ;
+    kno:semanticTag kno:usas-H5 ;
+    kno:formative kno:F000898 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component .

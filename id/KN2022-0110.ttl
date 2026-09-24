@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0110 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0110 kno:component kno:KN2022-0110-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B8%B0%EC%A0%95%EC%B2%B4%EC%A7%80%EC%88%98> ;
-    a kno:Neologism ;
-    kno:component kno:KN2022-0110-c3 ;
-    skos:definition "대기가 정체되어 있는 정도를 수치로 나타낸 지수. 지상 및 대기 상하층에 부는 바람의 세기에 따라서, ‘낮음, 보통, 높음, 매우 높음’의 4단계로 나타낸다."@ko ;
+kno:KN2022-0110 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EA%B8%B0%EC%A0%95%EC%B2%B4%EC%A7%80%EC%88%98> ;
+    kno:frequency kno:KN2022-0110-freq-NN-2022 ;
+    kno:example "¶기상청에 따르면 오늘 정오까지 대부분의 지역에서 {대기 정체 지수가} ‘높음’ 이상일 것으로 예상되어, 미세 먼지 농도가 떨어지지 않을 것으로 전망된다."@ko ;
+    kno:component kno:KN2022-0110-c2 ;
+    kno:frequency kno:KN2022-0110-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
     kno:origin "(大氣停滯指數)" ;
-    kno:frequency kno:KN2022-0110-freq-NN-total ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0110-freq-NN-2024 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "대기정체지수"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:slotFiller "대기(大氣)+정체(停滯) (2성분)"@ko ;
     kno:component kno:KN2022-0110-c1 ;
     kno:year "2022"^^xsd:gYear ;
+    kno:instantiates kno:S000024 ;
     kno:registration "신어DB"@ko ;
-    kno:componentString "대기(大氣), 정체(停滯), 지수(指數)"@ko ;
-    kno:frequency kno:KN2022-0110-freq-NN-2023 ;
-    kno:example "¶기상청에 따르면 오늘 정오까지 대부분의 지역에서 {대기 정체 지수가} ‘높음’ 이상일 것으로 예상되어, 미세 먼지 농도가 떨어지지 않을 것으로 전망된다."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000025 ;
-    kno:frequency kno:KN2022-0110-freq-NN-2022 ;
+    kno:component kno:KN2022-0110-c3 ;
+    kno:frequency kno:KN2022-0110-freq-NN-total ;
     rdfs:label "대기^정체^지수"@ko ;
-    kno:frequency kno:KN2022-0110-freq-NN-2025 ;
-    kno:slotFiller "대기(大氣)+정체(停滯) (2성분)"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2022-0110-freq-NN-2024 ;
-    kno:indexForm "대기정체지수"@ko ;
-    kno:activeYears "4"^^xsd:integer .
-kno:KN2022-0110-c2 kno:formative kno:F005690 ;
-    kno:semanticTag kno:usas-M8 ;
+    skos:definition "대기가 정체되어 있는 정도를 수치로 나타낸 지수. 지상 및 대기 상하층에 부는 바람의 세기에 따라서, ‘낮음, 보통, 높음, 매우 높음’의 4단계로 나타낸다."@ko ;
+    kno:componentString "대기(大氣), 정체(停滯), 지수(指數)"@ko ;
+    kno:frequency kno:KN2022-0110-freq-NN-2023 .
+kno:KN2022-0110-c2 rdfs:label "정체(停滯)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "정체(停滯)"@ko ;
+    kno:semanticTag kno:usas-M8 ;
+    kno:surfaceForm "정체"@ko ;
+    kno:formative kno:F005690 ;
     kno:fullForm "정체"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "정체"@ko .
-kno:KN2022-0110-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-N3.1 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2022-0110-c1 kno:fullForm "대기"@ko ;
+    rdfs:label "대기(大氣)"@ko ;
+    kno:semanticTag kno:usas-W4 ;
     a kno:Component ;
-    kno:fullForm "지수"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002908 ;
+    kno:surfaceForm "대기"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0110-c3 kno:truncated "false"^^xsd:boolean ;
     kno:position "3"^^xsd:integer ;
     rdfs:label "지수(指數)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "지수"@ko ;
-    kno:formative kno:F000035 .
-kno:KN2022-0110-c1 kno:formative kno:F002908 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "대기"@ko ;
     a kno:Component ;
-    rdfs:label "대기(大氣)"@ko ;
-    kno:fullForm "대기"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-W4 .
+    kno:formative kno:F000035 ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:surfaceForm "지수"@ko ;
+    kno:fullForm "지수"@ko .

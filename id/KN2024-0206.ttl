@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0206 kno:slotFiller "외국환(外國換)+평형(平衡)+관리(管理) (3성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%B8%EA%B5%AD%ED%99%98%ED%8F%89%ED%98%95%EA%B4%80%EB%A6%AC%EA%B8%B0%EA%B8%88> ;
-    kno:instantiates kno:S000072 ;
-    kno:frequency kno:KN2024-0206-freq-NN-total ;
-    kno:component kno:KN2024-0206-c4 ;
-    kno:languageType "한^한^한^한" ;
-    kno:frequency kno:KN2024-0206-freq-NN-2023 ;
-    kno:example "¶정부는 올해 국세 수입이 부족할 것으로 예상되자 {외국환 평형 관리 기금} 및 세계 잉여금과 같은 여유 재원의 활용을 통해 재정을 집행할 예정이라고 하였다."@ko ;
+kno:KN2024-0206 a kno:Neologism ;
+    kno:indexForm "외국환평형관리기금"@ko ;
+    kno:predicate "운용하다"@ko ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000068 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한^한^한^한" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "외국환^평형^관리^기금"@ko ;
+    kno:example "¶정부는 올해 국세 수입이 부족할 것으로 예상되자 {외국환 평형 관리 기금} 및 세계 잉여금과 같은 여유 재원의 활용을 통해 재정을 집행할 예정이라고 하였다."@ko ;
+    kno:origin "(外國換平衡管理基金)" ;
     kno:componentString "외국환(外國換), 평형(平衡), 관리(管理), 기금(基金)"@ko ;
+    kno:frequency kno:KN2024-0206-freq-NN-2023 ;
     kno:component kno:KN2024-0206-c1 ;
     kno:component kno:KN2024-0206-c3 ;
-    a ontolex:MultiwordExpression ;
-    kno:predicate "운용하다"@ko ;
-    kno:indexForm "외국환평형관리기금"@ko ;
-    kno:origin "(外國換平衡管理基金)" ;
-    a kno:Neologism ;
+    kno:slotFiller "외국환(外國換)+평형(平衡)+관리(管理) (3성분)"@ko ;
+    skos:definition "정부가 환율 관리와 외환 시장의 안정을 목적으로 보유하거나 운용하는 기금."@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%B8%EA%B5%AD%ED%99%98%ED%8F%89%ED%98%95%EA%B4%80%EB%A6%AC%EA%B8%B0%EA%B8%88> ;
+    kno:frequency kno:KN2024-0206-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
     kno:year "2024"^^xsd:gYear ;
     kno:component kno:KN2024-0206-c2 ;
-    kno:pos "「구」"@ko ;
-    skos:definition "정부가 환율 관리와 외환 시장의 안정을 목적으로 보유하거나 운용하는 기금."@ko ;
-    rdfs:label "외국환^평형^관리^기금"@ko .
-kno:KN2024-0206-c4 kno:surfaceForm "기금"@ko ;
-    kno:position "4"^^xsd:integer ;
+    kno:component kno:KN2024-0206-c4 .
+kno:KN2024-0206-c1 kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
+    kno:surfaceForm "외국환"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    rdfs:label "기금(基金)"@ko ;
-    kno:formative kno:F000096 ;
-    kno:fullForm "기금"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0206-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "외국환"@ko ;
     kno:formative kno:F005179 ;
-    kno:semanticTag kno:usas-I1 ;
-    rdfs:label "외국환(外國換)"@ko ;
+    kno:fullForm "외국환"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "외국환"@ko .
-kno:KN2024-0206-c3 kno:fullForm "관리"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S7.1p ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "외국환(外國換)"@ko .
+kno:KN2024-0206-c3 kno:surfaceForm "관리"@ko ;
     kno:position "3"^^xsd:integer ;
     kno:formative kno:F000461 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "관리"@ko ;
-    rdfs:label "관리(管理)"@ko .
-kno:KN2024-0206-c2 kno:role "슬롯 채움"@ko ;
-    rdfs:label "평형(平衡)"@ko ;
-    kno:formative kno:F006709 ;
-    kno:fullForm "평형"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A6.1p ;
     a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "관리(管理)"@ko ;
+    kno:fullForm "관리"@ko .
+kno:KN2024-0206-c2 kno:semanticTag kno:usas-A6.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "평형"@ko .
+    rdfs:label "평형(平衡)"@ko ;
+    kno:fullForm "평형"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "평형"@ko ;
+    kno:formative kno:F006709 .
+kno:KN2024-0206-c4 kno:role "고정항"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "기금"@ko ;
+    kno:formative kno:F000096 ;
+    rdfs:label "기금(基金)"@ko ;
+    kno:fullForm "기금"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1 .

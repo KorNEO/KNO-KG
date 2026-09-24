@@ -9,59 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0128 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0128 skos:definition "여럿이 무리 지어 캠핑하는 사람. 또는 그런 무리."@ko ;
-    kno:urimalTargetCode "1357632" ;
-    kno:frequency kno:KN2013-0128-freq-NN-2013 ;
-    kno:origin "(떼←<영>camp族)" ;
-    kno:indexForm "떼캠족"@ko ;
-    kno:formation kno:W02 ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
+kno:KN2013-0128 kno:component kno:KN2013-0128-c2 ;
+    a kno:Neologism ;
     kno:example "¶이처럼 최근 캠핑 인구가 급증하면서 밤에도 음주와 고성방가를 일삼는 사례가 잦아 주변에 스트레스를 주는 경우가 비일비재하다. 특히 이 같은 현상은 단체로 캠핑하는 ‘{떼캠’족이} 증가하면서 더욱 심해지고 있다."@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
     kno:year "2013"^^xsd:gYear ;
-    kno:instantiates kno:S000296 ;
-    kno:slotFiller "캠(프)(camp)+-족(族) (2성분)"@ko ;
-    kno:languageType "(고+영)+한" ;
-    kno:slotFiller "떼+캠(프)(camp) (2성분)"@ko ;
-    kno:registration "우리말샘"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "떼캠-족"@ko ;
     kno:frequency kno:KN2013-0128-freq-NN-total ;
+    kno:predicate "캠핑하다"@ko ;
+    kno:slotFiller "떼+캠(프)(camp) (2성분)"@ko ;
+    skos:definition "여럿이 무리 지어 캠핑하는 사람. 또는 그런 무리."@ko ;
+    a ontolex:Word ;
+    kno:languageType "(고+영)+한" ;
+    kno:indexForm "떼캠족"@ko ;
+    kno:frequency kno:KN2013-0128-freq-NN-2013 ;
+    kno:registration "우리말샘"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:urimalTargetCode "1357632" ;
+    kno:formation kno:W02 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357632> ;
     kno:componentString "떼, 캠(프)(camp), -족(族)"@ko ;
-    kno:predicate "캠핑하다"@ko ;
-    kno:component kno:KN2013-0128-c1 ;
-    rdfs:label "떼캠-족"@ko ;
-    kno:component kno:KN2013-0128-c3 ;
-    a kno:Neologism ;
-    kno:component kno:KN2013-0128-c2 ;
     kno:instantiates kno:S000001 ;
-    kno:unitType "단어"@ko .
-kno:KN2013-0128-c1 rdfs:label "떼"@ko ;
-    kno:fullForm "떼"@ko ;
-    kno:formative kno:F000258 ;
-    a kno:Component ;
-    kno:surfaceForm "떼"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2013-0128-c3 kno:semanticTag kno:usas-S2 ;
-    rdfs:label "-족(族)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "족"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "족"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000001 .
-kno:KN2013-0128-c2 rdfs:label "캠(프)(camp)"@ko ;
-    a kno:Component ;
+    kno:component kno:KN2013-0128-c1 ;
+    kno:component kno:KN2013-0128-c3 ;
+    kno:origin "(떼←<영>camp族)" ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear .
+kno:KN2013-0128-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001850 ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "캠프"@ko ;
     kno:semanticTag kno:usas-K1 ;
+    rdfs:label "캠(프)(camp)"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "캠"@ko .
+kno:KN2013-0128-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "떼"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "떼"@ko ;
+    kno:surfaceForm "떼"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "캠"@ko ;
-    kno:formative kno:F001850 .
+    kno:formative kno:F000258 ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2013-0128-c3 kno:semanticTag kno:usas-S5 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000001 ;
+    kno:fullForm "족"@ko ;
+    kno:role "고정항"@ko .

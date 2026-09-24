@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0006 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0006 kno:example "¶정부는 감염병 확산을 차단하기 위해 해외 입국자들이 증상이 없더라도 감염병 검사 결과를 통보 받을 때까지 우선 {격리 생활 시설에} 거주해야 한다는 방침을 세웠다."@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:languageType "한^한^한" ;
-    kno:instantiates kno:S000410 ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:slotFiller "격리(隔離)+생활(生活) (2성분)"@ko ;
-    kno:frequency kno:KN2020-0006-freq-NN-2021 ;
+kno:KN2020-0006 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2020-0006-c1 ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000375 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0006-c2 ;
+    rdfs:label "격리^생활^시설"@ko ;
+    kno:frequency kno:KN2020-0006-freq-NN-total ;
     a kno:Neologism ;
-    kno:component kno:KN2020-0006-c3 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:origin "(隔離生活施設)" ;
+    kno:languageType "한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%A9%EB%A6%AC%EC%83%9D%ED%99%9C%EC%8B%9C%EC%84%A4> ;
     kno:componentString "격리(隔離), 생활(生活), 시설(施設)"@ko ;
     kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%A9%EB%A6%AC%EC%83%9D%ED%99%9C%EC%8B%9C%EC%84%A4> ;
-    rdfs:label "격리^생활^시설"@ko ;
-    kno:component kno:KN2020-0006-c1 ;
-    kno:frequency kno:KN2020-0006-freq-NN-2020 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0006-freq-NN-total ;
-    kno:indexForm "격리생활시설"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(隔離生活施設)" ;
-    kno:component kno:KN2020-0006-c2 ;
-    kno:frequency kno:KN2020-0006-freq-NN-2022 ;
-    kno:unitType "구"@ko ;
     a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2020-0006-freq-NN-2022 ;
+    kno:slotFiller "격리(隔離)+생활(生活) (2성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0006-freq-NN-2021 ;
+    kno:indexForm "격리생활시설"@ko ;
+    kno:example "¶정부는 감염병 확산을 차단하기 위해 해외 입국자들이 증상이 없더라도 감염병 검사 결과를 통보 받을 때까지 우선 {격리 생활 시설에} 거주해야 한다는 방침을 세웠다."@ko ;
+    kno:frequency kno:KN2020-0006-freq-NN-2020 ;
+    kno:component kno:KN2020-0006-c3 ;
     skos:definition "감염병 환자 혹은 감염병 검사 결과를 기다리는 사람이 사회와 분리된 채 일상적인 생활을 할 수 있도록 마련한 시설. 코로나19의 확산을 막기 위해 증상이 나타나거나 의심되는 사람들을 사회로부터 떼어 놓고 생활하도록 만들어 놓은 시설이다."@ko .
-kno:KN2020-0006-c3 kno:fullForm "시설"@ko ;
-    rdfs:label "시설(施設)"@ko ;
-    kno:formative kno:F000832 ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:surfaceForm "시설"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
 kno:KN2020-0006-c1 kno:role "슬롯 채움"@ko ;
-    kno:fullForm "격리"@ko ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "격리"@ko ;
     kno:formative kno:F000330 ;
+    kno:fullForm "격리"@ko ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "격리(隔離)"@ko ;
+    kno:semanticTag kno:usas-B3 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "격리(隔離)"@ko .
-kno:KN2020-0006-c2 kno:formative kno:F000059 ;
+    kno:surfaceForm "격리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0006-c2 kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "생활"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000059 ;
     kno:surfaceForm "생활"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "생활"@ko ;
+    rdfs:label "생활(生活)"@ko ;
     kno:semanticTag kno:usas-L1 ;
-    rdfs:label "생활(生活)"@ko .
+    kno:position "2"^^xsd:integer .
+kno:KN2020-0006-c3 kno:surfaceForm "시설"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "시설"@ko ;
+    rdfs:label "시설(施設)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000832 ;
+    kno:semanticTag kno:usas-H1 .

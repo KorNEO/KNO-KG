@@ -9,41 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0049 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0049 kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000026 ;
-    skos:definition "유용한 금융 정보를 국민들이 쉽게 이해하고 익힐 수 있도록 금융 감독원에서 만든 만화."@ko ;
-    kno:origin "(金←<영>cartoon)" ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
+kno:KN2013-0049 kno:pos "「명」"@ko ;
     rdfs:label "금툰"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:componentString "금(융)(金), (카)툰(cartoon)"@ko ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶{금툰은} 보이스 피싱과 보험 사기 등 금융 사기 유형별로 피해 사례와 예방법 등을 담아 총 10편으로 제작했다."@ko ;
-    kno:component kno:KN2013-0049-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%ED%88%B0> ;
-    kno:formation kno:W05 ;
-    kno:activeYears "0"^^xsd:integer ;
+    skos:definition "유용한 금융 정보를 국민들이 쉽게 이해하고 익힐 수 있도록 금융 감독원에서 만든 만화."@ko ;
     kno:component kno:KN2013-0049-c1 ;
-    kno:slotFiller "금(융)(金) (1성분)"@ko ;
+    kno:indexForm "금툰"@ko ;
+    kno:origin "(金←<영>cartoon)" ;
+    kno:component kno:KN2013-0049-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%ED%88%B0> ;
+    kno:componentString "금(융)(金), (카)툰(cartoon)"@ko ;
+    kno:formation kno:W05 ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    a ontolex:Word ;
     a kno:Neologism ;
-    kno:indexForm "금툰"@ko .
-kno:KN2013-0049-c2 kno:surfaceForm "툰"@ko ;
-    a kno:Component ;
-    kno:fullForm "카툰"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "(카)툰(cartoon)"@ko ;
-    kno:formative kno:F000067 ;
-    kno:role "고정항"@ko ;
+    kno:example "¶{금툰은} 보이스 피싱과 보험 사기 등 금융 사기 유형별로 피해 사례와 예방법 등을 담아 총 10편으로 제작했다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "한+영" .
+kno:KN2013-0049-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "금융"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-C1 .
-kno:KN2013-0049-c1 kno:fullForm "금융"@ko ;
-    kno:formative kno:F002559 ;
+    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "금"@ko ;
-    rdfs:label "금(융)(金)"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:role "슬롯 채움"@ko .
+    kno:surfaceForm "금"@ko ;
+    kno:formative kno:F002559 ;
+    rdfs:label "금(융)(金)"@ko .
+kno:KN2013-0049-c2 kno:role "성분"@ko ;
+    kno:fullForm "카툰"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "툰"@ko ;
+    rdfs:label "(카)툰(cartoon)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:formative kno:F000067 .

@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0332 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0332 kno:component kno:KN2025-0332-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(설거지上場)" ;
-    kno:unitType "구"@ko ;
-    kno:componentString "설거지, 상장(上場)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2025-0332 kno:activeYears "1"^^xsd:integer ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0332-c2 ;
+    rdfs:label "설거지 상장"@ko ;
+    kno:frequency kno:KN2025-0332-freq-NN-2025 ;
+    a kno:Neologism ;
     kno:frequency kno:KN2025-0332-freq-NN-total ;
     kno:slotFiller "설거지 (1성분)"@ko ;
-    kno:instantiates kno:S000923 ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "(LLM) 가상자산 거래소가 특정 코인의 가격이 이미 크게 오른 뒤에 뒤늦게 거래 지원(상장)을 해, 기존 보유자가 매도하기 쉬운 장을 열어 준다는 뜻으로 쓰는 비판적 표현."@ko ;
-    kno:example "(LLM) 투자자들은 다른 거래소에서 이미 {떡상한} 뒤에야 거래 지원을 시작했다며 이번 상장을 {설거지상장이라고} 비판했다."@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A4%EA%B1%B0%EC%A7%80%20%EC%83%81%EC%9E%A5> ;
-    kno:indexForm "설거지상장"@ko ;
-    kno:frequency kno:KN2025-0332-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "설거지, 상장(上場)"@ko ;
     kno:pos "「구」"@ko ;
-    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "설거지상장"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000859 ;
     kno:languageType "고_한" ;
-    rdfs:label "설거지 상장"@ko ;
-    kno:component kno:KN2025-0332-c2 ;
-    a ontolex:MultiwordExpression .
-kno:KN2025-0332-c1 kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000530 ;
-    rdfs:label "설거지"@ko ;
-    a kno:Component ;
-    kno:fullForm "설거지"@ko ;
-    kno:semanticTag kno:usas-B4 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "설거지"@ko .
+    kno:origin "(설거지上場)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%A4%EA%B1%B0%EC%A7%80%20%EC%83%81%EC%9E%A5> ;
+    kno:component kno:KN2025-0332-c1 ;
+    skos:definition "(LLM) 가상자산 거래소가 특정 코인의 가격이 이미 크게 오른 뒤에 뒤늦게 거래 지원(상장)을 해, 기존 보유자가 매도하기 쉬운 장을 열어 준다는 뜻으로 쓰는 비판적 표현."@ko ;
+    kno:unitType "구"@ko ;
+    kno:example "(LLM) 투자자들은 다른 거래소에서 이미 {떡상한} 뒤에야 거래 지원을 시작했다며 이번 상장을 {설거지상장이라고} 비판했다."@ko .
 kno:KN2025-0332-c2 kno:fullForm "상장"@ko ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:surfaceForm "상장"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "상장(上場)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
-    kno:formative kno:F001448 .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    rdfs:label "상장(上場)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001448 ;
+    kno:surfaceForm "상장"@ko .
+kno:KN2025-0332-c1 kno:formative kno:F000530 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "설거지"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "설거지"@ko ;
+    rdfs:label "설거지"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B4 .

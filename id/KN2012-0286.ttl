@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0286 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0286 kno:unitType "단어"@ko ;
-    kno:predicate "받다"@ko ;
-    kno:component kno:KN2012-0286-c3 ;
-    kno:instantiates kno:S000463 ;
-    kno:slotFiller "얼굴+마담(madame) (2성분)"@ko ;
-    kno:indexForm "얼굴마담료"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2012-0286-freq-NN-2012 ;
-    rdfs:label "얼굴마담-료"@ko ;
-    skos:definition "어떤 가게나 분야, 집단 따위에서 얼굴마담의 역할을 하는 대가로 받는 돈."@ko ;
-    kno:instantiates kno:S000551 ;
+kno:KN2012-0286 a kno:Neologism ;
     kno:lastAttestationYear "2012"^^xsd:gYear ;
-    kno:languageType "(고+프)+한" ;
+    kno:slotFiller "마담(madame)+-료(料) (2성분)"@ko ;
+    kno:component kno:KN2012-0286-c3 ;
+    kno:example "¶‘OOO 쇼핑몰’로 불릴 수 있는 연예인의 {얼굴마담료는} 통상적으로 1년에 1억 2000만 원~1억 8000만 원가량이다."@ko ;
+    kno:instantiates kno:S000427 ;
     kno:origin "(--<프>madame料)" ;
     kno:year "2012"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2012-0286-freq-NN-total ;
-    kno:componentString "얼굴, 마담(madame), -료(料)"@ko ;
-    kno:slotFiller "마담(madame)+-료(料) (2성분)"@ko ;
-    kno:example "¶‘OOO 쇼핑몰’로 불릴 수 있는 연예인의 {얼굴마담료는} 통상적으로 1년에 1억 2000만 원~1억 8000만 원가량이다."@ko ;
-    kno:component kno:KN2012-0286-c1 ;
-    kno:formation kno:W02 ;
-    kno:registration "신어DB"@ko ;
+    kno:predicate "받다"@ko ;
+    kno:indexForm "얼굴마담료"@ko ;
+    rdfs:label "얼굴마담-료"@ko ;
     a ontolex:Word ;
+    skos:definition "어떤 가게나 분야, 집단 따위에서 얼굴마담의 역할을 하는 대가로 받는 돈."@ko ;
+    kno:frequency kno:KN2012-0286-freq-NN-total ;
+    kno:instantiates kno:S000505 ;
     kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%EB%A7%88%EB%8B%B4%EB%A3%8C> ;
+    kno:component kno:KN2012-0286-c1 ;
+    kno:frequency kno:KN2012-0286-freq-NN-2012 ;
+    kno:languageType "(고+프)+한" ;
+    kno:componentString "얼굴, 마담(madame), -료(料)"@ko ;
     kno:component kno:KN2012-0286-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%EB%A7%88%EB%8B%B4%EB%A3%8C> .
-kno:KN2012-0286-c3 kno:formative kno:F000735 ;
-    rdfs:label "-료(料)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W02 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "얼굴+마담(madame) (2성분)"@ko .
+kno:KN2012-0286-c3 a kno:Component ;
     kno:fullForm "료"@ko ;
+    kno:formative kno:F000735 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-료(料)"@ko ;
     kno:semanticTag kno:usas-I1.3 ;
     kno:surfaceForm "료"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0286-c1 kno:fullForm "얼굴"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000222 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2012-0286-c1 kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "얼굴"@ko ;
     kno:surfaceForm "얼굴"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
     rdfs:label "얼굴"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2012-0286-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "마담"@ko ;
+    kno:formative kno:F000222 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0286-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     rdfs:label "마담(madame)"@ko ;
+    kno:formative kno:F003346 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-S2.1 ;
-    a kno:Component ;
-    kno:surfaceForm "마담"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003346 .
+    kno:fullForm "마담"@ko ;
+    kno:surfaceForm "마담"@ko .

@@ -9,41 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0445 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0445 kno:activeYears "0"^^xsd:integer ;
-    kno:indexForm "폼컵"@ko ;
-    a ontolex:Word ;
-    kno:languageType "영+영" ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000183 ;
-    kno:registration "신어DB"@ko ;
-    kno:example "¶OO는…밀크티, 그린티, 카페라떼 등 OO 3종 또한 새롭게 선보인다. 종이컵이 아닌 기능성 {폼컵에} 담아 따뜻한 맛을 오래도록 즐길 수 있다."@ko ;
-    kno:formation kno:W01 ;
-    kno:component kno:KN2013-0445-c1 ;
-    rdfs:label "폼-컵"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:componentString "폼(foam), 컵(cup)"@ko ;
-    kno:component kno:KN2013-0445-c2 ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko ;
+kno:KN2013-0445 kno:registration "신어DB"@ko ;
     skos:definition "플라스틱 재질의 일회용 컵."@ko ;
-    kno:origin "(▼foam cup)" ;
-    kno:slotFiller "폼(foam) (1성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%BC%EC%BB%B5> .
-kno:KN2013-0445-c1 rdfs:label "폼(foam)"@ko ;
-    kno:semanticTag kno:usas-O4.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "폼"@ko ;
-    kno:formative kno:F006768 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "폼(foam), 컵(cup)"@ko ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8F%BC%EC%BB%B5> ;
+    kno:example "¶OO는…밀크티, 그린티, 카페라떼 등 OO 3종 또한 새롭게 선보인다. 종이컵이 아닌 기능성 {폼컵에} 담아 따뜻한 맛을 오래도록 즐길 수 있다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "영+영" ;
+    kno:indexForm "폼컵"@ko ;
+    kno:component kno:KN2013-0445-c1 ;
+    kno:component kno:KN2013-0445-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "폼-컵"@ko ;
+    kno:formation kno:W01 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:origin "(▼foam cup)" .
+kno:KN2013-0445-c1 kno:semanticTag kno:usas-O4.1 ;
+    kno:role "성분"@ko ;
     kno:fullForm "폼"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2013-0445-c2 kno:formative kno:F000417 ;
-    rdfs:label "컵(cup)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "컵"@ko ;
+    kno:surfaceForm "폼"@ko ;
+    rdfs:label "폼(foam)"@ko ;
+    kno:formative kno:F006768 ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2013-0445-c2 rdfs:label "컵(cup)"@ko ;
     kno:surfaceForm "컵"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-O2 .
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "컵"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F000417 ;
+    a kno:Component .

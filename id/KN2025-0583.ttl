@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0583 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0583 kno:unitType "구"@ko ;
+kno:KN2025-0583 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BF%A0%ED%8F%B0%20%EC%A3%BC%EB%8F%84%20%EA%B2%BD%EC%A0%9C> ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "쿠폰주도경제"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0583-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "영_한_한" ;
+    kno:instantiates kno:S000046 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 일회성 지원에 재정을 쏟아붓는 {쿠폰주도경제가} 장기적으로는 빚만 늘린다는 비판이 나왔다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0583-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "쿠폰(coupon)+주도(主導) (2성분)"@ko ;
     kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
-    kno:componentString "쿠폰(coupon), 주도(主導), 경제(經濟)"@ko ;
-    kno:indexForm "쿠폰주도경제"@ko ;
-    kno:slotFiller "쿠폰(coupon)+주도(主導) (2성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BF%A0%ED%8F%B0%20%EC%A3%BC%EB%8F%84%20%EA%B2%BD%EC%A0%9C> ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0583-freq-NN-2025 ;
-    rdfs:label "쿠폰 주도 경제"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0583-c1 ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000049 ;
-    kno:languageType "영_한_한" ;
-    kno:component kno:KN2025-0583-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:example "(LLM) 일회성 지원에 재정을 쏟아붓는 {쿠폰주도경제가} 장기적으로는 빚만 늘린다는 비판이 나왔다."@ko ;
     kno:origin "(<영>coupon主導經濟)" ;
+    kno:component kno:KN2025-0583-c2 ;
     kno:frequency kno:KN2025-0583-freq-NN-total ;
-    kno:component kno:KN2025-0583-c3 ;
+    rdfs:label "쿠폰 주도 경제"@ko ;
+    kno:component kno:KN2025-0583-c1 ;
+    kno:componentString "쿠폰(coupon), 주도(主導), 경제(經濟)"@ko ;
     skos:definition "(LLM) 정부가 소비 진작을 목적으로 국민에게 소비 쿠폰 등 바우처성 지원을 대규모로 지급하고, 그 효과에 기대어 경기를 부양하려는 경제 운영 방식."@ko .
-kno:KN2025-0583-c1 rdfs:label "쿠폰(coupon)"@ko ;
-    kno:surfaceForm "쿠폰"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000238 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "쿠폰"@ko .
-kno:KN2025-0583-c2 kno:semanticTag kno:usas-S7.1p ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000926 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "주도"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "주도(主導)"@ko ;
-    kno:fullForm "주도"@ko .
-kno:KN2025-0583-c3 kno:fullForm "경제"@ko ;
+kno:KN2025-0583-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "경제"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    rdfs:label "경제(經濟)"@ko ;
     a kno:Component ;
-    kno:surfaceForm "경제"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    rdfs:label "경제(經濟)"@ko ;
     kno:formative kno:F000029 ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "경제"@ko .
+kno:KN2025-0583-c2 kno:formative kno:F000926 ;
+    kno:fullForm "주도"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I1 .
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "주도"@ko ;
+    a kno:Component ;
+    rdfs:label "주도(主導)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0583-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000238 ;
+    kno:surfaceForm "쿠폰"@ko ;
+    rdfs:label "쿠폰(coupon)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "쿠폰"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 .

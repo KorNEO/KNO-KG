@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0206 a kno:Neologism ;
+kno:KN2016-0206 kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "권역별 비례 대표제와 석패율제를 결합하여 의원을 선출하는 선거 제도. 전국을 권역에 따라 구별하고 정당 득표율에 따라 권역별 비례 대표 당선자를 결정하는 방식으로, 의원의 정수를 늘리지 않으면서 취약 지역구 후보를 비례 대표로 선출할 수 있도록 하여 지역주의를 완화하는 효과를 거둘 수 있다."@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2016-0206-c2 ;
+    kno:component kno:KN2016-0206-c1 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0206-freq-NN-2015 ;
+    kno:componentString "병립형(竝立形), 석패율제(惜敗率制)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "병립형^석패율제"@ko ;
     kno:example "¶OOO 의원은 11일 의원 총회에서 ‘{병립형 석패율제’를} 당론으로 채택해 줄 것을 공식 제안했다."@ko ;
-    kno:origin "(竝立形惜敗率制)" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%91%EB%A6%BD%ED%98%95%EC%84%9D%ED%8C%A8%EC%9C%A8%EC%A0%9C> ;
     kno:indexForm "병립형석패율제"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2016-0206-freq-NN-2015 ;
-    skos:definition "권역별 비례 대표제와 석패율제를 결합하여 의원을 선출하는 선거 제도. 전국을 권역에 따라 구별하고 정당 득표율에 따라 권역별 비례 대표 당선자를 결정하는 방식으로, 의원의 정수를 늘리지 않으면서 취약 지역구 후보를 비례 대표로 선출할 수 있도록 하여 지역주의를 완화하는 효과를 거둘 수 있다."@ko ;
-    kno:component kno:KN2016-0206-c1 ;
-    rdfs:label "병립형^석패율제"@ko ;
-    kno:frequency kno:KN2016-0206-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
+    kno:origin "(竝立形惜敗率制)" ;
+    a kno:Neologism ;
     kno:languageType "한^한" ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
     kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:componentString "병립형(竝立形), 석패율제(惜敗率制)"@ko ;
-    kno:component kno:KN2016-0206-c2 .
-kno:KN2016-0206-c1 rdfs:label "병립형(竝立形)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "성분"@ko ;
+    kno:frequency kno:KN2016-0206-freq-NN-total .
+kno:KN2016-0206-c2 a kno:Component ;
+    kno:formative kno:F004296 ;
     kno:semanticTag kno:usas-G1.2 ;
-    kno:surfaceForm "병립형"@ko ;
-    kno:formative kno:F003855 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "병립형"@ko .
-kno:KN2016-0206-c2 kno:fullForm "석패율제"@ko ;
     rdfs:label "석패율제(惜敗率制)"@ko ;
     kno:surfaceForm "석패율제"@ko ;
-    kno:formative kno:F004296 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "석패율제"@ko ;
     kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0206-c1 kno:surfaceForm "병립형"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F003855 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "병립형(竝立形)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "병립형"@ko .

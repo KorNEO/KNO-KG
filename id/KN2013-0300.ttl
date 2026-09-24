@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0300 a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "‘어디서 본 듯한 얼굴’을 줄여 이르는 말. 처음 보았지만 낯선 느낌이 들지 않는, 개성이 뚜렷하지 않은 외모를 뜻한다."@ko ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2013-0300-c1 ;
-    kno:example "¶너무 개성적인 얼굴은 호불호가 분명하게 갈릴 확률이 ‘{어본얼’에} 비해 높다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%B3%B8%EC%96%BC> ;
-    kno:instantiates kno:S000626 ;
-    kno:component kno:KN2013-0300-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    kno:frequency kno:KN2013-0300-freq-NN-2012 ;
-    rdfs:label "어본얼"@ko ;
-    kno:frequency kno:KN2013-0300-freq-NN-total ;
-    kno:year "2013"^^xsd:gYear ;
+kno:KN2013-0300 kno:component kno:KN2013-0300-c3 ;
     kno:indexForm "어본얼"@ko ;
-    kno:componentString "어(디), 본, 얼(굴)"@ko ;
-    kno:slotFiller "어(디)+본 (2성분)"@ko ;
-    kno:component kno:KN2013-0300-c3 ;
+    kno:year "2013"^^xsd:gYear ;
+    skos:definition "‘어디서 본 듯한 얼굴’을 줄여 이르는 말. 처음 보았지만 낯선 느낌이 들지 않는, 개성이 뚜렷하지 않은 외모를 뜻한다."@ko ;
+    kno:registration "신어DB"@ko ;
     kno:languageType "고+고+고" ;
-    kno:lastAttestationYear "2012"^^xsd:gYear .
-kno:KN2013-0300-c1 kno:formative kno:F004934 ;
-    rdfs:label "어(디)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000601 ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%B3%B8%EC%96%BC> ;
+    kno:frequency kno:KN2013-0300-freq-NN-2012 ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "어(디)+본 (2성분)"@ko ;
+    kno:component kno:KN2013-0300-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶너무 개성적인 얼굴은 호불호가 분명하게 갈릴 확률이 ‘{어본얼’에} 비해 높다."@ko ;
+    kno:component kno:KN2013-0300-c1 ;
+    kno:frequency kno:KN2013-0300-freq-NN-total ;
+    rdfs:label "어본얼"@ko ;
+    kno:componentString "어(디), 본, 얼(굴)"@ko .
+kno:KN2013-0300-c3 kno:surfaceForm "얼"@ko ;
+    rdfs:label "얼(굴)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000117 ;
+    kno:position "3"^^xsd:integer ;
     a kno:Component ;
-    kno:surfaceForm "어"@ko ;
-    kno:fullForm "어디"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:semanticTag kno:usas-Z8 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2013-0300-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A5.4p ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "본"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:fullForm "얼굴"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2013-0300-c2 kno:semanticTag kno:usas-A5.4p ;
     kno:fullForm "본"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "본"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "본"@ko ;
     kno:formative kno:F003919 ;
     a kno:Component ;
-    kno:surfaceForm "본"@ko ;
     kno:position "2"^^xsd:integer .
-kno:KN2013-0300-c3 kno:formative kno:F000117 ;
-    kno:surfaceForm "얼"@ko ;
+kno:KN2013-0300-c1 rdfs:label "어(디)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "어디"@ko ;
+    kno:surfaceForm "어"@ko ;
+    kno:formative kno:F004934 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "얼굴"@ko ;
-    rdfs:label "얼(굴)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-B1 ;
-    a kno:Component .
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:role "슬롯 채움"@ko .

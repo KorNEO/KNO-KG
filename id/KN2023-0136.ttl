@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0136 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0136 kno:languageType "영_영" ;
-    kno:origin "(<영>self sale)" ;
-    kno:year "2023"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "셀프 세일"@ko ;
-    kno:example "¶배달 대행 서비스를 운영하는 한 회사가 기업 가치를 스스로 낮추며 ‘{셀프 세일’에} 나섰지만, 국내외 투자 유치에 큰 어려움을 겪고 있다."@ko ;
-    kno:frequency kno:KN2023-0136-freq-NN-2022 ;
-    kno:predicate "평가하다"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0136-freq-NN-total ;
-    kno:slotFiller "세일(sale) (1성분)"@ko ;
-    kno:componentString "셀프(self), 세일(sale)"@ko ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "셀프세일"@ko ;
+kno:KN2023-0136 kno:component kno:KN2023-0136-c1 ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:component kno:KN2023-0136-c1 ;
-    kno:component kno:KN2023-0136-c2 ;
-    kno:instantiates kno:S001459 ;
-    skos:definition "주로 기업이 투자를 받기 위해 스스로의 가치를 낮게 평가하는 일."@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%80%ED%94%84%20%EC%84%B8%EC%9D%BC> ;
     kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%85%80%ED%94%84%20%EC%84%B8%EC%9D%BC> .
-kno:KN2023-0136-c1 kno:fullForm "셀프"@ko ;
+    kno:instantiates kno:S001376 ;
+    kno:component kno:KN2023-0136-c2 ;
+    kno:componentString "셀프(self), 세일(sale)"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:predicate "평가하다"@ko ;
+    a kno:Neologism ;
+    kno:indexForm "셀프세일"@ko ;
+    kno:languageType "영_영" ;
+    kno:origin "(<영>self sale)" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0136-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2023-0136-freq-NN-total ;
+    kno:example "¶배달 대행 서비스를 운영하는 한 회사가 기업 가치를 스스로 낮추며 ‘{셀프 세일’에} 나섰지만, 국내외 투자 유치에 큰 어려움을 겪고 있다."@ko ;
+    kno:slotFiller "세일(sale) (1성분)"@ko ;
+    skos:definition "주로 기업이 투자를 받기 위해 스스로의 가치를 낮게 평가하는 일."@ko ;
+    rdfs:label "셀프 세일"@ko .
+kno:KN2023-0136-c1 a kno:Component ;
     rdfs:label "셀프(self)"@ko ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:fullForm "셀프"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "셀프"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000371 ;
-    kno:semanticTag kno:usas-Z8 .
-kno:KN2023-0136-c2 rdfs:label "세일(sale)"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "셀프"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0136-c2 kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I2.2 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F004358 ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "세일"@ko ;
-    kno:surfaceForm "세일"@ko .
+    kno:surfaceForm "세일"@ko ;
+    kno:formative kno:F004358 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "세일(sale)"@ko .

@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0319 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0319 kno:languageType "한+고" ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000612 ;
-    skos:definition "‘현실 웃음’을 줄여 이르는 말. ‘ㅋㅋ’ 따위를 타자로 쳐서 웃음을 표현하는 것이 아니라 실제 웃음을 가리킬 때 쓰인다."@ko ;
-    kno:indexForm "현웃"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "현(실)(現), 웃(음)"@ko ;
+kno:KN2014-0319 kno:component kno:KN2014-0319-c2 ;
     a ontolex:Word ;
-    kno:example "¶요일마다 연재되는 많은 코미디 장르의 웹툰 중에서도 매주 화ㆍ금요일 엄지족들의 {현웃을} 자아내는 클래스가 다른 ‘OO’가 개그 웹툰의 대표작이라고 할 수 있다."@ko ;
+    kno:origin "(現웃)" ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369068> ;
+    kno:formation kno:W06 ;
+    kno:languageType "한+고" ;
+    skos:definition "‘현실 웃음’을 줄여 이르는 말. ‘ㅋㅋ’ 따위를 타자로 쳐서 웃음을 표현하는 것이 아니라 실제 웃음을 가리킬 때 쓰인다."@ko ;
+    kno:componentString "현(실)(現), 웃(음)"@ko ;
+    kno:pos "「명」"@ko ;
     kno:component kno:KN2014-0319-c1 ;
+    kno:example "¶요일마다 연재되는 많은 코미디 장르의 웹툰 중에서도 매주 화ㆍ금요일 엄지족들의 {현웃을} 자아내는 클래스가 다른 ‘OO’가 개그 웹툰의 대표작이라고 할 수 있다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1369068" ;
+    a kno:Neologism ;
     kno:year "2014"^^xsd:gYear ;
     rdfs:label "현웃"@ko ;
-    kno:urimalTargetCode "1369068" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369068> ;
-    kno:component kno:KN2014-0319-c2 ;
-    kno:slotFiller "웃(음) (1성분)"@ko ;
-    kno:formation kno:W06 ;
-    kno:origin "(現웃)" ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko .
-kno:KN2014-0319-c1 rdfs:label "현(실)(現)"@ko ;
-    kno:fullForm "현실"@ko ;
-    kno:surfaceForm "현"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A3 ;
-    kno:formative kno:F001022 .
-kno:KN2014-0319-c2 kno:fullForm "웃음"@ko ;
-    kno:formative kno:F001657 ;
-    kno:surfaceForm "웃"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "현웃"@ko .
+kno:KN2014-0319-c2 kno:semanticTag kno:usas-E4.1p ;
     rdfs:label "웃(음)"@ko ;
-    kno:semanticTag kno:usas-E4.1p ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "웃"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "웃음"@ko ;
+    kno:formative kno:F001657 ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2014-0319-c1 kno:surfaceForm "현"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001022 ;
+    kno:semanticTag kno:usas-A3 ;
+    rdfs:label "현(실)(現)"@ko ;
+    kno:fullForm "현실"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component .

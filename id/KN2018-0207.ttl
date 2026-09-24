@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0207 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0207 skos:definition "스모그와 같은 대기 오염으로부터 몸을 보호하기 위한 패션. ‘스모그(smog)’와 고급 여성복을 뜻하는 ‘쿠튀르(couture)’를 결합하여 만든 말이다."@ko ;
+kno:KN2018-0207 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EB%AA%A8%EA%B7%B8%20%EC%BF%A0%ED%8A%80%EB%A5%B4> ;
+    kno:registration "신어DB"@ko ;
     kno:languageType "영_프" ;
     kno:slotFiller "쿠튀르(couture) (1성분)"@ko ;
-    a kno:Neologism ;
+    kno:example "¶이를 겨냥해 패션업계에서는 최근 ‘{스모그 쿠튀르}’ 제품들을 출시하고 있다."@ko ;
     kno:indexForm "스모그쿠튀르"@ko ;
-    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000495 ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:componentString "스모그(smog), 쿠튀르(couture)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2018-0207-c1 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
     kno:component kno:KN2018-0207-c2 ;
     kno:origin "(<영>smog<프>couture)" ;
-    kno:registration "신어DB"@ko ;
-    kno:example "¶이를 겨냥해 패션업계에서는 최근 ‘{스모그 쿠튀르}’ 제품들을 출시하고 있다."@ko ;
-    kno:instantiates kno:S000538 ;
-    a ontolex:MultiwordExpression ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:component kno:KN2018-0207-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%A4%EB%AA%A8%EA%B7%B8%20%EC%BF%A0%ED%8A%80%EB%A5%B4> ;
-    kno:componentString "스모그(smog), 쿠튀르(couture)"@ko ;
-    rdfs:label "스모그 쿠튀르"@ko ;
-    kno:unitType "구"@ko .
-kno:KN2018-0207-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B5 ;
-    rdfs:label "쿠튀르(couture)"@ko ;
-    kno:fullForm "쿠튀르"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F006318 ;
-    a kno:Component ;
-    kno:surfaceForm "쿠튀르"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:pos "「구」"@ko ;
+    skos:definition "스모그와 같은 대기 오염으로부터 몸을 보호하기 위한 패션. ‘스모그(smog)’와 고급 여성복을 뜻하는 ‘쿠튀르(couture)’를 결합하여 만든 말이다."@ko ;
+    rdfs:label "스모그 쿠튀르"@ko .
 kno:KN2018-0207-c1 kno:surfaceForm "스모그"@ko ;
-    kno:fullForm "스모그"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "스모그(smog)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000820 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-W4 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:formative kno:F000820 ;
+    kno:fullForm "스모그"@ko ;
+    a kno:Component ;
+    rdfs:label "스모그(smog)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0207-c2 kno:semanticTag kno:usas-B5 ;
+    kno:fullForm "쿠튀르"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006318 ;
+    rdfs:label "쿠튀르(couture)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "쿠튀르"@ko .

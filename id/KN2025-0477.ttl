@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0477 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0477 a kno:Neologism ;
-    kno:origin "(人間<영>GPT)" ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S001614 ;
+kno:KN2025-0477 kno:component kno:KN2025-0477-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:example "(LLM) 자료를 쭉 훑더니 쟁점이랑 결론을 바로 정리해 주는 선배는 팀에서 {인간GPT로} 통한다."@ko ;
-    kno:componentString "인간(人間), GPT"@ko ;
-    kno:year "2025"^^xsd:gYear ;
+    kno:indexForm "인간GPT"@ko ;
+    kno:languageType "한_영" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(人間<영>GPT)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EA%B0%84%20GPT> ;
     kno:slotFiller "GPT (1성분)"@ko ;
     skos:definition "(LLM) 인공지능 챗봇처럼 질문에 맞춰 핵심을 정리해 주거나 근거를 들어 답을 잘하는 사람을 비유적으로 이르는 말."@ko ;
-    kno:languageType "한_영" ;
+    kno:componentString "인간(人間), GPT"@ko ;
+    kno:example "(LLM) 자료를 쭉 훑더니 쟁점이랑 결론을 바로 정리해 주는 선배는 팀에서 {인간GPT로} 통한다."@ko ;
+    kno:instantiates kno:S001527 ;
     rdfs:label "인간 GPT"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0477-c2 ;
-    kno:component kno:KN2025-0477-c1 ;
-    kno:indexForm "인간GPT"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B8%EA%B0%84%20GPT> ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2025-0477-c2 kno:surfaceForm "GPT"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F002053 ;
-    rdfs:label "GPT"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:component kno:KN2025-0477-c1 .
+kno:KN2025-0477-c2 rdfs:label "GPT"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-Y2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002053 ;
     kno:fullForm "GPT"@ko ;
-    kno:position "2"^^xsd:integer .
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "GPT"@ko ;
+    kno:semanticTag kno:usas-Y2 .
 kno:KN2025-0477-c1 kno:formative kno:F000892 ;
-    rdfs:label "인간(人間)"@ko ;
-    kno:surfaceForm "인간"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
-    kno:fullForm "인간"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "인간(人間)"@ko ;
+    kno:surfaceForm "인간"@ko ;
+    kno:fullForm "인간"@ko .

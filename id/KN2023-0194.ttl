@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0194 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0194 skos:definition "엔화의 시세를 이용한 재테크를 하는 사람. 또는 그런 무리."@ko ;
+kno:KN2023-0194 kno:frequency kno:KN2023-0194-freq-NN-2025 ;
+    kno:slotFiller "엔(en) (1성분)"@ko ;
+    kno:component kno:KN2023-0194-c2 ;
+    kno:languageType "(일+영)+한" ;
+    kno:component kno:KN2023-0194-c3 ;
+    kno:indexForm "엔테크족"@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2023-0194-freq-NN-2024 ;
+    kno:componentString "엔(en), (재)테크(財tech), -족(族)"@ko ;
+    kno:frequency kno:KN2023-0194-freq-NN-2023 ;
+    kno:year "2023"^^xsd:gYear ;
+    a ontolex:Word ;
+    rdfs:label "엔테크-족"@ko ;
     a kno:Neologism ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000106 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<일>en[円]<영>tech族)" ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:example "¶지난해 말 역대급 ‘엔저’ 현상이 발생하면서 환차익을 노린 {엔테크족이} 대거 등장한 것으로 나타났다."@ko ;
     kno:pos "「명」"@ko ;
     kno:frequency kno:KN2023-0194-freq-NN-total ;
-    kno:origin "(<일>en[円]<영>tech族)" ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2023-0194-freq-NN-2025 ;
-    kno:predicate "하다"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2023-0194-c2 ;
-    kno:formation kno:W02 ;
-    kno:indexForm "엔테크족"@ko ;
-    a ontolex:Word ;
-    kno:example "¶지난해 말 역대급 ‘엔저’ 현상이 발생하면서 환차익을 노린 {엔테크족이} 대거 등장한 것으로 나타났다."@ko ;
-    kno:languageType "(일+영)+한" ;
-    kno:instantiates kno:S000116 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2023-0194-c1 ;
-    rdfs:label "엔테크-족"@ko ;
-    kno:frequency kno:KN2023-0194-freq-NN-2024 ;
-    kno:frequency kno:KN2023-0194-freq-NN-2023 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%94%ED%85%8C%ED%81%AC%EC%A1%B1> ;
     kno:registration "신어DB"@ko ;
-    kno:slotFiller "엔(en) (1성분)"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:componentString "엔(en), (재)테크(財tech), -족(族)"@ko ;
-    kno:component kno:KN2023-0194-c3 .
-kno:KN2023-0194-c2 kno:fullForm "재테크"@ko ;
+    kno:component kno:KN2023-0194-c1 ;
+    skos:definition "엔화의 시세를 이용한 재테크를 하는 사람. 또는 그런 무리."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%94%ED%85%8C%ED%81%AC%EC%A1%B1> .
+kno:KN2023-0194-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
     kno:formative kno:F000065 ;
     kno:surfaceForm "테크"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(재)테크(財tech)"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-I1 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2023-0194-c1 kno:semanticTag kno:usas-N1 ;
-    kno:fullForm "엔"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:fullForm "재테크"@ko .
+kno:KN2023-0194-c3 kno:fullForm "족"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000001 .
+kno:KN2023-0194-c1 rdfs:label "엔(en)"@ko ;
+    kno:semanticTag kno:usas-N1 ;
     kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "엔"@ko ;
-    kno:formative kno:F005007 ;
-    rdfs:label "엔(en)"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2023-0194-c3 rdfs:label "-족(族)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S2 ;
+    kno:fullForm "엔"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:fullForm "족"@ko ;
-    kno:formative kno:F000001 ;
-    kno:surfaceForm "족"@ko .
+    kno:formative kno:F005007 ;
+    a kno:Component .

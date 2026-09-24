@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0183 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0183 a ontolex:MultiwordExpression ;
-    kno:example "¶소위 {세기말 키즈라는} 1999년생 자녀를 둔 학부모의 자녀 교육은 유독 파란만장하였다."@ko ;
-    kno:componentString "세기말(世紀末), 키즈(kids)"@ko ;
-    kno:urimalTargetCode "1416249" ;
-    kno:languageType "한_영" ;
-    kno:slotFiller "세기말(世紀末) (1성분)"@ko ;
-    kno:instantiates kno:S000273 ;
-    kno:frequency kno:KN2018-0183-freq-NN-2017 ;
-    kno:registration "우리말샘"@ko ;
-    kno:origin "(世紀末<영>kids)" ;
-    kno:component kno:KN2018-0183-c2 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2018-0183-freq-NN-2018 ;
+kno:KN2018-0183 kno:unitType "구"@ko ;
     kno:lastAttestationYear "2018"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416249> ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:component kno:KN2018-0183-c1 ;
-    skos:definition "20세기의 끝인 1999년에 태어난 아이를 이르는 말."@ko ;
-    kno:indexForm "세기말키즈"@ko ;
+    a kno:Neologism ;
     rdfs:label "세기말 키즈"@ko ;
+    kno:componentString "세기말(世紀末), 키즈(kids)"@ko ;
+    skos:definition "20세기의 끝인 1999년에 태어난 아이를 이르는 말."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "세기말(世紀末) (1성분)"@ko ;
+    kno:languageType "한_영" ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:indexForm "세기말키즈"@ko ;
+    kno:component kno:KN2018-0183-c1 ;
+    kno:instantiates kno:S000250 ;
+    kno:component kno:KN2018-0183-c2 ;
+    kno:urimalTargetCode "1416249" ;
+    kno:example "¶소위 {세기말 키즈라는} 1999년생 자녀를 둔 학부모의 자녀 교육은 유독 파란만장하였다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416249> ;
+    kno:frequency kno:KN2018-0183-freq-NN-2018 ;
     kno:frequency kno:KN2018-0183-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko .
-kno:KN2018-0183-c2 kno:semanticTag kno:usas-S2 ;
+    kno:origin "(世紀末<영>kids)" ;
+    kno:frequency kno:KN2018-0183-freq-NN-2017 ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0183-c1 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "세기말"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세기말(世紀末)"@ko ;
+    kno:formative kno:F004344 ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "세기말"@ko .
+kno:KN2018-0183-c2 kno:semanticTag kno:usas-T3m ;
     kno:formative kno:F000151 ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "키즈(kids)"@ko ;
+    a kno:Component ;
     kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "키즈"@ko ;
-    kno:semanticTag kno:usas-T3m ;
     kno:surfaceForm "키즈"@ko ;
-    rdfs:label "키즈(kids)"@ko .
-kno:KN2018-0183-c1 kno:surfaceForm "세기말"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "세기말(世紀末)"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:formative kno:F004344 ;
-    kno:fullForm "세기말"@ko .
+    kno:position "2"^^xsd:integer .

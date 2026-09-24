@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0089 kno:activeYears "0"^^xsd:integer ;
-    kno:slotFiller "노(래) (1성분)"@ko ;
-    kno:instantiates kno:S000074 ;
-    a kno:Neologism ;
+kno:KN2013-0089 kno:componentString "노(래), 방(房)"@ko ;
+    a ontolex:Word ;
+    rdfs:label "노방"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:example "¶낼 생파 때 {노방} 가냐?"@ko ;
+    kno:component kno:KN2013-0089-c1 ;
+    kno:languageType "고+한" ;
+    kno:formation kno:W06 ;
     kno:unitType "단어"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=344080> ;
-    kno:languageType "고+한" ;
-    a ontolex:Word ;
-    kno:component kno:KN2013-0089-c1 ;
-    kno:year "2013"^^xsd:gYear ;
-    skos:definition "‘노래방’의 준말."@ko ;
-    kno:componentString "노(래), 방(房)"@ko ;
     kno:component kno:KN2013-0089-c2 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "노방"@ko ;
     kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    a kno:Neologism ;
     kno:origin "(노房)" ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:label "노방"@ko ;
-    kno:example "¶낼 생파 때 {노방} 가냐?"@ko ;
     kno:urimalTargetCode "344080" ;
-    kno:formation kno:W06 ;
-    kno:indexForm "노방"@ko .
-kno:KN2013-0089-c1 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001149 ;
+    skos:definition "‘노래방’의 준말."@ko .
+kno:KN2013-0089-c1 kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-K2 ;
     kno:surfaceForm "노"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "노(래)"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:formative kno:F001149 ;
     kno:fullForm "노래"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "노(래)"@ko .
-kno:KN2013-0089-c2 a kno:Component ;
+    a kno:Component .
+kno:KN2013-0089-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "방"@ko ;
+    rdfs:label "방(房)"@ko ;
+    kno:formative kno:F000077 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-H2 ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "방"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "방"@ko ;
-    rdfs:label "방(房)"@ko ;
-    kno:formative kno:F000077 .
+    kno:surfaceForm "방"@ko .

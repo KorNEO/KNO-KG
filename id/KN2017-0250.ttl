@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0250 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0250 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380236> ;
+kno:KN2017-0250 a kno:Neologism ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:instantiates kno:S000003 ;
     kno:frequency kno:KN2017-0250-freq-NN-2024 ;
     kno:languageType "한+한" ;
-    kno:frequency kno:KN2017-0250-freq-NN-2017 ;
-    kno:frequency kno:KN2017-0250-freq-NN-2019 ;
+    rdfs:label "졸혼-남"@ko ;
+    kno:origin "(卒婚男)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380236> ;
+    kno:frequency kno:KN2017-0250-freq-NN-2018 ;
+    a ontolex:Word ;
+    skos:definition "이혼을 하지 않은 상태에서, 부부 사이의 결혼 생활을 그만두는 남자."@ko ;
     kno:year "2017"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2017-0250-freq-NN-2025 ;
-    kno:instantiates kno:S000003 ;
-    kno:frequency kno:KN2017-0250-freq-NN-2023 ;
     kno:registration "우리말샘"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2017-0250-freq-NN-2019 ;
+    kno:frequency kno:KN2017-0250-freq-NN-2023 ;
+    kno:indexForm "졸혼남"@ko ;
+    kno:componentString "졸혼(卒婚), -남(男)"@ko ;
     kno:unitType "단어"@ko ;
     kno:component kno:KN2017-0250-c1 ;
-    kno:example "¶배우 OOO이 최근 {졸혼남으로} 살고 있음을 밝히며 그간 털어놓지 않았던 속마음을 고백했다."@ko ;
-    kno:origin "(卒婚男)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:componentString "졸혼(卒婚), -남(男)"@ko ;
-    kno:formation kno:W02 ;
-    rdfs:label "졸혼-남"@ko ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2017-0250-freq-NN-total ;
-    kno:slotFiller "졸혼(卒婚) (1성분)"@ko ;
-    kno:frequency kno:KN2017-0250-freq-NN-2018 ;
     kno:predicate "그만두다"@ko ;
-    kno:indexForm "졸혼남"@ko ;
+    kno:urimalTargetCode "1380236" ;
+    kno:pos "「명」"@ko ;
     kno:component kno:KN2017-0250-c2 ;
-    skos:definition "이혼을 하지 않은 상태에서, 부부 사이의 결혼 생활을 그만두는 남자."@ko ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:urimalTargetCode "1380236" .
+    kno:frequency kno:KN2017-0250-freq-NN-2025 ;
+    kno:frequency kno:KN2017-0250-freq-NN-2017 ;
+    kno:formation kno:W02 ;
+    kno:slotFiller "졸혼(卒婚) (1성분)"@ko ;
+    kno:frequency kno:KN2017-0250-freq-NN-total ;
+    kno:example "¶배우 OOO이 최근 {졸혼남으로} 살고 있음을 밝히며 그간 털어놓지 않았던 속마음을 고백했다."@ko .
 kno:KN2017-0250-c1 kno:role "슬롯 채움"@ko ;
-    rdfs:label "졸혼(卒婚)"@ko ;
-    kno:formative kno:F001768 ;
-    kno:semanticTag kno:usas-S4 ;
-    a kno:Component ;
-    kno:fullForm "졸혼"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "졸혼"@ko .
-kno:KN2017-0250-c2 kno:role "고정항"@ko ;
+    kno:formative kno:F001768 ;
+    kno:surfaceForm "졸혼"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "졸혼"@ko ;
     a kno:Component ;
+    rdfs:label "졸혼(卒婚)"@ko ;
+    kno:semanticTag kno:usas-S4 .
+kno:KN2017-0250-c2 kno:surfaceForm "남"@ko ;
+    kno:formative kno:F000008 ;
     kno:semanticTag kno:usas-S2.2 ;
     kno:fullForm "남"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000008 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "남"@ko ;
     rdfs:label "-남(男)"@ko .

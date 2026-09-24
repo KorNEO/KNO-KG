@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0349 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0349 kno:year "2020"^^xsd:gYear ;
-    kno:indexForm "코로나안개"@ko ;
-    kno:slotFiller "안개 (1성분)"@ko ;
-    kno:component kno:KN2020-0349-c1 ;
+kno:KN2020-0349 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0349-freq-NN-2023 ;
+    a kno:Neologism ;
     rdfs:label "코로나 안개"@ko ;
+    kno:slotFiller "안개 (1성분)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    skos:definition "코로나19의 확산으로 인해 미래가 불확실한 상황을 비유적으로 이르는 말."@ko ;
     kno:frequency kno:KN2020-0349-freq-NN-2021 ;
-    kno:instantiates kno:S000005 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%95%88%EA%B0%9C> ;
-    kno:registration "신어DB"@ko ;
-    kno:example "¶예비 창업자들은 끝이 보이지 않는 {코로나 안개} 속에 창업에 성공한 이들의 경험담을 참고할 필요가 있다."@ko ;
-    kno:unitType "구"@ko ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000004 ;
+    kno:frequency kno:KN2020-0349-freq-NN-2020 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:example "¶예비 창업자들은 끝이 보이지 않는 {코로나 안개} 속에 창업에 성공한 이들의 경험담을 참고할 필요가 있다."@ko ;
     kno:frequency kno:KN2020-0349-freq-NN-2022 ;
+    kno:indexForm "코로나안개"@ko ;
+    kno:component kno:KN2020-0349-c2 ;
     kno:origin "(<영>←corona virus안개)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%95%88%EA%B0%9C> ;
+    kno:component kno:KN2020-0349-c1 ;
     kno:languageType "영_고" ;
     kno:frequency kno:KN2020-0349-freq-NN-total ;
-    kno:frequency kno:KN2020-0349-freq-NN-2020 ;
-    skos:definition "코로나19의 확산으로 인해 미래가 불확실한 상황을 비유적으로 이르는 말."@ko ;
-    a kno:Neologism ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "코로나(바이러스)(corona virus), 안개"@ko ;
-    kno:component kno:KN2020-0349-c2 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2020-0349-freq-NN-2023 .
-kno:KN2020-0349-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000003 ;
-    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:surfaceForm "코로나"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "코로나바이러스"@ko ;
-    a kno:Component .
-kno:KN2020-0349-c2 rdfs:label "안개"@ko ;
+    kno:unitType "구"@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 안개"@ko .
+kno:KN2020-0349-c2 a kno:Component ;
     kno:surfaceForm "안개"@ko ;
-    a kno:Component ;
+    rdfs:label "안개"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F004836 ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "안개"@ko ;
-    kno:semanticTag kno:usas-W4 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    kno:semanticTag kno:usas-W4 .
+kno:KN2020-0349-c1 rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B2m ;
+    a kno:Component ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:formative kno:F000003 ;
+    kno:role "고정항"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "코로나"@ko .

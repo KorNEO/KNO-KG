@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0251 kno:year "2019"^^xsd:gYear ;
+kno:KN2019-0251 kno:component kno:KN2019-0251-c1 ;
+    kno:languageType "(고+한)^한" ;
+    kno:instantiates kno:S000002 ;
+    kno:example "¶반면 신세대는 가맹점 큐아르(QR) 코드를 스마트폰으로 찍거나 본인의 스마트폰에 내장된 큐아르(QR) 코드를 가맹점 단말기로 찍게 한다. 중국을 휩쓰는 이른바 {‘찍결 세대’의} 등장이다."@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "스마트폰을 이용해 정보 무늬(QR code) 따위를 찍어 상품의 값을 치르는 세대. ‘찍결’은 ‘찍어서 결제’를 줄여 이르는 말이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:slotFiller "찍(다)+결(제)(決) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2019-0251-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%8D%EA%B2%B0%EC%84%B8%EB%8C%80> ;
+    kno:origin "(찍決世代)" ;
+    rdfs:label "찍결^세대"@ko ;
+    kno:component kno:KN2019-0251-c2 ;
+    kno:frequency kno:KN2019-0251-freq-NN-2018 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2019-0251-freq-NN-total ;
     kno:componentString "찍(다), 결(제)(決), 세대(世代)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2019-0251-freq-NN-2018 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%8D%EA%B2%B0%EC%84%B8%EB%8C%80> ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:lastAttestationYear "2018"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "찍결세대"@ko ;
-    rdfs:label "찍결^세대"@ko ;
-    kno:example "¶반면 신세대는 가맹점 큐아르(QR) 코드를 스마트폰으로 찍거나 본인의 스마트폰에 내장된 큐아르(QR) 코드를 가맹점 단말기로 찍게 한다. 중국을 휩쓰는 이른바 {‘찍결 세대’의} 등장이다."@ko ;
-    kno:instantiates kno:S000002 ;
-    skos:definition "스마트폰을 이용해 정보 무늬(QR code) 따위를 찍어 상품의 값을 치르는 세대. ‘찍결’은 ‘찍어서 결제’를 줄여 이르는 말이다."@ko ;
-    kno:languageType "(고+한)^한" ;
     kno:predicate "치르다"@ko ;
-    kno:slotFiller "찍(다)+결(제)(決) (2성분)"@ko ;
-    kno:origin "(찍決世代)" ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2019-0251-c2 ;
-    kno:component kno:KN2019-0251-c1 ;
-    kno:component kno:KN2019-0251-c3 ;
+    kno:indexForm "찍결세대"@ko ;
     a kno:Neologism .
-kno:KN2019-0251-c2 a kno:Component ;
-    kno:surfaceForm "결"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "결제"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "결(제)(決)"@ko ;
-    kno:formative kno:F002216 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2019-0251-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "찍다"@ko ;
-    kno:semanticTag kno:usas-C1 ;
+kno:KN2019-0251-c1 kno:position "1"^^xsd:integer ;
     kno:formative kno:F000593 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "찍"@ko ;
+    kno:fullForm "찍다"@ko ;
     rdfs:label "찍(다)"@ko ;
+    kno:semanticTag kno:usas-C1 ;
     a kno:Component ;
-    kno:surfaceForm "찍"@ko .
-kno:KN2019-0251-c3 kno:fullForm "세대"@ko ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000006 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0251-c3 kno:formative kno:F000006 ;
     kno:surfaceForm "세대"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S2 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
     a kno:Component ;
-    rdfs:label "세대(世代)"@ko .
+    kno:fullForm "세대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2019-0251-c2 rdfs:label "결(제)(決)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "결제"@ko ;
+    kno:formative kno:F002216 ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "결"@ko ;
+    kno:role "슬롯 채움"@ko .

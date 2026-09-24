@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0141 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0141 kno:instantiates kno:S000868 ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384692> ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:componentString "반(말)(半), 모(드)(mode)"@ko ;
-    a kno:Neologism ;
-    skos:definition "‘반말 모드’를 줄여 이르는 말."@ko ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "반모"@ko ;
-    kno:example "¶‘{반모’는} 반말 모드, ‘사디’는 사람들이 무선 헤 드폰을 끼고 즐기는 파티인 사일런트 디스코를 각각 줄인 말로 사용된다."@ko ;
-    kno:component kno:KN2012-0141-c2 ;
-    a ontolex:Word ;
-    kno:origin "(半←mode)" ;
-    kno:pos "「명」"@ko ;
-    kno:urimalTargetCode "1384692" ;
+kno:KN2012-0141 kno:origin "(半←mode)" ;
     kno:indexForm "반모"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384692> ;
     kno:languageType "한+영" ;
-    kno:component kno:KN2012-0141-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "반(말)(半), 모(드)(mode)"@ko ;
+    kno:example "¶‘{반모’는} 반말 모드, ‘사디’는 사람들이 무선 헤 드폰을 끼고 즐기는 파티인 사일런트 디스코를 각각 줄인 말로 사용된다."@ko ;
+    a kno:Neologism ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2012"^^xsd:gYear ;
+    skos:definition "‘반말 모드’를 줄여 이르는 말."@ko ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:slotFiller "반(말)(半) (1성분)"@ko ;
-    kno:formation kno:W06 .
-kno:KN2012-0141-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-A4.1 ;
-    kno:fullForm "모드"@ko ;
-    kno:formative kno:F001303 ;
-    kno:surfaceForm "모"@ko ;
-    a kno:Component ;
-    rdfs:label "모(드)(mode)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2012-0141-c1 kno:surfaceForm "반"@ko ;
+    kno:urimalTargetCode "1384692" ;
+    rdfs:label "반모"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2012-0141-c1 ;
+    kno:component kno:KN2012-0141-c2 .
+kno:KN2012-0141-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-Q3 ;
-    rdfs:label "반(말)(半)"@ko ;
-    kno:formative kno:F003677 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "반말"@ko ;
+    kno:surfaceForm "반"@ko ;
     a kno:Component ;
+    kno:formative kno:F003677 ;
+    kno:fullForm "반말"@ko ;
+    rdfs:label "반(말)(半)"@ko .
+kno:KN2012-0141-c2 kno:fullForm "모드"@ko ;
+    kno:surfaceForm "모"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "모(드)(mode)"@ko ;
+    kno:formative kno:F001303 .

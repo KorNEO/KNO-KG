@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0231 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0231 kno:registration "우리말샘"@ko ;
-    rdfs:label "튀맥"@ko ;
-    kno:component kno:KN2015-0231-c1 ;
-    kno:indexForm "튀맥"@ko ;
-    kno:example "¶‘치맥’이 ‘{튀맥’으로} 진화하고 있다."@ko ;
-    kno:languageType "고+한" ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359768> ;
+kno:KN2015-0231 kno:year "2015"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1359768" ;
     a kno:Neologism ;
+    rdfs:label "튀맥"@ko ;
     kno:componentString "튀(김), 맥(주)(麥)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "튀(김) (1성분)"@ko ;
-    kno:instantiates kno:S000376 ;
     kno:component kno:KN2015-0231-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "튀맥"@ko ;
+    kno:component kno:KN2015-0231-c1 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359768> ;
     kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
     skos:definition "튀김과 맥주를 아울러 이르는 말."@ko ;
-    kno:origin "(튀麥)" ;
+    kno:languageType "고+한" ;
     kno:formation kno:W06 ;
-    kno:year "2015"^^xsd:gYear .
-kno:KN2015-0231-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:fullForm "튀김"@ko ;
-    rdfs:label "튀(김)"@ko ;
-    kno:surfaceForm "튀"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001915 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2015-0231-c2 kno:semanticTag kno:usas-F2 ;
-    kno:fullForm "맥주"@ko ;
-    kno:formative kno:F000171 ;
-    kno:role "고정항"@ko ;
+    kno:example "¶‘치맥’이 ‘{튀맥’으로} 진화하고 있다."@ko ;
+    kno:origin "(튀麥)" .
+kno:KN2015-0231-c2 kno:fullForm "맥주"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     rdfs:label "맥(주)(麥)"@ko ;
     a kno:Component ;
-    kno:surfaceForm "맥"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:formative kno:F000171 ;
+    kno:surfaceForm "맥"@ko ;
+    kno:semanticTag kno:usas-F2 .
+kno:KN2015-0231-c1 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "튀김"@ko ;
+    kno:surfaceForm "튀"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F001915 ;
+    rdfs:label "튀(김)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

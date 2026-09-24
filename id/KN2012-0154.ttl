@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0154 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%84%EC%B0%BD> ;
+kno:KN2012-0154 skos:definition "인터넷 개인 방송을 통해 전자 화폐를 구걸하는 여자. 인터넷에서 통용되는 전자 화폐인 ‘별 풍선’과 ‘창녀’를 줄여 이르는 말이다."@ko ;
     kno:indexForm "별창"@ko ;
+    kno:formation kno:W01 ;
+    kno:component kno:KN2012-0154-c1 ;
+    kno:component kno:KN2012-0154-c2 ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
     kno:componentString "별(풍선), 창(녀)(娼)"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:label "별-창"@ko ;
-    kno:component kno:KN2012-0154-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    kno:origin "(-娼)" ;
-    kno:year "2012"^^xsd:gYear ;
     a kno:Neologism ;
-    kno:component kno:KN2012-0154-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%84%EC%B0%BD> ;
     kno:predicate "구걸하다"@ko ;
     kno:languageType "고+한" ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:example "¶이른바 ‘{별창’이라고} 통하는 일반인이 진행하는 인터넷 개인 방송이다."@ko ;
-    skos:definition "인터넷 개인 방송을 통해 전자 화폐를 구걸하는 여자. 인터넷에서 통용되는 전자 화폐인 ‘별 풍선’과 ‘창녀’를 줄여 이르는 말이다."@ko ;
-    a ontolex:Word .
-kno:KN2012-0154-c2 rdfs:label "창(녀)(娼)"@ko ;
-    kno:semanticTag kno:usas-S2.1 ;
-    kno:formative kno:F006006 ;
-    kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "창"@ko ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:fullForm "창녀"@ko .
-kno:KN2012-0154-c1 a kno:Component ;
-    kno:surfaceForm "별"@ko ;
-    kno:role "성분"@ko ;
-    rdfs:label "별(풍선)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    a ontolex:Word ;
+    kno:origin "(-娼)" ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "별-창"@ko .
+kno:KN2012-0154-c1 kno:semanticTag kno:usas-I1 ;
     kno:formative kno:F003850 ;
-    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "별"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "별(풍선)"@ko ;
+    kno:role "성분"@ko ;
     kno:fullForm "별풍선"@ko ;
-    kno:position "1"^^xsd:integer .
+    a kno:Component .
+kno:KN2012-0154-c2 kno:semanticTag kno:usas-S2.1 ;
+    kno:fullForm "창녀"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "창(녀)(娼)"@ko ;
+    kno:formative kno:F006006 ;
+    kno:surfaceForm "창"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko .

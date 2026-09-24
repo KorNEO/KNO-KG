@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0016 a ontolex:Word ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "계폭"@ko ;
-    kno:component kno:KN2012-0016-c2 ;
-    kno:componentString "계(정)(計), 폭(파)(爆)"@ko ;
-    kno:urimalTargetCode "1373104" ;
+kno:KN2012-0016 kno:component kno:KN2012-0016-c1 ;
+    kno:pos "「명」"@ko ;
     rdfs:label "계폭"@ko ;
-    kno:component kno:KN2012-0016-c1 ;
-    kno:formation kno:W06 ;
+    kno:unitType "단어"@ko ;
     skos:definition "‘계정 폭파’를 줄여 이르는 말. 에스엔에스 계정이 삭제되는 것이다."@ko ;
+    kno:indexForm "계폭"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:languageType "한+한" ;
     kno:year "2012"^^xsd:gYear ;
+    kno:formation kno:W06 ;
+    kno:urimalTargetCode "1373104" ;
+    a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373104> ;
-    kno:origin "(計爆)" ;
-    kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
     kno:example "¶OO당은 29일 OO당이 OOO 후보 등 자당 후보들이 트위터 계정 폭파를 당했다며 검찰 수사까지 주장했다가 트위터 본사로부터 {계폭은} 불가능하다고 힐난을 당한 것과 관련, “국민은 OO당을 ‘자가당착’이라고 조소하지 않을까 싶다.”라고 비꼬았다."@ko ;
-    kno:activeYears "0"^^xsd:integer .
-kno:KN2012-0016-c2 kno:role "성분"@ko ;
-    rdfs:label "폭(파)(爆)"@ko ;
-    kno:surfaceForm "폭"@ko ;
-    kno:formative kno:F006747 ;
-    kno:fullForm "폭파"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:componentString "계(정)(計), 폭(파)(爆)"@ko ;
+    kno:component kno:KN2012-0016-c2 ;
+    kno:origin "(計爆)" .
+kno:KN2012-0016-c1 a kno:Component ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2012-0016-c1 rdfs:label "계(정)(計)"@ko ;
+    kno:formative kno:F001060 ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "계"@ko ;
     kno:fullForm "계정"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F001060 ;
     kno:semanticTag kno:usas-Y2 ;
+    rdfs:label "계(정)(計)"@ko .
+kno:KN2012-0016-c2 kno:formative kno:F006747 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "폭파"@ko ;
     kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:surfaceForm "폭"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    a kno:Component ;
+    rdfs:label "폭(파)(爆)"@ko .

@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0237 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0237 kno:pos "「명」"@ko ;
+kno:KN2013-0237 kno:frequency kno:KN2013-0237-freq-NN-total ;
     kno:component kno:KN2013-0237-c3 ;
-    skos:definition "‘생산 기능직001’을 줄여 이르는 말."@ko ;
-    kno:frequency kno:KN2013-0237-freq-NN-total ;
-    kno:componentString "생(산)(生), (기)능(能), 직(職)"@ko ;
-    a ontolex:Word ;
-    a kno:Neologism ;
     kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "생능직"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%8A%A5%EC%A7%81> ;
+    a ontolex:Word ;
+    kno:componentString "생(산)(生), (기)능(能), 직(職)"@ko ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:example "¶이와 비슷한 의미로 생산, 기능직의 준말인 {생능직이라는} 단어도 쓰인다. 과거 대졸자들에게 생산직은 비교적 비인기 직종이었지만, 최근에는 취업난으로 정년을 보장하고 임금도 높은 대기업 생산직이나 기능직에 지원자가 몰리고 있다."@ko ;
-    kno:component kno:KN2013-0237-c2 ;
-    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(生能職)" ;
     rdfs:label "생능직"@ko ;
     kno:frequency kno:KN2013-0237-freq-NN-2012 ;
+    kno:indexForm "생능직"@ko ;
     kno:languageType "한+한+한" ;
-    kno:origin "(生能職)" ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0237-c1 ;
     kno:year "2013"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%8A%A5%EC%A7%81> .
+    skos:definition "‘생산 기능직001’을 줄여 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶이와 비슷한 의미로 생산, 기능직의 준말인 {생능직이라는} 단어도 쓰인다. 과거 대졸자들에게 생산직은 비교적 비인기 직종이었지만, 최근에는 취업난으로 정년을 보장하고 임금도 높은 대기업 생산직이나 기능직에 지원자가 몰리고 있다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0237-c1 ;
+    kno:component kno:KN2013-0237-c2 .
 kno:KN2013-0237-c3 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "직(職)"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F005902 ;
     kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "직(職)"@ko ;
     kno:fullForm "직"@ko ;
     kno:surfaceForm "직"@ko ;
     a kno:Component ;
-    kno:formative kno:F005902 ;
-    kno:position "3"^^xsd:integer .
-kno:KN2013-0237-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F002830 ;
-    kno:semanticTag kno:usas-X9.1p ;
-    kno:surfaceForm "능"@ko ;
-    rdfs:label "(기)능(能)"@ko ;
-    kno:fullForm "기능"@ko .
+    kno:semanticTag kno:usas-I3.1 .
 kno:KN2013-0237-c1 kno:semanticTag kno:usas-I4 ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F004253 ;
     rdfs:label "생(산)(生)"@ko ;
     kno:surfaceForm "생"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
+    kno:fullForm "생산"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F004253 ;
+    a kno:Component .
+kno:KN2013-0237-c2 kno:fullForm "기능"@ko ;
+    rdfs:label "(기)능(能)"@ko ;
+    kno:formative kno:F002830 ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:fullForm "생산"@ko .
+    kno:surfaceForm "능"@ko ;
+    kno:semanticTag kno:usas-X9.1p .

@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0071 kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2025-0071 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%82%AC%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8> ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0071-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "교사스타그램"@ko ;
+    kno:formation kno:W05 ;
     kno:componentString "교사(敎師), (인)스타그램(Instagram)"@ko ;
     kno:component kno:KN2025-0071-c2 ;
     kno:year "2025"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "공유하다"@ko ;
-    a kno:Neologism ;
     skos:definition "(LLM) 교사가 누리 소통망 서비스(SNS), 특히 인스타그램에 수업ㆍ학급 운영ㆍ학교생활 등 교직 관련 사진이나 영상을 올려 공유하는 일. 또는 그런 계정ㆍ콘텐츠."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2025-0071-freq-NN-total ;
-    kno:frequency kno:KN2025-0071-freq-NN-2025 ;
-    kno:registration "신어DB"@ko ;
-    kno:example "(LLM) 우리 반 담임 선생님은 학급 행사 사진을 꾸준히 올려서 {교사스타그램이} 거의 학급 소식지 역할을 한다."@ko ;
-    kno:instantiates kno:S000067 ;
-    kno:component kno:KN2025-0071-c1 ;
-    kno:origin "(敎師←Instagram)" ;
-    rdfs:label "교사스타그램"@ko ;
-    kno:slotFiller "교사(敎師) (1성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%82%AC%EC%8A%A4%ED%83%80%EA%B7%B8%EB%9E%A8> ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
     kno:indexForm "교사스타그램"@ko ;
-    kno:formation kno:W05 .
-kno:KN2025-0071-c2 kno:surfaceForm "스타그램"@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000063 ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2025-0071-c1 ;
+    kno:example "(LLM) 우리 반 담임 선생님은 학급 행사 사진을 꾸준히 올려서 {교사스타그램이} 거의 학급 소식지 역할을 한다."@ko ;
+    kno:origin "(敎師←Instagram)" ;
+    kno:languageType "한+영" ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "교사(敎師) (1성분)"@ko ;
+    kno:predicate "공유하다"@ko ;
+    kno:frequency kno:KN2025-0071-freq-NN-2025 ;
+    kno:unitType "단어"@ko .
+kno:KN2025-0071-c2 a kno:Component ;
+    kno:fullForm "인스타그램"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:formative kno:F000143 ;
-    rdfs:label "(인)스타그램(Instagram)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Q1.3 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "인스타그램"@ko .
-kno:KN2025-0071-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002430 ;
+    kno:surfaceForm "스타그램"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "(인)스타그램(Instagram)"@ko .
+kno:KN2025-0071-c1 kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "교사"@ko ;
-    rdfs:label "교사(敎師)"@ko ;
     kno:semanticTag kno:usas-P1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "교사"@ko .
+    kno:formative kno:F002430 ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "교사"@ko ;
+    a kno:Component ;
+    rdfs:label "교사(敎師)"@ko ;
+    kno:role "슬롯 채움"@ko .

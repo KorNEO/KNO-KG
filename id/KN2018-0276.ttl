@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0276 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0276 kno:indexForm "월화요병"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "월(요일)(月)+화요(일)(火曜) (2성분)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "월(요일)(月), 화요(일)(火曜), 병(病)"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:origin "(月火曜病)" ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    rdfs:label "월화요-병"@ko ;
-    kno:component kno:KN2018-0276-c3 ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2018-0276-c2 ;
-    kno:frequency kno:KN2018-0276-freq-NN-2017 ;
-    kno:formation kno:W01 ;
-    kno:frequency kno:KN2018-0276-freq-NN-2020 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%ED%99%94%EC%9A%94%EB%B3%91> ;
+kno:KN2018-0276 kno:example "¶{월화요병} 퇴치를 부르는 웃음 만발, 공감 백배, 가슴 찡한 울림 선사!"@ko ;
     kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%94%ED%99%94%EC%9A%94%EB%B3%91> ;
     kno:frequency kno:KN2018-0276-freq-NN-total ;
+    kno:instantiates kno:S000022 ;
+    rdfs:label "월화요-병"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2018-0276-c2 ;
+    kno:slotFiller "월(요일)(月)+화요(일)(火曜) (2성분)"@ko ;
     kno:predicate "느끼다"@ko ;
     kno:component kno:KN2018-0276-c1 ;
-    kno:example "¶{월화요병} 퇴치를 부르는 웃음 만발, 공감 백배, 가슴 찡한 울림 선사!"@ko ;
-    kno:pos "「명」"@ko ;
+    kno:component kno:KN2018-0276-c3 ;
+    kno:indexForm "월화요병"@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2018-0276-freq-NN-2020 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(月火曜病)" ;
+    kno:year "2018"^^xsd:gYear ;
     skos:definition "한 주가 시작되는 월요일과 화요일에 정신적ㆍ육체적 피로나 힘이 없음을 느끼는 증상."@ko ;
-    kno:instantiates kno:S000021 .
-kno:KN2018-0276-c3 kno:fullForm "병"@ko ;
-    kno:role "고정항"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:componentString "월(요일)(月), 화요(일)(火曜), 병(病)"@ko ;
+    kno:unitType "단어"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0276-freq-NN-2017 .
+kno:KN2018-0276-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "화요(일)(火曜)"@ko ;
+    kno:fullForm "화요일"@ko ;
     a kno:Component ;
+    kno:formative kno:F007139 ;
+    kno:surfaceForm "화요"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-T1.3 .
+kno:KN2018-0276-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "월(요일)(月)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F005260 ;
+    a kno:Component ;
+    kno:fullForm "월요일"@ko ;
+    kno:surfaceForm "월"@ko .
+kno:KN2018-0276-c3 kno:role "고정항"@ko ;
     kno:surfaceForm "병"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000033 ;
+    kno:fullForm "병"@ko ;
     rdfs:label "병(病)"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000033 ;
-    kno:semanticTag kno:usas-B2m .
-kno:KN2018-0276-c2 rdfs:label "화요(일)(火曜)"@ko ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:surfaceForm "화요"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F007139 ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "화요일"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2018-0276-c1 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "월"@ko ;
-    kno:formative kno:F005260 ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:fullForm "월요일"@ko ;
-    rdfs:label "월(요일)(月)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
+    kno:semanticTag kno:usas-B2m .

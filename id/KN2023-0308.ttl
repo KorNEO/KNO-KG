@@ -9,61 +9,61 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0308 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0308 kno:component kno:KN2023-0308-c1 ;
-    kno:indexForm "킹차킹산직"@ko ;
-    kno:frequency kno:KN2023-0308-freq-NN-2023 ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(<영>king車<영>king産職)" ;
-    kno:unitType "구"@ko ;
-    kno:languageType "(영+한)_(영+한)" ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "킹차 킹산직"@ko ;
+kno:KN2023-0308 kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0308-c1 ;
+    kno:component kno:KN2023-0308-c4 ;
     kno:componentString "킹(king), 차(車), 킹(king), (생)산직(生産職)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%82%B9%EC%B0%A8%20%ED%82%B9%EC%82%B0%EC%A7%81> ;
+    kno:example "¶최근 ‘{킹차킹산직’의} 공개 채용에는 취준생뿐만 아니라 안정적 직업의 직장인들도 대거 지원하여 큰 화제가 되었다."@ko ;
+    kno:component kno:KN2023-0308-c3 ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:year "2023"^^xsd:gYear ;
-    skos:definition "대형 자동차 기업인 ‘현대’의 생산 분야 직무의 급여나 처우가 매우 좋음을 강조하여 이르는 말. 영어 단어 ‘킹(king)’과 ‘생산직’을 결합하여 만든 말이다. =킹산직."@ko ;
-    a kno:Neologism ;
     kno:frequency kno:KN2023-0308-freq-NN-total ;
-    kno:component kno:KN2023-0308-c2 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0308-freq-NN-2023 ;
+    kno:indexForm "킹차킹산직"@ko ;
+    rdfs:label "킹차 킹산직"@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(<영>king車<영>king産職)" ;
     kno:pos "「구」"@ko ;
-    kno:component kno:KN2023-0308-c4 ;
-    kno:example "¶최근 ‘{킹차킹산직’의} 공개 채용에는 취준생뿐만 아니라 안정적 직업의 직장인들도 대거 지원하여 큰 화제가 되었다."@ko ;
-    kno:component kno:KN2023-0308-c3 .
-kno:KN2023-0308-c1 kno:fullForm "킹"@ko ;
+    skos:definition "대형 자동차 기업인 ‘현대’의 생산 분야 직무의 급여나 처우가 매우 좋음을 강조하여 이르는 말. 영어 단어 ‘킹(king)’과 ‘생산직’을 결합하여 만든 말이다. =킹산직."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0308-c2 ;
+    kno:languageType "(영+한)_(영+한)" .
+kno:KN2023-0308-c1 rdfs:label "킹(king)"@ko ;
+    kno:fullForm "킹"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "킹"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
+    kno:formative kno:F000122 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2023-0308-c4 rdfs:label "(생)산직(生産職)"@ko ;
+    kno:surfaceForm "산직"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:fullForm "생산직"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:formative kno:F000795 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0308-c3 kno:surfaceForm "킹"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "킹(king)"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-S7.1p ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "킹(king)"@ko ;
-    kno:surfaceForm "킹"@ko ;
     kno:formative kno:F000122 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2023-0308-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "차"@ko ;
+    kno:fullForm "킹"@ko .
+kno:KN2023-0308-c2 kno:formative kno:F000075 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "차"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-M3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "차"@ko ;
+    a kno:Component ;
     rdfs:label "차(車)"@ko ;
-    kno:formative kno:F000075 .
-kno:KN2023-0308-c4 kno:formative kno:F000795 ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:position "4"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "산직"@ko ;
-    kno:fullForm "생산직"@ko ;
-    rdfs:label "(생)산직(生産職)"@ko .
-kno:KN2023-0308-c3 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S7.1p ;
-    rdfs:label "킹(king)"@ko ;
-    kno:surfaceForm "킹"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F000122 ;
-    kno:fullForm "킹"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:fullForm "차"@ko .

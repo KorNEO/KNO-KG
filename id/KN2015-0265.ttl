@@ -9,41 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0265 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0265 kno:formation kno:W06 ;
-    kno:example "¶스튜디오에 등장한 줄임말을 쓰는 친구들은…“OOO 언니는 가까이서 보니 {현미} 돋는다.”라며 “말을 줄여서 쓰는 게 정말 편하다. 할 말이 많으니 말을 줄이는 거다.”라고 밝혔다."@ko ;
-    kno:component kno:KN2015-0265-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%84%EB%AF%B8> ;
-    kno:origin "(現美)" ;
-    skos:definition "‘현실 미모’를 줄여 이르는 말. 방송이나 사진으로 보는 모습이 아니라 직접 눈으로 본 모습이 매우 아름다울 때 쓰는 말이다."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:instantiates kno:S000612 ;
-    kno:component kno:KN2015-0265-c1 ;
-    kno:languageType "한+한" ;
-    kno:slotFiller "미(모)(美) (1성분)"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
+kno:KN2015-0265 rdfs:label "현미"@ko ;
+    kno:formation kno:W06 ;
     kno:componentString "현(실)(現), 미(모)(美)"@ko ;
-    rdfs:label "현미"@ko ;
-    a ontolex:Word ;
+    kno:unitType "단어"@ko ;
     kno:indexForm "현미"@ko ;
+    kno:component kno:KN2015-0265-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%84%EB%AF%B8> ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:languageType "한+한" ;
+    kno:example "¶스튜디오에 등장한 줄임말을 쓰는 친구들은…“OOO 언니는 가까이서 보니 {현미} 돋는다.”라며 “말을 줄여서 쓰는 게 정말 편하다. 할 말이 많으니 말을 줄이는 거다.”라고 밝혔다."@ko ;
+    kno:origin "(現美)" ;
+    kno:component kno:KN2015-0265-c2 ;
+    skos:definition "‘현실 미모’를 줄여 이르는 말. 방송이나 사진으로 보는 모습이 아니라 직접 눈으로 본 모습이 매우 아름다울 때 쓰는 말이다."@ko ;
+    a ontolex:Word ;
     a kno:Neologism .
-kno:KN2015-0265-c2 kno:truncated "true"^^xsd:boolean ;
+kno:KN2015-0265-c1 rdfs:label "현(실)(現)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "현"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001022 ;
+    kno:semanticTag kno:usas-A3 ;
+    kno:fullForm "현실"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .
+kno:KN2015-0265-c2 kno:semanticTag kno:usas-O4.2p ;
+    rdfs:label "미(모)(美)"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:formative kno:F001324 ;
     kno:fullForm "미모"@ko ;
-    kno:semanticTag kno:usas-O4.2p ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "미(모)(美)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     a kno:Component ;
     kno:surfaceForm "미"@ko .
-kno:KN2015-0265-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "현실"@ko ;
-    kno:surfaceForm "현"@ko ;
-    kno:semanticTag kno:usas-A3 ;
-    rdfs:label "현(실)(現)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001022 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean .

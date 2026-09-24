@@ -9,43 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0127 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0127 kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶우리는 ‘나홀로 캠핑’이라 절대 ‘{떼캠’을} 하지 않습니다."@ko ;
-    kno:predicate "하다"@ko ;
-    skos:definition "여럿이 무리 지어 하는 캠핑."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357631> ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:slotFiller "캠(프)(camp) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2013-0127-c1 ;
-    kno:origin "(떼←<영>camp)" ;
-    rdfs:label "떼캠"@ko ;
-    kno:indexForm "떼캠"@ko ;
+kno:KN2013-0127 a ontolex:Word ;
     kno:componentString "떼, 캠(프)(camp)"@ko ;
-    kno:urimalTargetCode "1357631" ;
-    kno:component kno:KN2013-0127-c2 ;
-    kno:languageType "고+영" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:instantiates kno:S000296 ;
     a kno:Neologism ;
+    kno:component kno:KN2013-0127-c1 ;
+    kno:indexForm "떼캠"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:languageType "고+영" ;
+    kno:formation kno:W06 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357631> ;
+    kno:component kno:KN2013-0127-c2 ;
+    skos:definition "여럿이 무리 지어 하는 캠핑."@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:label "떼캠"@ko ;
+    kno:predicate "하다"@ko ;
     kno:pos "「명」"@ko ;
-    kno:formation kno:W06 .
+    kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(떼←<영>camp)" ;
+    kno:example "¶우리는 ‘나홀로 캠핑’이라 절대 ‘{떼캠’을} 하지 않습니다."@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:urimalTargetCode "1357631" .
 kno:KN2013-0127-c1 kno:surfaceForm "떼"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "떼"@ko ;
-    kno:formative kno:F000258 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "떼"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000258 ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-S5 .
-kno:KN2013-0127-c2 kno:semanticTag kno:usas-K1 ;
-    kno:surfaceForm "캠"@ko ;
+    rdfs:label "떼"@ko .
+kno:KN2013-0127-c2 kno:formative kno:F001850 ;
+    kno:role "성분"@ko ;
     rdfs:label "캠(프)(camp)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001850 ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K1 ;
+    a kno:Component ;
+    kno:surfaceForm "캠"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "캠프"@ko .

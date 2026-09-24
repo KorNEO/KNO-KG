@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0375 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0375 a kno:Neologism ;
-    kno:indexForm "여자박스장"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AC%EC%9E%90%20%EB%B0%95%EC%8A%A4%EC%9E%A5> ;
-    kno:pos "「구」"@ko ;
+kno:KN2016-0375 kno:pos "「구」"@ko ;
+    kno:component kno:KN2016-0375-c1 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "성매매 여성을 모집하고 관리하여 이들을 성매매업소에 알선하는 여자를 이르는 말."@ko ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:component kno:KN2016-0375-c2 ;
-    kno:componentString "여자(女子), 박스(box), 장(長)"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2016-0375-freq-NN-2016 ;
-    kno:component kno:KN2016-0375-c3 ;
-    kno:unitType "구"@ko ;
-    skos:definition "성매매 여성을 모집하고 관리하여 이들을 성매매업소에 알선하는 여자를 이르는 말."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2016-0375-freq-NN-total ;
+    kno:languageType "한_(영+한)" ;
     rdfs:label "여자 박스장"@ko ;
-    kno:component kno:KN2016-0375-c1 ;
     kno:example "¶이들은 또 ‘{여자 박스장’이라} 불리는 모집책을 통해 성매매 여성들을 관리해 왔으며 이들과 거래한 성매매 여성만 158명으로 파악됐다."@ko ;
+    kno:componentString "여자(女子), 박스(box), 장(長)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "여자박스장"@ko ;
+    kno:component kno:KN2016-0375-c3 ;
     kno:origin "(女子<영>box長)" ;
-    kno:languageType "한_(영+한)" .
-kno:KN2016-0375-c2 kno:formative kno:F000271 ;
-    a kno:Component ;
-    rdfs:label "박스(box)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "박스"@ko ;
-    kno:surfaceForm "박스"@ko .
-kno:KN2016-0375-c3 kno:surfaceForm "장"@ko ;
-    rdfs:label "장(長)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S7.1p ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005558 ;
-    kno:fullForm "장"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2016-0375-c1 kno:role "성분"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AC%EC%9E%90%20%EB%B0%95%EC%8A%A4%EC%9E%A5> ;
+    kno:year "2016"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2016-0375-freq-NN-2016 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2016-0375-freq-NN-total .
+kno:KN2016-0375-c1 kno:formative kno:F001605 ;
     kno:fullForm "여자"@ko ;
-    kno:formative kno:F001605 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S2.1 ;
     kno:surfaceForm "여자"@ko ;
-    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "여자(女子)"@ko .
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "여자(女子)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S2.1 .
+kno:KN2016-0375-c2 kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "박스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "박스"@ko ;
+    kno:formative kno:F000271 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "박스(box)"@ko .
+kno:KN2016-0375-c3 kno:semanticTag kno:usas-S7.1p ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "장(長)"@ko ;
+    kno:fullForm "장"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "장"@ko ;
+    a kno:Component ;
+    kno:formative kno:F005558 .

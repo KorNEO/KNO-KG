@@ -9,41 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0135 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0135 kno:year "2019"^^xsd:gYear ;
-    kno:slotFiller "타(임)(time) (1성분)"@ko ;
+kno:KN2019-0135 kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    rdfs:label "빵타"@ko ;
+    kno:component kno:KN2019-0135-c1 ;
+    a ontolex:Word ;
+    kno:componentString "빵, 타(임)(time)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "빵타"@ko ;
+    kno:year "2019"^^xsd:gYear ;
     kno:languageType "고+영" ;
     skos:definition "‘빵 먹는 타임’을 줄여 이르는 말."@ko ;
-    kno:component kno:KN2019-0135-c2 ;
-    rdfs:label "빵타"@ko ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%ED%83%80> ;
     kno:origin "(빵<영>←time)" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S000213 ;
-    kno:componentString "빵, 타(임)(time)"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2019-0135-c1 ;
-    kno:indexForm "빵타"@ko ;
-    a kno:Neologism ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
     kno:example "¶빵을 나눠 주며 “빨리 뜯어 같이 짠 하게.”라고 한 OOO은 이어 {“빵타.”라고} 하며 다른 사람들을 당황하게 만들었다."@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2019-0135-c2 rdfs:label "타(임)(time)"@ko ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:truncated "true"^^xsd:boolean ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%B5%ED%83%80> ;
+    kno:component kno:KN2019-0135-c2 .
+kno:KN2019-0135-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "빵"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000175 ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "빵"@ko ;
+    rdfs:label "빵"@ko .
+kno:KN2019-0135-c2 kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F006382 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "타(임)(time)"@ko ;
     kno:surfaceForm "타"@ko ;
     kno:fullForm "타임"@ko ;
-    kno:formative kno:F006382 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2019-0135-c1 kno:fullForm "빵"@ko ;
-    kno:formative kno:F000175 ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "빵"@ko ;
-    kno:surfaceForm "빵"@ko ;
-    kno:semanticTag kno:usas-F1 .
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:truncated "true"^^xsd:boolean .

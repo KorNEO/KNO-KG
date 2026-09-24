@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0202 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0202 kno:frequency kno:KN2025-0202-freq-NN-total ;
-    kno:slotFiller "(연)말정산(年末精算) (1성분)"@ko ;
-    kno:instantiates kno:S001358 ;
+kno:KN2025-0202 kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:formation kno:W05 ;
     kno:frequency kno:KN2025-0202-freq-NN-2025 ;
-    kno:indexForm "런말정산"@ko ;
-    kno:predicate "결산하다"@ko ;
     kno:year "2025"^^xsd:gYear ;
     a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
     skos:definition "(LLM) 연말에 한 해 동안의 달리기 기록(거리ㆍ횟수ㆍ시간 등)을 정리하고 결산하는 일."@ko ;
     rdfs:label "런말정산"@ko ;
-    kno:formation kno:W05 ;
+    kno:instantiates kno:S001277 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "(연)말정산(年末精算) (1성분)"@ko ;
     kno:example "(LLM) 연말이 되자 러닝 앱 기록을 모아 {런말정산을} 하면서 올해 총 몇 km를 달렸는지 정리했다."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
+    kno:indexForm "런말정산"@ko ;
     a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9F%B0%EB%A7%90%EC%A0%95%EC%82%B0> ;
-    kno:component kno:KN2025-0202-c2 ;
+    kno:pos "「명」"@ko ;
     kno:componentString "런(running), (연)말정산(年末精算)"@ko ;
-    kno:component kno:KN2025-0202-c1 .
-kno:KN2025-0202-c2 kno:fullForm "연말정산"@ko ;
-    rdfs:label "(연)말정산(年末精算)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:formative kno:F003377 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "말정산"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0202-c1 kno:fullForm "런"@ko ;
-    rdfs:label "런(running)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0202-c1 ;
+    kno:predicate "결산하다"@ko ;
+    kno:component kno:KN2025-0202-c2 ;
+    kno:frequency kno:KN2025-0202-freq-NN-total .
+kno:KN2025-0202-c1 kno:role "고정항"@ko ;
     kno:formative kno:F000730 ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "런"@ko ;
     kno:surfaceForm "런"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-K5.1 .
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "런(running)"@ko ;
+    a kno:Component .
+kno:KN2025-0202-c2 kno:surfaceForm "말정산"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F003377 ;
+    kno:fullForm "연말정산"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "(연)말정산(年末精算)"@ko .

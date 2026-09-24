@@ -9,44 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0600 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0600 kno:instantiates kno:S000769 ;
+kno:KN2016-0600 kno:languageType "고+영" ;
     kno:origin "(혼<영>←hotel)" ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:urimalTargetCode "1373035" ;
-    skos:definition "혼자 호텔에 감. 또는 그렇게 가는 호텔."@ko ;
-    kno:slotFiller "(호)텔(hotel) (1성분)"@ko ;
     kno:example "¶{혼텔} 경험이 있는 응답자 가운데 6개월~1년에 한 번꼴로 {혼텔을} 한다는 답변이 남성과 여성 모두 가장 많았다."@ko ;
-    kno:languageType "고+영" ;
-    kno:componentString "혼(자), (호)텔(hotel)"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373035> ;
-    kno:component kno:KN2016-0600-c2 ;
-    kno:slotFiller "혼(자) (1성분)"@ko ;
-    kno:indexForm "혼텔"@ko ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko ;
     kno:component kno:KN2016-0600-c1 ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W05 ;
-    kno:instantiates kno:S000017 ;
+    kno:pos "「명」"@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:componentString "혼(자), (호)텔(hotel)"@ko ;
+    kno:component kno:KN2016-0600-c2 ;
+    kno:year "2016"^^xsd:gYear ;
+    skos:definition "혼자 호텔에 감. 또는 그렇게 가는 호텔."@ko ;
+    kno:formation kno:W05 ;
+    kno:unitType "단어"@ko ;
     rdfs:label "혼텔"@ko ;
-    a ontolex:Word .
-kno:KN2016-0600-c2 kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    kno:indexForm "혼텔"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373035> ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1373035" .
+kno:KN2016-0600-c1 kno:fullForm "혼자"@ko ;
     a kno:Component ;
-    rdfs:label "(호)텔(hotel)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000425 ;
-    kno:surfaceForm "텔"@ko ;
-    kno:fullForm "호텔"@ko ;
-    kno:semanticTag kno:usas-H1 .
-kno:KN2016-0600-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:surfaceForm "혼"@ko ;
     kno:formative kno:F000011 ;
+    kno:surfaceForm "혼"@ko ;
     rdfs:label "혼(자)"@ko ;
-    kno:fullForm "혼자"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S5 .
+kno:KN2016-0600-c2 kno:formative kno:F000425 ;
+    rdfs:label "(호)텔(hotel)"@ko ;
+    kno:surfaceForm "텔"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:fullForm "호텔"@ko .

@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0003 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0003 kno:frequency kno:KN2019-0003-freq-NN-2020 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%90%EC%A0%95%20%EB%8C%80%EB%A6%AC%EC%9D%B8> ;
+kno:KN2019-0003 kno:registration "신어DB"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2019-0003-c2 ;
+    rdfs:label "감정 대리인"@ko ;
+    kno:frequency kno:KN2019-0003-freq-NN-total ;
+    kno:frequency kno:KN2019-0003-freq-NN-2019 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0003-freq-NN-2020 ;
     skos:definition "다른 이의 감정을 대신하여 표현해 주는 사람."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%90%EC%A0%95%20%EB%8C%80%EB%A6%AC%EC%9D%B8> ;
     kno:frequency kno:KN2019-0003-freq-NN-2021 ;
     kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:languageType "한_한" ;
-    kno:frequency kno:KN2019-0003-freq-NN-2019 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2019-0003-freq-NN-2018 ;
     a kno:Neologism ;
-    kno:year "2019"^^xsd:gYear ;
+    kno:component kno:KN2019-0003-c1 ;
+    kno:origin "(感情代理人)" ;
     kno:pos "「구」"@ko ;
-    rdfs:label "감정 대리인"@ko ;
-    kno:registration "신어DB"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:indexForm "감정대리인"@ko ;
     kno:componentString "감정(感情), 대리인(代理人)"@ko ;
+    kno:languageType "한_한" ;
+    kno:example "¶과거엔 시청자가 직접 출연자의 감정을 해석했지만 이젠 패널이 {‘감정 대리인’을} 맡아 그 역할을 대신하게 됐어요."@ko ;
+    kno:year "2019"^^xsd:gYear ;
     kno:predicate "주다"@ko ;
-    kno:component kno:KN2019-0003-c2 ;
-    kno:unitType "구"@ko ;
-    kno:origin "(感情代理人)" ;
-    kno:frequency kno:KN2019-0003-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2019-0003-c1 ;
-    kno:example "¶과거엔 시청자가 직접 출연자의 감정을 해석했지만 이젠 패널이 {‘감정 대리인’을} 맡아 그 역할을 대신하게 됐어요."@ko .
-kno:KN2019-0003-c2 kno:formative kno:F002915 ;
+    kno:frequency kno:KN2019-0003-freq-NN-2018 .
+kno:KN2019-0003-c2 kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
     kno:fullForm "대리인"@ko ;
     kno:surfaceForm "대리인"@ko ;
-    rdfs:label "대리인(代理人)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "성분"@ko .
-kno:KN2019-0003-c1 kno:role "성분"@ko ;
-    rdfs:label "감정(感情)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "감정"@ko ;
+    rdfs:label "대리인(代理人)"@ko ;
+    kno:formative kno:F002915 .
+kno:KN2019-0003-c1 kno:semanticTag kno:usas-E1 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F002130 ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-E1 ;
-    a kno:Component ;
-    kno:fullForm "감정"@ko .
+    rdfs:label "감정(感情)"@ko ;
+    kno:fullForm "감정"@ko ;
+    kno:surfaceForm "감정"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component .

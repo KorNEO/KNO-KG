@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0097 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0097 kno:frequency kno:KN2021-0097-freq-NN-total ;
+kno:KN2021-0097 kno:example "¶배송은 로켓 배송을 자랑하면서 대금 정산은 거북이처럼 하는 일부 기업의 갑질을 방지하기 위해 {로켓 정산법의} 도입이 필요하다."@ko ;
+    kno:frequency kno:KN2021-0097-freq-NN-2021 ;
     kno:frequency kno:KN2021-0097-freq-NN-2022 ;
-    kno:component kno:KN2021-0097-c2 ;
-    kno:languageType "영^한" ;
-    kno:component kno:KN2021-0097-c3 ;
-    kno:frequency kno:KN2021-0097-freq-NN-2024 ;
     kno:componentString "로켓(rocket), 정산(定算), 법(法)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "영^한" ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0097-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A1%9C%EC%BC%93%EC%A0%95%EC%82%B0%EB%B2%95> ;
     kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0097-freq-NN-2024 ;
+    kno:indexForm "로켓정산법"@ko ;
+    a kno:Neologism ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
+    kno:component kno:KN2021-0097-c2 ;
+    kno:slotFiller "로켓(rocket)+정산(定算) (2성분)"@ko ;
     kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
-    kno:component kno:KN2021-0097-c1 ;
-    kno:origin "(<영>rocket定算法)" ;
-    a kno:Neologism ;
-    kno:predicate "규정하다"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000009 ;
     skos:definition "판매 대금의 지급 기한을 30일로 규정하는 법안. 2021년 1월에 발의되었다."@ko ;
-    kno:instantiates kno:S000010 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A1%9C%EC%BC%93%EC%A0%95%EC%82%B0%EB%B2%95> ;
-    kno:frequency kno:KN2021-0097-freq-NN-2021 ;
-    kno:indexForm "로켓정산법"@ko ;
+    kno:predicate "규정하다"@ko ;
     rdfs:label "로켓^정산법"@ko ;
-    kno:slotFiller "로켓(rocket)+정산(定算) (2성분)"@ko ;
-    kno:example "¶배송은 로켓 배송을 자랑하면서 대금 정산은 거북이처럼 하는 일부 기업의 갑질을 방지하기 위해 {로켓 정산법의} 도입이 필요하다."@ko ;
-    kno:year "2021"^^xsd:gYear .
-kno:KN2021-0097-c2 kno:semanticTag kno:usas-I1 ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>rocket定算法)" ;
+    kno:component kno:KN2021-0097-c1 ;
+    kno:component kno:KN2021-0097-c3 .
+kno:KN2021-0097-c2 kno:formative kno:F005674 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "정산(定算)"@ko ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
     kno:fullForm "정산"@ko ;
-    kno:formative kno:F005674 ;
+    kno:surfaceForm "정산"@ko .
+kno:KN2021-0097-c1 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M5 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "로켓(rocket)"@ko ;
+    kno:formative kno:F000733 ;
+    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "정산"@ko ;
-    rdfs:label "정산(定算)"@ko .
-kno:KN2021-0097-c3 a kno:Component ;
+    kno:fullForm "로켓"@ko ;
+    kno:surfaceForm "로켓"@ko .
+kno:KN2021-0097-c3 kno:semanticTag kno:usas-G2.1 ;
     kno:formative kno:F000002 ;
     rdfs:label "법(法)"@ko ;
     kno:fullForm "법"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:surfaceForm "법"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko .
-kno:KN2021-0097-c1 a kno:Component ;
-    rdfs:label "로켓(rocket)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "로켓"@ko ;
-    kno:formative kno:F000733 ;
-    kno:semanticTag kno:usas-M5 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "로켓"@ko ;
-    kno:role "슬롯 채움"@ko .
+    a kno:Component ;
+    kno:surfaceForm "법"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .

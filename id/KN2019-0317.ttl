@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0317 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0317 kno:slotFiller "하우스(house) (1성분)"@ko ;
-    kno:indexForm "하우스디바이드"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
+kno:KN2019-0317 kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000343 ;
+    skos:definition "부동산 가격이 상승하면서 주택을 소유한 계층과 소유하지 못한 계층 간에 발생하는 사회 경제적 격차."@ko ;
     a kno:Neologism ;
-    kno:languageType "영_영" ;
-    kno:frequency kno:KN2019-0317-freq-NN-total ;
+    kno:component kno:KN2019-0317-c2 ;
+    rdfs:label "하우스 디바이드"@ko ;
     kno:unitType "구"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(<영>house divide)" ;
+    kno:example "¶세대를 막론하고 서울 집값 상승에 따른 박탈감이나 허탈함을 겪는 사람이 많아지면서 최근에는 {‘하우스 디바이드’가} 사회 갈등을 유발하는 새로운 요인이 되고 있다."@ko ;
     kno:pos "「구」"@ko ;
+    kno:urimalTargetCode "1470518" ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "하우스(house) (1성분)"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2019-0317-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0317-freq-NN-total ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:indexForm "하우스디바이드"@ko ;
+    kno:component kno:KN2019-0317-c1 ;
     kno:frequency kno:KN2019-0317-freq-NN-2018 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1470518> ;
-    kno:example "¶세대를 막론하고 서울 집값 상승에 따른 박탈감이나 허탈함을 겪는 사람이 많아지면서 최근에는 {‘하우스 디바이드’가} 사회 갈등을 유발하는 새로운 요인이 되고 있다."@ko ;
-    kno:component kno:KN2019-0317-c2 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0317-freq-NN-2023 ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:origin "(<영>house divide)" ;
-    skos:definition "부동산 가격이 상승하면서 주택을 소유한 계층과 소유하지 못한 계층 간에 발생하는 사회 경제적 격차."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:urimalTargetCode "1470518" ;
-    kno:componentString "하우스(house), 디바이드(divide)"@ko ;
-    kno:component kno:KN2019-0317-c1 ;
-    kno:instantiates kno:S000372 ;
     kno:frequency kno:KN2019-0317-freq-NN-2019 ;
-    rdfs:label "하우스 디바이드"@ko .
+    kno:componentString "하우스(house), 디바이드(divide)"@ko .
 kno:KN2019-0317-c2 kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A6.1m ;
-    kno:fullForm "디바이드"@ko ;
-    kno:formative kno:F000721 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "디바이드(divide)"@ko ;
-    kno:surfaceForm "디바이드"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2019-0317-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000639 ;
-    kno:surfaceForm "하우스"@ko ;
-    rdfs:label "하우스(house)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-H1 ;
+    kno:formative kno:F000721 ;
+    kno:surfaceForm "디바이드"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:fullForm "디바이드"@ko ;
+    rdfs:label "디바이드(divide)"@ko .
+kno:KN2019-0317-c1 kno:semanticTag kno:usas-H1 ;
     kno:role "슬롯 채움"@ko ;
+    rdfs:label "하우스(house)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000639 ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:surfaceForm "하우스"@ko ;
     kno:fullForm "하우스"@ko .

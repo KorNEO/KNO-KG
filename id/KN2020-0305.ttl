@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0305 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0305 kno:instantiates kno:S000648 ;
-    kno:year "2020"^^xsd:gYear ;
-    rdfs:label "정보 감염증"@ko ;
-    kno:component kno:KN2020-0305-c1 ;
-    kno:component kno:KN2020-0305-c2 ;
+kno:KN2020-0305 a ontolex:MultiwordExpression ;
+    kno:example "¶언론 관계자들은 최근 코로나19와 관련된 일부 국민들의 {정보 감염증}을 우려하며, 해당 정보를 수용하기에 앞서 정보의 출처와 사실 관계를 먼저 확인해야 한다고 말했다."@ko ;
     kno:slotFiller "정보(情報) (1성분)"@ko ;
+    kno:year "2020"^^xsd:gYear ;
     kno:origin "(情報感染症)" ;
+    kno:component kno:KN2020-0305-c1 ;
     kno:frequency kno:KN2020-0305-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0305-freq-NN-2020 ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:languageType "한_한" ;
-    skos:definition "사실 확인 없이 과도하게 생산되어 유통되는 정보에 과민하게 반응하는 현상을 일컫는 말. 코로나19와 관련하여 확인되지 않은 정보가 급속히 퍼지면서 혼란을 가져오는 데서 생겨난 말이다."@ko ;
-    kno:example "¶언론 관계자들은 최근 코로나19와 관련된 일부 국민들의 {정보 감염증}을 우려하며, 해당 정보를 수용하기에 앞서 정보의 출처와 사실 관계를 먼저 확인해야 한다고 말했다."@ko ;
-    kno:urimalTargetCode "1485728" ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2020-0305-freq-NN-total ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1485728> ;
-    a kno:Neologism ;
-    kno:registration "우리말샘"@ko ;
     kno:indexForm "정보감염증"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    skos:definition "사실 확인 없이 과도하게 생산되어 유통되는 정보에 과민하게 반응하는 현상을 일컫는 말. 코로나19와 관련하여 확인되지 않은 정보가 급속히 퍼지면서 혼란을 가져오는 데서 생겨난 말이다."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1485728> ;
+    rdfs:label "정보 감염증"@ko ;
+    kno:component kno:KN2020-0305-c2 ;
     kno:frequency kno:KN2020-0305-freq-NN-2022 ;
-    kno:frequency kno:KN2020-0305-freq-NN-2020 ;
-    kno:componentString "정보(情報), 감염증(感染症)"@ko .
-kno:KN2020-0305-c1 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "정보"@ko ;
-    kno:semanticTag kno:usas-X2.2 ;
-    rdfs:label "정보(情報)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000583 ;
-    a kno:Component ;
+    kno:componentString "정보(情報), 감염증(感染症)"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:instantiates kno:S000596 ;
+    kno:frequency kno:KN2020-0305-freq-NN-total ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1485728" ;
+    kno:pos "「구」"@ko .
+kno:KN2020-0305-c1 kno:position "1"^^xsd:integer ;
     kno:fullForm "정보"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0305-c2 kno:formative kno:F000447 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "감염증"@ko ;
-    kno:semanticTag kno:usas-B2m ;
-    rdfs:label "감염증(感染症)"@ko ;
-    kno:surfaceForm "감염증"@ko ;
-    kno:role "고정항"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X2.2 ;
+    kno:surfaceForm "정보"@ko ;
+    kno:formative kno:F000583 ;
+    rdfs:label "정보(情報)"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0305-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F000447 ;
+    kno:surfaceForm "감염증"@ko ;
+    a kno:Component ;
+    kno:fullForm "감염증"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "감염증(感染症)"@ko .

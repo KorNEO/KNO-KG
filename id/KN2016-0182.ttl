@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0182 skos:definition "좋은 음식을 찾아 먹는 것을 즐겨 멀리 떨어진 곳에 있는 식당을 찾아가는 사람. 또는 그런 무리."@ko ;
-    kno:unitType "구"@ko ;
+kno:KN2016-0182 a kno:Neologism ;
+    kno:instantiates kno:S001304 ;
+    kno:componentString "미식(美食), 노마드(nomad)"@ko ;
+    kno:example "¶맛집을 들르면 식사를 하기 전에 잘 차려진 상차림을 사진으로 찍어 OO에 올리는 게 {미식 노마드들의} 기본 수칙이다."@ko ;
+    rdfs:label "미식^노마드"@ko ;
+    kno:urimalTargetCode "1372618" ;
+    kno:indexForm "미식노마드"@ko ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
+    kno:languageType "한^라" ;
+    kno:component kno:KN2016-0182-c1 ;
+    kno:frequency kno:KN2016-0182-freq-NN-2017 ;
+    kno:slotFiller "노마드(nomad) (1성분)"@ko ;
+    kno:frequency kno:KN2016-0182-freq-NN-2016 ;
+    kno:unitType "구"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2016-0182-c2 ;
     kno:frequency kno:KN2016-0182-freq-NN-total ;
     kno:frequency kno:KN2016-0182-freq-NN-2021 ;
-    kno:component kno:KN2016-0182-c2 ;
-    kno:frequency kno:KN2016-0182-freq-NN-2016 ;
-    kno:frequency kno:KN2016-0182-freq-NN-2017 ;
-    kno:instantiates kno:S001388 ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2016-0182-c1 ;
+    kno:origin "(美食<라>nomad)" ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:predicate "찾아가다"@ko ;
+    skos:definition "좋은 음식을 찾아 먹는 것을 즐겨 멀리 떨어진 곳에 있는 식당을 찾아가는 사람. 또는 그런 무리."@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372618> ;
     kno:frequency kno:KN2016-0182-freq-NN-2015 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:predicate "찾아가다"@ko ;
-    kno:indexForm "미식노마드"@ko ;
-    kno:urimalTargetCode "1372618" ;
-    a kno:Neologism ;
-    kno:languageType "한^라" ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:label "미식^노마드"@ko ;
-    kno:slotFiller "노마드(nomad) (1성분)"@ko ;
-    kno:origin "(美食<라>nomad)" ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:example "¶맛집을 들르면 식사를 하기 전에 잘 차려진 상차림을 사진으로 찍어 OO에 올리는 게 {미식 노마드들의} 기본 수칙이다."@ko ;
-    kno:componentString "미식(美食), 노마드(nomad)"@ko .
-kno:KN2016-0182-c2 rdfs:label "노마드(nomad)"@ko ;
-    kno:surfaceForm "노마드"@ko ;
-    kno:formative kno:F000477 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "노마드"@ko ;
-    kno:semanticTag kno:usas-M1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear .
+kno:KN2016-0182-c1 kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2016-0182-c1 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001329 ;
-    kno:fullForm "미식"@ko ;
     rdfs:label "미식(美食)"@ko ;
-    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F001329 ;
     kno:position "1"^^xsd:integer ;
+    kno:fullForm "미식"@ko ;
     kno:surfaceForm "미식"@ko ;
-    kno:semanticTag kno:usas-F1 .
+    a kno:Component .
+kno:KN2016-0182-c2 kno:formative kno:F000477 ;
+    kno:surfaceForm "노마드"@ko ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "노마드(nomad)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "노마드"@ko .

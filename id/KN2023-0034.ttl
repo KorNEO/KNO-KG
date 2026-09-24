@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0034 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0034 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%ED%8F%AD02> ;
-    kno:languageType "한+한" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:origin "(國暴)" ;
-    a ontolex:Word ;
-    rdfs:label "국폭02"@ko ;
+kno:KN2023-0034 kno:unitType "단어"@ko ;
     kno:indexForm "국폭"@ko ;
-    a kno:Neologism ;
-    kno:example "¶OOO은 제주 사삼 사건에 대해 {국폭에} 의하여 죄가 없는 국민들이 짓밟힌 일이라고 강조하였다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W06 ;
-    kno:component kno:KN2023-0034-c1 ;
+    kno:componentString "국(가)(國家), 폭(력)(暴力)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2023-0034-c2 ;
     skos:definition "‘국가 폭력’을 줄여 이르는 말."@ko ;
+    kno:example "¶OOO은 제주 사삼 사건에 대해 {국폭에} 의하여 죄가 없는 국민들이 짓밟힌 일이라고 강조하였다."@ko ;
     kno:registration "신어DB"@ko ;
     kno:year "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0034-c2 ;
-    kno:componentString "국(가)(國家), 폭(력)(暴力)"@ko ;
+    kno:component kno:KN2023-0034-c1 ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%ED%8F%AD02> ;
+    kno:languageType "한+한" ;
+    rdfs:label "국폭02"@ko ;
+    kno:formation kno:W06 ;
+    kno:origin "(國暴)" ;
     kno:pos "「명」"@ko .
-kno:KN2023-0034-c1 kno:formative kno:F002462 ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.1 ;
-    a kno:Component ;
-    kno:fullForm "국가"@ko ;
-    kno:surfaceForm "국"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "국(가)(國家)"@ko .
-kno:KN2023-0034-c2 kno:semanticTag kno:usas-E3m ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F001963 ;
+kno:KN2023-0034-c2 rdfs:label "폭(력)(暴力)"@ko ;
+    kno:semanticTag kno:usas-E3m ;
     kno:fullForm "폭력"@ko ;
-    rdfs:label "폭(력)(暴力)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "폭"@ko ;
     a kno:Component ;
-    kno:surfaceForm "폭"@ko .
+    kno:formative kno:F001963 ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0034-c1 kno:fullForm "국가"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "국"@ko ;
+    a kno:Component ;
+    rdfs:label "국(가)(國家)"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:formative kno:F002462 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .

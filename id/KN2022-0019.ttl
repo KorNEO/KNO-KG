@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0019 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0019 a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    rdfs:label "검수더박"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:languageType "한+한+고+한" ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(檢搜더剝)" ;
+kno:KN2022-0019 kno:formation kno:W06 ;
+    kno:instantiates kno:S000262 ;
     a ontolex:Word ;
-    kno:frequency kno:KN2022-0019-freq-NN-total ;
-    kno:component kno:KN2022-0019-c1 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000285 ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "검(찰)(檢察), 수(사권)(搜査權), 더, 박(탈)(剝奪)"@ko ;
-    kno:component kno:KN2022-0019-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EB%8D%94%EB%B0%95> ;
-    kno:formation kno:W06 ;
-    kno:indexForm "검수더박"@ko ;
+    kno:pos "「명」"@ko ;
     kno:slotFiller "더 (1성분)"@ko ;
-    skos:definition "‘검찰의 수사권을 더 박탈함’을 줄여 이르는 말. 검찰의 수사권을 현재보다 더 제한하는 것을 말한다."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2022-0019-c2 ;
+    kno:componentString "검(찰)(檢察), 수(사권)(搜査權), 더, 박(탈)(剝奪)"@ko ;
     kno:example "¶O 위원은 한국에서 검찰의 직접 수사가 지나치게 많이 이루어지고 있으므로 ‘검수완박’은 부당하지만 ‘{검수더박’은} 옳은 방향이라고 주장하였다."@ko ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:languageType "한+한+고+한" ;
     kno:component kno:KN2022-0019-c4 ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2022-0019-freq-NN-total ;
+    kno:frequency kno:KN2022-0019-freq-NN-2022 ;
+    kno:component kno:KN2022-0019-c1 ;
+    skos:definition "‘검찰의 수사권을 더 박탈함’을 줄여 이르는 말. 검찰의 수사권을 현재보다 더 제한하는 것을 말한다."@ko ;
+    rdfs:label "검수더박"@ko ;
+    a kno:Neologism ;
+    kno:origin "(檢搜더剝)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EB%8D%94%EB%B0%95> ;
+    kno:indexForm "검수더박"@ko ;
     kno:component kno:KN2022-0019-c3 ;
-    kno:frequency kno:KN2022-0019-freq-NN-2022 .
-kno:KN2022-0019-c1 kno:fullForm "검찰"@ko ;
-    kno:formative kno:F000159 ;
-    kno:surfaceForm "검"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2022-0019-c2 a kno:Component ;
     kno:role "고정항"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "검(찰)(檢察)"@ko ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2022-0019-c2 kno:formative kno:F000178 ;
-    kno:surfaceForm "수"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    rdfs:label "수(사권)(搜査權)"@ko ;
     kno:fullForm "수사권"@ko ;
+    kno:surfaceForm "수"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000178 ;
     kno:semanticTag kno:usas-G2.1 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2022-0019-c4 kno:position "4"^^xsd:integer ;
-    a kno:Component ;
+    rdfs:label "수(사권)(搜査權)"@ko .
+kno:KN2022-0019-c4 a kno:Component ;
     kno:formative kno:F000040 ;
+    kno:role "고정항"@ko ;
+    kno:position "4"^^xsd:integer ;
     kno:semanticTag kno:usas-A9 ;
     kno:fullForm "박탈"@ko ;
     rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:surfaceForm "박"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0019-c1 kno:surfaceForm "검"@ko ;
+    rdfs:label "검(찰)(檢察)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000159 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "박"@ko .
-kno:KN2022-0019-c3 rdfs:label "더"@ko ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002942 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "더"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:fullForm "검찰"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2022-0019-c3 kno:fullForm "더"@ko ;
     kno:semanticTag kno:usas-N5p ;
-    kno:fullForm "더"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "더"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "더"@ko ;
+    kno:formative kno:F002942 .

@@ -9,62 +9,62 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0131 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0131 a kno:Neologism ;
-    kno:origin "(<영>←beauty알못)" ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2017-0131-freq-NN-total ;
-    kno:example "¶OOO는 인터뷰를 통해 “{뷰알못이지만}, 얼마 전부터 뷰티에 관심을 갖기 시작했다.…”라며 뷰티 분야에 관심을 드러냈다."@ko ;
+kno:KN2017-0131 a ontolex:Word ;
     kno:frequency kno:KN2017-0131-freq-NN-2021 ;
+    kno:componentString "뷰(티)(beauty), 알(다), 못(하다)"@ko ;
+    rdfs:label "뷰알못"@ko ;
+    kno:frequency kno:KN2017-0131-freq-NN-2019 ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2017-0131-freq-NN-2017 ;
+    kno:component kno:KN2017-0131-c2 ;
+    kno:formation kno:W06 ;
+    kno:indexForm "뷰알못"@ko ;
+    kno:component kno:KN2017-0131-c1 ;
+    kno:slotFiller "뷰(티)(beauty) (1성분)"@ko ;
+    kno:year "2017"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0131-freq-NN-2020 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384626> ;
+    kno:example "¶OOO는 인터뷰를 통해 “{뷰알못이지만}, 얼마 전부터 뷰티에 관심을 갖기 시작했다.…”라며 뷰티 분야에 관심을 드러냈다."@ko ;
+    kno:origin "(<영>←beauty알못)" ;
+    kno:instantiates kno:S001328 ;
+    kno:languageType "영+고+고" ;
+    kno:component kno:KN2017-0131-c3 ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "알(다)+못(하다) (2성분)"@ko ;
+    kno:frequency kno:KN2017-0131-freq-NN-total ;
     kno:frequency kno:KN2017-0131-freq-NN-2016 ;
     kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:instantiates kno:S001414 ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2017-0131-freq-NN-2018 ;
-    kno:component kno:KN2017-0131-c2 ;
-    kno:component kno:KN2017-0131-c1 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1384626> ;
-    kno:urimalTargetCode "1384626" ;
-    kno:frequency kno:KN2017-0131-freq-NN-2020 ;
-    kno:indexForm "뷰알못"@ko ;
-    kno:slotFiller "뷰(티)(beauty) (1성분)"@ko ;
-    kno:componentString "뷰(티)(beauty), 알(다), 못(하다)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:component kno:KN2017-0131-c3 ;
+    a kno:Neologism ;
     skos:definition "‘뷰티를 알지 못하는 사람’을 줄여 이르는 말. 화장품이나 옷 등 외모를 가꾸는 데에 필요한 물품에 대한 정보를 잘 알지 못하는 사람을 이르는 말이다."@ko ;
-    kno:frequency kno:KN2017-0131-freq-NN-2019 ;
-    kno:formation kno:W06 ;
-    kno:frequency kno:KN2017-0131-freq-NN-2017 ;
-    kno:slotFiller "알(다)+못(하다) (2성분)"@ko ;
-    rdfs:label "뷰알못"@ko ;
-    kno:languageType "영+고+고" ;
-    kno:instantiates kno:S000022 ;
-    kno:year "2017"^^xsd:gYear .
+    kno:urimalTargetCode "1384626" ;
+    kno:frequency kno:KN2017-0131-freq-NN-2018 ;
+    kno:instantiates kno:S000020 ;
+    kno:activeYears "6"^^xsd:integer .
 kno:KN2017-0131-c2 kno:surfaceForm "알"@ko ;
-    kno:formative kno:F000025 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X2.2p ;
     kno:fullForm "알다"@ko ;
     rdfs:label "알(다)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000025 ;
     a kno:Component ;
-    kno:semanticTag kno:usas-X2.2p ;
-    kno:position "2"^^xsd:integer .
+    kno:role "고정항"@ko .
 kno:KN2017-0131-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "뷰(티)(beauty)"@ko ;
-    kno:semanticTag kno:usas-O4.2p ;
     kno:fullForm "뷰티"@ko ;
-    kno:formative kno:F001398 ;
-    kno:surfaceForm "뷰"@ko ;
+    rdfs:label "뷰(티)(beauty)"@ko ;
     kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2017-0131-c3 kno:role "고정항"@ko ;
+    kno:surfaceForm "뷰"@ko ;
+    kno:semanticTag kno:usas-O4.2p ;
     a kno:Component ;
     kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "못(하다)"@ko ;
+    kno:formative kno:F001398 .
+kno:KN2017-0131-c3 kno:fullForm "못하다"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000039 ;
     kno:semanticTag kno:usas-Z6 ;
     kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000039 ;
+    rdfs:label "못(하다)"@ko ;
     kno:surfaceForm "못"@ko ;
-    kno:fullForm "못하다"@ko .
+    a kno:Component .

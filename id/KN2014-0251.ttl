@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0251 kno:frequency kno:KN2014-0251-freq-NN-total ;
-    kno:languageType "한+한" ;
-    kno:origin "(廳舍病)" ;
+kno:KN2014-0251 kno:unitType "단어"@ko ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    kno:indexForm "청사병"@ko ;
+    kno:urimalTargetCode "1358301" ;
     skos:definition "여름철 공공기관의 실내 온도 제한으로 인해 청사 안이 매우 더움을 비유적으로 이르는 말."@ko ;
+    kno:languageType "한+한" ;
+    kno:componentString "청사(廳舍), 병(病)"@ko ;
+    kno:component kno:KN2014-0251-c1 ;
+    kno:frequency kno:KN2014-0251-freq-NN-total ;
+    kno:frequency kno:KN2014-0251-freq-NN-2016 ;
+    kno:instantiates kno:S000022 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2014-0251-c2 ;
+    kno:frequency kno:KN2014-0251-freq-NN-2014 ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:instantiates kno:S000021 ;
-    kno:indexForm "청사병"@ko ;
-    kno:example "¶급기야 ‘{청사병’이란} 신조어까지 만들어졌다. OO청사에 근무하는 40대 공직자는 유달리 더위를 타는 탓에 지난해 여름을 떠올리면 울렁증이 와 닿는다고 했다."@ko ;
-    a ontolex:Word ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358301> ;
-    kno:component kno:KN2014-0251-c1 ;
-    kno:frequency kno:KN2014-0251-freq-NN-2014 ;
-    kno:componentString "청사(廳舍), 병(病)"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:component kno:KN2014-0251-c2 ;
-    a kno:Neologism ;
+    kno:slotFiller "청사(廳舍) (1성분)"@ko ;
+    kno:example "¶급기야 ‘{청사병’이란} 신조어까지 만들어졌다. OO청사에 근무하는 40대 공직자는 유달리 더위를 타는 탓에 지난해 여름을 떠올리면 울렁증이 와 닿는다고 했다."@ko ;
     rdfs:label "청사-병"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2014-0251-freq-NN-2016 ;
     kno:frequency kno:KN2014-0251-freq-NN-2020 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:urimalTargetCode "1358301" ;
+    kno:origin "(廳舍病)" ;
     kno:formation kno:W01 ;
-    kno:slotFiller "청사(廳舍) (1성분)"@ko .
-kno:KN2014-0251-c1 kno:fullForm "청사"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0251-c1 kno:formative kno:F006054 ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "청사(廳舍)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-H1 ;
-    kno:formative kno:F006054 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "청사"@ko .
-kno:KN2014-0251-c2 kno:formative kno:F000033 ;
-    rdfs:label "병(病)"@ko ;
-    kno:surfaceForm "병"@ko ;
-    kno:role "고정항"@ko ;
+    kno:fullForm "청사"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "청사"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "청사(廳舍)"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2014-0251-c2 kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "병"@ko ;
+    kno:formative kno:F000033 ;
     kno:fullForm "병"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "병(病)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

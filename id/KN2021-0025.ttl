@@ -9,60 +9,60 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0025 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0025 kno:example "¶코로나19의 확산으로 실내 헬스장이 문을 닫자 야외에 있는 {공스장에서} 간단한 운동을 하는 사람들이 늘었다."@ko ;
-    kno:component kno:KN2021-0025-c2 ;
-    kno:frequency kno:KN2021-0025-freq-NN-2023 ;
-    kno:origin "(公<영>▼←health場)" ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2021-0025-freq-NN-2024 ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W05 ;
+kno:KN2021-0025 a kno:Neologism ;
+    kno:activeYears "6"^^xsd:integer ;
+    skos:definition "운동 기구를 갖추어 놓은 공원을 이르는 말. ‘공원’과 ‘헬스장’을 결합하여 만든 말로, 코로나19의 확산 상황에서 실내에서 운동할 수 있는 시설들의 영업이 제한되자 주목받기 시작했다."@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0025-freq-NN-total ;
+    kno:urimalTargetCode "1520980" ;
+    kno:formation kno:W05 ;
     kno:frequency kno:KN2021-0025-freq-NN-2021 ;
-    kno:frequency kno:KN2021-0025-freq-NN-2025 ;
-    a ontolex:Word ;
-    kno:registration "우리말샘"@ko ;
-    kno:slotFiller "공(원)(公園) (1성분)"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1520980> ;
     kno:component kno:KN2021-0025-c3 ;
-    kno:urimalTargetCode "1520980" ;
-    kno:component kno:KN2021-0025-c1 ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0025-freq-NN-2022 ;
-    skos:definition "운동 기구를 갖추어 놓은 공원을 이르는 말. ‘공원’과 ‘헬스장’을 결합하여 만든 말로, 코로나19의 확산 상황에서 실내에서 운동할 수 있는 시설들의 영업이 제한되자 주목받기 시작했다."@ko ;
+    kno:origin "(公<영>▼←health場)" ;
+    kno:languageType "한+영+한" ;
+    kno:example "¶코로나19의 확산으로 실내 헬스장이 문을 닫자 야외에 있는 {공스장에서} 간단한 운동을 하는 사람들이 늘었다."@ko ;
+    kno:slotFiller "공(원)(公園) (1성분)"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2021-0025-c2 ;
+    kno:pos "「명」"@ko ;
     kno:componentString "공(원)(公園), (헬)스(health), -장(場)"@ko ;
-    kno:activeYears "6"^^xsd:integer ;
+    kno:frequency kno:KN2021-0025-freq-NN-2025 ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2021-0025-c1 ;
+    kno:frequency kno:KN2021-0025-freq-NN-2023 ;
+    rdfs:label "공스장"@ko ;
+    kno:instantiates kno:S000711 ;
+    kno:frequency kno:KN2021-0025-freq-NN-2024 ;
+    kno:indexForm "공스장"@ko ;
+    kno:year "2021"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
     kno:frequency kno:KN2021-0025-freq-NN-2020 ;
-    kno:instantiates kno:S000768 ;
-    kno:frequency kno:KN2021-0025-freq-NN-total ;
-    rdfs:label "공스장"@ko ;
-    kno:indexForm "공스장"@ko ;
-    kno:languageType "한+영+한" .
-kno:KN2021-0025-c2 kno:semanticTag kno:usas-K5.1 ;
-    kno:formative kno:F001516 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "스"@ko ;
-    rdfs:label "(헬)스(health)"@ko ;
-    a kno:Component ;
-    kno:fullForm "헬스"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:frequency kno:KN2021-0025-freq-NN-2022 .
 kno:KN2021-0025-c3 kno:formative kno:F000908 ;
-    kno:fullForm "장"@ko ;
+    rdfs:label "-장(場)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-M7 ;
-    a kno:Component ;
+    kno:fullForm "장"@ko ;
     kno:position "3"^^xsd:integer ;
     kno:surfaceForm "장"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "-장(場)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2021-0025-c1 kno:surfaceForm "공"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "공(원)(公園)"@ko ;
     a kno:Component ;
-    kno:fullForm "공원"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2021-0025-c2 a kno:Component ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001516 ;
+    rdfs:label "(헬)스(health)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "헬스"@ko ;
+    kno:surfaceForm "스"@ko .
+kno:KN2021-0025-c1 kno:fullForm "공원"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "공(원)(公園)"@ko ;
     kno:semanticTag kno:usas-M7 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F002339 ;
-    kno:role "슬롯 채움"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "공"@ko .

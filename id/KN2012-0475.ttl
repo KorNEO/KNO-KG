@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0475 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0475 kno:languageType "고+고+한" ;
-    skos:definition "‘해변에서 돋보이는 여자’를 줄여 이르는 말."@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0475-c2 ;
-    kno:frequency kno:KN2012-0475-freq-NN-2017 ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "해(변), 돋(보이다), 녀(女)"@ko ;
+kno:KN2012-0475 rdfs:label "해돋녀"@ko ;
+    kno:slotFiller "해(변)+돋(보이다) (2성분)"@ko ;
+    kno:languageType "고+고+한" ;
+    kno:example "¶남들과 다른, 좀 더 아찔한 비키니로 ‘{해돋녀’가} 될 수 있는 방법을 소개한다."@ko ;
+    a kno:Neologism ;
     kno:component kno:KN2012-0475-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "‘해변에서 돋보이는 여자’를 줄여 이르는 말."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2012-0475-freq-NN-2017 ;
     kno:component kno:KN2012-0475-c1 ;
     kno:indexForm "해돋녀"@ko ;
-    kno:instantiates kno:S000041 ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:componentString "해(변), 돋(보이다), 녀(女)"@ko ;
     a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    a kno:Neologism ;
-    kno:origin "(--女)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EB%8F%8B%EB%85%80> ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "해돋녀"@ko ;
     kno:frequency kno:KN2012-0475-freq-NN-total ;
-    kno:example "¶남들과 다른, 좀 더 아찔한 비키니로 ‘{해돋녀’가} 될 수 있는 방법을 소개한다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "해(변)+돋(보이다) (2성분)"@ko .
-kno:KN2012-0475-c2 rdfs:label "돋(보이다)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "돋보이다"@ko ;
-    kno:surfaceForm "돋"@ko ;
-    kno:formative kno:F003007 ;
-    kno:semanticTag kno:usas-A11.2p .
+    kno:component kno:KN2012-0475-c2 ;
+    kno:origin "(--女)" ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%B4%EB%8F%8B%EB%85%80> ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000047 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko .
 kno:KN2012-0475-c3 kno:surfaceForm "녀"@ko ;
-    kno:formative kno:F000024 ;
     kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000024 ;
     kno:semanticTag kno:usas-S2.1 ;
-    rdfs:label "녀(女)"@ko ;
     kno:fullForm "녀"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0475-c1 kno:formative kno:F006991 ;
-    rdfs:label "해(변)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "해"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
+    kno:role "고정항"@ko ;
+    rdfs:label "녀(女)"@ko .
+kno:KN2012-0475-c1 kno:role "슬롯 채움"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-W3 ;
+    kno:position "1"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "해"@ko ;
+    rdfs:label "해(변)"@ko ;
+    kno:fullForm "해변"@ko ;
+    kno:formative kno:F006991 ;
+    kno:semanticTag kno:usas-W3 .
+kno:KN2012-0475-c2 kno:fullForm "돋보이다"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "해변"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003007 ;
+    kno:semanticTag kno:usas-A11.2p ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "돋"@ko ;
+    a kno:Component ;
+    rdfs:label "돋(보이다)"@ko .

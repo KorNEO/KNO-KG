@@ -9,43 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0012 kno:urimalTargetCode "1369752" ;
-    kno:slotFiller "갠(←개인)(個人) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:origin "(갠←Kakaotalk)" ;
-    kno:component kno:KN2014-0012-c1 ;
-    kno:example "¶때로 민감한 이야기는 ‘{갠톡’에서} 더 할 수 있으니 편하다."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369752> ;
-    kno:instantiates kno:S000117 ;
-    kno:pos "「명」"@ko ;
-    rdfs:label "갠-톡"@ko ;
-    kno:registration "우리말샘"@ko ;
-    skos:definition "‘개인톡’의 준말."@ko ;
-    kno:languageType "고+영" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:component kno:KN2014-0012-c2 ;
+kno:KN2014-0012 a kno:Neologism ;
+    kno:urimalTargetCode "1369752" ;
     kno:indexForm "갠톡"@ko ;
-    a kno:Neologism ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:componentString "갠(←개인)(個人), (카카오)톡(Kakaotalk)"@ko ;
+    kno:languageType "고+영" ;
     kno:formation kno:W01 ;
     kno:unitType "단어"@ko ;
-    kno:componentString "갠(←개인)(個人), (카카오)톡(Kakaotalk)"@ko .
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0012-c2 ;
+    kno:component kno:KN2014-0012-c1 ;
+    skos:definition "‘개인톡’의 준말."@ko ;
+    kno:example "¶때로 민감한 이야기는 ‘{갠톡’에서} 더 할 수 있으니 편하다."@ko ;
+    rdfs:label "갠-톡"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(갠←Kakaotalk)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369752> .
+kno:KN2014-0012-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "톡"@ko ;
+    rdfs:label "(카카오)톡(Kakaotalk)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "카카오톡"@ko ;
+    kno:formative kno:F000106 .
 kno:KN2014-0012-c1 kno:fullForm "갠"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-S5m ;
-    kno:formative kno:F002170 ;
     a kno:Component ;
     rdfs:label "갠(←개인)(個人)"@ko ;
-    kno:surfaceForm "갠"@ko ;
+    kno:formative kno:F002170 ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2014-0012-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "톡"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:fullForm "카카오톡"@ko ;
-    kno:formative kno:F000106 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(카카오)톡(Kakaotalk)"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-S5m ;
+    kno:surfaceForm "갠"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko .

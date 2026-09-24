@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0272 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0272 kno:year "2016"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:component kno:KN2016-0272-c2 ;
+kno:KN2016-0272 a ontolex:Word ;
+    a kno:Neologism ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2016-0272-freq-NN-total ;
+    kno:languageType "한+고+고" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%A0%A4%EB%AA%BB> ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0272-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000201 ;
+    skos:definition "‘세상에서 제일 못생김’을 줄여 이르는 말."@ko ;
+    kno:origin "(世젤못)" ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2016-0272-c1 ;
     kno:component kno:KN2016-0272-c3 ;
     kno:componentString "세(상)(世), 젤, 못(생기다)"@ko ;
-    kno:indexForm "세젤못"@ko ;
-    kno:frequency kno:KN2016-0272-freq-NN-2015 ;
-    kno:instantiates kno:S000216 ;
-    kno:origin "(世젤못)" ;
-    kno:pos "「명」"@ko ;
-    skos:definition "‘세상에서 제일 못생김’을 줄여 이르는 말."@ko ;
-    kno:languageType "한+고+고" ;
-    kno:formation kno:W06 ;
-    rdfs:label "세젤못"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:slotFiller "못(생기다) (1성분)"@ko ;
     kno:example "¶누리꾼들은 “OOO…{세젤못이라니} 말도 안 된다.” 등의 반응을 보였다."@ko ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2016-0272-freq-NN-total ;
-    a kno:Neologism ;
-    kno:component kno:KN2016-0272-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "못(생기다) (1성분)"@ko .
-kno:KN2016-0272-c2 rdfs:label "젤"@ko ;
-    kno:surfaceForm "젤"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000232 ;
-    kno:role "고정항"@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "세젤못"@ko ;
+    kno:frequency kno:KN2016-0272-freq-NN-2015 ;
+    kno:indexForm "세젤못"@ko .
+kno:KN2016-0272-c2 kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
     kno:semanticTag kno:usas-A13.2 ;
-    kno:fullForm "젤"@ko .
-kno:KN2016-0272-c3 kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "못"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "젤"@ko ;
     a kno:Component ;
-    kno:fullForm "못생기다"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "못(생기다)"@ko ;
-    kno:formative kno:F003513 ;
-    kno:semanticTag kno:usas-O4.2m .
-kno:KN2016-0272-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "세상"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "젤"@ko ;
+    kno:formative kno:F000232 ;
+    kno:surfaceForm "젤"@ko .
+kno:KN2016-0272-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "세"@ko ;
     rdfs:label "세(상)(世)"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-W1 ;
     a kno:Component ;
-    kno:surfaceForm "세"@ko ;
-    kno:formative kno:F000283 .
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000283 ;
+    kno:fullForm "세상"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0272-c3 a kno:Component ;
+    rdfs:label "못(생기다)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O4.2m ;
+    kno:surfaceForm "못"@ko ;
+    kno:fullForm "못생기다"@ko ;
+    kno:formative kno:F003513 ;
+    kno:position "3"^^xsd:integer .

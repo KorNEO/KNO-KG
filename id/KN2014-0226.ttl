@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0226 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0226 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373893> ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2014-0226-freq-NN-2014 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "자방^세대"@ko ;
-    kno:instantiates kno:S000002 ;
-    a kno:Neologism ;
+kno:KN2014-0226 kno:component kno:KN2014-0226-c1 ;
+    skos:definition "스스로 콘텐츠를 만들어 방송하는 세대를 이르는 말."@ko ;
     kno:slotFiller "자방(自放) (1성분)"@ko ;
-    kno:component kno:KN2014-0226-c1 ;
-    kno:registration "우리말샘"@ko ;
-    kno:origin "(自放世代)" ;
-    kno:urimalTargetCode "1373893" ;
-    kno:component kno:KN2014-0226-c2 ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0226-freq-NN-2014 ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2014-0226-freq-NN-total ;
     kno:lastAttestationYear "2014"^^xsd:gYear ;
     kno:indexForm "자방세대"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(自放世代)" ;
+    rdfs:label "자방^세대"@ko ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1373893" ;
     kno:languageType "한^한" ;
-    skos:definition "스스로 콘텐츠를 만들어 방송하는 세대를 이르는 말."@ko ;
-    kno:pos "「구」"@ko ;
     kno:example "¶일찍이 OO는 현 세대를 두고 인터넷으로 일상을 ‘모두 말하는 세대’라 명명한 바 있다.…여기에 실시간 동영상이 대세인 점을 반영한다면, 이들을 ‘{자방 세대’라} 불러도 크게 틀리지 않을 듯싶다."@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373893> ;
+    kno:instantiates kno:S000002 ;
     kno:componentString "자방(自放), 세대(世代)"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:frequency kno:KN2014-0226-freq-NN-total .
-kno:KN2014-0226-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "자방"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2014-0226-c2 .
+kno:KN2014-0226-c1 kno:semanticTag kno:usas-Q4.3 ;
     rdfs:label "자방(自放)"@ko ;
-    kno:surfaceForm "자방"@ko ;
-    kno:semanticTag kno:usas-Q4.3 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
     kno:formative kno:F005520 ;
-    a kno:Component .
-kno:KN2014-0226-c2 kno:fullForm "세대"@ko ;
-    kno:semanticTag kno:usas-T3 ;
+    kno:fullForm "자방"@ko ;
+    kno:surfaceForm "자방"@ko .
+kno:KN2014-0226-c2 kno:formative kno:F000006 ;
     kno:surfaceForm "세대"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000006 ;
-    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
     a kno:Component ;
-    rdfs:label "세대(世代)"@ko .
+    kno:fullForm "세대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:position "2"^^xsd:integer .

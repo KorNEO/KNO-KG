@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0004 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0004 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A7%9C%EC%8A%B9> ;
+kno:KN2012-0004 kno:pos "「명」"@ko ;
+    skos:definition "사리사욕만 챙기고 수행은 게을리 하는 승려."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%A7%9C%EC%8A%B9> ;
+    kno:formation kno:W01 ;
+    kno:predicate "하다"@ko ;
     kno:languageType "(한+고)+한" ;
     kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "가짜-승"@ko ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    skos:definition "사리사욕만 챙기고 수행은 게을리 하는 승려."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2012-0004-c1 ;
-    kno:component kno:KN2012-0004-c2 ;
-    kno:example "¶어떤 분은…“{가짜승들의} 임종에는 티베트 사자의 서에 나타난 불보살과 신장 모두가 나와 지금 법복만 입고 있는 그들을 어떻게 심판하는지 반드시 볼 것이다.”라고 주장한다."@ko ;
-    kno:predicate "하다"@ko ;
-    kno:indexForm "가짜승"@ko ;
+    kno:year "2012"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
     kno:origin "(假-僧)" ;
-    kno:formation kno:W01 ;
-    kno:year "2012"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2012-0004-c1 ;
+    rdfs:label "가짜-승"@ko ;
     kno:componentString "가짜(假짜), 승(僧)"@ko ;
-    kno:pos "「명」"@ko .
-kno:KN2012-0004-c1 kno:formative kno:F000649 ;
-    kno:surfaceForm "가짜"@ko ;
+    kno:indexForm "가짜승"@ko ;
+    kno:example "¶어떤 분은…“{가짜승들의} 임종에는 티베트 사자의 서에 나타난 불보살과 신장 모두가 나와 지금 법복만 입고 있는 그들을 어떻게 심판하는지 반드시 볼 것이다.”라고 주장한다."@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2012-0004-c2 .
+kno:KN2012-0004-c1 rdfs:label "가짜(假짜)"@ko ;
     kno:semanticTag kno:usas-A5.4m ;
-    kno:fullForm "가짜"@ko ;
-    a kno:Component ;
-    rdfs:label "가짜(假짜)"@ko ;
-    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0004-c2 kno:formative kno:F004626 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F000649 ;
     a kno:Component ;
+    kno:fullForm "가짜"@ko ;
+    kno:surfaceForm "가짜"@ko .
+kno:KN2012-0004-c2 kno:semanticTag kno:usas-S9 ;
     kno:fullForm "승"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S9 ;
     kno:surfaceForm "승"@ko ;
-    rdfs:label "승(僧)"@ko .
+    rdfs:label "승(僧)"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004626 ;
+    kno:truncated "false"^^xsd:boolean .

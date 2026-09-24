@@ -9,66 +9,66 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0399 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0399 kno:languageType "고+한+한+한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%8C%80%ED%9B%84%EB%AA%85> ;
-    kno:formation kno:W06 ;
-    kno:component kno:KN2025-0399-c3 ;
-    kno:instantiates kno:S000750 ;
+kno:KN2025-0399 a ontolex:Word ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0399-c1 ;
     kno:frequency kno:KN2025-0399-freq-NN-total ;
-    kno:origin "(어大候明)" ;
-    kno:frequency kno:KN2025-0399-freq-NN-2025 ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "어대후명"@ko ;
     kno:example "(LLM) 여론조사와 당내 평가에서 선두가 굳어지자 당 안팎에서는 {어대후명}이라는 말까지 나왔다."@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 더불어민주당의 대통령 후보 경선에서 특정 인물이 후보로 사실상 확정됐다는 분위기나 인식을 이르는 말."@ko ;
-    kno:component kno:KN2025-0399-c4 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2025-0399-c1 ;
-    kno:slotFiller "어(차피)+대(통령)(大統領)+후(보)(候補) (3성분)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    a kno:Neologism ;
-    rdfs:label "어대후명"@ko ;
-    kno:instantiates kno:S000548 ;
-    kno:slotFiller "대(통령)(大統領)+후(보)(候補)+(이재)명 (3성분)"@ko ;
     kno:component kno:KN2025-0399-c2 ;
-    kno:componentString "어(차피), 대(통령)(大統領), 후(보)(候補), (이재)명"@ko .
-kno:KN2025-0399-c3 a kno:Component ;
-    kno:fullForm "후보"@ko ;
-    kno:surfaceForm "후"@ko ;
+    skos:definition "(LLM) 더불어민주당의 대통령 후보 경선에서 특정 인물이 후보로 사실상 확정됐다는 분위기나 인식을 이르는 말."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W06 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "어(차피), 대(통령)(大統領), 후(보)(候補), (이재)명"@ko ;
+    rdfs:label "어대후명"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+한+한+한" ;
+    kno:origin "(어大候明)" ;
+    kno:slotFiller "대(통령)(大統領)+후(보)(候補)+(이재)명 (3성분)"@ko ;
+    kno:component kno:KN2025-0399-c4 ;
+    kno:instantiates kno:S000694 ;
+    kno:component kno:KN2025-0399-c3 ;
+    kno:indexForm "어대후명"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0399-freq-NN-2025 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%8C%80%ED%9B%84%EB%AA%85> ;
+    kno:slotFiller "어(차피)+대(통령)(大統領)+후(보)(候補) (3성분)"@ko ;
+    kno:instantiates kno:S000503 .
+kno:KN2025-0399-c1 kno:role "고정항"@ko ;
+    rdfs:label "어(차피)"@ko ;
+    kno:fullForm "어차피"@ko ;
+    kno:semanticTag kno:usas-A7 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000849 ;
+    kno:surfaceForm "어"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2025-0399-c2 kno:fullForm "대통령"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "대"@ko ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "후(보)(候補)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F007186 ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0399-c4 kno:semanticTag kno:usas-Z1 ;
+    kno:formative kno:F002904 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "대(통령)(大統領)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2025-0399-c4 kno:formative kno:F001302 ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:surfaceForm "명"@ko ;
     rdfs:label "(이재)명"@ko ;
     kno:position "4"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "명"@ko ;
-    kno:formative kno:F001302 ;
     a kno:Component ;
-    kno:fullForm "이재명"@ko .
-kno:KN2025-0399-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "어"@ko ;
-    kno:semanticTag kno:usas-A7 ;
-    kno:formative kno:F000849 ;
-    rdfs:label "어(차피)"@ko ;
+    kno:fullForm "이재명"@ko ;
     kno:role "고정항"@ko ;
-    kno:fullForm "어차피"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2025-0399-c2 kno:formative kno:F002904 ;
-    a kno:Component ;
-    kno:surfaceForm "대"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0399-c3 rdfs:label "후(보)(候補)"@ko ;
+    kno:formative kno:F007186 ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:fullForm "후보"@ko ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "대(통령)(大統領)"@ko ;
-    kno:fullForm "대통령"@ko ;
-    kno:semanticTag kno:usas-G1.1 .
+    kno:surfaceForm "후"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component .

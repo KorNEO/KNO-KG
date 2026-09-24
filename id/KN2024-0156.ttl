@@ -9,62 +9,62 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0156 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0156 skos:definition "환율 산출 시점의 직전 10분부터 매 10초 간격으로 체결된 환율의 가격을 평균하여 산출하는 환율."@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2024-0156-c2 ;
-    kno:languageType "한^한^한^한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EA%B0%84%EA%B0%80%EC%A4%91%ED%8F%89%EA%B7%A0%ED%99%98%EC%9C%A8> ;
-    a kno:Neologism ;
-    kno:example "¶다음 달부터는 환율 정보 제공이 달라지게 되는데, 현물환을 중개하는 회사는 오전 9시부터 다음날 오전 2시 사이에는 매시 정각, 오후 3시 반의 시점 환율과 {시간 가중 평균 환율을} 제공할 예정이다."@ko ;
-    kno:frequency kno:KN2024-0156-freq-NN-2024 ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2024-0156-freq-NN-total ;
-    kno:predicate "산출하다"@ko ;
-    kno:component kno:KN2024-0156-c1 ;
-    kno:origin "(時間加重平均換率)" ;
-    kno:indexForm "시간가중평균환율"@ko ;
-    rdfs:label "시간^가중^평균^환율"@ko ;
-    kno:component kno:KN2024-0156-c3 ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2024-0156-c4 ;
+kno:KN2024-0156 kno:frequency kno:KN2024-0156-freq-NN-total ;
     kno:year "2024"^^xsd:gYear ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EA%B0%84%EA%B0%80%EC%A4%91%ED%8F%89%EA%B7%A0%ED%99%98%EC%9C%A8> ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0156-c4 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0156-c1 ;
+    kno:languageType "한^한^한^한" ;
+    kno:pos "「구」"@ko ;
+    kno:origin "(時間加重平均換率)" ;
+    kno:frequency kno:KN2024-0156-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "산출하다"@ko ;
+    kno:example "¶다음 달부터는 환율 정보 제공이 달라지게 되는데, 현물환을 중개하는 회사는 오전 9시부터 다음날 오전 2시 사이에는 매시 정각, 오후 3시 반의 시점 환율과 {시간 가중 평균 환율을} 제공할 예정이다."@ko ;
+    rdfs:label "시간^가중^평균^환율"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "환율 산출 시점의 직전 10분부터 매 10초 간격으로 체결된 환율의 가격을 평균하여 산출하는 환율."@ko ;
+    kno:indexForm "시간가중평균환율"@ko ;
     kno:componentString "시간(時間), 가중(加重), 평균(平均), 환율(換率)"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2024-0156-c2 kno:surfaceForm "가중"@ko ;
+    kno:component kno:KN2024-0156-c2 ;
+    kno:component kno:KN2024-0156-c3 ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0156-c4 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "환율"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "환율"@ko ;
+    a kno:Component ;
+    rdfs:label "환율(換率)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:formative kno:F002030 .
+kno:KN2024-0156-c1 kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000829 ;
+    a kno:Component ;
+    rdfs:label "시간(時間)"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:fullForm "시간"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "시간"@ko ;
+    kno:role "성분"@ko .
+kno:KN2024-0156-c2 kno:role "성분"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-N2 ;
     kno:fullForm "가중"@ko ;
     kno:formative kno:F002093 ;
+    kno:surfaceForm "가중"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "가중(加重)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0156-c1 a kno:Component ;
-    kno:fullForm "시간"@ko ;
-    rdfs:label "시간(時間)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000829 ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "시간"@ko ;
-    kno:semanticTag kno:usas-T1.3 .
-kno:KN2024-0156-c3 kno:fullForm "평균"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "평균"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .
+kno:KN2024-0156-c3 kno:position "3"^^xsd:integer ;
     rdfs:label "평균(平均)"@ko ;
-    kno:formative kno:F001959 ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-N5 .
-kno:KN2024-0156-c4 a kno:Component ;
     kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "평균"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "환율"@ko ;
-    kno:formative kno:F002030 ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:surfaceForm "환율"@ko ;
-    kno:position "4"^^xsd:integer ;
-    rdfs:label "환율(換率)"@ko .
+    kno:surfaceForm "평균"@ko ;
+    kno:semanticTag kno:usas-N5 ;
+    kno:formative kno:F001959 .

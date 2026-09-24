@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0164 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0164 kno:predicate "주다"@ko ;
-    kno:instantiates kno:S000222 ;
-    kno:indexForm "안심거래존"@ko ;
-    kno:origin "(安心去來<영>zone)" ;
-    kno:frequency kno:KN2023-0164-freq-NN-2025 ;
-    kno:componentString "안심(安心), 거래(去來), 존(zone)"@ko ;
-    kno:frequency kno:KN2023-0164-freq-NN-2024 ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한_영" ;
-    kno:frequency kno:KN2023-0164-freq-NN-2023 ;
-    kno:registration "신어DB"@ko ;
+kno:KN2023-0164 rdfs:label "안심 거래 존"@ko ;
     a kno:Neologism ;
-    kno:instantiates kno:S000617 ;
-    kno:component kno:KN2023-0164-c1 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0164-c3 ;
-    kno:frequency kno:KN2023-0164-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
     kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0164-c3 ;
+    kno:predicate "주다"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0164-freq-NN-total ;
+    kno:component kno:KN2023-0164-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%8B%AC%20%EA%B1%B0%EB%9E%98%20%EC%A1%B4> ;
     kno:example "¶{안심 거래 존에는} 중고 거래 시 주의 사항을 안내해 주는 키오스크도 함께 설치되어 있다."@ko ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S000564 ;
     kno:slotFiller "거래(去來)+존(zone) (2성분)"@ko ;
     kno:component kno:KN2023-0164-c2 ;
+    kno:languageType "한_한_영" ;
+    kno:frequency kno:KN2023-0164-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:instantiates kno:S000206 ;
+    kno:frequency kno:KN2023-0164-freq-NN-2024 ;
+    kno:origin "(安心去來<영>zone)" ;
+    kno:componentString "안심(安心), 거래(去來), 존(zone)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0164-freq-NN-2023 ;
     skos:definition "전세 계약 시, 세금 체납이나 보증 사고 이력이 없어 신뢰할 만한 집 주인에게 정부가 발행해 주는 인증서."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%8B%AC%20%EA%B1%B0%EB%9E%98%20%EC%A1%B4> ;
-    kno:slotFiller "안심(安心)+거래(去來) (2성분)"@ko ;
-    rdfs:label "안심 거래 존"@ko .
-kno:KN2023-0164-c1 kno:surfaceForm "안심"@ko ;
+    kno:indexForm "안심거래존"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "안심(安心)+거래(去來) (2성분)"@ko .
+kno:KN2023-0164-c3 kno:fullForm "존"@ko ;
+    kno:surfaceForm "존"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "존(zone)"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000034 ;
+    a kno:Component ;
+    kno:role "고정항"@ko .
+kno:KN2023-0164-c1 kno:fullForm "안심"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "안심"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-E6p ;
     kno:formative kno:F000088 ;
     kno:role "고정항"@ko ;
     rdfs:label "안심(安心)"@ko ;
-    kno:semanticTag kno:usas-E6p ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "안심"@ko .
-kno:KN2023-0164-c3 rdfs:label "존(zone)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    a kno:Component ;
-    kno:fullForm "존"@ko ;
-    kno:formative kno:F000034 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "존"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2023-0164-c2 kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:surfaceForm "거래"@ko ;
+    a kno:Component .
+kno:KN2023-0164-c2 kno:fullForm "거래"@ko ;
     kno:formative kno:F001047 ;
-    rdfs:label "거래(去來)"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
+    rdfs:label "거래(去來)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "거래"@ko .
+    kno:surfaceForm "거래"@ko ;
+    a kno:Component .

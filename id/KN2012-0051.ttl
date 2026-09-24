@@ -9,40 +9,38 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0051 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0051 kno:registration "신어DB"@ko ;
-    kno:component kno:KN2012-0051-c2 ;
-    skos:definition "‘나중에 뚱뚱해진 사람’을 줄여 이르는 말."@ko ;
-    kno:indexForm "나뚱"@ko ;
-    kno:languageType "고+고" ;
+kno:KN2012-0051 kno:component kno:KN2012-0051-c2 ;
     kno:pos "「명」"@ko ;
-    kno:example "¶이날 방송에서 OOO은 “뚱보에는 원래 뚱뚱한 ‘원뚱’이 있고 나중에 뚱뚱해진 ‘{나뚱’이} 있다. 나는 ‘{나뚱’이다}.”라고 말했다."@ko ;
-    kno:activeYears "0"^^xsd:integer ;
     rdfs:label "나뚱"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶이날 방송에서 OOO은 “뚱보에는 원래 뚱뚱한 ‘원뚱’이 있고 나중에 뚱뚱해진 ‘{나뚱’이} 있다. 나는 ‘{나뚱’이다}.”라고 말했다."@ko ;
+    kno:indexForm "나뚱"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고+고" ;
+    kno:component kno:KN2012-0051-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%98%EB%9A%B1> ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:componentString "나(중), 뚱(뚱하다)"@ko ;
     kno:year "2012"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%98%EB%9A%B1> ;
-    a ontolex:Word ;
-    kno:component kno:KN2012-0051-c1 ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
     kno:formation kno:W06 ;
-    kno:slotFiller "나(중) (1성분)"@ko ;
-    kno:instantiates kno:S000373 .
-kno:KN2012-0051-c2 kno:fullForm "뚱뚱하다"@ko ;
-    kno:semanticTag kno:usas-N3.5p ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    skos:definition "‘나중에 뚱뚱해진 사람’을 줄여 이르는 말."@ko .
+kno:KN2012-0051-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     kno:formative kno:F000491 ;
-    kno:surfaceForm "뚱"@ko ;
-    kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
     rdfs:label "뚱(뚱하다)"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "뚱뚱하다"@ko ;
+    kno:semanticTag kno:usas-N3.5p ;
+    kno:surfaceForm "뚱"@ko .
 kno:KN2012-0051-c1 rdfs:label "나(중)"@ko ;
-    kno:semanticTag kno:usas-T1.1.3 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "나중"@ko ;
+    a kno:Component ;
     kno:formative kno:F002666 ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-T1.1.3 ;
     kno:surfaceForm "나"@ko ;
-    kno:fullForm "나중"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko .

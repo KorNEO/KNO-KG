@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0266 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0266 kno:frequency kno:KN2021-0266-freq-NN-2020 ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression ;
+kno:KN2021-0266 kno:componentString "코로나(바이러스)(corona virus), 피로도(疲勞度)"@ko ;
     kno:frequency kno:KN2021-0266-freq-NN-2021 ;
-    kno:instantiates kno:S000005 ;
+    kno:pos "「구」"@ko ;
     kno:frequency kno:KN2021-0266-freq-NN-2022 ;
-    kno:predicate "느끼다"@ko ;
-    skos:definition "코로나19의 장기화로 인해 피로를 느끼는 정도."@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:componentString "코로나(바이러스)(corona virus), 피로도(疲勞度)"@ko ;
-    kno:languageType "영_한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%94%BC%EB%A1%9C%EB%8F%84> ;
+    a ontolex:MultiwordExpression ;
+    kno:example "¶영업시간 제한과 5인 이상의 사적 모임 금지 등으로 인해 국민들의 {코로나 피로도가} 한계에 다다르고 있다."@ko ;
     rdfs:label "코로나 피로도"@ko ;
-    kno:origin "(<영>←corona virus疲勞度)" ;
+    kno:predicate "느끼다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0266-freq-NN-total ;
+    kno:indexForm "코로나피로도"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0266-freq-NN-2020 ;
+    kno:languageType "영_한" ;
+    skos:definition "코로나19의 장기화로 인해 피로를 느끼는 정도."@ko ;
+    kno:unitType "구"@ko ;
     kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0266-c1 ;
+    kno:slotFiller "피로도(疲勞度) (1성분)"@ko ;
+    kno:instantiates kno:S000004 ;
     kno:component kno:KN2021-0266-c2 ;
     a kno:Neologism ;
-    kno:component kno:KN2021-0266-c1 ;
-    kno:pos "「구」"@ko ;
-    kno:example "¶영업시간 제한과 5인 이상의 사적 모임 금지 등으로 인해 국민들의 {코로나 피로도가} 한계에 다다르고 있다."@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:slotFiller "피로도(疲勞度) (1성분)"@ko ;
-    kno:frequency kno:KN2021-0266-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%94%BC%EB%A1%9C%EB%8F%84> ;
-    kno:indexForm "코로나피로도"@ko .
-kno:KN2021-0266-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "피로도(疲勞度)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "피로도"@ko ;
-    kno:formative kno:F001982 ;
-    kno:surfaceForm "피로도"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B2 .
-kno:KN2021-0266-c1 kno:surfaceForm "코로나"@ko ;
-    kno:fullForm "코로나바이러스"@ko ;
+    kno:origin "(<영>←corona virus疲勞度)" ;
+    kno:activeYears "3"^^xsd:integer .
+kno:KN2021-0266-c1 kno:position "1"^^xsd:integer ;
     rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:role "고정항"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     a kno:Component ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
     kno:semanticTag kno:usas-B2m ;
     kno:formative kno:F000003 .
+kno:KN2021-0266-c2 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "피로도"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:fullForm "피로도"@ko ;
+    rdfs:label "피로도(疲勞度)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001982 .

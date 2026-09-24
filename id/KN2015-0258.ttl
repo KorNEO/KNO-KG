@@ -9,44 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0258 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0258 kno:languageType "한+고" ;
+kno:KN2015-0258 rdfs:label "핵-잼"@ko ;
+    kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
+    kno:year "2015"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369962> ;
-    kno:slotFiller "잼 (1성분)"@ko ;
+    kno:languageType "한+고" ;
+    kno:formation kno:W03 ;
     kno:component kno:KN2015-0258-c1 ;
     kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    rdfs:label "핵-잼"@ko ;
-    kno:component kno:KN2015-0258-c2 ;
-    kno:year "2015"^^xsd:gYear ;
     kno:urimalTargetCode "1369962" ;
-    kno:indexForm "핵잼"@ko ;
+    a ontolex:Word ;
+    a kno:Neologism ;
     kno:componentString "핵(核)-, 잼"@ko ;
-    kno:slotFiller "핵(核)- (1성분)"@ko ;
-    kno:instantiates kno:S000036 ;
+    kno:component kno:KN2015-0258-c2 ;
     kno:origin "(核잼)" ;
-    kno:instantiates kno:S000266 ;
-    kno:formation kno:W03 ;
     skos:definition "매우 재미가 있음. 또는 그런 일."@ko ;
-    kno:example "¶‘꿀벅지’를 통해 잘 알려진 ‘꿀’, ‘개이득’을 통해 알려진 ‘개’, ‘{핵잼’을} 통해 알려진 ‘핵’ 등은 동사와 명사를 가리지 않고 접두어로 사용된다."@ko ;
-    a kno:Neologism .
-kno:KN2015-0258-c1 kno:surfaceForm "핵"@ko ;
-    kno:semanticTag kno:usas-A13.3 ;
+    kno:indexForm "핵잼"@ko ;
+    kno:example "¶‘꿀벅지’를 통해 잘 알려진 ‘꿀’, ‘개이득’을 통해 알려진 ‘개’, ‘{핵잼’을} 통해 알려진 ‘핵’ 등은 동사와 명사를 가리지 않고 접두어로 사용된다."@ko .
+kno:KN2015-0258-c1 kno:role "성분"@ko ;
     kno:formative kno:F000082 ;
-    rdfs:label "핵(核)-"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
     a kno:Component ;
+    rdfs:label "핵(核)-"@ko ;
     kno:fullForm "핵"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2015-0258-c2 kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
+    kno:surfaceForm "핵"@ko ;
+    kno:semanticTag kno:usas-A13.3 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2015-0258-c2 kno:surfaceForm "잼"@ko ;
     kno:semanticTag kno:usas-E4.1p ;
-    kno:fullForm "잼"@ko ;
-    rdfs:label "잼"@ko ;
-    kno:surfaceForm "잼"@ko ;
     kno:formative kno:F000405 ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "잼"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "잼"@ko .

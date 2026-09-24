@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0142 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0142 a ontolex:Word ;
+kno:KN2016-0142 kno:slotFiller "마(음) (1성분)"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2016-0142-c1 ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
     skos:definition "‘마음이 섹시한 여자’를 줄여 이르는 말. ‘마음이 섹시한 남자’를 줄여 이르는 말인 ‘마섹남’에 상대하여 이르는 말이다."@ko ;
-    kno:instantiates kno:S000938 ;
-    kno:languageType "(고+영)+한" ;
-    kno:example "¶처음 연기 호흡을 맞춘 두 배우는 탄탄한 연기력으로 ‘까순남’ OOO와 ‘{마섹녀}’ OOO의 캐릭터를 완벽하게 소화한다."@ko ;
-    kno:slotFiller "마(음) (1성분)"@ko ;
-    kno:origin "(마<영>←sexy女)" ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W06 ;
-    kno:componentString "마(음), 섹(시)(sexy), 녀(女)"@ko ;
-    kno:component kno:KN2016-0142-c2 ;
-    kno:indexForm "마섹녀"@ko ;
+    a ontolex:Word ;
     a kno:Neologism ;
-    kno:frequency kno:KN2016-0142-freq-NN-2016 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2016-0142-freq-NN-total ;
-    kno:year "2016"^^xsd:gYear ;
+    kno:languageType "(고+영)+한" ;
+    kno:component kno:KN2016-0142-c1 ;
+    kno:origin "(마<영>←sexy女)" ;
+    kno:activeYears "1"^^xsd:integer ;
     rdfs:label "마섹녀"@ko ;
+    kno:component kno:KN2016-0142-c3 ;
+    kno:formation kno:W06 ;
+    kno:indexForm "마섹녀"@ko ;
+    kno:componentString "마(음), 섹(시)(sexy), 녀(女)"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000873 ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2016-0142-freq-NN-2016 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EC%84%B9%EB%85%80> ;
-    kno:component kno:KN2016-0142-c3 .
-kno:KN2016-0142-c1 kno:role "슬롯 채움"@ko ;
+    kno:example "¶처음 연기 호흡을 맞춘 두 배우는 탄탄한 연기력으로 ‘까순남’ OOO와 ‘{마섹녀}’ OOO의 캐릭터를 완벽하게 소화한다."@ko ;
+    kno:component kno:KN2016-0142-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:frequency kno:KN2016-0142-freq-NN-total .
+kno:KN2016-0142-c1 kno:formative kno:F000740 ;
     rdfs:label "마(음)"@ko ;
     a kno:Component ;
+    kno:semanticTag kno:usas-X1 ;
     kno:fullForm "마음"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:surfaceForm "마"@ko ;
-    kno:formative kno:F000740 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-X1 .
-kno:KN2016-0142-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000114 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:fullForm "섹시"@ko ;
-    kno:surfaceForm "섹"@ko ;
-    rdfs:label "섹(시)(sexy)"@ko .
-kno:KN2016-0142-c3 kno:fullForm "녀"@ko ;
-    kno:formative kno:F000024 ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0142-c3 kno:role "고정항"@ko ;
     rdfs:label "녀(女)"@ko ;
     kno:surfaceForm "녀"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2.1 .
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000024 ;
+    kno:semanticTag kno:usas-S2.1 ;
+    a kno:Component ;
+    kno:fullForm "녀"@ko .
+kno:KN2016-0142-c2 kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "섹(시)(sexy)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "섹시"@ko ;
+    kno:surfaceForm "섹"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000114 .

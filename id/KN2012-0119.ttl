@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0119 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0119 kno:frequency kno:KN2012-0119-freq-NN-2012 ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0119-c3 ;
-    kno:formation kno:W02 ;
-    a ontolex:Word ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "(영+고)+한" ;
+kno:KN2012-0119 a ontolex:Word ;
+    skos:definition "주변 사람이 어깨에 기댈 수 있도록 배려해 주는 남자."@ko ;
+    kno:frequency kno:KN2012-0119-freq-NN-2012 ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "매너어깨남"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%A4%EB%84%88%EC%96%B4%EA%B9%A8%EB%82%A8> ;
-    a kno:Neologism ;
-    kno:predicate "주다"@ko ;
+    kno:instantiates kno:S001293 ;
     kno:unitType "단어"@ko ;
+    kno:example "¶{매너어깨남은} 누구?"@ko ;
+    kno:slotFiller "매너(manner)+어깨 (2성분)"@ko ;
+    kno:component kno:KN2012-0119-c3 ;
     kno:slotFiller "어깨+-남(男) (2성분)"@ko ;
-    kno:component kno:KN2012-0119-c1 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W02 ;
+    kno:origin "(manner어깨男)" ;
+    kno:frequency kno:KN2012-0119-freq-NN-total ;
+    rdfs:label "매너어깨-남"@ko ;
     kno:component kno:KN2012-0119-c2 ;
     kno:componentString "매너(manner), 어깨, -남(男)"@ko ;
-    rdfs:label "매너어깨-남"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2012-0119-freq-NN-total ;
-    kno:indexForm "매너어깨남"@ko ;
-    skos:definition "주변 사람이 어깨에 기댈 수 있도록 배려해 주는 남자."@ko ;
-    kno:origin "(manner어깨男)" ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
     kno:instantiates kno:S000003 ;
-    kno:slotFiller "매너(manner)+어깨 (2성분)"@ko ;
-    kno:example "¶{매너어깨남은} 누구?"@ko ;
-    kno:instantiates kno:S001377 .
-kno:KN2012-0119-c3 kno:formative kno:F000008 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "남"@ko ;
+    kno:languageType "(영+고)+한" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:predicate "주다"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2012-0119-c1 .
+kno:KN2012-0119-c3 kno:semanticTag kno:usas-S2.2 ;
     kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000008 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "-남(男)"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S2.2 ;
-    kno:fullForm "남"@ko .
-kno:KN2012-0119-c1 kno:formative kno:F000745 ;
-    kno:semanticTag kno:usas-S1.2.4p ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "매너(manner)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "매너"@ko ;
-    kno:semanticTag kno:usas-S1.1.1 ;
-    kno:surfaceForm "매너"@ko .
-kno:KN2012-0119-c2 kno:semanticTag kno:usas-B1 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000850 ;
-    kno:fullForm "어깨"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:fullForm "남"@ko ;
+    kno:surfaceForm "남"@ko .
+kno:KN2012-0119-c2 a kno:Component ;
     kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "어깨"@ko ;
+    kno:fullForm "어깨"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "어깨"@ko ;
-    kno:surfaceForm "어깨"@ko .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000850 .
+kno:KN2012-0119-c1 a kno:Component ;
+    kno:semanticTag kno:usas-S1.2.4p ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000745 ;
+    kno:fullForm "매너"@ko ;
+    kno:surfaceForm "매너"@ko ;
+    rdfs:label "매너(manner)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S1.1.1 .

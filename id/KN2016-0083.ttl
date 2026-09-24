@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0083 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0083 a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000208 ;
-    kno:slotFiller "스노우(snow) (1성분)"@ko ;
+kno:KN2016-0083 kno:component kno:KN2016-0083-c2 ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:componentString "다크(dark), 스노우(snow)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:predicate "띠다"@ko ;
+    kno:frequency kno:KN2016-0083-freq-NN-total ;
+    kno:languageType "영^영" ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000194 ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "다크^스노우"@ko ;
+    kno:pos "「구」"@ko ;
+    skos:definition "화산재, 산불 연기, 미세 먼지나 황사로 인한 티끌이 설원에 내려앉아, 탁한 빛을 띠는 눈. 눈 색깔이 어두워 햇빛을 잘 흡수하기 때문에 기상 이변을 가중시킨다."@ko ;
+    a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2016-0083-freq-NN-2015 ;
     kno:example "¶{다크 스노우는} 중요해 보이지 않을 수 있지만, 실제로는 봄철 눈이 빨리 녹게 하는 데 큰 영향을 끼칩니다."@ko ;
-    kno:component kno:KN2016-0083-c2 ;
-    kno:component kno:KN2016-0083-c1 ;
-    rdfs:label "다크^스노우"@ko ;
+    kno:slotFiller "스노우(snow) (1성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A4%ED%81%AC%EC%8A%A4%EB%85%B8%EC%9A%B0> ;
+    kno:component kno:KN2016-0083-c1 ;
     kno:indexForm "다크스노우"@ko ;
-    kno:predicate "띠다"@ko ;
-    kno:languageType "영^영" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "다크(dark), 스노우(snow)"@ko ;
-    a kno:Neologism ;
-    skos:definition "화산재, 산불 연기, 미세 먼지나 황사로 인한 티끌이 설원에 내려앉아, 탁한 빛을 띠는 눈. 눈 색깔이 어두워 햇빛을 잘 흡수하기 때문에 기상 이변을 가중시킨다."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0083-freq-NN-total ;
     kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:origin "(<영>dark snow)" ;
-    kno:unitType "구"@ko .
-kno:KN2016-0083-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:origin "(<영>dark snow)" .
+kno:KN2016-0083-c2 kno:surfaceForm "스노우"@ko ;
     kno:fullForm "스노우"@ko ;
-    kno:semanticTag kno:usas-W4 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "스노우(snow)"@ko ;
-    kno:surfaceForm "스노우"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004546 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2016-0083-c1 kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-W4 ;
     kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:formative kno:F004546 .
+kno:KN2016-0083-c1 kno:position "1"^^xsd:integer ;
     rdfs:label "다크(dark)"@ko ;
-    kno:semanticTag kno:usas-W2 ;
     kno:surfaceForm "다크"@ko ;
     a kno:Component ;
+    kno:semanticTag kno:usas-W2 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000344 ;
     kno:fullForm "다크"@ko .

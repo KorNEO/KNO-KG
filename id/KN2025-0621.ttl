@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0621 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0621 kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B9%EC%82%B0%EB%AC%BC%20%EC%BD%94%EC%9D%B8> ;
+kno:KN2025-0621 skos:definition "(LLM) 특정 가상 자산이 한 거래소에 거래가 과도하게 집중되거나 입출금ㆍ이동이 제한되어, 외부 시세와의 차이가 커지고 가격 변동성이 급격해지기 쉬운 상태(또는 그런 가상 자산)를 이르는 말."@ko ;
+    kno:slotFiller "특산물(特産物) (1성분)"@ko ;
+    kno:origin "(特産物<영>coin)" ;
+    kno:frequency kno:KN2025-0621-freq-NN-total ;
+    kno:indexForm "특산물코인"@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0621-c1 ;
     kno:componentString "특산물(特産物), 코인(coin)"@ko ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2025-0621-c2 ;
-    kno:languageType "한_영" ;
-    rdfs:label "특산물 코인"@ko ;
-    kno:slotFiller "특산물(特産物) (1성분)"@ko ;
-    kno:indexForm "특산물코인"@ko ;
-    kno:origin "(特産物<영>coin)" ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2025-0621-freq-NN-total ;
-    kno:example "(LLM) 입출금이 막히면서 {특산물코인이} 해당 거래소 안에서만 거래가 쏠려 단기간에 급등했다가 곧바로 급락했다."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
     kno:year "2025"^^xsd:gYear ;
-    kno:instantiates kno:S000439 ;
-    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "특산물 코인"@ko ;
     a kno:Neologism ;
-    skos:definition "(LLM) 특정 가상 자산이 한 거래소에 거래가 과도하게 집중되거나 입출금ㆍ이동이 제한되어, 외부 시세와의 차이가 커지고 가격 변동성이 급격해지기 쉬운 상태(또는 그런 가상 자산)를 이르는 말."@ko ;
-    kno:frequency kno:KN2025-0621-freq-NN-2025 .
-kno:KN2025-0621-c1 kno:surfaceForm "특산물"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:formative kno:F006583 ;
-    rdfs:label "특산물(特産物)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "특산물"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0621-c2 kno:role "고정항"@ko ;
-    rdfs:label "코인(coin)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "코인"@ko ;
+    kno:component kno:KN2025-0621-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0621-freq-NN-2025 ;
+    kno:instantiates kno:S000405 ;
+    kno:languageType "한_영" ;
+    kno:pos "「구」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B9%EC%82%B0%EB%AC%BC%20%EC%BD%94%EC%9D%B8> ;
+    a ontolex:MultiwordExpression ;
+    kno:example "(LLM) 입출금이 막히면서 {특산물코인이} 해당 거래소 안에서만 거래가 쏠려 단기간에 급등했다가 곧바로 급락했다."@ko .
+kno:KN2025-0621-c1 kno:semanticTag kno:usas-I2.2 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000121 ;
+    kno:fullForm "특산물"@ko ;
+    a kno:Component ;
+    rdfs:label "특산물(特産物)"@ko ;
+    kno:formative kno:F006583 ;
+    kno:surfaceForm "특산물"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0621-c2 a kno:Component ;
     kno:surfaceForm "코인"@ko ;
-    kno:semanticTag kno:usas-I1 .
+    kno:role "고정항"@ko ;
+    kno:fullForm "코인"@ko ;
+    rdfs:label "코인(coin)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F000121 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

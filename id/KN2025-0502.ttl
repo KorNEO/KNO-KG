@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0502 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0502 a kno:Neologism ;
+kno:KN2025-0502 kno:frequency kno:KN2025-0502-freq-NN-total ;
     kno:frequency kno:KN2025-0502-freq-NN-2025 ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    kno:unitType "단어"@ko ;
-    kno:predicate "전담하다"@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0502-c1 ;
-    kno:componentString "전업(專業), 손(孫), 주"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:origin "(專業孫주)" ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "한_(한+고)" ;
+    skos:definition "(LLM) 경제 활동이나 구직 활동을 잠시 미루고 조부모와 함께 지내며 병원 동행, 집안일, 돌봄 등을 전담하는 손주."@ko ;
+    kno:pos "「명」"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 취업 준비는 잠시 쉬고 할아버지 약 타는 일부터 병원 동행까지 맡다 보니, 친구들한테 {전업손주가} 됐다고 말했다."@ko ;
+    kno:origin "(專業孫주)" ;
+    kno:predicate "전담하다"@ko ;
+    kno:component kno:KN2025-0502-c1 ;
+    kno:formation kno:W01 ;
+    kno:indexForm "전업손주"@ko ;
     kno:component kno:KN2025-0502-c3 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%97%85%EC%86%90%EC%A3%BC> ;
-    kno:indexForm "전업손주"@ko ;
-    kno:frequency kno:KN2025-0502-freq-NN-total ;
+    kno:languageType "한_(한+고)" ;
+    kno:example "(LLM) 취업 준비는 잠시 쉬고 할아버지 약 타는 일부터 병원 동행까지 맡다 보니, 친구들한테 {전업손주가} 됐다고 말했다."@ko ;
+    kno:registration "신어DB"@ko ;
     kno:component kno:KN2025-0502-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:componentString "전업(專業), 손(孫), 주"@ko ;
+    kno:unitType "단어"@ko ;
     rdfs:label "전업-손주"@ko ;
-    skos:definition "(LLM) 경제 활동이나 구직 활동을 잠시 미루고 조부모와 함께 지내며 병원 동행, 집안일, 돌봄 등을 전담하는 손주."@ko .
-kno:KN2025-0502-c1 rdfs:label "전업(專業)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "전업"@ko ;
+    a ontolex:Word ;
+    a kno:Neologism .
+kno:KN2025-0502-c1 kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "전업(專業)"@ko ;
+    kno:formative kno:F005635 ;
+    a kno:Component ;
     kno:surfaceForm "전업"@ko ;
     kno:semanticTag kno:usas-I3.1 ;
-    kno:formative kno:F005635 .
-kno:KN2025-0502-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F005779 ;
-    kno:semanticTag kno:usas-F2 ;
-    a kno:Component ;
-    kno:fullForm "주"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "전업"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0502-c3 kno:formative kno:F005779 ;
     rdfs:label "주"@ko ;
-    kno:surfaceForm "주"@ko .
-kno:KN2025-0502-c2 kno:fullForm "손"@ko ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-S4 ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "주"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "주"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "손"@ko ;
-    rdfs:label "손(孫)"@ko ;
+    kno:semanticTag kno:usas-F2 .
+kno:KN2025-0502-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F004435 ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F004435 .
+    kno:surfaceForm "손"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    rdfs:label "손(孫)"@ko ;
+    kno:fullForm "손"@ko .

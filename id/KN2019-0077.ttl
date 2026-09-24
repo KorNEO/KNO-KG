@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0077 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0077 kno:componentString "리트(LEET), 투어(tour)"@ko ;
+kno:KN2019-0077 a kno:Neologism ;
+    skos:definition "법학 전문 대학원 재학 중에 더 나은 법학 전문 대학원에 진학하기 위해 다른 대학원에서 시행하는 법학 적성 시험을 치르러 다니는 일. ⇒규범 표기는 미확정이다."@ko ;
+    kno:instantiates kno:S001016 ;
     kno:pos "「구」"@ko ;
-    kno:unitType "구"@ko ;
+    a ontolex:MultiwordExpression ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%8A%B8%20%ED%88%AC%EC%96%B4> ;
+    kno:languageType "영_영" ;
+    kno:indexForm "리트투어"@ko ;
+    kno:predicate "다니다"@ko ;
+    kno:origin "(<영>LEET tour)" ;
+    kno:example "¶‘{리트 투어}’ 로스쿨생 매년 급증"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0077-freq-NN-2019 ;
+    kno:componentString "리트(LEET), 투어(tour)"@ko ;
+    rdfs:label "리트 투어"@ko ;
+    kno:unitType "구"@ko ;
     kno:component kno:KN2019-0077-c2 ;
     kno:component kno:KN2019-0077-c1 ;
-    kno:origin "(<영>LEET tour)" ;
-    kno:instantiates kno:S001087 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    rdfs:label "리트 투어"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "다니다"@ko ;
-    kno:languageType "영_영" ;
     kno:slotFiller "리트(LEET) (1성분)"@ko ;
-    kno:indexForm "리트투어"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0077-freq-NN-2019 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2019-0077-freq-NN-total ;
     kno:registration "신어DB"@ko ;
-    skos:definition "법학 전문 대학원 재학 중에 더 나은 법학 전문 대학원에 진학하기 위해 다른 대학원에서 시행하는 법학 적성 시험을 치르러 다니는 일. ⇒규범 표기는 미확정이다."@ko ;
-    kno:example "¶‘{리트 투어}’ 로스쿨생 매년 급증"@ko ;
-    a kno:Neologism .
-kno:KN2019-0077-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M1 ;
+    kno:frequency kno:KN2019-0077-freq-NN-total .
+kno:KN2019-0077-c2 kno:fullForm "투어"@ko ;
     rdfs:label "투어(tour)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "투어"@ko ;
     kno:formative kno:F000622 ;
-    kno:surfaceForm "투어"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component .
-kno:KN2019-0077-c1 kno:position "1"^^xsd:integer ;
     a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "리트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "투어"@ko .
+kno:KN2019-0077-c1 kno:surfaceForm "리트"@ko ;
     kno:formative kno:F003319 ;
     rdfs:label "리트(LEET)"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "리트"@ko ;
-    kno:semanticTag kno:usas-P1 .
+    kno:fullForm "리트"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component .

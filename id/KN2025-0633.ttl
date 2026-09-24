@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0633 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0633 kno:languageType "영_한" ;
-    kno:formation kno:W01 ;
-    kno:componentString "팬티(즈)(panties), 수괴(首魁)"@ko ;
-    a kno:Neologism ;
+kno:KN2025-0633 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%AC%ED%8B%B0%EC%88%98%EA%B4%B4> ;
+    kno:component kno:KN2025-0633-c2 ;
     kno:pos "「명」"@ko ;
+    kno:formation kno:W01 ;
+    kno:origin "(<영>←panties首魁)" ;
+    kno:indexForm "팬티수괴"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0633-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2025"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000263 ;
+    kno:componentString "팬티(즈)(panties), 수괴(首魁)"@ko ;
+    a ontolex:Word ;
+    kno:languageType "영_한" ;
+    kno:instantiates kno:S000242 ;
     rdfs:label "팬티-수괴"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "팬티(즈)(panties) (1성분)"@ko ;
+    kno:frequency kno:KN2025-0633-freq-NN-2025 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:frequency kno:KN2025-0633-freq-NN-total ;
-    kno:example "(LLM) 영장 집행을 막겠다며 속옷 차림으로 바닥에 누워 버티는 모습을 두고 온라인에서는 그를 {팬티수괴라고} 조롱했다."@ko ;
-    kno:component kno:KN2025-0633-c2 ;
     skos:definition "(LLM) 속옷 차림을 드러내거나 바닥에 드러눕는 등 유치하고 비상식적인 방식으로 공권력의 집행에 맞서 버티는 사람을 비꼬아 이르는 말."@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "팬티(즈)(panties) (1성분)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "팬티수괴"@ko ;
-    kno:frequency kno:KN2025-0633-freq-NN-2025 ;
-    kno:origin "(<영>←panties首魁)" ;
-    kno:component kno:KN2025-0633-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%AC%ED%8B%B0%EC%88%98%EA%B4%B4> .
-kno:KN2025-0633-c2 kno:surfaceForm "수괴"@ko ;
+    kno:example "(LLM) 영장 집행을 막겠다며 속옷 차림으로 바닥에 누워 버티는 모습을 두고 온라인에서는 그를 {팬티수괴라고} 조롱했다."@ko .
+kno:KN2025-0633-c2 a kno:Component ;
+    rdfs:label "수괴(首魁)"@ko ;
     kno:semanticTag kno:usas-G2.1m ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000538 ;
     kno:fullForm "수괴"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "수괴(首魁)"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0633-c1 kno:role "슬롯 채움"@ko ;
-    kno:fullForm "팬티즈"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001947 ;
-    rdfs:label "팬티(즈)(panties)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "수괴"@ko .
+kno:KN2025-0633-c1 kno:formative kno:F001947 ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:surfaceForm "팬티"@ko .
+    a kno:Component ;
+    kno:fullForm "팬티즈"@ko ;
+    rdfs:label "팬티(즈)(panties)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "팬티"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B5 .

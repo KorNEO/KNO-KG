@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0058 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0058 kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "노템개인전"@ko ;
-    kno:componentString "노(no), (아이)템(item), 개인전(個人戰)"@ko ;
-    kno:year "2012"^^xsd:gYear ;
+kno:KN2012-0058 kno:origin "(▼←no item個人戰)" ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0058-c3 ;
+    kno:instantiates kno:S001214 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%ED%85%9C%20%EA%B0%9C%EC%9D%B8%EC%A0%84> ;
+    kno:slotFiller "개인전(個人戰) (1성분)"@ko ;
+    kno:example "¶혼자 하기를 비롯해 3대3 팀으로 대결까지 가능하며 아이템 팀전, 아이템 개인전, {노템 개인전}, 노템 팀전 등 다양한 게임 모드가 재미를 더한다."@ko ;
+    kno:componentString "노(no), (아이)템(item), 개인전(個人戰)"@ko ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "노템 개인전"@ko ;
+    kno:component kno:KN2012-0058-c1 ;
     skos:definition "게임에서, 아이템을 장착하지 않고 개인끼리 겨루는 경기."@ko ;
     kno:registration "신어DB"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2012-0058-c1 ;
-    rdfs:label "노템 개인전"@ko ;
-    kno:instantiates kno:S001293 ;
-    kno:example "¶혼자 하기를 비롯해 3대3 팀으로 대결까지 가능하며 아이템 팀전, 아이템 개인전, {노템 개인전}, 노템 팀전 등 다양한 게임 모드가 재미를 더한다."@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:slotFiller "개인전(個人戰) (1성분)"@ko ;
-    a kno:Neologism ;
+    kno:indexForm "노템개인전"@ko ;
+    kno:component kno:KN2012-0058-c2 ;
     kno:predicate "겨루다"@ko ;
-    kno:languageType "영_한" ;
-    kno:origin "(▼←no item個人戰)" ;
-    kno:component kno:KN2012-0058-c3 ;
-    kno:component kno:KN2012-0058-c2 .
-kno:KN2012-0058-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "노"@ko ;
-    kno:formative kno:F000015 ;
-    kno:semanticTag kno:usas-Z6 ;
-    rdfs:label "노(no)"@ko ;
-    kno:surfaceForm "노"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2012-0058-c3 kno:formative kno:F002161 ;
-    kno:fullForm "개인전"@ko ;
-    kno:semanticTag kno:usas-K5.1 ;
+    kno:languageType "영_한" .
+kno:KN2012-0058-c3 rdfs:label "개인전(個人戰)"@ko ;
+    kno:formative kno:F002161 ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "개인전"@ko ;
     kno:surfaceForm "개인전"@ko ;
     kno:position "3"^^xsd:integer ;
-    rdfs:label "개인전(個人戰)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0058-c2 rdfs:label "(아이)템(item)"@ko ;
-    kno:fullForm "아이템"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-K5.1 .
+kno:KN2012-0058-c1 kno:surfaceForm "노"@ko ;
+    rdfs:label "노(no)"@ko ;
+    kno:semanticTag kno:usas-Z6 ;
+    kno:fullForm "노"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000015 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0058-c2 kno:fullForm "아이템"@ko ;
     kno:semanticTag kno:usas-O2 ;
     kno:role "고정항"@ko ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "템"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000007 .
+    kno:formative kno:F000007 ;
+    kno:surfaceForm "템"@ko .

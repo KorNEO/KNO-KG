@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0158 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0158 skos:definition "‘양곡 관리법 개정안’을 달리 이르는 말. 과잉 공급된 쌀을 정부가 의무적으로 매입하는 방안이 쌀값의 폭락 혹은 폭등을 해결할 수 있다는 관점에서 나온 말이다."@ko ;
-    kno:frequency kno:KN2023-0158-freq-NN-2023 ;
+kno:KN2023-0158 kno:frequency kno:KN2023-0158-freq-NN-2024 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:languageType "고^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:slotFiller "쌀값 (1성분)"@ko ;
-    kno:frequency kno:KN2023-0158-freq-NN-total ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8C%80%EA%B0%92%EC%A0%95%EC%83%81%ED%99%94%EB%B2%95> ;
     kno:example "¶한국 농촌 경제 연구원에서는 {쌀값 정상화법이} 통과되면 과잉 생산된 쌀의 증가로 국가의 재정에 큰 부담이 될 수도 있다는 연구 결과를 발표하였다."@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0158-freq-NN-2024 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:languageType "고^한" ;
-    a kno:Neologism ;
-    kno:component kno:KN2023-0158-c3 ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(쌀값正常化法)" ;
+    kno:instantiates kno:S000957 ;
     kno:component kno:KN2023-0158-c1 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(쌀값正常化法)" ;
+    kno:pos "「구」"@ko ;
     kno:indexForm "쌀값정상화법"@ko ;
-    rdfs:label "쌀값^정상화법"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2023-0158-freq-NN-2025 ;
-    kno:componentString "쌀값, 정상화(正常化), 법(法)"@ko ;
-    kno:instantiates kno:S001026 ;
-    kno:unitType "구"@ko ;
     a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2023-0158-freq-NN-2023 ;
+    kno:component kno:KN2023-0158-c2 ;
+    kno:activeYears "4"^^xsd:integer ;
+    rdfs:label "쌀값^정상화법"@ko ;
     kno:frequency kno:KN2023-0158-freq-NN-2022 ;
-    kno:component kno:KN2023-0158-c2 .
-kno:KN2023-0158-c3 kno:fullForm "법"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000002 ;
-    kno:role "고정항"@ko ;
+    kno:component kno:KN2023-0158-c3 ;
+    kno:frequency kno:KN2023-0158-freq-NN-2025 ;
+    skos:definition "‘양곡 관리법 개정안’을 달리 이르는 말. 과잉 공급된 쌀을 정부가 의무적으로 매입하는 방안이 쌀값의 폭락 혹은 폭등을 해결할 수 있다는 관점에서 나온 말이다."@ko ;
+    kno:componentString "쌀값, 정상화(正常化), 법(法)"@ko ;
+    kno:frequency kno:KN2023-0158-freq-NN-total ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0158-c1 kno:semanticTag kno:usas-I1.3 ;
     a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 ;
-    rdfs:label "법(法)"@ko ;
-    kno:surfaceForm "법"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0158-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F004759 ;
     kno:fullForm "쌀값"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "쌀값"@ko ;
     kno:surfaceForm "쌀값"@ko ;
+    kno:formative kno:F004759 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-I1.3 .
+    rdfs:label "쌀값"@ko .
 kno:KN2023-0158-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A6.2p ;
     kno:fullForm "정상화"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     kno:formative kno:F001759 ;
     kno:role "고정항"@ko ;
     rdfs:label "정상화(正常化)"@ko ;
-    a kno:Component ;
     kno:surfaceForm "정상화"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-A6.2p .
+kno:KN2023-0158-c3 kno:semanticTag kno:usas-G2.1 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000002 ;
+    rdfs:label "법(法)"@ko ;
+    kno:fullForm "법"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "법"@ko .

@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0116 kno:activeYears "0"^^xsd:integer ;
-    kno:year "2012"^^xsd:gYear ;
-    a ontolex:Word ;
-    kno:registration "우리말샘"@ko ;
+kno:KN2012-0116 kno:unitType "단어"@ko ;
+    kno:languageType "고+고" ;
     kno:urimalTargetCode "1374848" ;
-    kno:slotFiller "점(심) (1성분)"@ko ;
+    skos:definition "‘맛있는 점심’을 줄여 이르는 말."@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0116-c2 ;
+    a ontolex:Word ;
+    kno:component kno:KN2012-0116-c1 ;
+    a kno:Neologism ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374848> ;
     rdfs:label "맛점"@ko ;
     kno:indexForm "맛점"@ko ;
-    skos:definition "‘맛있는 점심’을 줄여 이르는 말."@ko ;
-    kno:instantiates kno:S001375 ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374848> ;
-    kno:languageType "고+고" ;
-    kno:example "¶OOO는 24일 오후 자신의 OO를 통해 “트친님들, {맛점} 하셨어요?”라는 글과 함께 사진 한 장을 게재했다."@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2012-0116-c2 ;
-    kno:component kno:KN2012-0116-c1 ;
-    kno:pos "「명」"@ko ;
     kno:formation kno:W06 ;
-    kno:componentString "맛(있다), 점(심)"@ko .
-kno:KN2012-0116-c2 kno:surfaceForm "점"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F005653 ;
+    kno:example "¶OOO는 24일 오후 자신의 OO를 통해 “트친님들, {맛점} 하셨어요?”라는 글과 함께 사진 한 장을 게재했다."@ko ;
+    kno:componentString "맛(있다), 점(심)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2012-0116-c2 kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "점"@ko ;
+    rdfs:label "점(심)"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-F1 ;
     kno:fullForm "점심"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "점(심)"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:formative kno:F005653 ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2012-0116-c1 kno:formative kno:F000744 ;
-    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:semanticTag kno:usas-A5.1p ;
     rdfs:label "맛(있다)"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "맛있다"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A5.1p ;
-    kno:surfaceForm "맛"@ko ;
-    kno:fullForm "맛있다"@ko .
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "맛"@ko .

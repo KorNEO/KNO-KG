@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0177 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0177 kno:example "¶학생들은 ‘짧은 치마, 줄인 교복’을 외치며 중고 교복을 사고 팔고 ‘짧치’, ‘똥치’, ‘{빽치’라는} 은어까지 만들어내며 불량 치마 구매에 열을 올리고 있다."@ko ;
-    kno:component kno:KN2012-0177-c1 ;
-    kno:component kno:KN2012-0177-c2 ;
+kno:KN2012-0177 a kno:Neologism ;
+    kno:example "¶학생들은 ‘짧은 치마, 줄인 교복’을 외치며 중고 교복을 사고 팔고 ‘짧치’, ‘똥치’, ‘{빽치’라는} 은어까지 만들어내며 불량 치마 구매에 열을 올리고 있다."@ko ;
     kno:formation kno:W06 ;
-    kno:year "2012"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:indexForm "빽치"@ko ;
-    kno:registration "우리말샘"@ko ;
+    skos:definition "몸에 딱 달라붙는 치마."@ko ;
     kno:unitType "단어"@ko ;
-    kno:predicate "달라붙다"@ko ;
-    kno:urimalTargetCode "1357015" ;
-    kno:componentString "빽, 치(마)"@ko ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
     kno:activeYears "0"^^xsd:integer ;
     rdfs:label "빽치"@ko ;
-    a ontolex:Word ;
-    skos:definition "몸에 딱 달라붙는 치마."@ko ;
+    kno:component kno:KN2012-0177-c2 ;
     kno:languageType "고+고" ;
-    kno:instantiates kno:S000271 ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "빽 (1성분)"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357015> .
-kno:KN2012-0177-c1 kno:surfaceForm "빽"@ko ;
-    kno:formative kno:F004125 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "빽"@ko ;
-    kno:fullForm "빽"@ko ;
-    kno:semanticTag kno:usas-S8p .
-kno:KN2012-0177-c2 kno:semanticTag kno:usas-B5 ;
-    kno:formative kno:F000413 ;
-    rdfs:label "치(마)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    kno:predicate "달라붙다"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0177-c1 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357015> ;
+    kno:urimalTargetCode "1357015" ;
+    kno:indexForm "빽치"@ko ;
+    kno:componentString "빽, 치(마)"@ko .
+kno:KN2012-0177-c2 rdfs:label "치(마)"@ko ;
     kno:surfaceForm "치"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000413 ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:fullForm "치마"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "치마"@ko .
+    kno:position "2"^^xsd:integer .
+kno:KN2012-0177-c1 kno:semanticTag kno:usas-S8p ;
+    kno:formative kno:F004125 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "빽"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "빽"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "빽"@ko .

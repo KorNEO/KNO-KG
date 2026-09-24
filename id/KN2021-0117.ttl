@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0117 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0117 kno:component kno:KN2021-0117-c2 ;
-    kno:component kno:KN2021-0117-c1 ;
-    kno:languageType "고^한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%BC%EC%A7%80%EC%84%B8%EB%8C%80> ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "민지^세대"@ko ;
+kno:KN2021-0117 kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
-    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0117-freq-NN-total ;
     kno:year "2021"^^xsd:gYear ;
     skos:definition "‘엠제트(MZ) 세대’를 달리 이르는 말. ‘밀레니엄 세대’의 첫머리 문자인 엠(M)을 활용한 ‘민’, ‘제트 세대’의 제트(Z)를 활용한 ‘지’를 결합하여 ‘민지’라는 이름으로 바꾸어 표현한 말이다."@ko ;
+    kno:componentString "민지, 세대(世代)"@ko ;
+    kno:example "¶재미를 중시하는 이른바 {민지 세대가} 소비 주체로 부상하면서 상대적으로 이들과 관련이 적은 전통 제조업체도 이색적인 협업을 통해서 엠제트(MZ) 공략에 나서고 있다."@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:label "민지^세대"@ko ;
+    kno:unitType "구"@ko ;
     kno:origin "(민지世代)" ;
     kno:instantiates kno:S000002 ;
-    kno:example "¶재미를 중시하는 이른바 {민지 세대가} 소비 주체로 부상하면서 상대적으로 이들과 관련이 적은 전통 제조업체도 이색적인 협업을 통해서 엠제트(MZ) 공략에 나서고 있다."@ko ;
-    kno:componentString "민지, 세대(世代)"@ko ;
-    kno:slotFiller "민지 (1성분)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2021-0117-freq-NN-total ;
-    a kno:Neologism ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2021-0117-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%BC%EC%A7%80%EC%84%B8%EB%8C%80> ;
     kno:indexForm "민지세대"@ko ;
-    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    kno:languageType "고^한" ;
+    kno:slotFiller "민지 (1성분)"@ko ;
     kno:frequency kno:KN2021-0117-freq-NN-2021 ;
-    kno:frequency kno:KN2021-0117-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear .
-kno:KN2021-0117-c2 kno:semanticTag kno:usas-T3 ;
-    kno:surfaceForm "세대"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000006 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "세대"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "세대(世代)"@ko .
-kno:KN2021-0117-c1 kno:surfaceForm "민지"@ko ;
-    kno:semanticTag kno:usas-Z1 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "민지"@ko ;
-    kno:fullForm "민지"@ko ;
-    a kno:Component ;
+    kno:component kno:KN2021-0117-c2 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2021-0117-freq-NN-2022 .
+kno:KN2021-0117-c1 a kno:Component ;
     kno:formative kno:F001332 ;
+    kno:surfaceForm "민지"@ko ;
+    kno:fullForm "민지"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    rdfs:label "민지"@ko .
+kno:KN2021-0117-c2 kno:surfaceForm "세대"@ko ;
+    kno:formative kno:F000006 ;
+    kno:semanticTag kno:usas-S2 ;
+    a kno:Component ;
+    kno:fullForm "세대"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T3 ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:position "2"^^xsd:integer .

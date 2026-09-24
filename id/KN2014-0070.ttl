@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0070 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0070 kno:component kno:KN2014-0070-c3 ;
-    skos:definition "추간판이 돌출되어 요통 및 신경 증상을 유발하는 질환."@ko ;
-    kno:component kno:KN2014-0070-c2 ;
+kno:KN2014-0070 kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:component kno:KN2014-0070-c3 ;
     kno:component kno:KN2014-0070-c1 ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:predicate "유발하다"@ko ;
+    a kno:Neologism ;
+    skos:definition "추간판이 돌출되어 요통 및 신경 증상을 유발하는 질환."@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1437634> ;
+    kno:componentString "디스크(disk), 팽륜(膨潤), 탈출증(脫出症)"@ko ;
     kno:frequency kno:KN2014-0070-freq-NN-2015 ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    rdfs:label "디스크^팽륜^탈출증"@ko ;
-    kno:frequency kno:KN2014-0070-freq-NN-2014 ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "디스크팽륜탈출증"@ko ;
+    kno:example "¶{디스크 팽륜 탈출증과} 후관절 비후가 보통 40대에 시작해 50~60대에서 점차 심해지고, 그 이후에 증상이 나타난다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1437634" ;
+    kno:pos "「구」"@ko ;
     a ontolex:MultiwordExpression ;
     kno:languageType "영^한^한" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1437634> ;
-    a kno:Neologism ;
-    kno:registration "우리말샘"@ko ;
-    kno:componentString "디스크(disk), 팽륜(膨潤), 탈출증(脫出症)"@ko ;
-    kno:origin "(<영>disk膨潤脫出症)" ;
-    kno:urimalTargetCode "1437634" ;
+    kno:frequency kno:KN2014-0070-freq-NN-2014 ;
+    rdfs:label "디스크^팽륜^탈출증"@ko ;
     kno:frequency kno:KN2014-0070-freq-NN-total ;
-    kno:example "¶{디스크 팽륜 탈출증과} 후관절 비후가 보통 40대에 시작해 50~60대에서 점차 심해지고, 그 이후에 증상이 나타난다."@ko .
-kno:KN2014-0070-c3 kno:formative kno:F006406 ;
-    kno:surfaceForm "탈출증"@ko ;
-    a kno:Component ;
-    rdfs:label "탈출증(脫出症)"@ko ;
-    kno:role "성분"@ko ;
+    kno:origin "(<영>disk膨潤脫出症)" ;
+    kno:predicate "유발하다"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:component kno:KN2014-0070-c2 ;
+    kno:indexForm "디스크팽륜탈출증"@ko ;
+    kno:unitType "구"@ko .
+kno:KN2014-0070-c3 rdfs:label "탈출증(脫出症)"@ko ;
+    kno:formative kno:F006406 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "성분"@ko ;
     kno:fullForm "탈출증"@ko ;
-    kno:semanticTag kno:usas-B2m .
-kno:KN2014-0070-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "팽륜(膨潤)"@ko ;
-    kno:role "성분"@ko ;
-    kno:fullForm "팽륜"@ko ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:formative kno:F006665 ;
-    kno:surfaceForm "팽륜"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2014-0070-c1 kno:fullForm "디스크"@ko ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:formative kno:F003092 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "탈출증"@ko .
+kno:KN2014-0070-c1 kno:semanticTag kno:usas-B2m ;
     rdfs:label "디스크(disk)"@ko ;
-    kno:surfaceForm "디스크"@ko ;
-    kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-B2m ;
+    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "디스크"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component .
+    kno:surfaceForm "디스크"@ko ;
+    kno:formative kno:F003092 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B1 .
+kno:KN2014-0070-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:fullForm "팽륜"@ko ;
+    kno:surfaceForm "팽륜"@ko ;
+    kno:formative kno:F006665 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "팽륜(膨潤)"@ko ;
+    kno:role "성분"@ko .

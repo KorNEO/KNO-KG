@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0277 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0277 kno:frequency kno:KN2021-0277-freq-NN-2022 ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0277-freq-NN-2023 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%EC%86%8C%EC%A1%B0%EC%A0%95%EC%84%B8> ;
-    skos:definition "생산 과정에서 탄소 배출량이 많은 상품에 대해 부과하는 세금."@ko ;
-    kno:frequency kno:KN2021-0277-freq-NN-2021 ;
-    kno:example "¶미국 행정부는 환경 의무를 다하지 않는 국가에 {탄소 조정세를} 부과할 예정이다."@ko ;
+kno:KN2021-0277 a kno:Neologism ;
+    kno:instantiates kno:S000640 ;
+    kno:predicate "부과하다"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:languageType "한^한" ;
-    kno:slotFiller "조정세(調整稅) (1성분)"@ko ;
-    kno:unitType "구"@ko ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2021-0277-c2 ;
-    kno:componentString "탄소(炭素), 조정세(調整稅)"@ko ;
+    kno:frequency kno:KN2021-0277-freq-NN-2021 ;
+    kno:year "2021"^^xsd:gYear ;
     kno:frequency kno:KN2021-0277-freq-NN-2024 ;
+    kno:componentString "탄소(炭素), 조정세(調整稅)"@ko ;
+    skos:definition "생산 과정에서 탄소 배출량이 많은 상품에 대해 부과하는 세금."@ko ;
+    kno:frequency kno:KN2021-0277-freq-NN-2022 ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%84%EC%86%8C%EC%A1%B0%EC%A0%95%EC%84%B8> ;
+    kno:slotFiller "조정세(調整稅) (1성분)"@ko ;
     kno:frequency kno:KN2021-0277-freq-NN-total ;
-    kno:instantiates kno:S000692 ;
+    kno:frequency kno:KN2021-0277-freq-NN-2023 ;
+    kno:origin "(炭素調整稅)" ;
     kno:component kno:KN2021-0277-c1 ;
     kno:indexForm "탄소조정세"@ko ;
-    kno:origin "(炭素調整稅)" ;
-    kno:frequency kno:KN2021-0277-freq-NN-2020 ;
-    kno:predicate "부과하다"@ko ;
+    kno:languageType "한^한" ;
+    kno:component kno:KN2021-0277-c2 ;
+    kno:unitType "구"@ko ;
     rdfs:label "탄소^조정세"@ko ;
+    kno:example "¶미국 행정부는 환경 의무를 다하지 않는 국가에 {탄소 조정세를} 부과할 예정이다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0277-freq-NN-2020 ;
     kno:activeYears "5"^^xsd:integer .
-kno:KN2021-0277-c2 rdfs:label "조정세(調整稅)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F005742 ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:fullForm "조정세"@ko ;
+kno:KN2021-0277-c1 kno:surfaceForm "탄소"@ko ;
     a kno:Component ;
-    kno:surfaceForm "조정세"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2021-0277-c1 kno:formative kno:F000970 ;
-    rdfs:label "탄소(炭素)"@ko ;
-    kno:fullForm "탄소"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-O1.1 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "탄소"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component .
+    kno:formative kno:F000970 ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:fullForm "탄소"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "탄소(炭素)"@ko .
+kno:KN2021-0277-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005742 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "조정세"@ko ;
+    rdfs:label "조정세(調整稅)"@ko ;
+    kno:surfaceForm "조정세"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-I1 .

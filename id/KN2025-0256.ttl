@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0256 a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%94%EB%B9%84%20%EC%88%98%EC%88%A0> ;
+kno:KN2025-0256 kno:instantiates kno:S000890 ;
+    kno:component kno:KN2025-0256-c1 ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "바비수술"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:languageType "영_한" ;
+    a kno:Neologism ;
     kno:frequency kno:KN2025-0256-freq-NN-total ;
-    kno:instantiates kno:S000958 ;
+    kno:component kno:KN2025-0256-c2 ;
     kno:example "(LLM) 허리를 더 가늘게 보이게 하려고 {바비수술을} 알아보는 사람이 늘면서 안전성에 대한 논의도 함께 커지고 있다."@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "바비(Barbie), 수술(手術)"@ko ;
+    kno:origin "(Barbie手術)" ;
     kno:frequency kno:KN2025-0256-freq-NN-2025 ;
     kno:pos "「구」"@ko ;
-    kno:componentString "바비(Barbie), 수술(手術)"@ko ;
-    kno:component kno:KN2025-0256-c1 ;
-    kno:component kno:KN2025-0256-c2 ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "(LLM) 바늘로 피부에 작은 구멍을 내어 기구를 삽입한 뒤 갈비뼈 일부를 변형시키는 방식으로 허리 둘레를 줄이려는 미용 목적의 성형수술."@ko ;
-    kno:unitType "구"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "바비수술"@ko ;
     kno:slotFiller "바비(Barbie) (1성분)"@ko ;
-    kno:origin "(Barbie手術)" ;
+    skos:definition "(LLM) 바늘로 피부에 작은 구멍을 내어 기구를 삽입한 뒤 갈비뼈 일부를 변형시키는 방식으로 허리 둘레를 줄이려는 미용 목적의 성형수술."@ko ;
+    a ontolex:MultiwordExpression ;
     rdfs:label "바비 수술"@ko ;
-    kno:languageType "영_한" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2025-0256-c1 kno:formative kno:F003646 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%94%EB%B9%84%20%EC%88%98%EC%88%A0> .
+kno:KN2025-0256-c1 kno:position "1"^^xsd:integer ;
+    rdfs:label "바비(Barbie)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "바비"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "바비(Barbie)"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
+    kno:formative kno:F003646 ;
     kno:fullForm "바비"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2025-0256-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000817 ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:fullForm "수술"@ko ;
     a kno:Component ;
-    rdfs:label "수술(手術)"@ko ;
-    kno:surfaceForm "수술"@ko ;
+    kno:semanticTag kno:usas-Z3 .
+kno:KN2025-0256-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:semanticTag kno:usas-B3 ;
+    kno:formative kno:F000817 ;
+    kno:surfaceForm "수술"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "수술"@ko ;
+    rdfs:label "수술(手術)"@ko .

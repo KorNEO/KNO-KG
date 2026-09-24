@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0242 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0242 kno:predicate "받다"@ko ;
-    kno:component kno:KN2022-0242-c1 ;
-    kno:origin "(在宅受講生)" ;
+kno:KN2022-0242 a kno:Neologism ;
+    kno:languageType "한_한" ;
+    kno:instantiates kno:S000299 ;
+    kno:componentString "재택(在宅), 수강생(受講生)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:year "2022"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%ED%83%9D%20%EC%88%98%EA%B0%95%EC%83%9D> ;
     kno:slotFiller "수강생(受講生) (1성분)"@ko ;
-    kno:componentString "재택(在宅), 수강생(受講生)"@ko ;
-    kno:example "¶{재택 수강생들의} 모습이 대형 화면에 모습을 드러내자, 마치 대면 강의처럼 느껴졌다."@ko ;
-    kno:instantiates kno:S000326 ;
-    kno:component kno:KN2022-0242-c2 ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "재택수강생"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:languageType "한_한" ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "재택 수강생"@ko ;
-    kno:unitType "구"@ko ;
+    kno:indexForm "재택수강생"@ko ;
+    kno:component kno:KN2022-0242-c1 ;
     skos:definition "집에서 컴퓨터 통신망을 통해 수업을 받는 사람."@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2022-0242-c1 kno:surfaceForm "재택"@ko ;
+    kno:example "¶{재택 수강생들의} 모습이 대형 화면에 모습을 드러내자, 마치 대면 강의처럼 느껴졌다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2022-0242-c2 ;
+    kno:predicate "받다"@ko ;
+    kno:origin "(在宅受講生)" ;
+    rdfs:label "재택 수강생"@ko .
+kno:KN2022-0242-c1 kno:formative kno:F000404 ;
     a kno:Component ;
     kno:semanticTag kno:usas-H4 ;
     kno:role "고정항"@ko ;
+    kno:surfaceForm "재택"@ko ;
+    rdfs:label "재택(在宅)"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000404 ;
     kno:fullForm "재택"@ko ;
-    rdfs:label "재택(在宅)"@ko .
-kno:KN2022-0242-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F004466 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0242-c2 kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-P1 ;
-    kno:role "슬롯 채움"@ko ;
     rdfs:label "수강생(受講生)"@ko ;
-    kno:fullForm "수강생"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "수강생"@ko ;
+    kno:formative kno:F004466 ;
     a kno:Component ;
-    kno:surfaceForm "수강생"@ko .
+    kno:fullForm "수강생"@ko ;
+    kno:role "슬롯 채움"@ko .

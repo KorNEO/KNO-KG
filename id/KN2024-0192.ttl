@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0192 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0192 kno:languageType "한^한^한" ;
-    kno:component kno:KN2024-0192-c2 ;
-    kno:instantiates kno:S001039 ;
-    kno:componentString "예술(藝術), 활동(活動), 준비금(準備金)"@ko ;
-    kno:frequency kno:KN2024-0192-freq-NN-2024 ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2024-0192-c3 ;
-    kno:component kno:KN2024-0192-c1 ;
-    kno:frequency kno:KN2024-0192-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2024-0192-freq-NN-2025 ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "예술활동준비금"@ko ;
-    kno:origin "(藝術活動準備金)" ;
+kno:KN2024-0192 kno:pos "「구」"@ko ;
     skos:definition "예술인이 안정적으로 창작 활동을 할 수 있도록 정부에서 지원하여 주는 자금. ‘창작 준비금’에서 명칭이 변경되었다."@ko ;
-    a kno:Neologism ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2024-0192-c1 ;
+    kno:instantiates kno:S000970 ;
+    kno:frequency kno:KN2024-0192-freq-NN-2025 ;
+    kno:predicate "주다"@ko ;
+    kno:origin "(藝術活動準備金)" ;
+    kno:component kno:KN2024-0192-c3 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2024-0192-c2 ;
+    kno:frequency kno:KN2024-0192-freq-NN-total ;
     kno:slotFiller "예술(藝術)+활동(活動) (2성분)"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2024-0192-freq-NN-2023 ;
-    rdfs:label "예술^활동^준비금"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:registration "신어DB"@ko ;
     kno:example "¶정부는 올해 예술인을 위한 복지 예산을 편성하여 예술인에게 {예술 활동 준비금을} 지원하고 자녀 돌봄, 사회 보험 가입 등을 위한 다양한 복지 사업을 운영할 계획이다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "예술활동준비금"@ko ;
+    rdfs:label "예술^활동^준비금"@ko ;
+    kno:componentString "예술(藝術), 활동(活動), 준비금(準備金)"@ko ;
+    a kno:Neologism ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2024-0192-freq-NN-2024 ;
+    kno:languageType "한^한^한" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%88%EC%88%A0%ED%99%9C%EB%8F%99%EC%A4%80%EB%B9%84%EA%B8%88> ;
-    kno:predicate "주다"@ko .
-kno:KN2024-0192-c2 kno:surfaceForm "활동"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0192-freq-NN-2023 .
+kno:KN2024-0192-c1 kno:surfaceForm "예술"@ko ;
+    kno:formative kno:F005089 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "예술"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-C1 ;
+    rdfs:label "예술(藝術)"@ko .
+kno:KN2024-0192-c3 kno:position "3"^^xsd:integer ;
+    kno:fullForm "준비금"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "준비금"@ko ;
+    rdfs:label "준비금(準備金)"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:formative kno:F001779 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0192-c2 kno:semanticTag kno:usas-A1.1.1 ;
+    a kno:Component ;
     kno:formative kno:F007164 ;
     rdfs:label "활동(活動)"@ko ;
-    kno:semanticTag kno:usas-A1.1.1 ;
     kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "활동"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "활동"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0192-c3 kno:fullForm "준비금"@ko ;
-    kno:formative kno:F001779 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "준비금"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    rdfs:label "준비금(準備金)"@ko .
-kno:KN2024-0192-c1 kno:surfaceForm "예술"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-C1 ;
-    kno:formative kno:F005089 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "예술(藝術)"@ko ;
-    kno:fullForm "예술"@ko .

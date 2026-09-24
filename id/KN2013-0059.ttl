@@ -9,42 +9,38 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0059 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0059 kno:example "¶’‘{김볶} 먹는 것도 찍더니, 이제 하다하다 이것도 찍으려고요?"@ko ;
+kno:KN2013-0059 kno:component kno:KN2013-0059-c1 ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%B3%B6> ;
+    rdfs:label "김볶"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "김(치), 볶(음밥)"@ko ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "고+고" ;
-    kno:instantiates kno:S000892 ;
-    skos:definition "‘김치볶음밥’을 줄여 이르는 말."@ko ;
     kno:year "2013"^^xsd:gYear ;
     kno:indexForm "김볶"@ko ;
-    kno:formation kno:W06 ;
-    kno:slotFiller "볶(음밥) (1성분)"@ko ;
-    rdfs:label "김볶"@ko ;
-    kno:instantiates kno:S001264 ;
-    kno:component kno:KN2013-0059-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "고+고" ;
+    a ontolex:Word ;
     a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2013-0059-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%80%EB%B3%B6> ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "김(치) (1성분)"@ko .
-kno:KN2013-0059-c2 kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "볶"@ko ;
-    rdfs:label "볶(음밥)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001379 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "볶음밥"@ko ;
-    kno:semanticTag kno:usas-F1 .
-kno:KN2013-0059-c1 kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:componentString "김(치), 볶(음밥)"@ko ;
+    kno:component kno:KN2013-0059-c2 ;
+    kno:example "¶’‘{김볶} 먹는 것도 찍더니, 이제 하다하다 이것도 찍으려고요?"@ko ;
+    kno:formation kno:W06 ;
+    skos:definition "‘김치볶음밥’을 줄여 이르는 말."@ko .
+kno:KN2013-0059-c1 kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001121 ;
+    kno:surfaceForm "김"@ko ;
     a kno:Component ;
     kno:fullForm "김치"@ko ;
     rdfs:label "김(치)"@ko ;
-    kno:formative kno:F001121 ;
-    kno:surfaceForm "김"@ko ;
-    kno:semanticTag kno:usas-F1 .
+    kno:semanticTag kno:usas-F1 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0059-c2 kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "볶음밥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "볶"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    rdfs:label "볶(음밥)"@ko ;
+    kno:formative kno:F001379 .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0122 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%96%BC%EC%B0%BD%20%EC%97%94%EB%94%A9> ;
-    kno:frequency kno:KN2016-0122-freq-NN-2015 ;
-    a kno:Neologism ;
+kno:KN2016-0122 kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(떼唱<영>ending)" ;
     kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2016-0122-c2 ;
+    kno:frequency kno:KN2016-0122-freq-NN-2015 ;
+    kno:unitType "구"@ko ;
     skos:definition "영화나 드라마의 결말에서 떼를 지어 노래를 부르는 것."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0122-freq-NN-2025 ;
+    kno:frequency kno:KN2016-0122-freq-NN-total ;
     kno:example "¶특히 OOO을 필두로 한 유생과 백성들의 처절하고도 가슴 저린 {떼창 엔딩이} 화제를 불러 모으고 있다."@ko ;
     rdfs:label "떼창 엔딩"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(떼唱<영>ending)" ;
-    kno:indexForm "떼창엔딩"@ko ;
-    kno:frequency kno:KN2016-0122-freq-NN-total ;
-    kno:languageType "(고+한)_영" ;
-    a ontolex:MultiwordExpression ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:year "2016"^^xsd:gYear ;
     kno:componentString "떼창(떼唱), 엔딩(ending)"@ko ;
-    kno:component kno:KN2016-0122-c2 ;
-    kno:unitType "구"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:indexForm "떼창엔딩"@ko ;
+    kno:frequency kno:KN2016-0122-freq-NN-2025 ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "(고+한)_영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%96%BC%EC%B0%BD%20%EC%97%94%EB%94%A9> ;
+    a kno:Neologism ;
     kno:component kno:KN2016-0122-c1 .
-kno:KN2016-0122-c2 kno:formative kno:F001601 ;
-    kno:truncated "false"^^xsd:boolean ;
+kno:KN2016-0122-c2 a kno:Component ;
     kno:surfaceForm "엔딩"@ko ;
-    a kno:Component ;
-    rdfs:label "엔딩(ending)"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:fullForm "엔딩"@ko ;
     kno:semanticTag kno:usas-T2m ;
+    kno:formative kno:F001601 ;
+    rdfs:label "엔딩(ending)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko .
+kno:KN2016-0122-c1 kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    kno:fullForm "엔딩"@ko .
-kno:KN2016-0122-c1 kno:fullForm "떼창"@ko ;
-    rdfs:label "떼창(떼唱)"@ko ;
-    kno:semanticTag kno:usas-K2 ;
-    kno:formative kno:F001224 ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
+    kno:fullForm "떼창"@ko ;
+    kno:semanticTag kno:usas-K2 ;
     kno:surfaceForm "떼창"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:formative kno:F001224 ;
+    a kno:Component ;
+    rdfs:label "떼창(떼唱)"@ko .

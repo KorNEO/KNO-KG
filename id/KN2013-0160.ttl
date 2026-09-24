@@ -9,43 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0160 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0160 a ontolex:Word ;
-    kno:slotFiller "맞- (1성분)"@ko ;
+kno:KN2013-0160 rdfs:label "맞-방"@ko ;
+    a ontolex:Word ;
     a kno:Neologism ;
-    kno:origin "(-放)" ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "맞방"@ko ;
-    kno:instantiates kno:S000209 ;
-    kno:slotFiller "방(송)(放) (1성분)"@ko ;
-    skos:definition "‘맞는 방송’을 줄여 이르는 말. 출연진이 맞는 것을 중심으로 하는 방송을 가리킨다."@ko ;
-    kno:example "¶이 말에 리포터가 “극 중 OOO이 따귀를 때린다면 어떻게 하겠느냐?”라고 묻자 OOO는 “OOO 씨와 요즘 유행인 ‘먹방’ 처럼 ‘{맞방’을} 하고 싶다.”라며 “제가 참 차지게 맞는다.”라고 말해 웃음을 유발했다."@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%9E%EB%B0%A9> ;
     kno:component kno:KN2013-0160-c1 ;
-    kno:component kno:KN2013-0160-c2 ;
-    rdfs:label "맞-방"@ko ;
+    kno:languageType "고+한" ;
+    kno:example "¶이 말에 리포터가 “극 중 OOO이 따귀를 때린다면 어떻게 하겠느냐?”라고 묻자 OOO는 “OOO 씨와 요즘 유행인 ‘먹방’ 처럼 ‘{맞방’을} 하고 싶다.”라며 “제가 참 차지게 맞는다.”라고 말해 웃음을 유발했다."@ko ;
+    kno:indexForm "맞방"@ko ;
     kno:year "2013"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    skos:definition "‘맞는 방송’을 줄여 이르는 말. 출연진이 맞는 것을 중심으로 하는 방송을 가리킨다."@ko ;
     kno:componentString "맞-, 방(송)(放)"@ko ;
-    kno:instantiates kno:S000256 ;
+    kno:origin "(-放)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%9E%EB%B0%A9> ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:formation kno:W03 ;
-    kno:languageType "고+한" ;
-    kno:activeYears "0"^^xsd:integer .
-kno:KN2013-0160-c1 a kno:Component ;
-    kno:semanticTag kno:usas-S1.1.2 ;
-    kno:role "고정항"@ko ;
+    kno:component kno:KN2013-0160-c2 .
+kno:KN2013-0160-c1 kno:truncated "false"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "맞-"@ko ;
-    kno:fullForm "맞"@ko ;
+    kno:role "성분"@ko ;
     kno:formative kno:F000170 ;
-    kno:surfaceForm "맞"@ko .
-kno:KN2013-0160-c2 kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "맞"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "맞-"@ko ;
+    kno:semanticTag kno:usas-S1.1.2 ;
+    kno:fullForm "맞"@ko .
+kno:KN2013-0160-c2 kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "방송"@ko ;
     kno:surfaceForm "방"@ko ;
+    kno:role "성분"@ko ;
     rdfs:label "방(송)(放)"@ko ;
-    kno:formative kno:F000509 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000509 .

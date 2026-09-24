@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0009 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0009 kno:example "¶OO시는 감염병이 재확산되자 {공공 선별 진료소를} 마흔 개에서 백 개 이상으로 확대하였다."@ko ;
-    kno:instantiates kno:S000084 ;
-    kno:slotFiller "공공(公共) (1성분)"@ko ;
-    kno:indexForm "공공선별진료소"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    rdfs:label "공공^선별^진료소"@ko ;
+kno:KN2020-0009 kno:unitType "구"@ko ;
+    kno:component kno:KN2020-0009-c2 ;
     kno:slotFiller "선별(選別)+진료소(診療所) (2성분)"@ko ;
-    a kno:Neologism ;
-    kno:origin "(公共選別診療所)" ;
-    kno:frequency kno:KN2020-0009-freq-NN-2020 ;
-    kno:frequency kno:KN2020-0009-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    skos:definition "정부에서 사람들이 감염 여부를 검사받을 수 있도록 마련한 진료소. 코로나19의 확산으로 인해, 증상 유무나 역학적 연관성에 관계없이 누구나 감염 여부를 검사받을 수 있도록 만든 의료 시설이다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%EC%84%A0%EB%B3%84%EC%A7%84%EB%A3%8C%EC%86%8C> ;
-    kno:componentString "공공(公共), 선별(選別), 진료소(診療所)"@ko ;
     kno:registration "신어DB"@ko ;
+    rdfs:label "공공^선별^진료소"@ko ;
+    skos:definition "정부에서 사람들이 감염 여부를 검사받을 수 있도록 마련한 진료소. 코로나19의 확산으로 인해, 증상 유무나 역학적 연관성에 관계없이 누구나 감염 여부를 검사받을 수 있도록 만든 의료 시설이다."@ko ;
+    kno:frequency kno:KN2020-0009-freq-NN-2020 ;
+    kno:instantiates kno:S000365 ;
+    a kno:Neologism ;
+    kno:languageType "한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%EC%84%A0%EB%B3%84%EC%A7%84%EB%A3%8C%EC%86%8C> ;
+    kno:instantiates kno:S000077 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:slotFiller "공공(公共) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0009-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:componentString "공공(公共), 선별(選別), 진료소(診療所)"@ko ;
     kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0009-c3 ;
+    kno:indexForm "공공선별진료소"@ko ;
     kno:frequency kno:KN2020-0009-freq-NN-total ;
     kno:component kno:KN2020-0009-c1 ;
-    kno:component kno:KN2020-0009-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:instantiates kno:S000400 ;
-    kno:component kno:KN2020-0009-c3 .
-kno:KN2020-0009-c1 kno:surfaceForm "공공"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(公共選別診療所)" ;
+    kno:example "¶OO시는 감염병이 재확산되자 {공공 선별 진료소를} 마흔 개에서 백 개 이상으로 확대하였다."@ko .
+kno:KN2020-0009-c2 kno:semanticTag kno:usas-X6 ;
+    a kno:Component ;
+    kno:formative kno:F000282 ;
     kno:role "고정항"@ko ;
-    rdfs:label "공공(公共)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000084 ;
-    kno:fullForm "공공"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-G1.1 .
-kno:KN2020-0009-c2 kno:formative kno:F000282 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "선별"@ko ;
+    rdfs:label "선별(選別)"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "선별"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "선별(選別)"@ko ;
-    kno:semanticTag kno:usas-X6 .
-kno:KN2020-0009-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "선별"@ko .
+kno:KN2020-0009-c3 kno:role "고정항"@ko ;
     kno:fullForm "진료소"@ko ;
     kno:formative kno:F000305 ;
+    rdfs:label "진료소(診療所)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-B3 ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "진료소"@ko ;
-    kno:role "고정항"@ko ;
     a kno:Component ;
-    rdfs:label "진료소(診療所)"@ko .
+    kno:surfaceForm "진료소"@ko .
+kno:KN2020-0009-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "공공"@ko ;
+    rdfs:label "공공(公共)"@ko ;
+    kno:surfaceForm "공공"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000084 ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0310 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0310 kno:year "2024"^^xsd:gYear ;
+kno:KN2024-0310 rdfs:label "초일^가점"@ko ;
     kno:predicate "주다"@ko ;
-    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "공모주 수요 예측에서, 첫날 주문을 넣은 기관 투자자에게 가산점을 주는 제도."@ko ;
     kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2024-0310-freq-NN-2025 ;
+    kno:componentString "초일(初日), 가점(加點)"@ko ;
     a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2024-0310-freq-NN-2024 ;
-    kno:origin "(初日加點)" ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B4%88%EC%9D%BC%EA%B0%80%EC%A0%90> ;
+    kno:frequency kno:KN2024-0310-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0310-freq-NN-total ;
+    kno:component kno:KN2024-0310-c1 ;
+    kno:indexForm "초일가점"@ko ;
+    kno:component kno:KN2024-0310-c2 ;
+    kno:unitType "구"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(初日加點)" ;
+    kno:year "2024"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶공모주 시장에서는 첫날 주문에 참여해 {초일 가점을} 확보하는 것이 필수 전략으로 자리를 잡았다."@ko ;
     kno:languageType "한^한" ;
     kno:activeYears "3"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:label "초일^가점"@ko ;
-    kno:example "¶공모주 시장에서는 첫날 주문에 참여해 {초일 가점을} 확보하는 것이 필수 전략으로 자리를 잡았다."@ko ;
-    kno:frequency kno:KN2024-0310-freq-NN-total ;
-    a kno:Neologism ;
-    kno:indexForm "초일가점"@ko ;
-    kno:component kno:KN2024-0310-c1 ;
-    kno:componentString "초일(初日), 가점(加點)"@ko ;
-    kno:frequency kno:KN2024-0310-freq-NN-2023 ;
-    skos:definition "공모주 수요 예측에서, 첫날 주문을 넣은 기관 투자자에게 가산점을 주는 제도."@ko ;
-    kno:component kno:KN2024-0310-c2 ;
-    kno:registration "신어DB"@ko .
-kno:KN2024-0310-c1 kno:fullForm "초일"@ko ;
-    kno:role "성분"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "초일"@ko ;
-    kno:formative kno:F006090 ;
+    kno:frequency kno:KN2024-0310-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0310-freq-NN-2023 .
+kno:KN2024-0310-c1 kno:surfaceForm "초일"@ko ;
+    a kno:Component ;
+    kno:fullForm "초일"@ko ;
     rdfs:label "초일(初日)"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-T1.1.1 ;
-    a kno:Component .
-kno:KN2024-0310-c2 kno:surfaceForm "가점"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F002091 ;
-    rdfs:label "가점(加點)"@ko ;
+    kno:formative kno:F006090 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-T1.1.1 .
+kno:KN2024-0310-c2 kno:fullForm "가점"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "가점"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-N1 ;
-    kno:fullForm "가점"@ko ;
+    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    rdfs:label "가점(加點)"@ko ;
+    kno:formative kno:F002091 .

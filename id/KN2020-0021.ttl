@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0021 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0021 kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2020-0021 kno:component kno:KN2020-0021-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%80%EC%99%B8%20%EB%93%9D%ED%91%9C> ;
+    kno:slotFiller "관외(管外) (1성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0021-freq-NN-2025 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000775 ;
+    kno:frequency kno:KN2020-0021-freq-NN-total ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:origin "(管外得票)" ;
+    skos:definition "사전 투표 시, 사전 투표소가 설치되어 있는 구, 시, 군 밖에 주소를 둔 관외 선거인으로부터 얻은 찬성표."@ko ;
+    rdfs:label "관외 득표"@ko ;
+    kno:example "¶O 후보는 “아직 {관외 득표를} 합산하지 않았으므로 승부를 단정 짓기 어렵다.”라며 사전 투표 중간 집계 결과에 대해 말을 아꼈다."@ko ;
+    kno:indexForm "관외득표"@ko ;
+    kno:componentString "관외(管外), 득표(得票)"@ko ;
+    kno:component kno:KN2020-0021-c1 ;
+    kno:frequency kno:KN2020-0021-freq-NN-2020 ;
     kno:languageType "한_한" ;
     kno:predicate "얻은"@ko ;
-    kno:slotFiller "관외(管外) (1성분)"@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B4%80%EC%99%B8%20%EB%93%9D%ED%91%9C> ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2020-0021-freq-NN-2025 ;
-    kno:frequency kno:KN2020-0021-freq-NN-total ;
     kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000836 ;
-    kno:example "¶O 후보는 “아직 {관외 득표를} 합산하지 않았으므로 승부를 단정 짓기 어렵다.”라며 사전 투표 중간 집계 결과에 대해 말을 아꼈다."@ko ;
-    kno:origin "(管外得票)" ;
-    kno:indexForm "관외득표"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:label "관외 득표"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2020-0021-c1 ;
-    kno:componentString "관외(管外), 득표(得票)"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    skos:definition "사전 투표 시, 사전 투표소가 설치되어 있는 구, 시, 군 밖에 주소를 둔 관외 선거인으로부터 얻은 찬성표."@ko ;
-    kno:frequency kno:KN2020-0021-freq-NN-2020 ;
-    kno:component kno:KN2020-0021-c2 ;
     kno:frequency kno:KN2020-0021-freq-NN-2023 .
-kno:KN2020-0021-c1 kno:semanticTag kno:usas-M7 ;
-    rdfs:label "관외(管外)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002397 ;
-    kno:surfaceForm "관외"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "관외"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2020-0021-c2 kno:fullForm "득표"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "득표"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:role "고정항"@ko ;
+kno:KN2020-0021-c2 kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F001209 ;
-    rdfs:label "득표(得票)"@ko .
+    rdfs:label "득표(得票)"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "득표"@ko ;
+    kno:surfaceForm "득표"@ko ;
+    kno:semanticTag kno:usas-G1.2 .
+kno:KN2020-0021-c1 kno:formative kno:F002397 ;
+    kno:surfaceForm "관외"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "관외"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "관외(管外)"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:position "1"^^xsd:integer .

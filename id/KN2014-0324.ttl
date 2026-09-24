@@ -9,44 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0324 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0324 kno:instantiates kno:S000017 ;
-    kno:activeYears "0"^^xsd:integer ;
+kno:KN2014-0324 kno:component kno:KN2014-0324-c2 ;
     a ontolex:Word ;
-    kno:componentString "혼(자), 밥"@ko ;
-    kno:languageType "고+고" ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    skos:definition "혼자서 먹는 밥."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368128> ;
     kno:component kno:KN2014-0324-c1 ;
-    kno:component kno:KN2014-0324-c2 ;
-    kno:example "¶O 씨는 공강 시간에는 도서관에 갔고 점심시간에는 이른바 ‘{혼밥’을} 먹었다."@ko ;
-    kno:formation kno:W06 ;
-    kno:urimalTargetCode "1368128" ;
-    kno:indexForm "혼밥"@ko ;
-    kno:slotFiller "밥 (1성분)"@ko ;
-    kno:predicate "먹다"@ko ;
-    kno:slotFiller "혼(자) (1성분)"@ko ;
-    kno:instantiates kno:S000073 ;
-    a kno:Neologism ;
     kno:registration "우리말샘"@ko ;
+    kno:urimalTargetCode "1368128" ;
+    kno:formation kno:W06 ;
+    skos:definition "혼자서 먹는 밥."@ko ;
+    rdfs:label "혼밥"@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368128> ;
+    kno:indexForm "혼밥"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:label "혼밥"@ko .
-kno:KN2014-0324-c1 kno:fullForm "혼자"@ko ;
-    kno:role "고정항"@ko ;
+    kno:example "¶O 씨는 공강 시간에는 도서관에 갔고 점심시간에는 이른바 ‘{혼밥’을} 먹었다."@ko ;
+    kno:languageType "고+고" ;
+    a kno:Neologism ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:componentString "혼(자), 밥"@ko ;
+    kno:predicate "먹다"@ko ;
+    kno:activeYears "0"^^xsd:integer .
+kno:KN2014-0324-c2 kno:role "성분"@ko ;
+    kno:fullForm "밥"@ko ;
+    kno:surfaceForm "밥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "밥"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F000086 .
+kno:KN2014-0324-c1 kno:surfaceForm "혼"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    rdfs:label "혼(자)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000011 ;
-    rdfs:label "혼(자)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "혼자"@ko ;
     a kno:Component ;
-    kno:surfaceForm "혼"@ko ;
-    kno:semanticTag kno:usas-S5 .
-kno:KN2014-0324-c2 kno:surfaceForm "밥"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F000086 ;
-    rdfs:label "밥"@ko ;
-    kno:fullForm "밥"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:formative kno:F000011 .

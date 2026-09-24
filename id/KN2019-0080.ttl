@@ -9,52 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0080 a ontolex:Word ;
-    kno:indexForm "마세권"@ko ;
-    kno:origin "(<중>←mala[麻辣]勢圈)" ;
-    kno:slotFiller "(역)세권(驛勢圈) (1성분)"@ko ;
+kno:KN2019-0080 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1436774> ;
+    kno:frequency kno:KN2019-0080-freq-NN-total ;
+    kno:example "¶“역세권 아니어도 {‘마세권’에} 살아서 행복하다.”거나 “혈중 마라 농도 측정해 봐야 한다.”라는 표현이 수시로 소셜 미디어에 등장한다."@ko ;
+    skos:definition "얼얼하면서 매운 맛을 내는 ‘마라’라는 향신료가 들어간 음식을 먹을 수 있는 식당에 가까운 지역의 범위. ⇒규범 표기는 미확정이다."@ko ;
+    kno:urimalTargetCode "1436774" ;
+    kno:pos "「명」"@ko ;
     kno:component kno:KN2019-0080-c1 ;
-    kno:languageType "중+한" ;
+    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2019-0080-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0080-freq-NN-2022 ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000008 ;
     kno:component kno:KN2019-0080-c2 ;
     kno:slotFiller "마(라)(mala) (1성분)"@ko ;
-    skos:definition "얼얼하면서 매운 맛을 내는 ‘마라’라는 향신료가 들어간 음식을 먹을 수 있는 식당에 가까운 지역의 범위. ⇒규범 표기는 미확정이다."@ko ;
-    kno:instantiates kno:S000008 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:activeYears "6"^^xsd:integer ;
-    rdfs:label "마세-권"@ko ;
-    kno:frequency kno:KN2019-0080-freq-NN-2018 ;
-    kno:example "¶“역세권 아니어도 {‘마세권’에} 살아서 행복하다.”거나 “혈중 마라 농도 측정해 봐야 한다.”라는 표현이 수시로 소셜 미디어에 등장한다."@ko ;
-    kno:formation kno:W05 ;
-    kno:instantiates kno:S001369 ;
-    kno:frequency kno:KN2019-0080-freq-NN-total ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1436774> ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2019-0080-freq-NN-2023 ;
-    kno:pos "「명」"@ko ;
+    kno:origin "(<중>←mala[麻辣]勢圈)" ;
+    kno:languageType "중+한" ;
     kno:year "2019"^^xsd:gYear ;
-    kno:componentString "마(라)(mala), (역)세권(驛勢圈)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:urimalTargetCode "1436774" ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2019-0080-freq-NN-2020 ;
-    kno:frequency kno:KN2019-0080-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0080-freq-NN-2023 ;
+    kno:indexForm "마세권"@ko ;
     kno:frequency kno:KN2019-0080-freq-NN-2021 ;
-    kno:frequency kno:KN2019-0080-freq-NN-2022 .
-kno:KN2019-0080-c1 a kno:Component ;
-    kno:fullForm "마라"@ko ;
+    rdfs:label "마세-권"@ko ;
+    kno:frequency kno:KN2019-0080-freq-NN-2019 ;
+    a kno:Neologism ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:componentString "마(라)(mala), (역)세권(驛勢圈)"@ko ;
+    a ontolex:Word ;
+    kno:frequency kno:KN2019-0080-freq-NN-2020 .
+kno:KN2019-0080-c1 kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "마"@ko ;
+    a kno:Component ;
     kno:formative kno:F001267 ;
     rdfs:label "마(라)(mala)"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2019-0080-c2 rdfs:label "(역)세권(驛勢圈)"@ko ;
-    kno:formative kno:F000012 ;
+    kno:fullForm "마라"@ko .
+kno:KN2019-0080-c2 kno:truncated "true"^^xsd:boolean ;
+    a kno:Component ;
     kno:surfaceForm "세권"@ko ;
-    kno:semanticTag kno:usas-M7 ;
+    kno:formative kno:F000012 ;
     kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "역세권"@ko ;
+    rdfs:label "(역)세권(驛勢圈)"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component .
+    kno:semanticTag kno:usas-M7 .

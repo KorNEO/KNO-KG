@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0268 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0268 kno:componentString "성과(成果), 피크(peak), -제(制)"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:languageType "한^(영+한)" ;
-    kno:slotFiller "성과(成果) (1성분)"@ko ;
-    kno:component kno:KN2016-0268-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EA%B3%BC%ED%94%BC%ED%81%AC%EC%A0%9C> ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2016-0268-c3 ;
-    kno:origin "(成果<영>peak制)" ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2016-0268-freq-NN-2015 ;
-    kno:example "¶{성과 피크제} 도입 움직임은 보험업계에서도 조금씩 나타나고 있다."@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
+kno:KN2016-0268 skos:definition "성과에 따라 급여를 지급하는 임금 피크제. 성과에 따라 급여를 추가로 지급하거나, 근로자가 일정한 나이가 되면 임금을 줄이는 대신 정년까지 고용을 보장하는 제도를 유예하여 업무 수행 능력을 향상시킨다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "성과피크제"@ko ;
+    kno:slotFiller "성과(成果) (1성분)"@ko ;
+    kno:frequency kno:KN2016-0268-freq-NN-2015 ;
+    kno:instantiates kno:S001058 ;
+    kno:component kno:KN2016-0268-c3 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "한^(영+한)" ;
     rdfs:label "성과^피크제"@ko ;
+    kno:indexForm "성과피크제"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶{성과 피크제} 도입 움직임은 보험업계에서도 조금씩 나타나고 있다."@ko ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EA%B3%BC%ED%94%BC%ED%81%AC%EC%A0%9C> ;
     kno:component kno:KN2016-0268-c1 ;
-    kno:instantiates kno:S001132 ;
+    kno:componentString "성과(成果), 피크(peak), -제(制)"@ko ;
+    kno:origin "(成果<영>peak制)" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
     a ontolex:MultiwordExpression ;
-    skos:definition "성과에 따라 급여를 지급하는 임금 피크제. 성과에 따라 급여를 추가로 지급하거나, 근로자가 일정한 나이가 되면 임금을 줄이는 대신 정년까지 고용을 보장하는 제도를 유예하여 업무 수행 능력을 향상시킨다."@ko ;
-    kno:frequency kno:KN2016-0268-freq-NN-total .
-kno:KN2016-0268-c2 kno:formative kno:F001986 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-N5.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "피크"@ko ;
-    rdfs:label "피크(peak)"@ko ;
-    kno:surfaceForm "피크"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2016-0268-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S7.1 ;
-    kno:position "3"^^xsd:integer ;
+    kno:frequency kno:KN2016-0268-freq-NN-total ;
+    kno:component kno:KN2016-0268-c2 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko .
+kno:KN2016-0268-c3 a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:fullForm "제"@ko ;
-    a kno:Component ;
-    rdfs:label "-제(制)"@ko ;
     kno:formative kno:F000120 ;
-    kno:surfaceForm "제"@ko .
-kno:KN2016-0268-c1 kno:fullForm "성과"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004330 ;
-    kno:surfaceForm "성과"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "제"@ko ;
+    kno:fullForm "제"@ko ;
+    rdfs:label "-제(制)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.1 ;
+    kno:position "3"^^xsd:integer .
+kno:KN2016-0268-c1 kno:fullForm "성과"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "성과"@ko ;
     rdfs:label "성과(成果)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004330 ;
     kno:semanticTag kno:usas-X9.2p ;
-    kno:role "슬롯 채움"@ko .
+    a kno:Component .
+kno:KN2016-0268-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-N5.1 ;
+    a kno:Component ;
+    kno:fullForm "피크"@ko ;
+    kno:surfaceForm "피크"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001986 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "피크(peak)"@ko .

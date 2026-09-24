@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0354 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0354 a kno:Neologism ;
-    kno:componentString "표(票), 틀(어)막(다)"@ko ;
-    kno:formation kno:W06 ;
+kno:KN2024-0354 kno:frequency kno:KN2024-0354-freq-NN-total ;
+    kno:languageType "한+고+고" ;
+    kno:slotFiller "표(票) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶OOO 원내 대표도 이날 특검법 재의결이 하루 앞으로 다가왔다고 말하며 이번에는 {표틀막이냐고} 지적했다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%91%9C%ED%8B%80%EB%A7%89> ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S001655 ;
     kno:component kno:KN2024-0354-c2 ;
     kno:slotFiller "틀(어)막(다) (1성분)"@ko ;
-    kno:example "¶OOO 원내 대표도 이날 특검법 재의결이 하루 앞으로 다가왔다고 말하며 이번에는 {표틀막이냐고} 지적했다."@ko ;
-    kno:component kno:KN2024-0354-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    kno:origin "(票틀막)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%91%9C%ED%8B%80%EB%A7%89> ;
-    kno:pos "「명」"@ko ;
-    skos:definition "‘표를 틀어막음’을 줄여 이르는 말. 법안을 부결시키기 위해서 당에 소속된 국회의원들의 투표권을 행사하지 못하게 압박을 넣는 행위를 이르는 말이다."@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:languageType "한+고+고" ;
+    kno:activeYears "1"^^xsd:integer ;
     rdfs:label "표틀막"@ko ;
-    kno:indexForm "표틀막"@ko ;
-    kno:frequency kno:KN2024-0354-freq-NN-total ;
-    kno:slotFiller "표(票) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2024-0354-freq-NN-2024 ;
-    kno:instantiates kno:S001742 ;
+    kno:componentString "표(票), 틀(어)막(다)"@ko ;
+    kno:origin "(票틀막)" ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "표틀막"@ko ;
     a ontolex:Word ;
-    kno:instantiates kno:S000078 ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2024-0354-c2 kno:position "2"^^xsd:integer ;
-    kno:fullForm "틀어막다"@ko ;
-    kno:semanticTag kno:usas-S8 ;
+    skos:definition "‘표를 틀어막음’을 줄여 이르는 말. 법안을 부결시키기 위해서 당에 소속된 국회의원들의 투표권을 행사하지 못하게 압박을 넣는 행위를 이르는 말이다."@ko ;
+    kno:instantiates kno:S000073 ;
+    kno:component kno:KN2024-0354-c1 ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:formation kno:W06 .
+kno:KN2024-0354-c2 a kno:Component ;
     kno:surfaceForm "틀막"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "틀어막다"@ko ;
     kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
     kno:formative kno:F000194 ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "틀(어)막(다)"@ko .
-kno:KN2024-0354-c1 kno:semanticTag kno:usas-G1.2 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "표"@ko ;
-    rdfs:label "표(票)"@ko ;
-    kno:position "1"^^xsd:integer ;
+kno:KN2024-0354-c1 kno:formative kno:F000630 ;
     a kno:Component ;
-    kno:surfaceForm "표"@ko ;
-    kno:formative kno:F000630 ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "표(票)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "표"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "표"@ko .

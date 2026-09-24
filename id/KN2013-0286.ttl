@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0286 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0286 skos:definition "방송에서, 혼자서 아나운서와 리포터 그리고 오디오 관리자 등의 여러 가지 역할을 동시에 하는 사람."@ko ;
-    kno:indexForm "아나리오"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%82%98%EB%A6%AC%EC%98%A4> ;
-    kno:example "¶엘에이에서 출범한 OO 에프엠 라디오 OO의 뉴스는…새로운 신조어 ‘{아나리오}’…의 아나운서, 리포터, 프로듀서, 오디오 등 1인 4역을 해내며, 이중 언어에도 고루 능한 젊은 재원들과 인턴들이 포진해 있다."@ko ;
-    a kno:Neologism ;
-    kno:unitType "단어"@ko ;
-    kno:predicate "하다"@ko ;
-    rdfs:label "아나리오"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:componentString "아나(운서)(announcer), 리(포터)(reporter), (오디)오(audio)"@ko ;
-    kno:languageType "영+영+영" ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(▼←announcer reporter audio)" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0286-c1 ;
+kno:KN2013-0286 kno:formation kno:W06 ;
     kno:component kno:KN2013-0286-c3 ;
+    skos:definition "방송에서, 혼자서 아나운서와 리포터 그리고 오디오 관리자 등의 여러 가지 역할을 동시에 하는 사람."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "아나(운서)(announcer), 리(포터)(reporter), (오디)오(audio)"@ko ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
     kno:component kno:KN2013-0286-c2 ;
-    kno:formation kno:W06 .
-kno:KN2013-0286-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶엘에이에서 출범한 OO 에프엠 라디오 OO의 뉴스는…새로운 신조어 ‘{아나리오}’…의 아나운서, 리포터, 프로듀서, 오디오 등 1인 4역을 해내며, 이중 언어에도 고루 능한 젊은 재원들과 인턴들이 포진해 있다."@ko ;
+    kno:predicate "하다"@ko ;
+    kno:languageType "영+영+영" ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%82%98%EB%A6%AC%EC%98%A4> ;
+    rdfs:label "아나리오"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0286-c1 ;
+    kno:origin "(▼←announcer reporter audio)" ;
+    kno:indexForm "아나리오"@ko .
+kno:KN2013-0286-c3 a kno:Component ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    rdfs:label "(오디)오(audio)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "오"@ko ;
+    kno:fullForm "오디오"@ko ;
+    kno:formative kno:F005102 .
+kno:KN2013-0286-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "리(포터)(reporter)"@ko ;
+    kno:surfaceForm "리"@ko ;
+    kno:formative kno:F003283 ;
+    kno:fullForm "리포터"@ko .
+kno:KN2013-0286-c1 kno:semanticTag kno:usas-Q4.3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "아나운서"@ko ;
     a kno:Component ;
     rdfs:label "아나(운서)(announcer)"@ko ;
-    kno:formative kno:F004799 ;
-    kno:surfaceForm "아나"@ko ;
-    kno:fullForm "아나운서"@ko ;
-    kno:semanticTag kno:usas-Q4.3 .
-kno:KN2013-0286-c3 kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-Q4.3 ;
-    kno:formative kno:F005102 ;
-    kno:fullForm "오디오"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "(오디)오(audio)"@ko ;
-    kno:surfaceForm "오"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2013-0286-c2 a kno:Component ;
-    kno:fullForm "리포터"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "리"@ko ;
     kno:role "성분"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F003283 ;
-    kno:semanticTag kno:usas-Q4.2 ;
-    rdfs:label "리(포터)(reporter)"@ko .
+    kno:surfaceForm "아나"@ko ;
+    kno:formative kno:F004799 .

@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0161 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0161 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B8%88%EB%A9%88%EC%B6%A4%EB%B2%95> ;
-    kno:component kno:KN2021-0161-c3 ;
-    kno:languageType "한^(고+한)" ;
-    kno:indexForm "세금멈춤법"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "세금(稅金), 멈춤, 법(法)"@ko ;
+kno:KN2021-0161 rdfs:label "세금^멈춤법"@ko ;
+    kno:slotFiller "세금(稅金) (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    rdfs:label "세금^멈춤법"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(稅金멈춤法)" ;
+    kno:languageType "한^(고+한)" ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000804 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EA%B8%88%EB%A9%88%EC%B6%A4%EB%B2%95> ;
     kno:component kno:KN2021-0161-c2 ;
     kno:component kno:KN2021-0161-c1 ;
-    kno:frequency kno:KN2021-0161-freq-NN-2020 ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:instantiates kno:S000866 ;
-    kno:example "¶여당은 착한 임대인을 지원하기 위한 {세금 멈춤법의} 발의도 예고했다."@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:slotFiller "세금(稅金) (1성분)"@ko ;
     a kno:Neologism ;
     kno:frequency kno:KN2021-0161-freq-NN-total ;
-    skos:definition "반값 임대료법에 따라 감액된 임대료의 절반을 임대인에게 되돌려 주도록 규정한 법안. 코로나19의 확산으로 인한 경제 위축이 장기화되고 반값 임대료법 발의에 따라 생기게 된 임대인의 손실을 보전하기 위해 추가적으로 발의된 법이다."@ko ;
-    kno:frequency kno:KN2021-0161-freq-NN-2021 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:origin "(稅金멈춤法)" ;
     kno:pos "「구」"@ko ;
-    kno:activeYears "2"^^xsd:integer .
-kno:KN2021-0161-c3 kno:fullForm "법"@ko ;
-    a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "법(法)"@ko ;
-    kno:surfaceForm "법"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:formative kno:F000002 .
+    kno:frequency kno:KN2021-0161-freq-NN-2020 ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "반값 임대료법에 따라 감액된 임대료의 절반을 임대인에게 되돌려 주도록 규정한 법안. 코로나19의 확산으로 인한 경제 위축이 장기화되고 반값 임대료법 발의에 따라 생기게 된 임대인의 손실을 보전하기 위해 추가적으로 발의된 법이다."@ko ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0161-freq-NN-2021 ;
+    kno:example "¶여당은 착한 임대인을 지원하기 위한 {세금 멈춤법의} 발의도 예고했다."@ko ;
+    kno:componentString "세금(稅金), 멈춤, 법(法)"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0161-c3 ;
+    kno:indexForm "세금멈춤법"@ko .
 kno:KN2021-0161-c2 rdfs:label "멈춤"@ko ;
+    a kno:Component ;
     kno:position "2"^^xsd:integer ;
     kno:formative kno:F001294 ;
-    kno:fullForm "멈춤"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "멈춤"@ko ;
-    kno:semanticTag kno:usas-T2m ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2021-0161-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "멈춤"@ko ;
+    kno:surfaceForm "멈춤"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:fullForm "세금"@ko ;
+    kno:semanticTag kno:usas-T2m .
+kno:KN2021-0161-c1 kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "세금(稅金)"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:formative kno:F004342 ;
+    a kno:Component ;
     kno:surfaceForm "세금"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    rdfs:label "세금(稅金)"@ko .
+    kno:fullForm "세금"@ko .
+kno:KN2021-0161-c3 a kno:Component ;
+    kno:surfaceForm "법"@ko ;
+    kno:formative kno:F000002 ;
+    kno:fullForm "법"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "법(法)"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer .

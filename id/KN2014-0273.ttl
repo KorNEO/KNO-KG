@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0273 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0273 kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000163 ;
+kno:KN2014-0273 kno:component kno:KN2014-0273-c1 ;
     rdfs:label "퀵^윈^기술"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:year "2014"^^xsd:gYear ;
-    kno:indexForm "퀵윈기술"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(<영>quick win技術)" ;
-    kno:languageType "영^영^한" ;
-    kno:frequency kno:KN2014-0273-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:example "¶OO는 중장기 계획에서 전체 해양 수산 아르앤드디를 12개 분야로 분류하고 각 분야별로 조기 성과 창출 가능성 등을 고려한 20개의 ‘{퀵 윈 기술’을} 선정했다."@ko ;
-    kno:componentString "퀵(quick), 윈(win), 기술(技術)"@ko ;
-    kno:component kno:KN2014-0273-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%80%B5%EC%9C%88%EA%B8%B0%EC%88%A0> ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2014-0273-c1 ;
-    kno:component kno:KN2014-0273-c3 ;
     kno:frequency kno:KN2014-0273-freq-NN-2014 ;
     kno:slotFiller "퀵(quick)+윈(win) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2014-0273-c3 ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
     skos:definition "개발에 따른 파급 효과가 크며 빠른 성과 창출이 가능한 기술."@ko ;
-    kno:lastAttestationYear "2014"^^xsd:gYear .
-kno:KN2014-0273-c2 kno:role "슬롯 채움"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2014-0273-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%80%B5%EC%9C%88%EA%B8%B0%EC%88%A0> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "퀵윈기술"@ko ;
+    kno:instantiates kno:S000152 ;
+    kno:example "¶OO는 중장기 계획에서 전체 해양 수산 아르앤드디를 12개 분야로 분류하고 각 분야별로 조기 성과 창출 가능성 등을 고려한 20개의 ‘{퀵 윈 기술’을} 선정했다."@ko ;
+    kno:component kno:KN2014-0273-c2 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "영^영^한" ;
+    kno:componentString "퀵(quick), 윈(win), 기술(技術)"@ko ;
+    kno:origin "(<영>quick win技術)" .
+kno:KN2014-0273-c1 kno:formative kno:F006331 ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "퀵(quick)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "퀵"@ko ;
+    kno:surfaceForm "퀵"@ko ;
+    kno:semanticTag kno:usas-N3.8p .
+kno:KN2014-0273-c3 kno:formative kno:F000129 ;
+    rdfs:label "기술(技術)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "기술"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "기술"@ko .
+kno:KN2014-0273-c2 a kno:Component ;
     rdfs:label "윈(win)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "윈"@ko ;
-    kno:semanticTag kno:usas-X9.2p ;
-    a kno:Component ;
     kno:formative kno:F005287 ;
-    kno:surfaceForm "윈"@ko .
-kno:KN2014-0273-c1 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F006331 ;
-    kno:fullForm "퀵"@ko ;
-    kno:surfaceForm "퀵"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-N3.8p ;
-    rdfs:label "퀵(quick)"@ko .
-kno:KN2014-0273-c3 a kno:Component ;
-    kno:semanticTag kno:usas-Y1 ;
-    kno:fullForm "기술"@ko ;
-    kno:formative kno:F000129 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "기술"@ko ;
-    rdfs:label "기술(技術)"@ko ;
-    kno:role "고정항"@ko .
+    kno:surfaceForm "윈"@ko ;
+    kno:semanticTag kno:usas-X9.2p .

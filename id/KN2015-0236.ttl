@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0236 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0236 kno:component kno:KN2015-0236-c1 ;
+kno:KN2015-0236 kno:component kno:KN2015-0236-c2 ;
+    kno:formation kno:W06 ;
+    kno:componentString "패(션)(fashion), 테(러리스트)(terrorist)"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359773> ;
     kno:example "¶어설프게 20~30대를 따라 했다간 일명 ‘{패테’만} 되기 십상이다."@ko ;
-    kno:formation kno:W06 ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    skos:definition "‘패션 테러리스트’를 줄여 이르는 말."@ko ;
+    kno:urimalTargetCode "1359773" ;
     kno:year "2015"^^xsd:gYear ;
     kno:origin "(<영>▼←fashion terrorist)" ;
-    kno:slotFiller "테(러리스트)(terrorist) (1성분)"@ko ;
-    kno:urimalTargetCode "1359773" ;
-    kno:instantiates kno:S000598 ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "패(션)(fashion), 테(러리스트)(terrorist)"@ko ;
-    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2015-0236-c1 ;
     rdfs:label "패테"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:indexForm "패테"@ko ;
-    a ontolex:Word ;
-    kno:languageType "영+영" ;
-    skos:definition "‘패션 테러리스트’를 줄여 이르는 말."@ko ;
-    a kno:Neologism ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2015-0236-c2 .
-kno:KN2015-0236-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000987 ;
-    rdfs:label "패(션)(fashion)"@ko ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:fullForm "패션"@ko ;
-    kno:surfaceForm "패"@ko .
-kno:KN2015-0236-c2 a kno:Component ;
+    a ontolex:Word ;
+    a kno:Neologism ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "영+영" .
+kno:KN2015-0236-c2 kno:surfaceForm "테"@ko ;
     kno:formative kno:F006450 ;
-    kno:surfaceForm "테"@ko ;
-    rdfs:label "테(러리스트)(terrorist)"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G3 ;
     kno:fullForm "테러리스트"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-G3 ;
-    kno:truncated "true"^^xsd:boolean .
+    rdfs:label "테(러리스트)(terrorist)"@ko .
+kno:KN2015-0236-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:surfaceForm "패"@ko ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:fullForm "패션"@ko ;
+    kno:formative kno:F000987 ;
+    rdfs:label "패(션)(fashion)"@ko .

@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0198 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0198 kno:formation kno:W01 ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "짤줍"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1393408> ;
-    kno:componentString "짤, 줍(다)"@ko ;
-    kno:slotFiller "짤 (1성분)"@ko ;
-    kno:instantiates kno:S000428 ;
+kno:KN2015-0198 kno:activeYears "0"^^xsd:integer ;
     kno:urimalTargetCode "1393408" ;
-    rdfs:label "짤-줍"@ko ;
-    kno:component kno:KN2015-0198-c1 ;
-    kno:component kno:KN2015-0198-c2 ;
     kno:example "¶OOO은 “단체 채팅방에…사진만 올라오면 다들 ‘{짤줍’이라면서} 다 퍼갔다.”라고 말해 웃음을 자아냈다."@ko ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:predicate "파일다"@ko ;
-    skos:definition "다른 사람이 게시한 그림 파일을 내려받음. 또는 그런 일."@ko ;
-    kno:languageType "고+고" ;
+    kno:indexForm "짤줍"@ko ;
+    rdfs:label "짤-줍"@ko ;
     kno:pos "「명」"@ko ;
+    kno:predicate "파일다"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:component kno:KN2015-0198-c2 ;
+    skos:definition "다른 사람이 게시한 그림 파일을 내려받음. 또는 그런 일."@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "짤, 줍(다)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고+고" ;
+    kno:component kno:KN2015-0198-c1 ;
     a ontolex:Word ;
-    a kno:Neologism .
-kno:KN2015-0198-c1 rdfs:label "짤"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1393408> .
+kno:KN2015-0198-c2 kno:semanticTag kno:usas-A9 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000587 ;
+    kno:surfaceForm "줍"@ko ;
+    rdfs:label "줍(다)"@ko ;
+    kno:role "성분"@ko ;
+    kno:fullForm "줍다"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .
+kno:KN2015-0198-c1 a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "짤"@ko ;
+    kno:fullForm "짤"@ko ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "짤"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
     kno:formative kno:F000074 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-C1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "짤"@ko .
-kno:KN2015-0198-c2 kno:role "고정항"@ko ;
-    rdfs:label "줍(다)"@ko ;
-    kno:surfaceForm "줍"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "줍다"@ko ;
-    kno:formative kno:F000587 ;
-    kno:semanticTag kno:usas-A9 .
+    kno:semanticTag kno:usas-C1 .

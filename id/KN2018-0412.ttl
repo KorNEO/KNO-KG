@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0412 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0412 kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+kno:KN2018-0412 kno:indexForm "햄버거포비아"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:origin "(<영>hamburger phobia)" ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:componentString "햄버거(hamburger), 포비아(phobia)"@ko ;
+    kno:urimalTargetCode "1416016" ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416016> ;
     skos:definition "햄버거 속에 들어간 덜 익은 고기 때문에 피해를 입은 사건으로 인하여 햄버거 먹기를 꺼리는 증세. ⇒규범 표기는 미확정이다."@ko ;
-    kno:slotFiller "햄버거(hamburger) (1성분)"@ko ;
-    kno:urimalTargetCode "1416016" ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2018-0412-c2 ;
-    kno:languageType "영_영" ;
-    kno:frequency kno:KN2018-0412-freq-NN-2017 ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:example "¶일명 ‘햄버거병’ 사태가 일파만파 커지면서 소비자와 누리꾼 사이에서 ‘{햄버거 포비아’가} 확산할 조짐을 보이고 있다."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    rdfs:label "햄버거 포비아"@ko ;
     kno:component kno:KN2018-0412-c1 ;
-    kno:indexForm "햄버거포비아"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     a kno:Neologism ;
     kno:predicate "꺼리다"@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:instantiates kno:S000013 ;
-    kno:example "¶일명 ‘햄버거병’ 사태가 일파만파 커지면서 소비자와 누리꾼 사이에서 ‘{햄버거 포비아’가} 확산할 조짐을 보이고 있다."@ko ;
+    kno:unitType "구"@ko ;
     kno:frequency kno:KN2018-0412-freq-NN-total ;
-    rdfs:label "햄버거 포비아"@ko ;
-    kno:origin "(<영>hamburger phobia)" .
-kno:KN2018-0412-c2 kno:role "고정항"@ko ;
+    kno:instantiates kno:S000013 ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2018-0412-c2 ;
+    kno:slotFiller "햄버거(hamburger) (1성분)"@ko ;
+    kno:languageType "영_영" ;
+    kno:frequency kno:KN2018-0412-freq-NN-2017 .
+kno:KN2018-0412-c1 kno:fullForm "햄버거"@ko ;
     a kno:Component ;
-    kno:surfaceForm "포비아"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "포비아(phobia)"@ko ;
-    kno:formative kno:F000018 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "포비아"@ko ;
-    kno:semanticTag kno:usas-E5m .
-kno:KN2018-0412-c1 kno:formative kno:F007019 ;
-    kno:fullForm "햄버거"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "햄버거(hamburger)"@ko ;
     kno:surfaceForm "햄버거"@ko ;
+    kno:formative kno:F007019 ;
     kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
+    rdfs:label "햄버거(hamburger)"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0412-c2 rdfs:label "포비아(phobia)"@ko ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "포비아"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "포비아"@ko ;
+    kno:formative kno:F000018 ;
+    a kno:Component .

@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0212 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0212 kno:registration "신어DB"@ko ;
+kno:KN2020-0212 a kno:Neologism ;
+    kno:slotFiller "애프터(after) (1성분)"@ko ;
+    kno:frequency kno:KN2020-0212-freq-NN-2021 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:indexForm "애프터코로나"@ko ;
+    kno:example "¶코로나19로 인해 힘든 관광업계에서 {애프터 코로나를} 대비하고 현 상황을 타개하기 위해 한 기업 총수가 직접 현장을 챙기고자 나섰다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%A0%ED%94%84%ED%84%B0%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2020-0212-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
     kno:component kno:KN2020-0212-c2 ;
     kno:frequency kno:KN2020-0212-freq-NN-2020 ;
-    kno:frequency kno:KN2020-0212-freq-NN-2025 ;
-    a ontolex:MultiwordExpression ;
-    kno:example "¶코로나19로 인해 힘든 관광업계에서 {애프터 코로나를} 대비하고 현 상황을 타개하기 위해 한 기업 총수가 직접 현장을 챙기고자 나섰다."@ko ;
-    rdfs:label "애프터 코로나"@ko ;
-    kno:slotFiller "애프터(after) (1성분)"@ko ;
-    kno:frequency kno:KN2020-0212-freq-NN-total ;
-    kno:component kno:KN2020-0212-c1 ;
-    kno:year "2020"^^xsd:gYear ;
     kno:activeYears "6"^^xsd:integer ;
+    skos:definition "코로나19의 세계적 대유행이 종식된 뒤의 시기."@ko ;
+    rdfs:label "애프터 코로나"@ko ;
+    kno:languageType "영_영" ;
+    kno:instantiates kno:S000121 ;
     kno:unitType "구"@ko ;
-    kno:frequency kno:KN2020-0212-freq-NN-2023 ;
-    kno:instantiates kno:S000131 ;
+    kno:year "2020"^^xsd:gYear ;
     kno:componentString "애프터(after), 코로나(바이러스)(corona virus)"@ko ;
     kno:frequency kno:KN2020-0212-freq-NN-2024 ;
-    kno:origin "(<영>▼after←corona virus)" ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%A0%ED%94%84%ED%84%B0%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
-    kno:languageType "영_영" ;
-    skos:definition "코로나19의 세계적 대유행이 종식된 뒤의 시기."@ko ;
-    kno:frequency kno:KN2020-0212-freq-NN-2021 ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "애프터코로나"@ko ;
     kno:frequency kno:KN2020-0212-freq-NN-2022 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear .
-kno:KN2020-0212-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:component kno:KN2020-0212-c1 ;
+    kno:frequency kno:KN2020-0212-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0212-freq-NN-2023 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>▼after←corona virus)" .
+kno:KN2020-0212-c2 kno:role "고정항"@ko ;
+    kno:surfaceForm "코로나"@ko ;
     kno:formative kno:F000003 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "코로나"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-B2m ;
     kno:fullForm "코로나바이러스"@ko ;
-    rdfs:label "코로나(바이러스)(corona virus)"@ko .
-kno:KN2020-0212-c1 kno:fullForm "애프터"@ko ;
-    kno:semanticTag kno:usas-S3.2 ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    a kno:Component .
+kno:KN2020-0212-c1 kno:formative kno:F004883 ;
+    kno:role "슬롯 채움"@ko ;
     rdfs:label "애프터(after)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F004883 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "애프터"@ko ;
     kno:surfaceForm "애프터"@ko ;
-    kno:role "슬롯 채움"@ko .
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.2 .

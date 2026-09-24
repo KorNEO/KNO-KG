@@ -9,42 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0157 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0157 a kno:Neologism ;
-    kno:componentString "슈(즈)(shoes), (셀)피(selfie)"@ko ;
-    kno:component kno:KN2014-0157-c1 ;
-    kno:instantiates kno:S000090 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:predicate "찍다"@ko ;
-    a ontolex:Word ;
+kno:KN2014-0157 rdfs:label "슈피"@ko ;
+    skos:definition "신발을 신고 있는 모습을 스스로 찍는 일. 또는 그렇게 찍은 사진."@ko ;
+    kno:indexForm "슈피"@ko ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
+    kno:component kno:KN2014-0157-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:predicate "찍다"@ko ;
     kno:year "2014"^^xsd:gYear ;
     kno:example "¶최근 자신의 모습을 담은 셀피에 이어 신발을 촬영하는 {슈피} 열풍이 불어왔다."@ko ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%88%ED%94%BC> ;
-    kno:slotFiller "슈(즈)(shoes) (1성분)"@ko ;
-    skos:definition "신발을 신고 있는 모습을 스스로 찍는 일. 또는 그렇게 찍은 사진."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W05 ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:origin "(<영>←shoes selfie)" ;
-    rdfs:label "슈피"@ko ;
-    kno:indexForm "슈피"@ko ;
-    kno:component kno:KN2014-0157-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%88%ED%94%BC> ;
+    kno:component kno:KN2014-0157-c1 ;
+    kno:formation kno:W05 ;
+    kno:componentString "슈(즈)(shoes), (셀)피(selfie)"@ko ;
+    a ontolex:Word ;
+    a kno:Neologism ;
     kno:languageType "영+영" .
-kno:KN2014-0157-c1 kno:fullForm "슈즈"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "슈"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B5 ;
-    a kno:Component ;
-    kno:formative kno:F004516 ;
-    rdfs:label "슈(즈)(shoes)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2014-0157-c2 kno:formative kno:F000242 ;
-    rdfs:label "(셀)피(selfie)"@ko ;
-    kno:fullForm "셀피"@ko ;
-    kno:role "고정항"@ko ;
+kno:KN2014-0157-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-C1 ;
     kno:surfaceForm "피"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:fullForm "셀피"@ko ;
+    rdfs:label "(셀)피(selfie)"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:formative kno:F000242 .
+kno:KN2014-0157-c1 kno:fullForm "슈즈"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "슈"@ko ;
+    rdfs:label "슈(즈)(shoes)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:formative kno:F004516 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko .

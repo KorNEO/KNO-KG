@@ -9,43 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0209 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0209 kno:component kno:KN2014-0209-c1 ;
-    kno:slotFiller "윰(←유모) (1성분)"@ko ;
+kno:KN2014-0209 a ontolex:Word ;
+    kno:componentString "윰(←유모), 차(車)"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374514> ;
+    kno:registration "우리말샘"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "윰차"@ko ;
+    kno:languageType "고+한" ;
+    kno:formation kno:W06 ;
+    kno:indexForm "윰차"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2014-0209-c1 ;
+    kno:component kno:KN2014-0209-c2 ;
+    kno:example "¶O 씨는 “4갤은 4개월, 얼집은 어린이집, {윰차는} 유모차, 문센은 문화 센터라고 하더라.”라며 “긴 단어도 아닌 두세 글자 단어를 굳이 줄여 쓰는 이유를 모르겠다.”라고 말했다."@ko ;
+    kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1374514" ;
     kno:origin "(윰車)" ;
-    kno:component kno:KN2014-0209-c2 ;
-    kno:formation kno:W06 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1374514> ;
-    a kno:Neologism ;
-    rdfs:label "윰차"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶O 씨는 “4갤은 4개월, 얼집은 어린이집, {윰차는} 유모차, 문센은 문화 센터라고 하더라.”라며 “긴 단어도 아닌 두세 글자 단어를 굳이 줄여 쓰는 이유를 모르겠다.”라고 말했다."@ko ;
-    kno:indexForm "윰차"@ko ;
-    kno:languageType "고+한" ;
-    kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    skos:definition "‘유모차’의 준말."@ko ;
-    kno:componentString "윰(←유모), 차(車)"@ko ;
     kno:year "2014"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:instantiates kno:S000269 .
-kno:KN2014-0209-c1 kno:surfaceForm "윰"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "윰(←유모)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005338 ;
+    skos:definition "‘유모차’의 준말."@ko .
+kno:KN2014-0209-c1 rdfs:label "윰(←유모)"@ko ;
     kno:semanticTag kno:usas-Y1 ;
+    kno:formative kno:F005338 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "윰"@ko ;
+    kno:surfaceForm "윰"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-O2 ;
+    a kno:Component .
+kno:KN2014-0209-c2 kno:fullForm "차"@ko ;
+    kno:surfaceForm "차"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "윰"@ko .
-kno:KN2014-0209-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M3 ;
-    kno:formative kno:F000075 ;
+    kno:position "2"^^xsd:integer ;
     rdfs:label "차(車)"@ko ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M3 ;
     a kno:Component ;
-    kno:fullForm "차"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "차"@ko .
+    kno:formative kno:F000075 .

@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0237 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0237 kno:instantiates kno:S001639 ;
-    kno:languageType "한^한^한^한" ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2019-0237-c3 ;
-    a kno:Neologism ;
-    kno:indexForm "전시노무동원피해자"@ko ;
-    kno:frequency kno:KN2019-0237-freq-NN-2019 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:predicate "받은"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%8B%9C%EB%85%B8%EB%AC%B4%EB%8F%99%EC%9B%90%ED%94%BC%ED%95%B4%EC%9E%90> ;
-    kno:example "¶지식인들은 징용 배상 문제에 대해선 “{전시 노무 동원 피해자가} 큰 문제로 그 모습을 드러내고 있다.”라며 위안부 문제와 마찬가지로 한층 더 진지한 대처가 필요하다고 일본 정부의 전향적인 대응을 주문했다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2019-0237-c2 ;
-    a ontolex:MultiwordExpression ;
+kno:KN2019-0237 kno:indexForm "전시노무동원피해자"@ko ;
     kno:componentString "전시(戰時), 노무(勞務), 동원(動員), 피해자(被害者)"@ko ;
-    kno:slotFiller "노무(勞務)+동원(動員)+피해자(被害者) (3성분)"@ko ;
+    kno:component kno:KN2019-0237-c3 ;
+    kno:component kno:KN2019-0237-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:instantiates kno:S001551 ;
+    a ontolex:MultiwordExpression ;
     kno:origin "(戰時勞務動員被害者)" ;
-    kno:frequency kno:KN2019-0237-freq-NN-total ;
+    kno:year "2019"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%84%EC%8B%9C%EB%85%B8%EB%AC%B4%EB%8F%99%EC%9B%90%ED%94%BC%ED%95%B4%EC%9E%90> ;
+    kno:languageType "한^한^한^한" ;
+    kno:example "¶지식인들은 징용 배상 문제에 대해선 “{전시 노무 동원 피해자가} 큰 문제로 그 모습을 드러내고 있다.”라며 위안부 문제와 마찬가지로 한층 더 진지한 대처가 필요하다고 일본 정부의 전향적인 대응을 주문했다."@ko ;
+    kno:component kno:KN2019-0237-c4 ;
     skos:definition "일제 강점기에, 일본 제국주의자들에게 징용을 당하여 자신의 생명이나 신체, 재산, 명예 따위에 침해 또는 위협을 받은 사람."@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0237-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2019-0237-c1 ;
+    kno:registration "신어DB"@ko ;
     rdfs:label "전시^노무^동원^피해자"@ko ;
-    kno:component kno:KN2019-0237-c4 .
-kno:KN2019-0237-c3 kno:surfaceForm "동원"@ko ;
+    a kno:Neologism ;
+    kno:predicate "받은"@ko ;
+    kno:slotFiller "노무(勞務)+동원(動員)+피해자(被害者) (3성분)"@ko ;
+    kno:frequency kno:KN2019-0237-freq-NN-2019 .
+kno:KN2019-0237-c3 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-G3 ;
-    rdfs:label "동원(動員)"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "동원"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
     kno:fullForm "동원"@ko ;
-    kno:formative kno:F003025 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2019-0237-c2 kno:surfaceForm "노무"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "동원(動員)"@ko ;
+    kno:formative kno:F003025 .
+kno:KN2019-0237-c2 kno:role "슬롯 채움"@ko ;
     rdfs:label "노무(勞務)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
-    a kno:Component ;
+    kno:surfaceForm "노무"@ko ;
+    kno:formative kno:F002774 ;
     kno:fullForm "노무"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F002774 .
-kno:KN2019-0237-c1 kno:surfaceForm "전시"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-G3 ;
-    rdfs:label "전시(戰時)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I3.1 .
+kno:KN2019-0237-c4 rdfs:label "피해자(被害者)"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F001007 ;
+    kno:fullForm "피해자"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "피해자"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A15m ;
+    a kno:Component .
+kno:KN2019-0237-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:position "1"^^xsd:integer ;
     kno:formative kno:F001750 ;
     kno:fullForm "전시"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2019-0237-c4 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001007 ;
-    kno:semanticTag kno:usas-A15m ;
-    kno:surfaceForm "피해자"@ko ;
-    kno:position "4"^^xsd:integer ;
+    kno:surfaceForm "전시"@ko ;
     a kno:Component ;
-    kno:fullForm "피해자"@ko ;
-    rdfs:label "피해자(被害者)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "전시(戰時)"@ko ;
+    kno:role "고정항"@ko .

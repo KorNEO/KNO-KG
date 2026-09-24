@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0545 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0545 kno:indexForm "짬채밥"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%AC%EC%B1%84%EB%B0%A5> ;
+kno:KN2025-0545 a kno:Neologism ;
     kno:slotFiller "짬(뽕)+(잡)채(雜菜) (2성분)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0545-c1 ;
-    rdfs:label "짬채밥"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0545-c3 ;
-    kno:frequency kno:KN2025-0545-freq-NN-total ;
-    kno:formation kno:W05 ;
-    skos:definition "(LLM) 짬뽕밥과 잡채밥을 함께 이르거나, 두 메뉴를 한 그릇에 섞어 먹는 것을 이르는 말."@ko ;
-    kno:componentString "짬(뽕), (잡)채(雜菜), 밥"@ko ;
-    a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    kno:example "(LLM) 중국집에서 잡채밥이랑 짬뽕밥을 같이 시켜서 섞어 먹었더니 {짬채밥이} 됐다."@ko ;
-    kno:component kno:KN2025-0545-c2 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0545-freq-NN-2025 ;
-    kno:year "2025"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%AC%EC%B1%84%EB%B0%A5> ;
     a ontolex:Word ;
+    kno:pos "「명」"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000073 .
-kno:KN2025-0545-c1 kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:position "1"^^xsd:integer ;
+    kno:component kno:KN2025-0545-c1 ;
+    kno:componentString "짬(뽕), (잡)채(雜菜), 밥"@ko ;
+    rdfs:label "짬채밥"@ko ;
+    kno:frequency kno:KN2025-0545-freq-NN-2025 ;
+    kno:component kno:KN2025-0545-c3 ;
+    kno:instantiates kno:S000112 ;
+    kno:indexForm "짬채밥"@ko ;
+    kno:example "(LLM) 중국집에서 잡채밥이랑 짬뽕밥을 같이 시켜서 섞어 먹었더니 {짬채밥이} 됐다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0545-c2 ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0545-freq-NN-total ;
+    skos:definition "(LLM) 짬뽕밥과 잡채밥을 함께 이르거나, 두 메뉴를 한 그릇에 섞어 먹는 것을 이르는 말."@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2025-0545-c1 kno:surfaceForm "짬"@ko ;
+    a kno:Component ;
     kno:fullForm "짬뽕"@ko ;
     kno:formative kno:F005956 ;
-    kno:surfaceForm "짬"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
     rdfs:label "짬(뽕)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2025-0545-c3 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000086 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2025-0545-c3 kno:semanticTag kno:usas-F1 ;
     rdfs:label "밥"@ko ;
-    kno:surfaceForm "밥"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
+    a kno:Component ;
+    kno:surfaceForm "밥"@ko ;
+    kno:formative kno:F000086 ;
     kno:role "고정항"@ko ;
     kno:fullForm "밥"@ko .
 kno:KN2025-0545-c2 kno:semanticTag kno:usas-F1 ;
-    rdfs:label "(잡)채(雜菜)"@ko ;
-    kno:formative kno:F006012 ;
+    kno:role "슬롯 채움"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
     kno:fullForm "잡채"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:surfaceForm "채"@ko ;
-    kno:role "슬롯 채움"@ko .
+    a kno:Component ;
+    rdfs:label "(잡)채(雜菜)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F006012 .

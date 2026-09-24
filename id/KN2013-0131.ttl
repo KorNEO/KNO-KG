@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0131 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0131 skos:definition "어린 양의 털로 만든 모피."@ko ;
-    kno:component kno:KN2013-0131-c2 ;
+kno:KN2013-0131 kno:componentString "램(lamb), 퍼(fur)"@ko ;
+    skos:definition "어린 양의 털로 만든 모피."@ko ;
+    a ontolex:Word ;
     a kno:Neologism ;
-    kno:formation kno:W01 ;
+    rdfs:label "램-퍼"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2013-0131-c1 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357565> ;
     kno:indexForm "램퍼"@ko ;
     kno:languageType "영+영" ;
-    kno:componentString "램(lamb), 퍼(fur)"@ko ;
-    a ontolex:Word ;
-    kno:example "¶이번 시즌 OO가 제안하는 티벳램 베스트는 {램퍼의} 풍성한 느낌을 살려 글래머러스한 실루엣을 연출했고, 카키와 화이트 컬러 대비로 포인트를 준 아이템이다."@ko ;
     kno:origin "(lamb fur)" ;
+    kno:unitType "단어"@ko ;
+    kno:example "¶이번 시즌 OO가 제안하는 티벳램 베스트는 {램퍼의} 풍성한 느낌을 살려 글래머러스한 실루엣을 연출했고, 카키와 화이트 컬러 대비로 포인트를 준 아이템이다."@ko ;
     kno:year "2013"^^xsd:gYear ;
     kno:urimalTargetCode "1357565" ;
     kno:pos "「명」"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "램-퍼"@ko .
-kno:KN2013-0131-c2 kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:fullForm "퍼"@ko ;
-    a kno:Component ;
-    rdfs:label "퍼(fur)"@ko ;
-    kno:surfaceForm "퍼"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F006666 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2013-0131-c1 kno:truncated "false"^^xsd:boolean ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357565> ;
+    kno:component kno:KN2013-0131-c1 ;
+    kno:component kno:KN2013-0131-c2 ;
+    kno:formation kno:W01 .
+kno:KN2013-0131-c1 kno:formative kno:F003177 ;
     kno:surfaceForm "램"@ko ;
-    kno:fullForm "램"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-L2 ;
-    kno:formative kno:F003177 ;
     rdfs:label "램(lamb)"@ko ;
-    kno:role "성분"@ko .
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "램"@ko .
+kno:KN2013-0131-c2 rdfs:label "퍼(fur)"@ko ;
+    kno:fullForm "퍼"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:formative kno:F006666 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "퍼"@ko .

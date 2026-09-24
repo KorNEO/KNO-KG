@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0002 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0002 kno:pos "「명」"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:indexForm "간판템"@ko ;
-    kno:component kno:KN2024-0002-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%84%ED%8C%90%ED%85%9C> ;
-    kno:component kno:KN2024-0002-c2 ;
-    kno:origin "(看板<영>←item)" ;
-    kno:slotFiller "간판(看板) (1성분)"@ko ;
-    skos:definition "‘간판’과 ‘아이템(item)’을 결합하여 만든 말로, 어떤 집단이나 영역에서 대표로 내세울 만한 상품을 이르는 말."@ko ;
-    kno:formation kno:W01 ;
-    kno:instantiates kno:S000004 ;
-    a kno:Neologism ;
+kno:KN2024-0002 kno:slotFiller "간판(看板) (1성분)"@ko ;
+    kno:instantiates kno:S000007 ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
     kno:componentString "간판(看板), (아이)템(item)"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%84%ED%8C%90%ED%85%9C> ;
+    kno:origin "(看板<영>←item)" ;
+    skos:definition "‘간판’과 ‘아이템(item)’을 결합하여 만든 말로, 어떤 집단이나 영역에서 대표로 내세울 만한 상품을 이르는 말."@ko ;
     kno:languageType "한+영" ;
     kno:example "¶겨울철 대표 {간판템인} 붕어빵이 고급스러운 이미지로 변신하고 있다."@ko ;
-    kno:unitType "단어"@ko ;
     rdfs:label "간판-템"@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko .
-kno:KN2024-0002-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0002-c1 ;
+    kno:formation kno:W01 ;
+    a kno:Neologism ;
+    kno:indexForm "간판템"@ko ;
+    kno:component kno:KN2024-0002-c2 .
+kno:KN2024-0002-c1 a kno:Component ;
+    rdfs:label "간판(看板)"@ko ;
     kno:surfaceForm "간판"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002103 ;
     kno:role "슬롯 채움"@ko ;
     kno:fullForm "간판"@ko ;
     kno:semanticTag kno:usas-Q1.2 ;
-    rdfs:label "간판(看板)"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F002103 ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2024-0002-c2 kno:fullForm "아이템"@ko ;
     a kno:Component ;
-    kno:formative kno:F000007 ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "템"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "(아이)템(item)"@ko ;
     kno:semanticTag kno:usas-O2 ;
-    kno:surfaceForm "템"@ko .
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer .

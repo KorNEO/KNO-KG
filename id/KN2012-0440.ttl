@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0440 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0440 a ontolex:MultiwordExpression ;
-    kno:componentString "트윗(←twitter), 버즈(buzz), -량(量)"@ko ;
-    kno:example "¶{트윗 버즈량은} 트위터 상 화제가 되고 있는 정치인들과 정당을 보여 주면서 여론의 흐름을 알 수 있는 도구로 활용할 때 꽤 유용한 도움이 될 수 있다."@ko ;
+kno:KN2012-0440 kno:component kno:KN2012-0440-c1 ;
+    kno:pos "「구」"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:slotFiller "트윗(←twitter) (1성분)"@ko ;
     kno:component kno:KN2012-0440-c3 ;
-    kno:origin "(←twitter buzz量)" ;
-    kno:component kno:KN2012-0440-c2 ;
-    kno:component kno:KN2012-0440-c1 ;
-    rdfs:label "트윗 버즈량"@ko ;
-    kno:frequency kno:KN2012-0440-freq-NN-2014 ;
-    kno:frequency kno:KN2012-0440-freq-NN-2016 ;
-    kno:instantiates kno:S000878 ;
-    kno:year "2012"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:indexForm "트윗버즈량"@ko ;
-    kno:frequency kno:KN2012-0440-freq-NN-2012 ;
-    skos:definition "누리 소통망 서비스(SNS)인 ‘트위터’에서 언급된 횟수. 여론의 흐름을 알 수 있는 도구로 사용된다."@ko ;
-    kno:frequency kno:KN2012-0440-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EC%9C%97%20%EB%B2%84%EC%A6%88%EB%9F%89> ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "영_(영+한)" ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
-    kno:languageType "영_(영+한)" ;
-    kno:unitType "구"@ko .
-kno:KN2012-0440-c3 kno:role "고정항"@ko ;
+    kno:component kno:KN2012-0440-c2 ;
+    kno:frequency kno:KN2012-0440-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0440-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "트윗버즈량"@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    rdfs:label "트윗 버즈량"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EC%9C%97%20%EB%B2%84%EC%A6%88%EB%9F%89> ;
+    kno:origin "(←twitter buzz量)" ;
+    kno:instantiates kno:S000816 ;
+    kno:frequency kno:KN2012-0440-freq-NN-2016 ;
+    kno:frequency kno:KN2012-0440-freq-NN-2014 ;
+    a kno:Neologism ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:example "¶{트윗 버즈량은} 트위터 상 화제가 되고 있는 정치인들과 정당을 보여 주면서 여론의 흐름을 알 수 있는 도구로 활용할 때 꽤 유용한 도움이 될 수 있다."@ko ;
+    kno:componentString "트윗(←twitter), 버즈(buzz), -량(量)"@ko ;
+    skos:definition "누리 소통망 서비스(SNS)인 ‘트위터’에서 언급된 횟수. 여론의 흐름을 알 수 있는 도구로 사용된다."@ko .
+kno:KN2012-0440-c1 kno:semanticTag kno:usas-Q1.2 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F001923 ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:fullForm "트윗"@ko ;
     a kno:Component ;
+    rdfs:label "트윗(←twitter)"@ko ;
+    kno:surfaceForm "트윗"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0440-c3 kno:role "고정항"@ko ;
     kno:formative kno:F000729 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "량"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:semanticTag kno:usas-N5 ;
     kno:surfaceForm "량"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "-량(量)"@ko .
-kno:KN2012-0440-c2 kno:surfaceForm "버즈"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:fullForm "량"@ko ;
+    rdfs:label "-량(量)"@ko ;
+    a kno:Component .
+kno:KN2012-0440-c2 a kno:Component ;
+    kno:fullForm "버즈"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001357 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Q2.2 ;
     rdfs:label "버즈(buzz)"@ko ;
-    kno:fullForm "버즈"@ko .
-kno:KN2012-0440-c1 kno:fullForm "트윗"@ko ;
-    kno:semanticTag kno:usas-Q1.2 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "트윗"@ko ;
-    rdfs:label "트윗(←twitter)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "버즈"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001923 .
+    kno:formative kno:F001357 .

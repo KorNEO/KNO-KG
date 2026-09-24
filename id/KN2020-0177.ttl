@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0177 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0177 kno:origin "(數理感染疫學)" ;
-    kno:frequency kno:KN2020-0177-freq-NN-2020 ;
-    a ontolex:MultiwordExpression ;
-    kno:predicate "예측하다"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:slotFiller "수리(數理)+감염(感染) (2성분)"@ko ;
+kno:KN2020-0177 kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2020-0177-freq-NN-total ;
     kno:indexForm "수리감염역학"@ko ;
+    kno:origin "(數理感染疫學)" ;
+    kno:componentString "수리(數理), 감염(感染), 역학(疫學)"@ko ;
+    rdfs:label "수리^감염^역학"@ko ;
+    a kno:Neologism ;
     kno:example "¶{수리 감염 역학에서는} 감염병의 확산 과정을 방정식으로 표현한다."@ko ;
     kno:component kno:KN2020-0177-c3 ;
-    kno:component kno:KN2020-0177-c1 ;
-    kno:frequency kno:KN2020-0177-freq-NN-total ;
-    kno:component kno:KN2020-0177-c2 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EB%A6%AC%EA%B0%90%EC%97%BC%EC%97%AD%ED%95%99> ;
     kno:languageType "한^한^한" ;
-    kno:unitType "구"@ko ;
     kno:pos "「구」"@ko ;
-    rdfs:label "수리^감염^역학"@ko ;
-    kno:componentString "수리(數理), 감염(感染), 역학(疫學)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2020-0177-c1 ;
+    kno:instantiates kno:S000912 ;
     skos:definition "미분 방정식이나 차분 방정식 등의 수학적 개념을 적용하여 전염병의 확산 과정을 파악하고 종식 시기 등을 예측하는 학문. 코로나19의 발병과 확산으로 수리 감염 역학에 대한 관심이 증가하게 되었다."@ko ;
-    kno:instantiates kno:S000980 .
-kno:KN2020-0177-c3 kno:role "고정항"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:component kno:KN2020-0177-c2 ;
+    kno:slotFiller "수리(數理)+감염(感染) (2성분)"@ko ;
+    kno:predicate "예측하다"@ko ;
+    kno:frequency kno:KN2020-0177-freq-NN-2020 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EB%A6%AC%EA%B0%90%EC%97%BC%EC%97%AD%ED%95%99> ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2020-0177-c3 kno:semanticTag kno:usas-Y1 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "역학"@ko ;
-    kno:formative kno:F001608 ;
+    kno:position "3"^^xsd:integer ;
     rdfs:label "역학(疫學)"@ko ;
     kno:fullForm "역학"@ko ;
-    kno:semanticTag kno:usas-Y1 ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer .
-kno:KN2020-0177-c1 a kno:Component ;
-    kno:semanticTag kno:usas-A1.1.1 ;
-    kno:fullForm "수리"@ko ;
+    kno:surfaceForm "역학"@ko ;
+    kno:formative kno:F001608 ;
+    kno:role "고정항"@ko .
+kno:KN2020-0177-c1 kno:surfaceForm "수리"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004474 ;
     kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:fullForm "수리"@ko ;
     rdfs:label "수리(數理)"@ko ;
-    kno:surfaceForm "수리"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004474 .
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "슬롯 채움"@ko .
 kno:KN2020-0177-c2 kno:formative kno:F001036 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "감염"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "감염"@ko ;
+    rdfs:label "감염(感染)"@ko ;
     a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "감염"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "감염(感染)"@ko ;
-    kno:fullForm "감염"@ko .
+    kno:semanticTag kno:usas-B2m .

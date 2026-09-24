@@ -9,46 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0598 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0598 skos:definition "혼자 활동하는 것을 즐기는 사람. 또는 그런 무리."@ko ;
-    kno:origin "(혼族)" ;
-    kno:urimalTargetCode "1370044" ;
-    kno:predicate "즐기다"@ko ;
-    kno:slotFiller "혼(자) (1성분)"@ko ;
-    kno:component kno:KN2016-0598-c2 ;
+kno:KN2016-0598 kno:component kno:KN2016-0598-c1 ;
+    kno:example "¶{혼족들의} 라이프 스타일을 하나의 인기 있는 트렌드로 만드는 요인 중 하나는 1인 가구의 급증이다."@ko ;
     a kno:Neologism ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:urimalTargetCode "1370044" ;
+    kno:languageType "고+한" ;
+    kno:component kno:KN2016-0598-c2 ;
+    a ontolex:Word ;
+    kno:predicate "즐기다"@ko ;
+    kno:componentString "혼(자), -족(族)"@ko ;
+    kno:origin "(혼族)" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
+    skos:definition "혼자 활동하는 것을 즐기는 사람. 또는 그런 무리."@ko ;
     rdfs:label "혼-족"@ko ;
-    kno:instantiates kno:S000017 ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:languageType "고+한" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2016-0598-c1 ;
     kno:indexForm "혼족"@ko ;
+    kno:year "2016"^^xsd:gYear ;
     kno:formation kno:W02 ;
-    a ontolex:Word ;
-    kno:componentString "혼(자), -족(族)"@ko ;
-    kno:instantiates kno:S000001 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1370044> ;
-    kno:example "¶{혼족들의} 라이프 스타일을 하나의 인기 있는 트렌드로 만드는 요인 중 하나는 1인 가구의 급증이다."@ko ;
-    kno:slotFiller "-족(族) (1성분)"@ko .
-kno:KN2016-0598-c2 kno:fullForm "족"@ko ;
-    a kno:Component ;
-    rdfs:label "-족(族)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "족"@ko ;
-    kno:formative kno:F000001 ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:role "고정항"@ko .
-kno:KN2016-0598-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
+    kno:unitType "단어"@ko .
+kno:KN2016-0598-c1 kno:formative kno:F000011 ;
     rdfs:label "혼(자)"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "혼"@ko ;
-    kno:formative kno:F000011 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-S5 ;
-    kno:fullForm "혼자"@ko .
+    kno:fullForm "혼자"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "혼"@ko .
+kno:KN2016-0598-c2 kno:formative kno:F000001 ;
+    kno:fullForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    rdfs:label "-족(族)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer .

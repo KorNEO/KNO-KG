@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0102 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0102 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%B6%94%ED%85%9C> ;
-    a kno:Neologism ;
-    kno:languageType "한+영" ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "비추(非推), (아이)템(item)"@ko ;
+kno:KN2024-0102 kno:instantiates kno:S000007 ;
     kno:example "¶소비자들 사이에서 품질 대비 가격이 지나치게 높다는 이유로 해당 제품은 {비추템으로} 불리고 있다."@ko ;
-    a ontolex:Word ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(非推<영>←item)" ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:languageType "한+영" ;
     kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2024-0102-freq-NN-total ;
+    kno:registration "신어DB"@ko ;
     kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0102-c2 ;
-    kno:indexForm "비추템"@ko ;
-    rdfs:label "비추-템"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%B6%94%ED%85%9C> ;
     skos:definition "품질이나 가격 대비 만족도가 낮아 구입을 권하지 않는 상품을 이르는 말. 비추천을 뜻하는 ‘비추(非推)’와 ‘아이템(item)’을 결합하여 만든 말이다."@ko ;
-    kno:slotFiller "비추(非推) (1성분)"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:formation kno:W01 ;
+    a kno:Neologism ;
+    kno:origin "(非推<영>←item)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:componentString "비추(非推), (아이)템(item)"@ko ;
+    kno:indexForm "비추템"@ko ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0102-c2 ;
+    kno:slotFiller "비추(非推) (1성분)"@ko ;
+    rdfs:label "비추-템"@ko ;
     kno:component kno:KN2024-0102-c1 ;
+    kno:frequency kno:KN2024-0102-freq-NN-total ;
     kno:frequency kno:KN2024-0102-freq-NN-2024 ;
-    kno:instantiates kno:S000004 .
-kno:KN2024-0102-c2 kno:semanticTag kno:usas-O2 ;
-    a kno:Component ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2024-0102-c2 kno:position "2"^^xsd:integer ;
     kno:surfaceForm "템"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000007 ;
+    kno:semanticTag kno:usas-O2 ;
+    a kno:Component ;
     rdfs:label "(아이)템(item)"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000007 ;
     kno:fullForm "아이템"@ko .
-kno:KN2024-0102-c1 a kno:Component ;
+kno:KN2024-0102-c1 kno:surfaceForm "비추"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:formative kno:F004083 ;
-    kno:semanticTag kno:usas-A5.1m ;
     kno:fullForm "비추"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-Q2.2 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "비추"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-A5.1m ;
     rdfs:label "비추(非推)"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:role "슬롯 채움"@ko .

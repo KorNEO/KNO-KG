@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0050 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0050 kno:year "2023"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2023-0050 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%EA%B8%B0%EC%88%A0%ED%97%88%EB%B8%8C> ;
+    kno:origin "(氣候技術<영>hub)" ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0050-c3 ;
+    kno:year "2023"^^xsd:gYear ;
     kno:frequency kno:KN2023-0050-freq-NN-2025 ;
+    kno:languageType "한^한^영" ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2023-0050-freq-NN-2023 ;
-    kno:example "¶정부는 아시아 개발은행과 공동으로 {기후 기술 허브를} 내년에 서울에 설립하고, 기금의 출연을 약정하는 등의 방법으로 협력을 강화하겠다고 하였다."@ko ;
+    skos:definition "기후 분야에서 개발 도상국의 역량 강화를 돕고 전문가 네트워크와 기후 기술의 거점 역할을 담당하기 위한 곳. 정부와 아시아 개발은행이 서울에 설립을 추진하기로 하였다."@ko ;
     kno:indexForm "기후기술허브"@ko ;
     kno:component kno:KN2023-0050-c1 ;
-    kno:frequency kno:KN2023-0050-freq-NN-total ;
-    kno:languageType "한^한^영" ;
-    skos:definition "기후 분야에서 개발 도상국의 역량 강화를 돕고 전문가 네트워크와 기후 기술의 거점 역할을 담당하기 위한 곳. 정부와 아시아 개발은행이 서울에 설립을 추진하기로 하였다."@ko ;
-    kno:instantiates kno:S000056 ;
-    kno:frequency kno:KN2023-0050-freq-NN-2024 ;
-    kno:component kno:KN2023-0050-c2 ;
-    kno:component kno:KN2023-0050-c3 ;
-    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000052 ;
+    kno:pos "「구」"@ko ;
     kno:componentString "기후(氣候), 기술(技術), 허브(hub)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%ED%9B%84%EA%B8%B0%EC%88%A0%ED%97%88%EB%B8%8C> ;
-    kno:origin "(氣候技術<영>hub)" ;
+    kno:example "¶정부는 아시아 개발은행과 공동으로 {기후 기술 허브를} 내년에 서울에 설립하고, 기금의 출연을 약정하는 등의 방법으로 협력을 강화하겠다고 하였다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0050-c2 ;
+    kno:frequency kno:KN2023-0050-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0050-freq-NN-total ;
     rdfs:label "기후^기술^허브"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2023-0050-freq-NN-2022 ;
     kno:slotFiller "기술(技術)+허브(hub) (2성분)"@ko ;
-    a kno:Neologism .
-kno:KN2023-0050-c1 kno:surfaceForm "기후"@ko ;
-    kno:semanticTag kno:usas-W4 ;
-    rdfs:label "기후(氣候)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000069 ;
-    kno:fullForm "기후"@ko ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2023-0050-c2 kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "기술(技術)"@ko ;
-    kno:formative kno:F000129 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:fullForm "기술"@ko ;
-    kno:semanticTag kno:usas-Y1 ;
-    kno:surfaceForm "기술"@ko .
-kno:KN2023-0050-c3 rdfs:label "허브(hub)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M7 ;
+    kno:frequency kno:KN2023-0050-freq-NN-2023 ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:frequency kno:KN2023-0050-freq-NN-2022 .
+kno:KN2023-0050-c3 a kno:Component ;
     kno:role "슬롯 채움"@ko ;
     kno:fullForm "허브"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-M7 ;
+    rdfs:label "허브(hub)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "허브"@ko ;
-    kno:formative kno:F007045 .
+    kno:formative kno:F007045 ;
+    kno:surfaceForm "허브"@ko .
+kno:KN2023-0050-c1 kno:role "고정항"@ko ;
+    rdfs:label "기후(氣候)"@ko ;
+    kno:semanticTag kno:usas-W4 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "기후"@ko ;
+    kno:surfaceForm "기후"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000069 ;
+    a kno:Component .
+kno:KN2023-0050-c2 rdfs:label "기술(技術)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "기술"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:fullForm "기술"@ko ;
+    kno:formative kno:F000129 ;
+    kno:position "2"^^xsd:integer .
