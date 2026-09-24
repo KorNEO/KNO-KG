@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0001 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0001 kno:component kno:KN2025-0001-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2025-0001 skos:definition "(LLM) 바이오, 우주항공, 반도체, 국방, 양자, 로봇 등으로 대표되는 첨단 전략 산업 분야를 묶어 이르는 말."@ko ;
     kno:example "(LLM) 대전시는 지역 성장 동력을 키우기 위해 {ABCDQR산업} 관련 기업 유치와 연구개발 지원을 강화하겠다고 밝혔다."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0001-freq-NN-total ;
-    skos:definition "(LLM) 바이오, 우주항공, 반도체, 국방, 양자, 로봇 등으로 대표되는 첨단 전략 산업 분야를 묶어 이르는 말."@ko ;
-    kno:languageType "영_한" ;
-    kno:indexForm "ABCDQR산업"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0001-freq-NN-2025 ;
+    kno:component kno:KN2025-0001-c1 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0001-freq-NN-total ;
+    a kno:Neologism ;
     kno:year "2025"^^xsd:gYear ;
     rdfs:label "ABCDQR 산업"@ko ;
+    kno:component kno:KN2025-0001-c2 ;
+    kno:indexForm "ABCDQR산업"@ko ;
+    kno:languageType "영_한" ;
+    kno:componentString "ABCDQR, 산업(産業)"@ko ;
+    kno:instantiates kno:S000124 ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=ABCDQR%20%EC%82%B0%EC%97%85> ;
     kno:origin "(ABCDQR産業)" ;
-    kno:component kno:KN2025-0001-c1 ;
-    kno:instantiates kno:S000124 ;
-    kno:componentString "ABCDQR, 산업(産業)"@ko ;
     kno:slotFiller "ABCDQR (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2025-0001-freq-NN-2025 .
-kno:KN2025-0001-c2 kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "산업"@ko ;
-    kno:surfaceForm "산업"@ko ;
-    kno:formative kno:F000058 ;
-    kno:semanticTag kno:usas-I4 ;
-    a kno:Component ;
+    kno:pos "「구」"@ko .
+kno:KN2025-0001-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "산업(産業)"@ko .
-kno:KN2025-0001-c1 rdfs:label "ABCDQR"@ko ;
+    kno:formative kno:F002051 ;
+    kno:semanticTag kno:usas-I4 ;
+    rdfs:label "ABCDQR"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
     kno:surfaceForm "ABCDQR"@ko ;
     a kno:Component ;
-    kno:formative kno:F002051 ;
-    kno:semanticTag kno:usas-Y1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
     kno:fullForm "ABCDQR"@ko ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2025-0001-c2 kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I4 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:surfaceForm "산업"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "산업"@ko ;
+    rdfs:label "산업(産業)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:formative kno:F000058 .

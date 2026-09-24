@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0430 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0430 a ontolex:MultiwordExpression ;
-    kno:component kno:KN2016-0430-c1 ;
-    kno:frequency kno:KN2016-0430-freq-NN-2015 ;
-    kno:languageType "한_한" ;
-    kno:component kno:KN2016-0430-c2 ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "¶수백만 명에 이르는 이 {자동차 공유족을} 눈독 들이는 곳은 완성차업계다."@ko ;
-    kno:origin "(自動車共有族)" ;
-    kno:componentString "자동차(自動車), 공유(共有), -족(族)"@ko ;
-    kno:component kno:KN2016-0430-c3 ;
-    kno:unitType "구"@ko ;
-    rdfs:label "자동차공유족"@ko ;
-    kno:slotFiller "공유(共有)+-족(族) (2성분)"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:slotFiller "자동차(自動車)+공유(共有) (2성분)"@ko ;
-    kno:predicate "이용하다"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B3%B5%EC%9C%A0%EC%A1%B1> ;
+kno:KN2016-0430 a kno:Neologism ;
     kno:instantiates kno:S001624 ;
-    kno:instantiates kno:S000012 ;
+    kno:slotFiller "공유(共有)+-족(族) (2성분)"@ko ;
+    kno:languageType "한_한" ;
+    rdfs:label "자동차공유족"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2016-0430-freq-NN-total ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2016-0430-freq-NN-2015 ;
+    kno:predicate "이용하다"@ko ;
+    kno:origin "(自動車共有族)" ;
     kno:lastAttestationYear "2015"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "자동차(自動車)+공유(共有) (2성분)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0430-c1 ;
+    kno:example "¶수백만 명에 이르는 이 {자동차 공유족을} 눈독 들이는 곳은 완성차업계다."@ko ;
+    kno:componentString "자동차(自動車), 공유(共有), -족(族)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EB%8F%99%EC%B0%A8%EA%B3%B5%EC%9C%A0%EC%A1%B1> ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0430-c3 ;
+    kno:component kno:KN2016-0430-c2 ;
+    kno:instantiates kno:S000012 ;
     skos:definition "자동차를 공유하여 이용하는 사람. 또는 그런 무리."@ko ;
+    kno:pos "「구」"@ko ;
     kno:indexForm "자동차공유족"@ko .
-kno:KN2016-0430-c1 kno:role "고정항"@ko ;
-    kno:formative kno:F000578 ;
+kno:KN2016-0430-c1 kno:formative kno:F000578 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "자동차"@ko ;
-    rdfs:label "자동차(自動車)"@ko ;
-    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-M3 ;
-    kno:surfaceForm "자동차"@ko .
-kno:KN2016-0430-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "공유(共有)"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "자동차"@ko ;
+    rdfs:label "자동차(自動車)"@ko ;
+    kno:fullForm "자동차"@ko .
+kno:KN2016-0430-c3 kno:formative kno:F000001 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S5 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001075 ;
-    kno:fullForm "공유"@ko ;
-    kno:surfaceForm "공유"@ko ;
+    kno:fullForm "족"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component .
+kno:KN2016-0430-c2 kno:fullForm "공유"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
     kno:semanticTag kno:usas-A9 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2016-0430-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:fullForm "족"@ko ;
-    kno:surfaceForm "족"@ko ;
-    kno:formative kno:F000001 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "-족(族)"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "공유"@ko ;
+    kno:formative kno:F001075 ;
+    rdfs:label "공유(共有)"@ko ;
+    kno:truncated "false"^^xsd:boolean .

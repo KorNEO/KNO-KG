@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0086 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0086 skos:definition "해결 방법이 마련되거나 떠오르지 아니 함."@ko ;
-    kno:languageType "영+한" ;
+kno:KN2013-0086 kno:instantiates kno:S000146 ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:urimalTargetCode "1368816" ;
-    kno:example "¶이어 OOO가 OOO에게 “아빠를 닮아 좋은 점과 싫은 점이 무엇인지?” 라고 묻자, OOO은 “아빠의 선한 눈 닮아 좋다. 아빠를 닮은 내 얼굴을 보며 ‘{노답’이라고} 놀리는데 그럴 땐 아빠를 닮아 슬픈 것 같다.”라고 말했다."@ko ;
-    a ontolex:Word ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W01 ;
-    kno:indexForm "노답"@ko ;
-    kno:origin "(no答)" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0086-c1 ;
     kno:registration "우리말샘"@ko ;
+    skos:definition "해결 방법이 마련되거나 떠오르지 아니 함."@ko ;
+    kno:formation kno:W01 ;
+    kno:componentString "노(no), 답(答)"@ko ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368816> ;
+    kno:origin "(no答)" ;
+    kno:languageType "영+한" ;
+    kno:component kno:KN2013-0086-c2 ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶이어 OOO가 OOO에게 “아빠를 닮아 좋은 점과 싫은 점이 무엇인지?” 라고 묻자, OOO은 “아빠의 선한 눈 닮아 좋다. 아빠를 닮은 내 얼굴을 보며 ‘{노답’이라고} 놀리는데 그럴 땐 아빠를 닮아 슬픈 것 같다.”라고 말했다."@ko ;
     kno:slotFiller "답(答) (1성분)"@ko ;
     a kno:Neologism ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2013-0086-c2 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368816> ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S000146 ;
-    rdfs:label "노-답"@ko ;
-    kno:componentString "노(no), 답(答)"@ko .
-kno:KN2013-0086-c1 kno:fullForm "노"@ko ;
-    kno:surfaceForm "노"@ko ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:indexForm "노답"@ko ;
+    kno:component kno:KN2013-0086-c1 ;
+    rdfs:label "노-답"@ko .
+kno:KN2013-0086-c2 rdfs:label "답(答)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:role "고정항"@ko ;
-    rdfs:label "노(no)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-Z6 ;
-    kno:formative kno:F000015 .
-kno:KN2013-0086-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Q2.2 ;
     kno:surfaceForm "답"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "답(答)"@ko ;
-    kno:formative kno:F000703 ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "답"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko .
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000703 .
+kno:KN2013-0086-c1 a kno:Component ;
+    rdfs:label "노(no)"@ko ;
+    kno:surfaceForm "노"@ko ;
+    kno:fullForm "노"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000015 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Z6 .

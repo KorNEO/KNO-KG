@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0317 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0317 skos:definition "카드 게임과 음주가 가능한 술집으로 가장하지만, 칩을 현금으로 바꾸어 주는 불법 도박 업소."@ko ;
-    a kno:Neologism ;
+kno:KN2024-0317 kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "캐시(cash), 펍(pub)"@ko ;
+    kno:languageType "영_영" ;
+    kno:component kno:KN2024-0317-c1 ;
     kno:unitType "구"@ko ;
     kno:indexForm "캐시펍"@ko ;
-    kno:origin "(<영>▼cash pub)" ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:year "2024"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EC%8B%9C%20%ED%8E%8D> ;
+    skos:definition "카드 게임과 음주가 가능한 술집으로 가장하지만, 칩을 현금으로 바꾸어 주는 불법 도박 업소."@ko ;
+    kno:origin "(<영>▼cash pub)" ;
+    kno:frequency kno:KN2024-0317-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    kno:example "¶지난 7월 경찰청은 수백억 원 규모에 달하는 {캐시펍} 도박 사례가 연이어 적발됨에 따라 이들 업소를 집중적으로 단속하겠다고 밝혔다."@ko ;
+    a kno:Neologism ;
+    rdfs:label "캐시 펍"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:frequency kno:KN2024-0317-freq-NN-2023 ;
+    kno:year "2024"^^xsd:gYear ;
     kno:component kno:KN2024-0317-c2 ;
     a ontolex:MultiwordExpression ;
-    kno:componentString "캐시(cash), 펍(pub)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0317-freq-NN-total ;
-    kno:languageType "영_영" ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2024-0317-c1 ;
-    rdfs:label "캐시 펍"@ko ;
-    kno:example "¶지난 7월 경찰청은 수백억 원 규모에 달하는 {캐시펍} 도박 사례가 연이어 적발됨에 따라 이들 업소를 집중적으로 단속하겠다고 밝혔다."@ko .
-kno:KN2024-0317-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:formative kno:F006678 ;
-    kno:fullForm "펍"@ko ;
-    kno:surfaceForm "펍"@ko ;
-    rdfs:label "펍(pub)"@ko ;
-    kno:semanticTag kno:usas-F2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko .
-kno:KN2024-0317-c1 rdfs:label "캐시(cash)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1 ;
+    kno:registration "신어DB"@ko .
+kno:KN2024-0317-c1 kno:position "1"^^xsd:integer ;
     kno:fullForm "캐시"@ko ;
+    a kno:Component ;
     kno:formative kno:F006220 ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "캐시"@ko ;
-    kno:role "성분"@ko .
+    rdfs:label "캐시(cash)"@ko .
+kno:KN2024-0317-c2 kno:role "성분"@ko ;
+    kno:surfaceForm "펍"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "펍"@ko ;
+    kno:formative kno:F006678 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-F2 ;
+    rdfs:label "펍(pub)"@ko ;
+    a kno:Component .

@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0015 kno:example "¶일각에서는 {검수원복법으로} 인해 검찰 조직에 대한 견제 장치가 무력화되면, 검찰에 많은 권력이 집중될 수도 있다는 지적이 나왔다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EC%9B%90%EB%B3%B5%EB%B2%95> ;
-    kno:frequency kno:KN2023-0015-freq-NN-2023 ;
-    kno:origin "(檢搜原復法)" ;
+kno:KN2023-0015 kno:instantiates kno:S000015 ;
+    kno:component kno:KN2023-0015-c2 ;
+    kno:frequency kno:KN2023-0015-freq-NN-total ;
+    kno:componentString "검수원복(檢搜原復), 법(法)"@ko ;
+    kno:predicate "복구하다"@ko ;
     kno:languageType "한+한" ;
-    kno:component kno:KN2023-0015-c1 ;
-    a kno:Neologism ;
-    rdfs:label "검수원복-법"@ko ;
-    kno:instantiates kno:S000015 ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2023"^^xsd:gYear ;
     kno:formation kno:W01 ;
+    kno:example "¶일각에서는 {검수원복법으로} 인해 검찰 조직에 대한 견제 장치가 무력화되면, 검찰에 많은 권력이 집중될 수도 있다는 지적이 나왔다."@ko ;
     kno:frequency kno:KN2023-0015-freq-NN-2022 ;
     kno:indexForm "검수원복법"@ko ;
-    kno:componentString "검수원복(檢搜原復), 법(法)"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:slotFiller "검수원복(檢搜原復) (1성분)"@ko ;
-    skos:definition "검찰의 수사권을 원상 복구하는 법안. 검찰의 수사권을 확대한 법안으로, 검찰의 수사가 가능한 경제 및 부패 범죄의 범위가 확대된다."@ko ;
-    kno:predicate "복구하다"@ko ;
-    kno:component kno:KN2023-0015-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2023-0015-freq-NN-total ;
     a ontolex:Word ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:unitType "단어"@ko .
-kno:KN2023-0015-c1 kno:semanticTag kno:usas-G2.1 ;
+    skos:definition "검찰의 수사권을 원상 복구하는 법안. 검찰의 수사권을 확대한 법안으로, 검찰의 수사가 가능한 경제 및 부패 범죄의 범위가 확대된다."@ko ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "검수원복-법"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:slotFiller "검수원복(檢搜原復) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0015-c1 ;
+    kno:frequency kno:KN2023-0015-freq-NN-2023 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EC%88%98%EC%9B%90%EB%B3%B5%EB%B2%95> ;
+    kno:origin "(檢搜原復法)" .
+kno:KN2023-0015-c2 kno:surfaceForm "법"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "법"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "법(法)"@ko ;
     a kno:Component ;
-    rdfs:label "검수원복(檢搜原復)"@ko ;
+    kno:formative kno:F000002 .
+kno:KN2023-0015-c1 kno:semanticTag kno:usas-G2.1 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F002197 ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "검수원복(檢搜原復)"@ko ;
+    kno:surfaceForm "검수원복"@ko ;
+    a kno:Component ;
     kno:role "슬롯 채움"@ko ;
     kno:fullForm "검수원복"@ko ;
-    kno:surfaceForm "검수원복"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0015-c2 rdfs:label "법(法)"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000002 ;
-    kno:fullForm "법"@ko ;
-    kno:surfaceForm "법"@ko ;
-    kno:role "고정항"@ko .
+    kno:position "1"^^xsd:integer .

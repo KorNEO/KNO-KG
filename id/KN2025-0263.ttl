@@ -9,66 +9,66 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0263 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0263 kno:slotFiller "윤(석열)+찬(성)(贊成)+탄(彈) (3성분)"@ko ;
+kno:KN2025-0263 kno:languageType "한+한+한+한" ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0263-c1 ;
-    kno:componentString "반(反)-, 윤(석열), 찬(성)(贊成), 탄(彈)"@ko ;
-    kno:languageType "한+한+한+한" ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "반윤찬탄"@ko ;
-    skos:definition "(LLM) 윤석열 전 대통령에 반대하며 탄핵에 찬성하는 입장이나 성향을 이르는 말."@ko ;
-    kno:origin "(反尹贊彈)" ;
-    kno:component kno:KN2025-0263-c3 ;
-    kno:frequency kno:KN2025-0263-freq-NN-2025 ;
-    kno:example "(LLM) 당내 경선 구도가 친윤 대 반윤으로 갈리면서 {반윤찬탄을} 내세운 후보를 둘러싼 공방이 거세졌다."@ko ;
-    kno:slotFiller "반(反)-+윤(석열)+찬(성)(贊成) (3성분)"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2025-0263-c2 ;
-    kno:instantiates kno:S000519 ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%98%EC%9C%A4%EC%B0%AC%ED%83%84> ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2025-0263-c4 ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "반윤찬탄"@ko ;
-    kno:instantiates kno:S001078 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0263-freq-NN-2025 ;
+    kno:component kno:KN2025-0263-c1 ;
+    kno:instantiates kno:S000519 ;
+    kno:origin "(反尹贊彈)" ;
+    skos:definition "(LLM) 윤석열 전 대통령에 반대하며 탄핵에 찬성하는 입장이나 성향을 이르는 말."@ko ;
+    kno:indexForm "반윤찬탄"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%98%EC%9C%A4%EC%B0%AC%ED%83%84> ;
+    kno:slotFiller "윤(석열)+찬(성)(贊成)+탄(彈) (3성분)"@ko ;
+    kno:instantiates kno:S001078 ;
+    kno:component kno:KN2025-0263-c4 ;
     kno:formation kno:W06 ;
-    kno:frequency kno:KN2025-0263-freq-NN-total ;
-    a kno:Neologism .
-kno:KN2025-0263-c1 rdfs:label "반(反)-"@ko ;
-    kno:fullForm "반"@ko ;
+    kno:component kno:KN2025-0263-c3 ;
+    rdfs:label "반윤찬탄"@ko ;
+    kno:componentString "반(反)-, 윤(석열), 찬(성)(贊成), 탄(彈)"@ko ;
+    kno:component kno:KN2025-0263-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 당내 경선 구도가 친윤 대 반윤으로 갈리면서 {반윤찬탄을} 내세운 후보를 둘러싼 공방이 거세졌다."@ko ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:slotFiller "반(反)-+윤(석열)+찬(성)(贊成) (3성분)"@ko ;
+    kno:frequency kno:KN2025-0263-freq-NN-total .
+kno:KN2025-0263-c1 kno:formative kno:F000762 ;
     kno:role "고정항"@ko ;
     kno:surfaceForm "반"@ko ;
+    kno:fullForm "반"@ko ;
+    rdfs:label "반(反)-"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
     a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000762 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0263-c4 kno:fullForm "탄"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "탄"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "탄(彈)"@ko ;
+    kno:semanticTag kno:usas-G3 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A6.1m .
-kno:KN2025-0263-c3 kno:formative kno:F000941 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
+    kno:position "4"^^xsd:integer ;
+    kno:formative kno:F001885 .
+kno:KN2025-0263-c3 kno:semanticTag kno:usas-S7.4p ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "찬(성)(贊成)"@ko ;
     kno:surfaceForm "찬"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:fullForm "찬성"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S7.4p ;
-    a kno:Component .
-kno:KN2025-0263-c2 a kno:Component ;
-    kno:semanticTag kno:usas-Z1 ;
-    kno:surfaceForm "윤"@ko ;
-    kno:formative kno:F001683 ;
+    kno:formative kno:F000941 .
+kno:KN2025-0263-c2 kno:position "2"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
     rdfs:label "윤(석열)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "윤석열"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0263-c4 kno:semanticTag kno:usas-G3 ;
-    rdfs:label "탄(彈)"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "탄"@ko ;
-    kno:surfaceForm "탄"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F001885 .
+    kno:surfaceForm "윤"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F001683 ;
+    kno:fullForm "윤석열"@ko .

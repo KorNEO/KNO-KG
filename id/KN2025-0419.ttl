@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0419 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0419 a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AC%EC%B9%9C%20%EC%9E%AC%EC%A7%88> ;
+kno:KN2025-0419 kno:pos "「구」"@ko ;
+    a kno:Neologism ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2025-0419-c1 ;
-    kno:languageType "한_한" ;
     kno:instantiates kno:S000178 ;
-    kno:component kno:KN2025-0419-c2 ;
+    kno:component kno:KN2025-0419-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%AC%EC%B9%9C%20%EC%9E%AC%EC%A7%88> ;
+    kno:origin "(女親材質)" ;
+    kno:languageType "한_한" ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "여친 재질"@ko ;
     kno:componentString "여친(女親), 재질(材質)"@ko ;
     skos:definition "(LLM) 여자친구로 삼고 싶을 만큼 호감이 가는 여성의 외모ㆍ분위기ㆍ말투ㆍ성격 등에서 느껴지는 매력이나 ‘여자친구 같은’ 느낌."@ko ;
-    kno:registration "신어DB"@ko ;
     kno:slotFiller "여친(女親) (1성분)"@ko ;
-    kno:indexForm "여친재질"@ko ;
-    rdfs:label "여친 재질"@ko ;
-    kno:origin "(女親材質)" ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:example "(LLM) 영상에서 말투가 다정하고 분위기가 포근해서 댓글에 {여친재질이라는} 반응이 이어졌다."@ko ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:pos "「구」"@ko .
-kno:KN2025-0419-c1 kno:fullForm "여친"@ko ;
-    kno:surfaceForm "여친"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "여친(女親)"@ko ;
+    kno:example "(LLM) 영상에서 말투가 다정하고 분위기가 포근해서 댓글에 {여친재질이라는} 반응이 이어졌다."@ko ;
+    kno:component kno:KN2025-0419-c2 ;
+    kno:indexForm "여친재질"@ko .
+kno:KN2025-0419-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000860 ;
     kno:semanticTag kno:usas-S3.2 ;
+    rdfs:label "여친(女親)"@ko ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "여친"@ko ;
+    kno:fullForm "여친"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-S2.1 ;
-    kno:formative kno:F000860 .
-kno:KN2025-0419-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000403 ;
-    kno:semanticTag kno:usas-O1.1 ;
-    kno:fullForm "재질"@ko ;
-    kno:surfaceForm "재질"@ko ;
-    rdfs:label "재질(材質)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0419-c2 kno:position "2"^^xsd:integer ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko .
+    kno:surfaceForm "재질"@ko ;
+    kno:fullForm "재질"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000403 ;
+    rdfs:label "재질(材質)"@ko .

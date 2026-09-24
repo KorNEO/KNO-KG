@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0136 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0136 kno:component kno:KN2024-0136-c1 ;
-    kno:component kno:KN2024-0136-c3 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0136-freq-NN-2023 ;
-    kno:componentString "수(도권)(首), 포(기)(抛), 당(黨)"@ko ;
-    a ontolex:Word ;
-    skos:definition "‘수도권을 포기한 정당’을 줄여 이르는 말. 수도권 지역 유권자층의 지지를 받지 못하는 정당을 이르는 말이다."@ko ;
-    kno:languageType "한+한+한" ;
-    kno:origin "(首抛黨)" ;
+kno:KN2024-0136 a ontolex:Word ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:indexForm "수포당"@ko ;
-    kno:frequency kno:KN2024-0136-freq-NN-total ;
+    kno:componentString "수(도권)(首), 포(기)(抛), 당(黨)"@ko ;
+    kno:frequency kno:KN2024-0136-freq-NN-2024 ;
+    kno:languageType "한+한+한" ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "수(도권)(首) (1성분)"@ko ;
+    rdfs:label "수포당"@ko ;
+    kno:instantiates kno:S001118 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0136-c2 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:component kno:KN2024-0136-c1 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%ED%8F%AC%EB%8B%B9> ;
+    kno:frequency kno:KN2024-0136-freq-NN-2023 ;
     kno:example "¶수도권 한 인사는 {수포당으로} 총선을 어떻게 이기겠다는 건지 모르겠다며 한숨을 쉬었다."@ko ;
     kno:pos "「명」"@ko ;
-    kno:component kno:KN2024-0136-c2 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2024-0136-freq-NN-2024 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%ED%8F%AC%EB%8B%B9> ;
-    kno:unitType "단어"@ko ;
+    skos:definition "‘수도권을 포기한 정당’을 줄여 이르는 말. 수도권 지역 유권자층의 지지를 받지 못하는 정당을 이르는 말이다."@ko ;
+    kno:frequency kno:KN2024-0136-freq-NN-total ;
     kno:formation kno:W06 ;
-    kno:instantiates kno:S001118 ;
-    rdfs:label "수포당"@ko ;
-    kno:slotFiller "수(도권)(首) (1성분)"@ko .
-kno:KN2024-0136-c1 kno:formative kno:F004457 ;
+    a kno:Neologism ;
+    kno:component kno:KN2024-0136-c3 ;
+    kno:origin "(首抛黨)" .
+kno:KN2024-0136-c2 kno:formative kno:F000320 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "포(기)(抛)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "포"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "포기"@ko .
+kno:KN2024-0136-c1 rdfs:label "수(도권)(首)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
     kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "수도권"@ko ;
-    a kno:Component ;
-    rdfs:label "수(도권)(首)"@ko ;
+    kno:formative kno:F004457 ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:surfaceForm "수"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2024-0136-c3 rdfs:label "당(黨)"@ko ;
-    kno:fullForm "당"@ko ;
-    kno:surfaceForm "당"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G1.2 ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
+    kno:surfaceForm "수"@ko .
+kno:KN2024-0136-c3 kno:surfaceForm "당"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000345 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0136-c2 kno:fullForm "포기"@ko ;
-    kno:surfaceForm "포"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "당"@ko ;
+    rdfs:label "당(黨)"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
     a kno:Component ;
-    kno:formative kno:F000320 ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-X7 ;
-    rdfs:label "포(기)(抛)"@ko .
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0045 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0045 kno:year "2019"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%ED%88%AC> ;
+kno:KN2019-0045 a ontolex:Word ;
+    kno:slotFiller "녹(음)(錄) (1성분)"@ko ;
+    kno:formation kno:W05 ;
+    kno:componentString "녹(음)(錄), (미)투(me-too)"@ko ;
+    kno:example "¶너도 녹음? 나도 녹음!…{‘녹투’가} 일상이 됐다."@ko ;
+    a kno:Neologism ;
+    kno:predicate "폭로하다"@ko ;
+    kno:instantiates kno:S000112 ;
     kno:component kno:KN2019-0045-c2 ;
     kno:pos "「명」"@ko ;
-    kno:instantiates kno:S000112 ;
-    a kno:Neologism ;
-    kno:example "¶너도 녹음? 나도 녹음!…{‘녹투’가} 일상이 됐다."@ko ;
-    kno:registration "신어DB"@ko ;
     kno:indexForm "녹투"@ko ;
-    kno:slotFiller "녹(음)(錄) (1성분)"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
+    kno:registration "신어DB"@ko ;
     skos:definition "녹음한 자료를 바탕으로 부당함을 폭로하는 일. ⇒규범 표기는 미확정이다."@ko ;
-    kno:componentString "녹(음)(錄), (미)투(me-too)"@ko ;
-    kno:predicate "폭로하다"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    rdfs:label "녹투"@ko ;
+    kno:year "2019"^^xsd:gYear ;
     kno:origin "(錄<영>←me-too)" ;
     kno:languageType "한+영" ;
-    a ontolex:Word ;
-    rdfs:label "녹투"@ko ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2019-0045-c1 ;
-    kno:formation kno:W05 .
-kno:KN2019-0045-c2 a kno:Component ;
-    kno:fullForm "미투"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%ED%88%AC> .
+kno:KN2019-0045-c2 kno:formative kno:F000241 ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "투"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
     rdfs:label "(미)투(me-too)"@ko ;
-    kno:formative kno:F000241 .
-kno:KN2019-0045-c1 rdfs:label "녹(음)(錄)"@ko ;
-    kno:formative kno:F002787 ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
+    kno:fullForm "미투"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "투"@ko ;
+    a kno:Component .
+kno:KN2019-0045-c1 kno:surfaceForm "녹"@ko ;
     kno:fullForm "녹음"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Q4.3 ;
     kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "녹"@ko .
+    kno:formative kno:F002787 ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "녹(음)(錄)"@ko ;
+    a kno:Component .

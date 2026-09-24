@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0016 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EC%A0%90%EC%A0%91%EC%A2%85%EC%84%BC%ED%84%B0> ;
-    kno:frequency kno:KN2021-0016-freq-NN-2020 ;
+kno:KN2021-0016 kno:slotFiller "거점(據點) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    skos:definition "특정 지역에서 감염병의 백신 접종을 위해 거점의 역할을 하도록 지정된 접종 센터. 전국적으로 코로나19 백신 접종을 시작하면서 생겨난 말이다."@ko ;
+    kno:frequency kno:KN2021-0016-freq-NN-2021 ;
+    kno:component kno:KN2021-0016-c2 ;
+    rdfs:label "거점^접종^센터"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EC%A0%90%EC%A0%91%EC%A2%85%EC%84%BC%ED%84%B0> ;
+    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S001025 ;
     kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:slotFiller "거점(據點) (1성분)"@ko ;
-    kno:year "2021"^^xsd:gYear ;
     kno:component kno:KN2021-0016-c3 ;
     kno:component kno:KN2021-0016-c1 ;
-    kno:example "¶이번 백신은 영하 75도의 초저온 유통ㆍ보관이 필요해 특수 냉동고가 비치된 지역별 {거점 접종 센터에서} 접종된다."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S001194 ;
-    skos:definition "특정 지역에서 감염병의 백신 접종을 위해 거점의 역할을 하도록 지정된 접종 센터. 전국적으로 코로나19 백신 접종을 시작하면서 생겨난 말이다."@ko ;
-    kno:unitType "구"@ko ;
     kno:componentString "거점(據點), 접종(接種), 센터(center)"@ko ;
-    rdfs:label "거점^접종^센터"@ko ;
+    kno:example "¶이번 백신은 영하 75도의 초저온 유통ㆍ보관이 필요해 특수 냉동고가 비치된 지역별 {거점 접종 센터에서} 접종된다."@ko ;
     kno:indexForm "거점접종센터"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2021-0016-freq-NN-2021 ;
-    kno:frequency kno:KN2021-0016-freq-NN-total ;
-    kno:slotFiller "접종(接種)+센터(center) (2성분)"@ko ;
-    kno:instantiates kno:S001025 ;
     kno:origin "(據點接種<영>center)" ;
-    a kno:Neologism ;
-    kno:component kno:KN2021-0016-c2 ;
-    kno:languageType "한^한^영" ;
+    kno:registration "신어DB"@ko ;
+    kno:frequency kno:KN2021-0016-freq-NN-2020 ;
+    kno:frequency kno:KN2021-0016-freq-NN-total ;
+    kno:year "2021"^^xsd:gYear ;
     kno:activeYears "2"^^xsd:integer ;
-    a ontolex:MultiwordExpression .
-kno:KN2021-0016-c3 kno:role "고정항"@ko ;
+    kno:slotFiller "접종(接種)+센터(center) (2성분)"@ko ;
+    kno:languageType "한^한^영" ;
+    kno:instantiates kno:S001194 ;
+    kno:pos "「구」"@ko .
+kno:KN2021-0016-c2 kno:position "2"^^xsd:integer ;
     a kno:Component ;
-    kno:fullForm "센터"@ko ;
+    rdfs:label "접종(接種)"@ko ;
+    kno:formative kno:F000917 ;
+    kno:surfaceForm "접종"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "접종"@ko .
+kno:KN2021-0016-c3 a kno:Component ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "센터"@ko ;
     kno:formative kno:F000141 ;
     kno:semanticTag kno:usas-H1 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "센터"@ko ;
+    kno:surfaceForm "센터"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     rdfs:label "센터(center)"@ko .
 kno:KN2021-0016-c1 rdfs:label "거점(據點)"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "거점"@ko ;
     kno:surfaceForm "거점"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:role "고정항"@ko ;
     kno:formative kno:F000451 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2021-0016-c2 kno:semanticTag kno:usas-B3 ;
     a kno:Component ;
-    kno:formative kno:F000917 ;
-    rdfs:label "접종(接種)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "접종"@ko ;
-    kno:surfaceForm "접종"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:role "고정항"@ko .

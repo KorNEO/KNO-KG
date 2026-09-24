@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0386 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0386 kno:pos "「명」"@ko ;
+kno:KN2018-0386 a ontolex:Word ;
+    kno:slotFiller "채(소) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
     skos:definition "‘편의점 채소 구매족’을 줄여 이르는 말로, 편의점에서 소량으로 포장된 채소를 구매하는 사람. 또는 그런 무리."@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2018-0386-freq-NN-total ;
+    kno:origin "(便채族)" ;
+    kno:frequency kno:KN2018-0386-freq-NN-2017 ;
     kno:componentString "편(의점)(便), 채(소), -족(族)"@ko ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2018-0386-c1 ;
     kno:frequency kno:KN2018-0386-freq-NN-2018 ;
-    kno:frequency kno:KN2018-0386-freq-NN-2017 ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:indexForm "편채족"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EC%B1%84%EC%A1%B1> ;
-    a kno:Neologism ;
-    kno:component kno:KN2018-0386-c3 ;
-    kno:frequency kno:KN2018-0386-freq-NN-total ;
-    kno:example "¶이런 가운데 마트에서 주로 구입했던 과일과 채소 등도 편의점에서 사는 이른바 ‘편과족’과 ‘{편채족’이} 크게 늘고 있는 것으로 조사됐다."@ko ;
-    kno:formation kno:W02 ;
-    kno:instantiates kno:S000108 ;
-    kno:languageType "(한+고)+한" ;
-    kno:slotFiller "채(소) (1성분)"@ko ;
-    rdfs:label "편채-족"@ko ;
     kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:origin "(便채族)" ;
-    kno:unitType "단어"@ko ;
+    kno:example "¶이런 가운데 마트에서 주로 구입했던 과일과 채소 등도 편의점에서 사는 이른바 ‘편과족’과 ‘{편채족’이} 크게 늘고 있는 것으로 조사됐다."@ko ;
+    kno:predicate "구매하다"@ko ;
+    kno:component kno:KN2018-0386-c1 ;
+    kno:indexForm "편채족"@ko ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EC%B1%84%EC%A1%B1> ;
+    kno:formation kno:W02 ;
     kno:component kno:KN2018-0386-c2 ;
-    kno:predicate "구매하다"@ko .
-kno:KN2018-0386-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I2.2 ;
-    a kno:Component ;
-    kno:formative kno:F000153 ;
-    kno:role "고정항"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "(한+고)+한" ;
+    kno:instantiates kno:S000108 ;
+    kno:component kno:KN2018-0386-c3 ;
+    rdfs:label "편채-족"@ko .
+kno:KN2018-0386-c1 kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "편"@ko ;
     rdfs:label "편(의점)(便)"@ko ;
-    kno:fullForm "편의점"@ko ;
-    kno:surfaceForm "편"@ko .
-kno:KN2018-0386-c3 kno:semanticTag kno:usas-S5 ;
-    kno:position "3"^^xsd:integer ;
+    a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "족"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    rdfs:label "-족(族)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "족"@ko ;
-    kno:formative kno:F000001 .
-kno:KN2018-0386-c2 kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F006014 ;
-    rdfs:label "채(소)"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "편의점"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:formative kno:F000153 .
+kno:KN2018-0386-c2 kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "채소"@ko ;
-    kno:surfaceForm "채"@ko .
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "채"@ko ;
+    rdfs:label "채(소)"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F006014 .
+kno:KN2018-0386-c3 kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "족"@ko ;
+    kno:formative kno:F000001 ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "족"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-족(族)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .

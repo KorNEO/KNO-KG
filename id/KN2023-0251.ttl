@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0251 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0251 kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:indexForm "정언공범"@ko ;
-    kno:unitType "구"@ko ;
+kno:KN2023-0251 kno:predicate "행하다"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%96%B8%EA%B3%B5%EB%B2%94> ;
-    kno:component kno:KN2023-0251-c2 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:predicate "행하다"@ko ;
-    kno:component kno:KN2023-0251-c1 ;
-    kno:languageType "한^한" ;
-    rdfs:label "정언^공범"@ko ;
-    kno:componentString "정언(政言), 공범(共犯)"@ko ;
-    kno:origin "(政言共犯)" ;
-    a kno:Neologism ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
     skos:definition "정치인과 언론인이 공동으로 범죄를 행하는 것. 또는 그 사람."@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(政言共犯)" ;
+    rdfs:label "정언^공범"@ko ;
+    kno:example "¶최근 언론사의 행보를 두고 정치인과 언론인이 결탁한 ‘{정언공범’이라는} 비난 여론이 일고 있다."@ko ;
     kno:frequency kno:KN2023-0251-freq-NN-2022 ;
+    kno:year "2023"^^xsd:gYear ;
     kno:frequency kno:KN2023-0251-freq-NN-total ;
-    kno:example "¶최근 언론사의 행보를 두고 정치인과 언론인이 결탁한 ‘{정언공범’이라는} 비난 여론이 일고 있다."@ko .
-kno:KN2023-0251-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "공범(共犯)"@ko ;
-    kno:fullForm "공범"@ko ;
-    kno:formative kno:F002351 ;
+    kno:component kno:KN2023-0251-c2 ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한" ;
+    kno:indexForm "정언공범"@ko ;
+    kno:component kno:KN2023-0251-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "정언(政言), 공범(共犯)"@ko .
+kno:KN2023-0251-c2 a kno:Component ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-G2.1m ;
     kno:surfaceForm "공범"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2023-0251-c1 rdfs:label "정언(政言)"@ko ;
-    kno:surfaceForm "정언"@ko ;
+    kno:fullForm "공범"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F002351 ;
+    rdfs:label "공범(共犯)"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2023-0251-c1 kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-Q4.3 ;
     kno:formative kno:F005681 ;
-    kno:role "성분"@ko ;
-    kno:fullForm "정언"@ko ;
-    a kno:Component .
+    kno:surfaceForm "정언"@ko ;
+    rdfs:label "정언(政言)"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "정언"@ko .

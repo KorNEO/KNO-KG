@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0513 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0513 a ontolex:MultiwordExpression ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:languageType "한_한" ;
-    skos:definition "(LLM) 관세ㆍ통상 협상에서 자국에 불리한 조건을 사실상 일방적으로 감수하는 것을, 상대국에 바치는 조공에 빗대어 비판적으로 이르는 말."@ko ;
+kno:KN2025-0513 rdfs:label "조공 관세"@ko ;
     kno:componentString "조공(朝貢), 관세(關稅)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2025-0513-c2 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:origin "(朝貢關稅)" ;
+    kno:instantiates kno:S000360 ;
+    kno:languageType "한_한" ;
+    kno:frequency kno:KN2025-0513-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 일각에서는 이번 합의가 국내 산업 부담만 키우는 {조공관세}라며 재협상을 요구했다."@ko ;
+    kno:frequency kno:KN2025-0513-freq-NN-total ;
+    skos:definition "(LLM) 관세ㆍ통상 협상에서 자국에 불리한 조건을 사실상 일방적으로 감수하는 것을, 상대국에 바치는 조공에 빗대어 비판적으로 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B0%EA%B3%B5%20%EA%B4%80%EC%84%B8> ;
     kno:slotFiller "조공(朝貢) (1성분)"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
     kno:indexForm "조공관세"@ko ;
-    kno:frequency kno:KN2025-0513-freq-NN-2025 ;
-    kno:example "(LLM) 일각에서는 이번 합의가 국내 산업 부담만 키우는 {조공관세}라며 재협상을 요구했다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B0%EA%B3%B5%20%EA%B4%80%EC%84%B8> ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(朝貢關稅)" ;
-    rdfs:label "조공 관세"@ko ;
-    kno:frequency kno:KN2025-0513-freq-NN-total ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2025-0513-c2 ;
-    kno:instantiates kno:S000360 ;
     kno:component kno:KN2025-0513-c1 .
-kno:KN2025-0513-c2 kno:surfaceForm "관세"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+kno:KN2025-0513-c2 kno:truncated "false"^^xsd:boolean ;
     rdfs:label "관세(關稅)"@ko ;
-    kno:semanticTag kno:usas-I1.3 ;
-    a kno:Component ;
-    kno:formative kno:F000462 ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "관세"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2025-0513-c1 kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "조공"@ko ;
-    rdfs:label "조공(朝貢)"@ko ;
-    kno:formative kno:F001763 ;
-    kno:surfaceForm "조공"@ko ;
+    kno:formative kno:F000462 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A9p .
+    kno:fullForm "관세"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "관세"@ko ;
+    kno:semanticTag kno:usas-I1.3 .
+kno:KN2025-0513-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F001763 ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "조공"@ko ;
+    kno:fullForm "조공"@ko ;
+    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "조공(朝貢)"@ko .

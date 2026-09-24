@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0135 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0135 kno:unitType "단어"@ko ;
+kno:KN2022-0135 kno:origin "(맘따男)" ;
+    kno:instantiates kno:S000003 ;
+    a kno:Neologism ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%98%EB%94%B0%EB%82%A8> ;
-    kno:formation kno:W06 ;
-    kno:languageType "고+고+한" ;
+    kno:component kno:KN2022-0135-c3 ;
+    kno:slotFiller "맘+따(뜻하다) (2성분)"@ko ;
+    kno:component kno:KN2022-0135-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:indexForm "맘따남"@ko ;
     kno:frequency kno:KN2022-0135-freq-NN-2021 ;
-    kno:component kno:KN2022-0135-c2 ;
-    kno:component kno:KN2022-0135-c3 ;
-    a ontolex:Word ;
-    kno:origin "(맘따男)" ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:example "¶그는 항상 후배들을 사랑으로 끌어 주고 챙겨 줘 왔기 때문에 {맘따남으로} 평가받고 있다."@ko ;
-    kno:slotFiller "맘+따(뜻하다) (2성분)"@ko ;
-    rdfs:label "맘따남"@ko ;
-    kno:instantiates kno:S000003 ;
-    kno:componentString "맘, 따(뜻하다), -남(男)"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2022-0135-c1 ;
-    a kno:Neologism ;
-    skos:definition "‘마음이 따뜻한 남자’를 줄여 이르는 말. 주변 사람을 대하는 마음이 정답고 포근한 남자를 말한다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:formation kno:W06 ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2022-0135-freq-NN-total .
-kno:KN2022-0135-c2 kno:formative kno:F000490 ;
-    kno:surfaceForm "따"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:component kno:KN2022-0135-c1 ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:example "¶그는 항상 후배들을 사랑으로 끌어 주고 챙겨 줘 왔기 때문에 {맘따남으로} 평가받고 있다."@ko ;
+    skos:definition "‘마음이 따뜻한 남자’를 줄여 이르는 말. 주변 사람을 대하는 마음이 정답고 포근한 남자를 말한다."@ko ;
+    kno:frequency kno:KN2022-0135-freq-NN-total ;
+    rdfs:label "맘따남"@ko ;
+    kno:componentString "맘, 따(뜻하다), -남(男)"@ko ;
+    a ontolex:Word ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:languageType "고+고+한" ;
+    kno:unitType "단어"@ko .
+kno:KN2022-0135-c3 kno:fullForm "남"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:formative kno:F000008 ;
     a kno:Component ;
-    kno:fullForm "따뜻하다"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-남(男)"@ko ;
+    kno:surfaceForm "남"@ko .
+kno:KN2022-0135-c2 kno:semanticTag kno:usas-O4.6p ;
     kno:position "2"^^xsd:integer ;
     rdfs:label "따(뜻하다)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-O4.6p .
-kno:KN2022-0135-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "남"@ko ;
-    kno:surfaceForm "남"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S2.2 ;
-    rdfs:label "-남(男)"@ko ;
+    kno:fullForm "따뜻하다"@ko ;
+    kno:formative kno:F000490 ;
     a kno:Component ;
-    kno:formative kno:F000008 .
-kno:KN2022-0135-c1 kno:semanticTag kno:usas-S4 ;
-    kno:fullForm "맘"@ko ;
-    kno:formative kno:F003378 ;
-    kno:surfaceForm "맘"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "따"@ko .
+kno:KN2022-0135-c1 kno:semanticTag kno:usas-S4 ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "맘"@ko ;
-    a kno:Component .
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "맘"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "맘"@ko ;
+    kno:formative kno:F003378 .

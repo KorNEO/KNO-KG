@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0300 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0300 kno:componentString "풀(pool), 여비(旅費)"@ko ;
+kno:KN2019-0300 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%92%80%EC%97%AC%EB%B9%84> ;
+    a kno:Neologism ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
+    rdfs:label "풀-여비"@ko ;
     skos:definition "여러 기관 또는 조직이 공동으로 관리하는 여비. 각 부서별로 책정된 예산 외의 지출이 있거나 예산이 부족할 때 쓰기 위해 모든 부서에서 공동으로 사용할 수 있도록 따로 갖추어 둔 여비 항목을 가리킨다."@ko ;
-    kno:component kno:KN2019-0300-c2 ;
     kno:registration "신어DB"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    a ontolex:Word ;
+    kno:component kno:KN2019-0300-c2 ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0300-freq-NN-total ;
+    kno:example "¶{풀여비는} 공무원의 출장비 등 상황에 따라서 부서에서 요청하면 그때그때 지출하는 예산으로 OO군은 지난해까지 연간 5천만 원의 {풀여비를} 편성, 운영해 왔으며 올해는 4천만 원을 편성했다."@ko ;
     kno:formation kno:W01 ;
-    kno:component kno:KN2019-0300-c1 ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "영+한" ;
+    kno:instantiates kno:S001744 ;
+    kno:componentString "풀(pool), 여비(旅費)"@ko ;
+    kno:indexForm "풀여비"@ko ;
+    kno:year "2019"^^xsd:gYear ;
     kno:predicate "관리하다"@ko ;
     kno:origin "(<영>pool旅費)" ;
-    kno:frequency kno:KN2019-0300-freq-NN-total ;
-    kno:pos "「명」"@ko ;
-    kno:instantiates kno:S001744 ;
-    kno:indexForm "풀여비"@ko ;
-    rdfs:label "풀-여비"@ko ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:slotFiller "여비(旅費) (1성분)"@ko ;
+    kno:component kno:KN2019-0300-c1 ;
+    a ontolex:Word ;
     kno:frequency kno:KN2019-0300-freq-NN-2019 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%92%80%EC%97%AC%EB%B9%84> ;
-    kno:example "¶{풀여비는} 공무원의 출장비 등 상황에 따라서 부서에서 요청하면 그때그때 지출하는 예산으로 OO군은 지난해까지 연간 5천만 원의 {풀여비를} 편성, 운영해 왔으며 올해는 4천만 원을 편성했다."@ko ;
-    a kno:Neologism ;
-    kno:languageType "영+한" .
-kno:KN2019-0300-c2 rdfs:label "여비(旅費)"@ko ;
+    kno:slotFiller "여비(旅費) (1성분)"@ko ;
+    kno:pos "「명」"@ko .
+kno:KN2019-0300-c2 a kno:Component ;
     kno:fullForm "여비"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1.3 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "여비"@ko ;
-    kno:formative kno:F005026 .
-kno:KN2019-0300-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "풀"@ko ;
-    kno:surfaceForm "풀"@ko ;
-    kno:semanticTag kno:usas-K5.1 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F005026 ;
+    kno:surfaceForm "여비"@ko ;
+    rdfs:label "여비(旅費)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2019-0300-c1 a kno:Component ;
+    kno:surfaceForm "풀"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:fullForm "풀"@ko ;
     kno:formative kno:F001972 ;
-    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "풀(pool)"@ko ;
-    a kno:Component .
+    kno:role "고정항"@ko .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0299 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0299 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%80%B8%EB%A3%A8%EB%B8%94> ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
+kno:KN2023-0299 kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:year "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%80%B8%EB%A3%A8%EB%B8%94> ;
     kno:componentString "퀸(queen), 루블(ruble)"@ko ;
-    kno:component kno:KN2023-0299-c2 ;
     kno:origin "(<영>▼queen<러>ruble)" ;
-    skos:definition "러ㆍ우 전쟁에도 불구하고 러시아의 화폐 단위인 루블화의 가치가 소폭 상승하는 현상을 이르는 말. 달러화 가치의 강세를 의미하는 ‘킹 달러’에 빗대어 이르는 말이다."@ko ;
-    a kno:Neologism ;
     kno:frequency kno:KN2023-0299-freq-NN-total ;
+    kno:unitType "구"@ko ;
+    skos:definition "러ㆍ우 전쟁에도 불구하고 러시아의 화폐 단위인 루블화의 가치가 소폭 상승하는 현상을 이르는 말. 달러화 가치의 강세를 의미하는 ‘킹 달러’에 빗대어 이르는 말이다."@ko ;
+    kno:languageType "영^러" ;
+    kno:frequency kno:KN2023-0299-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0299-c1 ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0299-c2 ;
     kno:example "¶러시아의 화폐는 현재 ‘{퀸 루블’로} 불릴 정도로 올해 초에 비해 달러와 비교해서 20% 이상의 가치 상승세를 보이고 있다."@ko ;
     kno:indexForm "퀸루블"@ko ;
-    kno:component kno:KN2023-0299-c1 ;
     a ontolex:MultiwordExpression ;
-    kno:languageType "영^러" ;
     rdfs:label "퀸^루블"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0299-freq-NN-2022 .
-kno:KN2023-0299-c2 kno:semanticTag kno:usas-I1 ;
-    a kno:Component ;
-    kno:fullForm "루블"@ko ;
-    rdfs:label "루블(ruble)"@ko ;
-    kno:surfaceForm "루블"@ko ;
-    kno:formative kno:F003264 ;
-    kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0299-c1 kno:semanticTag kno:usas-S7.1p ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko .
+kno:KN2023-0299-c1 kno:semanticTag kno:usas-S2.1 ;
     kno:formative kno:F000965 ;
-    kno:semanticTag kno:usas-S2.1 ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "퀸"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "퀸"@ko ;
+    kno:position "1"^^xsd:integer ;
     rdfs:label "퀸(queen)"@ko ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0299-c2 kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "루블"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "루블(ruble)"@ko ;
+    kno:formative kno:F003264 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:surfaceForm "루블"@ko ;
+    kno:role "성분"@ko .

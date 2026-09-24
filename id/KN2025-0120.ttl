@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0120 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0120 kno:instantiates kno:S000990 ;
-    kno:frequency kno:KN2025-0120-freq-NN-2025 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EC%98%B9%ED%98%B8%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
-    kno:component kno:KN2025-0120-c1 ;
-    kno:frequency kno:KN2025-0120-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0120-c3 ;
+kno:KN2025-0120 kno:activeYears "1"^^xsd:integer ;
     kno:indexForm "내란옹호위원회"@ko ;
-    skos:definition "(LLM) 어떤 기관ㆍ위원회가 내란에 해당하는 행위나 주장을 비호ㆍ두둔한다고 보아, 이를 조롱하거나 비판적으로 빗대어 이르는 말."@ko ;
-    kno:slotFiller "옹호(擁護) (1성분)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:componentString "내란(內亂), 옹호(擁護), 위원회(委員會)"@ko ;
-    kno:component kno:KN2025-0120-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:example "(LLM) 야당은 해당 기구가 내란 관련 발언을 감싸고 있다며, 사실상 {내란옹호위원회로} 전락했다고 비판했다."@ko ;
-    rdfs:label "내란 옹호 위원회"@ko ;
-    kno:languageType "한_한_한" ;
+    kno:componentString "내란(內亂), 옹호(擁護), 위원회(委員會)"@ko ;
     kno:instantiates kno:S001280 ;
-    a kno:Neologism ;
-    kno:origin "(內亂擁護委員會)" ;
+    kno:frequency kno:KN2025-0120-freq-NN-2025 ;
+    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
+    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 어떤 기관ㆍ위원회가 내란에 해당하는 행위나 주장을 비호ㆍ두둔한다고 보아, 이를 조롱하거나 비판적으로 빗대어 이르는 말."@ko ;
+    kno:frequency kno:KN2025-0120-freq-NN-total ;
+    kno:component kno:KN2025-0120-c1 ;
     kno:slotFiller "내란(內亂) (1성분)"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2025-0120-c1 kno:semanticTag kno:usas-G3m ;
-    kno:role "고정항"@ko ;
+    kno:component kno:KN2025-0120-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EC%98%B9%ED%98%B8%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
+    rdfs:label "내란 옹호 위원회"@ko ;
+    kno:unitType "구"@ko ;
+    kno:instantiates kno:S000990 ;
+    kno:slotFiller "옹호(擁護) (1성분)"@ko ;
+    kno:languageType "한_한_한" ;
+    kno:component kno:KN2025-0120-c3 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(內亂擁護委員會)" .
+kno:KN2025-0120-c1 rdfs:label "내란(內亂)"@ko ;
     kno:fullForm "내란"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G3m ;
     kno:position "1"^^xsd:integer ;
     kno:surfaceForm "내란"@ko ;
-    a kno:Component ;
     kno:formative kno:F000052 ;
-    rdfs:label "내란(內亂)"@ko .
-kno:KN2025-0120-c3 kno:formative kno:F000148 ;
-    kno:semanticTag kno:usas-S5 ;
-    rdfs:label "위원회(委員會)"@ko ;
-    kno:fullForm "위원회"@ko ;
-    kno:surfaceForm "위원회"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2025-0120-c2 kno:formative kno:F001638 ;
-    kno:surfaceForm "옹호"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0120-c2 kno:surfaceForm "옹호"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "옹호"@ko ;
     a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-S8p ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "옹호(擁護)"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "옹호(擁護)"@ko .
+    kno:formative kno:F001638 .
+kno:KN2025-0120-c3 kno:formative kno:F000148 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "위원회(委員會)"@ko ;
+    kno:surfaceForm "위원회"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "위원회"@ko .

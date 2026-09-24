@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0351 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0351 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%9A%B0%EC%9A%B8%EA%B0%90> ;
-    kno:example "¶반강제적인 칩거 생활이 지속되면서 {코로나 우울감을} 호소하는 사람들이 많아지고 있다."@ko ;
-    kno:languageType "영_한" ;
-    kno:frequency kno:KN2020-0351-freq-NN-total ;
-    kno:unitType "구"@ko ;
+kno:KN2020-0351 kno:instantiates kno:S000005 ;
+    kno:component kno:KN2020-0351-c2 ;
+    kno:slotFiller "우울감(憂鬱感) (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
     kno:year "2020"^^xsd:gYear ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0351-freq-NN-2021 ;
     rdfs:label "코로나 우울감"@ko ;
+    kno:frequency kno:KN2020-0351-freq-NN-2021 ;
+    kno:component kno:KN2020-0351-c1 ;
+    kno:example "¶반강제적인 칩거 생활이 지속되면서 {코로나 우울감을} 호소하는 사람들이 많아지고 있다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(<영>←corona virus憂鬱感)" ;
     kno:indexForm "코로나우울감"@ko ;
-    skos:definition "코로나19로 인해 외부 활동이 제한되면서 느끼는 답답하거나 언짢은 느낌을 이르는 말."@ko ;
+    kno:frequency kno:KN2020-0351-freq-NN-total ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2020-0351-freq-NN-2020 ;
     kno:frequency kno:KN2020-0351-freq-NN-2023 ;
-    a kno:Neologism ;
-    kno:slotFiller "우울감(憂鬱感) (1성분)"@ko ;
-    kno:component kno:KN2020-0351-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2020-0351-freq-NN-2022 ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S000005 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2020-0351-c1 ;
+    kno:languageType "영_한" ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:componentString "코로나(바이러스)(corona virus), 우울감(憂鬱感)"@ko ;
-    kno:origin "(<영>←corona virus憂鬱感)" .
-kno:KN2020-0351-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%EC%9A%B0%EC%9A%B8%EA%B0%90> ;
+    kno:frequency kno:KN2020-0351-freq-NN-2022 ;
+    kno:unitType "구"@ko ;
+    skos:definition "코로나19로 인해 외부 활동이 제한되면서 느끼는 답답하거나 언짢은 느낌을 이르는 말."@ko ;
+    kno:componentString "코로나(바이러스)(corona virus), 우울감(憂鬱感)"@ko .
+kno:KN2020-0351-c2 kno:formative kno:F005221 ;
     a kno:Component ;
     kno:fullForm "우울감"@ko ;
-    kno:surfaceForm "우울감"@ko ;
-    kno:formative kno:F005221 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-E4.1m ;
     rdfs:label "우울감(憂鬱感)"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-E4.1m .
-kno:KN2020-0351-c1 kno:surfaceForm "코로나"@ko ;
+    kno:surfaceForm "우울감"@ko .
+kno:KN2020-0351-c1 kno:fullForm "코로나바이러스"@ko ;
+    kno:role "고정항"@ko ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
+    kno:formative kno:F000003 ;
+    a kno:Component ;
     kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-B2m ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "코로나바이러스"@ko ;
-    a kno:Component ;
-    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:formative kno:F000003 ;
-    kno:role "고정항"@ko .
+    kno:surfaceForm "코로나"@ko .

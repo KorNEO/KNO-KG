@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0276 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0276 a kno:Neologism ;
-    kno:frequency kno:KN2023-0276-freq-NN-2023 ;
+kno:KN2023-0276 kno:languageType "한^한^한" ;
     kno:example "¶정부는 구직 의사가 없는 청년 위험군을 대상으로 청 년 도전 지원 사업과 {청년 도전 준비금을} 연계해 지원한다고 발표했다."@ko ;
-    kno:instantiates kno:S000107 ;
-    skos:definition "청년들의 취업 독려를 위하여 지원하는 준비금. 구직 프로그램을 이수한 청년 5천 명을 대상으로 최대 300만 원을 지원한다."@ko ;
-    kno:origin "(靑年挑戰準備金)" ;
-    kno:component kno:KN2023-0276-c2 ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2023-0276-freq-NN-2022 ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:instantiates kno:S001039 ;
+    kno:origin "(靑年挑戰準備金)" ;
+    kno:year "2023"^^xsd:gYear ;
     kno:frequency kno:KN2023-0276-freq-NN-total ;
-    kno:indexForm "청년도전준비금"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2023-0276-c3 ;
+    kno:instantiates kno:S000107 ;
+    kno:frequency kno:KN2023-0276-freq-NN-2023 ;
+    skos:definition "청년들의 취업 독려를 위하여 지원하는 준비금. 구직 프로그램을 이수한 청년 5천 명을 대상으로 최대 300만 원을 지원한다."@ko ;
+    rdfs:label "청년^도전^준비금"@ko ;
     kno:slotFiller "청년(靑年)+도전(挑戰) (2성분)"@ko ;
     kno:predicate "지원하다"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:pos "「구」"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2023-0276-c3 ;
-    kno:unitType "구"@ko ;
-    rdfs:label "청년^도전^준비금"@ko ;
-    kno:frequency kno:KN2023-0276-freq-NN-2022 ;
-    kno:componentString "청년(靑年), 도전(挑戰), 준비금(準備金)"@ko ;
-    kno:slotFiller "도전(挑戰)+준비금(準備金) (2성분)"@ko ;
     kno:component kno:KN2023-0276-c1 ;
-    kno:instantiates kno:S001039 ;
+    kno:indexForm "청년도전준비금"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "도전(挑戰)+준비금(準備金) (2성분)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0276-c2 ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%EB%8F%84%EC%A0%84%EC%A4%80%EB%B9%84%EA%B8%88> ;
-    kno:lastAttestationYear "2023"^^xsd:gYear .
-kno:KN2023-0276-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-X8p ;
-    kno:fullForm "도전"@ko ;
-    kno:surfaceForm "도전"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002986 ;
-    rdfs:label "도전(挑戰)"@ko .
-kno:KN2023-0276-c3 kno:surfaceForm "준비금"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    rdfs:label "준비금(準備金)"@ko ;
-    kno:position "3"^^xsd:integer ;
+    kno:componentString "청년(靑年), 도전(挑戰), 준비금(準備金)"@ko .
+kno:KN2023-0276-c3 kno:fullForm "준비금"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:fullForm "준비금"@ko ;
-    kno:formative kno:F001779 .
-kno:KN2023-0276-c1 a kno:Component ;
-    kno:formative kno:F000042 ;
-    rdfs:label "청년(靑年)"@ko ;
+    kno:formative kno:F001779 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "청년"@ko ;
+    rdfs:label "준비금(準備金)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:surfaceForm "준비금"@ko .
+kno:KN2023-0276-c1 kno:fullForm "청년"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000042 ;
+    kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "청년(靑年)"@ko ;
     kno:semanticTag kno:usas-T3m ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "청년"@ko ;
-    kno:semanticTag kno:usas-S2 .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0276-c2 kno:position "2"^^xsd:integer ;
+    kno:formative kno:F002986 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-X8p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "도전"@ko ;
+    rdfs:label "도전(挑戰)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "도전"@ko .

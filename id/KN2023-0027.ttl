@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0027 a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
+kno:KN2023-0027 kno:component kno:KN2023-0027-c1 ;
     kno:predicate "회수하다"@ko ;
-    skos:definition "회수하는 사람 없이도, 매장이 아닌 곳에서 일회용 컵의 보증금을 돌려받을 수 있도록 설치한 기계."@ko ;
-    kno:frequency kno:KN2023-0027-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%20%EB%B0%98%EB%82%A9%EA%B8%B0> ;
-    kno:indexForm "공공반납기"@ko ;
-    kno:component kno:KN2023-0027-c2 ;
-    rdfs:label "공공 반납기"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0027-freq-NN-2023 ;
-    kno:example "¶제주 시청과 제주 공항에 설치된 {공공 반납기는} 일회용 컵 반납처로서 중요한 역할을 하고 있다."@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:instantiates kno:S000084 ;
-    kno:origin "(公共返納器)" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:slotFiller "반납기(返納器) (1성분)"@ko ;
-    kno:component kno:KN2023-0027-c1 ;
-    kno:frequency kno:KN2023-0027-freq-NN-2022 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
     a kno:Neologism ;
+    kno:example "¶제주 시청과 제주 공항에 설치된 {공공 반납기는} 일회용 컵 반납처로서 중요한 역할을 하고 있다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "공공반납기"@ko ;
+    kno:slotFiller "반납기(返納器) (1성분)"@ko ;
+    kno:instantiates kno:S000084 ;
     kno:componentString "공공(公共), 반납기(返納器)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:origin "(公共返納器)" ;
+    kno:component kno:KN2023-0027-c2 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EA%B3%B5%20%EB%B0%98%EB%82%A9%EA%B8%B0> ;
     kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko .
-kno:KN2023-0027-c2 kno:fullForm "반납기"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "반납기(返納器)"@ko ;
-    kno:formative kno:F003681 ;
-    kno:surfaceForm "반납기"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0027-c1 kno:formative kno:F000084 ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:fullForm "공공"@ko ;
-    kno:surfaceForm "공공"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:frequency kno:KN2023-0027-freq-NN-total ;
+    rdfs:label "공공 반납기"@ko ;
+    skos:definition "회수하는 사람 없이도, 매장이 아닌 곳에서 일회용 컵의 보증금을 돌려받을 수 있도록 설치한 기계."@ko ;
+    kno:frequency kno:KN2023-0027-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0027-freq-NN-2023 ;
+    kno:activeYears "2"^^xsd:integer .
+kno:KN2023-0027-c1 kno:semanticTag kno:usas-G1.1 ;
     kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "공공"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "공공"@ko ;
+    kno:formative kno:F000084 ;
+    kno:role "고정항"@ko ;
     rdfs:label "공공(公共)"@ko ;
-    kno:semanticTag kno:usas-G1.1 .
+    a kno:Component .
+kno:KN2023-0027-c2 a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "반납기"@ko ;
+    kno:fullForm "반납기"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "반납기(返納器)"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F003681 .

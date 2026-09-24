@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0128 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0128 kno:example "¶최근 유통업계에서는 힐링 마케팅으로 통하는 {쉼표 마케팅이} 활발해지고 있다."@ko ;
-    kno:instantiates kno:S000050 ;
-    kno:component kno:KN2015-0128-c1 ;
-    a kno:Neologism ;
+kno:KN2015-0128 a ontolex:MultiwordExpression ;
     kno:registration "신어DB"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2015-0128-c1 ;
+    kno:componentString "쉼표(쉼標), 마케팅(marketing)"@ko ;
     kno:languageType "(고+한)^영" ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    skos:definition "상품 및 서비스가 소비자에게 어떤 휴식을 제공하는가에 초점을 맞추는 방식의 마케팅."@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
     kno:slotFiller "쉼표(쉼標) (1성분)"@ko ;
+    kno:instantiates kno:S000050 ;
     kno:indexForm "쉼표마케팅"@ko ;
+    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    kno:example "¶최근 유통업계에서는 힐링 마케팅으로 통하는 {쉼표 마케팅이} 활발해지고 있다."@ko ;
+    rdfs:label "쉼표^마케팅"@ko ;
     kno:origin "(쉼標<영>marketing)" ;
     kno:component kno:KN2015-0128-c2 ;
-    skos:definition "상품 및 서비스가 소비자에게 어떤 휴식을 제공하는가에 초점을 맞추는 방식의 마케팅."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%89%BC%ED%91%9C%EB%A7%88%EC%BC%80%ED%8C%85> ;
-    kno:unitType "구"@ko ;
-    rdfs:label "쉼표^마케팅"@ko ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "쉼표(쉼標), 마케팅(marketing)"@ko .
-kno:KN2015-0128-c1 kno:formative kno:F004514 ;
-    a kno:Component ;
-    rdfs:label "쉼표(쉼標)"@ko ;
-    kno:fullForm "쉼표"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%89%BC%ED%91%9C%EB%A7%88%EC%BC%80%ED%8C%85> .
+kno:KN2015-0128-c1 a kno:Component ;
     kno:surfaceForm "쉼표"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004514 ;
     kno:semanticTag kno:usas-Q3 ;
+    kno:fullForm "쉼표"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    rdfs:label "쉼표(쉼標)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
 kno:KN2015-0128-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I2.2 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000111 ;
     kno:fullForm "마케팅"@ko ;
-    kno:surfaceForm "마케팅"@ko ;
-    rdfs:label "마케팅(marketing)"@ko .
+    kno:formative kno:F000111 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "마케팅(marketing)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "마케팅"@ko .

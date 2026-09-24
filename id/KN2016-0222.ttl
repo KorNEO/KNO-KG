@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0222 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0222 rdfs:label "뷰완얼"@ko ;
-    kno:instantiates kno:S000173 ;
+kno:KN2016-0222 kno:frequency kno:KN2016-0222-freq-NN-2015 ;
+    kno:component kno:KN2016-0222-c1 ;
     kno:formation kno:W06 ;
-    kno:componentString "뷰(티)(beauty), 완(성)(完), 얼(굴)"@ko ;
     kno:indexForm "뷰완얼"@ko ;
-    kno:languageType "영+한+고" ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2016-0222-freq-NN-2015 ;
-    kno:registration "신어DB"@ko ;
+    skos:definition "‘뷰티의 완성은 얼굴’을 줄여 이르는 말. 얼굴의 생김새가 화장의 좋고 나쁨을 결정하는 데 가장 중요함을 말한다."@ko ;
+    kno:frequency kno:KN2016-0222-freq-NN-total ;
+    kno:slotFiller "완(성)(完)+얼(굴) (2성분)"@ko ;
     kno:origin "(<영>←beauty完얼)" ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:example "¶OOO, OOO는 OO의 뷰티 팁을 배우기 전에 “얼굴이 다들 예쁘시다. {뷰완얼이다.”라고} 말했다."@ko ;
-    kno:unitType "단어"@ko ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "뷰완얼"@ko ;
+    kno:pos "「명」"@ko ;
     kno:instantiates kno:S001414 ;
     kno:component kno:KN2016-0222-c3 ;
-    skos:definition "‘뷰티의 완성은 얼굴’을 줄여 이르는 말. 얼굴의 생김새가 화장의 좋고 나쁨을 결정하는 데 가장 중요함을 말한다."@ko ;
-    kno:component kno:KN2016-0222-c1 ;
-    a ontolex:Word ;
-    kno:slotFiller "완(성)(完)+얼(굴) (2성분)"@ko ;
-    kno:frequency kno:KN2016-0222-freq-NN-total ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B7%B0%EC%99%84%EC%96%BC> ;
+    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
+    kno:componentString "뷰(티)(beauty), 완(성)(完), 얼(굴)"@ko ;
+    kno:year "2016"^^xsd:gYear ;
     kno:slotFiller "뷰(티)(beauty) (1성분)"@ko ;
-    kno:component kno:KN2016-0222-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B7%B0%EC%99%84%EC%96%BC> .
-kno:KN2016-0222-c3 kno:surfaceForm "얼"@ko ;
-    rdfs:label "얼(굴)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000117 ;
-    kno:fullForm "얼굴"@ko ;
-    a kno:Component .
-kno:KN2016-0222-c1 kno:semanticTag kno:usas-O4.2p ;
-    kno:formative kno:F001398 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "뷰티"@ko ;
+    kno:languageType "영+한+고" ;
+    kno:example "¶OOO, OOO는 OO의 뷰티 팁을 배우기 전에 “얼굴이 다들 예쁘시다. {뷰완얼이다.”라고} 말했다."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000173 ;
+    kno:component kno:KN2016-0222-c2 .
+kno:KN2016-0222-c1 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.2p ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "뷰(티)(beauty)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "뷰(티)(beauty)"@ko ;
+    kno:surfaceForm "뷰"@ko ;
+    kno:fullForm "뷰티"@ko ;
     a kno:Component ;
-    kno:surfaceForm "뷰"@ko .
-kno:KN2016-0222-c2 kno:surfaceForm "완"@ko ;
+    kno:formative kno:F001398 .
+kno:KN2016-0222-c3 kno:semanticTag kno:usas-B1 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "얼(굴)"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "얼"@ko ;
+    kno:fullForm "얼굴"@ko ;
+    kno:formative kno:F000117 .
+kno:KN2016-0222-c2 a kno:Component ;
     kno:semanticTag kno:usas-T2 ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
     rdfs:label "완(성)(完)"@ko ;
+    kno:surfaceForm "완"@ko ;
     kno:formative kno:F000225 ;
+    kno:fullForm "완성"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "완성"@ko .
+    kno:role "고정항"@ko .

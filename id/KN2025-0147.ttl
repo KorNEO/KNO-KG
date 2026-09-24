@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0147 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0147 skos:definition "(LLM) 조명을 끄거나 낮춘 어두운 환경에서 하는 샤워."@ko ;
+kno:KN2025-0147 kno:instantiates kno:S000209 ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:indexForm "다크샤워"@ko ;
+    kno:component kno:KN2025-0147-c1 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A4%ED%81%AC%20%EC%83%A4%EC%9B%8C> ;
+    kno:example "(LLM) 수면의 질을 높이려고 잠들기 전 욕실 조명을 최소로 낮춘 채 {다크샤워를} 하는 사람이 늘고 있다."@ko ;
     kno:languageType "영_영" ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0147-freq-NN-total ;
+    kno:componentString "다크(dark), 샤워(shower)"@ko ;
+    rdfs:label "다크 샤워"@ko ;
+    kno:pos "「구」"@ko ;
     a kno:Neologism ;
     kno:unitType "구"@ko ;
-    kno:instantiates kno:S000209 ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A4%ED%81%AC%20%EC%83%A4%EC%9B%8C> ;
-    kno:indexForm "다크샤워"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2025-0147-c1 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0147-freq-NN-2025 ;
-    kno:componentString "다크(dark), 샤워(shower)"@ko ;
-    kno:predicate "하다"@ko ;
-    rdfs:label "다크 샤워"@ko ;
+    skos:definition "(LLM) 조명을 끄거나 낮춘 어두운 환경에서 하는 샤워."@ko ;
     kno:origin "(<영>dark shower)" ;
+    kno:frequency kno:KN2025-0147-freq-NN-2025 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:slotFiller "샤워(shower) (1성분)"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0147-freq-NN-total ;
     kno:component kno:KN2025-0147-c2 ;
-    kno:example "(LLM) 수면의 질을 높이려고 잠들기 전 욕실 조명을 최소로 낮춘 채 {다크샤워를} 하는 사람이 늘고 있다."@ko ;
-    kno:slotFiller "샤워(shower) (1성분)"@ko .
-kno:KN2025-0147-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-W2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "다크"@ko ;
-    kno:surfaceForm "다크"@ko ;
+    kno:activeYears "1"^^xsd:integer .
+kno:KN2025-0147-c1 kno:formative kno:F000344 ;
     rdfs:label "다크(dark)"@ko ;
-    kno:formative kno:F000344 .
-kno:KN2025-0147-c2 rdfs:label "샤워(shower)"@ko ;
-    kno:formative kno:F004269 ;
-    kno:semanticTag kno:usas-B4 ;
-    kno:fullForm "샤워"@ko ;
-    kno:surfaceForm "샤워"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-W2 ;
     a kno:Component ;
+    kno:surfaceForm "다크"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "다크"@ko .
+kno:KN2025-0147-c2 kno:semanticTag kno:usas-B4 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "샤워(shower)"@ko ;
+    kno:surfaceForm "샤워"@ko ;
+    kno:fullForm "샤워"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F004269 ;
+    a kno:Component ;
     kno:role "슬롯 채움"@ko .

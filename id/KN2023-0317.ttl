@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0317 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0317 kno:instantiates kno:S001722 ;
-    skos:definition "‘퇴근 후에 보내는 카카오톡’을 줄여 이르는 말."@ko ;
-    kno:formation kno:W06 ;
-    kno:origin "(退←Kakaotalk)" ;
-    kno:indexForm "퇴톡"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%86%A1> ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2023-0317-freq-NN-2023 ;
-    kno:component kno:KN2023-0317-c1 ;
+kno:KN2023-0317 kno:frequency kno:KN2023-0317-freq-NN-2023 ;
     kno:registration "신어DB"@ko ;
-    kno:componentString "퇴(근)(退勤), (카카오)톡(Kakaotalk)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2023-0317-c1 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "퇴톡"@ko ;
+    kno:frequency kno:KN2023-0317-freq-NN-total ;
+    skos:definition "‘퇴근 후에 보내는 카카오톡’을 줄여 이르는 말."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:year "2023"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0317-c2 ;
     kno:slotFiller "(카카오)톡(Kakaotalk) (1성분)"@ko ;
     rdfs:label "퇴톡"@ko ;
-    kno:frequency kno:KN2023-0317-freq-NN-total ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:year "2023"^^xsd:gYear ;
     kno:example "¶저녁 9시가 넘어서 보내는 상사의 {퇴톡} 때문에 너무 스트레스를 받는데 어떻게 해야 합니까?"@ko ;
     kno:instantiates kno:S000117 ;
-    kno:component kno:KN2023-0317-c2 ;
+    kno:pos "「명」"@ko ;
+    kno:origin "(退←Kakaotalk)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%86%A1> ;
+    kno:formation kno:W06 ;
+    kno:languageType "한+영" ;
+    kno:instantiates kno:S001722 ;
+    kno:componentString "퇴(근)(退勤), (카카오)톡(Kakaotalk)"@ko ;
     kno:slotFiller "퇴(근)(退勤) (1성분)"@ko ;
-    kno:languageType "한+영" .
+    a ontolex:Word .
 kno:KN2023-0317-c1 kno:surfaceForm "퇴"@ko ;
     a kno:Component ;
-    rdfs:label "퇴(근)(退勤)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000621 ;
-    kno:semanticTag kno:usas-I3.1 ;
     kno:position "1"^^xsd:integer ;
+    rdfs:label "퇴(근)(退勤)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "퇴근"@ko .
-kno:KN2023-0317-c2 kno:fullForm "카카오톡"@ko ;
-    rdfs:label "(카카오)톡(Kakaotalk)"@ko ;
+    kno:formative kno:F000621 ;
+    kno:fullForm "퇴근"@ko ;
+    kno:role "고정항"@ko .
+kno:KN2023-0317-c2 kno:formative kno:F000106 ;
+    kno:surfaceForm "톡"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:formative kno:F000106 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "톡"@ko ;
+    rdfs:label "(카카오)톡(Kakaotalk)"@ko ;
     kno:semanticTag kno:usas-Z3 ;
-    a kno:Component .
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "카카오톡"@ko .

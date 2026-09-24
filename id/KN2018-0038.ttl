@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0038 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0038 kno:frequency kno:KN2018-0038-freq-NN-2017 ;
-    kno:origin "(過勞老人)" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415817> ;
-    kno:activeYears "5"^^xsd:integer ;
-    rdfs:label "과로 노인"@ko ;
-    kno:frequency kno:KN2018-0038-freq-NN-total ;
-    kno:slotFiller "과로(過勞) (1성분)"@ko ;
-    kno:frequency kno:KN2018-0038-freq-NN-2022 ;
+kno:KN2018-0038 a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
     kno:year "2018"^^xsd:gYear ;
-    kno:registration "우리말샘"@ko ;
     a kno:Neologism ;
+    kno:frequency kno:KN2018-0038-freq-NN-2020 ;
+    kno:componentString "과로(過勞), 노인(老人)"@ko ;
+    kno:instantiates kno:S000820 ;
+    kno:frequency kno:KN2018-0038-freq-NN-total ;
+    kno:component kno:KN2018-0038-c1 ;
+    kno:frequency kno:KN2018-0038-freq-NN-2017 ;
+    kno:example "¶노인이 돼서도 생계 문제에 부딪혀 혹사당하는 ‘{과로 노인’이} 늘어나고 있다."@ko ;
+    kno:component kno:KN2018-0038-c2 ;
+    kno:urimalTargetCode "1415817" ;
+    kno:frequency kno:KN2018-0038-freq-NN-2022 ;
     kno:unitType "구"@ko ;
     kno:frequency kno:KN2018-0038-freq-NN-2024 ;
-    kno:indexForm "과로노인"@ko ;
-    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
     skos:definition "자식과 손주를 부양하거나 부모의 간병을 위해 노후에도 일해야 하는 노인을 이르는 말."@ko ;
-    kno:component kno:KN2018-0038-c1 ;
-    a ontolex:MultiwordExpression ;
+    rdfs:label "과로 노인"@ko ;
     kno:frequency kno:KN2018-0038-freq-NN-2018 ;
-    kno:urimalTargetCode "1415817" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415817> ;
     kno:languageType "한_한" ;
-    kno:example "¶노인이 돼서도 생계 문제에 부딪혀 혹사당하는 ‘{과로 노인’이} 늘어나고 있다."@ko ;
-    kno:frequency kno:KN2018-0038-freq-NN-2020 ;
+    kno:origin "(過勞老人)" ;
+    kno:activeYears "5"^^xsd:integer ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:component kno:KN2018-0038-c2 ;
-    kno:instantiates kno:S000820 ;
-    kno:componentString "과로(過勞), 노인(老人)"@ko .
-kno:KN2018-0038-c1 kno:fullForm "과로"@ko ;
-    a kno:Component ;
-    rdfs:label "과로(過勞)"@ko ;
+    kno:indexForm "과로노인"@ko ;
+    kno:slotFiller "과로(過勞) (1성분)"@ko .
+kno:KN2018-0038-c1 rdfs:label "과로(過勞)"@ko ;
+    kno:formative kno:F002371 ;
+    kno:fullForm "과로"@ko ;
     kno:semanticTag kno:usas-I3.1 ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "과로"@ko ;
-    kno:formative kno:F002371 ;
+    kno:semanticTag kno:usas-B2m ;
+    a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m .
-kno:KN2018-0038-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "과로"@ko .
+kno:KN2018-0038-c2 kno:position "2"^^xsd:integer ;
     rdfs:label "노인(老人)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:formative kno:F001153 ;
     kno:semanticTag kno:usas-T3p ;
     a kno:Component ;
-    kno:role "고정항"@ko ;
     kno:fullForm "노인"@ko ;
-    kno:surfaceForm "노인"@ko .
+    kno:semanticTag kno:usas-S2 ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F001153 ;
+    kno:surfaceForm "노인"@ko ;
+    kno:truncated "false"^^xsd:boolean .

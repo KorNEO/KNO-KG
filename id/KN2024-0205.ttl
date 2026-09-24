@@ -9,63 +9,63 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0205 a ontolex:MultiwordExpression ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "주식회사의 주주 총회가 필요한 경우 모든 주주들이 온라인으로 참석하는 주주 총회."@ko ;
-    kno:languageType "한^한^한^한" ;
-    kno:component kno:KN2024-0205-c1 ;
-    kno:component kno:KN2024-0205-c3 ;
-    kno:frequency kno:KN2024-0205-freq-NN-2025 ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "완전^전자^주주^총회"@ko ;
-    kno:frequency kno:KN2024-0205-freq-NN-2024 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%84%EC%A0%84%EC%A0%84%EC%9E%90%EC%A3%BC%EC%A3%BC%EC%B4%9D%ED%9A%8C> ;
-    kno:frequency kno:KN2024-0205-freq-NN-total ;
-    kno:component kno:KN2024-0205-c4 ;
-    kno:frequency kno:KN2024-0205-freq-NN-2023 ;
-    kno:origin "(完全電子株主總會)" ;
+kno:KN2024-0205 kno:year "2024"^^xsd:gYear ;
     kno:component kno:KN2024-0205-c2 ;
-    a kno:Neologism ;
+    kno:frequency kno:KN2024-0205-freq-NN-total ;
+    rdfs:label "완전^전자^주주^총회"@ko ;
+    kno:component kno:KN2024-0205-c1 ;
     kno:unitType "구"@ko ;
-    kno:componentString "완전(完全), 전자(電子), 주주(株主), 총회(總會)"@ko ;
-    kno:indexForm "완전전자주주총회"@ko ;
+    kno:frequency kno:KN2024-0205-freq-NN-2025 ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:languageType "한^한^한^한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%84%EC%A0%84%EC%A0%84%EC%9E%90%EC%A3%BC%EC%A3%BC%EC%B4%9D%ED%9A%8C> ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:component kno:KN2024-0205-c3 ;
+    kno:frequency kno:KN2024-0205-freq-NN-2023 ;
+    kno:frequency kno:KN2024-0205-freq-NN-2024 ;
+    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
+    kno:componentString "완전(完全), 전자(電子), 주주(株主), 총회(總會)"@ko ;
+    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
     kno:example "¶{완전 전자 주주 총회는} 온라인으로 이루어지기 때문에 더 많은 주주들이 쉽게 참여할 수 있으나 주주와 경영진 사이에 대면 소통이 사라질 수 있다는 우려도 있다."@ko ;
-    kno:year "2024"^^xsd:gYear .
-kno:KN2024-0205-c1 kno:semanticTag kno:usas-A13.2 ;
+    kno:origin "(完全電子株主總會)" ;
+    kno:component kno:KN2024-0205-c4 ;
+    kno:indexForm "완전전자주주총회"@ko ;
+    skos:definition "주식회사의 주주 총회가 필요한 경우 모든 주주들이 온라인으로 참석하는 주주 총회."@ko .
+kno:KN2024-0205-c2 kno:surfaceForm "전자"@ko ;
+    kno:fullForm "전자"@ko ;
+    kno:semanticTag kno:usas-O3 ;
+    rdfs:label "전자(電子)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000406 ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "성분"@ko .
+kno:KN2024-0205-c1 a kno:Component ;
+    kno:role "성분"@ko ;
+    rdfs:label "완전(完全)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "완전"@ko ;
     kno:formative kno:F005170 ;
-    kno:role "성분"@ko ;
+    kno:fullForm "완전"@ko .
+kno:KN2024-0205-c3 kno:fullForm "주주"@ko ;
+    kno:formative kno:F005799 ;
+    kno:semanticTag kno:usas-I2.1 ;
     a kno:Component ;
-    kno:fullForm "완전"@ko ;
-    rdfs:label "완전(完全)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2024-0205-c3 kno:truncated "false"^^xsd:boolean ;
     kno:position "3"^^xsd:integer ;
-    kno:fullForm "주주"@ko ;
-    kno:surfaceForm "주주"@ko ;
     kno:role "성분"@ko ;
     rdfs:label "주주(株主)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:formative kno:F005799 .
-kno:KN2024-0205-c4 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "주주"@ko .
+kno:KN2024-0205-c4 kno:truncated "false"^^xsd:boolean ;
     kno:position "4"^^xsd:integer ;
     kno:formative kno:F006106 ;
-    rdfs:label "총회(總會)"@ko ;
+    kno:semanticTag kno:usas-S5 ;
     kno:fullForm "총회"@ko ;
-    kno:surfaceForm "총회"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0205-c2 kno:surfaceForm "전자"@ko ;
-    kno:formative kno:F000406 ;
-    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "전자(電子)"@ko ;
-    kno:fullForm "전자"@ko ;
-    kno:semanticTag kno:usas-O3 .
+    rdfs:label "총회(總會)"@ko ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "총회"@ko .

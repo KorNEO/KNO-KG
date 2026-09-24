@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0216 a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2018-0216-c3 ;
-    kno:component kno:KN2018-0216-c1 ;
-    kno:unitType "단어"@ko ;
+kno:KN2018-0216 kno:activeYears "0"^^xsd:integer ;
     kno:example "¶젊은 시어머니들 사이에 “명절 스트레스를 며느리에게 물려주지 않겠다.”라는 분위기가 확산되고 있다는 보도다. 이를 대변하는 말이 ‘{시송합니다’라고} 한다."@ko ;
-    skos:definition "‘시댁이라 죄송하다’를 줄여 이르는 말. 시댁에서 겪는 어려움을 며느리에게 물려주지 않겠다는 시어머니들의 의지를 표현하는 말이다."@ko ;
-    kno:indexForm "시송하다"@ko ;
-    kno:slotFiller "시(댁)(媤)+(죄)송(하다)(悚) (2성분)"@ko ;
-    kno:instantiates kno:S000034 ;
-    kno:pos "「형」"@ko ;
-    a ontolex:Word ;
-    kno:year "2018"^^xsd:gYear ;
     kno:languageType "한+고" ;
-    kno:componentString "시(댁)(媤), (죄)송(하다)(悚), -하다"@ko ;
-    kno:component kno:KN2018-0216-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%86%A1%ED%95%98%EB%8B%A4> ;
+    kno:component kno:KN2018-0216-c1 ;
+    a ontolex:Word ;
+    kno:component kno:KN2018-0216-c3 ;
     rdfs:label "시송-하다"@ko ;
     kno:formation kno:W02 ;
+    kno:componentString "시(댁)(媤), (죄)송(하다)(悚), -하다"@ko ;
+    kno:indexForm "시송하다"@ko ;
+    kno:instantiates kno:S000034 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "시(댁)(媤)+(죄)송(하다)(悚) (2성분)"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    skos:definition "‘시댁이라 죄송하다’를 줄여 이르는 말. 시댁에서 겪는 어려움을 며느리에게 물려주지 않겠다는 시어머니들의 의지를 표현하는 말이다."@ko ;
     kno:origin "(媤悚하다)" ;
-    kno:activeYears "0"^^xsd:integer .
-kno:KN2018-0216-c3 kno:surfaceForm "하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%86%A1%ED%95%98%EB%8B%A4> ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2018-0216-c2 ;
+    kno:pos "「형」"@ko .
+kno:KN2018-0216-c1 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004637 ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "시(댁)(媤)"@ko ;
+    kno:surfaceForm "시"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "시댁"@ko .
+kno:KN2018-0216-c3 kno:truncated "false"^^xsd:boolean ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     rdfs:label "-하다"@ko ;
     kno:semanticTag kno:usas-Z5 ;
-    kno:formative kno:F000019 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "하다"@ko ;
     kno:role "고정항"@ko ;
-    kno:fullForm "하다"@ko .
-kno:KN2018-0216-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "시댁"@ko ;
-    kno:surfaceForm "시"@ko ;
-    rdfs:label "시(댁)(媤)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F004637 ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2018-0216-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F004446 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "하다"@ko ;
+    kno:formative kno:F000019 .
+kno:KN2018-0216-c2 kno:formative kno:F004446 ;
     kno:semanticTag kno:usas-S1.2.4p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:fullForm "죄송하다"@ko ;
-    rdfs:label "(죄)송(하다)(悚)"@ko ;
-    kno:surfaceForm "송"@ko ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko .
+    kno:surfaceForm "송"@ko ;
+    rdfs:label "(죄)송(하다)(悚)"@ko ;
+    kno:truncated "true"^^xsd:boolean .

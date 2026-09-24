@@ -9,62 +9,62 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0422 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0422 kno:year "2018"^^xsd:gYear ;
+kno:KN2018-0422 a kno:Neologism ;
+    kno:component kno:KN2018-0422-c3 ;
+    kno:predicate "가다"@ko ;
+    kno:urimalTargetCode "1416026" ;
+    kno:componentString "혼(자), (여)행(行), -러(←-er)"@ko ;
+    kno:languageType "고+한+영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     skos:definition "혼자서 여행을 가는 사람."@ko ;
-    kno:frequency kno:KN2018-0422-freq-NN-2024 ;
+    kno:origin "(혼行<영>←er)" ;
+    kno:instantiates kno:S001775 ;
     kno:example "¶‘혼행족’, ‘{혼행러}’, ‘혼행스타그램’ 등 나 홀로 여행을 나타내는 신조어는 이미 온라인상에서 활발히 활동하는 혼행족들에 의해 흔히 쓰이는 표현으로 자리하게 되었다."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416026> ;
     kno:indexForm "혼행러"@ko ;
-    kno:frequency kno:KN2018-0422-freq-NN-2019 ;
-    kno:slotFiller "혼(자)+(여)행(行) (2성분)"@ko ;
-    kno:formation kno:W02 ;
+    kno:component kno:KN2018-0422-c2 ;
+    kno:component kno:KN2018-0422-c1 ;
     kno:frequency kno:KN2018-0422-freq-NN-2023 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416026> ;
+    kno:frequency kno:KN2018-0422-freq-NN-2024 ;
+    kno:slotFiller "혼(자)+(여)행(行) (2성분)"@ko ;
     kno:frequency kno:KN2018-0422-freq-NN-total ;
+    kno:slotFiller "-러(←-er) (1성분)"@ko ;
+    rdfs:label "혼행러"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000079 ;
+    kno:unitType "단어"@ko ;
+    kno:frequency kno:KN2018-0422-freq-NN-2019 ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0422-freq-NN-2018 ;
+    kno:registration "우리말샘"@ko ;
     a ontolex:Word ;
     kno:activeYears "5"^^xsd:integer ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2018-0422-c3 ;
-    kno:frequency kno:KN2018-0422-freq-NN-2018 ;
-    kno:slotFiller "-러(←-er) (1성분)"@ko ;
-    kno:componentString "혼(자), (여)행(行), -러(←-er)"@ko ;
-    kno:component kno:KN2018-0422-c2 ;
-    kno:urimalTargetCode "1416026" ;
-    kno:instantiates kno:S000079 ;
-    kno:instantiates kno:S001775 ;
-    kno:predicate "가다"@ko ;
-    kno:frequency kno:KN2018-0422-freq-NN-2021 ;
-    kno:languageType "고+한+영" ;
-    rdfs:label "혼행러"@ko ;
-    kno:component kno:KN2018-0422-c1 ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
-    kno:origin "(혼行<영>←er)" ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:unitType "단어"@ko .
-kno:KN2018-0422-c3 kno:position "3"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2018-0422-freq-NN-2021 .
+kno:KN2018-0422-c3 rdfs:label "-러(←-er)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 ;
     kno:role "고정항"@ko ;
     kno:surfaceForm "러"@ko ;
-    rdfs:label "-러(←-er)"@ko ;
+    kno:formative kno:F000022 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    kno:fullForm "러"@ko ;
-    kno:formative kno:F000022 .
-kno:KN2018-0422-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "행"@ko ;
+    kno:fullForm "러"@ko .
+kno:KN2018-0422-c2 kno:position "2"^^xsd:integer ;
     kno:formative kno:F001016 ;
-    kno:semanticTag kno:usas-M1 ;
+    rdfs:label "(여)행(行)"@ko ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:fullForm "여행"@ko ;
-    rdfs:label "(여)행(行)"@ko .
-kno:KN2018-0422-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "혼자"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "행"@ko .
+kno:KN2018-0422-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "혼(자)"@ko ;
     kno:semanticTag kno:usas-S5 ;
     kno:formative kno:F000011 ;
-    kno:surfaceForm "혼"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    rdfs:label "혼(자)"@ko .
+    kno:surfaceForm "혼"@ko ;
+    kno:fullForm "혼자"@ko ;
+    kno:role "고정항"@ko .

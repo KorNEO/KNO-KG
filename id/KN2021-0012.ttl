@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0012 kno:indexForm "강제중도금"@ko ;
+kno:KN2021-0012 a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:example "¶{강제 중도금을} 치르면 계약이 파기되지 않을 것이라는 소문이 매수인들 사이에 퍼지며 중도금을 약속 일자 전에 치르는 일이 빈번해지자 매도인들이 난감을 표하고 있다."@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0012-c1 ;
+    kno:year "2021"^^xsd:gYear ;
+    kno:indexForm "강제중도금"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2021-0012-freq-NN-total ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EC%A0%9C%20%EC%A4%91%EB%8F%84%EA%B8%88> ;
     kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "¶{강제 중도금을} 치르면 계약이 파기되지 않을 것이라는 소문이 매수인들 사이에 퍼지며 중도금을 약속 일자 전에 치르는 일이 빈번해지자 매도인들이 난감을 표하고 있다."@ko ;
-    kno:origin "(強制中途金)" ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2021-0012-freq-NN-2020 ;
-    kno:languageType "한_한" ;
-    rdfs:label "강제 중도금"@ko ;
-    kno:slotFiller "중도금(中途金) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2021-0012-freq-NN-total ;
-    kno:component kno:KN2021-0012-c2 ;
-    kno:component kno:KN2021-0012-c1 ;
-    kno:componentString "강제(強制), 중도금(中途金)"@ko ;
-    skos:definition "계약금을 치르고 마지막 잔금을 치르기 전에, 매도자의 일방적인 계약 파기를 막기 위해 매수자가 약정한 날짜보다 이른 시기에 무작정 매도인의 계좌에 입금하는 돈."@ko ;
     kno:instantiates kno:S000143 ;
-    kno:predicate "입금하다"@ko .
-kno:KN2021-0012-c2 rdfs:label "중도금(中途金)"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "중도금"@ko ;
-    kno:surfaceForm "중도금"@ko ;
-    a kno:Component ;
+    kno:componentString "강제(強制), 중도금(中途金)"@ko ;
+    kno:slotFiller "중도금(中途金) (1성분)"@ko ;
+    kno:frequency kno:KN2021-0012-freq-NN-2020 ;
+    rdfs:label "강제 중도금"@ko ;
+    kno:languageType "한_한" ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "계약금을 치르고 마지막 잔금을 치르기 전에, 매도자의 일방적인 계약 파기를 막기 위해 매수자가 약정한 날짜보다 이른 시기에 무작정 매도인의 계좌에 입금하는 돈."@ko ;
+    kno:predicate "입금하다"@ko ;
+    kno:component kno:KN2021-0012-c2 ;
+    kno:origin "(強制中途金)" .
+kno:KN2021-0012-c1 kno:surfaceForm "강제"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F005832 .
-kno:KN2021-0012-c1 rdfs:label "강제(強制)"@ko ;
-    a kno:Component ;
     kno:semanticTag kno:usas-S6p ;
-    kno:fullForm "강제"@ko ;
     kno:formative kno:F000198 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "강제"@ko ;
+    rdfs:label "강제(強制)"@ko ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "강제"@ko ;
-    kno:position "1"^^xsd:integer .
+    a kno:Component .
+kno:KN2021-0012-c2 kno:formative kno:F005832 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "중도금(中途金)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "중도금"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:fullForm "중도금"@ko ;
+    a kno:Component .

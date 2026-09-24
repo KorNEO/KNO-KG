@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0287 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0287 a ontolex:Word ;
-    kno:componentString "얼(음), 동(동), 주(스)(juice)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    skos:definition "‘얼음을 동동 띄운 주스’를 줄여 이르는 말."@ko ;
-    rdfs:label "얼동주"@ko ;
-    kno:component kno:KN2012-0287-c3 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EB%8F%99%EC%A3%BC> ;
-    kno:indexForm "얼동주"@ko ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:origin "(얼동←juice)" ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2012-0287-c1 ;
+kno:KN2012-0287 kno:origin "(얼동←juice)" ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2012-0287-freq-NN-2012 ;
-    kno:component kno:KN2012-0287-c2 ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W06 ;
-    kno:languageType "고+고+영" ;
-    kno:frequency kno:KN2012-0287-freq-NN-total ;
+    kno:componentString "얼(음), 동(동), 주(스)(juice)"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:example "¶OOO는…“오면서 계속 ‘{얼동주}’ 마시고 싶다고 하더라.”라고 OOO의 또 다른 말줄임을 폭로해 웃음을 자아냈다."@ko ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2012-0287-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F005784 ;
-    kno:fullForm "주스"@ko ;
+    kno:component kno:KN2012-0287-c3 ;
+    kno:frequency kno:KN2012-0287-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EB%8F%99%EC%A3%BC> ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0287-c1 ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:indexForm "얼동주"@ko ;
+    kno:languageType "고+고+영" ;
+    skos:definition "‘얼음을 동동 띄운 주스’를 줄여 이르는 말."@ko ;
+    kno:component kno:KN2012-0287-c2 ;
+    kno:pos "「명」"@ko ;
+    rdfs:label "얼동주"@ko ;
+    kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0287-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "주"@ko ;
     kno:semanticTag kno:usas-F2 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    rdfs:label "주(스)(juice)"@ko ;
-    kno:surfaceForm "주"@ko .
-kno:KN2012-0287-c1 kno:surfaceForm "얼"@ko ;
-    kno:semanticTag kno:usas-O1.1 ;
+    kno:formative kno:F005784 ;
+    kno:fullForm "주스"@ko ;
+    rdfs:label "주(스)(juice)"@ko .
+kno:KN2012-0287-c1 kno:role "성분"@ko ;
     rdfs:label "얼(음)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "얼음"@ko ;
-    kno:role "성분"@ko ;
     kno:formative kno:F004970 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer .
-kno:KN2012-0287-c2 rdfs:label "동(동)"@ko ;
-    kno:surfaceForm "동"@ko ;
-    kno:formative kno:F003014 ;
-    kno:semanticTag kno:usas-M4 ;
-    kno:fullForm "동동"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "얼"@ko ;
+    kno:fullForm "얼음"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-O1.1 .
+kno:KN2012-0287-c2 kno:formative kno:F003014 ;
     kno:role "성분"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "동(동)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-M4 ;
+    kno:surfaceForm "동"@ko ;
+    kno:fullForm "동동"@ko .

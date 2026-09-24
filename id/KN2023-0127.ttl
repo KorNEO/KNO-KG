@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0127 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0127 skos:definition "상추의 시세를 이용한 재테크. 상추의 가격이 크게 오르자 상추를 직접 키워 먹는 사람들이 늘어난 상황에서 나온 말이다."@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:year "2023"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%B6%94%20%ED%85%8C%ED%81%AC> ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(상추<영>tech)" ;
-    kno:languageType "고_영" ;
-    kno:indexForm "상추테크"@ko ;
+kno:KN2023-0127 kno:activeYears "2"^^xsd:integer ;
     kno:frequency kno:KN2023-0127-freq-NN-2023 ;
-    kno:slotFiller "상추 (1성분)"@ko ;
     kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%B6%94%20%ED%85%8C%ED%81%AC> ;
+    kno:component kno:KN2023-0127-c1 ;
+    kno:slotFiller "상추 (1성분)"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:indexForm "상추테크"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
     kno:frequency kno:KN2023-0127-freq-NN-2022 ;
+    kno:languageType "고_영" ;
+    skos:definition "상추의 시세를 이용한 재테크. 상추의 가격이 크게 오르자 상추를 직접 키워 먹는 사람들이 늘어난 상황에서 나온 말이다."@ko ;
+    kno:component kno:KN2023-0127-c2 ;
     kno:instantiates kno:S000238 ;
     kno:componentString "상추, (재)테크(財tech)"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2023-0127-c1 ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:example "¶최근 아파트 옥상이나 베란다 등에서 상추를 직접 재배하는 사람들이 늘어나면서, 상추 가격이 오를 때에는 ‘{상추 테크’도} 가능하다는 말이 나오곤 한다."@ko ;
+    rdfs:label "상추 테크"@ko ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:origin "(상추<영>tech)" ;
     kno:frequency kno:KN2023-0127-freq-NN-total ;
-    kno:component kno:KN2023-0127-c2 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "상추 테크"@ko .
-kno:KN2023-0127-c1 kno:semanticTag kno:usas-F1 ;
-    kno:fullForm "상추"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "상추"@ko ;
+    kno:example "¶최근 아파트 옥상이나 베란다 등에서 상추를 직접 재배하는 사람들이 늘어나면서, 상추 가격이 오를 때에는 ‘{상추 테크’도} 가능하다는 말이 나오곤 한다."@ko .
+kno:KN2023-0127-c1 kno:surfaceForm "상추"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "상추"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:fullForm "상추"@ko ;
     kno:role "슬롯 채움"@ko ;
+    rdfs:label "상추"@ko ;
+    a kno:Component ;
     kno:formative kno:F004235 .
 kno:KN2023-0127-c2 kno:fullForm "재테크"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(재)테크(財tech)"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:formative kno:F000065 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "테크"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:formative kno:F000065 ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "테크"@ko .

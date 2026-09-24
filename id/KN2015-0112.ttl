@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0112 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0112 a ontolex:Word ;
-    kno:slotFiller "성(공하다)(成) (1성분)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(成<일>←otaku[御宅])" ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "성덕"@ko ;
-    kno:instantiates kno:S000060 ;
+kno:KN2015-0112 kno:example "¶이에 OOO는 “OOO 형을 보고 자란 팬이다. 성공한 덕후, {성덕이라고} 한다.”라고 말해 웃음을 자아냈다."@ko ;
+    kno:formation kno:W05 ;
     kno:componentString "성(공하다)(成), 덕(후)(otaku)"@ko ;
-    kno:example "¶이에 OOO는 “OOO 형을 보고 자란 팬이다. 성공한 덕후, {성덕이라고} 한다.”라고 말해 웃음을 자아냈다."@ko ;
-    kno:component kno:KN2015-0112-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EB%8D%95> ;
-    a kno:Neologism ;
-    kno:component kno:KN2015-0112-c2 ;
-    kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000060 ;
+    kno:slotFiller "성(공하다)(成) (1성분)"@ko ;
     skos:definition "‘성공한 덕후’를 줄여 이르는 말."@ko ;
-    kno:languageType "한+일" ;
+    a kno:Neologism ;
     kno:indexForm "성덕"@ko ;
-    kno:formation kno:W05 .
-kno:KN2015-0112-c1 rdfs:label "성(공하다)(成)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "성"@ko ;
-    kno:fullForm "성공하다"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004325 ;
-    kno:semanticTag kno:usas-X9.2p .
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EB%8D%95> ;
+    kno:component kno:KN2015-0112-c2 ;
+    kno:origin "(成<일>←otaku[御宅])" ;
+    rdfs:label "성덕"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:languageType "한+일" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2015-0112-c1 .
 kno:KN2015-0112-c2 kno:position "2"^^xsd:integer ;
     rdfs:label "덕(후)(otaku)"@ko ;
     kno:role "고정항"@ko ;
     kno:formative kno:F000037 ;
     kno:surfaceForm "덕"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-X5.2p ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
     kno:fullForm "덕후"@ko .
+kno:KN2015-0112-c1 kno:surfaceForm "성"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004325 ;
+    kno:position "1"^^xsd:integer ;
+    rdfs:label "성(공하다)(成)"@ko ;
+    kno:fullForm "성공하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-X9.2p ;
+    kno:role "슬롯 채움"@ko .

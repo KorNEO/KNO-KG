@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0244 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0244 kno:origin "(新適化)" ;
+kno:KN2012-0244 kno:component kno:KN2012-0244-c1 ;
+    kno:slotFiller "적화(適化) (1성분)"@ko ;
+    skos:definition "낮은 사양의 컴퓨터에서 최신 사양의 게임을 하는 일."@ko ;
+    kno:component kno:KN2012-0244-c2 ;
     kno:languageType "한+한" ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2012-0244-freq-NN-2015 ;
-    kno:component kno:KN2012-0244-c1 ;
     kno:indexForm "신적화"@ko ;
-    kno:instantiates kno:S000221 ;
-    kno:pos "「명」"@ko ;
+    kno:formation kno:W03 ;
+    kno:unitType "단어"@ko ;
     kno:example "¶통칭 ‘발적화’였던 크라이엔진2와 ‘{신적화’로} 돌아온 크라이엔진3…하지만 결국 이것은 도구일 뿐이다."@ko ;
     kno:year "2012"^^xsd:gYear ;
+    a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%A0%81%ED%99%94> ;
     kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:predicate "하다"@ko ;
-    skos:definition "낮은 사양의 컴퓨터에서 최신 사양의 게임을 하는 일."@ko ;
-    kno:formation kno:W03 ;
     a kno:Neologism ;
+    kno:predicate "하다"@ko ;
+    rdfs:label "신-적화"@ko ;
+    kno:instantiates kno:S000221 ;
+    kno:frequency kno:KN2012-0244-freq-NN-2015 ;
+    kno:origin "(新適化)" ;
     kno:frequency kno:KN2012-0244-freq-NN-total ;
     kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%A0%81%ED%99%94> ;
-    kno:componentString "신(新)-, 적화(適化)"@ko ;
-    kno:slotFiller "적화(適化) (1성분)"@ko ;
-    kno:component kno:KN2012-0244-c2 ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "신-적화"@ko .
-kno:KN2012-0244-c1 kno:role "고정항"@ko ;
-    kno:fullForm "신"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:componentString "신(新)-, 적화(適化)"@ko .
+kno:KN2012-0244-c1 a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "신(新)-"@ko ;
-    kno:semanticTag kno:usas-T3 ;
     kno:surfaceForm "신"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000145 .
-kno:KN2012-0244-c2 kno:fullForm "적화"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F005617 ;
+    rdfs:label "신(新)-"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "적화(適化)"@ko ;
+    kno:fullForm "신"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:formative kno:F000145 .
+kno:KN2012-0244-c2 a kno:Component ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:formative kno:F005617 ;
     kno:surfaceForm "적화"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G1.2 .
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "적화"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "적화(適化)"@ko .

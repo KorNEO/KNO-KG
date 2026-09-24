@@ -9,63 +9,63 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0031 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0031 kno:frequency kno:KN2021-0031-freq-NN-2020 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2021-0031-c1 ;
-    kno:origin "(國家治療隔離病床)" ;
-    kno:instantiates kno:S000085 ;
-    kno:component kno:KN2021-0031-c2 ;
-    kno:indexForm "국가치료격리병상"@ko ;
+kno:KN2021-0031 kno:lastAttestationYear "2020"^^xsd:gYear ;
     kno:componentString "국가(國家), 치료(治療), 격리(隔離), 병상(病床)"@ko ;
-    rdfs:label "국가^치료^격리^병상"@ko ;
-    kno:frequency kno:KN2021-0031-freq-NN-total ;
     kno:component kno:KN2021-0031-c3 ;
-    kno:slotFiller "치료(治療)+격리(隔離)+병상(病床) (3성분)"@ko ;
+    kno:example "¶감염병의 확산으로 ‘{국가 치료 격리 병상’을} 확충해야 한다는 목소리가 나오고 있다."@ko ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2021-0031-freq-NN-2020 ;
+    kno:year "2021"^^xsd:gYear ;
     kno:languageType "한^한^한^한" ;
     skos:definition "감염병 환자들을 일반 환자들과 따로 수용하여 치료하기 위해 국가에서 설치ㆍ운영하는 병상을 이르는 말. 코로나19의 전 세계적 확산 상황에서 사용되기 시작하였다."@ko ;
+    kno:component kno:KN2021-0031-c2 ;
+    kno:frequency kno:KN2021-0031-freq-NN-total ;
+    rdfs:label "국가^치료^격리^병상"@ko ;
+    kno:slotFiller "치료(治療)+격리(隔離)+병상(病床) (3성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%AD%EA%B0%80%EC%B9%98%EB%A3%8C%EA%B2%A9%EB%A6%AC%EB%B3%91%EC%83%81> ;
-    a kno:Neologism ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:component kno:KN2021-0031-c4 ;
-    kno:registration "신어DB"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:pos "「구」"@ko ;
-    kno:example "¶감염병의 확산으로 ‘{국가 치료 격리 병상’을} 확충해야 한다는 목소리가 나오고 있다."@ko .
-kno:KN2021-0031-c1 kno:formative kno:F000020 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "국가(國家)"@ko ;
-    kno:fullForm "국가"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "국가"@ko ;
+    kno:component kno:KN2021-0031-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000085 ;
+    a kno:Neologism ;
+    kno:component kno:KN2021-0031-c4 ;
+    kno:indexForm "국가치료격리병상"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:origin "(國家治療隔離病床)" .
+kno:KN2021-0031-c3 kno:formative kno:F000330 ;
+    kno:semanticTag kno:usas-B3 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-G1.1 .
-kno:KN2021-0031-c2 a kno:Component ;
+    kno:fullForm "격리"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "격리(隔離)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "격리"@ko .
+kno:KN2021-0031-c2 kno:surfaceForm "치료"@ko ;
+    kno:fullForm "치료"@ko ;
     kno:formative kno:F000414 ;
     kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
     rdfs:label "치료(治療)"@ko ;
-    kno:fullForm "치료"@ko ;
-    kno:surfaceForm "치료"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B3 .
-kno:KN2021-0031-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000330 ;
     kno:semanticTag kno:usas-B3 ;
-    kno:surfaceForm "격리"@ko ;
     a kno:Component ;
-    rdfs:label "격리(隔離)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "격리"@ko .
-kno:KN2021-0031-c4 rdfs:label "병상(病床)"@ko ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0031-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "국가"@ko ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:fullForm "국가"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000020 ;
+    kno:semanticTag kno:usas-G1.1 .
+kno:KN2021-0031-c4 kno:position "4"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "병상"@ko ;
+    kno:formative kno:F003856 ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "병상"@ko ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:position "4"^^xsd:integer ;
-    kno:formative kno:F003856 .
+    rdfs:label "병상(病床)"@ko ;
+    kno:fullForm "병상"@ko ;
+    a kno:Component .

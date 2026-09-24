@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0080 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0080 a kno:Neologism ;
-    kno:component kno:KN2025-0080-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2025-0080-freq-NN-total ;
-    kno:example "(LLM) 요즘은 {귀주톱}을 한 묶음으로 놓고 예전 인기작들이랑 비교하는 글이 자주 보이더라."@ko ;
-    kno:component kno:KN2025-0080-c2 ;
-    kno:componentString "귀(멸의 칼날), 주(술회전), 톱"@ko ;
+kno:KN2025-0080 kno:formation kno:W06 ;
     rdfs:label "귀주톱"@ko ;
-    a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%80%EC%A3%BC%ED%86%B1> ;
     kno:indexForm "귀주톱"@ko ;
+    kno:component kno:KN2025-0080-c2 ;
+    kno:component kno:KN2025-0080-c1 ;
+    a ontolex:Word ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:componentString "귀(멸의 칼날), 주(술회전), 톱"@ko ;
+    kno:unitType "단어"@ko ;
+    a kno:Neologism ;
     kno:year "2025"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0080-freq-NN-2025 ;
     kno:component kno:KN2025-0080-c3 ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:formation kno:W06 ;
-    skos:definition "(LLM) 일본 소년 만화(또는 애니메이션)인 ‘귀멸의 칼날’, ‘주술회전’, ‘체인소맨’을 함께 묶어 이르는 말."@ko ;
-    kno:frequency kno:KN2025-0080-freq-NN-2025 .
-kno:KN2025-0080-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
+    kno:registration "신어DB"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%80%EC%A3%BC%ED%86%B1> ;
+    kno:example "(LLM) 요즘은 {귀주톱}을 한 묶음으로 놓고 예전 인기작들이랑 비교하는 글이 자주 보이더라."@ko ;
+    kno:frequency kno:KN2025-0080-freq-NN-total ;
+    kno:pos "「명」"@ko ;
+    skos:definition "(LLM) 일본 소년 만화(또는 애니메이션)인 ‘귀멸의 칼날’, ‘주술회전’, ‘체인소맨’을 함께 묶어 이르는 말."@ko .
+kno:KN2025-0080-c2 kno:fullForm "주술회전"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-K1 ;
-    kno:surfaceForm "귀"@ko ;
-    kno:fullForm "귀멸의 칼날"@ko ;
+    kno:formative kno:F005783 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "주"@ko ;
+    rdfs:label "주(술회전)"@ko .
+kno:KN2025-0080-c1 kno:surfaceForm "귀"@ko ;
     rdfs:label "귀(멸의 칼날)"@ko ;
+    kno:role "성분"@ko ;
     kno:formative kno:F002499 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko .
-kno:KN2025-0080-c2 kno:formative kno:F005783 ;
-    kno:fullForm "주술회전"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:fullForm "귀멸의 칼날"@ko ;
     kno:semanticTag kno:usas-K1 ;
-    kno:surfaceForm "주"@ko ;
-    rdfs:label "주(술회전)"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2025-0080-c3 kno:semanticTag kno:usas-K1 ;
-    kno:fullForm "톱"@ko ;
-    kno:formative kno:F006491 ;
-    kno:position "3"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    rdfs:label "톱"@ko ;
-    kno:surfaceForm "톱"@ko ;
+    kno:position "1"^^xsd:integer ;
     a kno:Component .
+kno:KN2025-0080-c3 kno:fullForm "톱"@ko ;
+    rdfs:label "톱"@ko ;
+    kno:role "성분"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "톱"@ko ;
+    kno:formative kno:F006491 ;
+    kno:semanticTag kno:usas-K1 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .

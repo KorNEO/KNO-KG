@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0017 a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
+kno:KN2022-0017 kno:frequency kno:KN2022-0017-freq-NN-total ;
+    kno:indexForm "검당유착"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EB%8B%B9%EC%9C%A0%EC%B0%A9> ;
+    kno:component kno:KN2022-0017-c1 ;
+    skos:definition "검찰과 야당이 서로 깊은 관계를 가지고 결합해 있음. 또는 검찰과 야당 사이의 부도덕한 밀착 관계."@ko ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2022-0017-freq-NN-2022 ;
+    kno:languageType "한^한" ;
+    kno:year "2022"^^xsd:gYear ;
+    rdfs:label "검당^유착"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2022-0017-freq-NN-2021 ;
     kno:pos "「구」"@ko ;
     kno:component kno:KN2022-0017-c2 ;
-    kno:component kno:KN2022-0017-c1 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2022-0017-freq-NN-2021 ;
-    kno:year "2022"^^xsd:gYear ;
-    skos:definition "검찰과 야당이 서로 깊은 관계를 가지고 결합해 있음. 또는 검찰과 야당 사이의 부도덕한 밀착 관계."@ko ;
-    kno:example "¶O 대표는 이 사건을 ‘사상 초유의 {검당 유착’이라고} 언급하며 하루 빨리 진상을 조사하여 국민들에게 보고하여야 한다고 주장했다."@ko ;
-    kno:frequency kno:KN2022-0017-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%80%EB%8B%B9%EC%9C%A0%EC%B0%A9> ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    rdfs:label "검당^유착"@ko ;
-    kno:unitType "구"@ko ;
+    a kno:Neologism ;
     kno:componentString "검당(檢黨), 유착(癒着)"@ko ;
     kno:origin "(檢黨癒着)" ;
-    kno:indexForm "검당유착"@ko ;
-    kno:frequency kno:KN2022-0017-freq-NN-2022 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:languageType "한^한" .
-kno:KN2022-0017-c2 kno:semanticTag kno:usas-S1.1.1 ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "유착"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "유착(癒着)"@ko ;
-    kno:fullForm "유착"@ko ;
-    kno:formative kno:F005323 .
-kno:KN2022-0017-c1 kno:fullForm "검당"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:example "¶O 대표는 이 사건을 ‘사상 초유의 {검당 유착’이라고} 언급하며 하루 빨리 진상을 조사하여 국민들에게 보고하여야 한다고 주장했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear .
+kno:KN2022-0017-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "검당"@ko ;
     kno:semanticTag kno:usas-G1.2 ;
-    rdfs:label "검당(檢黨)"@ko ;
-    kno:surfaceForm "검당"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002195 ;
-    kno:position "1"^^xsd:integer .
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "검당"@ko ;
+    a kno:Component ;
+    rdfs:label "검당(檢黨)"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F002195 .
+kno:KN2022-0017-c2 kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "유착(癒着)"@ko ;
+    kno:formative kno:F005323 ;
+    kno:fullForm "유착"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "유착"@ko ;
+    kno:position "2"^^xsd:integer .

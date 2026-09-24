@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0147 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0147 a ontolex:MultiwordExpression ;
-    skos:definition "전 세계적으로 전염병이 크게 유행하는 상황에서 방역이 우수한 국가들 사이에 국민들이 해당 국가들을 자유롭게 여행할 수 있도록 맺은 협약. 코로나19가 전 세계적으로 유행한 상황에서 우리나라는 2021년 11월에 싱가포르와 처음 협약을 체결하였다. =여행 안전 권역, 트래블 버블."@ko ;
-    kno:frequency kno:KN2021-0147-freq-NN-2022 ;
-    rdfs:label "비격리^여행^권역"@ko ;
+kno:KN2021-0147 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EA%B2%A9%EB%A6%AC%EC%97%AC%ED%96%89%EA%B6%8C%EC%97%AD> ;
     kno:componentString "비격리(非隔離), 여행(旅行), 권역(圈域)"@ko ;
-    kno:frequency kno:KN2021-0147-freq-NN-2021 ;
-    kno:instantiates kno:S000798 ;
-    kno:unitType "구"@ko ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:predicate "맺은"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:indexForm "비격리여행권역"@ko ;
+    kno:instantiates kno:S000798 ;
+    rdfs:label "비격리^여행^권역"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:unitType "구"@ko ;
+    skos:definition "전 세계적으로 전염병이 크게 유행하는 상황에서 방역이 우수한 국가들 사이에 국민들이 해당 국가들을 자유롭게 여행할 수 있도록 맺은 협약. 코로나19가 전 세계적으로 유행한 상황에서 우리나라는 2021년 11월에 싱가포르와 처음 협약을 체결하였다. =여행 안전 권역, 트래블 버블."@ko ;
+    kno:frequency kno:KN2021-0147-freq-NN-total ;
+    kno:year "2021"^^xsd:gYear ;
     kno:origin "(非隔離旅行圈域)" ;
-    kno:component kno:KN2021-0147-c3 ;
-    kno:frequency kno:KN2021-0147-freq-NN-2023 ;
     kno:example "¶여행사는 최근 {비격리 여행 권역의} 확대로 해외여행 수요가 증가할 것으로 기대하고 있다."@ko ;
+    kno:frequency kno:KN2021-0147-freq-NN-2023 ;
+    kno:component kno:KN2021-0147-c1 ;
+    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0147-freq-NN-2022 ;
     kno:component kno:KN2021-0147-c2 ;
     kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2021-0147-c3 ;
     kno:slotFiller "비격리(非隔離)+여행(旅行) (2성분)"@ko ;
-    kno:predicate "맺은"@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2021-0147-freq-NN-total ;
-    kno:component kno:KN2021-0147-c1 ;
-    kno:year "2021"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EA%B2%A9%EB%A6%AC%EC%97%AC%ED%96%89%EA%B6%8C%EC%97%AD> ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:pos "「구」"@ko .
-kno:KN2021-0147-c3 a kno:Component ;
-    kno:surfaceForm "권역"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    rdfs:label "권역(圈域)"@ko ;
-    kno:formative kno:F000674 ;
-    kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
+    kno:frequency kno:KN2021-0147-freq-NN-2021 .
+kno:KN2021-0147-c1 kno:semanticTag kno:usas-B2m ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "권역"@ko .
-kno:KN2021-0147-c2 kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "여행"@ko ;
-    a kno:Component ;
-    rdfs:label "여행(旅行)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:formative kno:F000090 ;
-    kno:fullForm "여행"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2021-0147-c1 kno:formative kno:F004062 ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "비격리"@ko ;
-    rdfs:label "비격리(非隔離)"@ko ;
     a kno:Component ;
+    kno:surfaceForm "비격리"@ko ;
+    kno:formative kno:F004062 ;
+    kno:fullForm "비격리"@ko ;
+    rdfs:label "비격리(非隔離)"@ko .
+kno:KN2021-0147-c2 kno:semanticTag kno:usas-M1 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F000090 ;
+    kno:surfaceForm "여행"@ko ;
+    kno:fullForm "여행"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "비격리"@ko .
+    rdfs:label "여행(旅行)"@ko .
+kno:KN2021-0147-c3 kno:formative kno:F000674 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "권역(圈域)"@ko ;
+    kno:surfaceForm "권역"@ko ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "권역"@ko ;
+    kno:semanticTag kno:usas-M7 .

@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0280 skos:definition "약하게 타격을 가함."@ko ;
+kno:KN2012-0280 kno:year "2012"^^xsd:gYear ;
+    kno:componentString "약(弱)-, 딜(deal)"@ko ;
+    a ontolex:Word ;
+    kno:origin "(弱deal)" ;
     kno:formation kno:W03 ;
-    a kno:Neologism ;
-    kno:predicate "타격다"@ko ;
     kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EB%94%9C> ;
-    kno:unitType "단어"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2012-0280-c1 ;
     kno:example "¶기공사는 검사의 딜량에 맞춰 {약딜을} 합니다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EB%94%9C> ;
+    kno:component kno:KN2012-0280-c2 ;
+    kno:unitType "단어"@ko ;
+    skos:definition "약하게 타격을 가함."@ko ;
     kno:slotFiller "약(弱)- (1성분)"@ko ;
-    rdfs:label "약-딜"@ko ;
-    a ontolex:Word ;
-    kno:componentString "약(弱)-, 딜(deal)"@ko ;
-    kno:origin "(弱deal)" ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
     kno:instantiates kno:S000251 ;
     kno:indexForm "약딜"@ko ;
+    kno:pos "「명」"@ko ;
+    a kno:Neologism ;
     kno:languageType "한+영" ;
-    kno:component kno:KN2012-0280-c2 ;
-    kno:activeYears "0"^^xsd:integer .
-kno:KN2012-0280-c1 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "약(弱)-"@ko ;
-    kno:position "1"^^xsd:integer ;
+    rdfs:label "약-딜"@ko ;
+    kno:predicate "타격다"@ko .
+kno:KN2012-0280-c1 kno:role "슬롯 채움"@ko ;
     kno:formative kno:F004908 ;
-    kno:semanticTag kno:usas-B3 ;
     kno:fullForm "약"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:surfaceForm "약"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2012-0280-c2 a kno:Component ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "딜"@ko ;
+    kno:semanticTag kno:usas-B3 ;
     kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "약(弱)-"@ko ;
+    a kno:Component .
+kno:KN2012-0280-c2 kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-I2.1 ;
+    a kno:Component ;
+    kno:fullForm "딜"@ko ;
     kno:formative kno:F000110 ;
     rdfs:label "딜(deal)"@ko ;
-    kno:fullForm "딜"@ko .
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "딜"@ko ;
+    kno:truncated "false"^^xsd:boolean .

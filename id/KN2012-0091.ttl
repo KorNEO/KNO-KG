@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0091 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0091 kno:origin "(deep sea blue)" ;
-    kno:languageType "영_영_영" ;
-    skos:definition "깊은 바다와 같은 푸른색."@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "딥 시 블루"@ko ;
-    kno:instantiates kno:S000503 ;
-    kno:frequency kno:KN2012-0091-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "4"^^xsd:integer ;
+kno:KN2012-0091 a kno:Neologism ;
+    kno:component kno:KN2012-0091-c3 ;
     kno:slotFiller "딥(deep)+시(sea) (2성분)"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:instantiates kno:S000258 ;
-    kno:example "¶올 3월 나온 신상품 중에선 가장 무난하다고 추천받은 ‘{딥 시 블루}’ 색상과 작년 9월 출시된 ‘골든 블랙’ 색상을 모두 써 봤다."@ko ;
-    kno:component kno:KN2012-0091-c2 ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:componentString "딥(deep), 시(sea), 블루(blue)"@ko ;
-    kno:slotFiller "시(sea)+블루(blue) (2성분)"@ko ;
+    kno:frequency kno:KN2012-0091-freq-NN-total ;
     kno:frequency kno:KN2012-0091-freq-NN-2018 ;
-    a kno:Neologism ;
+    rdfs:label "딥 시 블루"@ko ;
+    kno:slotFiller "시(sea)+블루(blue) (2성분)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:languageType "영_영_영" ;
+    kno:component kno:KN2012-0091-c1 ;
+    kno:frequency kno:KN2012-0091-freq-NN-2017 ;
+    skos:definition "깊은 바다와 같은 푸른색."@ko ;
     kno:frequency kno:KN2012-0091-freq-NN-2012 ;
     kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2012-0091-freq-NN-2013 ;
-    kno:component kno:KN2012-0091-c3 ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%A5%20%EC%8B%9C%20%EB%B8%94%EB%A3%A8> ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2012-0091-freq-NN-2017 ;
-    kno:component kno:KN2012-0091-c1 ;
-    kno:indexForm "딥시블루"@ko .
-kno:KN2012-0091-c2 a kno:Component ;
-    kno:fullForm "시"@ko ;
-    kno:semanticTag kno:usas-M7 ;
-    rdfs:label "시(sea)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F004632 ;
-    kno:surfaceForm "시"@ko .
-kno:KN2012-0091-c3 a kno:Component ;
-    kno:fullForm "블루"@ko ;
-    kno:position "3"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:origin "(deep sea blue)" ;
+    kno:frequency kno:KN2012-0091-freq-NN-2013 ;
+    kno:year "2012"^^xsd:gYear ;
+    kno:example "¶올 3월 나온 신상품 중에선 가장 무난하다고 추천받은 ‘{딥 시 블루}’ 색상과 작년 9월 출시된 ‘골든 블랙’ 색상을 모두 써 봤다."@ko ;
+    kno:instantiates kno:S000258 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:indexForm "딥시블루"@ko ;
+    kno:component kno:KN2012-0091-c2 ;
+    kno:instantiates kno:S000503 .
+kno:KN2012-0091-c3 kno:semanticTag kno:usas-O4.3 ;
+    rdfs:label "블루(blue)"@ko ;
     kno:surfaceForm "블루"@ko ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-O4.3 ;
-    rdfs:label "블루(blue)"@ko ;
+    kno:fullForm "블루"@ko ;
+    kno:formative kno:F000519 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000519 .
-kno:KN2012-0091-c1 rdfs:label "딥(deep)"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer .
+kno:KN2012-0091-c1 kno:position "1"^^xsd:integer ;
+    kno:fullForm "딥"@ko ;
+    rdfs:label "딥(deep)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000489 ;
     kno:role "고정항"@ko ;
+    kno:surfaceForm "딥"@ko ;
     kno:semanticTag kno:usas-N3.7 ;
-    a kno:Component ;
+    a kno:Component .
+kno:KN2012-0091-c2 rdfs:label "시(sea)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "딥"@ko ;
-    kno:surfaceForm "딥"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F004632 ;
+    a kno:Component ;
+    kno:fullForm "시"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "시"@ko .

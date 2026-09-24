@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0178 skos:definition "‘버스 정류장’을 줄여 이르는 말."@ko ;
-    kno:origin "(←bus停)" ;
-    kno:componentString "뻐(스)(bus), 정(류장)(停)"@ko ;
+kno:KN2012-0178 rdfs:label "뻐정"@ko ;
+    kno:indexForm "뻐정"@ko ;
+    skos:definition "‘버스 정류장’을 줄여 이르는 말."@ko ;
     kno:component kno:KN2012-0178-c1 ;
-    kno:registration "우리말샘"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(←bus停)" ;
+    kno:pos "「명」"@ko ;
+    kno:urimalTargetCode "1368540" ;
+    kno:componentString "뻐(스)(bus), 정(류장)(停)"@ko ;
+    kno:component kno:KN2012-0178-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:formation kno:W06 ;
     a kno:Neologism ;
     kno:languageType "영+한" ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368540> ;
     kno:year "2012"^^xsd:gYear ;
-    kno:example "¶“그래, 이따 {뻐정에서} 만나.”"@ko ;
-    kno:component kno:KN2012-0178-c2 ;
-    kno:urimalTargetCode "1368540" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:formation kno:W06 ;
-    rdfs:label "뻐정"@ko ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368540> ;
     a ontolex:Word ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "뻐정"@ko .
-kno:KN2012-0178-c1 kno:surfaceForm "뻐"@ko ;
+    kno:example "¶“그래, 이따 {뻐정에서} 만나.”"@ko .
+kno:KN2012-0178-c1 a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004127 ;
     kno:fullForm "뻐스"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M3 ;
+    kno:formative kno:F004127 ;
     rdfs:label "뻐(스)(bus)"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2012-0178-c2 rdfs:label "정(류장)(停)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M3 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "정류장"@ko ;
-    kno:formative kno:F005665 ;
+    kno:surfaceForm "뻐"@ko ;
+    kno:semanticTag kno:usas-M3 .
+kno:KN2012-0178-c2 kno:semanticTag kno:usas-M3 ;
     kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "정(류장)(停)"@ko ;
+    kno:surfaceForm "정"@ko ;
+    kno:formative kno:F005665 ;
     a kno:Component ;
-    kno:surfaceForm "정"@ko .
+    kno:fullForm "정류장"@ko ;
+    kno:truncated "true"^^xsd:boolean .

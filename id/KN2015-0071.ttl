@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0071 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0071 kno:registration "우리말샘"@ko ;
+kno:KN2015-0071 a ontolex:MultiwordExpression ;
+    kno:activeYears "4"^^xsd:integer ;
+    rdfs:label "메르스^불황"@ko ;
+    kno:component kno:KN2015-0071-c2 ;
+    kno:frequency kno:KN2015-0071-freq-NN-2018 ;
+    kno:frequency kno:KN2015-0071-freq-NN-2020 ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2015-0071-c1 ;
+    kno:example "¶{메르스 불황이라는} 말이 나올 정도로 메르스 사태는 경제 전반에 심대한 영향을 끼쳤다."@ko ;
+    kno:componentString "메르스(MERS), 불황(不況)"@ko ;
+    kno:indexForm "메르스불황"@ko ;
     kno:lastAttestationYear "2020"^^xsd:gYear ;
-    skos:definition "메르스 때문에 나타나는 일시적인 경제 불황. 전염성이 강한 메르스가 유행하여 사람들이 되도록 외출하지 않으려고 하면서 경제 활동이 일시적으로 침체되는 상태를 이른다."@ko ;
-    kno:pos "「구」"@ko ;
     kno:origin "(<영>MERS不況)" ;
     kno:urimalTargetCode "1359990" ;
-    kno:frequency kno:KN2015-0071-freq-NN-2020 ;
-    kno:component kno:KN2015-0071-c2 ;
-    kno:frequency kno:KN2015-0071-freq-NN-total ;
-    kno:indexForm "메르스불황"@ko ;
-    kno:unitType "구"@ko ;
-    kno:componentString "메르스(MERS), 불황(不況)"@ko ;
-    kno:slotFiller "불황(不況) (1성분)"@ko ;
-    kno:frequency kno:KN2015-0071-freq-NN-2018 ;
-    kno:languageType "영^한" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359990> ;
-    kno:example "¶{메르스 불황이라는} 말이 나올 정도로 메르스 사태는 경제 전반에 심대한 영향을 끼쳤다."@ko ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:instantiates kno:S000511 ;
-    kno:component kno:KN2015-0071-c1 ;
-    a kno:Neologism ;
-    rdfs:label "메르스^불황"@ko ;
-    kno:frequency kno:KN2015-0071-freq-NN-2016 ;
     kno:year "2015"^^xsd:gYear ;
+    kno:slotFiller "불황(不況) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359990> ;
+    kno:languageType "영^한" ;
+    kno:frequency kno:KN2015-0071-freq-NN-total ;
+    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
     kno:frequency kno:KN2015-0071-freq-NN-2015 ;
-    a ontolex:MultiwordExpression .
-kno:KN2015-0071-c2 rdfs:label "불황(不況)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1m ;
-    kno:fullForm "불황"@ko ;
-    kno:surfaceForm "불황"@ko ;
-    kno:formative kno:F004004 ;
+    kno:instantiates kno:S000511 ;
+    skos:definition "메르스 때문에 나타나는 일시적인 경제 불황. 전염성이 강한 메르스가 유행하여 사람들이 되도록 외출하지 않으려고 하면서 경제 활동이 일시적으로 침체되는 상태를 이른다."@ko ;
+    kno:frequency kno:KN2015-0071-freq-NN-2016 .
+kno:KN2015-0071-c2 kno:semanticTag kno:usas-I1m ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "불황(不況)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2015-0071-c1 kno:formative kno:F000353 ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "불황"@ko ;
+    kno:fullForm "불황"@ko ;
     a kno:Component ;
-    kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F004004 .
+kno:KN2015-0071-c1 kno:formative kno:F000353 ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "메르스"@ko ;
     kno:surfaceForm "메르스"@ko ;
-    kno:role "고정항"@ko ;
+    a kno:Component ;
     rdfs:label "메르스(MERS)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:role "고정항"@ko .

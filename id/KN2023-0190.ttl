@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0190 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0190 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%86%8C%EB%B0%94> ;
-    kno:languageType "영+영" ;
-    kno:frequency kno:KN2023-0190-freq-NN-total ;
-    a kno:Neologism ;
-    kno:example "¶요즘은 서서 간편하게 커피를 즐길 수 있는 커피숍인 일명 ‘{에소바’가} 인기이다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2023-0190-c2 ;
-    kno:component kno:KN2023-0190-c1 ;
-    kno:origin "(<영>←espresso bar)" ;
-    kno:unitType "단어"@ko ;
-    skos:definition "‘에스프레소 바’를 줄여 이르는 말."@ko ;
-    rdfs:label "에소바"@ko ;
-    kno:componentString "에(스프레)소(espresso), 바(bar)"@ko ;
-    a ontolex:Word ;
+kno:KN2023-0190 kno:indexForm "에소바"@ko ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%86%8C%EB%B0%94> ;
     kno:frequency kno:KN2023-0190-freq-NN-2022 ;
+    a ontolex:Word ;
     kno:pos "「명」"@ko ;
-    kno:year "2023"^^xsd:gYear ;
+    rdfs:label "에소바"@ko ;
+    kno:component kno:KN2023-0190-c1 ;
+    kno:languageType "영+영" ;
+    skos:definition "‘에스프레소 바’를 줄여 이르는 말."@ko ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2023-0190-c2 ;
+    kno:origin "(<영>←espresso bar)" ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2023-0190-freq-NN-total ;
+    kno:componentString "에(스프레)소(espresso), 바(bar)"@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "에소바"@ko ;
     kno:slotFiller "에(스프레)소(espresso) (1성분)"@ko ;
+    kno:example "¶요즘은 서서 간편하게 커피를 즐길 수 있는 커피숍인 일명 ‘{에소바’가} 인기이다."@ko ;
     kno:instantiates kno:S000378 ;
-    kno:formation kno:W06 .
-kno:KN2023-0190-c2 rdfs:label "바(bar)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:formation kno:W06 ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0190-c1 kno:surfaceForm "에소"@ko ;
+    rdfs:label "에(스프레)소(espresso)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "에스프레소"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004994 .
+kno:KN2023-0190-c2 kno:formative kno:F000759 ;
+    a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-F2 ;
     kno:fullForm "바"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "바"@ko ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000759 ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0190-c1 kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "에(스프레)소(espresso)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F004994 ;
-    kno:surfaceForm "에소"@ko ;
-    kno:fullForm "에스프레소"@ko .
+    rdfs:label "바(bar)"@ko .

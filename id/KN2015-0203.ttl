@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0203 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0203 kno:frequency kno:KN2015-0203-freq-NN-2017 ;
+kno:KN2015-0203 a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
     kno:example "¶그의 청순하면서도 남자다운 이중적 매력에 시청자들은 ‘{청순 보스’라는} 애칭까지 새롭게 만들어 내며 그의 매력을 콕콕 짚어 내고 있다."@ko ;
-    kno:frequency kno:KN2015-0203-freq-NN-2016 ;
-    kno:year "2015"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2015-0203-freq-NN-total ;
     skos:definition "매우 깨끗하고 순수한 사람. 청순하기가 보스(boss) 급이라는 뜻에서 나온 말이다."@ko ;
+    kno:frequency kno:KN2015-0203-freq-NN-2015 ;
+    kno:frequency kno:KN2015-0203-freq-NN-2018 ;
+    kno:component kno:KN2015-0203-c1 ;
+    kno:component kno:KN2015-0203-c2 ;
+    kno:urimalTargetCode "1359741" ;
+    kno:year "2015"^^xsd:gYear ;
     kno:componentString "청순(淸純), 보스(boss)"@ko ;
     kno:unitType "구"@ko ;
-    kno:slotFiller "청순(淸純) (1성분)"@ko ;
-    kno:frequency kno:KN2015-0203-freq-NN-2015 ;
-    kno:urimalTargetCode "1359741" ;
     kno:languageType "한_영" ;
-    kno:activeYears "5"^^xsd:integer ;
-    kno:component kno:KN2015-0203-c1 ;
     kno:registration "우리말샘"@ko ;
-    a kno:Neologism ;
-    kno:origin "(淸純<영>boss)" ;
-    kno:instantiates kno:S000887 ;
-    kno:pos "「구」"@ko ;
     kno:frequency kno:KN2015-0203-freq-NN-2019 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:indexForm "청순보스"@ko ;
-    kno:frequency kno:KN2015-0203-freq-NN-2018 ;
-    kno:frequency kno:KN2015-0203-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
+    kno:activeYears "5"^^xsd:integer ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359741> ;
     rdfs:label "청순 보스"@ko ;
-    kno:component kno:KN2015-0203-c2 .
-kno:KN2015-0203-c1 kno:fullForm "청순"@ko ;
-    a kno:Component ;
+    kno:origin "(淸純<영>boss)" ;
+    kno:frequency kno:KN2015-0203-freq-NN-2017 ;
+    kno:indexForm "청순보스"@ko ;
+    kno:slotFiller "청순(淸純) (1성분)"@ko ;
+    kno:frequency kno:KN2015-0203-freq-NN-2016 ;
+    kno:instantiates kno:S000887 .
+kno:KN2015-0203-c1 kno:semanticTag kno:usas-O4.2p ;
     kno:surfaceForm "청순"@ko ;
-    kno:semanticTag kno:usas-O4.2p ;
-    kno:formative kno:F001824 ;
-    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
     kno:truncated "false"^^xsd:boolean ;
     rdfs:label "청순(淸純)"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2015-0203-c2 kno:fullForm "보스"@ko ;
-    kno:surfaceForm "보스"@ko ;
+    kno:fullForm "청순"@ko ;
+    kno:formative kno:F001824 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2015-0203-c2 kno:surfaceForm "보스"@ko ;
+    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "보스(boss)"@ko ;
     kno:semanticTag kno:usas-S7.1p ;
-    kno:formative kno:F001373 ;
+    kno:fullForm "보스"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko .
+    rdfs:label "보스(boss)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001373 .

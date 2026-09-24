@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0183 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0183 kno:languageType "한+한+한" ;
+kno:KN2022-0183 kno:component kno:KN2022-0183-c3 ;
     kno:component kno:KN2022-0183-c2 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0183-c3 ;
-    rdfs:label "소확수"@ko ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%99%95%EC%88%98> ;
+    skos:definition "‘소소하지만 확실한 수익’을 줄여 이르는 말. 주식 투자 따위에서 작지만 확실한 수익을 내는 것을 말한다."@ko ;
+    kno:component kno:KN2022-0183-c1 ;
+    kno:example "¶공모주를 청약하는 투자자들은 높은 수익률을 추구하는 대신, 검증된 기업을 통해 {소확수를} 추구하기도 한다."@ko ;
+    kno:frequency kno:KN2022-0183-freq-NN-2021 ;
     kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(小確收)" ;
     kno:frequency kno:KN2022-0183-freq-NN-2022 ;
+    a ontolex:Word ;
+    kno:year "2022"^^xsd:gYear ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:frequency kno:KN2022-0183-freq-NN-total ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
     kno:formation kno:W06 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%ED%99%95%EC%88%98> ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2022-0183-freq-NN-total ;
     kno:indexForm "소확수"@ko ;
-    skos:definition "‘소소하지만 확실한 수익’을 줄여 이르는 말. 주식 투자 따위에서 작지만 확실한 수익을 내는 것을 말한다."@ko ;
-    kno:origin "(小確收)" ;
-    kno:componentString "소(소하다), 확(실하다), 수(익)(收益)"@ko ;
-    kno:frequency kno:KN2022-0183-freq-NN-2021 ;
-    a ontolex:Word ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0183-c1 ;
-    kno:example "¶공모주를 청약하는 투자자들은 높은 수익률을 추구하는 대신, 검증된 기업을 통해 {소확수를} 추구하기도 한다."@ko .
-kno:KN2022-0183-c2 kno:fullForm "확실하다"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:languageType "한+한+한" ;
+    rdfs:label "소확수"@ko ;
+    kno:componentString "소(소하다), 확(실하다), 수(익)(收益)"@ko .
+kno:KN2022-0183-c3 kno:formative kno:F004463 ;
+    kno:semanticTag kno:usas-I1.1p ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:position "3"^^xsd:integer ;
+    rdfs:label "수(익)(收益)"@ko ;
+    kno:surfaceForm "수"@ko ;
+    kno:fullForm "수익"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0183-c2 kno:formative kno:F002027 ;
     rdfs:label "확(실하다)"@ko ;
-    kno:formative kno:F002027 ;
+    kno:fullForm "확실하다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "확"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
     kno:semanticTag kno:usas-A7p .
-kno:KN2022-0183-c3 kno:surfaceForm "수"@ko ;
-    kno:formative kno:F004463 ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.1p ;
-    rdfs:label "수(익)(收益)"@ko ;
-    kno:fullForm "수익"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2022-0183-c1 kno:formative kno:F004392 ;
-    kno:truncated "true"^^xsd:boolean ;
+kno:KN2022-0183-c1 kno:fullForm "소소하다"@ko ;
+    a kno:Component ;
     kno:surfaceForm "소"@ko ;
     kno:role "성분"@ko ;
-    a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-N3.2m ;
     rdfs:label "소(소하다)"@ko ;
-    kno:fullForm "소소하다"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.2m ;
+    kno:formative kno:F004392 .

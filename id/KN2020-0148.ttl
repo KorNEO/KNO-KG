@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0148 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0148 kno:predicate "이루어지다"@ko ;
-    kno:example "¶대학생 김 씨는 컴퓨터 앞에 술상을 차려 놓고 친구들과 {사이버 술자리를} 종종 가진다."@ko ;
-    kno:frequency kno:KN2020-0148-freq-NN-total ;
-    rdfs:label "사이버 술자리"@ko ;
-    kno:indexForm "사이버술자리"@ko ;
-    kno:frequency kno:KN2020-0148-freq-NN-2020 ;
-    kno:component kno:KN2020-0148-c2 ;
-    kno:componentString "사이버(cyber), 술자리"@ko ;
-    kno:languageType "영_고" ;
+kno:KN2020-0148 kno:slotFiller "술자리 (1성분)"@ko ;
+    kno:pos "「구」"@ko ;
     kno:component kno:KN2020-0148-c1 ;
-    kno:origin "(<영>cyber술자리)" ;
+    skos:definition "현실 공간이 아닌 온라인상에서 이루어지는 술자리. 코로나19로 대면 활동이 제한되면서 생겨난 말로, 각자의 공간에서 화상 카메라로 서로의 모습을 보면서 술을 마시는 자리를 의미한다."@ko ;
+    kno:component kno:KN2020-0148-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%9D%B4%EB%B2%84%20%EC%88%A0%EC%9E%90%EB%A6%AC> ;
     a kno:Neologism ;
+    kno:predicate "이루어지다"@ko ;
+    kno:componentString "사이버(cyber), 술자리"@ko ;
+    rdfs:label "사이버 술자리"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    a ontolex:MultiwordExpression ;
+    kno:languageType "영_고" ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
     kno:year "2020"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "현실 공간이 아닌 온라인상에서 이루어지는 술자리. 코로나19로 대면 활동이 제한되면서 생겨난 말로, 각자의 공간에서 화상 카메라로 서로의 모습을 보면서 술을 마시는 자리를 의미한다."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "술자리 (1성분)"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EC%9D%B4%EB%B2%84%20%EC%88%A0%EC%9E%90%EB%A6%AC> ;
     kno:instantiates kno:S000215 ;
-    kno:registration "신어DB"@ko .
-kno:KN2020-0148-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-F2 ;
-    kno:surfaceForm "술자리"@ko ;
-    kno:formative kno:F004503 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "술자리"@ko ;
-    a kno:Component ;
-    kno:fullForm "술자리"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2020-0148-c1 rdfs:label "사이버(cyber)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:example "¶대학생 김 씨는 컴퓨터 앞에 술상을 차려 놓고 친구들과 {사이버 술자리를} 종종 가진다."@ko ;
+    kno:frequency kno:KN2020-0148-freq-NN-total ;
+    kno:frequency kno:KN2020-0148-freq-NN-2020 ;
+    kno:origin "(<영>cyber술자리)" ;
+    kno:indexForm "사이버술자리"@ko .
+kno:KN2020-0148-c1 kno:surfaceForm "사이버"@ko ;
+    rdfs:label "사이버(cyber)"@ko ;
     kno:fullForm "사이버"@ko ;
     a kno:Component ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Y2 ;
-    kno:surfaceForm "사이버"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000366 .
+kno:KN2020-0148-c2 kno:role "슬롯 채움"@ko ;
+    kno:formative kno:F004503 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "술자리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "술자리"@ko ;
+    a kno:Component ;
+    rdfs:label "술자리"@ko ;
+    kno:semanticTag kno:usas-F2 .

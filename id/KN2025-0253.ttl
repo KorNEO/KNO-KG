@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0253 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0253 kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "(LLM) 열량 대비 단백질ㆍ비타민ㆍ미네랄ㆍ식이섬유 등 필수 영양소의 함량이 높은 식품."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:example "(LLM) 혈당 관리를 위해 간식도 과자 대신 {밀도푸드로} 바꿔 먹는 사람이 늘고 있다."@ko ;
+kno:KN2025-0253 kno:frequency kno:KN2025-0253-freq-NN-2025 ;
     a ontolex:MultiwordExpression ;
+    kno:unitType "구"@ko ;
+    rdfs:label "밀도 푸드"@ko ;
+    kno:indexForm "밀도푸드"@ko ;
+    kno:languageType "한_영" ;
     kno:component kno:KN2025-0253-c2 ;
     kno:predicate "높은"@ko ;
-    kno:frequency kno:KN2025-0253-freq-NN-total ;
-    kno:component kno:KN2025-0253-c1 ;
-    rdfs:label "밀도 푸드"@ko ;
-    kno:origin "(密度<영>food)" ;
-    kno:slotFiller "밀도(密度) (1성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%80%EB%8F%84%20%ED%91%B8%EB%93%9C> ;
-    kno:indexForm "밀도푸드"@ko ;
-    kno:componentString "밀도(密度), 푸드(food)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2025-0253-freq-NN-2025 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 열량 대비 단백질ㆍ비타민ㆍ미네랄ㆍ식이섬유 등 필수 영양소의 함량이 높은 식품."@ko ;
+    kno:example "(LLM) 혈당 관리를 위해 간식도 과자 대신 {밀도푸드로} 바꿔 먹는 사람이 늘고 있다."@ko ;
+    kno:component kno:KN2025-0253-c1 ;
     kno:instantiates kno:S000188 ;
-    kno:languageType "한_영" ;
-    a kno:Neologism .
-kno:KN2025-0253-c2 kno:semanticTag kno:usas-F1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000108 ;
-    rdfs:label "푸드(food)"@ko ;
+    kno:componentString "밀도(密度), 푸드(food)"@ko ;
+    kno:origin "(密度<영>food)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2025-0253-freq-NN-total ;
+    kno:slotFiller "밀도(密度) (1성분)"@ko .
+kno:KN2025-0253-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "푸드"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "푸드(food)"@ko ;
+    kno:formative kno:F000108 ;
     kno:role "고정항"@ko ;
     kno:fullForm "푸드"@ko ;
-    kno:surfaceForm "푸드"@ko .
-kno:KN2025-0253-c1 kno:fullForm "밀도"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-F1 .
+kno:KN2025-0253-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N5 ;
+    kno:role "슬롯 채움"@ko ;
     kno:formative kno:F003625 ;
-    kno:surfaceForm "밀도"@ko ;
     a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "밀도"@ko ;
     rdfs:label "밀도(密度)"@ko ;
-    kno:semanticTag kno:usas-N5 ;
-    kno:truncated "false"^^xsd:boolean .
+    kno:fullForm "밀도"@ko .

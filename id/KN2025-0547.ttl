@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0547 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0547 kno:origin "(짱北<영>song)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2025-0547 kno:year "2025"^^xsd:gYear ;
+    kno:slotFiller "짱(깨)+북(한)(北韓) (2성분)"@ko ;
+    kno:predicate "드러내다"@ko ;
     kno:component kno:KN2025-0547-c3 ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%B1%EB%B6%81%EC%86%A1> ;
-    a ontolex:Word ;
-    kno:example "(LLM) 집회 현장에서 확성기로 {짱북송이} 재생되자, 일부 참가자들이 혐오를 조장한다며 중단을 요구했다."@ko ;
-    kno:unitType "단어"@ko ;
     kno:componentString "짱(깨), 북(한)(北韓), 송(song)"@ko ;
     kno:formation kno:W01 ;
-    kno:component kno:KN2025-0547-c2 ;
-    kno:languageType "고+한+영" ;
+    kno:unitType "단어"@ko ;
+    skos:definition "(LLM) 중국인과 북한을 비하ㆍ조롱하는 표현을 가사나 구호처럼 반복해 반중ㆍ반북 정서를 드러내는 노래."@ko ;
+    kno:component kno:KN2025-0547-c1 ;
     rdfs:label "짱북-송"@ko ;
+    kno:origin "(짱北<영>song)" ;
+    a ontolex:Word ;
+    kno:indexForm "짱북송"@ko ;
+    kno:example "(LLM) 집회 현장에서 확성기로 {짱북송이} 재생되자, 일부 참가자들이 혐오를 조장한다며 중단을 요구했다."@ko ;
     kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:component kno:KN2025-0547-c2 ;
+    kno:frequency kno:KN2025-0547-freq-NN-2025 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2025-0547-freq-NN-total ;
     kno:instantiates kno:S000950 ;
-    skos:definition "(LLM) 중국인과 북한을 비하ㆍ조롱하는 표현을 가사나 구호처럼 반복해 반중ㆍ반북 정서를 드러내는 노래."@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:indexForm "짱북송"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "짱(깨)+북(한)(北韓) (2성분)"@ko ;
-    kno:component kno:KN2025-0547-c1 ;
-    kno:predicate "드러내다"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2025-0547-freq-NN-2025 .
-kno:KN2025-0547-c3 kno:fullForm "송"@ko ;
-    kno:surfaceForm "송"@ko ;
-    rdfs:label "송(song)"@ko ;
-    kno:semanticTag kno:usas-K2 ;
-    kno:formative kno:F000535 ;
+    kno:languageType "고+한+영" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%B1%EB%B6%81%EC%86%A1> .
+kno:KN2025-0547-c3 rdfs:label "송(song)"@ko ;
+    kno:fullForm "송"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:formative kno:F000535 ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:surfaceForm "송"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0547-c1 kno:formative kno:F001802 ;
+    kno:fullForm "짱깨"@ko ;
+    kno:surfaceForm "짱"@ko ;
+    kno:role "슬롯 채움"@ko ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer .
-kno:KN2025-0547-c2 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "북(한)(北韓)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S1.2.3m ;
+    rdfs:label "짱(깨)"@ko .
+kno:KN2025-0547-c2 a kno:Component ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "북"@ko ;
-    a kno:Component ;
+    rdfs:label "북(한)(北韓)"@ko ;
+    kno:formative kno:F003964 ;
     kno:fullForm "북한"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003964 .
-kno:KN2025-0547-c1 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "짱(깨)"@ko ;
-    kno:formative kno:F001802 ;
-    kno:semanticTag kno:usas-S1.2.3m ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "짱"@ko ;
-    kno:fullForm "짱깨"@ko .
+    kno:position "2"^^xsd:integer .

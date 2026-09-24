@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0400 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0400 kno:instantiates kno:S000033 ;
+kno:KN2018-0400 kno:componentString "피사(Pisa), 증후군(症候群)"@ko ;
+    kno:component kno:KN2018-0400-c1 ;
     kno:indexForm "피사증후군"@ko ;
-    kno:frequency kno:KN2018-0400-freq-NN-total ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416002> ;
+    kno:example "¶{피사 증후군이} 있는 환자 54명과 그렇지 않은 환자 36명을 비교한 결과 그 차이는 확연했다."@ko ;
+    a ontolex:MultiwordExpression ;
+    skos:definition "서 있거나 걸을 때 몸의 중심축이 옆으로 10도 이상 기울어진 증상. 주로 파킨슨병 환자에게서 나타난다."@ko ;
+    kno:unitType "구"@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:slotFiller "피사(Pisa) (1성분)"@ko ;
     kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:component kno:KN2018-0400-c2 ;
-    kno:languageType "이^한" ;
-    kno:year "2018"^^xsd:gYear ;
+    kno:origin "(Pisa症候群)" ;
     kno:urimalTargetCode "1416002" ;
-    kno:componentString "피사(Pisa), 증후군(症候群)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2018-0400-c1 ;
+    rdfs:label "피사^증후군"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:instantiates kno:S000033 ;
     kno:pos "「구」"@ko ;
     kno:frequency kno:KN2018-0400-freq-NN-2018 ;
-    kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    kno:example "¶{피사 증후군이} 있는 환자 54명과 그렇지 않은 환자 36명을 비교한 결과 그 차이는 확연했다."@ko ;
-    kno:origin "(Pisa症候群)" ;
-    rdfs:label "피사^증후군"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416002> ;
-    skos:definition "서 있거나 걸을 때 몸의 중심축이 옆으로 10도 이상 기울어진 증상. 주로 파킨슨병 환자에게서 나타난다."@ko .
-kno:KN2018-0400-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B2m ;
-    a kno:Component ;
-    kno:fullForm "증후군"@ko ;
-    rdfs:label "증후군(症候群)"@ko ;
-    kno:surfaceForm "증후군"@ko ;
-    kno:formative kno:F000062 ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko .
-kno:KN2018-0400-c1 kno:formative kno:F006874 ;
-    rdfs:label "피사(Pisa)"@ko ;
-    a kno:Component ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:frequency kno:KN2018-0400-freq-NN-total ;
+    a kno:Neologism ;
+    kno:languageType "이^한" .
+kno:KN2018-0400-c1 kno:surfaceForm "피사"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F006874 ;
     kno:fullForm "피사"@ko ;
-    kno:surfaceForm "피사"@ko ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Z2 ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "피사(Pisa)"@ko ;
+    a kno:Component ;
     kno:position "1"^^xsd:integer .
+kno:KN2018-0400-c2 kno:fullForm "증후군"@ko ;
+    rdfs:label "증후군(症候群)"@ko ;
+    kno:formative kno:F000062 ;
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "증후군"@ko .

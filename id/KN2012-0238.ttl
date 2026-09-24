@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0238 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0238 kno:languageType "한+한" ;
+kno:KN2012-0238 kno:component kno:KN2012-0238-c1 ;
     kno:predicate "주다"@ko ;
-    a kno:Neologism ;
     kno:registration "신어DB"@ko ;
-    rdfs:label "시주-간"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:origin "(施主間)" ;
+    kno:languageType "한+한" ;
+    kno:formation kno:W02 ;
     kno:unitType "단어"@ko ;
+    kno:indexForm "시주간"@ko ;
+    kno:example "¶점심 공양을 달게 비운 뒤 밥값은 해야 한다는 생각에 우리는 {시주간으로} 몰려가 개수대에 가득 쌓인 수백 개의 밥그릇을 정성스럽게 닦았다."@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9C%EC%A3%BC%EA%B0%84> ;
     skos:definition "절에서, 대중들에게 공짜로 밥을 주는 곳."@ko ;
+    kno:componentString "시주(施主), -간(間)"@ko ;
+    rdfs:label "시주-간"@ko ;
     a ontolex:Word ;
-    kno:example "¶점심 공양을 달게 비운 뒤 밥값은 해야 한다는 생각에 우리는 {시주간으로} 몰려가 개수대에 가득 쌓인 수백 개의 밥그릇을 정성스럽게 닦았다."@ko ;
-    kno:origin "(施主間)" ;
     kno:pos "「명」"@ko ;
     kno:component kno:KN2012-0238-c2 ;
-    kno:indexForm "시주간"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:formation kno:W02 ;
-    kno:component kno:KN2012-0238-c1 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "시주(施主), -간(間)"@ko .
-kno:KN2012-0238-c2 rdfs:label "-간(間)"@ko ;
-    kno:formative kno:F002098 ;
+    a kno:Neologism ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0238-c1 kno:semanticTag kno:usas-S9 ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "시주"@ko ;
+    rdfs:label "시주(施主)"@ko ;
+    kno:fullForm "시주"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004667 ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2012-0238-c2 rdfs:label "-간(間)"@ko ;
     kno:fullForm "간"@ko ;
     kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "간"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002098 ;
     kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-H2 ;
-    kno:surfaceForm "간"@ko .
-kno:KN2012-0238-c1 kno:fullForm "시주"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S9 ;
-    kno:formative kno:F004667 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "시주"@ko ;
-    rdfs:label "시주(施主)"@ko .
+    a kno:Component .

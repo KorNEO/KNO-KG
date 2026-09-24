@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0149 skos:definition "신흥 경제국 중 지난 수십 년간 급속한 성장을 이룬 나라. 지난 50년간 연평균 1인 국내 총생산 성장률이 3.5% 이상이면 장기 성장 우위국, 최근 20년간 성장률이 5% 이상이면 신흥 성장 우위국으로 분류된다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2019-0149-c1 ;
+kno:KN2019-0149 kno:example "¶{성장 우위국은} 국내 총생산 1조 달러당 대기업 수가 선진국이나 다른 신흥국 대비 두 배 이상 많은 것으로 나타났다."@ko ;
     kno:slotFiller "성장(成長)+우위(優位) (2성분)"@ko ;
+    kno:component kno:KN2019-0149-c3 ;
+    kno:component kno:KN2019-0149-c2 ;
+    kno:instantiates kno:S000458 ;
+    kno:registration "신어DB"@ko ;
+    rdfs:label "성장^우위국"@ko ;
+    skos:definition "신흥 경제국 중 지난 수십 년간 급속한 성장을 이룬 나라. 지난 50년간 연평균 1인 국내 총생산 성장률이 3.5% 이상이면 장기 성장 우위국, 최근 20년간 성장률이 5% 이상이면 신흥 성장 우위국으로 분류된다."@ko ;
+    kno:component kno:KN2019-0149-c1 ;
+    kno:frequency kno:KN2019-0149-freq-NN-2018 ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:indexForm "성장우위국"@ko ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2019-0149-freq-NN-2019 ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2019-0149-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EC%9E%A5%EC%9A%B0%EC%9C%84%EA%B5%AD> ;
+    kno:languageType "한^한" ;
     kno:componentString "성장(成長), 우위(優位), -국(國)"@ko ;
     kno:activeYears "3"^^xsd:integer ;
     kno:frequency kno:KN2019-0149-freq-NN-2020 ;
-    kno:frequency kno:KN2019-0149-freq-NN-2019 ;
-    kno:component kno:KN2019-0149-c3 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    rdfs:label "성장^우위국"@ko ;
     kno:origin "(成長優位國)" ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000458 ;
-    kno:component kno:KN2019-0149-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:example "¶{성장 우위국은} 국내 총생산 1조 달러당 대기업 수가 선진국이나 다른 신흥국 대비 두 배 이상 많은 것으로 나타났다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B1%EC%9E%A5%EC%9A%B0%EC%9C%84%EA%B5%AD> ;
-    kno:frequency kno:KN2019-0149-freq-NN-total ;
-    kno:frequency kno:KN2019-0149-freq-NN-2018 ;
-    kno:indexForm "성장우위국"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:languageType "한^한" .
-kno:KN2019-0149-c1 kno:truncated "false"^^xsd:boolean ;
+    a ontolex:MultiwordExpression .
+kno:KN2019-0149-c3 kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "-국(國)"@ko ;
+    kno:formative kno:F000161 ;
+    kno:fullForm "국"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2019-0149-c2 a kno:Component ;
+    rdfs:label "우위(優位)"@ko ;
+    kno:fullForm "우위"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "우위"@ko ;
+    kno:formative kno:F005222 .
+kno:KN2019-0149-c1 a kno:Component ;
+    kno:fullForm "성장"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-A2.1 ;
-    a kno:Component ;
-    kno:surfaceForm "성장"@ko ;
-    kno:formative kno:F001470 ;
+    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "성장(成長)"@ko ;
-    kno:fullForm "성장"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2019-0149-c3 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "국"@ko ;
-    kno:surfaceForm "국"@ko ;
-    kno:formative kno:F000161 ;
-    kno:semanticTag kno:usas-G1.1 ;
-    rdfs:label "-국(國)"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2019-0149-c2 kno:surfaceForm "우위"@ko ;
-    kno:formative kno:F005222 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "우위"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "우위(優位)"@ko ;
-    kno:semanticTag kno:usas-S7.1p .
+    kno:surfaceForm "성장"@ko ;
+    kno:formative kno:F001470 .

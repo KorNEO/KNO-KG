@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0383 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0383 kno:slotFiller "가(정 간편식)(家) (1성분)"@ko ;
-    kno:frequency kno:KN2018-0383-freq-NN-2018 ;
-    skos:definition "편의점에서 판매하는 가정 간편식을 주로 이용하는 사람. 또는 그런 무리."@ko ;
+kno:KN2018-0383 kno:unitType "단어"@ko ;
     rdfs:label "편가-족"@ko ;
-    kno:languageType "한+한" ;
-    kno:indexForm "편가족"@ko ;
-    a ontolex:Word ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    kno:component kno:KN2018-0383-c2 ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:componentString "편(의점)(便), 가(정 간편식)(家), -족(族)"@ko ;
-    kno:example "¶이들이 편의점에서 주로 구매하는 상품은 도시락, 컵밥과 같은 즉석식품과 소포장 상품, 생필품 등으로 ‘편도족’, ‘{편가족}’, ‘편채족’ 등의 신조어를 만들어 낼 정도로 유통업계에서 주목했다."@ko ;
-    kno:frequency kno:KN2018-0383-freq-NN-total ;
-    kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EA%B0%80%EC%A1%B1> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:formation kno:W02 ;
-    kno:component kno:KN2018-0383-c3 ;
     kno:instantiates kno:S000108 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:indexForm "편가족"@ko ;
+    kno:frequency kno:KN2018-0383-freq-NN-2018 ;
+    kno:formation kno:W02 ;
+    kno:component kno:KN2018-0383-c2 ;
+    kno:frequency kno:KN2018-0383-freq-NN-total ;
+    kno:component kno:KN2018-0383-c3 ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    skos:definition "편의점에서 판매하는 가정 간편식을 주로 이용하는 사람. 또는 그런 무리."@ko ;
+    kno:predicate "이용하다"@ko ;
     kno:origin "(便家族)" ;
-    kno:component kno:KN2018-0383-c1 ;
-    a kno:Neologism ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EA%B0%80%EC%A1%B1> ;
     kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:predicate "이용하다"@ko .
-kno:KN2018-0383-c2 rdfs:label "가(정 간편식)(家)"@ko ;
-    kno:surfaceForm "가"@ko ;
-    kno:fullForm "가정 간편식"@ko ;
+    kno:year "2018"^^xsd:gYear ;
+    kno:slotFiller "가(정 간편식)(家) (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:example "¶이들이 편의점에서 주로 구매하는 상품은 도시락, 컵밥과 같은 즉석식품과 소포장 상품, 생필품 등으로 ‘편도족’, ‘{편가족}’, ‘편채족’ 등의 신조어를 만들어 낼 정도로 유통업계에서 주목했다."@ko ;
+    kno:componentString "편(의점)(便), 가(정 간편식)(家), -족(族)"@ko ;
+    kno:component kno:KN2018-0383-c1 ;
+    kno:pos "「명」"@ko .
+kno:KN2018-0383-c2 kno:formative kno:F002063 ;
+    rdfs:label "가(정 간편식)(家)"@ko ;
     a kno:Component ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "가"@ko ;
     kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F002063 .
-kno:KN2018-0383-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "가정 간편식"@ko .
+kno:KN2018-0383-c3 a kno:Component ;
+    kno:formative kno:F000001 ;
     kno:position "3"^^xsd:integer ;
-    kno:fullForm "족"@ko ;
-    kno:surfaceForm "족"@ko ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:semanticTag kno:usas-S2 ;
-    rdfs:label "-족(族)"@ko ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000001 .
+    kno:surfaceForm "족"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:fullForm "족"@ko ;
+    rdfs:label "-족(族)"@ko .
 kno:KN2018-0383-c1 kno:semanticTag kno:usas-I2.2 ;
     kno:formative kno:F000153 ;
-    kno:surfaceForm "편"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "편의점"@ko ;
     rdfs:label "편(의점)(便)"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:surfaceForm "편"@ko ;
+    kno:fullForm "편의점"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko .

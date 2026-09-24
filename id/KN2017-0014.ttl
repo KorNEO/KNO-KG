@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0014 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0014 kno:activeYears "0"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
-    skos:definition "‘경찰 공무원 시험을 준비하는 학생’을 줄여 이르는 말."@ko ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:slotFiller "경(찰)(警) (1성분)"@ko ;
-    kno:component kno:KN2017-0014-c2 ;
-    kno:instantiates kno:S001038 ;
-    kno:indexForm "경준생"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A4%80%EC%83%9D> ;
-    a kno:Neologism ;
-    kno:component kno:KN2017-0014-c3 ;
+kno:KN2017-0014 kno:pos "「명」"@ko ;
     kno:example "¶특히 경찰청이 2023년까지 경찰관 1만 명을 신규로 채용하겠다는 구체적인 계획을 밝힘에 따라 ‘{경준생’들과} 관련 학원들이 ‘공채 특수’ 기대감에 들떴다."@ko ;
-    kno:origin "(警準生)" ;
-    kno:formation kno:W06 ;
+    a kno:Neologism ;
     kno:component kno:KN2017-0014-c1 ;
-    kno:componentString "경(찰)(警), 준(비)(準), -생(生)"@ko ;
-    kno:languageType "한+한" ;
-    kno:pos "「명」"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S001038 ;
     a ontolex:Word ;
+    kno:origin "(警準生)" ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:year "2017"^^xsd:gYear ;
+    skos:definition "‘경찰 공무원 시험을 준비하는 학생’을 줄여 이르는 말."@ko ;
+    kno:component kno:KN2017-0014-c3 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%BD%EC%A4%80%EC%83%9D> ;
+    kno:languageType "한+한" ;
+    kno:indexForm "경준생"@ko ;
+    kno:formation kno:W06 ;
+    kno:unitType "단어"@ko ;
+    kno:componentString "경(찰)(警), 준(비)(準), -생(生)"@ko ;
+    kno:component kno:KN2017-0014-c2 ;
+    kno:slotFiller "경(찰)(警) (1성분)"@ko ;
     rdfs:label "경준생"@ko .
-kno:KN2017-0014-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001778 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "준"@ko ;
-    kno:fullForm "준비"@ko ;
+kno:KN2017-0014-c1 kno:position "1"^^xsd:integer ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "준(비)(準)"@ko ;
-    kno:semanticTag kno:usas-A1.1.1 .
-kno:KN2017-0014-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000799 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "생"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "생"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "-생(生)"@ko .
-kno:KN2017-0014-c1 kno:semanticTag kno:usas-G2.1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002231 ;
     kno:fullForm "경찰"@ko ;
-    rdfs:label "경(찰)(警)"@ko ;
-    kno:surfaceForm "경"@ko .
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "경"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    a kno:Component ;
+    kno:formative kno:F002231 ;
+    rdfs:label "경(찰)(警)"@ko .
+kno:KN2017-0014-c3 kno:fullForm "생"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:formative kno:F000799 ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "-생(生)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "생"@ko .
+kno:KN2017-0014-c2 rdfs:label "준(비)(準)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F001778 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "준비"@ko ;
+    kno:surfaceForm "준"@ko ;
+    kno:position "2"^^xsd:integer .

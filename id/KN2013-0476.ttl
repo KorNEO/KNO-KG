@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0476 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0476 kno:component kno:KN2013-0476-c3 ;
-    kno:component kno:KN2013-0476-c2 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:origin "(←heal Well-being學)" ;
-    a kno:Neologism ;
-    kno:languageType "영+한" ;
-    kno:slotFiller "힐(heal)+(웰)빙(well-being) (2성분)"@ko ;
-    kno:frequency kno:KN2013-0476-freq-NN-2012 ;
-    kno:formation kno:W02 ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "힐빙학"@ko ;
-    rdfs:label "힐빙-학"@ko ;
-    kno:instantiates kno:S000197 ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:frequency kno:KN2013-0476-freq-NN-total ;
-    skos:definition "치유를 통해 심신의 회복을 추구하는 학문."@ko ;
-    kno:example "¶이렇게 병들어 신음하며 혼돈 상태에 빠져 있는 우리 사회는 치유를 간절히 바라고 있다. 여기에 융합 학문의 하나인 ‘{힐빙학’을} 정립하고 발전시켜야 할 필요성을 발견하게 된다."@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2013-0476 kno:origin "(←heal Well-being學)" ;
+    kno:component kno:KN2013-0476-c3 ;
     a ontolex:Word ;
+    skos:definition "치유를 통해 심신의 회복을 추구하는 학문."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:formation kno:W02 ;
+    kno:predicate "추구하다"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:instantiates kno:S000197 ;
+    kno:frequency kno:KN2013-0476-freq-NN-2012 ;
+    kno:languageType "영+한" ;
+    a kno:Neologism ;
+    kno:year "2013"^^xsd:gYear ;
     kno:frequency kno:KN2013-0476-freq-NN-2017 ;
     kno:component kno:KN2013-0476-c1 ;
-    kno:predicate "추구하다"@ko ;
-    kno:componentString "힐(heal), (웰)빙(well-being), -학(學)"@ko ;
+    kno:component kno:KN2013-0476-c2 ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:frequency kno:KN2013-0476-freq-NN-total ;
+    kno:indexForm "힐빙학"@ko ;
+    rdfs:label "힐빙-학"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:example "¶이렇게 병들어 신음하며 혼돈 상태에 빠져 있는 우리 사회는 치유를 간절히 바라고 있다. 여기에 융합 학문의 하나인 ‘{힐빙학’을} 정립하고 발전시켜야 할 필요성을 발견하게 된다."@ko ;
+    kno:registration "신어DB"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9E%90%EB%B9%99%ED%95%99> ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:pos "「명」"@ko .
+    kno:componentString "힐(heal), (웰)빙(well-being), -학(學)"@ko ;
+    kno:slotFiller "힐(heal)+(웰)빙(well-being) (2성분)"@ko .
 kno:KN2013-0476-c3 a kno:Component ;
-    kno:formative kno:F000437 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "학"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:surfaceForm "학"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     rdfs:label "-학(學)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2013-0476-c2 a kno:Component ;
-    rdfs:label "(웰)빙(well-being)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "학"@ko ;
+    kno:formative kno:F000437 ;
+    kno:surfaceForm "학"@ko .
+kno:KN2013-0476-c1 a kno:Component ;
+    kno:formative kno:F007232 ;
+    rdfs:label "힐(heal)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "힐"@ko ;
+    kno:fullForm "힐"@ko ;
+    kno:semanticTag kno:usas-B5 .
+kno:KN2013-0476-c2 rdfs:label "(웰)빙(well-being)"@ko ;
     kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "웰빙"@ko ;
+    a kno:Component ;
+    kno:formative kno:F004110 ;
     kno:semanticTag kno:usas-B2p ;
     kno:surfaceForm "빙"@ko ;
-    kno:formative kno:F004110 .
-kno:KN2013-0476-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F007232 ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "힐(heal)"@ko ;
-    kno:fullForm "힐"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "힐"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "웰빙"@ko .

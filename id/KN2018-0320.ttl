@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0320 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0320 kno:instantiates kno:S001114 ;
-    kno:frequency kno:KN2018-0320-freq-NN-2020 ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
+kno:KN2018-0320 kno:activeYears "2"^^xsd:integer ;
     kno:instantiates kno:S001682 ;
-    kno:activeYears "2"^^xsd:integer ;
+    kno:frequency kno:KN2018-0320-freq-NN-total ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:origin "(就準<영>←feminist)" ;
     kno:indexForm "취준페미"@ko ;
+    skos:definition "취업 준비 과정에서 겪은 성차별로 인해 페미니즘을 따르거나 주장하게 된 사람을 이르는 말."@ko ;
+    kno:slotFiller "페미(니스트)(feminist) (1성분)"@ko ;
+    kno:example "¶여성 취업 준비생들이 피부로 느끼는 채용 성차별은 그만큼 심각하다. 하지만 그것은 ‘{취준 페미’들이} 만든 괴담처럼 취급되어 왔다."@ko ;
+    kno:pos "「구」"@ko ;
     kno:slotFiller "취준(就準) (1성분)"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:year "2018"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B7%A8%EC%A4%80%20%ED%8E%98%EB%AF%B8> ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:slotFiller "페미(니스트)(feminist) (1성분)"@ko ;
-    kno:frequency kno:KN2018-0320-freq-NN-total ;
-    kno:componentString "취준(就準), 페미(니스트)(feminist)"@ko ;
-    kno:component kno:KN2018-0320-c1 ;
-    kno:origin "(就準<영>←feminist)" ;
-    kno:unitType "구"@ko ;
+    a kno:Neologism ;
     rdfs:label "취준 페미"@ko ;
+    kno:componentString "취준(就準), 페미(니스트)(feminist)"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
     kno:frequency kno:KN2018-0320-freq-NN-2018 ;
-    kno:languageType "한_영" ;
+    kno:instantiates kno:S001114 ;
+    kno:component kno:KN2018-0320-c1 ;
+    kno:frequency kno:KN2018-0320-freq-NN-2020 ;
     kno:component kno:KN2018-0320-c2 ;
-    skos:definition "취업 준비 과정에서 겪은 성차별로 인해 페미니즘을 따르거나 주장하게 된 사람을 이르는 말."@ko ;
-    kno:example "¶여성 취업 준비생들이 피부로 느끼는 채용 성차별은 그만큼 심각하다. 하지만 그것은 ‘{취준 페미’들이} 만든 괴담처럼 취급되어 왔다."@ko .
-kno:KN2018-0320-c1 kno:semanticTag kno:usas-I3.1 ;
-    kno:role "고정항"@ko ;
+    kno:languageType "한_영" .
+kno:KN2018-0320-c1 rdfs:label "취준(就準)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "취준(就準)"@ko ;
-    kno:formative kno:F001830 ;
+    kno:surfaceForm "취준"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "고정항"@ko ;
     kno:fullForm "취준"@ko ;
-    kno:surfaceForm "취준"@ko .
-kno:KN2018-0320-c2 kno:surfaceForm "페미"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001830 ;
+    kno:position "1"^^xsd:integer .
+kno:KN2018-0320-c2 rdfs:label "페미(니스트)(feminist)"@ko ;
     kno:semanticTag kno:usas-S2.1 ;
     kno:formative kno:F000319 ;
+    kno:surfaceForm "페미"@ko ;
+    kno:role "고정항"@ko ;
     kno:fullForm "페미니스트"@ko ;
-    rdfs:label "페미(니스트)(feminist)"@ko ;
-    kno:role "고정항"@ko .
+    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .

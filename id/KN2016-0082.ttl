@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0082 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0082 skos:definition "여러 가지 기준에 따라 살펴본 빈곤율. 소득뿐만 아니라 자산, 주거, 건강, 고용, 사회 참여, 사회 관계망 등의 다양한 요인을 함께 고려하여 파악하는 빈곤율이다."@ko ;
+kno:KN2016-0082 a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
     kno:componentString "다차원(多次元), 빈곤율(貧困率)"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2016-0082-c1 ;
+    kno:year "2016"^^xsd:gYear ;
     kno:activeYears "5"^^xsd:integer ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372517> ;
+    kno:component kno:KN2016-0082-c2 ;
     kno:frequency kno:KN2016-0082-freq-NN-2019 ;
-    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2016-0082-freq-NN-2018 ;
+    kno:urimalTargetCode "1372517" ;
     kno:frequency kno:KN2016-0082-freq-NN-2016 ;
+    kno:slotFiller "빈곤율(貧困率) (1성분)"@ko ;
+    kno:origin "(多次元貧困率)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:example "¶7가지 요인 중 2개 이상에서 빈곤 상태인 노인의 비율인 {다차원 빈곤율은} 67.3%였다."@ko ;
+    kno:frequency kno:KN2016-0082-freq-NN-2024 ;
     kno:indexForm "다차원빈곤율"@ko ;
     kno:frequency kno:KN2016-0082-freq-NN-total ;
-    kno:frequency kno:KN2016-0082-freq-NN-2018 ;
-    kno:origin "(多次元貧困率)" ;
-    kno:instantiates kno:S001305 ;
-    kno:languageType "한^한" ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:component kno:KN2016-0082-c2 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "다차원^빈곤율"@ko ;
-    kno:frequency kno:KN2016-0082-freq-NN-2024 ;
-    kno:component kno:KN2016-0082-c1 ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372517> ;
-    kno:urimalTargetCode "1372517" ;
-    a kno:Neologism ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
     kno:frequency kno:KN2016-0082-freq-NN-2017 ;
-    kno:example "¶7가지 요인 중 2개 이상에서 빈곤 상태인 노인의 비율인 {다차원 빈곤율은} 67.3%였다."@ko ;
-    kno:slotFiller "빈곤율(貧困率) (1성분)"@ko ;
-    kno:pos "「구」"@ko .
-kno:KN2016-0082-c2 kno:fullForm "빈곤율"@ko ;
-    kno:surfaceForm "빈곤율"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "빈곤율(貧困率)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F004096 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1.1m .
+    kno:languageType "한^한" ;
+    kno:registration "우리말샘"@ko ;
+    skos:definition "여러 가지 기준에 따라 살펴본 빈곤율. 소득뿐만 아니라 자산, 주거, 건강, 고용, 사회 참여, 사회 관계망 등의 다양한 요인을 함께 고려하여 파악하는 빈곤율이다."@ko ;
+    kno:instantiates kno:S001305 ;
+    rdfs:label "다차원^빈곤율"@ko .
 kno:KN2016-0082-c1 kno:surfaceForm "다차원"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001161 ;
-    rdfs:label "다차원(多次元)"@ko ;
     kno:semanticTag kno:usas-N3.1 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "다차원(多次元)"@ko ;
+    kno:formative kno:F001161 ;
+    kno:fullForm "다차원"@ko ;
+    a kno:Component ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "다차원"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0082-c2 a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "빈곤율"@ko ;
+    kno:formative kno:F004096 ;
+    rdfs:label "빈곤율(貧困率)"@ko ;
+    kno:surfaceForm "빈곤율"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-I1.1m ;
+    kno:position "2"^^xsd:integer .

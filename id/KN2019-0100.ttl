@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0100 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0100 kno:formation kno:W05 ;
-    kno:unitType "단어"@ko ;
+kno:KN2019-0100 kno:languageType "고+영" ;
+    kno:year "2019"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    skos:definition "알몸이 찍힌 동영상으로 상대방을 협박하여 큰돈을 뜯어내는 범죄를 비유적으로 이르는 말. ⇒규범 표기는 ‘몸토’이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    a kno:Neologism ;
+    kno:origin "(몸<영>←Lotto)" ;
+    kno:example "¶몸 캠 피싱은 최근 늘어난 인터넷 사기 범죄로, 이른바 ‘영상 통화 사기’, ‘{몸또}’, ‘화상 통화 사기’, ‘화상 통화 협박’ 등으로도 불리고 있는 신종 수법이다."@ko ;
     kno:component kno:KN2019-0100-c1 ;
-    kno:languageType "고+영" ;
+    kno:componentString "몸, (로)또(Lotto)"@ko ;
+    kno:formation kno:W05 ;
+    kno:component kno:KN2019-0100-c2 ;
+    kno:unitType "단어"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:indexForm "몸또"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%B8%EB%98%90> ;
     kno:slotFiller "몸 (1성분)"@ko ;
     rdfs:label "몸또"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AA%B8%EB%98%90> ;
-    kno:origin "(몸<영>←Lotto)" ;
-    a ontolex:Word ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S000728 ;
-    kno:example "¶몸 캠 피싱은 최근 늘어난 인터넷 사기 범죄로, 이른바 ‘영상 통화 사기’, ‘{몸또}’, ‘화상 통화 사기’, ‘화상 통화 협박’ 등으로도 불리고 있는 신종 수법이다."@ko ;
-    kno:indexForm "몸또"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    skos:definition "알몸이 찍힌 동영상으로 상대방을 협박하여 큰돈을 뜯어내는 범죄를 비유적으로 이르는 말. ⇒규범 표기는 ‘몸토’이다."@ko ;
-    kno:component kno:KN2019-0100-c2 ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
-    kno:componentString "몸, (로)또(Lotto)"@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2019-0100-c1 a kno:Component ;
+    kno:instantiates kno:S000728 .
+kno:KN2019-0100-c1 kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "몸"@ko ;
     kno:truncated "false"^^xsd:boolean ;
     rdfs:label "몸"@ko ;
-    kno:surfaceForm "몸"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-B1 ;
     kno:fullForm "몸"@ko ;
-    kno:formative kno:F001309 .
-kno:KN2019-0100-c2 kno:role "고정항"@ko ;
-    kno:fullForm "로또"@ko ;
-    kno:surfaceForm "또"@ko ;
-    kno:formative kno:F001225 ;
     a kno:Component ;
+    kno:formative kno:F001309 ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2019-0100-c2 kno:fullForm "로또"@ko ;
+    kno:semanticTag kno:usas-K5.2 ;
+    kno:formative kno:F001225 ;
+    kno:role "고정항"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "또"@ko ;
     kno:position "2"^^xsd:integer ;
     rdfs:label "(로)또(Lotto)"@ko ;
-    kno:semanticTag kno:usas-K5.2 .
+    a kno:Component .

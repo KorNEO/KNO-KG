@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0011 a ontolex:Word ;
-    kno:componentString "개(강)(開), 파(티)(party)"@ko ;
+kno:KN2014-0011 kno:languageType "한+영" ;
     kno:unitType "단어"@ko ;
-    kno:instantiates kno:S001190 ;
-    kno:pos "「명」"@ko ;
-    rdfs:label "개파"@ko ;
-    kno:instantiates kno:S000446 ;
     kno:component kno:KN2014-0011-c2 ;
-    kno:indexForm "개파"@ko ;
-    kno:languageType "한+영" ;
+    a ontolex:Word ;
+    kno:instantiates kno:S001190 ;
+    kno:registration "신어DB"@ko ;
     kno:origin "(開<영>←party)" ;
-    kno:formation kno:W06 ;
+    rdfs:label "개파"@ko ;
     a kno:Neologism ;
-    skos:definition "‘개강 파티’를 줄여 이르는 말."@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:slotFiller "개(강)(開) (1성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%ED%8C%8C> ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:slotFiller "파(티)(party) (1성분)"@ko ;
     kno:example "¶캠퍼스에는 {개파나}…긱사(기숙사) 등이 널리 사용되고 있다."@ko ;
+    kno:indexForm "개파"@ko ;
     kno:component kno:KN2014-0011-c1 ;
-    kno:registration "신어DB"@ko .
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%ED%8C%8C> ;
+    kno:slotFiller "파(티)(party) (1성분)"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W06 ;
+    kno:slotFiller "개(강)(開) (1성분)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:instantiates kno:S000446 ;
+    kno:year "2014"^^xsd:gYear ;
+    skos:definition "‘개강 파티’를 줄여 이르는 말."@ko ;
+    kno:componentString "개(강)(開), 파(티)(party)"@ko .
 kno:KN2014-0011-c2 kno:fullForm "파티"@ko ;
-    kno:formative kno:F000624 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-K1 ;
-    rdfs:label "파(티)(party)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "파"@ko .
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-K1 ;
+    a kno:Component ;
+    kno:surfaceForm "파"@ko ;
+    kno:formative kno:F000624 ;
+    rdfs:label "파(티)(party)"@ko ;
+    kno:role "고정항"@ko .
 kno:KN2014-0011-c1 kno:surfaceForm "개"@ko ;
     a kno:Component ;
-    kno:fullForm "개강"@ko ;
-    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-P1 ;
     kno:formative kno:F001044 ;
-    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "개(강)(開)"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "개(강)(開)"@ko .
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "개강"@ko .

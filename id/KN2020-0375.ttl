@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0375 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0375 kno:languageType "영_영" ;
-    skos:definition "미술관이나 박물관에서 전시 작품을 선정하거나 주제를 기획하기 위해 구축된 프로그램."@ko ;
+kno:KN2020-0375 kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    kno:unitType "구"@ko ;
+    kno:origin "(<영>curator bot)" ;
+    kno:frequency kno:KN2020-0375-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0375-freq-NN-total ;
+    kno:component kno:KN2020-0375-c1 ;
+    kno:component kno:KN2020-0375-c2 ;
+    a ontolex:MultiwordExpression ;
+    rdfs:label "큐레이터 봇"@ko ;
     kno:indexForm "큐레이터봇"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%81%90%EB%A0%88%EC%9D%B4%ED%84%B0%20%EB%B4%87> ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:unitType "구"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    rdfs:label "큐레이터 봇"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2020-0375-c2 ;
-    a kno:Neologism ;
-    kno:component kno:KN2020-0375-c1 ;
-    kno:frequency kno:KN2020-0375-freq-NN-2020 ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "큐레이터(curator), 봇(bot)"@ko ;
     kno:frequency kno:KN2020-0375-freq-NN-2024 ;
-    kno:origin "(<영>curator bot)" ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2020"^^xsd:gYear ;
+    kno:componentString "큐레이터(curator), 봇(bot)"@ko ;
+    skos:definition "미술관이나 박물관에서 전시 작품을 선정하거나 주제를 기획하기 위해 구축된 프로그램."@ko ;
     kno:example "¶우리는 에이아이(AI)를 활용한 {큐레이터 봇을} 구축하는 등 다양한 사업도 구상 중이다."@ko ;
-    kno:frequency kno:KN2020-0375-freq-NN-total .
-kno:KN2020-0375-c2 kno:fullForm "봇"@ko ;
-    kno:surfaceForm "봇"@ko ;
-    kno:formative kno:F000778 ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:languageType "영_영" .
+kno:KN2020-0375-c1 kno:surfaceForm "큐레이터"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "봇(bot)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-Y2 .
-kno:KN2020-0375-c1 kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
     rdfs:label "큐레이터(curator)"@ko ;
+    a kno:Component ;
     kno:semanticTag kno:usas-I3.1 ;
-    kno:fullForm "큐레이터"@ko ;
+    kno:role "성분"@ko ;
     kno:formative kno:F006334 ;
-    kno:surfaceForm "큐레이터"@ko ;
+    kno:fullForm "큐레이터"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2020-0375-c2 kno:semanticTag kno:usas-Y2 ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F000778 ;
+    kno:surfaceForm "봇"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko .
+    kno:fullForm "봇"@ko ;
+    kno:position "2"^^xsd:integer ;
+    a kno:Component ;
+    rdfs:label "봇(bot)"@ko .

@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0123 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0123 kno:pos "「명」"@ko ;
+kno:KN2019-0123 kno:component kno:KN2019-0123-c2 ;
+    skos:definition "‘보조 배터리’를 줄여 이르는 말."@ko ;
+    a kno:Neologism ;
+    rdfs:label "보배"@ko ;
+    kno:origin "(補<영>←battery)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:registration "우리말샘"@ko ;
+    kno:formation kno:W06 ;
+    kno:component kno:KN2019-0123-c1 ;
+    kno:languageType "한+영" ;
+    kno:unitType "단어"@ko ;
     kno:componentString "보(조)(補), 배(터리)(battery)"@ko ;
+    kno:year "2019"^^xsd:gYear ;
+    kno:example "¶홍콩에 본사를 두고 1세대부터 현재까지 미국, 영국, 일본 등 50개국에 수출하고 있는 OO의 무선 보조 배터리 OO는 독특한 디자인과 제품의 내구성까지 갖춘 것으로 알려지며 국내는 물론 해외 여러 소비자들로부터 소위 힙스터 아이템, 혹은 ‘인싸 {보배’로} 주목받은 바 있다."@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=10863> ;
     a ontolex:Word ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
-    skos:definition "‘보조 배터리’를 줄여 이르는 말."@ko ;
-    kno:formation kno:W06 ;
-    rdfs:label "보배"@ko ;
-    kno:component kno:KN2019-0123-c1 ;
-    kno:example "¶홍콩에 본사를 두고 1세대부터 현재까지 미국, 영국, 일본 등 50개국에 수출하고 있는 OO의 무선 보조 배터리 OO는 독특한 디자인과 제품의 내구성까지 갖춘 것으로 알려지며 국내는 물론 해외 여러 소비자들로부터 소위 힙스터 아이템, 혹은 ‘인싸 {보배’로} 주목받은 바 있다."@ko ;
-    kno:languageType "한+영" ;
-    kno:origin "(補<영>←battery)" ;
-    kno:registration "우리말샘"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2019-0123-c2 ;
-    kno:year "2019"^^xsd:gYear ;
     kno:indexForm "보배"@ko ;
-    kno:urimalTargetCode "10863" .
+    kno:urimalTargetCode "10863" ;
+    kno:pos "「명」"@ko .
+kno:KN2019-0123-c2 kno:semanticTag kno:usas-O2 ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "배(터리)(battery)"@ko ;
+    a kno:Component ;
+    kno:fullForm "배터리"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F003725 ;
+    kno:surfaceForm "배"@ko .
 kno:KN2019-0123-c1 kno:formative kno:F003873 ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S8p ;
-    kno:surfaceForm "보"@ko ;
-    rdfs:label "보(조)(補)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:fullForm "보조"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2019-0123-c2 kno:surfaceForm "배"@ko ;
-    rdfs:label "배(터리)(battery)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "보"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "배터리"@ko ;
-    kno:formative kno:F003725 ;
-    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-S8p ;
+    rdfs:label "보(조)(補)"@ko ;
     a kno:Component .

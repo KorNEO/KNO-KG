@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0364 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0364 a kno:Neologism ;
-    kno:urimalTargetCode "1415966" ;
-    kno:unitType "단어"@ko ;
-    kno:origin "(特<영>←meister高)" ;
-    kno:componentString "특(성화)(特), 마(이스터)(meister), 고(등학교)(高)"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415966> ;
-    rdfs:label "특마고"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:indexForm "특마고"@ko ;
-    kno:component kno:KN2018-0364-c3 ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:languageType "한+영+한" ;
+kno:KN2018-0364 kno:component kno:KN2018-0364-c3 ;
     kno:registration "우리말샘"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶‘{특마고’는}…졸업 뒤 ‘선취업 후진학’ 제도 등을 활용해 일과 공부를 병행할 수 있다는 점에서도 인기가 있다."@ko ;
-    kno:frequency kno:KN2018-0364-freq-NN-2017 ;
-    kno:component kno:KN2018-0364-c1 ;
+    kno:formation kno:W06 ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
     kno:frequency kno:KN2018-0364-freq-NN-total ;
+    kno:origin "(特<영>←meister高)" ;
+    a ontolex:Word ;
+    kno:componentString "특(성화)(特), 마(이스터)(meister), 고(등학교)(高)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "특마고"@ko ;
+    kno:component kno:KN2018-0364-c1 ;
+    kno:year "2018"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:urimalTargetCode "1415966" ;
+    kno:frequency kno:KN2018-0364-freq-NN-2017 ;
+    kno:languageType "한+영+한" ;
+    rdfs:label "특마고"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415966> ;
     skos:definition "‘특성화 고등학교’와 ‘마이스터 고등학교’를 아울러 이르는 말."@ko ;
     kno:component kno:KN2018-0364-c2 ;
-    kno:formation kno:W06 .
-kno:KN2018-0364-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:example "¶‘{특마고’는}…졸업 뒤 ‘선취업 후진학’ 제도 등을 활용해 일과 공부를 병행할 수 있다는 점에서도 인기가 있다."@ko .
+kno:KN2018-0364-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:formative kno:F002261 ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "3"^^xsd:integer ;
     kno:surfaceForm "고"@ko ;
-    rdfs:label "고(등학교)(高)"@ko ;
-    kno:fullForm "고등학교"@ko .
-kno:KN2018-0364-c1 kno:formative kno:F006575 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
+    rdfs:label "고(등학교)(高)"@ko ;
+    kno:fullForm "고등학교"@ko ;
+    kno:semanticTag kno:usas-P1 .
+kno:KN2018-0364-c1 kno:formative kno:F006575 ;
     a kno:Component ;
+    kno:position "1"^^xsd:integer ;
     kno:fullForm "특성화"@ko ;
+    kno:role "성분"@ko ;
     kno:surfaceForm "특"@ko ;
     kno:semanticTag kno:usas-P1 ;
-    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "특(성화)(特)"@ko .
-kno:KN2018-0364-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "마이스터"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F003339 ;
-    rdfs:label "마(이스터)(meister)"@ko ;
+kno:KN2018-0364-c2 kno:surfaceForm "마"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I3.1 ;
+    rdfs:label "마(이스터)(meister)"@ko ;
     a kno:Component ;
-    kno:surfaceForm "마"@ko .
+    kno:formative kno:F003339 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:role "성분"@ko ;
+    kno:fullForm "마이스터"@ko ;
+    kno:truncated "true"^^xsd:boolean .

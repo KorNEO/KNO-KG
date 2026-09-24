@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0270 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0270 rdfs:label "코세글자"@ko ;
+kno:KN2021-0270 kno:languageType "영+고+(고+한)" ;
     kno:lastAttestationYear "2020"^^xsd:gYear ;
-    skos:definition "‘코로나’를 달리 이르는 말. ‘코로나’는 ‘코로나바이러스 감염증 일구’를 일상적으로 이르는 말이다. 코로나19의 강한 전염성에 대한 우려와 장기화된 코로나19 사태에 대한 염증을 표현한다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EC%84%B8%EA%B8%80%EC%9E%90> ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
     kno:unitType "단어"@ko ;
-    kno:indexForm "코세글자"@ko ;
-    kno:slotFiller "세+글+(글)자(글字) (3성분)"@ko ;
-    kno:frequency kno:KN2021-0270-freq-NN-total ;
-    kno:formation kno:W05 ;
-    kno:componentString "코(로나)(corona), 세, 글, (글)자(글字)"@ko ;
-    kno:component kno:KN2021-0270-c2 ;
-    kno:frequency kno:KN2021-0270-freq-NN-2020 ;
-    kno:instantiates kno:S000228 ;
-    kno:component kno:KN2021-0270-c1 ;
     a kno:Neologism ;
+    kno:component kno:KN2021-0270-c1 ;
+    kno:indexForm "코세글자"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2021-0270-c3 ;
+    kno:frequency kno:KN2021-0270-freq-NN-2020 ;
+    kno:component kno:KN2021-0270-c2 ;
+    kno:frequency kno:KN2021-0270-freq-NN-total ;
+    rdfs:label "코세글자"@ko ;
+    kno:formation kno:W05 ;
+    skos:definition "‘코로나’를 달리 이르는 말. ‘코로나’는 ‘코로나바이러스 감염증 일구’를 일상적으로 이르는 말이다. 코로나19의 강한 전염성에 대한 우려와 장기화된 코로나19 사태에 대한 염증을 표현한다."@ko ;
+    kno:slotFiller "세+글+(글)자(글字) (3성분)"@ko ;
+    kno:instantiates kno:S000228 ;
+    kno:example "¶{코세글자} 때문에 외출도 못 하고, 공연도 못 봐서 답답해 죽겠다."@ko ;
     kno:year "2021"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
-    kno:component kno:KN2021-0270-c4 ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "코(로나)(corona), 세, 글, (글)자(글字)"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:origin "(<영>←corona virus세글字)" ;
-    kno:component kno:KN2021-0270-c3 ;
-    kno:languageType "영+고+(고+한)" ;
-    kno:example "¶{코세글자} 때문에 외출도 못 하고, 공연도 못 봐서 답답해 죽겠다."@ko .
-kno:KN2021-0270-c2 rdfs:label "세"@ko ;
-    kno:surfaceForm "세"@ko ;
-    kno:formative kno:F004336 ;
-    a kno:Component ;
-    kno:fullForm "세"@ko ;
-    kno:semanticTag kno:usas-N1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
-kno:KN2021-0270-c1 kno:formative kno:F000237 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "코로나"@ko ;
-    kno:surfaceForm "코"@ko ;
+    kno:component kno:KN2021-0270-c4 ;
+    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EC%84%B8%EA%B8%80%EC%9E%90> .
+kno:KN2021-0270-c1 kno:role "고정항"@ko ;
+    kno:formative kno:F000237 ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2 ;
-    rdfs:label "코(로나)(corona)"@ko .
-kno:KN2021-0270-c4 rdfs:label "(글)자(글字)"@ko ;
-    kno:fullForm "글자"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:semanticTag kno:usas-Q1.2 ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "코로나"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:surfaceForm "코"@ko ;
+    a kno:Component ;
+    rdfs:label "코(로나)(corona)"@ko .
+kno:KN2021-0270-c3 kno:role "슬롯 채움"@ko ;
+    rdfs:label "글"@ko ;
+    kno:surfaceForm "글"@ko ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:fullForm "글"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:formative kno:F000466 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0270-c2 kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:surfaceForm "세"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:fullForm "세"@ko ;
+    a kno:Component ;
+    rdfs:label "세"@ko ;
+    kno:formative kno:F004336 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0270-c4 kno:role "슬롯 채움"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "글자"@ko ;
+    rdfs:label "(글)자(글字)"@ko ;
     kno:formative kno:F005504 ;
     a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
     kno:surfaceForm "자"@ko .
-kno:KN2021-0270-c3 kno:semanticTag kno:usas-Q1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000466 ;
-    rdfs:label "글"@ko ;
-    a kno:Component ;
-    kno:fullForm "글"@ko ;
-    kno:surfaceForm "글"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer .

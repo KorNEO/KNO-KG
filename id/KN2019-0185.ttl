@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0185 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0185 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8D%B8%EB%A7%8C%EC%B6%94> ;
-    skos:definition "‘썸으로 만남을 추구’를 줄여 이르는 말. 연인 관계는 아니지만 사귀는 듯이 가까이 지내는 관계를 추구하는 연애관을 말한다. ⇒규범 표기는 미확정이다."@ko ;
-    kno:instantiates kno:S000858 ;
-    kno:pos "「명」"@ko ;
+kno:KN2019-0185 kno:frequency kno:KN2019-0185-freq-NN-total ;
+    kno:slotFiller "썸(←something) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "영+고+한" ;
     kno:example "¶이날 OOO는 “연애하고 있다. {‘썸만추’를} 반대한다. 나이 드니까 ‘러라밸’도 중요하더라. ‘러라밸’은 사랑과 인생의 균형.”이라고 열애를 고백했다."@ko ;
+    kno:component kno:KN2019-0185-c3 ;
+    kno:component kno:KN2019-0185-c1 ;
     kno:lastAttestationYear "2019"^^xsd:gYear ;
+    rdfs:label "썸만추"@ko ;
     kno:year "2019"^^xsd:gYear ;
     kno:componentString "썸(←something), 만(남), 추(구)(追)"@ko ;
-    kno:slotFiller "만(남)+추(구)(追) (2성분)"@ko ;
-    kno:component kno:KN2019-0185-c1 ;
-    a kno:Neologism ;
-    kno:component kno:KN2019-0185-c3 ;
-    kno:frequency kno:KN2019-0185-freq-NN-total ;
-    kno:origin "(<영>←something만追)" ;
-    kno:component kno:KN2019-0185-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "영+고+한" ;
-    kno:unitType "단어"@ko ;
+    kno:pos "「명」"@ko ;
+    skos:definition "‘썸으로 만남을 추구’를 줄여 이르는 말. 연인 관계는 아니지만 사귀는 듯이 가까이 지내는 관계를 추구하는 연애관을 말한다. ⇒규범 표기는 미확정이다."@ko ;
     kno:formation kno:W06 ;
+    a kno:Neologism ;
+    kno:origin "(<영>←something만追)" ;
+    kno:slotFiller "만(남)+추(구)(追) (2성분)"@ko ;
     kno:frequency kno:KN2019-0185-freq-NN-2019 ;
-    rdfs:label "썸만추"@ko ;
     kno:instantiates kno:S000222 ;
-    kno:slotFiller "썸(←something) (1성분)"@ko ;
+    a ontolex:Word ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "썸만추"@ko ;
-    a ontolex:Word .
-kno:KN2019-0185-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "썸"@ko ;
-    kno:surfaceForm "썸"@ko ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:formative kno:F000293 ;
+    kno:instantiates kno:S000858 ;
+    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2019-0185-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8D%B8%EB%A7%8C%EC%B6%94> ;
+    kno:indexForm "썸만추"@ko .
+kno:KN2019-0185-c3 kno:role "고정항"@ko ;
     a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "썸(←something)"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2019-0185-c3 kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "추(구)(追)"@ko ;
     kno:fullForm "추구"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "추"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-X7 ;
-    kno:formative kno:F000947 .
-kno:KN2019-0185-c2 rdfs:label "만(남)"@ko ;
-    kno:formative kno:F000499 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:formative kno:F000947 ;
+    rdfs:label "추(구)(追)"@ko ;
+    kno:semanticTag kno:usas-X7 ;
+    kno:surfaceForm "추"@ko .
+kno:KN2019-0185-c1 kno:surfaceForm "썸"@ko ;
+    rdfs:label "썸(←something)"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "썸"@ko ;
     a kno:Component ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000293 .
+kno:KN2019-0185-c2 kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "만(남)"@ko ;
     kno:surfaceForm "만"@ko ;
+    kno:formative kno:F000499 ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:fullForm "만남"@ko .

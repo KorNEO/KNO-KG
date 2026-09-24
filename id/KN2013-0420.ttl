@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0420 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0420 kno:example "¶대통령이 되었다가 {퇴통령이} 되고 다시 죄통령이 되는 비극의 되풀이. 되어 본 이들은 고개 떨구거나 눈감은 채 침묵하고, 되고 싶은 이는 너무나 하고 싶은 말이 많다."@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:componentString "퇴(임)(退), (대)통령(統領)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "퇴통령"@ko ;
-    kno:frequency kno:KN2013-0420-freq-NN-2012 ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2013-0420-c2 ;
+kno:KN2013-0420 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%86%B5%EB%A0%B9> ;
     kno:slotFiller "퇴(임)(退) (1성분)"@ko ;
+    kno:languageType "한+한" ;
+    kno:component kno:KN2013-0420-c1 ;
     kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2013-0420-freq-NN-2016 ;
+    kno:origin "(退統領)" ;
+    kno:frequency kno:KN2013-0420-freq-NN-2012 ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:year "2013"^^xsd:gYear ;
     skos:definition "퇴임한 대통령."@ko ;
+    rdfs:label "퇴통령"@ko ;
     a ontolex:Word ;
     kno:instantiates kno:S000724 ;
-    kno:origin "(退統領)" ;
-    kno:frequency kno:KN2013-0420-freq-NN-total ;
-    rdfs:label "퇴통령"@ko ;
-    kno:languageType "한+한" ;
     kno:formation kno:W05 ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:component kno:KN2013-0420-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%87%B4%ED%86%B5%EB%A0%B9> .
-kno:KN2013-0420-c2 kno:semanticTag kno:usas-G1.1 ;
+    kno:registration "신어DB"@ko ;
+    kno:indexForm "퇴통령"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2013-0420-c2 ;
+    kno:frequency kno:KN2013-0420-freq-NN-2016 ;
+    kno:example "¶대통령이 되었다가 {퇴통령이} 되고 다시 죄통령이 되는 비극의 되풀이. 되어 본 이들은 고개 떨구거나 눈감은 채 침묵하고, 되고 싶은 이는 너무나 하고 싶은 말이 많다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:componentString "퇴(임)(退), (대)통령(統領)"@ko ;
+    kno:frequency kno:KN2013-0420-freq-NN-total .
+kno:KN2013-0420-c1 a kno:Component ;
+    kno:surfaceForm "퇴"@ko ;
+    kno:formative kno:F006514 ;
+    rdfs:label "퇴(임)(退)"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:fullForm "퇴임"@ko .
+kno:KN2013-0420-c2 kno:surfaceForm "통령"@ko ;
     kno:position "2"^^xsd:integer ;
     rdfs:label "(대)통령(統領)"@ko ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "통령"@ko ;
-    kno:fullForm "대통령"@ko ;
-    kno:formative kno:F001908 .
-kno:KN2013-0420-c1 kno:surfaceForm "퇴"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
+    a kno:Component ;
+    kno:formative kno:F001908 ;
+    kno:semanticTag kno:usas-G1.1 ;
     kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "퇴(임)(退)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "퇴임"@ko ;
-    kno:formative kno:F006514 ;
-    a kno:Component .
+    kno:fullForm "대통령"@ko .

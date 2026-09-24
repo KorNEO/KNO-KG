@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0197 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0197 skos:definition "회사 보유의 자사주를 처분할 때, 제3자 배정 시와 같은 제한을 두는 법안. 신기술 도입이나 재무 구조 개선과 같은 경영상의 목적을 달성하기 위한 경우에만 제3자에게 자사주를 처분할 수 있도록 하는 방안이다."@ko ;
-    kno:languageType "한^한^한" ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EA%B8%B0%EC%82%AC%EC%B4%88%EC%B2%AD%EA%B8%88%EC%A7%80> ;
+kno:KN2016-0197 kno:component kno:KN2016-0197-c3 ;
     a ontolex:MultiwordExpression ;
-    kno:example "¶국회에는 최근 OOO OO 의원의 발의로 일명 ‘{백기사 초청 금지}’ 법안이 발의돼 있다."@ko ;
-    kno:indexForm "백기사초청금지"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "백기사^초청^금지"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0197-freq-NN-2015 ;
-    kno:unitType "구"@ko ;
-    kno:origin "(白騎士招請禁止法案)" ;
     kno:predicate "두다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2016-0197-c2 ;
+    kno:frequency kno:KN2016-0197-freq-NN-2015 ;
     kno:componentString "백기사(白騎士), 초청(招請), 금지(禁止)"@ko ;
-    kno:frequency kno:KN2016-0197-freq-NN-total ;
-    kno:component kno:KN2016-0197-c3 ;
+    kno:indexForm "백기사초청금지"@ko ;
     kno:component kno:KN2016-0197-c1 ;
+    kno:languageType "한^한^한" ;
+    skos:definition "회사 보유의 자사주를 처분할 때, 제3자 배정 시와 같은 제한을 두는 법안. 신기술 도입이나 재무 구조 개선과 같은 경영상의 목적을 달성하기 위한 경우에만 제3자에게 자사주를 처분할 수 있도록 하는 방안이다."@ko ;
+    kno:origin "(白騎士招請禁止法案)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%B1%EA%B8%B0%EC%82%AC%EC%B4%88%EC%B2%AD%EA%B8%88%EC%A7%80> ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "백기사^초청^금지"@ko ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     a kno:Neologism ;
-    kno:component kno:KN2016-0197-c2 .
-kno:KN2016-0197-c3 rdfs:label "금지(禁止)"@ko ;
-    kno:fullForm "금지"@ko ;
+    kno:frequency kno:KN2016-0197-freq-NN-total ;
+    kno:year "2016"^^xsd:gYear ;
+    kno:example "¶국회에는 최근 OOO OO 의원의 발의로 일명 ‘{백기사 초청 금지}’ 법안이 발의돼 있다."@ko .
+kno:KN2016-0197-c3 a kno:Component ;
     kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S7.4m ;
+    kno:fullForm "금지"@ko ;
+    kno:role "성분"@ko ;
+    kno:formative kno:F001108 ;
     kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "금지"@ko ;
+    rdfs:label "금지(禁止)"@ko .
+kno:KN2016-0197-c2 kno:fullForm "초청"@ko ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-S7.4m ;
-    a kno:Component ;
-    kno:formative kno:F001108 .
-kno:KN2016-0197-c1 rdfs:label "백기사(白騎士)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:formative kno:F003749 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "백기사"@ko ;
-    kno:surfaceForm "백기사"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko .
-kno:KN2016-0197-c2 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:surfaceForm "초청"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001826 ;
+    rdfs:label "초청(招請)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "초청"@ko ;
-    rdfs:label "초청(招請)"@ko .
+    kno:semanticTag kno:usas-Q2.2 ;
+    a kno:Component ;
+    kno:formative kno:F001826 ;
+    kno:surfaceForm "초청"@ko .
+kno:KN2016-0197-c1 kno:role "성분"@ko ;
+    rdfs:label "백기사(白騎士)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "백기사"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:fullForm "백기사"@ko ;
+    kno:formative kno:F003749 ;
+    a kno:Component .

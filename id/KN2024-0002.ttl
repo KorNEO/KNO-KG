@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0002 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0002 kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0002-c1 ;
+kno:KN2024-0002 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%84%ED%8C%90%ED%85%9C> ;
     rdfs:label "간판-템"@ko ;
-    kno:example "¶겨울철 대표 {간판템인} 붕어빵이 고급스러운 이미지로 변신하고 있다."@ko ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "간판(看板) (1성분)"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:activeYears "0"^^xsd:integer ;
     skos:definition "‘간판’과 ‘아이템(item)’을 결합하여 만든 말로, 어떤 집단이나 영역에서 대표로 내세울 만한 상품을 이르는 말."@ko ;
-    a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
+    kno:componentString "간판(看板), (아이)템(item)"@ko ;
     kno:indexForm "간판템"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W01 ;
     kno:languageType "한+영" ;
-    a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%84%ED%8C%90%ED%85%9C> ;
+    kno:example "¶겨울철 대표 {간판템인} 붕어빵이 고급스러운 이미지로 변신하고 있다."@ko ;
+    kno:unitType "단어"@ko ;
     kno:component kno:KN2024-0002-c2 ;
+    a ontolex:Word ;
+    kno:component kno:KN2024-0002-c1 ;
+    kno:pos "「명」"@ko ;
     kno:origin "(看板<영>←item)" ;
     kno:instantiates kno:S000004 ;
-    kno:slotFiller "간판(看板) (1성분)"@ko ;
-    kno:componentString "간판(看板), (아이)템(item)"@ko ;
-    kno:pos "「명」"@ko .
-kno:KN2024-0002-c1 kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F002103 ;
-    rdfs:label "간판(看板)"@ko ;
-    kno:semanticTag kno:usas-Q1.2 ;
-    kno:fullForm "간판"@ko ;
-    kno:surfaceForm "간판"@ko ;
-    a kno:Component .
-kno:KN2024-0002-c2 kno:fullForm "아이템"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    rdfs:label "(아이)템(item)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formation kno:W01 ;
+    a kno:Neologism .
+kno:KN2024-0002-c2 rdfs:label "(아이)템(item)"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000007 ;
-    kno:surfaceForm "템"@ko .
+    kno:semanticTag kno:usas-O2 ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "아이템"@ko ;
+    kno:surfaceForm "템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000007 .
+kno:KN2024-0002-c1 kno:formative kno:F002103 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "간판(看板)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "간판"@ko ;
+    kno:semanticTag kno:usas-Q1.2 ;
+    kno:fullForm "간판"@ko .

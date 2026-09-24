@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0171 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0171 kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W06 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0171-c1 ;
-    kno:frequency kno:KN2022-0171-freq-NN-2023 ;
-    skos:definition "‘삼십 대 미혼 남성’을 줄여 이르는 말."@ko ;
-    kno:example "¶{삼미남들은} ‘배우자와의 미래’보다 ‘현재’를 즐기기 위해서 결혼을 미루고 있다고 하지만, 최근에는 집값 폭등으로 인해 비자발적으로 결혼을 미루기도 한다."@ko ;
-    kno:origin "(三未男)" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2022-0171-c2 ;
-    kno:instantiates kno:S000305 ;
-    rdfs:label "삼미남"@ko ;
+kno:KN2022-0171 kno:slotFiller "미(혼)(未婚)+남(성)(男性) (2성분)"@ko ;
     kno:componentString "삼(三), 미(혼)(未婚), 남(성)(男性)"@ko ;
+    kno:frequency kno:KN2022-0171-freq-NN-2023 ;
+    kno:year "2022"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:component kno:KN2022-0171-c3 ;
+    rdfs:label "삼미남"@ko ;
+    kno:component kno:KN2022-0171-c1 ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2022-0171-freq-NN-total ;
+    kno:origin "(三未男)" ;
+    skos:definition "‘삼십 대 미혼 남성’을 줄여 이르는 말."@ko ;
+    a ontolex:Word ;
+    kno:instantiates kno:S000305 ;
+    kno:unitType "단어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EB%AF%B8%EB%82%A8> ;
     kno:frequency kno:KN2022-0171-freq-NN-2021 ;
-    kno:languageType "한+한+한" ;
     kno:indexForm "삼미남"@ko ;
     a kno:Neologism ;
-    kno:component kno:KN2022-0171-c3 ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "미(혼)(未婚)+남(성)(男性) (2성분)"@ko ;
-    kno:frequency kno:KN2022-0171-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%BC%EB%AF%B8%EB%82%A8> .
-kno:KN2022-0171-c1 kno:semanticTag kno:usas-N1 ;
-    rdfs:label "삼(三)"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000279 ;
-    kno:fullForm "삼"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "삼"@ko .
-kno:KN2022-0171-c2 kno:surfaceForm "미"@ko ;
-    kno:fullForm "미혼"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S4m ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "미(혼)(未婚)"@ko ;
-    kno:formative kno:F003590 .
-kno:KN2022-0171-c3 kno:fullForm "남성"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "남"@ko ;
+    kno:example "¶{삼미남들은} ‘배우자와의 미래’보다 ‘현재’를 즐기기 위해서 결혼을 미루고 있다고 하지만, 최근에는 집값 폭등으로 인해 비자발적으로 결혼을 미루기도 한다."@ko ;
+    kno:component kno:KN2022-0171-c2 ;
+    kno:languageType "한+한+한" ;
+    kno:registration "신어DB"@ko .
+kno:KN2022-0171-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:semanticTag kno:usas-S2.2 ;
     kno:formative kno:F002695 ;
-    a kno:Component ;
+    kno:fullForm "남성"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "남"@ko ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "남(성)(男性)"@ko ;
-    kno:position "3"^^xsd:integer .
+    rdfs:label "남(성)(男性)"@ko .
+kno:KN2022-0171-c1 kno:semanticTag kno:usas-N1 ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000279 ;
+    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "삼"@ko ;
+    kno:fullForm "삼"@ko ;
+    rdfs:label "삼(三)"@ko ;
+    a kno:Component .
+kno:KN2022-0171-c2 kno:fullForm "미혼"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "미"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S4m ;
+    kno:formative kno:F003590 ;
+    rdfs:label "미(혼)(未婚)"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer .

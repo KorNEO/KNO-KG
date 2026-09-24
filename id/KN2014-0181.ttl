@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0181 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0181 kno:frequency kno:KN2014-0181-freq-NN-2013 ;
-    kno:predicate "주다"@ko ;
-    kno:componentString "엄마, 적금(積金)"@ko ;
-    kno:slotFiller "적금(積金) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2014-0181 skos:definition "엄마가 자식을 위하여 들어 주는 적금."@ko ;
     kno:frequency kno:KN2014-0181-freq-NN-total ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "엄마적금"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%84%EB%A7%88%20%EC%A0%81%EA%B8%88> ;
-    skos:definition "엄마가 자식을 위하여 들어 주는 적금."@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
-    rdfs:label "엄마 적금"@ko ;
-    kno:unitType "구"@ko ;
-    a kno:Neologism ;
+    kno:languageType "고_한" ;
+    kno:instantiates kno:S000315 ;
     kno:example "¶‘엄마가 알아서’ 적금을 들어 주는 {엄마 적금은} 편할 뿐 아니라 말만 잘하면 이자율이 높아지기도 하고, 무엇보다 원금 손실의 걱정이 없다."@ko ;
+    kno:origin "(엄마積金)" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:unitType "구"@ko ;
+    kno:year "2014"^^xsd:gYear ;
+    kno:frequency kno:KN2014-0181-freq-NN-2013 ;
+    kno:predicate "주다"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "엄마, 적금(積金)"@ko ;
+    rdfs:label "엄마 적금"@ko ;
+    kno:indexForm "엄마적금"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2014-0181-c1 ;
     kno:instantiates kno:S001022 ;
     kno:slotFiller "엄마 (1성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(엄마積金)" ;
+    kno:slotFiller "적금(積金) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2014-0181-c2 ;
-    kno:component kno:KN2014-0181-c1 ;
-    kno:instantiates kno:S000315 ;
-    kno:languageType "고_한" ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2014-0181-c2 kno:formative kno:F001746 ;
-    kno:semanticTag kno:usas-I1 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "적금"@ko ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko .
+kno:KN2014-0181-c1 kno:formative kno:F000559 ;
     kno:role "고정항"@ko ;
-    kno:fullForm "적금"@ko ;
-    rdfs:label "적금(積金)"@ko .
-kno:KN2014-0181-c1 rdfs:label "엄마"@ko ;
-    a kno:Component ;
-    kno:fullForm "엄마"@ko ;
-    kno:surfaceForm "엄마"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-S4 ;
-    kno:formative kno:F000559 .
+    a kno:Component ;
+    kno:surfaceForm "엄마"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "엄마"@ko ;
+    rdfs:label "엄마"@ko .
+kno:KN2014-0181-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "적금"@ko ;
+    kno:formative kno:F001746 ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "적금(積金)"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "적금"@ko ;
+    kno:semanticTag kno:usas-I1 .

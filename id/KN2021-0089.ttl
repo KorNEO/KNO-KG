@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0089 a ontolex:Word ;
+kno:KN2021-0089 kno:year "2021"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:indexForm "라할살"@ko ;
+    kno:instantiates kno:S000391 ;
+    kno:component kno:KN2021-0089-c1 ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2021-0089-freq-NN-total ;
+    kno:frequency kno:KN2021-0089-freq-NN-2021 ;
     rdfs:label "라할살"@ko ;
     skos:definition "‘라고 말할 때 살걸.’을 줄여 이르는 말. 주로 주식 시장에서 본인이 투자하지 않은 종목의 가격이 크게 올라 아쉬움을 나타낼 때 쓴다."@ko ;
-    kno:componentString "라(←라고), (말)하(다), 사(다)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "고+고+고" ;
     kno:component kno:KN2021-0089-c2 ;
-    kno:formation kno:W06 ;
-    kno:frequency kno:KN2021-0089-freq-NN-2021 ;
-    kno:slotFiller "라(←라고)+(말)하(다) (2성분)"@ko ;
-    kno:indexForm "라할살"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9D%BC%ED%95%A0%EC%82%B4> ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:example "¶이렇게까지 오를 줄은 몰랐는데 정말 {라할살이네요.}"@ko ;
-    a kno:Neologism ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000391 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2021-0089-freq-NN-total ;
     kno:component kno:KN2021-0089-c3 ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "라(←라고), (말)하(다), 사(다)"@ko ;
+    kno:slotFiller "라(←라고)+(말)하(다) (2성분)"@ko ;
+    kno:formation kno:W06 ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2021-0089-c1 .
-kno:KN2021-0089-c2 a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F006916 ;
-    kno:semanticTag kno:usas-Q2.1 ;
-    rdfs:label "(말)하(다)"@ko ;
-    kno:fullForm "말하다"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "하"@ko .
-kno:KN2021-0089-c3 kno:fullForm "사다"@ko ;
-    a kno:Component ;
-    rdfs:label "사(다)"@ko ;
-    kno:formative kno:F000138 ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "사"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:role "고정항"@ko .
-kno:KN2021-0089-c1 kno:fullForm "라"@ko ;
-    kno:surfaceForm "라"@ko ;
-    kno:semanticTag kno:usas-Z5 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
+    kno:example "¶이렇게까지 오를 줄은 몰랐는데 정말 {라할살이네요.}"@ko ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:unitType "단어"@ko ;
+    kno:languageType "고+고+고" .
+kno:KN2021-0089-c1 kno:surfaceForm "라"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "라"@ko ;
     kno:formative kno:F003144 ;
     rdfs:label "라(←라고)"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    a kno:Component ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:position "1"^^xsd:integer .
+kno:KN2021-0089-c2 kno:formative kno:F006916 ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-Q2.1 ;
+    a kno:Component ;
+    kno:surfaceForm "하"@ko ;
+    kno:fullForm "말하다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    rdfs:label "(말)하(다)"@ko .
+kno:KN2021-0089-c3 kno:position "3"^^xsd:integer ;
+    kno:fullForm "사다"@ko ;
+    kno:role "고정항"@ko ;
+    kno:formative kno:F000138 ;
+    rdfs:label "사(다)"@ko ;
+    kno:surfaceForm "사"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean .

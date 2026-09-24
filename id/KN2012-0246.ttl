@@ -9,51 +9,51 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0246 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0246 kno:registration "신어DB"@ko ;
+kno:KN2012-0246 a kno:Neologism ;
+    kno:languageType "한+영" ;
+    skos:definition "유력 정치인의 조력자로서 정치에 참여하는 것을 넘어 직접 정치에 참여하는 현직 교수를 이르는 말."@ko ;
+    kno:year "2012"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:formation kno:W03 ;
     kno:component kno:KN2012-0246-c2 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2012-0246-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(新▼←politics professor)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:example "¶오늘의 {신폴리페서} 현상을 대하면서 우리나라 대학의 정신적 후진성을 보는 것 같아 안타깝기만 하다."@ko ;
+    kno:indexForm "신폴리페서"@ko ;
     kno:slotFiller "폴리(틱스)(politics)+(프로)페서(professor) (2성분)"@ko ;
     kno:componentString "신(新)-, 폴리(틱스)(politics), (프로)페서(professor)"@ko ;
-    kno:origin "(新▼←politics professor)" ;
-    kno:indexForm "신폴리페서"@ko ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000221 ;
+    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0246-c1 ;
     rdfs:label "신-폴리페서"@ko ;
-    kno:formation kno:W03 ;
-    kno:pos "「명」"@ko ;
-    kno:year "2012"^^xsd:gYear ;
     kno:component kno:KN2012-0246-c3 ;
-    kno:languageType "한+영" ;
-    kno:activeYears "0"^^xsd:integer ;
-    a kno:Neologism ;
-    skos:definition "유력 정치인의 조력자로서 정치에 참여하는 것을 넘어 직접 정치에 참여하는 현직 교수를 이르는 말."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%ED%8F%B4%EB%A6%AC%ED%8E%98%EC%84%9C> ;
-    kno:example "¶오늘의 {신폴리페서} 현상을 대하면서 우리나라 대학의 정신적 후진성을 보는 것 같아 안타깝기만 하다."@ko .
-kno:KN2012-0246-c2 rdfs:label "폴리(틱스)(politics)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000629 ;
+    kno:pos "「명」"@ko ;
+    kno:instantiates kno:S000221 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%ED%8F%B4%EB%A6%AC%ED%8E%98%EC%84%9C> .
+kno:KN2012-0246-c2 kno:formative kno:F000629 ;
+    rdfs:label "폴리(틱스)(politics)"@ko ;
     kno:surfaceForm "폴리"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:fullForm "폴리틱스"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    a kno:Component .
+kno:KN2012-0246-c1 kno:formative kno:F000145 ;
     a kno:Component ;
-    kno:semanticTag kno:usas-G1.2 .
-kno:KN2012-0246-c1 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000145 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "신(新)-"@ko ;
     kno:fullForm "신"@ko ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "신"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:semanticTag kno:usas-T3 ;
-    kno:surfaceForm "신"@ko .
-kno:KN2012-0246-c3 kno:semanticTag kno:usas-P1 ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "(프로)페서(professor)"@ko ;
+    rdfs:label "신(新)-"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0246-c3 a kno:Component ;
     kno:position "3"^^xsd:integer ;
     kno:formative kno:F006685 ;
-    kno:surfaceForm "페서"@ko ;
     kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "페서"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:fullForm "프로페서"@ko ;
-    a kno:Component .
+    rdfs:label "(프로)페서(professor)"@ko .

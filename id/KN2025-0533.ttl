@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0533 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0533 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EB%9F%89%20%EB%AC%B8%EB%AA%85> ;
-    rdfs:label "중량 문명"@ko ;
-    kno:example "(LLM) AI 도입으로 업무가 자동화되면서, 인력과 설비를 늘려 규모로 승부하던 {중량문명의} 방식이 더는 통하지 않는다는 말이 나온다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:origin "(重量文明)" ;
-    kno:componentString "중량(重量), 문명(文明)"@ko ;
+kno:KN2025-0533 a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
     kno:indexForm "중량문명"@ko ;
-    kno:component kno:KN2025-0533-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0533-freq-NN-2025 ;
     kno:year "2025"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:component kno:KN2025-0533-c1 ;
-    kno:pos "「구」"@ko ;
+    kno:example "(LLM) AI 도입으로 업무가 자동화되면서, 인력과 설비를 늘려 규모로 승부하던 {중량문명의} 방식이 더는 통하지 않는다는 말이 나온다."@ko ;
+    rdfs:label "중량 문명"@ko ;
+    kno:slotFiller "중량(重量) (1성분)"@ko ;
+    kno:instantiates kno:S000870 ;
+    kno:unitType "구"@ko ;
+    kno:component kno:KN2025-0533-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A4%91%EB%9F%89%20%EB%AC%B8%EB%AA%85> ;
     kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2025-0533-freq-NN-total ;
-    kno:frequency kno:KN2025-0533-freq-NN-2025 ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
-    kno:instantiates kno:S000870 ;
-    kno:slotFiller "중량(重量) (1성분)"@ko ;
     skos:definition "(LLM) 많은 인력과 대규모 설비 같은 유형 자산을 투입해 규모의 확장으로 성장과 경쟁력을 확보해 온 산업ㆍ기업 중심의 체계."@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2025-0533-c2 kno:surfaceForm "문명"@ko ;
-    kno:semanticTag kno:usas-S1.1.1 ;
-    rdfs:label "문명(文明)"@ko ;
-    kno:formative kno:F000755 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:componentString "중량(重量), 문명(文明)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:languageType "한_한" ;
+    kno:component kno:KN2025-0533-c1 ;
+    kno:origin "(重量文明)" .
+kno:KN2025-0533-c2 kno:role "고정항"@ko ;
+    kno:surfaceForm "문명"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "문명"@ko .
+    kno:fullForm "문명"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000755 ;
+    rdfs:label "문명(文明)"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    a kno:Component .
 kno:KN2025-0533-c1 kno:surfaceForm "중량"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "중량(重量)"@ko ;
     kno:semanticTag kno:usas-N3.5 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "중량(重量)"@ko ;
-    a kno:Component ;
     kno:formative kno:F001781 ;
-    kno:fullForm "중량"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "중량"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer .

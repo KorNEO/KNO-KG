@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0122 kno:pos "「명」"@ko ;
+kno:KN2023-0122 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EB%A7%89%EC%BA%89%EC%8A%A4> ;
+    a ontolex:Word ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "사막캉스"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:predicate "보내다"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:component kno:KN2023-0122-c2 ;
     skos:definition "사막에서 보내는 휴가."@ko ;
-    kno:year "2023"^^xsd:gYear ;
+    rdfs:label "사막캉스"@ko ;
     kno:componentString "사막(沙漠), (바)캉스(vacance)"@ko ;
     kno:formation kno:W05 ;
-    kno:predicate "보내다"@ko ;
-    kno:component kno:KN2023-0122-c1 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:slotFiller "사막(沙漠) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:indexForm "사막캉스"@ko ;
-    kno:instantiates kno:S000014 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2023-0122-c2 ;
-    kno:frequency kno:KN2023-0122-freq-NN-2022 ;
-    kno:frequency kno:KN2023-0122-freq-NN-total ;
-    kno:languageType "한+프" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%EB%A7%89%EC%BA%89%EC%8A%A4> ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:origin "(沙漠<프>←vacance)" ;
+    kno:year "2023"^^xsd:gYear ;
     kno:unitType "단어"@ko ;
-    rdfs:label "사막캉스"@ko ;
+    kno:instantiates kno:S000014 ;
+    kno:languageType "한+프" ;
+    kno:pos "「명」"@ko ;
+    kno:component kno:KN2023-0122-c1 ;
+    kno:slotFiller "사막(沙漠) (1성분)"@ko ;
+    kno:frequency kno:KN2023-0122-freq-NN-2022 ;
+    a kno:Neologism ;
+    kno:origin "(沙漠<프>←vacance)" ;
+    kno:frequency kno:KN2023-0122-freq-NN-total ;
     kno:example "¶미국 로스앤젤레스에서는 해변에서의 자유로운 시간뿐만 아니라, 이색적인 {사막캉스도} 함께 즐길 수 있다."@ko .
-kno:KN2023-0122-c1 kno:semanticTag kno:usas-W3 ;
-    rdfs:label "사막(沙漠)"@ko ;
-    kno:fullForm "사막"@ko ;
-    kno:formative kno:F001434 ;
-    kno:surfaceForm "사막"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2023-0122-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "바캉스"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "캉스"@ko ;
-    kno:semanticTag kno:usas-K1 ;
+kno:KN2023-0122-c2 kno:fullForm "바캉스"@ko ;
+    rdfs:label "(바)캉스(vacance)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:formative kno:F000017 ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(바)캉스(vacance)"@ko .
+    kno:surfaceForm "캉스"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    a kno:Component .
+kno:KN2023-0122-c1 kno:role "슬롯 채움"@ko ;
+    kno:fullForm "사막"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:surfaceForm "사막"@ko ;
+    kno:formative kno:F001434 ;
+    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "사막(沙漠)"@ko ;
+    kno:semanticTag kno:usas-W3 .

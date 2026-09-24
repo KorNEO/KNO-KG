@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0090 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0090 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%9C%EB%9F%89> ;
-    kno:registration "신어DB"@ko ;
-    a ontolex:Word ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶OO에서 전멸하는 가장 큰 이유 두 가지는 탱커의 사망과 {딜량의} 부족으로 인한 대격변 성공이다."@ko ;
-    kno:predicate "가하다"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "딜량"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2012-0090-c1 ;
+kno:KN2012-0090 kno:component kno:KN2012-0090-c1 ;
     skos:definition "게임에서, 상대편에게 타격을 가하는 양."@ko ;
-    rdfs:label "딜-량"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(deal量)" ;
+    kno:predicate "가하다"@ko ;
     kno:componentString "딜(deal), -량(量)"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:languageType "영+한" ;
+    kno:year "2012"^^xsd:gYear ;
+    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:formation kno:W02 ;
+    kno:example "¶OO에서 전멸하는 가장 큰 이유 두 가지는 탱커의 사망과 {딜량의} 부족으로 인한 대격변 성공이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%9C%EB%9F%89> ;
+    kno:unitType "단어"@ko ;
+    kno:indexForm "딜량"@ko ;
     a kno:Neologism ;
     kno:component kno:KN2012-0090-c2 ;
-    kno:languageType "영+한" ;
-    kno:origin "(deal量)" ;
-    kno:formation kno:W02 .
-kno:KN2012-0090-c1 rdfs:label "딜(deal)"@ko ;
-    kno:formative kno:F000110 ;
-    kno:fullForm "딜"@ko ;
-    kno:surfaceForm "딜"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko ;
+    rdfs:label "딜-량"@ko .
+kno:KN2012-0090-c1 kno:surfaceForm "딜"@ko ;
     a kno:Component ;
+    kno:fullForm "딜"@ko ;
+    kno:role "성분"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000110 ;
+    rdfs:label "딜(deal)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-I2.1 .
 kno:KN2012-0090-c2 kno:fullForm "량"@ko ;
-    kno:surfaceForm "량"@ko ;
-    kno:formative kno:F000729 ;
-    rdfs:label "-량(量)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
     kno:semanticTag kno:usas-N5 ;
-    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    rdfs:label "-량(量)"@ko ;
+    kno:formative kno:F000729 ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "량"@ko ;
+    kno:truncated "false"^^xsd:boolean .

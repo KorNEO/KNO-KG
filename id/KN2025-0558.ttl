@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0558 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0558 a kno:Neologism ;
+kno:KN2025-0558 kno:component kno:KN2025-0558-c2 ;
     kno:indexForm "청년근심주택"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0558-c3 ;
     a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%20%EA%B7%BC%EC%8B%AC%20%EC%A3%BC%ED%83%9D> ;
-    kno:example "(LLM) 보증보험 가입 여부가 불투명한 임대 단지가 늘자 입주 예정자들 사이에서는 {청년근심주택이라는} 말까지 나온다."@ko ;
-    kno:slotFiller "근심 (1성분)"@ko ;
+    kno:frequency kno:KN2025-0558-freq-NN-2025 ;
     kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000587 ;
-    skos:definition "(LLM) 청년을 대상으로 공급된 임대 주택이 보증보험 미가입, 경매 진행 등으로 인해 오히려 입주자의 주거 불안을 키우는 상황을 비유적으로 이르는 말."@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "청년(靑年), 근심, 주택(住宅)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:languageType "한_고_한" ;
     kno:origin "(靑年근심住宅)" ;
-    kno:component kno:KN2025-0558-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:slotFiller "근심 (1성분)"@ko ;
     rdfs:label "청년 근심 주택"@ko ;
     kno:component kno:KN2025-0558-c1 ;
-    kno:frequency kno:KN2025-0558-freq-NN-2025 ;
+    kno:example "(LLM) 보증보험 가입 여부가 불투명한 임대 단지가 늘자 입주 예정자들 사이에서는 {청년근심주택이라는} 말까지 나온다."@ko ;
+    kno:componentString "청년(靑年), 근심, 주택(住宅)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0558-c3 ;
+    kno:pos "「구」"@ko ;
+    kno:languageType "한_고_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 청년을 대상으로 공급된 임대 주택이 보증보험 미가입, 경매 진행 등으로 인해 오히려 입주자의 주거 불안을 키우는 상황을 비유적으로 이르는 말."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%20%EA%B7%BC%EC%8B%AC%20%EC%A3%BC%ED%83%9D> ;
+    kno:instantiates kno:S000587 ;
+    a kno:Neologism ;
     kno:frequency kno:KN2025-0558-freq-NN-total .
-kno:KN2025-0558-c3 kno:role "고정항"@ko ;
-    kno:fullForm "주택"@ko ;
-    kno:surfaceForm "주택"@ko ;
+kno:KN2025-0558-c2 kno:semanticTag kno:usas-E6m ;
+    kno:formative kno:F001102 ;
     a kno:Component ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000073 ;
-    rdfs:label "주택(住宅)"@ko .
-kno:KN2025-0558-c2 kno:formative kno:F001102 ;
-    kno:fullForm "근심"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-E6m ;
+    rdfs:label "근심"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "근심"@ko ;
-    a kno:Component ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "근심"@ko .
-kno:KN2025-0558-c1 kno:surfaceForm "청년"@ko ;
-    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "근심"@ko ;
+    kno:fullForm "근심"@ko ;
+    kno:position "2"^^xsd:integer .
+kno:KN2025-0558-c1 kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000042 ;
+    kno:surfaceForm "청년"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     a kno:Component ;
-    kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "청년(靑年)"@ko ;
     kno:fullForm "청년"@ko ;
-    kno:semanticTag kno:usas-T3m ;
-    kno:truncated "false"^^xsd:boolean .
+    rdfs:label "청년(靑年)"@ko ;
+    kno:semanticTag kno:usas-T3m .
+kno:KN2025-0558-c3 a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    rdfs:label "주택(住宅)"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:fullForm "주택"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "주택"@ko ;
+    kno:formative kno:F000073 .

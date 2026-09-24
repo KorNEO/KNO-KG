@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0261 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0261 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%A1%9C%EB%B3%91%EC%82%AC%EA%B4%80> ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0261-freq-NN-total ;
-    skos:definition "사람은 태어나고 늙고 병들고 죽는다는 삶의 순리를 철저히 따른다는 견해나 주장."@ko ;
+kno:KN2016-0261 kno:year "2016"^^xsd:gYear ;
     a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(生老病死觀)" ;
-    kno:frequency kno:KN2016-0261-freq-NN-2016 ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:componentString "생로병사(生老病死), -관(觀)"@ko ;
+    skos:definition "사람은 태어나고 늙고 병들고 죽는다는 삶의 순리를 철저히 따른다는 견해나 주장."@ko ;
     kno:formation kno:W02 ;
+    kno:frequency kno:KN2016-0261-freq-NN-2016 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%A1%9C%EB%B3%91%EC%82%AC%EA%B4%80> ;
+    kno:component kno:KN2016-0261-c1 ;
     kno:indexForm "생로병사관"@ko ;
     kno:example "¶OOO은 “현대인이 100세 인생을 축복으로 여기지 못하는 이유는 자본주의 문화와 그에 따른 {생로병사관에} 사로잡혀 있기 때문이다.”라고 지적한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2016-0261-freq-NN-total ;
     kno:languageType "한+한" ;
     rdfs:label "생로병사-관"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2016-0261-c1 ;
     kno:registration "신어DB"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:componentString "생로병사(生老病死), -관(觀)"@ko ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0261-c2 ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2016-0261-c2 .
+    a kno:Neologism ;
+    kno:origin "(生老病死觀)" .
 kno:KN2016-0261-c1 kno:surfaceForm "생로병사"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "생로병사(生老病死)"@ko ;
     kno:formative kno:F004261 ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "생로병사"@ko ;
-    kno:semanticTag kno:usas-L1 .
-kno:KN2016-0261-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "관"@ko ;
-    rdfs:label "-관(觀)"@ko ;
-    kno:formative kno:F002385 ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:role "성분"@ko ;
     a kno:Component ;
-    kno:surfaceForm "관"@ko .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-L1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer .
+kno:KN2016-0261-c2 kno:formative kno:F002385 ;
+    a kno:Component ;
+    kno:surfaceForm "관"@ko ;
+    kno:role "성분"@ko ;
+    rdfs:label "-관(觀)"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "관"@ko ;
+    kno:position "2"^^xsd:integer .

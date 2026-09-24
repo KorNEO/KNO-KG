@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0415 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0415 kno:origin "(▼←casual seethrough look)" ;
+kno:KN2012-0415 a ontolex:MultiwordExpression ;
+    skos:definition "격식에 매이지 아니하고 가볍게 입을 수 있는 시스루 룩."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0415-c3 ;
+    kno:slotFiller "캐(주얼)(casual)+(시)스루(seethrough) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EC%8A%A4%EB%A3%A8%20%EB%A3%A9> ;
+    kno:component kno:KN2012-0415-c1 ;
+    kno:origin "(▼←casual seethrough look)" ;
     kno:languageType "영_영" ;
     kno:unitType "구"@ko ;
     kno:year "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0415-c2 ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:example "¶‘캐주얼+시스루’ {캐스루 룩이} 뜬다!"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2012-0415-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "캐(주얼)(casual)+(시)스루(seethrough) (2성분)"@ko ;
+    kno:component kno:KN2012-0415-c2 ;
     kno:pos "「구」"@ko ;
-    kno:componentString "캐(주얼)(casual), (시)스루(seethrough), 룩(look)"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:instantiates kno:S000007 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EC%8A%A4%EB%A3%A8%20%EB%A3%A9> ;
-    skos:definition "격식에 매이지 아니하고 가볍게 입을 수 있는 시스루 룩."@ko ;
+    a kno:Neologism ;
+    kno:componentString "캐(주얼)(casual), (시)스루(seethrough), 룩(look)"@ko ;
     rdfs:label "캐스루 룩"@ko ;
-    kno:indexForm "캐스루룩"@ko ;
-    kno:component kno:KN2012-0415-c3 .
-kno:KN2012-0415-c2 kno:semanticTag kno:usas-B5 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:indexForm "캐스루룩"@ko .
+kno:KN2012-0415-c3 kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000005 ;
+    rdfs:label "룩(look)"@ko ;
+    kno:fullForm "룩"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "룩"@ko ;
+    kno:position "3"^^xsd:integer .
+kno:KN2012-0415-c1 rdfs:label "캐(주얼)(casual)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "캐주얼"@ko ;
+    kno:formative kno:F006214 ;
+    a kno:Component ;
+    kno:surfaceForm "캐"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0415-c2 a kno:Component ;
     rdfs:label "(시)스루(seethrough)"@ko ;
     kno:formative kno:F004551 ;
-    kno:fullForm "시스루"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "스루"@ko ;
     kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component .
-kno:KN2012-0415-c1 kno:surfaceForm "캐"@ko ;
-    kno:formative kno:F006214 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:fullForm "캐주얼"@ko ;
-    rdfs:label "캐(주얼)(casual)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2012-0415-c3 kno:position "3"^^xsd:integer ;
-    kno:fullForm "룩"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000005 ;
-    kno:surfaceForm "룩"@ko ;
-    rdfs:label "룩(look)"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
+    kno:fullForm "시스루"@ko ;
     kno:semanticTag kno:usas-B5 .

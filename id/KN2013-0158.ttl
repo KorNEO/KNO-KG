@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0158 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0158 kno:year "2013"^^xsd:gYear ;
-    kno:registration "우리말샘"@ko ;
-    kno:urimalTargetCode "1357666" ;
-    kno:indexForm "망겜"@ko ;
+kno:KN2013-0158 a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0158-c2 ;
+    a kno:Neologism ;
+    kno:instantiates kno:S000783 ;
+    kno:year "2013"^^xsd:gYear ;
+    kno:example "¶투자비도 못 뽑고 망한 까닭에 ‘{망겜’의} 대명사가 되긴했지만, 아직도 자신의 추억의 게임으로 ‘OO’을 꼽는 유저가 많을 정도로 깊은 인상을 남기긴 했습니다."@ko ;
     kno:origin "(亡←<영>game)" ;
     kno:slotFiller "망(하다)(亡) (1성분)"@ko ;
-    kno:example "¶투자비도 못 뽑고 망한 까닭에 ‘{망겜’의} 대명사가 되긴했지만, 아직도 자신의 추억의 게임으로 ‘OO’을 꼽는 유저가 많을 정도로 깊은 인상을 남기긴 했습니다."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357666> ;
-    kno:component kno:KN2013-0158-c2 ;
-    kno:pos "「명」"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2013-0158-c1 ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:unitType "단어"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357666> ;
+    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2013-0158-c1 ;
+    kno:indexForm "망겜"@ko ;
+    kno:urimalTargetCode "1357666" ;
     kno:formation kno:W06 ;
-    rdfs:label "망겜"@ko ;
     kno:languageType "한+영" ;
-    a ontolex:Word ;
     skos:definition "게임에서, ‘망한 게임’을 줄여 이르는 말."@ko ;
-    kno:componentString "망(하다)(亡), 겜(←game)"@ko ;
-    kno:instantiates kno:S000783 .
-kno:KN2013-0158-c2 a kno:Component ;
-    kno:formative kno:F000452 ;
-    kno:semanticTag kno:usas-K5.2 ;
-    kno:fullForm "겜"@ko ;
+    rdfs:label "망겜"@ko ;
+    kno:componentString "망(하다)(亡), 겜(←game)"@ko .
+kno:KN2013-0158-c2 kno:fullForm "겜"@ko ;
     kno:surfaceForm "겜"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "겜(←game)"@ko .
-kno:KN2013-0158-c1 kno:semanticTag kno:usas-X9.2m ;
-    kno:formative kno:F001284 ;
-    kno:fullForm "망하다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-K5.2 ;
+    rdfs:label "겜(←game)"@ko ;
     a kno:Component ;
+    kno:formative kno:F000452 ;
+    kno:role "고정항"@ko .
+kno:KN2013-0158-c1 a kno:Component ;
+    kno:surfaceForm "망"@ko ;
+    kno:fullForm "망하다"@ko ;
+    kno:semanticTag kno:usas-X9.2m ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "망(하다)(亡)"@ko ;
-    kno:surfaceForm "망"@ko .
+    kno:formative kno:F001284 ;
+    rdfs:label "망(하다)(亡)"@ko .

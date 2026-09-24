@@ -435,6 +435,7 @@
              : Math.max(10, Math.min(13, rr * 1.6)) / k;
       if (n2._highlighted && n2._hopDepth === 0) { fs *= 1.2; rr = rr * 1.35 + 2 / k; }
       var txt = n2.type === 'schema' ? (n2.short || n2.label) : n2.label, cat = '', tail = '';
+      var origin = (n2.type === 'neologism' && n2.origin && fs * k >= 8) ? originPlain(n2.origin) : '';
       if (n2.type === 'schema') { var sc = splitCat(txt); txt = sc[0]; cat = sc[1]; tail = sc[2]; }
       var mainFont = (n2.type === 'schema' ? '800 ' : '600 ') + fs + 'px Noto Sans KR, Pretendard, sans-serif';
       var subFont = '700 ' + (fs * 0.68) + 'px Noto Sans KR, Pretendard, sans-serif';
@@ -443,7 +444,9 @@
       if (cat) { ctx.font = subFont; cw = ctx.measureText(cat).width + 1 / k; ctx.font = mainFont; }
       var tailW = tail ? ctx.measureText(tail).width : 0; cw += tailW;
       var lx = n2.x, ly = n2.y - rr - 4 / k;
-      var lhw = (tw + cw) / 2 + 2 / k, lhh = fs * 0.65;
+      var oFont = '500 ' + (fs * 0.76) + 'px Noto Sans KR, Pretendard, sans-serif', ow = 0;
+      if (origin) { ctx.font = oFont; ow = ctx.measureText(origin).width; ctx.font = mainFont; }
+      var lhw = Math.max(tw + cw, ow) / 2 + 2 / k, lhh = fs * (origin ? 1.05 : 0.65);
       if (!(n2._highlighted && n2._hopDepth === 0) && !showAll && overlap(lx, ly, lhw, lhh)) continue;
       var x0 = lx - (tw + cw) / 2;
       ctx.textAlign = 'left';
@@ -452,6 +455,7 @@
       ctx.fillStyle = LABEL_COLORS[n2.type]; ctx.globalAlpha = 0.95; ctx.fillText(txt, x0, ly);
       if (cat) { ctx.font = subFont; ctx.strokeText(cat, x0 + tw + 1 / k, ly + fs * 0.28); ctx.fillText(cat, x0 + tw + 1 / k, ly + fs * 0.28); ctx.font = mainFont; }
       if (tail) { ctx.strokeText(tail, x0 + tw + cw - tailW, ly); ctx.fillText(tail, x0 + tw + cw - tailW, ly); }
+      if (origin) { ctx.font = oFont; ctx.lineWidth = 2.5 / k; ctx.globalAlpha = 0.95; ctx.strokeText(origin, lx - ow / 2, ly + fs * 0.85); ctx.fillStyle = '#6b7684'; ctx.globalAlpha = 0.9; ctx.fillText(origin, lx - ow / 2, ly + fs * 0.88); ctx.font = mainFont; }
       ctx.globalAlpha = 1; ctx.textAlign = 'center';
       _drawnLabels.push({ x: lx, y: ly, hw: lhw, hh: lhh, node: n2 });
     }
@@ -547,7 +551,7 @@
   }
 
   function item(n, sub, extra) {
-    return '<div class="ip-item ip-nav" data-nid="' + n.id + '" style="cursor:pointer;"><span>' + (n.type === 'schema' ? schemaHtml(n.label) : esc(n.label)) + '</span>' +
+    return '<div class="ip-item ip-nav" data-nid="' + n.id + '" style="cursor:pointer;"><span>' + (n.type === 'schema' ? schemaHtml(n.label) : esc(n.label) + (n.origin ? '<span class="origin">' + originHtml(n.origin) + '</span>' : '')) + '</span>' +
       (extra || '') + '<span class="ip-item-sub">' + (sub || '') + '</span></div>';
   }
   function statCard(v, unit, label) { return '<div class="stat-card"><div class="stat-value">' + v + (unit ? '<span class="stat-unit"> ' + unit + '</span>' : '') + '</div><div class="stat-label">' + label + '</div></div>'; }
@@ -572,6 +576,9 @@
     });
     ctx.textAlign = 'center';
   }
+  // 원어: <영> 같은 언어 표지는 작은 칩으로, 캔버스에서는 뺀다
+  function originHtml(o) { return esc(o).replace(/&lt;([^&]{1,3})&gt;/g, '<i class="lang">$1</i>'); }
+  function originPlain(o) { return String(o || '').replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim(); }
   function schemaHtml(label) { return esc(label).replace(/\]([A-Za-z\/·]+)( - X=[^ ·]+)?(?=$| · )/g, function (m, c, t) { return ']<sub>' + c + '</sub>' + (t ? '<span class="cond">' + t + '</span>' : ''); }); }
   function splitCat(label) { var m = /^(.*\])([A-Za-z\/·]+)( - X=.+)?$/.exec(label); return m ? [m[1], m[2], m[3] || ''] : [label, '', '']; }
   function esc(s) { return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;'); }
@@ -594,7 +601,7 @@
   function byN(a, b) { return (b.n || b.degree || 0) - (a.n || a.degree || 0); }
 
   function showInfoPanel(n, depth) {
-    ipTitle.innerHTML = n.type === 'schema' ? schemaHtml(n.label) : esc(n.label);
+    ipTitle.innerHTML = n.type === 'schema' ? schemaHtml(n.label) : esc(n.label) + (n.origin ? '<span class="origin">' + originHtml(n.origin) + '</span>' : '');
     var ti = TYPE_KO[n.type];
     if (n.type === 'schema') ti += ' · ' + (n.fm || '') + ' · 산출 범주 ' + n.cat + ' · 유형 ' + n.n + (n.total > n.n ? ' · 하위 포함 ' + n.total : '') + ' · 미등재 ' + n.unreg;
     if (n.type === 'formative') ti += ' · ' + n.n + '개 신어' + (n.affix ? ' · ' + n.affix + ' 접사' : '') + (n.trunc ? ' · 절단' : '') + ' · ' + (REG_KO[n.reg] || n.reg);
@@ -920,7 +927,7 @@
     groups.forEach(function (g) {
       html += '<div class="bb-group"><div class="bb-group-h">' + (g.color ? '<i style="background:' + g.color + '"></i>' : '') + esc(g.key) + '<span class="bb-group-n">' + g.items.length + '</span></div><div class="bb-cols">';
       g.items.forEach(function (n) {
-        html += '<div class="bb-item" data-nid="' + n.id + '"><span class="bb-lab">' + (tab === 'schema' ? schemaHtml(n.short || n.label) : esc(n.label)) + '</span>' +
+        html += '<div class="bb-item" data-nid="' + n.id + '"><span class="bb-lab">' + (tab === 'schema' ? schemaHtml(n.short || n.label) : esc(n.label) + (n.origin ? '<span class="origin">' + originHtml(n.origin) + '</span>' : '')) + '</span>' +
           (tab === 'schema' ? '<span class="bb-deg">' + (n.n || 0) + '</span>' : '') + '</div>';
       });
       html += '</div></div>';

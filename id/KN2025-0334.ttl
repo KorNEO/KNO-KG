@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0334 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0334 kno:frequency kno:KN2025-0334-freq-NN-2025 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0334-c2 ;
-    kno:indexForm "섬꾸"@ko ;
+kno:KN2025-0334 kno:component kno:KN2025-0334-c1 ;
     a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%AC%EA%BE%B8> ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2025-0334-freq-NN-total ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:slotFiller "섬 (1성분)"@ko ;
+    a kno:Neologism ;
+    kno:componentString "섬, 꾸(미다)"@ko ;
+    kno:indexForm "섬꾸"@ko ;
+    kno:component kno:KN2025-0334-c2 ;
+    kno:instantiates kno:S000030 ;
+    kno:instantiates kno:S000527 ;
+    rdfs:label "섬꾸"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:year "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2025-0334-freq-NN-2025 ;
+    kno:languageType "고+고" ;
     kno:example "(LLM) 새 휴대전화가 밋밋해 보여서 카메라 부분에 스티커를 붙여 {섬꾸를} 했다."@ko ;
     kno:slotFiller "꾸(미다) (1성분)"@ko ;
-    kno:unitType "단어"@ko ;
     kno:formation kno:W06 ;
-    kno:componentString "섬, 꾸(미다)"@ko ;
-    kno:instantiates kno:S000030 ;
-    kno:frequency kno:KN2025-0334-freq-NN-total ;
-    rdfs:label "섬꾸"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "섬 (1성분)"@ko ;
-    kno:languageType "고+고" ;
-    kno:component kno:KN2025-0334-c1 ;
-    kno:instantiates kno:S000527 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:year "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%AC%EA%BE%B8> ;
+    kno:unitType "단어"@ko ;
     kno:predicate "장식하다"@ko ;
-    kno:pos "「명」"@ko ;
     skos:definition "(LLM) 스마트폰의 카메라가 모여 있는 부분을 스티커, 보호 필름, 전용 액세서리 따위를 붙여 장식하는 일."@ko .
-kno:KN2025-0334-c2 kno:formative kno:F000056 ;
+kno:KN2025-0334-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "섬"@ko ;
+    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:fullForm "섬"@ko ;
+    kno:formative kno:F000531 ;
+    rdfs:label "섬"@ko ;
+    kno:semanticTag kno:usas-W3 ;
+    kno:role "고정항"@ko .
+kno:KN2025-0334-c2 kno:fullForm "꾸미다"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-C1 ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "꾸미다"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "꾸(미다)"@ko ;
     a kno:Component ;
-    kno:surfaceForm "꾸"@ko ;
-    rdfs:label "꾸(미다)"@ko .
-kno:KN2025-0334-c1 kno:fullForm "섬"@ko ;
-    kno:surfaceForm "섬"@ko ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000531 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-W3 ;
-    rdfs:label "섬"@ko ;
-    a kno:Component .
+    kno:surfaceForm "꾸"@ko ;
+    kno:formative kno:F000056 .

@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0089 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0089 a kno:Neologism ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:example "¶노사가 {내비 실거리제를} 도입하기로 합의하였으나 노조는 사측이 여전히 배달료를 깎기 위해 꼼수를 부린다고 지적했다."@ko ;
-    rdfs:label "내비^실거리제"@ko ;
+kno:KN2022-0089 kno:example "¶노사가 {내비 실거리제를} 도입하기로 합의하였으나 노조는 사측이 여전히 배달료를 깎기 위해 꼼수를 부린다고 지적했다."@ko ;
     kno:languageType "영^(한+고+한)" ;
-    a ontolex:MultiwordExpression ;
     kno:component kno:KN2022-0089-c2 ;
-    kno:origin "(<영>←navigation實거리制)" ;
     kno:frequency kno:KN2022-0089-freq-NN-total ;
     kno:year "2022"^^xsd:gYear ;
-    kno:componentString "내비(게이션)(navigation), 실거리(實距離), -제(制)"@ko ;
-    kno:component kno:KN2022-0089-c3 ;
-    kno:frequency kno:KN2022-0089-freq-NN-2022 ;
-    skos:definition "식당과 배달 장소의 직선 거리가 아닌 내비게이션상의 실제 거리를 기준으로 배달료를 책정하는 요금 체계."@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:indexForm "내비실거리제"@ko ;
-    kno:unitType "구"@ko ;
-    kno:instantiates kno:S000195 ;
-    kno:slotFiller "내비(게이션)(navigation)+실거리(實距離) (2성분)"@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:frequency kno:KN2022-0089-freq-NN-2022 ;
+    kno:pos "「구」"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "내비(게이션)(navigation)+실거리(實距離) (2성분)"@ko ;
+    skos:definition "식당과 배달 장소의 직선 거리가 아닌 내비게이션상의 실제 거리를 기준으로 배달료를 책정하는 요금 체계."@ko ;
+    kno:origin "(<영>←navigation實거리制)" ;
+    kno:instantiates kno:S000195 ;
+    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%B9%84%EC%8B%A4%EA%B1%B0%EB%A6%AC%EC%A0%9C> ;
     kno:component kno:KN2022-0089-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%B9%84%EC%8B%A4%EA%B1%B0%EB%A6%AC%EC%A0%9C> .
-kno:KN2022-0089-c2 a kno:Component ;
-    kno:semanticTag kno:usas-N3.3 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:indexForm "내비실거리제"@ko ;
+    rdfs:label "내비^실거리제"@ko ;
+    kno:component kno:KN2022-0089-c3 ;
+    kno:componentString "내비(게이션)(navigation), 실거리(實距離), -제(制)"@ko .
+kno:KN2022-0089-c2 kno:truncated "false"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "실거리"@ko ;
-    kno:formative kno:F004718 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-N3.3 ;
+    a kno:Component ;
     kno:surfaceForm "실거리"@ko ;
-    rdfs:label "실거리(實距離)"@ko .
-kno:KN2022-0089-c3 kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "제"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "제"@ko ;
-    kno:formative kno:F000120 ;
-    rdfs:label "-제(制)"@ko ;
-    kno:semanticTag kno:usas-S7.1 ;
-    a kno:Component .
+    kno:fullForm "실거리"@ko ;
+    rdfs:label "실거리(實距離)"@ko ;
+    kno:formative kno:F004718 ;
+    kno:role "슬롯 채움"@ko .
 kno:KN2022-0089-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-M3 ;
     kno:formative kno:F002719 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "내비(게이션)(navigation)"@ko ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:surfaceForm "내비"@ko ;
     kno:fullForm "내비게이션"@ko ;
     a kno:Component ;
-    kno:surfaceForm "내비"@ko .
+    rdfs:label "내비(게이션)(navigation)"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko .
+kno:KN2022-0089-c3 rdfs:label "-제(制)"@ko ;
+    a kno:Component ;
+    kno:formative kno:F000120 ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:surfaceForm "제"@ko ;
+    kno:semanticTag kno:usas-S7.1 ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "제"@ko .

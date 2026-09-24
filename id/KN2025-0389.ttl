@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0389 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0389 a ontolex:Word ;
-    kno:languageType "한+한+한+한" ;
-    kno:slotFiller "중(국)(中國)+친(親)- (2성분)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "안(보)(安保), 중(국)(中國), 친(親)-, 중(국)(中國)"@ko ;
-    skos:definition "(LLM) 국가 안보와 대외 관계에서 중국과의 협력ㆍ관계를 우선시하는 태도나 노선을 비판적으로 이르는 말."@ko ;
-    kno:component kno:KN2025-0389-c3 ;
-    rdfs:label "안중친중"@ko ;
-    kno:origin "(安中親中)" ;
-    kno:component kno:KN2025-0389-c1 ;
-    kno:formation kno:W06 ;
+kno:KN2025-0389 skos:definition "(LLM) 국가 안보와 대외 관계에서 중국과의 협력ㆍ관계를 우선시하는 태도나 노선을 비판적으로 이르는 말."@ko ;
     kno:component kno:KN2025-0389-c4 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2025-0389-freq-NN-2025 ;
-    kno:component kno:KN2025-0389-c2 ;
+    kno:origin "(安中親中)" ;
+    kno:pos "「명」"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%A4%91%EC%B9%9C%EC%A4%91> ;
     kno:instantiates kno:S000541 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%A4%91%EC%B9%9C%EC%A4%91> ;
+    kno:component kno:KN2025-0389-c2 ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "안중친중"@ko ;
+    kno:component kno:KN2025-0389-c3 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:example "(LLM) 야당은 정부의 대중 외교 기조를 두고 {안중친중으로} 기울었다며 안보 공백을 우려했다."@ko ;
-    kno:indexForm "안중친중"@ko ;
+    a kno:Neologism ;
+    kno:frequency kno:KN2025-0389-freq-NN-2025 ;
+    kno:year "2025"^^xsd:gYear ;
+    rdfs:label "안중친중"@ko ;
+    kno:component kno:KN2025-0389-c1 ;
+    kno:componentString "안(보)(安保), 중(국)(中國), 친(親)-, 중(국)(中國)"@ko ;
+    a ontolex:Word ;
+    kno:slotFiller "중(국)(中國)+친(親)- (2성분)"@ko ;
+    kno:languageType "한+한+한+한" ;
     kno:registration "신어DB"@ko ;
+    kno:formation kno:W06 ;
     kno:frequency kno:KN2025-0389-freq-NN-total .
-kno:KN2025-0389-c3 kno:formative kno:F000951 ;
-    rdfs:label "친(親)-"@ko ;
-    kno:semanticTag kno:usas-S3.1 ;
+kno:KN2025-0389-c4 kno:semanticTag kno:usas-Z2 ;
     a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "중(국)(中國)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:fullForm "중국"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F000408 ;
+    kno:surfaceForm "중"@ko ;
+    kno:position "4"^^xsd:integer .
+kno:KN2025-0389-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000408 ;
+    a kno:Component ;
+    kno:surfaceForm "중"@ko ;
+    kno:fullForm "중국"@ko ;
+    rdfs:label "중(국)(中國)"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0389-c3 rdfs:label "친(親)-"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-S3.1 ;
+    kno:surfaceForm "친"@ko ;
     kno:position "3"^^xsd:integer ;
     kno:fullForm "친"@ko ;
-    kno:surfaceForm "친"@ko .
-kno:KN2025-0389-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G3 ;
-    kno:surfaceForm "안"@ko ;
-    kno:formative kno:F000381 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000951 .
+kno:KN2025-0389-c1 kno:formative kno:F000381 ;
+    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "안(보)(安保)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "안보"@ko .
-kno:KN2025-0389-c4 kno:position "4"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000408 ;
-    kno:surfaceForm "중"@ko ;
-    a kno:Component ;
-    kno:fullForm "중국"@ko ;
-    kno:semanticTag kno:usas-Z2 ;
+    kno:surfaceForm "안"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    rdfs:label "중(국)(中國)"@ko .
-kno:KN2025-0389-c2 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "중"@ko ;
-    kno:fullForm "중국"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000408 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "중(국)(中國)"@ko .
+    kno:fullForm "안보"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    a kno:Component .

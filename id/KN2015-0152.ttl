@@ -9,67 +9,67 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0152 kno:registration "신어DB"@ko ;
+kno:KN2015-0152 skos:definition "‘얼굴에 빠지고 몸매에 빠짐’을 줄여 이르는 말. 능력이나 성품보다는 얼굴이 아름답고 몸매가 좋은 사람에게 쉽게 호감을 가지는 일이나 그런 사람을 이르는 말이다."@ko ;
     a ontolex:Word ;
+    kno:componentString "얼(굴), 빠(지다), 몸(매), 빠(지다)"@ko ;
+    kno:component kno:KN2015-0152-c3 ;
+    kno:component kno:KN2015-0152-c2 ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    rdfs:label "얼빠-몸빠"@ko ;
+    a kno:Neologism ;
+    kno:slotFiller "얼(굴)+빠(지다)+몸(매) (3성분)"@ko ;
+    kno:component kno:KN2015-0152-c4 ;
     kno:component kno:KN2015-0152-c1 ;
     kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:formation kno:W01 ;
-    skos:definition "‘얼굴에 빠지고 몸매에 빠짐’을 줄여 이르는 말. 능력이나 성품보다는 얼굴이 아름답고 몸매가 좋은 사람에게 쉽게 호감을 가지는 일이나 그런 사람을 이르는 말이다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EB%B9%A0%EB%AA%B8%EB%B9%A0> ;
-    kno:component kno:KN2015-0152-c4 ;
-    kno:example "¶OOO은 지난 20일 방송된 OO에 출연해 ‘{얼빠몸빠’라는} 이상형을 밝혀 눈길을 끌었다."@ko ;
-    kno:component kno:KN2015-0152-c3 ;
-    kno:indexForm "얼빠몸빠"@ko ;
-    kno:frequency kno:KN2015-0152-freq-NN-2016 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2015-0152-freq-NN-2017 ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "고+고" ;
-    kno:componentString "얼(굴), 빠(지다), 몸(매), 빠(지다)"@ko ;
-    kno:instantiates kno:S000389 ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:component kno:KN2015-0152-c2 ;
-    kno:frequency kno:KN2015-0152-freq-NN-total ;
-    rdfs:label "얼빠-몸빠"@ko ;
     kno:frequency kno:KN2015-0152-freq-NN-2015 ;
-    kno:slotFiller "얼(굴)+빠(지다)+몸(매) (3성분)"@ko ;
+    kno:year "2015"^^xsd:gYear ;
+    kno:frequency kno:KN2015-0152-freq-NN-2016 ;
+    kno:example "¶OOO은 지난 20일 방송된 OO에 출연해 ‘{얼빠몸빠’라는} 이상형을 밝혀 눈길을 끌었다."@ko ;
+    kno:languageType "고+고" ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:indexForm "얼빠몸빠"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2015-0152-freq-NN-total ;
     kno:instantiates kno:S000549 ;
-    kno:slotFiller "빠(지다)+몸(매)+빠(지다) (3성분)"@ko .
-kno:KN2015-0152-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "얼굴"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:formation kno:W01 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EB%B9%A0%EB%AA%B8%EB%B9%A0> ;
+    kno:slotFiller "빠(지다)+몸(매)+빠(지다) (3성분)"@ko ;
+    kno:frequency kno:KN2015-0152-freq-NN-2017 ;
+    kno:instantiates kno:S000389 .
+kno:KN2015-0152-c3 kno:formative kno:F001310 ;
+    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:surfaceForm "몸"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "몸매"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    rdfs:label "몸(매)"@ko .
+kno:KN2015-0152-c2 kno:role "슬롯 채움"@ko ;
+    kno:position "2"^^xsd:integer ;
+    rdfs:label "빠(지다)"@ko ;
+    kno:formative kno:F000364 ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "빠"@ko ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "빠지다"@ko .
+kno:KN2015-0152-c4 kno:truncated "true"^^xsd:boolean ;
+    kno:position "4"^^xsd:integer ;
+    kno:fullForm "빠지다"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    rdfs:label "빠(지다)"@ko ;
+    kno:formative kno:F000364 ;
+    kno:role "고정항"@ko ;
+    a kno:Component ;
+    kno:surfaceForm "빠"@ko .
+kno:KN2015-0152-c1 kno:position "1"^^xsd:integer ;
     kno:surfaceForm "얼"@ko ;
     rdfs:label "얼(굴)"@ko ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:formative kno:F000117 ;
     a kno:Component ;
-    kno:role "고정항"@ko .
-kno:KN2015-0152-c4 a kno:Component ;
-    kno:fullForm "빠지다"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    rdfs:label "빠(지다)"@ko ;
+    kno:semanticTag kno:usas-B1 ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000364 ;
-    kno:surfaceForm "빠"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2015-0152-c3 kno:surfaceForm "몸"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:fullForm "몸매"@ko ;
-    rdfs:label "몸(매)"@ko ;
+    kno:fullForm "얼굴"@ko ;
     kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001310 .
-kno:KN2015-0152-c2 kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "빠"@ko ;
-    rdfs:label "빠(지다)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "빠지다"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:formative kno:F000364 .
+    kno:formative kno:F000117 .

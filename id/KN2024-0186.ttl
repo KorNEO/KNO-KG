@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0186 skos:definition "정해진 기간 안에 대출을 갚지 못하는 연체 상태가 계속되는 비율."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "연체지속률"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EC%B2%B4%EC%A7%80%EC%86%8D%EB%A5%A0> ;
-    kno:example "¶자영업자 대출의 {연체 지속률은} 약 75%로, 이는 자영업자 4명 중 3명은 연체의 사슬을 벗어나지 못하고 있다는 것을 의미한다."@ko ;
-    rdfs:label "연체^지속률"@ko ;
-    kno:component kno:KN2024-0186-c1 ;
+kno:KN2024-0186 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%B0%EC%B2%B4%EC%A7%80%EC%86%8D%EB%A5%A0> ;
+    skos:definition "정해진 기간 안에 대출을 갚지 못하는 연체 상태가 계속되는 비율."@ko ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:frequency kno:KN2024-0186-freq-NN-total ;
-    kno:languageType "한^한" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:predicate "계속되다"@ko ;
-    kno:frequency kno:KN2024-0186-freq-NN-2024 ;
-    kno:component kno:KN2024-0186-c2 ;
-    a kno:Neologism ;
-    kno:componentString "연체(延滯), 지속률(持續率)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0186-freq-NN-2025 ;
+    kno:component kno:KN2024-0186-c1 ;
     kno:origin "(延滯持續率)" ;
-    a ontolex:MultiwordExpression .
-kno:KN2024-0186-c1 rdfs:label "연체(延滯)"@ko ;
-    kno:formative kno:F005059 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:frequency kno:KN2024-0186-freq-NN-2024 ;
+    kno:componentString "연체(延滯), 지속률(持續率)"@ko ;
+    kno:component kno:KN2024-0186-c2 ;
+    a ontolex:MultiwordExpression ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    a kno:Neologism ;
+    kno:example "¶자영업자 대출의 {연체 지속률은} 약 75%로, 이는 자영업자 4명 중 3명은 연체의 사슬을 벗어나지 못하고 있다는 것을 의미한다."@ko ;
+    kno:frequency kno:KN2024-0186-freq-NN-total ;
+    rdfs:label "연체^지속률"@ko ;
+    kno:frequency kno:KN2024-0186-freq-NN-2025 ;
+    kno:year "2024"^^xsd:gYear ;
+    kno:indexForm "연체지속률"@ko ;
+    kno:predicate "계속되다"@ko ;
+    kno:unitType "구"@ko ;
+    kno:languageType "한^한" .
+kno:KN2024-0186-c1 kno:formative kno:F005059 ;
+    kno:role "성분"@ko ;
     kno:fullForm "연체"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    rdfs:label "연체(延滯)"@ko ;
+    kno:surfaceForm "연체"@ko ;
     kno:semanticTag kno:usas-I1.2 ;
-    kno:surfaceForm "연체"@ko .
-kno:KN2024-0186-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-N2 ;
-    kno:surfaceForm "지속률"@ko ;
-    kno:formative kno:F005879 ;
     kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
     a kno:Component ;
+    kno:position "1"^^xsd:integer .
+kno:KN2024-0186-c2 rdfs:label "지속률(持續率)"@ko ;
+    a kno:Component ;
+    kno:semanticTag kno:usas-N2 ;
+    kno:formative kno:F005879 ;
+    kno:surfaceForm "지속률"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "지속률"@ko ;
-    rdfs:label "지속률(持續率)"@ko .
+    kno:role "성분"@ko ;
+    kno:position "2"^^xsd:integer .

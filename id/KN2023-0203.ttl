@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0203 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0203 a kno:Neologism ;
-    rdfs:label "용피셜"@ko ;
-    kno:frequency kno:KN2023-0203-freq-NN-total ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2023-0203-freq-NN-2022 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(龍<영>←official)" ;
-    kno:component kno:KN2023-0203-c2 ;
-    kno:instantiates kno:S000236 ;
-    kno:registration "신어DB"@ko ;
+kno:KN2023-0203 a ontolex:Word ;
     kno:indexForm "용피셜"@ko ;
-    a ontolex:Word ;
+    kno:pos "「명」"@ko ;
+    kno:slotFiller "용(산)(龍山) (1성분)"@ko ;
+    a kno:Neologism ;
+    rdfs:label "용피셜"@ko ;
+    kno:instantiates kno:S000236 ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2023-0203-freq-NN-total ;
+    kno:component kno:KN2023-0203-c1 ;
+    skos:definition "대한민국 대통령실에서 발표하거나 발언한 이야기를 이르는 말. 대한민국 대통령실이 위치한 ‘용산’과 ‘오피셜 (official)’을 결합하여 만든 말이다."@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:origin "(龍<영>←official)" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%A9%ED%94%BC%EC%85%9C> ;
+    kno:year "2023"^^xsd:gYear ;
+    kno:languageType "한+영" ;
     kno:unitType "단어"@ko ;
     kno:componentString "용(산)(龍山), (오)피셜(official)"@ko ;
-    skos:definition "대한민국 대통령실에서 발표하거나 발언한 이야기를 이르는 말. 대한민국 대통령실이 위치한 ‘용산’과 ‘오피셜 (official)’을 결합하여 만든 말이다."@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%A9%ED%94%BC%EC%85%9C> ;
-    kno:formation kno:W05 ;
-    kno:languageType "한+영" ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:example "¶여당의 대표는 당의 비상 상황이 그저 {용피셜일} 뿐이라며 반박했다."@ko ;
-    kno:component kno:KN2023-0203-c1 ;
-    kno:slotFiller "용(산)(龍山) (1성분)"@ko .
-kno:KN2023-0203-c2 kno:fullForm "오피셜"@ko ;
-    kno:semanticTag kno:usas-A5.2p ;
-    rdfs:label "(오)피셜(official)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "피셜"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000636 ;
+    kno:frequency kno:KN2023-0203-freq-NN-2022 ;
+    kno:component kno:KN2023-0203-c2 .
+kno:KN2023-0203-c1 rdfs:label "용(산)(龍山)"@ko ;
     a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2023-0203-c1 kno:fullForm "용산"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Z2 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "용(산)(龍山)"@ko ;
-    kno:formative kno:F001649 ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "용"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z2 ;
+    kno:fullForm "용산"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F001649 .
+kno:KN2023-0203-c2 kno:formative kno:F000636 ;
+    kno:fullForm "오피셜"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-A5.2p ;
+    kno:surfaceForm "피셜"@ko ;
+    a kno:Component ;
+    rdfs:label "(오)피셜(official)"@ko ;
+    kno:role "고정항"@ko .

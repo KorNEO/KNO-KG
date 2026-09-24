@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0260 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0260 kno:component kno:KN2017-0260-c1 ;
+kno:KN2017-0260 a ontolex:MultiwordExpression ;
     kno:frequency kno:KN2017-0260-freq-NN-total ;
-    skos:definition "저금리, 낮은 수익률 등의 이유로 채권 시장에서 빠져 나와 다른 투자처를 찾는 사람을 비유적으로 이르는 말."@ko ;
-    kno:frequency kno:KN2017-0260-freq-NN-2016 ;
-    kno:componentString "채권(債券), 난민(難民)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "구"@ko ;
-    kno:example "¶OO 그룹의 OOO 주식 전략가는 “{채권 난민들이} 주식에 흥미를 보이고 있다.”라면서 “급격한 인플레 상승이나 성장률 회복을 기대하기 어려운 상황에서 투자자들은 변동성이 낮고 더 높은 배당을 보장하는 주식 시장으로 관심을 돌리고 있다.”라고 말했다."@ko ;
     kno:urimalTargetCode "1380246" ;
+    kno:registration "우리말샘"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380246> ;
+    kno:componentString "채권(債券), 난민(難民)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:frequency kno:KN2017-0260-freq-NN-2016 ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:instantiates kno:S000092 ;
+    kno:slotFiller "채권(債券) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:indexForm "채권난민"@ko ;
+    kno:component kno:KN2017-0260-c2 ;
+    kno:example "¶OO 그룹의 OOO 주식 전략가는 “{채권 난민들이} 주식에 흥미를 보이고 있다.”라면서 “급격한 인플레 상승이나 성장률 회복을 기대하기 어려운 상황에서 투자자들은 변동성이 낮고 더 높은 배당을 보장하는 주식 시장으로 관심을 돌리고 있다.”라고 말했다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    skos:definition "저금리, 낮은 수익률 등의 이유로 채권 시장에서 빠져 나와 다른 투자처를 찾는 사람을 비유적으로 이르는 말."@ko ;
+    rdfs:label "채권 난민"@ko ;
+    a kno:Neologism ;
+    kno:component kno:KN2017-0260-c1 ;
     kno:year "2017"^^xsd:gYear ;
     kno:languageType "한_한" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380246> ;
-    kno:indexForm "채권난민"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "채권(債券) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(債券難民)" ;
-    rdfs:label "채권 난민"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000092 ;
-    kno:component kno:KN2017-0260-c2 ;
-    kno:lastAttestationYear "2016"^^xsd:gYear .
-kno:KN2017-0260-c1 kno:formative kno:F000944 ;
-    rdfs:label "채권(債券)"@ko ;
-    kno:fullForm "채권"@ko ;
-    kno:surfaceForm "채권"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1.1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2017-0260-c2 rdfs:label "난민(難民)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:origin "(債券難民)" .
+kno:KN2017-0260-c2 a kno:Component ;
     kno:semanticTag kno:usas-S2m ;
-    a kno:Component ;
-    kno:fullForm "난민"@ko ;
-    kno:formative kno:F000205 ;
     kno:surfaceForm "난민"@ko ;
+    kno:formative kno:F000205 ;
+    kno:fullForm "난민"@ko ;
+    rdfs:label "난민(難民)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko .
+kno:KN2017-0260-c1 a kno:Component ;
+    rdfs:label "채권(債券)"@ko ;
+    kno:truncated "false"^^xsd:boolean ;
+    kno:position "1"^^xsd:integer ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:fullForm "채권"@ko ;
+    kno:formative kno:F000944 ;
+    kno:surfaceForm "채권"@ko .

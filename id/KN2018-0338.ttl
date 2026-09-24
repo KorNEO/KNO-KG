@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0338 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0338 kno:origin "(<영>▼call phobia世代)" ;
-    kno:frequency kno:KN2018-0338-freq-NN-2018 ;
-    kno:componentString "콜(call), 포비아(phobia), 세대(世代)"@ko ;
+kno:KN2018-0338 kno:indexForm "콜포비아세대"@ko ;
+    a ontolex:MultiwordExpression ;
     kno:registration "신어DB"@ko ;
-    kno:indexForm "콜포비아세대"@ko ;
-    kno:component kno:KN2018-0338-c1 ;
-    kno:instantiates kno:S001698 ;
-    kno:unitType "구"@ko ;
-    kno:example "¶통화보다는 문자나 메신저, 이메일로 소통하는 것을 선호하는 ‘{콜 포비아 세대’라는} 말도 생겨났습니다."@ko ;
-    kno:component kno:KN2018-0338-c3 ;
     kno:instantiates kno:S000002 ;
-    kno:slotFiller "포비아(phobia)+세대(世代) (2성분)"@ko ;
+    kno:frequency kno:KN2018-0338-freq-NN-2018 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:predicate "느끼다"@ko ;
+    kno:example "¶통화보다는 문자나 메신저, 이메일로 소통하는 것을 선호하는 ‘{콜 포비아 세대’라는} 말도 생겨났습니다."@ko ;
     rdfs:label "콜 포비아 세대"@ko ;
+    kno:slotFiller "포비아(phobia)+세대(世代) (2성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%9C%20%ED%8F%AC%EB%B9%84%EC%95%84%20%EC%84%B8%EB%8C%80> ;
+    kno:origin "(<영>▼call phobia世代)" ;
+    kno:unitType "구"@ko ;
+    skos:definition "문자 메시지나 메신저 혹은 이메일로 소통하는 것을 선호하며 전화로 음성 통화를 하는 것에 두려움이나 거부감을 느끼는 세대."@ko ;
+    kno:instantiates kno:S001698 ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
     kno:year "2018"^^xsd:gYear ;
     kno:frequency kno:KN2018-0338-freq-NN-total ;
-    kno:component kno:KN2018-0338-c2 ;
-    kno:slotFiller "콜(call)+포비아(phobia) (2성분)"@ko ;
     a kno:Neologism ;
-    kno:pos "「구」"@ko ;
-    skos:definition "문자 메시지나 메신저 혹은 이메일로 소통하는 것을 선호하며 전화로 음성 통화를 하는 것에 두려움이나 거부감을 느끼는 세대."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "영_영_한" .
-kno:KN2018-0338-c1 kno:role "고정항"@ko ;
-    kno:surfaceForm "콜"@ko ;
-    kno:semanticTag kno:usas-I1 ;
+    kno:componentString "콜(call), 포비아(phobia), 세대(世代)"@ko ;
+    kno:component kno:KN2018-0338-c3 ;
+    kno:slotFiller "콜(call)+포비아(phobia) (2성분)"@ko ;
+    kno:languageType "영_영_한" ;
+    kno:component kno:KN2018-0338-c1 ;
+    kno:component kno:KN2018-0338-c2 .
+kno:KN2018-0338-c3 kno:surfaceForm "세대"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:role "고정항"@ko ;
+    rdfs:label "세대(世代)"@ko ;
     kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "세대"@ko ;
     a kno:Component ;
-    rdfs:label "콜(call)"@ko ;
+    kno:formative kno:F000006 ;
+    kno:position "3"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2 .
+kno:KN2018-0338-c1 rdfs:label "콜(call)"@ko ;
+    a kno:Component ;
+    kno:fullForm "콜"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "콜"@ko ;
     kno:formative kno:F000610 ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "콜"@ko .
-kno:KN2018-0338-c3 kno:position "3"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "세대"@ko ;
-    kno:formative kno:F000006 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "세대"@ko ;
-    rdfs:label "세대(世代)"@ko ;
-    a kno:Component .
-kno:KN2018-0338-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0338-c2 a kno:Component ;
+    rdfs:label "포비아(phobia)"@ko ;
+    kno:formative kno:F000018 ;
     kno:fullForm "포비아"@ko ;
     kno:surfaceForm "포비아"@ko ;
-    rdfs:label "포비아(phobia)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-E5m ;
+    kno:truncated "false"^^xsd:boolean ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000018 .
+    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-E5m .
