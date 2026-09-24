@@ -168,6 +168,12 @@
     }
     #hop-control .lt-row input { margin: 0; accent-color: #475569; }
     #hop-control .lt-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; display: inline-block; }
+    #ll-control .facet-list { max-height: 320px; }
+    #ll-control #ll-stats {
+      font-size: 0.67rem; color: #94a3b8;
+      padding: 0.25rem 0.5rem 0.1rem; margin-top: 0.2rem;
+      border-top: 1px solid #e2e8f0;
+    }
     /* ── 왼쪽 상단 컨트롤 래퍼 ── */
     #graph-controls-left {
       position: absolute;
@@ -503,6 +509,25 @@
         <label class="lt-row"><input type="radio" name="hop-range" value="2" checked> <span class="lt-dot" style="background:#82c4b5;"></span> 2차 연결</label>
         <label class="lt-row"><input type="radio" name="hop-range" value="3"> <span class="lt-dot" style="background:#b7a6de;"></span> 3차 연결</label>
       </div>
+      <div class="facet" id="ll-control">
+        <button class="facet-head">LL 유의수준 <span class="facet-sum filtered" id="ll-sum">LL≥1000</span> <span class="facet-arrow">▾</span></button>
+        <div class="facet-list">
+          <label data-sum="p&lt;.001"><input type="radio" name="ll-opt" value="10.83"> p &lt; .001 (LL≥10.83)</label>
+          <label data-sum="p&lt;.0001"><input type="radio" name="ll-opt" value="15.14"> p &lt; .0001</label>
+          <label data-sum="p&lt;10⁻⁵"><input type="radio" name="ll-opt" value="19.51"> p &lt; 10⁻⁵</label>
+          <label data-sum="p&lt;10⁻⁶"><input type="radio" name="ll-opt" value="23.93"> p &lt; 10⁻⁶</label>
+          <label data-sum="p&lt;10⁻⁸"><input type="radio" name="ll-opt" value="32.84"> p &lt; 10⁻⁸ (LL≥32.84)</label>
+          <label data-sum="p&lt;10⁻¹⁰"><input type="radio" name="ll-opt" value="41.82"> p &lt; 10⁻¹⁰</label>
+          <label data-sum="p&lt;10⁻¹⁵"><input type="radio" name="ll-opt" value="66.94"> p &lt; 10⁻¹⁵</label>
+          <label data-sum="p&lt;10⁻²⁰"><input type="radio" name="ll-opt" value="91.02"> p &lt; 10⁻²⁰</label>
+          <label data-sum="LL≥200"><input type="radio" name="ll-opt" value="200"> LL ≥ 200</label>
+          <label data-sum="LL≥500"><input type="radio" name="ll-opt" value="500"> LL ≥ 500</label>
+          <label data-sum="LL≥1000"><input type="radio" name="ll-opt" value="1000" checked> LL ≥ 1000</label>
+          <label data-sum="LL≥2000"><input type="radio" name="ll-opt" value="2000"> LL ≥ 2000</label>
+          <label data-sum="LL≥5000"><input type="radio" name="ll-opt" value="5000"> LL ≥ 5000</label>
+          <div id="ll-stats"></div>
+        </div>
+      </div>
     </div>
 
     <div id="legend" data-mode="main">
@@ -548,6 +573,7 @@
     var _drawnLabels = [];           // draw()에서 기록, findNode()에서 참조
     var SIM_ALPHA_STOP = 0.01;      // 시뮬레이션 종료 임계값
     var YEAR_MIN = 2020, YEAR_MAX = 2025;
+    var llThreshold = 1000;            // LL 유의수준 임계값 (초기 LL≥1000)
 
     // ── 층별 색상 (저채도 팔레트) ───────────────────────────────────────────
     var LAYER_COLORS = {
@@ -666,6 +692,8 @@
       // 활성 층의 링크만 (+ 범주 필터 시 해당 entry에 연결된 것만)
       var visLinks = allLinks.filter(function(l) {
         if (!layerActive[l.layer]) return false;
+        // entity 층: LL 유의수준 필터
+        if (l.layer === 'entity' && l.ll != null && l.ll < llThreshold) return false;
         // verb 층 세부 필터: 말뭉치(NN/YT)
         if (l.layer === 'verb') {
           if (l.src === 'NN' && !verbFilter.nn) return false;
@@ -766,6 +794,7 @@
         _allNodeMap = {};
         allNodes.forEach(function(n) { _allNodeMap[n.id] = n; });
         updateFacetCounts();
+        updateLLStats();
         var vis = computeVisible();
         applyLayout(vis.nodes, vis.links);
         centerGraph();
@@ -909,6 +938,7 @@
 
       // 연결 단계: 감정 용언 탭에선 숨김·1차 고정 (깊이 확장 무의미 — 2026-08-08 사용자 확정)
       document.getElementById('hop-control').style.display = mode === 'verb' ? 'none' : '';
+      document.getElementById('ll-control').style.display = mode === 'main' ? '' : 'none';
       hopRange = mode === 'verb' ? 1
         : parseInt(document.querySelector('#hop-control input[name="hop-range"]:checked').value, 10);
 
@@ -919,7 +949,9 @@
       } else if (mode === 'verb') {
         statsEl.innerHTML = '신어 <span>2,474</span> &middot; 감정 용언 <span>646</span>';
       } else {
-        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>2,159</span>';
+        var nEnt = allNodes.filter(function(n) { return n.type === 'entity'; }).length;
+        statsEl.innerHTML = '신어 <span>2,474</span> &middot; 개체명 <span>' + nEnt.toLocaleString() + '</span>';
+        updateLLStats();
       }
 
       // 하단 바: 모드별 탭 재구성 (main=개체명 / verb=감정 용언 / morph=구성 성분·고립 노드)
@@ -944,6 +976,56 @@
     document.getElementById('tab-main').addEventListener('click', function() { switchMode('main'); });
     document.getElementById('tab-morph').addEventListener('click', function() { switchMode('morph'); });
     document.getElementById('tab-verb').addEventListener('click', function() { switchMode('verb'); });
+
+    // ── LL 유의수준 필터 (facet 스타일 단일 선택) ──────────────────────────
+    var llControl = document.getElementById('ll-control');
+    function updateLLStats() {
+      if (!allLinks.length) return;
+      var cnt = 0, ents = new Set();
+      allLinks.forEach(function(l) {
+        if (l.layer !== 'entity') return;
+        if (l.ll != null && l.ll >= llThreshold) {
+          cnt++;
+          var tid = typeof l.target === 'object' ? l.target.id : l.target;
+          ents.add(tid);
+        }
+      });
+      var el = document.getElementById('ll-stats');
+      if (el) el.textContent = '엣지 ' + cnt.toLocaleString() + ' · 개체 ' + ents.size.toLocaleString();
+    }
+    if (llControl) {
+      var llHead = llControl.querySelector('.facet-head');
+      var llSum = document.getElementById('ll-sum');
+      llHead.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var wasOpen = llControl.classList.contains('open');
+        document.querySelectorAll('.facet.open').forEach(function(f) { f.classList.remove('open'); });
+        if (!wasOpen) llControl.classList.add('open');
+      });
+      llControl.querySelector('.facet-list').addEventListener('click', function(e) { e.stopPropagation(); });
+      llControl.querySelectorAll('input[name="ll-opt"]').forEach(function(radio) {
+        radio.addEventListener('change', function() {
+          llThreshold = parseFloat(this.value);
+          llSum.textContent = this.parentElement.getAttribute('data-sum');
+          llControl.classList.remove('open');
+          if (!allNodes.length) { updateLLStats(); return; }
+          var loadEl = document.getElementById('loading');
+          loadEl.style.display = '';
+          loadEl.innerHTML = '<div class="spin"></div>LL 필터 적용 중…';
+          setTimeout(function() {
+            updateLLStats();
+            var vis = computeVisible();
+            loadEl.innerHTML = '<div class="spin"></div>레이아웃 계산 중…';
+            setTimeout(function() {
+              applyLayout(vis.nodes, vis.links);
+              centerGraph();
+              draw();
+              loadEl.style.display = 'none';
+            }, 30);
+          }, 30);
+        });
+      });
+    }
 
     // ── 필터 (엑셀식 체크리스트) ────────────────────────────────────────────
     function refreshGraphFromFacets() {
@@ -989,7 +1071,7 @@
       });
     }
 
-    document.querySelectorAll('.facet').forEach(function(facet) {
+    document.querySelectorAll('.facet[data-key]').forEach(function(facet) {
       var key = facet.getAttribute('data-key');
       var head = facet.querySelector('.facet-head');
       var sum = facet.querySelector('.facet-sum');
@@ -1711,10 +1793,12 @@
       });
 
       var order = ['entry', 'entity', 'verb', 'element'];
+      var _typeSeenCount = {};  // 유형별 등장 횟수 (이분 그래프에서 유형별 차수 라벨용)
       order.forEach(function(t) {
         if (!groups[t]) return;
+        _typeSeenCount[t] = (_typeSeenCount[t] || 0) + 1;
         var label = typeLabels[t] || t;
-        html += '<div class="ip-section">' + label + ' · <span style="color:' + HOP_TEXT_COLORS[1] + ';">1차 연결</span> (' + groups[t].length + ')</div>';
+        html += '<div class="ip-section">' + label + ' · <span style="color:' + HOP_TEXT_COLORS[1] + ';">' + _typeSeenCount[t] + '차 연결</span> (' + groups[t].length + ')</div>';
         groups[t].sort(function(a, b) { return (a.label || '').localeCompare(b.label || ''); });
         groups[t].forEach(function(c) {
           var extra = '';
@@ -1760,8 +1844,8 @@
         html += '<div class="ip-item" style="color:#94a3b8;cursor:default;">공기한 감정 용언 없음</div>';
       }
 
-      // 깊이 2·3 — 유형별 그룹, 경유 노드 표시
-      function renderIndirect(list, tag, tagColor) {
+      // 깊이 2·3 — 유형별 그룹, 경유 노드 표시 (라벨은 유형별 차수)
+      function renderIndirect(list, tagColor) {
         if (!list.length) return;
         var groups2 = {};
         list.forEach(function(s) {
@@ -1771,8 +1855,9 @@
         });
         order.forEach(function(t) {
           if (!groups2[t]) return;
+          _typeSeenCount[t] = (_typeSeenCount[t] || 0) + 1;
           var label2 = typeLabels[t] || t;
-          html += '<div class="ip-section">' + label2 + ' · <span style="color:' + tagColor + ';">' + tag + '</span> (' + groups2[t].length + ')</div>';
+          html += '<div class="ip-section">' + label2 + ' · <span style="color:' + tagColor + ';">' + _typeSeenCount[t] + '차 연결</span> (' + groups2[t].length + ')</div>';
           groups2[t].sort(function(a, b) { return (a.node.label || '').localeCompare(b.node.label || ''); });
           groups2[t].forEach(function(s) {
             var c = s.node;
@@ -1789,8 +1874,8 @@
           });
         });
       }
-      renderIndirect(hop2, '2차 연결', HOP_TEXT_COLORS[2]);
-      renderIndirect(hop3, '3차 연결', HOP_TEXT_COLORS[3]);
+      renderIndirect(hop2, HOP_TEXT_COLORS[2]);
+      renderIndirect(hop3, HOP_TEXT_COLORS[3]);
 
       ipList.innerHTML = html;
 
