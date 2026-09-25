@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0279 kno:frequency kno:KN2025-0279-freq-NN-2025 ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "버드 돔"@ko ;
-    kno:indexForm "버드돔"@ko ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 해당 공항은 레이더와 열화상 카메라, 드론 순찰, 전담 인력의 현장 대응을 묶은 {버드돔을} 구축해 조류 충돌 사고를 예방하겠다고 밝혔다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%84%EB%93%9C%20%EB%8F%94> ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0279-c1 ;
+kno:KN2025-0279 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:instantiates kno:S000772 ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(<영>bird dome)" ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0279-freq-NN-total ;
-    kno:component kno:KN2025-0279-c2 ;
-    kno:languageType "영_영" ;
-    kno:slotFiller "버드(bird) (1성분)"@ko ;
+    rdfs:label "버드 돔"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%84%EB%93%9C%20%EB%8F%94> ;
     skos:definition "(LLM) 공항 주변에서 조류의 접근을 거리ㆍ고도 등 구역별로 탐지ㆍ감시하고, 경보ㆍ유도ㆍ퇴치 등의 대응을 연계해 항공기와의 충돌 위험을 줄이려는 통합 안전 관리 체계."@ko ;
-    kno:componentString "버드(bird), 돔(dome)"@ko .
-kno:KN2025-0279-c1 kno:role "슬롯 채움"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0279-c1 ;
+    kno:component kno:KN2025-0279-c2 ;
+    kno:componentString "버드(bird), 돔(dome)"@ko ;
+    kno:example "(LLM) 해당 공항은 레이더와 열화상 카메라, 드론 순찰, 전담 인력의 현장 대응을 묶은 {버드돔을} 구축해 조류 충돌 사고를 예방하겠다고 밝혔다."@ko ;
+    kno:frequency kno:KN2025-0279-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0279-freq-NN-total ;
+    kno:indexForm "버드돔"@ko ;
+    kno:instantiates kno:S000772 ;
+    kno:languageType "영_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>bird dome)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "버드(bird) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0279-c1 a kno:Component ;
     rdfs:label "버드(bird)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-L2 ;
-    kno:fullForm "버드"@ko ;
-    kno:surfaceForm "버드"@ko ;
-    a kno:Component ;
     kno:formative kno:F001355 ;
+    kno:fullForm "버드"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:surfaceForm "버드"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0279-c2 kno:formative kno:F000716 ;
-    a kno:Component ;
-    kno:fullForm "돔"@ko ;
+kno:KN2025-0279-c2 a kno:Component ;
     rdfs:label "돔(dome)"@ko ;
+    kno:formative kno:F000716 ;
+    kno:fullForm "돔"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "돔"@ko ;
     kno:semanticTag kno:usas-H1 ;
-    kno:position "2"^^xsd:integer .
+    kno:surfaceForm "돔"@ko ;
+    kno:truncated "false"^^xsd:boolean .

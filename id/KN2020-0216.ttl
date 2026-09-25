@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0216 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0216 kno:origin "(養育<영>coupon)" ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2020-0216-freq-NN-2020 ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9C%A1%EC%BF%A0%ED%8F%B0> ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2020-0216-freq-NN-total ;
-    skos:definition "자녀를 양육하는 부모의 부담을 줄이기 위해 정부에서 지급하는 지원금. 코로나19로 인한 재난 상황에서 지급되기 시작했다."@ko ;
+kno:KN2020-0216 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:instantiates kno:S000575 ;
-    kno:slotFiller "양육(養育) (1성분)"@ko ;
+    rdfs:label "양육^쿠폰"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EC%9C%A1%EC%BF%A0%ED%8F%B0> ;
+    skos:definition "자녀를 양육하는 부모의 부담을 줄이기 위해 정부에서 지급하는 지원금. 코로나19로 인한 재난 상황에서 지급되기 시작했다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2020-0216-c1 ;
     kno:component kno:KN2020-0216-c2 ;
-    kno:pos "「구」"@ko ;
-    kno:example "¶이번 {양육 쿠폰도} 만 7세 미만의 아동이 있는 가구에 지급된다."@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "양육^쿠폰"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:languageType "한^영" ;
-    kno:predicate "지급하다"@ko ;
     kno:componentString "양육(養育), 쿠폰(coupon)"@ko ;
+    kno:example "¶이번 {양육 쿠폰도} 만 7세 미만의 아동이 있는 가구에 지급된다."@ko ;
+    kno:frequency kno:KN2020-0216-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0216-freq-NN-total ;
     kno:indexForm "양육쿠폰"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear .
-kno:KN2020-0216-c1 kno:formative kno:F000847 ;
-    a kno:Component ;
-    kno:surfaceForm "양육"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "양육"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:instantiates kno:S000575 ;
+    kno:languageType "한^영" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(養育<영>coupon)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "지급하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "양육(養育) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0216-c1 a kno:Component ;
     rdfs:label "양육(養育)"@ko ;
+    kno:formative kno:F000847 ;
+    kno:fullForm "양육"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S4 ;
-    kno:position "1"^^xsd:integer .
-kno:KN2020-0216-c2 kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000238 ;
-    a kno:Component ;
+    kno:surfaceForm "양육"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0216-c2 a kno:Component ;
     rdfs:label "쿠폰(coupon)"@ko ;
+    kno:formative kno:F000238 ;
     kno:fullForm "쿠폰"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I2.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "쿠폰"@ko .
+    kno:surfaceForm "쿠폰"@ko ;
+    kno:truncated "false"^^xsd:boolean .

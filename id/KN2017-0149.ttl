@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0149 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0149 kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:languageType "한+고+영" ;
-    kno:indexForm "세젤섹"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%A0%A4%EC%84%B9> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
+kno:KN2017-0149 a ontolex:Word ;
     a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:origin "(世젤<영>←sexy)" ;
+    rdfs:label "세젤섹"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%84%B8%EC%A0%A4%EC%84%B9> ;
+    skos:definition "‘세상에서 제일 섹시한 사람’을 줄여 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2017-0149-c1 ;
+    kno:component kno:KN2017-0149-c2 ;
+    kno:component kno:KN2017-0149-c3 ;
+    kno:componentString "세(상)(世), 젤, 섹(시)(sexy)"@ko ;
     kno:example "¶OOO 어머니가 자신의 아들이 ‘{세젤섹’이라고} 밝혔다."@ko ;
     kno:formation kno:W06 ;
-    kno:slotFiller "섹(시)(sexy) (1성분)"@ko ;
-    rdfs:label "세젤섹"@ko ;
-    kno:component kno:KN2017-0149-c2 ;
-    kno:frequency kno:KN2017-0149-freq-NN-total ;
     kno:frequency kno:KN2017-0149-freq-NN-2016 ;
-    kno:componentString "세(상)(世), 젤, 섹(시)(sexy)"@ko ;
-    kno:component kno:KN2017-0149-c3 ;
-    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2017-0149-freq-NN-total ;
+    kno:indexForm "세젤섹"@ko ;
     kno:instantiates kno:S000201 ;
-    skos:definition "‘세상에서 제일 섹시한 사람’을 줄여 이르는 말."@ko .
-kno:KN2017-0149-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000283 ;
-    kno:surfaceForm "세"@ko ;
+    kno:languageType "한+고+영" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(世젤<영>←sexy)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "섹(시)(sexy) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0149-c1 a kno:Component ;
     rdfs:label "세(상)(世)"@ko ;
-    kno:semanticTag kno:usas-W1 ;
-    a kno:Component ;
+    kno:formative kno:F000283 ;
+    kno:fullForm "세상"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:fullForm "세상"@ko .
-kno:KN2017-0149-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:surfaceForm "세"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0149-c2 a kno:Component ;
     rdfs:label "젤"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000232 ;
+    kno:fullForm "젤"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-A13.2 ;
-    kno:fullForm "젤"@ko ;
-    kno:formative kno:F000232 ;
-    kno:surfaceForm "젤"@ko .
-kno:KN2017-0149-c3 kno:fullForm "섹시"@ko ;
-    kno:surfaceForm "섹"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S3.2 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "젤"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0149-c3 a kno:Component ;
     rdfs:label "섹(시)(sexy)"@ko ;
-    kno:formative kno:F000114 .
+    kno:formative kno:F000114 ;
+    kno:fullForm "섹시"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S3.2 ;
+    kno:surfaceForm "섹"@ko ;
+    kno:truncated "true"^^xsd:boolean .

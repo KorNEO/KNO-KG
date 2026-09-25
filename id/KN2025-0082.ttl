@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0082 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0082 kno:registration "신어DB"@ko ;
-    kno:componentString "그림, 공천(公薦)"@ko ;
-    kno:instantiates kno:S000330 ;
-    kno:origin "(그림公薦)" ;
+kno:KN2025-0082 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "그림 공천"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B8%EB%A6%BC%20%EA%B3%B5%EC%B2%9C> ;
     skos:definition "(LLM) 선거에서, 고가의 미술 작품(그림)을 건네는 등 ‘그림’을 매개로 특정 인물의 공천(후보 추천)을 청탁하거나 그 대가를 제공하는 행위를 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "고_한" ;
-    kno:frequency kno:KN2025-0082-freq-NN-total ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:label "그림 공천"@ko ;
-    kno:frequency kno:KN2025-0082-freq-NN-2025 ;
-    kno:component kno:KN2025-0082-c2 ;
     kno:component kno:KN2025-0082-c1 ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "그림 (1성분)"@ko ;
+    kno:component kno:KN2025-0082-c2 ;
+    kno:componentString "그림, 공천(公薦)"@ko ;
     kno:example "(LLM) 수사팀은 고가 작품 전달 정황을 토대로 {그림공천} 의혹이 실제 공천 청탁의 대가였는지 집중적으로 들여다보고 있다."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B8%EB%A6%BC%20%EA%B3%B5%EC%B2%9C> ;
+    kno:frequency kno:KN2025-0082-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0082-freq-NN-total ;
     kno:indexForm "그림공천"@ko ;
+    kno:instantiates kno:S000330 ;
+    kno:languageType "고_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(그림公薦)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2025-0082-c2 kno:fullForm "공천"@ko ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "그림 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0082-c1 a kno:Component ;
+    rdfs:label "그림"@ko ;
+    kno:formative kno:F002527 ;
+    kno:fullForm "그림"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:surfaceForm "그림"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0082-c2 a kno:Component ;
+    rdfs:label "공천(公薦)"@ko ;
+    kno:formative kno:F000460 ;
+    kno:fullForm "공천"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "공천(公薦)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000460 ;
-    kno:surfaceForm "공천"@ko .
-kno:KN2025-0082-c1 kno:fullForm "그림"@ko ;
-    kno:formative kno:F002527 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "그림"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-C1 ;
-    rdfs:label "그림"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "공천"@ko ;
     kno:truncated "false"^^xsd:boolean .

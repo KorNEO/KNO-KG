@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0332 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0332 kno:instantiates kno:S000211 ;
+kno:KN2020-0332 a ontolex:Word ;
     a kno:Neologism ;
-    kno:slotFiller "-돌이 (1성분)"@ko ;
-    kno:componentString "코(로나)(corona), -돌이"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0332-freq-NN-2021 ;
-    kno:frequency kno:KN2020-0332-freq-NN-2020 ;
-    kno:frequency kno:KN2020-0332-freq-NN-2024 ;
+    rdfs:label "코돌이"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%8F%8C%EC%9D%B4> ;
+    skos:definition "‘코로나돌이’를 줄여 이르는 말."@ko ;
     kno:activeYears "7"^^xsd:integer ;
-    kno:formation kno:W05 ;
-    kno:slotFiller "코(로나)(corona) (1성분)"@ko ;
-    kno:frequency kno:KN2020-0332-freq-NN-total ;
     kno:component kno:KN2020-0332-c1 ;
-    a ontolex:Word ;
+    kno:component kno:KN2020-0332-c2 ;
+    kno:componentString "코(로나)(corona), -돌이"@ko ;
+    kno:example "¶곧이어 치러지는 총선에서 새롭게 국회에 입성할 이른바 {코돌이들에} 많은 사람들이 기대와 우려의 시선을 던지고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0332-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0332-freq-NN-total ;
+    kno:indexForm "코돌이"@ko ;
+    kno:instantiates kno:S000211 ;
     kno:instantiates kno:S001086 ;
     kno:languageType "영+고" ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0332-freq-NN-2023 ;
-    rdfs:label "코돌이"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(<영>←corona virus돌이)" ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%8F%8C%EC%9D%B4> ;
-    kno:component kno:KN2020-0332-c2 ;
-    kno:example "¶곧이어 치러지는 총선에서 새롭게 국회에 입성할 이른바 {코돌이들에} 많은 사람들이 기대와 우려의 시선을 던지고 있다."@ko ;
-    kno:frequency kno:KN2020-0332-freq-NN-2025 ;
-    kno:frequency kno:KN2020-0332-freq-NN-2019 ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:indexForm "코돌이"@ko ;
-    kno:frequency kno:KN2020-0332-freq-NN-2022 ;
-    skos:definition "‘코로나돌이’를 줄여 이르는 말."@ko .
-kno:KN2020-0332-c1 rdfs:label "코(로나)(corona)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "코로나"@ko ;
-    kno:surfaceForm "코"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:slotFiller "-돌이 (1성분)"@ko ;
+    kno:slotFiller "코(로나)(corona) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0332-c1 a kno:Component ;
+    rdfs:label "코(로나)(corona)"@ko ;
     kno:formative kno:F000237 ;
-    a kno:Component ;
+    kno:fullForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B2 ;
-    kno:role "고정항"@ko .
-kno:KN2020-0332-c2 kno:formative kno:F001197 ;
-    kno:surfaceForm "돌이"@ko ;
-    kno:semanticTag kno:usas-S2.2 ;
+    kno:surfaceForm "코"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2020-0332-c2 a kno:Component ;
+    rdfs:label "-돌이"@ko ;
+    kno:formative kno:F001197 ;
     kno:fullForm "돌이"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "-돌이"@ko ;
-    kno:role "고정항"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:surfaceForm "돌이"@ko ;
+    kno:truncated "false"^^xsd:boolean .

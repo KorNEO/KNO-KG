@@ -9,68 +9,68 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0188 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0188 kno:component kno:KN2023-0188-c4 ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2023-0188-freq-NN-2022 ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(얼죽<영>←cropped族)" ;
-    kno:component kno:KN2023-0188-c1 ;
-    kno:component kno:KN2023-0188-c3 ;
+kno:KN2023-0188 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "얼죽크-족"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EC%A3%BD%ED%81%AC%EC%A1%B1> ;
     skos:definition "추운 날씨에도 멋을 위해서 길이가 짧은 윗옷이나 외투를 입는 사람. 또는 그런 무리."@ko ;
-    kno:slotFiller "크(롭트)(cropped)+-족(族) (2성분)"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0188-c1 ;
+    kno:component kno:KN2023-0188-c2 ;
+    kno:component kno:KN2023-0188-c3 ;
+    kno:component kno:KN2023-0188-c4 ;
+    kno:componentString "얼(다), 죽(다), 크(롭트)(cropped), -족(族)"@ko ;
+    kno:example "¶롱 패딩이 유행한 작년과 달리, 올해 겨울 패션의 트렌드는 강추위에도 크롭트 티를 고수하는 ‘{얼죽크족’의} 탄생이다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2023-0188-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0188-freq-NN-total ;
+    kno:indexForm "얼죽크족"@ko ;
     kno:instantiates kno:S000001 ;
     kno:instantiates kno:S000289 ;
-    kno:component kno:KN2023-0188-c2 ;
-    kno:frequency kno:KN2023-0188-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    kno:unitType "단어"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:slotFiller "얼(다)+죽(다)+크(롭트)(cropped) (3성분)"@ko ;
-    kno:predicate "입다"@ko ;
-    a kno:Neologism ;
-    kno:componentString "얼(다), 죽(다), 크(롭트)(cropped), -족(族)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EC%A3%BD%ED%81%AC%EC%A1%B1> ;
     kno:languageType "(고+고+영)+한" ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "얼죽크-족"@ko ;
-    kno:indexForm "얼죽크족"@ko ;
-    kno:example "¶롱 패딩이 유행한 작년과 달리, 올해 겨울 패션의 트렌드는 강추위에도 크롭트 티를 고수하는 ‘{얼죽크족’의} 탄생이다."@ko .
-kno:KN2023-0188-c4 kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000001 ;
-    kno:fullForm "족"@ko ;
-    rdfs:label "-족(族)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer .
-kno:KN2023-0188-c1 rdfs:label "얼(다)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(얼죽<영>←cropped族)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "입다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "얼(다)+죽(다)+크(롭트)(cropped) (3성분)"@ko ;
+    kno:slotFiller "크(롭트)(cropped)+-족(族) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0188-c1 a kno:Component ;
+    rdfs:label "얼(다)"@ko ;
+    kno:formative kno:F000385 ;
     kno:fullForm "얼다"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-O4.6m ;
     kno:surfaceForm "얼"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000385 .
-kno:KN2023-0188-c3 kno:fullForm "크롭트"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001875 ;
-    rdfs:label "크(롭트)(cropped)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:surfaceForm "크"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component .
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2023-0188-c2 a kno:Component ;
+    rdfs:label "죽(다)"@ko ;
+    kno:formative kno:F000303 ;
     kno:fullForm "죽다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-L1m ;
     kno:surfaceForm "죽"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0188-c3 a kno:Component ;
+    rdfs:label "크(롭트)(cropped)"@ko ;
+    kno:formative kno:F001875 ;
+    kno:fullForm "크롭트"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:surfaceForm "크"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0188-c4 a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
+    kno:fullForm "족"@ko ;
+    kno:position "4"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000303 ;
-    rdfs:label "죽(다)"@ko .
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0067 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0067 a kno:Neologism ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+kno:KN2023-0067 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "녹색^항로"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%EC%83%89%ED%95%AD%EB%A1%9C> ;
+    skos:definition "해당 항로를 이용하는 선박들은 온실가스의 배출이 없거나 낮은 연료를 사용해야 하는 특정 항로."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2023-0067-c1 ;
+    kno:component kno:KN2023-0067-c2 ;
+    kno:componentString "녹색(綠色), 항로(航路)"@ko ;
+    kno:example "¶이번 토론회에서는 국제 해운 분야에서 2050년 탄소 중립의 목표를 달성하기 위한 기술 개발과 {녹색 항로의} 도입 등 해운 탈탄소화를 위한 협력 방안에 대해 협의할 계획이다."@ko ;
+    kno:frequency kno:KN2023-0067-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0067-freq-NN-2023 ;
     kno:frequency kno:KN2023-0067-freq-NN-2024 ;
     kno:frequency kno:KN2023-0067-freq-NN-2025 ;
-    kno:component kno:KN2023-0067-c1 ;
-    kno:instantiates kno:S001065 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "녹색(綠色) (1성분)"@ko ;
     kno:frequency kno:KN2023-0067-freq-NN-total ;
-    kno:componentString "녹색(綠色), 항로(航路)"@ko ;
-    kno:frequency kno:KN2023-0067-freq-NN-2022 ;
-    kno:languageType "한^한" ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "항로(航路) (1성분)"@ko ;
     kno:indexForm "녹색항로"@ko ;
-    skos:definition "해당 항로를 이용하는 선박들은 온실가스의 배출이 없거나 낮은 연료를 사용해야 하는 특정 항로."@ko ;
-    rdfs:label "녹색^항로"@ko ;
-    kno:component kno:KN2023-0067-c2 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:example "¶이번 토론회에서는 국제 해운 분야에서 2050년 탄소 중립의 목표를 달성하기 위한 기술 개발과 {녹색 항로의} 도입 등 해운 탈탄소화를 위한 협력 방안에 대해 협의할 계획이다."@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B9%EC%83%89%ED%95%AD%EB%A1%9C> ;
-    kno:frequency kno:KN2023-0067-freq-NN-2023 ;
     kno:instantiates kno:S000455 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:origin "(綠色航路)" .
-kno:KN2023-0067-c1 kno:fullForm "녹색"@ko ;
-    kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000478 ;
-    kno:position "1"^^xsd:integer ;
+    kno:instantiates kno:S001065 ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(綠色航路)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "녹색(綠色) (1성분)"@ko ;
+    kno:slotFiller "항로(航路) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0067-c1 a kno:Component ;
     rdfs:label "녹색(綠色)"@ko ;
+    kno:formative kno:F000478 ;
+    kno:fullForm "녹색"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.3 ;
     kno:surfaceForm "녹색"@ko ;
-    kno:semanticTag kno:usas-O4.3 .
-kno:KN2023-0067-c2 kno:surfaceForm "항로"@ko ;
-    kno:formative kno:F001015 ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:fullForm "항로"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0067-c2 a kno:Component ;
     rdfs:label "항로(航路)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
+    kno:formative kno:F001015 ;
+    kno:fullForm "항로"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "항로"@ko ;
+    kno:truncated "false"^^xsd:boolean .

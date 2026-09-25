@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0280 kno:year "2019"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2019-0280-freq-NN-2023 ;
+kno:KN2019-0280 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "퇴튜던트"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1437581> ;
+    skos:definition "퇴근한 후에 공부하는 직장인을 이르는 말. ‘퇴근’과 학생을 뜻하는 ‘스튜던트(student)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2019-0280-c1 ;
+    kno:component kno:KN2019-0280-c2 ;
+    kno:componentString "퇴(근)(退), (스)튜던트(student)"@ko ;
+    kno:example "¶주 52시간 근무제가 시행되면서 직장인들의 여가 생활에 대한 투자가 높아진 가운데 OO에서도 퇴근 후 배움에 열중하는 직장인인 {‘퇴튜던트’가} 증가하고 있는 것으로 나타났다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2019-0280-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0280-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0280-freq-NN-2022 ;
+    kno:frequency kno:KN2019-0280-freq-NN-2023 ;
     kno:frequency kno:KN2019-0280-freq-NN-total ;
     kno:indexForm "퇴튜던트"@ko ;
-    kno:componentString "퇴(근)(退), (스)튜던트(student)"@ko ;
-    kno:formation kno:W05 ;
-    kno:example "¶주 52시간 근무제가 시행되면서 직장인들의 여가 생활에 대한 투자가 높아진 가운데 OO에서도 퇴근 후 배움에 열중하는 직장인인 {‘퇴튜던트’가} 증가하고 있는 것으로 나타났다."@ko ;
-    a ontolex:Word ;
-    skos:definition "퇴근한 후에 공부하는 직장인을 이르는 말. ‘퇴근’과 학생을 뜻하는 ‘스튜던트(student)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다."@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2019-0280-freq-NN-2018 ;
-    kno:component kno:KN2019-0280-c2 ;
-    kno:frequency kno:KN2019-0280-freq-NN-2022 ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2019-0280-c1 ;
-    kno:urimalTargetCode "1437581" ;
+    kno:languageType "한+영" ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:origin "(退<영>←student)" ;
-    kno:languageType "한+영" ;
-    kno:frequency kno:KN2019-0280-freq-NN-2019 ;
-    kno:pos "「명」"@ko .
-kno:KN2019-0280-c2 kno:role "성분"@ko ;
-    kno:fullForm "스튜던트"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "튜던트"@ko ;
-    rdfs:label "(스)튜던트(student)"@ko ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F006531 .
-kno:KN2019-0280-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1437581" ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0280-c1 a kno:Component ;
     rdfs:label "퇴(근)(退)"@ko ;
-    kno:role "성분"@ko ;
     kno:formative kno:F000976 ;
-    kno:surfaceForm "퇴"@ko ;
-    a kno:Component ;
     kno:fullForm "퇴근"@ko ;
-    kno:semanticTag kno:usas-I3.1 .
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "퇴"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0280-c2 a kno:Component ;
+    rdfs:label "(스)튜던트(student)"@ko ;
+    kno:formative kno:F006531 ;
+    kno:fullForm "스튜던트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "튜던트"@ko ;
+    kno:truncated "true"^^xsd:boolean .

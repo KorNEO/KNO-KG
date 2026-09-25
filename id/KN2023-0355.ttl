@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0355 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0355 kno:componentString "혈당(血糖), 다이어트(diet)"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%88%EB%8B%B9%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8> ;
-    kno:predicate "관리하다"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:languageType "한_영" ;
-    kno:frequency kno:KN2023-0355-freq-NN-total ;
-    kno:frequency kno:KN2023-0355-freq-NN-2023 ;
+kno:KN2023-0355 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:activeYears "3"^^xsd:integer ;
     rdfs:label "혈당 다이어트"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%88%EB%8B%B9%20%EB%8B%A4%EC%9D%B4%EC%96%B4%ED%8A%B8> ;
+    skos:definition "혈당 수치를 조절하여 체중을 관리하는 일. 식단이나 식습관을 개선해 혈당 수치의 급격한 상승을 막고, 인슐린 분비를 줄여 당이 지방이 되는 과정을 늦추는 원리이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2023-0355-c1 ;
-    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2023-0355-c2 ;
+    kno:componentString "혈당(血糖), 다이어트(diet)"@ko ;
+    kno:example "¶{혈당 다이어트가} 인기를 끌면서, 체중 감량을 위해 식초를 구입하는 사람들이 많아졌다."@ko ;
+    kno:frequency kno:KN2023-0355-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0355-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0355-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0355-freq-NN-total ;
+    kno:indexForm "혈당다이어트"@ko ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(血糖<영>diet)" ;
     kno:pos "「구」"@ko ;
-    kno:indexForm "혈당다이어트"@ko ;
-    kno:component kno:KN2023-0355-c2 ;
-    a ontolex:MultiwordExpression ;
-    skos:definition "혈당 수치를 조절하여 체중을 관리하는 일. 식단이나 식습관을 개선해 혈당 수치의 급격한 상승을 막고, 인슐린 분비를 줄여 당이 지방이 되는 과정을 늦추는 원리이다."@ko ;
-    kno:frequency kno:KN2023-0355-freq-NN-2025 ;
-    kno:example "¶{혈당 다이어트가} 인기를 끌면서, 체중 감량을 위해 식초를 구입하는 사람들이 많아졌다."@ko ;
-    kno:frequency kno:KN2023-0355-freq-NN-2024 .
-kno:KN2023-0355-c1 kno:fullForm "혈당"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "혈당"@ko ;
+    kno:predicate "관리하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0355-c1 a kno:Component ;
+    rdfs:label "혈당(血糖)"@ko ;
+    kno:formative kno:F002015 ;
+    kno:fullForm "혈당"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    rdfs:label "혈당(血糖)"@ko ;
-    a kno:Component ;
     kno:semanticTag kno:usas-B1 ;
-    kno:formative kno:F002015 .
-kno:KN2023-0355-c2 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "혈당"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0355-c2 a kno:Component ;
+    rdfs:label "다이어트(diet)"@ko ;
     kno:formative kno:F001159 ;
     kno:fullForm "다이어트"@ko ;
-    kno:surfaceForm "다이어트"@ko ;
-    rdfs:label "다이어트(diet)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2 .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:surfaceForm "다이어트"@ko ;
+    kno:truncated "false"^^xsd:boolean .

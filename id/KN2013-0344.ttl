@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0344 kno:component kno:KN2013-0344-c2 ;
-    kno:registration "우리말샘"@ko ;
-    kno:languageType "한+일" ;
-    kno:componentString "입(入), 덕(후)(otaku)"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    skos:definition "한 분야에 지나치게 집중하거나, 집착하게 되는 길에 처음 들어섬."@ko ;
-    kno:component kno:KN2013-0344-c1 ;
+kno:KN2013-0344 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "입덕"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369887> ;
+    skos:definition "한 분야에 지나치게 집중하거나, 집착하게 되는 길에 처음 들어섬."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0344-c1 ;
+    kno:component kno:KN2013-0344-c2 ;
+    kno:componentString "입(入), 덕(후)(otaku)"@ko ;
+    kno:example "¶얘들아, {입덕은} OOO으로 하겠다고 약속해."@ko ;
     kno:formation kno:W06 ;
+    kno:indexForm "입덕"@ko ;
+    kno:languageType "한+일" ;
+    kno:origin "(入←<일>otaku[御宅])" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1369887" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:indexForm "입덕"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:example "¶얘들아, {입덕은} OOO으로 하겠다고 약속해."@ko ;
-    kno:origin "(入←<일>otaku[御宅])" ;
-    rdfs:label "입덕"@ko ;
-    a kno:Neologism .
-kno:KN2013-0344-c2 kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0344-c1 a kno:Component ;
+    rdfs:label "입(入)"@ko ;
+    kno:formative kno:F000401 ;
+    kno:fullForm "입"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "입"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0344-c2 a kno:Component ;
     rdfs:label "덕(후)(otaku)"@ko ;
+    kno:formative kno:F000037 ;
     kno:fullForm "덕후"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-X5.2p ;
     kno:surfaceForm "덕"@ko ;
-    kno:formative kno:F000037 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
-kno:KN2013-0344-c1 kno:surfaceForm "입"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "입"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F000401 ;
-    kno:semanticTag kno:usas-B1 ;
-    a kno:Component ;
-    rdfs:label "입(入)"@ko .
+    kno:truncated "true"^^xsd:boolean .

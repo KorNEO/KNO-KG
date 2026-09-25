@@ -9,65 +9,65 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0301 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0301 kno:component kno:KN2022-0301-c1 ;
-    kno:unitType "구"@ko ;
-    kno:predicate "책임지다"@ko ;
-    kno:frequency kno:KN2022-0301-freq-NN-total ;
-    kno:languageType "한^한^한^한" ;
-    kno:component kno:KN2022-0301-c3 ;
+kno:KN2022-0301 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:example "¶정부에서는 코로나19 백신 접종 부작용의 해결을 위하여 ‘{피해 회복 국가 책임제’를} 추진할 예정이라고 하였다."@ko ;
-    kno:origin "(被害回復國家責任制)" ;
-    kno:instantiates kno:S000737 ;
-    kno:component kno:KN2022-0301-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "피해(被害), 회복(回復), 국가(國家), 책임제(責任制)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2022-0301-freq-NN-2022 ;
-    skos:definition "백신 접종으로 인한 손해를 국가에서 책임지는 제도. 코로나19의 백신 접종 과정에서 드러난 부작용으로 인해 사람들이 입은 피해를 해결하기 위하여 현 대통령의 대선 후보 시절에 공약으로 제안되었다."@ko ;
-    kno:frequency kno:KN2022-0301-freq-NN-2025 ;
-    kno:component kno:KN2022-0301-c4 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:slotFiller "피해(被害)+회복(回復) (2성분)"@ko ;
     rdfs:label "피해^회복^국가^책임제"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%ED%95%B4%ED%9A%8C%EB%B3%B5%EA%B5%AD%EA%B0%80%EC%B1%85%EC%9E%84%EC%A0%9C> ;
+    skos:definition "백신 접종으로 인한 손해를 국가에서 책임지는 제도. 코로나19의 백신 접종 과정에서 드러난 부작용으로 인해 사람들이 입은 피해를 해결하기 위하여 현 대통령의 대선 후보 시절에 공약으로 제안되었다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2022-0301-c1 ;
+    kno:component kno:KN2022-0301-c2 ;
+    kno:component kno:KN2022-0301-c3 ;
+    kno:component kno:KN2022-0301-c4 ;
+    kno:componentString "피해(被害), 회복(回復), 국가(國家), 책임제(責任制)"@ko ;
+    kno:example "¶정부에서는 코로나19 백신 접종 부작용의 해결을 위하여 ‘{피해 회복 국가 책임제’를} 추진할 예정이라고 하였다."@ko ;
+    kno:frequency kno:KN2022-0301-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0301-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0301-freq-NN-total ;
     kno:indexForm "피해회복국가책임제"@ko ;
+    kno:instantiates kno:S000737 ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(被害回復國家責任制)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "책임지다"@ko ;
     kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%BC%ED%95%B4%ED%9A%8C%EB%B3%B5%EA%B5%AD%EA%B0%80%EC%B1%85%EC%9E%84%EC%A0%9C> .
-kno:KN2022-0301-c1 kno:surfaceForm "피해"@ko ;
+    kno:slotFiller "피해(被害)+회복(回復) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0301-c1 a kno:Component ;
+    rdfs:label "피해(被害)"@ko ;
+    kno:formative kno:F006889 ;
     kno:fullForm "피해"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A1.1.2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F006889 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "피해(被害)"@ko .
-kno:KN2022-0301-c3 kno:formative kno:F000020 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "국가(國家)"@ko ;
-    kno:surfaceForm "국가"@ko ;
-    a kno:Component ;
-    kno:fullForm "국가"@ko ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-G1.1 .
-kno:KN2022-0301-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000442 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "회복"@ko ;
+    kno:surfaceForm "피해"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0301-c2 a kno:Component ;
     rdfs:label "회복(回復)"@ko ;
+    kno:formative kno:F000442 ;
     kno:fullForm "회복"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-B2p ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2022-0301-c4 a kno:Component ;
+    kno:surfaceForm "회복"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0301-c3 a kno:Component ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:formative kno:F000020 ;
+    kno:fullForm "국가"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국가"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0301-c4 a kno:Component ;
     rdfs:label "책임제(責任制)"@ko ;
-    kno:semanticTag kno:usas-S6p ;
     kno:formative kno:F001819 ;
     kno:fullForm "책임제"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "책임제"@ko .
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:surfaceForm "책임제"@ko ;
+    kno:truncated "false"^^xsd:boolean .

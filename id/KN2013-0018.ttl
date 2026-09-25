@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0018 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0018 kno:unitType "단어"@ko ;
-    kno:year "2013"^^xsd:gYear ;
+kno:KN2013-0018 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "겉-컵"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%89%EC%BB%B5> ;
     skos:definition "두 개의 컵이 내장된 브레지어에서 바깥쪽에 있는 컵."@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0018-c1 ;
+    kno:component kno:KN2013-0018-c2 ;
     kno:componentString "겉, 컵(cup)"@ko ;
-    kno:predicate "있다"@ko ;
+    kno:example "¶OO 브라는 원터치 수유 고리에 {겉컵과} 속컵으로 이중 구성돼 있어 출산 전에는 임산부 브라로, 출산 후에는 수유 브라로 사용할 수 있다."@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "겉컵"@ko ;
     kno:languageType "고+영" ;
     kno:origin "(겉<영>cup)" ;
-    kno:formation kno:W01 ;
-    a kno:Neologism ;
-    kno:component kno:KN2013-0018-c2 ;
-    kno:example "¶OO 브라는 원터치 수유 고리에 {겉컵과} 속컵으로 이중 구성돼 있어 출산 전에는 임산부 브라로, 출산 후에는 수유 브라로 사용할 수 있다."@ko ;
-    kno:component kno:KN2013-0018-c1 ;
-    kno:indexForm "겉컵"@ko ;
-    a ontolex:Word ;
     kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B2%89%EC%BB%B5> ;
+    kno:predicate "있다"@ko ;
     kno:registration "신어DB"@ko ;
-    rdfs:label "겉-컵"@ko .
-kno:KN2013-0018-c2 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000417 ;
-    kno:position "2"^^xsd:integer ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0018-c1 a kno:Component ;
+    rdfs:label "겉"@ko ;
+    kno:formative kno:F002202 ;
+    kno:fullForm "겉"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:surfaceForm "겉"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0018-c2 a kno:Component ;
     rdfs:label "컵(cup)"@ko ;
-    kno:semanticTag kno:usas-O2 ;
+    kno:formative kno:F000417 ;
     kno:fullForm "컵"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-O2 ;
     kno:surfaceForm "컵"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2013-0018-c1 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "겉"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F002202 ;
-    kno:semanticTag kno:usas-M6 ;
-    kno:fullForm "겉"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "겉"@ko ;
-    a kno:Component .

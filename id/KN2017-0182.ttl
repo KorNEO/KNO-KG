@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0182 kno:component kno:KN2017-0182-c1 ;
-    kno:unitType "단어"@ko ;
+kno:KN2017-0182 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "아재템"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380746> ;
+    skos:definition "중년층의 남성들이 즐겨 사용하거나 사용하던 물건."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2017-0182-c1 ;
+    kno:component kno:KN2017-0182-c2 ;
     kno:componentString "아재, (아이)템(item)"@ko ;
-    kno:frequency kno:KN2017-0182-freq-NN-2024 ;
-    kno:urimalTargetCode "1380746" ;
-    kno:slotFiller "(아이)템(item) (1성분)"@ko ;
-    kno:predicate "사용하다"@ko ;
-    kno:slotFiller "아재 (1성분)"@ko ;
-    kno:frequency kno:KN2017-0182-freq-NN-2016 ;
+    kno:example "¶일명 ‘{아재템’으로} 불리던 스포츠 샌들은 개성 있는 디자인과 편안한 착화감으로 큰 인기를 얻고 있다."@ko ;
     kno:formation kno:W05 ;
+    kno:frequency kno:KN2017-0182-freq-NN-2016 ;
     kno:frequency kno:KN2017-0182-freq-NN-2017 ;
     kno:frequency kno:KN2017-0182-freq-NN-2020 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380746> ;
-    a ontolex:Word ;
-    kno:origin "(아재<영>←item)" ;
-    kno:example "¶일명 ‘{아재템’으로} 불리던 스포츠 샌들은 개성 있는 디자인과 편안한 착화감으로 큰 인기를 얻고 있다."@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    skos:definition "중년층의 남성들이 즐겨 사용하거나 사용하던 물건."@ko ;
-    rdfs:label "아재템"@ko ;
-    kno:languageType "고+영" ;
-    kno:activeYears "5"^^xsd:integer ;
-    kno:component kno:KN2017-0182-c2 ;
-    kno:instantiates kno:S000007 ;
-    kno:indexForm "아재템"@ko ;
-    kno:instantiates kno:S000095 ;
-    kno:frequency kno:KN2017-0182-freq-NN-total ;
     kno:frequency kno:KN2017-0182-freq-NN-2023 ;
+    kno:frequency kno:KN2017-0182-freq-NN-2024 ;
+    kno:frequency kno:KN2017-0182-freq-NN-total ;
+    kno:indexForm "아재템"@ko ;
+    kno:instantiates kno:S000007 ;
+    kno:instantiates kno:S000095 ;
+    kno:languageType "고+영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(아재<영>←item)" ;
     kno:pos "「명」"@ko ;
-    kno:registration "우리말샘"@ko .
-kno:KN2017-0182-c1 kno:semanticTag kno:usas-S2.2 ;
+    kno:predicate "사용하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "(아이)템(item) (1성분)"@ko ;
+    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1380746" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0182-c1 a kno:Component ;
     rdfs:label "아재"@ko ;
-    kno:semanticTag kno:usas-T3p ;
-    kno:role "고정항"@ko ;
     kno:formative kno:F000028 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "아재"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "아재"@ko ;
-    a kno:Component .
-kno:KN2017-0182-c2 kno:fullForm "아이템"@ko ;
-    kno:surfaceForm "템"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:surfaceForm "아재"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0182-c2 a kno:Component ;
     rdfs:label "(아이)템(item)"@ko ;
     kno:formative kno:F000007 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component .
+    kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean .

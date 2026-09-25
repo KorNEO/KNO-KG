@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0205 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0205 kno:registration "신어DB"@ko ;
-    kno:example "¶‘{영란 페이}’, ‘영란 맛집 가이드’와 같은 별칭이 붙은 앱들이 회자되면서 인기를 끌고 있다."@ko ;
-    kno:componentString "영란(英蘭), 페이(pay)"@ko ;
+kno:KN2017-0205 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "영란페이"@ko ;
-    kno:component kno:KN2017-0205-c2 ;
-    kno:component kno:KN2017-0205-c1 ;
-    kno:languageType "한_영" ;
-    kno:pos "「구」"@ko ;
-    kno:slotFiller "페이(pay) (1성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%EB%9E%80%20%ED%8E%98%EC%9D%B4> ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:instantiates kno:S000415 ;
-    kno:slotFiller "영란(英蘭) (1성분)"@ko ;
-    kno:instantiates kno:S001480 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(英蘭<영>pay)" ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
     rdfs:label "영란 페이"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%EB%9E%80%20%ED%8E%98%EC%9D%B4> ;
+    skos:definition "김영란법의 허용 범위를 넘지 않도록 비용을 각자 부담하는 일을 더치페이에 빗대어 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0205-c1 ;
+    kno:component kno:KN2017-0205-c2 ;
+    kno:componentString "영란(英蘭), 페이(pay)"@ko ;
+    kno:example "¶‘{영란 페이}’, ‘영란 맛집 가이드’와 같은 별칭이 붙은 앱들이 회자되면서 인기를 끌고 있다."@ko ;
     kno:frequency kno:KN2017-0205-freq-NN-2016 ;
     kno:frequency kno:KN2017-0205-freq-NN-total ;
-    skos:definition "김영란법의 허용 범위를 넘지 않도록 비용을 각자 부담하는 일을 더치페이에 빗대어 이르는 말."@ko .
-kno:KN2017-0205-c2 kno:surfaceForm "페이"@ko ;
-    rdfs:label "페이(pay)"@ko ;
-    kno:formative kno:F000433 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "페이"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko .
-kno:KN2017-0205-c1 kno:role "고정항"@ko ;
+    kno:indexForm "영란페이"@ko ;
+    kno:instantiates kno:S000415 ;
+    kno:instantiates kno:S001480 ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(英蘭<영>pay)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "영란(英蘭) (1성분)"@ko ;
+    kno:slotFiller "페이(pay) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0205-c1 a kno:Component ;
+    rdfs:label "영란(英蘭)"@ko ;
     kno:formative kno:F001615 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "영란"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Z1 ;
     kno:surfaceForm "영란"@ko ;
-    rdfs:label "영란(英蘭)"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0205-c2 a kno:Component ;
+    rdfs:label "페이(pay)"@ko ;
+    kno:formative kno:F000433 ;
+    kno:fullForm "페이"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "페이"@ko ;
+    kno:truncated "false"^^xsd:boolean .

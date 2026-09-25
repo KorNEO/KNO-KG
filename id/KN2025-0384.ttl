@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0384 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0384 a kno:Neologism ;
-    kno:frequency kno:KN2025-0384-freq-NN-total ;
-    kno:languageType "고_(영+한)" ;
-    kno:slotFiller "맘(mom)+-상(相) (2성분)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "아들, 맘(mom), -상(相)"@ko ;
-    kno:indexForm "아들맘상"@ko ;
-    kno:slotFiller "아들+맘(mom) (2성분)"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2025-0384-c1 ;
-    kno:instantiates kno:S001426 ;
-    kno:component kno:KN2025-0384-c3 ;
-    kno:pos "「명」"@ko ;
-    kno:example "(LLM) 내 사진을 보더니 친구가 {아들맘상이라}면서 왠지 아들 엄마 느낌이 난다고 하더라."@ko ;
+kno:KN2025-0384 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "아들맘-상"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0384-freq-NN-2025 ;
-    kno:component kno:KN2025-0384-c2 ;
-    kno:origin "(아들<영>mom相)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:formation kno:W02 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:instantiates kno:S000177 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%93%A4%EB%A7%98%EC%83%81> ;
     skos:definition "(LLM) 아들을 둔 엄마(또는 아들을 낳아 키울 것 같은 사람)로 연상되는 분위기나 인상을 주는 얼굴 생김새."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%93%A4%EB%A7%98%EC%83%81> .
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0384-c1 ;
+    kno:component kno:KN2025-0384-c2 ;
+    kno:component kno:KN2025-0384-c3 ;
+    kno:componentString "아들, 맘(mom), -상(相)"@ko ;
+    kno:example "(LLM) 내 사진을 보더니 친구가 {아들맘상이라}면서 왠지 아들 엄마 느낌이 난다고 하더라."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0384-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0384-freq-NN-total ;
+    kno:indexForm "아들맘상"@ko ;
+    kno:instantiates kno:S000177 ;
+    kno:instantiates kno:S001426 ;
+    kno:languageType "고_(영+한)" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(아들<영>mom相)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "맘(mom)+-상(相) (2성분)"@ko ;
+    kno:slotFiller "아들+맘(mom) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0384-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000839 ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "아들"@ko ;
     rdfs:label "아들"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "아들"@ko .
-kno:KN2025-0384-c3 kno:semanticTag kno:usas-O4.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "상"@ko ;
-    a kno:Component ;
-    kno:fullForm "상"@ko ;
-    rdfs:label "-상(相)"@ko ;
+    kno:formative kno:F000839 ;
+    kno:fullForm "아들"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000217 .
-kno:KN2025-0384-c2 kno:formative kno:F000021 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "맘"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "맘"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "아들"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0384-c2 a kno:Component ;
     rdfs:label "맘(mom)"@ko ;
+    kno:formative kno:F000021 ;
+    kno:fullForm "맘"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S4 .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "맘"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0384-c3 a kno:Component ;
+    rdfs:label "-상(相)"@ko ;
+    kno:formative kno:F000217 ;
+    kno:fullForm "상"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:surfaceForm "상"@ko ;
+    kno:truncated "false"^^xsd:boolean .

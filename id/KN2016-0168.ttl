@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0168 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0168 kno:frequency kno:KN2016-0168-freq-NN-2016 ;
-    skos:definition "나무를 다루어서 물건을 만들거나 집을 짓는 일을 잘하는 여성."@ko ;
+kno:KN2016-0168 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "목공-녀"@ko ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:indexForm "목공녀"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373968> ;
+    skos:definition "나무를 다루어서 물건을 만들거나 집을 짓는 일을 잘하는 여성."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0168-c1 ;
+    kno:component kno:KN2016-0168-c2 ;
+    kno:componentString "목공(木工), -녀(女)"@ko ;
+    kno:example "¶소위 {목공녀로} 불리는 이들은 남자들의 전유물로만 여겨지던 목공에 도전장을 내밀어 전동 공구 시장의 새로운 강자로 부상하고 있다."@ko ;
+    kno:formation kno:W02 ;
     kno:frequency kno:KN2016-0168-freq-NN-2015 ;
-    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0168-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0168-freq-NN-total ;
+    kno:indexForm "목공녀"@ko ;
+    kno:instantiates kno:S000010 ;
+    kno:languageType "한+한" ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:origin "(木工女)" ;
-    kno:urimalTargetCode "1373968" ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:componentString "목공(木工), -녀(女)"@ko ;
-    kno:frequency kno:KN2016-0168-freq-NN-total ;
-    kno:formation kno:W02 ;
+    kno:pos "「명」"@ko ;
     kno:predicate "잘하다"@ko ;
-    a kno:Neologism ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373968> ;
-    kno:example "¶소위 {목공녀로} 불리는 이들은 남자들의 전유물로만 여겨지던 목공에 도전장을 내밀어 전동 공구 시장의 새로운 강자로 부상하고 있다."@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:slotFiller "목공(木工) (1성분)"@ko ;
-    kno:component kno:KN2016-0168-c1 ;
-    kno:languageType "한+한" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:instantiates kno:S000010 ;
-    kno:component kno:KN2016-0168-c2 .
-kno:KN2016-0168-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1373968" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0168-c1 a kno:Component ;
+    rdfs:label "목공(木工)"@ko ;
     kno:formative kno:F003503 ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "목공"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-C1 ;
     kno:surfaceForm "목공"@ko ;
-    a kno:Component ;
-    rdfs:label "목공(木工)"@ko .
-kno:KN2016-0168-c2 kno:semanticTag kno:usas-S2.1 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "녀"@ko ;
-    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0168-c2 a kno:Component ;
     rdfs:label "-녀(女)"@ko ;
-    kno:surfaceForm "녀"@ko ;
     kno:formative kno:F000004 ;
+    kno:fullForm "녀"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "녀"@ko ;
     kno:truncated "false"^^xsd:boolean .

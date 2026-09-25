@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0555 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0555 kno:component kno:KN2025-0555-c2 ;
-    kno:example "(LLM) 회식이 잦아지면서 채식을 이어 가기 어렵다며 스스로 {채포자가} 됐다고 말했다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B1%84%ED%8F%AC%EC%9E%90> ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0555-freq-NN-total ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2025-0555-freq-NN-2025 ;
-    kno:slotFiller "채(식)(菜食) (1성분)"@ko ;
+kno:KN2025-0555 a ontolex:Word ;
     a kno:Neologism ;
-    kno:instantiates kno:S001048 ;
     rdfs:label "채포자"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:origin "(菜抛者)" ;
-    kno:languageType "한+한" ;
-    kno:indexForm "채포자"@ko ;
-    kno:formation kno:W06 ;
-    kno:component kno:KN2025-0555-c1 ;
-    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B1%84%ED%8F%AC%EC%9E%90> ;
+    skos:definition "(LLM) ‘채식을 포기한 사람’을 줄여 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0555-c1 ;
+    kno:component kno:KN2025-0555-c2 ;
     kno:component kno:KN2025-0555-c3 ;
     kno:componentString "채(식)(菜食), 포(기)(抛棄), -자(者)"@ko ;
-    skos:definition "(LLM) ‘채식을 포기한 사람’을 줄여 이르는 말."@ko .
-kno:KN2025-0555-c2 kno:surfaceForm "포"@ko ;
+    kno:example "(LLM) 회식이 잦아지면서 채식을 이어 가기 어렵다며 스스로 {채포자가} 됐다고 말했다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0555-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0555-freq-NN-total ;
+    kno:indexForm "채포자"@ko ;
+    kno:instantiates kno:S001048 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(菜抛者)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "채(식)(菜食) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0555-c1 a kno:Component ;
+    rdfs:label "채(식)(菜食)"@ko ;
+    kno:formative kno:F006015 ;
+    kno:fullForm "채식"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "채"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0555-c2 a kno:Component ;
+    rdfs:label "포(기)(抛棄)"@ko ;
+    kno:formative kno:F000998 ;
+    kno:fullForm "포기"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-X7 ;
-    kno:fullForm "포기"@ko ;
-    rdfs:label "포(기)(抛棄)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000998 .
-kno:KN2025-0555-c1 kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "채"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "채(식)(菜食)"@ko ;
-    a kno:Component ;
-    kno:fullForm "채식"@ko ;
-    kno:formative kno:F006015 .
+    kno:surfaceForm "포"@ko ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2025-0555-c3 a kno:Component ;
     rdfs:label "-자(者)"@ko ;
+    kno:formative kno:F000014 ;
+    kno:fullForm "자"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:surfaceForm "자"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "자"@ko ;
-    kno:formative kno:F000014 .
+    kno:truncated "false"^^xsd:boolean .

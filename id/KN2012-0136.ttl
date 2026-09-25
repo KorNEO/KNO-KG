@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0136 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0136 kno:frequency kno:KN2012-0136-freq-NN-2012 ;
-    kno:origin "(-貌-)" ;
-    kno:indexForm "미모싸"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+kno:KN2012-0136 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "미모싸"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%AA%A8%EC%8B%B8> ;
     skos:definition "‘미워할 수 없는 미모의 싸가지’를 줄여 이르는 말. 성격은 나쁘지만 얼굴이 예쁜 여자를 말한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2012-0136-c1 ;
     kno:component kno:KN2012-0136-c2 ;
-    kno:unitType "단어"@ko ;
+    kno:component kno:KN2012-0136-c3 ;
     kno:componentString "미(워하다), (미)모(貌), 싸(가지)"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
     kno:example "¶천상천하 유아독존에 미모와는 상반되는 엽기적인 행동으로 ‘{미모싸’}, 방송이 불가능할 정도의 터프한 욕설로 상당수 대사가 음소거 ‘삐~’ 처리를 당해 ‘음소거녀’라는 별명을 갖고 있다."@ko ;
-    kno:languageType "고+한+고" ;
-    a kno:Neologism ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%AA%A8%EC%8B%B8> ;
-    kno:frequency kno:KN2012-0136-freq-NN-total ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:label "미모싸"@ko ;
     kno:formation kno:W05 ;
-    kno:component kno:KN2012-0136-c3 .
+    kno:frequency kno:KN2012-0136-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0136-freq-NN-total ;
+    kno:indexForm "미모싸"@ko ;
+    kno:languageType "고+한+고" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:origin "(-貌-)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2012"^^xsd:gYear .
 kno:KN2012-0136-c1 a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "미"@ko ;
-    kno:formative kno:F003588 ;
     rdfs:label "미(워하다)"@ko ;
+    kno:formative kno:F003588 ;
+    kno:fullForm "미워하다"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-E2m ;
-    kno:fullForm "미워하다"@ko .
-kno:KN2012-0136-c2 rdfs:label "(미)모(貌)"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "미"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0136-c2 a kno:Component ;
+    rdfs:label "(미)모(貌)"@ko ;
     kno:formative kno:F003485 ;
+    kno:fullForm "미모"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-O4.2p ;
     kno:surfaceForm "모"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "미모"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko .
-kno:KN2012-0136-c3 kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S1.2.4m ;
-    kno:formative kno:F004753 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0136-c3 a kno:Component ;
     rdfs:label "싸(가지)"@ko ;
-    kno:surfaceForm "싸"@ko ;
+    kno:formative kno:F004753 ;
     kno:fullForm "싸가지"@ko ;
-    kno:role "성분"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S1.2.4m ;
+    kno:surfaceForm "싸"@ko ;
+    kno:truncated "true"^^xsd:boolean .

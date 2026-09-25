@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0260 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0260 kno:component kno:KN2016-0260-c3 ;
+kno:KN2016-0260 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "생계형^행정^사건"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372695> ;
+    skos:definition "서민의 생계와 직접적으로 연관된 행정 사건. 주로 운전면허 취소나 영업 정지 등의 생계와 관련된 처분을 취소하거나 감경하기 위해 법원에 요구하는 사건이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0260-c1 ;
+    kno:component kno:KN2016-0260-c2 ;
+    kno:component kno:KN2016-0260-c3 ;
+    kno:componentString "생계형(生計型), 행정(行政), 사건(事件)"@ko ;
+    kno:example "¶식당 영업 정지 및 운전면허 취소 등에 불복해 소송을 내는 이른바 ‘{생계형 행정 사건’에} 대해 법원이 다음 달부터 신속하게 처리하겠다는 방침을 정했다."@ko ;
+    kno:frequency kno:KN2016-0260-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0260-freq-NN-total ;
+    kno:indexForm "생계형행정사건"@ko ;
+    kno:instantiates kno:S000359 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(生計型行政事件)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "생계형(生計型)+행정(行政) (2성분)"@ko ;
     kno:unitType "구"@ko ;
     kno:urimalTargetCode "1372695" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "¶식당 영업 정지 및 운전면허 취소 등에 불복해 소송을 내는 이른바 ‘{생계형 행정 사건’에} 대해 법원이 다음 달부터 신속하게 처리하겠다는 방침을 정했다."@ko ;
-    a kno:Neologism ;
-    kno:instantiates kno:S000359 ;
-    kno:componentString "생계형(生計型), 행정(行政), 사건(事件)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:component kno:KN2016-0260-c2 ;
-    rdfs:label "생계형^행정^사건"@ko ;
-    kno:slotFiller "생계형(生計型)+행정(行政) (2성분)"@ko ;
-    kno:frequency kno:KN2016-0260-freq-NN-2016 ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "생계형행정사건"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:year "2016"^^xsd:gYear ;
-    skos:definition "서민의 생계와 직접적으로 연관된 행정 사건. 주로 운전면허 취소나 영업 정지 등의 생계와 관련된 처분을 취소하거나 감경하기 위해 법원에 요구하는 사건이다."@ko ;
-    kno:component kno:KN2016-0260-c1 ;
-    kno:frequency kno:KN2016-0260-freq-NN-total ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372695> ;
-    kno:origin "(生計型行政事件)" .
-kno:KN2016-0260-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "사건(事件)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000789 ;
-    kno:semanticTag kno:usas-A2.1 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "사건"@ko ;
-    kno:semanticTag kno:usas-A1.1.1 ;
-    kno:fullForm "사건"@ko .
-kno:KN2016-0260-c2 kno:semanticTag kno:usas-G1.1 ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0260-c1 a kno:Component ;
+    rdfs:label "생계형(生計型)"@ko ;
+    kno:formative kno:F004258 ;
+    kno:fullForm "생계형"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "생계형"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0260-c2 a kno:Component ;
+    rdfs:label "행정(行政)"@ko ;
+    kno:formative kno:F000641 ;
     kno:fullForm "행정"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "행정(行政)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000641 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
     kno:surfaceForm "행정"@ko ;
-    a kno:Component .
-kno:KN2016-0260-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F004258 ;
-    kno:semanticTag kno:usas-I1 ;
-    rdfs:label "생계형(生計型)"@ko ;
-    a kno:Component ;
-    kno:fullForm "생계형"@ko ;
-    kno:surfaceForm "생계형"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0260-c3 a kno:Component ;
+    rdfs:label "사건(事件)"@ko ;
+    kno:formative kno:F000789 ;
+    kno:fullForm "사건"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:surfaceForm "사건"@ko ;
+    kno:truncated "false"^^xsd:boolean .

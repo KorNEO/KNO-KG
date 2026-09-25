@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0334 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0334 kno:instantiates kno:S000429 ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "웨빙(yuèbing), -세(稅)"@ko ;
-    kno:formation kno:W02 ;
-    kno:indexForm "웨빙세"@ko ;
-    a ontolex:Word ;
+kno:KN2012-0334 a ontolex:Word ;
     a kno:Neologism ;
-    kno:origin "(<중>yuèbing[月餠]稅)" ;
+    rdfs:label "웨빙-세"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%A8%EB%B9%99%EC%84%B8> ;
+    skos:definition "월병(月餠)에 부과하는 소득세."@ko ;
     kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2012-0334-c1 ;
-    kno:predicate "부과하다"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%A8%EB%B9%99%EC%84%B8> ;
-    rdfs:label "웨빙-세"@ko ;
-    kno:slotFiller "웨빙(yuèbing) (1성분)"@ko ;
-    kno:example "¶이 소식이 전해지자 중국 네티즌들 사이에서는 ‘{웨빙세’가} 새로 신설된 것 아니냐며 각종 불만을 표출하고 있다."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:languageType "중+한" ;
     kno:component kno:KN2012-0334-c2 ;
+    kno:componentString "웨빙(yuèbing), -세(稅)"@ko ;
+    kno:example "¶이 소식이 전해지자 중국 네티즌들 사이에서는 ‘{웨빙세’가} 새로 신설된 것 아니냐며 각종 불만을 표출하고 있다."@ko ;
+    kno:formation kno:W02 ;
+    kno:indexForm "웨빙세"@ko ;
+    kno:instantiates kno:S000429 ;
+    kno:languageType "중+한" ;
+    kno:origin "(<중>yuèbing[月餠]稅)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "부과하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "웨빙(yuèbing) (1성분)"@ko ;
     kno:unitType "단어"@ko ;
-    skos:definition "월병(月餠)에 부과하는 소득세."@ko .
-kno:KN2012-0334-c1 kno:surfaceForm "웨빙"@ko ;
-    a kno:Component ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0334-c1 a kno:Component ;
     rdfs:label "웨빙(yuèbing)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F005271 ;
+    kno:fullForm "웨빙"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Y2 ;
-    kno:fullForm "웨빙"@ko .
-kno:KN2012-0334-c2 kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "웨빙"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0334-c2 a kno:Component ;
     rdfs:label "-세(稅)"@ko ;
-    kno:surfaceForm "세"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000803 ;
     kno:fullForm "세"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.3 ;
-    kno:formative kno:F000803 ;
+    kno:surfaceForm "세"@ko ;
     kno:truncated "false"^^xsd:boolean .

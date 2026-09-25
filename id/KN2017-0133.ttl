@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0133 kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
+kno:KN2017-0133 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "비정규직 박물관"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%A0%95%EA%B7%9C%EC%A7%81%20%EB%B0%95%EB%AC%BC%EA%B4%80> ;
+    skos:definition "방송 관련 노동 현장에서 근로 방식 및 기간, 고용의 지속성 등을 보장받지 못하는 사람이 많은 현상을 ‘박물관’에 비유하여 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0133-c1 ;
+    kno:component kno:KN2017-0133-c2 ;
+    kno:componentString "비정규직(非正規職), 박물관(博物館)"@ko ;
     kno:example "¶이들은 또 “파견, 도급, 용역, 프리랜서 등 비정규직이 넘쳐나 ‘{비정규직 박물관’으로} 불리는 방송 콘텐츠 노동 현장을 근본적으로 바꿔 나가야 한다.…”라고 목소리를 높였다."@ko ;
+    kno:frequency kno:KN2017-0133-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0133-freq-NN-total ;
+    kno:indexForm "비정규직박물관"@ko ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(非正規職博物館)" ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
-    kno:frequency kno:KN2017-0133-freq-NN-2017 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(非正規職博物館)" ;
-    kno:component kno:KN2017-0133-c1 ;
-    kno:indexForm "비정규직박물관"@ko ;
-    skos:definition "방송 관련 노동 현장에서 근로 방식 및 기간, 고용의 지속성 등을 보장받지 못하는 사람이 많은 현상을 ‘박물관’에 비유하여 이르는 말."@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:frequency kno:KN2017-0133-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EC%A0%95%EA%B7%9C%EC%A7%81%20%EB%B0%95%EB%AC%BC%EA%B4%80> ;
-    kno:componentString "비정규직(非正規職), 박물관(博物館)"@ko ;
-    kno:component kno:KN2017-0133-c2 .
-kno:KN2017-0133-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:role "성분"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0133-c1 a kno:Component ;
+    rdfs:label "비정규직(非正規職)"@ko ;
     kno:formative kno:F004081 ;
     kno:fullForm "비정규직"@ko ;
-    kno:surfaceForm "비정규직"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-I3.1 ;
-    rdfs:label "비정규직(非正規職)"@ko .
-kno:KN2017-0133-c2 kno:role "성분"@ko ;
-    kno:formative kno:F003668 ;
-    a kno:Component ;
+    kno:surfaceForm "비정규직"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0133-c2 a kno:Component ;
     rdfs:label "박물관(博物館)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F003668 ;
     kno:fullForm "박물관"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-H1 ;
-    kno:surfaceForm "박물관"@ko .
+    kno:surfaceForm "박물관"@ko ;
+    kno:truncated "false"^^xsd:boolean .

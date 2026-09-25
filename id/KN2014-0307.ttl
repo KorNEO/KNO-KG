@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0307 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0307 kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2014-0307-freq-NN-total ;
-    kno:lastAttestationYear "2014"^^xsd:gYear ;
-    kno:slotFiller "하이라이트(highlight) (1성분)"@ko ;
-    kno:component kno:KN2014-0307-c1 ;
-    kno:indexForm "하이라이트성형"@ko ;
+kno:KN2014-0307 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:instantiates kno:S000871 ;
-    kno:example "¶여기서 코 성형만으로 만족할 수 없는 환자는 전체적인 조화를 위해 ‘{하이라이트 성형’을} 병행할 수 있다."@ko ;
-    kno:componentString "하이라이트(highlight), 성형(成形)"@ko ;
     rdfs:label "하이라이트^성형"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(<영>highlight成形)" ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2014-0307-c2 ;
-    skos:definition "코 수술과 함께 이마 수술을 병행하는 성형 수술. 코 수술만 했을 때 생길 수 있는 부자연스러운 얼굴을 이마 수술을 통해 보완하여, 티존 부위에 입체감을 살려 주는 성형법이다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%98%EC%9D%B4%EB%9D%BC%EC%9D%B4%ED%8A%B8%EC%84%B1%ED%98%95> ;
-    kno:frequency kno:KN2014-0307-freq-NN-2014 ;
+    skos:definition "코 수술과 함께 이마 수술을 병행하는 성형 수술. 코 수술만 했을 때 생길 수 있는 부자연스러운 얼굴을 이마 수술을 통해 보완하여, 티존 부위에 입체감을 살려 주는 성형법이다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2014-0307-c1 ;
+    kno:component kno:KN2014-0307-c2 ;
+    kno:componentString "하이라이트(highlight), 성형(成形)"@ko ;
+    kno:example "¶여기서 코 성형만으로 만족할 수 없는 환자는 전체적인 조화를 위해 ‘{하이라이트 성형’을} 병행할 수 있다."@ko ;
     kno:frequency kno:KN2014-0307-freq-NN-2013 ;
-    kno:languageType "영^한" .
-kno:KN2014-0307-c1 kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:frequency kno:KN2014-0307-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0307-freq-NN-total ;
+    kno:indexForm "하이라이트성형"@ko ;
+    kno:instantiates kno:S000871 ;
+    kno:languageType "영^한" ;
+    kno:lastAttestationYear "2014"^^xsd:gYear ;
+    kno:origin "(<영>highlight成形)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "하이라이트(highlight) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0307-c1 a kno:Component ;
+    rdfs:label "하이라이트(highlight)"@ko ;
     kno:formative kno:F006931 ;
-    kno:surfaceForm "하이라이트"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "하이라이트"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A11.1p ;
-    rdfs:label "하이라이트(highlight)"@ko .
-kno:KN2014-0307-c2 kno:formative kno:F000532 ;
-    kno:semanticTag kno:usas-B4 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "하이라이트"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0307-c2 a kno:Component ;
     rdfs:label "성형(成形)"@ko ;
+    kno:formative kno:F000532 ;
     kno:fullForm "성형"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "성형"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B4 ;
+    kno:surfaceForm "성형"@ko ;
+    kno:truncated "false"^^xsd:boolean .

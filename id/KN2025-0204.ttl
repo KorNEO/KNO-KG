@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0204 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0204 kno:frequency kno:KN2025-0204-freq-NN-total ;
-    kno:slotFiller "레디(ready)+코어(core) (2성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "레디(ready), 코어(core), 세대(世代)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A0%88%EB%94%94%EC%BD%94%EC%96%B4%20%EC%84%B8%EB%8C%80> ;
-    kno:example "(LLM) 취업이 불안정하다 보니 자격증과 부업을 동시에 준비하며 비상금까지 챙기는 {레디코어세대가} 늘고 있다."@ko ;
+kno:KN2025-0204 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0204-freq-NN-2025 ;
-    kno:predicate "젊은"@ko ;
-    kno:pos "「구」"@ko ;
     rdfs:label "레디코어 세대"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "레디코어세대"@ko ;
-    kno:component kno:KN2025-0204-c3 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000002 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A0%88%EB%94%94%EC%BD%94%EC%96%B4%20%EC%84%B8%EB%8C%80> ;
     skos:definition "(LLM) 불확실한 미래에 대비해 학업ㆍ경력ㆍ재무ㆍ건강 등 삶의 여러 영역을 미리 설계하고 준비하여 위험을 줄이려는 성향을 보이는 젊은 세대."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0204-c1 ;
-    kno:component kno:KN2025-0204-c2 .
-kno:KN2025-0204-c3 kno:fullForm "세대"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    rdfs:label "세대(世代)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "세대"@ko ;
-    kno:formative kno:F000006 .
+    kno:component kno:KN2025-0204-c2 ;
+    kno:component kno:KN2025-0204-c3 ;
+    kno:componentString "레디(ready), 코어(core), 세대(世代)"@ko ;
+    kno:example "(LLM) 취업이 불안정하다 보니 자격증과 부업을 동시에 준비하며 비상금까지 챙기는 {레디코어세대가} 늘고 있다."@ko ;
+    kno:frequency kno:KN2025-0204-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0204-freq-NN-total ;
+    kno:indexForm "레디코어세대"@ko ;
+    kno:instantiates kno:S000002 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "젊은"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "레디(ready)+코어(core) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0204-c1 a kno:Component ;
-    kno:surfaceForm "레디"@ko ;
-    kno:semanticTag kno:usas-X7p ;
-    kno:fullForm "레디"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "레디(ready)"@ko ;
     kno:formative kno:F003204 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "레디"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "레디(ready)"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X7p ;
+    kno:surfaceForm "레디"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2025-0204-c2 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A4.2 ;
+    rdfs:label "코어(core)"@ko ;
     kno:formative kno:F000043 ;
     kno:fullForm "코어"@ko ;
-    kno:surfaceForm "코어"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "코어(core)"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A4.2 ;
+    kno:surfaceForm "코어"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0204-c3 a kno:Component ;
+    rdfs:label "세대(世代)"@ko ;
+    kno:formative kno:F000006 ;
+    kno:fullForm "세대"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:surfaceForm "세대"@ko ;
+    kno:truncated "false"^^xsd:boolean .

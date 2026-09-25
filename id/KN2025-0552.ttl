@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0552 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0552 kno:registration "신어DB"@ko ;
-    rdfs:label "찬 탄 그룹"@ko ;
-    kno:frequency kno:KN2025-0552-freq-NN-total ;
-    kno:origin "(贊彈<영>group)" ;
+kno:KN2025-0552 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "찬 탄 그룹"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B0%AC%20%ED%83%84%20%EA%B7%B8%EB%A3%B9> ;
-    kno:componentString "찬(성)(贊成), 탄(핵)(彈劾), 그룹(group)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:unitType "구"@ko ;
-    kno:example "(LLM) 당내 갈등이 커지자 {찬탄그룹이} 탄핵 찬성파 결집을 시도하며 향후 지도부 구성에 영향력을 행사하려 한다는 관측이 나왔다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     skos:definition "(LLM) 윤석열 전 대통령 탄핵에 찬성하는 입장을 공유하는 국민의힘 안팎 인사들. 또는 그런 무리."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0552-c1 ;
+    kno:component kno:KN2025-0552-c2 ;
+    kno:component kno:KN2025-0552-c3 ;
+    kno:componentString "찬(성)(贊成), 탄(핵)(彈劾), 그룹(group)"@ko ;
+    kno:example "(LLM) 당내 갈등이 커지자 {찬탄그룹이} 탄핵 찬성파 결집을 시도하며 향후 지도부 구성에 영향력을 행사하려 한다는 관측이 나왔다."@ko ;
+    kno:frequency kno:KN2025-0552-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0552-freq-NN-total ;
     kno:indexForm "찬탄그룹"@ko ;
     kno:languageType "한+한_영" ;
-    kno:component kno:KN2025-0552-c3 ;
-    kno:component kno:KN2025-0552-c2 ;
-    kno:frequency kno:KN2025-0552-freq-NN-2025 .
-kno:KN2025-0552-c1 kno:role "성분"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(贊彈<영>group)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0552-c1 a kno:Component ;
     rdfs:label "찬(성)(贊成)"@ko ;
-    a kno:Component ;
     kno:formative kno:F000941 ;
-    kno:semanticTag kno:usas-S7.4p ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "찬"@ko ;
     kno:fullForm "찬성"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0552-c3 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:formative kno:F002525 ;
-    rdfs:label "그룹(group)"@ko ;
-    kno:fullForm "그룹"@ko ;
-    kno:surfaceForm "그룹"@ko ;
-    kno:role "성분"@ko .
-kno:KN2025-0552-c2 a kno:Component ;
-    kno:surfaceForm "탄"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:surfaceForm "찬"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0552-c2 a kno:Component ;
     rdfs:label "탄(핵)(彈劾)"@ko ;
     kno:formative kno:F000969 ;
-    kno:position "2"^^xsd:integer ;
     kno:fullForm "탄핵"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "탄"@ko ;
     kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0552-c3 a kno:Component ;
+    rdfs:label "그룹(group)"@ko ;
+    kno:formative kno:F002525 ;
+    kno:fullForm "그룹"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "그룹"@ko ;
+    kno:truncated "false"^^xsd:boolean .

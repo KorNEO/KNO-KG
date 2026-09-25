@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0042 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0042 kno:componentString "금리(金利), 폭리(暴利), 방지법(防止法)"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "금리^폭리^방지법"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:slotFiller "금리(金利) (1성분)"@ko ;
-    kno:slotFiller "폭리(暴利)+방지법(防止法) (2성분)"@ko ;
-    kno:example "¶OO은 시중 은행에 대출 금리의 산정 방식과 그 근거를 공개하도록 하는 내용의 {금리 폭리 방지법과} 이자 제한법을 비롯한 금융권 규제 법안의 정기 국회 처리를 목표로 하고 있다."@ko ;
+kno:KN2023-0042 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "금리^폭리^방지법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EB%A6%AC%ED%8F%AD%EB%A6%AC%EB%B0%A9%EC%A7%80%EB%B2%95> ;
     skos:definition "은행 이용자에게 이자율의 산정 방식과 그 근거를 투명하게 공개하여 금리 인하 효과를 유도하는 것을 목적으로 하는 법안."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0042-c1 ;
+    kno:component kno:KN2023-0042-c2 ;
+    kno:component kno:KN2023-0042-c3 ;
+    kno:componentString "금리(金利), 폭리(暴利), 방지법(防止法)"@ko ;
+    kno:example "¶OO은 시중 은행에 대출 금리의 산정 방식과 그 근거를 공개하도록 하는 내용의 {금리 폭리 방지법과} 이자 제한법을 비롯한 금융권 규제 법안의 정기 국회 처리를 목표로 하고 있다."@ko ;
+    kno:frequency kno:KN2023-0042-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0042-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0042-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0042-freq-NN-total ;
+    kno:indexForm "금리폭리방지법"@ko ;
+    kno:instantiates kno:S001051 ;
+    kno:instantiates kno:S001165 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:component kno:KN2023-0042-c1 ;
-    kno:component kno:KN2023-0042-c3 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EB%A6%AC%ED%8F%AD%EB%A6%AC%EB%B0%A9%EC%A7%80%EB%B2%95> ;
-    kno:component kno:KN2023-0042-c2 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:indexForm "금리폭리방지법"@ko ;
     kno:origin "(金利暴利防止法)" ;
-    kno:frequency kno:KN2023-0042-freq-NN-total ;
-    kno:instantiates kno:S001165 ;
-    kno:instantiates kno:S001051 ;
-    kno:frequency kno:KN2023-0042-freq-NN-2023 ;
+    kno:pos "「구」"@ko ;
     kno:predicate "하다"@ko ;
-    kno:frequency kno:KN2023-0042-freq-NN-2022 ;
-    kno:frequency kno:KN2023-0042-freq-NN-2024 ;
-    kno:unitType "구"@ko .
-kno:KN2023-0042-c1 kno:role "고정항"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "금리(金利) (1성분)"@ko ;
+    kno:slotFiller "폭리(暴利)+방지법(防止法) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0042-c1 a kno:Component ;
+    rdfs:label "금리(金利)"@ko ;
+    kno:formative kno:F001106 ;
     kno:fullForm "금리"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.3 ;
     kno:surfaceForm "금리"@ko ;
-    rdfs:label "금리(金利)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001106 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
-kno:KN2023-0042-c3 kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:formative kno:F000032 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "방지법(防止法)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "방지법"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "방지법"@ko .
-kno:KN2023-0042-c2 kno:fullForm "폭리"@ko ;
-    kno:surfaceForm "폭리"@ko ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0042-c2 a kno:Component ;
     rdfs:label "폭리(暴利)"@ko ;
+    kno:formative kno:F001966 ;
+    kno:fullForm "폭리"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.1p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001966 .
+    kno:surfaceForm "폭리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0042-c3 a kno:Component ;
+    rdfs:label "방지법(防止法)"@ko ;
+    kno:formative kno:F000032 ;
+    kno:fullForm "방지법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "방지법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

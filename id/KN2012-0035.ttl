@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0035 kno:activeYears "0"^^xsd:integer ;
-    kno:component kno:KN2012-0035-c3 ;
-    kno:component kno:KN2012-0035-c1 ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "기모가 들어간 레깅스 위에 짧은 치마를 덧댄 옷."@ko ;
-    kno:slotFiller "치(마)+렝스(←leggings) (2성분)"@ko ;
-    rdfs:label "기모 치렝스"@ko ;
-    kno:componentString "기모(起毛), 치(마), 렝스(←leggings)"@ko ;
-    kno:component kno:KN2012-0035-c2 ;
-    kno:origin "(起毛치←leggings)" ;
-    kno:unitType "구"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:indexForm "기모치렝스"@ko ;
-    kno:example "¶겨울에 접어들면서 안감이 기모로 처리되어 있는 ‘{기모 치렝스’가} 가장 대중적인 인기를 얻고 있다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%AA%A8%20%EC%B9%98%EB%A0%9D%EC%8A%A4> ;
+kno:KN2012-0035 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "기모 치렝스"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%AA%A8%20%EC%B9%98%EB%A0%9D%EC%8A%A4> ;
+    skos:definition "기모가 들어간 레깅스 위에 짧은 치마를 덧댄 옷."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0035-c1 ;
+    kno:component kno:KN2012-0035-c2 ;
+    kno:component kno:KN2012-0035-c3 ;
+    kno:componentString "기모(起毛), 치(마), 렝스(←leggings)"@ko ;
+    kno:example "¶겨울에 접어들면서 안감이 기모로 처리되어 있는 ‘{기모 치렝스’가} 가장 대중적인 인기를 얻고 있다."@ko ;
+    kno:indexForm "기모치렝스"@ko ;
     kno:instantiates kno:S001170 ;
-    kno:pos "「구」"@ko ;
     kno:languageType "한_(고+영)" ;
-    a ontolex:MultiwordExpression .
-kno:KN2012-0035-c3 kno:semanticTag kno:usas-N3.7 ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "렝스"@ko ;
-    kno:formative kno:F003225 ;
-    kno:surfaceForm "렝스"@ko ;
-    rdfs:label "렝스(←leggings)"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0035-c1 kno:role "고정항"@ko ;
+    kno:origin "(起毛치←leggings)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "치(마)+렝스(←leggings) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0035-c1 a kno:Component ;
     rdfs:label "기모(起毛)"@ko ;
-    kno:semanticTag kno:usas-B5 ;
-    kno:surfaceForm "기모"@ko ;
+    kno:formative kno:F001114 ;
     kno:fullForm "기모"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001114 .
-kno:KN2012-0035-c2 kno:formative kno:F000413 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "치"@ko ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B5 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:surfaceForm "기모"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0035-c2 a kno:Component ;
     rdfs:label "치(마)"@ko ;
-    kno:fullForm "치마"@ko .
+    kno:formative kno:F000413 ;
+    kno:fullForm "치마"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:surfaceForm "치"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0035-c3 a kno:Component ;
+    rdfs:label "렝스(←leggings)"@ko ;
+    kno:formative kno:F003225 ;
+    kno:fullForm "렝스"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N3.7 ;
+    kno:surfaceForm "렝스"@ko ;
+    kno:truncated "false"^^xsd:boolean .

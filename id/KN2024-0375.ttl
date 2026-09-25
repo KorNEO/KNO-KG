@@ -9,63 +9,63 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0375 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0375 kno:registration "신어DB"@ko ;
-    kno:origin "(航路標識識別裝置)" ;
+kno:KN2024-0375 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "항로^표지^식별^장치"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%AD%EB%A1%9C%ED%91%9C%EC%A7%80%EC%8B%9D%EB%B3%84%EC%9E%A5%EC%B9%98> ;
+    skos:definition "배가 항로에 따라 안전하게 항해하도록 돕기 위해 해상이나 육상에 설치된 표식 장치."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0375-c1 ;
+    kno:component kno:KN2024-0375-c2 ;
     kno:component kno:KN2024-0375-c3 ;
     kno:component kno:KN2024-0375-c4 ;
+    kno:componentString "항로(航路), 표지(標識), 식별(識別), 장치(裝置)"@ko ;
+    kno:example "¶항로 표지 관리원은 {항로 표지 식별 장치를} 점검하고, 이상이 발생하면 직접 수리까지 한다."@ko ;
+    kno:frequency kno:KN2024-0375-freq-NN-2024 ;
     kno:frequency kno:KN2024-0375-freq-NN-total ;
     kno:indexForm "항로표지식별장치"@ko ;
-    kno:slotFiller "항로(航路)+표지(標識)+식별(識別) (3성분)"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0375-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "항로(航路), 표지(標識), 식별(識別), 장치(裝置)"@ko ;
-    skos:definition "배가 항로에 따라 안전하게 항해하도록 돕기 위해 해상이나 육상에 설치된 표식 장치."@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
     kno:instantiates kno:S000948 ;
-    a kno:Neologism ;
-    kno:example "¶항로 표지 관리원은 {항로 표지 식별 장치를} 점검하고, 이상이 발생하면 직접 수리까지 한다."@ko ;
-    rdfs:label "항로^표지^식별^장치"@ko ;
     kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(航路標識識別裝置)" ;
     kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%95%AD%EB%A1%9C%ED%91%9C%EC%A7%80%EC%8B%9D%EB%B3%84%EC%9E%A5%EC%B9%98> ;
-    kno:component kno:KN2024-0375-c1 ;
-    kno:frequency kno:KN2024-0375-freq-NN-2024 ;
-    kno:unitType "구"@ko .
-kno:KN2024-0375-c3 kno:fullForm "식별"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "항로(航路)+표지(標識)+식별(識別) (3성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0375-c1 a kno:Component ;
+    rdfs:label "항로(航路)"@ko ;
+    kno:formative kno:F001015 ;
+    kno:fullForm "항로"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "식별"@ko ;
-    kno:formative kno:F004685 ;
-    kno:semanticTag kno:usas-X2.2p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "식별(識別)"@ko .
-kno:KN2024-0375-c4 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "장치"@ko ;
-    kno:formative kno:F001737 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:semanticTag kno:usas-O2 ;
-    kno:fullForm "장치"@ko ;
-    rdfs:label "장치(裝置)"@ko .
-kno:KN2024-0375-c2 kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "표지"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "항로"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0375-c2 a kno:Component ;
     rdfs:label "표지(標識)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:formative kno:F006776 ;
+    kno:fullForm "표지"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Q1.1 ;
     kno:surfaceForm "표지"@ko ;
-    kno:formative kno:F006776 .
-kno:KN2024-0375-c1 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001015 ;
-    kno:semanticTag kno:usas-M7 ;
-    rdfs:label "항로(航路)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0375-c3 a kno:Component ;
+    rdfs:label "식별(識別)"@ko ;
+    kno:formative kno:F004685 ;
+    kno:fullForm "식별"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "항로"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "항로"@ko .
+    kno:semanticTag kno:usas-X2.2p ;
+    kno:surfaceForm "식별"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0375-c4 a kno:Component ;
+    rdfs:label "장치(裝置)"@ko ;
+    kno:formative kno:F001737 ;
+    kno:fullForm "장치"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "장치"@ko ;
+    kno:truncated "false"^^xsd:boolean .

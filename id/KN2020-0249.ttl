@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0249 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%8C%ED%82%B9%EC%8A%A4%EB%A3%A8%20%EC%A7%84%EB%A3%8C%EC%86%8C> ;
-    kno:frequency kno:KN2020-0249-freq-NN-2023 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:component kno:KN2020-0249-c2 ;
-    kno:year "2020"^^xsd:gYear ;
-    skos:definition "환자가 걸어서 들어가거나 나오면서 의료진에게 진료를 받을 수 있도록 설비를 갖춘 곳. 코로나19의 확산을 방지하기 위해 설치되기 시작했다."@ko ;
-    kno:componentString "워킹스루(walking through), 진료소(診療所)"@ko ;
-    kno:origin "(<영>▼walking through診療所)" ;
-    kno:instantiates kno:S000565 ;
-    kno:slotFiller "워킹스루(walking through) (1성분)"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "영_한" ;
+kno:KN2020-0249 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:frequency kno:KN2020-0249-freq-NN-2021 ;
-    kno:example "¶공항의 {워킹스루 진료소에서} 한 해외 입국자가 코로나19 진단 검사를 받고 있다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2020-0249-freq-NN-2020 ;
-    kno:indexForm "워킹스루진료소"@ko ;
     rdfs:label "워킹스루 진료소"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%8C%ED%82%B9%EC%8A%A4%EB%A3%A8%20%EC%A7%84%EB%A3%8C%EC%86%8C> ;
+    skos:definition "환자가 걸어서 들어가거나 나오면서 의료진에게 진료를 받을 수 있도록 설비를 갖춘 곳. 코로나19의 확산을 방지하기 위해 설치되기 시작했다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2020-0249-c1 ;
-    kno:pos "「구」"@ko ;
+    kno:component kno:KN2020-0249-c2 ;
+    kno:componentString "워킹스루(walking through), 진료소(診療所)"@ko ;
+    kno:example "¶공항의 {워킹스루 진료소에서} 한 해외 입국자가 코로나19 진단 검사를 받고 있다."@ko ;
+    kno:frequency kno:KN2020-0249-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0249-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0249-freq-NN-2023 ;
     kno:frequency kno:KN2020-0249-freq-NN-total ;
-    a ontolex:MultiwordExpression .
-kno:KN2020-0249-c2 rdfs:label "진료소(診療所)"@ko ;
-    kno:surfaceForm "진료소"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "진료소"@ko ;
-    kno:semanticTag kno:usas-B3 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000305 .
-kno:KN2020-0249-c1 kno:semanticTag kno:usas-B3 ;
-    kno:formative kno:F005239 ;
-    a kno:Component ;
+    kno:indexForm "워킹스루진료소"@ko ;
+    kno:instantiates kno:S000565 ;
+    kno:languageType "영_한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(<영>▼walking through診療所)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "워킹스루(walking through) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0249-c1 a kno:Component ;
     rdfs:label "워킹스루(walking through)"@ko ;
+    kno:formative kno:F005239 ;
     kno:fullForm "워킹스루"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "워킹스루"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
     kno:semanticTag kno:usas-M1 ;
-    kno:position "1"^^xsd:integer .
+    kno:surfaceForm "워킹스루"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0249-c2 a kno:Component ;
+    rdfs:label "진료소(診療所)"@ko ;
+    kno:formative kno:F000305 ;
+    kno:fullForm "진료소"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "진료소"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0196 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0196 kno:componentString "생(명력)(生), 흡(수)(吸)"@ko ;
+kno:KN2012-0196 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "생흡"@ko ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "생흡"@ko ;
-    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%ED%9D%A1> ;
     skos:definition "게임에서, ‘생명력 흡수’를 줄여 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0196-c1 ;
+    kno:component kno:KN2012-0196-c2 ;
+    kno:componentString "생(명력)(生), 흡(수)(吸)"@ko ;
+    kno:example "¶이 외에도 소용돌이를 사용할 때는 적생, {생흡}, 가시 등의 옵션도 유용하게 쓰인다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "생흡"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(生吸)" ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:example "¶이 외에도 소용돌이를 사용할 때는 적생, {생흡}, 가시 등의 옵션도 유용하게 쓰인다."@ko ;
-    kno:origin "(生吸)" ;
-    kno:component kno:KN2012-0196-c2 ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:languageType "한+한" ;
-    kno:year "2012"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%ED%9D%A1> ;
-    kno:component kno:KN2012-0196-c1 ;
-    a kno:Neologism .
-kno:KN2012-0196-c2 kno:formative kno:F007221 ;
-    kno:fullForm "흡수"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "흡"@ko ;
-    kno:semanticTag kno:usas-A9p ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "흡(수)(吸)"@ko .
-kno:KN2012-0196-c1 kno:surfaceForm "생"@ko ;
-    kno:semanticTag kno:usas-L1p ;
+    kno:unitType "단어"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0196-c1 a kno:Component ;
     rdfs:label "생(명력)(生)"@ko ;
     kno:formative kno:F001451 ;
+    kno:fullForm "생명력"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:fullForm "생명력"@ko .
+    kno:semanticTag kno:usas-L1p ;
+    kno:surfaceForm "생"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0196-c2 a kno:Component ;
+    rdfs:label "흡(수)(吸)"@ko ;
+    kno:formative kno:F007221 ;
+    kno:fullForm "흡수"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A9p ;
+    kno:surfaceForm "흡"@ko ;
+    kno:truncated "true"^^xsd:boolean .

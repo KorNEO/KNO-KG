@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0178 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0178 kno:example "(LLM) 야당은 수사와 압박이 이어지는 상황을 두고 사실상 {드럼통정치가} 시작된 것 아니냐고 반발했다."@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0178-freq-NN-2025 ;
+kno:KN2025-0178 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "드럼 통 정치"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%9C%EB%9F%BC%20%ED%86%B5%20%EC%A0%95%EC%B9%98> ;
+    skos:definition "(LLM) 정치적 반대자나 비판 세력을 폭력적으로 제거하거나 위협해 침묵시키려 한다는 의혹을, 영화 속 ‘드럼통’ 장면에 빗대어 비난하는 정치 행태."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0178-c1 ;
     kno:component kno:KN2025-0178-c2 ;
     kno:component kno:KN2025-0178-c3 ;
-    skos:definition "(LLM) 정치적 반대자나 비판 세력을 폭력적으로 제거하거나 위협해 침묵시키려 한다는 의혹을, 영화 속 ‘드럼통’ 장면에 빗대어 비난하는 정치 행태."@ko ;
-    kno:origin "(<영>drum桶政治)" ;
-    kno:component kno:KN2025-0178-c1 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2025-0178-freq-NN-total ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "드럼통정치"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "드럼 통 정치"@ko ;
-    kno:languageType "(영+한)_한" ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%93%9C%EB%9F%BC%20%ED%86%B5%20%EC%A0%95%EC%B9%98> ;
-    kno:slotFiller "드럼(drum)+통(桶) (2성분)"@ko ;
     kno:componentString "드럼(drum), 통(桶), 정치(政治)"@ko ;
-    a kno:Neologism ;
+    kno:example "(LLM) 야당은 수사와 압박이 이어지는 상황을 두고 사실상 {드럼통정치가} 시작된 것 아니냐고 반발했다."@ko ;
+    kno:frequency kno:KN2025-0178-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0178-freq-NN-total ;
+    kno:indexForm "드럼통정치"@ko ;
     kno:instantiates kno:S000119 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear .
-kno:KN2025-0178-c2 rdfs:label "통(桶)"@ko ;
-    kno:formative kno:F006494 ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:fullForm "통"@ko ;
+    kno:languageType "(영+한)_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>drum桶政治)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "드럼(drum)+통(桶) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0178-c1 a kno:Component ;
+    rdfs:label "드럼(drum)"@ko ;
+    kno:formative kno:F003057 ;
+    kno:fullForm "드럼"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:surfaceForm "드럼"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0178-c2 a kno:Component ;
+    rdfs:label "통(桶)"@ko ;
+    kno:formative kno:F006494 ;
+    kno:fullForm "통"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
     kno:surfaceForm "통"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2025-0178-c3 rdfs:label "정치(政治)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0178-c3 a kno:Component ;
+    rdfs:label "정치(政治)"@ko ;
     kno:formative kno:F000188 ;
+    kno:fullForm "정치"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-G1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "정치"@ko ;
-    kno:surfaceForm "정치"@ko .
-kno:KN2025-0178-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-K2 ;
-    rdfs:label "드럼(drum)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "드럼"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F003057 ;
-    kno:surfaceForm "드럼"@ko .
+    kno:surfaceForm "정치"@ko ;
+    kno:truncated "false"^^xsd:boolean .

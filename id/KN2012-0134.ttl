@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0134 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0134 kno:frequency kno:KN2012-0134-freq-NN-total ;
-    rdfs:label "문학^경영학"@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:frequency kno:KN2012-0134-freq-NN-2012 ;
-    kno:registration "신어DB"@ko ;
+kno:KN2012-0134 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:example "¶문학 경영 연구원 아카데미에서 {문학 경영학} 시이오(CEO) 과정 수강생을 모집한다."@ko ;
-    skos:definition "문학과 경영학을 접목한 학문."@ko ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    rdfs:label "문학^경영학"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AC%B8%ED%95%99%EA%B2%BD%EC%98%81%ED%95%99> ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "문학경영학"@ko ;
-    kno:origin "(文學經營學)" ;
-    kno:languageType "한^한" ;
-    kno:unitType "구"@ko ;
+    skos:definition "문학과 경영학을 접목한 학문."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2012-0134-c1 ;
     kno:component kno:KN2012-0134-c2 ;
     kno:componentString "문학(文學), 경영학(經營學)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2012-0134-c1 .
-kno:KN2012-0134-c2 kno:formative kno:F002238 ;
-    kno:fullForm "경영학"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:role "성분"@ko ;
-    rdfs:label "경영학(經營學)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "경영학"@ko .
-kno:KN2012-0134-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "문학"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F003552 ;
+    kno:example "¶문학 경영 연구원 아카데미에서 {문학 경영학} 시이오(CEO) 과정 수강생을 모집한다."@ko ;
+    kno:frequency kno:KN2012-0134-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0134-freq-NN-total ;
+    kno:indexForm "문학경영학"@ko ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:origin "(文學經營學)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0134-c1 a kno:Component ;
     rdfs:label "문학(文學)"@ko ;
+    kno:formative kno:F003552 ;
+    kno:fullForm "문학"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-Q4.1 ;
-    kno:surfaceForm "문학"@ko .
+    kno:surfaceForm "문학"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0134-c2 a kno:Component ;
+    rdfs:label "경영학(經營學)"@ko ;
+    kno:formative kno:F002238 ;
+    kno:fullForm "경영학"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:surfaceForm "경영학"@ko ;
+    kno:truncated "false"^^xsd:boolean .

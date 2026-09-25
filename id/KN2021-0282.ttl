@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0282 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0282 kno:component kno:KN2021-0282-c2 ;
-    kno:example "¶{통합 수질 지수를} 적용하여 수질 등급을 측정한 결과, 58개 지점 가운데 5개 지점의 수질 등급이 ‘매우 좋음’으로 나타났다."@ko ;
-    kno:origin "(統合水質指數)" ;
-    kno:componentString "통합(統合), 수질(水質), 지수(指數)"@ko ;
+kno:KN2021-0282 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2021-0282-c1 ;
-    kno:frequency kno:KN2021-0282-freq-NN-total ;
-    kno:slotFiller "수질(水質)+지수(指數) (2성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S001635 ;
-    kno:frequency kno:KN2021-0282-freq-NN-2025 ;
+    rdfs:label "통합^수질^지수"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%86%B5%ED%95%A9%EC%88%98%EC%A7%88%EC%A7%80%EC%88%98> ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:instantiates kno:S000024 ;
-    kno:component kno:KN2021-0282-c3 ;
-    kno:registration "신어DB"@ko ;
     skos:definition "시민들이 수질의 상태를 직관적으로 확인할 수 있도록 하천의 오염도를 매우 나쁨에서 매우 좋음까지 5개 등급으로 나눈 지수. 총유기 탄소량, 총인, 총질소, 분원성 대장균군의 4개 주요 수질 항목을 하나의 등급으로 통합하여 평가한다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0282-c1 ;
+    kno:component kno:KN2021-0282-c2 ;
+    kno:component kno:KN2021-0282-c3 ;
+    kno:componentString "통합(統合), 수질(水質), 지수(指數)"@ko ;
+    kno:example "¶{통합 수질 지수를} 적용하여 수질 등급을 측정한 결과, 58개 지점 가운데 5개 지점의 수질 등급이 ‘매우 좋음’으로 나타났다."@ko ;
     kno:frequency kno:KN2021-0282-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0282-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0282-freq-NN-total ;
     kno:indexForm "통합수질지수"@ko ;
-    kno:slotFiller "통합(統合)+수질(水質) (2성분)"@ko ;
+    kno:instantiates kno:S000024 ;
+    kno:instantiates kno:S001635 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    rdfs:label "통합^수질^지수"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2021-0282-c2 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004484 ;
-    kno:semanticTag kno:usas-W5 ;
+    kno:origin "(統合水質指數)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "수질(水質)+지수(指數) (2성분)"@ko ;
+    kno:slotFiller "통합(統合)+수질(水質) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0282-c1 a kno:Component ;
+    rdfs:label "통합(統合)"@ko ;
+    kno:formative kno:F000620 ;
+    kno:fullForm "통합"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:surfaceForm "통합"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0282-c2 a kno:Component ;
     rdfs:label "수질(水質)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:formative kno:F004484 ;
     kno:fullForm "수질"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "수질"@ko .
-kno:KN2021-0282-c1 kno:semanticTag kno:usas-A1.1.1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "통합"@ko ;
-    rdfs:label "통합(統合)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000620 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "통합"@ko .
-kno:KN2021-0282-c3 kno:semanticTag kno:usas-N3.1 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-W5 ;
+    kno:surfaceForm "수질"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0282-c3 a kno:Component ;
     rdfs:label "지수(指數)"@ko ;
+    kno:formative kno:F000035 ;
     kno:fullForm "지수"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
     kno:surfaceForm "지수"@ko ;
-    kno:formative kno:F000035 .
+    kno:truncated "false"^^xsd:boolean .

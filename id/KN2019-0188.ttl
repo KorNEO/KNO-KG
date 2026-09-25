@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0188 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0188 kno:component kno:KN2019-0188-c1 ;
-    kno:origin "(아만追)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%A7%8C%EC%B6%94> ;
-    kno:component kno:KN2019-0188-c3 ;
-    kno:frequency kno:KN2019-0188-freq-NN-2018 ;
-    kno:registration "신어DB"@ko ;
-    kno:example "¶인만추, {아만추보다는} ‘자연스러운 만남 추구’합시다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:languageType "고+고+한" ;
-    kno:frequency kno:KN2019-0188-freq-NN-total ;
-    skos:definition "‘아무나 만나는 것을 추구’를 줄여 이르는 말. 조건을 따지지 않고 사람을 만나는 것을 추구하는 연애관을 말한다."@ko ;
+kno:KN2019-0188 a ontolex:Word ;
     a kno:Neologism ;
     rdfs:label "아만추"@ko ;
-    kno:slotFiller "아(무)+만(나) (2성분)"@ko ;
-    kno:indexForm "아만추"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:formation kno:W06 ;
-    kno:instantiates kno:S000608 ;
-    kno:frequency kno:KN2019-0188-freq-NN-2023 ;
-    kno:frequency kno:KN2019-0188-freq-NN-2019 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%A7%8C%EC%B6%94> ;
+    skos:definition "‘아무나 만나는 것을 추구’를 줄여 이르는 말. 조건을 따지지 않고 사람을 만나는 것을 추구하는 연애관을 말한다."@ko ;
     kno:activeYears "3"^^xsd:integer ;
-    a ontolex:Word ;
-    kno:componentString "아(무), 만(나), 추(구)(追)"@ko ;
+    kno:component kno:KN2019-0188-c1 ;
     kno:component kno:KN2019-0188-c2 ;
+    kno:component kno:KN2019-0188-c3 ;
+    kno:componentString "아(무), 만(나), 추(구)(追)"@ko ;
+    kno:example "¶인만추, {아만추보다는} ‘자연스러운 만남 추구’합시다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0188-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0188-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0188-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0188-freq-NN-total ;
+    kno:indexForm "아만추"@ko ;
+    kno:instantiates kno:S000608 ;
+    kno:languageType "고+고+한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(아만追)" ;
     kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "아(무)+만(나) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
     kno:year "2019"^^xsd:gYear .
-kno:KN2019-0188-c1 kno:fullForm "아무"@ko ;
+kno:KN2019-0188-c1 a kno:Component ;
+    rdfs:label "아(무)"@ko ;
+    kno:formative kno:F004792 ;
+    kno:fullForm "아무"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Z8 ;
-    rdfs:label "아(무)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F004792 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "아"@ko .
-kno:KN2019-0188-c3 kno:truncated "true"^^xsd:boolean ;
+    kno:surfaceForm "아"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0188-c2 a kno:Component ;
+    rdfs:label "만(나)"@ko ;
+    kno:formative kno:F003364 ;
+    kno:fullForm "만나"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:surfaceForm "만"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0188-c3 a kno:Component ;
+    rdfs:label "추(구)(追)"@ko ;
     kno:formative kno:F000947 ;
     kno:fullForm "추구"@ko ;
-    rdfs:label "추(구)(追)"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X7 ;
     kno:surfaceForm "추"@ko ;
-    kno:semanticTag kno:usas-X7 .
-kno:KN2019-0188-c2 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "만(나)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003364 ;
-    kno:semanticTag kno:usas-S1.1.1 ;
-    kno:fullForm "만나"@ko ;
-    kno:surfaceForm "만"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "true"^^xsd:boolean .

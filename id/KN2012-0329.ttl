@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0329 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0329 a kno:Neologism ;
-    kno:example "¶‘{월급 로그인}ㆍ로그아웃’은 가슴 한 구석을 저리게 하는 신조어다."@ko ;
-    kno:slotFiller "로그인(log-in) (1성분)"@ko ;
-    kno:origin "(月給log-in)" ;
+kno:KN2012-0329 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "월급 로그인"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000294 ;
-    kno:componentString "월급(月給), 로그인(log-in)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357208> ;
+    skos:definition "인터넷 사이트에서 로그인을 하는 것처럼 월급이 통장에 들어온 것을 비유적으로 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2012-0329-c1 ;
     kno:component kno:KN2012-0329-c2 ;
-    skos:definition "인터넷 사이트에서 로그인을 하는 것처럼 월급이 통장에 들어온 것을 비유적으로 이르는 말."@ko ;
-    kno:languageType "한_영" ;
+    kno:componentString "월급(月給), 로그인(log-in)"@ko ;
+    kno:example "¶‘{월급 로그인}ㆍ로그아웃’은 가슴 한 구석을 저리게 하는 신조어다."@ko ;
+    kno:frequency kno:KN2012-0329-freq-NN-2014 ;
     kno:frequency kno:KN2012-0329-freq-NN-total ;
     kno:indexForm "월급로그인"@ko ;
-    kno:unitType "구"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357208> ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:frequency kno:KN2012-0329-freq-NN-2014 ;
+    kno:instantiates kno:S000294 ;
+    kno:languageType "한_영" ;
     kno:lastAttestationYear "2014"^^xsd:gYear ;
-    kno:urimalTargetCode "1357208" .
-kno:KN2012-0329-c1 kno:role "고정항"@ko ;
+    kno:origin "(月給log-in)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "로그인(log-in) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1357208" ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0329-c1 a kno:Component ;
     rdfs:label "월급(月給)"@ko ;
+    kno:formative kno:F000297 ;
     kno:fullForm "월급"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000297 ;
-    a kno:Component ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
     kno:surfaceForm "월급"@ko ;
-    kno:semanticTag kno:usas-I1 .
-kno:KN2012-0329-c2 kno:formative kno:F003235 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0329-c2 a kno:Component ;
     rdfs:label "로그인(log-in)"@ko ;
-    a kno:Component ;
+    kno:formative kno:F003235 ;
+    kno:fullForm "로그인"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "로그인"@ko ;
-    kno:semanticTag kno:usas-Y2 ;
     kno:role "슬롯 채움"@ko ;
-    kno:fullForm "로그인"@ko .
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "로그인"@ko ;
+    kno:truncated "false"^^xsd:boolean .

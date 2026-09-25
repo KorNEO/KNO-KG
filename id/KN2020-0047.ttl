@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0047 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0047 kno:frequency kno:KN2020-0047-freq-NN-2021 ;
-    kno:componentString "기업(企業), 구호(救護), 긴급(緊急), 자금(資金)"@ko ;
-    kno:frequency kno:KN2020-0047-freq-NN-2020 ;
-    kno:languageType "한^한^한^한" ;
-    skos:definition "국가의 경제 위기로 인해 도산 위기에 처한 기업들을 지원하기 위한 자금. 코로나19의 장기화로 인한 경제 위축 때문에 어려움을 겪는 기업들을 지원하는 돈이다."@ko ;
-    kno:indexForm "기업구호긴급자금"@ko ;
-    kno:origin "(企業救護緊急資金)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%97%85%EA%B5%AC%ED%98%B8%EA%B8%B4%EA%B8%89%EC%9E%90%EA%B8%88> ;
-    kno:example "¶정부는 “100조 원 규모의 {기업 구호 긴급 자금을} 투입하여 기업이 코로나19의 영향으로 도산하는 일은 반드시 막겠다.”라며 자금 도입의 필요성을 말했다."@ko ;
-    kno:frequency kno:KN2020-0047-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000602 ;
-    kno:component kno:KN2020-0047-c2 ;
-    rdfs:label "기업^구호^긴급^자금"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
+kno:KN2020-0047 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2020-0047-c3 ;
+    rdfs:label "기업^구호^긴급^자금"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EC%97%85%EA%B5%AC%ED%98%B8%EA%B8%B4%EA%B8%89%EC%9E%90%EA%B8%88> ;
+    skos:definition "국가의 경제 위기로 인해 도산 위기에 처한 기업들을 지원하기 위한 자금. 코로나19의 장기화로 인한 경제 위축 때문에 어려움을 겪는 기업들을 지원하는 돈이다."@ko ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2020-0047-c1 ;
+    kno:component kno:KN2020-0047-c2 ;
+    kno:component kno:KN2020-0047-c3 ;
     kno:component kno:KN2020-0047-c4 ;
+    kno:componentString "기업(企業), 구호(救護), 긴급(緊急), 자금(資金)"@ko ;
+    kno:example "¶정부는 “100조 원 규모의 {기업 구호 긴급 자금을} 투입하여 기업이 코로나19의 영향으로 도산하는 일은 반드시 막겠다.”라며 자금 도입의 필요성을 말했다."@ko ;
+    kno:frequency kno:KN2020-0047-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0047-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0047-freq-NN-total ;
+    kno:indexForm "기업구호긴급자금"@ko ;
+    kno:instantiates kno:S000602 ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(企業救護緊急資金)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "기업(企業)+구호(救護)+긴급(緊急) (3성분)"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:component kno:KN2020-0047-c1 .
-kno:KN2020-0047-c2 rdfs:label "구호(救護)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002460 ;
-    a kno:Component ;
-    kno:surfaceForm "구호"@ko ;
-    kno:semanticTag kno:usas-S8p ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "구호"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2020-0047-c3 kno:surfaceForm "긴급"@ko ;
-    kno:formative kno:F000016 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "긴급"@ko ;
-    kno:semanticTag kno:usas-A11.1p ;
-    rdfs:label "긴급(緊急)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2020-0047-c4 kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "자금"@ko ;
-    rdfs:label "자금(資金)"@ko ;
-    kno:surfaceForm "자금"@ko ;
-    kno:formative kno:F000187 ;
-    a kno:Component .
-kno:KN2020-0047-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000338 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "기업"@ko ;
-    kno:surfaceForm "기업"@ko ;
-    a kno:Component ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0047-c1 a kno:Component ;
     rdfs:label "기업(企業)"@ko ;
+    kno:formative kno:F000338 ;
+    kno:fullForm "기업"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I2.1 ;
-    kno:role "슬롯 채움"@ko .
+    kno:surfaceForm "기업"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0047-c2 a kno:Component ;
+    rdfs:label "구호(救護)"@ko ;
+    kno:formative kno:F002460 ;
+    kno:fullForm "구호"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:surfaceForm "구호"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0047-c3 a kno:Component ;
+    rdfs:label "긴급(緊急)"@ko ;
+    kno:formative kno:F000016 ;
+    kno:fullForm "긴급"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:surfaceForm "긴급"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0047-c4 a kno:Component ;
+    rdfs:label "자금(資金)"@ko ;
+    kno:formative kno:F000187 ;
+    kno:fullForm "자금"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "자금"@ko ;
+    kno:truncated "false"^^xsd:boolean .

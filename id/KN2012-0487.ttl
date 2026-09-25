@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0487 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0487 kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:languageType "영^영" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EB%AA%A8%EC%84%9C%EC%B9%98%EC%97%94%EC%8A%A4> ;
-    rdfs:label "호모^서치엔스"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2012-0487-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(←Homo search sapiens)" ;
-    kno:frequency kno:KN2012-0487-freq-NN-2014 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:instantiates kno:S000100 ;
-    skos:definition "창조적으로 검색하는 인간을 비유적으로 이르는 말."@ko ;
-    kno:slotFiller "서치(search)+(사피)엔스(sapiens) (2성분)"@ko ;
-    kno:frequency kno:KN2012-0487-freq-NN-2012 ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2012-0487-c3 ;
-    kno:indexForm "호모서치엔스"@ko ;
-    kno:example "¶이 책은 {호모서치엔스가} 되려면 인터넷 검색 키워드를 상상하는 능력과 종이책, 신문, 메모 등을 통해 사색하는 힘을 기르라고 말한다."@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2012-0487-freq-NN-2013 ;
-    kno:component kno:KN2012-0487-c1 ;
+kno:KN2012-0487 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:frequency kno:KN2012-0487-freq-NN-total ;
+    rdfs:label "호모^서치엔스"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%98%B8%EB%AA%A8%EC%84%9C%EC%B9%98%EC%97%94%EC%8A%A4> ;
+    skos:definition "창조적으로 검색하는 인간을 비유적으로 이르는 말."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2012-0487-c1 ;
+    kno:component kno:KN2012-0487-c2 ;
+    kno:component kno:KN2012-0487-c3 ;
+    kno:componentString "호모(Homo), 서치(search), (사피)엔스(sapiens)"@ko ;
+    kno:example "¶이 책은 {호모서치엔스가} 되려면 인터넷 검색 키워드를 상상하는 능력과 종이책, 신문, 메모 등을 통해 사색하는 힘을 기르라고 말한다."@ko ;
+    kno:frequency kno:KN2012-0487-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0487-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0487-freq-NN-2014 ;
     kno:frequency kno:KN2012-0487-freq-NN-2023 ;
-    kno:componentString "호모(Homo), 서치(search), (사피)엔스(sapiens)"@ko .
-kno:KN2012-0487-c2 kno:semanticTag kno:usas-X2.4 ;
-    kno:fullForm "서치"@ko ;
+    kno:frequency kno:KN2012-0487-freq-NN-total ;
+    kno:indexForm "호모서치엔스"@ko ;
+    kno:instantiates kno:S000100 ;
+    kno:languageType "영^영" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(←Homo search sapiens)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "서치(search)+(사피)엔스(sapiens) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0487-c1 a kno:Component ;
+    rdfs:label "호모(Homo)"@ko ;
+    kno:formative kno:F000026 ;
+    kno:fullForm "호모"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "호모"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0487-c2 a kno:Component ;
     rdfs:label "서치(search)"@ko ;
     kno:formative kno:F004291 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:fullForm "서치"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "서치"@ko .
-kno:KN2012-0487-c3 kno:fullForm "사피엔스"@ko ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F005009 ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:surfaceForm "서치"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0487-c3 a kno:Component ;
     rdfs:label "(사피)엔스(sapiens)"@ko ;
-    a kno:Component ;
+    kno:formative kno:F005009 ;
+    kno:fullForm "사피엔스"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "엔스"@ko ;
     kno:truncated "true"^^xsd:boolean .
-kno:KN2012-0487-c1 kno:semanticTag kno:usas-S2 ;
-    kno:surfaceForm "호모"@ko ;
-    rdfs:label "호모(Homo)"@ko ;
-    kno:fullForm "호모"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000026 ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer .

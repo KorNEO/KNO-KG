@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0152 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0152 kno:formation kno:W01 ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371146> ;
-    kno:example "¶우리가 취재차 갔을 때에도 이 말을 듣게 되어 굉장히 ‘{맴찢’이었다}."@ko ;
-    kno:languageType "고+고" ;
-    kno:indexForm "맴찢"@ko ;
-    rdfs:label "맴-찢"@ko ;
-    kno:urimalTargetCode "1371146" ;
-    kno:component kno:KN2016-0152-c1 ;
+kno:KN2016-0152 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "맴-찢"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1371146> ;
+    skos:definition "마음이 찢어짐. 또는 그런 상태. 슬픔이나 분함 때문에 가슴이 찢어지는 듯한 고통을 느끼는 것을 말한다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2016-0152-c1 ;
+    kno:component kno:KN2016-0152-c2 ;
     kno:componentString "맴(←마음), 찢(어지다)"@ko ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
+    kno:example "¶우리가 취재차 갔을 때에도 이 말을 듣게 되어 굉장히 ‘{맴찢’이었다}."@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "맴찢"@ko ;
+    kno:languageType "고+고" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    skos:definition "마음이 찢어짐. 또는 그런 상태. 슬픔이나 분함 때문에 가슴이 찢어지는 듯한 고통을 느끼는 것을 말한다."@ko ;
-    kno:component kno:KN2016-0152-c2 .
-kno:KN2016-0152-c1 kno:formative kno:F003409 ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1371146" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0152-c1 a kno:Component ;
     rdfs:label "맴(←마음)"@ko ;
-    kno:semanticTag kno:usas-M1 ;
+    kno:formative kno:F003409 ;
+    kno:fullForm "맴"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M1 ;
     kno:surfaceForm "맴"@ko ;
-    a kno:Component ;
-    kno:fullForm "맴"@ko .
-kno:KN2016-0152-c2 kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0152-c2 a kno:Component ;
+    rdfs:label "찢(어지다)"@ko ;
     kno:formative kno:F000940 ;
-    a kno:Component ;
-    kno:surfaceForm "찢"@ko ;
     kno:fullForm "찢어지다"@ko ;
-    rdfs:label "찢(어지다)"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:surfaceForm "찢"@ko ;
+    kno:truncated "true"^^xsd:boolean .

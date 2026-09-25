@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0165 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0165 kno:languageType "한^한^한" ;
-    kno:frequency kno:KN2023-0165-freq-NN-total ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0165-freq-NN-2023 ;
+kno:KN2023-0165 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "지역 주민들이 중고 거래를 안전하게 할 수 있도록 각 지방 자치 단체가 만들어 놓은 공간."@ko ;
-    kno:componentString "안심(安心), 임대인(賃貸人), 인증서(認證書)"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000206 ;
-    kno:component kno:KN2023-0165-c2 ;
-    kno:example "¶{안심 임대인 인증서의} 유효 기간은 1개월이므로, 이전에 인증을 받은 집 주인이더라도 계약 당시에 인증서를 다시 확인할 필요가 있다."@ko ;
+    rdfs:label "안심^임대인^인증서"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EC%8B%AC%EC%9E%84%EB%8C%80%EC%9D%B8%EC%9D%B8%EC%A6%9D%EC%84%9C> ;
+    skos:definition "지역 주민들이 중고 거래를 안전하게 할 수 있도록 각 지방 자치 단체가 만들어 놓은 공간."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0165-c1 ;
+    kno:component kno:KN2023-0165-c2 ;
+    kno:component kno:KN2023-0165-c3 ;
+    kno:componentString "안심(安心), 임대인(賃貸人), 인증서(認證書)"@ko ;
+    kno:example "¶{안심 임대인 인증서의} 유효 기간은 1개월이므로, 이전에 인증을 받은 집 주인이더라도 계약 당시에 인증서를 다시 확인할 필요가 있다."@ko ;
+    kno:frequency kno:KN2023-0165-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0165-freq-NN-total ;
+    kno:indexForm "안심임대인인증서"@ko ;
+    kno:instantiates kno:S000206 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:origin "(安心賃貸人認證書)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "놓은"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2023-0165-c1 ;
     kno:slotFiller "임대인(賃貸人)+인증서(認證書) (2성분)"@ko ;
-    rdfs:label "안심^임대인^인증서"@ko ;
-    kno:component kno:KN2023-0165-c3 ;
-    kno:indexForm "안심임대인인증서"@ko ;
-    kno:unitType "구"@ko .
-kno:KN2023-0165-c2 kno:fullForm "임대인"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "임대인"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "임대인(賃貸人)"@ko ;
-    kno:semanticTag kno:usas-H4 ;
-    kno:formative kno:F000902 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0165-c1 rdfs:label "안심(安心)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-E6p ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "안심"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0165-c1 a kno:Component ;
+    rdfs:label "안심(安心)"@ko ;
     kno:formative kno:F000088 ;
-    kno:fullForm "안심"@ko .
-kno:KN2023-0165-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "인증서"@ko ;
+    kno:fullForm "안심"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E6p ;
+    kno:surfaceForm "안심"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0165-c2 a kno:Component ;
+    rdfs:label "임대인(賃貸人)"@ko ;
+    kno:formative kno:F000902 ;
+    kno:fullForm "임대인"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:surfaceForm "임대인"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0165-c3 a kno:Component ;
     rdfs:label "인증서(認證書)"@ko ;
+    kno:formative kno:F005451 ;
     kno:fullForm "인증서"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Q1.2 ;
-    kno:formative kno:F005451 .
+    kno:surfaceForm "인증서"@ko ;
+    kno:truncated "false"^^xsd:boolean .

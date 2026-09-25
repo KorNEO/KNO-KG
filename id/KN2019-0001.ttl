@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0001 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0001 kno:component kno:KN2019-0001-c3 ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "고+한+한" ;
+kno:KN2019-0001 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "가취관"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%B7%A8%EA%B4%80> ;
-    a kno:Neologism ;
+    skos:definition "‘가벼운 취향 위주의 관계’를 줄여 이르는 말. 취향을 좇아 느슨하게 교류하는 모임이 늘면서 생겨난 말이다."@ko ;
     kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2019-0001-c1 ;
     kno:component kno:KN2019-0001-c2 ;
+    kno:component kno:KN2019-0001-c3 ;
+    kno:componentString "가(벼운), 취(향)(趣), 관(계)(關)"@ko ;
     kno:example "¶업계 관계자는 “엠제트(MZ) 세대일수록 공강 시간이나 이동하는 중간에 볼 수 있는 짧은 영상 콘텐츠에 익숙해져 60분짜리 드라마보다는 10분 내외의 웹 드라마를 선호한다.”라며 “{‘가취관’을} 선호하다 보니 잘 짜여진 긴 호흡의 드라마보다는 비급(B級) 감성의 콘텐츠에 더욱 열광한다.”라고 말했다."@ko ;
     kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0001-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0001-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0001-freq-NN-2020 ;
     kno:frequency kno:KN2019-0001-freq-NN-total ;
     kno:indexForm "가취관"@ko ;
-    kno:component kno:KN2019-0001-c1 ;
-    a ontolex:Word ;
-    kno:origin "(가趣關)" ;
-    kno:frequency kno:KN2019-0001-freq-NN-2019 ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "가(벼운), 취(향)(趣), 관(계)(關)"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0001-freq-NN-2020 ;
-    kno:frequency kno:KN2019-0001-freq-NN-2018 ;
-    kno:unitType "단어"@ko ;
+    kno:languageType "고+한+한" ;
     kno:lastAttestationYear "2020"^^xsd:gYear ;
-    skos:definition "‘가벼운 취향 위주의 관계’를 줄여 이르는 말. 취향을 좇아 느슨하게 교류하는 모임이 늘면서 생겨난 말이다."@ko .
-kno:KN2019-0001-c3 kno:formative kno:F001082 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:origin "(가趣關)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0001-c1 a kno:Component ;
+    rdfs:label "가(벼운)"@ko ;
+    kno:formative kno:F002059 ;
+    kno:fullForm "가벼운"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:fullForm "관계"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S3.1 ;
-    a kno:Component ;
-    rdfs:label "관(계)(關)"@ko ;
-    kno:surfaceForm "관"@ko .
-kno:KN2019-0001-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "취"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-A13.3m ;
+    kno:surfaceForm "가"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0001-c2 a kno:Component ;
     rdfs:label "취(향)(趣)"@ko ;
     kno:formative kno:F006152 ;
     kno:fullForm "취향"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-X5.2 .
-kno:KN2019-0001-c1 kno:role "성분"@ko ;
-    kno:surfaceForm "가"@ko ;
-    a kno:Component ;
-    kno:fullForm "가벼운"@ko ;
-    kno:semanticTag kno:usas-A13.3m ;
-    kno:formative kno:F002059 ;
-    rdfs:label "가(벼운)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-X5.2 ;
+    kno:surfaceForm "취"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0001-c3 a kno:Component ;
+    rdfs:label "관(계)(關)"@ko ;
+    kno:formative kno:F001082 ;
+    kno:fullForm "관계"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S3.1 ;
+    kno:surfaceForm "관"@ko ;
+    kno:truncated "true"^^xsd:boolean .

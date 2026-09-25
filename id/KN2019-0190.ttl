@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0190 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0190 kno:languageType "한+영" ;
+kno:KN2019-0190 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "약투"@ko ;
-    kno:predicate "밝히다"@ko ;
-    kno:formation kno:W05 ;
-    kno:unitType "단어"@ko ;
-    kno:componentString "약(물)(藥), (미)투(me-too)"@ko ;
-    a ontolex:Word ;
-    skos:definition "약물과 ‘나도 당했다’는 의미의 ‘미 투(me too)’를 결합하여 만든 말로, 자신이 몰래 행한 약물 투약 경험을 밝히는 일. ⇒규범 표기는 미확정이다."@ko ;
-    kno:example "¶고백하는 이들은 이러한 {‘약투’를} 통해 부작용을 고려하지 않고 약물 투입을 하려는 일반인들을 막자는 취지에서 말을 꺼낸다."@ko ;
-    kno:pos "「명」"@ko ;
-    kno:year "2019"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%ED%88%AC> ;
-    kno:indexForm "약투"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2019-0190-c2 ;
+    skos:definition "약물과 ‘나도 당했다’는 의미의 ‘미 투(me too)’를 결합하여 만든 말로, 자신이 몰래 행한 약물 투약 경험을 밝히는 일. ⇒규범 표기는 미확정이다."@ko ;
     kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2019-0190-c1 ;
-    a kno:Neologism ;
-    kno:origin "(藥<영>←me-too)" .
-kno:KN2019-0190-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:fullForm "미투"@ko ;
-    a kno:Component ;
-    rdfs:label "(미)투(me-too)"@ko ;
-    kno:formative kno:F000241 ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:surfaceForm "투"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2019-0190-c1 kno:semanticTag kno:usas-B3 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:fullForm "약물"@ko ;
+    kno:component kno:KN2019-0190-c2 ;
+    kno:componentString "약(물)(藥), (미)투(me-too)"@ko ;
+    kno:example "¶고백하는 이들은 이러한 {‘약투’를} 통해 부작용을 고려하지 않고 약물 투입을 하려는 일반인들을 막자는 취지에서 말을 꺼낸다."@ko ;
+    kno:formation kno:W05 ;
+    kno:indexForm "약투"@ko ;
+    kno:languageType "한+영" ;
+    kno:origin "(藥<영>←me-too)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "밝히다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0190-c1 a kno:Component ;
     rdfs:label "약(물)(藥)"@ko ;
     kno:formative kno:F004912 ;
+    kno:fullForm "약물"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B3 ;
     kno:surfaceForm "약"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0190-c2 a kno:Component ;
+    rdfs:label "(미)투(me-too)"@ko ;
+    kno:formative kno:F000241 ;
+    kno:fullForm "미투"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "투"@ko ;
+    kno:truncated "true"^^xsd:boolean .

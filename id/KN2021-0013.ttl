@@ -9,59 +9,59 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0013 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0013 kno:languageType "한^한^한" ;
-    kno:frequency kno:KN2021-0013-freq-NN-total ;
-    kno:frequency kno:KN2021-0013-freq-NN-2023 ;
-    kno:frequency kno:KN2021-0013-freq-NN-2021 ;
-    kno:componentString "개인(個人), 대주(貸株), 제도(制度)"@ko ;
-    kno:frequency kno:KN2021-0013-freq-NN-2022 ;
-    kno:origin "(個人貸株制度)" ;
+kno:KN2021-0013 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:slotFiller "개인(個人)+대주(貸株) (2성분)"@ko ;
-    kno:example "¶공매도 금지 조치가 해제되는 다음 달부터 개인 투자자의 공매도 접근성을 확대한 새로운 {개인 대주 제도가} 시행된다."@ko ;
-    kno:slotFiller "대주(貸株)+제도(制度) (2성분)"@ko ;
+    rdfs:label "개인^대주^제도"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EC%9D%B8%EB%8C%80%EC%A3%BC%EC%A0%9C%EB%8F%84> ;
-    kno:component kno:KN2021-0013-c3 ;
-    kno:pos "「구」"@ko ;
-    kno:predicate "지원하다"@ko ;
-    a ontolex:MultiwordExpression ;
+    skos:definition "증권 시장에서 개인 투자자에게 매도 증권을 빌려줌으로써 안정적으로 주식을 차입하여 공매도 거래를 할 수 있도록 지원하는 제도."@ko ;
     kno:activeYears "4"^^xsd:integer ;
     kno:component kno:KN2021-0013-c1 ;
+    kno:component kno:KN2021-0013-c2 ;
+    kno:component kno:KN2021-0013-c3 ;
+    kno:componentString "개인(個人), 대주(貸株), 제도(制度)"@ko ;
+    kno:example "¶공매도 금지 조치가 해제되는 다음 달부터 개인 투자자의 공매도 접근성을 확대한 새로운 {개인 대주 제도가} 시행된다."@ko ;
+    kno:frequency kno:KN2021-0013-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0013-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0013-freq-NN-2023 ;
     kno:frequency kno:KN2021-0013-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0013-freq-NN-total ;
     kno:indexForm "개인대주제도"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "개인^대주^제도"@ko ;
     kno:instantiates kno:S000036 ;
-    skos:definition "증권 시장에서 개인 투자자에게 매도 증권을 빌려줌으로써 안정적으로 주식을 차입하여 공매도 거래를 할 수 있도록 지원하는 제도."@ko ;
     kno:instantiates kno:S000433 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(個人貸株制度)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "지원하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "개인(個人)+대주(貸株) (2성분)"@ko ;
+    kno:slotFiller "대주(貸株)+제도(制度) (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:component kno:KN2021-0013-c2 .
-kno:KN2021-0013-c3 kno:position "3"^^xsd:integer ;
-    rdfs:label "제도(制度)"@ko ;
-    kno:formative kno:F000041 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S7.1p ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "제도"@ko ;
-    kno:surfaceForm "제도"@ko .
-kno:KN2021-0013-c1 kno:surfaceForm "개인"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000449 ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0013-c1 a kno:Component ;
     rdfs:label "개인(個人)"@ko ;
+    kno:formative kno:F000449 ;
+    kno:fullForm "개인"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "개인"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "개인"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2021-0013-c2 a kno:Component ;
+    rdfs:label "대주(貸株)"@ko ;
     kno:formative kno:F002928 ;
     kno:fullForm "대주"@ko ;
-    kno:semanticTag kno:usas-I1.2 ;
-    rdfs:label "대주(貸株)"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "대주"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    kno:surfaceForm "대주"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0013-c3 a kno:Component ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
+    kno:fullForm "제도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "제도"@ko ;
+    kno:truncated "false"^^xsd:boolean .

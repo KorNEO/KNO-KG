@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0229 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0229 kno:frequency kno:KN2018-0229-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%B2%A1%EC%8B%9C%ED%8A%B8> ;
+kno:KN2018-0229 a ontolex:Word ;
     a kno:Neologism ;
-    kno:frequency kno:KN2018-0229-freq-NN-2018 ;
-    kno:instantiates kno:S001428 ;
     rdfs:label "아벡시트"@ko ;
-    kno:componentString "아베(安倍), (엑)시트(exit)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%84%EB%B2%A1%EC%8B%9C%ED%8A%B8> ;
     skos:definition "정치 스캔들로 인해 일본의 ‘아베’ 총리가 퇴진할 경우 일본 증시에 투자한 외국인 투자자들이 급속도로 투자금을 회수하는 현상을 이르는 말. ‘아베 신조’ 총리의 성(姓)인 ‘아베(安倍)’와 퇴진을 뜻하는 ‘엑시트(exit)’를 결합하여 만든 말이다. ⇒규범 표기는 미확정이다. =아베그지트."@ko ;
-    kno:year "2018"^^xsd:gYear ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2018-0229-c1 ;
+    kno:component kno:KN2018-0229-c2 ;
+    kno:componentString "아베(安倍), (엑)시트(exit)"@ko ;
     kno:example "¶연이은 사학 스캔들 등으로 최근 아베 신조 일본 총리의 지지율이 급락하면서 ‘{아벡시트’에} 대한 우려감이 다시 고개를 들고 있기 때문이다."@ko ;
     kno:formation kno:W05 ;
     kno:frequency kno:KN2018-0229-freq-NN-2017 ;
-    kno:slotFiller "아베(安倍) (1성분)"@ko ;
-    a ontolex:Word ;
-    kno:languageType "일+영" ;
-    kno:origin "(安倍<영>←exit)" ;
-    kno:activeYears "3"^^xsd:integer ;
+    kno:frequency kno:KN2018-0229-freq-NN-2018 ;
     kno:frequency kno:KN2018-0229-freq-NN-2019 ;
-    kno:slotFiller "(엑)시트(exit) (1성분)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000104 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:component kno:KN2018-0229-c1 ;
-    kno:pos "「명」"@ko ;
+    kno:frequency kno:KN2018-0229-freq-NN-total ;
     kno:indexForm "아벡시트"@ko ;
+    kno:instantiates kno:S000104 ;
+    kno:instantiates kno:S001428 ;
+    kno:languageType "일+영" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(安倍<영>←exit)" ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2018-0229-c2 .
-kno:KN2018-0229-c1 rdfs:label "아베(安倍)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:slotFiller "(엑)시트(exit) (1성분)"@ko ;
+    kno:slotFiller "아베(安倍) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0229-c1 a kno:Component ;
+    rdfs:label "아베(安倍)"@ko ;
     kno:formative kno:F001570 ;
-    kno:semanticTag kno:usas-Z1 ;
     kno:fullForm "아베"@ko ;
-    kno:surfaceForm "아베"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:surfaceForm "아베"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2018-0229-c2 kno:role "고정항"@ko ;
-    kno:fullForm "엑시트"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:formative kno:F000289 ;
-    kno:surfaceForm "시트"@ko ;
+kno:KN2018-0229-c2 a kno:Component ;
     rdfs:label "(엑)시트(exit)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:formative kno:F000289 ;
+    kno:fullForm "엑시트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "시트"@ko ;
+    kno:truncated "true"^^xsd:boolean .

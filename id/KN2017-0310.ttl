@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0310 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0310 kno:registration "우리말샘"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "팩폭"@ko ;
-    kno:languageType "영+한" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369489> ;
+kno:KN2017-0310 a ontolex:Word ;
     a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
+    rdfs:label "팩폭"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369489> ;
     skos:definition "‘팩트 폭력’을 줄여 이르는 말."@ko ;
-    kno:origin "(<영>←fact暴)" ;
-    kno:formation kno:W06 ;
-    kno:urimalTargetCode "1369489" ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "팩폭"@ko ;
-    kno:componentString "팩(트)(fact), 폭(력)(暴)"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2017-0310-c1 ;
     kno:component kno:KN2017-0310-c2 ;
+    kno:componentString "팩(트)(fact), 폭(력)(暴)"@ko ;
     kno:example "¶O 군은 “나에게 낮은 순위를 매긴 친구에게 화를 내면 오히려 ‘{팩폭을} 당해 발끈했느냐.’라며 놀림당한다.”라고 했다."@ko ;
-    kno:component kno:KN2017-0310-c1 .
-kno:KN2017-0310-c2 kno:semanticTag kno:usas-E3m ;
+    kno:formation kno:W06 ;
+    kno:indexForm "팩폭"@ko ;
+    kno:languageType "영+한" ;
+    kno:origin "(<영>←fact暴)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1369489" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0310-c1 a kno:Component ;
+    rdfs:label "팩(트)(fact)"@ko ;
+    kno:formative kno:F001945 ;
+    kno:fullForm "팩트"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A5.4p ;
+    kno:surfaceForm "팩"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0310-c2 a kno:Component ;
     rdfs:label "폭(력)(暴)"@ko ;
-    kno:surfaceForm "폭"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:formative kno:F006746 ;
     kno:fullForm "폭력"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2017-0310-c1 rdfs:label "팩(트)(fact)"@ko ;
-    kno:formative kno:F001945 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "팩"@ko ;
-    kno:fullForm "팩트"@ko ;
-    kno:semanticTag kno:usas-A5.4p .
+    kno:semanticTag kno:usas-E3m ;
+    kno:surfaceForm "폭"@ko ;
+    kno:truncated "true"^^xsd:boolean .

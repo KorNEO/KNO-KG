@@ -9,65 +9,65 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0012 a kno:Neologism ;
-    kno:frequency kno:KN2020-0012-freq-NN-2020 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%8F%99%EC%A3%BC%ED%83%9D%EC%82%AC%EC%9C%A1%ED%97%88%EA%B0%80%EC%A0%9C> ;
-    kno:component kno:KN2020-0012-c1 ;
-    kno:component kno:KN2020-0012-c3 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:example "¶정부는 맹견에 의한 물림 사고를 예방하기 위해 2022년까지 {공동 주택 사육 허가제를} 도입할 계획이다."@ko ;
-    kno:component kno:KN2020-0012-c2 ;
+kno:KN2020-0012 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "공동^주택^사육^허가제"@ko ;
-    kno:indexForm "공동주택사육허가제"@ko ;
-    kno:unitType "구"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:componentString "공동(共同), 주택(住宅), 사육(飼育), 허가제(許可制)"@ko ;
-    kno:frequency kno:KN2020-0012-freq-NN-2021 ;
-    kno:languageType "한^한^한^한" ;
-    kno:predicate "하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EB%8F%99%EC%A3%BC%ED%83%9D%EC%82%AC%EC%9C%A1%ED%97%88%EA%B0%80%EC%A0%9C> ;
     skos:definition "아파트, 연립 주택 따위의 공동 주택 내에서 맹견을 기르고자 할 때, 정부의 허가를 받도록 하는 제도."@ko ;
-    kno:instantiates kno:S000438 ;
-    kno:component kno:KN2020-0012-c4 ;
     kno:activeYears "2"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0012-c1 ;
+    kno:component kno:KN2020-0012-c2 ;
+    kno:component kno:KN2020-0012-c3 ;
+    kno:component kno:KN2020-0012-c4 ;
+    kno:componentString "공동(共同), 주택(住宅), 사육(飼育), 허가제(許可制)"@ko ;
+    kno:example "¶정부는 맹견에 의한 물림 사고를 예방하기 위해 2022년까지 {공동 주택 사육 허가제를} 도입할 계획이다."@ko ;
+    kno:frequency kno:KN2020-0012-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0012-freq-NN-2021 ;
     kno:frequency kno:KN2020-0012-freq-NN-total ;
+    kno:indexForm "공동주택사육허가제"@ko ;
+    kno:instantiates kno:S000438 ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
     kno:origin "(共同住宅飼育許可制)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "주택(住宅)+사육(飼育)+허가제(許可制) (3성분)"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear .
-kno:KN2020-0012-c1 kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0012-c1 a kno:Component ;
     rdfs:label "공동(共同)"@ko ;
-    kno:fullForm "공동"@ko ;
     kno:formative kno:F000665 ;
+    kno:fullForm "공동"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "공동"@ko ;
-    a kno:Component .
-kno:KN2020-0012-c3 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F001437 ;
-    kno:surfaceForm "사육"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-L2 ;
-    rdfs:label "사육(飼育)"@ko ;
-    kno:fullForm "사육"@ko .
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2020-0012-c2 a kno:Component ;
-    kno:formative kno:F000073 ;
-    kno:position "2"^^xsd:integer ;
     rdfs:label "주택(住宅)"@ko ;
-    kno:surfaceForm "주택"@ko ;
+    kno:formative kno:F000073 ;
     kno:fullForm "주택"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-H1 ;
+    kno:surfaceForm "주택"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0012-c4 kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-S7.4p ;
-    kno:formative kno:F007038 ;
+kno:KN2020-0012-c3 a kno:Component ;
+    rdfs:label "사육(飼育)"@ko ;
+    kno:formative kno:F001437 ;
+    kno:fullForm "사육"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:surfaceForm "사육"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0012-c4 a kno:Component ;
     rdfs:label "허가제(許可制)"@ko ;
+    kno:formative kno:F007038 ;
     kno:fullForm "허가제"@ko ;
     kno:position "4"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "허가제"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.4p ;
+    kno:surfaceForm "허가제"@ko ;
+    kno:truncated "false"^^xsd:boolean .

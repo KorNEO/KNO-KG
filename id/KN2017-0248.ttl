@@ -9,38 +9,38 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0248 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0248 rdfs:label "존똑"@ko ;
-    kno:pos "「명」"@ko ;
+kno:KN2017-0248 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "존똑"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B4%EB%98%91> ;
+    skos:definition "매우 똑같음. 또는 그런 모양."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:indexForm "존똑"@ko ;
+    kno:component kno:KN2017-0248-c1 ;
     kno:component kno:KN2017-0248-c2 ;
     kno:componentString "존(나), 똑(같다)"@ko ;
-    kno:languageType "고+고" ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:component kno:KN2017-0248-c1 ;
-    kno:year "2017"^^xsd:gYear ;
     kno:example "¶그대로인 얼굴에 풋풋한 느낌이 살아 있는 OOO의 과거 사진을 본 누리꾼들은 “지금이랑 ‘{존똑’이네}.”…등의 뜨거운 반응을 보였다."@ko ;
-    kno:registration "신어DB"@ko ;
     kno:formation kno:W06 ;
+    kno:indexForm "존똑"@ko ;
+    kno:languageType "고+고" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A1%B4%EB%98%91> ;
-    skos:definition "매우 똑같음. 또는 그런 모양."@ko .
-kno:KN2017-0248-c2 kno:semanticTag kno:usas-A6.1p ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "똑같다"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "똑"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "똑(같다)"@ko ;
-    kno:formative kno:F003127 ;
-    a kno:Component .
-kno:KN2017-0248-c1 kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A13.3 ;
-    kno:surfaceForm "존"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0248-c1 a kno:Component ;
+    rdfs:label "존(나)"@ko ;
     kno:formative kno:F000586 ;
     kno:fullForm "존나"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "존(나)"@ko ;
-    kno:role "성분"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A13.3 ;
+    kno:surfaceForm "존"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0248-c2 a kno:Component ;
+    rdfs:label "똑(같다)"@ko ;
+    kno:formative kno:F003127 ;
+    kno:fullForm "똑같다"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:surfaceForm "똑"@ko ;
+    kno:truncated "true"^^xsd:boolean .

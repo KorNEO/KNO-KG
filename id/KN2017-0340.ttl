@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0340 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0340 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380630> ;
-    kno:component kno:KN2017-0340-c2 ;
+kno:KN2017-0340 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    skos:definition "명절 연휴에 해외여행을 떠나는 사람. 또는 그런 무리. 명절 연휴에 해외여행을 떠나는 사람이 많아지는 추세를 반영한 말이다."@ko ;
-    kno:frequency kno:KN2017-0340-freq-NN-total ;
-    kno:slotFiller "해외(海外)+차례(차禮) (2성분)"@ko ;
     rdfs:label "해외차례족"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:indexForm "해외차례족"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(海外차禮族)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380630> ;
+    skos:definition "명절 연휴에 해외여행을 떠나는 사람. 또는 그런 무리. 명절 연휴에 해외여행을 떠나는 사람이 많아지는 추세를 반영한 말이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0340-c1 ;
+    kno:component kno:KN2017-0340-c2 ;
     kno:component kno:KN2017-0340-c3 ;
     kno:componentString "해외(海外), 차례(차禮), -족(族)"@ko ;
-    kno:urimalTargetCode "1380630" ;
-    kno:registration "우리말샘"@ko ;
-    kno:languageType "한_(고+한)" ;
     kno:example "¶아예 가족이 외국으로 여행을 떠나는 일명 ‘{해외 차례족’이} 늘고 있는 것도 이 같은 의식 변화와 무관하지 않다."@ko ;
-    kno:predicate "떠나다"@ko ;
-    kno:component kno:KN2017-0340-c1 ;
+    kno:frequency kno:KN2017-0340-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0340-freq-NN-total ;
+    kno:indexForm "해외차례족"@ko ;
     kno:instantiates kno:S000012 ;
+    kno:languageType "한_(고+한)" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(海外차禮族)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "떠나다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "해외(海外)+차례(차禮) (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2017-0340-freq-NN-2017 .
+    kno:urimalTargetCode "1380630" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0340-c1 a kno:Component ;
+    rdfs:label "해외(海外)"@ko ;
+    kno:formative kno:F002002 ;
+    kno:fullForm "해외"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "해외"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2017-0340-c2 a kno:Component ;
     rdfs:label "차례(차禮)"@ko ;
-    kno:fullForm "차례"@ko ;
-    kno:surfaceForm "차례"@ko ;
     kno:formative kno:F005987 ;
+    kno:fullForm "차례"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-S9 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2017-0340-c3 rdfs:label "-족(族)"@ko ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "차례"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0340-c3 a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
     kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
-kno:KN2017-0340-c1 rdfs:label "해외(海外)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002002 ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "해외"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "해외"@ko ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean .

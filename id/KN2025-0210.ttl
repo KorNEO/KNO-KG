@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0210 kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000356 ;
+kno:KN2025-0210 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    skos:definition "(LLM) 두피와 모발의 뿌리(모근) 건강을 피부 관리하듯 세심하게 가꾸는 헤어ㆍ두피 케어."@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A3%A8%ED%8A%B8%20%EB%B7%B0%ED%8B%B0> ;
-    kno:example "(LLM) 뷰티업계는 두피를 피부처럼 관리하는 흐름이 커지면서 {루트뷰티} 라인업을 강화하고 있다."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2025-0210-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2025-0210-c1 ;
-    kno:frequency kno:KN2025-0210-freq-NN-2025 ;
     rdfs:label "루트 뷰티"@ko ;
-    kno:frequency kno:KN2025-0210-freq-NN-total ;
-    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A3%A8%ED%8A%B8%20%EB%B7%B0%ED%8B%B0> ;
+    skos:definition "(LLM) 두피와 모발의 뿌리(모근) 건강을 피부 관리하듯 세심하게 가꾸는 헤어ㆍ두피 케어."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0210-c1 ;
+    kno:component kno:KN2025-0210-c2 ;
     kno:componentString "루트(root), 뷰티(beauty)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
+    kno:example "(LLM) 뷰티업계는 두피를 피부처럼 관리하는 흐름이 커지면서 {루트뷰티} 라인업을 강화하고 있다."@ko ;
+    kno:frequency kno:KN2025-0210-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0210-freq-NN-total ;
+    kno:indexForm "루트뷰티"@ko ;
+    kno:instantiates kno:S000356 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "루트(root) (1성분)"@ko ;
-    kno:indexForm "루트뷰티"@ko .
-kno:KN2025-0210-c2 kno:formative kno:F000173 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "뷰티(beauty)"@ko ;
-    kno:surfaceForm "뷰티"@ko ;
-    kno:semanticTag kno:usas-O4.2p ;
-    a kno:Component ;
-    kno:fullForm "뷰티"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2025-0210-c1 kno:semanticTag kno:usas-M6 ;
-    a kno:Component ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0210-c1 a kno:Component ;
     rdfs:label "루트(root)"@ko ;
-    kno:fullForm "루트"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "루트"@ko ;
     kno:formative kno:F003267 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:fullForm "루트"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M6 ;
+    kno:surfaceForm "루트"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0210-c2 a kno:Component ;
+    rdfs:label "뷰티(beauty)"@ko ;
+    kno:formative kno:F000173 ;
+    kno:fullForm "뷰티"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:surfaceForm "뷰티"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0172 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0172 kno:pos "「명」"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "단어"@ko ;
-    skos:definition "(속되게)남을 슬쩍 골려 주거나 속일 때에 하는 말. ‘엿 먹이다’에 ‘big’이 붙어 의미를 강조한 말이다."@ko ;
-    kno:formation kno:W01 ;
-    kno:indexForm "빅엿"@ko ;
+kno:KN2012-0172 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "빅-엿"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%85%EC%97%BF> ;
+    skos:definition "(속되게)남을 슬쩍 골려 주거나 속일 때에 하는 말. ‘엿 먹이다’에 ‘big’이 붙어 의미를 강조한 말이다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0172-c1 ;
     kno:component kno:KN2012-0172-c2 ;
     kno:componentString "빅(big), 엿"@ko ;
     kno:example "¶거침없는 욕설로 호기롭게 시작하는 할리우드 영화 OO는 직장에서 괴롭힘을 당하던 회사원 3명의 반란을 그렸다. 우리식 속어를 빌리자면 직장상사에게 ‘{빅엿’을} 선사하기 위한 소동극이다."@ko ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0172-c1 ;
-    a ontolex:Word ;
-    kno:origin "(big-)" ;
-    rdfs:label "빅-엿"@ko ;
-    a kno:Neologism ;
+    kno:formation kno:W01 ;
+    kno:indexForm "빅엿"@ko ;
     kno:languageType "영+고" ;
-    kno:predicate "하다"@ko .
-kno:KN2012-0172-c2 rdfs:label "엿"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "엿"@ko ;
-    kno:surfaceForm "엿"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F005073 .
-kno:KN2012-0172-c1 kno:position "1"^^xsd:integer ;
+    kno:origin "(big-)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0172-c1 a kno:Component ;
     rdfs:label "빅(big)"@ko ;
-    kno:role "성분"@ko ;
+    kno:formative kno:F000363 ;
     kno:fullForm "빅"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-N3.2p ;
     kno:surfaceForm "빅"@ko ;
-    kno:formative kno:F000363 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0172-c2 a kno:Component ;
+    rdfs:label "엿"@ko ;
+    kno:formative kno:F005073 ;
+    kno:fullForm "엿"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "엿"@ko ;
     kno:truncated "false"^^xsd:boolean .

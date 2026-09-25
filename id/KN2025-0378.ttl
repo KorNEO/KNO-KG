@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0378 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0378 kno:component kno:KN2025-0378-c2 ;
-    kno:frequency kno:KN2025-0378-freq-NN-2025 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0378-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    rdfs:label "신입 부머"@ko ;
-    kno:component kno:KN2025-0378-c1 ;
-    kno:languageType "한_영" ;
-    kno:componentString "신입(新入), 부머(boomer)"@ko ;
+kno:KN2025-0378 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:origin "(新入<영>boomer)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:indexForm "신입부머"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:example "(LLM) 유통업계는 50대 초반의 {신입부머를} 핵심 고객으로 보고 건강식과 여행 상품을 강화하고 있다."@ko ;
+    rdfs:label "신입 부머"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%9E%85%20%EB%B6%80%EB%A8%B8> ;
     skos:definition "(LLM) 베이비붐 세대에 새로 편입된 것으로 여겨지는 1970년대 출생의 중장년층을 이르는 말."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%9E%85%20%EB%B6%80%EB%A8%B8> .
-kno:KN2025-0378-c2 kno:semanticTag kno:usas-T3p ;
-    kno:surfaceForm "부머"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "부머"@ko ;
-    kno:formative kno:F000779 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    rdfs:label "부머(boomer)"@ko ;
-    a kno:Component .
-kno:KN2025-0378-c1 kno:fullForm "신입"@ko ;
-    kno:surfaceForm "신입"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0378-c1 ;
+    kno:component kno:KN2025-0378-c2 ;
+    kno:componentString "신입(新入), 부머(boomer)"@ko ;
+    kno:example "(LLM) 유통업계는 50대 초반의 {신입부머를} 핵심 고객으로 보고 건강식과 여행 상품을 강화하고 있다."@ko ;
+    kno:frequency kno:KN2025-0378-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0378-freq-NN-total ;
+    kno:indexForm "신입부머"@ko ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(新入<영>boomer)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0378-c1 a kno:Component ;
     rdfs:label "신입(新入)"@ko ;
-    kno:semanticTag kno:usas-T3m ;
+    kno:formative kno:F004705 ;
+    kno:fullForm "신입"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004705 .
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "신입"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0378-c2 a kno:Component ;
+    rdfs:label "부머(boomer)"@ko ;
+    kno:formative kno:F000779 ;
+    kno:fullForm "부머"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:surfaceForm "부머"@ko ;
+    kno:truncated "false"^^xsd:boolean .

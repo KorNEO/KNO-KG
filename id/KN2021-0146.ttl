@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0146 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0146 kno:predicate "하다"@ko ;
+kno:KN2021-0146 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "비건 헬스"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%84%EA%B1%B4%20%ED%97%AC%EC%8A%A4> ;
+    skos:definition "채식으로 식단을 구성하며 헬스를 하는 일. 닭 가슴살 등의 동물성 단백질이 아닌 콩, 두부 등의 식물성 단백질로 운동에 필요한 단백질을 섭취하는 것을 말한다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:component kno:KN2021-0146-c1 ;
-    kno:unitType "구"@ko ;
-    kno:year "2021"^^xsd:gYear ;
+    kno:component kno:KN2021-0146-c2 ;
+    kno:componentString "비건(vegan), 헬스(health)"@ko ;
+    kno:example "¶{비건 헬스를} 주장하는 사람들은 동물성 단백질을 섭취하지 않아도 근육을 충분히 키울 수 있다고 강조한다."@ko ;
+    kno:frequency kno:KN2021-0146-freq-NN-2021 ;
     kno:frequency kno:KN2021-0146-freq-NN-2024 ;
     kno:frequency kno:KN2021-0146-freq-NN-total ;
-    rdfs:label "비건 헬스"@ko ;
-    a kno:Neologism ;
-    kno:languageType "영_영" ;
     kno:indexForm "비건헬스"@ko ;
+    kno:languageType "영_영" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:componentString "비건(vegan), 헬스(health)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2021-0146-freq-NN-2021 ;
     kno:origin "(<영>vegan health)" ;
-    skos:definition "채식으로 식단을 구성하며 헬스를 하는 일. 닭 가슴살 등의 동물성 단백질이 아닌 콩, 두부 등의 식물성 단백질로 운동에 필요한 단백질을 섭취하는 것을 말한다."@ko ;
-    kno:component kno:KN2021-0146-c2 ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "하다"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:example "¶{비건 헬스를} 주장하는 사람들은 동물성 단백질을 섭취하지 않아도 근육을 충분히 키울 수 있다고 강조한다."@ko .
-kno:KN2021-0146-c1 kno:surfaceForm "비건"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0146-c1 a kno:Component ;
     rdfs:label "비건(vegan)"@ko ;
     kno:formative kno:F004061 ;
+    kno:fullForm "비건"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
     kno:semanticTag kno:usas-F1 ;
-    kno:fullForm "비건"@ko .
-kno:KN2021-0146-c2 kno:fullForm "헬스"@ko ;
-    kno:semanticTag kno:usas-K5.1 ;
+    kno:surfaceForm "비건"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0146-c2 a kno:Component ;
     rdfs:label "헬스(health)"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:formative kno:F000642 ;
+    kno:fullForm "헬스"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-K5.1 ;
     kno:surfaceForm "헬스"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean .

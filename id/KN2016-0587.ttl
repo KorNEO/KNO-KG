@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0587 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0587 kno:component kno:KN2016-0587-c2 ;
-    kno:languageType "고+한" ;
-    kno:formation kno:W06 ;
+kno:KN2016-0587 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "혼강"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373022> ;
     skos:definition "‘혼자 강의를 들음’을 줄여 이르는 말. 함께할 친구나 동료 없이 혼자서 강의를 듣는 것을 이르는 말이다."@ko ;
-    a ontolex:Word ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2016-0587-c1 ;
+    kno:component kno:KN2016-0587-c2 ;
+    kno:componentString "혼(자), 강(의)(講)"@ko ;
+    kno:example "¶혼밥 외에도 {혼강은} 혼자 강의 듣는 것, 솔플은 솔로 플레이, 즉 혼자 놀기를 의미합니다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "혼강"@ko ;
+    kno:languageType "고+한" ;
+    kno:origin "(혼講)" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1373022> ;
-    rdfs:label "혼강"@ko ;
-    kno:origin "(혼講)" ;
-    kno:componentString "혼(자), 강(의)(講)"@ko ;
-    kno:urimalTargetCode "1373022" ;
-    kno:indexForm "혼강"@ko ;
-    kno:component kno:KN2016-0587-c1 ;
     kno:unitType "단어"@ko ;
-    kno:example "¶혼밥 외에도 {혼강은} 혼자 강의 듣는 것, 솔플은 솔로 플레이, 즉 혼자 놀기를 의미합니다."@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:activeYears "0"^^xsd:integer .
-kno:KN2016-0587-c2 kno:surfaceForm "강"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "강(의)(講)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F001040 ;
-    kno:fullForm "강의"@ko .
-kno:KN2016-0587-c1 rdfs:label "혼(자)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:fullForm "혼자"@ko ;
-    a kno:Component ;
+    kno:urimalTargetCode "1373022" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0587-c1 a kno:Component ;
+    rdfs:label "혼(자)"@ko ;
     kno:formative kno:F000011 ;
+    kno:fullForm "혼자"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-S5 ;
-    kno:surfaceForm "혼"@ko .
+    kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0587-c2 a kno:Component ;
+    rdfs:label "강(의)(講)"@ko ;
+    kno:formative kno:F001040 ;
+    kno:fullForm "강의"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "강"@ko ;
+    kno:truncated "true"^^xsd:boolean .

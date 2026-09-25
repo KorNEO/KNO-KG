@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0013 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0013 kno:example "¶경찰은 {건폭 수사와} 관련하여, 건설 현장에서 일어나는 갈취나 협박 등의 불법 행위에 대하여 엄정하게 수사하고 있다고 말했다."@ko ;
-    kno:slotFiller "수사(搜査) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2023-0013-freq-NN-2023 ;
-    kno:slotFiller "건폭(建暴) (1성분)"@ko ;
-    kno:origin "(建暴搜査)" ;
-    kno:indexForm "건폭수사"@ko ;
-    kno:unitType "구"@ko ;
+kno:KN2023-0013 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "건폭 수사"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B4%ED%8F%AD%20%EC%88%98%EC%82%AC> ;
+    skos:definition "건설 현장에서 발생하는 불법 폭력 행위를 목표로 삼고 벌이는 수사."@ko ;
     kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0013-c1 ;
+    kno:component kno:KN2023-0013-c2 ;
     kno:componentString "건폭(建暴), 수사(搜査)"@ko ;
+    kno:example "¶경찰은 {건폭 수사와} 관련하여, 건설 현장에서 일어나는 갈취나 협박 등의 불법 행위에 대하여 엄정하게 수사하고 있다고 말했다."@ko ;
+    kno:frequency kno:KN2023-0013-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0013-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0013-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0013-freq-NN-total ;
+    kno:indexForm "건폭수사"@ko ;
     kno:instantiates kno:S000889 ;
     kno:instantiates kno:S001120 ;
-    kno:frequency kno:KN2023-0013-freq-NN-total ;
     kno:languageType "한_한" ;
-    skos:definition "건설 현장에서 발생하는 불법 폭력 행위를 목표로 삼고 벌이는 수사."@ko ;
-    kno:component kno:KN2023-0013-c2 ;
-    kno:component kno:KN2023-0013-c1 ;
-    rdfs:label "건폭 수사"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0013-freq-NN-2025 ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2023-0013-freq-NN-2024 ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(建暴搜査)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "벌이다"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B4%ED%8F%AD%20%EC%88%98%EC%82%AC> .
-kno:KN2023-0013-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "건폭(建暴) (1성분)"@ko ;
+    kno:slotFiller "수사(搜査) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0013-c1 a kno:Component ;
+    rdfs:label "건폭(建暴)"@ko ;
+    kno:formative kno:F001049 ;
+    kno:fullForm "건폭"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E3m ;
+    kno:surfaceForm "건폭"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0013-c2 a kno:Component ;
+    rdfs:label "수사(搜査)"@ko ;
     kno:formative kno:F000540 ;
     kno:fullForm "수사"@ko ;
-    a kno:Component ;
-    rdfs:label "수사(搜査)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "수사"@ko ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-G2.1 ;
-    kno:role "고정항"@ko .
-kno:KN2023-0013-c1 kno:role "고정항"@ko ;
-    a kno:Component ;
-    rdfs:label "건폭(建暴)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-E3m ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "건폭"@ko ;
-    kno:surfaceForm "건폭"@ko ;
-    kno:formative kno:F001049 .
+    kno:surfaceForm "수사"@ko ;
+    kno:truncated "false"^^xsd:boolean .

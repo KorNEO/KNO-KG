@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0026 kno:example "¶솔랭에서는 무조건 {공템을} 가야 돼요."@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:origin "(攻←<영>item)" ;
-    kno:predicate "사용하다"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%ED%85%9C> ;
+kno:KN2013-0026 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "공템"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%ED%85%9C> ;
+    skos:definition "게임에서, 공격을 하기 위해 사용하는 아이템."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0026-c1 ;
+    kno:component kno:KN2013-0026-c2 ;
+    kno:componentString "공(격)(攻), (아이)템(item)"@ko ;
+    kno:example "¶솔랭에서는 무조건 {공템을} 가야 돼요."@ko ;
+    kno:formation kno:W05 ;
+    kno:indexForm "공템"@ko ;
+    kno:languageType "한+영" ;
+    kno:origin "(攻←<영>item)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "사용하다"@ko ;
     kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    kno:indexForm "공템"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2013-0026-c1 ;
-    a kno:Neologism ;
-    kno:activeYears "0"^^xsd:integer ;
-    skos:definition "게임에서, 공격을 하기 위해 사용하는 아이템."@ko ;
-    kno:formation kno:W05 ;
-    kno:componentString "공(격)(攻), (아이)템(item)"@ko ;
-    kno:component kno:KN2013-0026-c2 ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko .
-kno:KN2013-0026-c1 rdfs:label "공(격)(攻)"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0026-c1 a kno:Component ;
+    rdfs:label "공(격)(攻)"@ko ;
     kno:formative kno:F002328 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:fullForm "공격"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-G3 ;
     kno:surfaceForm "공"@ko ;
-    kno:role "성분"@ko ;
-    kno:fullForm "공격"@ko ;
-    a kno:Component .
-kno:KN2013-0026-c2 rdfs:label "(아이)템(item)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0026-c2 a kno:Component ;
+    rdfs:label "(아이)템(item)"@ko ;
     kno:formative kno:F000007 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-O2 ;
-    a kno:Component ;
     kno:fullForm "아이템"@ko ;
-    kno:surfaceForm "템"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0280 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0280 kno:frequency kno:KN2024-0280-freq-NN-total ;
+kno:KN2024-0280 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "지구^열대화"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%80%EA%B5%AC%EC%97%B4%EB%8C%80%ED%99%94> ;
+    skos:definition "지구의 기온이 높아져 열대 기후 수준의 고온 상태에 이르는 현상."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2024-0280-c1 ;
+    kno:component kno:KN2024-0280-c2 ;
+    kno:componentString "지구(地球), 열대화(熱帶化)"@ko ;
     kno:example "¶{지구 열대화에} 따른 폭염과 가뭄이 전 세계적으로 확산되고 있다."@ko ;
     kno:frequency kno:KN2024-0280-freq-NN-2023 ;
-    kno:origin "(地球熱帶化)" ;
     kno:frequency kno:KN2024-0280-freq-NN-2024 ;
-    rdfs:label "지구^열대화"@ko ;
-    kno:unitType "구"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2024"^^xsd:gYear ;
+    kno:frequency kno:KN2024-0280-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0280-freq-NN-total ;
     kno:indexForm "지구열대화"@ko ;
-    skos:definition "지구의 기온이 높아져 열대 기후 수준의 고온 상태에 이르는 현상."@ko ;
-    a kno:Neologism ;
     kno:languageType "한^한" ;
-    kno:activeYears "3"^^xsd:integer ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(地球熱帶化)" ;
     kno:pos "「구」"@ko ;
-    kno:componentString "지구(地球), 열대화(熱帶化)"@ko ;
-    kno:component kno:KN2024-0280-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2024-0280-freq-NN-2025 .
-kno:KN2024-0280-c1 kno:position "1"^^xsd:integer ;
-    kno:fullForm "지구"@ko ;
-    kno:formative kno:F005866 ;
-    kno:surfaceForm "지구"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0280-c1 a kno:Component ;
     rdfs:label "지구(地球)"@ko ;
+    kno:formative kno:F005866 ;
+    kno:fullForm "지구"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M7 .
-kno:KN2024-0280-c2 kno:surfaceForm "열대화"@ko ;
-    kno:fullForm "열대화"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "지구"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0280-c2 a kno:Component ;
+    rdfs:label "열대화(熱帶化)"@ko ;
     kno:formative kno:F005068 ;
+    kno:fullForm "열대화"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-W4 ;
-    rdfs:label "열대화(熱帶化)"@ko .
+    kno:surfaceForm "열대화"@ko ;
+    kno:truncated "false"^^xsd:boolean .

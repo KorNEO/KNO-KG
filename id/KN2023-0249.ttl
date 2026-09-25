@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0249 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%91%EC%8B%9C%EB%87%8C> ;
-    kno:indexForm "접시뇌"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:label "접시^뇌"@ko ;
-    kno:frequency kno:KN2023-0249-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "접시, 뇌(腦)"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0249-freq-NN-2023 ;
-    kno:example "¶연구진이 배양한 ‘{접시뇌’는} 80만~100만 개 가량의 살아 있는 뇌 세포로 구성되어 있다."@ko ;
+kno:KN2023-0249 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2023-0249-c1 ;
-    kno:languageType "고^한" ;
-    kno:component kno:KN2023-0249-c2 ;
+    rdfs:label "접시^뇌"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%91%EC%8B%9C%EB%87%8C> ;
     skos:definition "쥐의 뇌 배아에서 추출해낸 초기 피질 세포와 유도 만능 줄기세포를 분화시켜 얻은 뇌세포를 이르는 말. 접시 위에서 뇌를 배양하였다고 하여 붙여진 이름이다."@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
+    kno:component kno:KN2023-0249-c1 ;
+    kno:component kno:KN2023-0249-c2 ;
+    kno:componentString "접시, 뇌(腦)"@ko ;
+    kno:example "¶연구진이 배양한 ‘{접시뇌’는} 80만~100만 개 가량의 살아 있는 뇌 세포로 구성되어 있다."@ko ;
+    kno:frequency kno:KN2023-0249-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0249-freq-NN-total ;
+    kno:indexForm "접시뇌"@ko ;
+    kno:languageType "고^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:origin "(접시腦)" ;
-    a ontolex:MultiwordExpression .
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
 kno:KN2023-0249-c1 a kno:Component ;
-    kno:semanticTag kno:usas-O2 ;
     rdfs:label "접시"@ko ;
     kno:formative kno:F005660 ;
+    kno:fullForm "접시"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "접시"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    kno:fullForm "접시"@ko .
-kno:KN2023-0249-c2 kno:fullForm "뇌"@ko ;
-    kno:surfaceForm "뇌"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "접시"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0249-c2 a kno:Component ;
+    rdfs:label "뇌(腦)"@ko ;
+    kno:formative kno:F000057 ;
+    kno:fullForm "뇌"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
     kno:semanticTag kno:usas-B1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000057 ;
-    rdfs:label "뇌(腦)"@ko ;
-    a kno:Component .
+    kno:surfaceForm "뇌"@ko ;
+    kno:truncated "false"^^xsd:boolean .

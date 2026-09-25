@@ -81,8 +81,34 @@
   var zoom = d3.zoom().scaleExtent([0.03, 14]).wheelDelta(wheelDelta).on('zoom', function (ev) { transform = ev.transform; draw(); });
   d3.select(canvas).call(zoom);
 
+  // 휴대폰 화면(graph-mobile.js): 왼쪽 패널 대신 시트, 정보 패널은 아래쪽 시트
+  function isM() { return !!(window.KNO_MOBILE && window.KNO_MOBILE()); }
+  var lastTouch = 0;
+  function touchy() { return Date.now() - lastTouch < 1500; }
+  canvas.addEventListener('touchstart', function () { lastTouch = Date.now(); tooltip.style.display = 'none'; }, { passive: true });
+  // 노드를 둘 화면 속 초점: 데스크톱은 왼쪽 패널을 뺀 가운데, 휴대폰은 시트에 가리지 않는 부분의 가운데
+  function focusPoint() {
+    if (!isM()) return { x: (W + 200) / 2, y: H / 2 };
+    if (infoPanel && infoPanel.classList.contains('open')) {
+      var cr = container.getBoundingClientRect(), pr = infoPanel.getBoundingClientRect();
+      if (pr.top > cr.top + 20) return { x: W / 2, y: Math.max(40, (pr.top - cr.top) / 2) };
+      if (pr.left > cr.left + 20) return { x: Math.max(40, (pr.left - cr.left) / 2), y: H / 2 };
+    }
+    return { x: W / 2, y: H / 2 };
+  }
+  // 휴대폰: 누른 노드가 시트에 가리면 보이는 곳으로 옮김 (확대 배율은 그대로)
+  function panIntoView(n) {
+    if (!isM() || !n) return;
+    var cr = container.getBoundingClientRect(), pr = infoPanel.getBoundingClientRect();
+    var sx = transform.applyX(n.x), sy = transform.applyY(n.y);
+    var bottom = pr.top > cr.top + 20 ? pr.top - cr.top : H, right = pr.left > cr.left + 20 ? pr.left - cr.left : W;
+    if (sx > 30 && sx < right - 30 && sy > 60 && sy < bottom - 30) return;
+    var f = focusPoint(), k = transform.k;
+    d3.select(canvas).transition().duration(450).call(zoom.transform, d3.zoomIdentity.translate(f.x - n.x * k, f.y - n.y * k).scale(k));
+  }
+
   function resize() {
-    dpr = window.devicePixelRatio || 1;
+    dpr = Math.min(window.devicePixelRatio || 1, isM() ? 2 : 3);   // 휴대폰은 2배까지만 (3배 캔버스는 느림)
     W = container.clientWidth; H = container.clientHeight;
     canvas.width = W * dpr; canvas.height = H * dpr;
     canvas.style.width = W + 'px'; canvas.style.height = H + 'px';
@@ -206,7 +232,7 @@
       .force('collide', d3.forceCollide(function (d) { return nodeRadius(d) + (d.type === 'schema' ? 14 : 6); }).strength(0.9).iterations(2))
       .force('cx', d3.forceX(function (d) { var c = commMap[d.comm]; return c ? c.x : cx; }).strength(commPull))
       .force('cy', d3.forceY(function (d) { var c = commMap[d.comm]; return c ? c.y : cy; }).strength(commPull))
-      .alpha(0.9).alphaDecay(0.035).velocityDecay(0.35)
+      .alpha(0.9).alphaDecay(isM() ? 0.05 : 0.035).velocityDecay(0.35)
       .on('tick', draw)
       .on('end', function () { draw(); if (pendingFocus) { var pf = pendingFocus; pendingFocus = null; centerOn(pf, true); } });
   }
@@ -214,6 +240,9 @@
   // 임곗값·사례 수 때문에 숨은 노드를 보이게: 전부 표시로 풀고 그 노드로 이동
   function showHidden(id) {
     if (!allNodeMap[id]) return;
+    var an = allNodeMap[id];
+    // 스키마 미귀속 신어는 캔버스에 없다(형성소 층이 꺼져 있으면 연결이 없음) → 정보 패널만 연다
+    if (an.type === 'neologism' && !(an.schemas || []).length && !layerActive.formative) { navHistory = []; navigateTo(an); return; }
     if (allNodeMap[id].type === 'formative' && !layerActive.formative) {
       layerActive.formative = true; var tf = document.getElementById('tog-formative'); if (tf) tf.checked = true;
       var v1 = computeVisible(); applyLayout(v1.nodes, v1.links); updateMinNHint();
@@ -226,8 +255,8 @@
     if (nodeMap[id]) focusNode(nodeMap[id], true);
   }
   function centerOn(n, animate) {
-    var tz = Math.max(transform.k, 1.6);
-    var tr = d3.zoomIdentity.translate((W + 200) / 2 - n.x * tz, H / 2 - n.y * tz).scale(tz);
+    var tz = Math.max(transform.k, 1.6), f = focusPoint();
+    var tr = d3.zoomIdentity.translate(f.x - n.x * tz, f.y - n.y * tz).scale(tz);
     if (animate) d3.select(canvas).transition().duration(700).call(zoom.transform, tr); else d3.select(canvas).call(zoom.transform, tr);
   }
   function focusNode(n, animate) {
@@ -246,9 +275,10 @@
     });
     var gw = maxX - minX || 1, gh = maxY - minY || 1;
     var cx = (minX + maxX) / 2, cy = (minY + maxY) / 2;
-    var k = Math.min((W - 220) / (gw + 80), (H - 40) / (gh + 80));
+    var m = isM(), padL = m ? 0 : 200;
+    var k = Math.min((W - (m ? 16 : 220)) / (gw + 80), (H - (m ? 96 : 40)) / (gh + 80));
     k = Math.max(0.03, Math.min(k, 2));
-    transform = d3.zoomIdentity.translate((W + 200) / 2 - cx * k, H / 2 - cy * k).scale(k);
+    transform = d3.zoomIdentity.translate((W + padL) / 2 - cx * k, H / 2 - cy * k + (m ? 8 : 0)).scale(k);
     d3.select(canvas).call(zoom.transform, transform);
   }
 
@@ -473,7 +503,7 @@
       var lb = _drawnLabels[li];
       if (Math.abs(gx - lb.x) <= lb.hw && Math.abs(gy - lb.y) <= lb.hh) return lb.node;
     }
-    var best = null, bestD = Infinity, pad = 5 / transform.k;
+    var best = null, bestD = Infinity, pad = (touchy() ? 14 : 5) / transform.k;   // 손가락은 넓게
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i], dx = n.x - gx, dy = n.y - gy, d = Math.sqrt(dx * dx + dy * dy);
       if (d <= nodeRadius(n) + pad) {
@@ -491,6 +521,7 @@
   }
   var _mm = false;
   canvas.addEventListener('mousemove', function (e) {
+    if (touchy()) return;   // 터치 뒤 따라오는 가짜 mousemove: 툴팁을 띄우지 않음
     if (_mm) return; _mm = true;
     requestAnimationFrame(function () { _mm = false; onMove(e); });
   });
@@ -707,12 +738,12 @@
     });
     ipList.innerHTML = html;
     var back = document.getElementById('ip-back');
-    if (back) back.addEventListener('click', function () { var p = navHistory.pop(); if (p) navigateTo(p); });
+    if (back) back.addEventListener('click', function () { var p = navHistory.pop(); if (p) { navigateTo(p); panIntoView(p); } });
     ipList.querySelectorAll('.ip-nav[data-nid]').forEach(function (el) {
       el.addEventListener('click', function () {
         var t = nodeMap[el.getAttribute('data-nid')];
         if (!t) { showHidden(el.getAttribute('data-nid')); return; }
-        navHistory.push(currentFocusNode); navigateTo(t);
+        navHistory.push(currentFocusNode); navigateTo(t); panIntoView(t);
       });
     });
     infoPanel.classList.add('open');
@@ -725,7 +756,7 @@
     var gp = screenToGraph(e.clientX - rect.left, e.clientY - rect.top);
     var n = findNode(gp[0], gp[1]);
     if (!n) { clearFocus(); tooltip.style.display = 'none'; return; }
-    navHistory = []; navigateTo(n);
+    navHistory = []; navigateTo(n); panIntoView(n);
   });
 
   // ── 검색 ────────────────────────────────────────────────────────────────
@@ -956,6 +987,8 @@
 
   // ── 로드 ────────────────────────────────────────────────────────────────
   resize();
+  // 웹 글꼴이 늦게 오면 캔버스 글자를 다시 잰다 (대체 글꼴 폭으로 겹침 판정이 어긋나지 않게)
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { draw(); });
   fetch('graph-data.json').then(function (r) { return r.json(); }).then(function (data) {
     allNodes = data.nodes; allLinks = data.links; communities = data.communities || []; communities.forEach(function (c) { commMap[c.id] = c; });
     allNodes.forEach(function (n) { allNodeMap[n.id] = n; adj[n.id] = []; });

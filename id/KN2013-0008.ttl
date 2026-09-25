@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0008 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0008 kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "강제후속곡"@ko ;
-    kno:slotFiller "후속(後續)+-곡(曲) (2성분)"@ko ;
+kno:KN2013-0008 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2012"^^xsd:gYear ;
-    kno:componentString "강제(強制), 후속(後續), -곡(曲)"@ko ;
-    kno:origin "(強制後續曲)" ;
-    kno:example "¶OOO의 OO가 {강제 후속곡이} 될 수 있을지 관심이 쏠리고 있다."@ko ;
     rdfs:label "강제 후속곡"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EC%A0%9C%20%ED%9B%84%EC%86%8D%EA%B3%A1> ;
+    skos:definition "사람들이 매우 좋아하여 가수의 의도와는 상관없이 정해진 후속곡."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0008-c1 ;
     kno:component kno:KN2013-0008-c2 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2013-0008-c3 ;
+    kno:componentString "강제(強制), 후속(後續), -곡(曲)"@ko ;
+    kno:example "¶OOO의 OO가 {강제 후속곡이} 될 수 있을지 관심이 쏠리고 있다."@ko ;
+    kno:frequency kno:KN2013-0008-freq-NN-2012 ;
     kno:frequency kno:KN2013-0008-freq-NN-total ;
+    kno:indexForm "강제후속곡"@ko ;
     kno:instantiates kno:S000131 ;
     kno:languageType "한_한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EC%A0%9C%20%ED%9B%84%EC%86%8D%EA%B3%A1> ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:origin "(強制後續曲)" ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2013-0008-c3 ;
-    kno:component kno:KN2013-0008-c1 ;
-    kno:frequency kno:KN2013-0008-freq-NN-2012 ;
-    skos:definition "사람들이 매우 좋아하여 가수의 의도와는 상관없이 정해진 후속곡."@ko ;
+    kno:slotFiller "후속(後續)+-곡(曲) (2성분)"@ko ;
     kno:unitType "구"@ko ;
     kno:year "2013"^^xsd:gYear .
-kno:KN2013-0008-c2 kno:formative kno:F007192 ;
-    a kno:Component ;
-    kno:surfaceForm "후속"@ko ;
-    rdfs:label "후속(後續)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "후속"@ko ;
-    kno:semanticTag kno:usas-N4 .
-kno:KN2013-0008-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000334 ;
-    kno:semanticTag kno:usas-K2 ;
-    rdfs:label "-곡(曲)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "곡"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "곡"@ko .
-kno:KN2013-0008-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S6p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "강제"@ko ;
-    a kno:Component ;
-    kno:fullForm "강제"@ko ;
+kno:KN2013-0008-c1 a kno:Component ;
+    rdfs:label "강제(強制)"@ko ;
     kno:formative kno:F000198 ;
+    kno:fullForm "강제"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    rdfs:label "강제(強制)"@ko .
+    kno:semanticTag kno:usas-S6p ;
+    kno:surfaceForm "강제"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0008-c2 a kno:Component ;
+    rdfs:label "후속(後續)"@ko ;
+    kno:formative kno:F007192 ;
+    kno:fullForm "후속"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N4 ;
+    kno:surfaceForm "후속"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0008-c3 a kno:Component ;
+    rdfs:label "-곡(曲)"@ko ;
+    kno:formative kno:F000334 ;
+    kno:fullForm "곡"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:surfaceForm "곡"@ko ;
+    kno:truncated "false"^^xsd:boolean .

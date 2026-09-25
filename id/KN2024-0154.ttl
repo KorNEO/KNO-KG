@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0154 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0154 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%AC%EB%A6%BC%20%EB%8B%A4%EC%9D%B4%EB%8B%9D> ;
+kno:KN2024-0154 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "슬림 다이닝"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%AC%EB%A6%BC%20%EB%8B%A4%EC%9D%B4%EB%8B%9D> ;
+    skos:definition "편의점, 밀키트, 배달 음식 등을 통해 빠르고 간편하게 준비한 식사."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0154-c1 ;
+    kno:component kno:KN2024-0154-c2 ;
+    kno:componentString "슬림(slim), 다이닝(dining)"@ko ;
     kno:example "¶60대를 포함한 전 연령층에서 반찬을 사 먹는 등 효율적인 방식을 택하며 여가와 휴식 시간을 위한 {슬림 다이닝을} 추구하고 있다."@ko ;
-    kno:languageType "영_영" ;
-    kno:origin "(<영>▼slim dining)" ;
-    kno:indexForm "슬림다이닝"@ko ;
-    kno:unitType "구"@ko ;
     kno:frequency kno:KN2024-0154-freq-NN-2024 ;
     kno:frequency kno:KN2024-0154-freq-NN-total ;
-    kno:componentString "슬림(slim), 다이닝(dining)"@ko ;
-    kno:slotFiller "슬림(slim) (1성분)"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
+    kno:indexForm "슬림다이닝"@ko ;
     kno:instantiates kno:S000764 ;
-    skos:definition "편의점, 밀키트, 배달 음식 등을 통해 빠르고 간편하게 준비한 식사."@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    rdfs:label "슬림 다이닝"@ko ;
-    kno:component kno:KN2024-0154-c1 ;
-    a kno:Neologism ;
+    kno:languageType "영_영" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
+    kno:origin "(<영>▼slim dining)" ;
     kno:pos "「구」"@ko ;
-    kno:component kno:KN2024-0154-c2 ;
-    a ontolex:MultiwordExpression .
-kno:KN2024-0154-c1 kno:surfaceForm "슬림"@ko ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "슬림(slim) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0154-c1 a kno:Component ;
     rdfs:label "슬림(slim)"@ko ;
-    kno:semanticTag kno:usas-N3.2m ;
     kno:formative kno:F001537 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "슬림"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "슬림"@ko .
-kno:KN2024-0154-c2 kno:fullForm "다이닝"@ko ;
-    kno:semanticTag kno:usas-F1 ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N3.2m ;
+    kno:surfaceForm "슬림"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0154-c2 a kno:Component ;
+    rdfs:label "다이닝(dining)"@ko ;
     kno:formative kno:F001158 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "다이닝"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "다이닝"@ko ;
     kno:role "고정항"@ko ;
-    rdfs:label "다이닝(dining)"@ko .
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "다이닝"@ko ;
+    kno:truncated "false"^^xsd:boolean .

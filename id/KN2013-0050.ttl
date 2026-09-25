@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0050 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0050 kno:registration "신어DB"@ko ;
+kno:KN2013-0050 a ontolex:Word ;
     a kno:Neologism ;
-    kno:example "¶이번 성금은 OO 초 학생들이 학교 규칙을 지키기 위해 ‘어려운 이웃 돕기 벌금 나누기’ {급칙을} 만들어 시행해 모은 것이다."@ko ;
-    kno:languageType "한+한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%89%EC%B9%99> ;
-    kno:origin "(級則)" ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:component kno:KN2013-0050-c2 ;
-    skos:definition "학생이 지켜야 할 학급의 규칙."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2013-0050-c1 ;
     rdfs:label "급칙"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:componentString "급(級), 칙(則)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%89%EC%B9%99> ;
+    skos:definition "학생이 지켜야 할 학급의 규칙."@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0050-c1 ;
+    kno:component kno:KN2013-0050-c2 ;
+    kno:componentString "급(級), 칙(則)"@ko ;
+    kno:example "¶이번 성금은 OO 초 학생들이 학교 규칙을 지키기 위해 ‘어려운 이웃 돕기 벌금 나누기’ {급칙을} 만들어 시행해 모은 것이다."@ko ;
     kno:formation kno:W08 ;
-    kno:indexForm "급칙"@ko .
-kno:KN2013-0050-c2 kno:fullForm "칙"@ko ;
-    rdfs:label "칙(則)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001839 ;
-    kno:surfaceForm "칙"@ko ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2013-0050-c1 kno:surfaceForm "급"@ko ;
-    kno:fullForm "급"@ko ;
-    kno:semanticTag kno:usas-A13.4 ;
+    kno:indexForm "급칙"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(級則)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0050-c1 a kno:Component ;
     rdfs:label "급(級)"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:formative kno:F001109 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "급"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component .
+    kno:semanticTag kno:usas-A13.4 ;
+    kno:surfaceForm "급"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0050-c2 a kno:Component ;
+    rdfs:label "칙(則)"@ko ;
+    kno:formative kno:F001839 ;
+    kno:fullForm "칙"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "칙"@ko ;
+    kno:truncated "false"^^xsd:boolean .

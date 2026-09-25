@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0007 kno:unitType "단어"@ko ;
-    kno:example "¶그는 “…갭 투자를 막으려다 ‘{갑대출’만} 받게 하는 것.”이라며 “대출 양극화를 막을 추가 대책이 필요하다.”라고 촉구했다."@ko ;
-    rdfs:label "갑-대출"@ko ;
+kno:KN2018-0007 a ontolex:Word ;
     a kno:Neologism ;
-    kno:origin "(甲貸出)" ;
-    kno:componentString "갑(甲), 대출(貸出)"@ko ;
-    kno:languageType "한+한" ;
-    kno:indexForm "갑대출"@ko ;
-    kno:predicate "받다"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:component kno:KN2018-0007-c2 ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+    rdfs:label "갑-대출"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%91%EB%8C%80%EC%B6%9C> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2018-0007-freq-NN-total ;
-    kno:frequency kno:KN2018-0007-freq-NN-2017 ;
-    kno:slotFiller "갑(甲) (1성분)"@ko ;
-    kno:formation kno:W01 ;
-    kno:instantiates kno:S000768 ;
-    kno:component kno:KN2018-0007-c1 ;
-    kno:year "2018"^^xsd:gYear ;
     skos:definition "소득이 높은 계층이 받는 대출."@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2018-0007-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "대출(貸出)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000167 ;
-    kno:surfaceForm "대출"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "대출"@ko ;
-    kno:semanticTag kno:usas-I1.2 .
-kno:KN2018-0007-c1 kno:formative kno:F001038 ;
-    a kno:Component ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2018-0007-c1 ;
+    kno:component kno:KN2018-0007-c2 ;
+    kno:componentString "갑(甲), 대출(貸出)"@ko ;
+    kno:example "¶그는 “…갭 투자를 막으려다 ‘{갑대출’만} 받게 하는 것.”이라며 “대출 양극화를 막을 추가 대책이 필요하다.”라고 촉구했다."@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2018-0007-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0007-freq-NN-total ;
+    kno:indexForm "갑대출"@ko ;
+    kno:instantiates kno:S000768 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(甲貸出)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "받다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "갑(甲) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0007-c1 a kno:Component ;
     rdfs:label "갑(甲)"@ko ;
+    kno:formative kno:F001038 ;
     kno:fullForm "갑"@ko ;
-    kno:surfaceForm "갑"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S7.1p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:surfaceForm "갑"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0007-c2 a kno:Component ;
+    rdfs:label "대출(貸出)"@ko ;
+    kno:formative kno:F000167 ;
+    kno:fullForm "대출"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.2 ;
+    kno:surfaceForm "대출"@ko ;
+    kno:truncated "false"^^xsd:boolean .

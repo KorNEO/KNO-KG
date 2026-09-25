@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0001 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0001 kno:slotFiller "근무표(勤務表) (1성분)"@ko ;
+kno:KN2023-0001 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "가상 근무표"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%83%81%20%EA%B7%BC%EB%AC%B4%ED%91%9C> ;
+    skos:definition "주당 최대 69시간 노동을 할 경우를 가정해서 만든 근무표. 고용 노동부가 주당 최대 12시간으로 제한돼 있는 연장 근로 허용 기준을 월ㆍ분기ㆍ반기ㆍ연 단위로 유연화해, 1주일에 최대 69시간까지 근로가 가능하도록 하는 제도 개편 방안을 제시한 후 등장한 근무표이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0001-c1 ;
+    kno:component kno:KN2023-0001-c2 ;
+    kno:componentString "가상(假想), 근무표(勤務表)"@ko ;
+    kno:example "¶고용 노동부가 근로 시간 개편안에 대한 오해를 풀겠다며, 온라인상에 공개한 {가상 근무표가} 직장인들의 반발을 불러일으키고 있다."@ko ;
+    kno:frequency kno:KN2023-0001-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0001-freq-NN-total ;
+    kno:indexForm "가상근무표"@ko ;
+    kno:instantiates kno:S000091 ;
+    kno:instantiates kno:S000742 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(假想勤務表)" ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
     kno:slotFiller "가상(假想) (1성분)"@ko ;
-    kno:example "¶고용 노동부가 근로 시간 개편안에 대한 오해를 풀겠다며, 온라인상에 공개한 {가상 근무표가} 직장인들의 반발을 불러일으키고 있다."@ko ;
-    kno:indexForm "가상근무표"@ko ;
-    kno:origin "(假想勤務表)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S000091 ;
-    rdfs:label "가상 근무표"@ko ;
-    kno:componentString "가상(假想), 근무표(勤務表)"@ko ;
-    kno:component kno:KN2023-0001-c1 ;
-    kno:instantiates kno:S000742 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0001-c2 ;
-    kno:frequency kno:KN2023-0001-freq-NN-2023 ;
-    a kno:Neologism ;
+    kno:slotFiller "근무표(勤務表) (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%80%EC%83%81%20%EA%B7%BC%EB%AC%B4%ED%91%9C> ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
-    skos:definition "주당 최대 69시간 노동을 할 경우를 가정해서 만든 근무표. 고용 노동부가 주당 최대 12시간으로 제한돼 있는 연장 근로 허용 기준을 월ㆍ분기ㆍ반기ㆍ연 단위로 유연화해, 1주일에 최대 69시간까지 근로가 가능하도록 하는 제도 개편 방안을 제시한 후 등장한 근무표이다."@ko ;
-    kno:frequency kno:KN2023-0001-freq-NN-total .
-kno:KN2023-0001-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0001-c1 a kno:Component ;
+    rdfs:label "가상(假想)"@ko ;
+    kno:formative kno:F000157 ;
     kno:fullForm "가상"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000157 ;
-    kno:surfaceForm "가상"@ko ;
-    kno:semanticTag kno:usas-A5.4m ;
-    a kno:Component ;
-    rdfs:label "가상(假想)"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2023-0001-c2 kno:formative kno:F001101 ;
-    kno:fullForm "근무표"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "근무표"@ko ;
-    rdfs:label "근무표(勤務表)"@ko ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-I3.1 .
+    kno:semanticTag kno:usas-A5.4m ;
+    kno:surfaceForm "가상"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0001-c2 a kno:Component ;
+    rdfs:label "근무표(勤務表)"@ko ;
+    kno:formative kno:F001101 ;
+    kno:fullForm "근무표"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "근무표"@ko ;
+    kno:truncated "false"^^xsd:boolean .

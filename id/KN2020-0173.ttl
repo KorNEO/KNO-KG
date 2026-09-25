@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0173 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0173 kno:languageType "한_영" ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:example "¶하나의 아이디로 여러 명이 온라인 서비스를 공유하면서 이용료를 나누어 내는 것도 {소액 테크의} 한 방식이다."@ko ;
-    kno:frequency kno:KN2020-0173-freq-NN-total ;
-    kno:predicate "모으다"@ko ;
-    kno:componentString "소액(少額), (재)테크(財tech)"@ko ;
-    kno:component kno:KN2020-0173-c2 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
+kno:KN2020-0173 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "소액 테크"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%95%A1%20%ED%85%8C%ED%81%AC> ;
     skos:definition "소액이라도 벌거나 아껴서 돈을 모으는 일."@ko ;
-    kno:indexForm "소액테크"@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2020-0173-c1 ;
+    kno:component kno:KN2020-0173-c2 ;
+    kno:componentString "소액(少額), (재)테크(財tech)"@ko ;
+    kno:example "¶하나의 아이디로 여러 명이 온라인 서비스를 공유하면서 이용료를 나누어 내는 것도 {소액 테크의} 한 방식이다."@ko ;
+    kno:frequency kno:KN2020-0173-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0173-freq-NN-total ;
+    kno:indexForm "소액테크"@ko ;
+    kno:instantiates kno:S000221 ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(少額<영>tech)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "모으다"@ko ;
     kno:registration "신어DB"@ko ;
     kno:slotFiller "소액(少額) (1성분)"@ko ;
-    kno:origin "(少額<영>tech)" ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EC%95%A1%20%ED%85%8C%ED%81%AC> ;
-    kno:instantiates kno:S000221 ;
-    kno:component kno:KN2020-0173-c1 ;
-    rdfs:label "소액 테크"@ko ;
-    kno:frequency kno:KN2020-0173-freq-NN-2019 .
-kno:KN2020-0173-c2 kno:surfaceForm "테크"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000065 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "재테크"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "(재)테크(財tech)"@ko .
-kno:KN2020-0173-c1 kno:fullForm "소액"@ko ;
-    a kno:Component ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0173-c1 a kno:Component ;
     rdfs:label "소액(少額)"@ko ;
-    kno:surfaceForm "소액"@ko ;
-    kno:semanticTag kno:usas-I1.1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F004417 ;
+    kno:fullForm "소액"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-N5m .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:surfaceForm "소액"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0173-c2 a kno:Component ;
+    rdfs:label "(재)테크(財tech)"@ko ;
+    kno:formative kno:F000065 ;
+    kno:fullForm "재테크"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "테크"@ko ;
+    kno:truncated "true"^^xsd:boolean .

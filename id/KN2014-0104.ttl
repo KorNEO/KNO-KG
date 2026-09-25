@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0104 skos:definition "바퀴가 작은 소형의 자전거."@ko ;
-    a ontolex:Word ;
+kno:KN2014-0104 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "미벨"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%B2%A8> ;
+    skos:definition "바퀴가 작은 소형의 자전거."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2014-0104-c1 ;
+    kno:component kno:KN2014-0104-c2 ;
+    kno:componentString "미(니)(mini), 벨(로)(vélo)"@ko ;
+    kno:example "¶‘{미벨’은} 20인치 이하의 작은 바퀴를 가진 자전거를 가리킨다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "미벨"@ko ;
+    kno:languageType "영+프" ;
     kno:origin "(<영>←mini<프>vélo)" ;
     kno:pos "「명」"@ko ;
-    kno:example "¶‘{미벨’은} 20인치 이하의 작은 바퀴를 가진 자전거를 가리킨다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%AF%B8%EB%B2%A8> ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "미벨"@ko ;
-    kno:component kno:KN2014-0104-c2 ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:registration "신어DB"@ko ;
-    kno:componentString "미(니)(mini), 벨(로)(vélo)"@ko ;
-    a kno:Neologism ;
-    kno:year "2014"^^xsd:gYear ;
-    rdfs:label "미벨"@ko ;
-    kno:formation kno:W06 ;
-    kno:languageType "영+프" .
+    kno:unitType "단어"@ko ;
+    kno:year "2014"^^xsd:gYear .
 kno:KN2014-0104-c1 a kno:Component ;
-    kno:surfaceForm "미"@ko ;
     rdfs:label "미(니)(mini)"@ko ;
-    kno:role "성분"@ko ;
     kno:formative kno:F003578 ;
     kno:fullForm "미니"@ko ;
-    kno:semanticTag kno:usas-N3.2m ;
     kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-N3.2m ;
+    kno:surfaceForm "미"@ko ;
     kno:truncated "true"^^xsd:boolean .
-kno:KN2014-0104-c2 kno:role "성분"@ko ;
+kno:KN2014-0104-c2 a kno:Component ;
     rdfs:label "벨(로)(vélo)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M3 ;
     kno:formative kno:F003832 ;
     kno:fullForm "벨로"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M3 ;
     kno:surfaceForm "벨"@ko ;
     kno:truncated "true"^^xsd:boolean .

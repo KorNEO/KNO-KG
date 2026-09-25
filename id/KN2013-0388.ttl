@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0388 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0388 kno:component kno:KN2013-0388-c2 ;
+kno:KN2013-0388 a ontolex:Word ;
     a kno:Neologism ;
-    kno:component kno:KN2013-0388-c1 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "한+영+영" ;
-    kno:formation kno:W06 ;
-    kno:slotFiller "취(업)(就)+(카카오)톡(Kakaotalk) (2성분)"@ko ;
-    kno:example "¶‘{취톡팸’이란} 단어도 눈에 띈다. 이 말은 채용 등 취업 정보를 카카오톡이라는 스마트폰 메신저를 통해 실시간으로 주고받는 모임을 뜻하는 신조어다."@ko ;
-    kno:origin "(就←<영>Kakaotalk family)" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
     rdfs:label "취톡팸"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B7%A8%ED%86%A1%ED%8C%B8> ;
+    skos:definition "모바일 메신저인 카카오톡을 통해 취업 정보를 주고받는 사람들의 모임."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0388-c1 ;
+    kno:component kno:KN2013-0388-c2 ;
     kno:component kno:KN2013-0388-c3 ;
     kno:componentString "취(업)(就), (카카오)톡(Kakaotalk), 팸(←family)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
-    kno:frequency kno:KN2013-0388-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B7%A8%ED%86%A1%ED%8C%B8> ;
-    kno:registration "신어DB"@ko ;
+    kno:example "¶‘{취톡팸’이란} 단어도 눈에 띈다. 이 말은 채용 등 취업 정보를 카카오톡이라는 스마트폰 메신저를 통해 실시간으로 주고받는 모임을 뜻하는 신조어다."@ko ;
+    kno:formation kno:W06 ;
     kno:frequency kno:KN2013-0388-freq-NN-2013 ;
-    skos:definition "모바일 메신저인 카카오톡을 통해 취업 정보를 주고받는 사람들의 모임."@ko ;
+    kno:frequency kno:KN2013-0388-freq-NN-total ;
+    kno:indexForm "취톡팸"@ko ;
     kno:instantiates kno:S001036 ;
-    a ontolex:Word ;
-    kno:indexForm "취톡팸"@ko .
-kno:KN2013-0388-c2 kno:role "슬롯 채움"@ko ;
+    kno:languageType "한+영+영" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:origin "(就←<영>Kakaotalk family)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "취(업)(就)+(카카오)톡(Kakaotalk) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0388-c1 a kno:Component ;
+    rdfs:label "취(업)(就)"@ko ;
+    kno:formative kno:F006149 ;
+    kno:fullForm "취업"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "취"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0388-c2 a kno:Component ;
     rdfs:label "(카카오)톡(Kakaotalk)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "톡"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000106 ;
+    kno:fullForm "카카오톡"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-Q1.3 ;
     kno:semanticTag kno:usas-Z3 ;
-    kno:fullForm "카카오톡"@ko ;
-    kno:formative kno:F000106 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2013-0388-c1 a kno:Component ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:fullForm "취업"@ko ;
-    kno:surfaceForm "취"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F006149 ;
-    rdfs:label "취(업)(就)"@ko ;
+    kno:surfaceForm "톡"@ko ;
     kno:truncated "true"^^xsd:boolean .
-kno:KN2013-0388-c3 kno:position "3"^^xsd:integer ;
-    kno:formative kno:F000990 ;
+kno:KN2013-0388-c3 a kno:Component ;
     rdfs:label "팸(←family)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:role "고정항"@ko ;
+    kno:formative kno:F000990 ;
     kno:fullForm "팸"@ko ;
-    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S4 ;
     kno:surfaceForm "팸"@ko ;
     kno:truncated "false"^^xsd:boolean .

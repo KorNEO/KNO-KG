@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0206 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0206 kno:origin "(안房料金)" ;
-    kno:predicate "지불하다"@ko ;
-    kno:unitType "구"@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2020-0206 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "안방 요금"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EB%B0%A9%20%EC%9A%94%EA%B8%88> ;
+    skos:definition "극장에서 상영하는 영화를 텔레비전으로 관람하기 위해 지불하는 요금. 코로나19로 인한 재난 상황에서 최신 개봉 영화를 관람하는 장소가 다양화되면서 극장에서 영화를 관람하기 위해 지불하는 요금에 상대하여 이르는 말이다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
     kno:component kno:KN2020-0206-c1 ;
     kno:component kno:KN2020-0206-c2 ;
-    kno:languageType "(고+한)_한" ;
-    a kno:Neologism ;
-    kno:indexForm "안방요금"@ko ;
-    skos:definition "극장에서 상영하는 영화를 텔레비전으로 관람하기 위해 지불하는 요금. 코로나19로 인한 재난 상황에서 최신 개봉 영화를 관람하는 장소가 다양화되면서 극장에서 영화를 관람하기 위해 지불하는 요금에 상대하여 이르는 말이다."@ko ;
     kno:componentString "안방, 요금(料金)"@ko ;
+    kno:example "¶이 영화는 온라인과 오프라인에서 동시 개봉 했지만 {안방 요금이} 상대적으로 비싸 예상보다 많은 사람들이 극장을 찾았다."@ko ;
+    kno:indexForm "안방요금"@ko ;
+    kno:languageType "(고+한)_한" ;
+    kno:origin "(안房料金)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "안방 요금"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%88%EB%B0%A9%20%EC%9A%94%EA%B8%88> ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:example "¶이 영화는 온라인과 오프라인에서 동시 개봉 했지만 {안방 요금이} 상대적으로 비싸 예상보다 많은 사람들이 극장을 찾았다."@ko .
-kno:KN2020-0206-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:predicate "지불하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0206-c1 a kno:Component ;
+    rdfs:label "안방"@ko ;
     kno:formative kno:F004839 ;
     kno:fullForm "안방"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:surfaceForm "안방"@ko ;
     kno:semanticTag kno:usas-H2 ;
-    a kno:Component ;
-    rdfs:label "안방"@ko .
-kno:KN2020-0206-c2 kno:formative kno:F005188 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
+    kno:surfaceForm "안방"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0206-c2 a kno:Component ;
     rdfs:label "요금(料金)"@ko ;
+    kno:formative kno:F005188 ;
     kno:fullForm "요금"@ko ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-I1.3 ;
-    kno:surfaceForm "요금"@ko .
+    kno:surfaceForm "요금"@ko ;
+    kno:truncated "false"^^xsd:boolean .

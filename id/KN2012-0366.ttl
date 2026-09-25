@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0366 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0366 kno:languageType "한_한" ;
-    kno:example "¶은행권의 영업 경쟁이 치열해지면서 이른바 ‘{자폭 통장’이} 늘어나고 있다."@ko ;
-    kno:slotFiller "자폭(自爆) (1성분)"@ko ;
-    kno:frequency kno:KN2012-0366-freq-NN-2014 ;
-    kno:frequency kno:KN2012-0366-freq-NN-2012 ;
-    kno:predicate "입금하다"@ko ;
-    kno:frequency kno:KN2012-0366-freq-NN-2017 ;
-    kno:frequency kno:KN2012-0366-freq-NN-2016 ;
+kno:KN2012-0366 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "자폭 통장"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357253> ;
-    kno:componentString "자폭(自爆), 통장(通帳)"@ko ;
-    kno:instantiates kno:S000410 ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:component kno:KN2012-0366-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(自爆通帳)" ;
+    skos:definition "은행 직원이 영업 목표를 달성하기 위해 자신의 돈으로 입금하는 통장."@ko ;
     kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2012-0366-c1 ;
+    kno:component kno:KN2012-0366-c2 ;
+    kno:componentString "자폭(自爆), 통장(通帳)"@ko ;
+    kno:example "¶은행권의 영업 경쟁이 치열해지면서 이른바 ‘{자폭 통장’이} 늘어나고 있다."@ko ;
+    kno:frequency kno:KN2012-0366-freq-NN-2012 ;
+    kno:frequency kno:KN2012-0366-freq-NN-2013 ;
+    kno:frequency kno:KN2012-0366-freq-NN-2014 ;
+    kno:frequency kno:KN2012-0366-freq-NN-2015 ;
+    kno:frequency kno:KN2012-0366-freq-NN-2016 ;
+    kno:frequency kno:KN2012-0366-freq-NN-2017 ;
     kno:frequency kno:KN2012-0366-freq-NN-total ;
     kno:indexForm "자폭통장"@ko ;
-    kno:frequency kno:KN2012-0366-freq-NN-2013 ;
-    kno:urimalTargetCode "1357253" ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2012-0366-freq-NN-2015 ;
-    skos:definition "은행 직원이 영업 목표를 달성하기 위해 자신의 돈으로 입금하는 통장."@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2012-0366-c1 ;
-    rdfs:label "자폭 통장"@ko ;
+    kno:instantiates kno:S000410 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(自爆通帳)" ;
     kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear .
-kno:KN2012-0366-c2 kno:fullForm "통장"@ko ;
-    rdfs:label "통장(通帳)"@ko ;
-    kno:surfaceForm "통장"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000426 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
-kno:KN2012-0366-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:predicate "입금하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "자폭(自爆) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1357253" ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0366-c1 a kno:Component ;
+    rdfs:label "자폭(自爆)"@ko ;
+    kno:formative kno:F005534 ;
     kno:fullForm "자폭"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "자폭"@ko ;
-    kno:semanticTag kno:usas-A1.1.2 ;
-    a kno:Component ;
-    kno:formative kno:F005534 ;
     kno:role "슬롯 채움"@ko ;
-    rdfs:label "자폭(自爆)"@ko .
+    kno:semanticTag kno:usas-A1.1.2 ;
+    kno:surfaceForm "자폭"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0366-c2 a kno:Component ;
+    rdfs:label "통장(通帳)"@ko ;
+    kno:formative kno:F000426 ;
+    kno:fullForm "통장"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "통장"@ko ;
+    kno:truncated "false"^^xsd:boolean .

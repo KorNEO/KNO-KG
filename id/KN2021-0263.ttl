@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0263 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0263 kno:indexForm "코끝모"@ko ;
+kno:KN2021-0263 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "코끝모"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%81%9D%EB%AA%A8> ;
+    skos:definition "‘코로나19가 끝나면 모이자.’를 줄여 이르는 말. 코로나19의 확산과 그에 따른 사회적 거리 두기의 시행으로 인해 대면 모임이 힘들어진 상황에서 나온 말로, 주로 누리 소통망 서비스 따위에서 인사말로 사용된다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2021-0263-c1 ;
+    kno:component kno:KN2021-0263-c2 ;
+    kno:component kno:KN2021-0263-c3 ;
+    kno:componentString "코(로나)(corona), 끝, 모(이다)"@ko ;
+    kno:example "¶연휴지만 메신저를 통해 ‘{코끝모’를} 되뇌며 지인들과 또 한 번 다음을 기약하게 된다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2021-0263-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0263-freq-NN-total ;
+    kno:indexForm "코끝모"@ko ;
+    kno:instantiates kno:S001609 ;
+    kno:languageType "영+고+고" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
     kno:origin "(<영>←corona virus끝모)" ;
-    kno:year "2021"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    skos:definition "‘코로나19가 끝나면 모이자.’를 줄여 이르는 말. 코로나19의 확산과 그에 따른 사회적 거리 두기의 시행으로 인해 대면 모임이 힘들어진 상황에서 나온 말로, 주로 누리 소통망 서비스 따위에서 인사말로 사용된다."@ko ;
-    kno:languageType "영+고+고" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%81%9D%EB%AA%A8> ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:component kno:KN2021-0263-c2 ;
-    kno:frequency kno:KN2021-0263-freq-NN-total ;
-    kno:componentString "코(로나)(corona), 끝, 모(이다)"@ko ;
-    kno:instantiates kno:S001609 ;
-    a ontolex:Word ;
-    kno:component kno:KN2021-0263-c1 ;
-    kno:example "¶연휴지만 메신저를 통해 ‘{코끝모’를} 되뇌며 지인들과 또 한 번 다음을 기약하게 된다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:slotFiller "모(이다) (1성분)"@ko ;
-    kno:component kno:KN2021-0263-c3 ;
-    kno:frequency kno:KN2021-0263-freq-NN-2021 ;
-    kno:formation kno:W06 ;
-    rdfs:label "코끝모"@ko .
-kno:KN2021-0263-c2 a kno:Component ;
-    kno:semanticTag kno:usas-T2 ;
+    kno:unitType "단어"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0263-c1 a kno:Component ;
+    rdfs:label "코(로나)(corona)"@ko ;
+    kno:formative kno:F000237 ;
+    kno:fullForm "코로나"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:surfaceForm "코"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2021-0263-c2 a kno:Component ;
     rdfs:label "끝"@ko ;
     kno:formative kno:F000471 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "끝"@ko ;
+    kno:fullForm "끝"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:fullForm "끝"@ko .
-kno:KN2021-0263-c1 kno:surfaceForm "코"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "코(로나)(corona)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "코로나"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000237 ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-B2 .
-kno:KN2021-0263-c3 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "모"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "모이다"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S5p ;
-    kno:formative kno:F003480 ;
+    kno:semanticTag kno:usas-T2 ;
+    kno:surfaceForm "끝"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0263-c3 a kno:Component ;
     rdfs:label "모(이다)"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:formative kno:F003480 ;
+    kno:fullForm "모이다"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:surfaceForm "모"@ko ;
+    kno:truncated "true"^^xsd:boolean .

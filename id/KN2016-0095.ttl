@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0095 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0095 rdfs:label "대출 작업단"@ko ;
-    kno:origin "(貸出作業團)" ;
-    kno:frequency kno:KN2016-0095-freq-NN-total ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EC%B6%9C%20%EC%9E%91%EC%97%85%EB%8B%A8> ;
-    kno:component kno:KN2016-0095-c2 ;
-    kno:frequency kno:KN2016-0095-freq-NN-2016 ;
-    kno:registration "신어DB"@ko ;
-    kno:example "¶대출을 진행하는 {대출 작업단에는} 2명의 조폭도 있었다."@ko ;
-    kno:indexForm "대출작업단"@ko ;
-    kno:year "2016"^^xsd:gYear ;
+kno:KN2016-0095 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:instantiates kno:S000943 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:predicate "저지르다"@ko ;
+    rdfs:label "대출 작업단"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8C%80%EC%B6%9C%20%EC%9E%91%EC%97%85%EB%8B%A8> ;
     skos:definition "대출과 관련된 공문서를 위조하여 대출을 받는 등의 사기 범죄를 저지르는 사람. 또는 그런 무리."@ko ;
-    kno:languageType "한_한" ;
-    kno:slotFiller "대출(貸出) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0095-c1 ;
+    kno:component kno:KN2016-0095-c2 ;
     kno:component kno:KN2016-0095-c3 ;
     kno:componentString "대출(貸出), 작업(作業), -단(團)"@ko ;
-    kno:component kno:KN2016-0095-c1 ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2016-0095-c2 kno:semanticTag kno:usas-I3.1 ;
-    kno:surfaceForm "작업"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "작업(作業)"@ko ;
-    kno:formative kno:F000228 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "작업"@ko .
-kno:KN2016-0095-c3 kno:role "고정항"@ko ;
-    kno:formative kno:F000255 ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:surfaceForm "단"@ko ;
-    kno:fullForm "단"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "-단(團)"@ko ;
-    a kno:Component .
-kno:KN2016-0095-c1 kno:formative kno:F000167 ;
-    a kno:Component ;
+    kno:example "¶대출을 진행하는 {대출 작업단에는} 2명의 조폭도 있었다."@ko ;
+    kno:frequency kno:KN2016-0095-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0095-freq-NN-total ;
+    kno:indexForm "대출작업단"@ko ;
+    kno:instantiates kno:S000943 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(貸出作業團)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "저지르다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "대출(貸出) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0095-c1 a kno:Component ;
+    rdfs:label "대출(貸出)"@ko ;
+    kno:formative kno:F000167 ;
+    kno:fullForm "대출"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1.2 ;
     kno:surfaceForm "대출"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "대출"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "대출(貸出)"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0095-c2 a kno:Component ;
+    rdfs:label "작업(作業)"@ko ;
+    kno:formative kno:F000228 ;
+    kno:fullForm "작업"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "작업"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0095-c3 a kno:Component ;
+    rdfs:label "-단(團)"@ko ;
+    kno:formative kno:F000255 ;
+    kno:fullForm "단"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "단"@ko ;
+    kno:truncated "false"^^xsd:boolean .

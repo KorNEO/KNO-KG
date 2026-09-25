@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0265 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0265 kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「명」"@ko ;
-    skos:definition "직장과 가까운 곳에서 사는 것이 즐거움을 이르는 말. ‘직장’과 즐거움을 의미하는 한자어인 ‘락(樂)’을 결합하여 만든 말이다."@ko ;
-    kno:registration "신어DB"@ko ;
+kno:KN2023-0265 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "직락"@ko ;
-    kno:origin "(職樂)" ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2023-0265-freq-NN-2023 ;
-    kno:indexForm "직락"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%81%EB%9D%BD> ;
+    skos:definition "직장과 가까운 곳에서 사는 것이 즐거움을 이르는 말. ‘직장’과 즐거움을 의미하는 한자어인 ‘락(樂)’을 결합하여 만든 말이다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2023-0265-c1 ;
+    kno:component kno:KN2023-0265-c2 ;
+    kno:componentString "직(장)(職場), 낙(樂)"@ko ;
     kno:example "¶최근 분양 시장에서는 직장과 가까운 곳에 사는 것이 즐겁다는 의미를 담은 ‘{직락’이라는} 말이 유행이다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2023-0265-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0265-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0265-freq-NN-total ;
+    kno:indexForm "직락"@ko ;
     kno:languageType "한+한" ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:formation kno:W05 ;
-    kno:frequency kno:KN2023-0265-freq-NN-total ;
-    kno:component kno:KN2023-0265-c2 ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%81%EB%9D%BD> ;
-    kno:componentString "직(장)(職場), 낙(樂)"@ko ;
-    kno:component kno:KN2023-0265-c1 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0265-freq-NN-2022 .
-kno:KN2023-0265-c2 kno:position "2"^^xsd:integer ;
-    kno:fullForm "낙"@ko ;
-    kno:formative kno:F001137 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "낙(樂)"@ko ;
-    kno:semanticTag kno:usas-E4.1p ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "낙"@ko .
-kno:KN2023-0265-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:origin "(職樂)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0265-c1 a kno:Component ;
+    rdfs:label "직(장)(職場)"@ko ;
+    kno:formative kno:F001789 ;
+    kno:fullForm "직장"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    rdfs:label "직(장)(職場)"@ko ;
-    a kno:Component ;
-    kno:fullForm "직장"@ko ;
     kno:semanticTag kno:usas-I3.1 ;
-    kno:formative kno:F001789 ;
-    kno:surfaceForm "직"@ko .
+    kno:surfaceForm "직"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0265-c2 a kno:Component ;
+    rdfs:label "낙(樂)"@ko ;
+    kno:formative kno:F001137 ;
+    kno:fullForm "낙"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-E4.1p ;
+    kno:surfaceForm "낙"@ko ;
+    kno:truncated "false"^^xsd:boolean .

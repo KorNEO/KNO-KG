@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0118 a kno:Neologism ;
-    kno:unitType "구"@ko ;
+kno:KN2025-0118 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "내란 수면 장애"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EC%88%98%EB%A9%B4%20%EC%9E%A5%EC%95%A0> ;
     skos:definition "(LLM) 정치적 혼란이나 국가적 위기와 관련한 소식에 분노하거나 불안해 잠을 이루지 못하는 상태를 이르는 말."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:instantiates kno:S000092 ;
+    kno:component kno:KN2025-0118-c1 ;
     kno:component kno:KN2025-0118-c2 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EC%88%98%EB%A9%B4%20%EC%9E%A5%EC%95%A0> ;
+    kno:component kno:KN2025-0118-c3 ;
     kno:componentString "내란(內亂), 수면(睡眠), 장애(障礙)"@ko ;
-    kno:slotFiller "수면(睡眠)+장애(障礙) (2성분)"@ko ;
+    kno:example "(LLM) 관련 뉴스가 연일 이어지자 불안감이 커져 {내란수면장애에} 시달리며 새벽까지 잠을 설쳤다."@ko ;
+    kno:indexForm "내란수면장애"@ko ;
+    kno:instantiates kno:S000092 ;
+    kno:instantiates kno:S000947 ;
     kno:languageType "한_한_한" ;
     kno:origin "(內亂睡眠障礙)" ;
-    kno:component kno:KN2025-0118-c3 ;
-    kno:instantiates kno:S000947 ;
-    kno:component kno:KN2025-0118-c1 ;
-    kno:example "(LLM) 관련 뉴스가 연일 이어지자 불안감이 커져 {내란수면장애에} 시달리며 새벽까지 잠을 설쳤다."@ko ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:indexForm "내란수면장애"@ko ;
-    rdfs:label "내란 수면 장애"@ko ;
-    kno:slotFiller "내란(內亂)+수면(睡眠) (2성분)"@ko .
-kno:KN2025-0118-c2 kno:fullForm "수면"@ko ;
-    rdfs:label "수면(睡眠)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000816 ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:surfaceForm "수면"@ko .
-kno:KN2025-0118-c3 kno:position "3"^^xsd:integer ;
-    rdfs:label "장애(障礙)"@ko ;
-    kno:fullForm "장애"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F001736 ;
-    kno:semanticTag kno:usas-B2m ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "장애"@ko .
-kno:KN2025-0118-c1 kno:surfaceForm "내란"@ko ;
+    kno:slotFiller "내란(內亂)+수면(睡眠) (2성분)"@ko ;
+    kno:slotFiller "수면(睡眠)+장애(障礙) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0118-c1 a kno:Component ;
     rdfs:label "내란(內亂)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G3m ;
     kno:formative kno:F000052 ;
     kno:fullForm "내란"@ko ;
-    kno:role "고정항"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G3m ;
+    kno:surfaceForm "내란"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0118-c2 a kno:Component ;
+    rdfs:label "수면(睡眠)"@ko ;
+    kno:formative kno:F000816 ;
+    kno:fullForm "수면"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "수면"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0118-c3 a kno:Component ;
+    rdfs:label "장애(障礙)"@ko ;
+    kno:formative kno:F001736 ;
+    kno:fullForm "장애"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "장애"@ko ;
     kno:truncated "false"^^xsd:boolean .

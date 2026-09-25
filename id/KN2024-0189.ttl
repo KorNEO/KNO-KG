@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0189 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0189 skos:definition "‘영어’와 ‘사회 탐구 영역’, ‘과학 탐구 영역’을 줄여 이르는 말. 대학 수학 능력 시험의 주요 5과목 중 국어와 수학을 제외한 3과목을 의미한다."@ko ;
-    kno:componentString "영(어)(英語), 탐(구)(探究), 탐(구)(探究)"@ko ;
-    kno:languageType "한+한+한" ;
-    kno:registration "신어DB"@ko ;
-    rdfs:label "영탐탐"@ko ;
-    kno:frequency kno:KN2024-0189-freq-NN-total ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:component kno:KN2024-0189-c1 ;
-    kno:unitType "단어"@ko ;
+kno:KN2024-0189 a ontolex:Word ;
     a kno:Neologism ;
-    kno:frequency kno:KN2024-0189-freq-NN-2023 ;
-    kno:example "¶전반적인 수능 최저 학력 기준도 완화되어 인문 계열은 상대적으로 등급의 확보가 쉬운 {영탐탐의} 조합으로도 최저 기준의 충족이 가능해졌다."@ko ;
+    rdfs:label "영탐탐"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%98%81%ED%83%90%ED%83%90> ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2024-0189-c3 ;
-    kno:formation kno:W06 ;
-    kno:origin "(英探探)" ;
-    a ontolex:Word ;
-    kno:indexForm "영탐탐"@ko ;
-    kno:pos "「명」"@ko ;
+    skos:definition "‘영어’와 ‘사회 탐구 영역’, ‘과학 탐구 영역’을 줄여 이르는 말. 대학 수학 능력 시험의 주요 5과목 중 국어와 수학을 제외한 3과목을 의미한다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2024-0189-c2 .
-kno:KN2024-0189-c1 kno:position "1"^^xsd:integer ;
+    kno:component kno:KN2024-0189-c1 ;
+    kno:component kno:KN2024-0189-c2 ;
+    kno:component kno:KN2024-0189-c3 ;
+    kno:componentString "영(어)(英語), 탐(구)(探究), 탐(구)(探究)"@ko ;
+    kno:example "¶전반적인 수능 최저 학력 기준도 완화되어 인문 계열은 상대적으로 등급의 확보가 쉬운 {영탐탐의} 조합으로도 최저 기준의 충족이 가능해졌다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2024-0189-freq-NN-2023 ;
+    kno:frequency kno:KN2024-0189-freq-NN-total ;
+    kno:indexForm "영탐탐"@ko ;
+    kno:languageType "한+한+한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(英探探)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0189-c1 a kno:Component ;
+    rdfs:label "영(어)(英語)"@ko ;
+    kno:formative kno:F005075 ;
     kno:fullForm "영어"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
     kno:semanticTag kno:usas-Q3 ;
-    kno:formative kno:F005075 ;
-    a kno:Component ;
-    rdfs:label "영(어)(英語)"@ko ;
     kno:surfaceForm "영"@ko ;
     kno:truncated "true"^^xsd:boolean .
-kno:KN2024-0189-c3 kno:surfaceForm "탐"@ko ;
+kno:KN2024-0189-c2 a kno:Component ;
     rdfs:label "탐(구)(探究)"@ko ;
     kno:formative kno:F006407 ;
-    a kno:Component ;
     kno:fullForm "탐구"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-X2.4 ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2024-0189-c2 kno:fullForm "탐구"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "탐"@ko ;
     kno:semanticTag kno:usas-X2.4 ;
+    kno:surfaceForm "탐"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0189-c3 a kno:Component ;
     rdfs:label "탐(구)(探究)"@ko ;
-    kno:formative kno:F006407 .
+    kno:formative kno:F006407 ;
+    kno:fullForm "탐구"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-X2.4 ;
+    kno:surfaceForm "탐"@ko ;
+    kno:truncated "true"^^xsd:boolean .

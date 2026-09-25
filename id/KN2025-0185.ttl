@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0185 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0185 kno:registration "신어DB"@ko ;
+kno:KN2025-0185 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "따소물"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B0%EC%86%8C%EB%AC%BC> ;
+    skos:definition "(LLM) ‘따뜻한 소금물’을 줄여 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0185-c1 ;
+    kno:component kno:KN2025-0185-c2 ;
+    kno:component kno:KN2025-0185-c3 ;
+    kno:componentString "따(뜻하다), 소(금), 물"@ko ;
+    kno:example "(LLM) 아침 공복에 {따소물을} 마시면 속이 편하다는 이야기가 퍼지면서 따라 하는 사람이 늘었다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0185-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0185-freq-NN-total ;
+    kno:indexForm "따소물"@ko ;
+    kno:instantiates kno:S001264 ;
+    kno:languageType "고+고+고" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "소(금)+물 (2성분)"@ko ;
     kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2025-0185-freq-NN-2025 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B0%EC%86%8C%EB%AC%BC> ;
-    rdfs:label "따소물"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "(LLM) ‘따뜻한 소금물’을 줄여 이르는 말."@ko ;
-    kno:indexForm "따소물"@ko ;
-    kno:formation kno:W06 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:languageType "고+고+고" ;
-    kno:component kno:KN2025-0185-c3 ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:instantiates kno:S001264 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0185-c2 ;
-    kno:example "(LLM) 아침 공복에 {따소물을} 마시면 속이 편하다는 이야기가 퍼지면서 따라 하는 사람이 늘었다."@ko ;
-    kno:frequency kno:KN2025-0185-freq-NN-total ;
-    kno:componentString "따(뜻하다), 소(금), 물"@ko ;
-    kno:component kno:KN2025-0185-c1 .
-kno:KN2025-0185-c3 kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "물"@ko ;
-    kno:formative kno:F000756 ;
-    kno:surfaceForm "물"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-O1.2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "물"@ko .
-kno:KN2025-0185-c2 a kno:Component ;
-    kno:fullForm "소금"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:surfaceForm "소"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "소(금)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F004389 .
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0185-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "따뜻하다"@ko ;
-    kno:semanticTag kno:usas-O4.6p ;
     rdfs:label "따(뜻하다)"@ko ;
     kno:formative kno:F000490 ;
+    kno:fullForm "따뜻하다"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "따"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.6p ;
+    kno:surfaceForm "따"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0185-c2 a kno:Component ;
+    rdfs:label "소(금)"@ko ;
+    kno:formative kno:F004389 ;
+    kno:fullForm "소금"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "소"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0185-c3 a kno:Component ;
+    rdfs:label "물"@ko ;
+    kno:formative kno:F000756 ;
+    kno:fullForm "물"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-O1.2 ;
+    kno:surfaceForm "물"@ko ;
+    kno:truncated "false"^^xsd:boolean .

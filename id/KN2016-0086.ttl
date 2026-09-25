@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0086 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0086 kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(單離香料)" ;
-    kno:frequency kno:KN2016-0086-freq-NN-2015 ;
-    kno:indexForm "단리향료"@ko ;
-    kno:year "2016"^^xsd:gYear ;
+kno:KN2016-0086 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
     rdfs:label "단리 향료"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2016-0086-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EB%A6%AC%20%ED%96%A5%EB%A3%8C> ;
+    skos:definition "천연 소재에서 물리 화학적인 방법으로 추출한 향료."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2016-0086-c1 ;
     kno:component kno:KN2016-0086-c2 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EB%A6%AC%20%ED%96%A5%EB%A3%8C> ;
-    kno:languageType "한_한" ;
-    kno:activeYears "3"^^xsd:integer ;
+    kno:componentString "단리(單離), 향료(香料)"@ko ;
+    kno:example "¶테르펜 화합물은 정유로부터 {단리 향료를} 가공해 사용했으나, 사용량이 증가하면서 합성해 사용하고 있다."@ko ;
+    kno:frequency kno:KN2016-0086-freq-NN-2015 ;
     kno:frequency kno:KN2016-0086-freq-NN-2016 ;
     kno:frequency kno:KN2016-0086-freq-NN-2019 ;
-    kno:componentString "단리(單離), 향료(香料)"@ko ;
-    skos:definition "천연 소재에서 물리 화학적인 방법으로 추출한 향료."@ko ;
-    kno:example "¶테르펜 화합물은 정유로부터 {단리 향료를} 가공해 사용했으나, 사용량이 증가하면서 합성해 사용하고 있다."@ko .
-kno:KN2016-0086-c1 kno:surfaceForm "단리"@ko ;
+    kno:frequency kno:KN2016-0086-freq-NN-total ;
+    kno:indexForm "단리향료"@ko ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(單離香料)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0086-c1 a kno:Component ;
     rdfs:label "단리(單離)"@ko ;
+    kno:formative kno:F002865 ;
     kno:fullForm "단리"@ko ;
-    kno:semanticTag kno:usas-Y1 ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F002865 .
-kno:KN2016-0086-c2 kno:formative kno:F007032 ;
-    kno:surfaceForm "향료"@ko ;
-    kno:fullForm "향료"@ko ;
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "단리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0086-c2 a kno:Component ;
     rdfs:label "향료(香料)"@ko ;
-    kno:semanticTag kno:usas-B4 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-X3.5 ;
+    kno:formative kno:F007032 ;
+    kno:fullForm "향료"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-B4 ;
+    kno:semanticTag kno:usas-X3.5 ;
+    kno:surfaceForm "향료"@ko ;
+    kno:truncated "false"^^xsd:boolean .

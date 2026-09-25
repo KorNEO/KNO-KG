@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0036 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0036 kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2016-0036-c2 ;
-    kno:languageType "한_고" ;
-    kno:instantiates kno:S000060 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0036-freq-NN-2016 ;
+kno:KN2016-0036 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "국민 아재"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372471> ;
     skos:definition "국민적인 지지를 받는 아저씨를 낮추어 이르는 말."@ko ;
-    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0036-c1 ;
+    kno:component kno:KN2016-0036-c2 ;
+    kno:componentString "국민(國民), 아재"@ko ;
+    kno:example "¶{국민 아재들이} 파격 변신을 시도했다."@ko ;
+    kno:frequency kno:KN2016-0036-freq-NN-2016 ;
     kno:frequency kno:KN2016-0036-freq-NN-2022 ;
     kno:frequency kno:KN2016-0036-freq-NN-total ;
-    kno:componentString "국민(國民), 아재"@ko ;
     kno:indexForm "국민아재"@ko ;
-    rdfs:label "국민 아재"@ko ;
-    kno:example "¶{국민 아재들이} 파격 변신을 시도했다."@ko ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2016-0036-c1 ;
-    kno:urimalTargetCode "1372471" ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:instantiates kno:S000060 ;
+    kno:languageType "한_고" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:origin "(國民아재)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "아재 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1372471" ;
     kno:year "2016"^^xsd:gYear .
-kno:KN2016-0036-c2 kno:surfaceForm "아재"@ko ;
-    rdfs:label "아재"@ko ;
-    kno:semanticTag kno:usas-T3p ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "아재"@ko ;
-    kno:formative kno:F000028 ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S2.2 .
-kno:KN2016-0036-c1 kno:formative kno:F000055 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "국민"@ko ;
-    kno:surfaceForm "국민"@ko ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+kno:KN2016-0036-c1 a kno:Component ;
     rdfs:label "국민(國民)"@ko ;
-    a kno:Component .
+    kno:formative kno:F000055 ;
+    kno:fullForm "국민"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국민"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0036-c2 a kno:Component ;
+    rdfs:label "아재"@ko ;
+    kno:formative kno:F000028 ;
+    kno:fullForm "아재"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S2.2 ;
+    kno:semanticTag kno:usas-T3p ;
+    kno:surfaceForm "아재"@ko ;
+    kno:truncated "false"^^xsd:boolean .

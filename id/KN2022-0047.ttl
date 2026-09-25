@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0047 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0047 kno:year "2022"^^xsd:gYear ;
-    kno:origin "(敎育回復推進團)" ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S000264 ;
-    kno:slotFiller "회복(回復)+추진단(推進團) (2성분)"@ko ;
-    kno:frequency kno:KN2022-0047-freq-NN-total ;
-    rdfs:label "교육^회복^추진단"@ko ;
-    kno:component kno:KN2022-0047-c1 ;
+kno:KN2022-0047 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2022-0047-freq-NN-2021 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    skos:definition "코로나19의 장기화로 인해 발생하게 된 학생들의 학습, 사회성 등의 교육 결손을 해결하기 위하여 만들어진 추진단. 국내에서는 인천시 교육청이 최초로 시행하였다."@ko ;
-    kno:componentString "교육(敎育), 회복(回復), 추진단(推進團)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:indexForm "교육회복추진단"@ko ;
-    kno:component kno:KN2022-0047-c2 ;
-    kno:languageType "한^한^한" ;
-    kno:frequency kno:KN2022-0047-freq-NN-2022 ;
-    kno:example "¶O 교육감은 코로나19로 발생한 학습 결손의 회복을 위하여 {교육 회복 추진단의} 구성 및 학교 방역 강화, 혁신 미래 교육 추진 등을 제안하였다."@ko ;
+    rdfs:label "교육^회복^추진단"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%90%EC%9C%A1%ED%9A%8C%EB%B3%B5%EC%B6%94%EC%A7%84%EB%8B%A8> ;
+    skos:definition "코로나19의 장기화로 인해 발생하게 된 학생들의 학습, 사회성 등의 교육 결손을 해결하기 위하여 만들어진 추진단. 국내에서는 인천시 교육청이 최초로 시행하였다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2022-0047-c1 ;
+    kno:component kno:KN2022-0047-c2 ;
+    kno:component kno:KN2022-0047-c3 ;
+    kno:componentString "교육(敎育), 회복(回復), 추진단(推進團)"@ko ;
+    kno:example "¶O 교육감은 코로나19로 발생한 학습 결손의 회복을 위하여 {교육 회복 추진단의} 구성 및 학교 방역 강화, 혁신 미래 교육 추진 등을 제안하였다."@ko ;
+    kno:frequency kno:KN2022-0047-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0047-freq-NN-2022 ;
     kno:frequency kno:KN2022-0047-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0047-freq-NN-total ;
+    kno:indexForm "교육회복추진단"@ko ;
+    kno:instantiates kno:S000264 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(敎育回復推進團)" ;
     kno:pos "「구」"@ko ;
-    kno:component kno:KN2022-0047-c3 .
-kno:KN2022-0047-c1 kno:surfaceForm "교육"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "회복(回復)+추진단(推進團) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0047-c1 a kno:Component ;
     rdfs:label "교육(敎育)"@ko ;
-    kno:fullForm "교육"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
     kno:formative kno:F000127 ;
-    kno:role "고정항"@ko .
-kno:KN2022-0047-c2 kno:surfaceForm "회복"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000442 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2p ;
+    kno:fullForm "교육"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "교육"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0047-c2 a kno:Component ;
     rdfs:label "회복(回復)"@ko ;
+    kno:formative kno:F000442 ;
     kno:fullForm "회복"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2022-0047-c3 kno:position "3"^^xsd:integer ;
-    rdfs:label "추진단(推進團)"@ko ;
-    a kno:Component ;
-    kno:fullForm "추진단"@ko ;
-    kno:surfaceForm "추진단"@ko ;
-    kno:semanticTag kno:usas-G1.1 ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B2p ;
+    kno:surfaceForm "회복"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0047-c3 a kno:Component ;
+    rdfs:label "추진단(推進團)"@ko ;
+    kno:formative kno:F006124 ;
+    kno:fullForm "추진단"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
     kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F006124 .
+    kno:surfaceForm "추진단"@ko ;
+    kno:truncated "false"^^xsd:boolean .

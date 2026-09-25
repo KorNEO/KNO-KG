@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0044 a kno:Neologism ;
-    kno:frequency kno:KN2023-0044-freq-NN-2024 ;
-    kno:activeYears "3"^^xsd:integer ;
+kno:KN2023-0044 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "금융^교육^진흥법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EC%9C%B5%EA%B5%90%EC%9C%A1%EC%A7%84%ED%9D%A5%EB%B2%95> ;
+    skos:definition "학교 정규 교과 과정에 금융 교육을 편성하여 공교육을 통해 초중고 학생들에게 금융 교육이 이루어질 수 있도록 금융 교육의 진흥에 필요한 사항을 규정한 법률."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0044-c1 ;
+    kno:component kno:KN2023-0044-c2 ;
+    kno:component kno:KN2023-0044-c3 ;
+    kno:componentString "금융(金融), 교육(敎育), 진흥법(振興法)"@ko ;
+    kno:example "¶OOO은 학생들이 올바른 금융 활동 역량을 갖추고 금융에 대한 지식을 습득하여, 향후 경제 활동 과정에서 합리적인 의사 결정에 도움을 주는 것을 목적으로 하는 법안인 {금융 교육 진흥법을} 대표 발의하였다."@ko ;
+    kno:frequency kno:KN2023-0044-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0044-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0044-freq-NN-2025 ;
+    kno:frequency kno:KN2023-0044-freq-NN-total ;
     kno:indexForm "금융교육진흥법"@ko ;
+    kno:instantiates kno:S000190 ;
+    kno:instantiates kno:S000395 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:slotFiller "금융(金融)+교육(敎育) (2성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2023-0044-freq-NN-total ;
-    kno:instantiates kno:S000395 ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2023-0044-freq-NN-2025 ;
     kno:origin "(金融敎育振興法)" ;
-    kno:component kno:KN2023-0044-c1 ;
-    kno:frequency kno:KN2023-0044-freq-NN-2023 ;
-    kno:instantiates kno:S000190 ;
-    kno:componentString "금융(金融), 교육(敎育), 진흥법(振興法)"@ko ;
-    kno:component kno:KN2023-0044-c3 ;
-    kno:example "¶OOO은 학생들이 올바른 금융 활동 역량을 갖추고 금융에 대한 지식을 습득하여, 향후 경제 활동 과정에서 합리적인 의사 결정에 도움을 주는 것을 목적으로 하는 법안인 {금융 교육 진흥법을} 대표 발의하였다."@ko ;
-    skos:definition "학교 정규 교과 과정에 금융 교육을 편성하여 공교육을 통해 초중고 학생들에게 금융 교육이 이루어질 수 있도록 금융 교육의 진흥에 필요한 사항을 규정한 법률."@ko ;
-    kno:slotFiller "교육(敎育)+진흥법(振興法) (2성분)"@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%88%EC%9C%B5%EA%B5%90%EC%9C%A1%EC%A7%84%ED%9D%A5%EB%B2%95> ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0044-c2 .
-kno:KN2023-0044-c1 kno:formative kno:F000068 ;
+    kno:slotFiller "교육(敎育)+진흥법(振興法) (2성분)"@ko ;
+    kno:slotFiller "금융(金融)+교육(敎育) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0044-c1 a kno:Component ;
     rdfs:label "금융(金融)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F000068 ;
     kno:fullForm "금융"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "금융"@ko .
-kno:KN2023-0044-c3 kno:semanticTag kno:usas-G2.1 ;
-    kno:fullForm "진흥법"@ko ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "진흥법"@ko ;
-    rdfs:label "진흥법(振興法)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000935 .
+    kno:surfaceForm "금융"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2023-0044-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
     rdfs:label "교육(敎育)"@ko ;
+    kno:formative kno:F000127 ;
     kno:fullForm "교육"@ko ;
-    kno:surfaceForm "교육"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-P1 ;
-    kno:formative kno:F000127 .
+    kno:surfaceForm "교육"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0044-c3 a kno:Component ;
+    rdfs:label "진흥법(振興法)"@ko ;
+    kno:formative kno:F000935 ;
+    kno:fullForm "진흥법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "진흥법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

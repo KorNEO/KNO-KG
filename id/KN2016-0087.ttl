@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0087 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0087 kno:registration "신어DB"@ko ;
-    rdfs:label "단식^로켓"@ko ;
-    kno:instantiates kno:S000788 ;
+kno:KN2016-0087 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:frequency kno:KN2016-0087-freq-NN-2015 ;
-    kno:example "¶최종 단계는 로켓을 분리하지 않고 통째로 회수하는 ‘{단식 로켓’의} 개발이지만 중력을 이기는 강력한 로켓 개발에는 아직 성공하지 못했다."@ko ;
-    kno:component kno:KN2016-0087-c2 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "단식로켓"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(單式<영>rocket)" ;
-    kno:componentString "단식(單式), 로켓(rocket)"@ko ;
-    kno:frequency kno:KN2016-0087-freq-NN-total ;
-    kno:frequency kno:KN2016-0087-freq-NN-2020 ;
+    rdfs:label "단식^로켓"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EC%8B%9D%EB%A1%9C%EC%BC%93> ;
     skos:definition "하나의 단으로 이루어진 로켓. 연소가 끝난 부분을 버리는 다단식 로켓과 달리 동체의 변화 없이 지구로 귀환하므로 분리 실패가 없으며, 로켓을 재활용할 수 있다는 장점이 있다."@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:component kno:KN2016-0087-c1 ;
-    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0087-c2 ;
+    kno:componentString "단식(單式), 로켓(rocket)"@ko ;
+    kno:example "¶최종 단계는 로켓을 분리하지 않고 통째로 회수하는 ‘{단식 로켓’의} 개발이지만 중력을 이기는 강력한 로켓 개발에는 아직 성공하지 못했다."@ko ;
+    kno:frequency kno:KN2016-0087-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0087-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0087-freq-NN-total ;
+    kno:indexForm "단식로켓"@ko ;
+    kno:instantiates kno:S000788 ;
+    kno:languageType "한^영" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(單式<영>rocket)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "단식(單式) (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:languageType "한^영" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8B%A8%EC%8B%9D%EB%A1%9C%EC%BC%93> .
-kno:KN2016-0087-c2 kno:role "고정항"@ko ;
-    rdfs:label "로켓(rocket)"@ko ;
-    kno:formative kno:F000733 ;
-    kno:surfaceForm "로켓"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M5 ;
-    kno:fullForm "로켓"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:year "2016"^^xsd:gYear .
 kno:KN2016-0087-c1 a kno:Component ;
     rdfs:label "단식(單式)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "단식"@ko ;
     kno:formative kno:F002869 ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "단식"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "단식"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0087-c2 a kno:Component ;
+    rdfs:label "로켓(rocket)"@ko ;
+    kno:formative kno:F000733 ;
+    kno:fullForm "로켓"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M5 ;
+    kno:surfaceForm "로켓"@ko ;
     kno:truncated "false"^^xsd:boolean .

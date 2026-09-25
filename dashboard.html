@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Noto+Sans+KR:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
   <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v=89a7df77">
 </head>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
@@ -39,6 +39,14 @@
 .table-wrap { max-height: 420px; overflow: auto; margin-bottom: 1rem; }
 sub { font-size: 0.72em; }
 @media (max-width: 900px) { .dash-cards { grid-template-columns: repeat(2, 1fr); } .two-col { grid-template-columns: 1fr; } }
+@media (max-width: 600px) {
+  .dash-toc li a { min-height: 44px; font-size: 0.84rem; padding: 0.4rem 0.6rem; }
+  .dash-cards { gap: 0.6rem; }
+  .chart-box { margin-left: -0.3rem; margin-right: -0.3rem; }
+  .chart-box:has(#c-slot) { height: 640px !important; }
+  .dl-png { padding: 0.3rem 0.6rem; font-size: 0.72rem; }
+  .table-wrap { max-height: 60vh; }
+}
 </style>
 <body>
   <nav class="top-nav">
@@ -83,7 +91,10 @@ b.addEventListener('click',function(){var e=b.getAttribute('aria-expanded')==='t
     });
     ctx.restore();
   } };
-  function subTicks() { return { autoSkip: false, font: { size: 11 }, color: 'rgba(0,0,0,0)' }; }
+  // 휴대폰(폭 600 미만): 긴 스키마 표기는 줄이고(범주 꼬리 ]N 은 남김) 범례는 아래로
+  var NARROW = window.innerWidth < 600;
+  function shortLab(l) { l = String(l == null ? '' : l); if (!NARROW) return l; var m = l.match(/^(.*\])([A-Za-z\/·]+)( - X=.+)?$/), b = m ? m[1].slice(0, -1) : l; if (b.length <= 13) return l; return m ? b.slice(0, 12) + '…]' + m[2] : b.slice(0, 13) + '…'; }
+  function subTicks() { return { autoSkip: false, font: { size: 11 }, color: 'rgba(0,0,0,0)', callback: function (v) { return shortLab(this.getLabelForValue(v)); } }; }
   function htmlLegend(chart) {
     var box = chart.canvas.parentNode, div = document.createElement('div'); div.className = 'html-legend';
     div.innerHTML = chart.data.datasets.map(function (d) { return '<span><i style="background:' + d.borderColor + '"></i>' + subH(d.label) + '</span>'; }).join('');
@@ -162,7 +173,7 @@ b.addEventListener('click',function(){var e=b.getAttribute('aria-expanded')==='t
   var majors = Object.keys(D.usas_ko).sort();
   var MAJ_COL = ['#1e3a8a', '#2a78d6', '#93c5fd', '#0f766e', '#1baf7a', '#a7f3d0', '#a16207', '#eda100', '#fde68a', '#4a3aa7', '#8b7bd6', '#c4b5fd', '#9f1239', '#e34948', '#fca5a5', '#334155', '#64748b', '#94a3b8', '#cbd5e1', '#0891b2', '#67e8f9'];
   new Chart(document.getElementById('c-slot'), { type: 'bar', data: { labels: D.slot_top.map(function (d) { return d.label; }), datasets: majors.map(function (m, i) { return { label: m + ' ' + D.usas_ko[m], data: D.slot_top.map(function (d) { var p = d.dist.filter(function (x) { return x[0] === m; })[0]; return p ? p[1] : 0; }), backgroundColor: MAJ_COL[i % MAJ_COL.length] }; }) },
-    options: opts({ indexAxis: 'y', plugins: { legend: { display: true, position: 'right', labels: { boxWidth: 10, font: { size: 10 } } }, title: { display: true, text: '상위 스키마의 슬롯 X 의미 태그 분포 (대범주)' } }, scales: { x: { stacked: true, beginAtZero: true, grid: grid }, y: { stacked: true, grid: { display: false }, ticks: subTicks() } }, subTick: true }), plugins: [subTick] });
+    options: opts({ indexAxis: 'y', plugins: { legend: { display: true, position: NARROW ? 'bottom' : 'right', labels: { boxWidth: 10, font: { size: NARROW ? 11 : 10 } } }, title: { display: true, text: '상위 스키마의 슬롯 X 의미 태그 분포 (대범주)' } }, scales: { x: { stacked: true, beginAtZero: true, grid: grid }, y: { stacked: true, grid: { display: false }, ticks: subTicks() } }, subTick: true }), plugins: [subTick] });
   tbl('t-slot', [['스키마', function (d) { return subH(d.label); }, true], ['유형 수', 'n'], ['슬롯 X 태그 (대범주: 사례 수)', function (d) { return d.dist.slice().sort(function (a, b) { return b[1] - a[1]; }).slice(0, 8).map(function (p) { return p[0] + ' ' + D.usas_ko[p[0]] + ' ' + p[1]; }).join(' · '); }]], D.slot_top);
   new Chart(document.getElementById('c-cat'), { type: 'bar', data: { labels: D.cat.map(function (d) { return d.cat; }), datasets: [{ label: '신어', data: D.cat.map(function (d) { return d.neo; }), backgroundColor: BLUE }, { label: '스키마', data: D.cat.map(function (d) { return d.schema; }), backgroundColor: ORANGE }] }, options: opts({ indexAxis: 'y', plugins: { legend: legendTop(), title: { display: true, text: '의미 범주별 신어·스키마' } }, scales: { x: { beginAtZero: true, grid: grid }, y: { grid: { display: false } } } }) });
   tbl('t-cat', [['의미 범주', 'cat'], ['신어', 'neo'], ['스키마', 'schema'], ['대표 스키마', function (d) { return d.top.map(subH).join(' · '); }, true]], D.cat);

@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0091 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0091 kno:frequency kno:KN2021-0091-freq-NN-2023 ;
-    kno:registration "신어DB"@ko ;
-    kno:predicate "돕다"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:activeYears "4"^^xsd:integer ;
-    skos:definition "온라인상에서 학습자에게 필요한 능력을 개발할 수 있도록 돕는 일. 코로나19의 확산을 방지하기 위해 비대면으로 하는 활동이 일반화되는 상황에서 나온 말이다."@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:slotFiller "코칭(coaching) (1성분)"@ko ;
+kno:KN2021-0091 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "랜선 코칭"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%EC%84%A0%20%EC%BD%94%EC%B9%AD> ;
+    skos:definition "온라인상에서 학습자에게 필요한 능력을 개발할 수 있도록 돕는 일. 코로나19의 확산을 방지하기 위해 비대면으로 하는 활동이 일반화되는 상황에서 나온 말이다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2021-0091-c1 ;
+    kno:component kno:KN2021-0091-c2 ;
+    kno:componentString "랜선(LAN線), 코칭(coaching)"@ko ;
+    kno:example "¶이번 프로그램에서는 수도권 이외 지역의 소상공인들에게 전문 강사의 {랜선 코칭을} 받을 수 있는 기회를 제공한다."@ko ;
     kno:frequency kno:KN2021-0091-freq-NN-2020 ;
     kno:frequency kno:KN2021-0091-freq-NN-2021 ;
-    kno:languageType "(영+한)_영" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%9E%9C%EC%84%A0%20%EC%BD%94%EC%B9%AD> ;
-    kno:origin "(<영>LAN線<영>coaching)" ;
-    kno:instantiates kno:S000053 ;
-    kno:example "¶이번 프로그램에서는 수도권 이외 지역의 소상공인들에게 전문 강사의 {랜선 코칭을} 받을 수 있는 기회를 제공한다."@ko ;
-    kno:indexForm "랜선코칭"@ko ;
-    kno:unitType "구"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0091-freq-NN-total ;
     kno:frequency kno:KN2021-0091-freq-NN-2022 ;
-    a kno:Neologism ;
-    kno:componentString "랜선(LAN線), 코칭(coaching)"@ko ;
-    kno:component kno:KN2021-0091-c1 ;
-    kno:component kno:KN2021-0091-c2 .
-kno:KN2021-0091-c1 kno:role "고정항"@ko ;
+    kno:frequency kno:KN2021-0091-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0091-freq-NN-total ;
+    kno:indexForm "랜선코칭"@ko ;
+    kno:instantiates kno:S000053 ;
+    kno:languageType "(영+한)_영" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(<영>LAN線<영>coaching)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "돕다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "코칭(coaching) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0091-c1 a kno:Component ;
+    rdfs:label "랜선(LAN線)"@ko ;
     kno:formative kno:F000099 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "랜선"@ko ;
-    kno:surfaceForm "랜선"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Y2 ;
-    a kno:Component ;
-    rdfs:label "랜선(LAN線)"@ko .
-kno:KN2021-0091-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-P1 ;
-    a kno:Component ;
-    kno:fullForm "코칭"@ko ;
+    kno:surfaceForm "랜선"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0091-c2 a kno:Component ;
     rdfs:label "코칭(coaching)"@ko ;
     kno:formative kno:F006301 ;
-    kno:surfaceForm "코칭"@ko ;
+    kno:fullForm "코칭"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "코칭"@ko ;
+    kno:truncated "false"^^xsd:boolean .

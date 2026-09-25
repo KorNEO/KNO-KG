@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0078 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0078 kno:example "¶마늘과 고춧가루로 매운맛을 내는 한국 음식과 달리 마라는 독특한 매운맛으로 마라에 중독되어 헤어 나오지 못하는 수많은 {‘마덕’들을} 양산했다."@ko ;
-    kno:component kno:KN2019-0078-c1 ;
-    a ontolex:Word ;
-    kno:component kno:KN2019-0078-c2 ;
+kno:KN2019-0078 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "마덕"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%8D%95> ;
     skos:definition "‘마라 덕후’를 줄여 이르는 말. 얼얼하면서 매운 맛을 내는 ‘마라’라는 향신료를 넣은 음식 따위를 열성적으로 좋아하는 사람을 뜻하는 말이다. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2019-0078-c1 ;
+    kno:component kno:KN2019-0078-c2 ;
+    kno:componentString "마(라)(mala), 덕(후)"@ko ;
+    kno:example "¶마늘과 고춧가루로 매운맛을 내는 한국 음식과 달리 마라는 독특한 매운맛으로 마라에 중독되어 헤어 나오지 못하는 수많은 {‘마덕’들을} 양산했다."@ko ;
     kno:formation kno:W06 ;
     kno:indexForm "마덕"@ko ;
+    kno:languageType "중+고" ;
     kno:origin "(<중>←mala[麻辣]덕)" ;
-    kno:componentString "마(라)(mala), 덕(후)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%88%EB%8D%95> ;
     kno:pos "「명」"@ko ;
-    kno:year "2019"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    kno:languageType "중+고" ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:label "마덕"@ko .
-kno:KN2019-0078-c1 kno:truncated "true"^^xsd:boolean ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0078-c1 a kno:Component ;
+    rdfs:label "마(라)(mala)"@ko ;
+    kno:formative kno:F001267 ;
     kno:fullForm "마라"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-F1 ;
     kno:surfaceForm "마"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "마(라)(mala)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001267 .
-kno:KN2019-0078-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000346 ;
-    kno:surfaceForm "덕"@ko ;
-    kno:role "성분"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0078-c2 a kno:Component ;
     rdfs:label "덕(후)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000346 ;
     kno:fullForm "덕후"@ko ;
-    kno:semanticTag kno:usas-X5.2p .
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:surfaceForm "덕"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0133 kno:origin "(<영>vaccine divide)" ;
-    kno:componentString "백신(vaccine), 디바이드(divide)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    skos:definition "백신을 확보한 나라와 그렇지 않은 나라 간에 발생하는 사회 경제적 격차. 코로나19가 전 세계적으로 유행한 상황에서 나온 말이다."@ko ;
-    kno:frequency kno:KN2021-0133-freq-NN-2021 ;
+kno:KN2021-0133 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "백신^디바이드"@ko ;
-    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1542942> ;
+    skos:definition "백신을 확보한 나라와 그렇지 않은 나라 간에 발생하는 사회 경제적 격차. 코로나19가 전 세계적으로 유행한 상황에서 나온 말이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2021-0133-c1 ;
+    kno:component kno:KN2021-0133-c2 ;
+    kno:componentString "백신(vaccine), 디바이드(divide)"@ko ;
+    kno:example "¶한 대선 후보는 2021년 경제가 {백신 디바이드에} 좌우될 것이라고 전망했다."@ko ;
     kno:frequency kno:KN2021-0133-freq-NN-2020 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:frequency kno:KN2021-0133-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0133-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0133-freq-NN-total ;
     kno:indexForm "백신디바이드"@ko ;
     kno:instantiates kno:S000061 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:urimalTargetCode "1542942" ;
-    kno:slotFiller "디바이드(divide) (1성분)"@ko ;
-    kno:example "¶한 대선 후보는 2021년 경제가 {백신 디바이드에} 좌우될 것이라고 전망했다."@ko ;
-    kno:frequency kno:KN2021-0133-freq-NN-total ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1542942> ;
-    kno:component kno:KN2021-0133-c1 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0133-freq-NN-2022 ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:languageType "영^영" ;
-    kno:component kno:KN2021-0133-c2 ;
     kno:instantiates kno:S000343 ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko .
-kno:KN2021-0133-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:languageType "영^영" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(<영>vaccine divide)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "디바이드(divide) (1성분)"@ko ;
+    kno:slotFiller "백신(vaccine) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1542942" ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0133-c1 a kno:Component ;
+    rdfs:label "백신(vaccine)"@ko ;
+    kno:formative kno:F000079 ;
+    kno:fullForm "백신"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B3 ;
     kno:surfaceForm "백신"@ko ;
-    a kno:Component ;
-    rdfs:label "백신(vaccine)"@ko ;
-    kno:fullForm "백신"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000079 .
-kno:KN2021-0133-c2 kno:formative kno:F000721 ;
-    kno:semanticTag kno:usas-A6.1m ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "디바이드"@ko ;
-    a kno:Component ;
-    kno:fullForm "디바이드"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0133-c2 a kno:Component ;
     rdfs:label "디바이드(divide)"@ko ;
+    kno:formative kno:F000721 ;
+    kno:fullForm "디바이드"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:surfaceForm "디바이드"@ko ;
     kno:truncated "false"^^xsd:boolean .

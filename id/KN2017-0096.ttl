@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0096 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0096 kno:component kno:KN2017-0096-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2017-0096-freq-NN-2016 ;
-    kno:slotFiller "남(자)(男) (1성분)"@ko ;
-    kno:languageType "(한+고)+한" ;
-    skos:definition "‘만화를 뚫고 나온 듯한 남자’라는 뜻으로, 만화에 등장하는 인물 못지않게 외모가 뛰어난 남자를 이르는 말."@ko ;
-    kno:frequency kno:KN2017-0096-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:component kno:KN2017-0096-c2 ;
-    kno:example "¶OOO는 3일 자신의 OO에 “…OOO와 함께 지난 화 진정한 {만뚫남이} 된 우리 OOO을 지켜봐 주세요. 오늘 밤 10시 ‘OO’ 5화 본방 사수!”라는 글과 함께 사진 한 장을 게재했다."@ko ;
-    kno:component kno:KN2017-0096-c3 ;
+kno:KN2017-0096 a ontolex:Word ;
     a kno:Neologism ;
-    kno:instantiates kno:S001289 ;
-    kno:activeYears "1"^^xsd:integer ;
     rdfs:label "만뚫남"@ko ;
-    kno:formation kno:W06 ;
-    kno:slotFiller "만(화)(漫)+뚫(다) (2성분)"@ko ;
-    kno:origin "(漫뚫男)" ;
-    kno:indexForm "만뚫남"@ko ;
-    a ontolex:Word ;
-    kno:componentString "만(화)(漫), 뚫(다), 남(자)(男)"@ko ;
-    kno:year "2017"^^xsd:gYear ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A7%8C%EB%9A%AB%EB%82%A8> ;
+    skos:definition "‘만화를 뚫고 나온 듯한 남자’라는 뜻으로, 만화에 등장하는 인물 못지않게 외모가 뛰어난 남자를 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0096-c1 ;
+    kno:component kno:KN2017-0096-c2 ;
+    kno:component kno:KN2017-0096-c3 ;
+    kno:componentString "만(화)(漫), 뚫(다), 남(자)(男)"@ko ;
+    kno:example "¶OOO는 3일 자신의 OO에 “…OOO와 함께 지난 화 진정한 {만뚫남이} 된 우리 OOO을 지켜봐 주세요. 오늘 밤 10시 ‘OO’ 5화 본방 사수!”라는 글과 함께 사진 한 장을 게재했다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2017-0096-freq-NN-2016 ;
+    kno:frequency kno:KN2017-0096-freq-NN-total ;
+    kno:indexForm "만뚫남"@ko ;
+    kno:instantiates kno:S000029 ;
+    kno:instantiates kno:S001289 ;
+    kno:languageType "(한+고)+한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(漫뚫男)" ;
     kno:pos "「명」"@ko ;
-    kno:instantiates kno:S000029 .
-kno:KN2017-0096-c1 kno:fullForm "만화"@ko ;
-    kno:formative kno:F000743 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "남(자)(男) (1성분)"@ko ;
+    kno:slotFiller "만(화)(漫)+뚫(다) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0096-c1 a kno:Component ;
     rdfs:label "만(화)(漫)"@ko ;
+    kno:formative kno:F000743 ;
+    kno:fullForm "만화"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Q4.1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:surfaceForm "만"@ko ;
-    a kno:Component .
-kno:KN2017-0096-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "뚫다"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0096-c2 a kno:Component ;
     rdfs:label "뚫(다)"@ko ;
-    kno:semanticTag kno:usas-A1.1.1 ;
-    a kno:Component ;
+    kno:formative kno:F001226 ;
+    kno:fullForm "뚫다"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "뚫"@ko ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F001226 .
+    kno:semanticTag kno:usas-A1.1.1 ;
+    kno:surfaceForm "뚫"@ko ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2017-0096-c3 a kno:Component ;
+    rdfs:label "남(자)(男)"@ko ;
+    kno:formative kno:F000023 ;
+    kno:fullForm "남자"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2.2 ;
-    kno:fullForm "남자"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "남(자)(男)"@ko ;
     kno:surfaceForm "남"@ko ;
-    kno:formative kno:F000023 ;
-    kno:position "3"^^xsd:integer .
+    kno:truncated "true"^^xsd:boolean .

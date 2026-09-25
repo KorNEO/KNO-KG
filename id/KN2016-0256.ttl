@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0256 kno:example "¶앞으로 {산후 도우미업자와} 계약을 해지하더라도 예약금 일부를 돌려받게 된다."@ko ;
+kno:KN2016-0256 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "산후 도우미업자"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372691> ;
+    skos:definition "일정한 보수를 받고 산모를 여러 가지로 도와 주는 일에 종사하는 사람."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0256-c1 ;
+    kno:component kno:KN2016-0256-c2 ;
+    kno:component kno:KN2016-0256-c3 ;
+    kno:componentString "산후(産後), 도우미, 업자(業者)"@ko ;
+    kno:example "¶앞으로 {산후 도우미업자와} 계약을 해지하더라도 예약금 일부를 돌려받게 된다."@ko ;
     kno:frequency kno:KN2016-0256-freq-NN-2016 ;
-    kno:origin "(産後도우미業者)" ;
     kno:frequency kno:KN2016-0256-freq-NN-total ;
     kno:indexForm "산후도우미업자"@ko ;
-    kno:componentString "산후(産後), 도우미, 업자(業者)"@ko ;
-    kno:predicate "종사하다"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
     kno:instantiates kno:S001354 ;
     kno:languageType "한_고+한" ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
-    rdfs:label "산후 도우미업자"@ko ;
-    a kno:Neologism ;
-    kno:slotFiller "업자(業者) (1성분)"@ko ;
-    skos:definition "일정한 보수를 받고 산모를 여러 가지로 도와 주는 일에 종사하는 사람."@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:urimalTargetCode "1372691" ;
+    kno:origin "(産後도우미業者)" ;
     kno:pos "「구」"@ko ;
-    kno:component kno:KN2016-0256-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2016-0256-c3 ;
-    kno:component kno:KN2016-0256-c1 .
-kno:KN2016-0256-c2 a kno:Component ;
-    kno:formative kno:F001191 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "도우미"@ko ;
-    rdfs:label "도우미"@ko ;
-    kno:semanticTag kno:usas-S8p ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "도우미"@ko .
-kno:KN2016-0256-c3 kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "업자(業者)"@ko ;
-    kno:semanticTag kno:usas-I2.1 ;
-    kno:formative kno:F004981 ;
-    kno:fullForm "업자"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "업자"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2016-0256-c1 kno:surfaceForm "산후"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:predicate "종사하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "업자(業者) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1372691" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0256-c1 a kno:Component ;
     rdfs:label "산후(産後)"@ko ;
     kno:formative kno:F001440 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
     kno:fullForm "산후"@ko ;
-    kno:role "고정항"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "산후"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0256-c2 a kno:Component ;
+    rdfs:label "도우미"@ko ;
+    kno:formative kno:F001191 ;
+    kno:fullForm "도우미"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:surfaceForm "도우미"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0256-c3 a kno:Component ;
+    rdfs:label "업자(業者)"@ko ;
+    kno:formative kno:F004981 ;
+    kno:fullForm "업자"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.1 ;
+    kno:surfaceForm "업자"@ko ;
+    kno:truncated "false"^^xsd:boolean .

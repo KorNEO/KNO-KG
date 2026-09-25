@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0112 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0112 kno:frequency kno:KN2025-0112-freq-NN-2025 ;
-    kno:component kno:KN2025-0112-c3 ;
-    kno:instantiates kno:S000828 ;
-    kno:instantiates kno:S001202 ;
-    kno:component kno:KN2025-0112-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:languageType "한_한_한" ;
-    kno:example "(LLM) 시민단체는 인권위가 계엄 관련 피고인들의 처우 개선을 권고하자, 인권위가 {내란보호위원회로} 전락했다며 위원장 사퇴를 요구했다."@ko ;
-    kno:slotFiller "내란(內亂) (1성분)"@ko ;
+kno:KN2025-0112 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:componentString "내란(內亂), 보호(保護), 위원회(委員會)"@ko ;
-    kno:unitType "구"@ko ;
     rdfs:label "내란 보호 위원회"@ko ;
-    kno:slotFiller "보호(保護) (1성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%82%B4%EB%9E%80%20%EB%B3%B4%ED%98%B8%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
     skos:definition "(LLM) 국가인권위원회가 비상계엄 선포 등 내란 혐의를 받는 권력자나 관련 피고인을 두둔ㆍ옹호하는 기관으로 변질됐다는 비판을 담아, 국가인권위원회를 비꼬아 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "내란보호위원회"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0112-c1 ;
     kno:component kno:KN2025-0112-c2 ;
+    kno:component kno:KN2025-0112-c3 ;
+    kno:componentString "내란(內亂), 보호(保護), 위원회(委員會)"@ko ;
+    kno:example "(LLM) 시민단체는 인권위가 계엄 관련 피고인들의 처우 개선을 권고하자, 인권위가 {내란보호위원회로} 전락했다며 위원장 사퇴를 요구했다."@ko ;
+    kno:frequency kno:KN2025-0112-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0112-freq-NN-total ;
+    kno:indexForm "내란보호위원회"@ko ;
+    kno:instantiates kno:S000828 ;
+    kno:instantiates kno:S001202 ;
+    kno:languageType "한_한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(內亂保護委員會)" ;
-    kno:frequency kno:KN2025-0112-freq-NN-total .
-kno:KN2025-0112-c3 kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:fullForm "위원회"@ko ;
-    rdfs:label "위원회(委員會)"@ko ;
-    kno:formative kno:F000148 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "위원회"@ko .
-kno:KN2025-0112-c1 kno:formative kno:F000052 ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "내란(內亂) (1성분)"@ko ;
+    kno:slotFiller "보호(保護) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0112-c1 a kno:Component ;
+    rdfs:label "내란(內亂)"@ko ;
+    kno:formative kno:F000052 ;
     kno:fullForm "내란"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G3m ;
     kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-G3m ;
     kno:surfaceForm "내란"@ko ;
-    rdfs:label "내란(內亂)"@ko .
-kno:KN2025-0112-c2 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000137 ;
-    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0112-c2 a kno:Component ;
     rdfs:label "보호(保護)"@ko ;
-    kno:surfaceForm "보호"@ko ;
+    kno:formative kno:F000137 ;
+    kno:fullForm "보호"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-A15p ;
-    kno:fullForm "보호"@ko .
+    kno:surfaceForm "보호"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0112-c3 a kno:Component ;
+    rdfs:label "위원회(委員會)"@ko ;
+    kno:formative kno:F000148 ;
+    kno:fullForm "위원회"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "위원회"@ko ;
+    kno:truncated "false"^^xsd:boolean .

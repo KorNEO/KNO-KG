@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0383 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0383 kno:frequency kno:KN2020-0383-freq-NN-2021 ;
-    kno:frequency kno:KN2020-0383-freq-NN-2020 ;
-    kno:languageType "영_영_영" ;
+kno:KN2020-0383 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:frequency kno:KN2020-0383-freq-NN-2025 ;
-    kno:unitType "구"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "투게더 앳 홈"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%88%AC%EA%B2%8C%EB%8D%94%20%EC%95%B3%20%ED%99%88> ;
+    skos:definition "인기 연예인들을 중심으로 시작된 코로나19 대응 기금 모금 운동의 하나. 온라인으로 자선 콘서트를 열어 코로나19 대응을 위한 기금을 모으는 방식으로 진행된다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2020-0383-c1 ;
+    kno:component kno:KN2020-0383-c2 ;
+    kno:component kno:KN2020-0383-c3 ;
+    kno:componentString "투게더(together), 앳(at), 홈(home)"@ko ;
     kno:example "¶OO는 국내 가수 중 최초로 ‘{투게더 앳 홈’에} 동참하여 온라인 콘서트를 진행한다."@ko ;
+    kno:frequency kno:KN2020-0383-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0383-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0383-freq-NN-2025 ;
+    kno:frequency kno:KN2020-0383-freq-NN-total ;
+    kno:indexForm "투게더앳홈"@ko ;
+    kno:instantiates kno:S001071 ;
+    kno:languageType "영_영_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(<영>together at home)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:componentString "투게더(together), 앳(at), 홈(home)"@ko ;
-    rdfs:label "투게더 앳 홈"@ko ;
-    kno:component kno:KN2020-0383-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%88%AC%EA%B2%8C%EB%8D%94%20%EC%95%B3%20%ED%99%88> ;
-    kno:component kno:KN2020-0383-c3 ;
-    kno:indexForm "투게더앳홈"@ko ;
-    kno:frequency kno:KN2020-0383-freq-NN-total ;
-    kno:slotFiller "투게더(together)+앳(at) (2성분)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:instantiates kno:S001071 ;
-    kno:component kno:KN2020-0383-c2 ;
     kno:registration "신어DB"@ko ;
-    skos:definition "인기 연예인들을 중심으로 시작된 코로나19 대응 기금 모금 운동의 하나. 온라인으로 자선 콘서트를 열어 코로나19 대응을 위한 기금을 모으는 방식으로 진행된다."@ko .
-kno:KN2020-0383-c1 kno:surfaceForm "투게더"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "투게더"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F006521 ;
-    kno:semanticTag kno:usas-S5p ;
+    kno:slotFiller "투게더(together)+앳(at) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0383-c1 a kno:Component ;
     rdfs:label "투게더(together)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2020-0383-c3 kno:role "고정항"@ko ;
-    kno:fullForm "홈"@ko ;
-    kno:surfaceForm "홈"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000045 ;
-    kno:semanticTag kno:usas-H4 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "홈(home)"@ko .
-kno:KN2020-0383-c2 kno:semanticTag kno:usas-Z5 ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "앳(at)"@ko ;
+    kno:formative kno:F006521 ;
+    kno:fullForm "투게더"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "앳"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:surfaceForm "투게더"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0383-c2 a kno:Component ;
+    rdfs:label "앳(at)"@ko ;
     kno:formative kno:F001577 ;
-    kno:surfaceForm "앳"@ko .
+    kno:fullForm "앳"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Z5 ;
+    kno:surfaceForm "앳"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0383-c3 a kno:Component ;
+    rdfs:label "홈(home)"@ko ;
+    kno:formative kno:F000045 ;
+    kno:fullForm "홈"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:surfaceForm "홈"@ko ;
+    kno:truncated "false"^^xsd:boolean .

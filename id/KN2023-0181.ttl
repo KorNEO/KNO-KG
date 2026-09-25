@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0181 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0181 kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2023-0181-freq-NN-2025 ;
-    rdfs:label "약자^동행^지수"@ko ;
-    kno:instantiates kno:S000024 ;
-    kno:frequency kno:KN2023-0181-freq-NN-2023 ;
-    kno:componentString "약자(弱者), 동행(同行), 지수(指數)"@ko ;
-    kno:indexForm "약자동행지수"@ko ;
-    kno:origin "(弱者同行指數)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EC%9E%90%EB%8F%99%ED%96%89%EC%A7%80%EC%88%98> ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2023-0181-c2 ;
-    kno:component kno:KN2023-0181-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2023-0181-c3 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0181-freq-NN-2022 ;
-    kno:slotFiller "약자(弱者)+동행(同行) (2성분)"@ko ;
+kno:KN2023-0181 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "약자^동행^지수"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EC%9E%90%EB%8F%99%ED%96%89%EC%A7%80%EC%88%98> ;
+    skos:definition "사회적 약자의 기준과 관점에서, 정부의 정책이 얼마나 도움이 되었는지를 측정하고 평가하기 위해 만든 지수."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2023-0181-c1 ;
+    kno:component kno:KN2023-0181-c2 ;
+    kno:component kno:KN2023-0181-c3 ;
+    kno:componentString "약자(弱者), 동행(同行), 지수(指數)"@ko ;
+    kno:example "¶정부는 {약자 동행 지수를} 개발하여 정책 수립과 실행, 예산 집행의 전 단계에 적용하겠다고 밝혔다."@ko ;
+    kno:frequency kno:KN2023-0181-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0181-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0181-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0181-freq-NN-2025 ;
     kno:frequency kno:KN2023-0181-freq-NN-total ;
+    kno:indexForm "약자동행지수"@ko ;
+    kno:instantiates kno:S000024 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "¶정부는 {약자 동행 지수를} 개발하여 정책 수립과 실행, 예산 집행의 전 단계에 적용하겠다고 밝혔다."@ko ;
+    kno:origin "(弱者同行指數)" ;
     kno:pos "「구」"@ko ;
-    skos:definition "사회적 약자의 기준과 관점에서, 정부의 정책이 얼마나 도움이 되었는지를 측정하고 평가하기 위해 만든 지수."@ko ;
-    kno:frequency kno:KN2023-0181-freq-NN-2024 ;
-    a ontolex:MultiwordExpression .
-kno:KN2023-0181-c2 kno:surfaceForm "동행"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "약자(弱者)+동행(同行) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0181-c1 a kno:Component ;
+    rdfs:label "약자(弱者)"@ko ;
+    kno:formative kno:F004914 ;
+    kno:fullForm "약자"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.1m ;
+    kno:surfaceForm "약자"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0181-c2 a kno:Component ;
+    rdfs:label "동행(同行)"@ko ;
+    kno:formative kno:F003029 ;
+    kno:fullForm "동행"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-M1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F003029 ;
-    rdfs:label "동행(同行)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "동행"@ko .
-kno:KN2023-0181-c1 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "약자(弱者)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S7.1m ;
-    kno:formative kno:F004914 ;
-    a kno:Component ;
-    kno:fullForm "약자"@ko ;
-    kno:surfaceForm "약자"@ko .
-kno:KN2023-0181-c3 kno:formative kno:F000035 ;
+    kno:surfaceForm "동행"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0181-c3 a kno:Component ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:formative kno:F000035 ;
+    kno:fullForm "지수"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-N3.1 ;
-    kno:fullForm "지수"@ko ;
     kno:surfaceForm "지수"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "지수(指數)"@ko .
+    kno:truncated "false"^^xsd:boolean .

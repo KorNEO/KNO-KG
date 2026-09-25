@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0194 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0194 kno:component kno:KN2016-0194-c2 ;
+kno:KN2016-0194 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "반퇴^테크"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372629> ;
-    kno:slotFiller "테크(tech) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2016-0194-freq-NN-2016 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    skos:definition "조기 퇴직을 한 후 다시 새로운 일자리를 찾는 세대가 노후 보장을 위한 금융 수익을 얻기 위하여 벌이는 재무 활동."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2016-0194-c1 ;
+    kno:component kno:KN2016-0194-c2 ;
+    kno:componentString "반퇴(半退), 테크(tech)"@ko ;
+    kno:example "¶{반퇴 테크를} 하려는 투자자에게 올해는 어느 때보다 선택의 폭이 넓어진 금융 상품 풍년이다."@ko ;
+    kno:frequency kno:KN2016-0194-freq-NN-2016 ;
     kno:frequency kno:KN2016-0194-freq-NN-total ;
     kno:indexForm "반퇴테크"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:instantiates kno:S000277 ;
     kno:instantiates kno:S000171 ;
+    kno:instantiates kno:S000277 ;
+    kno:languageType "한^영" ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:origin "(半退<영>tech)" ;
-    kno:urimalTargetCode "1372629" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:slotFiller "반퇴(半退) (1성분)"@ko ;
-    kno:componentString "반퇴(半退), 테크(tech)"@ko ;
-    skos:definition "조기 퇴직을 한 후 다시 새로운 일자리를 찾는 세대가 노후 보장을 위한 금융 수익을 얻기 위하여 벌이는 재무 활동."@ko ;
-    kno:example "¶{반퇴 테크를} 하려는 투자자에게 올해는 어느 때보다 선택의 폭이 넓어진 금융 상품 풍년이다."@ko ;
-    kno:year "2016"^^xsd:gYear ;
+    kno:slotFiller "테크(tech) (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:languageType "한^영" ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2016-0194-c2 kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:urimalTargetCode "1372629" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0194-c1 a kno:Component ;
+    rdfs:label "반퇴(半退)"@ko ;
+    kno:formative kno:F000355 ;
+    kno:fullForm "반퇴"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1m ;
+    kno:surfaceForm "반퇴"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0194-c2 a kno:Component ;
+    rdfs:label "테크(tech)"@ko ;
+    kno:formative kno:F000066 ;
     kno:fullForm "테크"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-Y1 ;
     kno:surfaceForm "테크"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000066 ;
-    rdfs:label "테크(tech)"@ko .
-kno:KN2016-0194-c1 a kno:Component ;
-    kno:formative kno:F000355 ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "반퇴"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I3.1m ;
-    rdfs:label "반퇴(半退)"@ko ;
-    kno:fullForm "반퇴"@ko .
+    kno:truncated "false"^^xsd:boolean .

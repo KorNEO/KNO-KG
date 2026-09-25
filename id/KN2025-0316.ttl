@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0316 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0316 kno:languageType "한_한" ;
-    kno:frequency kno:KN2025-0316-freq-NN-total ;
-    kno:example "(LLM) 배달비에 중개수수료, 광고비까지 더해지니 남는 게 거의 없어 업주들 사이에서는 이번 개편안을 {살생요금제}라고 부른다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2025-0316-freq-NN-2025 ;
-    skos:definition "(LLM) 겉으로는 상생을 내세우지만 실제로는 수수료ㆍ요금 부담을 크게 늘려 이용자나 입점 사업자의 생계를 압박하는 요금(수수료) 체계."@ko ;
-    kno:indexForm "살생요금제"@ko ;
-    kno:origin "(殺生料金制)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:componentString "살생(殺生), 요금제(料金制)"@ko ;
+kno:KN2025-0316 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "살생 요금제"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%B4%EC%83%9D%20%EC%9A%94%EA%B8%88%EC%A0%9C> ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2025-0316-c2 ;
+    skos:definition "(LLM) 겉으로는 상생을 내세우지만 실제로는 수수료ㆍ요금 부담을 크게 늘려 이용자나 입점 사업자의 생계를 압박하는 요금(수수료) 체계."@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0316-c1 ;
-    rdfs:label "살생 요금제"@ko ;
+    kno:component kno:KN2025-0316-c2 ;
+    kno:componentString "살생(殺生), 요금제(料金制)"@ko ;
+    kno:example "(LLM) 배달비에 중개수수료, 광고비까지 더해지니 남는 게 거의 없어 업주들 사이에서는 이번 개편안을 {살생요금제}라고 부른다."@ko ;
+    kno:frequency kno:KN2025-0316-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0316-freq-NN-total ;
+    kno:indexForm "살생요금제"@ko ;
+    kno:instantiates kno:S000384 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(殺生料金制)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "살생(殺生) (1성분)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000384 .
-kno:KN2025-0316-c2 kno:role "고정항"@ko ;
-    kno:surfaceForm "요금제"@ko ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:formative kno:F000875 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "요금제(料金制)"@ko ;
-    kno:fullForm "요금제"@ko ;
-    a kno:Component .
-kno:KN2025-0316-c1 kno:surfaceForm "살생"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F004199 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-L1m ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0316-c1 a kno:Component ;
     rdfs:label "살생(殺生)"@ko ;
-    kno:fullForm "살생"@ko .
+    kno:formative kno:F004199 ;
+    kno:fullForm "살생"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L1m ;
+    kno:surfaceForm "살생"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0316-c2 a kno:Component ;
+    rdfs:label "요금제(料金制)"@ko ;
+    kno:formative kno:F000875 ;
+    kno:fullForm "요금제"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "요금제"@ko ;
+    kno:truncated "false"^^xsd:boolean .

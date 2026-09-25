@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0026 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0026 kno:predicate "부과하다"@ko ;
-    kno:pos "「구」"@ko ;
-    skos:definition "범죄인의 재산이나 소득에 비례하여 차등적으로 부과하는 벌금."@ko ;
-    kno:component kno:KN2021-0026-c2 ;
-    kno:example "¶개인의 소득에 따라 벌금 5만 원에 대한 무게가 같지 않으므로 재산에 비례해 벌금을 내도록 해야 한다는 {공정 벌금이} 논의되고 있다."@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:instantiates kno:S000817 ;
-    rdfs:label "공정^벌금"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:origin "(公正罰金)" ;
-    kno:frequency kno:KN2021-0026-freq-NN-2021 ;
-    kno:indexForm "공정벌금"@ko ;
-    kno:frequency kno:KN2021-0026-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EC%A0%95%EB%B2%8C%EA%B8%88> ;
+kno:KN2021-0026 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "공정^벌금"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%B5%EC%A0%95%EB%B2%8C%EA%B8%88> ;
+    skos:definition "범죄인의 재산이나 소득에 비례하여 차등적으로 부과하는 벌금."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0026-c1 ;
+    kno:component kno:KN2021-0026-c2 ;
+    kno:componentString "공정(公正), 벌금(罰金)"@ko ;
+    kno:example "¶개인의 소득에 따라 벌금 5만 원에 대한 무게가 같지 않으므로 재산에 비례해 벌금을 내도록 해야 한다는 {공정 벌금이} 논의되고 있다."@ko ;
+    kno:frequency kno:KN2021-0026-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0026-freq-NN-2022 ;
     kno:frequency kno:KN2021-0026-freq-NN-total ;
+    kno:indexForm "공정벌금"@ko ;
+    kno:instantiates kno:S000440 ;
+    kno:instantiates kno:S000817 ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(公正罰金)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "부과하다"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "공정(公正) (1성분)"@ko ;
     kno:slotFiller "벌금(罰金) (1성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:instantiates kno:S000440 ;
-    kno:componentString "공정(公正), 벌금(罰金)"@ko ;
-    kno:component kno:KN2021-0026-c1 ;
-    kno:languageType "한^한" ;
-    kno:unitType "구"@ko .
-kno:KN2021-0026-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "벌금"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:surfaceForm "벌금"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F001360 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "벌금(罰金)"@ko .
-kno:KN2021-0026-c1 kno:surfaceForm "공정"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G2.2p ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "공정"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0026-c1 a kno:Component ;
     rdfs:label "공정(公正)"@ko ;
     kno:formative kno:F000459 ;
+    kno:fullForm "공정"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.2p ;
+    kno:surfaceForm "공정"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0026-c2 a kno:Component ;
+    rdfs:label "벌금(罰金)"@ko ;
+    kno:formative kno:F001360 ;
+    kno:fullForm "벌금"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "벌금"@ko ;
     kno:truncated "false"^^xsd:boolean .

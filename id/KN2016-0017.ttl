@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0017 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0017 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372452> ;
-    kno:predicate "진행하다"@ko ;
-    kno:frequency kno:KN2016-0017-freq-NN-2017 ;
-    kno:urimalTargetCode "1372452" ;
+kno:KN2016-0017 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "고용^디딤돌^제도"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372452> ;
+    skos:definition "주로 청년들의 일자리 창출을 위해서 교육과 채용을 함께 진행하는 제도. 교육 과정과 인턴 과정을 단계적으로 진행해 취업을 알선하는 제도이다. 2015년에 고용노동부에서 추진한 제도이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2016-0017-c1 ;
-    kno:frequency kno:KN2016-0017-freq-NN-2015 ;
+    kno:component kno:KN2016-0017-c2 ;
+    kno:component kno:KN2016-0017-c3 ;
     kno:componentString "고용(雇用), 디딤돌, 제도(制度)"@ko ;
     kno:example "¶OO 그룹 관계자는 “이번 {고용 디딤돌 제도는} 별도로 설립된 공익 법인을 통해 사회적 책임을 이행하는 형태이기 때문에, 단발에 그치지 않고 지속성을 갖는 것이 특징.”이라고 설명했다."@ko ;
-    kno:slotFiller "고용(雇用)+디딤돌 (2성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한^고^한" ;
-    kno:component kno:KN2016-0017-c2 ;
-    a kno:Neologism ;
-    kno:component kno:KN2016-0017-c3 ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:label "고용^디딤돌^제도"@ko ;
-    kno:registration "우리말샘"@ko ;
+    kno:frequency kno:KN2016-0017-freq-NN-2015 ;
     kno:frequency kno:KN2016-0017-freq-NN-2016 ;
-    skos:definition "주로 청년들의 일자리 창출을 위해서 교육과 채용을 함께 진행하는 제도. 교육 과정과 인턴 과정을 단계적으로 진행해 취업을 알선하는 제도이다. 2015년에 고용노동부에서 추진한 제도이다."@ko ;
+    kno:frequency kno:KN2016-0017-freq-NN-2017 ;
+    kno:frequency kno:KN2016-0017-freq-NN-total ;
     kno:indexForm "고용디딤돌제도"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
     kno:instantiates kno:S000036 ;
+    kno:languageType "한^고^한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
     kno:origin "(雇用디딤돌制度)" ;
-    kno:year "2016"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "진행하다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "고용(雇用)+디딤돌 (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:frequency kno:KN2016-0017-freq-NN-total .
-kno:KN2016-0017-c1 kno:formative kno:F002297 ;
-    kno:surfaceForm "고용"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:urimalTargetCode "1372452" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0017-c1 a kno:Component ;
+    rdfs:label "고용(雇用)"@ko ;
+    kno:formative kno:F002297 ;
     kno:fullForm "고용"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "고용(雇用)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I3.1 .
-kno:KN2016-0017-c2 kno:semanticTag kno:usas-S8p ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "디딤돌"@ko ;
-    rdfs:label "디딤돌"@ko ;
-    kno:fullForm "디딤돌"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001212 ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "고용"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2016-0017-c3 kno:semanticTag kno:usas-S7.1p ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+kno:KN2016-0017-c2 a kno:Component ;
+    rdfs:label "디딤돌"@ko ;
+    kno:formative kno:F001212 ;
+    kno:fullForm "디딤돌"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:surfaceForm "디딤돌"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0017-c3 a kno:Component ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
     kno:fullForm "제도"@ko ;
     kno:position "3"^^xsd:integer ;
-    rdfs:label "제도(制度)"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
     kno:surfaceForm "제도"@ko ;
-    kno:formative kno:F000041 ;
-    a kno:Component .
+    kno:truncated "false"^^xsd:boolean .

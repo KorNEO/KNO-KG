@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0462 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0462 kno:example "(LLM) 환율 변동성이 커지자 미국 주식을 정리하고 국내 대형주로 갈아타는 {유턴개미가} 늘고 있다는 분석이 나왔다."@ko ;
-    skos:definition "(LLM) 해외 주식 투자 비중을 줄이거나 보유 주식을 처분한 뒤, 그 자금을 국내 주식 시장으로 옮겨 투자하는 개인 투자자."@ko ;
-    kno:component kno:KN2025-0462-c2 ;
-    kno:slotFiller "개미 (1성분)"@ko ;
-    kno:instantiates kno:S001518 ;
-    kno:languageType "영_고" ;
-    kno:unitType "구"@ko ;
-    kno:instantiates kno:S000066 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "유턴(u-turn) (1성분)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
+kno:KN2025-0462 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
     rdfs:label "유턴 개미"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%ED%84%B4%20%EA%B0%9C%EB%AF%B8> ;
+    skos:definition "(LLM) 해외 주식 투자 비중을 줄이거나 보유 주식을 처분한 뒤, 그 자금을 국내 주식 시장으로 옮겨 투자하는 개인 투자자."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0462-c1 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:indexForm "유턴개미"@ko ;
-    kno:origin "(<영>u-turn개미)" ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    kno:component kno:KN2025-0462-c2 ;
+    kno:componentString "유턴(u-turn), 개미"@ko ;
+    kno:example "(LLM) 환율 변동성이 커지자 미국 주식을 정리하고 국내 대형주로 갈아타는 {유턴개미가} 늘고 있다는 분석이 나왔다."@ko ;
     kno:frequency kno:KN2025-0462-freq-NN-2025 ;
     kno:frequency kno:KN2025-0462-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A0%ED%84%B4%20%EA%B0%9C%EB%AF%B8> ;
-    kno:componentString "유턴(u-turn), 개미"@ko .
-kno:KN2025-0462-c2 rdfs:label "개미"@ko ;
-    kno:formative kno:F000083 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "개미"@ko ;
-    kno:semanticTag kno:usas-L2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "개미"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
-kno:KN2025-0462-c1 kno:fullForm "유턴"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "유턴"@ko ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F001680 ;
+    kno:indexForm "유턴개미"@ko ;
+    kno:instantiates kno:S000066 ;
+    kno:instantiates kno:S001518 ;
+    kno:languageType "영_고" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>u-turn개미)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "개미 (1성분)"@ko ;
+    kno:slotFiller "유턴(u-turn) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0462-c1 a kno:Component ;
     rdfs:label "유턴(u-turn)"@ko ;
-    kno:role "고정항"@ko .
+    kno:formative kno:F001680 ;
+    kno:fullForm "유턴"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "유턴"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0462-c2 a kno:Component ;
+    rdfs:label "개미"@ko ;
+    kno:formative kno:F000083 ;
+    kno:fullForm "개미"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L2 ;
+    kno:surfaceForm "개미"@ko ;
+    kno:truncated "false"^^xsd:boolean .

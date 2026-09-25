@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0507 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0507 kno:example "(LLM) 공원 황톳길에서 맨발 걷기를 하는 {접지주의자들이} 늘면서, 지자체에 안전한 맨발 산책로를 더 만들어 달라는 요구도 나온다."@ko ;
-    kno:frequency kno:KN2025-0507-freq-NN-2025 ;
-    kno:slotFiller "접지(接地) (1성분)"@ko ;
-    kno:frequency kno:KN2025-0507-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    kno:indexForm "접지주의자"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0507-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:predicate "실천하다"@ko ;
-    kno:component kno:KN2025-0507-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%91%EC%A7%80%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+kno:KN2025-0507 a ontolex:Word ;
     a kno:Neologism ;
-    kno:origin "(接地主義者)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "접지주의-자"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%91%EC%A7%80%EC%A3%BC%EC%9D%98%EC%9E%90> ;
+    skos:definition "(LLM) 맨발로 땅을 밟는 ‘접지(어싱)’가 건강 증진이나 질병 예방ㆍ치료에 도움이 된다고 믿고 이를 실천하는 사람."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0507-c1 ;
+    kno:component kno:KN2025-0507-c2 ;
+    kno:component kno:KN2025-0507-c3 ;
+    kno:componentString "접지(接地), 주의(主義), -자(者)"@ko ;
+    kno:example "(LLM) 공원 황톳길에서 맨발 걷기를 하는 {접지주의자들이} 늘면서, 지자체에 안전한 맨발 산책로를 더 만들어 달라는 요구도 나온다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0507-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0507-freq-NN-total ;
+    kno:indexForm "접지주의자"@ko ;
+    kno:instantiates kno:S000528 ;
     kno:instantiates kno:S000965 ;
     kno:languageType "한_(한+한)" ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000528 ;
-    skos:definition "(LLM) 맨발로 땅을 밟는 ‘접지(어싱)’가 건강 증진이나 질병 예방ㆍ치료에 도움이 된다고 믿고 이를 실천하는 사람."@ko ;
-    kno:slotFiller "주의(主義)+-자(者) (2성분)"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(接地主義者)" ;
     kno:pos "「명」"@ko ;
-    rdfs:label "접지주의-자"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "접지(接地), 주의(主義), -자(者)"@ko ;
-    kno:component kno:KN2025-0507-c3 .
-kno:KN2025-0507-c1 kno:position "1"^^xsd:integer ;
+    kno:predicate "실천하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "접지(接地) (1성분)"@ko ;
+    kno:slotFiller "주의(主義)+-자(者) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0507-c1 a kno:Component ;
     rdfs:label "접지(接地)"@ko ;
-    kno:semanticTag kno:usas-O1.1 ;
-    kno:fullForm "접지"@ko ;
-    a kno:Component ;
     kno:formative kno:F000918 ;
-    kno:surfaceForm "접지"@ko ;
+    kno:fullForm "접지"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:surfaceForm "접지"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0507-c2 kno:formative kno:F000080 ;
-    kno:surfaceForm "주의"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+kno:KN2025-0507-c2 a kno:Component ;
+    rdfs:label "주의(主義)"@ko ;
+    kno:formative kno:F000080 ;
     kno:fullForm "주의"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-X4.1 ;
-    rdfs:label "주의(主義)"@ko .
-kno:KN2025-0507-c3 rdfs:label "-자(者)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "자"@ko ;
+    kno:surfaceForm "주의"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0507-c3 a kno:Component ;
+    rdfs:label "-자(者)"@ko ;
     kno:formative kno:F000014 ;
+    kno:fullForm "자"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "자"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:truncated "false"^^xsd:boolean .

@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0270 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0270 skos:definition "‘혼자 먹는 술’을 줄여 이르는 말."@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
+kno:KN2015-0270 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "혼술"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368129> ;
+    skos:definition "‘혼자 먹는 술’을 줄여 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2015-0270-c1 ;
+    kno:component kno:KN2015-0270-c2 ;
+    kno:componentString "혼(자), 술"@ko ;
     kno:example "¶이 유형의 사람들 다수는 혼밥의 자유로움, 혼밥의 편함 등을 내세우면서 혼밥의 고독을 ‘{혼술’로} 감당해 가고 있다."@ko ;
+    kno:formation kno:W06 ;
     kno:indexForm "혼술"@ko ;
     kno:languageType "고+고" ;
-    kno:componentString "혼(자), 술"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1368129> ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:component kno:KN2015-0270-c2 ;
-    kno:component kno:KN2015-0270-c1 ;
-    a kno:Neologism ;
-    kno:urimalTargetCode "1368129" ;
+    kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    rdfs:label "혼술"@ko ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko .
-kno:KN2015-0270-c2 kno:surfaceForm "술"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "술"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000142 ;
-    rdfs:label "술"@ko ;
-    kno:semanticTag kno:usas-F2 .
-kno:KN2015-0270-c1 rdfs:label "혼(자)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1368129" ;
+    kno:year "2015"^^xsd:gYear .
+kno:KN2015-0270-c1 a kno:Component ;
+    rdfs:label "혼(자)"@ko ;
+    kno:formative kno:F000011 ;
     kno:fullForm "혼자"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000011 ;
-    kno:surfaceForm "혼"@ko .
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "혼"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2015-0270-c2 a kno:Component ;
+    rdfs:label "술"@ko ;
+    kno:formative kno:F000142 ;
+    kno:fullForm "술"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:surfaceForm "술"@ko ;
+    kno:truncated "false"^^xsd:boolean .

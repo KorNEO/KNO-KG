@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0417 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0417 kno:registration "신어DB"@ko ;
-    kno:example "(LLM) 그는 평소엔 차분하지만 필요할 땐 먼저 나서서 분위기를 주도하는 편이라 {에토녀라고} 불리기도 한다."@ko ;
-    rdfs:label "에토-녀"@ko ;
+kno:KN2025-0417 a ontolex:Word ;
     a kno:Neologism ;
-    kno:componentString "에(스트로겐)(estrogen), 토(스토스테론)(testosterone), -녀(女)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:slotFiller "신체; X=에(스트로겐)(estrogen)+토(스토스테론)(testosterone) (2성분)"@ko ;
-    kno:frequency kno:KN2025-0417-freq-NN-2025 ;
-    kno:formation kno:W02 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:languageType "영+영+한" ;
-    a ontolex:Word ;
-    kno:origin "(<영>←estrogen testosterone女)" ;
-    kno:frequency kno:KN2025-0417-freq-NN-total ;
-    kno:instantiates kno:S000076 ;
-    kno:slotFiller "-녀(女) (1성분)"@ko ;
+    rdfs:label "에토-녀"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%ED%86%A0%EB%85%80> ;
-    kno:component kno:KN2025-0417-c2 ;
-    kno:instantiates kno:S001459 ;
     skos:definition "(LLM) 남성 호르몬(테스토스테론)과 여성 호르몬(에스트로겐)의 성향을 함께 지닌 것으로 여겨지는 여자."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "에토녀"@ko ;
-    kno:predicate "여겨지다"@ko ;
-    kno:component kno:KN2025-0417-c3 ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2025-0417-c1 ;
-    kno:pos "「명」"@ko .
-kno:KN2025-0417-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "토스토스테론"@ko ;
-    kno:formative kno:F001901 ;
-    a kno:Component ;
+    kno:component kno:KN2025-0417-c2 ;
+    kno:component kno:KN2025-0417-c3 ;
+    kno:componentString "에(스트로겐)(estrogen), 토(스토스테론)(testosterone), -녀(女)"@ko ;
+    kno:example "(LLM) 그는 평소엔 차분하지만 필요할 땐 먼저 나서서 분위기를 주도하는 편이라 {에토녀라고} 불리기도 한다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0417-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0417-freq-NN-total ;
+    kno:indexForm "에토녀"@ko ;
+    kno:instantiates kno:S000076 ;
+    kno:instantiates kno:S001459 ;
+    kno:languageType "영+영+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>←estrogen testosterone女)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "여겨지다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "-녀(女) (1성분)"@ko ;
+    kno:slotFiller "신체; X=에(스트로겐)(estrogen)+토(스토스테론)(testosterone) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0417-c1 a kno:Component ;
+    rdfs:label "에(스트로겐)(estrogen)"@ko ;
+    kno:formative kno:F000855 ;
+    kno:fullForm "에스트로겐"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "에"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0417-c2 a kno:Component ;
     rdfs:label "토(스토스테론)(testosterone)"@ko ;
+    kno:formative kno:F001901 ;
+    kno:fullForm "토스토스테론"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "토"@ko .
-kno:KN2025-0417-c3 kno:formative kno:F000004 ;
-    kno:fullForm "녀"@ko ;
-    kno:surfaceForm "녀"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "-녀(女)"@ko ;
-    kno:semanticTag kno:usas-S2.1 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
-kno:KN2025-0417-c1 kno:role "고정항"@ko ;
-    kno:fullForm "에스트로겐"@ko ;
-    rdfs:label "에(스트로겐)(estrogen)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:semanticTag kno:usas-B1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000855 ;
-    kno:surfaceForm "에"@ko ;
-    a kno:Component .
+    kno:surfaceForm "토"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0417-c3 a kno:Component ;
+    rdfs:label "-녀(女)"@ko ;
+    kno:formative kno:F000004 ;
+    kno:fullForm "녀"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "녀"@ko ;
+    kno:truncated "false"^^xsd:boolean .

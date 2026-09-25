@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0104 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0104 kno:example "¶배달 어플 사용량이 급증하면서 리뷰를 이용한 {리뷰 진상도} 크게 늘었다."@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    rdfs:label "리뷰 진상"@ko ;
+kno:KN2021-0104 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
+    rdfs:label "리뷰 진상"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%EB%B7%B0%20%EC%A7%84%EC%83%81> ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    skos:definition "리뷰를 빌미로 하여 과도한 요청을 하거나 정당하지 않은 이유로 불만을 제기하는 소비자."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2021-0104-c1 ;
     kno:component kno:KN2021-0104-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "리뷰진상"@ko ;
-    kno:origin "(<영>review진상)" ;
-    kno:slotFiller "진상 (1성분)"@ko ;
-    kno:languageType "영_고" ;
+    kno:componentString "리뷰(review), 진상"@ko ;
+    kno:example "¶배달 어플 사용량이 급증하면서 리뷰를 이용한 {리뷰 진상도} 크게 늘었다."@ko ;
     kno:frequency kno:KN2021-0104-freq-NN-2021 ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:instantiates kno:S001286 ;
-    skos:definition "리뷰를 빌미로 하여 과도한 요청을 하거나 정당하지 않은 이유로 불만을 제기하는 소비자."@ko ;
     kno:frequency kno:KN2021-0104-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
+    kno:indexForm "리뷰진상"@ko ;
+    kno:instantiates kno:S001286 ;
+    kno:languageType "영_고" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(<영>review진상)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "제기하다"@ko ;
-    kno:componentString "리뷰(review), 진상"@ko .
-kno:KN2021-0104-c1 kno:formative kno:F000738 ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:semanticTag kno:usas-A5.1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "진상 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0104-c1 a kno:Component ;
     rdfs:label "리뷰(review)"@ko ;
-    kno:surfaceForm "리뷰"@ko ;
+    kno:formative kno:F000738 ;
     kno:fullForm "리뷰"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2021-0104-c2 kno:surfaceForm "진상"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A5.1 ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "리뷰"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0104-c2 a kno:Component ;
     rdfs:label "진상"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S1.2.4m ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A5.1m ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "진상"@ko ;
     kno:formative kno:F005925 ;
-    kno:role "슬롯 채움"@ko .
+    kno:fullForm "진상"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A5.1m ;
+    kno:semanticTag kno:usas-S1.2.4m ;
+    kno:surfaceForm "진상"@ko ;
+    kno:truncated "false"^^xsd:boolean .

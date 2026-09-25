@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0604 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0604 kno:component kno:KN2025-0604-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 구독료 인상에 반발한 이용자들이 {탈팡운동을} 벌이며 멤버십 해지를 인증하는 글을 잇달아 올렸다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    skos:definition "(LLM) 쿠팡 이용을 중단하거나 회원 탈퇴를 하는 방식으로, 쿠팡의 정책 변화(예: 요금 인상) 등에 항의하거나 불만을 표하는 집단적 소비자 행동."@ko ;
-    kno:frequency kno:KN2025-0604-freq-NN-2025 ;
-    kno:languageType "(한+영)_한" ;
-    kno:instantiates kno:S001623 ;
+kno:KN2025-0604 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "탈 팡 운동"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%20%ED%8C%A1%20%EC%9A%B4%EB%8F%99> ;
+    skos:definition "(LLM) 쿠팡 이용을 중단하거나 회원 탈퇴를 하는 방식으로, 쿠팡의 정책 변화(예: 요금 인상) 등에 항의하거나 불만을 표하는 집단적 소비자 행동."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0604-c1 ;
+    kno:component kno:KN2025-0604-c2 ;
+    kno:component kno:KN2025-0604-c3 ;
+    kno:componentString "탈(脫)-, (쿠)팡(Coupang), 운동(運動)"@ko ;
+    kno:example "(LLM) 구독료 인상에 반발한 이용자들이 {탈팡운동을} 벌이며 멤버십 해지를 인증하는 글을 잇달아 올렸다."@ko ;
+    kno:frequency kno:KN2025-0604-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0604-freq-NN-total ;
+    kno:indexForm "탈팡운동"@ko ;
+    kno:instantiates kno:S000030 ;
+    kno:instantiates kno:S001623 ;
+    kno:languageType "(한+영)_한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(脫←Coupang運動)" ;
-    kno:frequency kno:KN2025-0604-freq-NN-total ;
-    kno:componentString "탈(脫)-, (쿠)팡(Coupang), 운동(運動)"@ko ;
     kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%83%88%20%ED%8C%A1%20%EC%9A%B4%EB%8F%99> ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "탈팡운동"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "(쿠)팡(Coupang)+운동(運動) (2성분)"@ko ;
     kno:slotFiller "탈(脫)-+(쿠)팡(Coupang) (2성분)"@ko ;
-    kno:component kno:KN2025-0604-c3 ;
-    rdfs:label "탈 팡 운동"@ko ;
-    kno:component kno:KN2025-0604-c1 ;
     kno:unitType "구"@ko ;
-    kno:instantiates kno:S000030 .
-kno:KN2025-0604-c2 kno:formative kno:F001941 ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "쿠팡"@ko ;
-    rdfs:label "(쿠)팡(Coupang)"@ko ;
-    kno:surfaceForm "팡"@ko ;
-    kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Z3 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0604-c3 kno:semanticTag kno:usas-S1.1.1 ;
-    rdfs:label "운동(運動)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "운동"@ko ;
-    kno:surfaceForm "운동"@ko ;
-    kno:formative kno:F000053 .
-kno:KN2025-0604-c1 kno:role "고정항"@ko ;
-    kno:formative kno:F000152 ;
-    kno:semanticTag kno:usas-A1.8m ;
-    kno:fullForm "탈"@ko ;
-    kno:surfaceForm "탈"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0604-c1 a kno:Component ;
     rdfs:label "탈(脫)-"@ko ;
+    kno:formative kno:F000152 ;
+    kno:fullForm "탈"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.8m ;
+    kno:surfaceForm "탈"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0604-c2 a kno:Component ;
+    rdfs:label "(쿠)팡(Coupang)"@ko ;
+    kno:formative kno:F001941 ;
+    kno:fullForm "쿠팡"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:semanticTag kno:usas-Z3 ;
+    kno:surfaceForm "팡"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0604-c3 a kno:Component ;
+    rdfs:label "운동(運動)"@ko ;
+    kno:formative kno:F000053 ;
+    kno:fullForm "운동"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:surfaceForm "운동"@ko ;
+    kno:truncated "false"^^xsd:boolean .

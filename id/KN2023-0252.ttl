@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0252 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0252 kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0252-freq-NN-total ;
-    kno:example "¶지난주에 열린 팝업 스토어에서는 {제로 칼로리 캠퍼스의} 트렌드를 반영하여 학교 밖 공간에서 여러 가지 체험을 경험할 수 있는 다양한 이벤트가 진행되었다."@ko ;
-    kno:slotFiller "칼로리(calorie)+캠퍼스(campus) (2성분)"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:indexForm "제로칼로리캠퍼스"@ko ;
-    kno:frequency kno:KN2023-0252-freq-NN-2023 ;
+kno:KN2023-0252 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:componentString "제로(zero), 칼로리(calorie), 캠퍼스(campus)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%9C%EB%A1%9C%20%EC%B9%BC%EB%A1%9C%EB%A6%AC%20%EC%BA%A0%ED%8D%BC%EC%8A%A4> ;
-    kno:component kno:KN2023-0252-c2 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
     rdfs:label "제로 칼로리 캠퍼스"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%9C%EB%A1%9C%20%EC%B9%BC%EB%A1%9C%EB%A6%AC%20%EC%BA%A0%ED%8D%BC%EC%8A%A4> ;
+    skos:definition "대학생들이 캠퍼스 밖에서 더 다양한 경험을 하기 위해, 캠퍼스 안에서는 시간과 체력을 아끼는 현상을 이르는 말."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:component kno:KN2023-0252-c1 ;
-    kno:frequency kno:KN2023-0252-freq-NN-2024 ;
+    kno:component kno:KN2023-0252-c2 ;
     kno:component kno:KN2023-0252-c3 ;
-    kno:origin "(<영>▼zero calorie campus)" ;
-    kno:registration "신어DB"@ko ;
+    kno:componentString "제로(zero), 칼로리(calorie), 캠퍼스(campus)"@ko ;
+    kno:example "¶지난주에 열린 팝업 스토어에서는 {제로 칼로리 캠퍼스의} 트렌드를 반영하여 학교 밖 공간에서 여러 가지 체험을 경험할 수 있는 다양한 이벤트가 진행되었다."@ko ;
+    kno:frequency kno:KN2023-0252-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0252-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0252-freq-NN-total ;
+    kno:indexForm "제로칼로리캠퍼스"@ko ;
     kno:instantiates kno:S001556 ;
     kno:languageType "영_영_영" ;
-    skos:definition "대학생들이 캠퍼스 밖에서 더 다양한 경험을 하기 위해, 캠퍼스 안에서는 시간과 체력을 아끼는 현상을 이르는 말."@ko .
-kno:KN2023-0252-c2 kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "칼로리(calorie)"@ko ;
-    kno:fullForm "칼로리"@ko ;
-    kno:formative kno:F006208 ;
-    kno:surfaceForm "칼로리"@ko ;
-    kno:semanticTag kno:usas-F1 .
-kno:KN2023-0252-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-N5m ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(<영>▼zero calorie campus)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "칼로리(calorie)+캠퍼스(campus) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0252-c1 a kno:Component ;
     rdfs:label "제로(zero)"@ko ;
-    a kno:Component ;
     kno:formative kno:F001760 ;
-    kno:role "고정항"@ko ;
     kno:fullForm "제로"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N5m ;
     kno:surfaceForm "제로"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0252-c3 kno:formative kno:F001851 ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:fullForm "캠퍼스"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+kno:KN2023-0252-c2 a kno:Component ;
+    rdfs:label "칼로리(calorie)"@ko ;
+    kno:formative kno:F006208 ;
+    kno:fullForm "칼로리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "칼로리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0252-c3 a kno:Component ;
     rdfs:label "캠퍼스(campus)"@ko ;
+    kno:formative kno:F001851 ;
+    kno:fullForm "캠퍼스"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-P1 ;
     kno:surfaceForm "캠퍼스"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "false"^^xsd:boolean .

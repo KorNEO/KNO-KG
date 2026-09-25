@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0316 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0316 kno:formation kno:W01 ;
+kno:KN2024-0316 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "캐리오버-템"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EB%A6%AC%EC%98%A4%EB%B2%84%ED%85%9C> ;
+    skos:definition "한 시즌이 지나도 계속 판매되는 기본 상품을 이르는 말. 주로 특정 브랜드의 로고 티셔츠나 셔츠, 청바지 등을 말한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0316-c1 ;
+    kno:component kno:KN2024-0316-c2 ;
+    kno:componentString "캐리오버(carryover), (아이)템(item)"@ko ;
+    kno:example "¶이번 시즌 매출에서 큰 비중을 차지한 것은 전 시즌부터 꾸준히 팔린 {캐리오버템이었다}."@ko ;
+    kno:formation kno:W01 ;
     kno:frequency kno:KN2024-0316-freq-NN-2023 ;
+    kno:frequency kno:KN2024-0316-freq-NN-total ;
+    kno:indexForm "캐리오버템"@ko ;
+    kno:instantiates kno:S000007 ;
+    kno:languageType "영+영" ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:origin "(<영>▼carryover←item)" ;
-    skos:definition "한 시즌이 지나도 계속 판매되는 기본 상품을 이르는 말. 주로 특정 브랜드의 로고 티셔츠나 셔츠, 청바지 등을 말한다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BA%90%EB%A6%AC%EC%98%A4%EB%B2%84%ED%85%9C> ;
-    kno:example "¶이번 시즌 매출에서 큰 비중을 차지한 것은 전 시즌부터 꾸준히 팔린 {캐리오버템이었다}."@ko ;
-    a ontolex:Word ;
-    kno:slotFiller "캐리오버(carryover) (1성분)"@ko ;
-    kno:indexForm "캐리오버템"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2024-0316-freq-NN-total ;
-    kno:languageType "영+영" ;
-    kno:componentString "캐리오버(carryover), (아이)템(item)"@ko ;
-    kno:instantiates kno:S000007 ;
     kno:pos "「명」"@ko ;
-    kno:component kno:KN2024-0316-c2 ;
-    kno:component kno:KN2024-0316-c1 ;
     kno:registration "신어DB"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    rdfs:label "캐리오버-템"@ko ;
-    kno:unitType "단어"@ko .
-kno:KN2024-0316-c2 rdfs:label "(아이)템(item)"@ko ;
-    kno:formative kno:F000007 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "아이템"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    a kno:Component ;
-    kno:surfaceForm "템"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2024-0316-c1 kno:surfaceForm "캐리오버"@ko ;
+    kno:slotFiller "캐리오버(carryover) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0316-c1 a kno:Component ;
     rdfs:label "캐리오버(carryover)"@ko ;
     kno:formative kno:F006217 ;
+    kno:fullForm "캐리오버"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-T1.3 ;
-    kno:fullForm "캐리오버"@ko ;
+    kno:surfaceForm "캐리오버"@ko ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0316-c2 a kno:Component ;
+    rdfs:label "(아이)템(item)"@ko ;
+    kno:formative kno:F000007 ;
+    kno:fullForm "아이템"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "템"@ko ;
+    kno:truncated "true"^^xsd:boolean .

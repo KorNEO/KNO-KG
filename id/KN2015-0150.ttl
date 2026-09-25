@@ -9,59 +9,59 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0150 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0150 kno:frequency kno:KN2015-0150-freq-NN-total ;
-    kno:componentString "어번(urban), 그래니(granny), -족(族)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    skos:definition "도시적이고 세련된 할머니. 또는 그런 할머니들의 무리. 주로 자신의 건강과 외모 따위에 아낌없이 투자하는 중년 이상의 여성들을 이르는 말이다."@ko ;
-    kno:urimalTargetCode "1359830" ;
-    kno:frequency kno:KN2015-0150-freq-NN-2016 ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:languageType "영^(영+한)" ;
+kno:KN2015-0150 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:origin "(<영>urban granny族)" ;
-    kno:instantiates kno:S000012 ;
-    kno:indexForm "어번그래니족"@ko ;
     rdfs:label "어번^그래니족"@ko ;
-    kno:instantiates kno:S001448 ;
-    kno:example "¶‘신세대 할머니’라고도 불리는 {어번 그래니족은}…특히 젊음을 되찾기 위한 외모 관리에 큰 관심을 보인다."@ko ;
-    kno:slotFiller "어번(urban)+그래니(granny) (2성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2015-0150-c1 ;
-    kno:frequency kno:KN2015-0150-freq-NN-2015 ;
-    kno:frequency kno:KN2015-0150-freq-NN-2017 ;
-    kno:slotFiller "그래니(granny)+-족(族) (2성분)"@ko ;
-    kno:component kno:KN2015-0150-c2 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359830> ;
-    kno:unitType "구"@ko ;
+    skos:definition "도시적이고 세련된 할머니. 또는 그런 할머니들의 무리. 주로 자신의 건강과 외모 따위에 아낌없이 투자하는 중년 이상의 여성들을 이르는 말이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2015-0150-c1 ;
+    kno:component kno:KN2015-0150-c2 ;
     kno:component kno:KN2015-0150-c3 ;
-    kno:registration "우리말샘"@ko .
+    kno:componentString "어번(urban), 그래니(granny), -족(族)"@ko ;
+    kno:example "¶‘신세대 할머니’라고도 불리는 {어번 그래니족은}…특히 젊음을 되찾기 위한 외모 관리에 큰 관심을 보인다."@ko ;
+    kno:frequency kno:KN2015-0150-freq-NN-2015 ;
+    kno:frequency kno:KN2015-0150-freq-NN-2016 ;
+    kno:frequency kno:KN2015-0150-freq-NN-2017 ;
+    kno:frequency kno:KN2015-0150-freq-NN-total ;
+    kno:indexForm "어번그래니족"@ko ;
+    kno:instantiates kno:S000012 ;
+    kno:instantiates kno:S001448 ;
+    kno:languageType "영^(영+한)" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(<영>urban granny族)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "그래니(granny)+-족(族) (2성분)"@ko ;
+    kno:slotFiller "어번(urban)+그래니(granny) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1359830" ;
+    kno:year "2015"^^xsd:gYear .
 kno:KN2015-0150-c1 a kno:Component ;
     rdfs:label "어번(urban)"@ko ;
+    kno:formative kno:F001586 ;
     kno:fullForm "어번"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-M7 ;
     kno:surfaceForm "어번"@ko ;
-    kno:formative kno:F001586 ;
-    kno:position "1"^^xsd:integer .
-kno:KN2015-0150-c2 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "그래니"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2015-0150-c2 a kno:Component ;
     rdfs:label "그래니(granny)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
     kno:formative kno:F000679 ;
-    kno:fullForm "그래니"@ko .
-kno:KN2015-0150-c3 kno:formative kno:F000001 ;
+    kno:fullForm "그래니"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "그래니"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2015-0150-c3 a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    rdfs:label "-족(族)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
     kno:truncated "false"^^xsd:boolean .

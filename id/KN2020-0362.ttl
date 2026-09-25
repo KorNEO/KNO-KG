@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0362 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0362 kno:componentString "코로나(바이러스)(corona virus), 피싱(phishing)"@ko ;
-    kno:instantiates kno:S000004 ;
-    kno:frequency kno:KN2020-0362-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%94%BC%EC%8B%B1> ;
+kno:KN2020-0362 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:origin "(<영>←corona virus phishing)" ;
-    skos:definition "코로나19 확진자의 경로나 무료 마스크 제공 따위의 정보를 문자 메시지나 이메일로 보내어 악성 사이트에 접속하도록 유도하는 유형의 사기 수법."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "코로나피싱"@ko ;
     rdfs:label "코로나 피싱"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2020-0362-c1 ;
-    kno:frequency kno:KN2020-0362-freq-NN-2021 ;
-    kno:component kno:KN2020-0362-c2 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%A1%9C%EB%82%98%20%ED%94%BC%EC%8B%B1> ;
+    skos:definition "코로나19 확진자의 경로나 무료 마스크 제공 따위의 정보를 문자 메시지나 이메일로 보내어 악성 사이트에 접속하도록 유도하는 유형의 사기 수법."@ko ;
     kno:activeYears "3"^^xsd:integer ;
-    kno:languageType "영_영" ;
-    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0362-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:instantiates kno:S000255 ;
-    kno:slotFiller "피싱(phishing) (1성분)"@ko ;
-    kno:frequency kno:KN2020-0362-freq-NN-2020 ;
+    kno:component kno:KN2020-0362-c1 ;
+    kno:component kno:KN2020-0362-c2 ;
+    kno:componentString "코로나(바이러스)(corona virus), 피싱(phishing)"@ko ;
     kno:example "¶코로나19에 대한 불안감을 악용한 {코로나 피싱과} 관련된 범죄가 늘고 있어 시민들의 각별한 주의가 필요하다."@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2020-0362-c1 kno:surfaceForm "코로나"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m ;
+    kno:frequency kno:KN2020-0362-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0362-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0362-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0362-freq-NN-total ;
+    kno:indexForm "코로나피싱"@ko ;
+    kno:instantiates kno:S000004 ;
+    kno:instantiates kno:S000255 ;
+    kno:languageType "영_영" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(<영>←corona virus phishing)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:slotFiller "피싱(phishing) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0362-c1 a kno:Component ;
     rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:fullForm "코로나바이러스"@ko ;
     kno:formative kno:F000003 ;
-    kno:role "고정항"@ko .
-kno:KN2020-0362-c2 kno:semanticTag kno:usas-G2.1m ;
-    kno:formative kno:F000638 ;
-    kno:position "2"^^xsd:integer ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2020-0362-c2 a kno:Component ;
     rdfs:label "피싱(phishing)"@ko ;
-    kno:surfaceForm "피싱"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000638 ;
     kno:fullForm "피싱"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "피싱"@ko ;
+    kno:truncated "false"^^xsd:boolean .

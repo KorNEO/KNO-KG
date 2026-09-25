@@ -9,62 +9,62 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0241 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0241 kno:registration "신어DB"@ko ;
-    kno:example "¶입덕, 재입덕, {재재입덕을} 부르는 위험한 남자 OOO을 만날 수 있는 ‘OO’은 매주 수, 목요일 밤 10시에 방송된다."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2017-0241-c4 ;
+kno:KN2017-0241 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "재-재입덕"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EC%9E%AC%EC%9E%85%EB%8D%95> ;
+    skos:definition "어떤 분야나 사람을 열성적으로 좋아하다 포기하는 행위를 반복하여 또다시 좋아하게 됨을 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0241-c1 ;
+    kno:component kno:KN2017-0241-c2 ;
     kno:component kno:KN2017-0241-c3 ;
-    kno:pos "「명」"@ko ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:origin "(再再入덕)" ;
-    kno:indexForm "재재입덕"@ko ;
+    kno:component kno:KN2017-0241-c4 ;
+    kno:componentString "재(再)-, 재(再)-, 입(入), 덕(후)"@ko ;
+    kno:example "¶입덕, 재입덕, {재재입덕을} 부르는 위험한 남자 OOO을 만날 수 있는 ‘OO’은 매주 수, 목요일 밤 10시에 방송된다."@ko ;
     kno:formation kno:W03 ;
     kno:frequency kno:KN2017-0241-freq-NN-2016 ;
-    rdfs:label "재-재입덕"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:frequency kno:KN2017-0241-freq-NN-total ;
+    kno:indexForm "재재입덕"@ko ;
     kno:languageType "한+(한+한+고)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EC%9E%AC%EC%9E%85%EB%8D%95> ;
-    kno:componentString "재(再)-, 재(再)-, 입(入), 덕(후)"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2017-0241-c1 ;
-    skos:definition "어떤 분야나 사람을 열성적으로 좋아하다 포기하는 행위를 반복하여 또다시 좋아하게 됨을 이르는 말."@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:component kno:KN2017-0241-c2 .
-kno:KN2017-0241-c4 kno:position "4"^^xsd:integer ;
-    kno:semanticTag kno:usas-X5.2p ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000346 ;
-    kno:surfaceForm "덕"@ko ;
-    kno:role "성분"@ko ;
-    rdfs:label "덕(후)"@ko ;
-    kno:fullForm "덕후"@ko .
-kno:KN2017-0241-c3 rdfs:label "입(入)"@ko ;
-    kno:surfaceForm "입"@ko ;
-    kno:fullForm "입"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F000401 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B1 .
-kno:KN2017-0241-c1 kno:fullForm "재"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F005575 ;
-    a kno:Component ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(再再入덕)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0241-c1 a kno:Component ;
     rdfs:label "재(再)-"@ko ;
+    kno:formative kno:F005575 ;
+    kno:fullForm "재"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-N6p ;
-    kno:surfaceForm "재"@ko .
-kno:KN2017-0241-c2 rdfs:label "재(再)-"@ko ;
+    kno:surfaceForm "재"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0241-c2 a kno:Component ;
+    rdfs:label "재(再)-"@ko ;
+    kno:formative kno:F005575 ;
+    kno:fullForm "재"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:fullForm "재"@ko ;
     kno:semanticTag kno:usas-N6p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F005575 ;
-    kno:surfaceForm "재"@ko .
+    kno:surfaceForm "재"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0241-c3 a kno:Component ;
+    rdfs:label "입(入)"@ko ;
+    kno:formative kno:F000401 ;
+    kno:fullForm "입"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "입"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0241-c4 a kno:Component ;
+    rdfs:label "덕(후)"@ko ;
+    kno:formative kno:F000346 ;
+    kno:fullForm "덕후"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-X5.2p ;
+    kno:surfaceForm "덕"@ko ;
+    kno:truncated "true"^^xsd:boolean .

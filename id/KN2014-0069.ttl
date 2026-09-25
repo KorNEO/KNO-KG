@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0069 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0069 rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369508> ;
-    kno:languageType "영^한" ;
-    kno:frequency kno:KN2014-0069-freq-NN-total ;
-    kno:example "¶경기 회복에도 불구하고 각국 중앙은행은 내년에 {디 공포를} 우려하고 있다."@ko ;
-    kno:component kno:KN2014-0069-c2 ;
-    kno:component kno:KN2014-0069-c1 ;
-    kno:slotFiller "디(플레이션)(deflation) (1성분)"@ko ;
-    kno:predicate "느끼다"@ko ;
-    kno:urimalTargetCode "1369508" ;
-    skos:definition "통화량의 축소에 따라 물가가 하락하고 경제 활동이 침체되는 현상에 대하여 느끼는 공포."@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:origin "(<영>←deflation恐怖)" ;
-    kno:frequency kno:KN2014-0069-freq-NN-2023 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2014-0069-freq-NN-2015 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:indexForm "디공포"@ko ;
-    rdfs:label "디^공포"@ko ;
-    kno:instantiates kno:S000734 ;
+kno:KN2014-0069 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "디^공포"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1369508> ;
+    skos:definition "통화량의 축소에 따라 물가가 하락하고 경제 활동이 침체되는 현상에 대하여 느끼는 공포."@ko ;
     kno:activeYears "3"^^xsd:integer ;
-    kno:frequency kno:KN2014-0069-freq-NN-2013 ;
-    kno:registration "우리말샘"@ko ;
+    kno:component kno:KN2014-0069-c1 ;
+    kno:component kno:KN2014-0069-c2 ;
     kno:componentString "디(플레이션)(deflation), 공포(恐怖)"@ko ;
+    kno:example "¶경기 회복에도 불구하고 각국 중앙은행은 내년에 {디 공포를} 우려하고 있다."@ko ;
+    kno:frequency kno:KN2014-0069-freq-NN-2013 ;
+    kno:frequency kno:KN2014-0069-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0069-freq-NN-2023 ;
+    kno:frequency kno:KN2014-0069-freq-NN-total ;
+    kno:indexForm "디공포"@ko ;
+    kno:instantiates kno:S000734 ;
+    kno:languageType "영^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(<영>←deflation恐怖)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2014-0069-c2 kno:role "고정항"@ko ;
-    kno:formative kno:F000666 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "공포"@ko ;
-    kno:semanticTag kno:usas-E5m ;
-    rdfs:label "공포(恐怖)"@ko ;
-    kno:fullForm "공포"@ko ;
-    a kno:Component .
-kno:KN2014-0069-c1 kno:role "슬롯 채움"@ko ;
+    kno:predicate "느끼다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "디(플레이션)(deflation) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1369508" ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0069-c1 a kno:Component ;
     rdfs:label "디(플레이션)(deflation)"@ko ;
-    a kno:Component ;
     kno:formative kno:F003087 ;
     kno:fullForm "디플레이션"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "디"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.3m .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.3m ;
+    kno:surfaceForm "디"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2014-0069-c2 a kno:Component ;
+    rdfs:label "공포(恐怖)"@ko ;
+    kno:formative kno:F000666 ;
+    kno:fullForm "공포"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-E5m ;
+    kno:surfaceForm "공포"@ko ;
+    kno:truncated "false"^^xsd:boolean .

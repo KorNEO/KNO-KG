@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0449 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0449 kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "정적감시법"@ko ;
+kno:KN2016-0449 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "정적^감시법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%A0%81%EA%B0%90%EC%8B%9C%EB%B2%95> ;
+    skos:definition "정치적으로 대립되는 처지의 사람에 대한 감시를 허용하는 법."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0449-c1 ;
     kno:component kno:KN2016-0449-c2 ;
     kno:component kno:KN2016-0449-c3 ;
-    kno:instantiates kno:S000009 ;
-    kno:example "¶일명 ‘테러 방지법’이 테러 방지에는 별 신통함이 없을 것이로되, 국민 사찰법, {정적 감시법이라는} 지적은 국회의 필리버스터를 통해 이제 많이 알려졌다."@ko ;
     kno:componentString "정적(政敵), 감시(監視), 법(法)"@ko ;
-    kno:predicate "허용하다"@ko ;
-    a kno:Neologism ;
-    kno:languageType "한^한" ;
-    skos:definition "정치적으로 대립되는 처지의 사람에 대한 감시를 허용하는 법."@ko ;
-    kno:component kno:KN2016-0449-c1 ;
+    kno:example "¶일명 ‘테러 방지법’이 테러 방지에는 별 신통함이 없을 것이로되, 국민 사찰법, {정적 감시법이라는} 지적은 국회의 필리버스터를 통해 이제 많이 알려졌다."@ko ;
     kno:frequency kno:KN2016-0449-freq-NN-2016 ;
-    kno:slotFiller "정적(政敵)+감시(監視) (2성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EC%A0%81%EA%B0%90%EC%8B%9C%EB%B2%95> ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:frequency kno:KN2016-0449-freq-NN-total ;
+    kno:indexForm "정적감시법"@ko ;
+    kno:instantiates kno:S000009 ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:origin "(政敵監視法)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "허용하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "정적(政敵)+감시(監視) (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    rdfs:label "정적^감시법"@ko .
-kno:KN2016-0449-c2 rdfs:label "감시(監視)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F002127 ;
-    a kno:Component ;
-    kno:fullForm "감시"@ko ;
-    kno:surfaceForm "감시"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-X3.4 .
-kno:KN2016-0449-c3 kno:role "고정항"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "법"@ko ;
-    kno:formative kno:F000002 ;
-    rdfs:label "법(法)"@ko ;
-    kno:fullForm "법"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2016-0449-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0449-c1 a kno:Component ;
+    rdfs:label "정적(政敵)"@ko ;
     kno:formative kno:F005685 ;
-    kno:surfaceForm "정적"@ko ;
-    kno:role "슬롯 채움"@ko ;
     kno:fullForm "정적"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A2.1m ;
-    rdfs:label "정적(政敵)"@ko .
+    kno:surfaceForm "정적"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0449-c2 a kno:Component ;
+    rdfs:label "감시(監視)"@ko ;
+    kno:formative kno:F002127 ;
+    kno:fullForm "감시"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X3.4 ;
+    kno:surfaceForm "감시"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0449-c3 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
+    kno:formative kno:F000002 ;
+    kno:fullForm "법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

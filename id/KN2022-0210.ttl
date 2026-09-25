@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0210 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0210 kno:languageType "한+한+한" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%EC%8B%9C%EC%B2%98> ;
-    kno:slotFiller "(감)시(監視) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "언론을 감시하는 기관으로 변질되었다는 뜻으로, ‘고위 공직자 범죄 수사처’를 비판하여 이르는 말."@ko ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S001452 ;
-    kno:component kno:KN2022-0210-c2 ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
+kno:KN2022-0210 a ontolex:Word ;
     a kno:Neologism ;
-    kno:componentString "언(론)(言論), (감)시(監視), -처(處)"@ko ;
-    kno:formation kno:W05 ;
     rdfs:label "언시처"@ko ;
-    kno:example "¶김 의원은 공수처는 고위 공직자가 아니라 오히려 언론을 감시하는 {언시처로} 전락했다고 비판했다."@ko ;
-    a ontolex:Word ;
-    kno:origin "(言視處)" ;
-    kno:frequency kno:KN2022-0210-freq-NN-2021 ;
-    kno:indexForm "언시처"@ko ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2022-0210-freq-NN-total ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B8%EC%8B%9C%EC%B2%98> ;
+    skos:definition "언론을 감시하는 기관으로 변질되었다는 뜻으로, ‘고위 공직자 범죄 수사처’를 비판하여 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2022-0210-c1 ;
-    kno:component kno:KN2022-0210-c3 .
-kno:KN2022-0210-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:component kno:KN2022-0210-c2 ;
+    kno:component kno:KN2022-0210-c3 ;
+    kno:componentString "언(론)(言論), (감)시(監視), -처(處)"@ko ;
+    kno:example "¶김 의원은 공수처는 고위 공직자가 아니라 오히려 언론을 감시하는 {언시처로} 전락했다고 비판했다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2022-0210-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0210-freq-NN-total ;
+    kno:indexForm "언시처"@ko ;
+    kno:instantiates kno:S001452 ;
+    kno:languageType "한+한+한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(言視處)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "(감)시(監視) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0210-c1 a kno:Component ;
+    rdfs:label "언(론)(言論)"@ko ;
+    kno:formative kno:F000382 ;
+    kno:fullForm "언론"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q4.2 ;
+    kno:surfaceForm "언"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0210-c2 a kno:Component ;
     rdfs:label "(감)시(監視)"@ko ;
+    kno:formative kno:F004631 ;
+    kno:fullForm "감시"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-X3.4 ;
     kno:surfaceForm "시"@ko ;
-    a kno:Component ;
-    kno:fullForm "감시"@ko ;
-    kno:formative kno:F004631 ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2022-0210-c1 kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "언(론)(言論)"@ko ;
-    kno:semanticTag kno:usas-Q4.2 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "언론"@ko ;
-    kno:formative kno:F000382 ;
-    kno:surfaceForm "언"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2022-0210-c3 kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:fullForm "처"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "처"@ko ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F001820 ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0210-c3 a kno:Component ;
     rdfs:label "-처(處)"@ko ;
+    kno:formative kno:F001820 ;
+    kno:fullForm "처"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "처"@ko ;
     kno:truncated "false"^^xsd:boolean .

@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0204 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0204 kno:instantiates kno:S000512 ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "파킹(parking) (1성분)"@ko ;
-    kno:slotFiller "우버(Uber) (1성분)"@ko ;
-    skos:definition "우크라이나의 한 회사가 개발한 주차 공유 서비스를 ‘우버 택시’에 빗대어 이르는 말."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0204-freq-NN-total ;
+kno:KN2023-0204 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:origin "(Uber<영>parking)" ;
     rdfs:label "우버 파킹"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EB%B2%84%20%ED%8C%8C%ED%82%B9> ;
+    skos:definition "우크라이나의 한 회사가 개발한 주차 공유 서비스를 ‘우버 택시’에 빗대어 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2023-0204-c1 ;
     kno:component kno:KN2023-0204-c2 ;
-    kno:indexForm "우버파킹"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2023-0204-freq-NN-2023 ;
-    kno:languageType "영_영" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%B0%EB%B2%84%20%ED%8C%8C%ED%82%B9> ;
     kno:componentString "우버(Uber), 파킹(parking)"@ko ;
+    kno:example "¶그는 그가 개발한 주차 공유 서비스를 ‘우버 택시’와 같은 ‘{우버 파킹’으로} 성장시킬 것이라는 포부를 밝혔다."@ko ;
+    kno:frequency kno:KN2023-0204-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0204-freq-NN-total ;
+    kno:indexForm "우버파킹"@ko ;
+    kno:instantiates kno:S000512 ;
     kno:instantiates kno:S001027 ;
-    kno:example "¶그는 그가 개발한 주차 공유 서비스를 ‘우버 택시’와 같은 ‘{우버 파킹’으로} 성장시킬 것이라는 포부를 밝혔다."@ko .
-kno:KN2023-0204-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-M3 ;
-    a kno:Component ;
-    kno:fullForm "우버"@ko ;
-    kno:surfaceForm "우버"@ko ;
+    kno:languageType "영_영" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(Uber<영>parking)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "우버(Uber) (1성분)"@ko ;
+    kno:slotFiller "파킹(parking) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0204-c1 a kno:Component ;
     rdfs:label "우버(Uber)"@ko ;
+    kno:formative kno:F000562 ;
+    kno:fullForm "우버"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000562 .
-kno:KN2023-0204-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-M3 ;
+    kno:surfaceForm "우버"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0204-c2 a kno:Component ;
+    rdfs:label "파킹(parking)"@ko ;
     kno:formative kno:F000985 ;
     kno:fullForm "파킹"@ko ;
-    kno:semanticTag kno:usas-M3 ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M3 ;
     kno:surfaceForm "파킹"@ko ;
-    rdfs:label "파킹(parking)"@ko .
+    kno:truncated "false"^^xsd:boolean .

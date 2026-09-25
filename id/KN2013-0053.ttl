@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0053 kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2013-0053-freq-NN-total ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
+kno:KN2013-0053 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "기대-짤"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%8C%80%EC%A7%A4> ;
+    skos:definition "사람들의 기대에 미치는 사진."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0053-c1 ;
+    kno:component kno:KN2013-0053-c2 ;
+    kno:componentString "기대(期待), 짤"@ko ;
     kno:example "¶이를 접한 네티즌들은 “OOO 미모 빛난다 빛나.”, “OOO 옆 라인 소름 돋네요.”, “분위기 확 바뀐 OOO {기대짤}.”,“OOO 빨리 브라운관에서 보길.”, “OOO 진짜 예쁘다. 드라마 기대할게요.” 등 뜨거운 반응을 보였다."@ko ;
     kno:formation kno:W01 ;
-    kno:component kno:KN2013-0053-c2 ;
-    rdfs:label "기대-짤"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "기대(期待), 짤"@ko ;
-    kno:instantiates kno:S000057 ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:slotFiller "기대(期待) (1성분)"@ko ;
     kno:frequency kno:KN2013-0053-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0053-freq-NN-total ;
     kno:indexForm "기대짤"@ko ;
-    kno:predicate "미치다"@ko ;
-    kno:origin "(期待짤)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B0%EB%8C%80%EC%A7%A4> ;
+    kno:instantiates kno:S000057 ;
     kno:languageType "한+고" ;
-    kno:component kno:KN2013-0053-c1 ;
-    skos:definition "사람들의 기대에 미치는 사진."@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:pos "「명」"@ko .
-kno:KN2013-0053-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "짤"@ko ;
-    kno:semanticTag kno:usas-C1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "짤"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000074 ;
-    kno:role "고정항"@ko ;
-    rdfs:label "짤"@ko .
-kno:KN2013-0053-c1 rdfs:label "기대(期待)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "기대"@ko ;
-    kno:semanticTag kno:usas-X2.6p ;
-    a kno:Component ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:origin "(期待짤)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "미치다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "기대(期待) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0053-c1 a kno:Component ;
+    rdfs:label "기대(期待)"@ko ;
     kno:formative kno:F001113 ;
-    kno:fullForm "기대"@ko .
+    kno:fullForm "기대"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X2.6p ;
+    kno:surfaceForm "기대"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0053-c2 a kno:Component ;
+    rdfs:label "짤"@ko ;
+    kno:formative kno:F000074 ;
+    kno:fullForm "짤"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:surfaceForm "짤"@ko ;
+    kno:truncated "false"^^xsd:boolean .

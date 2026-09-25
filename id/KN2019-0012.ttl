@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0012 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0012 rdfs:label "고고단"@ko ;
-    kno:languageType "한+한+한" ;
-    kno:frequency kno:KN2019-0012-freq-NN-2020 ;
-    kno:indexForm "고고단"@ko ;
+kno:KN2019-0012 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "고고단"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EA%B3%A0%EB%8B%A8> ;
     skos:definition "고이율, 고리워드, 단기 상품을 줄여 이르는 말. 여기서 ‘고리워드(高reward)’는 금리 외에 덧붙여 주는 보상을 일컫는다. 투자에 있어 짧은 시간에 높은 수익을 낼 수 있지만 투자 위험도가 높아 원금 손실 가능성 또한 높은 상품을 말한다."@ko ;
-    kno:frequency kno:KN2019-0012-freq-NN-2024 ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2019-0012-c1 ;
+    kno:component kno:KN2019-0012-c2 ;
+    kno:component kno:KN2019-0012-c3 ;
+    kno:componentString "고(이율)(高), 고(리워드)(高), 단(기)(單)"@ko ;
+    kno:example "¶해외에 거주 중인 O 씨는 {‘고고단’에} 혹해 적금을 깼다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0012-freq-NN-2018 ;
+    kno:frequency kno:KN2019-0012-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0012-freq-NN-2020 ;
     kno:frequency kno:KN2019-0012-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0012-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0012-freq-NN-2025 ;
+    kno:frequency kno:KN2019-0012-freq-NN-total ;
+    kno:indexForm "고고단"@ko ;
+    kno:languageType "한+한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(高高單)" ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    a kno:Neologism ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:component kno:KN2019-0012-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "¶해외에 거주 중인 O 씨는 {‘고고단’에} 혹해 적금을 깼다."@ko ;
-    kno:frequency kno:KN2019-0012-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EA%B3%A0%EB%8B%A8> ;
-    kno:component kno:KN2019-0012-c3 ;
-    kno:formation kno:W06 ;
-    kno:frequency kno:KN2019-0012-freq-NN-2019 ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:frequency kno:KN2019-0012-freq-NN-2018 ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2019-0012-freq-NN-2025 ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(高高單)" ;
-    kno:component kno:KN2019-0012-c1 ;
-    kno:componentString "고(이율)(高), 고(리워드)(高), 단(기)(單)"@ko .
-kno:KN2019-0012-c2 kno:formative kno:F002262 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "고리워드"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "고"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1 ;
-    rdfs:label "고(리워드)(高)"@ko .
-kno:KN2019-0012-c3 kno:surfaceForm "단"@ko ;
-    kno:fullForm "단기"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F002861 ;
-    rdfs:label "단(기)(單)"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer .
-kno:KN2019-0012-c1 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "고"@ko ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:position "1"^^xsd:integer ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0012-c1 a kno:Component ;
     rdfs:label "고(이율)(高)"@ko ;
     kno:formative kno:F002269 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "고이율"@ko .
+    kno:fullForm "고이율"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "고"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0012-c2 a kno:Component ;
+    rdfs:label "고(리워드)(高)"@ko ;
+    kno:formative kno:F002262 ;
+    kno:fullForm "고리워드"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "고"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0012-c3 a kno:Component ;
+    rdfs:label "단(기)(單)"@ko ;
+    kno:formative kno:F002861 ;
+    kno:fullForm "단기"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "단"@ko ;
+    kno:truncated "true"^^xsd:boolean .

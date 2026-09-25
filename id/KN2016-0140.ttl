@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0140 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0140 skos:definition "휴대 전화 업체에서 고장 난 휴대 전화의 수리를 대신해 고객에게 중고품을 주는 대가로 요구하는 비용."@ko ;
+kno:KN2016-0140 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:example "¶국내에서 OO 수리를 맡길 경우 새 제품 가격의 70~80%에 달하는 {리퍼 수리비를} 선결제하도록 요구하고 있어 고객 권리를 지나치게 제한한다는 지적이다."@ko ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%8D%BC%20%EC%88%98%EB%A6%AC%EB%B9%84> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2016-0140-freq-NN-2015 ;
-    kno:component kno:KN2016-0140-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:indexForm "리퍼수리비"@ko ;
-    kno:predicate "요구하다"@ko ;
     rdfs:label "리퍼 수리비"@ko ;
-    kno:origin "(<영>←refurbished修理費)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%A6%AC%ED%8D%BC%20%EC%88%98%EB%A6%AC%EB%B9%84> ;
+    skos:definition "휴대 전화 업체에서 고장 난 휴대 전화의 수리를 대신해 고객에게 중고품을 주는 대가로 요구하는 비용."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2016-0140-c1 ;
-    kno:languageType "영_한" ;
-    kno:year "2016"^^xsd:gYear ;
+    kno:component kno:KN2016-0140-c2 ;
+    kno:componentString "리퍼(비쉬드)(refurbished), 수리비(修理費)"@ko ;
+    kno:example "¶국내에서 OO 수리를 맡길 경우 새 제품 가격의 70~80%에 달하는 {리퍼 수리비를} 선결제하도록 요구하고 있어 고객 권리를 지나치게 제한한다는 지적이다."@ko ;
+    kno:frequency kno:KN2016-0140-freq-NN-2015 ;
     kno:frequency kno:KN2016-0140-freq-NN-total ;
+    kno:indexForm "리퍼수리비"@ko ;
+    kno:languageType "영_한" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:origin "(<영>←refurbished修理費)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "요구하다"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:unitType "구"@ko ;
-    kno:componentString "리퍼(비쉬드)(refurbished), 수리비(修理費)"@ko .
-kno:KN2016-0140-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:formative kno:F004475 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "수리비(修理費)"@ko ;
-    kno:role "성분"@ko ;
-    kno:fullForm "수리비"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "수리비"@ko .
+    kno:year "2016"^^xsd:gYear .
 kno:KN2016-0140-c1 a kno:Component ;
-    kno:surfaceForm "리퍼"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    rdfs:label "리퍼(비쉬드)(refurbished)"@ko ;
     kno:formative kno:F003321 ;
     kno:fullForm "리퍼비쉬드"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "리퍼(비쉬드)(refurbished)"@ko ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-A2.1 .
+    kno:semanticTag kno:usas-A2.1 ;
+    kno:surfaceForm "리퍼"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2016-0140-c2 a kno:Component ;
+    rdfs:label "수리비(修理費)"@ko ;
+    kno:formative kno:F004475 ;
+    kno:fullForm "수리비"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "수리비"@ko ;
+    kno:truncated "false"^^xsd:boolean .

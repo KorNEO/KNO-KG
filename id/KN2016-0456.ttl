@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0456 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0456 a kno:Neologism ;
-    kno:activeYears "3"^^xsd:integer ;
+kno:KN2016-0456 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "좀비^대출"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A2%80%EB%B9%84%EB%8C%80%EC%B6%9C> ;
+    skos:definition "대출 상환 능력이 없는 상태에서 추가적으로 이루어지는 대출. 주로 정상적인 방법의 대출이 아니기 때문에 집계나 회수를 하기 어렵다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2016-0456-c1 ;
+    kno:component kno:KN2016-0456-c2 ;
+    kno:componentString "좀비(zombie), 대출(貸出)"@ko ;
+    kno:example "¶애널리스트들은 공식 집계보다 훨씬 많이 산적해 있는 {좀비 대출} 때문에 은행들이 긴급 구제가 필요하게 될 것으로 보고 있다."@ko ;
+    kno:frequency kno:KN2016-0456-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0456-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0456-freq-NN-2022 ;
+    kno:frequency kno:KN2016-0456-freq-NN-total ;
+    kno:indexForm "좀비대출"@ko ;
+    kno:instantiates kno:S000232 ;
+    kno:instantiates kno:S001559 ;
+    kno:languageType "영^한" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:origin "(<영>zombie貸出)" ;
     kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2016-0456-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2016-0456-freq-NN-2016 ;
-    kno:slotFiller "대출(貸出) (1성분)"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0456-freq-NN-2020 ;
-    kno:componentString "좀비(zombie), 대출(貸出)"@ko ;
-    kno:indexForm "좀비대출"@ko ;
-    kno:example "¶애널리스트들은 공식 집계보다 훨씬 많이 산적해 있는 {좀비 대출} 때문에 은행들이 긴급 구제가 필요하게 될 것으로 보고 있다."@ko ;
-    rdfs:label "좀비^대출"@ko ;
-    kno:frequency kno:KN2016-0456-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:instantiates kno:S000232 ;
-    kno:languageType "영^한" ;
-    skos:definition "대출 상환 능력이 없는 상태에서 추가적으로 이루어지는 대출. 주로 정상적인 방법의 대출이 아니기 때문에 집계나 회수를 하기 어렵다."@ko ;
-    kno:component kno:KN2016-0456-c1 ;
-    kno:unitType "구"@ko ;
-    kno:instantiates kno:S001559 ;
-    kno:component kno:KN2016-0456-c2 ;
     kno:predicate "이루어지다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "대출(貸出) (1성분)"@ko ;
     kno:slotFiller "좀비(zombie) (1성분)"@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2016-0456-c1 kno:role "고정항"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0456-c1 a kno:Component ;
+    rdfs:label "좀비(zombie)"@ko ;
     kno:formative kno:F000233 ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "좀비"@ko ;
-    kno:surfaceForm "좀비"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S9 ;
-    rdfs:label "좀비(zombie)"@ko .
-kno:KN2016-0456-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "좀비"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0456-c2 a kno:Component ;
     rdfs:label "대출(貸出)"@ko ;
     kno:formative kno:F000167 ;
-    a kno:Component ;
-    kno:surfaceForm "대출"@ko ;
+    kno:fullForm "대출"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.2 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "대출"@ko .
+    kno:surfaceForm "대출"@ko ;
+    kno:truncated "false"^^xsd:boolean .

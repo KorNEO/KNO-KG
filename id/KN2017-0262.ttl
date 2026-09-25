@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0262 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0262 kno:unitType "단어"@ko ;
-    kno:slotFiller "청(靑) (1성분)"@ko ;
-    kno:frequency kno:KN2017-0262-freq-NN-2016 ;
-    kno:pos "「명」"@ko ;
+kno:KN2017-0262 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "청세-권"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EC%84%B8%EA%B6%8C> ;
     skos:definition "숲, 공원 따위의 녹지 공간의 주변에 거주자가 분포하는 범위."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2017-0262-c1 ;
     kno:component kno:KN2017-0262-c2 ;
-    kno:origin "(靑勢圈)" ;
+    kno:componentString "청(靑), (역)세권(驛勢圈)"@ko ;
+    kno:example "¶이처럼 분양 시장에서 주변 자연환경이 집값 형성에 중요한 요소로 자리매김하면서 {청세권에} 새로 공급되는 단지들도 관심을 모으고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2017-0262-freq-NN-2016 ;
+    kno:frequency kno:KN2017-0262-freq-NN-2022 ;
     kno:frequency kno:KN2017-0262-freq-NN-2024 ;
+    kno:frequency kno:KN2017-0262-freq-NN-total ;
     kno:indexForm "청세권"@ko ;
     kno:instantiates kno:S000008 ;
-    kno:componentString "청(靑), (역)세권(驛勢圈)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EC%84%B8%EA%B6%8C> ;
-    kno:component kno:KN2017-0262-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:predicate "분포하다"@ko ;
-    a ontolex:Word ;
-    kno:example "¶이처럼 분양 시장에서 주변 자연환경이 집값 형성에 중요한 요소로 자리매김하면서 {청세권에} 새로 공급되는 단지들도 관심을 모으고 있다."@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:activeYears "3"^^xsd:integer ;
-    rdfs:label "청세-권"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:languageType "한+한" ;
-    kno:frequency kno:KN2017-0262-freq-NN-2022 ;
-    kno:formation kno:W05 ;
-    kno:frequency kno:KN2017-0262-freq-NN-total .
-kno:KN2017-0262-c2 kno:role "고정항"@ko ;
-    kno:fullForm "역세권"@ko ;
-    rdfs:label "(역)세권(驛勢圈)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-M7 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "세권"@ko ;
-    kno:formative kno:F000012 .
-kno:KN2017-0262-c1 kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(靑勢圈)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "분포하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "청(靑) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0262-c1 a kno:Component ;
     rdfs:label "청(靑)"@ko ;
+    kno:formative kno:F006047 ;
     kno:fullForm "청"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-O4.3 ;
     kno:surfaceForm "청"@ko ;
-    kno:formative kno:F006047 .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0262-c2 a kno:Component ;
+    rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:formative kno:F000012 ;
+    kno:fullForm "역세권"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
+    kno:surfaceForm "세권"@ko ;
+    kno:truncated "true"^^xsd:boolean .

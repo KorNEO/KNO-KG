@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0055 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0055 kno:example "¶OO당의 선전은 지난 대선에서 {노마드 보수를} 이끌었던 OOㆍOO의 높은 지지 때문이다."@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2017-0055 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "노마드 보수"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380365> ;
+    skos:definition "정치적으로 특정 후보를 일정하게 지지하지 않고 여러 후보에 대해 지지를 옮겨 다니는 보수층을 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0055-c1 ;
+    kno:component kno:KN2017-0055-c2 ;
+    kno:componentString "노마드(nomad), 보수(保守)"@ko ;
+    kno:example "¶OO당의 선전은 지난 대선에서 {노마드 보수를} 이끌었던 OOㆍOO의 높은 지지 때문이다."@ko ;
+    kno:frequency kno:KN2017-0055-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0055-freq-NN-total ;
     kno:indexForm "노마드보수"@ko ;
     kno:instantiates kno:S000353 ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    skos:definition "정치적으로 특정 후보를 일정하게 지지하지 않고 여러 후보에 대해 지지를 옮겨 다니는 보수층을 이르는 말. ⇒규범 표기는 미확정이다."@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:frequency kno:KN2017-0055-freq-NN-2017 ;
-    rdfs:label "노마드 보수"@ko ;
-    kno:component kno:KN2017-0055-c2 ;
-    kno:component kno:KN2017-0055-c1 ;
-    kno:frequency kno:KN2017-0055-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:languageType "영_한" ;
-    kno:componentString "노마드(nomad), 보수(保守)"@ko ;
-    kno:slotFiller "노마드(nomad) (1성분)"@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380365> ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
     kno:origin "(<영>nomad保守)" ;
-    kno:urimalTargetCode "1380365" .
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "노마드(nomad) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1380365" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0055-c1 a kno:Component ;
+    rdfs:label "노마드(nomad)"@ko ;
+    kno:formative kno:F000477 ;
+    kno:fullForm "노마드"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "노마드"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2017-0055-c2 a kno:Component ;
+    rdfs:label "보수(保守)"@ko ;
+    kno:formative kno:F000774 ;
+    kno:fullForm "보수"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-G1.2 ;
-    rdfs:label "보수(保守)"@ko ;
-    kno:fullForm "보수"@ko ;
-    kno:formative kno:F000774 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "보수"@ko .
-kno:KN2017-0055-c1 kno:fullForm "노마드"@ko ;
-    kno:formative kno:F000477 ;
-    kno:surfaceForm "노마드"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M1 ;
-    rdfs:label "노마드(nomad)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component .
+    kno:surfaceForm "보수"@ko ;
+    kno:truncated "false"^^xsd:boolean .

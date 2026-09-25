@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0213 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0213 kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:component kno:KN2020-0213-c2 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EB%AC%BC%EC%B9%98%EC%9C%A0%EB%B2%95%EC%9B%90> ;
-    kno:predicate "운영하다"@ko ;
-    rdfs:label "약물^치유^법원"@ko ;
+kno:KN2020-0213 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "약물^치유^법원"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%95%BD%EB%AC%BC%EC%B9%98%EC%9C%A0%EB%B2%95%EC%9B%90> ;
     skos:definition "범죄자의 약물 중독을 치유하여 재범을 방지하기 위하여 법원에서 운영하는 프로그램."@ko ;
-    kno:unitType "구"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:languageType "한^한^한" ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2020-0213-c3 ;
     kno:component kno:KN2020-0213-c1 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:indexForm "약물치유법원"@ko ;
-    kno:frequency kno:KN2020-0213-freq-NN-2019 ;
-    kno:origin "(藥物治癒法院)" ;
-    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2020-0213-c2 ;
+    kno:component kno:KN2020-0213-c3 ;
+    kno:componentString "약물(藥物), 치유(治癒), 법원(法院)"@ko ;
     kno:example "¶미국 뉴욕 주에는 180여 개의 {약물 치유 법원이} 있다."@ko ;
+    kno:frequency kno:KN2020-0213-freq-NN-2019 ;
     kno:frequency kno:KN2020-0213-freq-NN-total ;
-    kno:componentString "약물(藥物), 치유(治癒), 법원(法院)"@ko .
-kno:KN2020-0213-c2 kno:semanticTag kno:usas-B3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:fullForm "치유"@ko ;
-    kno:surfaceForm "치유"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001838 ;
-    rdfs:label "치유(治癒)"@ko .
-kno:KN2020-0213-c3 kno:surfaceForm "법원"@ko ;
-    kno:formative kno:F001364 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "법원(法院)"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:fullForm "법원"@ko .
-kno:KN2020-0213-c1 kno:fullForm "약물"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "약물"@ko ;
-    a kno:Component ;
+    kno:indexForm "약물치유법원"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(藥物治癒法院)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "운영하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0213-c1 a kno:Component ;
     rdfs:label "약물(藥物)"@ko ;
-    kno:semanticTag kno:usas-B3 ;
     kno:formative kno:F004913 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:fullForm "약물"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "약물"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0213-c2 a kno:Component ;
+    rdfs:label "치유(治癒)"@ko ;
+    kno:formative kno:F001838 ;
+    kno:fullForm "치유"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "치유"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0213-c3 a kno:Component ;
+    rdfs:label "법원(法院)"@ko ;
+    kno:formative kno:F001364 ;
+    kno:fullForm "법원"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법원"@ko ;
+    kno:truncated "false"^^xsd:boolean .

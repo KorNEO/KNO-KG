@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0007 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0007 kno:slotFiller "강려크(←강력)(強力) (1성분)"@ko ;
-    kno:languageType "한+고" ;
+kno:KN2014-0007 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "강려크-하다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EB%A0%A4%ED%81%AC%ED%95%98%EB%8B%A4> ;
     skos:definition "‘강력하다001’를 변형한 말."@ko ;
-    kno:origin "(強力▽하다)" ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2014-0007-c1 ;
+    kno:component kno:KN2014-0007-c2 ;
     kno:componentString "강려크(←강력)(強力), -하다"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:example "¶나머지 3명은 잘 크면 {강려크한데} 잘 커서 약한 챔프가 어딨음."@ko ;
     kno:formation kno:W02 ;
     kno:indexForm "강려크하다"@ko ;
-    rdfs:label "강려크-하다"@ko ;
-    kno:unitType "단어"@ko ;
-    a kno:Neologism ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:example "¶나머지 3명은 잘 크면 {강려크한데} 잘 커서 약한 챔프가 어딨음."@ko ;
-    kno:pos "「동」"@ko ;
     kno:instantiates kno:S000018 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%95%EB%A0%A4%ED%81%AC%ED%95%98%EB%8B%A4> ;
-    a ontolex:Word ;
-    kno:component kno:KN2014-0007-c1 ;
-    kno:component kno:KN2014-0007-c2 .
-kno:KN2014-0007-c1 kno:surfaceForm "강려크"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:languageType "한+고" ;
+    kno:origin "(強力▽하다)" ;
+    kno:pos "「동」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "강려크(←강력)(強力) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0007-c1 a kno:Component ;
     rdfs:label "강려크(←강력)(強力)"@ko ;
-    a kno:Component ;
     kno:formative kno:F002145 ;
+    kno:fullForm "강려크"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S1.2.5p ;
-    kno:fullForm "강려크"@ko .
-kno:KN2014-0007-c2 kno:semanticTag kno:usas-Z5 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "하다"@ko ;
+    kno:surfaceForm "강려크"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0007-c2 a kno:Component ;
     rdfs:label "-하다"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000019 ;
+    kno:fullForm "하다"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000019 ;
-    kno:surfaceForm "하다"@ko .
+    kno:semanticTag kno:usas-Z5 ;
+    kno:surfaceForm "하다"@ko ;
+    kno:truncated "false"^^xsd:boolean .

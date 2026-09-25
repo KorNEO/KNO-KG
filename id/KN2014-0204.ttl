@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0204 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0204 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B0%ED%94%BC> ;
+kno:KN2014-0204 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "웰피"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%B0%ED%94%BC> ;
+    skos:definition "운동을 하고 있는 자신의 모습을 스스로 찍는 일. 또는 그렇게 찍은 사진."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2014-0204-c1 ;
+    kno:component kno:KN2014-0204-c2 ;
+    kno:componentString "웰(←workout), (셀)피(selfie)"@ko ;
+    kno:example "¶편집진은 또 셀피의 인기에 힘입어 다른 파생어들도 등장했다고 전했다. 예를 들어…운동 중 셀피를 의미하는 {웰피와}, 술에 취한 셀피를 의미하는 드렐피가 있다."@ko ;
+    kno:formation kno:W05 ;
     kno:indexForm "웰피"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
     kno:languageType "영+영" ;
     kno:origin "(<영>←workout selfie)" ;
-    kno:unitType "단어"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:component kno:KN2014-0204-c1 ;
-    kno:componentString "웰(←workout), (셀)피(selfie)"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
+    kno:pos "「명」"@ko ;
     kno:predicate "찍다"@ko ;
-    kno:example "¶편집진은 또 셀피의 인기에 힘입어 다른 파생어들도 등장했다고 전했다. 예를 들어…운동 중 셀피를 의미하는 {웰피와}, 술에 취한 셀피를 의미하는 드렐피가 있다."@ko ;
-    skos:definition "운동을 하고 있는 자신의 모습을 스스로 찍는 일. 또는 그렇게 찍은 사진."@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2014-0204-c2 ;
-    kno:formation kno:W05 ;
-    rdfs:label "웰피"@ko .
-kno:KN2014-0204-c1 kno:surfaceForm "웰"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0204-c1 a kno:Component ;
     rdfs:label "웰(←workout)"@ko ;
-    kno:fullForm "웰"@ko ;
     kno:formative kno:F005272 ;
-    kno:semanticTag kno:usas-A5.1p ;
+    kno:fullForm "웰"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2014-0204-c2 kno:fullForm "셀피"@ko ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:surfaceForm "웰"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0204-c2 a kno:Component ;
     rdfs:label "(셀)피(selfie)"@ko ;
     kno:formative kno:F000242 ;
-    kno:surfaceForm "피"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:fullForm "셀피"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-C1 .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-C1 ;
+    kno:surfaceForm "피"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0044 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0044 kno:registration "신어DB"@ko ;
-    kno:component kno:KN2013-0044-c2 ;
-    kno:origin "(極←<영>option)" ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "극옵"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B9%EC%98%B5> ;
+kno:KN2013-0044 a ontolex:Word ;
     a kno:Neologism ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:formation kno:W03 ;
-    skos:definition "더할 수 없는 정도로 좋은 옵션."@ko ;
     rdfs:label "극-옵"@ko ;
-    kno:predicate "좋은"@ko ;
-    a ontolex:Word ;
-    kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶OO의 소위 ‘지존’ 아이템은 ‘트리플 옵션’이 {극옵으로} 달린 것들이 대부분이다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%B9%EC%98%B5> ;
+    skos:definition "더할 수 없는 정도로 좋은 옵션."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0044-c1 ;
+    kno:component kno:KN2013-0044-c2 ;
     kno:componentString "극(極)-, 옵(션)(option)"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0044-c1 .
-kno:KN2013-0044-c2 kno:fullForm "옵션"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-X6 ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "옵"@ko ;
-    rdfs:label "옵(션)(option)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000872 .
-kno:KN2013-0044-c1 kno:semanticTag kno:usas-A13.2 ;
-    kno:surfaceForm "극"@ko ;
+    kno:example "¶OO의 소위 ‘지존’ 아이템은 ‘트리플 옵션’이 {극옵으로} 달린 것들이 대부분이다."@ko ;
+    kno:formation kno:W03 ;
+    kno:indexForm "극옵"@ko ;
+    kno:languageType "한+영" ;
+    kno:origin "(極←<영>option)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "좋은"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0044-c1 a kno:Component ;
     rdfs:label "극(極)-"@ko ;
-    kno:role "성분"@ko ;
+    kno:formative kno:F000202 ;
     kno:fullForm "극"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000202 ;
-    a kno:Component ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "극"@ko ;
     kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0044-c2 a kno:Component ;
+    rdfs:label "옵(션)(option)"@ko ;
+    kno:formative kno:F000872 ;
+    kno:fullForm "옵션"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-X6 ;
+    kno:surfaceForm "옵"@ko ;
+    kno:truncated "true"^^xsd:boolean .

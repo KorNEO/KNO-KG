@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0056 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0056 kno:frequency kno:KN2025-0056-freq-NN-total ;
+kno:KN2025-0056 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:languageType "한+고_영" ;
-    kno:instantiates kno:S000413 ;
-    kno:unitType "구"@ko ;
     rdfs:label "고봉 밥 패치"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EB%B4%89%20%EB%B0%A5%20%ED%8C%A8%EC%B9%98> ;
+    skos:definition "(LLM) 게임에서 여러 개선 사항이나 변경점을 수시로 나누어 적용하지 않고, 특정 행사ㆍ방송ㆍ대형 업데이트 일정에 맞추어 한꺼번에 많이 몰아서 내놓는 업데이트 방식."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0056-c1 ;
+    kno:component kno:KN2025-0056-c2 ;
+    kno:component kno:KN2025-0056-c3 ;
+    kno:componentString "고봉(高捧), 밥, 패치(patch)"@ko ;
+    kno:example "(LLM) 편의성 개선은 그때그때 해도 될 텐데, 이번에도 {고봉밥패치로} 행사 시즌에 맞춰 한 번에 쏟아내는 느낌이라 아쉽다."@ko ;
+    kno:frequency kno:KN2025-0056-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0056-freq-NN-total ;
+    kno:indexForm "고봉밥패치"@ko ;
+    kno:instantiates kno:S000413 ;
+    kno:languageType "한+고_영" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(高捧밥<영>patch)" ;
     kno:pos "「구」"@ko ;
-    kno:slotFiller "고봉(高捧)+밥 (2성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EB%B4%89%20%EB%B0%A5%20%ED%8C%A8%EC%B9%98> ;
-    kno:component kno:KN2025-0056-c3 ;
-    kno:frequency kno:KN2025-0056-freq-NN-2025 ;
-    kno:example "(LLM) 편의성 개선은 그때그때 해도 될 텐데, 이번에도 {고봉밥패치로} 행사 시즌에 맞춰 한 번에 쏟아내는 느낌이라 아쉽다."@ko ;
-    kno:component kno:KN2025-0056-c2 ;
-    kno:component kno:KN2025-0056-c1 ;
-    skos:definition "(LLM) 게임에서 여러 개선 사항이나 변경점을 수시로 나누어 적용하지 않고, 특정 행사ㆍ방송ㆍ대형 업데이트 일정에 맞추어 한꺼번에 많이 몰아서 내놓는 업데이트 방식."@ko ;
-    kno:indexForm "고봉밥패치"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "고봉(高捧), 밥, 패치(patch)"@ko .
-kno:KN2025-0056-c3 kno:fullForm "패치"@ko ;
-    kno:formative kno:F000989 ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "패치"@ko ;
-    rdfs:label "패치(patch)"@ko ;
-    kno:semanticTag kno:usas-O2 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0056-c2 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "밥"@ko ;
-    kno:formative kno:F000086 ;
-    kno:fullForm "밥"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "밥"@ko .
-kno:KN2025-0056-c1 kno:fullForm "고봉"@ko ;
-    kno:semanticTag kno:usas-N5p ;
-    kno:surfaceForm "고봉"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:slotFiller "고봉(高捧)+밥 (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0056-c1 a kno:Component ;
+    rdfs:label "고봉(高捧)"@ko ;
+    kno:formative kno:F002292 ;
+    kno:fullForm "고봉"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002292 ;
-    rdfs:label "고봉(高捧)"@ko ;
-    a kno:Component .
+    kno:semanticTag kno:usas-N5p ;
+    kno:surfaceForm "고봉"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0056-c2 a kno:Component ;
+    rdfs:label "밥"@ko ;
+    kno:formative kno:F000086 ;
+    kno:fullForm "밥"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "밥"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0056-c3 a kno:Component ;
+    rdfs:label "패치(patch)"@ko ;
+    kno:formative kno:F000989 ;
+    kno:fullForm "패치"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O2 ;
+    kno:surfaceForm "패치"@ko ;
+    kno:truncated "false"^^xsd:boolean .

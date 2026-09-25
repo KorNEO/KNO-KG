@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0056 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0056 kno:instantiates kno:S000450 ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0056-freq-NN-2020 ;
-    kno:origin "(緊急돌봄學校)" ;
-    kno:example "¶코로나19로 인해 전국의 개학이 연기되면서 학생들의 돌봄 문제에도 비상이 걸렸다. 초등학생 아들을 두었다는 한 학부모는 “시어머니가 아들을 밖에 내보내는 것을 반대하여 {긴급 돌봄 학교는} 생각도 못한다.”라고 걱정을 표했다."@ko ;
-    kno:frequency kno:KN2020-0056-freq-NN-total ;
-    kno:component kno:KN2020-0056-c2 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:slotFiller "학교(學校) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:languageType "한^고^한" ;
+kno:KN2020-0056 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
+    rdfs:label "긴급^돌봄^학교"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%8F%8C%EB%B4%84%ED%95%99%EA%B5%90> ;
     skos:definition "전국적인 재난 사태가 발생한 상황에서 돌봄 교실을 운영하도록 정부가 지정한 학교. 코로나19의 확산으로 인해 대부분의 학교가 휴교함에 따라 발생한 돌봄 공백을 없애고 맞벌이 부부의 보육 부담을 줄이기 위해서 마련되었다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "긴급(緊急), 돌봄, 학교(學校)"@ko ;
-    kno:component kno:KN2020-0056-c3 ;
-    kno:pos "「구」"@ko ;
-    rdfs:label "긴급^돌봄^학교"@ko ;
-    kno:indexForm "긴급돌봄학교"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:component kno:KN2020-0056-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%8F%8C%EB%B4%84%ED%95%99%EA%B5%90> .
-kno:KN2020-0056-c2 kno:role "고정항"@ko ;
+    kno:component kno:KN2020-0056-c2 ;
+    kno:component kno:KN2020-0056-c3 ;
+    kno:componentString "긴급(緊急), 돌봄, 학교(學校)"@ko ;
+    kno:example "¶코로나19로 인해 전국의 개학이 연기되면서 학생들의 돌봄 문제에도 비상이 걸렸다. 초등학생 아들을 두었다는 한 학부모는 “시어머니가 아들을 밖에 내보내는 것을 반대하여 {긴급 돌봄 학교는} 생각도 못한다.”라고 걱정을 표했다."@ko ;
+    kno:frequency kno:KN2020-0056-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0056-freq-NN-total ;
+    kno:indexForm "긴급돌봄학교"@ko ;
+    kno:instantiates kno:S000450 ;
+    kno:languageType "한^고^한" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(緊急돌봄學校)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "학교(學校) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0056-c1 a kno:Component ;
+    rdfs:label "긴급(緊急)"@ko ;
+    kno:formative kno:F000016 ;
+    kno:fullForm "긴급"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:surfaceForm "긴급"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0056-c2 a kno:Component ;
+    rdfs:label "돌봄"@ko ;
+    kno:formative kno:F000046 ;
     kno:fullForm "돌봄"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S8 ;
     kno:surfaceForm "돌봄"@ko ;
-    kno:formative kno:F000046 ;
-    rdfs:label "돌봄"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2020-0056-c3 kno:formative kno:F000438 ;
-    a kno:Component ;
-    kno:surfaceForm "학교"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "학교"@ko ;
-    kno:semanticTag kno:usas-P1 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0056-c3 a kno:Component ;
     rdfs:label "학교(學校)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer .
-kno:KN2020-0056-c1 kno:fullForm "긴급"@ko ;
-    kno:formative kno:F000016 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "긴급"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A11.1p ;
-    rdfs:label "긴급(緊急)"@ko ;
-    kno:role "고정항"@ko .
+    kno:formative kno:F000438 ;
+    kno:fullForm "학교"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "학교"@ko ;
+    kno:truncated "false"^^xsd:boolean .

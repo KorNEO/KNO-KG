@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0286 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0286 kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2025-0286-freq-NN-total ;
-    kno:languageType "한+한" ;
-    kno:example "(LLM) 요즘은 역세권뿐 아니라 학세권, 숲세권 같은 {별별세권을} 따져 보고 집을 고르는 사람이 많다."@ko ;
-    kno:component kno:KN2025-0286-c1 ;
-    kno:origin "(別別勢圈)" ;
-    kno:component kno:KN2025-0286-c2 ;
+kno:KN2025-0286 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "별별세권"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%84%EB%B3%84%EC%84%B8%EA%B6%8C> ;
     skos:definition "(LLM) 역세권처럼 특정 시설ㆍ환경ㆍ가게 등이 가까이 있어 생활이 편리한 주거 지역의 범위를 통틀어 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2025-0286-freq-NN-2025 ;
-    kno:formation kno:W05 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:indexForm "별별세권"@ko ;
-    a ontolex:Word ;
-    kno:instantiates kno:S000008 ;
-    a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B3%84%EB%B3%84%EC%84%B8%EA%B6%8C> ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:label "별별세권"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0286-c1 ;
+    kno:component kno:KN2025-0286-c2 ;
     kno:componentString "별별, (역)세권(驛勢圈)"@ko ;
+    kno:example "(LLM) 요즘은 역세권뿐 아니라 학세권, 숲세권 같은 {별별세권을} 따져 보고 집을 고르는 사람이 많다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2025-0286-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0286-freq-NN-total ;
+    kno:indexForm "별별세권"@ko ;
+    kno:instantiates kno:S000008 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(別別勢圈)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "별별 (1성분)"@ko ;
     kno:unitType "단어"@ko ;
-    kno:slotFiller "별별 (1성분)"@ko .
-kno:KN2025-0286-c1 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "별별"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0286-c1 a kno:Component ;
+    rdfs:label "별별"@ko ;
     kno:formative kno:F003852 ;
-    kno:position "1"^^xsd:integer ;
     kno:fullForm "별별"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A6.3p ;
-    rdfs:label "별별"@ko .
-kno:KN2025-0286-c2 kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000012 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "역세권"@ko ;
+    kno:surfaceForm "별별"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0286-c2 a kno:Component ;
     rdfs:label "(역)세권(驛勢圈)"@ko ;
+    kno:formative kno:F000012 ;
+    kno:fullForm "역세권"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M7 ;
     kno:surfaceForm "세권"@ko ;
-    kno:semanticTag kno:usas-M7 .
+    kno:truncated "true"^^xsd:boolean .

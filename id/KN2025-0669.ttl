@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0669 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0669 kno:year "2025"^^xsd:gYear ;
-    kno:predicate "얻다"@ko ;
-    kno:indexForm "햇빛배당소득"@ko ;
-    kno:languageType "고_한_한" ;
+kno:KN2025-0669 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0669-freq-NN-total ;
-    skos:definition "(LLM) 태양광 발전 등 햇빛을 활용한 에너지 사업에서 발생한 수익을 출자자나 지역 주민 등에게 배당 형태로 나누어 받아 얻는 소득."@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2025-0669-c3 ;
-    kno:activeYears "1"^^xsd:integer ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%96%87%EB%B9%9B%20%EB%B0%B0%EB%8B%B9%20%EC%86%8C%EB%93%9D> ;
-    kno:frequency kno:KN2025-0669-freq-NN-2025 ;
-    kno:component kno:KN2025-0669-c1 ;
     rdfs:label "햇빛 배당 소득"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%96%87%EB%B9%9B%20%EB%B0%B0%EB%8B%B9%20%EC%86%8C%EB%93%9D> ;
+    skos:definition "(LLM) 태양광 발전 등 햇빛을 활용한 에너지 사업에서 발생한 수익을 출자자나 지역 주민 등에게 배당 형태로 나누어 받아 얻는 소득."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0669-c1 ;
     kno:component kno:KN2025-0669-c2 ;
-    kno:example "(LLM) 마을이 공공부지에 태양광 설비를 설치해 운영 수익을 주민에게 돌려주면서 {햇빛배당소득을} 기대하는 사람이 늘었다."@ko ;
-    kno:slotFiller "배당(配當) (1성분)"@ko ;
+    kno:component kno:KN2025-0669-c3 ;
     kno:componentString "햇빛, 배당(配當), 소득(所得)"@ko ;
-    kno:origin "(햇빛配當所得)" ;
+    kno:example "(LLM) 마을이 공공부지에 태양광 설비를 설치해 운영 수익을 주민에게 돌려주면서 {햇빛배당소득을} 기대하는 사람이 늘었다."@ko ;
+    kno:frequency kno:KN2025-0669-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0669-freq-NN-total ;
+    kno:indexForm "햇빛배당소득"@ko ;
     kno:instantiates kno:S001680 ;
-    kno:registration "신어DB"@ko .
-kno:KN2025-0669-c3 a kno:Component ;
+    kno:languageType "고_한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(햇빛配當所得)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "얻다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "배당(配當) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0669-c1 a kno:Component ;
+    rdfs:label "햇빛"@ko ;
+    kno:formative kno:F002005 ;
+    kno:fullForm "햇빛"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "소득"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:surfaceForm "햇빛"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0669-c2 a kno:Component ;
+    rdfs:label "배당(配當)"@ko ;
+    kno:formative kno:F003732 ;
+    kno:fullForm "배당"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "배당"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0669-c3 a kno:Component ;
+    rdfs:label "소득(所得)"@ko ;
     kno:formative kno:F000047 ;
     kno:fullForm "소득"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.1 ;
-    rdfs:label "소득(所得)"@ko .
-kno:KN2025-0669-c1 kno:formative kno:F002005 ;
-    kno:surfaceForm "햇빛"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "햇빛"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:fullForm "햇빛"@ko ;
-    kno:semanticTag kno:usas-W1 .
-kno:KN2025-0669-c2 kno:formative kno:F003732 ;
-    rdfs:label "배당(配當)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "배당"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "배당"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1 .
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:surfaceForm "소득"@ko ;
+    kno:truncated "false"^^xsd:boolean .

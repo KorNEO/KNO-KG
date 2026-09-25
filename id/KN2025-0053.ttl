@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0053 kno:pos "「명」"@ko ;
+kno:KN2025-0053 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "고당대통"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EB%8B%B9%EB%8C%80%ED%86%B5> ;
     skos:definition "(LLM) 고혈압ㆍ당뇨ㆍ대상포진ㆍ통풍을 묶어 이르는 말."@ko ;
-    rdfs:label "고당대통"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0053-c1 ;
+    kno:component kno:KN2025-0053-c2 ;
+    kno:component kno:KN2025-0053-c3 ;
+    kno:component kno:KN2025-0053-c4 ;
+    kno:componentString "고(혈압)(高血壓), 당(뇨)(糖尿), 대(상포진)(帶狀疱疹), 통(풍)(痛風)"@ko ;
+    kno:example "(LLM) 이 보험은 {고당대통} 진단 시 질환별 진단비를 지급하는 특약을 내세워 보장 범위를 넓혔다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0053-freq-NN-2025 ;
     kno:frequency kno:KN2025-0053-freq-NN-total ;
     kno:indexForm "고당대통"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0053-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:example "(LLM) 이 보험은 {고당대통} 진단 시 질환별 진단비를 지급하는 특약을 내세워 보장 범위를 넓혔다."@ko ;
-    kno:component kno:KN2025-0053-c4 ;
-    a kno:Neologism ;
-    kno:componentString "고(혈압)(高血壓), 당(뇨)(糖尿), 대(상포진)(帶狀疱疹), 통(풍)(痛風)"@ko ;
-    kno:component kno:KN2025-0053-c1 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:formation kno:W06 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2025-0053-freq-NN-2025 ;
-    kno:origin "(高糖帶痛)" ;
     kno:languageType "한+한+한+한" ;
-    kno:component kno:KN2025-0053-c3 ;
-    a ontolex:Word .
-kno:KN2025-0053-c2 rdfs:label "당(뇨)(糖尿)"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F002889 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "당뇨"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "당"@ko ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2025-0053-c4 kno:fullForm "통풍"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    rdfs:label "통(풍)(痛風)"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:formative kno:F006501 ;
-    kno:surfaceForm "통"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(高糖帶痛)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0053-c1 a kno:Component ;
-    kno:fullForm "고혈압"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     rdfs:label "고(혈압)(高血壓)"@ko ;
+    kno:formative kno:F002273 ;
+    kno:fullForm "고혈압"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
     kno:surfaceForm "고"@ko ;
-    kno:formative kno:F002273 .
-kno:KN2025-0053-c3 kno:surfaceForm "대"@ko ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "대(상포진)(帶狀疱疹)"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0053-c2 a kno:Component ;
+    rdfs:label "당(뇨)(糖尿)"@ko ;
+    kno:formative kno:F002889 ;
+    kno:fullForm "당뇨"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "당"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0053-c3 a kno:Component ;
+    rdfs:label "대(상포진)(帶狀疱疹)"@ko ;
     kno:formative kno:F002899 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "대상포진"@ko .
+    kno:fullForm "대상포진"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "대"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0053-c4 a kno:Component ;
+    rdfs:label "통(풍)(痛風)"@ko ;
+    kno:formative kno:F006501 ;
+    kno:fullForm "통풍"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:surfaceForm "통"@ko ;
+    kno:truncated "true"^^xsd:boolean .

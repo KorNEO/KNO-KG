@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0442 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0442 kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "요정(妖精), 귀, 필러(filler)"@ko ;
-    kno:component kno:KN2025-0442-c1 ;
-    kno:slotFiller "요정(妖精)+귀 (2성분)"@ko ;
-    kno:component kno:KN2025-0442-c2 ;
-    kno:frequency kno:KN2025-0442-freq-NN-2025 ;
-    kno:indexForm "요정귀필러"@ko ;
-    kno:example "(LLM) 옆모습 사진에서 귀가 너무 붙어 보인다는 말을 듣고 {요정귀필러를} 상담받는 사람이 늘고 있다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%94%EC%A0%95%20%EA%B7%80%20%ED%95%84%EB%9F%AC> ;
-    kno:instantiates kno:S001060 ;
+kno:KN2025-0442 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    skos:definition "(LLM) 귀에 필러를 주입하여 귓불이나 귀 윤곽의 볼륨을 보완하거나, 누운 귀를 상대적으로 도드라져 보이게 해 얼굴이 작아 보이는 효과를 노리는 미용 시술."@ko ;
-    kno:unitType "구"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:frequency kno:KN2025-0442-freq-NN-total ;
-    a ontolex:MultiwordExpression ;
     rdfs:label "요정 귀 필러"@ko ;
-    kno:origin "(妖精귀<영>filler)" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9A%94%EC%A0%95%20%EA%B7%80%20%ED%95%84%EB%9F%AC> ;
+    skos:definition "(LLM) 귀에 필러를 주입하여 귓불이나 귀 윤곽의 볼륨을 보완하거나, 누운 귀를 상대적으로 도드라져 보이게 해 얼굴이 작아 보이는 효과를 노리는 미용 시술."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0442-c1 ;
+    kno:component kno:KN2025-0442-c2 ;
+    kno:component kno:KN2025-0442-c3 ;
+    kno:componentString "요정(妖精), 귀, 필러(filler)"@ko ;
+    kno:example "(LLM) 옆모습 사진에서 귀가 너무 붙어 보인다는 말을 듣고 {요정귀필러를} 상담받는 사람이 늘고 있다."@ko ;
+    kno:frequency kno:KN2025-0442-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0442-freq-NN-total ;
+    kno:indexForm "요정귀필러"@ko ;
+    kno:instantiates kno:S001060 ;
     kno:languageType "(한+고)_영" ;
-    kno:component kno:KN2025-0442-c3 .
-kno:KN2025-0442-c1 kno:formative kno:F000226 ;
-    kno:surfaceForm "요정"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(妖精귀<영>filler)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "요정(妖精)+귀 (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0442-c1 a kno:Component ;
+    rdfs:label "요정(妖精)"@ko ;
+    kno:formative kno:F000226 ;
     kno:fullForm "요정"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S9 ;
-    a kno:Component ;
-    rdfs:label "요정(妖精)"@ko .
-kno:KN2025-0442-c2 a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "귀"@ko ;
-    kno:formative kno:F000675 ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S9 ;
+    kno:surfaceForm "요정"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0442-c2 a kno:Component ;
+    rdfs:label "귀"@ko ;
+    kno:formative kno:F000675 ;
+    kno:fullForm "귀"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B1 ;
     kno:surfaceForm "귀"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "귀"@ko .
-kno:KN2025-0442-c3 kno:fullForm "필러"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0442-c3 a kno:Component ;
+    rdfs:label "필러(filler)"@ko ;
     kno:formative kno:F001010 ;
+    kno:fullForm "필러"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B4 ;
     kno:surfaceForm "필러"@ko ;
-    a kno:Component ;
-    rdfs:label "필러(filler)"@ko .
+    kno:truncated "false"^^xsd:boolean .

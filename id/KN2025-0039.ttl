@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0039 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0039 kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    kno:slotFiller "계급(階級) (1성분)"@ko ;
-    skos:definition "(LLM) 사회ㆍ경제적 지위의 차이를 실감하는 순간에 느끼는 박탈감이나 허탈감을 비유적으로 이르는 말."@ko ;
-    kno:frequency kno:KN2025-0039-freq-NN-total ;
-    kno:formation kno:W01 ;
+kno:KN2025-0039 a ontolex:Word ;
     a kno:Neologism ;
-    kno:instantiates kno:S001014 ;
-    kno:origin "(階級痛)" ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:languageType "한+한" ;
-    kno:example "(LLM) 동기들은 부모 도움으로 전세를 구했다는 얘길 자연스럽게 하는데, 나는 월세부터 걱정하니 {계급통이} 확 오더라."@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0039-c2 ;
-    kno:component kno:KN2025-0039-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EA%B8%89%ED%86%B5> ;
-    kno:frequency kno:KN2025-0039-freq-NN-2025 ;
     rdfs:label "계급-통"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%84%EA%B8%89%ED%86%B5> ;
+    skos:definition "(LLM) 사회ㆍ경제적 지위의 차이를 실감하는 순간에 느끼는 박탈감이나 허탈감을 비유적으로 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0039-c1 ;
+    kno:component kno:KN2025-0039-c2 ;
+    kno:componentString "계급(階級), 통(痛)"@ko ;
+    kno:example "(LLM) 동기들은 부모 도움으로 전세를 구했다는 얘길 자연스럽게 하는데, 나는 월세부터 걱정하니 {계급통이} 확 오더라."@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2025-0039-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0039-freq-NN-total ;
     kno:indexForm "계급통"@ko ;
-    kno:componentString "계급(階級), 통(痛)"@ko .
-kno:KN2025-0039-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "통(痛)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Q1.3 ;
-    kno:fullForm "통"@ko ;
-    kno:formative kno:F001906 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "통"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0039-c1 kno:surfaceForm "계급"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-S5 ;
+    kno:instantiates kno:S001014 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(階級痛)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "계급(階級) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0039-c1 a kno:Component ;
+    rdfs:label "계급(階級)"@ko ;
+    kno:formative kno:F000332 ;
     kno:fullForm "계급"@ko ;
     kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "계급(階級)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000332 .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "계급"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0039-c2 a kno:Component ;
+    rdfs:label "통(痛)"@ko ;
+    kno:formative kno:F001906 ;
+    kno:fullForm "통"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:surfaceForm "통"@ko ;
+    kno:truncated "false"^^xsd:boolean .

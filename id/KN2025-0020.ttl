@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0020 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0020 kno:activeYears "1"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "개딸, 매체(媒體)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EB%94%B8%20%EB%A7%A4%EC%B2%B4> ;
+kno:KN2025-0020 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
     rdfs:label "개딸 매체"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0020-c2 ;
-    kno:frequency kno:KN2025-0020-freq-NN-2025 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%9C%EB%94%B8%20%EB%A7%A4%EC%B2%B4> ;
     skos:definition "(LLM) 특정 정치인을 강하게 지지하는 온라인 지지층의 관점에 맞춰 보도하거나 그에 유리한 주장ㆍ논리를 반복 생산한다고 비판받는 언론 매체."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0020-c1 ;
+    kno:component kno:KN2025-0020-c2 ;
+    kno:componentString "개딸, 매체(媒體)"@ko ;
+    kno:example "(LLM) 야권 인사는 해당 보도가 사실관계보다 진영 논리에 치우쳤다며 {개딸매체가} 또 프레임을 만든다고 비판했다."@ko ;
+    kno:frequency kno:KN2025-0020-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0020-freq-NN-total ;
     kno:indexForm "개딸매체"@ko ;
     kno:instantiates kno:S000577 ;
-    kno:example "(LLM) 야권 인사는 해당 보도가 사실관계보다 진영 논리에 치우쳤다며 {개딸매체가} 또 프레임을 만든다고 비판했다."@ko ;
-    kno:component kno:KN2025-0020-c1 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "매체(媒體) (1성분)"@ko ;
-    kno:frequency kno:KN2025-0020-freq-NN-total ;
-    kno:unitType "구"@ko .
-kno:KN2025-0020-c2 kno:position "2"^^xsd:integer ;
-    rdfs:label "매체(媒體)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "매체"@ko ;
-    kno:fullForm "매체"@ko ;
-    kno:semanticTag kno:usas-Q4.3 ;
-    kno:formative kno:F003400 ;
-    kno:role "슬롯 채움"@ko .
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0020-c1 a kno:Component ;
-    kno:surfaceForm "개딸"@ko ;
-    kno:fullForm "개딸"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S5 ;
     rdfs:label "개딸"@ko ;
+    kno:formative kno:F000448 ;
+    kno:fullForm "개딸"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000448 .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "개딸"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0020-c2 a kno:Component ;
+    rdfs:label "매체(媒體)"@ko ;
+    kno:formative kno:F003400 ;
+    kno:fullForm "매체"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q4.3 ;
+    kno:surfaceForm "매체"@ko ;
+    kno:truncated "false"^^xsd:boolean .

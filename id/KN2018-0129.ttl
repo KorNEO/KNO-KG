@@ -9,60 +9,60 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0129 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0129 kno:languageType "(한+영)+한" ;
-    kno:unitType "단어"@ko ;
+kno:KN2018-0129 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "문센-족"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1396681> ;
+    skos:definition "백화점이나 대형 마트의 문화 센터에서 여가나 취미 생활을 즐기는 사람. 또는 그런 무리."@ko ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:slotFiller "문(화)(文)+센(터)(center) (2성분)"@ko ;
     kno:component kno:KN2018-0129-c1 ;
-    kno:predicate "즐기다"@ko ;
-    kno:frequency kno:KN2018-0129-freq-NN-total ;
-    kno:frequency kno:KN2018-0129-freq-NN-2025 ;
+    kno:component kno:KN2018-0129-c2 ;
+    kno:component kno:KN2018-0129-c3 ;
+    kno:componentString "문(화)(文), 센(터)(center), -족(族)"@ko ;
     kno:example "¶20~30대 여성들이 ‘{문센족’으로} 급부상하면서 취미 관련 용품이 불티나게 판매되고 있다."@ko ;
     kno:formation kno:W02 ;
-    skos:definition "백화점이나 대형 마트의 문화 센터에서 여가나 취미 생활을 즐기는 사람. 또는 그런 무리."@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1396681> ;
-    kno:origin "(文<영>←center族)" ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2018-0129-freq-NN-2022 ;
-    kno:component kno:KN2018-0129-c3 ;
-    a kno:Neologism ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:component kno:KN2018-0129-c2 ;
-    kno:indexForm "문센족"@ko ;
-    kno:frequency kno:KN2018-0129-freq-NN-2019 ;
-    rdfs:label "문센-족"@ko ;
-    kno:componentString "문(화)(文), 센(터)(center), -족(族)"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:urimalTargetCode "1396681" ;
     kno:frequency kno:KN2018-0129-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0129-freq-NN-2019 ;
+    kno:frequency kno:KN2018-0129-freq-NN-2022 ;
+    kno:frequency kno:KN2018-0129-freq-NN-2025 ;
+    kno:frequency kno:KN2018-0129-freq-NN-total ;
+    kno:indexForm "문센족"@ko ;
     kno:instantiates kno:S000001 ;
-    kno:pos "「명」"@ko .
-kno:KN2018-0129-c1 kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:languageType "(한+영)+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(文<영>←center族)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "즐기다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "문(화)(文)+센(터)(center) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1396681" ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0129-c1 a kno:Component ;
     rdfs:label "문(화)(文)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "문"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:formative kno:F001320 ;
     kno:fullForm "문화"@ko ;
-    kno:formative kno:F001320 .
-kno:KN2018-0129-c3 kno:semanticTag kno:usas-S5 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S1.1.1 ;
+    kno:surfaceForm "문"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0129-c2 a kno:Component ;
+    rdfs:label "센(터)(center)"@ko ;
+    kno:formative kno:F001476 ;
+    kno:fullForm "센터"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:surfaceForm "센"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0129-c3 a kno:Component ;
     rdfs:label "-족(族)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
     kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "족"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko .
-kno:KN2018-0129-c2 kno:surfaceForm "센"@ko ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "센터"@ko ;
-    kno:formative kno:F001476 ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "센(터)(center)"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:truncated "false"^^xsd:boolean .

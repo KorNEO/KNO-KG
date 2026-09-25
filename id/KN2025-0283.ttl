@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0283 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0283 kno:slotFiller "법치(法治) (1성분)"@ko ;
-    kno:origin "(法治內亂)" ;
-    kno:componentString "법치(法治), 내란(內亂)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:formation kno:W01 ;
-    kno:instantiates kno:S000754 ;
-    kno:activeYears "1"^^xsd:integer ;
+kno:KN2025-0283 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "법치-내란"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B2%95%EC%B9%98%EB%82%B4%EB%9E%80> ;
-    kno:predicate "비판하다"@ko ;
-    kno:year "2025"^^xsd:gYear ;
+    skos:definition "(LLM) 법 집행과 사법 절차가 권력에 의해 선택적으로 적용되거나 왜곡되어, 특정 세력을 비호하고 반대 세력을 압박함으로써 헌정 질서를 흔든다고 비판하는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0283-c1 ;
+    kno:component kno:KN2025-0283-c2 ;
+    kno:componentString "법치(法治), 내란(內亂)"@ko ;
+    kno:example "(LLM) 야권은 수사와 기소 과정이 정권에 유리하게 작동한다며 이를 {법치내란으로} 규정하고 국정조사를 요구했다."@ko ;
+    kno:formation kno:W01 ;
     kno:frequency kno:KN2025-0283-freq-NN-2025 ;
     kno:frequency kno:KN2025-0283-freq-NN-total ;
-    a ontolex:Word ;
-    kno:component kno:KN2025-0283-c1 ;
-    a kno:Neologism ;
-    kno:languageType "한_한" ;
-    skos:definition "(LLM) 법 집행과 사법 절차가 권력에 의해 선택적으로 적용되거나 왜곡되어, 특정 세력을 비호하고 반대 세력을 압박함으로써 헌정 질서를 흔든다고 비판하는 말."@ko ;
-    kno:component kno:KN2025-0283-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:label "법치-내란"@ko ;
-    kno:example "(LLM) 야권은 수사와 기소 과정이 정권에 유리하게 작동한다며 이를 {법치내란으로} 규정하고 국정조사를 요구했다."@ko ;
-    kno:registration "신어DB"@ko ;
     kno:indexForm "법치내란"@ko ;
-    kno:unitType "단어"@ko .
-kno:KN2025-0283-c1 kno:role "슬롯 채움"@ko ;
+    kno:instantiates kno:S000754 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(法治內亂)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "비판하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "법치(法治) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0283-c1 a kno:Component ;
     rdfs:label "법치(法治)"@ko ;
+    kno:formative kno:F003808 ;
+    kno:fullForm "법치"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-G2.1 ;
     kno:surfaceForm "법치"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F003808 ;
-    kno:fullForm "법치"@ko .
-kno:KN2025-0283-c2 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "내란"@ko ;
-    kno:semanticTag kno:usas-G3m ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "내란"@ko ;
-    kno:role "고정항"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0283-c2 a kno:Component ;
+    rdfs:label "내란(內亂)"@ko ;
     kno:formative kno:F000052 ;
-    rdfs:label "내란(內亂)"@ko .
+    kno:fullForm "내란"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G3m ;
+    kno:surfaceForm "내란"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0009 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0009 a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2019-0009-freq-NN-2019 ;
+kno:KN2019-0009 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "거래 증진비"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EB%9E%98%20%EC%A6%9D%EC%A7%84%EB%B9%84> ;
+    skos:definition "기업 따위에서 거래량을 늘리기 위해 사용되는 비용. 부정적인 인식을 가진 ‘접대비’를 대체하기 위해 만든 말이다."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
     kno:component kno:KN2019-0009-c1 ;
-    kno:pos "「구」"@ko ;
+    kno:component kno:KN2019-0009-c2 ;
     kno:component kno:KN2019-0009-c3 ;
     kno:componentString "거래(去來), 증진(增進), -비(費)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
-    kno:registration "신어DB"@ko ;
-    kno:predicate "사용되다"@ko ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0009-freq-NN-2020 ;
-    kno:origin "(去來增進費)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B1%B0%EB%9E%98%20%EC%A6%9D%EC%A7%84%EB%B9%84> ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0009-freq-NN-2021 ;
     kno:example "¶O 의원은 또 접대비란 용어의 부정적 인식을 없애기 위해 이름을 {거래 증진비로} 바꿀 필요가 있다며 관련 법안 개정안도 함께 발의했습니다."@ko ;
-    kno:component kno:KN2019-0009-c2 ;
-    kno:frequency kno:KN2019-0009-freq-NN-total ;
-    rdfs:label "거래 증진비"@ko ;
-    skos:definition "기업 따위에서 거래량을 늘리기 위해 사용되는 비용. 부정적인 인식을 가진 ‘접대비’를 대체하기 위해 만든 말이다."@ko ;
     kno:frequency kno:KN2019-0009-freq-NN-2018 ;
-    kno:indexForm "거래증진비"@ko .
-kno:KN2019-0009-c1 kno:semanticTag kno:usas-I2.2 ;
+    kno:frequency kno:KN2019-0009-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0009-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0009-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0009-freq-NN-total ;
+    kno:indexForm "거래증진비"@ko ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(去來增進費)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "사용되다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0009-c1 a kno:Component ;
     rdfs:label "거래(去來)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "거래"@ko ;
     kno:formative kno:F001047 ;
+    kno:fullForm "거래"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
     kno:surfaceForm "거래"@ko ;
-    a kno:Component .
-kno:KN2019-0009-c3 kno:fullForm "비"@ko ;
-    kno:surfaceForm "비"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F000785 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    rdfs:label "-비(費)"@ko ;
-    kno:semanticTag kno:usas-I1 .
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2019-0009-c2 a kno:Component ;
+    rdfs:label "증진(增進)"@ko ;
     kno:formative kno:F000932 ;
-    kno:surfaceForm "증진"@ko ;
-    kno:semanticTag kno:usas-N5p ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "증진"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "증진(增進)"@ko ;
-    kno:role "성분"@ko .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-N5p ;
+    kno:surfaceForm "증진"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0009-c3 a kno:Component ;
+    rdfs:label "-비(費)"@ko ;
+    kno:formative kno:F000785 ;
+    kno:fullForm "비"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "비"@ko ;
+    kno:truncated "false"^^xsd:boolean .

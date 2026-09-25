@@ -9,68 +9,68 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0122 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0122 kno:instantiates kno:S000016 ;
-    kno:componentString "반(反)-, 백신(vaccine), -론(論), -자(者)"@ko ;
+kno:KN2021-0122 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "반백신론-자"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B0%98%EB%B0%B1%EC%8B%A0%EB%A1%A0%EC%9E%90> ;
-    kno:component kno:KN2021-0122-c3 ;
-    kno:frequency kno:KN2021-0122-freq-NN-2020 ;
-    kno:pos "「명」"@ko ;
     skos:definition "반백신론을 따르거나 주장하는 사람. 백신 접종을 거부하고 그 효능을 의심하는 사람을 일컫는 말이다. 방역 당국에서 코로나19의 감염과 확산을 막기 위해 전 국민을 대상으로 예방 접종을 실시하면서 생겨난 말이다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2021-0122-c1 ;
+    kno:component kno:KN2021-0122-c2 ;
+    kno:component kno:KN2021-0122-c3 ;
+    kno:component kno:KN2021-0122-c4 ;
+    kno:componentString "반(反)-, 백신(vaccine), -론(論), -자(者)"@ko ;
+    kno:example "¶코로나19 백신 접종률이 높아졌음에도 불구하고 확진자 수가 줄지 않자 {반백신론자들의} 경계심은 더욱 더 커졌다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2021-0122-freq-NN-2020 ;
     kno:frequency kno:KN2021-0122-freq-NN-2021 ;
     kno:frequency kno:KN2021-0122-freq-NN-total ;
+    kno:indexForm "반백신론자"@ko ;
+    kno:instantiates kno:S000016 ;
+    kno:instantiates kno:S000481 ;
+    kno:languageType "(한+영+한)+한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(反<영>vaccine論者)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "주장하다"@ko ;
     kno:registration "신어DB"@ko ;
     kno:slotFiller "반(反)-+백신(vaccine)+-론(論) (3성분)"@ko ;
     kno:slotFiller "백신(vaccine)+-론(論)+-자(者) (3성분)"@ko ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:component kno:KN2021-0122-c1 ;
-    kno:instantiates kno:S000481 ;
-    rdfs:label "반백신론-자"@ko ;
-    kno:component kno:KN2021-0122-c4 ;
-    kno:example "¶코로나19 백신 접종률이 높아졌음에도 불구하고 확진자 수가 줄지 않자 {반백신론자들의} 경계심은 더욱 더 커졌다."@ko ;
-    kno:formation kno:W02 ;
-    kno:indexForm "반백신론자"@ko ;
-    a ontolex:Word ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:languageType "(한+영+한)+한" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2021-0122-c2 ;
-    kno:origin "(反<영>vaccine論者)" ;
-    kno:predicate "주장하다"@ko ;
-    kno:unitType "단어"@ko .
-kno:KN2021-0122-c3 rdfs:label "-론(論)"@ko ;
-    a kno:Component ;
-    kno:fullForm "론"@ko ;
-    kno:formative kno:F000168 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-X4.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "론"@ko .
+    kno:unitType "단어"@ko ;
+    kno:year "2021"^^xsd:gYear .
 kno:KN2021-0122-c1 a kno:Component ;
-    kno:semanticTag kno:usas-A6.1m ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "반"@ko ;
-    kno:surfaceForm "반"@ko ;
+    rdfs:label "반(反)-"@ko ;
     kno:formative kno:F000762 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "반"@ko ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "반(反)-"@ko .
-kno:KN2021-0122-c4 kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    rdfs:label "-자(者)"@ko ;
     kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:fullForm "자"@ko ;
+    kno:semanticTag kno:usas-A6.1m ;
+    kno:surfaceForm "반"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0122-c2 a kno:Component ;
+    rdfs:label "백신(vaccine)"@ko ;
+    kno:formative kno:F000079 ;
+    kno:fullForm "백신"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "백신"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0122-c3 a kno:Component ;
+    rdfs:label "-론(論)"@ko ;
+    kno:formative kno:F000168 ;
+    kno:fullForm "론"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X4.1 ;
+    kno:surfaceForm "론"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0122-c4 a kno:Component ;
+    rdfs:label "-자(者)"@ko ;
     kno:formative kno:F000014 ;
+    kno:fullForm "자"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "자"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2021-0122-c2 kno:semanticTag kno:usas-B3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "백신"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "백신(vaccine)"@ko ;
-    kno:fullForm "백신"@ko ;
-    kno:formative kno:F000079 ;
-    kno:role "슬롯 채움"@ko .

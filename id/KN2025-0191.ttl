@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0191 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0191 kno:componentString "딸, 아빠, -상(相)"@ko ;
-    a ontolex:Word ;
-    kno:frequency kno:KN2025-0191-freq-NN-total ;
-    kno:origin "(딸아빠相)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B8%EC%95%84%EB%B9%A0%EC%83%81> ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2025-0191-c2 ;
-    kno:instantiates kno:S000177 ;
-    kno:languageType "고_고+한" ;
-    kno:example "(LLM) 초음파 보기 전부터 다들 {딸아빠상이}라며 아기 성별을 딸로 예상했다."@ko ;
-    kno:slotFiller "딸+아빠 (2성분)"@ko ;
-    kno:frequency kno:KN2025-0191-freq-NN-2025 ;
-    skos:definition "(LLM) 딸을 낳을 것 같다고 여겨지는 얼굴이나 분위기의 인상."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    rdfs:label "딸아빠-상"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S001269 ;
-    kno:slotFiller "아빠+-상(相) (2성분)"@ko ;
-    kno:component kno:KN2025-0191-c1 ;
+kno:KN2025-0191 a ontolex:Word ;
     a kno:Neologism ;
-    kno:predicate "낳다"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "딸아빠-상"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%B8%EC%95%84%EB%B9%A0%EC%83%81> ;
+    skos:definition "(LLM) 딸을 낳을 것 같다고 여겨지는 얼굴이나 분위기의 인상."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0191-c1 ;
+    kno:component kno:KN2025-0191-c2 ;
+    kno:component kno:KN2025-0191-c3 ;
+    kno:componentString "딸, 아빠, -상(相)"@ko ;
+    kno:example "(LLM) 초음파 보기 전부터 다들 {딸아빠상이}라며 아기 성별을 딸로 예상했다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2025-0191-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0191-freq-NN-total ;
     kno:indexForm "딸아빠상"@ko ;
-    kno:component kno:KN2025-0191-c3 .
-kno:KN2025-0191-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:instantiates kno:S000177 ;
+    kno:instantiates kno:S001269 ;
+    kno:languageType "고_고+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(딸아빠相)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "낳다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "딸+아빠 (2성분)"@ko ;
+    kno:slotFiller "아빠+-상(相) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0191-c1 a kno:Component ;
+    rdfs:label "딸"@ko ;
+    kno:formative kno:F000723 ;
+    kno:fullForm "딸"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "딸"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0191-c2 a kno:Component ;
+    rdfs:label "아빠"@ko ;
     kno:formative kno:F000552 ;
     kno:fullForm "아빠"@ko ;
-    kno:surfaceForm "아빠"@ko ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "아빠"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2025-0191-c1 kno:fullForm "딸"@ko ;
-    kno:surfaceForm "딸"@ko ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S4 ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000723 ;
-    rdfs:label "딸"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
+    kno:surfaceForm "아빠"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0191-c3 kno:formative kno:F000217 ;
-    kno:semanticTag kno:usas-O4.1 ;
-    kno:fullForm "상"@ko ;
+kno:KN2025-0191-c3 a kno:Component ;
     rdfs:label "-상(相)"@ko ;
+    kno:formative kno:F000217 ;
+    kno:fullForm "상"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "상"@ko ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-O4.1 ;
+    kno:surfaceForm "상"@ko ;
     kno:truncated "false"^^xsd:boolean .

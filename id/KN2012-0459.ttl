@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0459 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0459 kno:origin "(▼←press sale)" ;
-    kno:componentString "프(레스)(press), 셀(←sale)"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2012-0459-c2 ;
-    kno:example "¶명품족들 사이에서 ‘팸셀’, ‘{프셀’의} 인기가 뜨겁다."@ko ;
+kno:KN2012-0459 a ontolex:Word ;
     a kno:Neologism ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EC%85%80> ;
-    kno:year "2012"^^xsd:gYear ;
-    a ontolex:Word ;
-    skos:definition "‘프레스 세일’을 줄여 이르는 말. 업체의 홍보를 위해 언론 매체를 대상으로 재고나 샘플을 싼 값에 판매하는 일을 말한다."@ko ;
-    kno:languageType "영+영" ;
     rdfs:label "프셀"@ko ;
-    kno:formation kno:W06 ;
-    kno:component kno:KN2012-0459-c1 ;
-    kno:indexForm "프셀"@ko ;
-    kno:pos "「명」"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%94%84%EC%85%80> ;
+    skos:definition "‘프레스 세일’을 줄여 이르는 말. 업체의 홍보를 위해 언론 매체를 대상으로 재고나 샘플을 싼 값에 판매하는 일을 말한다."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko .
-kno:KN2012-0459-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "셀"@ko ;
-    kno:surfaceForm "셀"@ko ;
-    kno:role "성분"@ko ;
-    rdfs:label "셀(←sale)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:formative kno:F004370 .
+    kno:component kno:KN2012-0459-c1 ;
+    kno:component kno:KN2012-0459-c2 ;
+    kno:componentString "프(레스)(press), 셀(←sale)"@ko ;
+    kno:example "¶명품족들 사이에서 ‘팸셀’, ‘{프셀’의} 인기가 뜨겁다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "프셀"@ko ;
+    kno:languageType "영+영" ;
+    kno:origin "(▼←press sale)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2012"^^xsd:gYear .
 kno:KN2012-0459-c1 a kno:Component ;
-    kno:semanticTag kno:usas-Q4.1 ;
+    rdfs:label "프(레스)(press)"@ko ;
     kno:formative kno:F006790 ;
     kno:fullForm "프레스"@ko ;
-    rdfs:label "프(레스)(press)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:surfaceForm "프"@ko .
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:surfaceForm "프"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2012-0459-c2 a kno:Component ;
+    rdfs:label "셀(←sale)"@ko ;
+    kno:formative kno:F004370 ;
+    kno:fullForm "셀"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "셀"@ko ;
+    kno:truncated "false"^^xsd:boolean .

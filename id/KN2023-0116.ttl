@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0116 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0116 a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:languageType "한^한^한" ;
+kno:KN2023-0116 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "불법^일임^투자"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%88%EB%B2%95%EC%9D%BC%EC%9E%84%ED%88%AC%EC%9E%90> ;
+    skos:definition "법률에서 금하고 있는 방식이나 내용으로, 자산의 운용에 대한 권한이나 투자 자금을 자산 운용 회사, 투자 자문 회사, 증권 회사 등에 전부 맡기기로 하는 투자."@ko ;
     kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2023-0116-c1 ;
-    rdfs:label "불법^일임^투자"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%88%EB%B2%95%EC%9D%BC%EC%9E%84%ED%88%AC%EC%9E%90> ;
-    kno:origin "(不法一任投資)" ;
-    kno:instantiates kno:S000627 ;
+    kno:component kno:KN2023-0116-c2 ;
+    kno:component kno:KN2023-0116-c3 ;
+    kno:componentString "불법(不法), 일임(一任), 투자(投資)"@ko ;
+    kno:example "¶이들이 {불법 일임 투자에} 참여했다는 이유만으로 모두가 주가 조작을 인지하고 있던 공범이라고 간주하기는 어려워 보인다."@ko ;
     kno:frequency kno:KN2023-0116-freq-NN-2023 ;
     kno:frequency kno:KN2023-0116-freq-NN-total ;
     kno:indexForm "불법일임투자"@ko ;
-    kno:component kno:KN2023-0116-c2 ;
-    kno:predicate "하다"@ko ;
-    kno:slotFiller "일임(一任)+투자(投資) (2성분)"@ko ;
-    kno:component kno:KN2023-0116-c3 ;
-    kno:example "¶이들이 {불법 일임 투자에} 참여했다는 이유만으로 모두가 주가 조작을 인지하고 있던 공범이라고 간주하기는 어려워 보인다."@ko ;
-    kno:componentString "불법(不法), 일임(一任), 투자(投資)"@ko ;
+    kno:instantiates kno:S000627 ;
+    kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(不法一任投資)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "하다"@ko ;
     kno:registration "신어DB"@ko ;
-    skos:definition "법률에서 금하고 있는 방식이나 내용으로, 자산의 운용에 대한 권한이나 투자 자금을 자산 운용 회사, 투자 자문 회사, 증권 회사 등에 전부 맡기기로 하는 투자."@ko .
-kno:KN2023-0116-c1 rdfs:label "불법(不法)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "불법"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
+    kno:slotFiller "일임(一任)+투자(投資) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0116-c1 a kno:Component ;
+    rdfs:label "불법(不法)"@ko ;
+    kno:formative kno:F000517 ;
     kno:fullForm "불법"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:formative kno:F000517 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2023-0116-c2 rdfs:label "일임(一任)"@ko ;
-    kno:fullForm "일임"@ko ;
-    kno:surfaceForm "일임"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S7.1 ;
-    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "불법"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0116-c2 a kno:Component ;
+    rdfs:label "일임(一任)"@ko ;
     kno:formative kno:F005474 ;
-    a kno:Component .
-kno:KN2023-0116-c3 kno:role "슬롯 채움"@ko ;
-    kno:fullForm "투자"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "투자"@ko ;
+    kno:fullForm "일임"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.1 ;
+    kno:surfaceForm "일임"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0116-c3 a kno:Component ;
     rdfs:label "투자(投資)"@ko ;
     kno:formative kno:F000427 ;
+    kno:fullForm "투자"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "투자"@ko ;
+    kno:truncated "false"^^xsd:boolean .

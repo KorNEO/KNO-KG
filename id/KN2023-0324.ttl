@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0324 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0324 kno:example "¶최근 대도시를 중심으로 식당에서 종업원에게 지불하는 팁이 음식 가격의 15%에서 30%까지 높아지면서 이용자들 사이에 {팁 소름이라는} 말이 나오고 있다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:instantiates kno:S001642 ;
-    kno:frequency kno:KN2023-0324-freq-NN-2023 ;
-    kno:component kno:KN2023-0324-c2 ;
-    kno:instantiates kno:S000876 ;
-    kno:languageType "영_고" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%81%20%EC%86%8C%EB%A6%84> ;
-    kno:registration "신어DB"@ko ;
-    kno:componentString "팁(tip), 소름"@ko ;
-    kno:frequency kno:KN2023-0324-freq-NN-total ;
+kno:KN2023-0324 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:indexForm "팁소름"@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:slotFiller "팁(tip) (1성분)"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:slotFiller "소름 (1성분)"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(<영>tip소름)" ;
-    kno:component kno:KN2023-0324-c1 ;
-    skos:definition "서비스에 대한 감사의 의미로 종업원에게 지불하는 팁의 금액이 높게 치솟는 현상이 소름이 돋을 정도로 충격적인 상황임을 이르는 말."@ko ;
     rdfs:label "팁 소름"@ko ;
-    kno:unitType "구"@ko .
-kno:KN2023-0324-c2 rdfs:label "소름"@ko ;
-    kno:formative kno:F000809 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%81%20%EC%86%8C%EB%A6%84> ;
+    skos:definition "서비스에 대한 감사의 의미로 종업원에게 지불하는 팁의 금액이 높게 치솟는 현상이 소름이 돋을 정도로 충격적인 상황임을 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0324-c1 ;
+    kno:component kno:KN2023-0324-c2 ;
+    kno:componentString "팁(tip), 소름"@ko ;
+    kno:example "¶최근 대도시를 중심으로 식당에서 종업원에게 지불하는 팁이 음식 가격의 15%에서 30%까지 높아지면서 이용자들 사이에 {팁 소름이라는} 말이 나오고 있다."@ko ;
+    kno:frequency kno:KN2023-0324-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0324-freq-NN-total ;
+    kno:indexForm "팁소름"@ko ;
+    kno:instantiates kno:S000876 ;
+    kno:instantiates kno:S001642 ;
+    kno:languageType "영_고" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(<영>tip소름)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "소름 (1성분)"@ko ;
+    kno:slotFiller "팁(tip) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0324-c1 a kno:Component ;
+    rdfs:label "팁(tip)"@ko ;
+    kno:formative kno:F000195 ;
+    kno:fullForm "팁"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "팁"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0324-c2 a kno:Component ;
+    rdfs:label "소름"@ko ;
+    kno:formative kno:F000809 ;
+    kno:fullForm "소름"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-E5 ;
     kno:surfaceForm "소름"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "소름"@ko ;
-    a kno:Component .
-kno:KN2023-0324-c1 kno:fullForm "팁"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F000195 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "팁(tip)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:surfaceForm "팁"@ko .
+    kno:truncated "false"^^xsd:boolean .

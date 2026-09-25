@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0107 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0107 a kno:Neologism ;
-    kno:predicate "파다"@ko ;
-    kno:languageType "한+영" ;
-    kno:componentString "당(일)(當), (티)켓(ticket)"@ko ;
-    kno:indexForm "당켓"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:example "¶OO에서 열린 OO 7~8일 공연 티켓 중 103장이 ‘{당켓’으로} 팔렸다."@ko ;
-    kno:component kno:KN2013-0107-c1 ;
+kno:KN2013-0107 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "당켓"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357601> ;
     skos:definition "공연에서 행사 ‘당일까지 판매되지 않은 좌석을 할인하여 파는 티켓’."@ko ;
-    kno:year "2013"^^xsd:gYear ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0107-c1 ;
+    kno:component kno:KN2013-0107-c2 ;
+    kno:componentString "당(일)(當), (티)켓(ticket)"@ko ;
+    kno:example "¶OO에서 열린 OO 7~8일 공연 티켓 중 103장이 ‘{당켓’으로} 팔렸다."@ko ;
+    kno:formation kno:W05 ;
+    kno:indexForm "당켓"@ko ;
+    kno:languageType "한+영" ;
     kno:origin "(當←<영>ticket)" ;
     kno:pos "「명」"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:urimalTargetCode "1357601" ;
-    kno:component kno:KN2013-0107-c2 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357601> ;
-    rdfs:label "당켓"@ko ;
+    kno:predicate "파다"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:formation kno:W05 ;
-    a ontolex:Word .
-kno:KN2013-0107-c1 kno:semanticTag kno:usas-T1.3 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "당일"@ko ;
-    kno:formative kno:F002892 ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1357601" ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0107-c1 a kno:Component ;
     rdfs:label "당(일)(當)"@ko ;
+    kno:formative kno:F002892 ;
+    kno:fullForm "당일"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "당"@ko .
-kno:KN2013-0107-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "당"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0107-c2 a kno:Component ;
+    rdfs:label "(티)켓(ticket)"@ko ;
+    kno:formative kno:F006272 ;
+    kno:fullForm "티켓"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-Q1.2 ;
     kno:surfaceForm "켓"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "티켓"@ko ;
-    kno:formative kno:F006272 ;
-    rdfs:label "(티)켓(ticket)"@ko .
+    kno:truncated "true"^^xsd:boolean .

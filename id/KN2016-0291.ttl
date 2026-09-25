@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0291 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0291 kno:origin "(수저世代)" ;
-    kno:slotFiller "수저 (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
+kno:KN2016-0291 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "수저^세대"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372727> ;
+    skos:definition "부모의 지위, 재산, 직업 따위에 따라서 금수저, 은수저, 흙수저 등으로 자녀의 사회 계급을 나누는 세대."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2016-0291-c1 ;
-    a ontolex:MultiwordExpression ;
-    kno:urimalTargetCode "1372727" ;
+    kno:component kno:KN2016-0291-c2 ;
     kno:componentString "수저, 세대(世代)"@ko ;
+    kno:example "¶한창 친구들과 관계를 형성하며 즐거워야 할 시기에 지나친 경쟁과 삶의 무게로 주변을 돌아보지 못하는 ‘{수저 세대}’ 아이들이 암울한 현실 속에서 신음하고 있다."@ko ;
+    kno:frequency kno:KN2016-0291-freq-NN-2016 ;
     kno:frequency kno:KN2016-0291-freq-NN-total ;
+    kno:indexForm "수저세대"@ko ;
+    kno:instantiates kno:S000002 ;
     kno:instantiates kno:S000493 ;
+    kno:languageType "고^한" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(수저世代)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "나누다"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:frequency kno:KN2016-0291-freq-NN-2016 ;
-    kno:activeYears "1"^^xsd:integer ;
-    skos:definition "부모의 지위, 재산, 직업 따위에 따라서 금수저, 은수저, 흙수저 등으로 자녀의 사회 계급을 나누는 세대."@ko ;
-    kno:instantiates kno:S000002 ;
     kno:slotFiller "세대(世代) (1성분)"@ko ;
-    kno:component kno:KN2016-0291-c2 ;
-    kno:indexForm "수저세대"@ko ;
-    kno:example "¶한창 친구들과 관계를 형성하며 즐거워야 할 시기에 지나친 경쟁과 삶의 무게로 주변을 돌아보지 못하는 ‘{수저 세대}’ 아이들이 암울한 현실 속에서 신음하고 있다."@ko ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:year "2016"^^xsd:gYear ;
-    a kno:Neologism ;
+    kno:slotFiller "수저 (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372727> ;
-    kno:languageType "고^한" ;
-    rdfs:label "수저^세대"@ko .
-kno:KN2016-0291-c1 kno:fullForm "수저"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:urimalTargetCode "1372727" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0291-c1 a kno:Component ;
+    rdfs:label "수저"@ko ;
     kno:formative kno:F000048 ;
-    kno:semanticTag kno:usas-O2 ;
-    a kno:Component ;
+    kno:fullForm "수저"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:semanticTag kno:usas-O2 ;
     kno:surfaceForm "수저"@ko ;
-    rdfs:label "수저"@ko .
-kno:KN2016-0291-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-T3 ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0291-c2 a kno:Component ;
     rdfs:label "세대(世代)"@ko ;
-    kno:surfaceForm "세대"@ko ;
     kno:formative kno:F000006 ;
-    kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
+    kno:fullForm "세대"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:fullForm "세대"@ko .
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:surfaceForm "세대"@ko ;
+    kno:truncated "false"^^xsd:boolean .

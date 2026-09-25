@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0024 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0024 kno:component kno:KN2017-0024-c3 ;
-    kno:predicate "주다"@ko ;
+kno:KN2017-0024 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "골든 타임 배송"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A8%EB%93%A0%20%ED%83%80%EC%9E%84%20%EB%B0%B0%EC%86%A1> ;
+    skos:definition "가장 적절한 시간대에 물자를 보내 주는 일. 주로 신선한 식자재를 배송할 때 사용하는 말이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2017-0024-c1 ;
+    kno:component kno:KN2017-0024-c2 ;
+    kno:component kno:KN2017-0024-c3 ;
     kno:componentString "골든(golden), 타임(time), 배송(配送)"@ko ;
+    kno:example "¶수요자 관점에서는 최고의 품질의 식자재를 최적 시간에 공급받을 수 있는, 이른바 {골든 타임 배송의} 가능성이 활짝 열렸다."@ko ;
     kno:frequency kno:KN2017-0024-freq-NN-2016 ;
-    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2017-0024-freq-NN-total ;
     kno:indexForm "골든타임배송"@ko ;
     kno:languageType "영_영_한" ;
-    kno:component kno:KN2017-0024-c2 ;
-    kno:component kno:KN2017-0024-c1 ;
-    kno:registration "신어DB"@ko ;
     kno:lastAttestationYear "2016"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2017-0024-freq-NN-total ;
-    kno:example "¶수요자 관점에서는 최고의 품질의 식자재를 최적 시간에 공급받을 수 있는, 이른바 {골든 타임 배송의} 가능성이 활짝 열렸다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
     kno:origin "(<영>golden time配送)" ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A8%EB%93%A0%20%ED%83%80%EC%9E%84%20%EB%B0%B0%EC%86%A1> ;
-    kno:year "2017"^^xsd:gYear ;
-    skos:definition "가장 적절한 시간대에 물자를 보내 주는 일. 주로 신선한 식자재를 배송할 때 사용하는 말이다."@ko .
-kno:KN2017-0024-c3 rdfs:label "배송(配送)"@ko ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "주다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0024-c1 a kno:Component ;
+    rdfs:label "골든(golden)"@ko ;
+    kno:formative kno:F001068 ;
+    kno:fullForm "골든"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:fullForm "배송"@ko ;
-    kno:surfaceForm "배송"@ko ;
-    kno:formative kno:F001347 ;
+    kno:semanticTag kno:usas-A5.1p ;
+    kno:semanticTag kno:usas-O1.1 ;
+    kno:surfaceForm "골든"@ko ;
     kno:truncated "false"^^xsd:boolean .
 kno:KN2017-0024-c2 a kno:Component ;
     rdfs:label "타임(time)"@ko ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "타임"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:formative kno:F000613 ;
-    kno:fullForm "타임"@ko .
-kno:KN2017-0024-c1 kno:fullForm "골든"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-O1.1 ;
-    rdfs:label "골든(golden)"@ko ;
+    kno:fullForm "타임"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F001068 ;
-    kno:semanticTag kno:usas-A5.1p ;
-    kno:surfaceForm "골든"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
+    kno:surfaceForm "타임"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0024-c3 a kno:Component ;
+    rdfs:label "배송(配送)"@ko ;
+    kno:formative kno:F001347 ;
+    kno:fullForm "배송"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "배송"@ko ;
     kno:truncated "false"^^xsd:boolean .

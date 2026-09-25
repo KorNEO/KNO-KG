@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0348 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0348 kno:frequency kno:KN2017-0348-freq-NN-2018 ;
-    kno:slotFiller "고시(考試)+(소시)오패스(sociopath) (2성분)"@ko ;
-    kno:urimalTargetCode "1381760" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2017-0348-c2 ;
-    kno:languageType "라_(한+영)" ;
-    kno:componentString "호모(homo), 고시(考試), (소시)오패스(sociopath)"@ko ;
+kno:KN2017-0348 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "호모 고시오패스"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1381760> ;
     skos:definition "오랜 고시 준비로 인해 주변 일에 몹시 예민해지거나 다른 사람들에게 공격적인 성향을 보이는 인간을 비유적으로 이르는 말."@ko ;
-    kno:example "¶석 달 전 만난 그는 ‘{호모 고시오패스’의} 모습을 담고 있었다."@ko ;
-    kno:indexForm "호모고시오패스"@ko ;
-    kno:frequency kno:KN2017-0348-freq-NN-2017 ;
-    kno:origin "(<라>▼homo考試<영>←sociopath)" ;
-    kno:component kno:KN2017-0348-c3 ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2017-0348-freq-NN-total ;
-    kno:instantiates kno:S000054 ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:component kno:KN2017-0348-c1 ;
-    rdfs:label "호모 고시오패스"@ko ;
+    kno:component kno:KN2017-0348-c2 ;
+    kno:component kno:KN2017-0348-c3 ;
+    kno:componentString "호모(homo), 고시(考試), (소시)오패스(sociopath)"@ko ;
+    kno:example "¶석 달 전 만난 그는 ‘{호모 고시오패스’의} 모습을 담고 있었다."@ko ;
+    kno:frequency kno:KN2017-0348-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0348-freq-NN-2018 ;
+    kno:frequency kno:KN2017-0348-freq-NN-total ;
+    kno:indexForm "호모고시오패스"@ko ;
+    kno:instantiates kno:S000054 ;
+    kno:languageType "라_(한+영)" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
+    kno:origin "(<라>▼homo考試<영>←sociopath)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2017-0348-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000247 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "고시"@ko ;
-    rdfs:label "고시(考試)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "고시"@ko ;
-    kno:semanticTag kno:usas-P1 .
-kno:KN2017-0348-c3 kno:formative kno:F005130 ;
-    kno:surfaceForm "오패스"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m ;
-    rdfs:label "(소시)오패스(sociopath)"@ko ;
-    kno:fullForm "소시오패스"@ko ;
-    a kno:Component .
-kno:KN2017-0348-c1 kno:formative kno:F000026 ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "고시(考試)+(소시)오패스(sociopath) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1381760" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0348-c1 a kno:Component ;
+    rdfs:label "호모(homo)"@ko ;
+    kno:formative kno:F000026 ;
+    kno:fullForm "호모"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
     kno:surfaceForm "호모"@ko ;
-    a kno:Component ;
-    rdfs:label "호모(homo)"@ko ;
-    kno:fullForm "호모"@ko ;
-    kno:role "고정항"@ko .
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0348-c2 a kno:Component ;
+    rdfs:label "고시(考試)"@ko ;
+    kno:formative kno:F000247 ;
+    kno:fullForm "고시"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "고시"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0348-c3 a kno:Component ;
+    rdfs:label "(소시)오패스(sociopath)"@ko ;
+    kno:formative kno:F005130 ;
+    kno:fullForm "소시오패스"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "오패스"@ko ;
+    kno:truncated "true"^^xsd:boolean .

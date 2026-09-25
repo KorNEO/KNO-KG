@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0256 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0256 kno:frequency kno:KN2020-0256-freq-NN-2019 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:example "¶연구소는 지난달 약 200개 국가의 전략 물자 무역 관리 제도를 평가하여 {위험 유포 지수를} 발표했다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2020-0256-c3 ;
-    kno:component kno:KN2020-0256-c2 ;
-    kno:componentString "위험(危險), 유포(流布), 지수(指數)"@ko ;
-    skos:definition "국가의 전략 물자에 관한 무역 관리 제도를 평가한 결과를 나타내는 지수. =위험 행상 지수."@ko ;
-    kno:origin "(危險流布指數)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%84%ED%97%98%EC%9C%A0%ED%8F%AC%EC%A7%80%EC%88%98> ;
+kno:KN2020-0256 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:indexForm "위험유포지수"@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2020-0256-c1 ;
-    kno:languageType "한^한^한" ;
-    kno:instantiates kno:S001513 ;
-    kno:slotFiller "유포(流布) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
     rdfs:label "위험^유포^지수"@ko ;
-    kno:year "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%84%ED%97%98%EC%9C%A0%ED%8F%AC%EC%A7%80%EC%88%98> ;
+    skos:definition "국가의 전략 물자에 관한 무역 관리 제도를 평가한 결과를 나타내는 지수. =위험 행상 지수."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2020-0256-freq-NN-total .
-kno:KN2020-0256-c3 kno:surfaceForm "지수"@ko ;
-    kno:formative kno:F000035 ;
-    kno:semanticTag kno:usas-N3.1 ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
+    kno:component kno:KN2020-0256-c1 ;
+    kno:component kno:KN2020-0256-c2 ;
+    kno:component kno:KN2020-0256-c3 ;
+    kno:componentString "위험(危險), 유포(流布), 지수(指數)"@ko ;
+    kno:example "¶연구소는 지난달 약 200개 국가의 전략 물자 무역 관리 제도를 평가하여 {위험 유포 지수를} 발표했다."@ko ;
+    kno:frequency kno:KN2020-0256-freq-NN-2019 ;
+    kno:frequency kno:KN2020-0256-freq-NN-total ;
+    kno:indexForm "위험유포지수"@ko ;
+    kno:instantiates kno:S001513 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(危險流布指數)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "유포(流布) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0256-c1 a kno:Component ;
+    rdfs:label "위험(危險)"@ko ;
+    kno:formative kno:F001674 ;
+    kno:fullForm "위험"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "지수(指數)"@ko ;
-    kno:fullForm "지수"@ko .
+    kno:semanticTag kno:usas-A15m ;
+    kno:surfaceForm "위험"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2020-0256-c2 a kno:Component ;
     rdfs:label "유포(流布)"@ko ;
     kno:formative kno:F005329 ;
-    kno:semanticTag kno:usas-Q1.1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "유포"@ko ;
-    kno:position "2"^^xsd:integer ;
     kno:fullForm "유포"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q1.1 ;
+    kno:surfaceForm "유포"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0256-c1 kno:fullForm "위험"@ko ;
-    kno:formative kno:F001674 ;
-    kno:semanticTag kno:usas-A15m ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "위험"@ko ;
-    rdfs:label "위험(危險)"@ko ;
-    a kno:Component ;
+kno:KN2020-0256-c3 a kno:Component ;
+    rdfs:label "지수(指數)"@ko ;
+    kno:formative kno:F000035 ;
+    kno:fullForm "지수"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:surfaceForm "지수"@ko ;
     kno:truncated "false"^^xsd:boolean .

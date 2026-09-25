@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0053 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0053 kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(國家遺産基本法)" ;
+kno:KN2022-0053 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "국가^유산^기본법"@ko ;
-    kno:frequency kno:KN2022-0053-freq-NN-2025 ;
-    kno:registration "우리말샘"@ko ;
-    kno:slotFiller "유산(遺産) (1성분)"@ko ;
-    kno:component kno:KN2022-0053-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1801736> ;
+    skos:definition "국가 유산 체제의 변화를 위하여 문화 유산의 유형별 특성에 맞게 필요한 사항을 정한 법률."@ko ;
     kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2022-0053-c1 ;
+    kno:component kno:KN2022-0053-c2 ;
+    kno:component kno:KN2022-0053-c3 ;
+    kno:componentString "국가(國家), 유산(遺産), 기본법(基本法)"@ko ;
+    kno:example "¶문화재청은 ‘문화재’를 ‘유산’의 개념으로 변경하며, ‘{국가 유산 기본법’을} 중심으로 문화재와 관련된 법 체제를 정비할 계획이다."@ko ;
     kno:frequency kno:KN2022-0053-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0053-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0053-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0053-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0053-freq-NN-total ;
     kno:indexForm "국가유산기본법"@ko ;
     kno:instantiates kno:S001148 ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0053-c3 ;
-    kno:frequency kno:KN2022-0053-freq-NN-total ;
-    kno:componentString "국가(國家), 유산(遺産), 기본법(基本法)"@ko ;
-    skos:definition "국가 유산 체제의 변화를 위하여 문화 유산의 유형별 특성에 맞게 필요한 사항을 정한 법률."@ko ;
-    kno:example "¶문화재청은 ‘문화재’를 ‘유산’의 개념으로 변경하며, ‘{국가 유산 기본법’을} 중심으로 문화재와 관련된 법 체제를 정비할 계획이다."@ko ;
-    kno:frequency kno:KN2022-0053-freq-NN-2023 ;
-    a kno:Neologism ;
-    kno:urimalTargetCode "1801736" ;
-    kno:frequency kno:KN2022-0053-freq-NN-2024 ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2022-0053-c1 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1801736> .
-kno:KN2022-0053-c2 rdfs:label "유산(遺産)"@ko ;
-    kno:surfaceForm "유산"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:origin "(國家遺産基本法)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "유산(遺産) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1801736" ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0053-c1 a kno:Component ;
+    rdfs:label "국가(國家)"@ko ;
+    kno:formative kno:F000020 ;
+    kno:fullForm "국가"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "국가"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0053-c2 a kno:Component ;
+    rdfs:label "유산(遺産)"@ko ;
+    kno:formative kno:F000886 ;
     kno:fullForm "유산"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000886 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1.1 .
-kno:KN2022-0053-c3 kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:surfaceForm "유산"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0053-c3 a kno:Component ;
     rdfs:label "기본법(基本法)"@ko ;
     kno:formative kno:F000468 ;
-    kno:position "3"^^xsd:integer ;
     kno:fullForm "기본법"@ko ;
-    kno:surfaceForm "기본법"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    a kno:Component .
-kno:KN2022-0053-c1 kno:fullForm "국가"@ko ;
-    kno:formative kno:F000020 ;
-    kno:surfaceForm "국가"@ko ;
-    a kno:Component ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    rdfs:label "국가(國家)"@ko ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "기본법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

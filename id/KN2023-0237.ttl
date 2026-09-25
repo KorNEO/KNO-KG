@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0237 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0237 kno:languageType "한^한^한" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2023-0237-c3 ;
-    kno:component kno:KN2023-0237-c1 ;
-    kno:year "2023"^^xsd:gYear ;
-    skos:definition "자택에서 의료 서비스를 제공받는 재가 요양 환자의 복지를 위한 일을 전문적으로 하는 사람."@ko ;
+kno:KN2023-0237 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:frequency kno:KN2023-0237-freq-NN-2023 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:componentString "재가(在家), 요양(療養), 복지사(福祉士)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:example "¶최근 장기 요양 급여를 불법적으로 가로챈 {재가 요양 복지사들이} 다수 적발되어 사회에 큰 충격을 주었다."@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(在家療養福祉士)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EA%B0%80%EC%9A%94%EC%96%91%EB%B3%B5%EC%A7%80%EC%82%AC> ;
-    kno:indexForm "재가요양복지사"@ko ;
-    kno:component kno:KN2023-0237-c2 ;
-    kno:predicate "하다"@ko ;
     rdfs:label "재가^요양^복지사"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%AC%EA%B0%80%EC%9A%94%EC%96%91%EB%B3%B5%EC%A7%80%EC%82%AC> ;
+    skos:definition "자택에서 의료 서비스를 제공받는 재가 요양 환자의 복지를 위한 일을 전문적으로 하는 사람."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0237-c1 ;
+    kno:component kno:KN2023-0237-c2 ;
+    kno:component kno:KN2023-0237-c3 ;
+    kno:componentString "재가(在家), 요양(療養), 복지사(福祉士)"@ko ;
+    kno:example "¶최근 장기 요양 급여를 불법적으로 가로챈 {재가 요양 복지사들이} 다수 적발되어 사회에 큰 충격을 주었다."@ko ;
+    kno:frequency kno:KN2023-0237-freq-NN-2023 ;
     kno:frequency kno:KN2023-0237-freq-NN-total ;
-    kno:unitType "구"@ko .
-kno:KN2023-0237-c3 kno:formative kno:F003917 ;
-    rdfs:label "복지사(福祉士)"@ko ;
-    kno:semanticTag kno:usas-S8p ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "복지사"@ko ;
-    kno:fullForm "복지사"@ko .
-kno:KN2023-0237-c1 kno:fullForm "재가"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005583 ;
-    kno:surfaceForm "재가"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:indexForm "재가요양복지사"@ko ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(在家療養福祉士)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0237-c1 a kno:Component ;
     rdfs:label "재가(在家)"@ko ;
-    kno:semanticTag kno:usas-H4 .
+    kno:formative kno:F005583 ;
+    kno:fullForm "재가"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:surfaceForm "재가"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2023-0237-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001646 ;
-    kno:semanticTag kno:usas-B3 ;
-    kno:fullForm "요양"@ko ;
-    kno:surfaceForm "요양"@ko ;
     rdfs:label "요양(療養)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko .
+    kno:formative kno:F001646 ;
+    kno:fullForm "요양"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "요양"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0237-c3 a kno:Component ;
+    rdfs:label "복지사(福祉士)"@ko ;
+    kno:formative kno:F003917 ;
+    kno:fullForm "복지사"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S8p ;
+    kno:surfaceForm "복지사"@ko ;
+    kno:truncated "false"^^xsd:boolean .

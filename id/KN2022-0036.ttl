@@ -9,69 +9,69 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0036 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0036 kno:frequency kno:KN2022-0036-freq-NN-2021 ;
-    kno:componentString "고용(雇傭), 평등(平等), 임금(賃金), 공시제(公示制)"@ko ;
+kno:KN2022-0036 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "고용^평등^임금^공시제"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EC%9A%A9%ED%8F%89%EB%93%B1%EC%9E%84%EA%B8%88%EA%B3%B5%EC%8B%9C%EC%A0%9C> ;
+    skos:definition "성별, 고용 형태별로 임금과 근로 시간 등에 대한 정보와 임금 격차 현황을 공개적으로 게시하여 일반에게 의무적으로 알리는 제도."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2022-0036-c1 ;
+    kno:component kno:KN2022-0036-c2 ;
+    kno:component kno:KN2022-0036-c3 ;
     kno:component kno:KN2022-0036-c4 ;
+    kno:componentString "고용(雇傭), 평등(平等), 임금(賃金), 공시제(公示制)"@ko ;
+    kno:example "¶O 후보는 노동 시장의 구조적 임금 차별을 개선하기 위해 공공 분야부터 ‘{고용 평등 임금 공시제’를} 도입하겠다고 말했다."@ko ;
+    kno:frequency kno:KN2022-0036-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0036-freq-NN-2022 ;
+    kno:frequency kno:KN2022-0036-freq-NN-2023 ;
+    kno:frequency kno:KN2022-0036-freq-NN-2024 ;
+    kno:frequency kno:KN2022-0036-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0036-freq-NN-total ;
+    kno:indexForm "고용평등임금공시제"@ko ;
+    kno:instantiates kno:S001134 ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(雇傭平等賃金公示制)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "알리다"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2022-0036-freq-NN-2024 ;
-    kno:frequency kno:KN2022-0036-freq-NN-2022 ;
-    kno:instantiates kno:S001134 ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2022-0036-freq-NN-total ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%A0%EC%9A%A9%ED%8F%89%EB%93%B1%EC%9E%84%EA%B8%88%EA%B3%B5%EC%8B%9C%EC%A0%9C> ;
-    kno:frequency kno:KN2022-0036-freq-NN-2025 ;
-    kno:activeYears "5"^^xsd:integer ;
-    kno:languageType "한^한^한^한" ;
-    kno:pos "「구」"@ko ;
-    skos:definition "성별, 고용 형태별로 임금과 근로 시간 등에 대한 정보와 임금 격차 현황을 공개적으로 게시하여 일반에게 의무적으로 알리는 제도."@ko ;
-    kno:indexForm "고용평등임금공시제"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:slotFiller "평등(平等)+임금(賃金)+공시제(公示制) (3성분)"@ko ;
-    kno:component kno:KN2022-0036-c2 ;
-    kno:example "¶O 후보는 노동 시장의 구조적 임금 차별을 개선하기 위해 공공 분야부터 ‘{고용 평등 임금 공시제’를} 도입하겠다고 말했다."@ko ;
-    rdfs:label "고용^평등^임금^공시제"@ko ;
-    kno:frequency kno:KN2022-0036-freq-NN-2023 ;
-    kno:component kno:KN2022-0036-c1 ;
-    kno:component kno:KN2022-0036-c3 ;
+    kno:unitType "구"@ko ;
     kno:year "2022"^^xsd:gYear .
-kno:KN2022-0036-c4 kno:fullForm "공시제"@ko ;
-    kno:formative kno:F002355 ;
-    kno:surfaceForm "공시제"@ko ;
-    a kno:Component ;
-    kno:position "4"^^xsd:integer ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:semanticTag kno:usas-A10p ;
-    rdfs:label "공시제(公示制)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2022-0036-c2 kno:semanticTag kno:usas-A6.1p ;
-    kno:surfaceForm "평등"@ko ;
-    kno:fullForm "평등"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F006706 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "평등(平等)"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2022-0036-c1 kno:role "고정항"@ko ;
-    kno:surfaceForm "고용"@ko ;
+kno:KN2022-0036-c1 a kno:Component ;
+    rdfs:label "고용(雇傭)"@ko ;
     kno:formative kno:F000248 ;
     kno:fullForm "고용"@ko ;
-    rdfs:label "고용(雇傭)"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
     kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .
-kno:KN2022-0036-c3 kno:fullForm "임금"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "고용"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0036-c2 a kno:Component ;
+    rdfs:label "평등(平等)"@ko ;
+    kno:formative kno:F006706 ;
+    kno:fullForm "평등"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:surfaceForm "평등"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0036-c3 a kno:Component ;
+    rdfs:label "임금(賃金)"@ko ;
+    kno:formative kno:F000400 ;
+    kno:fullForm "임금"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1 ;
     kno:surfaceForm "임금"@ko ;
-    rdfs:label "임금(賃金)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0036-c4 a kno:Component ;
+    rdfs:label "공시제(公示制)"@ko ;
+    kno:formative kno:F002355 ;
+    kno:fullForm "공시제"@ko ;
+    kno:position "4"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000400 .
+    kno:semanticTag kno:usas-A10p ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "공시제"@ko ;
+    kno:truncated "false"^^xsd:boolean .

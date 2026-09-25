@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0157 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0157 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9D%ED%9B%84%ED%83%95> ;
-    a ontolex:Word ;
-    kno:predicate "먹다"@ko ;
+kno:KN2024-0157 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "식후탕"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%9D%ED%9B%84%ED%83%95> ;
+    skos:definition "밥을 먹은 직후에 탕후루를 먹는 일. 또는 그렇게 먹는 탕후루."@ko ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0157-c1 ;
+    kno:component kno:KN2024-0157-c2 ;
+    kno:componentString "식후(食後), 탕(후루)(tanghulu)"@ko ;
     kno:example "¶식후에 바로 과일을 먹으면 혈당을 급격하게 올려 당뇨의 위험이 높아지게 되며, 설탕을 바른 과일의 경우 그 위험이 더욱 높아지므로 {식후탕은} 경계해야 한다."@ko ;
     kno:formation kno:W05 ;
     kno:frequency kno:KN2024-0157-freq-NN-2023 ;
-    rdfs:label "식후탕"@ko ;
-    skos:definition "밥을 먹은 직후에 탕후루를 먹는 일. 또는 그렇게 먹는 탕후루."@ko ;
-    kno:origin "(食後<중>←tanghulu[糖葫芦])" ;
-    kno:component kno:KN2024-0157-c2 ;
-    kno:component kno:KN2024-0157-c1 ;
+    kno:frequency kno:KN2024-0157-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0157-freq-NN-total ;
     kno:indexForm "식후탕"@ko ;
+    kno:languageType "한+중" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(食後<중>←tanghulu[糖葫芦])" ;
     kno:pos "「명」"@ko ;
+    kno:predicate "먹다"@ko ;
     kno:registration "신어DB"@ko ;
     kno:unitType "단어"@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2024-0157-freq-NN-total ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0157-freq-NN-2024 ;
-    kno:componentString "식후(食後), 탕(후루)(tanghulu)"@ko ;
-    kno:languageType "한+중" .
-kno:KN2024-0157-c2 kno:surfaceForm "탕"@ko ;
-    a kno:Component ;
-    kno:formative kno:F006415 ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:fullForm "탕후루"@ko ;
-    rdfs:label "탕(후루)(tanghulu)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko .
-kno:KN2024-0157-c1 kno:formative kno:F004690 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "식후"@ko ;
-    kno:surfaceForm "식후"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0157-c1 a kno:Component ;
     rdfs:label "식후(食後)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 ;
+    kno:formative kno:F004690 ;
+    kno:fullForm "식후"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component .
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "식후"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0157-c2 a kno:Component ;
+    rdfs:label "탕(후루)(tanghulu)"@ko ;
+    kno:formative kno:F006415 ;
+    kno:fullForm "탕후루"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "탕"@ko ;
+    kno:truncated "true"^^xsd:boolean .

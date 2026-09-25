@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0074 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0074 kno:unitType "단어"@ko ;
-    kno:instantiates kno:S000799 ;
-    kno:component kno:KN2017-0074-c1 ;
-    kno:formation kno:W01 ;
+kno:KN2017-0074 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "돈세탁-망"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1380405> ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:example "¶국제적인 불법 {돈세탁망인} 이른바 ‘국제 빨래방’에 2010~2014년 사이에만 OO로부터 최소 200억 달러 이상의 수상한 자금이 유입된 것으로 보인다고 영국 신문 OO이 21일 보도했다."@ko ;
-    kno:languageType "(고+한)+한" ;
-    kno:urimalTargetCode "1380405" ;
-    kno:frequency kno:KN2017-0074-freq-NN-2017 ;
-    a ontolex:Word ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:component kno:KN2017-0074-c2 ;
+    skos:definition "돈세탁을 전문적으로 하거나 돈세탁의 과정을 돕는 일에 관련된 조직이나 체계."@ko ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2017-0074-c1 ;
+    kno:component kno:KN2017-0074-c2 ;
+    kno:componentString "돈세탁(돈洗濯), 망(網)"@ko ;
+    kno:example "¶국제적인 불법 {돈세탁망인} 이른바 ‘국제 빨래방’에 2010~2014년 사이에만 OO로부터 최소 200억 달러 이상의 수상한 자금이 유입된 것으로 보인다고 영국 신문 OO이 21일 보도했다."@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2017-0074-freq-NN-2017 ;
+    kno:frequency kno:KN2017-0074-freq-NN-2024 ;
+    kno:frequency kno:KN2017-0074-freq-NN-total ;
+    kno:indexForm "돈세탁망"@ko ;
+    kno:instantiates kno:S000799 ;
+    kno:languageType "(고+한)+한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(돈洗濯網)" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    rdfs:label "돈세탁-망"@ko ;
-    kno:origin "(돈洗濯網)" ;
     kno:slotFiller "돈세탁(돈洗濯) (1성분)"@ko ;
-    kno:frequency kno:KN2017-0074-freq-NN-total ;
-    skos:definition "돈세탁을 전문적으로 하거나 돈세탁의 과정을 돕는 일에 관련된 조직이나 체계."@ko ;
-    kno:indexForm "돈세탁망"@ko ;
-    kno:frequency kno:KN2017-0074-freq-NN-2024 ;
-    kno:componentString "돈세탁(돈洗濯), 망(網)"@ko .
-kno:KN2017-0074-c1 kno:fullForm "돈세탁"@ko ;
-    kno:surfaceForm "돈세탁"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1380405" ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0074-c1 a kno:Component ;
+    rdfs:label "돈세탁(돈洗濯)"@ko ;
+    kno:formative kno:F003006 ;
+    kno:fullForm "돈세탁"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-G2.1m ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "돈세탁(돈洗濯)"@ko ;
-    a kno:Component ;
     kno:semanticTag kno:usas-I1 ;
-    kno:formative kno:F003006 ;
+    kno:surfaceForm "돈세탁"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2017-0074-c2 kno:semanticTag kno:usas-Q1.3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001282 ;
+kno:KN2017-0074-c2 a kno:Component ;
     rdfs:label "망(網)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F001282 ;
     kno:fullForm "망"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "망"@ko .
+    kno:semanticTag kno:usas-Q1.3 ;
+    kno:surfaceForm "망"@ko ;
+    kno:truncated "false"^^xsd:boolean .

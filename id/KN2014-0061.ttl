@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0061 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0061 kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2014-0061-freq-NN-2013 ;
+kno:KN2014-0061 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "도보^추격극"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%8F%84%EB%B3%B4%EC%B6%94%EA%B2%A9%EA%B7%B9> ;
+    skos:definition "등장인물들이 뛰지 않고 걸어서 추격하는 내용을 소재로 한 연극이나 영화."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2014-0061-c1 ;
+    kno:component kno:KN2014-0061-c2 ;
+    kno:componentString "도보(徒步), 추격극(追擊劇)"@ko ;
+    kno:example "¶‘OO’은 ‘{도보 추격극’이라는} 신조어를 만들어 낸 작품이다."@ko ;
+    kno:frequency kno:KN2014-0061-freq-NN-2013 ;
+    kno:frequency kno:KN2014-0061-freq-NN-total ;
+    kno:indexForm "도보추격극"@ko ;
     kno:instantiates kno:S000461 ;
+    kno:languageType "한^한" ;
     kno:lastAttestationYear "2013"^^xsd:gYear ;
     kno:origin "(徒步追擊劇)" ;
-    a kno:Neologism ;
-    skos:definition "등장인물들이 뛰지 않고 걸어서 추격하는 내용을 소재로 한 연극이나 영화."@ko ;
-    kno:component kno:KN2014-0061-c2 ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "도보^추격극"@ko ;
-    kno:indexForm "도보추격극"@ko ;
-    kno:languageType "한^한" ;
-    kno:example "¶‘OO’은 ‘{도보 추격극’이라는} 신조어를 만들어 낸 작품이다."@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:frequency kno:KN2014-0061-freq-NN-total ;
-    kno:componentString "도보(徒步), 추격극(追擊劇)"@ko ;
-    kno:component kno:KN2014-0061-c1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "추격극(追擊劇) (1성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:slotFiller "추격극(追擊劇) (1성분)"@ko .
-kno:KN2014-0061-c2 rdfs:label "추격극(追擊劇)"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0061-c1 a kno:Component ;
+    rdfs:label "도보(徒步)"@ko ;
+    kno:formative kno:F000486 ;
+    kno:fullForm "도보"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "도보"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0061-c2 a kno:Component ;
+    rdfs:label "추격극(追擊劇)"@ko ;
     kno:formative kno:F006118 ;
+    kno:fullForm "추격극"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-K4 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "추격극"@ko ;
-    a kno:Component ;
     kno:surfaceForm "추격극"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2014-0061-c1 kno:fullForm "도보"@ko ;
-    kno:formative kno:F000486 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "도보"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-M1 ;
-    rdfs:label "도보(徒步)"@ko ;
-    kno:role "고정항"@ko .
+    kno:truncated "false"^^xsd:boolean .

@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0249 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0249 kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%ED%87%B4%20%EA%B0%81> ;
-    kno:year "2024"^^xsd:gYear ;
+kno:KN2024-0249 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "자퇴각"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(自退角)" ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2024-0249-c2 ;
-    kno:component kno:KN2024-0249-c1 ;
-    kno:componentString "자퇴(自退), 각(角)"@ko ;
     rdfs:label "자퇴 각"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:frequency kno:KN2024-0249-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%ED%87%B4%20%EA%B0%81> ;
     skos:definition "스스로 학교를 그만두고 싶을 만한 상황이나 일."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0249-c1 ;
+    kno:component kno:KN2024-0249-c2 ;
+    kno:componentString "자퇴(自退), 각(角)"@ko ;
     kno:example "¶새벽까지 과제를 했지만 제출 직전에 파일이 날아가자, 그의 머릿속에는 {자퇴 각이라는} 말밖에 떠오르지 않았다."@ko ;
+    kno:frequency kno:KN2024-0249-freq-NN-2024 ;
     kno:frequency kno:KN2024-0249-freq-NN-total ;
-    kno:languageType "한_한" .
-kno:KN2024-0249-c2 kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "각(角)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "각"@ko ;
-    kno:formative kno:F000124 ;
-    kno:surfaceForm "각"@ko ;
-    kno:semanticTag kno:usas-O4.4 .
-kno:KN2024-0249-c1 kno:surfaceForm "자퇴"@ko ;
+    kno:indexForm "자퇴각"@ko ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(自退角)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0249-c1 a kno:Component ;
+    rdfs:label "자퇴(自退)"@ko ;
+    kno:formative kno:F005533 ;
+    kno:fullForm "자퇴"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
     kno:semanticTag kno:usas-P1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F005533 ;
-    rdfs:label "자퇴(自退)"@ko ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "자퇴"@ko .
+    kno:surfaceForm "자퇴"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0249-c2 a kno:Component ;
+    rdfs:label "각(角)"@ko ;
+    kno:formative kno:F000124 ;
+    kno:fullForm "각"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-O4.4 ;
+    kno:surfaceForm "각"@ko ;
+    kno:truncated "false"^^xsd:boolean .

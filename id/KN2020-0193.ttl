@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0193 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0193 kno:componentString "신종(新種), 코로나(바이러스)(corona virus), 감염증(感染症)"@ko ;
-    kno:example "¶세계 보건 기구가 {신종 코로나 감염증에} 대해 세계적 대유행을 선언하였다."@ko ;
-    kno:frequency kno:KN2020-0193-freq-NN-2023 ;
-    kno:languageType "한^영^한" ;
+kno:KN2020-0193 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:indexForm "신종코로나감염증"@ko ;
-    kno:activeYears "5"^^xsd:integer ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2020-0193-c1 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2020-0193-c2 ;
-    kno:frequency kno:KN2020-0193-freq-NN-2024 ;
-    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    skos:definition "사스 코로나바이러스 2(SARS-CoV-2)에 감염되어 발생하는 호흡기 증후군. 발열, 권태감, 기침, 호흡 곤란, 폐렴 따위의 다양한 호흡기 증상을 보인다. =신종 코로나바이러스 감염증, 코로나바이러스 감염증 일구."@ko ;
-    kno:frequency kno:KN2020-0193-freq-NN-total ;
+    rdfs:label "신종^코로나^감염증"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8B%A0%EC%A2%85%EC%BD%94%EB%A1%9C%EB%82%98%EA%B0%90%EC%97%BC%EC%A6%9D> ;
-    kno:instantiates kno:S001412 ;
+    skos:definition "사스 코로나바이러스 2(SARS-CoV-2)에 감염되어 발생하는 호흡기 증후군. 발열, 권태감, 기침, 호흡 곤란, 폐렴 따위의 다양한 호흡기 증상을 보인다. =신종 코로나바이러스 감염증, 코로나바이러스 감염증 일구."@ko ;
+    kno:activeYears "5"^^xsd:integer ;
+    kno:component kno:KN2020-0193-c1 ;
+    kno:component kno:KN2020-0193-c2 ;
+    kno:component kno:KN2020-0193-c3 ;
+    kno:componentString "신종(新種), 코로나(바이러스)(corona virus), 감염증(感染症)"@ko ;
+    kno:example "¶세계 보건 기구가 {신종 코로나 감염증에} 대해 세계적 대유행을 선언하였다."@ko ;
+    kno:frequency kno:KN2020-0193-freq-NN-2020 ;
     kno:frequency kno:KN2020-0193-freq-NN-2021 ;
     kno:frequency kno:KN2020-0193-freq-NN-2022 ;
-    kno:year "2020"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0193-freq-NN-2023 ;
+    kno:frequency kno:KN2020-0193-freq-NN-2024 ;
+    kno:frequency kno:KN2020-0193-freq-NN-total ;
+    kno:indexForm "신종코로나감염증"@ko ;
+    kno:instantiates kno:S001412 ;
+    kno:languageType "한^영^한" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2020-0193-freq-NN-2020 ;
     kno:origin "(新種<영>←corona virus感染症)" ;
-    kno:component kno:KN2020-0193-c3 ;
-    rdfs:label "신종^코로나^감염증"@ko .
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "코로나(바이러스)(corona virus) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
 kno:KN2020-0193-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
     rdfs:label "신종(新種)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "신종"@ko ;
     kno:formative kno:F001553 ;
-    kno:surfaceForm "신종"@ko ;
+    kno:fullForm "신종"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-T3m .
-kno:KN2020-0193-c2 kno:fullForm "코로나바이러스"@ko ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "신종"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0193-c2 a kno:Component ;
+    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
     kno:formative kno:F000003 ;
+    kno:fullForm "코로나바이러스"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-B2m ;
     kno:surfaceForm "코로나"@ko ;
-    rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2020-0193-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "감염증"@ko ;
-    kno:fullForm "감염증"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2020-0193-c3 a kno:Component ;
     rdfs:label "감염증(感染症)"@ko ;
+    kno:formative kno:F000447 ;
+    kno:fullForm "감염증"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-B2m ;
-    kno:formative kno:F000447 .
+    kno:surfaceForm "감염증"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0157 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0157 kno:example "¶여당은 야당이 이번 국정 감사에 감사 위원의 출석을 요청한 것과 관련해서 “감사원의 손발을 묶기 위한 ‘{생떼탕’에} 불과하다.”라고 비판했다."@ko ;
-    skos:definition "억지로 떼를 쓰는 모습을 생태탕을 끓이는 것에 빗대어 이르는 말."@ko ;
-    kno:frequency kno:KN2021-0157-freq-NN-2021 ;
-    kno:slotFiller "생떼(生떼) (1성분)"@ko ;
-    kno:frequency kno:KN2021-0157-freq-NN-2024 ;
-    kno:unitType "단어"@ko ;
+kno:KN2021-0157 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "생떼-탕"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%9D%EB%96%BC%ED%83%95> ;
+    skos:definition "억지로 떼를 쓰는 모습을 생태탕을 끓이는 것에 빗대어 이르는 말."@ko ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:instantiates kno:S000431 ;
-    kno:indexForm "생떼탕"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(生떼湯)" ;
-    kno:frequency kno:KN2021-0157-freq-NN-total ;
+    kno:component kno:KN2021-0157-c1 ;
     kno:component kno:KN2021-0157-c2 ;
+    kno:componentString "생떼(生떼), -탕(湯)"@ko ;
+    kno:example "¶여당은 야당이 이번 국정 감사에 감사 위원의 출석을 요청한 것과 관련해서 “감사원의 손발을 묶기 위한 ‘{생떼탕’에} 불과하다.”라고 비판했다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2021-0157-freq-NN-2021 ;
     kno:frequency kno:KN2021-0157-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0157-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0157-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0157-freq-NN-total ;
+    kno:indexForm "생떼탕"@ko ;
+    kno:instantiates kno:S000431 ;
     kno:languageType "(한+고)+한" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(生떼湯)" ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    kno:componentString "생떼(生떼), -탕(湯)"@ko ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2021-0157-freq-NN-2023 ;
-    rdfs:label "생떼-탕"@ko ;
-    kno:component kno:KN2021-0157-c1 .
-kno:KN2021-0157-c2 kno:fullForm "탕"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F000972 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:slotFiller "생떼(生떼) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0157-c1 a kno:Component ;
+    rdfs:label "생떼(生떼)"@ko ;
+    kno:formative kno:F004260 ;
+    kno:fullForm "생떼"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q2.2 ;
+    kno:surfaceForm "생떼"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0157-c2 a kno:Component ;
     rdfs:label "-탕(湯)"@ko ;
+    kno:formative kno:F000972 ;
+    kno:fullForm "탕"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     kno:surfaceForm "탕"@ko ;
-    a kno:Component .
-kno:KN2021-0157-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "생떼(生떼)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F004260 ;
-    kno:surfaceForm "생떼"@ko ;
-    kno:semanticTag kno:usas-Q2.2 ;
-    kno:fullForm "생떼"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "false"^^xsd:boolean .

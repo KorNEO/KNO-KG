@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0157 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0157 kno:slotFiller "싫(어하다)+모(임) (2성분)"@ko ;
-    kno:component kno:KN2017-0157-c3 ;
-    kno:languageType "고+고+고" ;
-    kno:component kno:KN2017-0157-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2018"^^xsd:gYear ;
+kno:KN2017-0157 a ontolex:Word ;
     a kno:Neologism ;
-    kno:component kno:KN2017-0157-c2 ;
-    kno:example "¶‘떼어 내기 힘든 술의 유혹’을 단적으로 보여 준 이 사건과 정반대로, ‘{술싫모’는} 가까이 하기 정말 싫은 술에 대한 생각을 짤막한 글이나 사진에 담아 올린다."@ko ;
+    rdfs:label "술싫모"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A0%EC%8B%AB%EB%AA%A8> ;
+    skos:definition "‘술을 싫어하는 사람들의 모임’을 줄여 이르는 말."@ko ;
     kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2017-0157-c1 ;
+    kno:component kno:KN2017-0157-c2 ;
+    kno:component kno:KN2017-0157-c3 ;
+    kno:componentString "술, 싫(어하다), 모(임)"@ko ;
+    kno:example "¶‘떼어 내기 힘든 술의 유혹’을 단적으로 보여 준 이 사건과 정반대로, ‘{술싫모’는} 가까이 하기 정말 싫은 술에 대한 생각을 짤막한 글이나 사진에 담아 올린다."@ko ;
     kno:formation kno:W06 ;
+    kno:frequency kno:KN2017-0157-freq-NN-2017 ;
     kno:frequency kno:KN2017-0157-freq-NN-2018 ;
     kno:frequency kno:KN2017-0157-freq-NN-total ;
     kno:indexForm "술싫모"@ko ;
-    a ontolex:Word ;
-    kno:year "2017"^^xsd:gYear ;
-    skos:definition "‘술을 싫어하는 사람들의 모임’을 줄여 이르는 말."@ko ;
     kno:instantiates kno:S000140 ;
+    kno:languageType "고+고+고" ;
+    kno:lastAttestationYear "2018"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%A0%EC%8B%AB%EB%AA%A8> ;
-    kno:componentString "술, 싫(어하다), 모(임)"@ko ;
-    kno:frequency kno:KN2017-0157-freq-NN-2017 ;
-    rdfs:label "술싫모"@ko ;
-    kno:registration "신어DB"@ko .
-kno:KN2017-0157-c3 kno:surfaceForm "모"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "모임"@ko ;
-    kno:semanticTag kno:usas-S5p ;
-    kno:formative kno:F003481 ;
-    a kno:Component ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "모(임)"@ko .
-kno:KN2017-0157-c1 kno:formative kno:F000142 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "싫(어하다)+모(임) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0157-c1 a kno:Component ;
     rdfs:label "술"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000142 ;
+    kno:fullForm "술"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-F2 ;
-    kno:fullForm "술"@ko ;
     kno:surfaceForm "술"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2017-0157-c2 kno:semanticTag kno:usas-E2m ;
-    kno:role "슬롯 채움"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2017-0157-c2 a kno:Component ;
+    rdfs:label "싫(어하다)"@ko ;
     kno:formative kno:F004730 ;
     kno:fullForm "싫어하다"@ko ;
     kno:position "2"^^xsd:integer ;
-    a kno:Component ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-E2m ;
     kno:surfaceForm "싫"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "싫(어하다)"@ko .
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0157-c3 a kno:Component ;
+    rdfs:label "모(임)"@ko ;
+    kno:formative kno:F003481 ;
+    kno:fullForm "모임"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S5p ;
+    kno:surfaceForm "모"@ko ;
+    kno:truncated "true"^^xsd:boolean .

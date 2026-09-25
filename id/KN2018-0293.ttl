@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0293 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0293 kno:component kno:KN2018-0293-c2 ;
-    kno:languageType "한_(한+영)" ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:predicate "다니다"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:component kno:KN2018-0293-c1 ;
-    kno:origin "(長距離通學<영>←er)" ;
-    kno:instantiates kno:S001015 ;
+kno:KN2018-0293 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "장거리 통학러"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416345> ;
     skos:definition "집에서 먼 거리에 있는 학교에 다니는 사람."@ko ;
-    kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2018-0293-freq-NN-2018 ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:indexForm "장거리통학러"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2018-0293-c1 ;
+    kno:component kno:KN2018-0293-c2 ;
+    kno:component kno:KN2018-0293-c3 ;
     kno:componentString "장거리(長距離), 통학(通學), -러(←-er)"@ko ;
     kno:example "¶새 학기를 앞두고 통학 걱정으로 고민하는 학생들이 많은 가운데 이른바 ‘{장거리 통학러’를} 위한 휴대성 높은 식음료 제품들이 눈길을 끈다."@ko ;
-    rdfs:label "장거리 통학러"@ko ;
-    kno:urimalTargetCode "1416345" ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2018-0293-c3 ;
-    kno:slotFiller "장거리(長距離) (1성분)"@ko ;
+    kno:frequency kno:KN2018-0293-freq-NN-2018 ;
     kno:frequency kno:KN2018-0293-freq-NN-2019 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1416345> ;
-    kno:pos "「구」"@ko ;
     kno:frequency kno:KN2018-0293-freq-NN-total ;
-    a ontolex:MultiwordExpression .
-kno:KN2018-0293-c2 rdfs:label "통학(通學)"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:semanticTag kno:usas-M1 ;
-    kno:formative kno:F001909 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "통학"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "통학"@ko .
-kno:KN2018-0293-c1 kno:fullForm "장거리"@ko ;
-    kno:surfaceForm "장거리"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005564 ;
+    kno:indexForm "장거리통학러"@ko ;
+    kno:instantiates kno:S001015 ;
+    kno:languageType "한_(한+영)" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
+    kno:origin "(長距離通學<영>←er)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "다니다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "장거리(長距離) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1416345" ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0293-c1 a kno:Component ;
     rdfs:label "장거리(長距離)"@ko ;
+    kno:formative kno:F005564 ;
+    kno:fullForm "장거리"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:semanticTag kno:usas-N3.3p ;
-    kno:position "1"^^xsd:integer .
-kno:KN2018-0293-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:surfaceForm "장거리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0293-c2 a kno:Component ;
+    rdfs:label "통학(通學)"@ko ;
+    kno:formative kno:F001909 ;
+    kno:fullForm "통학"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "통학"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0293-c3 a kno:Component ;
+    rdfs:label "-러(←-er)"@ko ;
     kno:formative kno:F000022 ;
-    kno:position "3"^^xsd:integer ;
     kno:fullForm "러"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S2 ;
-    rdfs:label "-러(←-er)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "러"@ko .
+    kno:surfaceForm "러"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -41,3 +41,20 @@ python -X utf8 schema/build_graph.py && python -X utf8 tools/figures.py && pytho
 - 배포 저장소 = `KNO-KG_v1.1/site` (github.com/KorNEO/KNO-KG). 루트가 이 사이트, `entity/`가 이전 v1.1 그래프(개체명 공동 출현·감정 용언 공기).
 - `python -X utf8 tools/rebuild.py deploy --only` 또는 `python -X utf8 tools/deploy_to_kg.py` 로 이 폴더를 저장소 루트에 동기화한 뒤, 저장소에서 `git add -A && git commit && git push`.
 - 백업: 브랜치 `backup/v1.1-2026-09-24`, 태그 `before-schema-2026-09-24`.
+
+
+## 휴대폰 화면 (2026-09-25)
+
+- 그래프 페이지: `assets/graph-mobile.{css,js}` (폭 760px 이하·높이 500px 이하). 헤더 2줄(로고+검색 / 탭 가로 밀기), 필터·표시는 아래 시트(「필터·표시」 단추), 정보 패널은 아래 시트(손잡이를 누르거나 밀면 반↔전체, 아래로 밀면 닫힘), 휴대폰 가로에서는 옆 패널. 캔버스는 2배 해상도까지만, 터치는 넓게 판정, 툴팁 대신 패널.
+- 이전 v1.1 그래프(`entity/index.html`)도 같은 파일을 쓴다: `tools/deploy_to_kg.py` 가 `tools/entity_mobile.py` 로 태그 두 줄을 넣는다.
+- 항목 페이지: 연결 그래프는 휴대폰에서 세로형 그림(`svg.g-tall`), 여러 열 표는 가로로 밀기(가장자리 그림자), 속성 표는 이름 위·값 아래, 한자 원어처럼 긴 낱말은 줄 바꿈.
+- 목록: 휴대폰에서 카드(첫 칸 제목 + '이름 값'), 정렬은 선택 상자.
+- 자산 링크에 내용 해시(`?v=`)를 붙여 바뀐 파일만 캐시를 새로 받는다. TTL 은 트리플 순서를 고정해 빌드마다 바뀌지 않는다.
+
+점검:
+```
+python -X utf8 tools/preview_server.py 8765                # 배포 구조 그대로(entity/ 포함) 미리 보기; 휴대폰 실기기는 --host=0.0.0.0
+python -X utf8 tools/site_qa.py --out=DIR                   # 기기 7종 × Chrome·WebKit 스크린샷 + 자동 검사(가로 넘침·잘림·어절 쪼개짐·작은 글자·작은 터치)
+python -X utf8 tools/site_qa_flow.py --out=DIR              # 휴대폰·WebKit·가로·데스크톱에서 단추·필터·노드·패널·목록·검색·탭을 차례로 눌러 봄
+```
+(Playwright 필요: `pip install playwright && python -m playwright install webkit`. Windows 용 WebKit 은 가변 글꼴 굵기를 적용하지 않아 굵은 글자가 가늘게 보이는데, 실제 iOS Safari 에서는 정상이다.)

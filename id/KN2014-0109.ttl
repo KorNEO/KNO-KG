@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0109 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0109 kno:languageType "영+영" ;
-    kno:frequency kno:KN2014-0109-freq-NN-total ;
-    kno:origin "(<영>▼←buyer consumer)" ;
-    kno:formation kno:W05 ;
+kno:KN2014-0109 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "바이슈머"@ko ;
-    kno:example "¶새롭게 등장한 {바이슈머의} 증가는 유통 시장에 급격한 변화를 가져오고 있다."@ko ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2014-0109-c2 ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1375550> ;
     skos:definition "국내에서 판매되는 가격보다 싼 값에 물품을 사기 위하여 수입상을 통하지 않고 해외의 인터넷 쇼핑몰 따위에서 직접 물건을 구입하는 사람."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2014-0109-c1 ;
+    kno:component kno:KN2014-0109-c2 ;
+    kno:componentString "바이(어)(buyer), (컨)슈머(consumer)"@ko ;
+    kno:example "¶새롭게 등장한 {바이슈머의} 증가는 유통 시장에 급격한 변화를 가져오고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2014-0109-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0109-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0109-freq-NN-2016 ;
+    kno:frequency kno:KN2014-0109-freq-NN-total ;
+    kno:indexForm "바이슈머"@ko ;
+    kno:instantiates kno:S000021 ;
+    kno:languageType "영+영" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
+    kno:origin "(<영>▼←buyer consumer)" ;
     kno:pos "「명」"@ko ;
+    kno:predicate "구입하다"@ko ;
     kno:registration "우리말샘"@ko ;
     kno:slotFiller "바이(어)(buyer) (1성분)"@ko ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:indexForm "바이슈머"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1375550> ;
-    kno:frequency kno:KN2014-0109-freq-NN-2014 ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:componentString "바이(어)(buyer), (컨)슈머(consumer)"@ko ;
-    kno:predicate "구입하다"@ko ;
-    kno:frequency kno:KN2014-0109-freq-NN-2016 ;
+    kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1375550" ;
-    kno:instantiates kno:S000021 ;
-    a kno:Neologism ;
-    kno:component kno:KN2014-0109-c1 ;
-    kno:frequency kno:KN2014-0109-freq-NN-2015 ;
-    kno:activeYears "3"^^xsd:integer .
-kno:KN2014-0109-c2 a kno:Component ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:formative kno:F000060 ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "슈머"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "컨슈머"@ko ;
-    rdfs:label "(컨)슈머(consumer)"@ko .
-kno:KN2014-0109-c1 kno:fullForm "바이어"@ko ;
-    kno:role "슬롯 채움"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0109-c1 a kno:Component ;
     rdfs:label "바이(어)(buyer)"@ko ;
-    kno:semanticTag kno:usas-I2.2 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F003650 ;
+    kno:fullForm "바이어"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
     kno:surfaceForm "바이"@ko ;
-    a kno:Component ;
-    kno:formative kno:F003650 .
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2014-0109-c2 a kno:Component ;
+    rdfs:label "(컨)슈머(consumer)"@ko ;
+    kno:formative kno:F000060 ;
+    kno:fullForm "컨슈머"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "슈머"@ko ;
+    kno:truncated "true"^^xsd:boolean .

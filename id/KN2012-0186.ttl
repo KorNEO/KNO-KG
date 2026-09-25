@@ -9,50 +9,50 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0186 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0186 a kno:Neologism ;
-    kno:languageType "한^한" ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "부조리(不條理)+범(犯) (2성분)"@ko ;
-    kno:instantiates kno:S000200 ;
-    kno:component kno:KN2012-0186-c2 ;
+kno:KN2012-0186 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "사회^부조리범"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%9A%8C%EB%B6%80%EC%A1%B0%EB%A6%AC%EB%B2%94> ;
+    skos:definition "사회적인 이치나 도리에 맞지 않은 범죄를 저지른 사람."@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2012-0186-c1 ;
+    kno:component kno:KN2012-0186-c2 ;
+    kno:component kno:KN2012-0186-c3 ;
+    kno:componentString "사회(社會), 부조리(不條理), 범(犯)"@ko ;
     kno:example "¶2011년 6월 현재 특정 범죄 가중 처벌 등에 관한 법률 위반 등으로 경제 사범들의 미납액이 많았고 도박 개장 및 성매매 알선 등 {사회 부조리범들의} 미납액도 컸다."@ko ;
+    kno:indexForm "사회부조리범"@ko ;
+    kno:instantiates kno:S000200 ;
+    kno:languageType "한^한" ;
     kno:origin "(社會不條理犯)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%82%AC%ED%9A%8C%EB%B6%80%EC%A1%B0%EB%A6%AC%EB%B2%94> ;
-    kno:componentString "사회(社會), 부조리(不條理), 범(犯)"@ko ;
-    skos:definition "사회적인 이치나 도리에 맞지 않은 범죄를 저지른 사람."@ko ;
-    kno:indexForm "사회부조리범"@ko ;
-    rdfs:label "사회^부조리범"@ko ;
-    kno:component kno:KN2012-0186-c3 ;
-    kno:year "2012"^^xsd:gYear ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2012-0186-c1 .
-kno:KN2012-0186-c2 kno:surfaceForm "부조리"@ko ;
-    kno:semanticTag kno:usas-G2.2m ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F003958 ;
-    rdfs:label "부조리(不條理)"@ko ;
-    a kno:Component ;
-    kno:fullForm "부조리"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2012-0186-c3 kno:fullForm "범"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "범"@ko ;
-    a kno:Component ;
-    rdfs:label "범(犯)"@ko ;
-    kno:formative kno:F003798 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
-    kno:truncated "false"^^xsd:boolean .
-kno:KN2012-0186-c1 kno:formative kno:F000139 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
+    kno:slotFiller "부조리(不條理)+범(犯) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0186-c1 a kno:Component ;
     rdfs:label "사회(社會)"@ko ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F000139 ;
     kno:fullForm "사회"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "사회"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "사회"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0186-c2 a kno:Component ;
+    rdfs:label "부조리(不條理)"@ko ;
+    kno:formative kno:F003958 ;
+    kno:fullForm "부조리"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G2.2m ;
+    kno:surfaceForm "부조리"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0186-c3 a kno:Component ;
+    rdfs:label "범(犯)"@ko ;
+    kno:formative kno:F003798 ;
+    kno:fullForm "범"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "범"@ko ;
+    kno:truncated "false"^^xsd:boolean .

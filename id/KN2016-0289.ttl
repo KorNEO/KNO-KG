@@ -9,49 +9,49 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0289 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0289 kno:unitType "단어"@ko ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
+kno:KN2016-0289 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "수어-책"@ko ;
-    kno:languageType "한+한" ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%96%B4%EC%B1%85> ;
+    skos:definition "수화를 가르치거나 배우는 데 필요한 책."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2016-0289-c1 ;
+    kno:component kno:KN2016-0289-c2 ;
+    kno:componentString "수어(手語), 책(冊)"@ko ;
+    kno:example "¶시중에 일상생활이나 어휘집 위주로 발간된 {수어책은} 많지만, 대학 생활을 주제로 한 교재는 이번이 처음이다."@ko ;
+    kno:formation kno:W01 ;
+    kno:frequency kno:KN2016-0289-freq-NN-2016 ;
+    kno:frequency kno:KN2016-0289-freq-NN-2019 ;
+    kno:frequency kno:KN2016-0289-freq-NN-2020 ;
+    kno:frequency kno:KN2016-0289-freq-NN-2022 ;
+    kno:frequency kno:KN2016-0289-freq-NN-2023 ;
     kno:frequency kno:KN2016-0289-freq-NN-2025 ;
     kno:frequency kno:KN2016-0289-freq-NN-total ;
-    kno:component kno:KN2016-0289-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%88%98%EC%96%B4%EC%B1%85> ;
-    kno:formation kno:W01 ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:example "¶시중에 일상생활이나 어휘집 위주로 발간된 {수어책은} 많지만, 대학 생활을 주제로 한 교재는 이번이 처음이다."@ko ;
-    kno:origin "(手語冊)" ;
     kno:indexForm "수어책"@ko ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2016-0289-freq-NN-2016 ;
-    kno:frequency kno:KN2016-0289-freq-NN-2020 ;
-    kno:frequency kno:KN2016-0289-freq-NN-2023 ;
-    kno:frequency kno:KN2016-0289-freq-NN-2022 ;
-    kno:frequency kno:KN2016-0289-freq-NN-2019 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:componentString "수어(手語), 책(冊)"@ko ;
-    skos:definition "수화를 가르치거나 배우는 데 필요한 책."@ko ;
     kno:instantiates kno:S000980 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(手語冊)" ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2016-0289-c2 ;
-    kno:slotFiller "수어(手語) (1성분)"@ko .
-kno:KN2016-0289-c1 kno:semanticTag kno:usas-Q3 ;
-    kno:formative kno:F001503 ;
-    kno:position "1"^^xsd:integer ;
+    kno:slotFiller "수어(手語) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0289-c1 a kno:Component ;
     rdfs:label "수어(手語)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "수어"@ko ;
-    a kno:Component ;
+    kno:formative kno:F001503 ;
     kno:fullForm "수어"@ko ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2016-0289-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-Q4.1 ;
-    kno:surfaceForm "책"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Q3 ;
+    kno:surfaceForm "수어"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0289-c2 a kno:Component ;
+    rdfs:label "책(冊)"@ko ;
     kno:formative kno:F000598 ;
     kno:fullForm "책"@ko ;
-    a kno:Component ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "책(冊)"@ko ;
-    kno:role "고정항"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:surfaceForm "책"@ko ;
+    kno:truncated "false"^^xsd:boolean .

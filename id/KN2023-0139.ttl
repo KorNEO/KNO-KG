@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0139 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0139 kno:componentString "속(이다), 튀(다)"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶최근 일어난 주가 조작 사건에 대하여, 외국 투자 기업이 ‘먹튀’를 넘어 ‘{속튀’를} 했다는 전문가 의견이 나왔다."@ko ;
+kno:KN2023-0139 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "속튀"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8D%ED%8A%80> ;
+    skos:definition "‘속이고 튀다’를 줄여 이르는 말. 자신의 이익을 위해 상대방을 속이고 달아나는 일을 말한다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
     kno:component kno:KN2023-0139-c1 ;
+    kno:component kno:KN2023-0139-c2 ;
+    kno:componentString "속(이다), 튀(다)"@ko ;
+    kno:example "¶최근 일어난 주가 조작 사건에 대하여, 외국 투자 기업이 ‘먹튀’를 넘어 ‘{속튀’를} 했다는 전문가 의견이 나왔다."@ko ;
+    kno:formation kno:W06 ;
     kno:frequency kno:KN2023-0139-freq-NN-2022 ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:languageType "고+고" ;
     kno:frequency kno:KN2023-0139-freq-NN-2023 ;
     kno:frequency kno:KN2023-0139-freq-NN-total ;
-    kno:component kno:KN2023-0139-c2 ;
-    a kno:Neologism ;
-    kno:slotFiller "속(이다) (1성분)"@ko ;
-    kno:instantiates kno:S000173 ;
-    rdfs:label "속튀"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
     kno:indexForm "속튀"@ko ;
-    skos:definition "‘속이고 튀다’를 줄여 이르는 말. 자신의 이익을 위해 상대방을 속이고 달아나는 일을 말한다."@ko ;
-    kno:formation kno:W06 ;
+    kno:instantiates kno:S000173 ;
+    kno:languageType "고+고" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "속(이다) (1성분)"@ko ;
     kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8D%ED%8A%80> .
-kno:KN2023-0139-c1 kno:fullForm "속이다"@ko ;
-    kno:surfaceForm "속"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0139-c1 a kno:Component ;
+    rdfs:label "속(이다)"@ko ;
+    kno:formative kno:F004431 ;
+    kno:fullForm "속이다"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A5.4m ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F004431 ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "속(이다)"@ko ;
-    a kno:Component .
-kno:KN2023-0139-c2 kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000315 ;
+    kno:surfaceForm "속"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0139-c2 a kno:Component ;
     rdfs:label "튀(다)"@ko ;
+    kno:formative kno:F000315 ;
     kno:fullForm "튀다"@ko ;
-    kno:semanticTag kno:usas-M1 ;
     kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-M1 ;
     kno:surfaceForm "튀"@ko ;
-    a kno:Component .
+    kno:truncated "true"^^xsd:boolean .

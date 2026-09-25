@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0259 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0259 kno:activeYears "0"^^xsd:integer ;
-    kno:example "¶특히 돈은 남성이 벌어 와야 한다는 관념이 희박해지면서 젊은 남성들이 능력 있는 반려자를 만나고 싶다는 {‘취가’로} 눈을 돌리는 경우가 늘었다."@ko ;
+kno:KN2019-0259 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "취가"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B7%A8%EA%B0%80> ;
-    kno:origin "(就가)" ;
+    skos:definition "남성들이 취직 대신에 장가가는 것을 통해 경제적 안정을 꾀하는 일."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2019-0259-c1 ;
+    kno:component kno:KN2019-0259-c2 ;
+    kno:componentString "취(직)(就), (장)가"@ko ;
+    kno:example "¶특히 돈은 남성이 벌어 와야 한다는 관념이 희박해지면서 젊은 남성들이 능력 있는 반려자를 만나고 싶다는 {‘취가’로} 눈을 돌리는 경우가 늘었다."@ko ;
     kno:formation kno:W05 ;
+    kno:indexForm "취가"@ko ;
+    kno:languageType "한+고" ;
+    kno:origin "(就가)" ;
+    kno:pos "「명」"@ko ;
     kno:predicate "꾀하다"@ko ;
     kno:registration "동형어 미확정"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    skos:definition "남성들이 취직 대신에 장가가는 것을 통해 경제적 안정을 꾀하는 일."@ko ;
-    kno:languageType "한+고" ;
-    kno:componentString "취(직)(就), (장)가"@ko ;
-    rdfs:label "취가"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:indexForm "취가"@ko ;
-    kno:component kno:KN2019-0259-c2 ;
     kno:unitType "단어"@ko ;
-    kno:component kno:KN2019-0259-c1 ;
-    a kno:Neologism .
-kno:KN2019-0259-c2 rdfs:label "(장)가"@ko ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "가"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:fullForm "장가"@ko ;
-    kno:formative kno:F002065 ;
-    kno:truncated "true"^^xsd:boolean .
-kno:KN2019-0259-c1 kno:fullForm "취직"@ko ;
-    kno:surfaceForm "취"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0259-c1 a kno:Component ;
     rdfs:label "취(직)(就)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F006151 ;
+    kno:fullForm "취직"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:formative kno:F006151 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I3.1 .
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "취"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0259-c2 a kno:Component ;
+    rdfs:label "(장)가"@ko ;
+    kno:formative kno:F002065 ;
+    kno:fullForm "장가"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "가"@ko ;
+    kno:truncated "true"^^xsd:boolean .

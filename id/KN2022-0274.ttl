@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0274 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0274 rdfs:label "코끝여"@ko ;
-    kno:year "2022"^^xsd:gYear ;
+kno:KN2022-0274 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "코끝여"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%81%9D%EC%97%AC> ;
+    skos:definition "‘코로나 끝나고 여행가자.’ 또는 ‘코로나 끝나고 가야하는 여행지’를 줄여 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0274-c1 ;
+    kno:component kno:KN2022-0274-c2 ;
+    kno:component kno:KN2022-0274-c3 ;
+    kno:componentString "코(로나)(corona), 끝, 여(행)(旅行)"@ko ;
+    kno:example "¶코로나 기세가 다소 꺾이고 있으니 {코끝여를} 선정해 보자."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2022-0274-freq-NN-2021 ;
+    kno:frequency kno:KN2022-0274-freq-NN-total ;
+    kno:indexForm "코끝여"@ko ;
+    kno:instantiates kno:S001609 ;
+    kno:languageType "영+고+한" ;
+    kno:lastAttestationYear "2021"^^xsd:gYear ;
+    kno:origin "(<영>←corona virus끝旅)" ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2022-0274-c1 ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2021"^^xsd:gYear ;
-    a kno:Neologism ;
-    skos:definition "‘코로나 끝나고 여행가자.’ 또는 ‘코로나 끝나고 가야하는 여행지’를 줄여 이르는 말."@ko ;
-    kno:origin "(<영>←corona virus끝旅)" ;
-    kno:component kno:KN2022-0274-c2 ;
-    kno:componentString "코(로나)(corona), 끝, 여(행)(旅行)"@ko ;
-    kno:languageType "영+고+한" ;
-    kno:component kno:KN2022-0274-c3 ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "코끝여"@ko ;
     kno:slotFiller "여(행)(旅行) (1성분)"@ko ;
-    kno:formation kno:W06 ;
-    kno:example "¶코로나 기세가 다소 꺾이고 있으니 {코끝여를} 선정해 보자."@ko ;
-    kno:instantiates kno:S001609 ;
-    a ontolex:Word ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%BD%94%EB%81%9D%EC%97%AC> ;
-    kno:frequency kno:KN2022-0274-freq-NN-2021 ;
-    kno:frequency kno:KN2022-0274-freq-NN-total .
-kno:KN2022-0274-c1 rdfs:label "코(로나)(corona)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
+    kno:unitType "단어"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0274-c1 a kno:Component ;
+    rdfs:label "코(로나)(corona)"@ko ;
     kno:formative kno:F000237 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "코"@ko ;
     kno:fullForm "코로나"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2 .
-kno:KN2022-0274-c2 rdfs:label "끝"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000471 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-T2 ;
-    kno:fullForm "끝"@ko ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "끝"@ko .
+    kno:semanticTag kno:usas-B2 ;
+    kno:surfaceForm "코"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2022-0274-c2 a kno:Component ;
+    rdfs:label "끝"@ko ;
+    kno:formative kno:F000471 ;
+    kno:fullForm "끝"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T2 ;
+    kno:surfaceForm "끝"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2022-0274-c3 a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
+    rdfs:label "여(행)(旅行)"@ko ;
     kno:formative kno:F005021 ;
     kno:fullForm "여행"@ko ;
-    rdfs:label "여(행)(旅行)"@ko ;
-    kno:surfaceForm "여"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-M1 .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "여"@ko ;
+    kno:truncated "true"^^xsd:boolean .

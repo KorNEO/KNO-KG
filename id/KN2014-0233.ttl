@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0233 kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
+kno:KN2014-0233 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "저퀄"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372363> ;
     skos:definition "질이나 수준이 낮음."@ko ;
     kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2014-0233-c1 ;
+    kno:component kno:KN2014-0233-c2 ;
     kno:componentString "저(低)-, 퀄(리티)(quality)"@ko ;
     kno:example "¶요즘 나오는 스리디(3D) 고퀄리티 게임에 비하면, OO와 OO은 {저퀄에} 속한다."@ko ;
-    kno:unitType "단어"@ko ;
-    rdfs:label "저퀄"@ko ;
-    kno:origin "(低<영>←quality)" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372363> ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:indexForm "저퀄"@ko ;
-    kno:urimalTargetCode "1372363" ;
-    kno:component kno:KN2014-0233-c1 ;
     kno:formation kno:W05 ;
-    kno:component kno:KN2014-0233-c2 ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:registration "우리말샘"@ko .
-kno:KN2014-0233-c1 kno:role "성분"@ko ;
-    kno:fullForm "저"@ko ;
-    kno:surfaceForm "저"@ko ;
-    kno:formative kno:F005601 ;
-    kno:semanticTag kno:usas-Z8 ;
-    a kno:Component ;
+    kno:indexForm "저퀄"@ko ;
+    kno:languageType "한+영" ;
+    kno:origin "(低<영>←quality)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1372363" ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0233-c1 a kno:Component ;
     rdfs:label "저(低)-"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2014-0233-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005601 ;
+    kno:fullForm "저"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "퀄"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:surfaceForm "저"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0233-c2 a kno:Component ;
+    rdfs:label "퀄(리티)(quality)"@ko ;
     kno:formative kno:F000964 ;
     kno:fullForm "퀄리티"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-A5.1 ;
-    rdfs:label "퀄(리티)(quality)"@ko .
+    kno:surfaceForm "퀄"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0045 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0045 kno:indexForm "국제여성헌법"@ko ;
-    kno:origin "(國際女性憲法)" ;
-    kno:frequency kno:KN2018-0045-freq-NN-2024 ;
-    kno:urimalTargetCode "1415826" ;
-    kno:componentString "국제(國際), 여성(女性), 헌법(憲法)"@ko ;
-    kno:slotFiller "여성(女性)+헌법(憲法) (2성분)"@ko ;
-    kno:example "¶2월 22일 스위스 제네바 유엔 본부에서 한국 정부는 소위 ‘{국제 여성 헌법’이라} 불리는 유엔 여성 차별 철폐 협약에 관한 제8차 이행 보고서의 심의를 받는다."@ko ;
-    kno:instantiates kno:S000443 ;
+kno:KN2018-0045 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:unitType "구"@ko ;
     rdfs:label "국제^여성^헌법"@ko ;
-    kno:registration "우리말샘"@ko ;
-    kno:languageType "한^한^한" ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2018-0045-freq-NN-2018 ;
-    kno:frequency kno:KN2018-0045-freq-NN-2019 ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1415826> ;
-    kno:component kno:KN2018-0045-c3 ;
     skos:definition "여성의 권리와 인권을 지키기 위해 국제 연합(UN)에서 1979년 채택된 조약인 ‘여성 차별 철폐 협약’을 달리 이르는 말."@ko ;
-    a ontolex:MultiwordExpression ;
     kno:activeYears "3"^^xsd:integer ;
     kno:component kno:KN2018-0045-c1 ;
-    kno:pos "「구」"@ko ;
+    kno:component kno:KN2018-0045-c2 ;
+    kno:component kno:KN2018-0045-c3 ;
+    kno:componentString "국제(國際), 여성(女性), 헌법(憲法)"@ko ;
+    kno:example "¶2월 22일 스위스 제네바 유엔 본부에서 한국 정부는 소위 ‘{국제 여성 헌법’이라} 불리는 유엔 여성 차별 철폐 협약에 관한 제8차 이행 보고서의 심의를 받는다."@ko ;
+    kno:frequency kno:KN2018-0045-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0045-freq-NN-2019 ;
+    kno:frequency kno:KN2018-0045-freq-NN-2024 ;
     kno:frequency kno:KN2018-0045-freq-NN-total ;
-    kno:component kno:KN2018-0045-c2 .
-kno:KN2018-0045-c3 rdfs:label "헌법(憲法)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "헌법"@ko ;
-    kno:formative kno:F001018 ;
-    kno:surfaceForm "헌법"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 .
-kno:KN2018-0045-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:indexForm "국제여성헌법"@ko ;
+    kno:instantiates kno:S000443 ;
+    kno:languageType "한^한^한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(國際女性憲法)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "여성(女性)+헌법(憲法) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1415826" ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0045-c1 a kno:Component ;
+    rdfs:label "국제(國際)"@ko ;
     kno:formative kno:F000463 ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
     kno:fullForm "국제"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-G1.1 ;
-    rdfs:label "국제(國際)"@ko ;
-    kno:surfaceForm "국제"@ko .
+    kno:surfaceForm "국제"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2018-0045-c2 a kno:Component ;
-    kno:surfaceForm "여성"@ko ;
-    kno:fullForm "여성"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S2.1 ;
-    kno:position "2"^^xsd:integer ;
+    rdfs:label "여성(女性)"@ko ;
     kno:formative kno:F000859 ;
-    rdfs:label "여성(女性)"@ko .
+    kno:fullForm "여성"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S2.1 ;
+    kno:surfaceForm "여성"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0045-c3 a kno:Component ;
+    rdfs:label "헌법(憲法)"@ko ;
+    kno:formative kno:F001018 ;
+    kno:fullForm "헌법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "헌법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

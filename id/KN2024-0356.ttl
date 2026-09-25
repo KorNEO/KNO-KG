@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0356 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0356 a kno:Neologism ;
-    kno:component kno:KN2024-0356-c1 ;
-    kno:slotFiller "푸드(food)+큐아르(QR) (2성분)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:origin "(<영>food QR code)" ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0356-freq-NN-total ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S000308 ;
-    kno:frequency kno:KN2024-0356-freq-NN-2025 ;
-    kno:example "¶OO은 {푸드 큐아르 코드} 국제 표준화 추진을 위한 업무 협약을 체결했다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%91%B8%EB%93%9C%ED%81%90%EC%95%84%EB%A5%B4%EC%BD%94%EB%93%9C> ;
+kno:KN2024-0356 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "푸드^큐아르^코드"@ko ;
-    kno:component kno:KN2024-0356-c3 ;
-    kno:slotFiller "큐아르(QR)+코드(code) (2성분)"@ko ;
-    kno:component kno:KN2024-0356-c2 ;
-    kno:frequency kno:KN2024-0356-freq-NN-2024 ;
-    kno:instantiates kno:S000998 ;
-    kno:unitType "구"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%91%B8%EB%93%9C%ED%81%90%EC%95%84%EB%A5%B4%EC%BD%94%EB%93%9C> ;
     skos:definition "식품에 대한 자세한 정보가 담긴 큐아르 코드. 식품을 고유하게 구분하기 위한 상품 식별 코드와 해당 식품에 관한 다양한 정보로 연결되는 인터넷 주소가 포함되어 있다. =푸드 큐아르."@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "영^영^영" ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2024-0356-c1 ;
+    kno:component kno:KN2024-0356-c2 ;
+    kno:component kno:KN2024-0356-c3 ;
     kno:componentString "푸드(food), 큐아르(QR), 코드(code)"@ko ;
-    kno:indexForm "푸드큐아르코드"@ko .
-kno:KN2024-0356-c1 kno:surfaceForm "푸드"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
+    kno:example "¶OO은 {푸드 큐아르 코드} 국제 표준화 추진을 위한 업무 협약을 체결했다."@ko ;
+    kno:frequency kno:KN2024-0356-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0356-freq-NN-2025 ;
+    kno:frequency kno:KN2024-0356-freq-NN-total ;
+    kno:indexForm "푸드큐아르코드"@ko ;
+    kno:instantiates kno:S000308 ;
+    kno:instantiates kno:S000998 ;
+    kno:languageType "영^영^영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>food QR code)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "큐아르(QR)+코드(code) (2성분)"@ko ;
+    kno:slotFiller "푸드(food)+큐아르(QR) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0356-c1 a kno:Component ;
     rdfs:label "푸드(food)"@ko ;
-    a kno:Component ;
     kno:formative kno:F000108 ;
+    kno:fullForm "푸드"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:fullForm "푸드"@ko .
-kno:KN2024-0356-c3 kno:surfaceForm "코드"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "코드(code)"@ko ;
-    kno:semanticTag kno:usas-S6p ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "코드"@ko ;
-    kno:formative kno:F001860 .
-kno:KN2024-0356-c2 kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "큐아르"@ko ;
-    kno:semanticTag kno:usas-Y2 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "큐아르"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "푸드"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0356-c2 a kno:Component ;
+    rdfs:label "큐아르(QR)"@ko ;
     kno:formative kno:F001873 ;
-    a kno:Component ;
-    rdfs:label "큐아르(QR)"@ko .
+    kno:fullForm "큐아르"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "큐아르"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0356-c3 a kno:Component ;
+    rdfs:label "코드(code)"@ko ;
+    kno:formative kno:F001860 ;
+    kno:fullForm "코드"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S6p ;
+    kno:surfaceForm "코드"@ko ;
+    kno:truncated "false"^^xsd:boolean .

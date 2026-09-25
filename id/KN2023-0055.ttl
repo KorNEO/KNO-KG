@@ -9,53 +9,53 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0055 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0055 kno:year "2023"^^xsd:gYear ;
-    kno:origin "(緊急伐採制度)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%B2%8C%EC%B1%84%EC%A0%9C%EB%8F%84> ;
+kno:KN2023-0055 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2023-0055-c1 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2023-0055-c3 ;
+    rdfs:label "긴급^벌채^제도"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B8%B4%EA%B8%89%EB%B2%8C%EC%B1%84%EC%A0%9C%EB%8F%84> ;
+    skos:definition "병충해 방제, 산불 진화 및 산불 확산 방지, 산사태 등 2차 피해가 우려되는 경우에, 산림 소유자의 동의 없이 긴급히 벌채를 할 수 있도록 한 제도."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0055-c1 ;
     kno:component kno:KN2023-0055-c2 ;
+    kno:component kno:KN2023-0055-c3 ;
+    kno:componentString "긴급(緊急), 벌채(伐採), 제도(制度)"@ko ;
+    kno:example "¶산림청 관계자는 조만간 과도하게 넓은 지역에 대한 벌채를 허가하는 {긴급 벌채 제도의} 미비점을 정비할 예정임을 알렸다."@ko ;
+    kno:frequency kno:KN2023-0055-freq-NN-2023 ;
     kno:frequency kno:KN2023-0055-freq-NN-total ;
     kno:indexForm "긴급벌채제도"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "벌채(伐採) (1성분)"@ko ;
     kno:instantiates kno:S001178 ;
-    kno:registration "신어DB"@ko ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2023-0055-freq-NN-2023 ;
-    skos:definition "병충해 방제, 산불 진화 및 산불 확산 방지, 산사태 등 2차 피해가 우려되는 경우에, 산림 소유자의 동의 없이 긴급히 벌채를 할 수 있도록 한 제도."@ko ;
-    rdfs:label "긴급^벌채^제도"@ko ;
-    kno:example "¶산림청 관계자는 조만간 과도하게 넓은 지역에 대한 벌채를 허가하는 {긴급 벌채 제도의} 미비점을 정비할 예정임을 알렸다."@ko ;
     kno:languageType "한^한^한" ;
-    kno:componentString "긴급(緊急), 벌채(伐採), 제도(制度)"@ko .
-kno:KN2023-0055-c1 kno:semanticTag kno:usas-A11.1p ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(緊急伐採制度)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "벌채(伐採) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0055-c1 a kno:Component ;
     rdfs:label "긴급(緊急)"@ko ;
-    kno:surfaceForm "긴급"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:formative kno:F000016 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
     kno:fullForm "긴급"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2023-0055-c3 kno:semanticTag kno:usas-S7.1p ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "제도(制度)"@ko ;
-    kno:surfaceForm "제도"@ko ;
-    kno:fullForm "제도"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000041 .
-kno:KN2023-0055-c2 kno:position "2"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F003795 ;
+    kno:semanticTag kno:usas-A11.1p ;
+    kno:surfaceForm "긴급"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0055-c2 a kno:Component ;
     rdfs:label "벌채(伐採)"@ko ;
-    kno:surfaceForm "벌채"@ko ;
+    kno:formative kno:F003795 ;
+    kno:fullForm "벌채"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-F4 ;
-    kno:fullForm "벌채"@ko .
+    kno:surfaceForm "벌채"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0055-c3 a kno:Component ;
+    rdfs:label "제도(制度)"@ko ;
+    kno:formative kno:F000041 ;
+    kno:fullForm "제도"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "제도"@ko ;
+    kno:truncated "false"^^xsd:boolean .

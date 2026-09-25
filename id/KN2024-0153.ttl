@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0153 a kno:Neologism ;
-    kno:origin "(<영>slow aging族)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%AC%EB%A1%9C%EC%97%90%EC%9D%B4%EC%A7%95%EC%A1%B1> ;
-    kno:component kno:KN2024-0153-c1 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "영_(영+한)" ;
-    kno:slotFiller "슬로(slow)+에이징(aging) (2성분)"@ko ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "슬로(slow), 에이징(aging), -족(族)"@ko ;
+kno:KN2024-0153 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "슬로에이징-족"@ko ;
-    kno:slotFiller "에이징(aging)+-족(族) (2성분)"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%8A%AC%EB%A1%9C%EC%97%90%EC%9D%B4%EC%A7%95%EC%A1%B1> ;
+    skos:definition "노화를 늦추기 위하여 노화가 시작되기 전부터 건강과 외모 등을 관리하는 사람. 또는 그런 무리."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0153-c1 ;
+    kno:component kno:KN2024-0153-c2 ;
     kno:component kno:KN2024-0153-c3 ;
-    kno:instantiates kno:S001406 ;
-    kno:instantiates kno:S000001 ;
+    kno:componentString "슬로(slow), 에이징(aging), -족(族)"@ko ;
     kno:example "¶국내의 뷰티 시장 규모는 급성장하고 있으며, 피부가 좋을 때부터 미리 관리하여 노화를 늦추려고 하는 {슬로 에이징족까지} 소비자층 또한 다양해지고 있다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2024-0153-freq-NN-2024 ;
     kno:frequency kno:KN2024-0153-freq-NN-total ;
     kno:indexForm "슬로에이징족"@ko ;
-    skos:definition "노화를 늦추기 위하여 노화가 시작되기 전부터 건강과 외모 등을 관리하는 사람. 또는 그런 무리."@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000001 ;
+    kno:instantiates kno:S001406 ;
+    kno:languageType "영_(영+한)" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(<영>slow aging族)" ;
+    kno:pos "「명」"@ko ;
     kno:predicate "관리하다"@ko ;
-    kno:formation kno:W02 ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2024-0153-freq-NN-2024 ;
-    kno:component kno:KN2024-0153-c2 .
-kno:KN2024-0153-c1 kno:formative kno:F000545 ;
-    kno:semanticTag kno:usas-N3.8m ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "슬로(slow)+에이징(aging) (2성분)"@ko ;
+    kno:slotFiller "에이징(aging)+-족(族) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0153-c1 a kno:Component ;
     rdfs:label "슬로(slow)"@ko ;
+    kno:formative kno:F000545 ;
     kno:fullForm "슬로"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "슬로"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer .
-kno:KN2024-0153-c3 kno:formative kno:F000001 ;
+    kno:semanticTag kno:usas-N3.8m ;
+    kno:surfaceForm "슬로"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0153-c2 a kno:Component ;
+    rdfs:label "에이징(aging)"@ko ;
+    kno:formative kno:F001596 ;
+    kno:fullForm "에이징"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-T3 ;
+    kno:surfaceForm "에이징"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0153-c3 a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
+    kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
     kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "족"@ko ;
-    rdfs:label "-족(族)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S2 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2024-0153-c2 rdfs:label "에이징(aging)"@ko ;
-    kno:surfaceForm "에이징"@ko ;
-    kno:fullForm "에이징"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001596 ;
-    kno:semanticTag kno:usas-T3 ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component .

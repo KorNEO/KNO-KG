@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0179 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0179 kno:component kno:KN2025-0179-c1 ;
-    kno:origin "(<영>dessert←inflation)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:formation kno:W05 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0179-freq-NN-2025 ;
-    kno:componentString "디저트(dessert), (인)플레이션(inflation)"@ko ;
-    skos:definition "(LLM) 케이크ㆍ초콜릿ㆍ커피 등 디저트류의 가격이 급등하는 현상. 원재료 가격 상승과 인건비ㆍ물류비 증가 등 복합적 요인으로 발생한 인플레이션이다."@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:predicate "급등하다"@ko ;
+kno:KN2025-0179 a ontolex:Word ;
     a kno:Neologism ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:languageType "영+영" ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0179-c2 ;
     rdfs:label "디저트플레이션"@ko ;
-    a ontolex:Word ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%94%EC%A0%80%ED%8A%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
+    skos:definition "(LLM) 케이크ㆍ초콜릿ㆍ커피 등 디저트류의 가격이 급등하는 현상. 원재료 가격 상승과 인건비ㆍ물류비 증가 등 복합적 요인으로 발생한 인플레이션이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0179-c1 ;
+    kno:component kno:KN2025-0179-c2 ;
+    kno:componentString "디저트(dessert), (인)플레이션(inflation)"@ko ;
     kno:example "(LLM) 원재료값과 인건비가 함께 오르면서 연말을 앞두고 {디저트플레이션이} 더 심해질 수 있다는 우려가 나온다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2025-0179-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0179-freq-NN-total ;
     kno:indexForm "디저트플레이션"@ko ;
     kno:instantiates kno:S000050 ;
-    kno:slotFiller "음식; X=디저트(dessert) (1성분)"@ko ;
+    kno:languageType "영+영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>dessert←inflation)" ;
     kno:pos "「명」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%94%94%EC%A0%80%ED%8A%B8%ED%94%8C%EB%A0%88%EC%9D%B4%EC%85%98> ;
-    kno:frequency kno:KN2025-0179-freq-NN-total .
-kno:KN2025-0179-c1 rdfs:label "디저트(dessert)"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "디저트"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "디저트"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:predicate "급등하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "음식; X=디저트(dessert) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0179-c1 a kno:Component ;
+    rdfs:label "디저트(dessert)"@ko ;
     kno:formative kno:F001216 ;
-    a kno:Component .
-kno:KN2025-0179-c2 kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:role "고정항"@ko ;
+    kno:fullForm "디저트"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "디저트"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0179-c2 a kno:Component ;
+    rdfs:label "(인)플레이션(inflation)"@ko ;
     kno:formative kno:F000009 ;
     kno:fullForm "인플레이션"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.3p ;
     kno:surfaceForm "플레이션"@ko ;
-    rdfs:label "(인)플레이션(inflation)"@ko .
+    kno:truncated "true"^^xsd:boolean .

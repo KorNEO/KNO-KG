@@ -9,64 +9,64 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0101 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0101 kno:activeYears "1"^^xsd:integer ;
-    skos:definition "농어민의 기본 생활을 돕고, 지속적인 농어업 활동을 장려하기 위해 정부가 지급하는 지원금. 지급 주체가 지방 자치 단체일 경우 각 지방 자치 단체에 따라 지급 내용과 용어가 조금씩 다르다."@ko ;
-    kno:example "¶OO도는 올해 연 60만 원을 {농어민 기본 소득 지원금으로} 지급한다."@ko ;
-    kno:languageType "한^한^한^한" ;
-    kno:frequency kno:KN2022-0101-freq-NN-2022 ;
+kno:KN2022-0101 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
+    rdfs:label "농어민^기본^소득^지원금"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%86%8D%EC%96%B4%EB%AF%BC%EA%B8%B0%EB%B3%B8%EC%86%8C%EB%93%9D%EC%A7%80%EC%9B%90%EA%B8%88> ;
+    skos:definition "농어민의 기본 생활을 돕고, 지속적인 농어업 활동을 장려하기 위해 정부가 지급하는 지원금. 지급 주체가 지방 자치 단체일 경우 각 지방 자치 단체에 따라 지급 내용과 용어가 조금씩 다르다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2022-0101-c1 ;
     kno:component kno:KN2022-0101-c2 ;
+    kno:component kno:KN2022-0101-c3 ;
     kno:component kno:KN2022-0101-c4 ;
     kno:componentString "농어민(農漁民), 기본(基本), 소득(所得), 지원금(支援金)"@ko ;
-    kno:indexForm "농어민기본소득지원금"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:example "¶OO도는 올해 연 60만 원을 {농어민 기본 소득 지원금으로} 지급한다."@ko ;
+    kno:frequency kno:KN2022-0101-freq-NN-2022 ;
     kno:frequency kno:KN2022-0101-freq-NN-total ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "농어민(農漁民)+기본(基本)+소득(所得) (3성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%86%8D%EC%96%B4%EB%AF%BC%EA%B8%B0%EB%B3%B8%EC%86%8C%EB%93%9D%EC%A7%80%EC%9B%90%EA%B8%88> ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:component kno:KN2022-0101-c1 ;
-    rdfs:label "농어민^기본^소득^지원금"@ko ;
-    kno:component kno:KN2022-0101-c3 ;
-    kno:origin "(農漁民基本所得支援金)" ;
-    kno:predicate "지급하다"@ko ;
+    kno:indexForm "농어민기본소득지원금"@ko ;
     kno:instantiates kno:S000071 ;
+    kno:languageType "한^한^한^한" ;
     kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:unitType "구"@ko .
-kno:KN2022-0101-c2 kno:fullForm "기본"@ko ;
-    kno:semanticTag kno:usas-A4.2m ;
-    a kno:Component ;
-    kno:surfaceForm "기본"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "기본(基本)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000085 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2022-0101-c4 a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko ;
-    kno:position "4"^^xsd:integer ;
-    kno:formative kno:F000036 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "지원금"@ko ;
-    kno:surfaceForm "지원금"@ko ;
-    rdfs:label "지원금(支援金)"@ko .
-kno:KN2022-0101-c1 kno:semanticTag kno:usas-F4 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F002801 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:origin "(農漁民基本所得支援金)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "지급하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "농어민(農漁民)+기본(基本)+소득(所得) (3성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0101-c1 a kno:Component ;
     rdfs:label "농어민(農漁民)"@ko ;
+    kno:formative kno:F002801 ;
     kno:fullForm "농어민"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "농어민"@ko .
-kno:KN2022-0101-c3 rdfs:label "소득(所得)"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-F4 ;
+    kno:surfaceForm "농어민"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0101-c2 a kno:Component ;
+    rdfs:label "기본(基本)"@ko ;
+    kno:formative kno:F000085 ;
+    kno:fullForm "기본"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A4.2m ;
+    kno:surfaceForm "기본"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0101-c3 a kno:Component ;
+    rdfs:label "소득(所得)"@ko ;
     kno:formative kno:F000047 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "소득"@ko ;
-    kno:semanticTag kno:usas-I1.1 ;
     kno:fullForm "소득"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
+    kno:surfaceForm "소득"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0101-c4 a kno:Component ;
+    rdfs:label "지원금(支援金)"@ko ;
+    kno:formative kno:F000036 ;
+    kno:fullForm "지원금"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "지원금"@ko ;
+    kno:truncated "false"^^xsd:boolean .

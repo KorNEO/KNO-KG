@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0092 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0092 kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2024-0092-freq-NN-total ;
-    kno:example "¶쇼핑몰의 판매 실적을 늘리기 위해 수취인 불명의 택배를 부치는 {브러싱캠이} 늘어나고 있다."@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
+kno:KN2024-0092 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "브러싱캠"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B8%8C%EB%9F%AC%EC%8B%B1%EC%BA%A0> ;
+    skos:definition "온라인 쇼핑몰에서 판매 실적과 상품 후기를 조작하기 위해 실제 주문과 상관없이 무작위로 소비자에게 물건을 발송하는 행위."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0092-c1 ;
+    kno:component kno:KN2024-0092-c2 ;
+    kno:componentString "브러싱(brushing), (스)캠(scam)"@ko ;
+    kno:example "¶쇼핑몰의 판매 실적을 늘리기 위해 수취인 불명의 택배를 부치는 {브러싱캠이} 늘어나고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0092-freq-NN-2023 ;
+    kno:frequency kno:KN2024-0092-freq-NN-total ;
+    kno:indexForm "브러싱캠"@ko ;
     kno:languageType "영+영" ;
     kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:formation kno:W05 ;
-    kno:componentString "브러싱(brushing), (스)캠(scam)"@ko ;
-    kno:frequency kno:KN2024-0092-freq-NN-2023 ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2024-0092-c2 ;
-    skos:definition "온라인 쇼핑몰에서 판매 실적과 상품 후기를 조작하기 위해 실제 주문과 상관없이 무작위로 소비자에게 물건을 발송하는 행위."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B8%8C%EB%9F%AC%EC%8B%B1%EC%BA%A0> ;
-    kno:predicate "발송하다"@ko ;
-    rdfs:label "브러싱캠"@ko ;
     kno:origin "(<영>▼brushing←scam)" ;
-    kno:indexForm "브러싱캠"@ko ;
-    kno:component kno:KN2024-0092-c1 .
-kno:KN2024-0092-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    rdfs:label "(스)캠(scam)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "캠"@ko ;
-    kno:formative kno:F006226 ;
-    kno:fullForm "스캠"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
-    kno:position "2"^^xsd:integer .
-kno:KN2024-0092-c1 kno:formative kno:F001399 ;
-    kno:semanticTag kno:usas-G2.1m ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "발송하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0092-c1 a kno:Component ;
+    rdfs:label "브러싱(brushing)"@ko ;
+    kno:formative kno:F001399 ;
+    kno:fullForm "브러싱"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:fullForm "브러싱"@ko ;
-    a kno:Component ;
-    rdfs:label "브러싱(brushing)"@ko ;
-    kno:surfaceForm "브러싱"@ko .
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "브러싱"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0092-c2 a kno:Component ;
+    rdfs:label "(스)캠(scam)"@ko ;
+    kno:formative kno:F006226 ;
+    kno:fullForm "스캠"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "캠"@ko ;
+    kno:truncated "true"^^xsd:boolean .

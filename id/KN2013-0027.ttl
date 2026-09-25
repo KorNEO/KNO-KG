@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0027 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0027 kno:instantiates kno:S000185 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%BC%EB%8C%80%ED%91%9C%ED%98%95> ;
-    kno:origin "(科代表型)" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    kno:frequency kno:KN2013-0027-freq-NN-2015 ;
-    kno:unitType "단어"@ko ;
+kno:KN2013-0027 a ontolex:Word ;
     a kno:Neologism ;
-    kno:frequency kno:KN2013-0027-freq-NN-total ;
+    rdfs:label "과대표-형"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B3%BC%EB%8C%80%ED%91%9C%ED%98%95> ;
     skos:definition "조직에서 구성원들을 잘 이끄는 유형."@ko ;
-    kno:languageType "한+한" ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:frequency kno:KN2013-0027-freq-NN-2013 ;
-    kno:predicate "이끄다"@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2013-0027-c1 ;
+    kno:component kno:KN2013-0027-c2 ;
     kno:component kno:KN2013-0027-c3 ;
     kno:componentString "과(科), 대표(代表), -형(型)"@ko ;
-    a ontolex:Word ;
-    kno:indexForm "과대표형"@ko ;
-    kno:component kno:KN2013-0027-c1 ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:component kno:KN2013-0027-c2 ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "과(科)+대표(代表) (2성분)"@ko ;
     kno:example "¶이에 반해 여자 대학생들의 경우 ‘미래의 비전을 가지고 있는 야망가형 남학생(25.3%)’을 자신이 바라는 남성상 1위로 꼽았다. 뒤를 이어 ‘어려운 문제나 숙제를 해결해 주는 브레인형 남학생(23%)’, ‘어디서나 무리를 잘 이끄는 {과대표형} 남학생(20.3%)’ 순으로 나타났다."@ko ;
-    rdfs:label "과대표-형"@ko .
-kno:KN2013-0027-c3 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "형"@ko ;
-    kno:semanticTag kno:usas-A4.1 ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "형"@ko ;
-    kno:formative kno:F000109 ;
-    rdfs:label "-형(型)"@ko .
-kno:KN2013-0027-c1 kno:truncated "false"^^xsd:boolean ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2013-0027-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0027-freq-NN-2015 ;
+    kno:frequency kno:KN2013-0027-freq-NN-total ;
+    kno:indexForm "과대표형"@ko ;
+    kno:instantiates kno:S000185 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
+    kno:origin "(科代表型)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "이끄다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "과(科)+대표(代表) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0027-c1 a kno:Component ;
+    rdfs:label "과(科)"@ko ;
+    kno:formative kno:F001078 ;
+    kno:fullForm "과"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-P1 ;
-    kno:formative kno:F001078 ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "과"@ko ;
     kno:surfaceForm "과"@ko ;
-    rdfs:label "과(科)"@ko ;
-    a kno:Component .
-kno:KN2013-0027-c2 kno:position "2"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F002933 ;
-    kno:semanticTag kno:usas-S7.1p ;
-    kno:fullForm "대표"@ko ;
-    kno:surfaceForm "대표"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0027-c2 a kno:Component ;
     rdfs:label "대표(代表)"@ko ;
+    kno:formative kno:F002933 ;
+    kno:fullForm "대표"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S7.1p ;
+    kno:surfaceForm "대표"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0027-c3 a kno:Component ;
+    rdfs:label "-형(型)"@ko ;
+    kno:formative kno:F000109 ;
+    kno:fullForm "형"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A4.1 ;
+    kno:surfaceForm "형"@ko ;
     kno:truncated "false"^^xsd:boolean .

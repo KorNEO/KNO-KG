@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0097 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0097 kno:instantiates kno:S000451 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0097-c1 ;
+kno:KN2025-0097 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "깐부 회동"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%90%EB%B6%80%20%ED%9A%8C%EB%8F%99> ;
     skos:definition "(LLM) 서로를 ‘깐부’로 여길 만큼 가까운 사이의 사람들이 격식 없이 만나 협력이나 현안을 논의하는 비공식 회동."@ko ;
-    kno:slotFiller "회동(會同) (1성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0097-c1 ;
+    kno:component kno:KN2025-0097-c2 ;
+    kno:componentString "깐부, 회동(會同)"@ko ;
+    kno:example "(LLM) 세 기업 수장이 치킨집에서 {깐부회동을} 갖고 인공지능 분야 협력 방안을 논의했다."@ko ;
+    kno:frequency kno:KN2025-0097-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0097-freq-NN-total ;
+    kno:indexForm "깐부회동"@ko ;
+    kno:instantiates kno:S000451 ;
+    kno:languageType "고_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:origin "(깐부會同)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0097-freq-NN-total ;
-    rdfs:label "깐부 회동"@ko ;
-    kno:component kno:KN2025-0097-c2 ;
-    kno:example "(LLM) 세 기업 수장이 치킨집에서 {깐부회동을} 갖고 인공지능 분야 협력 방안을 논의했다."@ko ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:languageType "고_한" ;
     kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0097-freq-NN-2025 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B9%90%EB%B6%80%20%ED%9A%8C%EB%8F%99> ;
-    kno:year "2025"^^xsd:gYear ;
-    a kno:Neologism ;
-    kno:componentString "깐부, 회동(會同)"@ko ;
-    kno:indexForm "깐부회동"@ko .
-kno:KN2025-0097-c1 kno:position "1"^^xsd:integer ;
+    kno:slotFiller "회동(會同) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0097-c1 a kno:Component ;
+    rdfs:label "깐부"@ko ;
     kno:formative kno:F000684 ;
     kno:fullForm "깐부"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    rdfs:label "깐부"@ko ;
     kno:semanticTag kno:usas-S3.1p ;
-    kno:surfaceForm "깐부"@ko .
+    kno:surfaceForm "깐부"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2025-0097-c2 a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "회동"@ko ;
-    kno:semanticTag kno:usas-S1.1.3p ;
-    kno:fullForm "회동"@ko ;
+    rdfs:label "회동(會同)"@ko ;
     kno:formative kno:F007176 ;
+    kno:fullForm "회동"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "회동(會同)"@ko .
+    kno:semanticTag kno:usas-S1.1.3p ;
+    kno:surfaceForm "회동"@ko ;
+    kno:truncated "false"^^xsd:boolean .

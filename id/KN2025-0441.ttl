@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0441 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0441 kno:predicate "판매하다"@ko ;
-    kno:indexForm "와인카세"@ko ;
-    kno:component kno:KN2025-0441-c2 ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2025-0441-freq-NN-2025 ;
-    kno:languageType "영+일" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%80%EC%9D%B8%EC%B9%B4%EC%84%B8> ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
+kno:KN2025-0441 a ontolex:Word ;
     a kno:Neologism ;
-    kno:frequency kno:KN2025-0441-freq-NN-total ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "와인(wine), (오마)카세(omakase)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0441-c1 ;
-    kno:formation kno:W05 ;
-    skos:definition "(LLM) 편의점 등 유통 채널에서 ‘오마카세’처럼 취향이나 콘셉트에 맞춰 와인을 골라 묶음으로 구성해 소개하거나 할인 판매하는 행사."@ko ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:instantiates kno:S000105 ;
-    kno:origin "(<영>wine<일>←omaka[御任]se)" ;
     rdfs:label "와인카세"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%99%80%EC%9D%B8%EC%B9%B4%EC%84%B8> ;
+    skos:definition "(LLM) 편의점 등 유통 채널에서 ‘오마카세’처럼 취향이나 콘셉트에 맞춰 와인을 골라 묶음으로 구성해 소개하거나 할인 판매하는 행사."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0441-c1 ;
+    kno:component kno:KN2025-0441-c2 ;
+    kno:componentString "와인(wine), (오마)카세(omakase)"@ko ;
     kno:example "(LLM) 해당 편의점은 소믈리에가 시음해 고른 와인을 묶어 {와인카세를} 선보이며 일부 품목을 할인 판매한다고 밝혔다."@ko ;
-    kno:slotFiller "와인(wine) (1성분)"@ko .
-kno:KN2025-0441-c2 kno:formative kno:F000309 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "카세"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F1 ;
-    rdfs:label "(오마)카세(omakase)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "오마카세"@ko .
-kno:KN2025-0441-c1 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2025-0441-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0441-freq-NN-total ;
+    kno:indexForm "와인카세"@ko ;
+    kno:instantiates kno:S000105 ;
+    kno:languageType "영+일" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>wine<일>←omaka[御任]se)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "판매하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "와인(wine) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0441-c1 a kno:Component ;
     rdfs:label "와인(wine)"@ko ;
-    kno:surfaceForm "와인"@ko ;
-    kno:fullForm "와인"@ko ;
     kno:formative kno:F005164 ;
+    kno:fullForm "와인"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-F2 ;
-    kno:position "1"^^xsd:integer .
+    kno:surfaceForm "와인"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0441-c2 a kno:Component ;
+    rdfs:label "(오마)카세(omakase)"@ko ;
+    kno:formative kno:F000309 ;
+    kno:fullForm "오마카세"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "카세"@ko ;
+    kno:truncated "true"^^xsd:boolean .

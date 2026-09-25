@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0011 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0011 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%92%EC%84%B1%EB%B9%84> ;
-    kno:component kno:KN2018-0011-c2 ;
-    kno:frequency kno:KN2018-0011-freq-NN-2017 ;
-    kno:formation kno:W06 ;
-    skos:definition "‘값어치 대비 성능의 비율’을 줄여 이르는 말. 어떤 품목이나 상품에 대하여 정해진 시장 가격에서 기대할 수 있는 성능이나 효율의 정도를 말한다."@ko ;
-    kno:component kno:KN2018-0011-c1 ;
-    a ontolex:Word ;
+kno:KN2018-0011 a ontolex:Word ;
     a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
     rdfs:label "값성비"@ko ;
-    kno:slotFiller "값(어치) (1성분)"@ko ;
-    kno:languageType "(고+한)+한" ;
-    kno:componentString "값(어치), 성(능)(性), 비(율)(比)"@ko ;
-    kno:lastAttestationYear "2017"^^xsd:gYear ;
-    kno:indexForm "값성비"@ko ;
-    kno:example "¶OO는 엠시(MC)들이 직접 핫한 트렌드를 체험해 보고 {값성비를} 따져 보는 콘텐츠로…각각의 값어치 즉 가치를 따져 보자는 기획 의도하에 만들어졌다."@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B0%92%EC%84%B1%EB%B9%84> ;
+    skos:definition "‘값어치 대비 성능의 비율’을 줄여 이르는 말. 어떤 품목이나 상품에 대하여 정해진 시장 가격에서 기대할 수 있는 성능이나 효율의 정도를 말한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2018-0011-c1 ;
+    kno:component kno:KN2018-0011-c2 ;
     kno:component kno:KN2018-0011-c3 ;
+    kno:componentString "값(어치), 성(능)(性), 비(율)(比)"@ko ;
+    kno:example "¶OO는 엠시(MC)들이 직접 핫한 트렌드를 체험해 보고 {값성비를} 따져 보는 콘텐츠로…각각의 값어치 즉 가치를 따져 보자는 기획 의도하에 만들어졌다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2018-0011-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0011-freq-NN-total ;
+    kno:indexForm "값성비"@ko ;
+    kno:instantiates kno:S000869 ;
+    kno:languageType "(고+한)+한" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(값性比)" ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
+    kno:slotFiller "값(어치) (1성분)"@ko ;
     kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2018-0011-freq-NN-total ;
-    kno:instantiates kno:S000869 ;
-    kno:origin "(값性比)" ;
     kno:year "2018"^^xsd:gYear .
-kno:KN2018-0011-c2 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "성"@ko ;
-    a kno:Component ;
-    rdfs:label "성(능)(性)"@ko ;
-    kno:semanticTag kno:usas-X9.1p ;
-    kno:formative kno:F001467 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "성능"@ko ;
-    kno:position "2"^^xsd:integer .
-kno:KN2018-0011-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "값"@ko ;
-    kno:fullForm "값어치"@ko ;
-    kno:semanticTag kno:usas-I1.3 ;
-    a kno:Component ;
+kno:KN2018-0011-c1 a kno:Component ;
     rdfs:label "값(어치)"@ko ;
-    kno:position "1"^^xsd:integer ;
     kno:formative kno:F002135 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2018-0011-c3 kno:fullForm "비율"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-N3.1 ;
-    kno:formative kno:F000277 ;
-    a kno:Component ;
-    kno:surfaceForm "비"@ko ;
+    kno:fullForm "값어치"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "값"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0011-c2 a kno:Component ;
+    rdfs:label "성(능)(性)"@ko ;
+    kno:formative kno:F001467 ;
+    kno:fullForm "성능"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "비(율)(比)"@ko .
+    kno:semanticTag kno:usas-X9.1p ;
+    kno:surfaceForm "성"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0011-c3 a kno:Component ;
+    rdfs:label "비(율)(比)"@ko ;
+    kno:formative kno:F000277 ;
+    kno:fullForm "비율"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-N3.1 ;
+    kno:surfaceForm "비"@ko ;
+    kno:truncated "true"^^xsd:boolean .

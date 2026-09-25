@@ -9,39 +9,39 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0404 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0404 rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%20%EC%A3%BC%EC%82%AC%EC%9C%84> ;
+kno:KN2025-0404 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:instantiates kno:S000506 ;
-    skos:definition "(LLM) 사람의 얼굴 생김새나 외모의 매력도를 주사위 눈금(1~6)에 빗대어 점수처럼 평가해 이르는 말."@ko ;
-    kno:example "(LLM) 댓글에서 {얼굴주사위가} 6이라며 영상 속 인물을 칭찬하는 반응이 이어졌다."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2025-0404-c1 ;
     rdfs:label "얼굴 주사위"@ko ;
-    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%BC%EA%B5%B4%20%EC%A3%BC%EC%82%AC%EC%9C%84> ;
+    skos:definition "(LLM) 사람의 얼굴 생김새나 외모의 매력도를 주사위 눈금(1~6)에 빗대어 점수처럼 평가해 이르는 말."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
+    kno:component kno:KN2025-0404-c1 ;
     kno:component kno:KN2025-0404-c2 ;
     kno:componentString "얼굴, 주사위"@ko ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "주사위 (1성분)"@ko ;
-    kno:languageType "고_고" ;
+    kno:example "(LLM) 댓글에서 {얼굴주사위가} 6이라며 영상 속 인물을 칭찬하는 반응이 이어졌다."@ko ;
     kno:indexForm "얼굴주사위"@ko ;
+    kno:instantiates kno:S000506 ;
+    kno:languageType "고_고" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "주사위 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
     kno:year "2025"^^xsd:gYear .
-kno:KN2025-0404-c1 kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+kno:KN2025-0404-c1 a kno:Component ;
     rdfs:label "얼굴"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
+    kno:formative kno:F000222 ;
     kno:fullForm "얼굴"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
     kno:surfaceForm "얼굴"@ko ;
-    kno:formative kno:F000222 .
-kno:KN2025-0404-c2 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:surfaceForm "주사위"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0404-c2 a kno:Component ;
     rdfs:label "주사위"@ko ;
     kno:formative kno:F005794 ;
-    kno:semanticTag kno:usas-K5.2 ;
-    kno:role "슬롯 채움"@ko ;
     kno:fullForm "주사위"@ko ;
-    kno:position "2"^^xsd:integer .
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-K5.2 ;
+    kno:surfaceForm "주사위"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0559 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0559 rdfs:label "청년 불안 주택"@ko ;
-    kno:frequency kno:KN2025-0559-freq-NN-2025 ;
-    kno:indexForm "청년불안주택"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "불안(不安) (1성분)"@ko ;
-    kno:component kno:KN2025-0559-c2 ;
-    kno:languageType "한_한_한" ;
+kno:KN2025-0559 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:origin "(靑年不安住宅)" ;
-    kno:frequency kno:KN2025-0559-freq-NN-total ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "청년 불안 주택"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%B2%AD%EB%85%84%20%EB%B6%88%EC%95%88%20%EC%A3%BC%ED%83%9D> ;
+    skos:definition "(LLM) 청년을 대상으로 한 공공 지원 임대 주택이 보증금 반환 지연ㆍ불이행, 경매ㆍ가압류 등 위험 요인으로 인해 입주자에게 불안과 피해 우려를 안기는 상황을 비판적으로 이르는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0559-c1 ;
+    kno:component kno:KN2025-0559-c2 ;
     kno:component kno:KN2025-0559-c3 ;
     kno:componentString "청년(靑年), 불안(不安), 주택(住宅)"@ko ;
-    skos:definition "(LLM) 청년을 대상으로 한 공공 지원 임대 주택이 보증금 반환 지연ㆍ불이행, 경매ㆍ가압류 등 위험 요인으로 인해 입주자에게 불안과 피해 우려를 안기는 상황을 비판적으로 이르는 말."@ko ;
-    kno:pos "「구」"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2025-0559-c1 ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
     kno:example "(LLM) 보증금 반환 문제가 잇따르자 청년 대상 임대 정책이 오히려 {청년불안주택으로} 불린다는 지적이 나왔다."@ko ;
-    kno:instantiates kno:S000540 .
-kno:KN2025-0559-c2 kno:role "슬롯 채움"@ko ;
-    rdfs:label "불안(不安)"@ko ;
-    kno:surfaceForm "불안"@ko ;
-    kno:formative kno:F003999 ;
-    kno:semanticTag kno:usas-E6m ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "불안"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2025-0559-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000073 ;
-    rdfs:label "주택(住宅)"@ko ;
-    kno:surfaceForm "주택"@ko ;
-    kno:semanticTag kno:usas-H1 ;
-    kno:fullForm "주택"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2025-0559-c1 kno:fullForm "청년"@ko ;
-    kno:semanticTag kno:usas-T3m ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S2 ;
+    kno:frequency kno:KN2025-0559-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0559-freq-NN-total ;
+    kno:indexForm "청년불안주택"@ko ;
+    kno:instantiates kno:S000540 ;
+    kno:languageType "한_한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(靑年不安住宅)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "불안(不安) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0559-c1 a kno:Component ;
     rdfs:label "청년(靑年)"@ko ;
     kno:formative kno:F000042 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:fullForm "청년"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "청년"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "청년"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0559-c2 a kno:Component ;
+    rdfs:label "불안(不安)"@ko ;
+    kno:formative kno:F003999 ;
+    kno:fullForm "불안"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-E6m ;
+    kno:surfaceForm "불안"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0559-c3 a kno:Component ;
+    rdfs:label "주택(住宅)"@ko ;
+    kno:formative kno:F000073 ;
+    kno:fullForm "주택"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-H1 ;
+    kno:surfaceForm "주택"@ko ;
+    kno:truncated "false"^^xsd:boolean .

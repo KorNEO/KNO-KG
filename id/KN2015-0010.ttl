@@ -9,47 +9,47 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2015-0010 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2015-0010 kno:example "¶최근 뒤태의 아름다움이 주목받으면서 ‘애플 힙’, ‘{골반 깡패}’ 등과 같은 단어가 등장했다."@ko ;
-    kno:origin "(骨盤깡牌)" ;
+kno:KN2015-0010 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "골반 깡패"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359881> ;
     skos:definition "허리가 가늘고 골반이 커서 허리에서 골반까지의 선이 예쁜 여자를 비유적으로 이르는 말."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2015-0010-c1 ;
+    kno:component kno:KN2015-0010-c2 ;
+    kno:componentString "골반(骨盤), 깡패(깡牌)"@ko ;
+    kno:example "¶최근 뒤태의 아름다움이 주목받으면서 ‘애플 힙’, ‘{골반 깡패}’ 등과 같은 단어가 등장했다."@ko ;
+    kno:frequency kno:KN2015-0010-freq-NN-2015 ;
+    kno:frequency kno:KN2015-0010-freq-NN-2016 ;
     kno:frequency kno:KN2015-0010-freq-NN-2017 ;
-    kno:unitType "구"@ko ;
+    kno:frequency kno:KN2015-0010-freq-NN-2020 ;
+    kno:frequency kno:KN2015-0010-freq-NN-total ;
+    kno:indexForm "골반깡패"@ko ;
+    kno:instantiates kno:S000108 ;
     kno:languageType "한_(고+한)" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(骨盤깡牌)" ;
+    kno:pos "「구」"@ko ;
     kno:registration "우리말샘"@ko ;
     kno:slotFiller "골반(骨盤) (1성분)"@ko ;
-    kno:frequency kno:KN2015-0010-freq-NN-2020 ;
-    kno:componentString "골반(骨盤), 깡패(깡牌)"@ko ;
-    kno:indexForm "골반깡패"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1359881> ;
-    kno:frequency kno:KN2015-0010-freq-NN-2016 ;
-    kno:year "2015"^^xsd:gYear ;
-    kno:frequency kno:KN2015-0010-freq-NN-total ;
-    kno:activeYears "4"^^xsd:integer ;
-    a kno:Neologism ;
-    kno:component kno:KN2015-0010-c1 ;
-    kno:instantiates kno:S000108 ;
+    kno:unitType "구"@ko ;
     kno:urimalTargetCode "1359881" ;
-    kno:frequency kno:KN2015-0010-freq-NN-2015 ;
-    kno:pos "「구」"@ko ;
-    kno:component kno:KN2015-0010-c2 ;
-    a ontolex:MultiwordExpression .
-kno:KN2015-0010-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:year "2015"^^xsd:gYear .
+kno:KN2015-0010-c1 a kno:Component ;
+    rdfs:label "골반(骨盤)"@ko ;
     kno:formative kno:F002316 ;
-    a kno:Component ;
+    kno:fullForm "골반"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-B1 ;
     kno:surfaceForm "골반"@ko ;
-    kno:fullForm "골반"@ko ;
-    rdfs:label "골반(骨盤)"@ko ;
-    kno:role "슬롯 채움"@ko .
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2015-0010-c2 a kno:Component ;
-    kno:surfaceForm "깡패"@ko ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "깡패"@ko ;
     rdfs:label "깡패(깡牌)"@ko ;
-    kno:semanticTag kno:usas-G2.1m ;
     kno:formative kno:F000164 ;
+    kno:fullForm "깡패"@ko ;
     kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1m ;
+    kno:surfaceForm "깡패"@ko ;
     kno:truncated "false"^^xsd:boolean .

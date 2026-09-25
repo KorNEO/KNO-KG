@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0449 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0449 kno:frequency kno:KN2025-0449-freq-NN-2025 ;
+kno:KN2025-0449 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "원스코"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%EC%8A%A4%EC%BD%94> ;
+    skos:definition "(LLM) 가치가 원화에 연동되도록 설계된 스테이블코인."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0449-c1 ;
+    kno:component kno:KN2025-0449-c2 ;
+    kno:component kno:KN2025-0449-c3 ;
     kno:componentString "원(화)(貨), 스(테이블)(stable), 코(인)(coin)"@ko ;
+    kno:example "(LLM) 국회에서는 디지털 자산 제도 정비와 함께 {원스코} 도입 필요성을 놓고 논의가 이어졌다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2025-0449-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0449-freq-NN-total ;
+    kno:indexForm "원스코"@ko ;
+    kno:instantiates kno:S000893 ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0449-c3 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0449-c1 ;
-    kno:instantiates kno:S000893 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%90%EC%8A%A4%EC%BD%94> ;
     kno:slotFiller "원(화)(貨) (1성분)"@ko ;
-    kno:component kno:KN2025-0449-c2 ;
-    kno:frequency kno:KN2025-0449-freq-NN-total ;
-    rdfs:label "원스코"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:example "(LLM) 국회에서는 디지털 자산 제도 정비와 함께 {원스코} 도입 필요성을 놓고 논의가 이어졌다."@ko ;
-    a ontolex:Word ;
-    skos:definition "(LLM) 가치가 원화에 연동되도록 설계된 스테이블코인."@ko ;
-    kno:indexForm "원스코"@ko ;
-    a kno:Neologism ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:formation kno:W06 .
-kno:KN2025-0449-c3 kno:surfaceForm "코"@ko ;
-    rdfs:label "코(인)(coin)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:formative kno:F000312 ;
-    kno:position "3"^^xsd:integer ;
-    kno:fullForm "코인"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "고정항"@ko .
-kno:KN2025-0449-c1 kno:role "슬롯 채움"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0449-c1 a kno:Component ;
     rdfs:label "원(화)(貨)"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005246 ;
     kno:fullForm "원화"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1 ;
     kno:surfaceForm "원"@ko ;
-    kno:formative kno:F005246 .
-kno:KN2025-0449-c2 kno:surfaceForm "스"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0449-c2 a kno:Component ;
+    rdfs:label "스(테이블)(stable)"@ko ;
+    kno:formative kno:F001515 ;
     kno:fullForm "스테이블"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-A2.1m ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F001515 ;
-    rdfs:label "스(테이블)(stable)"@ko ;
-    a kno:Component .
+    kno:surfaceForm "스"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0449-c3 a kno:Component ;
+    rdfs:label "코(인)(coin)"@ko ;
+    kno:formative kno:F000312 ;
+    kno:fullForm "코인"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "코"@ko ;
+    kno:truncated "true"^^xsd:boolean .

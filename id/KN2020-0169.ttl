@@ -9,55 +9,55 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0169 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0169 rdfs:label "소득 감소 진술서"@ko ;
-    kno:indexForm "소득감소진술서"@ko ;
+kno:KN2020-0169 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "소득 감소 진술서"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%93%9D%20%EA%B0%90%EC%86%8C%20%EC%A7%84%EC%88%A0%EC%84%9C> ;
-    kno:unitType "구"@ko ;
-    kno:year "2020"^^xsd:gYear ;
-    kno:component kno:KN2020-0169-c2 ;
     skos:definition "객관적으로 소득 감소를 증명할 자료가 없을 시, 소득 감소에 관한 내용을 본인이 스스로 작성한 문서. 정부가 코로나19로 소득이 감소하여 기존 대출의 원금을 상환하기 어려운 가계의 대출 원금 상환을 유예해 주었는데, 소득 감소를 증명할 수 없는 경우 소득 감소 진술서를 제출할 수 있도록 하였다."@ko ;
-    kno:frequency kno:KN2020-0169-freq-NN-2022 ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:origin "(所得減少陳述書)" ;
     kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2020-0169-c1 ;
+    kno:component kno:KN2020-0169-c2 ;
     kno:component kno:KN2020-0169-c3 ;
-    kno:frequency kno:KN2020-0169-freq-NN-total ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2020-0169-freq-NN-2020 ;
     kno:componentString "소득(所得), 감소(減少), 진술서(陳述書)"@ko ;
     kno:example "¶금융사에 본인이 서명한 {소득 감소 진술서를} 내면 대출 원금의 상환 유예를 신청할 수 있다."@ko ;
-    kno:languageType "한_한_한" ;
-    kno:slotFiller "감소(減少)+진술서(陳述書) (2성분)"@ko ;
-    a kno:Neologism ;
+    kno:frequency kno:KN2020-0169-freq-NN-2020 ;
     kno:frequency kno:KN2020-0169-freq-NN-2021 ;
-    kno:component kno:KN2020-0169-c1 ;
+    kno:frequency kno:KN2020-0169-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0169-freq-NN-total ;
+    kno:indexForm "소득감소진술서"@ko ;
     kno:instantiates kno:S000490 ;
+    kno:languageType "한_한_한" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:origin "(所得減少陳述書)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression .
-kno:KN2020-0169-c2 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002125 ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "감소(減少)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "감소"@ko ;
-    kno:semanticTag kno:usas-N5m ;
-    kno:surfaceForm "감소"@ko ;
-    a kno:Component .
-kno:KN2020-0169-c3 kno:semanticTag kno:usas-G2.1 ;
-    kno:surfaceForm "진술서"@ko ;
-    kno:formative kno:F005926 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    rdfs:label "진술서(陳述書)"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:fullForm "진술서"@ko .
-kno:KN2020-0169-c1 kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-I1.1 ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "감소(減少)+진술서(陳述書) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0169-c1 a kno:Component ;
+    rdfs:label "소득(所得)"@ko ;
     kno:formative kno:F000047 ;
     kno:fullForm "소득"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1.1 ;
     kno:surfaceForm "소득"@ko ;
-    rdfs:label "소득(所得)"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0169-c2 a kno:Component ;
+    rdfs:label "감소(減少)"@ko ;
+    kno:formative kno:F002125 ;
+    kno:fullForm "감소"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N5m ;
+    kno:surfaceForm "감소"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0169-c3 a kno:Component ;
+    rdfs:label "진술서(陳述書)"@ko ;
+    kno:formative kno:F005926 ;
+    kno:fullForm "진술서"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "진술서"@ko ;
     kno:truncated "false"^^xsd:boolean .

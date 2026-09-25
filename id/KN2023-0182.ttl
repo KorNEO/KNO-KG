@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0182 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0182 kno:registration "신어DB"@ko ;
-    skos:definition "‘양곡 관리법 개정안’을 비난조로 이르는 말. 과잉 공급된 쌀을 정부가 의무적으로 매입하는 것이 공산주의 경제를 모방하는 것과 같다는 비판에서 나온 말이다."@ko ;
-    kno:indexForm "양곡공산화법"@ko ;
-    kno:frequency kno:KN2023-0182-freq-NN-total ;
-    kno:instantiates kno:S000009 ;
-    kno:frequency kno:KN2023-0182-freq-NN-2023 ;
-    kno:component kno:KN2023-0182-c3 ;
-    kno:slotFiller "공산화(共産化)+법(法) (2성분)"@ko ;
-    kno:languageType "한^한" ;
-    kno:unitType "구"@ko ;
-    kno:origin "(糧穀共産化法)" ;
-    kno:componentString "양곡(糧穀), 공산화(共産化), 법(法)"@ko ;
-    kno:instantiates kno:S001447 ;
-    kno:year "2023"^^xsd:gYear ;
-    kno:example "¶여당은 양곡 관리법이 ‘{양곡 공산화법’이자} 농업인과 농업에 도움이 되지 않는 입법이라며 거세게 비판하였다."@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EA%B3%A1%EA%B3%B5%EC%82%B0%ED%99%94%EB%B2%95> ;
+kno:KN2023-0182 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
     rdfs:label "양곡^공산화법"@ko ;
-    kno:frequency kno:KN2023-0182-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%91%EA%B3%A1%EA%B3%B5%EC%82%B0%ED%99%94%EB%B2%95> ;
+    skos:definition "‘양곡 관리법 개정안’을 비난조로 이르는 말. 과잉 공급된 쌀을 정부가 의무적으로 매입하는 것이 공산주의 경제를 모방하는 것과 같다는 비판에서 나온 말이다."@ko ;
     kno:activeYears "3"^^xsd:integer ;
-    kno:slotFiller "양곡(糧穀)+공산화(共産化) (2성분)"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:component kno:KN2023-0182-c1 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
     kno:component kno:KN2023-0182-c2 ;
-    kno:frequency kno:KN2023-0182-freq-NN-2022 .
-kno:KN2023-0182-c3 kno:truncated "false"^^xsd:boolean ;
+    kno:component kno:KN2023-0182-c3 ;
+    kno:componentString "양곡(糧穀), 공산화(共産化), 법(法)"@ko ;
+    kno:example "¶여당은 양곡 관리법이 ‘{양곡 공산화법’이자} 농업인과 농업에 도움이 되지 않는 입법이라며 거세게 비판하였다."@ko ;
+    kno:frequency kno:KN2023-0182-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0182-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0182-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0182-freq-NN-total ;
+    kno:indexForm "양곡공산화법"@ko ;
+    kno:instantiates kno:S000009 ;
+    kno:instantiates kno:S001447 ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(糧穀共産化法)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "공산화(共産化)+법(法) (2성분)"@ko ;
+    kno:slotFiller "양곡(糧穀)+공산화(共産化) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0182-c1 a kno:Component ;
+    rdfs:label "양곡(糧穀)"@ko ;
+    kno:formative kno:F001582 ;
+    kno:fullForm "양곡"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "양곡"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0182-c2 a kno:Component ;
+    rdfs:label "공산화(共産化)"@ko ;
+    kno:formative kno:F002353 ;
+    kno:fullForm "공산화"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G1.2 ;
+    kno:surfaceForm "공산화"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0182-c3 a kno:Component ;
+    rdfs:label "법(法)"@ko ;
     kno:formative kno:F000002 ;
     kno:fullForm "법"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:surfaceForm "법"@ko ;
-    kno:semanticTag kno:usas-G2.1 ;
-    rdfs:label "법(法)"@ko ;
-    kno:role "고정항"@ko .
-kno:KN2023-0182-c1 kno:fullForm "양곡"@ko ;
-    rdfs:label "양곡(糧穀)"@ko ;
-    kno:surfaceForm "양곡"@ko ;
-    a kno:Component ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F001582 .
-kno:KN2023-0182-c2 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F002353 ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "공산화(共産化)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "공산화"@ko ;
-    a kno:Component ;
-    kno:fullForm "공산화"@ko ;
-    kno:semanticTag kno:usas-G1.2 .
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

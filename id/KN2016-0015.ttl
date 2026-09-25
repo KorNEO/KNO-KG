@@ -9,63 +9,63 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0015 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0015 a kno:Neologism ;
+kno:KN2016-0015 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "고객^수익률^평가^보상제"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372450> ;
+    skos:definition "증권 회사에서 직원 평가에 고객 수익률을 반영하여 성과급을 지급하는 제도. 직원이나 영업점을 평가할 때 고객의 자산 관리 업무에 중점을 두어 고객의 총자산 수익률을 반영하여 평가한다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2016-0015-c1 ;
     kno:component kno:KN2016-0015-c2 ;
+    kno:component kno:KN2016-0015-c3 ;
+    kno:component kno:KN2016-0015-c4 ;
     kno:componentString "고객(顧客), 수익률(收益率), 평가(評價), 보상제(補償制)"@ko ;
+    kno:example "¶OO은 이미 {고객 수익률 평가 보상제를} 실시하고 있다."@ko ;
+    kno:frequency kno:KN2016-0015-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0015-freq-NN-total ;
+    kno:indexForm "고객수익률평가보상제"@ko ;
+    kno:languageType "한^한^한^한" ;
+    kno:lastAttestationYear "2015"^^xsd:gYear ;
     kno:origin "(顧客收益率評價補償制)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:urimalTargetCode "1372450" ;
-    kno:year "2016"^^xsd:gYear ;
-    kno:example "¶OO은 이미 {고객 수익률 평가 보상제를} 실시하고 있다."@ko ;
-    kno:component kno:KN2016-0015-c3 ;
-    kno:lastAttestationYear "2015"^^xsd:gYear ;
-    kno:component kno:KN2016-0015-c4 ;
     kno:predicate "지급하다"@ko ;
-    skos:definition "증권 회사에서 직원 평가에 고객 수익률을 반영하여 성과급을 지급하는 제도. 직원이나 영업점을 평가할 때 고객의 자산 관리 업무에 중점을 두어 고객의 총자산 수익률을 반영하여 평가한다."@ko ;
-    kno:component kno:KN2016-0015-c1 ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372450> ;
     kno:registration "우리말샘"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:indexForm "고객수익률평가보상제"@ko ;
-    rdfs:label "고객^수익률^평가^보상제"@ko ;
-    kno:frequency kno:KN2016-0015-freq-NN-total ;
-    kno:languageType "한^한^한^한" ;
-    kno:frequency kno:KN2016-0015-freq-NN-2015 .
-kno:KN2016-0015-c2 kno:semanticTag kno:usas-I1.1p ;
-    kno:surfaceForm "수익률"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F004481 ;
-    rdfs:label "수익률(收益率)"@ko ;
-    kno:fullForm "수익률"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2016-0015-c3 kno:fullForm "평가"@ko ;
-    kno:surfaceForm "평가"@ko ;
-    kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F006705 ;
-    kno:semanticTag kno:usas-A5.1 ;
-    rdfs:label "평가(評價)"@ko .
-kno:KN2016-0015-c4 kno:formative kno:F003888 ;
-    kno:fullForm "보상제"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    rdfs:label "보상제(補償制)"@ko ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:position "4"^^xsd:integer ;
-    kno:surfaceForm "보상제"@ko .
-kno:KN2016-0015-c1 kno:formative kno:F002274 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "고객"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1372450" ;
+    kno:year "2016"^^xsd:gYear .
+kno:KN2016-0015-c1 a kno:Component ;
     rdfs:label "고객(顧客)"@ko ;
+    kno:formative kno:F002274 ;
     kno:fullForm "고객"@ko ;
-    kno:semanticTag kno:usas-I2.2 .
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "고객"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0015-c2 a kno:Component ;
+    rdfs:label "수익률(收益率)"@ko ;
+    kno:formative kno:F004481 ;
+    kno:fullForm "수익률"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1.1p ;
+    kno:surfaceForm "수익률"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0015-c3 a kno:Component ;
+    rdfs:label "평가(評價)"@ko ;
+    kno:formative kno:F006705 ;
+    kno:fullForm "평가"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-A5.1 ;
+    kno:surfaceForm "평가"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0015-c4 a kno:Component ;
+    rdfs:label "보상제(補償制)"@ko ;
+    kno:formative kno:F003888 ;
+    kno:fullForm "보상제"@ko ;
+    kno:position "4"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "보상제"@ko ;
+    kno:truncated "false"^^xsd:boolean .

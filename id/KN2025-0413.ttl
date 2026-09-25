@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0413 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0413 kno:indexForm "에겐력"@ko ;
-    kno:frequency kno:KN2025-0413-freq-NN-total ;
-    kno:instantiates kno:S000507 ;
-    kno:unitType "단어"@ko ;
-    kno:component kno:KN2025-0413-c2 ;
-    kno:origin "(<영>←estrogen力)" ;
-    rdfs:label "에겐-력"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2025-0413-c1 ;
+kno:KN2025-0413 a ontolex:Word ;
     a kno:Neologism ;
-    kno:instantiates kno:S000006 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    rdfs:label "에겐-력"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EA%B2%90%EB%A0%A5> ;
     skos:definition "(LLM) 여성 호르몬인 에스트로겐이 많은 사람처럼 가녀리거나 귀엽고 여리여리한 분위기를 풍기는 성향이나 매력."@ko ;
-    kno:languageType "영+한" ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:slotFiller "-력(力) (1성분)"@ko ;
+    kno:component kno:KN2025-0413-c1 ;
+    kno:component kno:KN2025-0413-c2 ;
+    kno:componentString "에(스트로)겐(estrogen), -력(力)"@ko ;
     kno:example "(LLM) 주사 맞기 무섭다며 잔뜩 겁먹는 모습이 오늘따라 {에겐력이} 넘쳐 보였다."@ko ;
     kno:formation kno:W02 ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "에(스트로)겐(estrogen), -력(力)"@ko ;
-    a ontolex:Word ;
     kno:frequency kno:KN2025-0413-freq-NN-2025 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EA%B2%90%EB%A0%A5> ;
-    kno:slotFiller "에(스트로)겐(estrogen) (1성분)"@ko .
-kno:KN2025-0413-c2 kno:fullForm "력"@ko ;
+    kno:frequency kno:KN2025-0413-freq-NN-total ;
+    kno:indexForm "에겐력"@ko ;
+    kno:instantiates kno:S000006 ;
+    kno:instantiates kno:S000507 ;
+    kno:languageType "영+한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(<영>←estrogen力)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "-력(力) (1성분)"@ko ;
+    kno:slotFiller "에(스트로)겐(estrogen) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0413-c1 a kno:Component ;
+    rdfs:label "에(스트로)겐(estrogen)"@ko ;
+    kno:formative kno:F000387 ;
+    kno:fullForm "에스트로겐"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B1 ;
+    kno:surfaceForm "에겐"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2025-0413-c2 a kno:Component ;
+    rdfs:label "-력(力)"@ko ;
+    kno:formative kno:F000010 ;
+    kno:fullForm "력"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-X9.1p ;
     kno:surfaceForm "력"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000010 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    rdfs:label "-력(力)"@ko .
-kno:KN2025-0413-c1 kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "에(스트로)겐(estrogen)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-B1 ;
-    kno:formative kno:F000387 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "에겐"@ko ;
-    kno:fullForm "에스트로겐"@ko .
+    kno:truncated "false"^^xsd:boolean .

@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0200 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0200 kno:unitType "구"@ko ;
-    kno:component kno:KN2019-0200-c1 ;
-    kno:instantiates kno:S001463 ;
-    kno:activeYears "1"^^xsd:integer ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2019-0200-freq-NN-2019 ;
-    kno:predicate "꾸미다"@ko ;
+kno:KN2019-0200 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:indexForm "에코플랜테리어"@ko ;
-    kno:frequency kno:KN2019-0200-freq-NN-total ;
+    rdfs:label "에코 플랜테리어"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%BD%94%20%ED%94%8C%EB%9E%9C%ED%85%8C%EB%A6%AC%EC%96%B4> ;
     skos:definition "공기 정화 식물을 이용하여 실내를 아름답게 꾸미는 일. ⇒규범 표기는 미확정이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2019-0200-c1 ;
+    kno:component kno:KN2019-0200-c2 ;
+    kno:component kno:KN2019-0200-c3 ;
+    kno:componentString "에코(eco), 플랜(트)(plant), (인)테리어(interior)"@ko ;
+    kno:example "¶숲과 함께하는 삶이 꼭 거창하거나 어려운 일만은 아니다. OO의 저자 OOO 씨는 미세 먼지 걱정 없는 {에코 플랜테리어를} 추천한다."@ko ;
+    kno:frequency kno:KN2019-0200-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0200-freq-NN-total ;
+    kno:indexForm "에코플랜테리어"@ko ;
+    kno:instantiates kno:S001463 ;
+    kno:languageType "영_영" ;
+    kno:lastAttestationYear "2019"^^xsd:gYear ;
     kno:origin "(<영>▼eco←plant interior)" ;
     kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%97%90%EC%BD%94%20%ED%94%8C%EB%9E%9C%ED%85%8C%EB%A6%AC%EC%96%B4> ;
-    kno:slotFiller "플랜(트)(plant)+(인)테리어(interior) (2성분)"@ko ;
-    kno:example "¶숲과 함께하는 삶이 꼭 거창하거나 어려운 일만은 아니다. OO의 저자 OOO 씨는 미세 먼지 걱정 없는 {에코 플랜테리어를} 추천한다."@ko ;
-    kno:languageType "영_영" ;
-    kno:componentString "에코(eco), 플랜(트)(plant), (인)테리어(interior)"@ko ;
-    kno:year "2019"^^xsd:gYear ;
+    kno:predicate "꾸미다"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2019-0200-c3 ;
-    rdfs:label "에코 플랜테리어"@ko ;
-    kno:component kno:KN2019-0200-c2 ;
-    kno:lastAttestationYear "2019"^^xsd:gYear .
-kno:KN2019-0200-c1 kno:position "1"^^xsd:integer ;
+    kno:slotFiller "플랜(트)(plant)+(인)테리어(interior) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0200-c1 a kno:Component ;
     rdfs:label "에코(eco)"@ko ;
     kno:formative kno:F001599 ;
-    a kno:Component ;
+    kno:fullForm "에코"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "에코"@ko ;
     kno:semanticTag kno:usas-W5 ;
-    kno:fullForm "에코"@ko .
-kno:KN2019-0200-c3 kno:formative kno:F000616 ;
-    kno:fullForm "인테리어"@ko ;
-    rdfs:label "(인)테리어(interior)"@ko ;
-    kno:surfaceForm "테리어"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-H5 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component .
-kno:KN2019-0200-c2 rdfs:label "플랜(트)(plant)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I4 ;
-    kno:role "슬롯 채움"@ko ;
+    kno:surfaceForm "에코"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2019-0200-c2 a kno:Component ;
+    rdfs:label "플랜(트)(plant)"@ko ;
     kno:formative kno:F006836 ;
     kno:fullForm "플랜트"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I4 ;
     kno:surfaceForm "플랜"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0200-c3 a kno:Component ;
+    rdfs:label "(인)테리어(interior)"@ko ;
+    kno:formative kno:F000616 ;
+    kno:fullForm "인테리어"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H5 ;
+    kno:surfaceForm "테리어"@ko ;
     kno:truncated "true"^^xsd:boolean .

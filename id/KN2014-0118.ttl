@@ -9,49 +9,49 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0118 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0118 rdfs:label "베이비노믹스"@ko ;
-    kno:languageType "영+영" ;
+kno:KN2014-0118 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "베이비노믹스"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358414> ;
+    skos:definition "영국 왕가의 아기가 탄생함으로써 발생할 경제 효과를 이르는 말."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2014-0118-c1 ;
+    kno:component kno:KN2014-0118-c2 ;
+    kno:componentString "베이비(baby), (이코)노믹스(economics)"@ko ;
+    kno:example "¶영국 소매업계는 ‘{베이비노믹스’란} 말을 써 가며 OOO 왕세손 부부의 첫 아들이 가져다 줄 경제 효과를 기대하고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2014-0118-freq-NN-2013 ;
+    kno:frequency kno:KN2014-0118-freq-NN-2014 ;
+    kno:frequency kno:KN2014-0118-freq-NN-2015 ;
+    kno:frequency kno:KN2014-0118-freq-NN-2019 ;
+    kno:frequency kno:KN2014-0118-freq-NN-total ;
     kno:indexForm "베이비노믹스"@ko ;
     kno:instantiates kno:S000019 ;
-    kno:frequency kno:KN2014-0118-freq-NN-2013 ;
-    skos:definition "영국 왕가의 아기가 탄생함으로써 발생할 경제 효과를 이르는 말."@ko ;
-    kno:componentString "베이비(baby), (이코)노믹스(economics)"@ko ;
-    kno:frequency kno:KN2014-0118-freq-NN-2019 ;
-    kno:pos "「명」"@ko ;
-    kno:urimalTargetCode "1358414" ;
-    kno:frequency kno:KN2014-0118-freq-NN-2014 ;
-    kno:registration "우리말샘"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:frequency kno:KN2014-0118-freq-NN-2015 ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:component kno:KN2014-0118-c1 ;
+    kno:languageType "영+영" ;
     kno:lastAttestationYear "2019"^^xsd:gYear ;
-    kno:slotFiller "베이비(baby) (1성분)"@ko ;
     kno:origin "(<영>baby←economics)" ;
-    kno:example "¶영국 소매업계는 ‘{베이비노믹스’란} 말을 써 가며 OOO 왕세손 부부의 첫 아들이 가져다 줄 경제 효과를 기대하고 있다."@ko ;
-    kno:component kno:KN2014-0118-c2 ;
-    kno:formation kno:W05 ;
-    a ontolex:Word ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1358414> ;
-    kno:frequency kno:KN2014-0118-freq-NN-total ;
-    a kno:Neologism .
-kno:KN2014-0118-c1 kno:formative kno:F000214 ;
-    kno:surfaceForm "베이비"@ko ;
-    kno:semanticTag kno:usas-T3m ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "베이비(baby) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1358414" ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0118-c1 a kno:Component ;
+    rdfs:label "베이비(baby)"@ko ;
+    kno:formative kno:F000214 ;
     kno:fullForm "베이비"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "베이비(baby)"@ko .
-kno:KN2014-0118-c2 kno:semanticTag kno:usas-I1 ;
-    kno:fullForm "이코노믹스"@ko ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "노믹스"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-T3m ;
+    kno:surfaceForm "베이비"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0118-c2 a kno:Component ;
+    rdfs:label "(이코)노믹스(economics)"@ko ;
     kno:formative kno:F000027 ;
+    kno:fullForm "이코노믹스"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "(이코)노믹스(economics)"@ko .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "노믹스"@ko ;
+    kno:truncated "true"^^xsd:boolean .

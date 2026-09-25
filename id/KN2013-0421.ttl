@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0421 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0421 kno:frequency kno:KN2013-0421-freq-NN-total ;
-    kno:origin "(transit衛星)" ;
-    kno:example "¶{트랜짓 위성은} 지구의 회전 현상에 따라 지상 수신기가 위성 궤도에 가깝게 또는 멀어질 때 제각각 독특한 도플러 곡선을 형성했다."@ko ;
-    kno:languageType "영^한" ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:slotFiller "트랜짓(transit) (1성분)"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:lastAttestationYear "2013"^^xsd:gYear ;
+kno:KN2013-0421 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "트랜짓^위성"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%9E%9C%EC%A7%93%EC%9C%84%EC%84%B1> ;
+    skos:definition "미국 해군이 개발한 인공위성. 항해 중인 선박에 전파를 발사하여, 선박이 자신의 위치를 파악할 수 있게 만든다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2013-0421-c1 ;
     kno:component kno:KN2013-0421-c2 ;
     kno:componentString "트랜짓(transit), 위성(衛星)"@ko ;
-    kno:indexForm "트랜짓위성"@ko ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
+    kno:example "¶{트랜짓 위성은} 지구의 회전 현상에 따라 지상 수신기가 위성 궤도에 가깝게 또는 멀어질 때 제각각 독특한 도플러 곡선을 형성했다."@ko ;
     kno:frequency kno:KN2013-0421-freq-NN-2013 ;
+    kno:frequency kno:KN2013-0421-freq-NN-total ;
+    kno:indexForm "트랜짓위성"@ko ;
     kno:instantiates kno:S000929 ;
+    kno:languageType "영^한" ;
+    kno:lastAttestationYear "2013"^^xsd:gYear ;
+    kno:origin "(transit衛星)" ;
     kno:pos "「구」"@ko ;
-    skos:definition "미국 해군이 개발한 인공위성. 항해 중인 선박에 전파를 발사하여, 선박이 자신의 위치를 파악할 수 있게 만든다."@ko ;
-    kno:component kno:KN2013-0421-c1 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8A%B8%EB%9E%9C%EC%A7%93%EC%9C%84%EC%84%B1> ;
-    rdfs:label "트랜짓^위성"@ko ;
-    kno:activeYears "1"^^xsd:integer .
-kno:KN2013-0421-c2 kno:role "고정항"@ko ;
-    kno:fullForm "위성"@ko ;
-    kno:semanticTag kno:usas-W1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000396 ;
-    rdfs:label "위성(衛星)"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "위성"@ko .
-kno:KN2013-0421-c1 kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:formative kno:F006541 ;
-    kno:surfaceForm "트랜짓"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "트랜짓"@ko ;
-    kno:semanticTag kno:usas-M1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "트랜짓(transit) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0421-c1 a kno:Component ;
     rdfs:label "트랜짓(transit)"@ko ;
-    kno:position "1"^^xsd:integer .
+    kno:formative kno:F006541 ;
+    kno:fullForm "트랜짓"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "트랜짓"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2013-0421-c2 a kno:Component ;
+    rdfs:label "위성(衛星)"@ko ;
+    kno:formative kno:F000396 ;
+    kno:fullForm "위성"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-W1 ;
+    kno:surfaceForm "위성"@ko ;
+    kno:truncated "false"^^xsd:boolean .

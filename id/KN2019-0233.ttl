@@ -9,59 +9,59 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0233 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0233 kno:frequency kno:KN2019-0233-freq-NN-2021 ;
+kno:KN2019-0233 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "자부 타임"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9E%90%EB%B6%80%20%ED%83%80%EC%9E%84> ;
-    kno:year "2019"^^xsd:gYear ;
     skos:definition "결혼한 여자가 육아나 집안일 따위에 얽매이지 않고 자기만을 위해 자유롭게 활용할 수 있는 시간. ‘자부’는 ‘자유 부인’을 줄여 이르는 말이다."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
     kno:component kno:KN2019-0233-c1 ;
-    kno:frequency kno:KN2019-0233-freq-NN-2018 ;
-    kno:registration "신어DB"@ko ;
-    kno:instantiates kno:S001007 ;
-    kno:indexForm "자부타임"@ko ;
-    kno:frequency kno:KN2019-0233-freq-NN-2025 ;
+    kno:component kno:KN2019-0233-c2 ;
+    kno:component kno:KN2019-0233-c3 ;
     kno:componentString "자(유)(自), 부(인)(夫), 타임(time)"@ko ;
     kno:example "¶먼저 OOO은 시아버지인 OOO와 함께 댄스 스포츠를 배우며 남다른 {‘자부 타임’을} 즐겨 모두를 깜짝 놀라게 했다."@ko ;
-    kno:component kno:KN2019-0233-c3 ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "자(유)(自)+부(인)(夫) (2성분)"@ko ;
-    kno:origin "(自夫<영>time)" ;
-    kno:predicate "있다"@ko ;
-    kno:languageType "한_영" ;
-    kno:component kno:KN2019-0233-c2 ;
-    kno:frequency kno:KN2019-0233-freq-NN-total ;
-    a kno:Neologism ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2019-0233-freq-NN-2018 ;
     kno:frequency kno:KN2019-0233-freq-NN-2019 ;
-    kno:frequency kno:KN2019-0233-freq-NN-2023 ;
-    kno:pos "「구」"@ko ;
     kno:frequency kno:KN2019-0233-freq-NN-2020 ;
-    a ontolex:MultiwordExpression ;
-    rdfs:label "자부 타임"@ko .
-kno:KN2019-0233-c1 kno:fullForm "자유"@ko ;
-    kno:surfaceForm "자"@ko ;
-    kno:position "1"^^xsd:integer ;
-    a kno:Component ;
+    kno:frequency kno:KN2019-0233-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0233-freq-NN-2023 ;
+    kno:frequency kno:KN2019-0233-freq-NN-2025 ;
+    kno:frequency kno:KN2019-0233-freq-NN-total ;
+    kno:indexForm "자부타임"@ko ;
+    kno:instantiates kno:S001007 ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(自夫<영>time)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "있다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "자(유)(自)+부(인)(夫) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0233-c1 a kno:Component ;
+    rdfs:label "자(유)(自)"@ko ;
     kno:formative kno:F001720 ;
+    kno:fullForm "자유"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-S7.4p ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "자(유)(自)"@ko .
-kno:KN2019-0233-c3 kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-T1.3 ;
-    kno:role "고정항"@ko ;
+    kno:surfaceForm "자"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0233-c2 a kno:Component ;
+    rdfs:label "부(인)(夫)"@ko ;
+    kno:formative kno:F003939 ;
+    kno:fullForm "부인"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "부"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0233-c3 a kno:Component ;
+    rdfs:label "타임(time)"@ko ;
     kno:formative kno:F000613 ;
     kno:fullForm "타임"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-T1.3 ;
     kno:surfaceForm "타임"@ko ;
-    rdfs:label "타임(time)"@ko .
-kno:KN2019-0233-c2 kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-S4 ;
-    rdfs:label "부(인)(夫)"@ko ;
-    a kno:Component ;
-    kno:formative kno:F003939 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "부"@ko ;
-    kno:fullForm "부인"@ko ;
-    kno:truncated "true"^^xsd:boolean .
+    kno:truncated "false"^^xsd:boolean .

@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0133 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0133 kno:registration "신어DB"@ko ;
+kno:KN2024-0133 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "소득^이동^통계"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%93%9D%EC%9D%B4%EB%8F%99%ED%86%B5%EA%B3%84> ;
+    skos:definition "대규모 표본을 대상으로 종단 형태의 데이터베이스를 구축하여, 개인 단위에서 소득의 종적 변화를 파악하는 데 사용되는 통계. 사회 이동성 개선과 취약 계층 지원 정책을 뒷받침하기 위해 개발한 것이다."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2024-0133-c1 ;
+    kno:component kno:KN2024-0133-c2 ;
+    kno:component kno:KN2024-0133-c3 ;
+    kno:componentString "소득(所得), 이동(移動), 통계(統計)"@ko ;
+    kno:example "¶통계청장은 “{소득 이동 통계를} 통해 사회 이동성 현황과 원인을 분석하고 이를 토대로 범정부 차원의 정책 과제를 발굴할 수 있도록 지원할 예정”이라고 하였다."@ko ;
     kno:frequency kno:KN2024-0133-freq-NN-2023 ;
     kno:frequency kno:KN2024-0133-freq-NN-2024 ;
-    kno:component kno:KN2024-0133-c2 ;
-    kno:origin "(所得移動統計)" ;
-    kno:instantiates kno:S000490 ;
-    kno:component kno:KN2024-0133-c1 ;
-    kno:predicate "사용되다"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2024-0133-freq-NN-total ;
-    a kno:Neologism ;
-    kno:unitType "구"@ko ;
-    kno:componentString "소득(所得), 이동(移動), 통계(統計)"@ko ;
-    rdfs:label "소득^이동^통계"@ko ;
     kno:frequency kno:KN2024-0133-freq-NN-2025 ;
-    kno:component kno:KN2024-0133-c3 ;
+    kno:frequency kno:KN2024-0133-freq-NN-total ;
+    kno:indexForm "소득이동통계"@ko ;
+    kno:instantiates kno:S000490 ;
     kno:languageType "한^한^한" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%86%8C%EB%93%9D%EC%9D%B4%EB%8F%99%ED%86%B5%EA%B3%84> ;
-    kno:example "¶통계청장은 “{소득 이동 통계를} 통해 사회 이동성 현황과 원인을 분석하고 이를 토대로 범정부 차원의 정책 과제를 발굴할 수 있도록 지원할 예정”이라고 하였다."@ko ;
-    kno:indexForm "소득이동통계"@ko ;
+    kno:origin "(所得移動統計)" ;
     kno:pos "「구」"@ko ;
-    skos:definition "대규모 표본을 대상으로 종단 형태의 데이터베이스를 구축하여, 개인 단위에서 소득의 종적 변화를 파악하는 데 사용되는 통계. 사회 이동성 개선과 취약 계층 지원 정책을 뒷받침하기 위해 개발한 것이다."@ko ;
+    kno:predicate "사용되다"@ko ;
+    kno:registration "신어DB"@ko ;
     kno:slotFiller "이동(移動)+통계(統計) (2성분)"@ko ;
-    kno:activeYears "3"^^xsd:integer .
-kno:KN2024-0133-c2 kno:formative kno:F000399 ;
-    kno:fullForm "이동"@ko ;
-    kno:surfaceForm "이동"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "이동(移動)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-M1 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
 kno:KN2024-0133-c1 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "소득"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    rdfs:label "소득(所得)"@ko ;
     kno:formative kno:F000047 ;
     kno:fullForm "소득"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-I1.1 ;
-    rdfs:label "소득(所得)"@ko .
-kno:KN2024-0133-c3 kno:surfaceForm "통계"@ko ;
+    kno:surfaceForm "소득"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0133-c2 a kno:Component ;
+    rdfs:label "이동(移動)"@ko ;
+    kno:formative kno:F000399 ;
+    kno:fullForm "이동"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-M1 ;
+    kno:surfaceForm "이동"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0133-c3 a kno:Component ;
     rdfs:label "통계(統計)"@ko ;
-    kno:fullForm "통계"@ko ;
     kno:formative kno:F006502 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-N1 ;
+    kno:fullForm "통계"@ko ;
     kno:position "3"^^xsd:integer ;
-    a kno:Component .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-N1 ;
+    kno:surfaceForm "통계"@ko ;
+    kno:truncated "false"^^xsd:boolean .

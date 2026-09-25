@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0317 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0317 kno:languageType "(고+영)_영" ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2020-0317-c1 ;
-    kno:indexForm "집터파크"@ko ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%91%ED%84%B0%20%ED%8C%8C%ED%81%AC> ;
-    kno:frequency kno:KN2020-0317-freq-NN-2021 ;
+kno:KN2020-0317 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2020-0317-c3 ;
     rdfs:label "집터 파크"@ko ;
-    kno:slotFiller "집+(워)터(water) (2성분)"@ko ;
-    kno:origin "(집<영>←water park)" ;
-    kno:component kno:KN2020-0317-c2 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:instantiates kno:S001026 ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2020-0317-freq-NN-2020 ;
-    kno:activeYears "4"^^xsd:integer ;
-    kno:year "2020"^^xsd:gYear ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%91%ED%84%B0%20%ED%8C%8C%ED%81%AC> ;
     skos:definition "집에서 물놀이를 하며 워터 파크에서 노는 듯한 분위기를 내는 일. 또는 그 공간. 코로나19로 인해 외부 활동에 제약이 생기면서 사용되는 말이다. =홈터 파크."@ko ;
+    kno:activeYears "4"^^xsd:integer ;
+    kno:component kno:KN2020-0317-c1 ;
+    kno:component kno:KN2020-0317-c2 ;
+    kno:component kno:KN2020-0317-c3 ;
+    kno:componentString "집, (워)터(water), 파크(park)"@ko ;
     kno:example "¶신나게 물놀이를 하다 지치면 잔디 위에서 햇살을 받으며 누울 수 있는 것도 {집터 파크가} 주는 장점 중 하나이다."@ko ;
-    kno:predicate "내다"@ko ;
+    kno:frequency kno:KN2020-0317-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0317-freq-NN-2021 ;
     kno:frequency kno:KN2020-0317-freq-NN-2023 ;
     kno:frequency kno:KN2020-0317-freq-NN-2024 ;
     kno:frequency kno:KN2020-0317-freq-NN-total ;
-    kno:componentString "집, (워)터(water), 파크(park)"@ko .
-kno:KN2020-0317-c1 kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F000064 ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-H4 ;
-    a kno:Component ;
-    kno:fullForm "집"@ko ;
-    kno:surfaceForm "집"@ko ;
+    kno:indexForm "집터파크"@ko ;
+    kno:instantiates kno:S001026 ;
+    kno:languageType "(고+영)_영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(집<영>←water park)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "내다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "집+(워)터(water) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0317-c1 a kno:Component ;
     rdfs:label "집"@ko ;
+    kno:formative kno:F000064 ;
+    kno:fullForm "집"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-H4 ;
+    kno:surfaceForm "집"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2020-0317-c3 kno:role "고정항"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F000984 ;
-    kno:position "3"^^xsd:integer ;
-    rdfs:label "파크(park)"@ko ;
-    kno:fullForm "파크"@ko ;
-    kno:surfaceForm "파크"@ko ;
-    kno:semanticTag kno:usas-K1 ;
-    a kno:Component .
-kno:KN2020-0317-c2 kno:surfaceForm "터"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+kno:KN2020-0317-c2 a kno:Component ;
     rdfs:label "(워)터(water)"@ko ;
     kno:formative kno:F001895 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
     kno:fullForm "워터"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:semanticTag kno:usas-O1.2 .
+    kno:semanticTag kno:usas-O1.2 ;
+    kno:surfaceForm "터"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2020-0317-c3 a kno:Component ;
+    rdfs:label "파크(park)"@ko ;
+    kno:formative kno:F000984 ;
+    kno:fullForm "파크"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "파크"@ko ;
+    kno:truncated "false"^^xsd:boolean .

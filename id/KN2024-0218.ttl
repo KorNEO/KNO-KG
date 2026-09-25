@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0218 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0218 kno:formation kno:W05 ;
-    kno:registration "신어DB"@ko ;
-    kno:year "2024"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    a ontolex:Word ;
+kno:KN2024-0218 a ontolex:Word ;
     a kno:Neologism ;
     rdfs:label "웨장센"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%A8%EC%9E%A5%EC%84%BC> ;
+    skos:definition "영화감독 ‘웨스 앤더슨’만의 특징적인 화면 구조와 색채 등을 이르는 말. ‘웨스 앤더슨’과 ‘미장센’을 결합한 말이다."@ko ;
     kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0218-c1 ;
+    kno:component kno:KN2024-0218-c2 ;
+    kno:componentString "웨(스 앤더슨)(Wes Anderson), (미)장센(mise-en-scène)"@ko ;
     kno:example "¶영화 ‘그랜드 부다페스트 호텔’은 화면 전체를 가득 채우는 대칭적 구도와 파스텔톤 색감, 그리고 세밀하게 배치된 소품까지 어우러져 대표적인 {웨장센} 사례로 꼽힌다."@ko ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0218-freq-NN-2023 ;
     kno:frequency kno:KN2024-0218-freq-NN-total ;
     kno:indexForm "웨장센"@ko ;
     kno:languageType "영+프" ;
-    kno:componentString "웨(스 앤더슨)(Wes Anderson), (미)장센(mise-en-scène)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9B%A8%EC%9E%A5%EC%84%BC> ;
-    kno:component kno:KN2024-0218-c1 ;
-    kno:component kno:KN2024-0218-c2 ;
-    skos:definition "영화감독 ‘웨스 앤더슨’만의 특징적인 화면 구조와 색채 등을 이르는 말. ‘웨스 앤더슨’과 ‘미장센’을 결합한 말이다."@ko ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(←Wes Anderson<프>←mise-en-scène)" ;
     kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2024-0218-freq-NN-2023 ;
-    kno:origin "(←Wes Anderson<프>←mise-en-scène)" .
-kno:KN2024-0218-c1 kno:formative kno:F005269 ;
-    kno:surfaceForm "웨"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "웨스 앤더슨"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0218-c1 a kno:Component ;
     rdfs:label "웨(스 앤더슨)(Wes Anderson)"@ko ;
-    kno:semanticTag kno:usas-Z1 .
-kno:KN2024-0218-c2 kno:semanticTag kno:usas-K4 ;
+    kno:formative kno:F005269 ;
+    kno:fullForm "웨스 앤더슨"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Z1 ;
+    kno:surfaceForm "웨"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0218-c2 a kno:Component ;
+    rdfs:label "(미)장센(mise-en-scène)"@ko ;
     kno:formative kno:F005573 ;
     kno:fullForm "미장센"@ko ;
-    rdfs:label "(미)장센(mise-en-scène)"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-K4 ;
     kno:surfaceForm "장센"@ko ;
-    a kno:Component .
+    kno:truncated "true"^^xsd:boolean .

@@ -9,45 +9,45 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0106 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0106 a kno:Neologism ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:languageType "영+한" ;
-    kno:componentString "빗(썸)(Bithumb), (공)무원(公務員)"@ko ;
-    kno:frequency kno:KN2024-0106-freq-NN-2024 ;
-    kno:example "¶암호 화폐 커뮤니티에서는 매일 출석 체크만으로 혜택을 받는 정책을 두고 {빗무원이라는} 조롱과 함께, 사용자의 무분별한 참여 유도로 이어진다는 비판도 제기되고 있다."@ko ;
-    kno:frequency kno:KN2024-0106-freq-NN-total ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%97%EB%AC%B4%EC%9B%90> ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "빗(썸)(Bithumb) (1성분)"@ko ;
+kno:KN2024-0106 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "빗무원"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B9%97%EB%AC%B4%EC%9B%90> ;
+    skos:definition "가상 자산 거래소 ‘빗썸’에서 출석 체크나 단순 활동만으로 보상을 받는 사용자를, 별다른 노력 없이 안정적으로 수익을 얻는다는 점에서 공무원에 빗대어 이르는 말. 이러한 표현은 주로 온라인 커뮤니티에서 투자 행위보다는 보상 중심의 구조를 풍자하고 조롱하는 의미로 사용된다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주 의가 필요하다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0106-c1 ;
+    kno:component kno:KN2024-0106-c2 ;
+    kno:componentString "빗(썸)(Bithumb), (공)무원(公務員)"@ko ;
+    kno:example "¶암호 화폐 커뮤니티에서는 매일 출석 체크만으로 혜택을 받는 정책을 두고 {빗무원이라는} 조롱과 함께, 사용자의 무분별한 참여 유도로 이어진다는 비판도 제기되고 있다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2024-0106-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0106-freq-NN-total ;
     kno:indexForm "빗무원"@ko ;
     kno:instantiates kno:S000671 ;
+    kno:languageType "영+한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:origin "(←Bithumb務員)" ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:formation kno:W05 ;
+    kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:year "2024"^^xsd:gYear ;
+    kno:slotFiller "빗(썸)(Bithumb) (1성분)"@ko ;
     kno:unitType "단어"@ko ;
-    skos:definition "가상 자산 거래소 ‘빗썸’에서 출석 체크나 단순 활동만으로 보상을 받는 사용자를, 별다른 노력 없이 안정적으로 수익을 얻는다는 점에서 공무원에 빗대어 이르는 말. 이러한 표현은 주로 온라인 커뮤니티에서 투자 행위보다는 보상 중심의 구조를 풍자하고 조롱하는 의미로 사용된다. 차별 및 비하하는 의미가 포함되어 있으므로 사용에 주 의가 필요하다."@ko ;
-    a ontolex:Word ;
-    kno:component kno:KN2024-0106-c2 ;
-    kno:component kno:KN2024-0106-c1 .
-kno:KN2024-0106-c2 kno:fullForm "공무원"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    rdfs:label "(공)무원(公務員)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:role "고정항"@ko ;
-    kno:formative kno:F001317 ;
-    kno:surfaceForm "무원"@ko .
-kno:KN2024-0106-c1 kno:role "슬롯 채움"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0106-c1 a kno:Component ;
     rdfs:label "빗(썸)(Bithumb)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "빗"@ko ;
-    a kno:Component ;
+    kno:formative kno:F004106 ;
     kno:fullForm "빗썸"@ko ;
-    kno:semanticTag kno:usas-Z3 ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I1 ;
-    kno:formative kno:F004106 .
+    kno:semanticTag kno:usas-Z3 ;
+    kno:surfaceForm "빗"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2024-0106-c2 a kno:Component ;
+    rdfs:label "(공)무원(公務員)"@ko ;
+    kno:formative kno:F001317 ;
+    kno:fullForm "공무원"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "무원"@ko ;
+    kno:truncated "true"^^xsd:boolean .

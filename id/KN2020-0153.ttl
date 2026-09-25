@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0153 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0153 a kno:Neologism ;
-    kno:frequency kno:KN2020-0153-freq-NN-2020 ;
-    kno:unitType "구"@ko ;
-    kno:frequency kno:KN2020-0153-freq-NN-total ;
+kno:KN2020-0153 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "상상 코로나"@ko ;
-    kno:componentString "상상(想像), 코로나(바이러스)(corona virus)"@ko ;
-    kno:slotFiller "상상(想像) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%83%81%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
     skos:definition "피로나 재채기와 같은 일상적인 증상에도 코로나19의 감염을 의심하는 현상."@ko ;
     kno:activeYears "3"^^xsd:integer ;
-    kno:predicate "의심하다"@ko ;
-    kno:frequency kno:KN2020-0153-freq-NN-2021 ;
-    kno:year "2020"^^xsd:gYear ;
     kno:component kno:KN2020-0153-c1 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%83%81%EC%83%81%20%EC%BD%94%EB%A1%9C%EB%82%98> ;
-    kno:frequency kno:KN2020-0153-freq-NN-2022 ;
     kno:component kno:KN2020-0153-c2 ;
+    kno:componentString "상상(想像), 코로나(바이러스)(corona virus)"@ko ;
     kno:example "¶코로나19가 확산되면서 {상상 코로나에} 시달리는 사람이 증가하고 있다."@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0153-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0153-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0153-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0153-freq-NN-total ;
     kno:indexForm "상상코로나"@ko ;
-    kno:registration "신어DB"@ko ;
+    kno:instantiates kno:S000121 ;
     kno:languageType "한_영" ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:origin "(想像<영>←corona virus)" ;
-    kno:instantiates kno:S000121 .
-kno:KN2020-0153-c1 kno:semanticTag kno:usas-X2.1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "의심하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "상상(想像) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0153-c1 a kno:Component ;
     rdfs:label "상상(想像)"@ko ;
-    kno:position "1"^^xsd:integer ;
+    kno:formative kno:F004230 ;
     kno:fullForm "상상"@ko ;
-    a kno:Component ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-X2.1 ;
     kno:surfaceForm "상상"@ko ;
-    kno:formative kno:F004230 .
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2020-0153-c2 a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "코로나"@ko ;
     rdfs:label "코로나(바이러스)(corona virus)"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2m ;
+    kno:formative kno:F000003 ;
     kno:fullForm "코로나바이러스"@ko ;
-    kno:formative kno:F000003 .
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "코로나"@ko ;
+    kno:truncated "true"^^xsd:boolean .

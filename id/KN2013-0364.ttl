@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2013-0364 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2013-0364 kno:pos "「명」"@ko ;
-    skos:definition "‘졸업 사진001’을 줄여 이르는 말."@ko ;
+kno:KN2013-0364 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "졸사"@ko ;
     rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1357423> ;
+    skos:definition "‘졸업 사진001’을 줄여 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2013-0364-c1 ;
+    kno:component kno:KN2013-0364-c2 ;
+    kno:componentString "졸(업)(卒), 사(진)(寫)"@ko ;
+    kno:example "¶OOO은 지난 13일 자신의 페이스북에 “{졸사의} 계절이네요. 예쁘게 찍으세요. 남자끼리 한 조였던 기억이.”라는 글과 함께 졸업 사진 한 장을 게재했다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "졸사"@ko ;
+    kno:languageType "한+한" ;
+    kno:origin "(卒寫)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "우리말샘"@ko ;
     kno:unitType "단어"@ko ;
     kno:urimalTargetCode "1357423" ;
-    kno:languageType "한+한" ;
-    rdfs:label "졸사"@ko ;
-    kno:example "¶OOO은 지난 13일 자신의 페이스북에 “{졸사의} 계절이네요. 예쁘게 찍으세요. 남자끼리 한 조였던 기억이.”라는 글과 함께 졸업 사진 한 장을 게재했다."@ko ;
-    kno:indexForm "졸사"@ko ;
-    kno:component kno:KN2013-0364-c1 ;
-    a ontolex:Word ;
-    a kno:Neologism ;
-    kno:registration "우리말샘"@ko ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:formation kno:W06 ;
-    kno:origin "(卒寫)" ;
-    kno:componentString "졸(업)(卒), 사(진)(寫)"@ko ;
-    kno:year "2013"^^xsd:gYear ;
-    kno:component kno:KN2013-0364-c2 .
-kno:KN2013-0364-c1 kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "1"^^xsd:integer ;
-    kno:fullForm "졸업"@ko ;
+    kno:year "2013"^^xsd:gYear .
+kno:KN2013-0364-c1 a kno:Component ;
     rdfs:label "졸(업)(卒)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:formative kno:F005758 ;
+    kno:fullForm "졸업"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-P1 ;
     kno:surfaceForm "졸"@ko ;
-    kno:formative kno:F005758 .
-kno:KN2013-0364-c2 kno:fullForm "사진"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "사"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2013-0364-c2 a kno:Component ;
+    rdfs:label "사(진)(寫)"@ko ;
     kno:formative kno:F000788 ;
+    kno:fullForm "사진"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
     kno:semanticTag kno:usas-C1 ;
-    rdfs:label "사(진)(寫)"@ko .
+    kno:surfaceForm "사"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,57 +9,57 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0091 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0091 kno:formation kno:W06 ;
-    kno:frequency kno:KN2019-0091-freq-NN-2018 ;
-    kno:frequency kno:KN2019-0091-freq-NN-total ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "머라밸"@ko ;
+kno:KN2019-0091 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "머라밸"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1465302> ;
+    skos:definition "‘머니 라이프 밸런스’를 줄여 이르는 말로, 돈과 개인의 삶 사이의 균형을 이르는 말."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2019-0091-c1 ;
+    kno:component kno:KN2019-0091-c2 ;
+    kno:component kno:KN2019-0091-c3 ;
     kno:componentString "머(니)(money), 라(이프)(life), 밸(런스)(balance)"@ko ;
+    kno:example "¶근로자들은 워라밸이 가능해졌을지라도, 소상공인들은 {머라밸이} 더 중요하다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2019-0091-freq-NN-2018 ;
     kno:frequency kno:KN2019-0091-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0091-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0091-freq-NN-total ;
+    kno:indexForm "머라밸"@ko ;
+    kno:instantiates kno:S000233 ;
     kno:languageType "영" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(<영>←money-life balance)" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:year "2019"^^xsd:gYear ;
-    rdfs:label "머라밸"@ko ;
-    kno:instantiates kno:S000233 ;
-    kno:example "¶근로자들은 워라밸이 가능해졌을지라도, 소상공인들은 {머라밸이} 더 중요하다."@ko ;
-    kno:component kno:KN2019-0091-c3 ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0091-freq-NN-2020 ;
-    kno:component kno:KN2019-0091-c2 ;
-    kno:origin "(<영>←money-life balance)" ;
-    kno:component kno:KN2019-0091-c1 ;
-    a ontolex:Word ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1465302> ;
-    a kno:Neologism ;
-    kno:urimalTargetCode "1465302" ;
-    kno:activeYears "3"^^xsd:integer ;
     kno:slotFiller "머(니)(money) (1성분)"@ko ;
-    skos:definition "‘머니 라이프 밸런스’를 줄여 이르는 말로, 돈과 개인의 삶 사이의 균형을 이르는 말."@ko .
-kno:KN2019-0091-c3 kno:surfaceForm "밸"@ko ;
-    kno:fullForm "밸런스"@ko ;
-    kno:role "고정항"@ko ;
-    rdfs:label "밸(런스)(balance)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A6.1p ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000357 .
-kno:KN2019-0091-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000492 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:surfaceForm "라"@ko ;
-    rdfs:label "라(이프)(life)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-L1 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "라이프"@ko .
-kno:KN2019-0091-c1 kno:surfaceForm "머"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1465302" ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0091-c1 a kno:Component ;
+    rdfs:label "머(니)(money)"@ko ;
     kno:formative kno:F003413 ;
-    kno:semanticTag kno:usas-I1 ;
     kno:fullForm "머니"@ko ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:position "1"^^xsd:integer ;
-    rdfs:label "머(니)(money)"@ko .
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "머"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0091-c2 a kno:Component ;
+    rdfs:label "라(이프)(life)"@ko ;
+    kno:formative kno:F000492 ;
+    kno:fullForm "라이프"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-L1 ;
+    kno:surfaceForm "라"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0091-c3 a kno:Component ;
+    rdfs:label "밸(런스)(balance)"@ko ;
+    kno:formative kno:F000357 ;
+    kno:fullForm "밸런스"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A6.1p ;
+    kno:surfaceForm "밸"@ko ;
+    kno:truncated "true"^^xsd:boolean .

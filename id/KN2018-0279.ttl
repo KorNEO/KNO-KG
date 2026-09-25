@@ -9,43 +9,43 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0279 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0279 kno:languageType "한^영" ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2018-0279-c1 ;
+kno:KN2018-0279 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:instantiates kno:S001033 ;
-    kno:origin "(銀行<영>passing)" ;
-    kno:example "¶이른바 은행 없이도 담보 대출이 가능한 ‘{은행 패싱}’ 시대가 오는 것이다."@ko ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:componentString "은행(銀行), 패싱(passing)"@ko ;
     rdfs:label "은행^패싱"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:indexForm "은행패싱"@ko ;
-    kno:frequency kno:KN2018-0279-freq-NN-2017 ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2018-0279-c2 ;
-    skos:definition "은행을 직접 거치지 않고, 공공 거래 장부인 블록 체인상에 등록된 자산을 개인 간에 거래하는 일을 이르는 말."@ko ;
-    kno:frequency kno:KN2018-0279-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:slotFiller "은행(銀行) (1성분)"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%80%ED%96%89%ED%8C%A8%EC%8B%B1> ;
+    skos:definition "은행을 직접 거치지 않고, 공공 거래 장부인 블록 체인상에 등록된 자산을 개인 간에 거래하는 일을 이르는 말."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2017"^^xsd:gYear .
+    kno:component kno:KN2018-0279-c1 ;
+    kno:component kno:KN2018-0279-c2 ;
+    kno:componentString "은행(銀行), 패싱(passing)"@ko ;
+    kno:example "¶이른바 은행 없이도 담보 대출이 가능한 ‘{은행 패싱}’ 시대가 오는 것이다."@ko ;
+    kno:frequency kno:KN2018-0279-freq-NN-2017 ;
+    kno:frequency kno:KN2018-0279-freq-NN-total ;
+    kno:indexForm "은행패싱"@ko ;
+    kno:instantiates kno:S001033 ;
+    kno:languageType "한^영" ;
+    kno:lastAttestationYear "2017"^^xsd:gYear ;
+    kno:origin "(銀行<영>passing)" ;
+    kno:pos "「구」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "은행(銀行) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2018"^^xsd:gYear .
 kno:KN2018-0279-c1 a kno:Component ;
-    kno:surfaceForm "은행"@ko ;
-    kno:formative kno:F001686 ;
-    kno:semanticTag kno:usas-I1 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "은행(銀行)"@ko ;
+    kno:formative kno:F001686 ;
+    kno:fullForm "은행"@ko ;
     kno:position "1"^^xsd:integer ;
-    kno:fullForm "은행"@ko .
-kno:KN2018-0279-c2 kno:fullForm "패싱"@ko ;
-    kno:formative kno:F000988 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer ;
-    kno:surfaceForm "패싱"@ko ;
-    kno:role "고정항"@ko ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I1 ;
+    kno:surfaceForm "은행"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2018-0279-c2 a kno:Component ;
     rdfs:label "패싱(passing)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-A1.8m .
+    kno:formative kno:F000988 ;
+    kno:fullForm "패싱"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A1.8m ;
+    kno:surfaceForm "패싱"@ko ;
+    kno:truncated "false"^^xsd:boolean .

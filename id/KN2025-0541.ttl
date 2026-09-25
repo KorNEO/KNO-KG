@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0541 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0541 kno:registration "신어DB"@ko ;
-    kno:languageType "한_한_한" ;
-    kno:origin "(眞實埋葬委員會)" ;
-    kno:frequency kno:KN2025-0541-freq-NN-total ;
+kno:KN2025-0541 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2025-0541-c2 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:component kno:KN2025-0541-c1 ;
-    kno:component kno:KN2025-0541-c3 ;
-    kno:pos "「구」"@ko ;
-    kno:instantiates kno:S000166 ;
-    kno:year "2025"^^xsd:gYear ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2025-0541-freq-NN-2025 ;
-    kno:slotFiller "진실(眞實)+매장(埋葬) (2성분)"@ko ;
     rdfs:label "진실 매장 위원회"@ko ;
-    skos:definition "(LLM) 어떤 기관ㆍ단체가 진상을 규명하기보다 불리한 사실을 덮거나 없앤다고 비꼴 때 쓰는 말."@ko ;
-    kno:predicate "쓰다"@ko ;
-    kno:componentString "진실(眞實), 매장(埋葬), 위원회(委員會)"@ko ;
-    kno:unitType "구"@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:example "(LLM) 조사 결과 발표가 미흡하다는 지적이 나오자, 온라인에서는 해당 기구를 {진실매장위원회}라고 부르며 재조사를 요구했다."@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A7%84%EC%8B%A4%20%EB%A7%A4%EC%9E%A5%20%EC%9C%84%EC%9B%90%ED%9A%8C> ;
-    kno:indexForm "진실매장위원회"@ko .
-kno:KN2025-0541-c2 kno:formative kno:F003399 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-I2.2 ;
-    rdfs:label "매장(埋葬)"@ko ;
-    kno:fullForm "매장"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "매장"@ko ;
-    kno:truncated "false"^^xsd:boolean .
+    skos:definition "(LLM) 어떤 기관ㆍ단체가 진상을 규명하기보다 불리한 사실을 덮거나 없앤다고 비꼴 때 쓰는 말."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0541-c1 ;
+    kno:component kno:KN2025-0541-c2 ;
+    kno:component kno:KN2025-0541-c3 ;
+    kno:componentString "진실(眞實), 매장(埋葬), 위원회(委員會)"@ko ;
+    kno:example "(LLM) 조사 결과 발표가 미흡하다는 지적이 나오자, 온라인에서는 해당 기구를 {진실매장위원회}라고 부르며 재조사를 요구했다."@ko ;
+    kno:frequency kno:KN2025-0541-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0541-freq-NN-total ;
+    kno:indexForm "진실매장위원회"@ko ;
+    kno:instantiates kno:S000166 ;
+    kno:languageType "한_한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(眞實埋葬委員會)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "쓰다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "진실(眞實)+매장(埋葬) (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
 kno:KN2025-0541-c1 a kno:Component ;
+    rdfs:label "진실(眞實)"@ko ;
     kno:formative kno:F005927 ;
-    kno:surfaceForm "진실"@ko ;
     kno:fullForm "진실"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-A5.4p ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "진실(眞實)"@ko ;
+    kno:surfaceForm "진실"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0541-c3 kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:fullForm "위원회"@ko ;
+kno:KN2025-0541-c2 a kno:Component ;
+    rdfs:label "매장(埋葬)"@ko ;
+    kno:formative kno:F003399 ;
+    kno:fullForm "매장"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I2.2 ;
+    kno:surfaceForm "매장"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0541-c3 a kno:Component ;
+    rdfs:label "위원회(委員會)"@ko ;
     kno:formative kno:F000148 ;
-    a kno:Component ;
+    kno:fullForm "위원회"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S5 ;
     kno:surfaceForm "위원회"@ko ;
-    rdfs:label "위원회(委員會)"@ko .
+    kno:truncated "false"^^xsd:boolean .

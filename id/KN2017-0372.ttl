@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0372 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0372 kno:frequency kno:KN2017-0372-freq-NN-total ;
-    skos:definition "인간이 직접 하던 행정 일을 대신할 수 있는 지능화된 프로그램. 또는 그러한 프로그램을 내재한 로봇."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2017-0372-c3 ;
-    kno:formation kno:W05 ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:componentString "휴(머나이즈드)(humanized), (로)보(틱)(robotic), (에이)젠트(agent)"@ko ;
-    kno:frequency kno:KN2017-0372-freq-NN-2016 ;
-    kno:lastAttestationYear "2016"^^xsd:gYear ;
-    kno:unitType "단어"@ko ;
-    kno:indexForm "휴보젠트"@ko ;
+kno:KN2017-0372 a ontolex:Word ;
+    a kno:Neologism ;
     rdfs:label "휴보-젠트"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%9C%B4%EB%B3%B4%EC%A0%A0%ED%8A%B8> ;
-    kno:component kno:KN2017-0372-c2 ;
-    kno:registration "신어DB"@ko ;
+    skos:definition "인간이 직접 하던 행정 일을 대신할 수 있는 지능화된 프로그램. 또는 그러한 프로그램을 내재한 로봇."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2017-0372-c1 ;
+    kno:component kno:KN2017-0372-c2 ;
+    kno:component kno:KN2017-0372-c3 ;
+    kno:componentString "휴(머나이즈드)(humanized), (로)보(틱)(robotic), (에이)젠트(agent)"@ko ;
     kno:example "¶{휴보젠트를} 지원하는 인프라로…{휴보젠트가} 행정에 내재화되는 스마트 정보화 사업이 추진될 필요성이 절실하다."@ko ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2017-0372-freq-NN-2016 ;
+    kno:frequency kno:KN2017-0372-freq-NN-total ;
+    kno:indexForm "휴보젠트"@ko ;
+    kno:languageType "영+영" ;
+    kno:lastAttestationYear "2016"^^xsd:gYear ;
     kno:origin "(<영>▼←humanized robotic agent)" ;
-    kno:languageType "영+영" .
-kno:KN2017-0372-c3 rdfs:label "(에이)젠트(agent)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0372-c1 a kno:Component ;
+    rdfs:label "휴(머나이즈드)(humanized)"@ko ;
+    kno:formative kno:F007205 ;
+    kno:fullForm "휴머나이즈드"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:position "3"^^xsd:integer ;
-    kno:surfaceForm "젠트"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-Y2 ;
-    kno:formative kno:F005717 ;
-    kno:fullForm "에이젠트"@ko .
-kno:KN2017-0372-c2 kno:truncated "true"^^xsd:boolean ;
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "휴"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0372-c2 a kno:Component ;
     rdfs:label "(로)보(틱)(robotic)"@ko ;
-    kno:semanticTag kno:usas-Y1 ;
+    kno:formative kno:F003865 ;
     kno:fullForm "로보틱"@ko ;
-    kno:surfaceForm "보"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F003865 .
-kno:KN2017-0372-c1 kno:formative kno:F007205 ;
-    kno:fullForm "휴머나이즈드"@ko ;
-    a kno:Component ;
-    kno:surfaceForm "휴"@ko ;
-    rdfs:label "휴(머나이즈드)(humanized)"@ko ;
-    kno:semanticTag kno:usas-S2 ;
-    kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko .
+    kno:semanticTag kno:usas-Y1 ;
+    kno:surfaceForm "보"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0372-c3 a kno:Component ;
+    rdfs:label "(에이)젠트(agent)"@ko ;
+    kno:formative kno:F005717 ;
+    kno:fullForm "에이젠트"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-Y2 ;
+    kno:surfaceForm "젠트"@ko ;
+    kno:truncated "true"^^xsd:boolean .

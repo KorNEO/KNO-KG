@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2016-0020 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2016-0020 kno:year "2016"^^xsd:gYear ;
-    kno:frequency kno:KN2016-0020-freq-NN-2015 ;
-    kno:unitType "구"@ko ;
+kno:KN2016-0020 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "곰팡이^폐렴"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372455> ;
+    skos:definition "곰팡이균을 흡입하여 생기는 폐렴. 주로 조류에게서 나타난다."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2016-0020-c1 ;
     kno:component kno:KN2016-0020-c2 ;
+    kno:componentString "곰팡이, 폐렴(肺炎)"@ko ;
     kno:example "¶병원 관계자도 임상 증상만 놓고 보면 {곰팡이 폐렴과} 유사하다고 밝혔습니다."@ko ;
+    kno:frequency kno:KN2016-0020-freq-NN-2015 ;
+    kno:frequency kno:KN2016-0020-freq-NN-2023 ;
+    kno:frequency kno:KN2016-0020-freq-NN-total ;
     kno:indexForm "곰팡이폐렴"@ko ;
     kno:instantiates kno:S001044 ;
-    a kno:Neologism ;
-    kno:componentString "곰팡이, 폐렴(肺炎)"@ko ;
-    kno:slotFiller "곰팡이 (1성분)"@ko ;
-    kno:activeYears "2"^^xsd:integer ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:component kno:KN2016-0020-c1 ;
-    kno:frequency kno:KN2016-0020-freq-NN-2023 ;
-    kno:pos "「구」"@ko ;
-    skos:definition "곰팡이균을 흡입하여 생기는 폐렴. 주로 조류에게서 나타난다."@ko ;
-    rdfs:label "곰팡이^폐렴"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:origin "(곰팡이肺炎▽)" ;
-    kno:registration "우리말샘"@ko ;
     kno:languageType "고^한" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1372455> ;
-    kno:frequency kno:KN2016-0020-freq-NN-total ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(곰팡이肺炎▽)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "생기다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "곰팡이 (1성분)"@ko ;
+    kno:unitType "구"@ko ;
     kno:urimalTargetCode "1372455" ;
-    kno:predicate "생기다"@ko .
-kno:KN2016-0020-c2 kno:role "고정항"@ko ;
-    kno:formative kno:F000996 ;
-    kno:fullForm "폐렴"@ko ;
-    kno:semanticTag kno:usas-B2m ;
-    rdfs:label "폐렴(肺炎)"@ko ;
-    kno:surfaceForm "폐렴"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
+    kno:year "2016"^^xsd:gYear .
 kno:KN2016-0020-c1 a kno:Component ;
     rdfs:label "곰팡이"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-L3 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "곰팡이"@ko ;
-    kno:surfaceForm "곰팡이"@ko ;
     kno:formative kno:F002319 ;
-    kno:position "1"^^xsd:integer .
+    kno:fullForm "곰팡이"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-L3 ;
+    kno:surfaceForm "곰팡이"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2016-0020-c2 a kno:Component ;
+    rdfs:label "폐렴(肺炎)"@ko ;
+    kno:formative kno:F000996 ;
+    kno:fullForm "폐렴"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2m ;
+    kno:surfaceForm "폐렴"@ko ;
+    kno:truncated "false"^^xsd:boolean .

@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2020-0016 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2020-0016 kno:frequency kno:KN2020-0016-freq-NN-2023 ;
+kno:KN2020-0016 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "공적^마스크"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1484323> ;
+    skos:definition "정부가 수급을 관리하는 마스크. 코로나19의 확산으로 마스크 품귀 현상이 발생함에 따라, 마스크 공급 문제를 해결하기 위해 생산량의 대부분을 정부에서 구매하여 공적 판매처를 통해 판매한 마스크이다."@ko ;
+    kno:activeYears "6"^^xsd:integer ;
     kno:component kno:KN2020-0016-c1 ;
+    kno:component kno:KN2020-0016-c2 ;
     kno:componentString "공적(公的), 마스크(mask)"@ko ;
-    kno:instantiates kno:S000345 ;
-    kno:origin "(公的<영>mask)" ;
+    kno:example "¶정부가 약국ㆍ우체국 등을 통해 1개당 1500원, 1인당 5장 한정으로 {공적 마스크를} 판매한다고 발표했다."@ko ;
+    kno:frequency kno:KN2020-0016-freq-NN-2020 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2021 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2022 ;
+    kno:frequency kno:KN2020-0016-freq-NN-2023 ;
     kno:frequency kno:KN2020-0016-freq-NN-2024 ;
     kno:frequency kno:KN2020-0016-freq-NN-2025 ;
-    kno:languageType "한^영" ;
-    kno:frequency kno:KN2020-0016-freq-NN-2020 ;
-    kno:predicate "관리하다"@ko ;
-    kno:frequency kno:KN2020-0016-freq-NN-2021 ;
-    kno:instantiates kno:S000439 ;
-    a kno:Neologism ;
-    kno:example "¶정부가 약국ㆍ우체국 등을 통해 1개당 1500원, 1인당 5장 한정으로 {공적 마스크를} 판매한다고 발표했다."@ko ;
-    kno:unitType "구"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1484323> ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:frequency kno:KN2020-0016-freq-NN-total ;
     kno:indexForm "공적마스크"@ko ;
-    kno:component kno:KN2020-0016-c2 ;
-    kno:frequency kno:KN2020-0016-freq-NN-2022 ;
-    skos:definition "정부가 수급을 관리하는 마스크. 코로나19의 확산으로 마스크 품귀 현상이 발생함에 따라, 마스크 공급 문제를 해결하기 위해 생산량의 대부분을 정부에서 구매하여 공적 판매처를 통해 판매한 마스크이다."@ko ;
+    kno:instantiates kno:S000345 ;
+    kno:instantiates kno:S000439 ;
+    kno:languageType "한^영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(公的<영>mask)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:slotFiller "마스크(mask) (1성분)"@ko ;
-    kno:slotFiller "공적(公的) (1성분)"@ko ;
-    kno:urimalTargetCode "1484323" ;
-    rdfs:label "공적^마스크"@ko ;
-    kno:activeYears "6"^^xsd:integer ;
-    kno:year "2020"^^xsd:gYear ;
+    kno:predicate "관리하다"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:frequency kno:KN2020-0016-freq-NN-total .
-kno:KN2020-0016-c1 kno:fullForm "공적"@ko ;
-    kno:formative kno:F000458 ;
-    kno:role "고정항"@ko ;
-    kno:surfaceForm "공적"@ko ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
+    kno:slotFiller "공적(公的) (1성분)"@ko ;
+    kno:slotFiller "마스크(mask) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1484323" ;
+    kno:year "2020"^^xsd:gYear .
+kno:KN2020-0016-c1 a kno:Component ;
     rdfs:label "공적(公的)"@ko ;
-    a kno:Component .
-kno:KN2020-0016-c2 kno:semanticTag kno:usas-B5 ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
+    kno:formative kno:F000458 ;
+    kno:fullForm "공적"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "마스크"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
+    kno:surfaceForm "공적"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2020-0016-c2 a kno:Component ;
+    rdfs:label "마스크(mask)"@ko ;
     kno:formative kno:F000038 ;
     kno:fullForm "마스크"@ko ;
-    rdfs:label "마스크(mask)"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B5 ;
+    kno:surfaceForm "마스크"@ko ;
     kno:truncated "false"^^xsd:boolean .

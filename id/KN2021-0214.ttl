@@ -9,49 +9,49 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0214 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0214 kno:frequency kno:KN2021-0214-freq-NN-total ;
-    kno:languageType "한+일" ;
-    kno:registration "신어DB"@ko ;
-    kno:frequency kno:KN2021-0214-freq-NN-2024 ;
-    kno:indexForm "이모카세"@ko ;
-    kno:unitType "단어"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EB%AA%A8%EC%B9%B4%EC%84%B8> ;
+kno:KN2021-0214 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "이모카세"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9D%B4%EB%AA%A8%EC%B9%B4%EC%84%B8> ;
+    skos:definition "주방장이 만드는 특선 요리. 또는 그런 요리를 내놓는 음식점. 손님이 메뉴판에 적힌 일정한 음식을 주문하지 않고, 주방장이 그날그날의 상황에 따라 엄선하여 만든 음식을 손님에게 내놓는다. 식당이나 주점 따위에서 일하는 중년의 여성을 친근하게 부르는 말인 ‘이모’와 ‘오마카세’를 결합하여 만든 말이다."@ko ;
     kno:activeYears "6"^^xsd:integer ;
+    kno:component kno:KN2021-0214-c1 ;
     kno:component kno:KN2021-0214-c2 ;
     kno:componentString "이모(姨母), (오마)카세(omakase)"@ko ;
-    kno:lastAttestationYear "2025"^^xsd:gYear ;
-    kno:frequency kno:KN2021-0214-freq-NN-2023 ;
-    kno:formation kno:W05 ;
-    kno:frequency kno:KN2021-0214-freq-NN-2025 ;
-    skos:definition "주방장이 만드는 특선 요리. 또는 그런 요리를 내놓는 음식점. 손님이 메뉴판에 적힌 일정한 음식을 주문하지 않고, 주방장이 그날그날의 상황에 따라 엄선하여 만든 음식을 손님에게 내놓는다. 식당이나 주점 따위에서 일하는 중년의 여성을 친근하게 부르는 말인 ‘이모’와 ‘오마카세’를 결합하여 만든 말이다."@ko ;
-    kno:frequency kno:KN2021-0214-freq-NN-2022 ;
-    kno:origin "(姨母<일>←omaka[御任]se)" ;
-    a ontolex:Word ;
-    kno:pos "「명」"@ko ;
-    kno:slotFiller "이모(姨母) (1성분)"@ko ;
-    kno:instantiates kno:S000105 ;
-    kno:frequency kno:KN2021-0214-freq-NN-2020 ;
-    kno:component kno:KN2021-0214-c1 ;
     kno:example "¶{이모카세는} 식당 주인이 그날그날 구매한 재료에 따라 음식을 만들어 내므로 별도의 메뉴판이 없다."@ko ;
+    kno:formation kno:W05 ;
+    kno:frequency kno:KN2021-0214-freq-NN-2020 ;
     kno:frequency kno:KN2021-0214-freq-NN-2021 ;
-    kno:year "2021"^^xsd:gYear ;
-    rdfs:label "이모카세"@ko .
-kno:KN2021-0214-c2 kno:fullForm "오마카세"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:formative kno:F000309 ;
-    kno:truncated "true"^^xsd:boolean ;
+    kno:frequency kno:KN2021-0214-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0214-freq-NN-2023 ;
+    kno:frequency kno:KN2021-0214-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0214-freq-NN-2025 ;
+    kno:frequency kno:KN2021-0214-freq-NN-total ;
+    kno:indexForm "이모카세"@ko ;
+    kno:instantiates kno:S000105 ;
+    kno:languageType "한+일" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(姨母<일>←omaka[御任]se)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "이모(姨母) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0214-c1 a kno:Component ;
+    rdfs:label "이모(姨母)"@ko ;
+    kno:formative kno:F000571 ;
+    kno:fullForm "이모"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "이모"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2021-0214-c2 a kno:Component ;
     rdfs:label "(오마)카세(omakase)"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000309 ;
+    kno:fullForm "오마카세"@ko ;
     kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:surfaceForm "카세"@ko .
-kno:KN2021-0214-c1 kno:formative kno:F000571 ;
-    a kno:Component ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "이모"@ko ;
-    kno:position "1"^^xsd:integer ;
-    rdfs:label "이모(姨母)"@ko ;
-    kno:fullForm "이모"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-S4 .
+    kno:semanticTag kno:usas-F1 ;
+    kno:surfaceForm "카세"@ko ;
+    kno:truncated "true"^^xsd:boolean .

@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2017-0273 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2017-0273 kno:example "¶콜라 시장에 새로운 탄산수가 접목되면서…이름하여 ‘{치탄’이라는} 새로운 트렌드가 형성될지 궁금증을 만들어 내고 있다."@ko ;
+kno:KN2017-0273 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "치탄"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=959563> ;
+    skos:definition "치킨과 탄산수를 아울러 이르는 말."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2017-0273-c1 ;
+    kno:component kno:KN2017-0273-c2 ;
+    kno:componentString "치(킨)(chicken), 탄(산수)(炭)"@ko ;
+    kno:example "¶콜라 시장에 새로운 탄산수가 접목되면서…이름하여 ‘{치탄’이라는} 새로운 트렌드가 형성될지 궁금증을 만들어 내고 있다."@ko ;
+    kno:formation kno:W06 ;
+    kno:indexForm "치탄"@ko ;
+    kno:languageType "영+한" ;
+    kno:origin "(<영>←chicken炭)" ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
     kno:unitType "단어"@ko ;
-    skos:definition "치킨과 탄산수를 아울러 이르는 말."@ko ;
-    kno:component kno:KN2017-0273-c1 ;
-    kno:activeYears "0"^^xsd:integer ;
     kno:urimalTargetCode "959563" ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=959563> ;
-    a kno:Neologism ;
-    kno:year "2017"^^xsd:gYear ;
-    kno:origin "(<영>←chicken炭)" ;
-    kno:component kno:KN2017-0273-c2 ;
-    kno:componentString "치(킨)(chicken), 탄(산수)(炭)"@ko ;
-    kno:languageType "영+한" ;
-    kno:formation kno:W06 ;
-    rdfs:label "치탄"@ko ;
-    a ontolex:Word ;
-    kno:indexForm "치탄"@ko .
-kno:KN2017-0273-c1 kno:fullForm "치킨"@ko ;
+    kno:year "2017"^^xsd:gYear .
+kno:KN2017-0273-c1 a kno:Component ;
     rdfs:label "치(킨)(chicken)"@ko ;
-    kno:semanticTag kno:usas-F1 ;
-    kno:truncated "true"^^xsd:boolean ;
     kno:formative kno:F000092 ;
+    kno:fullForm "치킨"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-F1 ;
     kno:surfaceForm "치"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component .
-kno:KN2017-0273-c2 kno:surfaceForm "탄"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-F2 ;
-    kno:fullForm "탄산수"@ko ;
-    kno:role "성분"@ko ;
-    kno:formative kno:F006398 ;
-    kno:position "2"^^xsd:integer ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2017-0273-c2 a kno:Component ;
     rdfs:label "탄(산수)(炭)"@ko ;
-    a kno:Component .
+    kno:formative kno:F006398 ;
+    kno:fullForm "탄산수"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-F2 ;
+    kno:surfaceForm "탄"@ko ;
+    kno:truncated "true"^^xsd:boolean .

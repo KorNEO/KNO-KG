@@ -9,41 +9,41 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0400 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0400 kno:languageType "한_영" ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
+kno:KN2025-0400 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "어뢰 배트"@ko ;
-    kno:unitType "구"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%96%B4%EB%A2%B0%20%EB%B0%B0%ED%8A%B8> ;
-    kno:frequency kno:KN2025-0400-freq-NN-total ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:origin "(魚雷<영>bat)" ;
-    kno:componentString "어뢰(魚雷), 배트(bat)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
     skos:definition "(LLM) 야구에서, 배트의 특정 타격 지점에 무게를 집중시켜 공이 맞을 때의 반발력과 타구의 질을 높이도록 설계한 방망이."@ko ;
-    kno:indexForm "어뢰배트"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2025-0400-c1 ;
     kno:component kno:KN2025-0400-c2 ;
+    kno:componentString "어뢰(魚雷), 배트(bat)"@ko ;
     kno:example "(LLM) 개막 3연전에서 홈런이 잇따르자 다른 팀 타자들도 {어뢰배트를} 구해 타구가 얼마나 달라지는지 시험해 보겠다고 했다."@ko ;
     kno:frequency kno:KN2025-0400-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0400-freq-NN-total ;
+    kno:indexForm "어뢰배트"@ko ;
+    kno:languageType "한_영" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(魚雷<영>bat)" ;
+    kno:pos "「구」"@ko ;
     kno:registration "신어DB"@ko ;
-    a kno:Neologism ;
-    kno:component kno:KN2025-0400-c1 ;
-    kno:lastAttestationYear "2025"^^xsd:gYear .
-kno:KN2025-0400-c2 kno:truncated "false"^^xsd:boolean ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0400-c1 a kno:Component ;
+    rdfs:label "어뢰(魚雷)"@ko ;
+    kno:formative kno:F004947 ;
+    kno:fullForm "어뢰"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-K5.1 ;
-    kno:surfaceForm "배트"@ko ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:surfaceForm "어뢰"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2025-0400-c2 a kno:Component ;
+    rdfs:label "배트(bat)"@ko ;
     kno:formative kno:F003742 ;
     kno:fullForm "배트"@ko ;
-    rdfs:label "배트(bat)"@ko .
-kno:KN2025-0400-c1 kno:fullForm "어뢰"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G3 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:position "2"^^xsd:integer ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    rdfs:label "어뢰(魚雷)"@ko ;
-    kno:surfaceForm "어뢰"@ko ;
-    kno:formative kno:F004947 .
+    kno:semanticTag kno:usas-K5.1 ;
+    kno:surfaceForm "배트"@ko ;
+    kno:truncated "false"^^xsd:boolean .

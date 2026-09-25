@@ -9,52 +9,52 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0029 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0029 kno:slotFiller "극(極)-+혐오(嫌惡) (2성분)"@ko ;
-    kno:languageType "한+고" ;
-    kno:indexForm "극혐오하다"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383979> ;
-    kno:formation kno:W02 ;
-    kno:unitType "단어"@ko ;
+kno:KN2014-0029 a ontolex:Word ;
     a kno:Neologism ;
-    kno:urimalTargetCode "1383979" ;
+    rdfs:label "극혐오-하다"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1383979> ;
+    skos:definition "아주 싫어하고 미워하다."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:componentString "극(極)-, 혐오(嫌惡), -하다"@ko ;
+    kno:component kno:KN2014-0029-c1 ;
     kno:component kno:KN2014-0029-c2 ;
+    kno:component kno:KN2014-0029-c3 ;
+    kno:componentString "극(極)-, 혐오(嫌惡), -하다"@ko ;
+    kno:example "¶내가 가장 힘들었을 때, 내가 내 자신을 {극혐오했을} 때 피아노를 다시 칠 수 있게 해 줬고 내 마음을 읽어 줬다."@ko ;
+    kno:formation kno:W02 ;
+    kno:indexForm "극혐오하다"@ko ;
+    kno:instantiates kno:S000018 ;
+    kno:languageType "한+고" ;
     kno:origin "(極嫌惡하다)" ;
     kno:pos "「동」"@ko ;
-    kno:instantiates kno:S000018 ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:component kno:KN2014-0029-c1 ;
-    rdfs:label "극혐오-하다"@ko ;
-    kno:component kno:KN2014-0029-c3 ;
-    a ontolex:Word ;
     kno:registration "우리말샘"@ko ;
-    skos:definition "아주 싫어하고 미워하다."@ko ;
-    kno:example "¶내가 가장 힘들었을 때, 내가 내 자신을 {극혐오했을} 때 피아노를 다시 칠 수 있게 해 줬고 내 마음을 읽어 줬다."@ko .
-kno:KN2014-0029-c2 kno:semanticTag kno:usas-E2m ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "혐오"@ko ;
-    kno:fullForm "혐오"@ko ;
-    kno:formative kno:F002016 ;
-    rdfs:label "혐오(嫌惡)"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer .
-kno:KN2014-0029-c1 kno:surfaceForm "극"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:fullForm "극"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A13.2 ;
-    kno:position "1"^^xsd:integer ;
+    kno:slotFiller "극(極)-+혐오(嫌惡) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1383979" ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0029-c1 a kno:Component ;
     rdfs:label "극(極)-"@ko ;
     kno:formative kno:F000202 ;
-    a kno:Component .
-kno:KN2014-0029-c3 kno:surfaceForm "하다"@ko ;
-    kno:semanticTag kno:usas-Z5 ;
-    kno:fullForm "하다"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
+    kno:fullForm "극"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "극"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0029-c2 a kno:Component ;
+    rdfs:label "혐오(嫌惡)"@ko ;
+    kno:formative kno:F002016 ;
+    kno:fullForm "혐오"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-E2m ;
+    kno:surfaceForm "혐오"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2014-0029-c3 a kno:Component ;
     rdfs:label "-하다"@ko ;
-    a kno:Component ;
+    kno:formative kno:F000019 ;
+    kno:fullForm "하다"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:formative kno:F000019 .
+    kno:semanticTag kno:usas-Z5 ;
+    kno:surfaceForm "하다"@ko ;
+    kno:truncated "false"^^xsd:boolean .

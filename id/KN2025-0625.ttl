@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2025-0625 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2025-0625 kno:component kno:KN2025-0625-c1 ;
-    kno:frequency kno:KN2025-0625-freq-NN-total ;
-    rdfs:label "파면 정식"@ko ;
-    kno:pos "「구」"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%8C%EB%A9%B4%20%EC%A0%95%EC%8B%9D> ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_한" ;
-    kno:frequency kno:KN2025-0625-freq-NN-2025 ;
-    kno:example "(LLM) 선고 생중계를 보면서 친구들이랑 {파면정식}으로 치킨이랑 샐러드를 시켜 놓고 기다렸다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:indexForm "파면정식"@ko ;
-    skos:definition "(LLM) 대통령 탄핵 심판에서 파면 선고가 내려지기를 바라거나, 파면 선고가 난 날을 기념하는 뜻으로 먹는 음식(또는 그 조합)."@ko ;
-    kno:instantiates kno:S001645 ;
-    kno:component kno:KN2025-0625-c2 ;
-    kno:origin "(罷免定食)" ;
-    kno:predicate "먹다"@ko ;
-    kno:slotFiller "정식(定食) (1성분)"@ko ;
-    kno:year "2025"^^xsd:gYear ;
-    kno:componentString "파면(罷免), 정식(定食)"@ko ;
+kno:KN2025-0625 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:unitType "구"@ko ;
+    rdfs:label "파면 정식"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8C%8C%EB%A9%B4%20%EC%A0%95%EC%8B%9D> ;
+    skos:definition "(LLM) 대통령 탄핵 심판에서 파면 선고가 내려지기를 바라거나, 파면 선고가 난 날을 기념하는 뜻으로 먹는 음식(또는 그 조합)."@ko ;
     kno:activeYears "1"^^xsd:integer ;
-    kno:lastAttestationYear "2025"^^xsd:gYear .
-kno:KN2025-0625-c1 rdfs:label "파면(罷免)"@ko ;
+    kno:component kno:KN2025-0625-c1 ;
+    kno:component kno:KN2025-0625-c2 ;
+    kno:componentString "파면(罷免), 정식(定食)"@ko ;
+    kno:example "(LLM) 선고 생중계를 보면서 친구들이랑 {파면정식}으로 치킨이랑 샐러드를 시켜 놓고 기다렸다."@ko ;
+    kno:frequency kno:KN2025-0625-freq-NN-2025 ;
+    kno:frequency kno:KN2025-0625-freq-NN-total ;
+    kno:indexForm "파면정식"@ko ;
+    kno:instantiates kno:S001645 ;
+    kno:languageType "한_한" ;
+    kno:lastAttestationYear "2025"^^xsd:gYear ;
+    kno:origin "(罷免定食)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "먹다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "정식(定食) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2025"^^xsd:gYear .
+kno:KN2025-0625-c1 a kno:Component ;
+    rdfs:label "파면(罷免)"@ko ;
     kno:formative kno:F001933 ;
     kno:fullForm "파면"@ko ;
     kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-S7.1m ;
     kno:surfaceForm "파면"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2025-0625-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "정식"@ko ;
-    a kno:Component ;
-    kno:position "2"^^xsd:integer ;
-    kno:fullForm "정식"@ko ;
-    kno:formative kno:F005677 ;
+kno:KN2025-0625-c2 a kno:Component ;
     rdfs:label "정식(定食)"@ko ;
+    kno:formative kno:F005677 ;
+    kno:fullForm "정식"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-F1 ;
-    kno:role "슬롯 채움"@ko .
+    kno:surfaceForm "정식"@ko ;
+    kno:truncated "false"^^xsd:boolean .

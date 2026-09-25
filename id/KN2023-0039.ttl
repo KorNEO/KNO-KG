@@ -9,54 +9,54 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0039 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0039 kno:activeYears "1"^^xsd:integer ;
-    kno:componentString "근로자(勤勞者), 밥값, 지원법(支援法)"@ko ;
-    kno:lastAttestationYear "2022"^^xsd:gYear ;
-    kno:frequency kno:KN2023-0039-freq-NN-2022 ;
+kno:KN2023-0039 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "근로자^밥값^지원법"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EB%A1%9C%EC%9E%90%EB%B0%A5%EA%B0%92%EC%A7%80%EC%9B%90%EB%B2%95> ;
     skos:definition "직장인의 밥값 부담을 덜어 주기 위한 목적으로 제정한 법. 비과세 식대의 한도를 월 10만 원에서 20만 원으로 올리는 것을 주요 내용으로 한다."@ko ;
-    kno:frequency kno:KN2023-0039-freq-NN-total ;
+    kno:activeYears "1"^^xsd:integer ;
     kno:component kno:KN2023-0039-c1 ;
+    kno:component kno:KN2023-0039-c2 ;
     kno:component kno:KN2023-0039-c3 ;
-    kno:registration "신어DB"@ko ;
+    kno:componentString "근로자(勤勞者), 밥값, 지원법(支援法)"@ko ;
+    kno:example "¶외식 물가의 상승세가 이어지는 상황에서 여야는 직장인들의 점심값 부담을 낮춰 주기 위하여 {근로자 밥값 지원법을} 추진하고 있다."@ko ;
+    kno:frequency kno:KN2023-0039-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0039-freq-NN-total ;
+    kno:indexForm "근로자밥값지원법"@ko ;
     kno:instantiates kno:S000246 ;
     kno:languageType "한^고^한" ;
-    a kno:Neologism ;
+    kno:lastAttestationYear "2022"^^xsd:gYear ;
     kno:origin "(勤勞者밥값支援法)" ;
-    kno:slotFiller "근로자(勤勞者)+밥값 (2성분)"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B7%BC%EB%A1%9C%EC%9E%90%EB%B0%A5%EA%B0%92%EC%A7%80%EC%9B%90%EB%B2%95> ;
-    kno:indexForm "근로자밥값지원법"@ko ;
-    kno:example "¶외식 물가의 상승세가 이어지는 상황에서 여야는 직장인들의 점심값 부담을 낮춰 주기 위하여 {근로자 밥값 지원법을} 추진하고 있다."@ko ;
-    kno:year "2023"^^xsd:gYear ;
     kno:pos "「구」"@ko ;
-    rdfs:label "근로자^밥값^지원법"@ko ;
-    kno:component kno:KN2023-0039-c2 ;
-    a ontolex:MultiwordExpression ;
-    kno:unitType "구"@ko .
-kno:KN2023-0039-c1 kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001100 ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I3.1 ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "근로자(勤勞者)+밥값 (2성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0039-c1 a kno:Component ;
     rdfs:label "근로자(勤勞者)"@ko ;
-    kno:surfaceForm "근로자"@ko ;
+    kno:formative kno:F001100 ;
     kno:fullForm "근로자"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:position "1"^^xsd:integer .
-kno:KN2023-0039-c3 kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G2.1 ;
-    kno:role "고정항"@ko ;
-    kno:fullForm "지원법"@ko ;
-    kno:surfaceForm "지원법"@ko ;
-    kno:formative kno:F000591 ;
-    rdfs:label "지원법(支援法)"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "근로자"@ko ;
     kno:truncated "false"^^xsd:boolean .
-kno:KN2023-0039-c2 kno:surfaceForm "밥값"@ko ;
-    kno:position "2"^^xsd:integer ;
+kno:KN2023-0039-c2 a kno:Component ;
     rdfs:label "밥값"@ko ;
+    kno:formative kno:F003706 ;
     kno:fullForm "밥값"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I1.3 ;
-    kno:semanticTag kno:usas-F1 ;
+    kno:position "2"^^xsd:integer ;
     kno:role "슬롯 채움"@ko ;
-    kno:formative kno:F003706 .
+    kno:semanticTag kno:usas-F1 ;
+    kno:semanticTag kno:usas-I1.3 ;
+    kno:surfaceForm "밥값"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0039-c3 a kno:Component ;
+    rdfs:label "지원법(支援法)"@ko ;
+    kno:formative kno:F000591 ;
+    kno:fullForm "지원법"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G2.1 ;
+    kno:surfaceForm "지원법"@ko ;
+    kno:truncated "false"^^xsd:boolean .

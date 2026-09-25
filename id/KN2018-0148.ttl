@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2018-0148 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2018-0148 skos:definition "자식들에게 부양받는 것을 포기한 사람. 또는 그런 무리."@ko ;
-    kno:example "¶그래서 “우리 5060 베이비 부머 세대가 어쩌면 대한민국 최초의 {부포족이} 될 것이다.” 이런 말까지 나옵니다."@ko ;
-    kno:instantiates kno:S001047 ;
-    kno:unitType "단어"@ko ;
-    kno:lastAttestationYear "2020"^^xsd:gYear ;
+kno:KN2018-0148 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "부포-족"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%ED%8F%AC%EC%A1%B1> ;
+    skos:definition "자식들에게 부양받는 것을 포기한 사람. 또는 그런 무리."@ko ;
+    kno:activeYears "2"^^xsd:integer ;
+    kno:component kno:KN2018-0148-c1 ;
+    kno:component kno:KN2018-0148-c2 ;
+    kno:component kno:KN2018-0148-c3 ;
     kno:componentString "부(양)(扶), 포(기)(抛), -족(族)"@ko ;
+    kno:example "¶그래서 “우리 5060 베이비 부머 세대가 어쩌면 대한민국 최초의 {부포족이} 될 것이다.” 이런 말까지 나옵니다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2018-0148-freq-NN-2018 ;
+    kno:frequency kno:KN2018-0148-freq-NN-2020 ;
+    kno:frequency kno:KN2018-0148-freq-NN-total ;
+    kno:indexForm "부포족"@ko ;
+    kno:instantiates kno:S001047 ;
+    kno:languageType "한+한" ;
+    kno:lastAttestationYear "2020"^^xsd:gYear ;
+    kno:origin "(扶抛族)" ;
     kno:pos "「명」"@ko ;
     kno:registration "신어DB"@ko ;
-    kno:component kno:KN2018-0148-c2 ;
-    kno:frequency kno:KN2018-0148-freq-NN-total ;
-    kno:origin "(扶抛族)" ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%B6%80%ED%8F%AC%EC%A1%B1> ;
-    kno:year "2018"^^xsd:gYear ;
-    kno:activeYears "2"^^xsd:integer ;
     kno:slotFiller "부(양)(扶) (1성분)"@ko ;
-    kno:frequency kno:KN2018-0148-freq-NN-2020 ;
-    kno:formation kno:W02 ;
-    a ontolex:Word ;
-    kno:component kno:KN2018-0148-c3 ;
-    rdfs:label "부포-족"@ko ;
-    a kno:Neologism ;
-    kno:frequency kno:KN2018-0148-freq-NN-2018 ;
-    kno:languageType "한+한" ;
-    kno:component kno:KN2018-0148-c1 ;
-    kno:indexForm "부포족"@ko .
-kno:KN2018-0148-c2 kno:surfaceForm "포"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2018"^^xsd:gYear .
+kno:KN2018-0148-c1 a kno:Component ;
+    rdfs:label "부(양)(扶)"@ko ;
+    kno:formative kno:F003938 ;
+    kno:fullForm "부양"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-S8 ;
+    kno:surfaceForm "부"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0148-c2 a kno:Component ;
+    rdfs:label "포(기)(抛)"@ko ;
+    kno:formative kno:F000320 ;
+    kno:fullForm "포기"@ko ;
+    kno:position "2"^^xsd:integer ;
     kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-X7 ;
-    kno:fullForm "포기"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000320 ;
-    rdfs:label "포(기)(抛)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "2"^^xsd:integer .
-kno:KN2018-0148-c3 rdfs:label "-족(族)"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-S5 ;
-    kno:surfaceForm "족"@ko ;
-    a kno:Component ;
+    kno:surfaceForm "포"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2018-0148-c3 a kno:Component ;
+    rdfs:label "-족(族)"@ko ;
     kno:formative kno:F000001 ;
     kno:fullForm "족"@ko ;
+    kno:position "3"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S2 .
-kno:KN2018-0148-c1 kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "부"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:formative kno:F003938 ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    rdfs:label "부(양)(扶)"@ko ;
-    kno:fullForm "부양"@ko ;
-    kno:semanticTag kno:usas-S8 .
+    kno:semanticTag kno:usas-S2 ;
+    kno:semanticTag kno:usas-S5 ;
+    kno:surfaceForm "족"@ko ;
+    kno:truncated "false"^^xsd:boolean .

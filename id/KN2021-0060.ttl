@@ -9,46 +9,46 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2021-0060 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2021-0060 kno:instantiates kno:S000129 ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EA%B0%80%EB%8D%94> ;
-    kno:slotFiller "노가(다)(←dokata) (1성분)"@ko ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:year "2021"^^xsd:gYear ;
-    kno:pos "「명」"@ko ;
-    kno:frequency kno:KN2021-0060-freq-NN-2024 ;
-    kno:component kno:KN2021-0060-c1 ;
-    kno:registration "신어DB"@ko ;
-    kno:formation kno:W02 ;
-    kno:frequency kno:KN2021-0060-freq-NN-2022 ;
-    kno:componentString "노가(다)(←dokata), -어(←-er)"@ko ;
-    kno:unitType "단어"@ko ;
+kno:KN2021-0060 a ontolex:Word ;
     a kno:Neologism ;
     rdfs:label "노가-더"@ko ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:indexForm "노가더"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%85%B8%EA%B0%80%EB%8D%94> ;
+    skos:definition "막일을 직업으로 하는 사람을 세련되게 이르는 말."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2021-0060-c1 ;
     kno:component kno:KN2021-0060-c2 ;
-    a ontolex:Word ;
-    kno:languageType "일+영" ;
-    kno:frequency kno:KN2021-0060-freq-NN-total ;
-    kno:frequency kno:KN2021-0060-freq-NN-2021 ;
+    kno:componentString "노가(다)(←dokata), -어(←-er)"@ko ;
     kno:example "¶건설 현장에서 일하는 청년들이 촬영한 {노가더} 콘텐츠가 많은 사람들에게 주목받고 있다."@ko ;
+    kno:formation kno:W02 ;
+    kno:frequency kno:KN2021-0060-freq-NN-2021 ;
+    kno:frequency kno:KN2021-0060-freq-NN-2022 ;
+    kno:frequency kno:KN2021-0060-freq-NN-2024 ;
+    kno:frequency kno:KN2021-0060-freq-NN-total ;
+    kno:indexForm "노가더"@ko ;
+    kno:instantiates kno:S000129 ;
+    kno:languageType "일+영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
     kno:origin "(<일>←dokata[土方]<영>←er)" ;
-    skos:definition "막일을 직업으로 하는 사람을 세련되게 이르는 말."@ko .
-kno:KN2021-0060-c1 kno:position "1"^^xsd:integer ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "노가(다)(←dokata) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2021"^^xsd:gYear .
+kno:KN2021-0060-c1 a kno:Component ;
     rdfs:label "노가(다)(←dokata)"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
+    kno:formative kno:F002766 ;
     kno:fullForm "노가다"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-I3.1 ;
     kno:surfaceForm "노가"@ko ;
-    kno:formative kno:F002766 ;
-    kno:role "슬롯 채움"@ko .
-kno:KN2021-0060-c2 kno:surfaceForm "어"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2021-0060-c2 a kno:Component ;
+    rdfs:label "-어(←-er)"@ko ;
+    kno:formative kno:F000182 ;
     kno:fullForm "어"@ko ;
     kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000182 ;
-    rdfs:label "-어(←-er)"@ko ;
     kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-S2 .
+    kno:semanticTag kno:usas-S2 ;
+    kno:surfaceForm "어"@ko ;
+    kno:truncated "false"^^xsd:boolean .

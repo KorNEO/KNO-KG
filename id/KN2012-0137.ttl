@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0137 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0137 kno:urimalTargetCode "1356938" ;
-    kno:component kno:KN2012-0137-c2 ;
-    rdfs:label "미-팝"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:formation kno:W01 ;
-    kno:example "¶OOO는 OO를 통해 {미팝} 아티스트들의 아시아 시장 진출과 내한 공연을 추진하고 케이팝 신인을 개발해 미팝 시장으로 진출시키는 작업을 진행할 계획이다."@ko ;
+kno:KN2012-0137 a ontolex:Word ;
     a kno:Neologism ;
+    rdfs:label "미-팝"@ko ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356938> ;
     skos:definition "미국의 대중가요. 일반 대중들이 즐겨 부르는 통속적인 성격의 미국 음악을 이르는 말이다."@ko ;
     kno:activeYears "0"^^xsd:integer ;
-    kno:year "2012"^^xsd:gYear ;
+    kno:component kno:KN2012-0137-c1 ;
+    kno:component kno:KN2012-0137-c2 ;
+    kno:componentString "미(美), 팝(pop)"@ko ;
+    kno:example "¶OOO는 OO를 통해 {미팝} 아티스트들의 아시아 시장 진출과 내한 공연을 추진하고 케이팝 신인을 개발해 미팝 시장으로 진출시키는 작업을 진행할 계획이다."@ko ;
+    kno:formation kno:W01 ;
+    kno:indexForm "미팝"@ko ;
+    kno:languageType "한+영" ;
     kno:origin "(美pop)" ;
-    a ontolex:Word ;
     kno:pos "「명」"@ko ;
     kno:registration "우리말샘"@ko ;
-    kno:indexForm "미팝"@ko ;
-    kno:component kno:KN2012-0137-c1 ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1356938> ;
-    kno:componentString "미(美), 팝(pop)"@ko ;
-    kno:languageType "한+영" .
-kno:KN2012-0137-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "팝"@ko ;
-    kno:formative kno:F000317 ;
-    kno:surfaceForm "팝"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:semanticTag kno:usas-K2 ;
-    rdfs:label "팝(pop)"@ko ;
-    kno:role "성분"@ko ;
-    a kno:Component .
+    kno:unitType "단어"@ko ;
+    kno:urimalTargetCode "1356938" ;
+    kno:year "2012"^^xsd:gYear .
 kno:KN2012-0137-c1 a kno:Component ;
-    kno:truncated "false"^^xsd:boolean ;
     rdfs:label "미(美)"@ko ;
     kno:formative kno:F000112 ;
     kno:fullForm "미"@ko ;
-    kno:surfaceForm "미"@ko ;
     kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-O4.2p .
+    kno:semanticTag kno:usas-O4.2p ;
+    kno:surfaceForm "미"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0137-c2 a kno:Component ;
+    rdfs:label "팝(pop)"@ko ;
+    kno:formative kno:F000317 ;
+    kno:fullForm "팝"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-K2 ;
+    kno:surfaceForm "팝"@ko ;
+    kno:truncated "false"^^xsd:boolean .

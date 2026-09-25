@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2012-0344 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2012-0344 kno:lastAttestationYear "2012"^^xsd:gYear ;
-    kno:origin "(育兒專擔mom)" ;
-    kno:instantiates kno:S000081 ;
-    kno:year "2012"^^xsd:gYear ;
-    kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:languageType "한_(한+영)" ;
-    kno:example "¶워킹맘들을 지원하는 대책보다 {육아 전담맘들을} 지원해 주어야 출산율이 상승할 것이라는 전망이었다."@ko ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:component kno:KN2012-0344-c2 ;
-    kno:frequency kno:KN2012-0344-freq-NN-2012 ;
+kno:KN2012-0344 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
+    rdfs:label "육아 전담맘"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%9C%A1%EC%95%84%20%EC%A0%84%EB%8B%B4%EB%A7%98> ;
-    kno:slotFiller "전담(專擔)+맘(mom) (2성분)"@ko ;
-    kno:component kno:KN2012-0344-c1 ;
     skos:definition "육아를 전적으로 하는 엄마."@ko ;
-    kno:slotFiller "육아(育兒)+전담(專擔) (2성분)"@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2012-0344-c1 ;
+    kno:component kno:KN2012-0344-c2 ;
+    kno:component kno:KN2012-0344-c3 ;
+    kno:componentString "육아(育兒), 전담(專擔), 맘(mom)"@ko ;
+    kno:example "¶워킹맘들을 지원하는 대책보다 {육아 전담맘들을} 지원해 주어야 출산율이 상승할 것이라는 전망이었다."@ko ;
+    kno:frequency kno:KN2012-0344-freq-NN-2012 ;
     kno:frequency kno:KN2012-0344-freq-NN-total ;
     kno:indexForm "육아전담맘"@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2012-0344-c3 ;
+    kno:instantiates kno:S000081 ;
+    kno:instantiates kno:S000234 ;
+    kno:languageType "한_(한+영)" ;
+    kno:lastAttestationYear "2012"^^xsd:gYear ;
+    kno:origin "(育兒專擔mom)" ;
+    kno:pos "「구」"@ko ;
     kno:predicate "하다"@ko ;
-    rdfs:label "육아 전담맘"@ko ;
-    a kno:Neologism ;
-    kno:componentString "육아(育兒), 전담(專擔), 맘(mom)"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "육아(育兒)+전담(專擔) (2성분)"@ko ;
+    kno:slotFiller "전담(專擔)+맘(mom) (2성분)"@ko ;
     kno:unitType "구"@ko ;
-    kno:instantiates kno:S000234 .
-kno:KN2012-0344-c2 kno:fullForm "전담"@ko ;
-    kno:semanticTag kno:usas-I3.1 ;
-    rdfs:label "전담(專擔)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:surfaceForm "전담"@ko ;
-    a kno:Component ;
-    kno:formative kno:F000301 ;
-    kno:position "2"^^xsd:integer .
-kno:KN2012-0344-c1 kno:role "고정항"@ko ;
-    kno:fullForm "육아"@ko ;
-    kno:surfaceForm "육아"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:year "2012"^^xsd:gYear .
+kno:KN2012-0344-c1 a kno:Component ;
     rdfs:label "육아(育兒)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
-    kno:position "1"^^xsd:integer ;
     kno:formative kno:F000118 ;
-    a kno:Component .
-kno:KN2012-0344-c3 kno:surfaceForm "맘"@ko ;
-    rdfs:label "맘(mom)"@ko ;
-    kno:semanticTag kno:usas-S4 ;
+    kno:fullForm "육아"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "고정항"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "육아"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0344-c2 a kno:Component ;
+    rdfs:label "전담(專擔)"@ko ;
+    kno:formative kno:F000301 ;
+    kno:fullForm "전담"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "전담"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2012-0344-c3 a kno:Component ;
+    rdfs:label "맘(mom)"@ko ;
     kno:formative kno:F000021 ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:fullForm "맘"@ko ;
-    kno:position "3"^^xsd:integer .
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-S4 ;
+    kno:surfaceForm "맘"@ko ;
+    kno:truncated "false"^^xsd:boolean .

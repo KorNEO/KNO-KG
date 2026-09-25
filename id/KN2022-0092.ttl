@@ -9,58 +9,58 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2022-0092 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2022-0092 kno:example "¶{너또다?} 이번엔 얼마나 가는지 보자."@ko ;
+kno:KN2022-0092 a ontolex:Word ;
+    a kno:Neologism ;
+    rdfs:label "너또다"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%88%EB%98%90%EB%8B%A4> ;
+    skos:definition "‘너 또 다이어트하니?’를 줄여 이르는 말."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2022-0092-c1 ;
+    kno:component kno:KN2022-0092-c2 ;
+    kno:component kno:KN2022-0092-c3 ;
+    kno:componentString "너, 또, 다(이어트)(diet)"@ko ;
+    kno:example "¶{너또다?} 이번엔 얼마나 가는지 보자."@ko ;
     kno:formation kno:W06 ;
     kno:frequency kno:KN2022-0092-freq-NN-2021 ;
-    kno:component kno:KN2022-0092-c1 ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:componentString "너, 또, 다(이어트)(diet)"@ko ;
-    kno:component kno:KN2022-0092-c2 ;
-    kno:frequency kno:KN2022-0092-freq-NN-total ;
-    kno:year "2022"^^xsd:gYear ;
-    kno:slotFiller "또+다(이어트)(diet) (2성분)"@ko ;
-    kno:pos "「명」"@ko ;
-    kno:origin "(너또<영>←diet)" ;
-    kno:instantiates kno:S000763 ;
-    kno:languageType "고+고+영" ;
-    kno:unitType "단어"@ko ;
-    kno:instantiates kno:S001205 ;
-    kno:slotFiller "너+또 (2성분)"@ko ;
-    kno:frequency kno:KN2022-0092-freq-NN-2025 ;
     kno:frequency kno:KN2022-0092-freq-NN-2022 ;
-    kno:registration "신어DB"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EB%84%88%EB%98%90%EB%8B%A4> ;
-    kno:component kno:KN2022-0092-c3 ;
-    rdfs:label "너또다"@ko ;
-    a ontolex:Word ;
-    a kno:Neologism ;
+    kno:frequency kno:KN2022-0092-freq-NN-2025 ;
+    kno:frequency kno:KN2022-0092-freq-NN-total ;
     kno:indexForm "너또다"@ko ;
+    kno:instantiates kno:S000763 ;
+    kno:instantiates kno:S001205 ;
+    kno:languageType "고+고+영" ;
     kno:lastAttestationYear "2025"^^xsd:gYear ;
-    skos:definition "‘너 또 다이어트하니?’를 줄여 이르는 말."@ko .
-kno:KN2022-0092-c1 kno:role "고정항"@ko ;
-    kno:semanticTag kno:usas-Z8 ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:origin "(너또<영>←diet)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "너+또 (2성분)"@ko ;
+    kno:slotFiller "또+다(이어트)(diet) (2성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2022"^^xsd:gYear .
+kno:KN2022-0092-c1 a kno:Component ;
     rdfs:label "너"@ko ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "너"@ko ;
     kno:formative kno:F000476 ;
-    a kno:Component ;
-    kno:fullForm "너"@ko .
-kno:KN2022-0092-c2 kno:formative kno:F000208 ;
-    kno:role "슬롯 채움"@ko ;
-    kno:surfaceForm "또"@ko ;
-    kno:position "2"^^xsd:integer ;
+    kno:fullForm "너"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-Z8 ;
+    kno:surfaceForm "너"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2022-0092-c2 a kno:Component ;
+    rdfs:label "또"@ko ;
+    kno:formative kno:F000208 ;
     kno:fullForm "또"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    a kno:Component ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
     kno:semanticTag kno:usas-N6 ;
-    rdfs:label "또"@ko .
+    kno:surfaceForm "또"@ko ;
+    kno:truncated "false"^^xsd:boolean .
 kno:KN2022-0092-c3 a kno:Component ;
     rdfs:label "다(이어트)(diet)"@ko ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:fullForm "다이어트"@ko ;
     kno:formative kno:F000698 ;
-    kno:surfaceForm "다"@ko ;
+    kno:fullForm "다이어트"@ko ;
     kno:position "3"^^xsd:integer ;
-    kno:semanticTag kno:usas-B2 .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-B2 ;
+    kno:surfaceForm "다"@ko ;
+    kno:truncated "true"^^xsd:boolean .

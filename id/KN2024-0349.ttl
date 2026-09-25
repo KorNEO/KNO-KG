@@ -9,44 +9,44 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2024-0349 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2024-0349 rdfs:label "편법 휴진"@ko ;
-    kno:indexForm "편법휴진"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EB%B2%95%20%ED%9C%B4%EC%A7%84> ;
-    kno:activeYears "1"^^xsd:integer ;
-    kno:year "2024"^^xsd:gYear ;
-    skos:definition "개원의가 휴진 신고를 하지 않은 채로 자리를 비워 진료를 하지 않거나 오전에 소수의 환자만을 진료하는 행위. 윤석열 정부의 의대 정원 증원에 반대하며 일어난 시위의 하나이다."@ko ;
-    kno:frequency kno:KN2024-0349-freq-NN-2024 ;
+kno:KN2024-0349 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:languageType "한_한" ;
-    kno:registration "신어DB"@ko ;
-    kno:slotFiller "휴진(休診) (1성분)"@ko ;
-    kno:pos "「구」"@ko ;
-    kno:origin "(便法休診)" ;
-    a ontolex:MultiwordExpression ;
-    kno:frequency kno:KN2024-0349-freq-NN-total ;
-    kno:predicate "진료하다"@ko ;
+    rdfs:label "편법 휴진"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%ED%8E%B8%EB%B2%95%20%ED%9C%B4%EC%A7%84> ;
+    skos:definition "개원의가 휴진 신고를 하지 않은 채로 자리를 비워 진료를 하지 않거나 오전에 소수의 환자만을 진료하는 행위. 윤석열 정부의 의대 정원 증원에 반대하며 일어난 시위의 하나이다."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2024-0349-c1 ;
     kno:component kno:KN2024-0349-c2 ;
-    kno:instantiates kno:S001651 ;
     kno:componentString "편법(便法), 휴진(休診)"@ko ;
     kno:example "¶대통령 역시 {편법 휴진에} 엄정하게 대응할 것을 주문하는 등 강경한 대응 방침을 밝혔다."@ko ;
-    kno:component kno:KN2024-0349-c1 ;
+    kno:frequency kno:KN2024-0349-freq-NN-2024 ;
+    kno:frequency kno:KN2024-0349-freq-NN-total ;
+    kno:indexForm "편법휴진"@ko ;
+    kno:instantiates kno:S001651 ;
+    kno:languageType "한_한" ;
     kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:unitType "구"@ko .
-kno:KN2024-0349-c2 kno:truncated "false"^^xsd:boolean ;
-    kno:fullForm "휴진"@ko ;
-    kno:surfaceForm "휴진"@ko ;
-    rdfs:label "휴진(休診)"@ko ;
-    kno:role "슬롯 채움"@ko ;
-    kno:position "2"^^xsd:integer ;
-    kno:formative kno:F007214 ;
-    kno:semanticTag kno:usas-B3 ;
-    a kno:Component .
-kno:KN2024-0349-c1 kno:surfaceForm "편법"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:formative kno:F001957 ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-X4.2 ;
+    kno:origin "(便法休診)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "진료하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "휴진(休診) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2024"^^xsd:gYear .
+kno:KN2024-0349-c1 a kno:Component ;
     rdfs:label "편법(便法)"@ko ;
-    a kno:Component ;
+    kno:formative kno:F001957 ;
     kno:fullForm "편법"@ko ;
-    kno:role "고정항"@ko .
+    kno:position "1"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-X4.2 ;
+    kno:surfaceForm "편법"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2024-0349-c2 a kno:Component ;
+    rdfs:label "휴진(休診)"@ko ;
+    kno:formative kno:F007214 ;
+    kno:fullForm "휴진"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-B3 ;
+    kno:surfaceForm "휴진"@ko ;
+    kno:truncated "false"^^xsd:boolean .

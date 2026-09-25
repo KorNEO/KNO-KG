@@ -9,56 +9,56 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0250 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0250 skos:definition "‘정부의 권한을 완전히 박탈함’을 줄여 이르는 말."@ko ;
+kno:KN2023-0250 a ontolex:Word ;
     a kno:Neologism ;
-    kno:activeYears "3"^^xsd:integer ;
-    kno:slotFiller "정부(政府) (1성분)"@ko ;
-    kno:frequency kno:KN2023-0250-freq-NN-2022 ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EB%B6%80%EC%99%84%EB%B0%95> ;
-    kno:formation kno:W06 ;
-    kno:unitType "단어"@ko ;
-    kno:frequency kno:KN2023-0250-freq-NN-total ;
-    kno:pos "「명」"@ko ;
-    kno:example "¶여당과 야당 간에 의견이 팽팽히 맞서고 있는 법안에 대한 발의가 예고되자, O 씨는 해당 법안을 {정부완박이라며} 비난하였다."@ko ;
-    kno:registration "신어DB"@ko ;
-    kno:component kno:KN2023-0250-c1 ;
-    kno:languageType "한+한+한+한" ;
-    kno:component kno:KN2023-0250-c3 ;
     rdfs:label "정부완박"@ko ;
-    kno:frequency kno:KN2023-0250-freq-NN-2024 ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A0%95%EB%B6%80%EC%99%84%EB%B0%95> ;
+    skos:definition "‘정부의 권한을 완전히 박탈함’을 줄여 이르는 말."@ko ;
+    kno:activeYears "3"^^xsd:integer ;
+    kno:component kno:KN2023-0250-c1 ;
     kno:component kno:KN2023-0250-c2 ;
-    kno:origin "(政府完剝)" ;
-    kno:frequency kno:KN2023-0250-freq-NN-2023 ;
+    kno:component kno:KN2023-0250-c3 ;
     kno:componentString "정부(政府), 완(전)(完全), 박(탈)(剝奪)"@ko ;
+    kno:example "¶여당과 야당 간에 의견이 팽팽히 맞서고 있는 법안에 대한 발의가 예고되자, O 씨는 해당 법안을 {정부완박이라며} 비난하였다."@ko ;
+    kno:formation kno:W06 ;
+    kno:frequency kno:KN2023-0250-freq-NN-2022 ;
+    kno:frequency kno:KN2023-0250-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0250-freq-NN-2024 ;
+    kno:frequency kno:KN2023-0250-freq-NN-total ;
     kno:indexForm "정부완박"@ko ;
     kno:instantiates kno:S000049 ;
-    kno:year "2023"^^xsd:gYear ;
-    a ontolex:Word .
+    kno:languageType "한+한+한+한" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(政府完剝)" ;
+    kno:pos "「명」"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:slotFiller "정부(政府) (1성분)"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2023"^^xsd:gYear .
 kno:KN2023-0250-c1 a kno:Component ;
+    rdfs:label "정부(政府)"@ko ;
     kno:formative kno:F000584 ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G1.1 ;
-    kno:role "슬롯 채움"@ko ;
     kno:fullForm "정부"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-G1.1 ;
     kno:surfaceForm "정부"@ko ;
-    rdfs:label "정부(政府)"@ko .
-kno:KN2023-0250-c3 kno:fullForm "박탈"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0250-c2 a kno:Component ;
+    rdfs:label "완(전)(完全)"@ko ;
+    kno:formative kno:F000031 ;
+    kno:fullForm "완전"@ko ;
+    kno:position "2"^^xsd:integer ;
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-A13.2 ;
+    kno:surfaceForm "완"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2023-0250-c3 a kno:Component ;
     rdfs:label "박(탈)(剝奪)"@ko ;
+    kno:formative kno:F000040 ;
+    kno:fullForm "박탈"@ko ;
+    kno:position "3"^^xsd:integer ;
+    kno:role "고정항"@ko ;
     kno:semanticTag kno:usas-A9 ;
     kno:surfaceForm "박"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:position "3"^^xsd:integer ;
-    a kno:Component ;
-    kno:formative kno:F000040 ;
-    kno:role "고정항"@ko .
-kno:KN2023-0250-c2 kno:position "2"^^xsd:integer ;
-    kno:formative kno:F000031 ;
-    rdfs:label "완(전)(完全)"@ko ;
-    kno:surfaceForm "완"@ko ;
-    a kno:Component ;
-    kno:role "고정항"@ko ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:semanticTag kno:usas-A13.2 ;
-    kno:fullForm "완전"@ko .
+    kno:truncated "true"^^xsd:boolean .

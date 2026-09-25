@@ -9,48 +9,48 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2019-0114 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2019-0114 a kno:Neologism ;
-    kno:frequency kno:KN2019-0114-freq-NN-total ;
-    kno:unitType "구"@ko ;
-    kno:registration "우리말샘"@ko ;
-    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1424563> ;
-    kno:lastAttestationYear "2024"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0114-freq-NN-2020 ;
-    kno:slotFiller "(아르)바이토(Arubaito) (1성분)"@ko ;
-    kno:frequency kno:KN2019-0114-freq-NN-2019 ;
-    kno:pos "「구」"@ko ;
+kno:KN2019-0114 a ontolex:MultiwordExpression ;
+    a kno:Neologism ;
     rdfs:label "바이토 테러"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:component kno:KN2019-0114-c2 ;
-    kno:origin "(<일>←Arubaito<영>terror)" ;
+    rdfs:seeAlso <http://opendict.korean.go.kr/dictionary/view?sense_no=1424563> ;
+    skos:definition "아르바이트 직원이 자신이 근무하는 매장이나 회사에 해를 입히는 행위. 주로 매장에서 판매하는 음식이나 물건 따위로 장난하는 영상을 누리 소통망에 올려서, 매장 또는 회사가 비난을 받게 되는 경우가 많아지면서 생겨난 말이다. ‘바이토’는 ‘아르바이트’의 일본식 줄임 말이다. ⇒규범 표기는 미확정이다."@ko ;
     kno:activeYears "4"^^xsd:integer ;
-    kno:predicate "입히다"@ko ;
-    kno:frequency kno:KN2019-0114-freq-NN-2021 ;
-    kno:year "2019"^^xsd:gYear ;
-    kno:frequency kno:KN2019-0114-freq-NN-2024 ;
-    kno:example "¶유명 초밥 체인점 OO, 편의점 OO도 {바이토 테러를} 당했다."@ko ;
-    kno:urimalTargetCode "1424563" ;
     kno:component kno:KN2019-0114-c1 ;
-    kno:languageType "일_영" ;
-    kno:indexForm "바이토테러"@ko ;
+    kno:component kno:KN2019-0114-c2 ;
     kno:componentString "(아르)바이토(Arubaito), 테러(terror)"@ko ;
+    kno:example "¶유명 초밥 체인점 OO, 편의점 OO도 {바이토 테러를} 당했다."@ko ;
+    kno:frequency kno:KN2019-0114-freq-NN-2019 ;
+    kno:frequency kno:KN2019-0114-freq-NN-2020 ;
+    kno:frequency kno:KN2019-0114-freq-NN-2021 ;
+    kno:frequency kno:KN2019-0114-freq-NN-2024 ;
+    kno:frequency kno:KN2019-0114-freq-NN-total ;
+    kno:indexForm "바이토테러"@ko ;
     kno:instantiates kno:S000251 ;
-    skos:definition "아르바이트 직원이 자신이 근무하는 매장이나 회사에 해를 입히는 행위. 주로 매장에서 판매하는 음식이나 물건 따위로 장난하는 영상을 누리 소통망에 올려서, 매장 또는 회사가 비난을 받게 되는 경우가 많아지면서 생겨난 말이다. ‘바이토’는 ‘아르바이트’의 일본식 줄임 말이다. ⇒규범 표기는 미확정이다."@ko .
-kno:KN2019-0114-c2 kno:role "고정항"@ko ;
-    kno:surfaceForm "테러"@ko ;
+    kno:languageType "일_영" ;
+    kno:lastAttestationYear "2024"^^xsd:gYear ;
+    kno:origin "(<일>←Arubaito<영>terror)" ;
+    kno:pos "「구」"@ko ;
+    kno:predicate "입히다"@ko ;
+    kno:registration "우리말샘"@ko ;
+    kno:slotFiller "(아르)바이토(Arubaito) (1성분)"@ko ;
+    kno:unitType "구"@ko ;
+    kno:urimalTargetCode "1424563" ;
+    kno:year "2019"^^xsd:gYear .
+kno:KN2019-0114-c1 a kno:Component ;
+    rdfs:label "(아르)바이토(Arubaito)"@ko ;
+    kno:formative kno:F003658 ;
+    kno:fullForm "아르바이토"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "슬롯 채움"@ko ;
+    kno:semanticTag kno:usas-I3.1 ;
+    kno:surfaceForm "바이토"@ko ;
+    kno:truncated "true"^^xsd:boolean .
+kno:KN2019-0114-c2 a kno:Component ;
+    rdfs:label "테러(terror)"@ko ;
     kno:formative kno:F000422 ;
     kno:fullForm "테러"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "테러(terror)"@ko ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-G3m .
-kno:KN2019-0114-c1 kno:position "1"^^xsd:integer ;
-    kno:truncated "true"^^xsd:boolean ;
-    a kno:Component ;
-    kno:semanticTag kno:usas-I3.1 ;
-    kno:role "슬롯 채움"@ko ;
-    rdfs:label "(아르)바이토(Arubaito)"@ko ;
-    kno:surfaceForm "바이토"@ko ;
-    kno:fullForm "아르바이토"@ko ;
-    kno:formative kno:F003658 .
+    kno:role "고정항"@ko ;
+    kno:semanticTag kno:usas-G3m ;
+    kno:surfaceForm "테러"@ko ;
+    kno:truncated "false"^^xsd:boolean .

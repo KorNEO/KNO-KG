@@ -9,42 +9,42 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2023-0035 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2023-0035 kno:registration "신어DB"@ko ;
-    kno:origin "(軍卒敎科書)" ;
-    rdfs:label "군졸^교과서"@ko ;
-    kno:componentString "군졸(軍卒), 교과서(敎科書)"@ko ;
-    kno:languageType "한^한" ;
-    skos:definition "군국기무처의 의결을 거쳐서 군졸들에게 보급된 우리나라 최초의 순 한글 교과서."@ko ;
-    kno:unitType "구"@ko ;
-    kno:component kno:KN2023-0035-c1 ;
-    kno:frequency kno:KN2023-0035-freq-NN-total ;
-    kno:frequency kno:KN2023-0035-freq-NN-2023 ;
-    kno:indexForm "군졸교과서"@ko ;
-    kno:year "2023"^^xsd:gYear ;
+kno:KN2023-0035 a ontolex:MultiwordExpression ;
     a kno:Neologism ;
-    kno:component kno:KN2023-0035-c2 ;
-    kno:lastAttestationYear "2023"^^xsd:gYear ;
-    kno:activeYears "1"^^xsd:integer ;
+    rdfs:label "군졸^교과서"@ko ;
     rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EA%B5%B0%EC%A1%B8%EA%B5%90%EA%B3%BC%EC%84%9C> ;
+    skos:definition "군국기무처의 의결을 거쳐서 군졸들에게 보급된 우리나라 최초의 순 한글 교과서."@ko ;
+    kno:activeYears "1"^^xsd:integer ;
+    kno:component kno:KN2023-0035-c1 ;
+    kno:component kno:KN2023-0035-c2 ;
+    kno:componentString "군졸(軍卒), 교과서(敎科書)"@ko ;
+    kno:example "¶이번에 공개된 {군졸 교과서는} 군졸을 대상으로 예절과 충절의 도리를 설파한 내용을 담고 있다."@ko ;
+    kno:frequency kno:KN2023-0035-freq-NN-2023 ;
+    kno:frequency kno:KN2023-0035-freq-NN-total ;
+    kno:indexForm "군졸교과서"@ko ;
+    kno:languageType "한^한" ;
+    kno:lastAttestationYear "2023"^^xsd:gYear ;
+    kno:origin "(軍卒敎科書)" ;
     kno:pos "「구」"@ko ;
-    a ontolex:MultiwordExpression ;
-    kno:example "¶이번에 공개된 {군졸 교과서는} 군졸을 대상으로 예절과 충절의 도리를 설파한 내용을 담고 있다."@ko .
-kno:KN2023-0035-c1 kno:fullForm "군졸"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
-    kno:position "1"^^xsd:integer ;
-    kno:semanticTag kno:usas-G3 ;
-    kno:formative kno:F002489 ;
-    kno:surfaceForm "군졸"@ko ;
-    kno:role "성분"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "구"@ko ;
+    kno:year "2023"^^xsd:gYear .
+kno:KN2023-0035-c1 a kno:Component ;
     rdfs:label "군졸(軍卒)"@ko ;
-    a kno:Component .
-kno:KN2023-0035-c2 kno:formative kno:F002429 ;
-    kno:fullForm "교과서"@ko ;
-    kno:truncated "false"^^xsd:boolean ;
+    kno:formative kno:F002489 ;
+    kno:fullForm "군졸"@ko ;
+    kno:position "1"^^xsd:integer ;
     kno:role "성분"@ko ;
-    kno:semanticTag kno:usas-Q4.1 ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:surfaceForm "교과서"@ko ;
-    a kno:Component ;
+    kno:semanticTag kno:usas-G3 ;
+    kno:surfaceForm "군졸"@ko ;
+    kno:truncated "false"^^xsd:boolean .
+kno:KN2023-0035-c2 a kno:Component ;
+    rdfs:label "교과서(敎科書)"@ko ;
+    kno:formative kno:F002429 ;
+    kno:fullForm "교과서"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "교과서(敎科書)"@ko .
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:semanticTag kno:usas-Q4.1 ;
+    kno:surfaceForm "교과서"@ko ;
+    kno:truncated "false"^^xsd:boolean .

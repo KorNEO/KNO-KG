@@ -9,40 +9,40 @@
 @prefix frac: <http://www.w3.org/ns/lemon/frac#> .
 # KN2014-0236 — 한국어 신어 지식 그래프 (kno-components.ttl 발췌)
 
-kno:KN2014-0236 kno:languageType "한+영" ;
-    kno:pos "「명」"@ko ;
-    kno:unitType "단어"@ko ;
-    kno:year "2014"^^xsd:gYear ;
-    kno:predicate "하다"@ko ;
-    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A2%85%ED%8C%8C> ;
-    rdfs:label "종파"@ko ;
-    kno:origin "(終<영>←party)" ;
-    kno:activeYears "0"^^xsd:integer ;
-    kno:registration "신어DB"@ko ;
+kno:KN2014-0236 a ontolex:Word ;
     a kno:Neologism ;
-    kno:example "¶캠퍼스에는 개파나 {종파}, 전필(전공필수), 전선(전공선택), 긱사(기숙사) 등이 널리 사용되고 있다."@ko ;
+    rdfs:label "종파"@ko ;
+    rdfs:seeAlso <https://opendict.korean.go.kr/search/searchResult?focus_name_top=query&query=%EC%A2%85%ED%8C%8C> ;
+    skos:definition "강의나 강습 따위를 마칠 때 하는 파티. =종강파티(終講<영>party)."@ko ;
+    kno:activeYears "0"^^xsd:integer ;
+    kno:component kno:KN2014-0236-c1 ;
     kno:component kno:KN2014-0236-c2 ;
     kno:componentString "종(강)(終), 파(티)(party)"@ko ;
-    skos:definition "강의나 강습 따위를 마칠 때 하는 파티. =종강파티(終講<영>party)."@ko ;
+    kno:example "¶캠퍼스에는 개파나 {종파}, 전필(전공필수), 전선(전공선택), 긱사(기숙사) 등이 널리 사용되고 있다."@ko ;
     kno:formation kno:W06 ;
     kno:indexForm "종파"@ko ;
-    kno:component kno:KN2014-0236-c1 ;
-    a ontolex:Word .
+    kno:languageType "한+영" ;
+    kno:origin "(終<영>←party)" ;
+    kno:pos "「명」"@ko ;
+    kno:predicate "하다"@ko ;
+    kno:registration "신어DB"@ko ;
+    kno:unitType "단어"@ko ;
+    kno:year "2014"^^xsd:gYear .
+kno:KN2014-0236-c1 a kno:Component ;
+    rdfs:label "종(강)(終)"@ko ;
+    kno:formative kno:F005765 ;
+    kno:fullForm "종강"@ko ;
+    kno:position "1"^^xsd:integer ;
+    kno:role "성분"@ko ;
+    kno:semanticTag kno:usas-P1 ;
+    kno:surfaceForm "종"@ko ;
+    kno:truncated "true"^^xsd:boolean .
 kno:KN2014-0236-c2 a kno:Component ;
+    rdfs:label "파(티)(party)"@ko ;
     kno:formative kno:F000624 ;
     kno:fullForm "파티"@ko ;
-    kno:semanticTag kno:usas-K1 ;
-    kno:truncated "true"^^xsd:boolean ;
-    kno:role "성분"@ko ;
-    kno:surfaceForm "파"@ko ;
     kno:position "2"^^xsd:integer ;
-    rdfs:label "파(티)(party)"@ko .
-kno:KN2014-0236-c1 kno:truncated "true"^^xsd:boolean ;
     kno:role "성분"@ko ;
-    a kno:Component ;
-    kno:formative kno:F005765 ;
-    rdfs:label "종(강)(終)"@ko ;
-    kno:fullForm "종강"@ko ;
-    kno:semanticTag kno:usas-P1 ;
-    kno:position "1"^^xsd:integer ;
-    kno:surfaceForm "종"@ko .
+    kno:semanticTag kno:usas-K1 ;
+    kno:surfaceForm "파"@ko ;
+    kno:truncated "true"^^xsd:boolean .
