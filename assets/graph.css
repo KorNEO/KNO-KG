@@ -264,3 +264,20 @@ a.graph-tab { text-decoration: none; display: inline-flex; align-items: center; 
 
 /* 터치 화면에는 툴팁 대신 정보 패널 (2026-09-25) */
 @media (hover: none) { #tooltip { display: none !important; } }
+
+/* USAS · 변항 X: 평소엔 제목 줄만, 마우스를 올리면(터치는 누르면) 펼침 (2026-09-25) */
+#info-panel .u-hover { cursor: pointer; }
+#info-panel .u-hover .u-h { margin-bottom: 0; }
+#info-panel .u-hover .u-more { color: #94a3b8; }
+#info-panel .u-hover .u-more i { font-style: normal; }
+#info-panel .u-hover .u-hint-t { display: none; }
+#info-panel .u-hover .u-body { display: none; margin-top: 0.25rem; }
+#info-panel .u-hover:hover .u-body, #info-panel .u-hover:focus-within .u-body, #info-panel .u-hover.open .u-body { display: block; }
+#info-panel .u-hover:hover .u-more i, #info-panel .u-hover.open .u-more i { display: none; }
+#info-panel .u-hover:hover { border-color: #cbd5e1; }
+@media (hover: none) {
+  #info-panel .u-hover .u-hint-h { display: none; }
+  #info-panel .u-hover .u-hint-t { display: inline; }
+  #info-panel .u-hover:hover .u-body, #info-panel .u-hover:focus-within .u-body { display: none; }
+  #info-panel .u-hover.open .u-body { display: block; }
+}

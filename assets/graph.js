@@ -52,8 +52,11 @@
     return '<div class="u-row"><code>' + esc(base) + (pol ? '<b>' + esc(pol) + '</b>' : '') + '</code><span class="u-en">' + esc(en) + '</span>' + mid +
       '<span class="u-maj">' + esc(mj.ko || mj.en || base.charAt(0)) + '</span>' + (extra || '') + '</div>';
   }
-  function usasCard(title, rows) {
-    return '<div class="u-card"><div class="u-h">' + title + '</div>' + (rows.length ? rows.join('') : '<div class="u-none">태그 없음</div>') + '</div>';
+  // hover=true: 제목 줄만 보이고, 마우스를 올리면(터치는 누르면) 펼쳐진다
+  function usasCard(title, rows, hover) {
+    var body = rows.length ? rows.join('') : '<div class="u-none">태그 없음</div>';
+    if (hover && rows.length) return '<div class="u-card u-hover" tabindex="0"><div class="u-h">' + title + ' <span class="u-more">· ' + rows.length + '개<i class="u-hint-h"> · 마우스를 올리면 보임</i><i class="u-hint-t"> · 눌러서 보기</i></span></div><div class="u-body">' + body + '</div></div>';
+    return '<div class="u-card"><div class="u-h">' + title + '</div>' + body + '</div>';
   }
 
   // ── 상태 ────────────────────────────────────────────────────────────────
@@ -656,16 +659,15 @@
           + statCard(n.H != null ? n.H.toFixed(2) : '–', 'bit', '엔트로피')
           + statCard(n.Hn != null ? n.Hn.toFixed(2) : '–', '', '정규화 엔트로피')
           + (n.regr != null ? statCard(Math.round(n.regr * 100), '%', '우리말샘 등재율') : '')
-          + (n.t3 ? statCard(n.t3.replace('-', '.') + '.', '', '타입 빈도 3 도달 · 첫 사례 후 ' + n.m3 + '개월') : '')
           + '</div>';
-        html += '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 약 250억 어절) 기준</div>' + (n.Hn != null ? '<div class="ip-note">* 정규화 H(정규화 엔트로피): 스키마 사례들에 토큰이 얼마나 고르게 퍼져 있는지. 0에 가까울수록 한두 사례에 토큰이 몰려 있고, 1에 가까울수록 여러 사례에 고르게 퍼져 있다.</div>' : '');
+        html += '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 약 250억 어절) 기준</div>' + (n.Hn != null ? '<div class="ip-note">* 정규화 H(정규화 엔트로피): 스키마 사례들에 토큰이 얼마나 고르게 퍼져 있는지. 0에 가까울수록 한두 사례에 토큰이 몰려 있고, 1에 가까울수록 여러 사례에 고르게 퍼져 있음.</div>' : '');
       }
       var fx = []; (n.usas_f || []).forEach(function (t) { t.split('/').forEach(function (u) { if (u && fx.indexOf(u) < 0) fx.push(u); }); });
       var xs = (n.usas_x || []).slice(0, 6), xt = 0; (n.usas_x || []).forEach(function (t) { xt += t[1]; });
       html += '<div class="u-cards">'
         + usasCard('USAS · 스키마', n.usas.map(function (t) { return usasRow(t); }))
         + usasCard('USAS · 고정항', fx.map(function (t) { return usasRow(t); }))
-        + usasCard('USAS · 변항 X', xs.map(function (t) { return usasRow(t[0], '<span class="u-cnt">' + t[1] + '<i style="width:' + Math.round(100 * t[1] / (xt || 1)) + '%"></i></span>'); }))
+        + usasCard('USAS · 변항 X', xs.map(function (t) { return usasRow(t[0], '<span class="u-cnt">' + t[1] + '<i style="width:' + Math.round(100 * t[1] / (xt || 1)) + '%"></i></span>'); }), true)
         + '</div>';
     }
     if (n.type === 'formative') {
@@ -737,6 +739,7 @@
       });
     });
     ipList.innerHTML = html;
+    ipList.querySelectorAll('.u-hover').forEach(function (el) { el.addEventListener('click', function () { el.classList.toggle('open'); }); });
     var back = document.getElementById('ip-back');
     if (back) back.addEventListener('click', function () { var p = navHistory.pop(); if (p) { navigateTo(p); panIntoView(p); } });
     ipList.querySelectorAll('.ip-nav[data-nid]').forEach(function (el) {
