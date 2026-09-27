@@ -44,19 +44,27 @@
       ' <span class="lv">‹ <code>' + mi.mid + '</code> ' + (md.en || '') + ' ‹ <code>' + (md.major || '') + '</code> ' + (mj.ko || mj.en || '') + '</span>';
   }
   // USAS 카드: 소범주 코드 · 영어 이름 · 대범주(한국어). 중범주가 소범주와 같으면 생략
-  function usasRow(tag, extra) {
+  // cases: 이 태그를 지닌 사례 신어 id 목록. 있으면 줄에 마우스를 올릴 때(터치는 누를 때) 목록이 펼쳐진다 (2026-09-27)
+  function usasRow(tag, extra, cases) {
     var base = String(tag).replace(/[+-]+$/, ''), pol = String(tag).slice(base.length);
     var mi = usasMinor[base], md = mi ? (usasMid[mi.mid] || {}) : (usasMid[base] || {}), mj = usasMajor[(md.major || base.charAt(0))] || {};
     var en = mi ? (mi.en || '') : (md.en || '');
     var mid = mi && mi.mid !== base ? '<span class="u-mid">' + esc(md.en || mi.mid) + '</span>' : '';
-    return '<div class="u-row"><code>' + esc(base) + (pol ? '<b>' + esc(pol) + '</b>' : '') + '</code><span class="u-en">' + esc(en) + '</span>' + mid +
-      '<span class="u-maj">' + esc(mj.ko || mj.en || base.charAt(0)) + '</span>' + (extra || '') + '</div>';
+    var list = '';
+    if (cases && cases.length) {
+      var os = cases.map(function (id) { return allNodeMap[id]; }).filter(Boolean);
+      os.sort(function (a, b) { return (b.nn || 0) - (a.nn || 0) || String(a.year).localeCompare(String(b.year)) || a.label.localeCompare(b.label, 'ko'); });
+      list = '<div class="u-cases">' + os.map(function (o) {
+        return '<span class="u-case ip-nav" data-nid="' + o.id + '" title="' + esc(o.origin || '') + '">' + esc(o.label) + '<i>' + esc(String(o.year)) + '</i></span>';
+      }).join('') + '</div>';
+    }
+    return '<div class="u-row' + (list ? ' u-x" tabindex="0"' : '"') + '><code>' + esc(base) + (pol ? '<b>' + esc(pol) + '</b>' : '') + '</code><span class="u-en">' + esc(en) + '</span>' + mid +
+      '<span class="u-maj">' + esc(mj.ko || mj.en || base.charAt(0)) + '</span>' + (extra || '') + list + '</div>';
   }
-  // hover=true: 제목 줄만 보이고, 마우스를 올리면(터치는 누르면) 펼쳐진다
-  function usasCard(title, rows, hover) {
+  // meta: 제목 오른쪽의 작은 설명(선택)
+  function usasCard(title, rows, meta) {
     var body = rows.length ? rows.join('') : '<div class="u-none">태그 없음</div>';
-    if (hover && rows.length) return '<div class="u-card u-hover" tabindex="0"><div class="u-h">' + title + ' <span class="u-more">· ' + rows.length + '개<i class="u-hint-h"> · 마우스를 올리면 보임</i><i class="u-hint-t"> · 눌러서 보기</i></span></div><div class="u-body">' + body + '</div></div>';
-    return '<div class="u-card"><div class="u-h">' + title + '</div>' + body + '</div>';
+    return '<div class="u-card"><div class="u-h">' + title + (meta || '') + '</div>' + body + '</div>';
   }
 
   // ── 상태 ────────────────────────────────────────────────────────────────
@@ -639,7 +647,7 @@
   function showInfoPanel(n, depth) {
     ipTitle.innerHTML = n.type === 'schema' ? schemaHtml(n.label) : esc(n.label) + (n.origin ? '<span class="origin">' + originHtml(n.origin) + '</span>' : '');
     var ti = TYPE_KO[n.type];
-    if (n.type === 'schema') ti += ' · ' + (n.fm || '') + ' · 산출 범주 ' + n.cat + ' · 유형 ' + n.n + (n.total > n.n ? ' · 하위 포함 ' + n.total : '') + ' · 미등재 ' + n.unreg;
+    if (n.type === 'schema') ti += ' · ' + (n.fm || '') + ' · 문법 범주 ' + n.cat + ' · 유형 ' + n.n + (n.total > n.n ? ' · 하위 포함 ' + n.total : '') + ' · 미등재 ' + n.unreg;
     if (n.type === 'formative') ti += ' · ' + n.n + '개 신어' + (n.affix ? ' · ' + n.affix + ' 접사' : '') + (n.trunc ? ' · 절단' : '') + ' · ' + (REG_KO[n.reg] || n.reg);
     if (n.type === 'neologism') ti += ' · ' + n.year + '년 · ' + n.ut + (n.fm ? ' · ' + n.fm : '') + ' · ' + n.pos + (n.cat ? ' · ' + n.cat : '');
     ipType.textContent = ti;
@@ -663,11 +671,13 @@
         html += '<div class="ip-note">* 신문 말뭉치(네이버 뉴스 2012–2025, 약 250억 어절) 기준</div>' + (n.Hn != null ? '<div class="ip-note">* 정규화 H(정규화 엔트로피): 스키마 사례들에 토큰이 얼마나 고르게 퍼져 있는지. 0에 가까울수록 한두 사례에 토큰이 몰려 있고, 1에 가까울수록 여러 사례에 고르게 퍼져 있음.</div>' : '');
       }
       var fx = []; (n.usas_f || []).forEach(function (t) { t.split('/').forEach(function (u) { if (u && fx.indexOf(u) < 0) fx.push(u); }); });
-      var xs = (n.usas_x || []).slice(0, 6), xt = 0; (n.usas_x || []).forEach(function (t) { xt += t[1]; });
+      // 변항 X: 태그별 사례 신어 목록([태그, [id…]]), 사례 수 내림차순. 상위 6줄만 보이고, 줄에 올리면 그 태그의 신어가 펼쳐진다
+      var xall = n.usas_x || [], xs = xall.slice(0, 6), xt = 0; xall.forEach(function (t) { xt += t[1].length; });
+      var xmeta = xall.length ? '<span class="u-more"> · ' + (xall.length > 6 ? '상위 6 / ' + xall.length + '개 태그' : xall.length + '개 태그') + '</span><span class="u-hint"><i class="u-hint-h">줄에 올리면 사례</i><i class="u-hint-t">줄을 누르면 사례</i></span>' : '';
       html += '<div class="u-cards">'
         + usasCard('USAS · 스키마', n.usas.map(function (t) { return usasRow(t); }))
         + usasCard('USAS · 고정항', fx.map(function (t) { return usasRow(t); }))
-        + usasCard('USAS · 변항 X', xs.map(function (t) { return usasRow(t[0], '<span class="u-cnt">' + t[1] + '<i style="width:' + Math.round(100 * t[1] / (xt || 1)) + '%"></i></span>'); }), true)
+        + usasCard('USAS · 변항 X', xs.map(function (t) { return usasRow(t[0], '<span class="u-cnt">' + t[1].length + '<i style="width:' + Math.round(100 * t[1].length / (xt || 1)) + '%"></i></span>', t[1]); }), xmeta)
         + '</div>';
     }
     if (n.type === 'formative') {
@@ -739,7 +749,8 @@
       });
     });
     ipList.innerHTML = html;
-    ipList.querySelectorAll('.u-hover').forEach(function (el) { el.addEventListener('click', function () { el.classList.toggle('open'); }); });
+    // 변항 X 줄: 터치 화면에서는 눌러서 사례 목록을 펼치고 접는다 (사례 자체를 누르면 그 신어로 이동)
+    ipList.querySelectorAll('.u-x').forEach(function (el) { el.addEventListener('click', function (ev) { if (ev.target.closest('.ip-nav')) return; el.classList.toggle('open'); }); });
     var back = document.getElementById('ip-back');
     if (back) back.addEventListener('click', function () { var p = navHistory.pop(); if (p) { navigateTo(p); panIntoView(p); } });
     ipList.querySelectorAll('.ip-nav[data-nid]').forEach(function (el) {

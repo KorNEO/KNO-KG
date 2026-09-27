@@ -265,19 +265,33 @@ a.graph-tab { text-decoration: none; display: inline-flex; align-items: center; 
 /* 터치 화면에는 툴팁 대신 정보 패널 (2026-09-25) */
 @media (hover: none) { #tooltip { display: none !important; } }
 
-/* USAS · 변항 X: 평소엔 제목 줄만, 마우스를 올리면(터치는 누르면) 펼침 (2026-09-25) */
-#info-panel .u-hover { cursor: pointer; }
-#info-panel .u-hover .u-h { margin-bottom: 0; }
-#info-panel .u-hover .u-more { color: #94a3b8; }
-#info-panel .u-hover .u-more i { font-style: normal; }
-#info-panel .u-hover .u-hint-t { display: none; }
-#info-panel .u-hover .u-body { display: none; margin-top: 0.25rem; }
-#info-panel .u-hover:hover .u-body, #info-panel .u-hover:focus-within .u-body, #info-panel .u-hover.open .u-body { display: block; }
-#info-panel .u-hover:hover .u-more i, #info-panel .u-hover.open .u-more i { display: none; }
-#info-panel .u-hover:hover { border-color: #cbd5e1; }
+/* USAS · 변항 X: 항상 펼쳐 두고, 줄에 마우스를 올리면(터치는 누르면) 그 태그를 지닌 사례 신어 목록이 그 아래 펼쳐진다 (2026-09-27) */
+#info-panel .u-h .u-more { color: #94a3b8; font-weight: 400; }
+#info-panel .u-h .u-hint { float: right; color: #b4bccb; font-weight: 400; }
+#info-panel .u-h .u-hint i { font-style: normal; }
+#info-panel .u-h .u-hint-t { display: none; }
+#info-panel .u-x { cursor: pointer; position: relative; margin: 0 -0.35rem; padding: 0.14rem 0.35rem; border-radius: 5px; transition: background 0.12s; }
+#info-panel .u-x::after { content: ''; position: absolute; right: 0.35rem; top: 0.6rem; width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #cbd5e1; opacity: 0; transition: opacity 0.12s; }
+#info-panel .u-x .u-cnt { padding-right: 0.75rem; }
+#info-panel .u-x:hover, #info-panel .u-x.open, #info-panel .u-x:focus-within { background: #eef2ff; }
+#info-panel .u-x:hover::after, #info-panel .u-x.open::after, #info-panel .u-x:focus-within::after { opacity: 1; border-top-color: #1e3a8a; }
+#info-panel .u-x:hover code, #info-panel .u-x.open code, #info-panel .u-x:focus-within code { background: #c7d2fe; }
+#info-panel .u-x .u-cases { display: none; grid-column: 1 / -1; padding: 0.3rem 0 0.25rem; border-top: 1px dashed #c7d2fe; margin-top: 0.2rem; }
+#info-panel .u-x:hover .u-cases, #info-panel .u-x.open .u-cases, #info-panel .u-x:focus-within .u-cases { display: flex; flex-wrap: wrap; gap: 0.28rem 0.3rem; }
+#info-panel .u-case { font-size: 0.72rem; line-height: 1.5; color: #1e293b; background: #fff; border: 1px solid #c7d2fe; border-radius: 4px; padding: 0.05rem 0.45rem; cursor: pointer; white-space: nowrap; }
+#info-panel .u-case:hover { border-color: #1e3a8a; color: #1e3a8a; background: #f5f7ff; }
+#info-panel .u-case .origin { font-size: 0.62rem; color: #94a3b8; margin-left: 0.2rem; }
+#info-panel .u-case i { font-style: normal; color: #94a3b8; font-size: 0.62rem; margin-left: 0.3rem; }
 @media (hover: none) {
-  #info-panel .u-hover .u-hint-h { display: none; }
-  #info-panel .u-hover .u-hint-t { display: inline; }
-  #info-panel .u-hover:hover .u-body, #info-panel .u-hover:focus-within .u-body { display: none; }
-  #info-panel .u-hover.open .u-body { display: block; }
+  #info-panel .u-h .u-hint-h { display: none; }
+  #info-panel .u-h .u-hint-t { display: inline; }
+  #info-panel .u-x::after { opacity: 1; }
+  #info-panel .u-x:hover { background: transparent; }
+  #info-panel .u-x:hover::after { border-top-color: #cbd5e1; }
+  #info-panel .u-x:hover code { background: #e0e7ff; }
+  #info-panel .u-x:hover .u-cases, #info-panel .u-x:focus-within .u-cases { display: none; }
+  #info-panel .u-x.open { background: #eef2ff; }
+  #info-panel .u-x.open::after { border-top-color: #1e3a8a; }
+  #info-panel .u-x.open code { background: #c7d2fe; }
+  #info-panel .u-x.open .u-cases { display: flex; }
 }
