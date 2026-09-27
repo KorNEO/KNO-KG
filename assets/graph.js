@@ -58,7 +58,7 @@
         return '<span class="u-case ip-nav" data-nid="' + o.id + '" title="' + esc(o.origin || '') + '">' + esc(o.label) + '<i>' + esc(String(o.year)) + '</i></span>';
       }).join('') + '</div>';
     }
-    return '<div class="u-row' + (list ? ' u-x" tabindex="0"' : '"') + '><code>' + esc(base) + (pol ? '<b>' + esc(pol) + '</b>' : '') + '</code><span class="u-en">' + esc(en) + '</span>' + mid +
+    return '<div class="u-row' + (list ? ' u-x" tabindex="0"' : '"') + '><code>' + esc(base) + (pol ? '<b>' + esc(pol) + '</b>' : '') + '</code><span class="u-name"><span class="u-en">' + esc(en) + '</span>' + mid + '</span>' +
       '<span class="u-maj">' + esc(mj.ko || mj.en || base.charAt(0)) + '</span>' + (extra || '') + list + '</div>';
   }
   // meta: 제목 오른쪽의 작은 설명(선택)
