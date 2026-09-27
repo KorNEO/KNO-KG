@@ -74,7 +74,6 @@
   var minN = 3;   // 스키마 사례 수 임곗값
   var casesK = 0; // 스키마당 표시 사례 수 (0 = 전부)
   var casesOf = {}; // 스키마 id → 사례 id (빈도 내림차순)
-  var sim = null;
   var allNodes = [], allLinks = [], allNodeMap = {};
   var nodes = [], links = [], nodeMap = {};
   var adj = {};           // id → [{other, link}] (전체 그래프)
@@ -88,7 +87,8 @@
   var W, H, dpr;
   var transform = d3.zoomIdentity;
   // 휠 확대 속도: d3 기본값은 Ctrl+휠에서 10배로 튀므로 Ctrl 여부와 무관하게 같은 폭으로, 한 칸에 약 12%
-  function wheelDelta(ev) { var d = -ev.deltaY * (ev.deltaMode === 1 ? 0.05 : ev.deltaMode ? 1 : 0.002); return Math.max(-0.12, Math.min(0.12, d)); }
+  // 트랙패드 핀치는 ctrlKey 가 켜진 wheel 이고 deltaY 가 아주 작다(몇 px) → d3 기본처럼 10배 (2026-09-27). 한 이벤트 최대 12% 는 그대로
+  function wheelDelta(ev) { var d = -ev.deltaY * (ev.deltaMode === 1 ? 0.05 : ev.deltaMode ? 1 : 0.002) * (ev.ctrlKey ? 10 : 1); return Math.max(-0.12, Math.min(0.12, d)); }
   var zoom = d3.zoom().scaleExtent([0.03, 14]).wheelDelta(wheelDelta).on('zoom', function (ev) { transform = ev.transform; draw(); });
   d3.select(canvas).call(zoom);
 
@@ -222,32 +222,9 @@
     });
     nodeMap = nm; nodes = vn; links = vl;
     document.getElementById('loading').style.display = 'none';
-    runForce();
-    draw();
+    draw();   // 빌드 때 계산한 좌표 그대로. 힘 시뮬레이션은 2026-09-27 에 뺌(노드가 떠다니고 렉이 걸려서)
   }
 
-  // 보이는 노드가 적으면 d3-force 로 자연스럽게 펼친다 (사전 좌표에서 출발 → 군집 유지)
-  function runForce() {
-    if (sim) { sim.stop(); sim = null; }
-    if (!nodes.length || nodes.length > 8000) return;
-    var simLinks = links.map(function (l) { return { source: l.source, target: l.target, type: l.type }; });
-    var dist = { '사례화': 58, '고정항': 70, '구성': 40, '하위': 170, '의미 조건': 150, '병렬': 150 };
-    var strength = { '사례화': 0.9, '고정항': 0.6, '구성': 0.5, '하위': 0.25, '의미 조건': 0.3, '병렬': 0.2 };
-    var cx = 0, cy = 0; nodes.forEach(function (n) { cx += n.x; cy += n.y; }); cx /= nodes.length; cy /= nodes.length;
-    // 군집 중심으로 끄는 힘: 사전 배치(군집 메타 그래프)의 자리를 지켜 군집이 펼쳐진 채 남게 한다
-    function commPull(d) { return commMap[d.comm] ? (d.type === 'schema' ? 0.16 : 0.10) : 0.03; }
-    sim = d3.forceSimulation(nodes)
-      .force('link', d3.forceLink(simLinks).id(function (d) { return d.id; }).distance(function (l) { return (dist[l.type] || 60) * (l.source.comm === l.target.comm ? 1 : 1.6); })
-        .strength(function (l) { return (strength[l.type] || 0.5) * (l.source.comm === l.target.comm ? 1 : 0.12); }))   // 군집을 가로지르는 링크는 약하게: 군집이 서로 끌려 뭉치지 않게
-      .force('charge', d3.forceManyBody().strength(function (d) { return d.type === 'schema' ? -300 : -50; }).distanceMax(420))
-      .force('collide', d3.forceCollide(function (d) { return nodeRadius(d) + (d.type === 'schema' ? 14 : 6); }).strength(0.9).iterations(2))
-      .force('cx', d3.forceX(function (d) { var c = commMap[d.comm]; return c ? c.x : cx; }).strength(commPull))
-      .force('cy', d3.forceY(function (d) { var c = commMap[d.comm]; return c ? c.y : cy; }).strength(commPull))
-      .alpha(0.9).alphaDecay(isM() ? 0.05 : 0.035).velocityDecay(0.35)
-      .on('tick', draw)
-      .on('end', function () { draw(); if (pendingFocus) { var pf = pendingFocus; pendingFocus = null; centerOn(pf, true); } });
-  }
-  var pendingFocus = null;
   // 임곗값·사례 수 때문에 숨은 노드를 보이게: 전부 표시로 풀고 그 노드로 이동
   function showHidden(id) {
     if (!allNodeMap[id]) return;
@@ -274,7 +251,6 @@
     if (!n) return;
     navHistory = []; navigateTo(n);
     centerOn(n, animate);
-    if (sim && sim.alpha() > sim.alphaMin()) pendingFocus = n;   // 배치가 끝나면 다시 중심으로
   }
 
   function centerGraph() {
@@ -1025,7 +1001,7 @@
     focus: function (id, animate) { if (nodeMap[id]) focusNode(nodeMap[id], !!animate); else showHidden(id); return !!nodeMap[id]; },
     screen: function (id) { var n = nodeMap[id]; if (!n) return null; return { x: transform.applyX(n.x), y: transform.applyY(n.y), r: nodeRadius(n) * transform.k }; },
     setMinN: function (v) { minN = v; refresh(true); updateMinNHint(); },
-    state: function () { return { minN: minN, hop: hopRange, layers: layerActive, facets: Object.keys(facetSel).filter(function (k) { return facetSel[k]; }), visible: nodes.length, links: links.length, focus: currentFocusNode ? currentFocusNode.id : null, simAlpha: sim ? sim.alpha() : 0 }; },
-    settled: function () { return !sim || sim.alpha() <= sim.alphaMin(); }
+    state: function () { return { minN: minN, hop: hopRange, layers: layerActive, facets: Object.keys(facetSel).filter(function (k) { return facetSel[k]; }), visible: nodes.length, links: links.length, focus: currentFocusNode ? currentFocusNode.id : null }; },
+    settled: function () { return true; }   // 힘 시뮬레이션 없음: 좌표는 빌드 때 확정
   };
 })();
