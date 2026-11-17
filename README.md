@@ -24,7 +24,7 @@ python -X utf8 schema/analysis.py && python -X utf8 schema/urimal_defs.py && pyt
 python -X utf8 schema/build_graph.py && python -X utf8 tools/figures.py && python -X utf8 tools/build_dashboard.py
 ```
 
-입력: `master/KNO_DATASET_2012-2025_v1.8.xlsx`(v1.7 = 도식 귀납, v1.8 = + 말뭉치·분석), `graphs/kno-components.ttl`, `master/USAS_태그_체계.md`, `tools/schema_site/usas_ko.json`.
+입력: `KNO_DATASET_2012-2025_v1.9.xlsx`(v1.7 = 도식 귀납, v1.8 = + 말뭉치·분석, v1.9 = + 범주 통합 상위 스키마·USAS 최하위 소범주 재태깅, 2026-11-17), `graphs/kno-components.ttl`, `master/USAS_태그_체계.md`, `tools/schema_site/usas_ko.json`.
 코드: `tools/build_schema_site.py`(데이터·레이아웃), `tools/render_schema_site.py`(HTML·TTL), `tools/schema_site/`(템플릿·CSS·JS).
 
 레이아웃: 스키마 + 고정항 형성소 + 하위·병렬·고정항 링크로 핵 그래프를 spring 배치 → 신어는 귀속 스키마 주위 원반 → 슬롯 채움 형성소는 자기 신어 무게중심 → 스키마 없는 덩어리는 오른쪽 아래 별도 배치 → 겹침 해소.
